@@ -2,638 +2,548 @@
 name: pt-corporate-tax
 description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas coletivas em Portugal. Utilizar sempre que seja pedida assistência com Imposto sobre o Rendimento das Pessoas Coletivas (IRC) para sociedades residentes em Portugal. Ativar com expressões como \"IRC Portugal\", \"Modelo 22\", \"derrama estadual\", \"derrama municipal\", \"tributação autónoma\", \"Imposto sobre o Rendimento das Pessoas Coletivas\", \"SIFIDE II\", \"RFAI\", \"Pilar Dois Portugal\", \"Madeira IBC\", \"SGPS\", \"prejuízos fiscais 12 anos\", \"pagamentos por conta\", \"pagamento especial por conta\", \"PEC\", \"CIRC\", \"AT Autoridade Tributária\", \"IES\", \"preços de transferência Portugal\", \"CFC Portugal\", \"participation exemption Portugal\". Ativar também em inglês: \"Portugal corporate tax\", \"Portugal IRC\", \"Portugal Modelo 22\", \"Portugal Pillar Two top-up\", \"Madeira IBC 5%\", \"Portugal R&D credit\", \"Portugal SGPS participation exemption\". Cobre a taxa nominal de 21% nos termos do art.º 87.º CIRC, a taxa reduzida de 17% para PMEs sobre os primeiros €50.000 de matéria coletável, o regime do Centro Internacional de Negócios da Madeira (CINM/IBC) a 5% até 31 dez 2027, a Derrama Estadual progressiva (1,5%/3%/5%/9%) nos termos do art.º 87.º-A, a Derrama Municipal (0-1,5%), a Tributação Autónoma do art.º 88.º (viaturas, despesas de representação, ajudas de custo, paraísos fiscais), o Modelo 22 e respetivos Anexos (A regime geral, B simplificado, C grupos, D incentivos, E preços de transferência), os Pagamentos por Conta do art.º 105.º CIRC (3 prestações: julho, setembro, dezembro) a 80% da coleta do ano anterior, o Pagamento Especial por Conta (PEC) eliminado para PMEs em 2018 mas mantido para grandes empresas, o reporte de prejuízos fiscais a 12 anos com limitação a 65% da matéria coletável (art.º 52.º CIRC), o crédito SIFIDE II (32,5% + 50% incremental, aprovação ANI), o RFAI (25% / 10% por região), o regime SGPS (participation exemption art.º 51.º e 51.º-C), o Pilar Dois (Lei 27/2024 transpondo a Diretiva UE 2022/2523, MNE > €750M), os preços de transferência (art.º 63.º CIRC, Master/Local File por Portaria 268/2021, CbCR), as CFC do art.º 66.º, as retenções na fonte e o cumprimento do IES até 15 julho. Fora de âmbito: regime simplificado de tributação para microentidades (separado), entidades sem fins lucrativos / IPSS, sector financeiro e segurador (regimes especiais), exploração de petróleo e gás, organismos de investimento coletivo (regime especial), fundos de capital de risco, instituições religiosas. Para IVA ver portugal-vat-return; para IRS dos sócios ver pt-income-tax; para contabilidade e SAF-T ver portugal-bookkeeping."
 jurisdiction: PT
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-10-12
+authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# PT Corporate Tax
+# Portugal corporate income tax (IRC) for resident companies
 
-## Portugal — IRC (Imposto sobre o Rendimento das Pessoas Coletivas) — Skill v1.0
+Figures are for tax year 2026. This Guide covers Portuguese corporate income tax (Imposto sobre o Rendimento das Pessoas Coletivas, IRC) for companies resident in mainland Portugal that carry on a commercial, industrial or agricultural activity as their main activity. It covers the IRC rates, the state and municipal surcharges (derrama estadual and derrama municipal), autonomous taxation (tributação autónoma), losses, payments on account, the Modelo 22 return and the IES, the participation exemption, the interest limit, CFC rules, withholding by the company, and the SIFIDE II and RFAI tax credits. Every rate and amount below comes from the consolidated codes on the Portal das Finanças, which print each article with its transitional notes, or from AT's Modelo 22 instructions. The IRC rate changes every year from 2026 to 2028, and the rate depends on the year in which the company's tax period STARTS, so read the first table with care.
 
-> **Produzido pela OpenAccountants (openaccountants.com)**
->
-> Este skill destina-se exclusivamente a fins informativos e não constitui aconselhamento fiscal, jurídico ou financeiro. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas (ROC) inscrito na OROC antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT). A versão verificada mais recente é mantida em [openaccountants.com](https://openaccountants.com).
+## Section 1: Quick reference
 
-## Secção 1 — Referência rápida
-
-**Referência rápida**
-
-| Campo | Valor |
+| Field | Value |
 | --- | --- |
-| País | Portugal (República Portuguesa) |
-| Imposto | Imposto sobre o Rendimento das Pessoas Coletivas (IRC) |
-| Moeda | EUR (Euros, €) |
-| Período de tributação | Em regra, coincide com o ano civil (1 jan – 31 dez); art.º 8.º CIRC permite período diferente mediante comunicação à AT |
-| Legislação primária | **Código do IRC (CIRC)** aprovado pelo DL 442-B/88, de 30 de novembro, e alterações subsequentes; **Lei do Orçamento do Estado para 2025** (Lei 45-A/2024) |
-| Legislação complementar | Estatuto dos Benefícios Fiscais (EBF); Código Fiscal do Investimento (CFI, DL 162/2014); Lei 27/2024 (Pilar Dois); Portaria 268/2021 (preços de transferência); Portaria 220/2008 (Modelo 22) |
-| **Taxa IRC standard** | **21%** sobre a matéria coletável (art.º 87.º n.º 1 CIRC) |
-| **Taxa reduzida PMEs** | **17%** sobre os primeiros **€50.000** de matéria coletável; 21% sobre o remanescente (art.º 87.º n.º 2 CIRC, redação OE 2025) |
-| **Madeira IBC (CINM)** | **5%** para entidades licenciadas no Centro Internacional de Negócios da Madeira até **31 dez 2027** (DL 165/86, alterado; aprovação UE Decisão SA.21259) |
-| **Derrama Estadual** | Escalões progressivos sobre lucro tributável: 1,5% (€1,5M – €7,5M), 3% (€7,5M – €35M), 5% (€35M – €200M), 9% (> €200M) — art.º 87.º-A CIRC |
-| **Derrama Municipal** | 0% a **1,5%** sobre lucro tributável, fixada por cada município (Lei 73/2013 – Lei das Finanças Locais). Lisboa e Porto: 1,5%; vários municípios do interior: 0% |
-| **Tributação Autónoma (TA)** | Art.º 88.º CIRC — taxas variáveis sobre viaturas, despesas representação, ajudas de custo, paraísos fiscais; **+10 p.p. se exercício de prejuízo fiscal** |
-| Declaração anual | **Modelo 22** + Anexos — submissão eletrónica via Portal das Finanças |
-| Prazo Modelo 22 | Até ao **último dia útil de maio** do ano seguinte (TY 2024: 31 maio 2025; TY 2025: 31 maio 2026 — confirmar dia útil) |
-| **IES** (Informação Empresarial Simplificada) | Até **15 julho** do ano seguinte |
-| **Pagamentos por Conta (PPC)** | 3 prestações: **julho, setembro, dezembro** — total = 80% da coleta IRC do ano anterior (75% se VN ≤ €500.000) — art.º 105.º CIRC |
-| **Pagamento Especial por Conta (PEC)** | Eliminado para PMEs (OE 2018); mantém-se para grandes empresas — art.º 106.º CIRC |
-| Prejuízos fiscais | Reporte por **12 períodos de tributação**; limitação de dedução a **65% da matéria coletável** (art.º 52.º CIRC) |
-| **SIFIDE II** | Crédito de **32,5%** das despesas de I&D + **50%** sobre parte incremental (acima da média dos 2 anos anteriores); reporte 8 anos; aprovação ANI |
-| **RFAI** | Crédito de **25%** sobre investimento elegível até €15M; **10%** acima; condicionado à região (Norte/Centro/Alentejo/Madeira/Açores; menor em Algarve/Lisboa) |
-| **Pilar Dois** | Lei 27/2024 transpõe Diretiva UE 2022/2523; aplica-se a MNEs com EBM > €750M; taxa efetiva mínima 15% (IIR + UTPR + QDMTT) |
-| Retenções na fonte | Dividendos 28% (residentes) / 25% (não residentes); juros 28%/25%; royalties 25% — reduções por CDT |
-| Portal | **Portal das Finanças** (portaldasfinancas.gov.pt) |
-| Autoridade fiscal | **Autoridade Tributária e Aduaneira (AT)** |
-| Conservação de documentos | 10 anos (art.º 123.º CIRC) |
-| Validado por | Pendente — sign-off por Contabilista Certificado (OCC) ou ROC (OROC) |
-| Versão do skill | 1.0 |
+| Country | Portugal (mainland). Azores and Madeira: see Section 3.3 |
+| Tax | Imposto sobre o Rendimento das Pessoas Coletivas (IRC) |
+| Currency | EUR |
+| Tax period | The calendar year, unless the company adopts a different annual period that matches its accounting year (art. 8 CIRC) |
+| Main law | Código do IRC (CIRC); 2026 State Budget Law 73-A/2025 of 30 December 2025; IRC rate law 64/2025 of 7 November 2025 |
+| Other law | Código Fiscal do Investimento (CFI) for SIFIDE II and RFAI; Lei 73/2013 for derrama municipal; Lei 41/2024 for the global minimum tax |
+| General IRC rate | See Section 3.1 |
+| SME rate | See Section 3.2 |
+| Derrama estadual | See Section 4.1 |
+| Derrama municipal | See Section 4.2 |
+| Autonomous taxation | See Section 5 |
+| Annual return | Modelo 22, sent electronically through the Portal das Finanças |
+| Modelo 22 deadline | Last day of May of the following year, working day or not (art. 120 CIRC) |
+| IES deadline | 15 July of the following year, working day or not (art. 121 CIRC) |
+| Payments on account | Three: July, September and 15 December of the year itself (art. 104 CIRC); amounts in Section 7 |
+| Special payment on account (PEC) | Repealed for tax periods starting on or after 1 January 2022 (Section 8) |
+| Tax losses | No time limit; yearly deduction capped (Section 9) |
+| Tax authority | Autoridade Tributária e Aduaneira (AT) |
 
-### 1.1 Defaults conservadores
+### 1.1 Conservative defaults
 
-**Defaults conservadores**
-
-| Ambiguidade | Default |
+| Ambiguity | Default |
 | --- | --- |
-| Estatuto PME desconhecido | Aplicar 21% (não PME) até confirmação dos critérios da Recomendação UE 2003/361/CE |
-| Município desconhecido | Aplicar **1,5%** de derrama municipal (taxa máxima) até confirmação |
-| Madeira IBC sem licença confirmada | Aplicar 21% standard; flag para verificação da licença CINM |
-| Tributação autónoma — viatura sem valor de aquisição claro | Assumir escalão mais alto (35%) |
-| Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14) |
-| SIFIDE — incremental vs base | Confirmar média dos 2 anos anteriores; se incerto, aplicar só 32,5% (sem componente incremental) |
-| RFAI — região elegível | Confirmar NUTS II; se cliente em Lisboa/Algarve aplicar taxa reduzida ou recusar |
-| Reporte prejuízos pré-2014 | Aplicar regras transitórias específicas; sinalizar para revisor |
-| SGPS — participation exemption | Confirmar participação ≥10% e ≥1 ano detenção antes de aplicar isenção |
-| Pilar Dois aplicabilidade | Confirmar EBM > €750M em 2 dos 4 anos anteriores; se incerto, sinalizar |
-| Preços de transferência — limiar | Se VN ≥ €3M ou operações com partes relacionadas, exigir Master/Local File |
+| SME status unknown | Apply the general rate to all taxable income until the SME or Small Mid Cap status under the annex to Decree-Law 372/2007 is confirmed |
+| Start date of the tax period unknown | Ask. A period that started in 2025 uses the 2025 rate, not the 2026 rate |
+| Municipality unknown | Apply the maximum derrama municipal rate in Section 4.2 until the municipality's rate is confirmed |
+| Madeira or Azores company | Do not apply mainland rates or the Madeira CINM regime; refer (Section 3.3) |
+| Car autonomous tax, acquisition cost unclear | Use the highest band in Section 5.1 |
+| Tax loss in the period | Apply the loss uplift in Section 5.3 unless one of its exceptions is proved |
+| SIFIDE II without the certifying declaration or proof it was requested | Apply no credit |
+| RFAI region unclear | Apply no credit until the region is confirmed against the regional aid map |
+| Participation exemption conditions unclear | Tax the dividend or gain normally |
+| Ownership change of more than half the capital | Assume losses are lost until the art. 52(8) and (9) analysis is done |
 
-## Secção 2 — Entradas obrigatórias e catálogo de recusas
+## Section 2: Required inputs and refusal catalogue
 
-### 2.1 Entradas obrigatórias
+### 2.1 Required inputs
 
-- **Mínimo viável** — Demonstrações financeiras anuais aprovadas (balanço, demonstração de resultados); IES do exercício anterior; Modelo 22 do ano anterior; SAF-T (PT) Contabilidade; confirmação de (i) estatuto PME, (ii) município da sede, (iii) eventual licenciamento Madeira IBC, (iv) eventual qualificação como SGPS, (v) opção pelo Regime Especial de Tributação dos Grupos de Sociedades (RETGS), se aplicável.
-- **Recomendado** — Razão geral e balancetes; mapa de amortizações e depreciações; mapa de provisões e imparidades; mapa de reporte de prejuízos fiscais por ano de origem; comprovativos de retenção na fonte sofrida; recibos dos pagamentos por conta efetuados; quadro de partes relacionadas e respetivos saldos/transações; mapa de viaturas (matrícula, data de aquisição, valor, utilizador).
-- **Ideal** — Demonstrações financeiras com Certificação Legal de Contas (CLC) emitida por ROC; dossier de preços de transferência completo (Master File + Local File por Portaria 268/2021); certificado SIFIDE II emitido pela ANI; declaração RFAI com identificação dos investimentos elegíveis; mapa Pilar Dois GloBE Information Return (se aplicável); atas que documentem opções fiscais (RETGS, regime especial, etc.).
-- **HARD STOP** — HARD STOP se faltar o mínimo. Sem DFs aprovadas e Modelo 22 do ano anterior não pode ser produzida computação de IRC.
+- **Minimum.** Approved annual accounts (balance sheet and income statement); the prior-year Modelo 22 and IES; the SAF-T (PT) accounting file; confirmation of (i) SME or Small Mid Cap status, (ii) the municipality of the head office and of any permanent establishments, (iii) the start and end dates of the tax period, (iv) any Madeira or Azores operations, (v) whether the company is in a group taxed under RETGS.
+- **Recommended.** Trial balance and general ledger; depreciation schedule; provisions and impairment schedule; tax losses by year of origin; withholding certificates; receipts for payments on account made in 2026; list of related parties and transactions; car register (plate, acquisition date, acquisition cost, fuel type, user).
+- **Ideal.** Statutory audit report where required; transfer pricing documentation; the SIFIDE II certifying declaration; RFAI investment schedule by region; board minutes that record tax options (RETGS, a different tax period).
+- **Hard stop.** Without approved accounts and the prior-year Modelo 22, no IRC computation is produced.
 
-### 2.2 Catálogo de recusas
+### 2.2 Refusal catalogue
 
-- **R-PT-IRC-1** — Setores financeiro e segurador. Bancos, sociedades financeiras, instituições de pagamento, seguradoras e resseguradoras seguem regimes específicos (Decreto Regulamentar 25/2009 + regras de Banco de Portugal / ASF; contribuição extraordinária sobre o setor bancário). Fora de âmbito — escalar para fiscalista especializado.  _(Decreto Regulamentar 25/2009)_
-- **R-PT-IRC-2** — Petróleo, gás e indústrias extrativas. Regime especial; tributação adicional sectorial. Fora de âmbito.
-- **R-PT-IRC-3** — Organismos de investimento coletivo (OIC) e fundos. Fundos de investimento mobiliário e imobiliário, FCR, FIA, FIIAH têm regime fiscal próprio (DL 7/2015 e EBF). Fora de âmbito.  _(DL 7/2015; EBF)_
-- **R-PT-IRC-4** — Entidades sem fins lucrativos / IPSS / sector cooperativo. IPSS, associações, fundações, cooperativas (com algumas exceções) — regime do art.º 9.º e 10.º CIRC, EBF, e Estatuto da Cooperação. Fora de âmbito.  _(art.º 9.º e 10.º CIRC)_
-- **R-PT-IRC-5** — Não residentes sem estabelecimento estável. Tributação cedular (taxas liberatórias ou retenções definitivas). Para estabelecimentos estáveis (EE) de não residentes, aplicam-se regras de imputação dos arts. 4.º-3, 50.º e 55.º CIRC — escalar a fiscalista.  _(arts. 4.º-3, 50.º e 55.º CIRC)_
-- **R-PT-IRC-6** — RETGS (Regime Especial de Tributação dos Grupos de Sociedades). Art.º 69.º a 71.º CIRC. A opção exige sociedade dominante com participação ≥75%, residência fiscal em Portugal e cumprimento de requisitos formais. Recusa por defeito — apenas Tier 2 com sign-off do revisor; computações em base consolidada não são produzidas neste skill.  _(art.º 69.º a 71.º CIRC)_
-- **R-PT-IRC-7** — Procedimentos de inspeção, contraordenacionais ou contenciosos pendentes. Se a sociedade estiver em inspeção tributária ativa (Lei Geral Tributária art.º 63.º), processo de execução fiscal, impugnação judicial, reclamação graciosa ou MAP — escalar. Não produzir números que prejudiquem a posição em litígio.  _(Lei Geral Tributária art.º 63.º)_
-- **R-PT-IRC-8** — Reorganizações empresariais (fusões, cisões, entradas de ativos, permutas). Regime de neutralidade fiscal dos arts. 73.º a 78.º CIRC requer análise específica. Fora de âmbito.  _(arts. 73.º a 78.º CIRC)_
-- **R-PT-IRC-9** — Operações com paraísos fiscais (Portaria 150/2004 e Portaria 309-A/2020). Pagamentos a entidades em jurisdições da lista nacional de regimes fiscais claramente mais favoráveis exigem inversão do ónus da prova (art.º 23.º-A n.º 1 r CIRC) e tributação autónoma agravada (35%/55%). Tier 2; reviewer sign-off obrigatório.  _(Portaria 150/2004; Portaria 309-A/2020; art.º 23.º-A n.º 1 r CIRC)_
-- **R-PT-IRC-10** — Âmbito cross-skill. IVA → `portugal-vat-return`; IRS dos sócios → `pt-income-tax`; Segurança Social → `pt-social-contributions`; contabilidade e SAF-T → `portugal-bookkeeping`; demonstrações financeiras e relatório de gestão → `portugal-financial-statements`; constituição de sociedade → `portugal-formation`.
+- **R-PT-IRC-1: banks, financial institutions and insurers.** Special regimes apply (for example, the interest limit in art. 67 does not apply to entities supervised by the Banco de Portugal or the insurance supervisor). Out of scope; refer.
+- **R-PT-IRC-2: oil, gas and extractive industries.** Sector regimes. Out of scope.
+- **R-PT-IRC-3: collective investment undertakings and funds.** Own tax regime. Out of scope.
+- **R-PT-IRC-4: non-profit entities and entities whose main activity is not commercial, industrial or agricultural.** Taxed on global income under art. 53 and art. 87(5) CIRC. Out of scope.
+- **R-PT-IRC-5: non-residents.** A non-resident with no permanent establishment is taxed at the rates in Section 3.1 on Portuguese income, mostly by final withholding. A permanent establishment needs its own attribution analysis. Refer.
+- **R-PT-IRC-6: RETGS (group taxation, arts. 69 to 71 CIRC).** The conditions are in Section 12.4. Group computations are not produced in this Guide.
+- **R-PT-IRC-7: inspections and disputes.** An open tax inspection, enforcement proceeding, administrative claim, court challenge or mutual agreement procedure: refer. Do not produce figures that could prejudice the position.
+- **R-PT-IRC-8: reorganisations (mergers, divisions, asset contributions, share exchanges, arts. 73 and following CIRC).** Out of scope.
+- **R-PT-IRC-9: payments to listed preferential tax regimes.** The autonomous tax in Section 5.2 applies unless the company proves the operations are real and normal. Partner review required.
+- **R-PT-IRC-10: other Guides.** VAT: `portugal-vat-return`. Shareholders' personal income tax: `pt-income-tax`. Payroll and employee withholding: `portugal-payroll`. Bookkeeping and SAF-T: `portugal-bookkeeping`. Annual accounts and IES content: `portugal-financial-statements`. Company formation: `portugal-formation`. Treaty relief on foreign income: `pt-foreign-source-treaties`. Final filing package: `pt-return-assembly`.
 
-## Secção 3 — Tier 1 — Taxa nominal IRC, regime PMEs e Madeira IBC
+## Section 3: IRC rates
 
-### 3.1 Taxa nominal — 21%
+### 3.1 General rate: 19% for periods starting in 2026
 
-- **Taxa de IRC geral** — 21% (taxa geral)
-- **Fórmula IRC standard** — IRC = 21% × Matéria Coletável  _(art.º 87.º n.º 1 CIRC)_
+Article 87(1) CIRC now prints a rate that applies only from 2028. The transitional rule printed under the article (art. 3 of Law 64/2025) sets a different rate for tax periods that start in 2026 and in 2027. For a calendar-year company, the 2026 tax year uses the 2026 row. A company whose tax period started in 2025 (for example, 1 July 2025 to 30 June 2026) uses the rate for 2025, which this Guide does not state.
 
-### 3.2 Taxa reduzida para PMEs — 17%
-
-- **Taxa reduzida PMEs** — 17% percent (sobre os primeiros €50.000 de matéria coletável; excedente a 21%)  _(art.º 87.º n.º 2 CIRC (redação dada pela Lei do OE 2025))_
-- **Fórmula PME** — Se matéria coletável ≤ €50.000: IRC = 17% × MC Se matéria coletável > €50.000: IRC = (17% × €50.000) + (21% × (MC − €50.000)) = €8.500 + 21% × (MC − €50.000)  _(art.º 87.º n.º 2 CIRC)_
-
-O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos anteriores). Verificar o texto da LOE 2025 publicada antes de aplicar.
-
-**Definição de PME (Recomendação UE 2003/361/CE)**  _(Recomendação UE 2003/361/CE; DL 372/2007)_
-
-| Categoria | Trabalhadores | E (VN anual ≤) OU (Balanço total ≤) |
+| Item | Rate | Note (verbatim) |
 | --- | --- | --- |
-| Micro | < 10 | €2M / €2M |
-| Pequena | < 50 | €10M / €10M |
-| Média | < 250 | €50M / €43M |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx |
+| General rate, periods starting during 2026 (art. 87(1) and (5)) | 19% | "Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %" |
+| General rate, periods starting during 2027 | 18% | "Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %" |
+| Rate printed in art. 87(1), for periods starting on or after 1 January 2028 | 17% | "A taxa do IRC é de 17 %, exceto nos casos previstos" |
+| SME and Small Mid Cap rate, first part of taxable income (art. 87(2)), periods starting on or after 1 January 2026 | 15% | "50 000 € de matéria coletável é de 15 %, aplicando-se a" |
+| Band taxed at the SME rate | EUR 50,000 | "a taxa de IRC aplicável aos primeiros 50 000 € de matéria coletável" |
+| Startup rate on the same band (art. 87(8)) | 12.5% | "a taxa de IRC prevista no n.º 2 é reduzida para 12,5 %" |
+| Non-resident with no permanent establishment to which the income is attributable (art. 87(4)) | 25% | "aí não possuam estabelecimento estável ao qual os mesmos sejam imputáveis, a taxa do IRC é de 25%" |
+| Non-resident: capital income of entities domiciled in a listed preferential tax regime, capital income paid to accounts for unidentified third parties, lottery and raffle prizes (art. 87(4)(d), (h), (i)) | 35% | "Ministro das Finanças, em que a taxa é de 35%" |
 
-- **Base de apreciação de limites** — Os limites são apreciados em base consolidada quando há empresas associadas ou parceiras.  _(art.º 3.º do anexo ao DL 372/2007)_
+### 3.2 SME and Small Mid Cap rate
 
-### 3.3 Madeira IBC (Centro Internacional de Negócios da Madeira) — 5%
+The SME rate in the table above applies only to a company that meets all of these conditions (art. 87(2) and (3) CIRC):
 
-- **Taxa Madeira IBC** — 5% percent (sobre rendimentos de atividades licenciadas pelo CINM, até 31 dezembro 2027)  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
+1. It carries on, directly and as its main activity, an economic activity of an agricultural, commercial or industrial nature. For the CIRC, every activity that consists of business economic operations, including the supply of services, counts as commercial, industrial or agricultural (art. 3(4) CIRC), so a services company meets this condition. [art. 3 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc3.aspx)
+2. It qualifies as a small or medium-sized enterprise, or as a Small Mid Cap, under the annex to Decree-Law 372/2007 of 6 November. The size thresholds sit in that decree-law, which no allowed page prints; confirm them there, on a consolidated basis with partner and linked enterprises.
+3. The reduced rate is State aid: it is subject to the EU de minimis rules (art. 87(3)).
 
-**Requisitos Madeira IBC**  _(DL 165/86)_
+The reduced rate is a band, not a cliff. Taxable income (matéria coletável) up to the band in the table above pays the SME rate; only the excess pays the general rate.
 
-| Requisito | Conteúdo |
-| --- | --- |
-| Licenciamento | Licença CINM emitida pela SDM (Sociedade de Desenvolvimento da Madeira) |
-| Criação de postos de trabalho | Mínimo de 1 posto de trabalho nos primeiros 6 meses, com limite máximo de matéria coletável beneficiada conforme tabela (1 trabalhador → MC máxima beneficiada €2,73M; escalões crescentes até > 100 trabalhadores) |
-| Investimento mínimo | Alternativa ao requisito de postos: €75.000 em ativos fixos tangíveis ou intangíveis nos primeiros 2 anos |
-| Atividades elegíveis | Serviços internacionais conforme lista CINM (excluindo certas atividades financeiras e de consultoria não internacionais) |
-| Plafonds | Tetos sobre matéria coletável beneficiada por nível de emprego |
+A company that qualifies as a startup under Law 21/2023 of 25 May and meets all the conditions of art. 2(1)(f) of that law pays the startup rate in the table above on the same band (art. 87(8)), also under the de minimis rules.
 
-- **Tributação acima dos plafonds** — Acima dos plafonds aplicáveis, a matéria coletável é tributada à taxa standard (Açores: 14,7%; Madeira fora do CINM: 14,7% para PMEs e 18,9% para outras — verificar Decreto Legislativo Regional aplicável).
-- **Default conservador Madeira IBC** — Aplicar 21% standard até validação da licença CINM válida para o exercício e cumprimento dos requisitos de emprego/investimento.
+A transitional rule printed under art. 87 (art. 229 of Law 24-D/2022) keeps the SME rate for the two periods after a merger, division, asset contribution or share exchange carried out between 1 January 2023 and 31 December 2026, where every party qualified as an SME or Small Mid Cap and the receiving company stops qualifying because of the operation. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
 
-### 3.4 Regiões Autónomas — taxas regionais
+### 3.3 Azores, Madeira and the Madeira International Business Centre
 
-**Regiões Autónomas — taxas regionais**
+The Azores and Madeira set their own regional IRC rates by regional law, and the Madeira International Business Centre (CINM, often called the Madeira IBC) has its own licensing, job and ceiling rules. No allowed page used for this Guide prints the 2026 regional rates or the CINM rate and ceilings, so this Guide states none. The live Guide's regional rates and CINM table were removed because no allowed page prints them. For a company with its head office, a permanent establishment or a CINM licence in either region: refer to a local accountant and the regional tax authority. For derrama municipal, Modelo 22 Annex A has a separate subtable for the Madeira Free Zone (art. 36-A(12) of the EBF). [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
 
-| Região | Taxa standard | Taxa PMEs (primeiros €50.000) |
+## Section 4: Derrama estadual and derrama municipal
+
+Both surcharges are charged on TAXABLE PROFIT (lucro tributável), which is the profit before tax losses are deducted. IRC itself is charged on taxable income (matéria coletável), after losses. AT's own Annex A example shows a company with taxable profit of EUR 450,000 and taxable income of EUR 350,000 whose derrama is computed on the EUR 450,000. [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
+
+### 4.1 Derrama estadual (art. 87-A CIRC)
+
+Who pays: residents whose main activity is commercial, industrial or agricultural, and non-residents with a permanent establishment in Portugal. It applies only to the part of taxable profit above the threshold in the table, by slices, so each rate applies only to the profit inside its slice. There is no lower band below the first rate shown. Under RETGS, each group company computes it on its own individual taxable profit, including the parent (art. 87-A(3)). It is self-assessed in the Modelo 22 (art. 87-A(4)).
+
+| Slice of taxable profit | Rate | Note (verbatim) |
 | --- | --- | --- |
-| Continente | 21% | 17% |
-| **Açores** (DLR específico) | 14,7% | 11,9% (verificar valor exato em DLR vigente) |
-| **Madeira** (fora CINM) | 14,7% | 11,9% (verificar valor exato em DLR vigente) |
-| **Madeira CINM/IBC** | 5% (até 31 dez 2027, com plafonds) | — |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx |
+| Threshold: only profit above this is charged | EUR 1,500,000 | "Sobre a parte do lucro tributável superior a (euro) 1 500 000 sujeito e não isento" |
+| Above EUR 1,500,000 up to EUR 7,500,000 | 3% | "uma, igual a (euro) 6 000 000, à qual se aplica a taxa de 3 %" |
+| Above EUR 7,500,000 up to EUR 35,000,000 | 5% | "igual ao lucro tributável que exceda (euro) 7 500 000, à qual se aplica a taxa de 5%" |
+| Above EUR 35,000,000 | 9% | "à qual se aplica a taxa de 9 %" |
+| Size of the first slice | EUR 6,000,000 | "uma, igual a (euro) 6 000 000, à qual" |
 
-(Reviewer: confirmar percentagens regionais contra o Decreto Legislativo Regional em vigor para 2025 — as RA podem adotar reduções dentro das margens permitidas pela Lei das Finanças Regionais.)
+### 4.2 Derrama municipal (art. 18 of Lei 73/2013)
 
-## Secção 4 — Derrama Estadual + Derrama Municipal
+Who pays: the same taxpayers as derrama estadual. Each municipality decides each year whether to levy it and at what rate, up to the maximum in the table, on taxable profit. A municipality may also set a reduced rate for small taxpayers by prior-year turnover, and may grant exemptions on its own conditions (for example, job creation or activity code).
 
-### 4.1 Derrama Estadual — art.º 87.º-A CIRC
-
-- **Incidência** — A Derrama Estadual incide sobre a parte do lucro tributável (não da matéria coletável) superior a €1.500.000, em escalões progressivos.  _(art.º 87.º-A CIRC)_
-
-**Derrama Estadual — escalões**  _(art.º 87.º-A CIRC)_
-
-| Lucro tributável | Taxa |
-| --- | --- |
-| Até €1.500.000 | 0% |
-| €1.500.000 — €7.500.000 | **1,5%** |
-| €7.500.000 — €35.000.000 | **3%** |
-| €35.000.000 — €200.000.000 | **5%** |
-| Acima de €200.000.000 | **9%** |
-
-- **Fórmula Derrama Estadual** — Derrama Estadual = Σ (taxa do escalão × lucro tributável dentro do escalão)  _(art.º 87.º-A CIRC)_
-- **Acréscimo e não creditação** — A Derrama Estadual acresce ao IRC, à Derrama Municipal e à Tributação Autónoma. Não é creditável e não dá origem a reporte.  _(art.º 87.º-A CIRC)_
-
-### 4.2 Derrama Municipal — Lei 73/2013 (Lei das Finanças Locais)
-
-- **Fixação municipal** — Cada município pode fixar anualmente uma derrama até 1,5% sobre o lucro tributável do exercício. A taxa pode também ser zero ou diferenciada para PMEs (regime de incentivos municipais).  _(art.º 18.º da Lei 73/2013)_
-
-**Taxas comuns para 2025 (verificar deliberação municipal específica)**  _(Lei 73/2013)_
-
-| Município | Derrama Municipal |
-| --- | --- |
-| Lisboa | 1,5% |
-| Porto | 1,5% |
-| Cascais | 1,5% |
-| Sintra | 1,5% |
-| Várias do interior (ex: Mértola, Idanha-a-Nova) | 0% |
-| Algumas com taxa reduzida para PMEs | 1,25% / 1,0% |
-
-- **Fórmula Derrama Municipal** — Derrama Municipal = Taxa do município × Lucro Tributável  _(art.º 18.º da Lei 73/2013)_
-- **Repartição multi-município** — Se a empresa tiver atividade em mais que um município, a derrama é repartida pela massa salarial em cada município (art.º 18.º n.º 2 da Lei 73/2013), salvo se o VN anual não exceder €50.000 (todos os rendimentos imputados ao município da sede).  _(art.º 18.º n.º 2 da Lei 73/2013)_
-- **Default conservador Derrama Municipal** — Aplicar 1,5% até confirmação da deliberação municipal específica para o exercício.
-
-## Secção 5 — Tributação Autónoma (art.º 88.º CIRC)
-
-- **Natureza da TA** — A Tributação Autónoma (TA) é um imposto adicional sobre certas despesas, independentemente de se apurar matéria coletável positiva. Incide sobre o sujeito passivo (não sobre o beneficiário) e acresce ao IRC.  _(art.º 88.º CIRC)_
-- **Agravamento por prejuízo fiscal** — Se o sujeito passivo apresentar prejuízo fiscal no exercício, as taxas de TA são agravadas em 10 p.p. (com exceção das taxas de 35%/55% sobre paraísos fiscais que já são as máximas).  _(art.º 88.º n.º 14 CIRC)_
-
-### 5.1 Viaturas ligeiras de passageiros e mistas
-
-**Viaturas ligeiras de passageiros e mistas**  _(art.º 88.º CIRC)_
-
-| Custo de aquisição | Taxa TA (regra) | Taxa TA (com prejuízo) |
+| Item | Value | Note (verbatim) |
 | --- | --- | --- |
-| < €27.500 | 10% | 20% |
-| €27.500 — €35.000 | 27,5% | 37,5% |
-| > €35.000 | 35% | 45% |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF |
+| Maximum municipal rate, on taxable profit | 1.5% | "A taxa pode variar até ao limite máximo de 1,5% do lucro tributável apurado no período." |
+| Reduced municipal rate allowed for prior-year turnover not above | EUR 150,000 | "taxa reduzida de derrama municipal para os sujeitos passivos cujo volume de negócios no ano anterior não ultrapasse" |
+| Annex A required when taxable income is above this AND the company has establishments in more than one municipality | EUR 50,000 | "Tenham matéria coletável no período superior a" |
 
-- **Aplica-se sobre** — Depreciações, encargos com manutenção, combustíveis, seguros, rendas de locação, impostos (IUC).  _(art.º 88.º CIRC)_
-- **Exclusões** — Veículos exclusivamente elétricos com custo até €62.500 (taxa 0%); híbridos plug-in com taxas reduzidas (5%/10%/17,5%); GPL/GNV (taxas reduzidas — verificar art.º 88.º n.º 18 atual).  _(art.º 88.º n.º 18 CIRC)_
+The Annex A instructions above, which cite art. 18(24) of Lei 73/2013, say a turnover that does "não ultrapasse" (does not exceed) the amount, which includes a turnover exactly equal to it. AT's older help sheet for field 364 (worked examples for the 2016 period) says "inferior a" (below) in its summary, while the municipal rate rows it reproduces say "não ultrapasse":
 
-### 5.2 Outras categorias
-
-**Outras categorias de TA**  _(art.º 88.º CIRC; Portaria 150/2004)_
-
-| Despesa | Taxa TA |
-| --- | --- |
-| Despesas de representação | 10% (+10 p.p. se prejuízo = 20%) |
-| Ajudas de custo e km próprio (não faturados a cliente, sem mapa) | 5% (+10 p.p. = 15%) |
-| Pagamentos a entidades em paraísos fiscais (Portaria 150/2004) — não documentados ou não justificados | **35%** (sujeitos passivos com contabilidade organizada) / **55%** (entidades isentas ou parcialmente isentas) |
-| Encargos não documentados | 50% (+10 p.p. = 60%); 70% para entidades total ou parcialmente isentas |
-| Bónus e remunerações variáveis pagas a gestores/administradores que representem mais de 25% da remuneração anual e excedam €27.500, salvo se diferidos > 3 anos com componente variável dependente de desempenho positivo | 35% |
-| Lucros distribuídos a entidades isentas total ou parcialmente | 23% (sobre dividendos, em certos casos) — verificar redação atual do art.º 88.º n.º 11 |
-
-- **Fórmula TA total** — TA Total = Σ (taxa aplicável × despesa em causa)  _(art.º 88.º CIRC)_
-- **Liquidação da TA** — A TA é liquidada no Modelo 22 (campo próprio do Quadro 10) e paga com o saldo do IRC.
-
-## Secção 6 — Modelo 22 + Anexos
-
-### 6.1 Modelo 22 — declaração de rendimentos
-
-- **Modelo 22** — A declaração periódica de rendimentos Modelo 22 de IRC é o instrumento de autoliquidação. Submetida obrigatoriamente por via eletrónica no Portal das Finanças.
-
-**Quadros principais**
-
-| Quadro | Conteúdo |
-| --- | --- |
-| Q01 | Identificação e tipo de declaração |
-| Q03 | Resultado líquido do período (RLP) |
-| Q07 | Correções para apuramento do lucro tributável (acréscimos e deduções) |
-| Q09 | Apuramento da matéria coletável (deduções de benefícios fiscais; prejuízos fiscais reportáveis) |
-| Q10 | Cálculo do imposto: IRC, derramas, tributação autónoma, retenções, PPC, PEC, créditos |
-| Q11 | Outras informações |
-| Q13 | Apuramento do PEC |
-
-### 6.2 Anexos
-
-**Anexos Modelo 22**
-
-| Anexo | Quando obrigatório |
-| --- | --- |
-| **Anexo A** | Regime geral — Derrama Municipal repartida por município (sempre que aplicável) |
-| **Anexo B** | Regime simplificado de determinação da matéria coletável (microentidades elegíveis com VN ≤ €200.000 e ativo ≤ €500.000, sem participações > 20%, etc.) |
-| **Anexo C** | Regime Especial de Tributação dos Grupos de Sociedades (RETGS) — sociedade dominante |
-| **Anexo D** | Benefícios fiscais (SIFIDE, RFAI, CFEI, DLRR, RFI/DLRR, etc.) |
-| **Anexo E** | Regime das Operações entre Entidades Relacionadas — preços de transferência (sempre que VN ≥ €3M ou operações com partes relacionadas) |
-| **Anexo F** | Entidades isentas ou parcialmente isentas |
-| **Anexo G** | Atividade hoteleira e similares (informação setorial) |
-| **Anexo H** | Imputação de rendimentos (CFC, art.º 66.º) |
-
-### 6.3 IES (Informação Empresarial Simplificada)
-
-- **IES** — Declaração anual conjunta cumprindo obrigações perante AT, IRN (Registo Comercial), Banco de Portugal e INE. Submetida no Portal das Finanças até 15 de julho do ano seguinte.
-
-**Anexos IES relevantes para IRC**
-
-| Anexo IES | Conteúdo |
-| --- | --- |
-| Anexo A | Balanço, demonstração de resultados, anexo |
-| Anexo D | Operações com partes relacionadas |
-| Anexo R | RETGS |
-| Anexo Q | SGPS |
-
-## Secção 7 — Pagamentos por Conta (art.º 105.º CIRC)
-
-**Prestações de PPC**  _(art.º 105.º CIRC)_
-
-| Prestação | Vencimento |
-| --- | --- |
-| 1ª | Julho (até último dia útil) |
-| 2ª | Setembro (até último dia útil) |
-| 3ª | 15 de dezembro |
-
-- **Cálculo PPC** — Total PPC = 80% × Coleta IRC do ano N−1 (líquida de retenções) Se VN do ano N−1 ≤ €500.000: Total PPC = 75% × Coleta do ano N−1 PPC por prestação = Total PPC / 3 (arredondado por excesso)  _(art.º 105.º CIRC)_
-- **Dispensa da 3ª prestação** — Quando o sujeito passivo verifique que o montante dos PPC já pagos é igual ou superior ao imposto que será devido com base na matéria coletável do exercício, pode deixar de efetuar a 3ª prestação. Esta dispensa deve ser comunicada e, se a estimativa for incorreta com erro superior a 20%, há juros compensatórios.  _(art.º 105.º n.º 5 e n.º 6 CIRC)_
-
-## Secção 8 — Pagamento Especial por Conta (PEC) — art.º 106.º CIRC
-
-- **Eliminação para PMEs** — A Lei do OE 2018 (Lei 114/2017) eliminou o PEC para sujeitos passivos que cumpram as obrigações declarativas (Modelo 22 e IES) nos prazos legais. Para PMEs em situação regularizada, o PEC deixou de ser exigido.  _(Lei 114/2017; art.º 106.º CIRC)_
-- **Permanência para não dispensadas** — Mantém-se para grandes empresas e em casos de incumprimento das obrigações declarativas.  _(art.º 106.º CIRC)_
-- **Cálculo PEC** — PEC = 1% do VN do exercício anterior, com mínimo €850 e máximo €70.000 + 20% sobre a parte que exceder €50.000 Pago em 2 prestações: - 1ª prestação: março - 2ª prestação: outubro Dedutível à coleta de IRC nos 6 períodos seguintes; reembolsável nos termos do art.º 93.º se não absorvido.  _(art.º 106.º CIRC; art.º 93.º CIRC)_
-- **Default conservador PEC** — Confirmar se a entidade está dispensada (cumprimento declarativo em dia + ser PME). Em dúvida, calcular o PEC.
-
-## Secção 9 — Prejuízos fiscais (art.º 52.º CIRC)
-
-**Prejuízos fiscais — regras**  _(art.º 52.º CIRC (redação dada pela Lei 24-D/2022 e alterações posteriores))_
-
-| Item | Regra |
-| --- | --- |
-| Período de reporte | **12 períodos de tributação** seguintes (regra atual; alterada de 5 → 12 em 2023) |
-| Limitação anual de dedução | A dedução em cada período não pode exceder **65% da matéria coletável** apurada (art.º 52.º n.º 2) |
-| Ordem de dedução | Por ordem cronológica (prejuízos mais antigos primeiro) |
-| Carry-back | **Não permitido** em Portugal |
-| Aquisição de controlo | Perda do direito à dedução se alteração da titularidade de mais de 50% do capital social ou da maioria dos direitos de voto, salvo autorização da AT (art.º 52.º n.º 8 e 9) |
-| Período pré-2014 | Aplicam-se regras transitórias — prejuízos gerados em 2014-2016 com reporte de 12 anos; 2017-2022 com reporte de 5 anos (verificar regime de transição) |
-
-- **Cálculo da dedução de prejuízos** — Dedução máxima do ano = min ( Prejuízos disponíveis , 65% × Matéria Coletável antes da dedução )  _(art.º 52.º CIRC)_
-
-Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos reportáveis disponíveis = €80.000.
-- Limite 65% = €65.000.
-- Dedução do ano = €65.000.
-- Matéria coletável após dedução = €35.000.
-- Prejuízos por reportar = €15.000 (continuam disponíveis nos exercícios seguintes até esgotar os 12 anos).
-
-## Secção 10 — SIFIDE II (Sistema de Incentivos Fiscais à I&D Empresarial)
-
-**SIFIDE II — componentes**  _(Código Fiscal do Investimento (DL 162/2014), arts. 35.º a 42.º)_
-
-| Componente | Taxa |
-| --- | --- |
-| Taxa base | **32,5%** das despesas de I&D elegíveis incorridas no exercício |
-| Taxa incremental | **+50%** sobre o aumento de despesas em relação à média dos **2 exercícios anteriores** (com tecto de €1.500.000 sobre a componente incremental) |
-
-- **Reporte SIFIDE** — 8 períodos de tributação seguintes (créditos não utilizados).  _(DL 162/2014)_
-- **Despesas elegíveis (não exaustivo)** — Aquisição de ativos fixos tangíveis e intangíveis afetos a I&D (exclui terrenos e edifícios fora de certas condições), despesas com pessoal afeto a I&D, despesas com participação em ensaios, despesas com auditorias externas, contratos com instituições do sistema científico, registo de patentes.  _(DL 162/2014)_
-- **Procedimento** — 1. Submissão à ANI (Agência Nacional de Inovação) de candidatura/declaração com o dossier de despesas. 2. ANI emite declaração SIFIDE atestando o montante de crédito apurado. 3. Crédito deduzido à coleta de IRC no Modelo 22 (Quadro 10, campo 355) com base na declaração ANI.
-- **Default conservador SIFIDE** — Não aplicar SIFIDE sem certificado ANI emitido. Se o certificado ainda não foi emitido, aplicar 0 e flag para revisor.
-
-## Secção 11 — RFAI (Regime Fiscal de Apoio ao Investimento)
-
-**RFAI por região**  _(Código Fiscal do Investimento (DL 162/2014), arts. 22.º a 26.º)_
-
-| Região (NUTS II) | Taxa RFAI sobre investimento elegível |
-| --- | --- |
-| Norte, Centro, Alentejo, RA Madeira, RA Açores | **25%** sobre os primeiros €15.000.000 de investimento elegível; **10%** sobre o excedente |
-| Algarve | **10%** (com algumas variações; verificar mapa de auxílios regionais 2022-2027) |
-| Área Metropolitana de Lisboa | Geralmente **não elegível** (com exceções pontuais previstas no mapa de auxílios) |
-
-- **Requisitos RFAI** — Investimento em ativos fixos tangíveis afetos à exploração (com exclusões: terrenos, edifícios — salvo em certos casos —, viaturas ligeiras, equipamento administrativo). Atividade em sectores elegíveis (indústria, turismo, alguns serviços — não inclui sectores excluídos do RGIC como pesca, agricultura primária, setor financeiro). Criação de postos de trabalho e manutenção por 3 anos (PME) ou 5 anos (não PME). Manutenção do investimento pelo mesmo período.  _(DL 162/2014)_
-- **Reporte RFAI** — 10 períodos de tributação seguintes.  _(DL 162/2014)_
-- **Limite de dedução à coleta** — 50% da coleta de IRC (com exceção para PMEs nos 2 primeiros anos — 100%).  _(DL 162/2014)_
-
-## Secção 12 — Regime SGPS (Sociedade Gestora de Participações Sociais)
-
-### 12.1 Participation exemption (art.º 51.º CIRC) — Dividendos
-
-- **Isenção de lucros e reservas distribuídos** — Os lucros e reservas distribuídos a sujeitos passivos de IRC residentes em Portugal estão isentos de IRC, desde que cumulativamente cumpridos os requisitos.  _(art.º 51.º CIRC)_
-
-**Requisitos participation exemption**  _(art.º 51.º CIRC)_
-
-| Requisito | Conteúdo |
-| --- | --- |
-| **Participação mínima** | Detenção, direta ou indireta, de **≥10%** do capital social ou dos direitos de voto |
-| **Período de detenção** | **≥1 ano** ininterrupto (a contar até à data da distribuição) ou compromisso de manter pelo período mínimo |
-| **Sujeição da participada a imposto** | A participada está sujeita a IRC, IRS-PE ou imposto análogo a taxa nominal ≥ **60% da taxa IRC portuguesa** (ou seja, ≥12,6% face à taxa 21%); ou outras condições alternativas (art.º 51.º n.º 1 e n.º 6) |
-| **Não residência em paraíso fiscal** | A participada não pode residir em jurisdição da lista de regimes fiscais claramente mais favoráveis (Portaria 150/2004 e 309-A/2020) |
-
-### 12.2 Participation exemption (art.º 51.º-C CIRC) — Mais-valias
-
-- **Isenção mais-valias e menos-valias** — As mais-valias e menos-valias realizadas com a transmissão onerosa de partes sociais que cumpram os mesmos requisitos do art.º 51.º estão isentas (no caso das mais-valias) ou não dedutíveis (no caso das menos-valias) — regime simétrico.  _(art.º 51.º-C CIRC)_
-
-### 12.3 Regime SGPS específico
-
-- **Regras específicas SGPS** — As SGPS (DL 495/88) podem ainda beneficiar de regras específicas sobre: Encargos financeiros suportados com a aquisição de participações (regime de subcapitalização e limitação dos encargos financeiros — art.º 67.º CIRC, "regra dos juros excessivos" / EBITDA fiscal). Prazos de imobilização das participações.  _(DL 495/88; art.º 67.º CIRC)_
-- **Default conservador SGPS** — Confirmar (i) participação ≥10%, (ii) detenção ≥1 ano, (iii) sujeição da participada a IRC ou análogo, (iv) participada não residente em paraíso fiscal. Em qualquer dúvida, tributar normalmente.
-
-## Secção 13 — Pilar Dois (Imposto Complementar) — Lei 27/2024
-
-- **Legislação e âmbito** — Lei 27/2024, de 15 de julho — transpõe a Diretiva (UE) 2022/2523 do Conselho relativa a um nível mínimo mundial de tributação para os grupos de empresas multinacionais e grupos nacionais de grande dimensão na União. Aplica-se a grupos de empresas multinacionais (EMN) ou nacionais com rendimento total consolidado anual ≥ €750.000.000 em pelo menos 2 dos 4 períodos de tributação anteriores.  _(Lei 27/2024; Diretiva (UE) 2022/2523)_
-
-**Componentes Pilar Dois**  _(Lei 27/2024)_
-
-| Mecanismo | Conteúdo |
-| --- | --- |
-| **IIR** (Income Inclusion Rule / Regra de Inclusão dos Rendimentos) | A empresa-mãe final ou intermédia em Portugal deve incluir e tributar os rendimentos das suas filiais com taxa efetiva < 15% até ao mínimo de 15% |
-| **UTPR** (Undertaxed Profits Rule / Regra dos Lucros Subtributados) | Mecanismo de "backstop" — se IIR não foi aplicada no topo, as entidades em Portugal pagam top-up |
-| **QDMTT** (Qualified Domestic Minimum Top-up Tax / Imposto Complementar Nacional Qualificado) | Portugal aplica o top-up sobre os lucros gerados em Portugal por entidades do grupo até atingir 15% efetivo localmente |
-
-- **Taxa efetiva mínima** — 15% percent (por jurisdição (GloBE Income / Taxes Covered, com ajustamentos GloBE))  _(Lei 27/2024)_
-- **Obrigações declarativas** — GloBE Information Return (GIR) — submetido até 15 meses após o fim do exercício (18 meses no primeiro ano de aplicação). Declaração separada de liquidação do imposto complementar em Portugal.  _(Lei 27/2024)_
-- **Entrada em vigor em Portugal** — IIR e QDMTT aplicáveis a períodos de tributação iniciados em ou após 1 de janeiro de 2024; UTPR a partir de 1 de janeiro de 2025.  _(Lei 27/2024)_
-- **Default conservador Pilar Dois** — Se o grupo tem EBM consolidada > €750M em algum dos últimos 4 anos, escalar a equipa fiscal especializada em Pilar Dois. Este skill identifica a aplicabilidade mas não produz a computação GloBE.
-
-## Secção 14 — Preços de Transferência (art.º 63.º CIRC)
-
-- **Princípio arm's length** — As operações entre entidades relacionadas devem ser contratadas em condições equivalentes às que seriam acordadas entre entidades independentes ("arm's length principle" / princípio da plena concorrência).  _(art.º 63.º CIRC; Portaria 268/2021, de 26 de novembro)_
-
-### 14.1 Obrigações documentais
-
-**Obrigações documentais preços de transferência**  _(Portaria 268/2021)_
-
-| Obrigação | Quando aplicável |
-| --- | --- |
-| **Dossier de preços de transferência** (Master File + Local File) | Sujeitos passivos com **volume de negócios ≥ €3.000.000** ou operações com partes relacionadas relevantes |
-| **CbCR** (Country-by-Country Report) | Grupos multinacionais com receitas consolidadas ≥ **€750.000.000** |
-| **Anexo E do Modelo 22** | Quando há operações com partes relacionadas (independentemente do limiar do dossier) |
-| **Notificação CbCR** | Empresas residentes que pertençam a grupo MNE com obrigação CbCR — informar AT sobre a entidade declarante |
-
-- **Métodos aceites** — CUP, Resale Price, Cost Plus, TNMM, Profit Split (alinhados com Diretrizes OCDE 2022).  _(Diretrizes OCDE 2022)_
-- **Prazo do dossier** — Disponível na sociedade até 15 julho do ano seguinte (mesma data da IES).
-
-## Secção 15 — CFC (Sociedades Estrangeiras Controladas) — art.º 66.º CIRC
-
-**Requisitos CFC**  _(art.º 66.º CIRC)_
-
-| Requisito | Conteúdo |
-| --- | --- |
-| Controlo | Participação ≥ **25%** (ou ≥10% se outros residentes portugueses controlam, no total, ≥50%) |
-| Residência da CFC | Em jurisdição com regime fiscal claramente mais favorável (Portaria 150/2004) OU sujeição a imposto efetivo inferior a **50% do IRC português** |
-| Tipo de rendimentos | Rendimentos passivos, royalties, juros, etc., conforme art.º 66.º n.º 2 |
-
-- **Imputação e crédito** — O lucro imputado é tributado na sociedade portuguesa às taxas normais (com crédito por imposto pago no estrangeiro).  _(art.º 66.º CIRC)_
-- **Anexo H obrigatório** — Anexo H ao Modelo 22 — preenchimento obrigatório quando há imputação CFC.
-
-## Secção 16 — Retenções na fonte efetuadas pela sociedade
-
-- **Obrigação de retenção** — A sociedade portuguesa, enquanto entidade pagadora, é obrigada a reter na fonte e entregar à AT (via Guia DMR/Modelo 30/Modelo 39 conforme tipo de beneficiário).
-
-**Taxas de retenção na fonte**
-
-| Rendimento | Taxa retenção — residente | Taxa retenção — não residente |
+| Item | Value | Note (verbatim) |
 | --- | --- | --- |
-| Dividendos (lucros e reservas distribuídos) | 28% (IRS) / dispensável se beneficiário sujeito IRC | 25% (com possibilidade de redução por CDT) |
-| Juros | 28% (IRS) / 25% (IRC) | 25% (com redução por CDT) |
-| Royalties | 25% | 25% (com redução por CDT; isenção Diretiva Juros e Royalties UE se aplicável) |
-| Comissões e rendimentos de capitais diversos | 25% | 25% |
-| Rendimentos prediais pagos a não residentes | 25% | 25% |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/Mod_22_Q_7_Campo_364_derrama_ajudas_preench.pdf |
+| Reduced-rate turnover boundary, help sheet wording | EUR 150,000 | "volume de negócios no ano anterior inferior a 150 000,00 euros" |
 
-- **Diretiva Mães-Filhas** — Dispensa de retenção sobre dividendos pagos a sociedade-mãe na UE/EEE com participação ≥10% por ≥1 ano (transposta no art.º 14.º n.º 3 CIRC e art.º 97.º).  _(Diretiva 2011/96/UE; art.º 14.º n.º 3 CIRC; art.º 97.º CIRC)_
-- **Diretiva Juros e Royalties** — Dispensa para juros/royalties entre sociedades associadas UE com participação ≥25% por ≥2 anos.  _(Diretiva 2003/49/CE)_
+Whether a municipality's reduced rate covers a turnover exactly at the amount depends on that municipality's own deliberation as published in the Ofício Circulado; where that wording is not available, refer the case. The help sheet also says that if the IES was not filed, AT does not know the turnover and applies the municipality's normal rate.
 
-## Secção 17 — Madeira IBC (CINM)
+**Rates by municipality for 2026.** AT publishes each municipality's rates for a year's profits in an Ofício Circulado early in the following year. The list for 2024 profits is Ofício Circulado 20273 of 22 January 2025. No list for 2026 profits exists yet. The Annex A instructions also point to the Portal das Finanças path "Serviços → IRC → Modelo 22 e Derrama de IRC → Derrama IRC → Consultar taxas". Until the municipality's 2026 rate is confirmed, use the maximum rate. The live Guide's table of municipal rates (Lisboa, Porto, Cascais, Sintra and others) was removed: none of those rates is on an allowed page for 2026.
 
-### 17.1 Taxa e prazo
+**Several municipalities.** When BOTH conditions in the Annex A table hold (taxable income above the amount shown AND establishments or local representations in more than one municipality), the company files Annex A and splits the derrama between municipalities by the ratio of payroll (massa salarial) in each. The result goes to field 364 of table 10 of the Modelo 22. [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
 
-- **Taxa Madeira IBC e prazo** — 5% de IRC sobre rendimentos provenientes de atividades licenciadas pelo CINM. Regime válido até 31 de dezembro de 2027 (sob a aprovação atual da Comissão Europeia como auxílio de Estado compatível). Entidades licenciadas até 31 dez 2024 mantêm o regime até 31 dez 2027 (verificar regime transitório aplicável). percent  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
+## Section 5: Autonomous taxation (art. 88 CIRC)
 
-### 17.2 Requisitos (tabela simplificada)
+Autonomous taxes are separate charges on certain expenses. They are due whether or not the company has taxable income, are self-assessed in the Modelo 22, and no deductions are allowed against the total, even under special laws (art. 88(23)). They do not apply to the expenses of a permanent establishment outside Portugal (art. 88(17)). Under the simplified regime, the rates in art. 88(7), (9), (11) and (13) do not apply (art. 88(16)).
 
-**Requisitos Madeira IBC (tabela simplificada)**
+### 5.1 Cars
 
-| Postos de trabalho criados | Matéria coletável máxima beneficiada |
-| --- | --- |
-| 1 a 2 (com investimento mínimo €75.000) | €2.730.000 |
-| 3 a 5 | €3.550.000 |
-| 6 a 30 | €21.870.000 |
-| 31 a 50 | €35.540.000 |
-| 51 a 100 | €54.680.000 |
-| > 100 | €205.500.000 |
+The car rates apply only to taxpayers that are not subjectively exempt AND carry on a commercial, industrial or agricultural main activity. They apply to charges on light passenger cars, the light goods vehicles of art. 7(1)(b) of the Vehicle Tax Code, and motorcycles. Charges include depreciation, rents, insurance, maintenance, fuel and taxes on ownership or use (art. 88(5)). The band depends on the car's acquisition cost; the rate applies to the year's charges, not to the cost. Excluded: vehicles used in public transport or rented out in the normal course of business, and cars covered by an agreement taxed on the employee under art. 2(3)(b)(9) CIRS (art. 88(6)).
 
-*(Valores indicativos — verificar o regime atualizado em DL 165/86 e diplomas conexos para o exercício 2025.)*
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx |
+| Cars with acquisition cost below EUR 37,500 | 8% | "a) 8 % no caso de viaturas com um custo de aquisição inferior a 37 500 €;" |
+| Cars costing EUR 37,500 or more and below EUR 45,000 | 25% | "b) 25 % no caso de viaturas com um custo de aquisição igual ou superior a 37 500 € e inferior a 45 000 €;" |
+| Cars costing EUR 45,000 or more | 32% | "c) 32 % no caso de viaturas com um custo de aquisição igual ou superior a 45 000 €." |
+| Qualifying plug-in hybrids and natural gas (GNV) cars, the same three bands | 2.5%, 7.5% and 15% | "são, respetivamente, de 2,5 %, 7,5 % e 15 %" |
+| Fully electric vehicles, only where the acquisition cost exceeds the limit set by the ordinance under art. 34(1)(e) | 10% | "apenas são sujeitos a tributação, à taxa autónoma de 10 %," |
 
-### 17.3 Atividades elegíveis
+A plug-in hybrid qualifies for the reduced rates only if its battery charges from the grid, it has an electric range of at least 50 km, AND its official emissions are below 50 gCO2/km (or below 80 gCO2/km if type-approved under the Euro 6e-bis standard). This wording is from Law 73-A/2025. A fully electric vehicle costing no more than the ordinance limit bears no autonomous tax. The ordinance amount is not printed on an allowed page; confirm it before relying on it.
 
-- **Atividades elegíveis CINM** — Serviços internacionais (consultoria internacional, prestação de serviços a entidades não residentes em Portugal, e-commerce, propriedade intelectual com gestão na Madeira). Indústria (Zona Franca Industrial — separada). Registo Internacional de Navios da Madeira (MAR) — para atividade de transporte marítimo.
-- **Não elegíveis** — Atividades financeiras puras (com restrições pós-reformas 2014), atividades de seguros, atividades concorrenciais no mercado nacional fora do CINM.
+### 5.2 Other autonomous taxes
 
-### 17.4 Outros benefícios CINM
+| Expense | Rate | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx |
+| Undocumented expenses (also not deductible) | 50% | "As despesas não documentadas são tributadas autonomamente, à taxa de 50 %, sem prejuízo" |
+| Undocumented expenses of wholly or partly exempt entities, entities without a commercial, industrial or agricultural main activity, or art. 7 entities | 70% | "é elevada para 70 % nos casos" |
+| Representation expenses (receptions, meals, trips offered to clients, suppliers or others) | 10% | "São tributados autonomamente à taxa de 10 % os encargos efetuados ou suportados relativos a despesas de representação," |
+| Payments to persons in a listed preferential tax regime, or to accounts there, unless the company proves they are real operations, not abnormal and not exaggerated: ordinary taxpayers | 35% | "sendo as taxas aplicáveis, respetivamente, 35 % ou 55 %, as" |
+| The same payments by entities under art. 88(2) | 55% | "sendo as taxas aplicáveis, respetivamente, 35 % ou 55 %, as" |
+| Per diem allowances and payments for an employee's own car, not invoiced to clients, except the part taxed in the employee's IRS | 5% | "São ainda tributados autonomamente, à taxa de 5 %, os" |
+| Profits distributed to wholly or partly exempt IRC taxpayers where the shares were not held for one year without interruption before the distribution and are not kept to complete it | 23% | "São tributados autonomamente, à taxa de 23 %, os" |
+| Manager termination payments not tied to pre-set productivity goals; and manager bonuses that are BOTH above the share of annual pay AND above the amount below | 35% | "São tributados autonomamente, à taxa de 35 %: a) Os gastos ou encargos relativos a indemnizações" |
+| Manager bonus test: share of annual remuneration | 25% | "parcela superior a 25 % da remuneração anual e" |
+| Manager bonus test: amount | EUR 27,500 | "possuam valor superior a (euro) 27 500, salvo se" |
+| Bonus escape: deferred part of at least | 50% | "diferimento de uma parte não inferior a 50 % por um período mínimo de três anos" |
 
-- **Outros benefícios CINM** — Isenção de retenção sobre pagamento de dividendos a sócios não residentes (com condições). Isenção sobre prestações suplementares dos sócios. Imposto do Selo reduzido em certas operações.
-- **Default conservador Madeira IBC final** — Sem licença CINM válida confirmada, aplicar regime geral (IRC 14,7% Madeira ou 21% Continente, conforme sede). Pedir cópia da licença CINM e relatório de cumprimento de requisitos de emprego/investimento.
+The manager bonus is NOT taxed if at least the deferred share in the table is deferred for at least three years AND payment is conditional on the company's positive performance over that period. If a condition later fails, the autonomous tax that should have been paid is added to the IRC of the period in which it fails (art. 88(21)).
 
-## Secção 18 — Casos práticos
+### 5.3 Loss uplift and its 2026 exceptions
 
-### 18.1 Lda restauração em Lisboa — não PME
+All autonomous tax rates in art. 88 rise by 10 percentage points for a taxpayer with a tax loss in the period, where the expenses relate to a commercial, industrial or agricultural activity not exempt from IRC (art. 88(14)). The uplift applies to every rate in the article, including the preferential-regime rates; the live Guide's statement that those rates are excluded was wrong.
 
-**Factos:** Restaurante das Janelas, Lda. Período coincide com ano civil. Exercício 2025.
-- Volume de negócios: €1.500.000.
-- 25 trabalhadores. Critério PME cumprido (micro/pequena).
-- Resultado líquido contabilístico: €120.000.
-- Acréscimos fiscais (TA de viaturas extra, multas, donativos não enquadráveis): +€15.000.
-- Deduções (provisões fiscalmente aceites revertidas): −€5.000.
-- Sem prejuízos fiscais reportáveis.
-- Sede em Lisboa (Derrama Municipal 1,5%).
-- Viaturas: 1 ligeira a €40.000 (sem alternativos elétricos) e 1 ligeira a €25.000.
-- Despesas de representação: €8.000.
+The uplift does NOT apply in any of these cases:
 
-#### 18.1.1 Apuramento do lucro tributável.
+1. The tax period in which the activity starts, and the next one (art. 88(15)).
+2. For the 2026 tax period only (art. 95(5) of Law 73-A/2025, printed under the article), EITHER (a) the company had taxable profit in one of the three previous tax periods AND filed the Modelo 22 and the IES for the two previous periods on time, OR (b) 2026 is the period in which the activity starts or one of the two following periods.
 
-- **Apuramento do lucro tributável** — Resultado líquido contabilístico            €120.000 + Acréscimos (Q07)                          €15.000 − Deduções (Q07)                            (€5.000) ───────────── Lucro tributável                            €130.000 − Prejuízos reportáveis                          €0 ───────────── Matéria coletável                           €130.000
+Under RETGS, the group's tax loss under art. 70 is used for this test (art. 88(22)). [art. 88 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx)
 
-#### 18.1.2 IRC.
+## Section 6: Modelo 22 and IES
 
-- **IRC** — Pequena empresa — taxa reduzida nos primeiros €50.000. IRC sobre €50.000 a 17%   = €8.500 IRC sobre €80.000 a 21%   = €16.800 ───────────── IRC                       = €25.300
+### 6.1 Modelo 22
 
-#### 18.1.3 Derrama Estadual.
+The Modelo 22 is the annual self-assessment return (art. 117(1)(b) and art. 120 CIRC). It is sent electronically:
 
-- **Derrama Estadual** — Lucro tributável (€130.000) < €1.500.000 → **€0**.
+- calendar-year period: by the last day of May of the following year, whether or not that day is a working day (art. 120(1)). For the 2026 tax year: 31 May 2027;
+- a different annual period: by the last day of the fifth month after the period ends (art. 120(2));
+- cessation of activity: by the last day of the third month after cessation (art. 120(3));
+- RETGS: the parent files the group return AND every group company files its own return as if the regime did not apply (art. 120(6)).
 
-#### 18.1.4 Derrama Municipal Lisboa.
+The IRC balance (total tax less payments on account) is paid by the last day for sending the Modelo 22 (art. 104(1)(b)). A refund is paid by the end of the third month after the return is sent, if it was sent on time and without errors (art. 104(3)). [art. 120 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc120.aspx) [art. 104 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc104.aspx)
 
-- **Derrama Municipal Lisboa** — Derrama Municipal = 1,5% × €130.000 = €1.950
+### 6.2 Annexes
 
-#### 18.1.5 Tributação Autónoma.
+Annex A (derrama municipal) is covered in Section 4.2. The derrama municipal total goes to field 364 of table 10. The live Guide's list of other annexes (B to H) and of the main tables was removed: it was not checked against an allowed page, and at least one line conflicted with the law (it placed related-party disclosure in a Modelo 22 annex, while art. 63(7) CIRC puts it in the IES). Use the annex list in the current official form and its instructions.
 
-- **Tributação Autónoma** — Viatura €40.000 a 35%                = €40.000 × 35% × 1 (depreciação/encargos anuais ~ €10.000) TA = €10.000 × 35%                  = €3.500 Viatura €25.000 a 10% (encargos €6.000) TA = €6.000 × 10%                   = €600 Despesas representação €8.000 a 10%   = €800 ───────────── TA total                              = €4.900 *(Notas: TA aplica-se aos encargos do exercício, não ao custo total de aquisição. Exemplo simplificado.)*
+### 6.3 IES
 
-#### 18.1.6 Coleta total a pagar.
+The IES (declaração anual de informação contabilística e fiscal, art. 117(1)(c)) is sent electronically by 15 July of the following year, whether or not that day is a working day (art. 121(2)). For a different annual period: by the 15th day of the seventh month after the period ends (art. 121(3)). For the 2026 tax year of a calendar-year company: 15 July 2027. [art. 121 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc121.aspx)
 
-- **Coleta total a pagar** — IRC                  €25.300 Derrama Estadual          €0 Derrama Municipal     €1.950 TA                    €4.900 ───────────── Total                €32.150
+The IES must state whether the company had transactions with related parties in the period and, if so, identify them and the amounts, and declare whether transfer pricing documentation was prepared at the time and is kept (art. 63(7)). [art. 63 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc63.aspx)
 
-#### 18.1.7 Acerto:
+## Section 7: Payments on account (arts. 104, 105 and 105-A CIRC)
 
-- **Acerto** — Coleta total                       €32.150 − Retenções na fonte sofridas        (€800) − PPC efetuados (julho/set/dez)   (€20.000) ───────────── A pagar com Modelo 22              €11.350 Modelo 22 a submeter até **31 maio 2026** (verificar dia útil). IES até **15 julho 2026**.
+Companies whose main activity is commercial, industrial or agricultural, and non-residents with a permanent establishment, pay three payments on account in July, September and 15 December of the year the profit relates to (for a different tax period: the seventh month, the ninth month and the 15th day of the twelfth month). The base is the IRC assessed for the PREVIOUS tax period, net of withholding (art. 105(1)). The percentage depends on the PREVIOUS period's turnover. Each payment is one third, rounded up to the euro.
 
-### 18.2 SGPS holding com dividendos de filial UE
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105.aspx |
+| Prior-period turnover up to and including this amount | EUR 500,000 | "seja igual ou inferior a (euro) 500 000" |
+| Payments on account, prior-period turnover up to that amount | 80% | "correspondem a 80 % do montante do imposto" |
+| Payments on account, prior-period turnover above that amount | 95% | "correspondem a 95 % do montante do imposto" |
 
-**Factos:** Holding Atlântico, SGPS, S.A. Detém 100% da Atlântico Operações, Lda (PT) e 30% da SkyTech BV (Países Baixos) há 5 anos. Exercício 2025.
-- Dividendos recebidos da Atlântico Ops: €500.000.
-- Dividendos recebidos da SkyTech BV: €200.000.
-- Outras receitas operacionais (serviços de gestão): €120.000.
-- Custos operacionais (RH, escritório): €80.000.
-- Encargos financeiros (empréstimo para aquisição de SkyTech BV): €50.000.
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc104.aspx |
+| No payments on account when the reference period's IRC is below | EUR 200 | "dispensados de efetuar pagamentos por conta quando o imposto do período de tributação de referência" |
+| No balance payment or refund when the amount is below | EUR 25 | "nem ao reembolso a que se refere o n.º 2 quando o seu montante for inferior a" |
 
-#### 18.2.1 Aplicação do art.º 51.º (participation exemption).
+Late payments on account start compensatory interest at once (art. 104(5)). A company may skip the third payment on account if, on the information it has, the payments already made are equal to or more than the tax that will be due for the period, or may limit the third payment to the difference (art. 107(1) and (3)). If the return then shows that this left unpaid more than the share in the table below of what a normal third payment would have been, compensatory interest runs from the due date of the third payment (art. 107(2)).
 
-- **Aplicação do art.º 51.º** — **Dividendos Atlântico Ops:** 100% > 10%; ≥1 ano; participada residente PT e sujeita a IRC. **Isentos.** **Dividendos SkyTech BV:** 30% > 10%; ≥1 ano; Países Baixos sujeitos a IRC nacional > 12,6%; não paraíso fiscal. **Isentos.**  _(art.º 51.º)_
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc107.aspx |
+| Shortfall from skipping or limiting the third payment above which compensatory interest is due | 20% | "deixou de ser paga uma importância superior a 20% da que, em condições normais, teria sido entregue" |
 
-#### 18.2.2 Lucro tributável.
+**Additional payment on account (art. 105-A).** A company that owed derrama estadual for the previous period also makes additional payments on account under art. 104-A, computed on the PREVIOUS period's taxable profit above the threshold, by slices. Under RETGS each group company pays its own, including the parent (art. 105-A(4)). The due dates in art. 104-A are not reproduced here.
 
-- **Lucro tributável** — Resultado líquido contabilístico         €690.000 (= 500 + 200 + 120 − 80 − 50) − Dividendos isentos art.º 51.º         (€700.000) + Encargos financeiros não aceites (regra art.º 67.º — EBITDA fiscal)      verificar limitação ───────────── Lucro tributável                          €40.000 (ilustrativo, após art.º 67.º) *(Reviewer: aplicar regra do art.º 67.º — limitação dos gastos de financiamento ao maior de €1M ou 30% do EBITDA fiscal — antes de finalizar números.)*  _(art.º 51.º; art.º 67.º)_
+| Slice of prior-period taxable profit | Rate | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105a.aspx |
+| Above EUR 1,500,000 up to EUR 7,500,000 | 2.5% | "à qual se aplica a taxa de 2,5 %; outra, igual ao lucro tributável que exceda (euro) 7 500 000, à" |
+| Above EUR 7,500,000 up to EUR 35,000,000 | 4.5% | "que exceda (euro) 7 500 000, à qual se aplica a taxa de 4,5 %;" |
+| Above EUR 35,000,000 | 8.5% | "à qual se aplica a taxa de 8,5 %" |
 
-#### 18.2.3 IRC.
+## Section 8: Special payment on account (PEC): repealed
 
-- **IRC** — Holding Atlântico cumpre critérios PME (assumido). Matéria coletável €40.000 < €50.000: IRC = 17% × €40.000 = €6.800
+Article 106 CIRC (pagamento especial por conta) was repealed by Law 12/2022 of 27 June, with effect for tax periods starting on or after 1 January 2022. No company pays a PEC for 2026, whatever its size. The live Guide said the PEC still applied to large companies and gave its formula; that is wrong and has been removed. [art. 106 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc106.aspx)
 
-#### 18.2.4 Derrama Estadual / Municipal.
+## Section 9: Tax losses (art. 52 CIRC)
 
-- **Derrama Estadual / Municipal** — Lucro tributável €40.000 → DE = €0. DM sede (assumir Porto 1,5%) = €600.
+Tax losses are deducted from the taxable profit of one or more later tax periods, with NO time limit (art. 52(1), wording of Law 24-D/2022). This applies to deductions in tax periods starting on or after 1 January 2023, and also to losses from earlier periods whose deduction window was still open when that law entered into force (art. 228(1) of Law 24-D/2022). Losses of earlier periods covered by art. 6(1) of the REAID regime keep the deduction period in force on 31 December 2022 (art. 228(2)).
 
-#### 18.2.5 Total:
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx |
+| Yearly cap on the deduction, as a share of that period's taxable profit | 65% | "não pode exceder o montante correspondente a 65 % do respetivo lucro tributável, não" |
+| Change of ownership that ends the right to deduct: more than this share of share capital, or the majority of voting rights | 50% | "se verificou a alteração da titularidade de mais de 50 % do capital social ou" |
+| Ownership-change exception: acquirer has held, without interruption since the start of the loss period, more than this share of capital or the majority of voting rights | 20% | "mais de 20 % do capital social ou da maioria dos direitos de voto" |
 
-- **Total** — IRC                  €6.800 DM                     €600 Total                €7.400
+The cap is an allowance: the part not deducted carries forward on the same terms. There is no carry-back. Losses are not deductible in a period whose taxable profit is set by indirect methods, but they are not lost (art. 52(3)).
 
-### 18.3 PME tech no Porto — SIFIDE
+Losses are lost when, at the end of the period in which they are deducted, more than half of the share capital or the majority of the voting rights has changed hands since the loss period, UNLESS the operation did not have tax evasion as its main purpose or one of its main purposes (which can be shown by valid economic reasons) (art. 52(8)). Art. 52(9) excludes these changes: direct to indirect holding or the reverse, and transfers between companies under common majority control; operations under the reorganisation regime of arts. 73 and following; succession on death; an acquirer that has held more than the share in the table since the start of the loss period; and an acquirer who has been an employee or board member since the start of the loss period. The live Guide said the right could be kept with AT authorisation; the current text has no authorisation procedure.
 
-**Factos:** CodePorto, Lda. Desenvolvimento de software. Exercício 2025.
-- Volume de negócios: €1.200.000.
-- 18 trabalhadores. PME (pequena empresa).
-- Lucro tributável: €200.000.
-- Despesas de I&D elegíveis incorridas em 2025: €150.000.
-- Média I&D 2023-2024: €80.000.
-- Sem prejuízos reportáveis.
-- Sede no Porto (DM 1,5%).
-- ANI emitiu declaração SIFIDE confirmando o crédito.
+## Section 10: SIFIDE II (R&D tax credit, arts. 35 to 42 CFI)
 
-#### 18.3.1 IRC sobre matéria coletável.
+SIFIDE II runs for tax periods from 2014 to 2026 (art. 35 CFI, wording of Decree-Law 170/2026). It is available to resident IRC taxpayers whose main activity is agricultural, industrial, commercial or services, and to non-residents with a permanent establishment. The credit is deducted from the IRC assessed, up to that amount, for R&D expenses incurred in tax periods starting between 1 January 2014 and 31 December 2026, to the extent not covered by non-repayable State funding.
 
-- **IRC sobre matéria coletável** — Matéria coletável = Lucro tributável (sem dedução de prejuízos)   €200.000 IRC sobre primeiros €50.000 a 17%                                  €8.500 IRC sobre €150.000 a 21%                                          €31.500 ───────────── IRC bruto                                                         €40.000
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-38.aspx |
+| Base rate, on the period's eligible R&D expenses | 32.5% | "Taxa de base - 32,5 % das despesas realizadas naquele período" |
+| Incremental rate, on the increase over the simple average of the two previous years | 50% | "Taxa incremental - 50 % do acréscimo das despesas realizadas naquele período" |
+| Cap on the incremental part | EUR 1,500,000 | "até ao limite de (euro) 1 500 000,00" |
+| Uplift to the base rate for micro, small and medium enterprises that have not yet completed two financial years and have not used the incremental rate | 15% | "aplica-se uma majoração de 15 % à taxa base" |
 
-#### 18.3.2 Crédito SIFIDE.
+Rules (arts. 38 to 40 CFI):
 
-- **Crédito SIFIDE** — Componente base: 32,5% × €150.000                                 €48.750 Componente incremental: 50% × (€150.000 − €80.000) = 50% × €70.000  €35.000 ───────────── Crédito SIFIDE                                                    €83.750
+- An unused credit, for lack of tax, carries forward to the twelfth following period (art. 38(4)). The live Guide said eight periods.
+- Only companies whose taxable profit is not set by indirect methods AND that owe no tax or social security contributions (or have payment secured) may claim (art. 39).
+- The claim needs a certifying declaration issued by the Agência para a Investigação e Inovação, E. P. E., or proof that it was requested, kept in the tax documentation file (art. 40(1)). The live Guide said the credit could not be used before the declaration is issued; the law also accepts proof of the request.
+- Applications are due by the end of the fifth month of the year after the financial year; applications for earlier years are not accepted (art. 40(3)).
+- No credit for R&D financed directly or indirectly by SIFIDE II investment funds or other public support (art. 38(10)).
 
-#### 18.3.3 Dedução à coleta.
+The page shows the article amended by "Decreto-Lei n.º 170/2026" in the text and "Decreto-Lei n.º 171/2026" in the amendment list. Confirm the decree-law number before citing it.
 
-- **Dedução à coleta** — IRC bruto                                                         €40.000 − Crédito SIFIDE deduzido no exercício (limitado à coleta)      (€40.000) ───────────── IRC líquido                                                            €0 Crédito SIFIDE a reportar (8 anos)                                €43.750
+## Section 11: RFAI (investment tax credit, arts. 22 to 26 CFI)
 
-#### 18.3.4 Derrama Estadual:
+RFAI applies to IRC taxpayers in the sectors listed in art. 2(2) CFI, except activities excluded under the EU regional aid rules (art. 22(1)). Eligible investments are new tangible fixed assets used in the business (excluding, among others, land, most buildings, light passenger or mixed cars, furniture, social equipment), certain technology-transfer intangibles, and the salary costs of new jobs for staff with qualifications at level 7 or 8 of the national framework (art. 22(2), added by Law 82/2023). For a company that is not a micro, small or medium enterprise, the intangibles and salary costs are limited to a share of the eligible investment set in art. 22(3); and in art. 107(3)(c) regions it may claim RFAI only for investment in a new economic activity, meaning a new establishment or the diversification of an existing one, on the conditions in art. 22(7).
 
-- **Derrama Estadual** — Lucro tributável €200.000 → **€0**.
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-23.aspx |
+| Regions eligible under art. 107(3)(a) of the Treaty on the Functioning of the EU: credit on investment up to EUR 15,000,000 | 30% | "i) 30 % das aplicações relevantes, relativamente ao investimento realizado até ao montante de 15 000 000 (euro)" |
+| Same regions: credit on investment above EUR 15,000,000 | 10% | "ii) 10 % das aplicações relevantes, relativamente à parte do investimento realizado que exceda o montante" |
+| Regions eligible under art. 107(3)(c): credit on all eligible investment | 10% | "constantes da tabela prevista no n.º 1 do artigo 43.º, 10 % das aplicações relevantes" |
+| Yearly cap outside the start-up years, as a share of IRC assessed | 50% | "até à concorrência de 50 % da coleta do IRC apurada em cada período de tributação" |
 
-#### 18.3.5 Derrama Municipal Porto:
+Rules:
 
-- **Derrama Municipal Porto** — DM = 1,5% × €200.000 = €3.000 *(Nota: a derrama municipal incide sobre o lucro tributável independentemente do SIFIDE.)*
+- Which regions fall under art. 107(3)(a) or (c) is set by the regional aid map table in art. 43 CFI, which this Guide does not reproduce. The live Guide's list of regions (Norte, Centro, Alentejo, Madeira, Azores; Algarve; Lisbon) was not on an allowed page and was removed.
+- Investments in the start-up period and the next two periods (unless the company results from a division) can use the credit up to the full IRC of each period; otherwise up to the cap in the table (art. 23(2)).
+- Unused credit carries forward to the next 10 tax periods, under the same caps (art. 23(3)).
+- The total aid must stay within the regional aid ceiling for the region, counting all State aid to the investment (art. 23(5) and (6)).
+- The assets must be kept in the company and the region for at least three years from the investment for micro, small and medium enterprises, or five years otherwise, and the investment must create jobs that are kept for the same period (art. 22(4)). [art. 22 CFI](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-22.aspx)
 
-#### 18.3.6 Total a pagar:
+## Section 12: Holding companies and the participation exemption
 
-- **Total a pagar** — IRC líquido                €0 DM                       €3.000 TA (a calcular)            ... Total                    €3.000+ CodePorto deve preencher **Anexo D do Modelo 22** com identificação do crédito SIFIDE e juntar cópia da declaração ANI ao dossier fiscal.
+### 12.1 Dividends received (art. 51 CIRC)
 
-## Secção 19 — Defaults conservadores (resumo)
+Profits and reserves distributed to an IRC taxpayer with its head office or effective management in Portugal are excluded from its taxable profit only if ALL of these conditions hold:
 
-**Defaults conservadores (resumo)**
+| Condition | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51.aspx |
+| (a) Direct, or direct and indirect, holding of at least this share of capital OR voting rights | 10% | "uma participação não inferior a 10 % do capital social ou dos direitos de voto" |
+| (d) Payer's statutory tax rate at least this share of the art. 87(1) IRC rate | 60% | "não seja inferior a 60 % da taxa do IRC prevista no n.º 1 do artigo 87.º; e) A" |
+
+1. (a) the holding in the table above;
+2. (b) held without interruption for one year before the distribution or, if held for less, kept until one year is completed;
+3. (c) the recipient is not under the tax transparency regime of art. 6;
+4. (d) the payer is subject to and not exempt from IRC, a tax listed in art. 2 of Directive 2011/96/EU, or a tax similar to IRC, at a statutory rate not below the share in the table. This test is waived where the conditions of art. 66(7) are met (art. 51(2));
+5. (e) the payer is not resident in a listed preferential tax regime.
+
+The exemption does not apply to distributions that are deductible for the payer (art. 51(10)(a)) or under a non-genuine arrangement whose main purpose is a tax advantage (art. 51(13) and (14)). Where the conditions fail, a foreign tax credit under arts. 91 and 91-A may still apply (art. 51(9)).
+
+For a tax period that starts in 2026, the transitional rule printed under art. 87 says that the rate in art. 87(1) "é de 19 %" (Section 3.1). Read literally, the rate that art. 51(1)(d) refers to is therefore the 2026 row in Section 3.1, not the rate printed in the article. No AT page read for this Guide confirms that reading. A payer whose statutory rate is at least the share in the table of the 2026 rate passes on either reading. A payer that passes only when measured against the printed art. 87(1) rate is unsettled: refer. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+
+### 12.2 Capital gains on shares (art. 51-C CIRC)
+
+Gains and losses on the sale of shares held without interruption for at least one year are excluded from taxable profit, whatever percentage is sold, if at the date of sale conditions (a), (c) and (e) of art. 51(1) are met, AND condition (d) or art. 51(2). The exclusion covers gains AND losses: a loss on qualifying shares is not deductible. Other equity instruments linked to the shares, such as supplementary capital contributions, are covered too (art. 51-C(2)).
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51c.aspx |
+| No exclusion when Portuguese real estate (other than property used in an agricultural, industrial or commercial activity other than buying and selling property) is, directly or indirectly, more than this share of the assets | 50% | "represente, direta ou indiretamente, mais de 50 % do ativo." |
+
+Impairment losses on the shares that reduced taxable profit in earlier years are added back in the year of sale when the exclusion applies (art. 51-C(6)).
+
+### 12.3 Interest limit (art. 67 CIRC)
+
+Net financing expenses are deductible up to the HIGHER of the two limits in the table. Non-deductible expenses carry forward to the next five tax periods; unused capacity under the EBITDA limit carries forward to the fifth later period. The fixed limit is pro-rated for a period shorter than a year (art. 67(10)). Banks and insurers are excluded (art. 67(11)). Carry-forwards are lost on a change of more than half the capital or voting rights, with the same exceptions as for losses (art. 67(8)).
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc67.aspx |
+| Fixed limit | EUR 1,000,000 | "a) (euro) 1 000 000; ou b) 30 % do" |
+| EBITDA limit: share of profit before depreciation, amortisation, net financing expenses and taxes | 30% | "b) 30 % do resultado antes de depreciações, amortizações, gastos de financiamento líquidos e impostos" |
+
+### 12.4 Group taxation (RETGS, art. 69 CIRC): conditions only
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc69.aspx |
+| Parent's direct or indirect holding in each subsidiary, which must also give more than half of the voting rights | 75% | "pelo menos, 75 % do capital de outra ou outras sociedades ditas dominadas," |
+
+The option also requires, among others, that all group companies have their head office and effective management in Portugal and all their income is taxed under the general regime at the highest normal rate, that the parent has held each holding for more than one year when the regime starts, and that the parent is not itself controlled by another resident company that could be a parent (art. 69(3)). Group computations are out of scope (R-PT-IRC-6).
+
+## Section 13: Global minimum tax (Pillar Two)
+
+Portugal's global minimum tax regime (Regime do Imposto Mínimo Global, RIMG) was approved by Law 41/2024 of 8 November, which transposes Directive (EU) 2022/2523. The live Guide named "Lei 27/2024" and that is not the law AT lists. AT publishes the Modelo 62 registration return (Ordinance 290/2025/1 of 2 September) and the Modelo 63 GloBE information return. This Guide does not state the scope threshold, the minimum rate or the filing deadlines, because the saved AT pages do not print them. A group that may be in scope: refer to a specialist. [AT Pillar Two legislation page](https://info.portaldasfinancas.gov.pt/pt/Grandes_Contribuintes/Pilar_2/Legislacao_e_regulamentacao_nacional/Paginas/Regime_imposto_minimo_global.aspx)
+
+## Section 14: Transfer pricing (art. 63 CIRC)
+
+Transactions between a taxpayer and any entity with which it has special relations must be agreed and carried out on terms substantially the same as independent entities would agree in comparable transactions (art. 63(1)). The taxpayer must keep transfer pricing documentation in the tax documentation file of art. 130 (art. 63(6)), and must disclose related-party transactions in the IES (art. 63(7), Section 6.3). The methods and documentation rules are set by ordinance (art. 63(15)). The live Guide's revenue thresholds for the master file and local file and for country-by-country reporting were not on an allowed page and were removed. The country-by-country return is a separate filing under art. 117(1)(d) and art. 121-A. [art. 63 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc63.aspx)
+
+## Section 15: Controlled foreign companies (art. 66 CIRC)
+
+Profits of a non-resident entity under a clearly more favourable tax regime are attributed to a resident IRC taxpayer that holds, directly or indirectly (including through a nominee), at least the share in the table of the capital, the voting rights or the rights to income or assets. Holdings of related parties under art. 63(4)(a) to (e) are added together (art. 66(13)).
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc66.aspx |
+| Holding that triggers attribution | 25% | "pelo menos 25% das partes de capital, dos direitos de voto ou dos direitos sobre os rendimentos" |
+| More favourable regime: profit tax actually paid is below this share of the tax due under the CIRC | 50% | "O imposto sobre os lucros efetivamente pago seja inferior a 50 % do imposto que seria devido nos termos deste Código" |
+| Exclusion: passive income (royalties, dividends and share gains, leasing, intra-group financial and insurance income, low-value invoicing, interest) is no more than this share of total income | 25% | "não exceda 25 % do total dos seus rendimentos" |
+
+A regime is clearly more favourable if the territory is on the ministerial list OR the tax-paid test in the table is met (art. 66(6)). The rule does not apply to an entity resident in the EU, or in an EEA state with equivalent administrative cooperation, if the taxpayer shows valid economic reasons AND a real activity with staff, equipment, assets and premises (art. 66(14)). The live Guide's alternative "10% holding" condition is not in the article and was removed.
+
+## Section 16: Withholding by the company
+
+### 16.1 IRC withholding (art. 94 CIRC)
+
+IRC is withheld on the income listed in art. 94(1) obtained in Portugal, including intellectual property and know-how income, equipment rental, capital income and rental income where the payer is an IRC taxpayer or keeps organised accounts, and board members' fees. For a resident recipient, withholding is a payment on account of its final IRC (art. 94(3)). For a non-resident without a permanent establishment (except rental income) it is final, at the art. 87 rates in Section 3.1 (art. 94(3)(b) and (5)). Amounts withheld are paid to the State by the 20th day of the month after the deduction (art. 94(6)).
+
+| Item | Rate | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc94.aspx |
+| IRC withholding, general rate | 25% | "As retenções na fonte de IRC são efetuadas à taxa de 25 %," |
+| IRC withholding on fees of members of statutory bodies (art. 94(1)(d)) | 21.5% | "aplicando-se aos rendimentos referidos na alínea d) do n.º 1 a taxa de 21,5 %." |
+
+Treaty or directive relief at source requires the recipient to prove the conditions to the payer by the deadline for paying over the tax that would have been withheld (art. 98(2)). [art. 98 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc98.aspx)
+
+### 16.2 IRS withholding on payments to individuals (art. 71 CIRS)
+
+| Item | Rate | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx |
+| Final (liberatória) IRS withholding on capital income, such as dividends and interest (art. 71(1)) | 28% | "à taxa liberatória de 28 %: a) Os" |
+| Final IRS withholding at the higher rate (art. 71(17)), for example capital income paid to entities in listed preferential regimes or to accounts for unidentified holders | 35% | "à taxa liberatória de 35 %: (Anterior" |
+
+For the shareholder's own tax position, use `pt-income-tax`.
+
+### 16.3 Dividends paid to EU, EEA and treaty-country parents (art. 14(3) CIRC)
+
+Dividends a resident company pays are exempt from IRC (and so from withholding) where the parent: (a) is resident in another EU state, in an EEA state with equivalent administrative cooperation, or in a treaty state whose treaty provides for exchange of information; (b) is subject to and not exempt from a tax listed in art. 2 of Directive 2011/96/EU or a similar tax, and, for a treaty-state parent only, at a statutory rate not below the share in the table; (c) holds at least the share in the table of capital or voting rights; AND (d) has held it without interruption for the year before the payment. Proof must be given to the payer BEFORE the payment date; for (a) and (b), by a declaration confirmed by the parent's tax authority (art. 14(4)). The exemption does not apply where an arrangement, or series of arrangements, with the main purpose or one of the main purposes of obtaining a tax advantage is not genuine; an arrangement is not genuine to the extent it is not made for valid economic reasons and does not reflect economic substance (art. 14(17) and (18)).
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc14.aspx |
+| Parent's minimum holding | 10% | "uma participação não inferior a 10 % do capital" |
+| Treaty-state parent: minimum statutory rate, as a share of the art. 87(1) IRC rate | 60% | "a taxa legal aplicável à entidade não seja inferior a 60 % da taxa do" |
+
+The test in condition (b) refers to the same art. 87(1) rate; the transitional point in Section 12.1 applies to it in the same way.
+
+The live Guide's rule for interest and royalties under Directive 2003/49/EC (holding and period) was not checked on an allowed page and was removed.
+
+## Section 17: Worked examples (hypothetical)
+
+All amounts in these examples are invented. The rates come from the tables above. Arithmetic is shown so it can be checked. Autonomous taxes, tax credits and withholding are left out unless stated.
+
+### 17.1 SME in mainland Portugal: IRC and derrama municipal
+
+Facts (hypothetical): a private limited company (Lda) qualifies as an SME, carries on a commercial main activity, has a calendar tax period, head office in one mainland municipality only, no tax losses and no establishments elsewhere. Its taxable profit for 2026 is EUR 130,000, so its taxable income is also EUR 130,000. The municipality's 2026 rate is not yet known, so the maximum rate is used. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+
+1. IRC on the first EUR 50,000 at 15%: EUR 7,500. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+2. IRC on the remaining EUR 80,000 at 19%: EUR 15,200. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+3. IRC: EUR 7,500 plus EUR 15,200 = EUR 22,700. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+4. Derrama estadual: taxable profit is not above EUR 1,500,000, so none is due. [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx)
+5. Derrama municipal at the maximum 1.5% of taxable profit: EUR 130,000 times 1.5% = EUR 1,950. Annex A is not needed because there is only one municipality. [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
+6. IRC plus derrama municipal: EUR 24,650, before autonomous taxes, credits, withholding and the payments on account made in 2026. [art. 104 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc104.aspx)
+
+The live Guide's version of this example applied the old general rate and the old SME rate to the same facts.
+
+### 17.2 Tax losses: the yearly cap
+
+Facts (hypothetical): calendar 2026, taxable profit EUR 100,000, tax losses brought forward EUR 80,000, no ownership change. [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx)
+
+1. Cap: 65% of EUR 100,000 = EUR 65,000. [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx)
+2. Losses deducted in 2026: the lower of EUR 80,000 and EUR 65,000 = EUR 65,000. [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx)
+3. Taxable income for IRC: EUR 100,000 minus EUR 65,000 = EUR 35,000. [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx)
+4. Losses carried forward, with no time limit: EUR 80,000 minus EUR 65,000 = EUR 15,000. [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx)
+5. Derrama municipal is still computed on the taxable profit of EUR 100,000, not on the EUR 35,000. [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
+
+### 17.3 Derrama estadual by slices
+
+Facts (hypothetical): calendar 2026, taxable profit EUR 10,000,000, single company, not in a group. [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx)
+
+1. Profit above EUR 1,500,000 is above EUR 7,500,000 and not above EUR 35,000,000, so it splits into two slices. [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx)
+2. First slice: EUR 6,000,000 times 3% = EUR 180,000. [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx)
+3. Second slice: EUR 10,000,000 minus EUR 7,500,000 = EUR 2,500,000, times 5% = EUR 125,000. [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx)
+4. Derrama estadual: EUR 305,000. Because it was due for 2026, the company also makes additional payments on account in 2027 (Section 7). [art. 105-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105a.aspx)
+
+## Section 18: Conservative defaults (summary)
 
 | Item | Default |
 | --- | --- |
-| Estatuto PME | Não PME (21%) até confirmação da Recomendação UE 2003/361/CE em base consolidada |
-| Sede / Município | DM 1,5% (taxa máxima) até confirmação |
-| Madeira IBC | Não aplicável (21% standard) até prova de licença CINM válida |
-| TA em exercício de prejuízo | Adicionar +10 p.p. (art.º 88.º n.º 14) |
-| Viaturas — escalão | Quando dúvida, escalão mais alto (35%) |
-| Prejuízos reportáveis | Aplicar limite 65% MC; respeitar ordem cronológica; verificar alterações de controlo |
-| SIFIDE | Não aplicar sem declaração ANI emitida; sem componente incremental se média 2 anos anteriores incerta |
-| RFAI | Verificar região NUTS II e mapa de auxílios; PMEs com manutenção 3 anos / não PMEs 5 anos |
-| SGPS — participation exemption | Confirmar ≥10%, ≥1 ano, não paraíso fiscal, participada tributada |
-| Pilar Dois | Se EBM consolidada > €750M em 2 dos 4 anos anteriores, escalar a especialista |
-| Preços de transferência | Se VN ≥ €3M ou partes relacionadas, exigir Master/Local File |
-| Pagamentos por Conta | 80% da coleta ano anterior; 75% se VN ≤ €500.000 |
-| PEC | PMEs com cumprimento declarativo: dispensa; grandes empresas: aplicar |
-| Retenções na fonte | Aplicar Diretivas UE (Mães-Filhas; Juros e Royalties) apenas com cumprimento dos requisitos formais e materiais |
-| Conservação documental | 10 anos (art.º 123.º CIRC) |
-| Submissão | Modelo 22 até último dia útil de maio; IES até 15 julho; via Portal das Finanças |
-| OE 2025 não confirmado | Marcar **TBC** e sinalizar para verificação no texto publicado da Lei do OE 2025 |
+| IRC rate | Check the start date of the tax period first; then the general rate for that year (Section 3.1) |
+| SME status | Not an SME until confirmed under the annex to Decree-Law 372/2007, consolidated with partner and linked enterprises |
+| Municipality | Maximum derrama municipal rate until the 2026 rate is confirmed |
+| Madeira, Azores, CINM | Refer; no mainland rates |
+| Autonomous tax in a loss year | Apply the uplift unless an exception in Section 5.3 is proved |
+| Cars | Highest band when the acquisition cost is unclear |
+| Losses | Apply the yearly cap; check ownership changes |
+| PEC | None: repealed |
+| SIFIDE II | No credit without the declaration or proof it was requested |
+| RFAI | No credit until the region and its aid ceiling are confirmed |
+| Participation exemption | Confirm every condition; otherwise tax normally |
+| Pillar Two | Refer if the group may be in scope |
+| Payments on account | Use the prior period's turnover to pick the percentage |
+| Filing | Modelo 22 by the last day of May; IES by 15 July; both whether or not a working day |
 
-## Secção 20 — Fontes
+## The method, step by step
 
-### Legislação primária
+1. Fix the tax period and its start date (art. 8 CIRC), then pick the general rate for that start year from the transitional rule under [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx).
+2. Start from the accounting result in the approved accounts and make the tax adjustments to reach taxable profit (lucro tributável), including the participation exemption in [art. 51 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51.aspx) and [art. 51-C CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51c.aspx), the interest limit in [art. 67 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc67.aspx) and any CFC attribution under [art. 66 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc66.aspx).
+3. Deduct tax losses up to the yearly cap to reach taxable income (matéria coletável), checking ownership changes, under [art. 52 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx).
+4. Apply the IRC rate: the SME or startup band if every condition holds, the general rate on the rest, under [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx).
+5. Compute derrama estadual on taxable profit by slices under [art. 87-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx), and derrama municipal on taxable profit at the municipality's rate, with Annex A where required, under the [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF).
+6. Compute autonomous taxes on the year's charges, then check the loss uplift and its 2026 exceptions, under [art. 88 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx).
+7. Deduct tax credits from the IRC within their caps: SIFIDE II under [art. 38 CFI](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-38.aspx), RFAI under [art. 23 CFI](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-23.aspx).
+8. Deduct withholding suffered and the payments on account made in the year, and work out the balance or refund under [art. 104 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc104.aspx).
+9. File the Modelo 22 by the last day of May under [art. 120 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc120.aspx) and the IES by 15 July under [art. 121 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc121.aspx).
+10. Set next year's payments on account from this year's IRC and turnover under [art. 105 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105.aspx), and the additional payments on account if derrama estadual was due, under [art. 105-A CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105a.aspx).
 
-- **Legislação primária** — **Código do IRC (CIRC)** — aprovado pelo DL 442-B/88, de 30 de novembro, e alterações posteriores. - Art.º 8.º — período de tributação. - Art.º 14.º — isenções (Diretiva Mães-Filhas). - Art.º 23.º-A — encargos não dedutíveis (incl. pagamentos a paraísos fiscais). - Art.º 52.º — dedução de prejuízos fiscais (12 anos, limite 65%). - Art.º 51.º e 51.º-C — participation exemption (dividendos e mais-valias). - Art.º 63.º — preços de transferência. - Art.º 66.º — imputação de rendimentos (CFC). - Art.º 67.º — limitação dos gastos de financiamento. - Art.º 69.º a 71.º — RETGS. - Art.º 73.º a 78.º — reorganizações empresariais (neutralidade fiscal). - Art.º 87.º — taxas de IRC (21% / 17%). - Art.º 87.º-A — Derrama Estadual. - Art.º 88.º — Tributação Autónoma. - Art.º 97.º — dispensa de retenção (Diretiva Mães-Filhas). - Art.º 105.º — Pagamentos por Conta. - Art.º 106.º — Pagamento Especial por Conta. - Art.º 117.º — obrigações declarativas. - Art.º 120.º — declaração periódica de rendimentos (Modelo 22). - Art.º 121.º — IES. - Art.º 123.º — obrigações de escrituração (10 anos). **Lei do Orçamento do Estado para 2025** (Lei 45-A/2024) — atualização da taxa PME e limites. **DL 442-B/88** — aprovação do CIRC. **DL 372/2007** — definição de PME (transpõe Recomendação UE 2003/361/CE). **DL 165/86** — Centro Internacional de Negócios da Madeira (CINM/IBC). **Lei 73/2013** — Regime Financeiro das Autarquias Locais (Derrama Municipal).  _(CIRC; Lei 45-A/2024; DL 442-B/88; DL 372/2007; DL 165/86; Lei 73/2013)_
+## Ask the client first
 
-### Legislação complementar
+- When did your current tax period start, and does it follow the calendar year? (This decides the IRC rate.)
+- Does the company qualify as an SME or Small Mid Cap under Decree-Law 372/2007 on a consolidated basis, is its main activity commercial, industrial or agricultural, and is it a certified startup under Law 21/2023?
+- In which municipalities does the company have its head office or establishments, and what was last year's turnover? (Derrama municipal rate, reduced rate and Annex A.)
+- Did the company make a tax loss this year, did it make taxable profit in any of the last three years, and were the Modelo 22 and IES for the last two years filed on time? (Autonomous tax uplift.)
+- Has more than half of the share capital or voting rights changed hands since any year with unused losses?
+- Does the company have operations, a licence or establishments in Madeira or the Azores, or belong to a group that may be in scope of the global minimum tax?
 
-- **Legislação complementar** — **Estatuto dos Benefícios Fiscais (EBF)** — aprovado pelo DL 215/89. **Código Fiscal do Investimento (CFI)** — DL 162/2014: - Arts. 22.º-26.º — RFAI. - Arts. 35.º-42.º — SIFIDE II. **Lei 27/2024, de 15 de julho** — transposição da Diretiva (UE) 2022/2523 (Pilar Dois — Imposto Complementar). **Diretiva (UE) 2022/2523** do Conselho — nível mínimo mundial de tributação (Pilar Dois). **Diretiva 2011/96/UE** — regime comum aplicável às sociedades-mãe e sociedades afiliadas de Estados-membros (Mães-Filhas). **Diretiva 2003/49/CE** — Juros e Royalties.  _(DL 215/89; DL 162/2014; Lei 27/2024; Diretiva (UE) 2022/2523; Diretiva 2011/96/UE; Diretiva 2003/49/CE)_
+## When to refuse or refer
 
-### Portarias e Decretos Regulamentares
+- Banks, insurers, funds, extractive industries, non-profits and entities whose main activity is not commercial, industrial or agricultural (R-PT-IRC-1 to R-PT-IRC-4).
+- Companies in Madeira or the Azores, or with a CINM licence (Section 3.3).
+- RETGS group computations, reorganisations and permanent establishments of non-residents (R-PT-IRC-5, R-PT-IRC-6, R-PT-IRC-8).
+- Groups that may be in scope of the global minimum tax (Section 13).
+- Transfer pricing documentation, CFC attribution with foreign tax credit, and payments to listed preferential regimes, unless a partner reviews the work.
+- Open inspections, claims, court cases or mutual agreement procedures (R-PT-IRC-7).
+- A tax period that started before 1 January 2026: this Guide does not state the 2025 rates.
+- A prior-year turnover exactly at the derrama municipal reduced-rate boundary (Section 4.2).
+- Never present figures as final: every output is an estimate for review by a certified accountant (Contabilista Certificado) before filing.
 
-- **Portarias e Decretos Regulamentares** — **Portaria 268/2021, de 26 de novembro** — dossier de preços de transferência. **Portaria 150/2004** — lista de regimes fiscais claramente mais favoráveis (paraísos fiscais), alterada pela Portaria 309-A/2020. **Portaria 220/2008** — declaração Modelo 22. **Decisão da Comissão Europeia SA.21259** — aprovação do regime CINM/Madeira IBC até 31 dez 2027.  _(Portaria 268/2021; Portaria 150/2004; Portaria 309-A/2020; Portaria 220/2008; Decisão SA.21259)_
+## Prohibitions
 
-### Plataformas e entidades
+- Never apply the rate printed in art. 87(1) to a 2026 or 2027 period: use the transitional rule.
+- Never apply the SME rate without confirming every condition in Section 3.2, including the de minimis limit.
+- Never apply a mainland rate or a CINM rate to a Madeira or Azores company without regional advice.
+- Never charge derrama estadual on profit at or below its threshold, and never apply a slice rate to the whole profit.
+- Never compute derrama estadual or derrama municipal on taxable income after losses: both use taxable profit.
+- Never assume a derrama municipal rate of zero without the municipality's rate for the year.
+- Never forget the loss uplift on autonomous taxes, and never apply it without checking its exceptions for 2026.
+- Never deduct losses above the yearly cap, and never treat losses as expiring after a fixed number of years.
+- Never compute a PEC: it is repealed.
+- Never claim SIFIDE II without the certifying declaration or proof it was requested.
+- Never apply the participation exemption if the payer is in a listed preferential regime.
+- Never apply the outbound dividend exemption without the proof required before the payment date.
 
-**Portal das Finanças** (portaldasfinancas.gov.pt) — submissão de Modelo 22, IES, pagamentos, consulta de situação fiscal.
-**Autoridade Tributária e Aduaneira (AT)** — administração fiscal.
-**ANI — Agência Nacional de Inovação** (ani.pt) — emissão de declarações SIFIDE.
-**SDM — Sociedade de Desenvolvimento da Madeira** (ibc-madeira.com) — licenciamento CINM.
-**OCC — Ordem dos Contabilistas Certificados** (occ.pt).
-**OROC — Ordem dos Revisores Oficiais de Contas** (oroc.pt).
+## Sources
 
-## PROIBIÇÕES
-
-- **Não aplicar taxa reduzida PME sem confirmação** — NUNCA aplicar a taxa reduzida PME (17%) sem confirmar cumulativamente os critérios da Recomendação UE 2003/361/CE em base consolidada (empresas associadas e parceiras).  _(Recomendação UE 2003/361/CE)_
-- **Não aplicar taxa Madeira IBC sem licença CINM** — NUNCA aplicar a taxa Madeira IBC de 5% sem licença CINM válida emitida pela SDM e sem verificação do cumprimento dos requisitos de emprego/investimento e dos plafonds de matéria coletável.
-- **Não omitir Derrama Estadual** — NUNCA omitir a Derrama Estadual quando o lucro tributável excede €1.500.000.
-- **Não presumir DM a 0%** — NUNCA presumir Derrama Municipal a 0% sem confirmar a deliberação da Assembleia Municipal para o exercício — usar 1,5% como default conservador.
-- **Agravamento TA em exercício de prejuízo** — NUNCA esquecer o agravamento de +10 p.p. sobre todas as Tributações Autónomas em exercício de prejuízo fiscal (art.º 88.º n.º 14).  _(art.º 88.º n.º 14)_
-- **Limite dedução prejuízos fiscais 65%** — NUNCA deduzir prejuízos fiscais acima de 65% da matéria coletável do exercício (art.º 52.º n.º 2).  _(art.º 52.º n.º 2)_
-- **Limite temporal dedução prejuízos** — NUNCA deduzir prejuízos fiscais com mais de 12 períodos de tributação de antiguidade (ou as regras transitórias para exercícios pré-2023, conforme caso).
-- **SIFIDE requer declaração ANI** — NUNCA aplicar o crédito SIFIDE sem a declaração emitida pela ANI; a candidatura submetida não basta.
-- **Participation exemption limites** — NUNCA aplicar a participation exemption do art.º 51.º se a participada residir em jurisdição da Portaria 150/2004 ou estiver sujeita a tributação efetiva inferior aos limiares estatutários.  _(art.º 51.º; Portaria 150/2004)_
-- **Anexo E partes relacionadas** — NUNCA omitir o Anexo E quando há operações com partes relacionadas, mesmo que o volume de negócios seja inferior a €3M.
-- **Pilar Dois escalar especialista** — NUNCA tratar grupos com EBM consolidada > €750M sem analisar o Pilar Dois (Lei 27/2024) — escalar a especialista.  _(Lei 27/2024)_
-- **RETGS fora de escopo** — NUNCA produzir computações RETGS (consolidação fiscal) neste skill (R-PT-IRC-6) — exige sign-off específico.  _(R-PT-IRC-6)_
-- **Setores excluídos** — NUNCA tratar setor financeiro, segurador, OICs, IPSS, cooperativas ou indústrias extrativas neste skill (R-PT-IRC-1 a R-PT-IRC-4).  _(R-PT-IRC-1 a R-PT-IRC-4)_
-- **Não aconselhar pagamento fora de prazo** — NUNCA aconselhar pagamento fora de prazo de IRC, PPC ou PEC — juros compensatórios e de mora aplicam-se nos termos da LGT (taxa de juro compensatório atual: confirmar Portaria em vigor).  _(LGT)_
-- **Anexo H CFC** — NUNCA esquecer o Anexo H quando há imputação CFC (art.º 66.º).  _(art.º 66.º)_
-- **Isenção retenção Diretiva Mães-Filhas requisitos** — NUNCA aplicar isenção de retenção pela Diretiva Mães-Filhas sem (i) participação ≥10%, (ii) detenção ≥1 ano (ou compromisso), (iii) participada residente UE/EEE sujeita a imposto, (iv) declaração formal da participada.  _(Diretiva Mães-Filhas)_
-- **Outputs como estimativas pendentes de revisão** — NUNCA apresentar números como definitivos — todos os outputs devem ser explicitamente identificados como estimativas pendentes de revisão e sign-off por Contabilista Certificado (OCC) ou ROC (OROC).
+- Código do IRC, consolidated, Portal das Finanças: [art. 3](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc3.aspx), [art. 8](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc8.aspx), [art. 14](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc14.aspx), [art. 51](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51.aspx), [art. 51-C](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc51c.aspx), [art. 52](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc52.aspx), [art. 63](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc63.aspx), [art. 66](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc66.aspx), [art. 67](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc67.aspx), [art. 69](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc69.aspx), [art. 87](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx), [art. 87-A](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87a.aspx), [art. 88](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx), [art. 94](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc94.aspx), [art. 98](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc98.aspx), [art. 104](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc104.aspx), [art. 105](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105.aspx), [art. 105-A](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc105a.aspx), [art. 106](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc106.aspx), [art. 107](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc107.aspx), [art. 117](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc117.aspx), [art. 120](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc120.aspx), [art. 121](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc121.aspx).
+- Código do IRS, art. 71: [art. 71 CIRS](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx).
+- Código Fiscal do Investimento: [art. 22](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-22.aspx), [art. 23](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-23.aspx), [art. 35](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-35.aspx), [art. 38](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-38.aspx), [art. 39](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-39.aspx), [art. 40](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-40.aspx).
+- AT, [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF) and [field 364 help sheet](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/Mod_22_Q_7_Campo_364_derrama_ajudas_preench.pdf).
+- AT, [global minimum tax legislation page](https://info.portaldasfinancas.gov.pt/pt/Grandes_Contribuintes/Pilar_2/Legislacao_e_regulamentacao_nacional/Paginas/Regime_imposto_minimo_global.aspx).
 
 ## Disclaimer
 
-Este skill e os seus outputs destinam-se exclusivamente a fins informativos e computacionais e **não constituem aconselhamento fiscal, jurídico ou financeiro**. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas inscrito na Ordem dos Revisores Oficiais de Contas (OROC) antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT) ou ação com base nos números apurados. Especificações da Lei do Orçamento do Estado para 2025 sinalizadas como **TBC** devem ser verificadas contra o texto publicado em Diário da República antes de qualquer aplicação. A versão verificada mais recente é mantida em [openaccountants.com](https://openaccountants.com).
-
----
-
-*OpenAccountants — skills de contabilidade open-source para IA*
+This Guide and its outputs are for information and computation only and are not tax, legal or financial advice. Every output must be reviewed and confirmed by a certified accountant registered with the Ordem dos Contabilistas Certificados, or by a statutory auditor registered with the Ordem dos Revisores Oficiais de Contas, before anything is filed with the Autoridade Tributária e Aduaneira or acted on. The current version of this Guide is kept at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 

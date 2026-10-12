@@ -1,7 +1,7 @@
 # OpenAccountants — GitHub Skills Repository
 
 <!-- The counts sentence below is restamped from the `counts` block of index.json by scripts/build-index.py on every default build; do not edit its figures by hand. The README stats block carries the platform-wide totals. -->
-> Open-source Tax Guides ("skills") for AI agents. 2,043 Guides across 245 jurisdictions in this repository, 156 of them accountant-reviewed and signed off by named Partners (CPAs/CAs/EAs). Live counts: the `counts` block of `index.json`.
+> Open-source Tax Guides ("skills") for AI agents. 2,048 Guides across 245 jurisdictions in this repository, 156 of them accountant-reviewed and signed off by named Partners (CPAs/CAs/EAs). Live counts: the `counts` block of `index.json`.
 
 ## What this repo is
 
@@ -132,7 +132,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (2043 guides, 245 jurisdictions, 156 accountant-reviewed)
+## Guide inventory (2048 guides, 245 jurisdictions, 156 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -163,6 +163,7 @@ https://www.openaccountants.com
 - us-state-new-hire-reporting-matrix | US | tier 2 | reviewed_by -
 - us-state-payroll-matrix | US | tier 2 | reviewed_by -
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
+- cfc-and-substance-rules-compared | general | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
 - cross-border-payroll-coordination | INTL | tier 2 | reviewed_by -
 - cross-border-tax-router | GLOBAL | tier 2 | reviewed_by -
@@ -174,7 +175,9 @@ https://www.openaccountants.com
 - eu-oss-digital | GLOBAL | tier 2 | reviewed_by -
 - eu-reverse-charge | GLOBAL | tier 2 | reviewed_by -
 - eu-social-security-coordination | EU/EEA/CH/UK | tier 2 | reviewed_by -
+- exit-taxes-when-a-family-moves | general | tier 2 | reviewed_by -
 - family-holding-company-location-compared | general | tier 2 | reviewed_by -
+- family-office-residency-regimes-compared | general | tier 2 | reviewed_by -
 - fatca-crs-automatic-exchange | GLOBAL | tier 2 | reviewed_by -
 - forex-controls | INTL | tier 2 | reviewed_by -
 - free-zones-sez-matrix | GLOBAL | tier 2 | reviewed_by -
@@ -190,6 +193,7 @@ https://www.openaccountants.com
 - rd-tax-credits-matrix | GLOBAL | tier 2 | reviewed_by -
 - saf-t-realtime-ereporting-matrix | GLOBAL | tier 2 | reviewed_by -
 - stamp-duty-matrix | GLOBAL | tier 2 | reviewed_by -
+- succession-and-forced-heirship-compared | general | tier 2 | reviewed_by -
 - tax-controversy-map-apa | GLOBAL | tier 2 | reviewed_by -
 - tax-research-with-your-ai-how-to-do-it-defensibly | general | tier 2 | reviewed_by -
 - tax-residency-planning | INTL | tier 2 | reviewed_by -
@@ -1240,6 +1244,7 @@ https://www.openaccountants.com
 - mt-company-residence-and-substance | MT | tier 2 | reviewed_by -
 - mt-crypto-tax | MT | tier 2 | reviewed_by -
 - mt-estimated-tax | MT | tier 2 | reviewed_by Michael Cutajar, CPA (Malta)
+- mt-family-office-setup | MT | tier 2 | reviewed_by -
 - mt-foundations-and-trusts | MT | tier 2 | reviewed_by -
 - mt-holding-company-participation-exemption | MT | tier 2 | reviewed_by -
 - mt-inheritance-and-succession | MT | tier 2 | reviewed_by -

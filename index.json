@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-11T10:03:25+00:00",
+ "generated_at": "2026-10-12T10:13:48+00:00",
  "counts": {
-  "guides": 2043,
+  "guides": 2048,
   "jurisdictions": 245,
   "accountant_reviewed": 156
  },
@@ -355,6 +355,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "cfc-and-substance-rules-compared",
+   "path": "skills/cross-border/cfc-and-substance-rules-compared.md",
+   "name": "cfc-and-substance-rules-compared",
+   "jurisdiction": "general",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
+  },
+  {
    "slug": "cross-border-invoicing-compliance",
    "path": "skills/cross-border/cross-border-invoicing-compliance.md",
    "name": "cross-border-invoicing-compliance",
@@ -487,6 +499,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "exit-taxes-when-a-family-moves",
+   "path": "skills/cross-border/exit-taxes-when-a-family-moves.md",
+   "name": "exit-taxes-when-a-family-moves",
+   "jurisdiction": "general",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
+  },
+  {
    "slug": "family-holding-company-location-compared",
    "path": "skills/cross-border/family-holding-company-location-compared.md",
    "name": "family-holding-company-location-compared",
@@ -497,6 +521,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-10-05"
+  },
+  {
+   "slug": "family-office-residency-regimes-compared",
+   "path": "skills/cross-border/family-office-residency-regimes-compared.md",
+   "name": "family-office-residency-regimes-compared",
+   "jurisdiction": "general",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "fatca-crs-automatic-exchange",
@@ -677,6 +713,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "succession-and-forced-heirship-compared",
+   "path": "skills/cross-border/succession-and-forced-heirship-compared.md",
+   "name": "succession-and-forced-heirship-compared",
+   "jurisdiction": "general",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "tax-controversy-map-apa",
@@ -9867,8 +9915,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "iceland-income-tax",
@@ -9915,8 +9963,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "iceland-vat",
@@ -13279,6 +13327,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "mt-family-office-setup",
+   "path": "skills/international/malta/mt-family-office-setup.md",
+   "name": "mt-family-office-setup",
+   "jurisdiction": "MT",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
+  },
+  {
    "slug": "mt-foundations-and-trusts",
    "path": "skills/international/malta/mt-foundations-and-trusts.md",
    "name": "mt-foundations-and-trusts",
@@ -16191,8 +16251,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "pt-foreign-source-treaties",
@@ -17463,8 +17523,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "sg-tax-residency",
@@ -21795,8 +21855,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "global-marketplaces-banking-fees",
@@ -23475,8 +23535,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "nj-cbt-and-bait",

@@ -9,9 +9,9 @@ This library includes accountant-reviewed Guides and source-cited drafts. Check 
 [![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
 <!-- oa-stats:start -->
-**1,890 Guides** across **231 jurisdictions** · **53 accountant-reviewed** · **44 named accountants** · **17,612 questions answered** through connected AIs
+**1,895 Guides** across **232 jurisdictions** · **53 accountant-reviewed** · **44 named accountants** · **18,081 questions answered** through connected AIs
 
-<sub>Live from openaccountants.com — updated 2026-10-11 by the nightly sync.</sub>
+<sub>Live from openaccountants.com — updated 2026-10-12 by the nightly sync.</sub>
 <!-- oa-stats:end -->
 
 ---
