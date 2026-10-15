@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T08:33:10+00:00",
+ "generated_at": "2026-10-15T08:42:09+00:00",
  "counts": {
   "guides": 2048,
   "jurisdictions": 245,
@@ -2824,7 +2824,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-deductions-offsets",
@@ -2847,8 +2847,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "au-employment-termination-payments",
@@ -2872,7 +2872,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-fbt",
@@ -2883,8 +2883,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "au-foreign-currency-forex-realisation-gains-and",
@@ -2908,7 +2908,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-gst-bas",
@@ -2932,7 +2932,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-individual-return",
@@ -2943,8 +2943,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2024",
-   "last_updated": "2026-09-10"
+   "tax_year": "2025",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "au-land-tax",
@@ -2956,7 +2956,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-lodgment-deadlines-penalties",
@@ -2979,8 +2979,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2024",
-   "last_updated": "2026-09-10"
+   "tax_year": "2025",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "au-nonresident-cgt-2",
@@ -3076,7 +3076,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-rates-2026-27",
@@ -3087,8 +3087,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-09-27"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "au-rd-incentive",
@@ -3136,7 +3136,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-smsf",
@@ -3148,7 +3148,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-sole-trader-schedule",
@@ -3172,7 +3172,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "au-super-guarantee",
@@ -3327,8 +3327,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-09-27"
+   "tax_year": "2026",
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "australia-tax-optimization-2",
