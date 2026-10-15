@@ -4,8 +4,7 @@ description: Use this skill whenever asked about Australian stamp duty (transfer
 version: "1.0"
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "2026-27 duty year"
-last_updated: 2026-10-12
+last_updated: 2026-10-14
 review_status: pending_review
 category: international
 tier: 2
@@ -13,6 +12,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # AU Stamp Duty
+
+## AU Stamp Duty
 
 ## Australia Stamp Duty (Transfer Duty) -- State & Territory Skill v1.0
 
@@ -317,23 +318,24 @@ A private company holds NSW land with an unencumbered value of **$4,000,000** pl
 
 ### 11.1 Deceased Estates
 
-- A transfer from a deceased estate to a beneficiary **in conformity with the will** or on intestacy is generally exempt or attracts only nominal duty. NSW charges a concessional **$100**; Victoria treats it as exempt under s 42(1) *Duties Act 2000* and extends the same treatment to the first transfer into a testamentary trust.
-- The concession is fragile: a transfer for **valuable consideration**, an unequal distribution settled with cash between beneficiaries, or a transfer that does not conform to the will can be assessed at full ad valorem rates. Put the grant of probate and the will in front of the revenue office.
-- CGT rollover on death is a separate question — see `au-capital-gains`.
+- **Deceased estate transfer duty** — A transfer from a deceased estate to a beneficiary in conformity with the will or on intestacy is generally exempt or attracts only nominal duty. NSW charges a concessional $100; Victoria treats it as exempt under s 42(1) Duties Act 2000 and extends the same treatment to the first transfer into a testamentary trust.  _(s 42(1) Duties Act 2000)_
+- **Concession fragility** — The concession is fragile: a transfer for valuable consideration, an unequal distribution settled with cash between beneficiaries, or a transfer that does not conform to the will can be assessed at full ad valorem rates. Put the grant of probate and the will in front of the revenue office.
+
+CGT rollover on death is a separate question — see `au-capital-gains`.
 
 ### 11.2 Trust Distributions and Trust Dealings
 
-- An in-specie distribution of real property from a trust to a beneficiary is **generally a dutiable transfer**, even with no money changing hands. Some jurisdictions provide narrow relief for distributions to a beneficiary of a fixed trust where no consideration passes and the beneficiary's existing interest is being satisfied.
-- Trust **resettlements**, deed variations, changes of trustee and changes of beneficial ownership are separate dutiable heads in several jurisdictions (NT charges nominal $20 duty on a trust deed). These need jurisdiction-specific advice **before** the deed is signed — after the fact there is usually no fix. Refuse and escalate (R-AU-SD-5).
+- **In-specie distribution of real property** — An in-specie distribution of real property from a trust to a beneficiary is generally a dutiable transfer, even with no money changing hands. Some jurisdictions provide narrow relief for distributions to a beneficiary of a fixed trust where no consideration passes and the beneficiary's existing interest is being satisfied.
+- **Trust resettlements and dealings** — Trust resettlements, deed variations, changes of trustee and changes of beneficial ownership are separate dutiable heads in several jurisdictions (NT charges nominal $20 duty on a trust deed). These need jurisdiction-specific advice before the deed is signed — after the fact there is usually no fix. Refuse and escalate (R-AU-SD-5).
 
 ### 11.3 Corporate Reconstruction and Consolidation Relief
 
-All jurisdictions offer some form of **corporate reconstruction/consolidation** relief for transfers within a wholly-owned group, but the tests (group composition, pre- and post-association periods, clawback on group exit) differ materially and several require an **application before** the transaction. Relief is discretionary in some jurisdictions and a statutory exemption in others, ranging from full exemption to a 90% reduction. Do not model a restructure assuming relief will be granted (R-AU-SD-3).
+- **Corporate reconstruction/consolidation relief** — All jurisdictions offer some form of corporate reconstruction/consolidation relief for transfers within a wholly-owned group, but the tests (group composition, pre- and post-association periods, clawback on group exit) differ materially and several require an application before the transaction. Relief is discretionary in some jurisdictions and a statutory exemption in others, ranging from full exemption to a 90% reduction. Do not model a restructure assuming relief will be granted (R-AU-SD-3).
 
 ### 11.4 Other Traps
 
-- **Nominations and sub-sales** — Naming a different purchaser before settlement can create a **second dutiable transaction** (double duty), particularly under Victoria's sub-sale provisions. **Options**: granting or assigning a call option over land is dutiable in several jurisdictions (call option assignment duty in NSW).
-- **Chattels** — Chattels sold with land are dutiable in TAS and several others; allocating price to chattels rarely reduces duty and invites reassessment. **Partnership interests**: acquiring an interest in a land-holding partnership can be dutiable as an indirect land acquisition.
+- **Nominations and sub-sales / Options** — Nominations and sub-sales — Naming a different purchaser before settlement can create a second dutiable transaction (double duty), particularly under Victoria's sub-sale provisions. Options: granting or assigning a call option over land is dutiable in several jurisdictions (call option assignment duty in NSW).
+- **Chattels / Partnership interests** — Chattels — Chattels sold with land are dutiable in TAS and several others; allocating price to chattels rarely reduces duty and invites reassessment. Partnership interests: acquiring an interest in a land-holding partnership can be dutiable as an indirect land acquisition.
 
 ## Section 12 -- Refusal Catalogue
 
@@ -368,6 +370,8 @@ This skill and its outputs are provided for informational and computational purp
 Duty rates, thresholds and concessions change frequently, and several are indexed annually or set by budget announcement. Always re-verify against the relevant revenue office before quoting a figure to a client.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

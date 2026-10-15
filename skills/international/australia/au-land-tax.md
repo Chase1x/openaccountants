@@ -14,8 +14,7 @@ description: >
 version: 1.0
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-10-12
+last_updated: 2026-10-14
 review_status: pending_review
 category: international
 tier: 2
@@ -23,6 +22,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # AU Land Tax
+
+## AU Land Tax
 
 ## Australia -- State & Territory Land Tax Skill v1.0
 
@@ -96,7 +97,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.1 New South Wales (NSW)
 
-**NSW Land Tax Rates (2026 land tax year -- assessed 31 Dec 2025)**
+**NSW Land Tax Rates (2026 land tax year -- assessed 31 Dec 2025)**  _(Revenue NSW -- Land tax thresholds and rates)_
 
 | Land Value | Rate |
 | --- | --- |
@@ -109,7 +110,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.2 Victoria (VIC)
 
-**VIC Land Tax General Rates (2026 land tax year -- assessed 31 Dec 2025)**
+**VIC Land Tax General Rates (2026 land tax year -- assessed 31 Dec 2025)**  _(SRO Victoria -- Land tax current rates)_
 
 | Total Taxable Value | Land Tax Payable |
 | --- | --- |
@@ -129,7 +130,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.3 Queensland (QLD)
 
-**QLD Land Tax Rates -- Individuals (2025-26 land tax year -- assessed 30 Jun 2025)**
+**QLD Land Tax Rates -- Individuals (2025-26 land tax year -- assessed 30 Jun 2025)**  _(QRO -- Land tax)_
 
 | Total Taxable Value | Rate |
 | --- | --- |
@@ -145,7 +146,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.4 South Australia (SA)
 
-**SA Land Tax General Rates (2025-26 land tax year -- assessed 30 Jun 2025)**
+**SA Land Tax General Rates (2025-26 land tax year -- assessed 30 Jun 2025)**  _(RevenueSA -- Rates and thresholds)_
 
 | Total Taxable Site Value | Amount of Tax |
 | --- | --- |
@@ -162,7 +163,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.5 Western Australia (WA)
 
-**WA Land Tax Rates (2025-26 land tax year -- assessed 30 Jun 2025)**
+**WA Land Tax Rates (2025-26 land tax year -- assessed 30 Jun 2025)**  _(RevenueWA -- Land tax assessment)_
 
 | Aggregated Taxable Value | Rate |
 | --- | --- |
@@ -172,11 +173,12 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 | $1,000,001 to $5,000,000 | $1,750 + 0.65c per $1 above $1,000,000 |
 | $5,000,001 to $11,000,000 | $28,000 + 1.8c per $1 above $5,000,000 |
 | $11,000,001 and over | $186,550 + 2.67c per $1 above $11,000,000 |
+
 - **Foreign surcharge** — WA does not levy a foreign owner land tax surcharge.
 
 ### 4.6 Tasmania (TAS)
 
-**TAS Land Tax Rates (2025-26 land tax year -- assessed 1 Jul 2025)**
+**TAS Land Tax Rates (2025-26 land tax year -- assessed 1 Jul 2025)**  _(SRO Tasmania -- Rates of land tax)_
 
 | Total Land Value | Rate |
 | --- | --- |
@@ -189,7 +191,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.7 Australian Capital Territory (ACT)
 
-**ACT Land Tax Rates (2026-27 land tax year)**
+**ACT Land Tax Rates (2026-27 land tax year)**  _(ACT Revenue Office -- How land tax is calculated)_
 
 | Component | Detail |
 | --- | --- |
@@ -342,15 +344,22 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+> Contributed by Ryan Duguid.
+
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put their name behind the tax answers AI gives people. The live, always-current version (and the professional behind it) is at [openaccountants.com](https://www.openaccountants.com).
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
 - Use it in your AI: https://www.openaccountants.com/connect
 - Meet the accountants: https://www.openaccountants.com/network
 
-> **General reference only.** This document does not constitute tax, legal, or financial advice. Verify figures against the cited primary sources or with a licensed professional before relying on them.
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
