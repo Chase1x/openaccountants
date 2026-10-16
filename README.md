@@ -33,12 +33,12 @@ Then ask a question your AI would otherwise guess at:
 Without OpenAccountants, models answer from training data. With it, the answer can cite the fetched Guide and its review status. Name a professional reviewer only when that Guide version has a published review record.
 
 ```
-You:    "I'm a freelancer in South Africa. What do I owe?"
-          ↓  loads za-income-tax, za-provisional-tax
-AI:     ITR12 working paper · IRP6 provisional schedule
-        Medical credits · Retirement annuity deduction
+You:    "I'm moving to Malta and selling my company next year. What tax do I face?"
+          ↓  loads moving-to-malta-tax-residence, selling-a-company-in-malta
+AI:     Residence and domicile · Remittance basis on foreign income
+        Gain on the share sale · Participation exemption check
         ─────────────────────────────────────────
-        Reviewed by Werner Britz CA(SA)
+        Authored by Michael Cutajar CPA, ACCA (Malta)
 ```
 
 <details>
