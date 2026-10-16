@@ -147,8 +147,8 @@ These are the sources a source-cited draft must be drafted and cross-checked aga
 
 | Source | URL pattern | What it covers |
 |--------|------------|----------------|
-| **Deloitte Tax Guides** | dits.deloitte.com | VAT/GST rates, thresholds, compliance |
-| **EY Worldwide Tax Guide** | ey.com/en_gl/tax-guides | Country-by-country tax overviews |
+| **Deloitte Tax skills** | dits.deloitte.com | VAT/GST rates, thresholds, compliance |
+| **EY Worldwide Tax skill** | ey.com/en_gl/tax-guides | Country-by-country tax overviews |
 | **KPMG Tax Rates Online** | kpmg.com/tax-rates | Corporate / individual / indirect tax rates |
 | **OECD Tax Database** | oecd.org/tax/tax-policy | Standardised cross-country tax data |
 

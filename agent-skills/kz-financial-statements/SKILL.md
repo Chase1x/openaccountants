@@ -57,4 +57,4 @@ Informational only; not advice. Verify entity-size thresholds, standard choice, 
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-financial-statements) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/kz-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

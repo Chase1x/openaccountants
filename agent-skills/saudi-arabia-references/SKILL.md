@@ -83,4 +83,4 @@ None of the three repos contain withholding tax rate tables or zakat computation
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/saudi-arabia-references) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/saudi-arabia-references) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

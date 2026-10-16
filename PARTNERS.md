@@ -1,10 +1,10 @@
 # Partners — the named professionals on record
 
-This file is the public roster of licensed accountants who review OpenAccountants Tax Guides. Every Partner here has had their credential verified, and their reviews are public. **This roster is the product.** Agents can do the math; these are the people who stand behind the answers.
+This file is the public roster of licensed accountants who review OpenAccountants Tax skills. Every Partner here has had their credential verified, and their reviews are public. **This roster is the product.** Agents can do the math; these are the people who stand behind the answers.
 
 **Scoreboard: 10 of 193 jurisdictions have a Partner. The other 183 are open.**
 
-| Jurisdiction | Partner | Credential | Guides | On record since | Proof |
+| Jurisdiction | Partner | Credential | Skills | On record since | Proof |
 |---|---|---|---|---|---|
 | United States (federal forms) | Christopher Aryee | CPA | 4 | 2026-07 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
 | United States | Amir Pelinkovic | CPA | 16 | 2026 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
@@ -20,7 +20,7 @@ This file is the public roster of licensed accountants who review OpenAccountant
 
 ## The reviewer badge
 
-Every accountant-reviewed Guide carries this badge directly under its title:
+Every accountant-reviewed skill carries this badge directly under its title:
 
 > ✅ **Accountant-reviewed** · **Name, Credential (Jurisdiction)** · credential verified · YYYY-MM-DD · [public record](#)
 
@@ -33,6 +33,6 @@ Every accountant-reviewed Guide carries this badge directly under its title:
 Onboarding is two steps, in this order:
 
 1. **Verify your credential**: apply at [openaccountants.com/for-accountants](https://www.openaccountants.com/for-accountants). Credentials are reviewed in 1–2 business days. This step is what makes the badge mean something; a PR alone doesn't grant it.
-2. **Put yourself on the record**: once approved, [open a PR adding your row to this file](https://github.com/openaccountants/openaccountants/edit/main/PARTNERS.md) — jurisdiction, name, credential, date. Star the repo while you're here; stars get jurisdictions reviewed faster. Your first Guide review then adds the badge to the Guides themselves.
+2. **Put yourself on the record**: once approved, [open a PR adding your row to this file](https://github.com/openaccountants/openaccountants/edit/main/PARTNERS.md) — jurisdiction, name, credential, date. Star the repo while you're here; stars get jurisdictions reviewed faster. Your first skill review then adds the badge to the skills themselves.
 
 Questions: **info@openaccountants.com** · [Claim your jurisdiction →](https://github.com/openaccountants/openaccountants/issues/46)

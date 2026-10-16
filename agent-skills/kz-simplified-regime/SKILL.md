@@ -358,4 +358,4 @@ or a licensed Kazakhstan practitioner before filing or making decisions. Provide
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-simplified-regime) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/kz-simplified-regime) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

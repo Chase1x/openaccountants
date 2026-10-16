@@ -29,4 +29,4 @@ OpenAccountants is AGPL-3.0. MPL-2.0, MIT, and Apache-2.0 are all compatible lic
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bangladesh-references) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/bangladesh-references) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

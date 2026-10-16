@@ -6,12 +6,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping keep the Guides accurate. Corrections with an authoritative source are applied fastest.
+        Thanks for helping keep the skills accurate. Corrections with an authoritative source are applied fastest.
   - type: input
     id: guide-path
     attributes:
-      label: Guide file path or slug
-      description: The Guide containing the wrong value.
+      label: Skill file path or slug
+      description: The skill containing the wrong value.
       placeholder: "e.g., skills/international/malta/malta-vat-return.md or malta-vat-return"
     validations:
       required: true
@@ -19,7 +19,7 @@ body:
     id: jurisdiction
     attributes:
       label: Jurisdiction
-      description: Country, US state, or Canadian province the Guide covers.
+      description: Country, US state, or Canadian province the skill covers.
       placeholder: "e.g., Malta, Germany, US-CA"
     validations:
       required: true
@@ -27,7 +27,7 @@ body:
     id: current-value
     attributes:
       label: Current (wrong) value
-      description: What the Guide says today. Quote the exact line or figure.
+      description: What the skill says today. Quote the exact line or figure.
       placeholder: "e.g., \"VAT rate listed as 17%\""
     validations:
       required: true

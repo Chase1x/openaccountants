@@ -1,6 +1,6 @@
 # Frontmatter spec — the canonical reference
 
-**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), and a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns).
+**This section is THE frontmatter spec for every skill/skill file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), and a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns).
 
 ## Required keys
 
@@ -18,7 +18,7 @@
 
 | Key | Format | Notes |
 |-----|--------|-------|
-| `tax_year_notes` | quoted string | The human-readable tax-year label when a bare year can't express it: `"2025-26"`, `"FY 2026-27 (AY 2027-28)"`, `"2025 (with confirmed 2026 figures noted)"`. The platform does not store this key, so the daily export drops it when it re-renders a Guide. Put the year label in the body text, such as a "Tax year" row in the quick-reference table, so it survives |
+| `tax_year_notes` | quoted string | The human-readable tax-year label when a bare year can't express it: `"2025-26"`, `"FY 2026-27 (AY 2027-28)"`, `"2025 (with confirmed 2026 figures noted)"`. The platform does not store this key, so the daily export drops it when it re-renders a skill. Put the year label in the body text, such as a "Tax year" row in the quick-reference table, so it survives |
 | `verified_by` | `pending` or `Name, Credential` | e.g. `Michael Cutajar, CPA (Malta)`. Stored identifier — the field name stays `verified_by` even though the display language is "reviewed". A real name here does **not** imply `tier: 1`; set `tier: 1` explicitly as well. CI errors if `tier: 2` carries a real `verified_by` |
 | `reviewed_by` | `Name, Credential` | Used on the hand-authored `packages/us-federal/` guides (e.g. `Christopher Aryee, CPA`) |
 | `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of |
@@ -26,16 +26,16 @@
 
 ## Platform-written keys
 
-The daily export from openaccountants.com (see [WEBSITE-SYNC.md](WEBSITE-SYNC.md)) writes these keys when it renders a Guide. Do not add or edit them in a PR: the platform owns their values and rewrites them on the next export. Leave them in place when you edit a Guide that already carries them. None of them is a quality state; `tier` remains the only quality field, and `review_status` records where the accountant review stands. `scripts/validate-guides.py` ignores keys it does not know, so a key outside this document is undefined, not validated.
+The daily export from openaccountants.com (see [WEBSITE-SYNC.md](WEBSITE-SYNC.md)) writes these keys when it renders a skill. Do not add or edit them in a PR: the platform owns their values and rewrites them on the next export. Leave them in place when you edit a skill that already carries them. None of them is a quality state; `tier` remains the only quality field, and `review_status` records where the accountant review stands. `scripts/validate-guides.py` ignores keys it does not know, so a key outside this document is undefined, not validated.
 
 | Key | Values seen | Notes |
 |-----|-------------|-------|
-| `review_status` | `current` or `pending_review` | Whether the current text carries a professional review. A substantive edit sets the Guide back to `pending_review` until it is reviewed again |
+| `review_status` | `current` or `pending_review` | Whether the current text carries a professional review. A substantive edit sets the skill back to `pending_review` until it is reviewed again |
 | `license` | `AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)` | Written verbatim by the export. [LICENSING.md](../LICENSING.md) is the licence reference |
 | `authored_by` | `OpenAccountants team` | Present when the platform team, not a named accountant or GitHub contributor, authored the current revision |
 | `trust_label` | `By OpenAccountants` | Display attribution for the website. Not a review claim |
 
-The export has also written `drafted_by` and `approved_by` (90 Guides, values `OpenAccountants` and `pending`), `validation_status` (5) and `validated` (4). Treat them the same way: leave them alone and do not add them to new files.
+The export has also written `drafted_by` and `approved_by` (90 skills, values `OpenAccountants` and `pending`), `validation_status` (5) and `validated` (4). Treat them the same way: leave them alone and do not add them to new files.
 
 ## Sync integrity rules
 

@@ -2,7 +2,7 @@ blank_issues_enabled: true
 contact_links:
   - name: 🌍 Become a Partner (licensed accountants)
     url: https://www.openaccountants.com/for-accountants
-    about: Review Tax Guides for your jurisdiction — your name goes on every answer. 130+ jurisdictions open. No GitHub needed.
+    about: Review Tax skills for your jurisdiction — your name goes on every answer. 130+ jurisdictions open. No GitHub needed.
   - name: 💬 Ask a question
     url: https://github.com/openaccountants/openaccountants/discussions
     about: Usage questions, jurisdiction requests, and general discussion.

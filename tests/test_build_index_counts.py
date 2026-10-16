@@ -26,9 +26,11 @@ build_index = _load("build_index_for_counts_tests", "build-index.py")
 
 COUNTS = {"guides": 2019, "jurisdictions": 245, "accountant_reviewed": 168}
 SENTENCE = (
-    "> Tax Guides. 1,998 Guides across 245 jurisdictions in this repository, "
+    "> AI skills. 1,998 AI skills across 245 jurisdictions in this repository, "
     "171 of them accountant-reviewed and signed off by named Partners."
 )
+# The wording before the 16 Oct 2026 rename; the first build after it restamps.
+OLD_SENTENCE = SENTENCE.replace("1,998 AI skills across", "1,998 Guides across")
 
 
 class StampLlmsCountsTests(unittest.TestCase):
@@ -43,7 +45,7 @@ class StampLlmsCountsTests(unittest.TestCase):
         path = self._write("# llms\r\n\r\n" + SENTENCE + "\r\n")
         self.assertTrue(build_index.stamp_llms_counts(COUNTS, path=path))
         text = path.read_bytes().decode("utf-8")
-        self.assertIn("2,019 Guides across 245 jurisdictions in this repository, 168 of them accountant-reviewed", text)
+        self.assertIn("2,019 AI skills across 245 jurisdictions in this repository, 168 of them accountant-reviewed", text)
         self.assertNotIn("1,998", text)
         self.assertEqual(text.count("\r\n"), 3)
 
@@ -52,6 +54,11 @@ class StampLlmsCountsTests(unittest.TestCase):
         before = path.stat().st_mtime_ns
         self.assertFalse(build_index.stamp_llms_counts({"guides": 1998, "jurisdictions": 245, "accountant_reviewed": 171}, path=path))
         self.assertEqual(path.stat().st_mtime_ns, before)
+
+    def test_restamps_the_pre_rename_wording(self) -> None:
+        path = self._write(OLD_SENTENCE + "\n")
+        self.assertTrue(build_index.stamp_llms_counts({"guides": 1998, "jurisdictions": 245, "accountant_reviewed": 171}, path=path))
+        self.assertIn("1,998 AI skills across 245", path.read_text(encoding="utf-8"))
 
     def test_missing_sentence_warns_instead_of_failing(self) -> None:
         path = self._write("no counts sentence here\n")

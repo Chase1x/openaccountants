@@ -62,4 +62,4 @@ Informational only; not advice. The IT-export tax rate, its final-vs-minimum cha
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-it-export-tax) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/pk-it-export-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

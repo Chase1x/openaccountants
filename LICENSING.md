@@ -1,7 +1,12 @@
 # Licensing
 
 OpenAccountants is a **mixed-licence repository**. Two different licences apply,
-depending on whether a file is *software* or a *tax Guide*.
+depending on whether a file is *software* or an *AI skill* (tax rules your AI follows).
+
+> **Name change, 16 October 2026.** What this repository used to call "Guides" are now
+> called **AI skills**. Nothing about the licensing changed: the content licence keeps its
+> legal name, the **OpenAccountants Guide License v1.0**, and "Guide" in that licence means
+> the same files we now call skills.
 
 ## Which licence applies to what
 
