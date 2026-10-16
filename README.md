@@ -1,6 +1,6 @@
 # OpenAccountants
 
-**Tax skills your AI can cite, with sources and published review status.**
+**Free AI skills (tax rules your AI follows) your AI can cite, with sources and published review status.**
 
 This library includes accountant-reviewed skills and source-cited drafts. Check each skill version's review record before relying on it; a named author is distinct from a professional reviewer. Skill content is source-available under the terms in [LICENSING.md](LICENSING.md).
 
