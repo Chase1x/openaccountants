@@ -646,4 +646,4 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-schedule-c-and-se-computation) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **accountant-reviewed**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/us-schedule-c-and-se-computation) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **accountant-reviewed**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

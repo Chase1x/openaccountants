@@ -33,8 +33,8 @@ def read_text(rel_path):
 
 def guide_inventory():
     index = json.loads(read_text("index.json"))
-    lines = ["## Guide inventory "
-             f"({index['counts']['guides']} guides, "
+    lines = ["## Skill inventory "
+             f"({index['counts']['guides']} skills, "
              f"{index['counts']['jurisdictions']} jurisdictions, "
              f"{index['counts']['accountant_reviewed']} accountant-reviewed)", ""]
     for guide in index["guides"]:

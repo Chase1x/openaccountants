@@ -2,6 +2,14 @@
 
 All notable changes to OpenAccountants will be documented in this file.
 
+## 2026-10-16
+
+### Guides are now called AI skills
+
+- **Renamed** the product from "Guides" to **AI skills** (tax rules your AI follows) in the README, CONTRIBUTING, START-HERE, CLAUDE.md, llms.txt, docs, issue and PR templates, and the `agent-skills/` footer. Machines already used the word: the `skills/` folder, the `get_skill` tools, and the openaccountants.com `/skills` URLs are unchanged.
+- **Unchanged:** the licence and its legal name (OpenAccountants Guide License v1.0; see the note in [`LICENSING.md`](LICENSING.md)), `index.json` keys (`guides[]`, `counts.guides`), file paths, workflow and check names.
+- **Generators:** `scripts/build-index.py` now writes "AI skills across" in the llms.txt counts sentence and still recognises the old wording; `scripts/build-llms-full.py` heads the inventory "Skill inventory". Skill bodies written by the OpenAccountants team follow through the nightly sync.
+
 ## [2.3.0] — 2026-07-16
 
 ### Mixed-licence restructure (Guides move to a source-available licence)

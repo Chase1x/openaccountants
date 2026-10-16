@@ -4,13 +4,13 @@ Thanks for your interest in contributing. Here's how it works.
 
 ## Who can contribute
 
-Guides are written by **verified accountants**: people whose professional licence or registration number we have checked. Provisional or student members of a professional body (for example a CA ANZ provisional member) count too, once we have checked their membership. Pull requests that add or change Guides (`skills/**`) are merged only from verified accountants.
+Skills are written by **verified accountants**: people whose professional licence or registration number we have checked. Provisional or student members of a professional body (for example a CA ANZ provisional member) count too, once we have checked their membership. Pull requests that add or change skills (`skills/**`) are merged only from verified accountants.
 
 To get verified: sign up at [openaccountants.com](https://www.openaccountants.com), finish the [accountant application](https://www.openaccountants.com/onboarding/accountant) with your licence, registration or membership number, and set your GitHub username in your profile so we can match your pull requests to you.
 
 Not an accountant? You are still welcome to:
 
-- **Report an error** in a Guide by opening an issue with the source that shows it. A verified accountant or the OpenAccountants team will fix it.
+- **Report an error** in a skill by opening an issue with the source that shows it. A verified accountant or the OpenAccountants team will fix it.
 - **Contribute code** (`mcp/`, `scripts/`, `.github/`). Code changes do not need an accountant licence.
 
 There are no fees and no minimum contribution. Contributions of any kind need the [CLA](#contributor-license-agreement-cla).
@@ -36,7 +36,7 @@ There are no fees and no minimum contribution. Contributions of any kind need th
 
 ## Repo layout
 
-`skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (except the hand-authored `packages/us-federal/`); `index.json` at the repo root is the machine-readable inventory of every Guide. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
+`skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (except the hand-authored `packages/us-federal/`); `index.json` at the repo root is the machine-readable inventory of every skill. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
 ## Website sync rule
 
@@ -45,7 +45,7 @@ Every skill in `skills/` that should appear on [openaccountants.com](https://www
 1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
 2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
 
-Guide changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export. The ingestion workflow notifies the platform when configured; a maintainer handles failed notifications and backfills. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
+Skill changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export. The ingestion workflow notifies the platform when configured; a maintainer handles failed notifications and backfills. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
 
 Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
@@ -111,11 +111,11 @@ If you add a `references.md` to a country's source directory, it will be include
 
 ## Review
 
-A verified accountant's Guide publishes credited to them as **Accountant-authored**. Another verified accountant can then attest to it, and their name and review date go on it too.
+A verified accountant's skill publishes credited to them as **Accountant-authored**. Another verified accountant can then attest to it, and their name and review date go on it too.
 
 ## Contributor License Agreement (CLA)
 
-OpenAccountants is a **mixed-licence** project: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License**, with a commercial track for both (see [LICENSING.md](LICENSING.md)). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **all** of these tracks. You **retain copyright**; you are granting a license, not handing over ownership.
+OpenAccountants is a **mixed-licence** project: software is **AGPL-3.0-only** and the skills are under the source-available **OA Guide License**, with a commercial track for both (see [LICENSING.md](LICENSING.md)). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **all** of these tracks. You **retain copyright**; you are granting a license, not handing over ownership.
 
 **GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
 
@@ -127,5 +127,5 @@ If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
 
 - Your name on the skill, linked to your contributor profile
 - Public contributor profile showing all your contributions
-- Attestation from other verified accountants, named on the Guide
+- Attestation from other verified accountants, named on the skill
 - The knowledge that thousands of freelancers and small businesses are using your skill to manage their accounting

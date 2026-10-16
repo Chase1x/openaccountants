@@ -51,4 +51,4 @@ Informational only; not advice. Verify Universal Pension Scheme tiers and PF/gra
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bd-social-contributions) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/bd-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

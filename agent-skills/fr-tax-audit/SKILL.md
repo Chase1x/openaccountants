@@ -333,4 +333,4 @@ For each anomaly, the adjustment is formalised as a **chef de redressement** con
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/fr-tax-audit) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/fr-tax-audit) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

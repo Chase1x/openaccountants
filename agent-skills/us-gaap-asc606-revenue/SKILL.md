@@ -226,4 +226,4 @@ Provides computational and interpretive guidance on ASC 606 / ASC 340-40 only. N
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-gaap-asc606-revenue) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/us-gaap-asc606-revenue) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._

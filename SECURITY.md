@@ -23,5 +23,5 @@ If you're a licensed accountant, corrections you submit are credited to you by n
 
 ## Scope notes
 
-- The Guides are reference material with a prominent disclaimer; they are not executable code.
-- The MCP server runs read-only over bundled markdown and, in hosted mode, calls openaccountants.com APIs. It does not execute Guide content.
+- The skills are reference material with a prominent disclaimer; they are not executable code.
+- The MCP server runs read-only over bundled markdown and, in hosted mode, calls openaccountants.com APIs. It does not execute skill content.

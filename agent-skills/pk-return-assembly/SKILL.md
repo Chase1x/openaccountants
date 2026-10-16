@@ -789,4 +789,4 @@ If execution runs out of context mid-build, complete the computation work first 
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-return-assembly) — open tax Guides for AI, reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - foundation - pk-income-tax - pk-corporate-tax - pk-withholding-tax - pk-sales-tax-federal - pk-sales-tax-services - pk-payroll-eobi - pk-cgt - pk-formation. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+_Source: [OpenAccountants](https://openaccountants.com/skills/pk-return-assembly) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - foundation - pk-income-tax - pk-corporate-tax - pk-withholding-tax - pk-sales-tax-federal - pk-sales-tax-services - pk-payroll-eobi - pk-cgt - pk-formation. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
