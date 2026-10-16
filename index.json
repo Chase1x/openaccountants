@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-15T08:42:09+00:00",
+ "generated_at": "2026-10-16T08:19:07+00:00",
  "counts": {
-  "guides": 2048,
+  "guides": 2050,
   "jurisdictions": 245,
   "accountant_reviewed": 156
  },
@@ -5839,6 +5839,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "leaving-canada-departure-tax",
+   "path": "skills/international/canada/leaving-canada-departure-tax.md",
+   "name": "leaving-canada-departure-tax",
+   "jurisdiction": "CA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-15"
+  },
+  {
    "slug": "mb-individual-return",
    "path": "skills/international/canada/manitoba/mb-individual-return.md",
    "name": "mb-individual-return",
@@ -9197,6 +9209,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-09-20"
+  },
+  {
+   "slug": "leaving-germany-exit-tax",
+   "path": "skills/international/germany/leaving-germany-exit-tax.md",
+   "name": "leaving-germany-exit-tax",
+   "jurisdiction": "DE",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "references",
