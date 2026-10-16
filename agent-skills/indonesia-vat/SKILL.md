@@ -1,28 +1,61 @@
 ---
 name: indonesia-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for an Indonesia VAT (PPN — Pajak Pertambahan Nilai) return (SPT Masa PPN), handle e-Faktur compliance, or advise on PPN registration and filing in Indonesia. Trigger on phrases like \"PPN Indonesia\", \"Pajak Pertambahan Nilai\", \"SPT Masa PPN\", \"e-Faktur\", \"Faktur Pajak\", \"PKP registration\", \"Pengusaha Kena Pajak\", or any Indonesia PPN request. ALWAYS read this skill before touching any Indonesia PPN work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: ID
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/indonesia-vat"
-  tax_year: 2025
-  obligation: CT
-  reviewed_by: "pending depends_on: - vat-workflow-base"
+  openaccountants_url: "https://www.openaccountants.com/skills/indonesia-vat"
+  jurisdiction: "ID"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "RILIA PUTRI"
+  review_status: "current"
 ---
 
-# Indonesia PPN (Pajak Pertambahan Nilai / VAT) Skill v2.1
+# Indonesia VAT
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Indonesia PPN (Pajak Pertambahan Nilai / VAT) Skill v2.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### PPN - VAT
+
+- **Standard effective rate (non-luxury)** — 11% — nominal 12% applied to DPP of 11/12 × selling price  _(UU HPP Art. 7; PMK 131/2024)_
+- **Luxury goods (PPnBM-listed) rate** — 12% on full DPP from 1 Feb 2025. Transitional 11/12 DPP in Jan 2025.  _(PMK 131/2024)_
+- **Export rate** — 0% on goods; qualifying exported services  _(UU PPN Art. 7(2))_
+- **PKP mandatory threshold** — IDR 4,800,000,000 annual turnover  _(UU PPN Art. 3A; PMK 197/2013)_
+- **SPT Masa PPN filing deadline** — SPT Masa PPN must be filed no later than the end of the following month after the tax period ends (akhir bulan berikutnya setelah berakhirnya Masa Pajak).  _([UU KUP as amended by UU HPP No. 7/2021.](https://www.pajak.go.id/en/node/34988))_
+- **PPN payment deadline** — PPN and PPnBM generally must be paid by the end of the month following the tax period and before the relevant SPT Masa PPN is submitted, subject to applicable VAT regulations.  _(UU KUP, PMK 81/2024 Article 94(3) as amended by PMK 01/2026; UU KUP as amended by UU HPP No. 7/2021.)_
+- **Faktur Pajak issuance** — Faktur Pajak generally must be issued at the time of taxable supply or in accordance with applicable VAT invoicing and electronic tax administration regulations.  _(PMK-151/PMK.03/2013, Indonesian VAT Law Article 13, PER-11/PJ/2025, and PMK 81/2024 as amended by PMK 01/2026.)_
+- **Input credit window** — Within 3 months of the tax period  _(UU PPN)_
+- **Late filing SPT Masa PPN** — IDR 500,000 per month  _(UU KUP Art. 7)_
+- **Late PPN payment** — Floating monthly rate set by the Minister of Finance (benchmark rate + 5% uplift ÷ 12; ~0.99% for March 2025 period) — no longer a fixed 2% per month  _([UU KUP Article 9(2a), Article 13(2)](https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga))_
+- **Late Faktur Pajak** — 1% of DPP per Faktur  _([Indonesian VAT Law Article 14(4)](https://www.pajak.go.id/en/node/101543))_
+- **Underpayment on audit** — Interest (MoF reference-rate-based, per Art. 13(3b)) for income tax; 75% increase for VAT/PPnBM and for income tax withheld/collected but not deposited — no '100%' sanction exists in the current Art. 13(3)  _([UU KUP Article 13(3), UU KUP as amended by UU HPP No. 7/2021.](https://www.pajak.go.id/sites/default/files/2021-12/Salinan%20UU%20Nomor%207%20Tahun%202021.pdf))_
+- **Basic food staples** — Basic food staples (rice, grain, corn, sago, soybeans, salt, meat, eggs, milk, fruits, vegetables) are NO LONGER exempted under Article 4A; UU HPP No. 7/2021 removed them from Article 4A(2)(b) and relocated the VAT-exemption facility to Article 16B(1a)(j) of the VAT Law  _([Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021](https://www.pajak.go.id/index.php/en/node/71871))_
+- **Services exempt** — Medical, education, financial, insurance, employment, water supply  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021, PMK 70/PMK.03/2022 Articles 3, 5–8)_
+- **PMSE PPN rate** — 11% collected by registered foreign providers  _(Indonesian VAT Law Article 7, PMK 81/2024 Articles 332–339)_
+- **PMSE registration threshold** — >IDR 600m annual turnover from Indonesia OR >12,000 users/year  _(PMK 81/2024 Articles 332–339)_
+- **I.A — Taxable sales 11%** — Taxable supplies subject to VAT (Tax Base/DPP)  _(Indonesian VAT Law Articles 4 & 7; UU HPP No. 7/2021 Article 7)_
+- **I.B — Zero-rated (exports)** — Exports  _(Indonesian VAT Law Articles 3A, 4(1)(f),(g),(h), & 7(2))_
+- **I.C — Exempt/non-taxable** — VAT-exempt supplies  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021; PMK 70/PMK.03/2022 Articles 3 & 5–8)_
+- **II — Output PPN** — Output VAT  _(Indonesian VAT Law Articles 1A, 4, & 9)_
+- **III.A — Domestic input PPN** — Domestic Input VAT  _(Indonesian VAT Law Article 9)_
+- **IV — PPN payable** — Output VAT less allowable Input VAT  _(Indonesian VAT Law Article 9(2))_
+- **Coretax mandatory from** — January 2025 implementation for VAT administration  _(PMK 81/2024 as amended by PMK 01/2026)_
+- **e-Faktur system** — Mandatory for taxable entrepreneurs (PKPs); integrated with Coretax  _(Indonesian VAT Law Article 13; PER-11/PJ/2025; PMK 81/2024 as amended by PMK 01/2026)_
+- **NPWP format on Faktur Pajak** — 16-digit NIK-based Taxpayer Identification Number  _(PMK-112/PMK.03/2022 Article 2(1)–(3) & PER-6/PJ/2024)_
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Indonesia (Republik Indonesia) |
 | Tax | PPN — Pajak Pertambahan Nilai (Value Added Tax) |
 | Currency | IDR (Indonesian Rupiah / Rupiah) |
@@ -46,8 +79,10 @@ metadata:
 
 ### Key SPT Masa PPN form lines
 
+**Key SPT Masa PPN form lines**
+
 | Line | Meaning |
-|---|---|
+| --- | --- |
 | I.A | Taxable sales at 11% (Penyerahan yang terutang PPN) |
 | I.B | Zero-rated sales (Ekspor) |
 | I.C | Exempt/non-taxable sales |
@@ -62,8 +97,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 11% standard |
 | Unknown counterparty registration (PKP or non-PKP) | Non-PKP — no input credit |
 | Unknown counterparty country | Domestic Indonesia |
@@ -74,15 +111,15 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | IDR 100,000,000 |
 | HIGH tax delta on single default | IDR 11,000,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net PPN position | IDR 50,000,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -98,17 +135,11 @@ metadata:
 
 ### Refusal catalogue
 
-**R-ID-1 — Non-PKP (below IDR 4.8B threshold).** "This business is not a Pengusaha Kena Pajak (PKP). Non-PKPs do not charge PPN and cannot recover input PPN. This skill covers PKP-registered businesses only."
-
-**R-ID-2 — Luxury goods tax (PPnBM).** "PPnBM on luxury goods (vehicles, electronics above threshold, jewellery, etc.) is a separate tax mechanism. Out of scope — escalate to a Konsultan Pajak."
-
-**R-ID-3 — Partial exemption (usaha campuran).** "Businesses making both taxable and exempt supplies must apportion input PPN. Apportionment requires the taxable/total ratio — out of scope without full-year data. Escalate."
-
-**R-ID-4 — Export refund (restitusi PPN).** "PPN refund claims for exporters require separate documentation and DGT audit. Out of scope — escalate."
-
-**R-ID-5 — Withholding PPN (Pemungut PPN).** "Government agencies and designated private companies act as PPN withholders. If your client has significant government contracts, the withheld PPN must be tracked and credited. Flag for specialist review."
-
----
+- **R-ID-1 — Non-PKP (below IDR 4.8B threshold)** — This business is not a Pengusaha Kena Pajak (PKP). Non-PKPs do not charge PPN and cannot recover input PPN. This skill covers PKP-registered businesses only.
+- **R-ID-2 — Luxury goods tax (PPnBM)** — PPnBM on luxury goods (vehicles, electronics above threshold, jewellery, etc.) is a separate tax mechanism. Out of scope — escalate to a Konsultan Pajak.
+- **R-ID-3 — Partial exemption (usaha campuran)** — Businesses making both taxable and exempt supplies must apportion input PPN. Apportionment requires the taxable/total ratio — out of scope without full-year data. Escalate.
+- **R-ID-4 — Export refund (restitusi PPN)** — PPN refund claims for exporters require separate documentation and DGT audit. Out of scope — escalate.
+- **R-ID-5 — Withholding PPN (Pemungut PPN)** — Government agencies and designated private companies act as PPN withholders. If your client has significant government contracts, the withheld PPN must be tracked and credited. Flag for specialist review.
 
 ## Section 3 — Supplier pattern library
 
@@ -116,8 +147,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.1 Indonesian banks — fees and charges (exempt / exclude)
 
+**3.1 Indonesian banks — fees and charges (exempt / exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BANK CENTRAL ASIA, BCA | EXCLUDE (fee lines) | Financial service — PPN exempt |
 | BANK RAKYAT INDONESIA, BRI | EXCLUDE (fee lines) | Same |
 | BANK NEGARA INDONESIA, BNI | EXCLUDE (fee lines) | Same |
@@ -132,8 +165,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.2 Indonesian government and statutory (exclude)
 
+**3.2 Indonesian government and statutory (exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DIREKTORAT JENDERAL PAJAK, DJP | EXCLUDE | Tax payment |
 | PAJAK PERTAMBAHAN NILAI, PPN | EXCLUDE | Tax remittance |
 | PAJAK PENGHASILAN, PPH | EXCLUDE | Income tax — out of PPN scope |
@@ -144,8 +179,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.3 Indonesian utilities (taxable at 11%)
 
+**3.3 Indonesian utilities (taxable at 11%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PLN, PERUSAHAAN LISTRIK NEGARA | Input 11% | 11% | Electricity — taxable |
 | PDAM, AIR MINUM | EXEMPT | 0% | Drinking water supply — exempt |
 | PERTAMINA | Input 11% | 11% | Fuel/gas — taxable |
@@ -159,8 +196,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.4 Transport and logistics
 
+**3.4 Transport and logistics**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GARUDA INDONESIA | Check route | 0%/11% | International 0%; domestic 11% |
 | LION AIR, WINGS AIR | Check route | 0%/11% | International 0%; domestic 11% |
 | CITILINK | Check route | 0%/11% | International 0%; domestic 11% |
@@ -179,8 +218,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.5 Food and retail
 
+**3.5 Food and retail**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | INDOMARET | Input 11% (non-food)/EXEMPT (basic staples) | Mixed | Food staples (beras, gula, etc.) exempt; packaged food 11% |
 | ALFAMART | Input 11%/EXEMPT | Mixed | Same split |
 | HYPERMART | Input 11%/EXEMPT | Mixed | Same |
@@ -194,8 +235,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.6 SaaS — local Indonesian suppliers (11%)
 
+**3.6 SaaS — local Indonesian suppliers (11%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | JURNAL.ID (Mekari) | Input 11% | 11% | Indonesian accounting SaaS — PKP registered |
 | ACCURATE ONLINE | Input 11% | 11% | Indonesian accounting software |
 | ZAHIR ACCOUNTING | Input 11% | 11% | Indonesian ERP |
@@ -206,22 +249,26 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 DJP has a system for foreign digital service providers (PMSE) to register and collect 11% PPN directly from Indonesian B2C customers. For B2B: PKP buyers can claim input credit if the foreign provider is PMSE-registered and issues a valid commercial document (kuitansi).
 
+**3.7 SaaS — international suppliers table**
+
 | Pattern | Registration status | Treatment | Notes |
-|---|---|---|---|
-| GOOGLE (Workspace, Ads, Cloud) | PMSE registered | Input 11% if commercial invoice held | |
-| MICROSOFT (365, Azure) | PMSE registered | Input 11% if invoice held | |
-| META, FACEBOOK ADS | PMSE registered | Input 11% if invoice held | |
-| NETFLIX | PMSE registered | 11% on subscription (B2C) | |
-| SPOTIFY | PMSE registered | 11% on subscription | |
-| ZOOM | PMSE registered | Input 11% if invoice held | |
-| SLACK | PMSE registered | Input 11% if invoice held | |
-| NOTION, OPENAI, ANTHROPIC | Check PMSE list | Flag if not registered | |
-| AWS (Amazon) | PMSE registered | Input 11% if invoice held | |
+| --- | --- | --- | --- |
+| GOOGLE (Workspace, Ads, Cloud) | PMSE registered | Input 11% if commercial invoice held |  |
+| MICROSOFT (365, Azure) | PMSE registered | Input 11% if invoice held |  |
+| META, FACEBOOK ADS | PMSE registered | Input 11% if invoice held |  |
+| NETFLIX | PMSE registered | 11% on subscription (B2C) |  |
+| SPOTIFY | PMSE registered | 11% on subscription |  |
+| ZOOM | PMSE registered | Input 11% if invoice held |  |
+| SLACK | PMSE registered | Input 11% if invoice held |  |
+| NOTION, OPENAI, ANTHROPIC | Check PMSE list | Flag if not registered |  |
+| AWS (Amazon) | PMSE registered | Input 11% if invoice held |  |
 
 ### 3.8 Payment processors (exempt fees)
 
+**3.8 Payment processors (exempt fees)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MIDTRANS (biaya) | EXCLUDE | Payment processing fee — exempt |
 | DOKU (biaya) | EXCLUDE | Payment gateway — exempt |
 | XENDIT (biaya) | EXCLUDE | Payment gateway — exempt |
@@ -229,16 +276,16 @@ DJP has a system for foreign digital service providers (PMSE) to register and co
 
 ### 3.9 Internal transfers and exclusions
 
+**3.9 Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TRANSFER ANTAR REKENING, INTERNAL | EXCLUDE | Internal movement |
 | PINJAMAN, CICILAN PINJAMAN | EXCLUDE | Loan principal |
 | GAJI, UPAH, SALARY | EXCLUDE | Payroll — outside PPN scope |
 | DIVIDEN | EXCLUDE | Dividend — out of scope |
 | UANG MUKA, DP (deposit advance) | Tier 2 — check | Advance payment for taxable supply triggers PPN |
 | TARIK TUNAI, ATM | Tier 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -304,42 +351,42 @@ Purchase of rice (beras) and sugar (gula) from a grocery. Basic food staples (ba
 
 **Classification:** EXEMPT — no input PPN. Out of PPN scope.
 
----
-
 ## Section 5 — Tier 1 rules (compressed)
 
 ### 5.1 Standard rate 11%
 
-Default rate for all taxable supplies. Rate increased from 10% to 11% effective 1 April 2022 (Law No. 7 of 2021 on Tax Regulation Harmonisation). Legislation: UU PPN No. 42/2009 as amended by UU HPP No. 7/2021.
+- **Standard rate 11%** — Default rate for all taxable supplies. Rate increased from 10% to 11% effective 1 April 2022 (Law No. 7 of 2021 on Tax Regulation Harmonisation).  _(UU PPN No. 42/2009 as amended by UU HPP No. 7/2021)_
 
 ### 5.2 Zero rate — exports
 
-Exports of goods and qualifying exported services. Zero-rated evidence for goods: Pemberitahuan Ekspor Barang (PEB — export declaration) and settlement documents. Services: contract + payment in foreign currency + consumed outside Indonesia. Legislation: UU PPN Article 7(2).
+- **Zero rate — exports** — Exports of goods and qualifying exported services. Zero-rated evidence for goods: Pemberitahuan Ekspor Barang (PEB — export declaration) and settlement documents. Services: contract + payment in foreign currency + consumed outside Indonesia.  _(UU PPN Article 7(2))_
 
 ### 5.3 Exempt supplies
 
-Basic food staples (beras, jagung, sagu, kedelai, garam, daging segar, telur, susu, buah-buahan, sayur-sayuran); medical/health services; education; financial services; insurance services; employment; water supply (drinking water). Legislation: UU PPN Article 4A.
+- **Exempt supplies** — Basic food staples (beras, jagung, sagu, kedelai, garam, daging segar, telur, susu, buah-buahan, sayur-sayuran); medical/health services; education; financial services; insurance services; employment; water supply (drinking water).  _(UU PPN Article 4A)_
 
 ### 5.4 Faktur Pajak (tax invoice) requirements
 
-Issued via e-Faktur application (mandatory for all PKPs since 2016). Must be issued within: (a) end of month of delivery/payment for regular transactions. Required fields: seller NPWP, buyer NPWP, Faktur Pajak serial number (16-digit), date, description, DPP (tax base), PPN amount. Late issuance penalty: 2% of DPP per Faktur.
+- **Faktur Pajak requirements** — Issued via e-Faktur application (mandatory for all PKPs since 2016). Must be issued within: (a) end of month of delivery/payment for regular transactions. Required fields: seller NPWP, buyer NPWP, Faktur Pajak serial number (16-digit), date, description, DPP (tax base), PPN amount. Late issuance penalty: 2% of DPP per Faktur.
 
 ### 5.5 Input credit eligibility
 
-Input PPN is creditable if: (1) valid Faktur Pajak is held; (2) the purchase relates to taxable business activities; (3) Faktur Pajak is verified in the DJP e-Faktur system; (4) claimed within 3 months of the tax period. Non-creditable: entertainment, golf, Faktur Pajak from non-PKP suppliers.
+- **Input credit eligibility** — Input PPN is creditable if: (1) valid Faktur Pajak is held; (2) the purchase relates to taxable business activities; (3) Faktur Pajak is verified in the DJP e-Faktur system; (4) claimed within 3 months of the tax period. Non-creditable: entertainment, golf, Faktur Pajak from non-PKP suppliers.
 
 ### 5.6 PMSE (digital economy)
 
-Foreign digital service providers (PMSE) registered with DJP collect 11% PPN from Indonesian customers. For PKP buyers, check current DJP guidance on whether PMSE commercial documents (kuitansi) qualify as input credit evidence. Currently a grey area.
+- **PMSE (digital economy)** — Foreign digital service providers (PMSE) registered with DJP collect 11% PPN from Indonesian customers. For PKP buyers, check current DJP guidance on whether PMSE commercial documents (kuitansi) qualify as input credit evidence. Currently a grey area.
 
 ### 5.7 Withholding PPN (Pemungut)
 
-Government agencies and certain designated private companies (BUMN and others) withhold the PPN portion of payments and remit directly to DJP. Suppliers receive only the net amount. The withheld PPN is NOT offset against the supplier's output PPN in the SPT — it is reported separately in section IV of the SPT.
+- **Withholding PPN (Pemungut)** — Government agencies and certain designated private companies (BUMN and others) withhold the PPN portion of payments and remit directly to DJP. Suppliers receive only the net amount. The withheld PPN is NOT offset against the supplier's output PPN in the SPT — it is reported separately in section IV of the SPT.
 
 ### 5.8 Filing deadlines
 
+**5.8 Filing deadlines**
+
 | Obligation | Deadline |
-|---|---|
+| --- | --- |
 | PPN payment | End of month following tax period |
 | SPT Masa PPN filing | End of month following tax period |
 | Faktur Pajak issuance | Within the month of supply (or end of month for periodic billing) |
@@ -347,15 +394,15 @@ Government agencies and certain designated private companies (BUMN and others) w
 
 ### 5.9 Penalties
 
+**5.9 Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing SPT | IDR 500,000 per month |
 | Late payment | 2% per month of unpaid tax |
 | Late Faktur Pajak | 2% of DPP per Faktur |
 | Underpayment detected by audit | 100% of underpaid tax |
 | Fraudulent Faktur | Criminal liability |
-
----
 
 ## Section 6 — Tier 2 catalogue
 
@@ -394,8 +441,6 @@ Government agencies and certain designated private companies (BUMN and others) w
 **Conservative default:** Treat as taxable — output PPN due on receipt of advance.
 **Question to ask:** "Was a Faktur Pajak issued for this advance payment? PPN is due when advance is received, not at delivery."
 
----
-
 ## Section 7 — Excel working paper template
 
 ```
@@ -433,26 +478,30 @@ REVIEWER FLAGS:
   [ ] Advance payments: Faktur Pajak issued?
 ```
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Common Indonesian bank statement formats (rekening koran)
 
+**Common Indonesian bank statement formats (rekening koran)**
+
 | Bank | Key columns | Date format | Amount format |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BCA | Tanggal, Keterangan, Debit, Kredit, Saldo | DD/MM/YYYY | Rp X.XXX.XXX (period=thousands, comma=decimal) |
 | BRI | Tgl Transaksi, Uraian, Debit, Kredit, Saldo | DD/MM/YYYY | Rp format |
 | BNI | Tanggal, Mutasi, Debet, Kredit, Saldo | DD/MM/YYYY | Rp format |
 | Mandiri | Tgl, Ket/Keterangan, Debet, Kredit, Saldo | DD/MM/YYYY | Rp format |
 | CIMB Niaga | Date, Description, Debit, Credit, Balance | DD/MM/YYYY | Rp format |
 
+### Common Indonesian bank statement formats (rekening koran)
+
 **Key note on Indonesian number format:** Rp 111.000.000 = IDR 111,000,000 (one hundred eleven million rupiah). Periods separate thousands; comma separates decimals (rarely used in IDR).
 
 ### Key Indonesian banking terms
 
+**Key Indonesian banking terms**
+
 | Indonesian | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | Transfer Masuk | Incoming transfer | Potential revenue |
 | Transfer Keluar | Outgoing transfer | Potential expense |
 | Bayar Tagihan | Bill payment | Expense |
@@ -463,8 +512,6 @@ REVIEWER FLAGS:
 | Keterangan / Uraian | Description / narrative | Key classification field |
 | Tarik Tunai / ATM | ATM withdrawal | Tier 2 — ask |
 | Gaji | Salary | Out of PPN scope |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -491,14 +538,14 @@ INDONESIA PPN ONBOARDING — PERTANYAAN MINIMUM
 8. Ada uang muka (advance payment) yang diterima — sudah ada Faktur Pajak?
 ```
 
----
-
 ## Section 10 — Reference material
 
 ### Key legislation
 
+**Key legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | PPN Law | UU PPN No. 42/2009 as amended by UU HPP No. 7/2021 |
 | 11% rate | UU HPP No. 7/2021 Article 7 |
 | Exempt supplies | UU PPN Article 4A |
@@ -529,49 +576,31 @@ INDONESIA PPN ONBOARDING — PERTANYAAN MINIMUM
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, PMSE section, no inline tier tags |
 | 2.1 | 2026-05 | Add PMK 131/2024 (nominal 12% with 11/12 DPP keeping non-luxury at 11% effective; 12% effective on LGST goods from 1 Feb 2025); add Coretax DJP filing channel; flag pending accountant verification |
-
----
 
 ## Section — Recent changes (PMK 131/2024 + Coretax)
 
 ### PMK 131/2024 — the 11% / 12% split (effective 1 January 2025)
 
-PMK 131/2024 (issued 31 December 2024) changed the **nominal** PPN rate to **12%**, but kept the **effective** rate at **11%** for non-luxury supplies through a tax-base (DPP — Dasar Pengenaan Pajak) adjustment:
-
-- **Non-luxury goods/services**: 12% applied to a DPP of **11/12 × selling price** → effective PPN = 11%. Output VAT and input VAT both follow this formula. Faktur Pajak shows the 12% rate but the underlying DPP is 11/12 of price.
-- **Luxury goods (LGST-listed — PPnBM)**: from **1 February 2025**, 12% applied to the full selling price → effective 12%. For 1–31 January 2025, the transitional 11/12 DPP also applied to luxury goods.
-
-Practical implication: most freelance/SME invoices remain effectively 11%. Only LGST-listed items (luxury vehicles, luxury non-vehicles per PMK 96/2021 + PMK 15/2023 and PMK 141/2021 + PMK 42/2022) carry a real 12%.
+- **PMK 131/2024 rate split** — PMK 131/2024 (issued 31 December 2024) changed the nominal PPN rate to 12%, but kept the effective rate at 11% for non-luxury supplies through a tax-base (DPP — Dasar Pengenaan Pajak) adjustment: - Non-luxury goods/services: 12% applied to a DPP of 11/12 × selling price → effective PPN = 11%. Output VAT and input VAT both follow this formula. Faktur Pajak shows the 12% rate but the underlying DPP is 11/12 of price. - Luxury goods (LGST-listed — PPnBM): from 1 February 2025, 12% applied to the full selling price → effective 12%. For 1–31 January 2025, the transitional 11/12 DPP also applied to luxury goods. Practical implication: most freelance/SME invoices remain effectively 11%. Only LGST-listed items (luxury vehicles, luxury non-vehicles per PMK 96/2021 + PMK 15/2023 and PMK 141/2021 + PMK 42/2022) carry a real 12%.  _(PMK 131/2024)_
 
 ### Coretax DJP — the new filing channel (effective 1 January 2025)
 
-From tax year 2025 onward, all PPN compliance flows through **Coretax DJP**:
-
-- **e-Faktur** is inside Coretax (replaces the standalone desktop app). NSFP (Nomor Seri Faktur Pajak) requested in-platform; QR code generated automatically.
-- **SPT Masa PPN** filed via Coretax (web upload / Coretax Form / Coretax Mobile).
-- For tax periods through December 2024, the legacy DJP Online / e-Faktur desktop is still used; from January 2025 (filed February 2025) onward, Coretax.
-- See `id-einvoice-coretax` skill for the full Coretax workflow.
+- **Coretax DJP filing channel** — From tax year 2025 onward, all PPN compliance flows through Coretax DJP: - e-Faktur is inside Coretax (replaces the standalone desktop app). NSFP (Nomor Seri Faktur Pajak) requested in-platform; QR code generated automatically. - SPT Masa PPN filed via Coretax (web upload / Coretax Form / Coretax Mobile). - For tax periods through December 2024, the legacy DJP Online / e-Faktur desktop is still used; from January 2025 (filed February 2025) onward, Coretax. - See `id-einvoice-coretax` skill for the full Coretax workflow.
 
 ### NPWP = NIK (effective 1 July 2024)
 
-Indonesian-citizen taxpayers now use their 16-digit **NIK** (national ID) as their **NPWP**. Foreign-national taxpayers retain the 15-digit NPWP until further notice. Faktur Pajak issued to/from Indonesian counterparts should carry the 16-digit identifier.
-
----
+- **NPWP = NIK** — Indonesian-citizen taxpayers now use their 16-digit NIK (national ID) as their NPWP. Foreign-national taxpayers retain the 15-digit NPWP until further notice. Faktur Pajak issued to/from Indonesian counterparts should carry the 16-digit identifier.
 
 ## Prohibitions
 
-- NEVER claim input credit from a non-PKP supplier's document — only valid Faktur Pajak qualifies
-- NEVER apply 10% rate — current nominal rate is 12% with an effective 11% on non-luxury via the PMK 131/2024 DPP 11/12 mechanism
-- NEVER exempt basic food staples if they are processed/packaged (only raw staples listed in Article 4A are exempt)
-- NEVER omit withholding PPN from government clients — track SSP separately
-- NEVER present calculations as definitive — direct to a licensed Indonesian tax consultant (Konsultan Pajak)
-
----
+- **Prohibitions** — - NEVER claim input credit from a non-PKP supplier's document — only valid Faktur Pajak qualifies - NEVER apply 10% rate — current nominal rate is 12% with an effective 11% on non-luxury via the PMK 131/2024 DPP 11/12 mechanism - NEVER exempt basic food staples if they are processed/packaged (only raw staples listed in Article 4A are exempt) - NEVER omit withholding PPN from government clients — track SSP separately - NEVER present calculations as definitive — direct to a licensed Indonesian tax consultant (Konsultan Pajak)
 
 ## Disclaimer
 
@@ -579,6 +608,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date version is maintained at openaccountants.com.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/indonesia-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - vat-workflow-base. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `indonesia-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/indonesia-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

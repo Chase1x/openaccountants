@@ -1,665 +1,383 @@
 ---
 name: netherlands-vat-return
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Netherlands VAT return (OB aangifte / btw-aangifte) for a self-employed individual or small business in the Netherlands. Trigger on phrases like \"prepare OB aangifte\", \"Dutch VAT return\", \"BTW aangifte\", \"classify transactions for Dutch VAT\", or any request involving Netherlands VAT filing. This skill covers the Netherlands only, standard BTW regime. Kleineondernemersregeling (KOR), partial exemption, margin scheme (margeregeling), and VAT groups (fiscale eenheid) are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Dutch VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/netherlands-vat-return"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/netherlands-vat-return"
+  jurisdiction: "NL"
+  tax_year: "2026"
+  last_updated: "2026-09-27"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Netherlands VAT Return Skill (OB Aangifte / BTW) v2.0
+# Netherlands VAT return (aangifte omzetbelasting, btw-aangifte)
+
+## Scope and who this is for ([Belastingdienst: notes to the 2026 VAT return](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf))
+
+This Guide covers preparing and filing the Dutch VAT return (btw-aangifte, also called aangifte omzetbelasting) for a business **established in the Netherlands**. It covers a sole trader (eenmanszaak), a partnership (vof, maatschap) or a company (bv, nv) that is registered for VAT and uses the normal rules. The primary year is **2026** (calendar year). There is a dated section for the **2025** returns and corrections that are being dealt with now.
+
+It covers:
+- which periods apply (month, quarter, year) and the deadlines;
+- the boxes (rubrieken) 1a to 5b, and what goes where;
+- the 21% and 9% rates, including the 2026 change for accommodation;
+- the small business scheme (kleineondernemersregeling, KOR) and the EU version (EU-KOR) that started in 2025;
+- reverse charge, intra-EU supplies and acquisitions, and the ICP listing (opgaaf intracommunautaire prestaties);
+- input VAT (voorbelasting), including the BUA limits, private use and the car;
+- corrections (suppletie), penalties and tax interest (belastingrente).
+
+The practical rules come from the Belastingdienst's own pages and its notes to the 2026 return ("Toelichting bij de btw-aangifte (omzetbelasting) 2026"). Statute points cite the Wet op de omzetbelasting 1968 ("Wet OB 1968") as in force from 1 January 2026 ([wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002629/2026-01-01)).
+
+This Guide does **not** cover businesses established outside the Netherlands (they use separate notes and later deadlines), fiscal unities, the margin scheme, the travel agency scheme, real estate transactions, OSS returns, or the Caribbean Netherlands (Bonaire, Sint Eustatius and Saba). See "When to refuse or refer".
+
+Figures in this Guide were checked against the Belastingdienst sources on 27 September 2026. Penalty amounts and the tax interest rate can change from year to year, so check the linked page before relying on them for a later period.
+
+## Ask the client first
+
+- Is the business established in the Netherlands? What is its legal form (eenmanszaak, vof, maatschap, bv, nv)?
+- Is it registered for VAT, and does it have its VAT id (btw-id) and turnover tax number (ob-nummer)? The ob-nummer is used only with the Belastingdienst; the btw-id goes on invoices ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)). A Dutch btw-id is NL, then 9 digits, the letter B and a 2-digit sub-number, for example NL123456789B01 ([btw-id and ob-nummer](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-identificatienummer-en-omzetbelastingnummer)). Check EU customers' VAT ids and, where available, names and addresses on the European Commission's VIES site. German customer names and addresses cannot be checked there; VIES can still validate the German VAT id ([checking a btw-id](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-id-controleren)).
+- Does it take part in the KOR, or is it thinking of joining or leaving? A KOR participant does not file normal returns ([what the KOR means](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/wat-betekent-meedoen-met-de-kleineondernemersregeling)).
+- Which return period applies (month, quarter or year)? Ask for the annual letter (aangiftebrief) that lists the periods, deadlines and payment references ([filing period](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/wijziging-aangiftetijdvak-btw)).
+- Which period is being prepared, and is it the last return of the calendar year? The year-end adjustments (private use, car, BUA, partial exemption) go in the last return ([last return of the year](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken/laatste-btw-aangifte-van-het-jaar)).
+- Does the invoice VAT scheme apply? This method assumes invoice-based output VAT data. If the business uses a cash VAT scheme, refer its output-VAT timing for scheme-specific preparation before filling these boxes; do not select sales merely by invoice date.
+- Sales invoices and purchase invoices for the period. Input VAT must be backed by invoices that meet the legal requirements ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)). A bank statement alone is not enough to support a deduction.
+- Any sales that are exempt from VAT (for example medical, financial, insurance or residential letting)? If so, input VAT must be split.
+- Customers or suppliers outside the Netherlands: which country, business or consumer, goods or services? For EU business customers, their VAT ids.
+- Imports from outside the EU, and whether the business has an article 23 licence (vergunning artikel 23).
+- A car of the business used privately (including commuting): catalogue price including VAT and bpm, first year of use, and whether a closing mileage record exists.
+- Gifts, staff provisions and food and drink in restaurants and cafés during the year.
+- Buildings, large renovations and other investment goods: purchase date, VAT deducted and the taxable share of use in the first year.
+- Errors found in earlier returns, and when they were found.
+- Refunds claimed for earlier periods that have not arrived yet.
+
+## The method, step by step
+
+1. **Confirm the business must file, and for which period.** A VAT-registered business always files the return that the Belastingdienst puts ready for it, even with nothing to declare. That is a nil return (0-aangifte or nihilaangifte) ([what to consider](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken)). A KOR participant does not file normal returns.
+2. **Sort every sale** into: Dutch VAT at 21% (1a) or 9% (1b); private use (1d, normally the last return of the year; retained goods on business cessation go in the transfer period); 0% or VAT shifted to a Dutch customer (1e); exports (3a); intra-EU supplies of goods and B2B services (3b); installation and distance sales in other EU states (3c); OSS sales (not on this return). Exempt sales are not entered ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+3. **Sort every purchase that shifts VAT to the client**: domestic reverse charge (2a), goods or services from outside the EU (4a), goods or services from other EU states (4b). The client calculates and declares the VAT and, where the purchase is used for taxed activities, deducts it again in 5b.
+4. **Collect deductible input VAT (5b)** from compliant invoices dated in the period, even if the supplier has not been paid yet. Take out purchases that are private, used for exempt or non-taxable activities, food and drink in hospitality, gifts and staff provisions disallowed under the applicable BUA conditions and exceptions, and VAT charged in error ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+5. **In the last return of the year, make the annual adjustments**: private use (1d), including the car; BUA over-limit amounts; the final taxable/exempt ratio; and revisions of investment goods ([last return of the year](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken/laatste-btw-aangifte-van-het-jaar)).
+6. **Process past errors.** An error of €1,000 or less goes into the next return in the normal box. An error of more than €1,000 goes on a separate Suppletie form (see "Corrections").
+7. **Round to whole euros** (you may round in the client's favour), put a minus sign before negative amounts, and let the program calculate the total ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+8. **File the ICP listing** for the ordinary intra-EU B2B transactions covered here. Reconcile it to box 3b for the same period. New or nearly new means of transport sold to non-VAT customers require a separate reporting route and referral ([ICP](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/zakendoen_met_het_buitenland/goederen_en_diensten_naar_andere_eu_landen/opgaaf_icp/opgaaf_icp)).
+9. **File and pay by the deadline.** Payment counts on the day it is credited to the Belastingdienst's account, so allow for bank processing time ([filling in and sending](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken/hoe-btw-aangifte-invullen-en-versturen)).
+
+### The boxes (rubrieken) of the 2026 return ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf))
+
+| Box | Dutch label | What goes in it |
+| --- | --- | --- |
+| 1a | Leveringen/diensten belast met hoog tarief | Domestic sales at 21%: turnover and VAT |
+| 1b | Leveringen/diensten belast met laag tarief | Domestic sales at 9%: turnover and VAT |
+| 1c | Leveringen/diensten belast met overige tarieven, behalve 0% | Only the sports canteen flat rate of 13% on total canteen receipts |
+| 1d | Privégebruik | VAT on private use by the owner or staff. Normally in the last return of the year; on business cessation, goods retained privately are reported in the period they transfer to private ownership |
+| 1e | Leveringen/diensten belast met 0% of niet bij u belast | Domestic 0% supplies (not exports or intra-EU supplies), and supplies where VAT is shifted to another business |
+| 2a | Leveringen/diensten waarbij de btw naar u is verlegd | Domestic reverse charge **received** (for example construction subcontracting, or services to real estate from another EU state) |
+| 3a | Leveringen naar landen buiten de EU (uitvoer) | Exports of goods, including goods placed in a customs warehouse |
+| 3b | Leveringen naar of diensten in landen binnen de EU | Intra-EU supplies of goods and B2B services. Reconcile to the ICP listing for ordinary covered transactions; new means of transport have a separate reporting exception |
+| 3c | Installatie/afstandsverkopen binnen de EU | Installation or assembly in another EU state, and distance sales where OSS is not used |
+| 4a | Leveringen/diensten uit landen buiten de EU | Services from non-EU suppliers with VAT shifted to the client, and imports under an article 23 licence |
+| 4b | Leveringen/diensten uit landen binnen de EU | Intra-EU acquisitions of goods, and services from EU suppliers with VAT shifted to the client |
+| 5a | Verschuldigde btw (rubrieken 1 t/m 4) | Calculated by the program: total VAT due from boxes 1 to 4 ([step-by-step](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/ik-moet-btw-aangifte-doen-hoe-vul-ik-die-in)) |
+| 5b | Voorbelasting | Deductible input VAT, including reverse-charged VAT declared in 2a, 4a or 4b |
+
+Boxes 1a to 1d, 2a, 4a and 4b each have a turnover column and a VAT column. In 4a and 4b the amounts do not need to be split by rate. The program then works out the amount to pay or reclaim. The 2026 notes describe no other box that the business fills in. There is no box for a KOR reduction: KOR participants do not file normal returns, so do not look for or fill in one.
+
+## Figures by year
+
+### Rates ([Wet OB 1968, article 9](https://wetten.overheid.nl/BWBR0002629/2026-01-01))
+
+| Rate | 2026 | 2025 | What it covers |
+| --- | --- | --- | --- |
+| Standard | 21% | 21% | Everything not exempt and not in the 9% or 0% lists |
+| Reduced | 9% | 9% | Goods and services in Table I of the Wet OB 1968 (see below) |
+| Zero | 0% | 0% | Table II: mainly exports, intra-EU supplies of goods and some cross-border services |
+
+Article 9 says: "De belasting bedraagt 21 percent", with 9% for Table I and nil for Table II ([wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002629/2026-01-01)).
+
+**9% goods** include food, water, ornamental horticulture products, medicines and aids, art, collectors' items and antiques, and books and periodicals ([9% goods](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/goederen_9_btw)).
+
+**9% services** include repairs of bicycles, shoes and leather goods, clothing and household linen; hairdressers; some work on homes; camping; access to cultural and recreational events and facilities; performing artists; the chance to play sport and to bathe (including swimming pools and saunas); passenger transport; comparable e-books; news websites and apps; and food served in hospitality ([9% services](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw)). On 27 September 2026 that list still included cultural events and sport. For 2026 the Belastingdienst lists accommodation as the rate change (below). If a client asks about a planned change for culture, media or sport, check the 9% services page for the period concerned rather than relying on news reports.
+
+**Accommodation (logies) from 1 January 2026: 21%, not 9%.** This covers furnished short-stay accommodation in hotels, guesthouses and holiday businesses, including holiday homes, static caravans and seasonal letting of furnished rooms. Related facilities (gas, electricity, water, sanitary and laundry facilities, and parking with the stay) are also 21%. A payment made in 2025 for a stay in 2026 or later is also 21%, and so is a single-purpose voucher for such a stay ([accommodation rate](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-logies)). Facilities offered **separately**, such as breakfast or access to a swimming pool or amusement park, stay at 9%. An all-in price is split by the market values of the parts ([news, 30 October 2025](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/berichten/nieuws/btw-logies)).
+
+### Filing period thresholds ([filing period](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/wijziging-aangiftetijdvak-btw))
+
+Most businesses file quarterly. A business can ask for monthly filing by letter. The Belastingdienst can impose monthly filing after late returns or payments. An **annual return** is possible on request only if **all** of these apply:
+- the business pays less than €1,883 VAT a year;
+- it has no article 23 licence;
+- it is a natural person (eenmanszaak) or a partnership made up only of natural persons;
+- it has less than €10,000 a year of **each** of: intra-EU supplies of goods, intra-EU services, intra-EU acquisitions, and intra-EU services received.
+
+The Belastingdienst replies within 6 weeks. A change takes effect at the start of the next return period.
+
+### KOR and EU-KOR
+
+| Rule | Figure | Source |
+| --- | --- | --- |
+| Dutch KOR turnover limit, in the year of joining **and** the previous calendar year | Not more than €20,000 | [KOR conditions](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kor-voorwaarden); [article 25a Wet OB 1968](https://wetten.overheid.nl/BWBR0002629/2026-01-01) |
+| EU-KOR: total EU turnover (including the Netherlands), this year and last year | Not more than €100,000 | [EU-KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kleineondernemersregeling-in-de-europese-unie-eu-kor) |
+| Later-year annual revision caused by joining or leaving the KOR | None if the qualifying annual revision total is less than €500; do not use this to waive first-use/full first-year adjustment | [Revision](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet/inschatting_van_het_gebruik2/herziening_aftrek_bij_investeringsgoederen2/herziening_aftrek_bij_investeringsgoederen) |
+
+The KOR rules are in "KOR and EU-KOR in practice" below.
+
+### Input VAT limits
+
+| Rule | Figure | Source |
+| --- | --- | --- |
+| Gifts, business gifts and staff provisions (BUA) | For expenditure within the BUA exclusion, threshold is €227 per recipient per year excluding VAT; check the recipient condition and exceptions below | [BUA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/personeelsvoorzieningen_en_relatiegeschenken) |
+| Gifts: the BUA limit applies only if the recipients could deduct | Less than 30% of the VAT themselves | [BUA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/personeelsvoorzieningen_en_relatiegeschenken) |
+| Car private use, no mileage record | 2.7% of the catalogue price including VAT and bpm | [Car](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak) |
+| Car private use later than 4 years after the year the car was first used, or car bought without VAT deduction | 1.5% instead of 2.7% | [Car](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak) |
+| Revision follow-up of investment goods | Movables: year of first use plus 4 years; immovables: plus 9 years | [Investment services](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-aftrek-investeringsdiensten) |
+| Later-year revision threshold | After the year of first use, revise if the difference exceeds 10% of the first-year taxable-use percentage; first-year true-up is separate | [Revision](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet/inschatting_van_het_gebruik2/herziening_aftrek_bij_investeringsgoederen2/herziening_aftrek_bij_investeringsgoederen) |
+| **New from 1 January 2026**: investment services (major work on immovable property) | From €30,000 excluding VAT, 5-year revision period | [Investment services](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-aftrek-investeringsdiensten) |
+
+### Corrections, ICP and payment
+
+| Rule | Figure | Source |
+| --- | --- | --- |
+| Error processed in the next return | €1,000 or less | [Correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren) |
+| Error that needs the Suppletie form, within 8 weeks of discovery | More than €1,000 | [Correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren) |
+| ICP listing for goods may be quarterly | Not more than €50,000 of goods a quarter, in that quarter and each of the previous 4 quarters | [ICP period](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/zakendoen_met_het_buitenland/goederen_en_diensten_naar_andere_eu_landen/opgaaf_icp/tijdvak_opgaaf_icp/tijdvak_opgaaf_icp) |
+| Distance sales and digital services to consumers in other EU states: threshold for taxation in the customer's state | €10,000 (last year and/or this year) | [notes 2026, box 3c](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf) |
+| Paying by iDEAL or Wero from the online return | Amount due at most €50,000 | [notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf) |
+
+### Penalties and tax interest (belastingrente)
+
+| Item | 2026 | 2025 | Source |
+| --- | --- | --- | --- |
+| Late or missing return (after a 7-day grace period) | €82 | Not re-checked; see the page for the year | [Late return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_doet_geen_of_te_laat_aangifte) |
+| Late return, exceptional cases (for example often late) | Up to €165 | Not re-checked | [Special situations](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/uitzonderlijke_of_bijzondere_situaties) |
+| Late, missing or short payment | 3% of the amount, minimum €50, maximum €6,709 | Not re-checked | [Late payment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_betaalt_niet_te_laat_of_te_weinig) |
+| Often late with payment | Up to 10%, never more than €6,709 a year | Not re-checked | [Special situations](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/uitzonderlijke_of_bijzondere_situaties) |
+| Too little declared, or too much refunded | 10% of the tax, never more than €6,709 a year | Not re-checked | [Special situations](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/uitzonderlijke_of_bijzondere_situaties) |
+| Vergrijpboete (gross negligence or intent) | Up to 100% of the tax | Same | [Special situations](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/uitzonderlijke_of_bijzondere_situaties) |
+| Belastingrente on VAT: rate for interest days falling in the year | 5% (from 1 January 2026) | 6.5% (days in 2025, for example interest on 2024 VAT) | [Tax interest rates](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/belastingrente/overzicht_percentages_belastingrente) |
+
+The penalty pages carry no year. The amounts above were checked on 27 September 2026. For a penalty relating to 2025, read the amount on the penalty decision itself.
+
+## Rules in practice
+
+### Reverse charge, intra-EU trade and the ICP listing ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf))
+
+- **Domestic reverse charge (verleggingsregeling)** can apply in the following categories, subject to the specific scheme conditions and thresholds: subcontracting and hiring out staff in construction, shipbuilding, cleaning and gardening; telecom services to another business; mobile phones, chips, games consoles, laptops and tablets; real estate where a taxed supply was chosen; waste and scrap; gas and electricity certificates; forced sales; gold; and emission rights. The **supplier** puts the turnover in 1e and writes "btw verlegd" and the customer's VAT id on the invoice. The **customer** calculates the VAT, declares it in 2a, and deducts it in 5b if the conditions are met. Declare the reverse-charged VAT even where an eligible matching deduction makes the net result nil; 5b only contains the amount actually deductible.
+- **Ordinary intra-EU B2B supplies of goods (3b, 0%)** qualify for 0% only if the business can show from its records that the goods went to another EU state, that the customer is a business with a valid VAT id from another EU state, and that the ICP listing was filed on time, correctly and completely. Report goods in the period of the **invoice date**. Own goods moved to another EU state and call-off stock also need the relevant reporting checks; call-off stock is referred below. New or nearly new means of transport supplied to a non-VAT customer abroad are a separate exception: use the special invoice-copy and letter reporting route described in the official notes and refer before filing.
+- **B2B services to EU businesses (3b)**: the customer declares the VAT in its own country. Report them in the period in which the **service was performed**; the invoice date does not matter. Some services are **not** reported in 3b or on the ICP listing: services that are exempt or 0% in the customer's state, OSS services, services connected with real estate, passenger transport, admission to events, restaurant and catering services, and short-term hire of means of transport.
+- **Exports (3a)** are goods sent outside the EU.
+- **Purchases from EU suppliers (4b)**: intra-EU acquisitions of goods, and services where the EU supplier shifted the VAT to the client. Services connected with real estate go in 2a instead. Report services in the period they were performed.
+- **Purchases from non-EU suppliers (4a)**: services where the VAT was shifted to the client, and imports under an **article 23 licence**. With that licence, import VAT is not paid to Customs but declared in the return and deducted in 5b. For certain raw materials named in the law, the shift at import is compulsory and no licence is needed. **Without a licence**, import VAT is paid to Customs; it is ordinary input VAT and is deducted in 5b for goods used for taxed activities (article 15(1)(c) Wet OB 1968, [wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002629/2026-01-01)).
+- **ICP listing** ([ICP](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/zakendoen_met_het_buitenland/goederen_en_diensten_naar_andere_eu_landen/opgaaf_icp/opgaaf_icp)): lists intra-EU supplies of goods and services, transfers of own goods and call-off stock. It is filed in Mijn Belastingdienst Zakelijk, and no invitation is sent. Reconcile the total to box 3b for ordinary ICP-reportable transactions; separately identify the new/nearly new means-of-transport exception for a customer without a VAT identification number described above. Nothing is filed for a period with no such supplies. An error is corrected in the next listing.
+- **VAT paid in other EU states** cannot be deducted in the Dutch return; it is reclaimed through the separate EU refund procedure.
+- **United Kingdom**: a third country. Northern Ireland still counts as an EU state for goods, but not for services.
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+### Input VAT: what can and cannot be deducted
 
-## Section 1 — Quick reference
+- Deduct in the period in which the VAT was charged on a compliant invoice, even if the supplier is still unpaid. Only purchases used for the business and for taxed activities qualify. Supplies at 0% or with VAT shifted to the customer count as taxed ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+- **Excluded or restricted**: private purchases; costs of exempt or non-taxable turnover (for example genuinely non-taxable subsidies or activities supplied without taxable consideration); **food and drink in hospitality (eten en drinken in de horeca)**; gifts, business gifts and staff provisions where the applicable BUA exclusion applies (see its recipient test and exceptions below); and VAT a supplier charged in error ([what is not deductible](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/welke_btw_is_aftrekbaar/welke_btw_mag_u_niet_aftrekken)). A restaurant bill is not deductible at the time of purchase; there is nothing to correct later.
+- **Items with no input VAT at all**: qualifying exempt financial/insurance services and exempt supplies or lettings of real estate carry no deductible VAT; examine the particular service rather than treating every bank fee as exempt ([exemptions](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/vrijstellingen)), so there is nothing to deduct on them. Tax payments, wages, pension and social contributions, and loan or savings movements are not supplies and stay out of the return.
+- **BUA (Besluit uitsluiting aftrek omzetbelasting 1968)** ([BUA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/personeelsvoorzieningen_en_relatiegeschenken)): staff provisions (housing, fitness, recreation, pay in kind, Christmas packages), private transport of staff, gifts and business gifts. For expenditure within the BUA exclusion, the de minimis threshold is €227 excluding VAT per recipient per year. Check the recipient condition for gifts, exceptions for certain staff provisions, and the separate staff food-and-drink rules before applying the threshold. For gifts, the limit applies where the recipients could deduct less than 30% of the VAT themselves if they bought the item. Employees' own contributions may **not** be netted off when testing the threshold ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)). If more was spent and the VAT was deducted, correct it in the last return of the year. The BUA does **not** apply to staff's private use of a company car; that follows the car rules. Unsaleable food donated to a food bank needs no correction.
+- **Mixed taxable and exempt turnover** ([taxable and exempt turnover](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet)): VAT on costs used only for taxed turnover is fully deductible; on costs used only for exempt turnover, not deductible; on shared costs, partly deductible. Split by the ratio of taxed to exempt turnover, or by actual use if it can be shown. Check the estimate at the end of the year and correct it in the last return.
+- **Business and private use** ([mixed use](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/privegebruik/gemengd_gebruik)): depending on the type of goods or services, possible treatments are no deduction, deduction of the business part only, or deduction followed by VAT on private use at year-end (1d). Do not treat these as freely interchangeable elections; apply the relevant investment-good or other-item rules. Private use of gas, water, electricity and telephone also goes in 1d ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+- **Bad debts**: VAT can be reclaimed once a debt is certain to be (partly) uncollectable, and at the latest 1 year after the agreed payment date. If no term was agreed, the statutory term of 30 days after the customer received the invoice applies, so the 1-year period runs from the end of those 30 days. Deduct both the VAT and the turnover in 1a or 1b of that period ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
 
-**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
+### Investment-use changes: first year versus later years
 
-| Field | Value |
-|---|---|
-| Country | Netherlands (Koninkrijk der Nederlanden) |
-| Standard rate | 21% |
-| Reduced rate | 9% (food and drinks, books, medicines, hotels, cultural events, passenger transport, hairdressers, repairs of bicycles/shoes/clothing) |
-| Zero rate | 0% (exports, intra-EU B2B supplies of goods) |
-| Return form | OB aangifte (Omzetbelasting aangifte) — rubrieken 1 through 5 |
-| Filing portal | https://www.belastingdienst.nl (Mijn Belastingdienst Zakelijk) |
-| Authority | Belastingdienst |
-| Currency | EUR only |
-| Filing frequencies | Quarterly (standard); Monthly (if assigned by Belastingdienst or on request); Annual (if assigned) |
-| Deadline | Last business day of the month following the period (e.g. Q1 due 30 April) |
-| Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
-| Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |
-| Contributor | Open Accountants contributors |
-| Validation date | April 2026 |
+At first use, reassess any earlier deduction using the use at that time; reconcile again at the end of the year of first use using the full-year position. Do not apply the later-year tolerance to avoid this first-year true-up. For subsequent years within the revision period, compare the change in taxable-use percentage with 10% of the original first-year percentage. Where revision is required, the annual amount uses one fifth of the original VAT for movable investment goods/services or one tenth for immovable investment goods, multiplied by the change in use. A disposal can accelerate remaining-year revision. Refer property and investment-service calculations as indicated below. [Investment revision](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet/inschatting_van_het_gebruik2/herziening_aftrek_bij_investeringsgoederen2/herziening_aftrek_bij_investeringsgoederen) [Investment services](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-aftrek-investeringsdiensten)
 
-**Key OB aangifte rubrieken (the boxes you will use most):**
+### The company car ([car private use](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak))
 
-| Rubriek | Meaning |
-|---|---|
-| 1a | Supplies/services taxed at 21% (omzet + BTW) |
-| 1b | Supplies/services taxed at 9% (omzet + BTW) |
-| 1c | Supplies/services taxed at other rates (omzet + BTW) |
-| 1d | Private use (privégebruik) and other internal supplies (omzet + BTW) |
-| 1e | Supplies/services taxed at 0% or not taxed (omzet only) |
-| 2a | Supplies/services to EU countries (intracommunautaire leveringen/diensten, omzet only) |
-| 3a | Acquisitions from EU countries (omzet + BTW) |
-| 3b | Acquisitions from outside EU (omzet + BTW) |
-| 4a | Supplies/services from EU countries — reverse charge received (omzet + BTW) |
-| 4b | Supplies/services from outside EU — reverse charge received (omzet + BTW) |
-| 5a | Total BTW due (verschuldigde omzetbelasting) |
-| 5b | Total deductible BTW (voorbelasting) |
-| 5c | Sub-total (5a minus 5b) |
-| 5d | Reduction under KOR (only if KOR applies — we refuse this) |
-| 5e | Estimated result from prior period |
-| 5f | Total to pay / to receive |
-| 5g | Total to pay / to receive |
-
-**Conservative defaults — Netherlands-specific values for the universal categories in `vat-workflow-base` Section 2:**
-
-| Ambiguity | Default |
-|---|---|
-| Unknown rate on a sale | 21% |
-| Unknown VAT status of a purchase | Not deductible |
-| Unknown counterparty country | Domestic Netherlands |
-| Unknown B2B vs B2C status for EU customer | B2C, charge 21% |
-| Unknown business-use proportion (vehicle, phone, home office) | 0% recovery |
-| Unknown SaaS billing entity | Reverse charge from non-EU (rubriek 4b) |
-| Unknown blocked-input status (entertainment, personal use) | Blocked |
-| Unknown whether transaction is in scope | In scope |
-
-**Red flag thresholds — country slot values for the reviewer brief in `vat-workflow-base` Section 3:**
-
-| Threshold | Value |
-|---|---|
-| HIGH single-transaction size | €5,000 |
-| HIGH tax-delta on a single conservative default | €400 |
-| MEDIUM counterparty concentration | >40% of output OR input |
-| MEDIUM conservative-default count | >4 across the return |
-| LOW absolute net VAT position | €10,000 |
-
----
-
-## Section 2 — Required inputs and refusal catalogue
-
-### Required inputs
-
-**Minimum viable** — bank statement for the period in CSV, PDF, or pasted text. Must cover the full period. Acceptable from any Dutch or international business bank: ING, ABN AMRO, Rabobank, SNS Bank, ASN Bank, Triodos Bank, Bunq, Knab, Revolut Business, Wise Business, N26 Business, or any other.
-
-**Recommended** — sales invoices for the period (especially for intra-EU B2B services and zero-rated supplies), purchase invoices for any input BTW claim above €400, the client's BTW-id in writing (NL + 9 digits + B + 2 digits).
-
-**Ideal** — complete invoice register, prior period OB aangifte, reconciliation of any prior period credit.
-
-**Refusal policy if minimum is missing — SOFT WARN.** If no bank statement at all → hard stop. If bank statement only → proceed but record in reviewer brief: "This OB aangifte was produced from bank statement alone. Reviewer must verify input BTW claims above €400 are supported by compliant invoices and reverse-charge classifications match supplier invoices."
-
-### Netherlands-specific refusal catalogue
-
-These refusals apply on top of the EU-wide refusals in `eu-vat-directive` Section 13.
-
-**R-NL-1 — Kleineondernemersregeling (KOR).** *Trigger:* client is registered under the KOR (small business scheme, turnover below €20,000). *Message:* "KOR-registered businesses are exempt from charging BTW and cannot recover input BTW. They do not file OB aangiften. This skill covers the standard BTW regime only. If you have opted out of KOR, please confirm."
-
-**R-NL-2 — Partial exemption (pro rata / BUA).** *Trigger:* client makes both taxable and exempt-without-credit supplies and the exempt proportion is not de minimis. *Message:* "You make both taxable and exempt supplies. Input BTW must be apportioned under the pro rata (Art. 11 Wet OB 1968) or BUA (Besluit Uitsluiting Aftrek) rules. Please use a belastingadviseur."
-
-**R-NL-3 — Margin scheme (margeregeling).** *Trigger:* client deals in second-hand goods, art, antiques, or collectables. *Message:* "Margeregeling transactions require transaction-level margin computation. Out of scope."
-
-**R-NL-4 — Fiscal unity (fiscale eenheid).** *Trigger:* client is part of a fiscale eenheid BTW. *Message:* "Fiscale eenheden require consolidation. Out of scope."
-
-**R-NL-5 — Fiscal representative.** *Trigger:* non-resident with a fiscal representative in the Netherlands. *Message:* "Non-resident registrations with fiscal representatives have specific obligations beyond this skill."
-
-**R-NL-6 — BES islands filing.** *Trigger:* client is based in Bonaire, Sint Eustatius, or Saba. *Message:* "The BES islands have a separate ABB (Algemene Bestedingsbelasting) system, not BTW. This skill covers European Netherlands only."
-
-**R-NL-7 — Real estate (BTW on onroerend goed).** *Trigger:* client deals in new property or opted for BTW on property lease. *Message:* "BTW on real estate is complex. Please use a belastingadviseur."
-
-**R-NL-8 — Income tax instead of BTW.** *Trigger:* user asks about inkomstenbelasting or vennootschapsbelasting instead of BTW. *Message:* "This skill only handles Dutch BTW returns. For income tax, use a dedicated Dutch income tax skill."
-
----
-
-## Section 3 — Supplier pattern library (the lookup table)
-
-This is the deterministic pre-classifier. Match by case-insensitive substring. If none match, fall through to Section 5.
-
-### 3.1 Dutch banks (fees exempt — exclude)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| ING, ING BANK | EXCLUDE for bank charges/fees | Financial service, exempt |
-| ABN AMRO, ABN | EXCLUDE for bank charges/fees | Same |
-| RABOBANK, RABO | EXCLUDE for bank charges/fees | Same |
-| SNS BANK, ASN BANK | EXCLUDE for bank charges/fees | Same |
-| TRIODOS, BUNQ, KNAB | EXCLUDE for bank charges/fees | Same |
-| REVOLUT, WISE, N26 (fee lines) | EXCLUDE for transaction/maintenance fees | Check for separate taxable subscription invoices |
-| RENTE, INTEREST | EXCLUDE | Interest income/expense, out of scope |
-| LENING, HYPOTHEEK | EXCLUDE | Loan principal movement, out of scope |
-
-### 3.2 Dutch government, regulators, and statutory bodies (exclude entirely)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| BELASTINGDIENST | EXCLUDE | Tax payment (BTW, IB, Vpb), not a supply |
-| RIJKSOVERHEID | EXCLUDE | Government |
-| GEMEENTE | EXCLUDE | Municipal fees/taxes |
-| UWV | EXCLUDE | Employee insurance, social security |
-| SVB | EXCLUDE | Social insurance bank |
-| KVK, KAMER VAN KOOPHANDEL | EXCLUDE | Chamber of Commerce fees |
-| RVO, RIJKSDIENST VOOR ONDERNEMEND | EXCLUDE | Government agency |
-| DOUANE | EXCLUDE | Customs (but check for import BTW) |
-| CBS, CENTRAAL BUREAU STATISTIEK | EXCLUDE | Government statistics |
-
-### 3.3 Dutch utilities
-
-| Pattern | Treatment | Rubriek | Notes |
-|---|---|---|---|
-| VATTENFALL | Domestic 21% | 5b (input) | Electricity/gas — standard rate |
-| ENECO | Domestic 21% | 5b (input) | Energy |
-| ESSENT | Domestic 21% | 5b (input) | Energy |
-| GREENCHOICE | Domestic 21% | 5b (input) | Energy |
-| NUON (now Vattenfall) | Domestic 21% | 5b (input) | Energy |
-| KPN, KPN BV | Domestic 21% | 5b (input) | Telecoms/broadband — overhead |
-| T-MOBILE NL, T-MOBILE NETHERLANDS | Domestic 21% | 5b (input) | Telecoms |
-| VODAFONE NL, VODAFONE NETHERLANDS | Domestic 21% | 5b (input) | Telecoms |
-| ZIGGO | Domestic 21% | 5b (input) | Cable/broadband |
-| VITENS, DUNEA, EVIDES | Domestic 9% | 5b (input) | Water supply at reduced rate |
-
-### 3.4 Insurance (exempt — exclude)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| ACHMEA, CENTRAAL BEHEER, INTERPOLIS | EXCLUDE | Insurance, exempt |
-| NATIONALE NEDERLANDEN, NN | EXCLUDE | Same |
-| AEGON, ASR | EXCLUDE | Same |
-| UNIVÉ, CZ, MENZIS, VGZ, ZILVEREN KRUIS | EXCLUDE | Health insurance, exempt |
-| VERZEKERING, PREMIE | EXCLUDE | All insurance exempt |
-
-### 3.5 Post and logistics
-
-| Pattern | Treatment | Rubriek | Notes |
-|---|---|---|---|
-| POSTNL (standard mail) | EXCLUDE for standard postage | | Universal postal service, exempt |
-| POSTNL (parcels) | Domestic 21% | 5b | Non-universal services taxable |
-| DHL EXPRESS NL, DHL PARCEL | Domestic 21% | 5b | Express courier |
-| DPD, GLS NETHERLANDS | Domestic 21% | 5b | Courier |
-| UPS NEDERLAND | Domestic 21% | 5b | Courier |
-
-### 3.6 Transport (Netherlands domestic)
-
-| Pattern | Treatment | Rubriek | Notes |
-|---|---|---|---|
-| NS, NEDERLANDSE SPOORWEGEN | Domestic 9% | 5b (input) | Rail transport at reduced rate |
-| GVB, RET, HTM, CONNEXXION, ARRIVA | Domestic 9% | 5b (input) | Public transport, reduced rate |
-| OV-CHIPKAART | Domestic 9% | 5b (input) | Public transport card top-up |
-| UBER NL, UBER NETHERLANDS | Domestic 9% (transport) | 5b | Ride-hailing |
-| BOLT NL | Domestic 9% | 5b | Ride-hailing |
-| KLM (domestic) | Domestic 21% | 5b | Domestic flights at standard rate |
-| KLM, TRANSAVIA, EASYJET (international) | EXCLUDE / 0% | | International flights exempt |
-| TAXI | Domestic 9% | 5b | Local taxi, reduced rate |
-
-### 3.7 Food retail (blocked unless hospitality business)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| ALBERT HEIJN, AH | Default BLOCK input BTW | Personal provisioning. |
-| JUMBO, LIDL, ALDI, PLUS | Default BLOCK | Same |
-| DIRK, DEKAMARKT, HOOGVLIET | Default BLOCK | Same |
-| RESTAURANT, EETCAFE, CAFE | Default BLOCK | Entertainment — see Section 5.12 |
-
-### 3.8 SaaS — EU suppliers (reverse charge, rubriek 4a)
-
-| Pattern | Billing entity | Rubriek | Notes |
-|---|---|---|---|
-| GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | 4a + 5b | Reverse charge: output in 5a via 4a, input in 5b |
-| MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) | 4a + 5b | Reverse charge |
-| ADOBE | Adobe Systems Software Ireland Ltd (IE) | 4a + 5b | Reverse charge |
-| META, FACEBOOK ADS | Meta Platforms Ireland Ltd (IE) | 4a + 5b | Reverse charge |
-| LINKEDIN (paid) | LinkedIn Ireland Unlimited (IE) | 4a + 5b | Reverse charge |
-| SPOTIFY TECHNOLOGY | Spotify AB (SE) | 4a + 5b | EU reverse charge |
-| DROPBOX | Dropbox International Unlimited (IE) | 4a + 5b | Reverse charge |
-| SLACK | Slack Technologies Ireland Ltd (IE) | 4a + 5b | Reverse charge |
-| ATLASSIAN (Jira, Confluence) | Atlassian Network Services BV (NL) | 1a (domestic!) | NL entity — domestic 21%, NOT reverse charge |
-| ZOOM | Zoom Video Communications Ireland Ltd (IE) | 4a + 5b | Reverse charge |
-| STRIPE (subscription fees) | Stripe Technology Europe Ltd (IE) | 4a + 5b | Transaction fees may be exempt — see 3.11 |
-
-### 3.9 SaaS — non-EU suppliers (reverse charge, rubriek 4b)
-
-| Pattern | Billing entity | Rubriek | Notes |
-|---|---|---|---|
-| AWS (standard) | AWS EMEA SARL (LU) — check | 4a + 5b | LU entity → EU reverse charge |
-| NOTION | Notion Labs Inc (US) | 4b + 5b | Non-EU reverse charge |
-| ANTHROPIC, CLAUDE | Anthropic PBC (US) | 4b + 5b | Non-EU reverse charge |
-| OPENAI, CHATGPT | OpenAI Inc (US) | 4b + 5b | Non-EU reverse charge |
-| GITHUB (standard plans) | GitHub Inc (US) | 4b + 5b | Check if billed by IE entity |
-| FIGMA | Figma Inc (US) | 4b + 5b | Non-EU reverse charge |
-| CANVA | Canva Pty Ltd (AU) | 4b + 5b | Non-EU reverse charge |
-| HUBSPOT | HubSpot Inc (US) or IE — check | 4b or 4a | Depends on billing entity |
-| TWILIO | Twilio Inc (US) | 4b + 5b | Non-EU reverse charge |
-
-### 3.10 SaaS — the exception (NOT reverse charge)
-
-| Pattern | Treatment | Why |
-|---|---|---|
-| ATLASSIAN (NL entity) | Domestic 21% rubriek 1a / 5b | Atlassian Network Services BV is a Dutch entity — domestic purchase, not reverse charge. |
-| AWS EMEA SARL | EU reverse charge rubriek 4a + 5b (LU entity) | Standard EU reverse charge. If invoice shows Dutch BTW, treat as domestic 21%. |
-
-### 3.11 Payment processors
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| STRIPE (transaction fees) | EXCLUDE (exempt) | Payment processing fees are exempt financial services |
-| PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
-| STRIPE (monthly subscription) | EU reverse charge 4a + 5b | Stripe IE entity |
-| MOLLIE | Domestic 21% or EXCLUDE | Check — Mollie BV is Dutch; transaction fees exempt, subscription fees taxable |
-| ADYEN | Domestic 21% or EXCLUDE | Adyen NV is Dutch; same distinction |
-| SUMUP, SQUARE, ZETTLE | Check invoice | If Dutch: domestic; if IE: reverse charge |
-
-### 3.12 Professional services (Netherlands)
-
-| Pattern | Treatment | Rubriek | Notes |
-|---|---|---|---|
-| ACCOUNTANT, BELASTINGADVISEUR | Domestic 21% | 5b | Always deductible |
-| ADVOCAAT, ADVOCATENKANTOOR | Domestic 21% | 5b | Deductible if business legal matter |
-| NOTARIS, NOTARISKANTOOR | Domestic 21% | 5b | Deductible if business |
-| ADMINISTRATIEKANTOOR | Domestic 21% | 5b | Bookkeeper |
-
-### 3.13 Payroll and social security (exclude entirely)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| UWV, WERKNEMERSVERZEKERINGEN | EXCLUDE | Employee insurance contributions |
-| LOONHEFFING, LOONBELASTING | EXCLUDE | Payroll tax remittance |
-| SALARIS, LOON | EXCLUDE | Wages — outside BTW scope |
-| PENSIOEN, ABP, PFZW | EXCLUDE | Pension contributions |
-
-### 3.14 Property and rent
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| HUUR BEDRIJFSPAND, KANTOORHUUR | Domestic 21% | Commercial lease where landlord opted for BTW (optie belaste verhuur) |
-| HUUR, HUURPRIJS (residential) | EXCLUDE | Residential lease exempt |
-| OZB, ONROERENDEZAAKBELASTING | EXCLUDE | Property tax, not a supply |
-| WOZ | EXCLUDE | Property valuation, not a supply |
+- VAT on buying, maintaining and using a business car (including a lease car) is deductible to the extent it is used for taxed turnover. Private use, **including commuting**, is then charged in 1d in the last return of the calendar year.
+- With a closing mileage record (or other evidence of the business/private split), pay VAT on the actual private use and enter the base amount in the left column.
+- Without such a record, pay 2.7% of the catalogue price including VAT and bpm, and enter "0" in the left column. Apply 1.5% instead if the private use is later than 4 years after the year the car was first used, or if no VAT was deducted on purchase (for example a margin car, or a car bought from a private person). Reduce the charge pro rata for a car bought during the year, and for exempt use.
+- **Cap**: during the 4 years after the year of purchase, the charge is not more than the VAT deducted that year on maintenance and use, plus one fifth of the VAT deducted on purchase. After that period, or if no purchase VAT was deducted, the cap is the VAT deducted that year on maintenance and use.
+- For a bv, the director-shareholder is treated as an employee. If an employee contributes for private use, first establish whether the contribution covers the attributable costs, including both VAT-bearing and other costs. If cost-covering, account for VAT on the contribution. Only for a non-cost-covering contribution compare VAT on the contribution with the flat-rate amount. Where it is lower, apply the source's deemed cost-covering amount or permitted flat-rate option, avoiding double taxation of the contribution; refer if the cost allocation is uncertain.
+- No VAT is deductible on allowances paid to employees for business use of their **own** cars.
 
-### 3.15 Internal transfers and exclusions
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| OVERBOEKING EIGEN REKENING | EXCLUDE | Internal movement |
-| SPAARREKENING, NAAR SPAREN | EXCLUDE | Own savings transfer |
-| DIVIDEND | EXCLUDE | Dividend payment, out of scope |
-| AFLOSSING, AFLOSSING LENING | EXCLUDE | Loan repayment |
-| GELDOPNAME, PINOPNAME | TIER 2 — ask | Default exclude; ask what cash was spent on |
-| STORTING, PRIVÉSTORTING | EXCLUDE | Owner injection |
-
----
-
-## Section 4 — Worked examples
-
-These are six fully worked classifications drawn from a hypothetical bank statement of a Netherlands-based self-employed IT consultant (zzp'er, standard BTW regime).
-
-### Example 1 — Non-EU SaaS reverse charge (Notion)
-
-**Input line:**
-`03.04.2026 ; NOTION LABS INC ; DEBIT ; Monthly subscription ; USD 16.00 ; EUR 14.68`
-
-**Reasoning:**
-Notion Labs Inc is a US entity (Section 3.9). No BTW on the invoice. This is a service from a non-EU supplier. The Dutch client must self-assess BTW (verlegging) under Art. 12 lid 2 Wet OB. Output BTW on rubriek 4b, input BTW on rubriek 5b. Net effect zero for a fully taxable client.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek (input) | Rubriek (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 03.04.2026 | NOTION LABS INC | -14.68 | -14.68 | 3.08 | 21% | 5b | 4b | N | — | — |
-
-### Example 2 — EU service, reverse charge (Google Ads)
-
-**Input line:**
-`10.04.2026 ; GOOGLE IRELAND LIMITED ; DEBIT ; Google Ads April 2026 ; -850.00 ; EUR`
-
-**Reasoning:**
-Google Ireland Limited is an IE entity — EU reverse charge (verlegging). Output BTW on rubriek 4a, input BTW on rubriek 5b. Net effect zero.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek (input) | Rubriek (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 10.04.2026 | GOOGLE IRELAND LIMITED | -850.00 | -850.00 | 178.50 | 21% | 5b | 4a | N | — | — |
-
-### Example 3 — Entertainment, BUA blocked
-
-**Input line:**
-`15.04.2026 ; RESTAURANT DE KAS AMSTERDAM ; DEBIT ; Business dinner ; -220.00 ; EUR`
-
-**Reasoning:**
-Restaurant transaction. In the Netherlands, the Besluit Uitsluiting Aftrek (BUA) blocks deduction of BTW on business entertainment (relatiegeschenken, spijzen en dranken) unless it relates to staff meals in specific circumstances. Business meals with external relations (zakenrelaties) have blocked BTW under Art. 1 lid 1 sub c BUA. Default: block. If this is a staff canteen or company event → may be deductible.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 15.04.2026 | RESTAURANT DE KAS AMSTERDAM | -220.00 | -220.00 | 0 | — | — | Y | Q1 | "Restaurant: BUA blocks BTW on business entertainment. Staff event or external?" |
-
-### Example 4 — Capital goods (bedrijfsmiddel)
-
-**Input line:**
-`18.04.2026 ; DELL NETHERLANDS BV ; DEBIT ; Invoice DEL2026-0041 Laptop XPS 15 ; -1,595.00 ; EUR`
-
-**Reasoning:**
-The gross amount is €1,595. In the Netherlands, capital goods (bedrijfsmiddelen) used for business are subject to BTW correction over the herzieningsperiode (5 years movable, 10 years immovable). There is no minimum threshold for capitalisation for BTW purposes — the herzieningsregeling applies to goods used for more than one year. Input BTW is deductible in full on rubriek 5b at time of purchase (for fully taxable businesses). The distinction matters for BUA and herzieningsregeling tracking.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 18.04.2026 | DELL NETHERLANDS BV | -1,595.00 | -1,318.18 | -276.82 | 21% | 5b | N | — | — |
-
-### Example 5 — EU B2B service sale (inbound receipt)
-
-**Input line:**
-`22.04.2026 ; STUDIO KREBS GMBH ; CREDIT ; Invoice NL-2026-018 IT consultancy March ; +3,500.00 ; EUR`
-
-**Reasoning:**
-Incoming €3,500 from a German company. B2B services: place of supply is customer's country (Germany) under Art. 6 lid 1 Wet OB / Art. 44 VAT Directive. Client invoices at 0% with "BTW verlegd" (reverse charge). Report on rubriek 2a (intracommunautaire diensten). No output BTW. Verify German USt-IdNr on VIES.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 22.04.2026 | STUDIO KREBS GMBH | +3,500.00 | +3,500.00 | 0 | 0% | 2a | Y | Q2 (HIGH) | "Verify German USt-IdNr on VIES" |
-
-### Example 6 — Motor vehicle, BUA correction
-
-**Input line:**
-`28.04.2026 ; LEASE PLAN NEDERLAND ; DEBIT ; Lease payment VW Golf ; -550.00 ; EUR`
-
-**Reasoning:**
-Car lease payment. In the Netherlands, BTW on car leases IS deductible at the time of purchase/lease (unlike Malta's hard block). However, the BUA requires a correction at year-end for private use (privégebruik). The correction is 2.7% of the catalogue value (cataloguswaarde) of the car per year, or actual private use percentage. For a zzp'er with mixed use: deduct BTW fully now, correct at year-end via rubriek 1d (privégebruik). Default: deduct in full, flag for year-end BUA correction.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Rubriek | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 28.04.2026 | LEASE PLAN NEDERLAND | -550.00 | -454.55 | -95.45 | 21% | 5b | Y | Q3 | "Car: BTW deductible now, year-end BUA privégebruik correction needed. What is the cataloguswaarde?" |
+### KOR and EU-KOR in practice
+
+- **Who**: businesses established in the Netherlands, including sole traders, partnerships and legal entities such as foundations, associations and bv's, whose counted turnover is not more than €20,000 in the calendar year of joining and in the previous calendar year ([KOR conditions](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kor-voorwaarden)).
+- **Counted turnover**: supplies at 21%, 9% and 0% (including exports and intra-EU supplies), supplies where VAT is shifted to another Dutch business, and some exempt real estate, financial and insurance turnover. **Not counted**: VAT on private use, sales of the business's own investment goods, supplies taxed in another country, and intra-EU acquisitions. Before joining, count turnover excluding VAT. All sub-numbers of one business count together, and the choice applies to all of them.
+- **Effect**: no VAT is charged or shown on invoices, no normal returns are filed, and no input VAT can be deducted (including VAT paid in other EU states). An earlier deduction may have to be revised. Some supplies stay outside the exemption: real estate used in the business, and new means of transport sent to another EU state. An occasional return may still be needed, for example for some EU purchases ([what the KOR means](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/wat-betekent-meedoen-met-de-kleineondernemersregeling)). Joining ends an article 23 licence and rules out taxed letting of real estate.
+- **Joining**: only after VAT registration, online. It takes effect at the earliest from the next quarter or return period, allowing 4 weeks' processing time. To join from 1 January 2027, the application must arrive by 4 December 2026. Keep filing returns until the letter with the final start date arrives, usually within 8 weeks ([joining the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/aanmelden-kor)).
+- **Leaving** ([leaving the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/afmelden-kor)): if turnover goes above €20,000 in a calendar year, the exemption ends immediately. The supply that takes turnover over the limit is itself taxed in full, and the business must deregister at once. A voluntary exit takes effect only from the first day of a return period; apply at least 4 weeks ahead. After leaving, the business cannot rejoin for the rest of that calendar year and the next year.
+- **EU-KOR (since 1 January 2025)**: a Dutch-established business can choose exemption in one or more other EU states if its EU-wide turnover (including the Netherlands) is not more than €100,000 in this year and last year, it stays under each chosen state's national threshold, and it does not use the import scheme (Invoerregeling). It then files a quarterly turnover report (opgaaf kwartaalomzet) with the Belastingdienst. Above €100,000 it must deregister at once ([EU-KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kleineondernemersregeling-in-de-europese-unie-eu-kor)). Each state's national threshold and tolerance differ, so check that state's rules.
+
+## Boundary and exception table
+
+| Situation | Treatment | Source |
+| --- | --- | --- |
+| Error in an earlier return of exactly €1,000 | Next return, normal box ("maximaal €1000") | [Correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren) |
+| Error of any amount above €1,000 | Suppletie form, within 8 weeks of discovery ("meer dan € 1.000") | [Correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren) |
+| KOR turnover of exactly €20,000 | Still eligible ("maximaal € 20.000") | [KOR conditions](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kor-voorwaarden) |
+| KOR turnover goes one euro above €20,000 during the year | Exemption ends at once; that supply is taxed in full | [Leaving the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/afmelden-kor) |
+| BUA spending of exactly €227 per recipient (excluding VAT) | The BUA threshold itself does not block deduction, subject to the recipient/exception rules and ordinary deduction conditions | [BUA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/personeelsvoorzieningen_en_relatiegeschenken) |
+| Goods supplied to EU businesses of exactly €50,000 in a quarter | Quarterly ICP remains possible only if this quarter and each of the preceding four quarters satisfy the threshold | [ICP period](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/zakendoen_met_het_buitenland/goederen_en_diensten_naar_andere_eu_landen/opgaaf_icp/tijdvak_opgaaf_icp/tijdvak_opgaaf_icp) |
+| Later-year change in taxable use of an investment good equal to 10% of the first-year percentage | No later-year revision ("kleiner dan of gelijk aan") | [Revision](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet/inschatting_van_het_gebruik2/herziening_aftrek_bij_investeringsgoederen2/herziening_aftrek_bij_investeringsgoederen) |
+| Return arrives within 7 calendar days after the deadline | No late-filing penalty | [Late return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_doet_geen_of_te_laat_aangifte) |
+| Payment within 7 days after the deadline, previous return paid on time and in full | No payment penalty, only a notice (verzuimmededeling) | [Late payment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_betaalt_niet_te_laat_of_te_weinig) |
+| Payment within 7 days, but the previous return was paid late | Payment penalty applies | [Late payment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_betaalt_niet_te_laat_of_te_weinig) |
+| Return both late and underpaid | Two separate penalties | [Both](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/samenloop_betaal_en_aangifteverzuim) |
+| Suppletie for underpaid VAT sent within 3 months after the year | No belastingrente | [Tax interest on VAT](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/belastingrente/belastingrente_betalen_bij_loonbelasting_btw_en_overdrachtsbelasting) |
+| Car first used in 2021; private use in 2026 | 1.5%: 2026 is later than 4 years after 2021 | [Car](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak) |
+| Hotel stay in 2026 paid in 2025 | 21% | [Accommodation](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/btw-logies) |
+| Breakfast sold separately from the room in 2026 | 9% | [News](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/berichten/nieuws/btw-logies) |
+| Services from an EU supplier connected with Dutch real estate | Box 2a, not 4b | [notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf) |
+| Ordinary intra-EU B2B goods supply without the customer's valid EU VAT id | Do not apply ordinary B2B 0% treatment; investigate and refer. The new-means-of-transport exception has separate rules | [notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf) |
+| Nothing to declare in the period | File a nil return anyway | [What to consider](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken) |
+
+## Worked cases
+
+Cases one to four use the Belastingdienst's published example figures, with arithmetic recomputed. Case seven explicitly reuses a dated official example. The other cases are illustrative decision checks.
+
+### Case 1: a simple quarterly return, 2026 ([step-by-step](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/ik-moet-btw-aangifte-doen-hoe-vul-ik-die-in))
+
+A jewellery maker files quarterly. Domestic sales at 21% are €5,000 excluding VAT, so the VAT is €1,050. Purchases for the business are €1,000 excluding VAT, with €210 VAT on valid invoices.
+- 1a: turnover €5,000, VAT €1,050. Rubrieken 3 and 4: nothing.
+- 5a (calculated): €1,050. 5b: €210.
+- Amount to pay: €1,050 − €210 = €840. For Q3 2026 it must be filed and paid by 31 October 2026 ([deadlines](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/uiterste-aangifte-en-betaaldatums)).
+
+### Case 2: car private use with no mileage record ([car](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak))
+
+The catalogue price is €45,000 including VAT and bpm. All VAT on purchase, maintenance and use was deducted, and there is no mileage record.
+- Full year: 2.7% × €45,000 = €1,215, declared in 1d in the last return of the year, with "0" in the left column.
+- Car bought on 1 September: only 4 of 12 months count, so the charge is 4/12 of €1,215, which is €405.
+- In a separate full-year variant, 40% of use is for exempt turnover and only 60% of purchase/use VAT was deductible; the charge is therefore 60% of €1,215, or €729. This is not combined with the part-year variant.
+
+### Case 3: the cap on the car charge ([car](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak))
+
+A used car was bought last year for €18,150, with a catalogue price of €75,000. Purchase VAT of €3,150 was deducted. This year €210 VAT on maintenance and €525 on use were deducted, and there is no mileage record.
+- Normal charge: 2.7% × €75,000 = €2,025.
+- Cap: €210 + €525 + 1/5 × €3,150 = €1,365. **Declare €1,365.**
+
+### Case 4: all-in hotel price, 2026 ([news, 30 October 2025](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/berichten/nieuws/btw-logies))
+
+The market value of a weekend stay for two is €280 and of breakfast €70, together €350. Accommodation is 280/350 = 80% and breakfast is 20%. An all-in price of €150 excluding VAT splits into €120 at 21% (accommodation) and €30 at 9% (breakfast). The VAT is therefore €25.20 plus €2.70 = €27.90, entered as €120 and €25.20 in 1a and €30 and €2.70 in 1b (rounded to whole euros on the return).
+
+### Case 5: correcting an error ([correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren))
+
+- In the Q2 2026 return the client under-claimed €100 input VAT. Add €100 to 5b in the Q3 2026 return; no form is needed.
+- In February 2026 the client finds that 2025 sales VAT was understated by €4,000. That is more than €1,000, so a Suppletie is compulsory, within 8 weeks. Filed before 1 April 2026 (within 3 months after 2025), it attracts **no belastingrente**. The client then waits for the additional assessment (naheffingsaanslag) before paying. If the Belastingdienst finds the error first, a penalty can follow. Not filing a suppletie can lead to a vergrijpboete.
+
+### Case 6: late payment penalty, 2026 ([late payment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/boetes/u_betaalt_niet_te_laat_of_te_weinig))
+
+A Q1 2026 return showing €10,000 VAT was filed on time, but the money was credited on 20 May 2026, after the 7-day grace period. Penalty: 3% × €10,000 = €300 (within the €50 minimum and €6,709 maximum). If the return had also arrived after the grace period, a separate €82 late-filing penalty would apply as well.
+
+### Case 7: crossing the KOR limit ([leaving the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/afmelden-kor))
+
+This is the Belastingdienst's own 2024 example; the rule is unchanged for 2026. A KOR participant has turnover of €19,750 on 15 September. The next day it receives a €500 advance, which takes turnover over €20,000. The exemption lapses from 16 September. The €500 advance is fully taxable, and the business deregisters with effect from 16 September. It cannot rejoin for the rest of that year and the next year.
+
+### Case 8: services to a German business and software from an Irish supplier
+
+Assume a Dutch consultant making only taxed supplies, a German business customer with a validated VAT id, and an ordinary B2B consultancy service performed in Q3 2026. The consultant also receives a valid reverse-charge invoice from an Irish supplier for a business-only online subscription; no exemption, special place-of-supply rule or fixed-establishment exception applies. Before the sale, the consultant checks the German customer's VAT id (the Belastingdienst's btw-id check page explains how).
+- Consultancy: no Dutch VAT. The turnover goes in 3b for the quarter in which the service was performed, and on the ICP listing for that period, due within 1 month after the period ([ICP notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting-digitale-opgaaf-intracomm-pres-ob1291t62fd.pdf)).
+- Irish subscription: the value goes in 4b with the VAT the client calculates at the Dutch rate; the same VAT is deductible in 5b on these assumptions. Net result nil because the business-only subscription supports only taxed supplies ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+
+### Case 9: correcting a nil-result Suppletie ([correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren))
+
+A submitted correction changes reported turnover but produces neither VAT payable nor a refund. The business later discovers that the turnover allocation still needs amendment. No decision is issued for the nil-result correction: fill in and submit the correction form again. Do not wait for a decision that will not arrive. Where a refund decision or additional assessment is issued, use the objection route instead.
+
+### Further decision checks
+
+- **First-year adjustment:** an investment's actual first-year taxable use differs from the initial deduction assumption. Reconcile the first-use and year-end deduction; do not apply the later-year tolerance to suppress this adjustment. [Investment revision](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/belaste_en_vrijgestelde_omzet/inschatting_van_het_gebruik2/herziening_aftrek_bij_investeringsgoederen2/herziening_aftrek_bij_investeringsgoederen)
+- **Employee car contribution:** a contribution demonstrably covers the attributable private-use costs. Account for VAT on that contribution; do not automatically substitute the flat-rate correction. [Car private use](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aftrekken/btw_en_de_auto/privegebruik_auto_van_de_zaak)
+- **Business cessation:** goods on which VAT was deducted transfer to private ownership when the business stops. Report the applicable VAT in that period; do not wait for the final calendar-year return. [Return notes](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)
+
+## When to refuse or refer
+
+- **KOR participant**: no normal return is due. Help only with the decision to join or leave, the turnover test and occasional returns. Refer any revision of earlier deductions caused by joining.
+- **Business not established in the Netherlands**: it uses different notes and later deadlines ([deadlines](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/uiterste-aangifte-en-betaaldatums)). A fiscal representative may be required ([fiscal representative](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/fiscaal_vertegenwoordiger)). Refer.
+- **Fiscal unity for VAT (fiscale eenheid)**: one combined return and special login rules. Refer.
+- **Significant exempt turnover alongside taxed turnover** (partial exemption), beyond a simple ratio: refer, especially where buildings or investment services are involved.
+- **Real estate**: sale or letting of buildings, the option for taxed letting, new buildings, major renovations (investment services of €30,000 or more from 2026), and revision of immovable property. Refer.
+- **Cash VAT scheme timing, margin scheme, travel agency scheme, sports canteen flat rate or specialist agricultural VAT questions**: refer for the applicable method; do not import ordinary invoice-based timing.
+- **OSS (One Stop Shop) and import scheme returns**: these are separate returns and are not covered here. Refer.
+- **Imports** without an article 23 licence, call-off stock, and new or nearly new means of transport supplied abroad to non-VAT customers: refer. The last category can be an intra-EU supply despite no customer VAT id; follow the official invoice-copy and letter reporting route instead of inserting a fictitious customer VAT id into ICP.
+- **Suspected VAT fraud** in the supply chain (for example carousel fraud): if the client knew or should have known, deduction can be refused. Refer at once ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+- **Caribbean Netherlands (Bonaire, Sint Eustatius, Saba)**: outside the Dutch VAT return. Refer.
+- **Penalty decisions, a vergrijpboete, objections or a dispute with the Belastingdienst**: refer to a Dutch belastingadviseur.
+- **Income tax or corporate income tax questions**: use the Guides for those taxes.
+- **No invoices at all**: do not claim input VAT from a bank statement alone. Ask for the invoices.
+
+## Filing and payment
+
+### Deadlines for 2026 periods ([deadlines](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/uiterste-aangifte-en-betaaldatums))
+
+Monthly and quarterly returns are due, and must be paid, by the last day of the month after the period ("uiterlijk op de laatste dag van de maand die volgt op het kwartaal of de maand"). An annual return is due before 1 April of the next year ([what to consider](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw-aangifte-waar-moet-u-aan-denken)). The date that counts is the date of receipt; for payment, the date the money reaches the Belastingdienst's account.
+
+| Period | Return and payment must be received by |
+| --- | --- |
+| Q1 2026 | 30 April 2026 |
+| Q2 2026 | 31 July 2026 |
+| Q3 2026 | 31 October 2026 |
+| Q4 2026 | 31 January 2027 |
+| Month (for example August 2026) | 30 September 2026 (the last day of the next month) |
+| December 2026 | 31 January 2027 |
+| Year 2026 | 31 March 2027 |
+
+Returns filed with software can be sent from the 24th of the last month of the period; earlier filing is rejected. An **extension** is given only for a serious calamity, requested in writing ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+
+### Returns for 2025 being dealt with now
+
+- Q4 2025 and December 2025 returns were due by 31 January 2026, and the 2025 annual return by 31 March 2026 ([deadlines](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/uiterste-aangifte-en-betaaldatums)). If one is still missing, file it now: the late-filing and late-payment penalties above apply, and belastingrente runs from 1 January 2026.
+- Errors in 2025 returns above €1,000 need a Suppletie. It is interest-free only if sent within 3 months after 2025, that is before 1 April 2026. After that, belastingrente runs from 1 January 2026 until 14 days after the date of the additional assessment, so for a 2025 error only the 2026 rate of 5% applies. The 2025 rate of 6.5% applied to interest days in 2025, for example on 2024 VAT ([tax interest on VAT](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/belastingrente/belastingrente_betalen_bij_loonbelasting_btw_en_overdrachtsbelasting); [tax interest rates](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/belastingrente/overzicht_percentages_belastingrente)). Corrections are possible up to 5 years after the year, so 2025 can be corrected until the end of 2030 (the Belastingdienst's example: 2024 until the end of 2029).
+- Accommodation supplied in 2025 was still at 9%; stays from 1 January 2026 are at 21%.
+
+### How to pay ([paying or receiving VAT](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/btw_betalen))
+
+- No assessment is issued; the business pays the amount itself. Pay to IBAN NL04 RABO 0200 1122 44 in the name of "Belastingdienst" (BIC RABONL2U), always with the payment reference (betalingskenmerk). The Belastingdienst moved from ING to Rabobank on 1 May 2026, so update any old payment templates.
+- iDEAL or Wero can be used from the return in Mijn Belastingdienst Zakelijk, within the payment term and for amounts up to €50,000.
+- **Refunds**: a letter within 8 weeks of receipt, and the money within 1 week of that letter. An unpaid refund from an earlier period can be offset against a current payment, on request by letter.
+- **Tax interest (belastingrente)**: charged on late payment and on additional assessments, from 1 January after the tax year. None is charged if the client voluntarily corrects within 3 months after the year, or pays late but within 3 months after the year ([tax interest on VAT](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/belastingrente/belastingrente_betalen_bij_loonbelasting_btw_en_overdrachtsbelasting)).
+- **Objection**: within 6 weeks of the date of an additional assessment or refund decision, or within 6 weeks of paying on the return ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
+
+### Corrections (suppletie) ([correcting a return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_aangifte_doen_en_betalen/aangifte_corrigeren))
+
+- €1,000 or less: put it in the next return, in the box where it normally belongs.
+- More than €1,000: a Suppletie form in Mijn Belastingdienst Zakelijk, as soon as possible and at the latest within 8 weeks of finding the error. It can cover one period or a whole year. Corrections are possible up to 5 years after the year concerned.
+- If VAT was overpaid, a refund decision usually follows within 8 weeks. If VAT was underpaid, wait for the additional assessment and pay that.
+- To change a Suppletie already sent, normally wait for the refund decision or additional assessment and object to that decision within 6 weeks. **Exception:** if the submitted correction produces neither VAT payable nor a refund, no decision is issued. To amend that nil-result correction, fill in and submit the correction form again.
+
+### ICP listing deadlines (Dutch-established businesses) ([ICP notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting-digitale-opgaaf-intracomm-pres-ob1291t62fd.pdf))
+
+The listing must be received within 1 month after the chosen period: quarterly by 30 April, 31 July, 31 October and 31 January of the next year; monthly by the end of the next month. Annual ICP needs permission. A late or wrong listing can bring a penalty and loss of the 0% rate.
+
+## Completion checklist
+
+- [ ] Business established in the Netherlands, not in the KOR, not in a fiscal unity; period and deadline taken from the aangiftebrief.
+- [ ] A return is filed even if it is nil.
+- [ ] Sales split into 1a (21%), 1b (9%), 1e, 3a, 3b and 3c; exempt sales left out; OSS sales left out.
+- [ ] Accommodation supplied from 1 January 2026 charged at 21%; separately sold extras classified individually (qualifying breakfast/pool admission at 9%, not every extra).
+- [ ] Reverse-charge purchases in 2a, 4a or 4b, with only the eligible deductible amount in 5b.
+- [ ] Input VAT only from compliant invoices; no horeca food and drink; BUA €227 limit checked; exempt share taken out.
+- [ ] Last return of the year: ordinary 1d private use (car at actual use, or 2.7% or 1.5% within the cap), applicable BUA and partial-exemption corrections. Check investment first-use/year-end true-up separately; later-year revision uses the relative 10% threshold. On cessation, report retained goods in the transfer period.
+- [ ] Earlier errors: €1,000 or less in this return; above that a Suppletie within 8 weeks.
+- [ ] Ordinary covered box 3b transactions reconciled to ICP; customer VAT ids checked; ICP filed within 1 month. Special new-means-of-transport reporting referred.
+- [ ] Amounts in whole euros; total checked; paid with the right payment reference to the Rabobank account, in time to be credited by the deadline.
+- [ ] KOR: turnover tested against €20,000 for this year and last year; EU-KOR against €100,000.
+- [ ] Anything in "When to refuse or refer" flagged for a Dutch belastingadviseur.
+
+This Guide is not tax advice. Check the linked Belastingdienst pages for the period you are filing.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 5 — Tier 1 classification rules (compressed)
+## Talk to a verified accountant
 
-### 5.1 Standard rate 21% (Art. 9 lid 1 Wet OB)
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-Default rate. Sales → rubriek 1a. Purchases → rubriek 5b.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-### 5.2 Reduced rate 9% (Tabel I bij Wet OB)
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-Applies to: food and non-alcoholic drinks (on-premises and takeaway), books (print and digital), medicines, hotels, camping, cultural events (museums, cinema, theatre), passenger transport, hairdressers, repairs of bicycles/shoes/clothing/household linen. Sales → rubriek 1b. Purchases → rubriek 5b.
+## Today's figures and who stands behind this skill
 
-### 5.3 Zero rate and exempt with credit
-
-Exports outside EU → rubriek 1e (zero-rated). Intra-EU B2B supplies of goods → rubriek 2a (intracommunautaire levering, zero-rated with VIES verification). Intra-EU B2B services → rubriek 2a (diensten, place of supply customer's country).
-
-### 5.4 Exempt without credit (Art. 11 Wet OB)
-
-Medical/paramedical, education, insurance, financial services, residential rent, postal universal service, cultural/sporting (in some cases), child care. No output BTW, no input deduction. If significant → **R-NL-2 refuses**.
-
-### 5.5 Local standard purchases
-
-Input BTW on a compliant invoice from a Dutch supplier is deductible. Map to rubriek 5b.
-
-### 5.6 Reverse charge — EU services received (verlegging, Art. 12 lid 2)
-
-EU supplier invoices at 0% with reverse charge: output BTW on rubriek 4a, input BTW on rubriek 5b. Net effect zero.
-
-### 5.7 Reverse charge — EU goods received (intracommunautaire verwerving)
-
-Goods from EU: output BTW on rubriek 3a, input BTW on rubriek 5b.
-
-### 5.8 Reverse charge — non-EU
-
-Non-EU services and goods: output BTW on rubriek 4b, input BTW on rubriek 5b.
-
-### 5.9 Capital goods (bedrijfsmiddelen / herzieningsregeling)
-
-No minimum threshold for BTW capitalisation. Herzieningsperiode: 5 years movable, 10 years immovable (Art. 13 Uitvoeringsbeschikking OB). Input BTW deductible in full at purchase for fully taxable businesses. Corrections for change of use over the herzieningsperiode.
-
-### 5.10 BUA — Besluit Uitsluiting Aftrek (blocked deductions)
-
-The BUA blocks deduction of BTW on:
-- Business gifts (relatiegeschenken) to external parties if total per recipient > €227 per year. Below → deductible.
-- Food, drink, tobacco provided in connection with external business relations (entertainment).
-- Private use of company car (privégebruik auto): correct at year-end via rubriek 1d. Correction = 2.7% of cataloguswaarde per year (or actual private use %).
-- Staff provisions: meals at workplace, canteen → partially blocked if below cost.
-- Accommodation for external relations → blocked.
-- NOTE: unlike Malta's hard block on entertainment, the Netherlands blocks via BUA year-end correction mechanism. BTW is initially deductible, then corrected.
-
-### 5.11 Private use correction (rubriek 1d)
-
-At year-end (or in Q4 / last period), the client must declare output BTW on private use of business goods via rubriek 1d. Most common: car (2.7% cataloguswaarde), phone, home office.
-
-### 5.12 Intracommunautaire opgave (ICP — Listing)
-
-In addition to the OB aangifte, if the client makes intra-EU supplies, they must file an ICP (Intracommunautaire opgave) listing the EU customers and amounts. This is separate from the OB aangifte but the data comes from the same rubriek 2a transactions. Flag for reviewer.
-
-### 5.13 Sales — local domestic
-
-Charge 21% or 9% as applicable. Map to rubriek 1a or 1b.
-
-### 5.14 Sales — cross-border B2C
-
-Above €10,000 EU-wide → **R-EU-5 OSS refusal fires**. Below → Dutch BTW.
-
-### 5.15 Import BTW
-
-Since 2023, businesses with an Art. 23 licence (vergunning) can defer import BTW to the OB aangifte instead of paying at customs. Output on rubriek 3b or 4b, input on 5b.
-
----
-
-## Section 6 — Tier 2 catalogue (compressed)
-
-### 6.1 Fuel and vehicle costs
-
-*Pattern:* SHELL, BP, ESSO, TANGO, TINQ. *Default:* deductible in full, flag for BUA year-end correction. *Question:* "What is the cataloguswaarde of the car? What % private use?"
-
-### 6.2 Restaurants and entertainment
-
-*Pattern:* restaurant, eetcafe, hotel. *Default:* block (BUA). *Question:* "Staff event or external business entertainment?"
-
-### 6.3 Ambiguous SaaS billing entities
-
-*Default:* non-EU reverse charge rubriek 4b. *Question:* "Check invoice for legal entity and country."
-
-### 6.4 Round-number incoming transfers from owner-named counterparties
-
-*Default:* exclude as owner injection. *Question:* "Customer payment, own money, or loan?"
-
-### 6.5 Incoming transfers from individual names
-
-*Default:* domestic B2C 21%. *Question:* "Sale? Business or consumer?"
-
-### 6.6 Incoming transfers from foreign counterparties
-
-*Default:* domestic 21%. *Question:* "B2B with BTW-id, B2C, goods or services, which country?"
-
-### 6.7 Large one-off purchases
-
-*Default:* deductible, flag for herzieningsregeling tracking. *Question:* "Confirm invoice amount."
-
-### 6.8 Mixed-use phone, internet, home office
-
-*Default:* 0% if mixed. *Question:* "Dedicated business line or mixed-use? Business %?"
-
-### 6.9 Outgoing transfers to individuals
-
-*Default:* exclude. *Question:* "Contractor, wages, refund, or personal?"
-
-### 6.10 Cash withdrawals
-
-*Pattern:* geldopname, pinopname. *Default:* exclude. *Question:* "What was the cash used for?"
-
-### 6.11 Rent payments
-
-*Default:* no BTW (residential). *Question:* "Commercial property with BTW option (optie belaste verhuur)?"
-
-### 6.12 Foreign hotel and accommodation
-
-*Default:* exclude from input BTW. *Question:* "Business trip?"
-
-### 6.13 Airbnb income
-
-*Default:* [T2] flag. *Question:* "Short-stay rental? Duration? Tourist tax (toeristenbelasting)?"
-
-### 6.14 Domestic reverse charge (construction)
-
-*Pattern:* aanneming, onderaanneming, construction. *Why insufficient:* the Netherlands has domestic verlegging for construction subcontracting (Art. 12 lid 5 Wet OB). *Default:* [T2] flag. *Question:* "Construction subcontractor with verlegging?"
-
-### 6.15 Platform sales
-
-*Default:* if EU cross-border above €10,000 → R-EU-5. Otherwise: domestic 21% for sales; platform fees as EU reverse charge. *Question:* "Sell outside Netherlands?"
-
----
-
-## Section 7 — Excel working paper template (Netherlands-specific)
-
-The base specification is in `vat-workflow-base` Section 3. This section provides the Netherlands overlay.
-
-### Sheet "Transactions"
-
-Column H accepts rubriek codes from Section 1. For reverse charge, enter both (e.g. "4a/5b").
-
-### Sheet "Rubriek Summary"
-
-```
-| 1a | Omzet 21% + BTW | =SUMIFS(...) |
-| 1b | Omzet 9% + BTW | =SUMIFS(...) |
-| 1e | 0% / niet belast | =SUMIFS(...) |
-| 2a | Intracommunautaire prestaties | =SUMIFS(...) |
-| 3a | Verwervingen uit EU | =SUMIFS(...) |
-| 4a | Verlegging EU | =SUMIFS(...) |
-| 4b | Verlegging niet-EU | =SUMIFS(...) |
-| 5a | Verschuldigde BTW | =SUM(BTW on 1a,1b,1d,3a,4a,4b) |
-| 5b | Voorbelasting | =SUM(deductible input BTW) |
-| 5c | Subtotaal | =5a - 5b |
-| 5g | Te betalen / te ontvangen | =5c + 5e |
-```
-
-### Mandatory recalc step
-
-```bash
-python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/netherlands-vat-<period>-working-paper.xlsx
-```
-
----
-
-## Section 8 — Dutch bank statement reading guide
-
-**CSV format conventions.** Dutch banks export in CSV with comma or semicolon delimiters and DD-MM-YYYY dates. Common columns: Datum, Naam/Omschrijving, Rekening, Tegenrekening, Bedrag, Mutatiesoort, Mededelingen. ING uses YYYYMMDD in their CSV.
-
-**Dutch language variants.** Huur (rent), salaris/loon (salary), rente (interest), overboeking (transfer), factuur (invoice), terugbetaling (refund), storting (deposit), opname (withdrawal). Treat as English equivalents.
-
-**Mutatiesoort codes.** BA = betaalautomaat (card payment), GT = girale telebankieropdracht (bank transfer), IC = incasso (direct debit), OV = overboeking (internal transfer), ST = storting (deposit). These help classify.
-
-**Internal transfers.** "Overboeking eigen rekening", "naar spaarrekening". Always exclude.
-
-**Belastingdienst payments.** Tax payments appear as "BELASTINGDIENST" with a specific aanslagnummer. Always exclude.
-
-**Foreign currency.** Convert to EUR at transaction date ECB rate.
-
-**IBAN prefix.** NL = Netherlands. IE, LU, FR, DE = EU. US, GB, AU, CH = non-EU.
-
----
-
-## Section 9 — Onboarding fallback (only when inference fails)
-
-### 9.1 Entity type
-*Inference rule:* BV = company; eenmanszaak = sole trader; VOF = partnership; zzp'er = freelancer. *Fallback:* "Eenmanszaak, BV, VOF, or zzp'er?"
-
-### 9.2 BTW regime
-*Inference rule:* if filing OB aangifte, they are standard regime. *Fallback:* "Standard BTW regime or KOR?"
-
-### 9.3 BTW-id
-*Fallback:* "What is your BTW-id? (NL + 9 digits + B + 2 digits)"
-
-### 9.4 Filing period
-*Fallback:* "Which quarter/month?"
-
-### 9.5 Industry
-*Fallback:* "What does the business do?"
-
-### 9.6 Employees
-*Inference rule:* UWV, loonheffing outgoing. *Fallback:* "Employees?"
-
-### 9.7 Exempt supplies
-*Fallback:* "Any exempt sales?" *If yes → R-NL-2.*
-
-### 9.8 Credit carried forward
-*Always ask.* "BTW credit from prior period?"
-
-### 9.9 Cross-border customers
-*Fallback:* "Customers outside Netherlands? EU/non-EU? B2B/B2C?"
-
-### 9.10 Art. 23 import licence
-*Conditional fallback:* "Do you have an Art. 23 vergunning for deferred import BTW?"
-
----
-
-## Section 10 — Reference material
-
-### Validation status
-
-v2.0, April 2026, three-tier Accora architecture.
-
-### Sources
-
-1. Wet op de omzetbelasting 1968 (Wet OB) — https://wetten.overheid.nl
-2. Uitvoeringsbeschikking OB 1968 — herzieningsregeling
-3. Besluit Uitsluiting Aftrek omzetbelasting 1968 (BUA)
-4. Belastingdienst OB aangifte guidance — https://www.belastingdienst.nl
-5. Council Directive 2006/112/EC — via eu-vat-directive companion skill
-6. VIES — https://ec.europa.eu/taxation_customs/vies/
-
-### Known gaps
-
-1. KOR details not covered (R-NL-1 refuses).
-2. BUA year-end correction calculation is simplified (2.7% cataloguswaarde).
-3. Art. 23 import deferral details are flagged T2 only.
-4. Herzieningsregeling tracking requires multi-year data.
-5. ICP listing is flagged but not generated.
-6. Domestic construction verlegging flagged T2 only.
-
-### Change log
-
-- **v2.0 (April 2026):** Full rewrite to Malta v2.0 structure. 10 sections.
-- **v1.0/1.1:** Initial skill.
-
-### Self-check (v2.0)
-
-1. Quick reference with rubrieken table: yes.
-2. Supplier library (15 sub-tables): yes.
-3. Worked examples (6): yes.
-4. Tier 1 rules (15): yes.
-5. Tier 2 catalogue (15): yes.
-6. Excel template: yes.
-7. Onboarding fallback (10): yes.
-8. 8 refusals: yes.
-9. Reference material: yes.
-10. BUA mechanism (key NL difference from Malta hard block): yes.
-11. Privégebruik auto correction via rubriek 1d: yes.
-12. Atlassian NL entity exception: yes.
-13. EU B2B services on rubriek 2a: yes.
-14. Non-EU SaaS reverse charge rubriek 4b: yes.
-15. Art. 23 import deferral mentioned: yes.
-
-## End of Netherlands VAT Return Skill v2.0
-
-This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a belastingadviseur, registeraccountant, or equivalent licensed practitioner) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/netherlands-vat-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

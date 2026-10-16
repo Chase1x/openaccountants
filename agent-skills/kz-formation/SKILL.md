@@ -1,15 +1,13 @@
 ---
 name: kz-formation
-description: "> Use this skill whenever asked how to register or start a business in Kazakhstan as a self-employed person. Trigger on phrases like \"register ИП Kazakhstan\", \"how to start freelancing Kazakhstan\", \"open ТОО\", \"ИП регистрация\", \"Astana Hub registration\", \"business formation Kazakhstan\". Covers registering an individual entrepreneur (ИП), choosing a tax regime at registration, the LLP (ТОО) alternative, and the Astana Hub IT regime. ALWAYS read this before any Kazakhstan formation work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked how to register or start a business in Kazakhstan as a self-employed person. Trigger on phrases like \"register ИП Kazakhstan\", \"how to start freelancing Kazakhstan\", \"open ТОО\", \"ИП регистрация\", \"Astana Hub registration\", \"business formation Kazakhstan\". Covers registering an individual entrepreneur (ИП), choosing a tax regime at registration, the LLP (ТОО) alternative, and the Astana Hub IT regime. ALWAYS read this before any Kazakhstan formation work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-formation"
-  tax_year: 2026
-  obligation: FORM
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-formation"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Business Formation (ИП / ТОО) — Skill v1.0
@@ -62,8 +60,8 @@ IT companies/entrepreneurs accredited by **Astana Hub** receive substantial tax 
 - NEVER state the VAT threshold or Astana Hub benefits without verifying the 2026 figures.
 
 ## Disclaimer
-Informational only; not advice. Verify registration steps, the VAT threshold, and Astana Hub relief with the КГД / Astana Hub. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify registration steps, the VAT threshold, and Astana Hub relief with the КГД / Astana Hub. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-formation) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

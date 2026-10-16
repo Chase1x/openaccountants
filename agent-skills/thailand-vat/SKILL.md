@@ -1,27 +1,24 @@
 ---
 name: thailand-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Thailand VAT (ภาษีมูลค่าเพิ่ม) return (PP.30), classify transactions for Thai VAT purposes, or advise on VAT registration and filing in Thailand. Trigger on phrases like \"ภาษีมูลค่าเพิ่ม\", \"Thai VAT\", \"PP.30\", \"VAT Thailand\", \"Revenue Department Thailand\", or any Thailand VAT request. ALWAYS read this skill before touching any Thailand VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: TH
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/thailand-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/thailand-vat"
+  jurisdiction: "TH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Thailand VAT (ภาษีมูลค่าเพิ่ม) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Thailand VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Thailand (ราชอาณาจักรไทย) |
 | Tax | ภาษีมูลค่าเพิ่ม (Phaasi Mun Lak Phoem — VAT) |
 | Currency | THB (Thai Baht / บาท) |
@@ -42,8 +39,10 @@ metadata:
 
 ### Key PP.30 return lines
 
+**Key PP.30 return lines**
+
 | Line | Meaning |
-|---|---|
+| --- | --- |
 | 1 | Sales subject to 7% VAT (net) |
 | 2 | Output VAT at 7% |
 | 3 | Zero-rated sales (exports) |
@@ -57,8 +56,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 7% standard rate |
 | Unknown counterparty country | Domestic Thailand |
 | Unknown whether export qualifies for 0% | 7% until export evidence confirmed |
@@ -69,15 +70,15 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | THB 100,000 |
 | HIGH tax delta on single default | THB 7,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net VAT position | THB 50,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -93,17 +94,11 @@ metadata:
 
 ### Refusal catalogue
 
-**R-TH-1 — Non-VAT registered businesses.** "Businesses below the THB 1.8M threshold are not required to register. They cannot charge VAT and cannot recover input VAT. This skill covers VAT-registered businesses only."
-
-**R-TH-2 — Special business tax (ธุรกิจเฉพาะ).** "Banks, financial institutions, and life insurance companies pay Specific Business Tax (SBT / ภาษีธุรกิจเฉพาะ) instead of VAT. Out of scope."
-
-**R-TH-3 — Partial exemption proration.** "If the business makes both taxable and exempt supplies, input VAT must be apportioned. The apportionment requires annual sales ratios and is out of scope without the full-year data — escalate."
-
-**R-TH-4 — Withholding VAT (VAT ถูกหัก ณ ที่จ่าย).** "Government agencies and designated businesses act as VAT withholders — they remit the VAT portion of payments directly to the Revenue Department. If your client has significant government contracts, withholding VAT offsets must be tracked. Flag for specialist review."
-
-**R-TH-5 — Digital economy platforms.** "Non-resident digital service providers with B2C supplies > THB 1.8M must register under the Digital Economy VAT rules. Out of scope for domestic filers."
-
----
+- **R-TH-1** — Non-VAT registered businesses. "Businesses below the THB 1.8M threshold are not required to register. They cannot charge VAT and cannot recover input VAT. This skill covers VAT-registered businesses only."
+- **R-TH-2** — Special business tax (ธุรกิจเฉพาะ). "Banks, financial institutions, and life insurance companies pay Specific Business Tax (SBT / ภาษีธุรกิจเฉพาะ) instead of VAT. Out of scope."
+- **R-TH-3** — Partial exemption proration. "If the business makes both taxable and exempt supplies, input VAT must be apportioned. The apportionment requires annual sales ratios and is out of scope without the full-year data — escalate."
+- **R-TH-4** — Withholding VAT (VAT ถูกหัก ณ ที่จ่าย). "Government agencies and designated businesses act as VAT withholders — they remit the VAT portion of payments directly to the Revenue Department. If your client has significant government contracts, withholding VAT offsets must be tracked. Flag for specialist review."
+- **R-TH-5** — Digital economy platforms. "Non-resident digital service providers with B2C supplies > THB 1.8M must register under the Digital Economy VAT rules. Out of scope for domestic filers."
 
 ## Section 3 — Supplier pattern library
 
@@ -111,8 +106,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.1 Thai banks — fees and charges (exempt / exclude)
 
+**Thai banks fees table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ธนาคารกรุงเทพ, BANGKOK BANK, BBL | EXCLUDE (fee lines) | Financial service — exempt |
 | ธนาคารกสิกรไทย, KASIKORNBANK, KBANK | EXCLUDE (fee lines) | Same |
 | ธนาคารไทยพาณิชย์, SCB, SIAM COMMERCIAL | EXCLUDE (fee lines) | Same |
@@ -125,8 +122,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.2 Thai government and statutory payments (exclude)
 
+**Thai government payments table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | กรมสรรพากร, REVENUE DEPARTMENT, RD | EXCLUDE | Tax payment |
 | ภาษีมูลค่าเพิ่ม, ภาษีเงินได้ | EXCLUDE | Tax remittance |
 | ประกันสังคม, SOCIAL SECURITY OFFICE, SSO | EXCLUDE | Social insurance |
@@ -136,8 +135,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.3 Thai utilities (taxable at 7%)
 
+**Thai utilities table**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | การไฟฟ้านครหลวง, MEA, METROPOLITAN ELECTRICITY | Input 7% | 7% | Electricity (Bangkok) — taxable |
 | การไฟฟ้าส่วนภูมิภาค, PEA, PROVINCIAL ELECTRICITY | Input 7% | 7% | Electricity (provinces) — taxable |
 | การประปานครหลวง, MWA, METROPOLITAN WATERWORKS | Input 7% | 7% | Water (Bangkok) — taxable |
@@ -151,8 +152,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.4 Transport and logistics
 
+**Transport and logistics table**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | การรถไฟ, SRT, STATE RAILWAY OF THAILAND | EXEMPT | 0% | Domestic land transport — exempt |
 | รถไฟฟ้าบีทีเอส, BTS SKYTRAIN | EXEMPT | 0% | Mass transit — exempt |
 | รถไฟฟ้ามหานคร, MRT BANGKOK | EXEMPT | 0% | Mass transit — exempt |
@@ -170,8 +173,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.5 Food and retail
 
+**Food and retail table**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | เซเว่น-อีเลฟเว่น, 7-ELEVEN THAILAND, CPF | Input 7% | 7% | All items 7% in Thailand (no food reduced rate) |
 | เทสโก้ โลตัส, TESCO LOTUS, LOTUS'S | Input 7% | 7% | Hypermarket — 7% on all |
 | บิ๊กซี, BIG C SUPERCENTER | Input 7% | 7% | Hypermarket — 7% |
@@ -183,8 +188,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.6 SaaS — local Thai suppliers (7%)
 
+**Local SaaS table**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | JOBBKK, จ๊อบบีเคเค | Input 7% | 7% | Thai job board — taxable |
 | JOBSDB THAILAND | Input 7% | 7% | HR platform — taxable |
 | WONGNAI | Input 7% | 7% | Thai platform — taxable |
@@ -193,10 +200,12 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.7 SaaS — international suppliers (reverse charge)
 
-For B2B digital services received from abroad: the Thai VAT-registered recipient must self-assess and remit 7% VAT (under the reverse charge equivalent). Foreign suppliers with B2C sales > THB 1.8M must register separately.
+- **Reverse charge rule for foreign digital B2B services** — For B2B digital services received from abroad: the Thai VAT-registered recipient must self-assess and remit 7% VAT (under the reverse charge equivalent). Foreign suppliers with B2C sales > THB 1.8M must register separately.
+
+**International SaaS reverse charge table**
 
 | Pattern | Billing entity | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Workspace, Ads, Cloud) | Google Asia Pacific | Reverse charge 7% | Self-assess and remit |
 | MICROSOFT (365, Azure) | Microsoft regional | Reverse charge 7% | Self-assess |
 | ADOBE | Adobe Inc (US) | Reverse charge 7% | Self-assess |
@@ -210,8 +219,10 @@ For B2B digital services received from abroad: the Thai VAT-registered recipient
 
 ### 3.8 Payment processors (exempt)
 
+**Payment processors table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE | Financial service — exempt |
 | PAYPAL (fees) | EXCLUDE | Same |
 | OMISE (fees) | EXCLUDE | Thai payment gateway — exempt fees |
@@ -219,16 +230,16 @@ For B2B digital services received from abroad: the Thai VAT-registered recipient
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | โอนเงินภายใน, INTERNAL TRANSFER | EXCLUDE | Internal movement |
 | เงินกู้, LOAN, เงินให้กู้ | EXCLUDE | Loan principal |
 | เงินเดือน, SALARY, ค่าจ้าง | EXCLUDE | Wages — outside VAT scope |
 | เงินปันผล, DIVIDEND | EXCLUDE | Out of scope |
 | เงินประกัน, DEPOSIT | EXCLUDE | Deposit — out of scope until applied |
 | ถอนเงินสด, ATM | Tier 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -294,38 +305,38 @@ Restaurant meal for a client lunch. In Thailand — unlike Malta or the UK — t
 
 **Classification:** Input VAT 7% — THB 210 (if compliant tax invoice held). Net expense: THB 3,000. Flag: confirm ใบกำกับภาษี available.
 
----
-
 ## Section 5 — Tier 1 rules (compressed)
 
 ### 5.1 Standard rate 7%
 
-Default rate for all taxable supplies. Currently set at 7% (reduced from the statutory 10%) by Royal Decree; extensions renewed periodically. Legislation: Revenue Code (ประมวลรัษฎากร) Section 80; Royal Decree on VAT rate reduction.
+- **Standard rate** — 7% (Default rate for all taxable supplies. Reduced from statutory 10% by Royal Decree; extensions renewed periodically.)  _(Revenue Code (ประมวลรัษฎากร) Section 80; Royal Decree on VAT rate reduction)_
 
 ### 5.2 Zero rate 0%
 
-Exports of goods and services used outside Thailand; international transport of goods and passengers; services rendered in Thailand but consumed entirely abroad (evidence required). Legislation: Revenue Code Section 80/1.
+- **Zero rate** — 0% (Exports of goods and services used outside Thailand; international transport of goods and passengers; services rendered in Thailand but consumed entirely abroad (evidence required).)  _(Revenue Code Section 80/1)_
 
 ### 5.3 Exempt supplies
 
-Agricultural products (raw/unprocessed), educational services, health and medical services, domestic passenger transport (land and water), residential rent, interest/financial services, insurance, cultural/religious services. No output VAT; no input credit on attributable costs. Legislation: Revenue Code Section 81.
+- **Exempt supplies** — Agricultural products (raw/unprocessed), educational services, health and medical services, domestic passenger transport (land and water), residential rent, interest/financial services, insurance, cultural/religious services. No output VAT; no input credit on attributable costs.  _(Revenue Code Section 81)_
 
 ### 5.4 Tax invoice (ใบกำกับภาษี) requirements
 
-Required fields: seller's name/address/tax ID, buyer's name/address/tax ID (for B2B), sequential invoice number, date, description, net amount, VAT rate, VAT amount. A simplified tax invoice (ใบกำกับภาษีอย่างย่อ) is allowed for retail sales below THB 1,000 per transaction but does not support input credit claims.
+- **Tax invoice requirements** — Required fields: seller's name/address/tax ID, buyer's name/address/tax ID (for B2B), sequential invoice number, date, description, net amount, VAT rate, VAT amount. A simplified tax invoice (ใบกำกับภาษีอย่างย่อ) is allowed for retail sales below THB 1,000 per transaction but does not support input credit claims.
 
 ### 5.5 Withholding VAT
 
-When government agencies or designated private companies pay a VAT-registered supplier, they withhold the VAT portion (7%) and remit it directly to the Revenue Department. The supplier records the full sale (including VAT) as revenue but receives only the net amount. The withheld VAT is credited against PP.30 output tax. Track withholding tax certificates (ใบรับรองการหักภาษี ณ ที่จ่าย).
+- **Withholding VAT process** — When government agencies or designated private companies pay a VAT-registered supplier, they withhold the VAT portion (7%) and remit it directly to the Revenue Department. The supplier records the full sale (including VAT) as revenue but receives only the net amount. The withheld VAT is credited against PP.30 output tax. Track withholding tax certificates (ใบรับรองการหักภาษี ณ ที่จ่าย).
 
 ### 5.6 Registration threshold
 
-THB 1,800,000 per year in taxable supplies. Once exceeded, must register within 30 days. Voluntary registration available below the threshold. Legislation: Revenue Code Section 85.
+- **Registration threshold** — THB 1,800,000 THB/year (Once exceeded, must register within 30 days. Voluntary registration available below the threshold.)  _(Revenue Code Section 85)_
 
 ### 5.7 Filing deadlines
 
+**Filing deadlines table**
+
 | Method | Deadline |
-|---|---|
+| --- | --- |
 | Paper filing | 15th of following month |
 | E-filing (efiling.rd.go.th) | 23rd of following month |
 | Late surcharge | 1.5% per month on unpaid VAT |
@@ -333,53 +344,36 @@ THB 1,800,000 per year in taxable supplies. Once exceeded, must register within 
 
 ### 5.8 Penalties
 
+**Penalties table**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late payment surcharge | 1.5% per month of unpaid tax |
 | Late filing | THB 300–500 fine |
 | Failure to issue tax invoice | Fine up to THB 2,000 per invoice |
 | Fraudulent invoice | Fine up to 2× VAT evaded + potential criminal |
 
----
-
 ## Section 6 — Tier 2 catalogue
 
 ### 6.1 Domestic vs. international transport classification
 
-**What it shows:** Airline or transport charge where the route is unclear.
-**What's missing:** Whether domestic (7%) or international (0%).
-**Conservative default:** 7% domestic.
-**Question to ask:** "Is this a domestic or international flight/transport? Please confirm the route."
+- **Domestic vs international transport** — **What it shows:** Airline or transport charge where the route is unclear. **What's missing:** Whether domestic (7%) or international (0%). **Conservative default:** 7% domestic. **Question to ask:** "Is this a domestic or international flight/transport? Please confirm the route."
 
 ### 6.2 Export service qualification
 
-**What it shows:** Revenue from a foreign client.
-**What's missing:** Whether the service was consumed outside Thailand.
-**Conservative default:** 7% standard rate.
-**Question to ask:** "Were these services entirely used/consumed outside Thailand? Is there a contract confirming this? Was payment received in foreign currency?"
+- **Export service qualification** — **What it shows:** Revenue from a foreign client. **What's missing:** Whether the service was consumed outside Thailand. **Conservative default:** 7% standard rate. **Question to ask:** "Were these services entirely used/consumed outside Thailand? Is there a contract confirming this? Was payment received in foreign currency?"
 
 ### 6.3 Mixed-use vehicle expenses
 
-**What it shows:** Fuel, parking, car lease, or maintenance.
-**What's missing:** Business-use percentage.
-**Conservative default:** 0% input credit.
-**Question to ask:** "Is this vehicle used exclusively for business? What percentage is business vs. personal?"
+- **Mixed-use vehicle expenses** — **What it shows:** Fuel, parking, car lease, or maintenance. **What's missing:** Business-use percentage. **Conservative default:** 0% input credit. **Question to ask:** "Is this vehicle used exclusively for business? What percentage is business vs. personal?"
 
 ### 6.4 Tax invoice availability for restaurant/entertainment
 
-**What it shows:** Restaurant or entertainment expense.
-**What's missing:** Whether a compliant ใบกำกับภาษี was obtained.
-**Conservative default:** No input credit.
-**Question to ask:** "Did you receive a full tax invoice (ใบกำกับภาษีเต็มรูปแบบ) from this restaurant/venue?"
+- **Tax invoice availability for restaurant/entertainment** — **What it shows:** Restaurant or entertainment expense. **What's missing:** Whether a compliant ใบกำกับภาษี was obtained. **Conservative default:** No input credit. **Question to ask:** "Did you receive a full tax invoice (ใบกำกับภาษีเต็มรูปแบบ) from this restaurant/venue?"
 
 ### 6.5 Withholding VAT from government clients
 
-**What it shows:** Receipt from a government agency that appears lower than the invoiced amount.
-**What's missing:** Whether VAT was withheld and a withholding certificate issued.
-**Conservative default:** Record full output VAT on invoice amount; credit withheld portion from certificate.
-**Question to ask:** "Did this government client withhold VAT? Do you have the withholding certificate?"
-
----
+- **Withholding VAT from government clients** — **What it shows:** Receipt from a government agency that appears lower than the invoiced amount. **What's missing:** Whether VAT was withheld and a withholding certificate issued. **Conservative default:** Record full output VAT on invoice amount; credit withheld portion from certificate. **Question to ask:** "Did this government client withhold VAT? Do you have the withholding certificate?"
 
 ## Section 7 — Excel working paper template
 
@@ -417,26 +411,26 @@ REVIEWER FLAGS:
   [ ] Vehicle use % confirmed?
 ```
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Common Thai bank statement formats
 
+**Bank statement formats table**
+
 | Bank | Key columns | Date format | Amount |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ธ.กสิกรไทย KBank | วันที่, รายการ, ถอน/โอนออก, ฝาก/โอนเข้า, ยอดคงเหลือ | DD/MM/YYYY (BE) | THB |
 | ธ.ไทยพาณิชย์ SCB | Date, Description, Debit, Credit, Balance | DD/MM/YYYY | THB |
 | ธ.กรุงเทพ BBL | วันที่ทำรายการ, คำอธิบาย, ถอน, ฝาก, ยอดคงเหลือ | DD/MM/YYYY (BE) | THB |
 | ธ.กรุงไทย KTB | Date, Narrative, Withdrawal, Deposit, Balance | DD/MM/YYYY | THB |
 | ธ.กรุงศรี Krungsri | วันที่, รายละเอียด, เดบิต, เครดิต, ยอดเงินคงเหลือ | DD/MM/YYYY (BE) | THB |
 
-**Important:** Thai bank statements often use Buddhist Era (พ.ศ. / BE) dates. BE = CE + 543. Example: 15/04/2568 BE = 15/04/2025 CE.
-
 ### Key Thai banking terms
 
+**Key Thai banking terms table**
+
 | Thai | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | โอนเงินรับ / รับโอน | Incoming transfer | Potential revenue |
 | โอนเงิน / ตัดบัญชี | Outgoing transfer / debit | Potential expense |
 | หักค่า | Auto-deduct | Subscription/utility |
@@ -446,8 +440,6 @@ REVIEWER FLAGS:
 | รายการ / คำอธิบาย | Transaction description | Key classification field |
 | ถอนเงิน / ATM | Cash withdrawal | Tier 2 — ask |
 | เงินเดือน | Salary | Out of VAT scope |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -471,14 +463,14 @@ THAILAND VAT ONBOARDING — MINIMUM QUESTIONS
 8. Any international SaaS subscriptions (Google, Microsoft, etc.)?
 ```
 
----
-
 ## Section 10 — Reference material
 
 ### Key legislation
 
+**Key legislation table**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | VAT general | Revenue Code (ประมวลรัษฎากร) Part 4 (Sections 77–87/1) |
 | Standard rate | Revenue Code Section 80; Royal Decree on rate |
 | Zero rate | Revenue Code Section 80/1 |
@@ -508,12 +500,12 @@ THAILAND VAT ONBOARDING — MINIMUM QUESTIONS
 
 ### Changelog
 
+**Changelog table**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, no inline tier tags |
-
----
 
 ## Prohibitions
 
@@ -524,14 +516,30 @@ THAILAND VAT ONBOARDING — MINIMUM QUESTIONS
 - NEVER ignore withholding VAT from government clients — offset against output tax
 - NEVER present calculations as definitive — direct to a licensed Thai CPA or tax consultant
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional before filing.
 
 The most up-to-date version is maintained at openaccountants.com.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/thailand-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `thailand-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/thailand-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

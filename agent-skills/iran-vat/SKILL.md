@@ -1,24 +1,24 @@
 ---
 name: iran-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for an Iran VAT return. Trigger on phrases like \"Iran VAT\", \"INTA tax\", \"Iran value added tax\". Iran imposes VAT at 10% (9% VAT + 1% municipal) under the VAT Law of 2008 as amended. Iran uses the Solar Hijri calendar for all tax purposes. ALWAYS read this skill before handling any Iran VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/iran-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/iran-vat"
+  jurisdiction: "IR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Iran VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Iran VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Iran (Islamic Republic) |
 | Combined rate | 10% (9% VAT + 1% municipal tax) |
 | Zero rate | 0% (exports) |
@@ -32,34 +32,27 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate | 10% (9% + 1%) |
 | Unknown purchase status | Not deductible |
 | Unknown counterparty | Domestic Iran |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from Bank Melli, Bank Mellat, Bank Saderat, Bank Tejarat, Parsian Bank, or any Iranian bank.
 
-**Refusal catalogue:**
-
-**R-IR-1 -- Free Trade Zone.** Trigger: operations in Kish, Qeshm, Chabahar, Arvand, Aras zones. Message: "Free zone VAT rules vary by zone. Escalate to specialist."
-
-**R-IR-2 -- Oil/gas sector.** Message: "Escalate to specialist."
-
----
-
-## Section 3 -- Supplier pattern library
+- **R-IR-1 -- Free Trade Zone** — Free zone VAT rules vary by zone. Escalate to specialist. (Trigger: operations in Kish, Qeshm, Chabahar, Arvand, Aras zones.)  _(R-IR-1)_
+- **R-IR-2 -- Oil/gas sector** — Escalate to specialist.  _(R-IR-2)_
 
 ### 3.1 Iranian banks (exempt -- exclude)
 
+**Iranian banks (exempt -- exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BANK MELLI, MELLI IRAN | EXCLUDE | Exempt financial service |
 | BANK MELLAT | EXCLUDE | Same |
 | BANK SADERAT, BANK TEJARAT | EXCLUDE | Same |
@@ -68,28 +61,30 @@ metadata:
 
 ### 3.2 Government
 
+**Government**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INTA, SAZMAN MALIYATI | EXCLUDE | Tax payment |
 | CUSTOMS, IRICA | Check for import VAT | Duty exclude; VAT recoverable |
 | TAMIN EJTEMAEI, SOCIAL SECURITY | EXCLUDE | Social insurance |
 
 ### 3.3 Utilities
 
+**Utilities**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TAVANIR, BARGH | Domestic 10% | Electricity |
 | MOKHABERAT, MCI, IRANCELL, RIGHTEL | Domestic 10% | Telecoms |
 
 ### 3.4 SaaS and digital
 
+**SaaS and digital**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Non-resident digital services | Reverse charge 10% | Subject to payment restrictions |
-
----
-
-## Section 4 -- Worked examples
 
 ### Example 1 -- Standard domestic sale
 
@@ -101,30 +96,24 @@ VAT (9%) = IRR 9,000,000. Municipal (1%) = IRR 1,000,000. Total tax = IRR 10,000
 
 Goods from Kish Free Zone to Tehran. Treated as import. VAT at 10% at customs checkpoint.
 
----
-
-## Section 5 -- Classification rules
-
 ### 5.1 Standard rate 10% (9% VAT + 1% municipal)
 
-Single combined rate for all taxable supplies. Both components reported separately on return.
+- **Standard rate application** — Single combined rate for all taxable supplies. Both components reported separately on return.  _(5.1 Standard rate 10% (9% VAT + 1% municipal))_
 
 ### 5.2 Zero-rated (0%, input recoverable)
 
-Exports of goods/services outside Iran. Goods to Free Trade Zones (conditions).
+- **Zero-rated supplies** — Exports of goods/services outside Iran. Goods to Free Trade Zones (conditions).  _(5.2 Zero-rated (0%, input recoverable))_
 
 ### 5.3 Exempt (no VAT, no recovery)
 
-Unprocessed agricultural, livestock, bread/flour, books/newspapers, medical/pharmaceutical, education, banking/insurance, public transport, handmade carpets, gold bullion.
-
----
-
-## Section 6 -- VAT return form structure
+- **Exempt supplies** — Unprocessed agricultural, livestock, bread/flour, books/newspapers, medical/pharmaceutical, education, banking/insurance, public transport, handmade carpets, gold bullion.  _(5.3 Exempt (no VAT, no recovery))_
 
 ### Output
 
+**Output section of VAT return**
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | Taxable sales | Sales at 10% combined |
 | Zero-rated | Exports |
 | Exempt | Exempt supplies |
@@ -134,8 +123,10 @@ Unprocessed agricultural, livestock, bread/flour, books/newspapers, medical/phar
 
 ### Input
 
+**Input section of VAT return**
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | Input VAT on purchases | 9% component recoverable |
 | Input municipal on purchases | 1% component recoverable |
 | Customs VAT | Import VAT |
@@ -145,66 +136,53 @@ Unprocessed agricultural, livestock, bread/flour, books/newspapers, medical/phar
 
 Output minus input. Credit brought forward from prior season.
 
----
-
 ## Section 7 -- Reverse charge and imports
 
-Services from non-resident: self-assess at 10% (9% + 1%). Claim input if taxable. Net zero.
-
-Import of goods: VAT on CIF plus customs duties plus commercial profit tax. Collected by IRICA.
-
----
+- **Services from non-resident** — Services from non-resident: self-assess at 10% (9% + 1%). Claim input if taxable. Net zero.  _(Section 7 -- Reverse charge and imports)_
+- **Import of goods** — Import of goods: VAT on CIF plus customs duties plus commercial profit tax. Collected by IRICA.  _(Section 7 -- Reverse charge and imports)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked: personal-use items, purchases for exempt supplies, entertainment (above limits), passenger vehicles for personal use, gifts/donations (above limits).
-
----
+- **Blocked inputs** — Blocked: personal-use items, purchases for exempt supplies, entertainment (above limits), passenger vehicles for personal use, gifts/donations (above limits).  _(Section 8 -- Deductibility and blocked input)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Filing is quarterly aligned to Solar Hijri seasons:
+**Filing seasons and deadlines**
 
 | Season | Months | Deadline (approx. Gregorian) |
-|---|---|---|
+| --- | --- | --- |
 | Spring | Farvardin-Khordad | ~July 6 |
 | Summer | Tir-Shahrivar | ~October 7 |
 | Autumn | Mehr-Azar | ~January 5 |
 | Winter | Dey-Esfand | ~April 4 |
 
+**Penalties**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 10% of tax due |
 | Late payment | 2.5% per month |
 | Failure to register | Backdated assessment + penalties |
 
----
-
-## Section 10 -- Edge cases, test suite, and escalation
-
 ### Edge cases
 
-**EC1 -- VAT/municipal split.** Always report 9% and 1% separately.
-
-**EC2 -- Free zone to mainland.** Treated as import. VAT at customs.
-
-**EC3 -- Agricultural exemption.** Unprocessed wheat exempt. No output, no input recovery.
-
-**EC4 -- Foreign SaaS.** Reverse charge at 10%. Payment restrictions do not change VAT treatment.
-
-**EC5 -- Export with docs.** Zero-rated if export documentation exists.
+- **EC1 -- VAT/municipal split** — Always report 9% and 1% separately.  _(EC1)_
+- **EC2 -- Free zone to mainland** — Treated as import. VAT at customs.  _(EC2)_
+- **EC3 -- Agricultural exemption** — Unprocessed wheat exempt. No output, no input recovery.  _(EC3)_
+- **EC4 -- Foreign SaaS** — Reverse charge at 10%. Payment restrictions do not change VAT treatment.  _(EC4)_
+- **EC5 -- Export with docs** — Zero-rated if export documentation exists.  _(EC5)_
 
 ### Test suite
 
-**Test 1 -- Standard sale.** IRR 100M net. Expected: VAT IRR 9M, municipal IRR 1M, total IRR 10M.
+IRR 100M net. Expected: VAT IRR 9M, municipal IRR 1M, total IRR 10M.
 
-**Test 2 -- Export.** IRR equivalent of USD 10,000. Expected: 0%. Input recoverable.
+IRR equivalent of USD 10,000. Expected: 0%. Input recoverable.
 
-**Test 3 -- Reverse charge.** Indian consulting USD 5,000. Expected: 10% self-assessed. Net zero.
+Indian consulting USD 5,000. Expected: 10% self-assessed. Net zero.
 
-**Test 4 -- Exempt medical.** Medicines IRR 500M. Expected: no output. Input IRR 20M not recoverable.
+Medicines IRR 500M. Expected: no output. Input IRR 20M not recoverable.
 
-**Test 5 -- Import.** CIF IRR 1B + duty IRR 100M. Expected: VAT IRR 99M (9%), municipal IRR 11M.
+CIF IRR 1B + duty IRR 100M. Expected: VAT IRR 99M (9%), municipal IRR 11M.
 
 ### Escalation protocol
 
@@ -228,14 +206,30 @@ REVIEWER FLAG / ESCALATION REQUIRED
 - NEVER use Gregorian dates on official filings
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/iran-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `iran-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/iran-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

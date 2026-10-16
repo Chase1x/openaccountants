@@ -1,26 +1,24 @@
 ---
 name: bulgaria-vat-return
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Bulgarian VAT return (Spravka-deklaratsiya po DDS) for any client. Trigger on phrases like \"prepare VAT return\", \"do the DDS\", \"fill in DDS return\", \"create the return\", \"Bulgarian VAT\", or any request involving Bulgaria VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Bulgaria only and standard DDS registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Bulgarian VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/bulgaria-vat-return"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/bulgaria-vat-return"
+  jurisdiction: "BG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Bulgaria VAT Return Skill (Spravka-deklaratsiya po DDS) v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Bulgaria VAT (ДДС) Return
 
 ## Section 1 — Quick reference
 
-**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Bulgaria (Republic of Bulgaria) |
 | Standard rate | 20% |
 | Reduced rates | 9% (accommodation/hotel services, printed/electronic books, baby food/hygiene products) |
@@ -36,12 +34,16 @@ metadata:
 | Validated by | Deep research verification, April 2026 |
 | Validation date | April 2026 |
 
+**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
+
 **Key return structure — Bulgaria uses purchase/sales ledgers submitted with the return:**
 
 The return (Spravka-deklaratsiya) summarizes ledger totals. Key rows:
 
+**Return row table**
+
 | Row | Meaning |
-|---|---|
+| --- | --- |
 | 01 | Total output DDS (danak za nachislyavane) |
 | 11 | Output DDS on domestic supplies at 20% |
 | 12 | Output DDS on domestic supplies at 9% |
@@ -64,8 +66,10 @@ The return (Spravka-deklaratsiya) summarizes ledger totals. Key rows:
 
 **Conservative defaults — Bulgaria-specific values for the universal categories in `vat-workflow-base` Section 2:**
 
+**Conservative defaults table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 20% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Bulgaria |
@@ -77,45 +81,31 @@ The return (Spravka-deklaratsiya) summarizes ledger totals. Key rows:
 
 **Red flag thresholds — country slot values for the reviewer brief in `vat-workflow-base` Section 3:**
 
+**Red flag thresholds table**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | BGN 5,000 |
 | HIGH tax-delta on a single conservative default | BGN 400 |
 | MEDIUM counterparty concentration | >40% of output OR input |
 | MEDIUM conservative-default count | >4 across the return |
 | LOW absolute net DDS position | BGN 10,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
-### Required inputs
-
-**Minimum viable** — bank statement for the month in CSV, PDF, or pasted text. Must cover the full period. Acceptable from any Bulgarian or international business bank: UniCredit Bulbank, DSK Bank, Fibank (First Investment Bank), Postbank (Eurobank Bulgaria), UBB (United Bulgarian Bank), Raiffeisenbank Bulgaria, Revolut Business, Wise Business, or any other.
-
-**Recommended** — sales invoices for the period (especially for intra-EU B2B services and zero-rated supplies), purchase invoices for any input DDS claim above BGN 400, the client's DDS number in writing (BG + 9/10 digits).
-
-**Ideal** — complete purchase/sales ledgers (dnevnik za pokupkite / dnevnik za prodazhbite), prior period return, reconciliation of excess credit brought forward.
-
-**Refusal policy if minimum is missing — SOFT WARN.** If no bank statement is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This return was produced from bank statement alone. The reviewer must verify, before approval, that input DDS claims above BGN 400 are supported by compliant tax invoices and that all reverse-charge classifications match the supplier's invoice."
-
-### Bulgaria-specific refusal catalogue
+- **Required inputs — Minimum viable** — bank statement for the month in CSV, PDF, or pasted text. Must cover the full period. Acceptable from any Bulgarian or international business bank: UniCredit Bulbank, DSK Bank, Fibank (First Investment Bank), Postbank (Eurobank Bulgaria), UBB (United Bulgarian Bank), Raiffeisenbank Bulgaria, Revolut Business, Wise Business, or any other.
+- **Required inputs — Recommended** — sales invoices for the period (especially for intra-EU B2B services and zero-rated supplies), purchase invoices for any input DDS claim above BGN 400, the client's DDS number in writing (BG + 9/10 digits).
+- **Required inputs — Ideal** — complete purchase/sales ledgers (dnevnik za pokupkite / dnevnik za prodazhbite), prior period return, reconciliation of excess credit brought forward.
+- **Refusal policy if minimum is missing** — SOFT WARN. If no bank statement is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This return was produced from bank statement alone. The reviewer must verify, before approval, that input DDS claims above BGN 400 are supported by compliant tax invoices and that all reverse-charge classifications match the supplier's invoice."
 
 These refusals apply on top of the EU-wide refusals in `eu-vat-directive` Section 13 (R-EU-1 through R-EU-12). If any trigger fires, stop, output the refusal message verbatim, end the conversation.
 
-**R-BG-1 — Non-registered entity attempting to file a DDS return.** *Trigger:* client is not registered for DDS and turnover is below the mandatory threshold (EUR 51,130 / BGN 100,000 from 2026). *Message:* "Non-registered entities do not file DDS returns. If you wish to register voluntarily, contact NRA first."
-
-**R-BG-2 — Partial exemption (mixed taxable and exempt supplies).** *Trigger:* client makes both taxable and exempt-without-credit supplies and the exempt proportion is not de minimis. *Message:* "You make both taxable and exempt supplies. Your input DDS must be apportioned using the partial credit coefficient (koefitsient) under ZDDS Art. 73. This requires an annual calculation. Please use a qualified accountant to determine the coefficient before input DDS is claimed."
-
-**R-BG-3 — VAT group structure.** *Trigger:* client is part of a DDS group registration. *Message:* "DDS group registrations require consolidation across the group. Out of scope."
-
-**R-BG-4 — Special schemes (margin, travel agent, investment gold).** *Trigger:* client deals in second-hand goods, travel packages, or investment gold under special schemes. *Message:* "Special DDS schemes require transaction-level margin or package computation. Out of scope for this skill."
-
-**R-BG-5 — SAF-T filing complexity.** *Trigger:* client is a large enterprise required to file SAF-T alongside the DDS return with complex multi-branch reporting. *Message:* "SAF-T filing for large enterprises with multi-branch structures requires specialist IT and accounting setup. Out of scope."
-
-**R-BG-6 — Fiscal representative.** *Trigger:* non-resident supplier with fiscal representative in Bulgaria. *Message:* "Non-resident registrations with fiscal representatives have specific obligations beyond this skill. Please use a qualified accountant."
-
----
+- **R-BG-1 — Non-registered entity attempting to file a DDS return** — Trigger: client is not registered for DDS and turnover is below the mandatory threshold (EUR 51,130 / BGN 100,000 from 2026). Message: "Non-registered entities do not file DDS returns. If you wish to register voluntarily, contact NRA first."
+- **R-BG-2 — Partial exemption (mixed taxable and exempt supplies)** — Trigger: client makes both taxable and exempt-without-credit supplies and the exempt proportion is not de minimis. Message: "You make both taxable and exempt supplies. Your input DDS must be apportioned using the partial credit coefficient (koefitsient) under ZDDS Art. 73. This requires an annual calculation. Please use a qualified accountant to determine the coefficient before input DDS is claimed."  _(ZDDS Art. 73)_
+- **R-BG-3 — VAT group structure** — Trigger: client is part of a DDS group registration. Message: "DDS group registrations require consolidation across the group. Out of scope."
+- **R-BG-4 — Special schemes (margin, travel agent, investment gold)** — Trigger: client deals in second-hand goods, travel packages, or investment gold under special schemes. Message: "Special DDS schemes require transaction-level margin or package computation. Out of scope for this skill."
+- **R-BG-5 — SAF-T filing complexity** — Trigger: client is a large enterprise required to file SAF-T alongside the DDS return with complex multi-branch reporting. Message: "SAF-T filing for large enterprises with multi-branch structures requires specialist IT and accounting setup. Out of scope."
+- **R-BG-6 — Fiscal representative** — Trigger: non-resident supplier with fiscal representative in Bulgaria. Message: "Non-resident registrations with fiscal representatives have specific obligations beyond this skill. Please use a qualified accountant."
 
 ## Section 3 — Supplier pattern library (the lookup table)
 
@@ -125,8 +115,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.1 Bulgarian banks (fees exempt — exclude)
 
+**Bulgarian banks table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | UNICREDIT BULBANK, BULBANK | EXCLUDE for bank charges/fees | Financial service, exempt |
 | DSK BANK, DSK | EXCLUDE for bank charges/fees | Same |
 | FIBANK, FIRST INVESTMENT BANK | EXCLUDE for bank charges/fees | Same |
@@ -139,8 +131,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.2 Bulgarian government, regulators, and statutory bodies (exclude entirely)
 
+**Government/regulator table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | НАП, NRA, NAP, NATIONAL REVENUE | EXCLUDE | Tax payment, not a supply |
 | ДДС ПЛАЩАНЕ, VAT PAYMENT | EXCLUDE | DDS payment |
 | МИТНИЦА, CUSTOMS | EXCLUDE | Customs duty (but check for import VAT on customs declaration) |
@@ -151,8 +145,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.3 Bulgarian utilities
 
+**Utilities table**
+
 | Pattern | Treatment | Row | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ЧЕЗ, CEZ RAZPREDELENIE, CEZ ELECTRO | Domestic 20% | 40 (input) | Electricity — overhead |
 | ЕЛЕКТРОХОЛД, ELECTROHOLD | Domestic 20% | 40 (input) | Electricity distributor |
 | EVN BULGARIA, EVN | Domestic 20% | 40 (input) | Electricity — overhead |
@@ -165,8 +161,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.4 Insurance (exempt — exclude)
 
+**Insurance table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DZI, ДЗИ | EXCLUDE | Insurance, exempt |
 | BULSTRAD, БУЛСТРАД | EXCLUDE | Same |
 | ALLIANZ BULGARIA, АЛИАНЦ | EXCLUDE | Same |
@@ -177,9 +175,11 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.5 Post and logistics
 
+**Post and logistics table**
+
 | Pattern | Treatment | Row | Notes |
-|---|---|---|---|
-| БЪЛГАРСКИ ПОЩИ, BULGARIAN POSTS | EXCLUDE for standard postal services | | Universal postal service, exempt |
+| --- | --- | --- | --- |
+| БЪЛГАРСКИ ПОЩИ, BULGARIAN POSTS | EXCLUDE for standard postal services |  | Universal postal service, exempt |
 | БЪЛГАРСКИ ПОЩИ (parcel/courier) | Domestic 20% | 40 | Non-universal services are taxable |
 | SPEEDY, СПИДИ | Domestic 20% | 40 | Domestic courier |
 | ECONT, ЕКОНТ | Domestic 20% | 40 | Domestic courier |
@@ -188,19 +188,23 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.6 Transport
 
+**Transport table**
+
 | Pattern | Treatment | Row | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | БДЖ, BDZ, BULGARIAN RAILWAYS | Domestic 20% | 40 | Domestic rail |
-| SOFIA METRO, МЕТРОПОЛИТЕН | EXCLUDE / 20% | | Public transport |
+| SOFIA METRO, МЕТРОПОЛИТЕН | EXCLUDE / 20% |  | Public transport |
 | TAXI, ТАКСИМЕТРОВ | Domestic 20% | 40 | Local taxi |
-| RYANAIR, WIZZ AIR (international) | EXCLUDE / 0% | | International flights zero rated |
+| RYANAIR, WIZZ AIR (international) | EXCLUDE / 0% |  | International flights zero rated |
 | BULGARIA AIR (domestic) | Domestic 20% | 40 | Domestic flight |
-| BULGARIA AIR (international) | EXCLUDE / 0% | | International flight zero rated |
+| BULGARIA AIR (international) | EXCLUDE / 0% |  | International flight zero rated |
 
 ### 3.7 Food retail (blocked unless hospitality business)
 
+**Food retail table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KAUFLAND, LIDL, BILLA, FANTASTICO | Default BLOCK input DDS | Personal provisioning. Deductible only if hospitality/catering business. |
 | CBA, METRO CASH & CARRY | Default BLOCK unless resale | If buying for resale, deductible |
 | РЕСТОРАНТ, RESTAURANT, КАФЕ, CAFE | Default BLOCK | Entertainment/representation — see Section 5.12 |
@@ -209,8 +213,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 These are billed from EU entities and trigger reverse charge under ZDDS Art. 82(2).
 
+**SaaS EU suppliers table**  _(ZDDS Art. 82(2))_
+
 | Pattern | Billing entity | Row | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | 14/43 | Reverse charge services |
 | MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) | 14/43 | Reverse charge |
 | ADOBE | Adobe Systems Software Ireland Ltd (IE) | 14/43 | Reverse charge |
@@ -225,8 +231,10 @@ These are billed from EU entities and trigger reverse charge under ZDDS Art. 82(
 
 ### 3.9 SaaS — non-EU suppliers (reverse charge)
 
+**SaaS non-EU suppliers table**
+
 | Pattern | Billing entity | Row | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AWS EMEA SARL | AWS EMEA SARL (LU) | 14/43 | LU entity = EU reverse charge |
 | NOTION | Notion Labs Inc (US) | 14/43 | Non-EU reverse charge |
 | ANTHROPIC, CLAUDE | Anthropic PBC (US) | 14/43 | Non-EU reverse charge |
@@ -239,8 +247,10 @@ These are billed from EU entities and trigger reverse charge under ZDDS Art. 82(
 
 ### 3.10 Payment processors
 
+**Payment processors table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE (exempt) | Payment processing fees are exempt financial services |
 | PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
 | STRIPE (monthly subscription) | EU reverse charge | Stripe IE entity — separate from transaction fees |
@@ -248,17 +258,21 @@ These are billed from EU entities and trigger reverse charge under ZDDS Art. 82(
 
 ### 3.11 Professional services (Bulgaria)
 
+**Professional services table**
+
 | Pattern | Treatment | Row | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | НОТАРИУС, NOTARY | Domestic 20% | 40 | Deductible if business purpose |
 | СЧЕТОВОДИТЕЛ, ACCOUNTANT, ОДИТОР, AUDITOR | Domestic 20% | 40 | Always deductible |
 | АДВОКАТ, LAWYER, ATTORNEY | Domestic 20% | 40 | Deductible if business legal matter |
-| ТЪРГОВСКИ РЕГИСТЪР, COMMERCIAL REGISTER | EXCLUDE | Government fee, not a supply |
+| ТЪРГОВСКИ РЕГИСТЪР, COMMERCIAL REGISTER | EXCLUDE | Government fee, not a supply |  |
 
 ### 3.12 Payroll and social security (exclude entirely)
 
+**Payroll and social security table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ДОО, DOO, СОЦИАЛНО ОСИГУРЯВАНЕ | EXCLUDE | Social security contribution |
 | ДЗПО, DZPO | EXCLUDE | Supplementary pension |
 | ЗО, ЗДРАВНО ОСИГУРЯВАНЕ | EXCLUDE | Health insurance contribution |
@@ -267,22 +281,24 @@ These are billed from EU entities and trigger reverse charge under ZDDS Art. 82(
 
 ### 3.13 Property and rent
 
+**Property and rent table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | НАЕМ, RENT (commercial, with DDS invoice) | Domestic 20% | Commercial lease where landlord charges DDS |
 | НАЕМ, RENT (residential, no DDS) | EXCLUDE | Residential lease exempt (first letting) |
 | ПРОМИШЛЕН ПАРК, INDUSTRIAL PARK | Domestic 20% | Industrial/commercial let |
 
 ### 3.14 Internal transfers and exclusions
 
+**Internal transfers table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ВЪТРЕШЕН ПРЕВОД, OWN TRANSFER, INTERNAL | EXCLUDE | Internal movement |
 | ДИВИДЕНТ, DIVIDEND | EXCLUDE | Dividend payment, out of scope |
 | ПОГАСЯВАНЕ НА КРЕДИТ, LOAN REPAYMENT | EXCLUDE | Loan principal, out of scope |
 | ТЕГЛЕНЕ, CASH WITHDRAWAL, ATM | Ask | Default exclude; ask what cash was spent on |
-
----
 
 ## Section 4 — Worked examples
 
@@ -296,10 +312,10 @@ These are six fully worked classifications drawn from a hypothetical bank statem
 **Reasoning:**
 Notion Labs Inc is a US entity (Section 3.9). No VAT on the invoice. Service received from non-EU supplier. Under ZDDS Art. 82(2), the Bulgarian recipient self-assesses output DDS at 20% and simultaneously claims input DDS. Both sides must appear: output in Row 14, input in Row 43. Net effect zero for fully taxable client.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row (input) | Row (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 03.04.2026 | NOTION LABS INC | -28.70 | -28.70 | 5.74 | 20% | 43 | 14 | N | — | — |
 
 ### Example 2 — EU service, reverse charge (Google Ads)
@@ -310,10 +326,10 @@ Notion Labs Inc is a US entity (Section 3.9). No VAT on the invoice. Service rec
 **Reasoning:**
 Google Ireland Limited is an IE entity — standard EU reverse charge. Google Ads is a service. Output DDS self-assessed at 20% in Row 14, input DDS in Row 43. Both sides on the return. Net zero for fully taxable client.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row (input) | Row (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 10.04.2026 | GOOGLE IRELAND LIMITED | -1,660.00 | -1,660.00 | 332.00 | 20% | 43 | 14 | N | — | — |
 
 ### Example 3 — Entertainment/representation, limited deduction
@@ -324,10 +340,10 @@ Google Ireland Limited is an IE entity — standard EU reverse charge. Google Ad
 **Reasoning:**
 Restaurant transaction. In Bulgaria, entertainment/representation expenses have deductible input DDS but the expense itself is subject to a 10% expense tax under the Corporate Income Tax Act (ZKPO Art. 204–207). The input DDS on the invoice IS deductible (unlike Malta where entertainment is hard-blocked). However, for a sole trader (ET), representation expenses may be challenged. Default: claim input DDS but flag for reviewer. Note the 10% expense tax obligation separately.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2026 | РЕСТОРАНТ ЩАСТЛИВЕЦА | -430.00 | -358.33 | -71.67 | 20% | 40 | Y | Q1 | "Representation: confirm business purpose; 10% expense tax applies" |
 
 ### Example 4 — Capital goods (no statutory threshold)
@@ -338,10 +354,10 @@ Restaurant transaction. In Bulgaria, entertainment/representation expenses have 
 **Reasoning:**
 Bulgaria does not have a specific DDS monetary threshold for capital goods like Malta's EUR 1,160. However, assets used for business with a useful life > 1 year are subject to capital goods adjustment rules: 5-year for movables (ZDDS Art. 79(3)), 20-year for immovables (ZDDS Art. 79(7)). This laptop qualifies as a capital asset. Input DDS is deductible. Flag for capital goods tracking.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 18.04.2026 | ТЕХНОПОЛИС | -3,118.00 | -2,598.33 | -519.67 | 20% | 40 | N | — | "Capital goods — 5yr adjustment tracking" |
 
 ### Example 5 — EU B2B service sale (inbound receipt)
@@ -352,10 +368,10 @@ Bulgaria does not have a specific DDS monetary threshold for capital goods like 
 **Reasoning:**
 Incoming from a German company. The client provides IT consulting services. B2B place of supply is the customer's country (Germany). The Bulgarian client invoices at 0%. Report in Row 22 (services to EU). Confirm: (a) customer has valid USt-IdNr; (b) invoice shows no Bulgarian DDS.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 22.04.2026 | STUDIO KREBS GMBH | +6,850.00 | +6,850.00 | 0 | 0% | 22 | Y | Q2 (HIGH) | "Verify German USt-IdNr on VIES" |
 
 ### Example 6 — Motor vehicle, partial restriction
@@ -366,13 +382,11 @@ Incoming from a German company. The client provides IT consulting services. B2B 
 **Reasoning:**
 Fuel purchase. In Bulgaria, input DDS on passenger vehicles and their fuel/maintenance is deductible only if the vehicle is used exclusively for business, for taxi/rent-a-car, or if the vehicle has 6+1 seats. For a standard passenger car used partly for personal purposes, input DDS is restricted. Default: 0% recovery unless the client can demonstrate 100% business use or the vehicle qualifies under the exceptions (ZDDS Art. 70(1)(4-5)).
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | DDS | Rate | Row | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 28.04.2026 | OMV БЪЛГАРИЯ | -150.00 | -150.00 | 0 | — | — | Y | Q3 | "Vehicle: confirm 100% business use or excluded vehicle type" |
-
----
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
@@ -380,127 +394,116 @@ Each rule states the legal source and the row mapping. Apply silently if the dat
 
 ### 5.1 Standard rate 20% (ZDDS Art. 66(1)(1))
 
-Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Sales: Row 11 (output base/DDS). Purchases: Row 40 (input DDS).
+- **Unknown rate on a sale** — 20%
 
 ### 5.2 Reduced rate 9% (ZDDS Art. 66(2))
 
-Applies to: accommodation/hotel services (tourist sector), printed and electronic books and publications, specific baby food and hygiene products. Sales: Row 12 (output base/DDS). Purchases: Row 40 at 9%.
-
-**Note:** The temporary 9% rate on restaurant/catering and sports facilities expired 31 December 2024. From 1 January 2025 these are at 20%.
+- **Reduced rate** — 9% (Applies to: accommodation/hotel services (tourist sector), printed and electronic books and publications, specific baby food and hygiene products. Sales: Row 12 (output base/DDS). Purchases: Row 40 at 9%.)  _(ZDDS Art. 66(2))_
+- **Restaurant/catering 9% rate expiry** — The temporary 9% rate on restaurant/catering and sports facilities expired 31 December 2024. From 1 January 2025 these are at 20%.
 
 ### 5.3 Zero rate and exempt with credit
 
-Exports outside EU (ZDDS Art. 28): Row 20. Intra-EU B2B supplies of goods (ZDDS Art. 7): Row 21 (zero-rated, requires VIES-verified VAT number, transport proof). Intra-EU B2B services (ZDDS Art. 21(2)): Row 22 (place of supply is customer's country). International transport (ZDDS Art. 30-32): Row 20.
+- **Zero rate and exempt with credit categories** — Exports outside EU (ZDDS Art. 28): Row 20. Intra-EU B2B supplies of goods (ZDDS Art. 7): Row 21 (zero-rated, requires VIES-verified VAT number, transport proof). Intra-EU B2B services (ZDDS Art. 21(2)): Row 22 (place of supply is customer's country). International transport (ZDDS Art. 30-32): Row 20.  _(ZDDS Art. 28, Art. 7, Art. 21(2), Art. 30-32)_
 
 ### 5.4 Exempt without credit
 
-Financial services (Art. 46), insurance (Art. 47), healthcare (Art. 39), education (Art. 41), residential rental first letting (Art. 45), gambling (Art. 48), postal universal service (Art. 49). These are excluded from the return — no output DDS, no input deduction on related costs.
+- **Exempt without credit categories** — Financial services (Art. 46), insurance (Art. 47), healthcare (Art. 39), education (Art. 41), residential rental first letting (Art. 45), gambling (Art. 48), postal universal service (Art. 49). These are excluded from the return — no output DDS, no input deduction on related costs.  _(ZDDS Art. 46, 47, 39, 41, 45, 48, 49)_
 
 ### 5.5 Local standard purchases
 
-Input DDS on a compliant tax invoice (данъчна фактура) from a BG supplier is deductible for purchases used in taxable business activity. Subject to blocked-input rules (5.12). Map to Row 40.
+- **Local standard purchases** — Input DDS on a compliant tax invoice (данъчна фактура) from a BG supplier is deductible for purchases used in taxable business activity. Subject to blocked-input rules (5.12). Map to Row 40.
 
 ### 5.6 Reverse charge — EU services received (ZDDS Art. 82(2))
 
-Service from EU supplier invoiced at 0% with reverse-charge note: output DDS self-assessed at 20% in Row 14, input DDS in Row 43. Net zero for fully taxable client. If the EU supplier charged their local VAT, that is NOT reverse charge — treat as overhead with irrecoverable foreign VAT.
+- **Reverse charge EU services received** — Service from EU supplier invoiced at 0% with reverse-charge note: output DDS self-assessed at 20% in Row 14, input DDS in Row 43. Net zero for fully taxable client. If the EU supplier charged their local VAT, that is NOT reverse charge — treat as overhead with irrecoverable foreign VAT.  _(ZDDS Art. 82(2))_
 
 ### 5.7 Reverse charge — EU goods received (ZDDS Art. 84)
 
-Physical goods from EU supplier: output DDS self-assessed in Row 13, input DDS in Row 41.
+- **Reverse charge EU goods received** — Physical goods from EU supplier: output DDS self-assessed in Row 13, input DDS in Row 41.  _(ZDDS Art. 84)_
 
 ### 5.8 Reverse charge — non-EU services received (ZDDS Art. 82(2))
 
-Services from outside EU with no VAT charged: same treatment as EU reverse charge. Output in Row 14, input in Row 43.
+- **Reverse charge non-EU services received** — Services from outside EU with no VAT charged: same treatment as EU reverse charge. Output in Row 14, input in Row 43.  _(ZDDS Art. 82(2))_
 
 ### 5.9 Imports (ZDDS Art. 56)
 
-Physical goods imported from non-EU: import DDS assessed by customs on the customs declaration. Input DDS on import in Row 42 if goods are for taxable business use.
+- **Imports** — Physical goods imported from non-EU: import DDS assessed by customs on the customs declaration. Input DDS on import in Row 42 if goods are for taxable business use.  _(ZDDS Art. 56)_
 
 ### 5.10 Capital goods adjustments (ZDDS Art. 79)
 
-Movable capital goods: 5-year adjustment period. Immovable property: 20-year adjustment period. No specific monetary threshold — asset classification based on accounting standards (useful life > 1 year). If client disposes of or changes use, adjustment may be required.
+- **Capital goods adjustments** — Movable capital goods: 5-year adjustment period. Immovable property: 20-year adjustment period. No specific monetary threshold — asset classification based on accounting standards (useful life > 1 year). If client disposes of or changes use, adjustment may be required.  _(ZDDS Art. 79)_
 
 ### 5.11 3-period excess credit offset (ZDDS Art. 92)
 
-Bulgaria has a unique rule: if input DDS exceeds output DDS, the excess is NOT immediately refundable. It must be offset against output DDS due in the next 3 consecutive periods. Only if excess remains after 3 periods is it refundable. Exception: accelerated refund for businesses with >30% zero-rated supplies.
+- **3-period excess credit offset** — Bulgaria has a unique rule: if input DDS exceeds output DDS, the excess is NOT immediately refundable. It must be offset against output DDS due in the next 3 consecutive periods. Only if excess remains after 3 periods is it refundable. Exception: accelerated refund for businesses with >30% zero-rated supplies.  _(ZDDS Art. 92)_
 
 ### 5.12 Blocked input DDS (ZDDS Art. 70)
 
-The following have restricted or zero recovery:
-- Passenger vehicles (up to 8+1 seats) and their fuel/maintenance — blocked unless used exclusively for taxable business, taxi/rent-a-car, 6+1 seat exception (Art. 70(1)(4-5))
-- Goods/services for entertainment/representation — input DDS IS deductible, but subject to 10% expense tax under ZKPO
-- Goods for personal use of staff/owners (Art. 70(1)(2))
-- Goods/services not used for taxable supplies (Art. 70(1)(1))
+- **Blocked input DDS categories** — The following have restricted or zero recovery: - Passenger vehicles (up to 8+1 seats) and their fuel/maintenance — blocked unless used exclusively for taxable business, taxi/rent-a-car, 6+1 seat exception (Art. 70(1)(4-5)) - Goods/services for entertainment/representation — input DDS IS deductible, but subject to 10% expense tax under ZKPO - Goods for personal use of staff/owners (Art. 70(1)(2)) - Goods/services not used for taxable supplies (Art. 70(1)(1))  _(ZDDS Art. 70)_
 
 ### 5.13 Sales — local domestic (any rate)
 
-Charge 20% or 9% as applicable. Report in sales ledger and Rows 11/12.
+- **Sales local domestic** — Charge 20% or 9% as applicable. Report in sales ledger and Rows 11/12.
 
 ### 5.14 Sales — cross-border B2C
 
-Services to EU consumers above EUR 10,000 threshold: R-EU-5 (OSS refusal) from eu-vat-directive fires. Below threshold: Bulgarian DDS at applicable rate.
+- **Sales cross-border B2C** — Services to EU consumers above EUR 10,000 threshold: R-EU-5 (OSS refusal) from eu-vat-directive fires. Below threshold: Bulgarian DDS at applicable rate.
 
 ### 5.15 Purchase/sales ledgers (ZDDS Art. 124-126)
 
-Both the purchase ledger (dnevnik za pokupkite) and sales ledger (dnevnik za prodazhbite) MUST be submitted with the return. Each invoice must be individually recorded.
-
----
-
-## Section 6 — Tier 2 catalogue (compressed)
+- **Purchase/sales ledgers** — Both the purchase ledger (dnevnik za pokupkite) and sales ledger (dnevnik za prodazhbite) MUST be submitted with the return. Each invoice must be individually recorded.  _(ZDDS Art. 124-126)_
 
 ### 6.1 Fuel and vehicle costs
 
-*Pattern:* OMV, Shell, Лукойл, Petrol, EKO, fuel receipts. *Why insufficient:* vehicle type and business-use unknown. Passenger car fuel blocked unless 100% business or qualifying vehicle. *Default:* 0% recovery. *Question:* "Is this a passenger car (restricted) or a commercial vehicle/qualifying vehicle used 100% for business?"
+- **Fuel and vehicle costs** — Pattern: OMV, Shell, Лукойл, Petrol, EKO, fuel receipts. Why insufficient: vehicle type and business-use unknown. Passenger car fuel blocked unless 100% business or qualifying vehicle. Default: 0% recovery. Question: "Is this a passenger car (restricted) or a commercial vehicle/qualifying vehicle used 100% for business?"
 
 ### 6.2 Restaurants and entertainment
 
-*Pattern:* any restaurant, café, bar, catering name. *Why insufficient:* representation expenses deductible for DDS but trigger 10% expense tax. Business vs personal unknown. *Default:* block input DDS. *Question:* "Was this a business representation expense? (Note: if yes, input DDS deductible but 10% expense tax applies under ZKPO.)"
+- **Restaurants and entertainment** — Pattern: any restaurant, café, bar, catering name. Why insufficient: representation expenses deductible for DDS but trigger 10% expense tax. Business vs personal unknown. Default: block input DDS. Question: "Was this a business representation expense? (Note: if yes, input DDS deductible but 10% expense tax applies under ZKPO.)"
 
 ### 6.3 Ambiguous SaaS billing entities
 
-*Pattern:* Google, Microsoft, Adobe, Meta, Slack, Zoom, etc. *Why insufficient:* same brand bills from IE, US, or local entity. *Default:* non-EU reverse charge. *Question:* "Check the invoice for the legal entity name and billing country."
+- **Ambiguous SaaS billing entities** — Pattern: Google, Microsoft, Adobe, Meta, Slack, Zoom, etc. Why insufficient: same brand bills from IE, US, or local entity. Default: non-EU reverse charge. Question: "Check the invoice for the legal entity name and billing country."
 
 ### 6.4 Round-number incoming transfers from owner-named counterparties
 
-*Pattern:* large round credit matching client's name. *Default:* exclude as owner injection. *Question:* "Is this a customer payment, your own money, or a loan?"
+- **Round-number incoming transfers from owner-named counterparties** — Pattern: large round credit matching client's name. Default: exclude as owner injection. Question: "Is this a customer payment, your own money, or a loan?"
 
 ### 6.5 Incoming transfers from individual names
 
-*Pattern:* incoming from private-looking counterparties. *Default:* domestic B2C sale at 20%. *Question:* "Was this a sale? Business or consumer? Country?"
+- **Incoming transfers from individual names** — Pattern: incoming from private-looking counterparties. Default: domestic B2C sale at 20%. Question: "Was this a sale? Business or consumer? Country?"
 
 ### 6.6 Incoming transfers from foreign counterparties
 
-*Pattern:* foreign IBAN or foreign currency. *Default:* domestic 20%. *Question:* "B2B with VAT number, B2C, goods or services, which country?"
+- **Incoming transfers from foreign counterparties** — Pattern: foreign IBAN or foreign currency. Default: domestic 20%. Question: "B2B with VAT number, B2C, goods or services, which country?"
 
 ### 6.7 Large one-off purchases (capital goods tracking)
 
-*Pattern:* equipment, laptop, machinery. *Why insufficient:* no statutory DDS threshold but accounting classification determines adjustment period. *Default:* deductible; flag for capital goods register. *Question:* "Confirm useful life > 1 year for capital goods tracking."
+- **Large one-off purchases (capital goods tracking)** — Pattern: equipment, laptop, machinery. Why insufficient: no statutory DDS threshold but accounting classification determines adjustment period. Default: deductible; flag for capital goods register. Question: "Confirm useful life > 1 year for capital goods tracking."
 
 ### 6.8 Mixed-use phone, internet, home office
 
-*Pattern:* Vivacom, A1, Yettel personal lines; home electricity. *Default:* 0% if mixed without declared %. *Question:* "Dedicated business line or mixed-use? Business percentage?"
+- **Mixed-use phone, internet, home office** — Pattern: Vivacom, A1, Yettel personal lines; home electricity. Default: 0% if mixed without declared %. Question: "Dedicated business line or mixed-use? Business percentage?"
 
 ### 6.9 Outgoing transfers to individuals
 
-*Pattern:* outgoing to private-looking names. *Default:* exclude as drawings. *Question:* "Contractor with invoice, wages, refund, or personal transfer?"
+- **Outgoing transfers to individuals** — Pattern: outgoing to private-looking names. Default: exclude as drawings. Question: "Contractor with invoice, wages, refund, or personal transfer?"
 
 ### 6.10 Cash withdrawals
 
-*Pattern:* ATM, теглене, cash withdrawal. *Default:* exclude as owner drawing. *Question:* "What was the cash used for?"
+- **Cash withdrawals** — Pattern: ATM, теглене, cash withdrawal. Default: exclude as owner drawing. Question: "What was the cash used for?"
 
 ### 6.11 Rent payments
 
-*Pattern:* наем, rent, lease. *Default:* no DDS (residential default). *Question:* "Commercial or residential? Does landlord charge DDS?"
+- **Rent payments** — Pattern: наем, rent, lease. Default: no DDS (residential default). Question: "Commercial or residential? Does landlord charge DDS?"
 
 ### 6.12 Foreign hotel and accommodation
 
-*Pattern:* hotel charged abroad. *Default:* exclude from input DDS. *Question:* "Was this a business trip?"
+- **Foreign hotel and accommodation** — Pattern: hotel charged abroad. Default: exclude from input DDS. Question: "Was this a business trip?"
 
 ### 6.13 Credit brought forward and 3-period offset
 
-*Pattern:* excess credit from prior periods. *Why insufficient:* must track the 3-period offset chain. *Default:* flag for reviewer. *Question:* "Which period did the excess credit originate? Has it been offset for 3 consecutive periods?"
-
----
+- **Credit brought forward and 3-period offset** — Pattern: excess credit from prior periods. Why insufficient: must track the 3-period offset chain. Default: flag for reviewer. Question: "Which period did the excess credit originate? Has it been offset for 3 consecutive periods?"
 
 ## Section 7 — Excel working paper template (Bulgaria-specific)
 
@@ -512,7 +515,7 @@ Columns A–L per the base. Column H ("Row code") accepts only valid Bulgaria DD
 
 ### Sheet "Row Summary"
 
-One row per return row. Column A is the row number, column B is the description, column C is the value computed via formula. Key rows:
+**Row Summary formulas**
 
 ```
 Output DDS:
@@ -546,8 +549,6 @@ Final return-ready figures. Bottom-line: Row 70 (payable) or Row 60/80 (excess c
 
 Per the xlsx skill: blue for hardcoded values, black for formulas, green for cross-sheet references, yellow background for any Default? = "Y" row.
 
----
-
 ## Section 8 — Bulgaria bank statement reading guide
 
 Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these Bulgaria-specific patterns.
@@ -566,43 +567,45 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these B
 
 **IBAN prefix.** BG = Bulgaria. IE, LU, NL, FR, DE = EU. US, GB, AU, CH = non-EU.
 
----
-
-## Section 9 — Onboarding fallback (only when inference fails)
-
 ### 9.1 Entity type and trading name
-*Inference rule:* ET = sole trader; OOD/EOOD = limited company. *Fallback:* "Are you a sole trader (ET), limited company (OOD/EOOD), or other?"
+
+- **Entity type and trading name** — Inference rule: ET = sole trader; OOD/EOOD = limited company. Fallback: "Are you a sole trader (ET), limited company (OOD/EOOD), or other?"
 
 ### 9.2 DDS registration status
-*Inference rule:* if filing a DDS return, they are registered. *Fallback:* "Are you DDS-registered (mandatory or voluntary)?"
+
+- **DDS registration status** — Inference rule: if filing a DDS return, they are registered. Fallback: "Are you DDS-registered (mandatory or voluntary)?"
 
 ### 9.3 DDS number
-*Inference rule:* BG-format numbers may appear in EU customer payment descriptions. *Fallback:* "What is your DDS number? (BG + 9/10 digits)"
+
+- **DDS number** — Inference rule: BG-format numbers may appear in EU customer payment descriptions. Fallback: "What is your DDS number? (BG + 9/10 digits)"
 
 ### 9.4 Filing period
-*Inference rule:* first and last transaction dates. Bulgaria is always monthly. *Fallback:* "Which month does this cover?"
+
+- **Filing period** — Inference rule: first and last transaction dates. Bulgaria is always monthly. Fallback: "Which month does this cover?"
 
 ### 9.5 Industry and sector
-*Inference rule:* counterparty mix. *Fallback:* "What does the business do?"
+
+- **Industry and sector** — Inference rule: counterparty mix. Fallback: "What does the business do?"
 
 ### 9.6 Employees
-*Inference rule:* DOO/ZO outgoing payments. *Fallback:* "Do you have employees?"
+
+- **Employees** — Inference rule: DOO/ZO outgoing payments. Fallback: "Do you have employees?"
 
 ### 9.7 Exempt supplies
-*Inference rule:* medical/financial/educational income patterns. *Fallback:* "Do you make exempt supplies?" *If yes and non-de-minimis: R-BG-2 refuses.*
+
+- **Exempt supplies** — Inference rule: medical/financial/educational income patterns. Fallback: "Do you make exempt supplies?" If yes and non-de-minimis: R-BG-2 refuses.
 
 ### 9.8 3-period excess credit status
-*Inference rule:* not inferable from single period. *Fallback:* "Do you have excess DDS credit carried forward? From which period?"
+
+- **3-period excess credit status** — Inference rule: not inferable from single period. Fallback: "Do you have excess DDS credit carried forward? From which period?"
 
 ### 9.9 Cross-border customers
-*Inference rule:* foreign IBANs on incoming. *Fallback:* "Do you have customers outside Bulgaria? EU or non-EU? B2B or B2C?"
+
+- **Cross-border customers** — Inference rule: foreign IBANs on incoming. Fallback: "Do you have customers outside Bulgaria? EU or non-EU? B2B or B2C?"
 
 ### 9.10 Vehicle ownership
-*Inference rule:* fuel/vehicle-related debits. *Fallback:* "Do you own/lease a vehicle for business? Type (passenger car vs commercial)?"
 
----
-
-## Section 10 — Reference material
+- **Vehicle ownership** — Inference rule: fuel/vehicle-related debits. Fallback: "Do you own/lease a vehicle for business? Type (passenger car vs commercial)?"
 
 ### Sources
 
@@ -653,14 +656,30 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these B
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later AND `eu-vat-directive` v0.1 or later.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bulgaria-vat-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `bulgaria-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/bulgaria-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

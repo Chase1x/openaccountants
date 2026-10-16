@@ -1,30 +1,80 @@
 ---
 name: id-payroll-pph21
 description: "Use this skill whenever asked to calculate, review, or advise on Indonesian payroll — PPh 21 (income tax withholding), BPJS Kesehatan (health insurance), BPJS Ketenagakerjaan (JHT, JP, JKK, JKM employment social security), biaya jabatan, or PTKP thresholds. Trigger on phrases like \"PPh 21\", \"PPh Pasal 21\", \"pajak penghasilan\", \"BPJS\", \"gaji Indonesia\", \"payroll Indonesia\", \"potong pajak karyawan\", \"TER PPh 21\", \"PTKP\", or any Indonesia employment income tax / social security request. ALWAYS read this skill before touching any Indonesia payroll or PPh 21 work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: ID
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/id-payroll-pph21"
-  tax_year: 2025
-  obligation: PAY
-  reviewed_by: "pending depends_on: - foundation"
+  openaccountants_url: "https://www.openaccountants.com/skills/id-payroll-pph21"
+  jurisdiction: "ID"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "RILIA PUTRI"
+  review_status: "current"
 ---
 
-# Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.1
+# ID Payroll Pph21
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.1
 
 > **2025 changes summary (v1.1 refresh):** PPh 21 monthly withholding continues under the TER system (PP 58/2023, PMK 168/2023 — Categories A/B/C by PTKP, year-end reconciliation under Article 17 brackets). From **1 July 2024**, Indonesian-citizen employees use their **16-digit NIK as NPWP**; foreign-national employees keep the 15-digit NPWP. From **1 January 2025**, all PPh 21 filings — monthly **SPT Masa PPh 21 / e-Bupot Unifikasi** and the **1721-A1 / 1721-A2** annual slips — flow through **Coretax DJP** (the legacy DJP Online e-Bupot 21/26 desktop app is being retired). See `id-einvoice-coretax` for the Coretax workflow.
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Payroll PPh 21 and BPJS
+
+- **0 – IDR 60,000,000 bracket** — 5% — max IDR 3,000,000  _(UU HPP Art. 17(1)(a))_
+- **60m – 250m bracket** — 15% — max IDR 28,500,000  _(UU HPP Art. 17(1)(a))_
+- **250m – 500m bracket** — 25% — max IDR 62,500,000  _(UU HPP Art. 17(1)(a))_
+- **500m – 5bn bracket** — 30% — max IDR 1,350,000,000  _(UU HPP Art. 17(1)(a))_
+- **Above 5,000,000,000** — 35%  _(UU HPP Art. 17(1)(a))_
+- **No-NPWP surcharge** — 20% additional on calculated PPh 21  _(UU PPh Art. 21(5a); PMK 168/2023)_
+- **Biaya Jabatan rate** — 5% of gross employment income  _(UU PPh Art. 21)_
+- **Biaya Jabatan monthly cap** — Maximum IDR 500,000/month  _(PMK-168/2023)_
+- **Biaya Jabatan annual cap** — Maximum IDR 6,000,000/year  _(PMK-168/2023)_
+- **Biaya Jabatan applies to** — Permanent employees (Pegawai Tetap)  _(PMK 168/2023 Art. 3 & Art. 10)_
+- **BPJS Kesehatan employer rate** — 4% of gross monthly salary  _(Perpres 64/2020)_
+- **BPJS Kesehatan employee rate** — 1% of gross monthly salary  _(Perpres 64/2020)_
+- **BPJS Kesehatan total** — 5%  _(Perpres 64/2020)_
+- **BPJS Kesehatan max wage basis** — IDR 12,000,000/month  _(Perpres 64/2020)_
+- **BPJS Kesehatan extra dependants (>5 family)** — Additional 1% per extra dependent  _(Perpres 64/2020)_
+- **JHT employer rate** — 3.7% of wage  _(PP 46/2015)_
+- **JHT employee rate** — 2.0% of wage  _(PP 46/2015)_
+- **JHT total** — 5.7% total contribution  _(PP 46/2015)_
+- **JP employer rate** — 2.00%  _(PP 45/2015)_
+- **JP employee rate** — 1.00%  _(PP 45/2015)_
+- **JP total** — 3.00%  _(PP 45/2015)_
+- **JP wage cap (Mar 2025)** — IDR 11,086,300/month  _([BPJS TK 2025 regulation](https://494075.fs1.hubspotusercontent-na1.net/hubfs/494075/compliance-portal/notification-number-b1226022026.pdf))_
+- **JKK Grade 1 (very low risk)** — 0.10% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(a))_
+- **JKK Grade 2 (low risk)** — 0.40% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(b))_
+- **JKK Grade 3 (medium risk)** — 0.75% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(b))_
+- **JKK Grade 4 (high risk)** — 1.13% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(d))_
+- **JKK Grade 5 (very high risk)** — 1.60% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)€)_
+- **JKM employer rate** — 0.20% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 18A)_
+- **JKP rate** — 0.46% — funded by govt + JKK/JKM surplus reallocation  _(PP 37/2021; PP 49/2023)_
+- **JKP impact on payroll** — No additional employer/employee deduction  _(PP 37/2021; PP 49/2023)_
+- **TER effective from** — 1 January 2024  _(PP 58/2023; PMK 168/2023)_
+- **TER Category A** — Category A generally applies to taxpayers with PTKP status TK/0, TK/1, K/0 under prevailing TER provisions.  _(PP 58/202, PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **TER Category B** — Category B generally applies to PTKP status TK/2, TK/3, K/1, K/2.  _(PP 58/2023; PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **TER Category C** — Category C generally applies to PTKP status K/3.  _(PP 58/2023 ; PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **Cat A: 0% threshold** — IDR 0 – 5,400,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat B: 0% threshold** — IDR 0 – 6,200,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat C: 0% threshold** — IDR 0 – 6,600,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat A: top rate** — 34% (over IDR 1,400,000,000/month)  _(PP 58/2023 Annex; PMK 168/PMK.010/2023. See full bracket table in attachment TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly'.)_
+- **December reconciliation** — December PPh 21 calculation generally reconciles annual tax under Article 17 rates against cumulative Jan–Nov withholding using TER methodology.  _(PP 58/2023; PMK 168/PMK.010/2023.)_
+- **Monthly e-Bupot PPh 21/26** — Generally due by the 20th of the following month through the applicable DJP electronic tax administration system (Coretax/e-Bupot)  _(UU KUP Art. 3(3); PMK 81/2024 as amended by PMK 1/2026 |; note: UU KUP as amended by UU HPP No. 7/2021.)_
+- **Annual SPT filing** — 31 March (individual)  _(UU KUP Art. 3(3)(b))_
+- **1721-A1 certificate** — Issued annually or on termination  _(PMK 168/2023 Art. 23)_
 
 ## Section 1 — Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Indonesia (Republik Indonesia) |
 | Tax | PPh 21 — Pajak Penghasilan Pasal 21 (Employment Income Tax Withholding) |
 | Currency | IDR (Indonesian Rupiah / Rp) |
@@ -40,16 +90,16 @@ metadata:
 | Validated by | Pending — requires sign-off by a qualified Indonesian tax consultant |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 — PPh 21 progressive tax brackets (Tarif Pasal 17 UU HPP)
 
 Tax is computed on **Penghasilan Kena Pajak (PKP)** — taxable income after deductions and PTKP.
 
 These brackets are from UU HPP No. 7/2021, effective from 1 January 2022 onward. They are permanent and unchanged through 2025/2026.
 
+**PPh 21 progressive tax brackets**
+
 | Annual PKP (IDR) | Rate | Max tax in bracket |
-|---|---|---|
+| --- | --- | --- |
 | 0 – 60,000,000 | 5% | 3,000,000 |
 | 60,000,001 – 250,000,000 | 15% | 28,500,000 |
 | 250,000,001 – 500,000,000 | 25% | 62,500,000 |
@@ -58,16 +108,16 @@ These brackets are from UU HPP No. 7/2021, effective from 1 January 2022 onward.
 
 > **Note:** The `steevenz/id-payroll-calculator` and `KejawenLab/PPH21` repos use the older pre-HPP brackets (first bracket 0–50M, no 35% bracket). The brackets above reflect the current law.
 
-**No-NPWP surcharge:** Employees without an NPWP (tax ID number) are subject to an additional 20% surcharge on the calculated PPh 21 liability (per `steevenz/id-payroll-calculator` `Pph21.php`).
-
----
+- **No-NPWP surcharge** — Employees without an NPWP (tax ID number) are subject to an additional 20% surcharge on the calculated PPh 21 liability  _(per `steevenz/id-payroll-calculator` `Pph21.php`)_
 
 ## Section 3 — PTKP (Penghasilan Tidak Kena Pajak / Non-Taxable Income)
 
 PTKP is deducted from annual net income before applying the progressive brackets. Amounts are per PMK 101/PMK.010/2016, unchanged through 2025.
 
+**PTKP status table**
+
 | Status code | Description | Annual PTKP (IDR) |
-|---|---|---|
+| --- | --- | --- |
 | TK/0 | Single, no dependents | 54,000,000 |
 | TK/1 | Single, 1 dependent | 58,500,000 |
 | TK/2 | Single, 2 dependents | 63,000,000 |
@@ -77,80 +127,86 @@ PTKP is deducted from annual net income before applying the progressive brackets
 | K/2 | Married, 2 dependents | 67,500,000 |
 | K/3 | Married, 3 dependents | 72,000,000 |
 
-Additional rules:
-- Maximum 3 dependents (tanggungan) are recognized
-- If wife's income is combined (penghasilan digabung), add an additional IDR 54,000,000
+- **Additional rules** — Maximum 3 dependents (tanggungan) are recognized; If wife's income is combined (penghasilan digabung), add an additional IDR 54,000,000
 
 Source: `steevenz/id-payroll-calculator` → `State.php` → `$listOfPTKP` array.
 
----
-
 ## Section 4 — Biaya Jabatan (Position Deduction)
 
+**Biaya Jabatan parameters**
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Rate | 5% of annual gross income |
 | Monthly maximum | IDR 500,000 |
 | Annual maximum | IDR 6,000,000 |
 | Applies to | Permanent employees (pegawai tetap) only |
 
-Employees earning at or below the province minimum wage are exempt from biaya jabatan (per `steevenz/id-payroll-calculator` logic).
+- **Exemption for minimum wage earners** — Employees earning at or below the province minimum wage are exempt from biaya jabatan (per `steevenz/id-payroll-calculator` logic).
 
 Source: UU DJP No. PER-32/PJ/2015 Pasal 21 ayat 3; `PayrollCalculator.php`.
 
----
-
 ## Section 5 — BPJS Kesehatan (Health Insurance)
 
+**BPJS Kesehatan contribution table**
+
 | Component | Rate | Paid by |
-|---|---|---|
+| --- | --- | --- |
 | Employer contribution | 4% of gross monthly salary | Employer |
 | Employee contribution | 1% of gross monthly salary | Employee (payroll deduction) |
-| **Total** | **5%** | |
+| **Total** | **5%** |  |
+
+**BPJS Kesehatan parameters**
 
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Maximum wage basis | IDR 12,000,000/month |
 | Additional dependents | If employee has > 5 family dependents, additional 1% deduction per extra dependent |
 
 Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php` (employer 4%, employee 1%).
 
----
-
 ## Section 6 — BPJS Ketenagakerjaan (Employment Social Security)
 
 ### 6a — JHT (Jaminan Hari Tua / Old-Age Savings)
 
+**JHT contribution table**
+
 | Component | Rate | Paid by |
-|---|---|---|
+| --- | --- | --- |
 | Employer contribution | 3.70% of gross monthly salary | Employer |
 | Employee contribution | 2.00% of gross monthly salary | Employee (payroll deduction) |
-| **Total** | **5.70%** | |
+| **Total** | **5.70%** |  |
 
 Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php`.
 
 ### 6b — JP (Jaminan Pensiun / Pension Insurance)
 
+**JP contribution table**
+
 | Component | Rate | Paid by |
-|---|---|---|
+| --- | --- | --- |
 | Employer contribution | 2.00% of gross monthly salary | Employer |
 | Employee contribution | 1.00% of gross monthly salary | Employee (payroll deduction) |
-| **Total** | **3.00%** | |
+| **Total** | **3.00%** |  |
+
+**JP parameters**
 
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Maximum wage basis | IDR 10,547,400/month (effective 1 March 2025) |
 
-When salary exceeds the wage ceiling, contributions are calculated on the ceiling amount, not actual salary. Example: for salary IDR 15,000,000, employer JP = 2% × 10,547,400 = IDR 210,948; employee JP = 1% × 10,547,400 = IDR 105,474.
+- **JP contribution cap example** — When salary exceeds the wage ceiling, contributions are calculated on the ceiling amount, not actual salary. Example: for salary IDR 15,000,000, employer JP = 2% × 10,547,400 = IDR 210,948; employee JP = 1% × 10,547,400 = IDR 105,474.
 
 Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php` (cap logic at `7000000` in repo, now updated to IDR 10,547,400 per BPJS Ketenagakerjaan 2025 regulation).
 
 ### 6c — JKK (Jaminan Kecelakaan Kerja / Work Accident Insurance)
 
-Paid entirely by the employer. Rate depends on the company's industry risk grade:
+- **Payer and rate basis** — Paid entirely by the employer. Rate depends on the company's industry risk grade.
+
+**JKK risk grade table**
 
 | Risk grade | Industry type | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Grade 1 | Very low risk (e.g. financial services, offices) | 0.24% |
 | Grade 2 | Low risk (e.g. retail, hospitality) | 0.54% |
 | Grade 3 | Medium risk (e.g. manufacturing, light industry) | 0.89% |
@@ -161,28 +217,32 @@ Source: `steevenz/id-payroll-calculator` → `State.php` → `$listOfJKKRiskGrad
 
 ### 6d — JKM (Jaminan Kematian / Death Insurance)
 
+**JKM contribution table**
+
 | Component | Rate | Paid by |
-|---|---|---|
+| --- | --- | --- |
 | Employer contribution | 0.30% of gross monthly salary | Employer |
 | Employee contribution | — | — |
-| **Total** | **0.30%** | |
+| **Total** | **0.30%** |  |
 
 Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php`.
 
 ### 6e — JKP (Jaminan Kehilangan Pekerjaan / Job Loss Insurance)
 
+**JKP contribution table**
+
 | Component | Rate | Paid by |
-|---|---|---|
+| --- | --- | --- |
 | Contribution | 0.46% | Government + reallocation from JKK/JKM surplus |
 
-JKP was introduced by PP 37/2021 (effective February 2022). The 0.46% is funded jointly: 0.22% from employer contribution reallocated from JKK/JKM, 0.14% from government, and 0.10% from reallocation of BPJS Ketenagakerjaan surplus. **No additional payroll deduction for employer or employee.** This program is listed for completeness but does not change the payroll calculation.
-
----
+- **JKP funding and impact** — JKP was introduced by PP 37/2021 (effective February 2022). The 0.46% is funded jointly: 0.22% from employer contribution reallocated from JKK/JKM, 0.14% from government, and 0.10% from reallocation of BPJS Ketenagakerjaan surplus. **No additional payroll deduction for employer or employee.** This program is listed for completeness but does not change the payroll calculation.
 
 ## Section 7 — Summary of all payroll contributions
 
+**Summary of all payroll contributions**
+
 | Program | Employer | Employee | Total |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BPJS Kesehatan | 4.00% | 1.00% | 5.00% |
 | JHT | 3.70% | 2.00% | 5.70% |
 | JP (capped at IDR 10,547,400) | 2.00% | 1.00% | 3.00% |
@@ -190,28 +250,27 @@ JKP was introduced by PP 37/2021 (effective February 2022). The 0.46% is funded 
 | JKM | 0.30% | — | 0.30% |
 | **Total (using JKK grade 2)** | **10.54%** | **4.00%** | **14.54%** |
 
----
-
 ## Section 8 — TER (Tarif Efektif Rata-rata / Average Effective Rate)
 
-Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses the TER scheme (PP 58/2023, PMK 168/2023) instead of the old cumulative method.
-
-**How TER works:**
-1. Months January–November: `PPh 21 = Gross Monthly Income × TER rate`
-2. December (or final month of employment): recalculate full-year liability using progressive brackets (Section 2), then subtract all TER withheld in months 1–11
+- **TER scheme applicability** — Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses the TER scheme (PP 58/2023, PMK 168/2023) instead of the old cumulative method.  _(PP 58/2023, PMK 168/2023)_
+- **How TER works** — 1. Months January–November: PPh 21 = Gross Monthly Income × TER rate 2. December (or final month of employment): recalculate full-year liability using progressive brackets (Section 2), then subtract all TER withheld in months 1–11
 
 ### TER category assignment
 
+**TER category assignment**
+
 | TER Category | PTKP Status |
-|---|---|
+| --- | --- |
 | A | TK/0, TK/1, K/0 |
 | B | TK/2, TK/3, K/1, K/2 |
 | C | K/3 |
 
 ### TER Category A — selected rates (common salary ranges)
 
+**TER Category A — selected rates (common salary ranges)**
+
 | Monthly gross income (IDR) | TER rate |
-|---|---|
+| --- | --- |
 | 0 – 5,400,000 | 0% |
 | 5,400,001 – 5,650,000 | 0.25% |
 | 5,650,001 – 5,950,000 | 0.50% |
@@ -259,8 +318,10 @@ Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses th
 
 ### TER Category B — selected rates (common salary ranges)
 
+**TER Category B — selected rates (common salary ranges)**
+
 | Monthly gross income (IDR) | TER rate |
-|---|---|
+| --- | --- |
 | 0 – 6,200,000 | 0% |
 | 6,200,001 – 6,500,000 | 0.25% |
 | 6,500,001 – 6,850,000 | 0.50% |
@@ -281,8 +342,10 @@ Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses th
 
 ### TER Category C — selected rates (common salary ranges)
 
+**TER Category C — selected rates (common salary ranges)**
+
 | Monthly gross income (IDR) | TER rate |
-|---|---|
+| --- | --- |
 | 0 – 6,600,000 | 0% |
 | 6,600,001 – 6,950,000 | 0.25% |
 | 6,950,001 – 7,350,000 | 0.50% |
@@ -304,76 +367,66 @@ Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses th
 
 ### TER Harian (Daily Rate) — for non-permanent employees
 
+**TER Harian (Daily Rate) — for non-permanent employees**
+
 | Daily gross income (IDR) | TER rate |
-|---|---|
+| --- | --- |
 | ≤ 450,000 | 0% |
 | 450,001 – 2,500,000 | 0.50% |
 | > 2,500,000 | Use 50% × gross × progressive rates (Pasal 17) |
 
----
-
 ## Section 9 — Annual PPh 21 computation method (December recalculation)
 
-```
-Step 1:  Gross annual income (gaji + tunjangan tetap + overtime + bonus + THR)
-Step 2:  − Biaya jabatan (5%, max IDR 6,000,000/year)
-Step 3:  − Iuran pensiun (employee JP contribution, if applicable)
-Step 4:  = Penghasilan Neto (net income)
-Step 5:  − PTKP (based on marital/dependent status)
-Step 6:  = PKP (Penghasilan Kena Pajak / taxable income)
-Step 7:  Apply progressive brackets (Section 2) → PPh 21 terutang (annual liability)
-Step 8:  − TER amounts withheld Jan–Nov
-Step 9:  = PPh 21 for December (or refund if negative)
-```
-
----
+- **December recalculation steps** — Step 1:  Gross annual income (gaji + tunjangan tetap + overtime + bonus + THR) Step 2:  − Biaya jabatan (5%, max IDR 6,000,000/year) Step 3:  − Iuran pensiun (employee JP contribution, if applicable) Step 4:  = Penghasilan Neto (net income) Step 5:  − PTKP (based on marital/dependent status) Step 6:  = PKP (Penghasilan Kena Pajak / taxable income) Step 7:  Apply progressive brackets (Section 2) → PPh 21 terutang (annual liability) Step 8:  − TER amounts withheld Jan–Nov Step 9:  = PPh 21 for December (or refund if negative)
 
 ## Section 10 — Worked example: monthly payroll calculation
 
-**Scenario:** Permanent employee (pegawai tetap), single with no dependents (TK/0), has NPWP. Monthly base salary IDR 10,000,000. Company risk grade 2 (low). No overtime, no bonuses this month.
+Scenario: Permanent employee (pegawai tetap), single with no dependents (TK/0), has NPWP. Monthly base salary IDR 10,000,000. Company risk grade 2 (low). No overtime, no bonuses this month.
 
 ### A — Monthly gross earnings
 
+**A — Monthly gross earnings**
+
 | Component | Amount (IDR) |
-|---|---|
+| --- | --- |
 | Base salary (gaji pokok) | 10,000,000 |
 | Fixed allowances (tunjangan tetap) | 0 |
 | **Monthly gross** | **10,000,000** |
 
 ### B — Employer BPJS contributions (company cost, not deducted from employee)
 
+**B — Employer BPJS contributions (company cost, not deducted from employee)**
+
 | Program | Rate | Amount (IDR) |
-|---|---|---|
+| --- | --- | --- |
 | BPJS Kesehatan | 4.00% × 10,000,000 | 400,000 |
 | JHT | 3.70% × 10,000,000 | 370,000 |
 | JP | 2.00% × 10,000,000 | 200,000 |
 | JKK (grade 2) | 0.54% × 10,000,000 | 54,000 |
 | JKM | 0.30% × 10,000,000 | 30,000 |
-| **Total employer cost** | | **1,054,000** |
+| **Total employer cost** |  | **1,054,000** |
 
 ### C — Employee deductions (withheld from salary)
 
+**C — Employee deductions (withheld from salary)**
+
 | Program | Rate | Amount (IDR) |
-|---|---|---|
+| --- | --- | --- |
 | BPJS Kesehatan | 1.00% × 10,000,000 | 100,000 |
 | JHT | 2.00% × 10,000,000 | 200,000 |
 | JP | 1.00% × 10,000,000 | 100,000 |
-| **Total employee BPJS** | | **400,000** |
+| **Total employee BPJS** |  | **400,000** |
 
 ### D — Monthly PPh 21 withholding (TER method, Jan–Nov)
 
-Status TK/0 → TER Category A. Monthly gross = IDR 10,000,000.
-
-From TER Category A table: IDR 9,650,001 – 10,050,000 → rate = **2.00%**
-
-```
-PPh 21 monthly (TER) = 10,000,000 × 2.00% = IDR 200,000
-```
+- **PPh 21 monthly (TER)** — Status TK/0 → TER Category A. Monthly gross = IDR 10,000,000. From TER Category A table: IDR 9,650,001 – 10,050,000 → rate = 2.00%. PPh 21 monthly (TER) = 10,000,000 × 2.00% = IDR 200,000
 
 ### E — Take-home pay
 
+**E — Take-home pay**
+
 | Component | Amount (IDR) |
-|---|---|
+| --- | --- |
 | Monthly gross | 10,000,000 |
 | − Employee BPJS | (400,000) |
 | − PPh 21 (TER) | (200,000) |
@@ -381,61 +434,60 @@ PPh 21 monthly (TER) = 10,000,000 × 2.00% = IDR 200,000
 
 ### F — December recalculation (annual true-up)
 
+**F — December recalculation (annual true-up)**
+
 | Step | Description | Amount (IDR) |
-|---|---|---|
+| --- | --- | --- |
 | Gross annual income | 10,000,000 × 12 | 120,000,000 |
 | − Biaya jabatan | 5% × 120,000,000 = 6,000,000 (at cap) | (6,000,000) |
 | − Iuran pensiun (JP employee) | 100,000 × 12 | (1,200,000) |
-| **Penghasilan neto** | | **112,800,000** |
-| − PTKP (TK/0) | | (54,000,000) |
-| **PKP** | | **58,800,000** |
+| **Penghasilan neto** |  | **112,800,000** |
+| − PTKP (TK/0) |  | (54,000,000) |
+| **PKP** |  | **58,800,000** |
 
-Annual tax on PKP of 58,800,000:
+**Annual tax on PKP of 58,800,000**
 
 | Bracket | Taxable in bracket | Rate | Tax |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 – 58,800,000 | 58,800,000 | 5% | 2,940,000 |
-| **Total PPh 21 annual** | | | **2,940,000** |
+| **Total PPh 21 annual** |  |  | **2,940,000** |
 
-PPh 21 for December:
-```
-PPh 21 annual          = IDR 2,940,000
-− TER withheld (Jan–Nov) = 200,000 × 11 = IDR 2,200,000
-PPh 21 December        = IDR 740,000
-```
-
----
+- **PPh 21 for December** — PPh 21 annual          = IDR 2,940,000 − TER withheld (Jan–Nov) = 200,000 × 11 = IDR 2,200,000 PPh 21 December        = IDR 740,000
 
 ## Section 11 — Payroll calculation methods
 
 The `steevenz/id-payroll-calculator` supports three PPh 21 calculation methods:
 
+**Payroll calculation methods**
+
 | Method | Indonesian | Description |
-|---|---|---|
+| --- | --- | --- |
 | NETT | Pajak ditanggung perusahaan | Employer bears the tax; employee receives full salary |
 | GROSS | Pajak ditanggung karyawan | Employee bears the tax; PPh 21 deducted from salary |
 | GROSS-UP | Tunjangan pajak | Employer adds a tax allowance equal to the PPh 21 liability, then deducts it — net effect same as NETT but appears on payslip |
-
----
 
 ## Section 12 — Filing guidance
 
 ### Who must file?
 
-All resident individuals with income above the PTKP threshold must file an annual SPT.
+- **Who must file** — All resident individuals with income above the PTKP threshold must file an annual SPT.
 
 ### Which form?
 
+**Which form?**
+
 | Form | Who |
-|---|---|
+| --- | --- |
 | 1770SS | Single employer, gross income ≤ IDR 60,000,000/year |
 | 1770S | Single employer, gross income > IDR 60,000,000/year |
 | 1770 | Multiple income sources / business income |
 
 ### Key dates
 
+**Key dates**
+
 | Event | Deadline |
-|---|---|
+| --- | --- |
 | Tax year end | 31 December |
 | Monthly E-Bupot PPh 21/26 | 20th of following month |
 | Annual SPT filing | 31 March |
@@ -448,14 +500,14 @@ All resident individuals with income above the PTKP threshold must file an annua
 - Additional income documentation (if applicable)
 - NPWP (Nomor Pokok Wajib Pajak / Tax ID)
 
----
-
 ## Section 13 — Conservative defaults
 
 When in doubt:
 
+**Conservative defaults**
+
 | Situation | Conservative position |
-|---|---|
+| --- | --- |
 | Employee NPWP status unknown | Assume no NPWP → apply 20% surcharge on PPh 21; flag for confirmation |
 | PTKP status unclear | Use TK/0 (lowest PTKP = highest tax); flag for reviewer |
 | Company risk grade unknown | Use grade 2 (0.54%) as default; flag for confirmation |
@@ -466,12 +518,12 @@ When in doubt:
 | Bonus / THR month | Include in gross for TER calculation that month; December true-up will reconcile |
 | Mid-year joiner | Pro-rate PTKP for partial year; apply TER monthly as normal |
 
----
-
 ## Section 14 — Classification rules for bank statement
 
+**Classification rules for bank statement**
+
 | Pattern / Keyword | Classification | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Gaji / Salary / Payroll | Employment income (PPh 21) | Main salary |
 | Tunjangan / Allowance | Employment income (PPh 21) | Fixed or variable allowance |
 | Bonus / Gratifikasi | Employment income (PPh 21) | Irregular income, included in TER month |
@@ -484,12 +536,12 @@ When in doubt:
 | Bunga / Interest | PPh 23 or Final | Interest income |
 | Sewa / Rent | PPh 23 or PPh 4(2) | Rental income |
 
----
-
 ## Section 15 — Sources
 
+**Sources**
+
 | Source | URL |
-|---|---|
+| --- | --- |
 | DJP (Direktorat Jenderal Pajak) | https://www.pajak.go.id |
 | DJP Online | https://djponline.pajak.go.id |
 | UU HPP No. 7/2021 | Revenue Code — Pasal 17 ayat (1) huruf a |
@@ -500,11 +552,29 @@ When in doubt:
 | BPJS Kesehatan | https://www.bpjs-kesehatan.go.id |
 | BPJS Ketenagakerjaan | https://www.bpjsketenagakerjaan.go.id |
 
+## OpenAccountants footer
+
+OpenAccountants — open-source accounting skills for AI
+This is not tax advice. All outputs must be reviewed by a qualified professional before filing.
+
+<!-- openaccountants-cta-block -->
+
 ---
 
-*OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
+## Talk to a verified accountant
 
----
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/id-payroll-pph21) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - foundation. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `id-payroll-pph21` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/id-payroll-pph21. If neither is available, confirm every figure against the official source pages cited above before relying on it.

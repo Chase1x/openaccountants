@@ -1,29 +1,28 @@
 ---
 name: jp-incorporation
-description: "> Use this skill whenever asked about incorporating in Japan -- transitioning from sole proprietorship (個人事業主) to a corporation (法人). Trigger on phrases like \"incorporation Japan\", \"法人成り\", \"会社設立\", \"should I incorporate\", \"法人化\", \"株式会社\", \"合同会社\", \"KK vs GK\", \"corporate tax vs income tax\", \"法人税\", \"when to incorporate\", \"法人成りのタイミング\", \"micro corporation\", \"マイクロ法人\", \"officer compensation\", \"役員報酬\", \"social insurance comparison\", \"社会保険\", \"個人事業 vs 法人\", \"定期同額給与\", \"consumption tax exemption reset\", \"消費税の免税リセット\", or any question about whether, when, and how a Japanese sole proprietor should form a company. This skill covers tax burden comparison, breakeven analysis, corporate form selection, establishment procedures, filing deadlines, officer compensation strategy, and social insurance optimization. ALWAYS read this skill before advising on Japanese incorporation."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about incorporating in Japan -- transitioning from sole proprietorship (個人事業主) to a corporation (法人). Trigger on phrases like \"incorporation Japan\", \"法人成り\", \"会社設立\", \"should I incorporate\", \"法人化\", \"株式会社\", \"合同会社\", \"KK vs GK\", \"corporate tax vs income tax\", \"法人税\", \"when to incorporate\", \"法人成りのタイミング\", \"micro corporation\", \"マイクロ法人\", \"officer compensation\", \"役員報酬\", \"social insurance comparison\", \"社会保険\", \"個人事業 vs 法人\", \"定期同額給与\", \"consumption tax exemption reset\", \"消費税の免税リセット\", or any question about whether, when, and how a Japanese sole proprietor should form a company. This skill covers tax burden comparison, breakeven analysis, corporate form selection, establishment procedures, filing deadlines, officer compensation strategy, and social insurance optimization. ALWAYS read this skill before advising on Japanese incorporation."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: JP
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/jp-incorporation"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/jp-incorporation"
+  jurisdiction: "JP"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Japan Incorporation (法人成り) -- Self-Employed Skill v1.0
+# JP Incorporation
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Japan Incorporation (法人成り) -- Self-Employed Skill v1.0
 
 > **Based on work by [Kazuki Nagata (@kazukinagata)](https://github.com/kazukinagata/shinkoku)**, licensed under MIT. Adapted for the OpenAccountants format.
 
----
-
 ## Section 1 -- Quick Reference
 
+**Quick Reference Table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Japan (日本) |
 | Topic | Sole proprietor → Corporation transition (法人成り) |
 | Legislation | Companies Act (会社法), Corporate Tax Act (法人税法), Income Tax Act (所得税法), Consumption Tax Act (消費税法) |
@@ -35,8 +34,10 @@ metadata:
 
 ### Key Decision Thresholds
 
+**Key Decision Thresholds Table**
+
 | Business Income | Recommendation |
-|---|---|
+| --- | --- |
 | Under JPY 5,000,000 | Stay as sole proprietor |
 | JPY 6,000,000 -- 7,000,000 | Sole proprietor slightly favorable; prepare for future incorporation |
 | ~JPY 8,000,000 | **Breakeven point** -- evaluate with social insurance benefits |
@@ -44,14 +45,14 @@ metadata:
 | Over JPY 10,000,000 | Corporation clearly favorable |
 | Over JPY 15,000,000 | Strong case for incorporation |
 
----
-
 ## Section 2 -- Tax Burden Comparison: Sole Proprietor vs Corporation
 
 ### 2.1 Sole Proprietor Tax Structure
 
+**Sole Proprietor Tax Structure Table**
+
 | Tax | Rate/Rule | Legislation |
-|---|---|---|
+| --- | --- | --- |
 | Income tax (所得税) | Progressive 5%--45% on taxable income | Income Tax Act Art. 89 |
 | Reconstruction surtax (復興特別所得税) | Income tax × 2.1% (through 2037) | Reconstruction Finance Act Art. 13 |
 | Resident tax (住民税) | 10% of taxable income + per-capita levy ~JPY 5,000 | Local Tax Act |
@@ -59,32 +60,34 @@ metadata:
 | National health insurance (国民健康保険) | Income-based + per-capita; cap ~JPY 1,090,000/year (2025) | Per municipality |
 | National pension (国民年金) | Flat JPY 17,510/month (JPY 210,120/year, 2025) | National Pension Act |
 
-**Total formula:** Income tax + reconstruction surtax + resident tax + enterprise tax + NHI + national pension
+- **Total formula (sole proprietor)** — Income tax + reconstruction surtax + resident tax + enterprise tax + NHI + national pension
 
 ### 2.2 Corporate Tax Structure
 
+**Corporate Tax Structure Table**
+
 | Tax | Rate | Legislation |
-|---|---|---|
+| --- | --- | --- |
 | Corporate tax (法人税) -- income ≤ JPY 8M | 15% (reduced rate for SMEs) | Corporate Tax Act Art. 66; Special Measures Art. 42-3-2 |
 | Corporate tax -- income > JPY 8M | 23.2% | Corporate Tax Act Art. 66 |
 | Local corporate tax (地方法人税) | Corporate tax × 10.3% | Local Corporate Tax Act Art. 6 |
 | Corporate inhabitant tax (法人住民税) -- tax portion | Corporate tax × ~7% | Local Tax Act |
 | Corporate inhabitant tax -- per-capita (均等割) | JPY 70,000/year minimum (capital ≤ JPY 10M, ≤ 50 employees) | Local Tax Act |
 | Enterprise tax (法人事業税) | 3.5%--7.0% (progressive by income bracket) | Local Tax Act Art. 72-24-7 |
-| Special enterprise tax (特別法人事業税) | Enterprise tax × 37% | |
+| Special enterprise tax (特別法人事業税) | Enterprise tax × 37% |  |
 | Social insurance (健康保険 + 厚生年金) | ~28--30% of officer compensation (split employer/employee) | Health Insurance Act; Employees' Pension Insurance Act |
 
-**Total formula:** Corporate taxes + officer's personal income tax/resident tax + social insurance (both halves)
+- **Total formula (corporate)** — Corporate taxes + officer's personal income tax/resident tax + social insurance (both halves)
 
 ### 2.3 Enterprise Tax Brackets (Corporate)
 
+**Enterprise Tax Brackets Table**
+
 | Taxable Income | Rate | With surcharge |
-|---|---|---|
+| --- | --- | --- |
 | Up to JPY 4,000,000 | 3.5% | 3.75% |
 | JPY 4,000,001 -- 8,000,000 | 5.3% | 5.665% |
 | Over JPY 8,000,000 | 7.0% | 7.48% |
-
----
 
 ## Section 3 -- Breakeven Simulations
 
@@ -98,8 +101,10 @@ metadata:
 
 ### 3.1 Business Income JPY 5,000,000 -- Sole Proprietor Wins
 
-| | Sole Proprietor | Corporation (officer comp. JPY 4M) |
-|---|---|---|
+**JPY 5,000,000 comparison table**
+
+|  | Sole Proprietor | Corporation (officer comp. JPY 4M) |
+| --- | --- | --- |
 | Income/corporate tax + surtaxes | ~JPY 620,000 | ~JPY 516,000 |
 | Social insurance | ~JPY 610,000 (NHI + pension) | ~JPY 1,200,000 (both halves) |
 | **Total burden** | **~JPY 1,230,000** | **~JPY 1,764,000** |
@@ -108,8 +113,10 @@ metadata:
 
 ### 3.2 Business Income JPY 8,000,000 -- Breakeven
 
-| | Sole Proprietor | Corporation (officer comp. JPY 6M) |
-|---|---|---|
+**JPY 8,000,000 comparison table**
+
+|  | Sole Proprietor | Corporation (officer comp. JPY 6M) |
+| --- | --- | --- |
 | Income/corporate tax + surtaxes | ~JPY 1,398,000 | ~JPY 870,000 |
 | Social insurance | ~JPY 910,000 | ~JPY 1,500,000 |
 | **Total burden** | **~JPY 2,308,000** | **~JPY 2,370,000** |
@@ -118,8 +125,10 @@ metadata:
 
 ### 3.3 Business Income JPY 10,000,000 -- Corporation Wins
 
-| | Sole Proprietor | Corporation (officer comp. JPY 7M) |
-|---|---|---|
+**JPY 10,000,000 comparison table**
+
+|  | Sole Proprietor | Corporation (officer comp. JPY 7M) |
+| --- | --- | --- |
 | Income/corporate tax + surtaxes | ~JPY 2,188,000 | ~JPY 1,240,000 |
 | Social insurance | ~JPY 1,110,000 | ~JPY 1,700,000 |
 | **Total burden** | **~JPY 3,298,000** | **~JPY 2,940,000** |
@@ -128,8 +137,10 @@ metadata:
 
 ### 3.4 Business Income JPY 15,000,000 -- Corporation Clearly Wins
 
-| | Sole Proprietor | Corporation (officer comp. JPY 9M) |
-|---|---|---|
+**JPY 15,000,000 comparison table**
+
+|  | Sole Proprietor | Corporation (officer comp. JPY 9M) |
+| --- | --- | --- |
 | Income/corporate tax + surtaxes | ~JPY 3,938,000 | ~JPY 2,250,000 |
 | Social insurance | ~JPY 1,270,000 | ~JPY 2,200,000 |
 | **Total burden** | **~JPY 5,208,000** | **~JPY 4,450,000** |
@@ -138,22 +149,24 @@ metadata:
 
 ### 3.5 Business Income JPY 20,000,000+ -- Corporation Strongly Wins
 
-| | Sole Proprietor | Corporation (officer comp. JPY 10M) |
-|---|---|---|
+**JPY 20,000,000+ comparison table**
+
+|  | Sole Proprietor | Corporation (officer comp. JPY 10M) |
+| --- | --- | --- |
 | Income/corporate tax + surtaxes | ~JPY 5,518,000 | ~JPY 3,620,000 |
 | Social insurance | ~JPY 1,270,000 | ~JPY 2,400,000 |
 | **Total burden** | **~JPY 7,638,000** | **~JPY 6,020,000** |
 
 **Verdict:** Corporation saves ~JPY 1,620,000.
 
----
-
 ## Section 4 -- Corporate Forms: KK vs GK
 
 ### 4.1 Comparison Table
 
+**KK vs GK Comparison Table**
+
 | Feature | Kabushiki Kaisha (株式会社/KK) | Godo Kaisha (合同会社/GK) |
-|---|---|---|
+| --- | --- | --- |
 | Legal basis | Companies Act Art. 25+ | Companies Act Art. 575+ |
 | Establishment cost (electronic articles) | ~JPY 200,000 | ~JPY 60,000 |
 | Establishment cost (paper articles) | ~JPY 240,000 | ~JPY 100,000 |
@@ -169,19 +182,19 @@ metadata:
 
 ### 4.2 Establishment Cost Breakdown
 
-**Kabushiki Kaisha (electronic articles):**
+**Kabushiki Kaisha (electronic articles) Cost Table**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Notarization fee | JPY 30,000--50,000 (depends on capital amount) |
 | Certified copy fee | ~JPY 2,000 |
 | Registration tax | JPY 150,000 (or capital × 0.7%, whichever is higher) |
 | **Total** | **~JPY 182,000--202,000** |
 
-**Godo Kaisha (electronic articles):**
+**Godo Kaisha (electronic articles) Cost Table**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Notarization fee | Not required |
 | Registration tax | JPY 60,000 (or capital × 0.7%, whichever is higher) |
 | **Total** | **~JPY 60,000** |
@@ -202,16 +215,16 @@ Paper articles add JPY 40,000 in revenue stamps for both forms.
 - B2C business where corporate form is invisible to customers (IT, consulting)
 - Faster decision-making and lower administrative overhead
 
----
-
 ## Section 5 -- Officer Compensation Strategy (役員報酬)
 
 ### 5.1 Fixed Monthly Compensation Rule (定期同額給与)
 
-To deduct officer compensation as a corporate expense, it must be paid monthly in equal amounts (Corporate Tax Act Art. 34, para. 1, item 1).
+- **Fixed monthly compensation requirement** — To deduct officer compensation as a corporate expense, it must be paid monthly in equal amounts.  _(Corporate Tax Act Art. 34, para. 1, item 1)_
+
+**Fixed Monthly Compensation Rules Table**
 
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Amount must be equal each month | Set once at the start of the fiscal year |
 | Change window | Within 3 months of fiscal year start (at shareholders' meeting) |
 | Mid-year changes | Prohibited except for extraordinary reasons |
@@ -221,8 +234,10 @@ To deduct officer compensation as a corporate expense, it must be paid monthly i
 
 This is the key advantage of incorporation. Sole proprietors only get the blue return deduction (max JPY 650,000), but officers get the employment income deduction:
 
+**Employment Income Deduction Table (2025)**
+
 | Annual Compensation | Employment Income Deduction (2025) |
-|---|---|
+| --- | --- |
 | Up to JPY 1,625,000 | JPY 650,000 (minimum) |
 | JPY 1,625,001 -- 1,800,000 | Compensation × 40% − JPY 100,000 |
 | JPY 1,800,001 -- 3,600,000 | Compensation × 30% + JPY 80,000 |
@@ -232,8 +247,10 @@ This is the key advantage of incorporation. Sole proprietors only get the blue r
 
 ### 5.3 Optimal Compensation Targets
 
+**Optimal Compensation Targets Table**
+
 | Business Profit | Officer Compensation Target | Corporate Profit Target | Rationale |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | JPY 8,000,000 | JPY 6,000,000 | JPY 2,000,000 | Keep personal tax at 20% bracket |
 | JPY 10,000,000 | JPY 7,000,000 | JPY 3,000,000 | Good balance of deduction and rate |
 | JPY 12,000,000 | JPY 8,000,000 | JPY 4,000,000 | Maximize deduction; corporate profit at 15% rate |
@@ -251,22 +268,24 @@ This is the key advantage of incorporation. Sole proprietors only get the blue r
 
 A corporation can pay salaries to family members as employees or directors, achieving income splitting:
 
+**Family Income Splitting Scenario Table**
+
 | Scenario | Effect |
-|---|---|
+| --- | --- |
 | Sole proprietor: all JPY 12M to owner | Owner at ~23% marginal rate |
 | Corporation: JPY 9M to owner + JPY 3M to spouse | Owner at ~20%, spouse at ~5% |
 | **Tax savings** | **~JPY 570,000/year** |
 
-**Requirements:** Family employees must have genuine work duties. Compensation must be reasonable for the role. No-work salary payments will be denied as a deductible expense.
-
----
+- **Requirements for family income splitting** — Family employees must have genuine work duties. Compensation must be reasonable for the role. No-work salary payments will be denied as a deductible expense.
 
 ## Section 6 -- Social Insurance Comparison
 
 ### 6.1 Sole Proprietor vs Corporation
 
+**Sole Proprietor vs Corporation Social Insurance Table**
+
 | Feature | Sole Proprietor (NHI + National Pension) | Corporation (Kyokai Kenpo + Employees' Pension) |
-|---|---|---|
+| --- | --- | --- |
 | Basis | Prior year income | Standard monthly compensation |
 | Dependent coverage | None (each family member pays) | Yes (dependents covered at no extra cost) |
 | Sick pay (傷病手当金) | None | 2/3 of daily comp. for up to 18 months |
@@ -276,8 +295,10 @@ A corporation can pay salaries to family members as employees or directors, achi
 
 ### 6.2 Social Insurance Rates (2025)
 
+**Social Insurance Rates Table (2025)**
+
 | Insurance | Rate | Burden |
-|---|---|---|
+| --- | --- | --- |
 | Health insurance (Kyokai Kenpo, national avg.) | ~10.00% | Split 50/50 employer/employee |
 | Nursing care (age 40--64) | 1.59% | Split 50/50 |
 | Employees' pension (厚生年金) | 18.3% | Split 50/50 |
@@ -287,20 +308,20 @@ A corporation can pay salaries to family members as employees or directors, achi
 
 ### 6.3 Social Insurance Cap
 
+**Social Insurance Cap Table**
+
 | Insurance | Standard Monthly Comp. Cap | Annual Comp. Equivalent |
-|---|---|---|
+| --- | --- | --- |
 | Health insurance | JPY 1,390,000 (Grade 50) | ~JPY 16,680,000 |
 | Employees' pension | JPY 650,000 (Grade 32) | ~JPY 7,800,000 |
 
-Above the pension cap (~JPY 7,800,000 annual compensation), pension premiums stop increasing. Health insurance premiums stop at ~JPY 16,680,000.
-
----
+- **Cap plateau note** — Above the pension cap (~JPY 7,800,000 annual compensation), pension premiums stop increasing. Health insurance premiums stop at ~JPY 16,680,000.
 
 ## Section 7 -- Consumption Tax Exemption Reset
 
 ### 7.1 The Two-Year Exemption
 
-A newly established corporation with capital under JPY 10,000,000 is generally exempt from consumption tax for the first two fiscal years (Consumption Tax Act Art. 12-2).
+- **Two-year exemption** — A newly established corporation with capital under JPY 10,000,000 is generally exempt from consumption tax for the first two fiscal years.  _(Consumption Tax Act Art. 12-2)_
 
 **Conditions:**
 1. Capital under JPY 10,000,000
@@ -310,8 +331,10 @@ A newly established corporation with capital under JPY 10,000,000 is generally e
 
 ### 7.2 Maximizing the Exemption Period
 
+**Maximizing Exemption Period Strategies Table**
+
 | Strategy | Effect |
-|---|---|
+| --- | --- |
 | Set capital below JPY 10,000,000 (e.g., JPY 9,990,000) | Qualifies for exemption |
 | Make first fiscal period ≤ 7 months | Eliminates specified-period test for 2nd year |
 | Delay qualified invoice registration | Preserves exemption (but may lose clients who need invoices) |
@@ -320,20 +343,16 @@ A newly established corporation with capital under JPY 10,000,000 is generally e
 
 ### 7.3 Invoice Registration Caution
 
-If the sole proprietor was already a qualified invoice issuer:
-- The corporation needs its own new invoice registration
-- Registering makes the corporation taxable from the registration date, losing the exemption
-- The individual's registration does NOT automatically cancel -- submit a cancellation notice (適格請求書発行事業者の登録の取消しを求める届出書)
-- The 20% special measure (2割特例) may apply to the new corporation through periods ending September 2026
-
----
+- **Invoice registration caution** — If the sole proprietor was already a qualified invoice issuer: - The corporation needs its own new invoice registration - Registering makes the corporation taxable from the registration date, losing the exemption - The individual's registration does NOT automatically cancel -- submit a cancellation notice (適格請求書発行事業者の登録の取消しを求める届出書) - The 20% special measure (2割特例) may apply to the new corporation through periods ending September 2026
 
 ## Section 8 -- Establishment Procedure
 
 ### Step 1: Pre-establishment Decisions
 
+**Pre-establishment Decisions Table**
+
 | Decision | Considerations |
-|---|---|
+| --- | --- |
 | Corporate form | KK vs GK (see Section 4) |
 | Trade name (商号) | Check for conflicts at Legal Affairs Bureau |
 | Business purpose | List broadly in articles (include future activities) |
@@ -364,8 +383,10 @@ Processing time: typically 1--2 weeks. Obtain certificate of registered matters 
 
 #### Tax Office (税務署)
 
+**Tax Office Filings Table**
+
 | Filing | Deadline | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Corporate establishment notice (法人設立届出書) | Within 2 months of establishment | Attach articles + registration certificate |
 | Blue return approval application (青色申告の承認申請書) | Within 3 months of establishment OR fiscal year end (whichever is earlier) | **Highest priority -- missing this means white return** |
 | Payroll office opening notice (給与支払事務所等の開設届出書) | Within 1 month | Required if paying officer compensation |
@@ -375,37 +396,43 @@ Processing time: typically 1--2 weeks. Obtain certificate of registered matters 
 
 #### Prefectural/Municipal Tax Office
 
+**Prefectural/Municipal Tax Office Filings Table**
+
 | Filing | Deadline |
-|---|---|
+| --- | --- |
 | Corporate establishment notice (prefectural) | 15 days to 2 months (varies by municipality) |
 | Corporate establishment notice (municipal) | 15 days to 2 months (Tokyo 23 wards: file with Tokyo Metropolitan) |
 
 #### Pension Office (年金事務所)
 
+**Pension Office Filings Table**
+
 | Filing | Deadline | Notes |
-|---|---|---|
+| --- | --- | --- |
 | New workplace application (健康保険・厚生年金保険 新規適用届) | Within 5 days | Mandatory for all corporations |
 | Insured person qualification (被保険者資格取得届) | Within 5 days | Officers are also covered |
 | Dependent notification (被扶養者異動届) | Within 5 days | If there are dependents |
 
 #### Labor Insurance (only if hiring employees)
 
+**Labor Insurance Filings Table**
+
 | Filing | Submit To | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Insurance relationship establishment (保険関係成立届) | Labor Standards Office | Within 10 days of hiring |
 | Employment insurance workplace (雇用保険 適用事業所設置届) | Hello Work | Within 10 days of hiring |
 | Employment insurance qualification (雇用保険 被保険者資格取得届) | Hello Work | By 10th of following month |
 
 *Not required for single-person corporations with no employees.*
 
----
-
 ## Section 9 -- Closing the Sole Proprietorship
 
 If not maintaining a dual structure, file these to close the sole proprietorship:
 
+**Closing Sole Proprietorship Filings Table**
+
 | Filing | Submit To | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Business opening/closing notice (開業・廃業等届出書) | Tax office | Within 1 month of closure |
 | Blue return cessation (青色申告の取りやめ届出書) | Tax office | By March 15 of following year |
 | Business cessation notice (CT) (事業廃止届出書) | Tax office | Promptly |
@@ -419,8 +446,6 @@ If not maintaining a dual structure, file these to close the sole proprietorship
 - Transfer fixed assets at book value or fair market value (beware of below-market transfers)
 - Settle all receivables/payables between individual and corporation
 - Consider filing for estimated tax reduction (予定納税の減額申請)
-
----
 
 ## Section 10 -- Micro Corporation + Sole Proprietorship ("Two-Sword" Strategy)
 
@@ -448,8 +473,10 @@ Compared to sole proprietor only at JPY 10,000,000 income:
 
 ### Risk Factors
 
+**Risk Factors Table**
+
 | Risk | Description |
-|---|---|
+| --- | --- |
 | Tax denial | If the corporation has no real business activity, it may be treated as a paper company |
 | Same business split | Splitting the same client work between personal and corporate is high-risk for denial |
 | Zero revenue corporation | A corporation existing solely for social insurance access may be challenged |
@@ -457,19 +484,17 @@ Compared to sole proprietor only at JPY 10,000,000 income:
 
 **Acceptable examples:** Personal = freelance engineering (main); Corporation = SaaS product development (separate business). **Unacceptable:** Both entities doing the same programming work for the same clients.
 
----
-
 ## Section 11 -- Optimal Timing
 
+**Optimal Timing Table**
+
 | Factor | Recommended Timing | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Income tax optimization | Mid-year | Split income between individual (first half) and corporation |
 | Consumption tax reset | Before becoming a taxable business | Maximize exemption period |
 | Accounting simplicity | January 1 | Clean separation of individual fiscal year and corporate fiscal year |
 | Client relationships | Start of quarter | Smoother invoice/contract transition |
 | Fiscal year-end choice | Avoid March | Tax advisers are busiest in March; consider September or December |
-
----
 
 ## PROHIBITIONS
 
@@ -482,8 +507,6 @@ Compared to sole proprietor only at JPY 10,000,000 income:
 - NEVER forget to mention tax adviser fees (~JPY 300,000--500,000/year) as a fixed cost of incorporation
 - NEVER present simulations as definitive -- always label as estimated and direct to a 税理士 for confirmation
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill.
@@ -494,6 +517,24 @@ Information is based on the 2025 tax year (令和7年分) tax system. Tax laws, 
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/jp-incorporation) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `jp-incorporation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/jp-incorporation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,27 +1,26 @@
 ---
 name: belgium-crypto-tax
-description: "> Use this skill whenever asked about Belgium cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Belgium\", \"Bitcoin Belgium\", \"cryptocurrency gains Belgium\", \"crypto income Belgium\", \"staking Belgium\", \"mining income Belgium\", \"NFT tax Belgium\", \"goede huisvader crypto\", \"bon père de famille crypto\", \"speculative income Belgium\", \"miscellaneous income Belgium\", \"divers inkomen crypto\", \"revenus divers crypto\", \"professional income crypto Belgium\", \"Ruling Commission crypto\", \"Service des Décisions Anticipées crypto\", \"SDA crypto\", \"Belgian crypto audit\", or any question about the income tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Belgian tax residents. Covers the three-tier classification system (normal management / speculative / professional), SDA ruling criteria, the 25% wealth threshold, and the upcoming 2026 capital gains regime. ALWAYS read this skill before touching any Belgium crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Belgium cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Belgium\", \"Bitcoin Belgium\", \"cryptocurrency gains Belgium\", \"crypto income Belgium\", \"staking Belgium\", \"mining income Belgium\", \"NFT tax Belgium\", \"goede huisvader crypto\", \"bon père de famille crypto\", \"speculative income Belgium\", \"miscellaneous income Belgium\", \"divers inkomen crypto\", \"revenus divers crypto\", \"professional income crypto Belgium\", \"Ruling Commission crypto\", \"Service des Décisions Anticipées crypto\", \"SDA crypto\", \"Belgian crypto audit\", or any question about the income tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Belgian tax residents. Covers the three-tier classification system (normal management / speculative / professional), SDA ruling criteria, the 25% wealth threshold, and the upcoming 2026 capital gains regime. ALWAYS read this skill before touching any Belgium crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: BE
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/belgium-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/belgium-crypto-tax"
+  jurisdiction: "BE"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Belgium Crypto / Digital Assets Tax Skill v1.0
+# Belgium Crypto Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Belgium Crypto / Digital Assets Tax Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Belgium (Koninkrijk België / Royaume de Belgique) |
 | Tax | Personal income tax (personenbelasting / impôt des personnes physiques) on crypto |
 | Currency | EUR |
@@ -39,8 +38,10 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether normal management or speculative | Treat as speculative (taxable at 33%) |
 | Unknown whether speculative or professional | Treat as professional (progressive rates) |
 | Unknown cost basis | STOP — cannot compute gain without acquisition cost |
@@ -48,16 +49,16 @@ metadata:
 | Crypto > 25% of movable wealth | Strong indicator of speculative/abnormal management per SDA practice |
 | Mining/staking activity | Treat as professional income unless clearly de minimis |
 
----
-
 ## Section 2 -- Classification Rules
 
 ### 2.1 The Three-Tier System (Income Year 2025)
 
 Belgium applies a **facts-and-circumstances** classification to determine how crypto gains are taxed. There is no statutory bright-line test. The three tiers are:
 
+**Three-Tier System table**  _(Art. 90, al. 1, 1° WIB 92; Art. 171, 1° WIB 92; Art. 23 §1 WIB 92)_
+
 | Tier | Dutch | French | Tax Rate | Legal Basis |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1. Normal management of private patrimony | Normaal beheer van privévermogen / goede huisvader | Gestion normale du patrimoine privé / bon père de famille | **TAX FREE** | Art. 90, al. 1, 1° WIB 92 (exclusion) |
 | 2. Speculative gains | Speculatieve meerwaarden | Plus-values spéculatives | **33%** + municipal surcharge (avg. 7–8%) | Art. 90, al. 1, 1° and Art. 171, 1° WIB 92 |
 | 3. Professional income | Beroepsinkomen | Revenus professionnels | **25%–50%** progressive + social security | Art. 23 §1 WIB 92 |
@@ -66,8 +67,10 @@ Belgium applies a **facts-and-circumstances** classification to determine how cr
 
 The Dienst Voorafgaande Beslissingen (DVB/SDA) uses a detailed questionnaire to classify crypto investors. Key factors:
 
+**Classification Factors table**
+
 | Factor | Normal Management (Tax-Free) | Speculative (33%) | Professional (25–50%) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Crypto as % of movable wealth | < 25% (SDA informal threshold) | > 25% | High and systematic |
 | Transaction frequency | Low; buy-and-hold | High volume trading | Very high; daily trading |
 | Holding period | Long (months to years) | Short (days to weeks) | Very short; day trading |
@@ -82,14 +85,15 @@ The Dienst Voorafgaande Beslissingen (DVB/SDA) uses a detailed questionnaire to 
 
 ### 2.3 The 25% Wealth Threshold
 
-The SDA applies an **informal but consistently enforced threshold**: if more than 25% of a taxpayer's movable wealth is invested in cryptocurrency, the SDA quasi-automatically classifies the management as "abnormal" (speculative). This threshold is controversial but well-documented in published rulings.
-
-**Critical note:** The percentage must be tracked from the date of first investment through each year-end. The SDA questionnaire requires a table showing this percentage at each key date.
+- **25% wealth threshold rule** — The SDA applies an informal but consistently enforced threshold: if more than 25% of a taxpayer's movable wealth is invested in cryptocurrency, the SDA quasi-automatically classifies the management as "abnormal" (speculative). This threshold is controversial but well-documented in published rulings.
+- **Critical note on tracking percentage** — The percentage must be tracked from the date of first investment through each year-end. The SDA questionnaire requires a table showing this percentage at each key date.
 
 ### 2.4 Advance Rulings (DVB/SDA)
 
+**Advance Rulings table**
+
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Who can apply | Any Belgian tax resident (individual) |
 | What it provides | Binding advance determination of tax classification |
 | Validity | Typically limited to 1 year; contains reservations for legislative changes |
@@ -98,16 +102,16 @@ The SDA applies an **informal but consistently enforced threshold**: if more tha
 | Questionnaire | 17+ questions covering all factors above (updated 2026 for new regime) |
 | Binding effect | Binds the tax administration unless facts change or legislation is amended |
 
-**Citation:** Loi du 24 décembre 2002 / Wet van 24 december 2002 (DVB/SDA organic law); DVB/SDA annual reports and published rulings
-
----
+Citation: Loi du 24 décembre 2002 / Wet van 24 december 2002 (DVB/SDA organic law); DVB/SDA annual reports and published rulings
 
 ## Section 3 -- Rate Tables
 
 ### 3.1 Tax Rates by Classification (Income Year 2025)
 
+**Tax Rates by Classification table**  _(Art. 130–145 WIB 92; Art. 171 WIB 92; FOD Financiën "Belastingtarieven — Inkomstenjaar 2025 (Aanslagjaar 2026)")_
+
 | Classification | Federal Rate | Municipal Surcharge | Effective Rate | Social Security |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Normal management | 0% | N/A | **0%** | No |
 | Speculative (miscellaneous income) | 33% | ~7–8% of federal tax | **~35.4–35.6%** | No |
 | Professional income bracket 1 | 25% on 0–€16,320 | ~7–8% | ~26.8–27.0% | Yes (~20.5% self-employed) |
@@ -115,26 +119,26 @@ The SDA applies an **informal but consistently enforced threshold**: if more tha
 | Professional income bracket 3 | 45% on €28,800–€49,840 | ~7–8% | ~48.2–48.6% | Yes |
 | Professional income bracket 4 | 50% on €49,840+ | ~7–8% | ~53.5–54.0% | Yes |
 
-**Personal tax allowance (belastingvrije som):** EUR 10,910 for income year 2025
-
-**Citation:** Art. 130–145 WIB 92; Art. 171 WIB 92; FOD Financiën "Belastingtarieven — Inkomstenjaar 2025 (Aanslagjaar 2026)"
+- **Personal tax allowance (belastingvrije som)** — EUR 10,910 EUR (income year 2025)  _(Art. 130–145 WIB 92; Art. 171 WIB 92; FOD Financiën "Belastingtarieven — Inkomstenjaar 2025 (Aanslagjaar 2026)")_
 
 ### 3.2 Staking / Passive Income Classification
 
-The SDA has classified staking rewards as **roerend inkomen** (movable income / income from movable property) under Art. 17 §1 WIB 92, analogous to interest under Art. 19, 1° WIB 92. This implies:
+- **SDA staking classification rule** — The SDA has classified staking rewards as roerend inkomen (movable income / income from movable property) under Art. 17 §1 WIB 92, analogous to interest under Art. 19, 1° WIB 92.  _(SDA ruling March 2025; Art. 17, 19, 261–269 WIB 92)_
+
+**Staking / Passive Income table**  _(SDA ruling March 2025; Art. 17, 19, 261–269 WIB 92)_
 
 | Income Type | Rate | Withholding |
-|---|---|---|
+| --- | --- | --- |
 | Staking rewards (interest analogy) | 30% (précompte mobilier / roerende voorheffing) | Self-assessed if no Belgian intermediary |
-
-**Citation:** SDA ruling March 2025; Art. 17, 19, 261–269 WIB 92
 
 ### 3.3 Upcoming 2026 Regime (Important Context for 2025 Planning)
 
 From 1 January 2026, a new capital gains tax applies:
 
+**2026 Regime table**  _(Programme law (Programmawet) 2025; Art. 90, al. 1, 9°, c) WIB 92 (new))_
+
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Rate on "normal management" gains | 10% (replaces tax-free treatment) |
 | Annual exemption | EUR 10,000 per taxpayer |
 | Historical gains exempt | Gains accrued up to 31 December 2025 are exempt if documented |
@@ -142,18 +146,16 @@ From 1 January 2026, a new capital gains tax applies:
 | Professional gains | Still taxed at progressive rates |
 | Carry-forward of unused exemption | Up to EUR 1,000/year for max 5 years |
 
-**Citation:** Programme law (Programmawet) 2025; Art. 90, al. 1, 9°, c) WIB 92 (new)
-
----
-
 ## Section 4 -- Cost Basis Methods
 
 ### 4.1 Accepted Methods
 
 Belgium does not prescribe a specific cost basis method for crypto. In practice:
 
+**Accepted Methods table**
+
 | Method | Status |
-|---|---|
+| --- | --- |
 | FIFO (First In, First Out) | Accepted; most commonly used |
 | Average cost | Accepted |
 | LIFO (Last In, First Out) | Not standard; may be challenged |
@@ -161,26 +163,22 @@ Belgium does not prescribe a specific cost basis method for crypto. In practice:
 
 ### 4.2 Cost Basis Components
 
-The acquisition cost (aanschaffingswaarde) includes:
-- Purchase price in EUR at the date of acquisition
-- Exchange fees and commissions
-- Network/gas fees directly attributable to the purchase
-- Bank transfer fees for deposits to exchanges
+- **Acquisition cost (aanschaffingswaarde) components** — Purchase price in EUR at the date of acquisition; Exchange fees and commissions; Network/gas fees directly attributable to the purchase; Bank transfer fees for deposits to exchanges
 
 ### 4.3 No Expense Deduction for Speculative Income
 
-**Critical rule:** For gains taxed as miscellaneous income (33%), **no deduction is permitted for expenses** — only the acquisition cost can offset the sale proceeds. This is per Art. 97 WIB 92.
+- **No expense deduction for speculative income** — Critical rule: For gains taxed as miscellaneous income (33%), no deduction is permitted for expenses — only the acquisition cost can offset the sale proceeds.  _(Art. 97 WIB 92)_
 
 For professional income, normal business expense deductions apply.
-
----
 
 ## Section 5 -- DeFi, Staking, Mining, and Airdrop Treatment
 
 ### 5.1 Mining
 
+**Mining table**
+
 | Scale | Classification | Tax Treatment |
-|---|---|---|
+| --- | --- | --- |
 | Occasional/small scale | Likely miscellaneous income (speculative) | 33% + municipal surcharge |
 | Regular/commercial | Professional income | Progressive rates 25%–50% + social security |
 
@@ -188,8 +186,10 @@ The SDA and OATR (Opsporingsdienst) tend to quickly classify mining as professio
 
 ### 5.2 Staking
 
+**Staking table**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | SDA classification (March 2025 ruling) | Movable income (roerend inkomen) — interest analogy |
 | Tax rate | 30% (roerende voorheffing rate) |
 | Tax point | When rewards are received/accessible |
@@ -198,36 +198,32 @@ The SDA and OATR (Opsporingsdienst) tend to quickly classify mining as professio
 
 ### 5.3 DeFi Lending
 
+**DeFi Lending table**
+
 | Activity | Treatment |
-|---|---|
+| --- | --- |
 | Depositing crypto into lending protocol | Uncertain — may constitute a disposal or may be treated as a loan |
 | Interest received | Likely movable income at 30% (interest analogy) |
 | Withdrawing from lending protocol | Uncertain |
 
-**Warning:** There is no specific Belgian guidance on DeFi lending. The SDA has not published rulings on LP positions, yield farming, or DeFi protocols. Conservative approach: treat deposits as disposals.
+Warning: There is no specific Belgian guidance on DeFi lending. The SDA has not published rulings on LP positions, yield farming, or DeFi protocols. Conservative approach: treat deposits as disposals.
 
 ### 5.4 Liquidity Providing
 
-No specific guidance. Conservative treatment:
-- Deposit into LP = disposal of underlying crypto (capital gain/loss triggered)
-- LP tokens = new acquisition at FMV
-- Withdrawal from LP = disposal of LP tokens
+- **Liquidity Providing conservative treatment** — No specific guidance. Conservative treatment: Deposit into LP = disposal of underlying crypto (capital gain/loss triggered); LP tokens = new acquisition at FMV; Withdrawal from LP = disposal of LP tokens
 
 ### 5.5 Airdrops
 
+**Airdrops table**
+
 | Type | Treatment |
-|---|---|
+| --- | --- |
 | Gratuitous airdrop | Cost basis EUR 0; taxable event at disposal only |
 | Airdrop for service/action | Income at FMV when received; classification depends on overall investor profile |
 
 ### 5.6 Hard Forks
 
-No specific guidance. Conservative treatment:
-- Cost basis of forked coin = EUR 0
-- Gain = full proceeds on disposal
-- Classification follows normal three-tier analysis
-
----
+- **Hard Forks conservative treatment** — No specific guidance. Conservative treatment: Cost basis of forked coin = EUR 0; Gain = full proceeds on disposal; Classification follows normal three-tier analysis
 
 ## Section 6 -- NFT Treatment
 
@@ -235,16 +231,20 @@ No specific guidance. Conservative treatment:
 
 Belgium applies the same three-tier classification to NFTs as to other crypto assets:
 
+**General NFT Classification table**
+
 | Scenario | Likely Classification |
-|---|---|
+| --- | --- |
 | Buy and hold NFT art long-term | Normal management (tax-free in 2025) |
 | Frequent NFT trading (flipping) | Speculative (33%) |
 | NFT creation and sale as regular activity | Professional income (25–50%) |
 
 ### 6.2 NFT-Specific Considerations
 
+**NFT-Specific Considerations table**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | NFT purchased with crypto | Two transactions: disposal of crypto + acquisition of NFT |
 | NFT sold for crypto | Disposal of NFT + acquisition of crypto |
 | NFT creation (artist) | If regular → professional income |
@@ -252,18 +252,16 @@ Belgium applies the same three-tier classification to NFTs as to other crypto as
 
 ### 6.3 TOB (Tax on Stock Exchange Transactions)
 
-The Taks op de Beursverrichtingen (TOB) / Taxe sur les Opérations de Bourse does **NOT** apply to cryptocurrency or NFT transactions. The TOB is limited to transactions in financial instruments executed through a Belgian intermediary on a regulated market.
-
-**Citation:** Art. 120–123 of the Code of Miscellaneous Taxes and Duties (Wetboek Diverse Rechten en Taksen)
-
----
+- **TOB does not apply to crypto/NFTs** — The Taks op de Beursverrichtingen (TOB) / Taxe sur les Opérations de Bourse does NOT apply to cryptocurrency or NFT transactions. The TOB is limited to transactions in financial instruments executed through a Belgian intermediary on a regulated market.  _(Art. 120–123 of the Code of Miscellaneous Taxes and Duties (Wetboek Diverse Rechten en Taksen))_
 
 ## Section 7 -- Reporting Requirements
 
 ### 7.1 Tax Return Filing
 
+**Tax Return Filing table**
+
 | Classification | Where to Report |
-|---|---|
+| --- | --- |
 | Normal management (tax-free) | No reporting obligation for gains; but crypto accounts must be declared to CAP (see below) |
 | Speculative / miscellaneous income | Part 2 of tax return, Section XV — Diverse inkomsten / Revenus divers (Code 1440/2440) |
 | Professional income | Part 1 of tax return — Beroepsinkomsten / Revenus professionnels |
@@ -271,8 +269,10 @@ The Taks op de Beursverrichtingen (TOB) / Taxe sur les Opérations de Bourse doe
 
 ### 7.2 Centraal Aanspreekpunt (CAP) — Foreign Account Declaration
 
+**CAP table**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | What must be declared | Foreign crypto exchange accounts (Binance, Coinbase, Kraken, etc.) |
 | To whom | National Bank of Belgium — Centraal Aanspreekpunt (CAP) |
 | Deadline | Before filing the tax return |
@@ -281,16 +281,20 @@ The Taks op de Beursverrichtingen (TOB) / Taxe sur les Opérations de Bourse doe
 
 ### 7.3 Filing Deadlines (Income Year 2025)
 
+**Filing Deadlines table**
+
 | Method | Deadline |
-|---|---|
+| --- | --- |
 | Paper filing | Late June 2026 (exact date published annually) |
 | Tax-on-web (e-filing) | Mid-July 2026 (exact date published annually) |
 | Via tax advisor (mandataris) | Late October 2026 |
 
 ### 7.4 Record-Keeping
 
+**Record-Keeping table**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 7 years from the assessment year |
 | Records to maintain | Full transaction logs, cost basis calculations, portfolio value at each year-end, documentation of crypto-to-movable-wealth ratio |
 | SDA ruling documentation | Keep the SDA questionnaire responses and ruling decision indefinitely |
@@ -298,72 +302,52 @@ The Taks op de Beursverrichtingen (TOB) / Taxe sur les Opérations de Bourse doe
 
 ### 7.5 DAC8 / CARF (From 2026)
 
-- Crypto service providers report Belgian user transaction data to FOD Financiën
-- Increased audit risk for undeclared crypto gains
-- Belgian tax authorities have been increasingly auditing crypto holders since 2023
-
----
+- **DAC8/CARF reporting** — Crypto service providers report Belgian user transaction data to FOD Financiën; Increased audit risk for undeclared crypto gains; Belgian tax authorities have been increasingly auditing crypto holders since 2023
 
 ## Section 8 -- Loss Offset and Carry-Forward
 
 ### 8.1 Loss Rules by Classification
 
+**Loss Rules by Classification table**
+
 | Classification | Loss Offset | Carry-Forward |
-|---|---|---|
+| --- | --- | --- |
 | Normal management | N/A (gains are tax-free, so losses are irrelevant) | No |
 | Speculative (miscellaneous income) | Losses can **only** offset gains within the **same category** (miscellaneous/speculative crypto gains) in the **same tax year** | **No carry-forward** |
 | Professional income | Losses deductible as business losses; can offset other professional income | Carry-forward possible under normal business loss rules |
 
 ### 8.2 Critical Limitation — Speculative Losses
 
-**Speculative crypto losses CANNOT offset:**
-- Employment income
-- Rental income
-- Movable income (dividends, interest)
-- Other types of miscellaneous income not in the same sub-category
-
-This is one of the harshest aspects of Belgian crypto taxation.
-
-**Citation:** Art. 90 and Art. 103 WIB 92
+- **Speculative losses ring-fencing** — Speculative crypto losses CANNOT offset: Employment income; Rental income; Movable income (dividends, interest); Other types of miscellaneous income not in the same sub-category. This is one of the harshest aspects of Belgian crypto taxation.  _(Art. 90 and Art. 103 WIB 92)_
 
 ### 8.3 2026 Regime — Loss Rules
 
-Under the new 10% capital gains tax from 2026:
-- Losses are deductible only against gains in the **same sub-category** of financial assets
-- Crypto losses cannot offset, e.g., share gains
-- No carry-forward of losses
-
----
+- **2026 loss rules** — Under the new 10% capital gains tax from 2026: Losses are deductible only against gains in the same sub-category of financial assets; Crypto losses cannot offset, e.g., share gains; No carry-forward of losses
 
 ## Section 9 -- Anti-Avoidance Rules
 
 ### 9.1 General Anti-Abuse Provision
 
-Belgium has a general anti-abuse provision (Art. 344, §1 WIB 92) that allows the tax administration to recharacterise transactions lacking genuine economic substance. This includes artificial structures designed to avoid crypto taxation.
+- **General anti-abuse provision** — Belgium has a general anti-abuse provision that allows the tax administration to recharacterise transactions lacking genuine economic substance. This includes artificial structures designed to avoid crypto taxation.  _(Art. 344, §1 WIB 92)_
 
 ### 9.2 Substance Over Form
 
-The SDA and courts apply a substance-over-form analysis. Even if a taxpayer formally holds crypto long-term, the overall pattern of behaviour determines classification. Key case law precedents include the Court of Cassation rulings of 1968/1969 defining professional vs private activities.
+- **Substance over form analysis** — The SDA and courts apply a substance-over-form analysis. Even if a taxpayer formally holds crypto long-term, the overall pattern of behaviour determines classification. Key case law precedents include the Court of Cassation rulings of 1968/1969 defining professional vs private activities.
 
 ### 9.3 Increased Audit Activity
 
-Belgian tax authorities have significantly increased crypto-related audits since 2023. Common triggers:
-- Large bank deposits from crypto exchange withdrawals
-- Inconsistencies between declared income and lifestyle
-- Information received from foreign tax authorities
-- DAC8/CARF reports (from 2026)
-- Undeclared CAP accounts
+Belgian tax authorities have significantly increased crypto-related audits since 2023. Common triggers: Large bank deposits from crypto exchange withdrawals; Inconsistencies between declared income and lifestyle; Information received from foreign tax authorities; DAC8/CARF reports (from 2026); Undeclared CAP accounts
 
 ### 9.4 Penalties
 
+**Penalties table**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | Administrative fines (EUR 50–1,250) |
 | Undeclared crypto income | Tax surcharge of 10%–200% of unpaid tax |
 | Undeclared foreign accounts (CAP) | Separate fines; potential criminal prosecution |
 | Fraud | Criminal penalties; tax surcharge up to 200% |
-
----
 
 ## Section 10 -- Worked Examples
 
@@ -446,8 +430,6 @@ Tax computation:
 Reporting: Part 1 — Beroepsinkomsten / Revenus professionnels
 ```
 
----
-
 ## Self-Checks
 
 Before finalising any Belgium crypto computation, verify:
@@ -464,8 +446,6 @@ Before finalising any Belgium crypto computation, verify:
 - [ ] Record of SDA ruling (if obtained) retained
 - [ ] Planning for 2026 regime change considered (10% tax on normal management gains)
 
----
-
 ## PROHIBITIONS
 
 - NEVER assume all crypto gains are tax-free in Belgium — only "normal management" gains are exempt (and only for 2025; 10% from 2026)
@@ -479,14 +459,30 @@ Before finalising any Belgium crypto computation, verify:
 - NEVER compute gains without verified cost basis records
 - NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a belastingconsulent, conseil fiscal, or equivalent licensed practitioner in Belgium) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/belgium-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `belgium-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/belgium-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

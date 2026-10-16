@@ -1,15 +1,13 @@
 ---
 name: in-income-tax
-description: "> Use this skill whenever asked about Indian income tax for self-employed professionals, freelancers, or sole proprietors. Trigger on phrases like \"how much tax do I pay in India\", \"ITR-4\", \"ITR-3\", \"Sugam\", \"Section 44ADA\", \"Section 44AD\", \"presumptive taxation\", \"new tax regime\", \"old tax regime\", \"advance tax India\", \"TDS credit\", \"PAN\", \"80C\", \"80D\", \"income tax return India\", \"surcharge\", \"health and education cess\", \"UPI income\", \"Razorpay payout\", \"Paytm business\", or any question about filing or computing income tax for a self-employed individual in India. This skill covers new regime vs old regime rate tables, presumptive taxation (44ADA for professionals, 44AD for business), regular computation (ITR-3), surcharge, cess, standard deduction, Section 80C/80D deductions, advance tax schedule, TDS credits, PAN requirements, and ITR-4 (Sugam) structure. ALWAYS read this skill before touching any Indian income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Indian income tax for self-employed professionals, freelancers, or sole proprietors. Trigger on phrases like \"how much tax do I pay in India\", \"ITR-4\", \"ITR-3\", \"Sugam\", \"Section 44ADA\", \"Section 44AD\", \"presumptive taxation\", \"new tax regime\", \"old tax regime\", \"advance tax India\", \"TDS credit\", \"PAN\", \"80C\", \"80D\", \"income tax return India\", \"surcharge\", \"health and education cess\", \"UPI income\", \"Razorpay payout\", \"Paytm business\", or any question about filing or computing income tax for a self-employed individual in India. This skill covers new regime vs old regime rate tables, presumptive taxation (44ADA for professionals, 44AD for business), regular computation (ITR-3), surcharge, cess, standard deduction, Section 80C/80D deductions, advance tax schedule, TDS credits, PAN requirements, and ITR-4 (Sugam) structure. ALWAYS read this skill before touching any Indian income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: IN
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/in-income-tax"
-  tax_year: 2025-26
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/in-income-tax"
+  jurisdiction: "IN"
+  tax_year: "2025"
+  last_updated: "2026-07-04"
 ---
 
 # India Income Tax (आयकर) -- Self-Employed Skill v2.0
@@ -547,8 +545,8 @@ ONBOARDING QUESTIONS -- INDIA INCOME TAX
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Chartered Accountant or equivalent licensed practitioner in India) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/in-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-04. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

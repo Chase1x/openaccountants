@@ -1,27 +1,24 @@
 ---
 name: nb-individual-return
-description: "> Use this skill whenever asked about New Brunswick provincial individual income tax. Trigger on phrases like \"New Brunswick tax\", \"NB provincial tax\", \"New Brunswick T1\", \"New Brunswick brackets\", \"HST New Brunswick\", \"New Brunswick credits\", or any question about computing New Brunswick provincial tax for an individual return. This skill covers New Brunswick's four-bracket tax system, HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any New Brunswick individual tax return work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about New Brunswick provincial individual income tax. Trigger on phrases like \"New Brunswick tax\", \"NB provincial tax\", \"New Brunswick T1\", \"New Brunswick brackets\", \"HST New Brunswick\", \"New Brunswick credits\", or any question about computing New Brunswick provincial tax for an individual return. This skill covers New Brunswick's four-bracket tax system, HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any New Brunswick individual tax return work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/nb-individual-return"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/nb-individual-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# New Brunswick Individual Tax Return -- Provincial T1 Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# NB Individual Return
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Province | New Brunswick (Canada) |
 | Tax | Provincial Personal Income Tax |
 | Currency | CAD only |
@@ -34,8 +31,10 @@ metadata:
 
 ### New Brunswick Provincial Tax Rates (2025)
 
+**New Brunswick Provincial Tax Rates (2025)**
+
 | Taxable Income (CAD) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 49,958 | 9.4% |
 | 49,959 -- 99,916 | 14% |
 | 99,917 -- 185,064 | 16% |
@@ -43,8 +42,10 @@ metadata:
 
 ### Key New Brunswick Features
 
+**Key New Brunswick Features**
+
 | Feature | Detail |
-|---|---|
+| --- | --- |
 | Harmonized sales tax (HST) | 15% (5% federal + 10% provincial) |
 | Basic personal amount (2025) | $13,044 |
 | Spousal/equivalent amount | $13,044 |
@@ -56,8 +57,10 @@ metadata:
 
 ### Combined Federal + New Brunswick Marginal Rates (2025)
 
+**Combined Federal + New Brunswick Marginal Rates (2025)**
+
 | Taxable Income (CAD) | Combined Rate |
-|---|---|
+| --- | --- |
 | 0 -- 49,958 | 24.4% |
 | 49,959 -- 57,375 | 29% |
 | 57,376 -- 99,916 | 34.5% |
@@ -69,27 +72,31 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown residency province on Dec 31 | Do not compute -- confirm province |
 | Unknown marital/family status | Single, no dependants |
-
----
 
 ## Section 2 -- Classification and Filing
 
 ### 2.1 T1 Structure
 
+**T1 Structure**
+
 | Schedule | Purpose |
-|---|---|
+| --- | --- |
 | T1 General | Federal return |
 | Form NB428 | New Brunswick Tax and Credits |
 | Form NB479 | New Brunswick Credits (refundable) |
 
 ### 2.2 Provincial Non-Refundable Credits (Form NB428)
 
+**Provincial Non-Refundable Credits (Form NB428)**
+
 | Credit | Amount (2025) | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Basic personal amount | $13,044 | 9.4% |
 | Spousal / common-law partner | $13,044 | 9.4% |
 | CPP/EI contributions | Actual | 9.4% |
@@ -102,72 +109,76 @@ metadata:
 
 ### 2.3 New Brunswick Refundable Credits (Form NB479)
 
+**New Brunswick Refundable Credits (Form NB479)**
+
 | Credit | Detail |
-|---|---|
+| --- | --- |
 | NB Low-Income Tax Reduction | Eliminates provincial tax for low-income earners |
 | NB Child Tax Benefit | $250/child; income-tested |
 | Seniors' Home Renovation Credit | 10% on up to $10,000 eligible expenses |
 | Tuition Rebate | 50% of tuition over 3 years for NB graduates working in NB |
 | Small Business Investor Tax Credit | 50% of eligible investment (max $125,000 investment) |
 
----
-
 ## Section 3 -- Computation Method
 
 ### Step 1: Calculate Taxable Income
-Same as federal taxable income (Line 26000).
+
+- **Calculate Taxable Income** — Same as federal taxable income (Line 26000).  _(Line 26000)_
 
 ### Step 2: Apply New Brunswick Bracket Rates
-- First $49,958 × 9.4%
-- $49,959 to $99,916 × 14%
-- $99,917 to $185,064 × 16%
-- Above $185,064 × 19.5%
+
+- **Apply New Brunswick Bracket Rates** — First $49,958 × 9.4%; $49,959 to $99,916 × 14%; $99,917 to $185,064 × 16%; Above $185,064 × 19.5%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
-Total credit amounts × 9.4% (lowest bracket rate).
+
+- **Subtract Non-Refundable Tax Credits** — Total credit amounts × 9.4% (lowest bracket rate).
 
 ### Step 4: Apply Low-Income Tax Reduction
-If eligible, reduces or eliminates provincial tax.
+
+- **Apply Low-Income Tax Reduction** — If eligible, reduces or eliminates provincial tax.
 
 ### Step 5: Net Provincial Tax
-Gross provincial tax less credits and low-income reduction.
+
+- **Net Provincial Tax** — Gross provincial tax less credits and low-income reduction.
 
 ### Step 6: Apply Refundable Credits
-Subtract applicable refundable credits.
 
----
+- **Apply Refundable Credits** — Subtract applicable refundable credits.
 
 ## Section 4 -- HST Considerations
 
+**HST Considerations**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | HST rate | 15% (5% federal + 10% provincial) |
 | HST registrant (business) | Full input tax credit (ITC) available |
 | Small supplier threshold | $30,000 in 4 consecutive quarters |
 | New Housing Rebate | Provincial portion: 36% rebate on homes up to $350,000 |
 | Point-of-sale rebates | Children's clothing, footwear, diapers, feminine hygiene |
 
----
-
 ## Section 5 -- Income Types and Dividend Tax Credits
 
 ### 5.1 New Brunswick Dividend Tax Credit
 
+**New Brunswick Dividend Tax Credit**
+
 | Dividend Type | Federal Gross-Up | NB Credit Rate |
-|---|---|---|
+| --- | --- | --- |
 | Eligible dividends (public corps) | 38% gross-up | 14% of taxable amount |
 | Non-eligible dividends (CCPCs) | 15% gross-up | 2.75% of taxable amount |
 
 ### 5.2 Capital Gains
 
-- 50% inclusion rate for first $250,000 (individuals)
-- 66.67% above $250,000 (effective June 2024)
-- Lifetime Capital Gains Exemption: $1,250,000 on qualifying small business shares (2025)
+- **Capital gains inclusion rate** — 50% inclusion rate for all capital gains; the proposed 66.67% increase and $250,000 threshold were cancelled March 21, 2025
+- **Lifetime Capital Gains Exemption** — $1,250,000 on qualifying small business shares (2025)
 
 ### 5.3 NB Small Business Investor Tax Credit
 
+**NB Small Business Investor Tax Credit**
+
 | Element | Detail |
-|---|---|
+| --- | --- |
 | Credit rate | 50% of eligible investment |
 | Maximum investment | $125,000 per investor per year |
 | Maximum credit | $62,500 per year |
@@ -175,15 +186,16 @@ Subtract applicable refundable credits.
 | Carry-forward | 7 years for unused credits |
 | Hold period | Must hold investment for at least 4 years |
 
----
-
 ## Section 6 -- Edge Cases
 
 ### 6.1 NB Tuition Rebate
-Available to graduates of designated NB post-secondary institutions who live and work in NB. Rebate is 50% of tuition paid, claimed over 3 years (20%/20%/10% or until limit reached). Maximum $10,000 lifetime rebate.
+
+- **NB Tuition Rebate** — Available to graduates of designated NB post-secondary institutions who live and work in NB. Rebate is 50% of tuition paid, claimed over 3 years (20%/20%/10% or until limit reached). Maximum $10,000 lifetime rebate.
+
+**NB Tuition Rebate details**
 
 | Element | Detail |
-|---|---|
+| --- | --- |
 | Eligible programs | Degrees/diplomas from designated NB institutions |
 | Maximum lifetime rebate | $10,000 |
 | Claim schedule | ~33% per year over 3 years |
@@ -191,22 +203,28 @@ Available to graduates of designated NB post-secondary institutions who live and
 | Application | Automatic through T1 filing (claimed on NB479) |
 
 ### 6.2 Low-Income Tax Reduction
-Eliminates NB provincial tax for individuals with income below approximately $22,000 (single). Phases out between ~$22,000 and ~$25,000. Adjusted for family size.
+
+- **Low-Income Tax Reduction** — Eliminates NB provincial tax for individuals with income below approximately $22,000 (single). Phases out between ~$22,000 and ~$25,000. Adjusted for family size.
+
+**Low-Income Tax Reduction thresholds**
 
 | Filing Status | Threshold (approximate) |
-|---|---|
+| --- | --- |
 | Single | $22,005 |
 | Single + 1 dependant | $28,459 |
 | Couple (no dependants) | $28,459 |
 | Couple + 1 child | $32,457 |
 
 ### 6.3 Interprovincial Truckers/Workers
-Workers who live in NB but earn income in other provinces: all income taxed at NB rates if resident on Dec 31. No provincial allocation for employment income.
+
+- **Interprovincial Truckers/Workers** — Workers who live in NB but earn income in other provinces: all income taxed at NB rates if resident on Dec 31. No provincial allocation for employment income.
 
 ### 6.4 Seniors' Home Renovation Credit
 
+**Seniors' Home Renovation Credit**
+
 | Element | Detail |
-|---|---|
+| --- | --- |
 | Credit rate | 10% of eligible expenses |
 | Maximum expenses | $10,000 per year |
 | Maximum credit | $1,000 per year |
@@ -215,40 +233,32 @@ Workers who live in NB but earn income in other provinces: all income taxed at N
 | Non-eligible | Routine maintenance, appliances, landscaping |
 
 ### 6.5 Bilingual Province Considerations
-New Brunswick is Canada's only officially bilingual province. CRA services and all tax forms are available in both English and French. No tax implications -- administrative convenience only.
 
----
+New Brunswick is Canada's only officially bilingual province. CRA services and all tax forms are available in both English and French. No tax implications -- administrative convenience only.
 
 ## Section 7 -- Worked Example
 
 ### Single taxpayer, employment income $70,000 (2025)
 
+**Single taxpayer, employment income $70,000 (2025)**
+
 | Step | Calculation | Amount |
-|---|---|---|
-| Taxable income | | $70,000 |
+| --- | --- | --- |
+| Taxable income |  | $70,000 |
 | NB tax on first $49,958 | $49,958 × 9.4% | $4,696 |
 | NB tax on $49,959 -- $70,000 | $20,042 × 14% | $2,806 |
-| Gross NB provincial tax | | $7,502 |
+| Gross NB provincial tax |  | $7,502 |
 | Less: Basic personal credit | $13,044 × 9.4% | ($1,226) |
 | Less: CPP credit | ~$3,867 × 9.4% | ($364) |
 | Less: EI credit | ~$1,049 × 9.4% | ($99) |
-| Net NB provincial tax | | $5,813 |
-| Federal tax (for reference) | | $10,252 |
-| Total combined tax (approx.) | | $16,065 |
-| Effective combined rate | | ~22.9% |
-
----
+| Net NB provincial tax |  | $5,813 |
+| Federal tax (for reference) |  | $10,252 |
+| Total combined tax (approx.) |  | $16,065 |
+| Effective combined rate |  | ~22.9% |
 
 ## Section 6 -- Prohibitions
 
-- NEVER apply other provincial rates to a New Brunswick resident
-- NEVER separate HST into GST + PST -- New Brunswick uses harmonized HST
-- NEVER claim NB credits without confirming NB residency on December 31
-- NEVER ignore the four-bracket structure
-- NEVER claim the Tuition Rebate without confirming NB post-secondary graduation and NB residency
-- NEVER present tax calculations as definitive -- always label as estimated
-
----
+- **Prohibitions** — NEVER apply other provincial rates to a New Brunswick resident; NEVER separate HST into GST + PST -- New Brunswick uses harmonized HST; NEVER claim NB credits without confirming NB residency on December 31; NEVER ignore the four-bracket structure; NEVER claim the Tuition Rebate without confirming NB post-secondary graduation and NB residency; NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 
@@ -256,6 +266,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/nb-individual-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nb-individual-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nb-individual-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

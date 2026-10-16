@@ -1,30 +1,28 @@
 ---
 name: eu-intra-rates
-description: "OpenAccountants tax and accounting reference for INTL: eu intra rates. Use for cross-border questions in INTL (tax year )."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use when asked about EU Intra Rates. Quick Reference"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/eu-intra-rates"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/eu-intra-rates"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# EU Intra-Community Treaty Rates
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# EU Intra Rates
 
 ## Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | EU Member States (intra-community) |
 | Corridors Covered | DE-FR, DE-NL, DE-IT, DE-ES, FR-IT, FR-ES, FR-BE, NL-BE, ES-PT, IT-MT, AT-DE, SE-DK-NO (Nordic Convention) |
 | Last Verified | May 2026 |
 | Key Note | EU Parent-Subsidiary Directive (0% dividends, 10%+ holding) and Interest & Royalties Directive (0% for 25%+ associated companies) often override treaty rates. Treaty rates below apply when directives do NOT apply (below thresholds, unrelated parties, individuals). |
-
----
 
 ## When Do EU Directives NOT Apply?
 
@@ -37,12 +35,12 @@ The EU Parent-Subsidiary Directive and Interest & Royalties Directive eliminate 
 
 The treaty rates below are relevant when these EU-level exemptions do not apply.
 
----
-
 ## Germany → France
 
+**Germany → France rates**  _(Germany-France Convention (revised). PwC Germany WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 9 | Below PSA threshold |
 | Dividends — substantial (≥10% capital) | 5% | Art 9 | Between 10% and PSA threshold |
 | Interest | 0% | Art 10 | Taxable only in residence state |
@@ -52,12 +50,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Both states agreed to 0% interest/royalties bilaterally regardless of relationship. PSA Directive covers most corporate dividends above 10%.
 **Last verified:** May 2026
 
----
-
 ## Germany → Netherlands
 
+**Germany → Netherlands rates**  _(Germany-Netherlands Convention. PwC Germany and Netherlands WHT tables.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 10% | Art 10 | Intermediate rate |
 | Dividends — substantial (≥25% capital) | 5% | Art 10 | Higher threshold for 5% |
@@ -68,12 +66,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Three-tier dividend rate (5%/10%/15%) — Germany uses capital percentage, not voting power. Netherlands conditional WHT does not apply to German payments (Germany is not low-tax). Treaty awaiting new protocol ratification.
 **Last verified:** May 2026
 
----
-
 ## Germany → Italy
 
+**Germany → Italy rates**  _(Germany-Italy Convention. PwC Germany and Italy WHT tables.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Italy domestic WHT 26% |
 | Dividends — substantial (≥25% capital) | 10% | Art 10 | Older treaty — 25% threshold |
 | Interest | 0%/10% | Art 11 | 0% for most; 10% for certain types |
@@ -83,12 +81,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Older treaty with higher substantial-holding threshold (25%). Post-Brexit, Italy-UK Interest & Royalties Directive ceased — but intra-EU Italy-Germany directive still applies for qualifying associated companies. Italy domestic royalty WHT is 30% (applied on 75% of gross).
 **Last verified:** May 2026
 
----
-
 ## Germany → Spain
 
+**Germany → Spain rates**  _(Germany-Spain Convention. PwC Germany WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 5% | Art 10 | Direct investment |
 | Interest | 0% | Art 11 | Taxable only in residence state; 15% on profit-participating |
@@ -98,12 +96,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** 0% interest applies generally but 15% may apply to profit-participating debt. Spain domestic WHT on dividends to non-residents is 19%.
 **Last verified:** May 2026
 
----
-
 ## France → Italy
 
+**France → Italy rates**  _(France-Italy Convention. PwC France and Italy WHT tables.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Below PSA threshold |
 | Dividends — substantial (≥10% capital) | 5% | Art 10 | Direct investment |
 | Interest | 10% | Art 11 | NOT zero — older treaty |
@@ -113,12 +111,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Interest rate of 10% is higher than most intra-EU treaties. EU I&R Directive overrides to 0% for qualifying 25%+ associated companies. Italy WHT on royalties to France: 5% for some, 0% for qualifying associated companies under directive.
 **Last verified:** May 2026
 
----
-
 ## France → Spain
 
+**France → Spain rates**  _(France-Spain Convention. PwC France WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 0% | Art 10 | Full exemption |
 | Interest | 0%/10% | Art 11 | 0% general; 10% on certain types |
@@ -128,12 +126,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** 0% dividend for ≥10% holdings mirrors PSA Directive level. Spain domestic WHT 19% on dividends to non-residents.
 **Last verified:** May 2026
 
----
-
 ## France → Belgium
 
+**France → Belgium rates**  _(France-Belgium Convention. PwC France WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 10% | Art 10 | Intermediate rate |
 | Interest | 15% | Art 11 | Relatively high for intra-EU |
@@ -143,12 +141,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Interest rate of 15% is the highest in this set of intra-EU treaties. EU I&R Directive overrides to 0% for qualifying associated companies. Belgium 30% domestic WHT on dividends.
 **Last verified:** May 2026
 
----
-
 ## Netherlands → Belgium
 
+**Netherlands → Belgium rates**  _(Netherlands-Belgium Convention. PwC Netherlands WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥25% capital) | 5% | Art 10 | Higher threshold |
 | Interest | 0%/10% | Art 11 | 0% general; exceptions apply |
@@ -158,12 +156,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** 25% capital threshold for reduced dividend rate is higher than modern treaties. Belgium domestic WHT on dividends is 30%. Netherlands conditional WHT does not apply to Belgium (not low-tax jurisdiction).
 **Last verified:** May 2026
 
----
-
 ## Spain → Portugal
 
+**Spain → Portugal rates**  _(Spain-Portugal Convention. PwC Spain WHT tables.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥25% capital) | 10% | Art 10 | Older treaty threshold |
 | Interest | 15% | Art 11 | Relatively high for intra-EU |
@@ -173,12 +171,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Iberian corridor with older treaty terms. Both countries have relatively high domestic WHT rates. EU directives override for qualifying associated companies. Portugal domestic WHT: dividends 25%, interest 25%, royalties 25%.
 **Last verified:** May 2026
 
----
-
 ## Italy → Malta
 
+**Italy → Malta rates**  _(Italy-Malta Convention. PwC Italy WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥25% capital) | 5% | Art 10 | Direct investment |
 | Interest | 10% | Art 11 | Standard rate |
@@ -188,12 +186,12 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Key corridor for holding structures. Malta's full imputation system and 6/7ths refund mechanism interacts with treaty rates. EU PSA Directive applies for qualifying 10%+ holdings. Italy domestic WHT: dividends 26%.
 **Last verified:** May 2026
 
----
-
 ## Austria → Germany
 
+**Austria → Germany rates**  _(Austria-Germany Convention. PwC Germany WHT table.)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 5% | Art 10 | Direct investment |
 | Interest | 0% | Art 11 | Taxable only in residence state |
@@ -203,16 +201,16 @@ The treaty rates below are relevant when these EU-level exemptions do not apply.
 **Special provisions:** Austrian domestic WHT on dividends is 27.5%. Zero interest and royalties reflect close economic ties. Both countries use exemption-with-progression method. EU directives also provide 0% for qualifying associated companies.
 **Last verified:** May 2026
 
----
-
 ## Nordic Convention: Sweden-Denmark-Norway
 
 The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland, Norway, and Sweden.
 
 ### Sweden → Denmark
 
+**Sweden → Denmark rates**  _(Nordic Convention 1996 (in force 1997). PwC Denmark, Sweden, Norway WHT tables.)_
+
 | Income Type | Treaty Rate | Notes |
-|-------------|------------|-------|
+| --- | --- | --- |
 | Dividends — portfolio | 15% | Denmark domestic WHT 27% |
 | Dividends — qualifying company | 0% | EU PSA Directive / Nordic Convention |
 | Interest | 0% | Denmark does not levy WHT on interest |
@@ -220,8 +218,10 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 
 ### Sweden → Norway
 
+**Sweden → Norway rates**  _(Nordic Convention 1996 (in force 1997). PwC Denmark, Sweden, Norway WHT tables.)_
+
 | Income Type | Treaty Rate | Notes |
-|-------------|------------|-------|
+| --- | --- | --- |
 | Dividends — portfolio | 15% | Norway domestic WHT 25% |
 | Dividends — qualifying company | 0% | EEA participation exemption |
 | Interest | 0% | Norway does not levy WHT on interest generally |
@@ -229,23 +229,27 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 
 ### Denmark → Norway
 
+**Denmark → Norway rates**  _(Nordic Convention 1996 (in force 1997). PwC Denmark, Sweden, Norway WHT tables.)_
+
 | Income Type | Treaty Rate | Notes |
-|-------------|------------|-------|
+| --- | --- | --- |
 | Dividends — portfolio | 15% | Standard rate |
 | Dividends — qualifying company | 0% | Nordic Convention / EEA exemption |
 | Interest | 0% | Neither country levies WHT on interest |
 | Royalties | 0% | Full exemption |
 
+## Nordic Convention: Sweden-Denmark-Norway
+
 **Source:** Nordic Convention 1996 (in force 1997). PwC Denmark, Sweden, Norway WHT tables.
 **Special provisions:** The Nordic Convention is a rare multilateral tax treaty. All three corridors are effectively 0% on interest and royalties. Dividend exemptions available through both the Nordic Convention and EEA participation exemption. TREKK Treaty governs collection/transfer between Nordic countries. Individual/portfolio dividends face 15% WHT. Sweden suspended its convention with Russia in February 2025.
 **Last verified:** May 2026
 
----
-
 ## Summary: Intra-EU Zero-WHT Corridors (Treaty-Level, All Three Categories)
 
+**Summary: Intra-EU Zero-WHT Corridors**
+
 | Corridor | Dividends (substantial) | Interest | Royalties |
-|----------|------------------------|----------|-----------|
+| --- | --- | --- | --- |
 | DE ↔ FR | 5% | 0% | 0% |
 | DE ↔ NL | 5% | 0% | 0% |
 | DE ↔ ES | 5% | 0% | 0% |
@@ -255,14 +259,14 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 
 **Note:** With EU Parent-Subsidiary Directive and Interest & Royalties Directive, most intra-EU corporate payments between associated companies (≥25% for I&R, ≥10% for PSA) are at 0% regardless of treaty rates.
 
----
-
 ## EU Directive Quick Reference
 
 ### Parent-Subsidiary Directive (2011/96/EU)
 
+**Parent-Subsidiary Directive (2011/96/EU) requirements**
+
 | Requirement | Detail |
-|-------------|--------|
+| --- | --- |
 | Minimum shareholding | 10% of capital or voting rights |
 | Holding period | At least 2 years (may be retroactive) |
 | Company form | Listed in Directive Annex I |
@@ -272,8 +276,10 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 
 ### Interest & Royalties Directive (2003/49/EC)
 
+**Interest & Royalties Directive (2003/49/EC) requirements**
+
 | Requirement | Detail |
-|-------------|--------|
+| --- | --- |
 | Minimum shareholding | 25% direct holding of capital |
 | Company form | Listed in Directive Annex |
 | Subject to tax | Must be subject to corporate tax in an EU state |
@@ -290,12 +296,12 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 5. **Third-country PE:** Income attributable to a PE outside the EU → directive may not apply
 6. **Post-Brexit UK:** UK recipients no longer qualify for either directive → bilateral treaty rates apply
 
----
-
 ## PE Thresholds — Intra-EU Notable Deviations
 
+**PE Thresholds — Intra-EU Notable Deviations**
+
 | Corridor | Construction PE | Service PE | Notes |
-|----------|----------------|------------|-------|
+| --- | --- | --- | --- |
 | DE → FR | 12 months | None | Standard OECD |
 | DE → NL | 12 months | None | Standard OECD |
 | DE → IT | 12 months | None | Standard OECD |
@@ -304,12 +310,28 @@ The Nordic Convention is a multilateral treaty between Denmark, Finland, Iceland
 
 Most intra-EU PE thresholds follow the OECD 12-month standard for construction projects, with no separate service PE provision.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Treaty rates are subject to change through protocol amendments, renegotiations, and EU directive amendments. Always verify current treaty text and EU directive applicability before relying on any rate. All outputs must be reviewed by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/eu-intra-rates) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `eu-intra-rates` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/eu-intra-rates. If neither is available, confirm every figure against the official source pages cited above before relying on it.

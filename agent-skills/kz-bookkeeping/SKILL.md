@@ -1,15 +1,13 @@
 ---
 name: kz-bookkeeping
-description: "> Use this skill whenever asked about record-keeping, bookkeeping, ledgers, or accounting obligations for self-employed people and individual entrepreneurs (ИП / жеке кәсіпкер) in Kazakhstan. Trigger phrases like \"ЭСФ Казахстан\", \"ККМ Казахстан\", \"bookkeeping Kazakhstan ИП\", \"e-invoicing Kazakhstan\", \"электронные счета-фактуры\", \"онлайн-ККМ\", \"фискальный чек\", \"виртуальный склад\", \"СНТ\", \"first-aid documents Kazakhstan\", \"what records does an ИП keep\", \"do I need a cash register in Kazakhstan\", \"Form 910.00 records\", \"упрощённая декларация учёт\", \"общеустановленный режим учёт\", \"срок хранения документов Казахстан\", \"налоговый учёт ИП\", \"e-Salyq\", \"ИС ЭСФ\". Distinguishes obligations by tax regime (simplified declaration / упрощённая декларация vs general / общеустановленный) and explains when ИП are NOT required to keep full бухгалтерский учёт."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about record-keeping, bookkeeping, ledgers, or accounting obligations for self-employed people and individual entrepreneurs (ИП / жеке кәсіпкер) in Kazakhstan. Trigger phrases like \"ЭСФ Казахстан\", \"ККМ Казахстан\", \"bookkeeping Kazakhstan ИП\", \"e-invoicing Kazakhstan\", \"электронные счета-фактуры\", \"онлайн-ККМ\", \"фискальный чек\", \"виртуальный склад\", \"СНТ\", \"first-aid documents Kazakhstan\", \"what records does an ИП keep\", \"do I need a cash register in Kazakhstan\", \"Form 910.00 records\", \"упрощённая декларация учёт\", \"общеустановленный режим учёт\", \"срок хранения документов Казахстан\", \"налоговый учёт ИП\", \"e-Salyq\", \"ИС ЭСФ\". Distinguishes obligations by tax regime (simplified declaration / упрощённая декларация vs general / общеустановленный) and explains when ИП are NOT required to keep full бухгалтерский учёт."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-bookkeeping"
-  tax_year: 2026
-  obligation: BT
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-bookkeeping"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan (KZ) — Record-Keeping & Bookkeeping for the Self-Employed (2026)
@@ -316,6 +314,6 @@ values, thresholds, forms, issuance terms, and exemptions change — always veri
 Kazakhstan accountant or tax adviser must review any output before it is relied upon for
 filing. See **openaccountants.com**.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-bookkeeping) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.

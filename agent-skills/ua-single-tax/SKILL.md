@@ -1,25 +1,24 @@
 ---
 name: ua-single-tax
-description: "> Use this skill whenever asked about the Ukrainian single tax (єдиний податок) simplified regime for sole proprietors (ФОП / FOP). Trigger on phrases like \"ФОП\", \"FOP\", \"single tax Ukraine\", \"єдиний податок\", \"Group 1 2 3 FOP\", \"simplified system Ukraine\", \"5% tax Ukraine freelancer\", \"how much tax does a FOP pay\", \"unified tax Ukraine\", or any question about a Ukrainian self-employed person on the simplified system. Covers the three FOP single-tax groups, income limits, the single-tax rate, the 1% military levy on Group 3, the unified social contribution (ЄСВ) due on top, employee limits, and which activities are barred from the simplified system. ALWAYS read this skill before any Ukrainian FOP single-tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Ukrainian single tax (єдиний податок) simplified regime for sole proprietors (ФОП): the three FOP groups, income limits, rates, the 1% military levy on Group 3, ЄСВ due on top, employee limits, and barred activities."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: UA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ua-single-tax"
-  tax_year: 2026
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/ua-single-tax"
+  jurisdiction: "UA"
+  tax_year: "2026"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Ukraine Single Tax (Єдиний податок / FOP Simplified System) — Self-Employed Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# UA Single Tax
 
 ## Section 1 — Quick Reference
 
+**Section 1 Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Ukraine |
 | Regime | Спрощена система оподаткування (Simplified system) — Єдиний податок |
 | Taxpayer | ФОП (фізична особа-підприємець) — sole proprietor / individual entrepreneur |
@@ -37,8 +36,10 @@ metadata:
 
 ### The three FOP groups (2026)
 
-| | Group 1 | Group 2 | Group 3 |
-|---|---|---|---|
+**The three FOP groups (2026)**
+
+|  | Group 1 | Group 2 | Group 3 |
+| --- | --- | --- | --- |
 | **Who** | Retail trade at markets / personal services to individuals | Services, restaurant, production/sale of goods | Almost any activity; freelancers, IT, consultants |
 | **Customers** | Individuals only | Individuals + other single-tax payers | Anyone (incl. companies, foreign clients) |
 | **Employees** | 0 | ≤ 10 | Unlimited |
@@ -50,8 +51,10 @@ metadata:
 
 ### Indicative monthly fixed amounts (as of 1 Jan 2026; verify current min/living wage)
 
+**Indicative monthly fixed amounts**
+
 | Item | Basis | Indicative ₴/month |
-|---|---|---|
+| --- | --- | --- |
 | Living wage (прожитковий мінімум) | — | ₴3,328 |
 | Minimum wage (мінімальна зарплата) | — | ₴8,647 |
 | Group 1 single tax | 10% × living wage | ≈ ₴332.80 |
@@ -65,30 +68,30 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Group not stated | Group 3, non-VAT (5%) — the freelancer default |
 | VAT status unknown (Group 3) | Non-VAT (5% rate) |
 | Whether ЄСВ applies | Assume YES — single-tax payers owe ЄСВ even with zero income in 2026 |
 | Foreign-currency income date | Date of receipt at NBU rate |
 | Activity eligibility unknown | Flag for review — see Section 3 prohibitions |
 
----
-
 ## Section 2 — Required Inputs and Refusal Catalogue
 
 ### Required inputs
+
 - **Minimum:** FOP group, VAT status (Group 3), and full-year bank/turnover records (UAH and any FX accounts).
 - **Recommended:** registration extract (виписка з ЄДР) showing КВЕД activity codes, prior-year declaration, ЄСВ payment history.
 - **Ideal:** Книга обліку доходів (income ledger), all FX receipts with NBU conversion dates.
 
 ### Refusal catalogue
-- **R-UA-1 — Income over the group cap.** Exceeding the cap triggers a 15% single-tax penalty on the excess and forced transfer to the general system. Escalate.
-- **R-UA-2 — Barred activities.** Single tax is not available for, e.g., excisable goods (except retail fuel within limits), gambling, currency exchange, financial intermediation, mineral extraction, trade in jewellery. Flag and route to general system.
-- **R-UA-3 — Company (ТОВ).** This skill is FOP (individual) only. A ТОВ on single tax (Group 3) is different. Escalate.
-- **R-UA-4 — Non-resident.** Single tax is for Ukrainian-resident FOPs. Escalate.
 
----
+- **R-UA-1** — Income over the group cap. Exceeding the cap triggers a 15% single-tax penalty on the excess and forced transfer to the general system. Escalate.  _(R-UA-1)_
+- **R-UA-2** — Barred activities. Single tax is not available for, e.g., excisable goods (except retail fuel within limits), gambling, currency exchange, financial intermediation, mineral extraction, trade in jewellery. Flag and route to general system.  _(R-UA-2)_
+- **R-UA-3** — Company (ТОВ). This skill is FOP (individual) only. A ТОВ on single tax (Group 3) is different. Escalate.  _(R-UA-3)_
+- **R-UA-4** — Non-resident. Single tax is for Ukrainian-resident FOPs. Escalate.  _(R-UA-4)_
 
 ## Section 3 — Eligibility & Activity Rules (Tier 1)
 
@@ -96,57 +99,51 @@ metadata:
 - **Barred from the simplified system entirely:** excisable goods production/sale (limited fuel/retail exceptions), gambling/lotteries, FX exchange, financial services and intermediation, extraction/sale of minerals (except certain local), trade in antiques/art via auction, technical testing, and management of enterprises. Such activity in any month forces transfer to the general system.
 - **Foreign income:** permitted for Group 3. Convert to UAH at the NBU rate on the date funds arrive in the FOP account. Currency must generally be sold per NBU rules; the UAH proceeds are the single-tax base.
 
----
-
 ## Section 4 — Rates, Base & Computation (Tier 1)
 
 ### Group 3 (turnover-based)
-- **Base:** gross income received (cash basis — money in the account / cash received), not profit. Expenses are **not** deducted under the single tax.
-- **Single tax:** 5% (non-VAT) or 3% (VAT-registered, with separate VAT obligations).
-- **Military levy:** 1% of the same income base (since 1 Jan 2025 for Group 3).
-- Returns/refunds to customers reduce the base.
+
+- **Base** — gross income received (cash basis — money in the account / cash received), not profit. Expenses are not deducted under the single tax.  _(Section 4 — Rates, Base & Computation (Tier 1))_
+- **Single tax** — 5% (non-VAT) or 3% (VAT-registered, with separate VAT obligations)  _(Section 4 — Rates, Base & Computation (Tier 1))_
+- **Military levy** — 1% of the same income base (since 1 Jan 2025 for Group 3)  _(Section 4 — Rates, Base & Computation (Tier 1))_
+- **Returns/refunds** — Returns/refunds to customers reduce the base.  _(Section 4 — Rates, Base & Computation (Tier 1))_
 
 ### Groups 1 & 2 (fixed)
-- Pay a fixed monthly single tax (set by the local council up to the statutory cap) plus a fixed monthly military levy, **regardless of income**, up to the annual cap.
+
+- **Fixed payment rule** — Pay a fixed monthly single tax (set by the local council up to the statutory cap) plus a fixed monthly military levy, regardless of income, up to the annual cap.  _(Section 4 — Rates, Base & Computation (Tier 1))_
 
 ### ЄСВ on top (all groups)
-- Unified social contribution is **separate** from the single tax: minimum 22% of the minimum wage per month (≈ ₴1,902.34), payable quarterly. Owed even in months with no income (2026). See ua-social-contributions.
 
----
+- **ЄСВ minimum** — minimum 22% of the minimum wage per month (≈ ₴1,902.34), payable quarterly. Owed even in months with no income (2026). See ua-social-contributions.  _(Section 4 — Rates, Base & Computation (Tier 1))_
 
 ## Section 5 — Filing & Payment Calendar (Tier 1)
 
+**Filing & Payment Calendar**
+
 | Group | Single-tax return | Single-tax payment | Military levy | ЄСВ |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 & 2 | Annual (within 60 days of year-end) | Monthly, by 20th | Monthly, by 20th | Quarterly, by 19th of month after quarter |
 | 3 | Quarterly (within 40 days of quarter-end) | Quarterly, within 50 days of quarter-end | With the single tax (quarterly) | Quarterly, by 19th of month after quarter |
 
 > From 1 Jan 2026 the separate **monthly** ЄСВ/PIT/military-levy report for sole proprietors is abolished; obligations are reported within the single-tax return / annual cycle. Confirm current ДПС guidance.
 
----
-
 ## Section 6 — Worked Examples
 
-**Example 1 — IT freelancer, Group 3 non-VAT, foreign client.**
 Receives USD 3,000 from a US client; NBU rate on receipt 41.50 → ₴124,500 income.
 Single tax 5% = ₴6,225; military levy 1% = ₴1,245; plus the fixed monthly ЄСВ ₴1,902.34. No expense deduction.
 
-**Example 2 — Group 2 hairdresser, slow month.**
 Earns ₴5,000 in the month. Still pays the **fixed** Group 2 single tax (≈₴1,729.40) + military levy (≈₴864.70) + ЄСВ (₴1,902.34) ≈ ₴4,496, because Group 2 is a fixed regime.
 
-**Example 3 — Approaching the cap.**
 A Group 3 FOP hits ₴10.09 m of income in November. Any income above the 1,167 × min-wage cap is taxed at **15%** single tax and the FOP must move to the general system from the next quarter. Flag well before the cap.
-
----
 
 ## Section 10 — Prohibitions
 
-- NEVER deduct business expenses against the single-tax base — it is turnover-based, not profit-based.
-- NEVER omit ЄСВ — it is due on top of the single tax, even in zero-income months (2026).
-- NEVER omit the military levy (1% for Group 3; fixed monthly for Groups 1–2) — it is in force under martial law.
-- NEVER apply Group 1/2 fixed amounts to a freelancer serving companies or foreign clients — that requires Group 3.
-- NEVER treat income over the group cap as still 5% — the excess is 15% and forces a regime change.
-- NEVER compute a final figure as definitive — direct the client to a Ukrainian accountant/auditor.
+- **Prohibition — expense deduction** — NEVER deduct business expenses against the single-tax base — it is turnover-based, not profit-based.  _(Section 10 — Prohibitions)_
+- **Prohibition — ЄСВ omission** — NEVER omit ЄСВ — it is due on top of the single tax, even in zero-income months (2026).  _(Section 10 — Prohibitions)_
+- **Prohibition — military levy omission** — NEVER omit the military levy (1% for Group 3; fixed monthly for Groups 1–2) — it is in force under martial law.  _(Section 10 — Prohibitions)_
+- **Prohibition — Group 1/2 misapplication** — NEVER apply Group 1/2 fixed amounts to a freelancer serving companies or foreign clients — that requires Group 3.  _(Section 10 — Prohibitions)_
+- **Prohibition — cap excess rate** — NEVER treat income over the group cap as still 5% — the excess is 15% and forces a regime change.  _(Section 10 — Prohibitions)_
+- **Prohibition — definitive computation** — NEVER compute a final figure as definitive — direct the client to a Ukrainian accountant/auditor.  _(Section 10 — Prohibitions)_
 
 ## Disclaimer
 
@@ -154,6 +151,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ua-single-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ua-single-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ua-single-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

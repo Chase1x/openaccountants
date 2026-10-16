@@ -1,27 +1,24 @@
 ---
 name: oh-sales-tax
-description: "> Use this skill whenever asked about Ohio sales and use tax, ODT filings, Ohio CAT, Ohio exemptions, Ohio nexus, or any request involving Ohio state sales and use tax compliance. Trigger on phrases like \"Ohio sales tax\", \"OH sales tax\", \"ODT\", \"UST-1\", \"Ohio exemption certificate\", \"Streamlined Sales Tax Ohio\", or any request involving Ohio sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Ohio sales tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Ohio sales and use tax, ODT filings, Ohio CAT, Ohio exemptions, Ohio nexus, or any request involving Ohio state sales and use tax compliance. Trigger on phrases like \"Ohio sales tax\", \"OH sales tax\", \"ODT\", \"UST-1\", \"Ohio exemption certificate\", \"Streamlined Sales Tax Ohio\", or any request involving Ohio sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Ohio sales tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-OH
-  category: us-states
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/oh-sales-tax"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/oh-sales-tax"
+  jurisdiction: "US-OH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Ohio Sales and Use Tax Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# OH Sales Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | State | Ohio |
 | Tax | Sales and Use Tax (state + county) |
 | State rate | 5.75% |
@@ -41,8 +38,10 @@ metadata:
 
 ### Key Combined Rates
 
+**Key Combined Rates**
+
 | County | County Rate | Combined Rate |
-|---|---|---|
+| --- | --- | --- |
 | Cuyahoga (Cleveland) | 2.25% | 8.00% |
 | Franklin (Columbus) | 1.75% | 7.50% |
 | Hamilton (Cincinnati) | 1.80% | 7.55% |
@@ -52,8 +51,10 @@ metadata:
 
 ### Taxability Quick Matrix
 
+**Taxability Quick Matrix**
+
 | Item | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Tangible personal property | YES | Default taxable |
 | SaaS / cloud software | YES | Taxable as automatic data processing (ORC 5739.01(B)(3)(a)) |
 | Grocery food | NO | Exempt (but candy without flour, soft drinks, dietary supplements are taxable) |
@@ -67,42 +68,38 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Product taxability unknown | Taxable |
 | Service taxability unknown | Exempt (unless enumerated) |
 | Sourcing location unknown | Seller's county (origin-based intrastate) |
 | Candy vs food unclear | Food (exempt) if contains flour |
 | CAT obligation | Escalate -- separate tax |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable:** Confirmation of Ohio nexus (physical or economic), vendor license status, filing frequency, and list of products/services sold.
-
-**Recommended:** Sales by county, exemption certificates on file, prior period UST-1.
-
-**Ideal:** Complete transaction log with ship-to addresses, exemption certificate register, CAT filing status.
+- **Minimum viable** — Confirmation of Ohio nexus (physical or economic), vendor license status, filing frequency, and list of products/services sold.
+- **Recommended** — Sales by county, exemption certificates on file, prior period UST-1.
+- **Ideal** — Complete transaction log with ship-to addresses, exemption certificate register, CAT filing status.
 
 ### Refusal Catalogue
 
-**R-OH-1 -- CAT questions.** "The Commercial Activity Tax (CAT) is a separate tax on gross receipts. CAT compliance is outside this skill scope. Escalate."
-
-**R-OH-2 -- Audit defense.** "Responding to ODT audits or assessments requires specialist representation. Escalate."
-
-**R-OH-3 -- Complex bundled transactions.** "Mixed transactions involving taxable and exempt components require specialist analysis. Escalate."
-
----
+- **R-OH-1 -- CAT questions** — The Commercial Activity Tax (CAT) is a separate tax on gross receipts. CAT compliance is outside this skill scope. Escalate.  _(R-OH-1)_
+- **R-OH-2 -- Audit defense** — Responding to ODT audits or assessments requires specialist representation. Escalate.  _(R-OH-2)_
+- **R-OH-3 -- Complex bundled transactions** — Mixed transactions involving taxable and exempt components require specialist analysis. Escalate.  _(R-OH-3)_
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Taxable Sales
 
+**Taxable Sales**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Electronics / hardware sale | Taxable at combined rate | TPP |
 | SaaS subscription / cloud CRM | Taxable | Automatic data processing |
 | Staffing / temp agency | Taxable | Employment services |
@@ -113,8 +110,10 @@ metadata:
 
 ### 3.2 Exempt Sales
 
+**Exempt Sales**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Grocery food (bread, milk, produce) | Exempt | Not candy, soft drinks, supplements |
 | Manufacturing equipment with STEC-B | Exempt | Must have valid certificate |
 | Sale to government entity | Exempt | With proper documentation |
@@ -123,15 +122,15 @@ metadata:
 
 ### 3.3 Candy/Food Classification (SST Standard)
 
+**Candy/Food Classification (SST Standard)**
+
 | Item | Classification | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | Chocolate bar (no flour) | Candy -- TAXABLE | No flour ingredient |
 | Chocolate-covered pretzels | Food -- EXEMPT | Contains flour |
 | Soft drinks | TAXABLE | Specifically enumerated |
 | Dietary supplements | TAXABLE | Specifically enumerated |
 | Fresh produce | EXEMPT | Grocery food |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -167,54 +166,55 @@ metadata:
 
 **Classification:** Rate = 7.50% (seller's county).
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Rate Structure
 
-State rate: 5.75%. County permissive taxes: 0.75% to 2.25%. No city or special district taxes.
+- **State rate** — 5.75%
+- **County permissive taxes** — 0.75% to 2.25% (No city or special district taxes)
 
 ### 5.2 Sourcing (ORC 5739.033)
 
-Origin-based for intrastate (both seller and buyer in Ohio). Destination-based for remote sellers (SST compliant).
+- **Sourcing rule** — Origin-based for intrastate (both seller and buyer in Ohio). Destination-based for remote sellers (SST compliant).  _(ORC 5739.033)_
 
 ### 5.3 Filing (ORC 5739.12)
 
+**Filing frequency**  _(ORC 5739.12)_
+
 | Frequency | Criteria | Due Date |
-|---|---|---|
+| --- | --- | --- |
 | Monthly | Tax liability > $600/month | 23rd of following month |
 | Semi-annual | Tax liability $600 or less/month | July 23 / January 23 |
 
 ### 5.4 Vendor Discount
 
-0.75% of tax collected for timely filing and payment. No cap. ORC 5739.12(B).
+- **Vendor discount** — 0.75% of tax collected for timely filing and payment. No cap.  _(ORC 5739.12(B))_
 
 ### 5.5 Economic Nexus (ORC 5741.01(I)(2))
 
-$100,000 gross receipts OR 200 transactions in current or preceding calendar year. Effective August 1, 2019.
+- **Economic nexus threshold** — $100,000 gross receipts OR 200 transactions in current or preceding calendar year. (Effective August 1, 2019)  _(ORC 5741.01(I)(2))_
 
 ### 5.6 Marketplace Facilitator (ORC 5739.01(Q))
 
-Required to collect and remit. Effective January 1, 2020. Marketplace sellers relieved for facilitated sales.
+- **Marketplace facilitator obligation** — Required to collect and remit. Effective January 1, 2020. Marketplace sellers relieved for facilitated sales.  _(ORC 5739.01(Q))_
 
 ### 5.7 Exemption Certificates
 
-STEC-B (blanket), STEC-U (unit), STEC-CO (construction). Ohio accepts SST Certificate and MTC Uniform Certificate.
+- **Exemption certificates** — STEC-B (blanket), STEC-U (unit), STEC-CO (construction). Ohio accepts SST Certificate and MTC Uniform Certificate.
 
 ### 5.8 Use Tax
 
-Applies when Ohio purchaser acquires TPP/services without Ohio tax collected. Rate = combined state + county at location of use. Report on UST-1 (vendors) or IT-1040 (individuals).
+- **Use tax** — Applies when Ohio purchaser acquires TPP/services without Ohio tax collected. Rate = combined state + county at location of use. Report on UST-1 (vendors) or IT-1040 (individuals).
 
 ### 5.9 Penalties (ORC 5739.13)
 
+**Penalties**  _(ORC 5739.13)_
+
 | Penalty | Rate |
-|---|---|
+| --- | --- |
 | Late filing/payment | Greater of 10% of tax due or $50 |
 | Fraud | 50% of deficiency |
 | Interest | Federal short-term rate + 5% |
-
----
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -229,8 +229,6 @@ Ohio imposes BOTH sales tax (customer-collected) and CAT (seller's gross receipt
 ### 6.3 Complex Bundled Transactions
 
 When taxable and exempt items are sold together, bundling rules determine treatment. Flag for reviewer.
-
----
 
 ## Section 7 -- Working Paper Template
 
@@ -265,20 +263,18 @@ REVIEWER FLAGS:
   [ ] CAT obligation flagged separately?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Common Ohio Business Narrations
 
+**Common Ohio Business Narrations**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | ODT / OHIO DEPT OF TAXATION | Tax payment | Exclude |
 | AMAZON / ETSY / SHOPIFY | Marketplace settlement | Check if facilitator collected |
 | SQUARE / STRIPE / PAYPAL | Payment processor | Business income |
 | OHIO BWC | Workers comp | Exclude |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -296,14 +292,14 @@ ONBOARDING QUESTIONS -- OHIO SALES TAX
 8. Which Ohio counties do you sell into?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Sales tax imposition | ORC 5739.02 |
 | Use tax | ORC Chapter 5741 |
 | Sourcing | ORC 5739.033 |
@@ -323,8 +319,10 @@ ONBOARDING QUESTIONS -- OHIO SALES TAX
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 10-section structure; taxability matrix; worked examples; origin-based sourcing detail |
 | 1.0 | 2025 | Initial version |
 
@@ -336,8 +334,6 @@ ONBOARDING QUESTIONS -- OHIO SALES TAX
 - [ ] SaaS classified as taxable?
 - [ ] Vendor discount applied if timely?
 - [ ] CAT flagged as separate obligation?
-
----
 
 ## PROHIBITIONS
 
@@ -351,14 +347,30 @@ ONBOARDING QUESTIONS -- OHIO SALES TAX
 - NEVER refuse SST Certificate -- Ohio is an SST member
 - NEVER present calculations as definitive -- always label as estimated and direct client to a qualified Ohio CPA or EA
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, or tax attorney) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/oh-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `oh-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/oh-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

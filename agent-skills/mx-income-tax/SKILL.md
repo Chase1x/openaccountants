@@ -1,26 +1,24 @@
 ---
 name: mx-income-tax
-description: "> Use this skill whenever asked about Mexican individual income tax (ISR) for self-employed individuals (personas físicas con actividades empresariales y profesionales). Trigger on phrases like \"how much tax do I pay in Mexico\", \"ISR\", \"Declaración Anual\", \"pagos provisionales\", \"actividades profesionales\", \"honorarios\", \"RESICO\", \"deducciones personales\", \"deducciones autorizadas\", \"retenciones\", \"RFC\", \"income tax return Mexico\", \"SAT\", \"CFDI honorarios\", \"comprobante fiscal\", or any question about filing or computing income tax for a self-employed or freelance client in Mexico. This skill covers the Declaración Anual PF (Personas Físicas), pagos provisionales (monthly estimated payments), progressive ISR brackets, deducciones autorizadas and personales, retenciones on professional CFDI, and the RESICO regime. ALWAYS read this skill before touching any Mexican income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Mexican individual income tax (ISR) for self-employed individuals (personas físicas con actividades empresariales y profesionales). Trigger on phrases like \"how much tax do I pay in Mexico\", \"ISR\", \"Declaración Anual\", \"pagos provisionales\", \"actividades profesionales\", \"honorarios\", \"RESICO\", \"deducciones personales\", \"deducciones autorizadas\", \"retenciones\", \"RFC\", \"income tax return Mexico\", \"SAT\", \"CFDI honorarios\", \"comprobante fiscal\", or any question about filing or computing income tax for a self-employed or freelance client in Mexico. This skill covers the Declaración Anual PF (Personas Físicas), pagos provisionales (monthly estimated payments), progressive ISR brackets, deducciones autorizadas and personales, retenciones on professional CFDI, and the RESICO regime. ALWAYS read this skill before touching any Mexican income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/mx-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/mx-income-tax"
+  jurisdiction: "MX"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Mexican Income Tax — Persona Física Actividades Profesionales (ISR) v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
-## Section 1 — Quick Reference
+# MX Income Tax
 
 ### ISR Annual Brackets 2025 (Personas Físicas — Régimen General)
 
+**ISR Annual Brackets 2025 (Personas Físicas — Régimen General)**
+
 | Lower Limit (MXN) | Upper Limit (MXN) | Fixed Fee | Rate on Excess |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0.01 | 8,952.49 | 0 | 1.92% |
 | 8,952.50 | 75,984.55 | 171.88 | 6.40% |
 | 75,984.56 | 133,536.07 | 4,461.94 | 10.88% |
@@ -33,54 +31,59 @@ metadata:
 | 1,503,902.47 | 4,511,707.37 | 392,294.17 | 34.00% |
 | Over 4,511,707.38 | — | 1,414,947.85 | 35.00% |
 
-**Formula:** ISR = Fixed Fee + (Gross Income − Lower Limit) × Rate
+- **ISR calculation formula** — ISR = Fixed Fee + (Gross Income − Lower Limit) × Rate
 
-**Note:** Annual table is published by SAT each year. Monthly pagos provisionales use the monthly equivalent table. Always verify current-year SAT tables.
+Annual table is published by SAT each year. Monthly pagos provisionales use the monthly equivalent table. Always verify current-year SAT tables.
 
 ### RESICO (Régimen Simplificado de Confianza) — Alternative
 
-Professionals with annual gross income ≤ MXN 3,500,000 may use RESICO:
+**RESICO rate schedule**
 
 | Annual Income (MXN) | RESICO Rate |
-|---|---|
+| --- | --- |
 | Up to 300,000 | 1.00% |
 | 300,001 – 600,000 | 1.10% |
 | 600,001 – 1,000,000 | 1.50% |
 | 1,000,001 – 2,500,000 | 2.00% |
 | 2,500,001 – 3,500,000 | 2.50% |
 
-**RESICO key features:**
-- Rate applied to gross income (no expense deductions)
-- Monthly provisional = monthly gross × rate
-- No annual Declaración Anual for purely RESICO income (informativa only)
-- Cannot combine RESICO with Régimen General in same year for same activity
+- **RESICO eligibility** — Professionals with annual gross income ≤ MXN 3,500,000 may use RESICO
+
+Rate applied to gross income (no expense deductions)
+Monthly provisional = monthly gross × rate
+No annual Declaración Anual for purely RESICO income (informativa only)
+Cannot combine RESICO with Régimen General in same year for same activity
 
 ### Retenciones (Withholding by Clients)
 
+**Retenciones (Withholding by Clients)**
+
 | Client Type | Withholding on Honorarios CFDI |
-|---|---|
+| --- | --- |
 | Moral (corporation) | 10% ISR + 2/3 of applicable IVA (10.667% of invoice amount) |
 | Física (individual) with business activity | Same obligations as Moral |
 | Persona Física consumer | No withholding obligation |
 
 Retenciones are credited against the annual ISR balance.
 
-**ISR retenido:** Client withholds 10% on the pre-IVA amount (honorarios brutos). The 10% is an advance payment, not the final rate.
+- **ISR retenido** — Client withholds 10% on the pre-IVA amount (honorarios brutos). The 10% is an advance payment, not the final rate.
 
 ### IVA on Professional Services
 
-Standard IVA rate: **16%**. Not included in ISR computation — IVA is collected and remitted separately. Strip IVA from all income and expense figures for ISR purposes.
+- **Standard IVA rate** — 16%
+- **IVA treatment for ISR** — Not included in ISR computation — IVA is collected and remitted separately. Strip IVA from all income and expense figures for ISR purposes.
 
 ### IMSS / ISSSTE Social Security
 
-Personas físicas with actividades profesionales (autónomas) pay IMSS voluntarily (seguro voluntario) or have no mandatory IMSS obligation (unless registered as patron). Mandatory regime applies when they have employees.
-
-Voluntary IMSS contributions: deductible in Declaración Anual as deducciones personales.
+- **IMSS obligation for personas físicas** — Personas físicas with actividades profesionales (autónomas) pay IMSS voluntarily (seguro voluntario) or have no mandatory IMSS obligation (unless registered as patron). Mandatory regime applies when they have employees.
+- **Voluntary IMSS deductibility** — Voluntary IMSS contributions: deductible in Declaración Anual as deducciones personales.
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | RESICO vs. Régimen General unclear | Flag — regime determines entire calculation approach |
 | IVA included in income figures | Strip 16% IVA before ISR computation |
 | Retention rate unclear (PJ client) | Apply 10% ISR retention as default |
@@ -90,17 +93,15 @@ Voluntary IMSS contributions: deductible in Declaración Anual as deducciones pe
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Gross income > MXN 3,500,000 | RESICO not available — Régimen General mandatory |
 | No CFDI emitted for services | SAT audit risk — CFDI de honorarios required for every PJ client |
 | No pagos provisionales | Multa and recargos — verify monthly obligations met |
 | Cash income without CFDI | Non-deductible for client; high SAT scrutiny for taxpayer |
 | Single client > 80% of income | Régimen de asalariados may apply — verify |
-
----
-
-## Section 2 — Required Inputs + Refusal Catalogue
 
 ### Required Inputs
 
@@ -119,22 +120,28 @@ Before computing Mexican ISR, collect:
 
 ### Refusal Catalogue
 
+**Refusal Catalogue**
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-MX-1 | Client in RESICO but claims deducciones autorizadas | Stop — RESICO does not allow expense deductions; apply gross income × rate only |
 | R-MX-2 | No CFDI for claimed expense > MXN 2,000 | Reject expense — SAT requires CFDI for all deductible expenses; cash payments > MXN 2,000 not deductible |
 | R-MX-3 | Income from employment (asalariado) mixed with professional | Flag — empleos simultáneos con honorarios require careful coordination; employer withholds IRPF; consolidated return required |
 | R-MX-4 | Foreign-source income without RFC from payer | Treat as taxable; no retention was made; pago provisional required for each month |
 | R-MX-5 | Client claiming RIF (Régimen de Incorporación Fiscal) | RIF was abolished January 2022 — now RESICO; stop if client still references RIF |
 
----
-
-## Section 3 — Transaction Pattern Library
+- **R-MX-1** — Client in RESICO but claims deducciones autorizadas  _(Stop — RESICO does not allow expense deductions; apply gross income × rate only)_
+- **R-MX-2** — No CFDI for claimed expense > MXN 2,000  _(Reject expense — SAT requires CFDI for all deductible expenses; cash payments > MXN 2,000 not deductible)_
+- **R-MX-3** — Income from employment (asalariado) mixed with professional  _(Flag — empleos simultáneos con honorarios require careful coordination; employer withholds IRPF; consolidated return required)_
+- **R-MX-4** — Foreign-source income without RFC from payer  _(Treat as taxable; no retention was made; pago provisional required for each month)_
+- **R-MX-5** — Client claiming RIF (Régimen de Incorporación Fiscal)  _(RIF was abolished January 2022 — now RESICO; stop if client still references RIF)_
 
 ### Income Patterns
 
+**Income Patterns**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `TRANSFERENCIA DE [client]` / `SPEI DE [client]` | Gross income (ex-IVA) | SPEI (Mexican interbank transfer) from client |
 | I-02 | `CoDi COBRO [client]` / `CODI PAGO RECIBIDO` | Gross income (ex-IVA) | CoDi (Cobro Digital) QR/NFC payment from client |
 | I-03 | `MERCADO PAGO RETIRO` / `MERCADOPAGO DEPOSITO` | Gross income — gross-up | Mercado Pago payout; fee deductible with CFDI |
@@ -148,8 +155,10 @@ Before computing Mexican ISR, collect:
 
 ### Expense Patterns (Deducciones Autorizadas — require CFDI)
 
+**Expense Patterns (Deducciones Autorizadas — require CFDI)**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `RENTA OFICINA` / `ARRENDAMIENTO OFICINA` | Rent — deductible (professional use) | Require CFDI arrendamiento from landlord |
 | E-02 | `CFE ENERGIA ELECTRICA` / `CFE PAGO` | Utilities — deductible (professional proportion) | CFE = Comisión Federal de Electricidad; require CFDI |
 | E-03 | `TELMEX` / `IZZI` / `TOTALPLAY` / `MEGACABLE` | Internet/phone — deductible (professional %) | Require CFDI; document business percentage |
@@ -170,8 +179,10 @@ Before computing Mexican ISR, collect:
 
 ### Deducciones Personales (in Declaración Anual — not Cap. II expenses)
 
+**Deducciones Personales (in Declaración Anual — not Cap. II expenses)**
+
 | # | Type | Cap |
-|---|---|---|
+| --- | --- | --- |
 | DP-01 | Gastos médicos, dentales, hospitalarios | No cap (require CFDI) |
 | DP-02 | Primas de seguros de gastos médicos | No cap (require CFDI) |
 | DP-03 | Gastos funerarios | Up to 1 UMA × 12 = ~MXN 38,220 |
@@ -180,11 +191,7 @@ Before computing Mexican ISR, collect:
 | DP-06 | Colegiaturas (education) | Capped by level: e.g., preparatoria MXN 14,200 |
 | DP-07 | Aportaciones voluntarias AFORE | Up to 10% of income, max 5 UMA annual |
 
-Total deducciones personales cap: 15% of gross income OR 5 UMA anual (MXN ~159,200), whichever is lower.
-
----
-
-## Section 4 — Worked Examples
+- **Total deducciones personales cap** — 15% of gross income OR 5 UMA anual (MXN ~159,200), whichever is lower
 
 ### Example 1 — BBVA México (CDMX, Marketing Consultant — Régimen General)
 
@@ -208,11 +215,11 @@ Fecha;Concepto;Cargo;Abono;Saldo
 **Step 1 — Income (ex-IVA)**
 
 | Narration | Pattern | Received | IVA (if incl.) | Ex-IVA Gross |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | SPEI DE EMPRESA ALPHA | I-01 | MXN 87,500 | ÷ 1.16 if incl. | MXN 75,431 |
-| SPEI DE MARKETING CORP | I-01 | MXN 57,500 | | MXN 49,569 |
+| SPEI DE MARKETING CORP | I-01 | MXN 57,500 |  | MXN 49,569 |
 | STRIPE PAYMENTS MX | I-04 | MXN 34,800 | gross-up | ~MXN 35,900 |
-| SPEI DE BETA CONSULTORES | I-01 | MXN 69,000 | | MXN 59,483 |
+| SPEI DE BETA CONSULTORES | I-01 | MXN 69,000 |  | MXN 59,483 |
 
 Note: If amounts received are already net of IVA that Andrés already remitted to SAT, the ex-IVA gross = CFDI subtotal. Confirm with CFDI records. For simplicity, assume SPEI amounts are already net received after clients withheld 10% ISR.
 
@@ -222,7 +229,7 @@ IRSR retenido 10% by PJ clients: MXN 52,000
 **Step 2 — Deducciones Autorizadas**
 
 | Concept | Amount | Deductible |
-|---|---|---|
+| --- | --- | --- |
 | TELMEX (80% business) | MXN 10,200/yr × 80% = MXN 8,160 | MXN 8,160 |
 | ADOBE | MXN 15,000/yr | MXN 15,000 |
 | DESPACHO CONTABLE | MXN 55,680/yr | MXN 55,680 |
@@ -230,17 +237,13 @@ IRSR retenido 10% by PJ clients: MXN 52,000
 | COMISION BANCARIA | MXN 1,800/yr | MXN 1,800 |
 | STRIPE FEES | ~MXN 1,100 | MXN 1,100 |
 | PAGO PROVISIONAL ISR | MXN 12,500 | MXN 0 |
-| **Total deducciones** | | **MXN 85,220** |
-
-**Step 3 — Taxable Income (Base ISR)**
+| **Total deducciones** |  | **MXN 85,220** |
 
 ```
 Gross income:         MXN 520,000
 Less deducciones:     MXN  85,220
 Taxable income:       MXN 434,780
 ```
-
-**Step 4 — ISR**
 
 ```
 Bracket: MXN 374,837.89 – MXN 590,795.99
@@ -252,8 +255,6 @@ Less retenciones:  MXN 52,000
 Less pagos provisionales: MXN 12,500 × months
 ISR balance:       MXN 74,147.98 − MXN 52,000 − MXN [provisional total]
 ```
-
----
 
 ### Example 2 — Santander México (Guadalajara, Developer — RESICO)
 
@@ -270,8 +271,6 @@ Key points:
 - Monthly pago provisional: (monthly income) × 1.10% via SAT portal
 - No Declaración Anual required (informativa only)
 - IVA still applies separately (collect 16%, remit to SAT)
-
----
 
 ### Example 3 — Banamex / Citibanamex (Monterrey, Architect)
 
@@ -293,8 +292,6 @@ ISR: MXN 60,049.40 + (MXN 500,000 − MXN 374,837.89) × 23.52%
 
 Flag: Subcontractor paid MXN 120,000 — did Ricardo issue CFDI to subcontractor? If subcontractor has RFC and Andrés is acting as client, no issue. But if Ricardo paid as employer, IMSS and payroll taxes may apply.
 
----
-
 ### Example 4 — HSBC México (CDMX, Consultant with Foreign Clients)
 
 **Bank:** HSBC Advance statement
@@ -313,8 +310,6 @@ ISR: MXN 110,842.74 + (MXN 605,000 − MXN 590,796) × 30% = MXN 110,842.74 + MX
 
 Foreign tax credit: If US withholding tax was paid, may credit against Mexican ISR (Art. 5 LISR). Flag for treaty review.
 
----
-
 ### Example 5 — Banorte (Puebla, Physician)
 
 **Bank:** Banorte statement
@@ -332,8 +327,6 @@ ISR: MXN 60,049.40 + (MXN 393,600 − MXN 374,837.89) × 23.52%
 = MXN 60,049.40 + MXN 18,762.11 × 23.52% = MXN 60,049.40 + MXN 4,413.85 = **MXN 64,463.25**
 
 Deducciones personales: gastos médicos propios MXN 12,000 + colegiaturas hijo MXN 8,900 = MXN 20,900 (reduces ISR ~ MXN 4,000 at marginal rate).
-
----
 
 ### Example 6 — Nu México / Hey Banco (CDMX, Freelance Designer)
 
@@ -358,45 +351,46 @@ ISR (bracket MXN 133,536.08 at 16%): MXN 10,723.55 + (130,000 − 133,536 → be
 
 RESICO (MXN 1,500) significantly better → recommend RESICO (client must be formally enrolled).
 
----
+## T1-MX-1 — Always strip IVA before ISR computation
 
-## Section 5 — Tier 1 Rules (Apply Directly)
+- **T1-MX-1** — Mexican professional services carry 16% IVA. All income and expense figures for ISR purposes must be ex-IVA (subtotal on CFDI). IVA is collected and remitted separately. Never include IVA in ISR base calculations.
 
-**T1-MX-1 — Always strip IVA before ISR computation**
-Mexican professional services carry 16% IVA. All income and expense figures for ISR purposes must be ex-IVA (subtotal on CFDI). IVA is collected and remitted separately. Never include IVA in ISR base calculations.
+## T1-MX-2 — No CFDI = no deduction
 
-**T1-MX-2 — No CFDI = no deduction**
-Under LISR, deductible expenses require a valid CFDI (Comprobante Fiscal Digital por Internet) from the supplier with the taxpayer's RFC. Cash payments > MXN 2,000 are explicitly non-deductible. Reject any expense claim without a CFDI.
+- **T1-MX-2** — Under LISR, deductible expenses require a valid CFDI (Comprobante Fiscal Digital por Internet) from the supplier with the taxpayer's RFC. Cash payments > MXN 2,000 are explicitly non-deductible. Reject any expense claim without a CFDI.
 
-**T1-MX-3 — RESICO prohibits expense deductions**
-RESICO applies a flat rate to gross income without any deductions. Never apply deducciones autorizadas to a RESICO taxpayer. The two regimes are mutually exclusive for the same activity in the same year.
+## T1-MX-3 — RESICO prohibits expense deductions
 
-**T1-MX-4 — 10% ISR retenido is a credit, not income reduction**
-Clients withholding 10% ISR on honorarios CFDI do not reduce the taxpayer's gross income — they reduce the final tax balance payable. Always gross up received amounts by the 10% retention to compute the income figure, then credit the retention against annual ISR.
+- **T1-MX-3** — RESICO applies a flat rate to gross income without any deductions. Never apply deducciones autorizadas to a RESICO taxpayer. The two regimes are mutually exclusive for the same activity in the same year.
 
-**T1-MX-5 — Meals deduction: 8.5% cap**
-Restaurant consumption (consumos en restaurantes) deductible at only 8.5% of the CFDI amount (Art. 28 LISR). Apply 8.5% to all restaurant narrations where a CFDI exists. Never apply 100% to meals.
+## T1-MX-4 — 10% ISR retenido is a credit, not income reduction
 
-**T1-MX-6 — Fuel: electronic payment mandatory**
-Gasoline and diesel expenses are only deductible when paid electronically (CFDI with electronic payment method). Cash fuel purchases are explicitly disallowed. Apply zero deduction to any fuel expense that appears to be a cash purchase.
+- **T1-MX-4** — Clients withholding 10% ISR on honorarios CFDI do not reduce the taxpayer's gross income — they reduce the final tax balance payable. Always gross up received amounts by the 10% retention to compute the income figure, then credit the retention against annual ISR.
 
-**T1-MX-7 — Pagos provisionales are not deductible**
-Monthly ISR advance payments made to SAT (línea de captura / complemento de pago) are not deductible expenses. They are credits against the annual tax balance.
+## T1-MX-5 — Meals deduction: 8.5% cap
 
----
+- **T1-MX-5** — Restaurant consumption (consumos en restaurantes) deductible at only 8.5% of the CFDI amount (Art. 28 LISR). Apply 8.5% to all restaurant narrations where a CFDI exists. Never apply 100% to meals.  _(Art. 28 LISR)_
+
+## T1-MX-6 — Fuel: electronic payment mandatory
+
+- **T1-MX-6** — Gasoline and diesel expenses are only deductible when paid electronically (CFDI with electronic payment method). Cash fuel purchases are explicitly disallowed. Apply zero deduction to any fuel expense that appears to be a cash purchase.
+
+## T1-MX-7 — Pagos provisionales are not deductible
+
+- **T1-MX-7** — Monthly ISR advance payments made to SAT (línea de captura / complemento de pago) are not deductible expenses. They are credits against the annual tax balance.
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)**
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-MX-1 | RESICO vs. Régimen General comparison | Regime choice has major tax impact; cannot be changed mid-year | Present both calculations; advise formal enrollment at SAT for following year |
 | T2-MX-2 | Foreign income without retention | No ISR withheld by foreign payer; pago provisional required each month on that income | Compute pagos provisionales on foreign income; flag FX conversion (SAT rates) |
 | T2-MX-3 | Subcontractor payments (honorarios a terceros) | If paying a freelancer > MXN 2,000, client must issue CFDI and subcontractor is obligated to emit CFDI | Flag — verify CFDI chain; both CFDIs must exist for the deduction |
 | T2-MX-4 | Rental income (arrendamiento) alongside professional | Capítulo III income; different pago provisional regime and deductions | Flag — separate the two income streams in Declaración Anual |
 | T2-MX-5 | Vehicle expenses (deducción de automóvil) | Cars deductible up to MXN 175,000 purchase value; annual depreciation 25%; strict fuel rules | Flag — vehicle deduction calculations require SAT-compliant depreciation schedule |
 | T2-MX-6 | Prior-year tax losses (pérdidas fiscales) | Losses can offset income for up to 10 years with inflation adjustment | Flag — review prior-year declaraciones for carryforward losses |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -461,11 +455,8 @@ SECTION G — REVIEWER FLAGS
 [ ] CFDI de honorarios emitidos match total income?
 ```
 
----
-
-## Section 8 — Bank Statement Reading Guide
-
 ### BBVA México
+
 - Export: CSV/Excel via "Mis Finanzas" → "Descargar movimientos"
 - Columns: `Fecha;Concepto;Cargo;Abono;Saldo`
 - Amount format: no thousands separator, period decimal (varies) or comma depending on locale
@@ -473,39 +464,41 @@ SECTION G — REVIEWER FLAGS
 - SPEI credits: `SPEI DE [RFC/name] [reference]`; CoDi: `CoDi COBRO`
 
 ### Santander México
+
 - Export: CSV/PDF from Santander Online
 - Columns: `Fecha;Descripción;Monto;Saldo`
 - Positive Monto = credit; negative = debit (or separate columns)
 - SPEI narrations: `TRANSF SPEI DE [name]`
 
 ### Banamex (Citibanamex)
+
 - Export: PDF or XLS from Banca en Línea
 - Columns: `Fecha;Descripción;Retiros;Depósitos;Saldo`
 - Deposits = credits; Retiros = debits
 
 ### Banorte
+
 - Export: CSV/Excel from Banorte En Línea
 - Standard format: `Fecha;Movimiento;Cargo;Abono;Saldo`
 
 ### HSBC México
+
 - Export: CSV from HSBC Personal Banking portal
 - Columns: `Fecha;Descripción;Débitos;Créditos;Saldo`
 
 ### Nu México (Nubank México)
+
 - Export: CSV from Nu app ("Movimientos" → export)
 - Simple format: `Fecha,Descripción,Valor`
 - Positive = credit; negative = debit; period decimal
 
 ### Hey Banco / Clip / Konfio (digital banks)
+
 - Export varies; typically CSV with `Fecha;Concepto;Monto;Tipo` (CARGO/ABONO)
 
 ### CFDI Cross-Reference
-Always cross-reference bank statement credits with CFDI de ingresos in SAT portal:
-- SAT Portal: cfdiv4.sat.gob.mx → "Factura Electrónica" → "Consultar CFDI emitidos"
-- Confirm total CFDI subtotals (ex-IVA) = bank statement gross receipts
-- Gaps may indicate income received outside CFDI obligations
 
----
+- **CFDI Cross-Reference** — Always cross-reference bank statement credits with CFDI de ingresos in SAT portal: - SAT Portal: cfdiv4.sat.gob.mx → "Factura Electrónica" → "Consultar CFDI emitidos" - Confirm total CFDI subtotals (ex-IVA) = bank statement gross receipts - Gaps may indicate income received outside CFDI obligations
 
 ## Section 9 — Onboarding Fallback
 
@@ -521,19 +514,16 @@ Always cross-reference bank statement credits with CFDI de ingresos in SAT porta
 **Foreign income:**
 > "I see payments from foreign clients. These amounts must be: (1) converted to MXN at the SAT-published exchange rate for the date of each receipt, and (2) included in monthly pagos provisionales since the foreign payer does not withhold Mexican ISR. Do you have bank records showing the MXN equivalent received, or can you provide the dates and foreign currency amounts?"
 
----
-
-## Section 10 — Reference Material
-
 ### Key Legislation
-- **LISR (Ley del Impuesto Sobre la Renta)** — Mexican income tax law; Capítulo II (actividades empresariales y profesionales), Capítulo IX (RESICO)
-- **LISR Art. 28** — non-deductible expenses (meals cap, fuel rules, etc.)
-- **LISR Art. 105** — deductible expenses for professionals
-- **Resolución Miscelánea Fiscal 2025** — annual SAT administrative rules
+
+- **Key Legislation** — LISR (Ley del Impuesto Sobre la Renta) — Mexican income tax law; Capítulo II (actividades empresariales y profesionales), Capítulo IX (RESICO). LISR Art. 28 — non-deductible expenses (meals cap, fuel rules, etc.). LISR Art. 105 — deductible expenses for professionals. Resolución Miscelánea Fiscal 2025 — annual SAT administrative rules.  _(LISR; LISR Art. 28; LISR Art. 105; Resolución Miscelánea Fiscal 2025)_
 
 ### Filing Deadlines 2025 (FY 2024)
+
+**Filing Deadlines 2025 (FY 2024)**
+
 | Deadline | Event |
-|---|---|
+| --- | --- |
 | Day 17 of each month | Pago provisional ISR for prior month |
 | Day 17 of each month | IVA monthly payment |
 | 30 April 2025 | Declaración Anual PF 2024 (Régimen General) |
@@ -541,13 +531,12 @@ Always cross-reference bank statement credits with CFDI de ingresos in SAT porta
 | Automatic (RESICO) | No Declaración Anual required; informativa if applicable |
 
 ### Useful References
+
 - SAT Portal: sat.gob.mx
 - Mi Portal SAT: portalsat.plataforma.sat.gob.mx
 - CFDI validation: verificacfdi.facturaelectronica.sat.gob.mx
 - Exchange rates (SAT): sat.gob.mx/consultas/18038/consulta-de-tipo-de-cambio
 - RESICO enrollment: sat.gob.mx → "Trámites" → "RFC y obligaciones"
-
----
 
 ## Disclaimer
 
@@ -555,6 +544,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/mx-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mx-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mx-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

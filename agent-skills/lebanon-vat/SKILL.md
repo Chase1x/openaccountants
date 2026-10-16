@@ -1,24 +1,24 @@
 ---
 name: lebanon-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Lebanon VAT return. Trigger on phrases like \"Lebanon VAT\", \"TVA Lebanon\", \"MOF Lebanon\". Lebanon imposes VAT at 11% under Law 379/2001 (12% Cabinet-approved Feb 2026, pending Parliament). WARNING -- ongoing economic crisis affects enforcement and exchange rates. ALWAYS read this skill before handling any Lebanon VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/lebanon-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/lebanon-vat"
+  jurisdiction: "LB"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Lebanon VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Lebanon VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Lebanon |
 | Standard rate | 11% (single rate; 12% Cabinet-approved Feb 2026, pending Parliament) |
 | Zero rate | 0% (exports, international transport) |
@@ -35,26 +35,21 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from Bank Audi, Blom Bank, Byblos Bank, BankMed, Fransabank, or any Lebanese bank.
 
-**Refusal catalogue:**
-
-**R-LB-1 -- Exchange rate determination.** Trigger: foreign currency transactions without confirmed MOF rate guidance. Message: "Multiple exchange rates exist. MOF guidance on applicable rate must be confirmed by practitioner before VAT calculations."
-
-**R-LB-2 -- Crisis-era enforcement.** Trigger: questions about current MOF operational status. Message: "Verify current MOF enforcement position with local practitioner."
-
----
+- **R-LB-1 -- Exchange rate determination** — Trigger: foreign currency transactions without confirmed MOF rate guidance. Message: "Multiple exchange rates exist. MOF guidance on applicable rate must be confirmed by practitioner before VAT calculations."  _(R-LB-1)_
+- **R-LB-2 -- Crisis-era enforcement** — Trigger: questions about current MOF operational status. Message: "Verify current MOF enforcement position with local practitioner."  _(R-LB-2)_
 
 ## Section 3 -- Supplier pattern library
 
 ### 3.1 Lebanese banks (exempt -- exclude)
 
+**Lebanese banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BANK AUDI, AUDI | EXCLUDE | Exempt financial service |
 | BLOM BANK, BLOM | EXCLUDE | Same |
 | BYBLOS BANK | EXCLUDE | Same |
@@ -63,27 +58,31 @@ metadata:
 
 ### 3.2 Government
 
+**Government pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MOF, MINISTRY OF FINANCE | EXCLUDE | Tax payment |
 | CUSTOMS, DOUANE | Check for import VAT | VAT recoverable |
 | NSSF, CNSS | EXCLUDE | Social security |
 
 ### 3.3 Utilities
 
+**Utilities pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EDL, ELECTRICITE DU LIBAN | Domestic 11% | Electricity |
 | OGERO, ALFA, TOUCH | Domestic 11% | Telecoms |
 
 ### 3.4 SaaS
 
+**SaaS pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, AWS | Reverse charge 11% | Non-resident; exchange rate critical |
 | ZOOM, SLACK, NOTION | Reverse charge 11% | Same |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -95,28 +94,26 @@ Company sells goods LBP 10,000,000 net. Output VAT = LBP 1,100,000 (11%). Total 
 
 UK law firm invoices USD 10,000. Reverse charge at 11% on LBP equivalent. Exchange rate: flag for practitioner -- conversion rate is critical during crisis.
 
----
-
 ## Section 5 -- Classification rules
 
 ### 5.1 Standard rate 11%
 
-Single rate. No reduced rates. If 12% enacted by Parliament, update accordingly.
+- **Standard rate** — 11% (Single rate. No reduced rates. If 12% enacted by Parliament, update accordingly.)
 
 ### 5.2 Zero-rated
 
-Exports, international transport, duty-free zone supplies (conditions).
+- **Zero-rated supplies** — Exports, international transport, duty-free zone supplies (conditions).
 
 ### 5.3 Exempt
 
-Financial/banking, insurance, medical, education, residential rental, public transport, unprocessed agricultural, books/newspapers, gold (investment grade).
-
----
+- **Exempt supplies** — Financial/banking, insurance, medical, education, residential rental, public transport, unprocessed agricultural, books/newspapers, gold (investment grade).
 
 ## Section 6 -- VAT return form structure
 
+**VAT return form structure**
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | A. Output VAT | 11% on domestic taxable supplies |
 | B. Zero-rated | Exports |
 | C. Exempt | Exempt revenue |
@@ -127,72 +124,66 @@ Financial/banking, insurance, medical, education, residential rental, public tra
 | H. Net VAT | A minus G |
 | Credit brought forward | Prior period |
 
----
-
 ## Section 7 -- Reverse charge and imports
 
-Services from non-resident: self-assess at 11%. Claim input if taxable. Net zero. Exchange rate: must confirm with practitioner.
-
-Import of goods: VAT at 11% on CIF plus customs plus excise. Collected by Lebanese Customs.
-
----
+- **Reverse charge on services from non-resident** — Services from non-resident: self-assess at 11%. Claim input if taxable. Net zero. Exchange rate: must confirm with practitioner.
+- **Import of goods VAT** — Import of goods: VAT at 11% on CIF plus customs plus excise. Collected by Lebanese Customs.
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked: entertainment/hospitality, personal-use items, passenger vehicles (unless transport/rental), purchases for exempt supplies, gifts (above thresholds), tobacco/alcohol (personal), club memberships.
-
-Partial exemption: turnover-based apportionment. Annual adjustment required.
-
----
+- **Blocked input items** — Blocked: entertainment/hospitality, personal-use items, passenger vehicles (unless transport/rental), purchases for exempt supplies, gifts (above thresholds), tobacco/alcohol (personal), club memberships.
+- **Partial exemption** — Partial exemption: turnover-based apportionment. Annual adjustment required.
 
 ## Section 9 -- Filing, deadlines, and penalties
 
+**Quarterly filing deadlines**
+
 | Quarter | Deadline |
-|---|---|
+| --- | --- |
 | Q1 (Jan-Mar) | 20 April |
 | Q2 (Apr-Jun) | 20 July |
 | Q3 (Jul-Sep) | 20 October |
 | Q4 (Oct-Dec) | 20 January |
 
+**Penalties table**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | LBP 50,000/day (pre-crisis; may be negligible) |
 | Late payment | 1.5% per month |
 | Failure to register | Backdated assessment + penalties |
 
 Note: penalty amounts may be effectively negligible due to devaluation.
 
----
-
 ## Section 10 -- Edge cases, test suite, and escalation
 
 ### Edge cases
 
-**EC1 -- Foreign currency invoicing.** Flag for practitioner. Multiple rates exist.
+Flag for practitioner. Multiple rates exist.
 
-**EC2 -- Refund delays.** Cash refunds from MOF may not be obtainable. Carry forward.
+Cash refunds from MOF may not be obtainable. Carry forward.
 
-**EC3 -- Export proof.** Zero-rated only with customs declaration, bill of lading, proof of delivery.
+Zero-rated only with customs declaration, bill of lading, proof of delivery.
 
-**EC4 -- Banking services exempt.** Input VAT on purchases for exempt banking not recoverable.
+Input VAT on purchases for exempt banking not recoverable.
 
-**EC5 -- Restaurant (blocked for buyer).** Entertainment blocked for input recovery.
+Entertainment blocked for input recovery.
 
-**EC6 -- Construction/real estate.** First sale may be taxable. Escalate.
+First sale may be taxable. Escalate.
 
 ### Test suite
 
-**Test 1 -- Standard sale.** LBP 10M net. Expected: output LBP 1.1M (11%).
+LBP 10M net. Expected: output LBP 1.1M (11%).
 
-**Test 2 -- Export.** USD 5,000 to France. Expected: 0%. Input recoverable.
+USD 5,000 to France. Expected: 0%. Input recoverable.
 
-**Test 3 -- Reverse charge.** UK firm USD 10,000. Expected: 11% self-assessed. Exchange rate: flag.
+UK firm USD 10,000. Expected: 11% self-assessed. Exchange rate: flag.
 
-**Test 4 -- Exempt.** Bank interest LBP 500M. Expected: no output. Input LBP 2.2M not recoverable.
+Bank interest LBP 500M. Expected: no output. Input LBP 2.2M not recoverable.
 
-**Test 5 -- Import.** Turkish goods CIF LBP 100M + duty LBP 5M. Expected: VAT base LBP 105M, VAT LBP 11.55M.
+Turkish goods CIF LBP 100M + duty LBP 5M. Expected: VAT base LBP 105M, VAT LBP 11.55M.
 
-**Test 6 -- Blocked entertainment.** Dinner LBP 5M + VAT LBP 550K. Expected: input = 0.
+Dinner LBP 5M + VAT LBP 550K. Expected: input = 0.
 
 ### Escalation protocol
 
@@ -216,14 +207,30 @@ REVIEWER FLAG / ESCALATION REQUIRED
 - NEVER assume MOF systems operational without confirming
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/lebanon-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `lebanon-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/lebanon-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

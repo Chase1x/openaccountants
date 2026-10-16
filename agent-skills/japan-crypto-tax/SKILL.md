@@ -1,27 +1,26 @@
 ---
 name: japan-crypto-tax
-description: "> Use this skill whenever asked about Japan cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Japan\", \"Bitcoin Japan tax\", \"暗号資産 税金\", \"仮想通貨 税金\", \"cryptocurrency Japan\", \"crypto income Japan\", \"miscellaneous income crypto\", \"雑所得\", \"NTA crypto\", \"staking tax Japan\", \"mining tax Japan\", \"NFT tax Japan\", \"DeFi tax Japan\", \"確定申告 crypto\", \"kakutei shinkoku crypto\", \"bitFlyer tax\", \"Coincheck tax\", \"crypto-to-crypto Japan\", \"総平均法\", \"移動平均法\", or any question about the income tax, reporting, or cost basis treatment of cryptocurrency, tokens, or digital assets for Japan tax residents. Covers NTA Crypto FAQ guidance, miscellaneous income classification, aggregate taxation, cost basis methods (total average / moving average), the ¥200,000 filing threshold, and Kakutei Shinkoku reporting. ALWAYS read this skill before touching any Japan crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Japan cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Japan\", \"Bitcoin Japan tax\", \"暗号資産 税金\", \"仮想通貨 税金\", \"cryptocurrency Japan\", \"crypto income Japan\", \"miscellaneous income crypto\", \"雑所得\", \"NTA crypto\", \"staking tax Japan\", \"mining tax Japan\", \"NFT tax Japan\", \"DeFi tax Japan\", \"確定申告 crypto\", \"kakutei shinkoku crypto\", \"bitFlyer tax\", \"Coincheck tax\", \"crypto-to-crypto Japan\", \"総平均法\", \"移動平均法\", or any question about the income tax, reporting, or cost basis treatment of cryptocurrency, tokens, or digital assets for Japan tax residents. Covers NTA Crypto FAQ guidance, miscellaneous income classification, aggregate taxation, cost basis methods (total average / moving average), the ¥200,000 filing threshold, and Kakutei Shinkoku reporting. ALWAYS read this skill before touching any Japan crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: JP
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/japan-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/japan-crypto-tax"
+  jurisdiction: "JP"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Japan Crypto / Digital Assets Tax Skill v1.0
+# Japan Crypto Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Japan Crypto / Digital Assets Tax Skill v1.0
 
 ## Section 1 — Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Japan (日本) |
 | Tax | Income Tax (所得税) — crypto classified as miscellaneous income (雑所得) |
 | Currency | JPY (Japanese Yen) — all values must be converted to JPY at the transaction date |
@@ -48,48 +47,48 @@ Crypto in Japan is classified as **miscellaneous income (雑所得 / zatsu shoto
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown cost basis | Zero (maximises gain) — STOP if material |
 | Unknown cost basis method | Total average method (総平均法) — the statutory default for individuals |
 | Unknown whether business or miscellaneous income | Miscellaneous income (雑所得) — this is the NTA's default classification |
 | Unknown FMV at receipt | Use Japanese exchange price (bitFlyer, Coincheck) at time of transaction |
 | Multiple income sources besides salary | Aggregate all miscellaneous income; file if total > ¥200,000 |
 
----
-
-## Section 2 — Classification Rules
-
 ### Income Classification for Crypto
 
+**Income Classification for Crypto**
+
 | Classification | When it applies | Tax Treatment |
-|---|---|---|
+| --- | --- | --- |
 | Miscellaneous income (雑所得) | Default for individual crypto trading, staking, mining, DeFi | Aggregate taxation at progressive rates |
 | Business income (事業所得) | Only if crypto activity constitutes a "business" (organized, continuous, substantial) | Aggregate taxation; blue return deduction possible; losses offset other income |
 | Employment income (給与所得) | Salary paid in crypto | Subject to withholding; employer obligations |
 
-**NTA position (FAQ 2-2):** Crypto gains are principally classified as miscellaneous income (other) unless the activity clearly constitutes a business under established criteria.
+- **NTA position (FAQ 2-2)** — Crypto gains are principally classified as miscellaneous income (other) unless the activity clearly constitutes a business under established criteria.  _(NTA FAQ 2-2)_
 
 ### Business vs Miscellaneous Income — NTA Criteria
 
+**Business vs Miscellaneous Income — NTA Criteria**
+
 | Factor | Miscellaneous Income | Business Income |
-|---|---|---|
+| --- | --- | --- |
 | Scale of activity | Personal, occasional | Organised, substantial |
 | Continuity | Intermittent | Continuous, systematic |
 | Infrastructure | Personal devices | Dedicated office, equipment |
 | Livelihood dependency | Side income | Primary source of income |
 | Number of transactions | Moderate | Very high volume |
 
-**Conservative default:** Unless the taxpayer can clearly demonstrate business-level activity, classify as miscellaneous income.
-
----
-
-## Section 3 — Rate Tables
+- **Conservative default** — Unless the taxpayer can clearly demonstrate business-level activity, classify as miscellaneous income.
 
 ### National Income Tax Rates (2025)
 
+**National Income Tax Rates (2025)**  _(Income Tax Act (所得税法) Art. 89; NTA 2025 Individual Income Tax Guide.)_
+
 | Taxable Income | Rate | Deduction Amount |
-|---|---|---|
+| --- | --- | --- |
 | ¥1 – ¥1,950,000 | 5% | ¥0 |
 | ¥1,950,001 – ¥3,300,000 | 10% | ¥97,500 |
 | ¥3,300,001 – ¥6,950,000 | 20% | ¥427,500 |
@@ -98,12 +97,12 @@ Crypto in Japan is classified as **miscellaneous income (雑所得 / zatsu shoto
 | ¥18,000,001 – ¥40,000,000 | 40% | ¥2,796,000 |
 | Over ¥40,000,000 | 45% | ¥4,796,000 |
 
-Source: Income Tax Act (所得税法) Art. 89; NTA 2025 Individual Income Tax Guide.
-
 ### Combined Rates (National + Local Inhabitant Tax)
 
+**Combined Rates (National + Local Inhabitant Tax)**
+
 | Taxable Income | National Rate | Local Rate | Combined |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Up to ¥1,950,000 | 5% | 10% | 15% |
 | ¥1,950,001 – ¥3,300,000 | 10% | 10% | 20% |
 | ¥3,300,001 – ¥6,950,000 | 20% | 10% | 30% |
@@ -112,29 +111,29 @@ Source: Income Tax Act (所得税法) Art. 89; NTA 2025 Individual Income Tax Gu
 | ¥18,000,001 – ¥40,000,000 | 40% | 10% | 50% |
 | Over ¥40,000,000 | 45% | 10% | 55% |
 
-**Reconstruction surtax (復興特別所得税):** 2.1% of national income tax, applicable through 2037. This increases the effective national rates slightly (e.g., 45% becomes 45% × 1.021 = 45.945%).
+- **Reconstruction surtax (復興特別所得税)** — 2.1% of national income tax, applicable through 2037. This increases the effective national rates slightly (e.g., 45% becomes 45% × 1.021 = 45.945%).
 
 ### Basic Deduction (基礎控除)
 
+**Basic Deduction (基礎控除)**
+
 | Taxpayer's Total Income | Basic Deduction |
-|---|---|
+| --- | --- |
 | Up to ¥24,000,000 | ¥480,000 |
 | ¥24,000,001 – ¥24,500,000 | ¥320,000 |
 | ¥24,500,001 – ¥25,000,000 | ¥160,000 |
 | Over ¥25,000,000 | ¥0 |
 
----
-
-## Section 4 — Cost Basis Methods
-
 ### Permitted Methods (NTA FAQ 2-4, 2-5)
 
+**Permitted Methods (NTA FAQ 2-4, 2-5)**  _(NTA FAQ 2-4, 2-5)_
+
 | Method | Japanese Name | Description | Default? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Total average method | 総平均法 (sō heikin hō) | (Opening balance value + total year acquisitions) ÷ (opening quantity + total year acquisitions quantity) = unit cost for the year | YES — default for individuals |
 | Moving average method | 移動平均法 (idō heikin hō) | Recalculate average unit cost each time tokens are acquired; use year-end average | Must notify NTA |
 
-**FIFO is NOT available** for individuals in Japan (unlike many other jurisdictions).
+- **FIFO not available** — FIFO is NOT available for individuals in Japan (unlike many other jurisdictions).  _(NTA FAQ 2-4, 2-5)_
 
 ### Notification Requirement
 
@@ -145,25 +144,11 @@ Source: Income Tax Act (所得税法) Art. 89; NTA 2025 Individual Income Tax Gu
 
 ### Total Average Method — Formula
 
-```
-Year-end unit cost =
-  (Opening balance value + Sum of all acquisition costs during the year)
-  ÷ (Opening quantity + Total quantity acquired during the year)
-
-Transfer cost (譲渡原価) = Units sold during the year × Year-end unit cost
-```
+- **Total Average Method formula** — Year-end unit cost = (Opening balance value + Sum of all acquisition costs during the year) ÷ (Opening quantity + Total quantity acquired during the year) Transfer cost (譲渡原価) = Units sold during the year × Year-end unit cost  _(NTA FAQ 2-4, 2-5)_
 
 ### Moving Average Method — Formula
 
-```
-At each acquisition:
-  New average unit cost =
-    (Existing holdings value + New acquisition cost)
-    ÷ (Existing quantity + New quantity acquired)
-
-Year-end unit cost = Most recent average unit cost as of 31 December
-Transfer cost = Units sold during the year × Year-end unit cost
-```
+- **Moving Average Method formula** — At each acquisition: New average unit cost = (Existing holdings value + New acquisition cost) ÷ (Existing quantity + New quantity acquired) Year-end unit cost = Most recent average unit cost as of 31 December Transfer cost = Units sold during the year × Year-end unit cost  _(NTA FAQ 2-4, 2-5)_
 
 ### What is included in acquisition cost
 
@@ -175,10 +160,10 @@ Source: NTA FAQ 2-3 (暗号資産の必要経費).
 
 ### Deductible Expenses (必要経費)
 
-Beyond the transfer cost (譲渡原価), the following may be deductible:
+**Deductible Expenses (必要経費)**
 
 | Expense | Deductible? |
-|---|---|
+| --- | --- |
 | Exchange trading fees on sale | Yes |
 | Internet/smartphone costs (proportional) | Yes, if directly related to crypto activity |
 | Computer/hardware (if > ¥100,000) | Depreciation over useful life |
@@ -186,14 +171,12 @@ Beyond the transfer cost (譲渡原価), the following may be deductible:
 | Tax software subscription | Yes |
 | General living expenses | No |
 
----
-
-## Section 5 — DeFi, Staking, Mining, and Airdrops
-
 ### 5.1 Mining
 
+**5.1 Mining**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Receipt of mined tokens | Miscellaneous income at FMV (JPY) when mined |
 | Cost basis of mined tokens | FMV at receipt (becomes acquisition cost) |
 | Deductible expenses | Electricity, hardware depreciation, cooling, rent (proportional) |
@@ -201,24 +184,30 @@ Beyond the transfer cost (譲渡原価), the following may be deductible:
 
 ### 5.2 Staking
 
+**5.2 Staking**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Staking rewards received | Miscellaneous income at FMV when received |
 | Cost basis of reward tokens | FMV at receipt date |
 | Subsequent sale | Gain computed under normal cost basis rules |
 
 ### 5.3 Airdrops
 
+**5.3 Airdrops**
+
 | Scenario | Treatment |
-|---|---|
+| --- | --- |
 | Airdrop with FMV at receipt | Miscellaneous income at FMV |
 | Airdrop with zero value at receipt | No income on receipt; cost basis = ¥0; full gain on disposal |
 | Airdrop requiring action | Income at FMV when claimed |
 
 ### 5.4 DeFi Yield / Lending
 
+**5.4 DeFi Yield / Lending**
+
 | Activity | Treatment |
-|---|---|
+| --- | --- |
 | Interest/yield from lending protocols | Miscellaneous income at FMV when received |
 | Liquidity provision (deposit tokens) | May constitute a disposal — exchange of tokens for LP tokens at FMV |
 | LP withdrawal | Disposal of LP tokens; gain/loss computed |
@@ -226,8 +215,10 @@ Beyond the transfer cost (譲渡原価), the following may be deductible:
 
 ### 5.5 Hard Forks
 
+**5.5 Hard Forks**
+
 | Scenario | Treatment |
-|---|---|
+| --- | --- |
 | New tokens from fork | Cost basis = ¥0 (if no acquisition cost); NTA FAQ indicates no income at time of fork if market value is not established |
 | Sale of forked tokens | Full proceeds treated as income |
 
@@ -235,20 +226,20 @@ Beyond the transfer cost (譲渡原価), the following may be deductible:
 
 **Every crypto-to-crypto swap is a taxable event in Japan.** This is one of the most impactful rules.
 
+**Crypto-to-Crypto Swaps table**  _(NTA FAQ 1-2 (暗号資産で暗号資産を購入した場合))_
+
 | Event | Treatment |
-|---|---|
+| --- | --- |
 | Swap BTC for ETH | Disposal of BTC at FMV of ETH received; gain = FMV of ETH – cost basis of BTC disposed |
 | Swap ETH for stablecoin | Same — disposal of ETH |
 | Any token exchange | Both sides are taxable events |
 
-Source: NTA FAQ 1-2 (暗号資産で暗号資産を購入した場合).
-
----
-
 ## Section 6 — NFT Treatment
 
+**NFT Treatment**
+
 | Event | Treatment |
-|---|---|
+| --- | --- |
 | Purchase of NFT with crypto | Disposal of crypto at FMV; acquisition of NFT at FMV |
 | Purchase of NFT with fiat | Acquisition — record cost |
 | Sale of NFT | Miscellaneous income (gain = proceeds – cost basis) |
@@ -257,14 +248,12 @@ Source: NTA FAQ 1-2 (暗号資産で暗号資産を購入した場合).
 | NFT-for-NFT swap | Disposal of both NFTs at FMV |
 | NFT becomes worthless | Loss — cannot carry forward (miscellaneous income limitation) |
 
----
-
-## Section 7 — Reporting Requirements
-
 ### 7.1 Kakutei Shinkoku (確定申告 — Final Tax Return)
 
+**Kakutei Shinkoku table**
+
 | Element | Detail |
-|---|---|
+| --- | --- |
 | Form | Kakutei Shinkoku-sho (確定申告書) — B form |
 | Crypto income section | 雑所得（その他） — Miscellaneous income (Other) |
 | Computation sheet | NTA Crypto Calculation Sheet (暗号資産の計算書) — total average version available on NTA website |
@@ -273,14 +262,16 @@ Source: NTA FAQ 1-2 (暗号資産で暗号資産を購入した場合).
 
 ### 7.2 The ¥200,000 Threshold
 
+**¥200,000 Threshold table**
+
 | Taxpayer Type | Filing Required? |
-|---|---|
+| --- | --- |
 | Salary earner (年末調整 done by employer) with misc. income ≤ ¥200,000 | NO national income tax return required |
 | Salary earner with misc. income > ¥200,000 | YES — must file Kakutei Shinkoku |
 | Self-employed / business owner | Always required if crypto income exists |
 | Salary > ¥20,000,000 | Always required regardless |
 
-**Critical:** Even if the ¥200,000 threshold exempts you from national filing, you **must still file a local inhabitant tax return (住民税の申告)** with your municipality. The ¥200,000 exemption applies ONLY to national income tax.
+- **Critical note** — Even if the ¥200,000 threshold exempts you from national filing, you must still file a local inhabitant tax return (住民税の申告) with your municipality. The ¥200,000 exemption applies ONLY to national income tax.
 
 ### 7.3 NTA Crypto Calculation Tool
 
@@ -292,8 +283,10 @@ The NTA provides a downloadable Excel spreadsheet (暗号資産の計算書（�
 
 ### 7.4 Key Deadlines
 
+**Key Deadlines table**
+
 | Deadline | Date (CY 2025 income) |
-|---|---|
+| --- | --- |
 | Tax year end | 31 December 2025 |
 | Filing period opens | 16 February 2026 |
 | Filing deadline | 15 March 2026 (16 March if 15th falls on weekend/holiday) |
@@ -307,14 +300,12 @@ Japanese licensed crypto exchanges (暗号資産交換業者) registered with th
 - Issue annual transaction summaries (年間取引報告書) to users
 - Report suspicious transactions
 
----
-
-## Section 8 — Loss Offset and Carry-Forward Rules
-
 ### The miscellaneous income limitation
 
+**Loss offset table**
+
 | Rule | Detail | Authority |
-|---|---|---|
+| --- | --- | --- |
 | Loss offset within miscellaneous income | Losses within "other miscellaneous income" (その他の雑所得) CAN offset gains within the same sub-category in the same year | Income Tax Act |
 | Loss offset against other income categories | **NOT PERMITTED** — miscellaneous income losses cannot offset salary, business, or other income | Income Tax Act Art. 69 |
 | Loss carry-forward | **NOT PERMITTED** for miscellaneous income | Income Tax Act Art. 70 |
@@ -326,24 +317,18 @@ Unlike India's regime, Japan **does allow** offsetting losses within the same mi
 
 ### Business income exception
 
-If crypto activity is classified as **business income** (事業所得), losses CAN:
-- Offset other income in the same year (損益通算)
-- Be carried forward for 3 years (with blue return / 青色申告)
-
-This is why the business vs miscellaneous income classification matters, but NTA's default is miscellaneous income.
-
----
-
-## Section 9 — Anti-Avoidance Rules
+- **Business income exception** — If crypto activity is classified as business income (事業所得), losses CAN: offset other income in the same year (損益通算); be carried forward for 3 years (with blue return / 青色申告). This is why the business vs miscellaneous income classification matters, but NTA's default is miscellaneous income.
 
 ### 9.1 No Wash Sale Rule
 
-Japan has **no specific wash sale rule** for crypto. You can sell to crystallise a loss within miscellaneous income and immediately rebuy. However, the limited utility of losses (no carry-forward, no cross-category offset) reduces the incentive.
+- **No Wash Sale Rule** — Japan has no specific wash sale rule for crypto. You can sell to crystallise a loss within miscellaneous income and immediately rebuy. However, the limited utility of losses (no carry-forward, no cross-category offset) reduces the incentive.
 
 ### 9.2 Low-Value / Gratuitous Transfer Rule
 
+**Low-Value / Gratuitous Transfer Rule table**
+
 | Provision | Effect |
-|---|---|
+| --- | --- |
 | Transfer at below market value | NTA may deem the transfer at FMV; difference may be treated as gift (贈与税) |
 | Gift tax (贈与税) | Gift of crypto valued > ¥1,100,000 (after basic deduction) attracts gift tax at 10%–55% |
 | Inheritance | Crypto included in estate at FMV; inheritance tax applies |
@@ -353,10 +338,6 @@ Japan has **no specific wash sale rule** for crypto. You can sell to crystallise
 - Japanese exchanges report all user transaction data to the NTA
 - The NTA has a dedicated crypto audit team
 - Non-filing or underreporting of crypto income carries penalties: 15%–20% additional tax (過少申告加算税) plus interest (延滞税)
-
----
-
-## Section 10 — Worked Examples
 
 ### Example 1 — BTC Trading, Total Average Method
 
@@ -433,8 +414,6 @@ Cost basis of mined BTC: ¥500,000 (FMV at receipt)
   For future disposal calculations.
 ```
 
----
-
 ## Self-Checks
 
 - [ ] Is crypto income classified as miscellaneous income (雑所得) unless business criteria are clearly met?
@@ -447,8 +426,6 @@ Cost basis of mined BTC: ¥500,000 (FMV at receipt)
 - [ ] Have losses within miscellaneous income been correctly netted within the same sub-category?
 - [ ] Is the Kakutei Shinkoku filed by 15 March of the following year?
 - [ ] Are all values converted to JPY at the transaction-date exchange rate?
-
----
 
 ## PROHIBITIONS
 
@@ -463,14 +440,30 @@ Cost basis of mined BTC: ¥500,000 (FMV at receipt)
 - NEVER treat transfers between own wallets as disposals
 - NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/japan-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `japan-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/japan-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,24 +1,24 @@
 ---
 name: hi-sales-tax
 description: "Use this skill whenever asked about Hawaii General Excise Tax (GET). Trigger on phrases like \"Hawaii GET\", \"General Excise Tax\", \"HI sales tax\", \"HRS §237\". Hawaii has a GET on the SELLER, not a traditional sales tax. ALWAYS load us-sales-tax first."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-HI
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/hi-sales-tax"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/hi-sales-tax"
+  jurisdiction: "US-HI"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Hawaii General Excise Tax (GET) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# HI Sales Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | Hawaii |
 | Tax type | General Excise Tax (GET) -- NOT a traditional sales tax; tax on SELLER's gross income |
 | Retail GET rate | 4.00% (4.50% on Oahu with county surcharge) |
@@ -34,21 +34,23 @@ metadata:
 | SST member | No |
 | Skill version | 2.0 |
 
-**CRITICAL: GET is imposed on the SELLER, not the buyer. GET applies to virtually ALL transactions including services. GET pyramids (cascades) at every supply chain level.**
+- **GET imposed on seller, applies broadly, and pyramids** — CRITICAL: GET is imposed on the SELLER, not the buyer. GET applies to virtually ALL transactions including services. GET pyramids (cascades) at every supply chain level.
 
 ## Section 3 -- Transaction pattern library
 
+**Transaction pattern library**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | General TPP | TAXABLE 4% (4.5% Oahu) | Retail rate |
 | Clothing | TAXABLE | No exemption |
 | Grocery food | TAXABLE | No food exemption -- GET applies to all |
-| Prepared food | TAXABLE | |
+| Prepared food | TAXABLE |  |
 | ALL services (including professional) | TAXABLE | Hawaii taxes virtually ALL services |
-| SaaS | TAXABLE | |
-| Digital goods | TAXABLE | |
+| SaaS | TAXABLE |  |
+| Digital goods | TAXABLE |  |
 | Wholesale sales | TAXABLE at 0.50% | Lower wholesale rate |
-| Prescription drugs | EXEMPT | |
+| Prescription drugs | EXEMPT |  |
 | Manufacturing equipment | No specific exemption | GET applies broadly |
 | Resale | 0.50% wholesale rate | Not fully exempt; taxed at wholesale rate |
 
@@ -56,26 +58,24 @@ metadata:
 
 ### GET pyramiding
 
-GET cascades at every level. Manufacturer pays 0.5% on wholesale sales. Wholesaler pays 0.5%. Retailer pays 4%. If passed to buyer, the pass-through amount is additional gross income subject to GET again.
+- **GET pyramiding across supply chain** — GET cascades at every level. Manufacturer pays 0.5% on wholesale sales. Wholesaler pays 0.5%. Retailer pays 4%. If passed to buyer, the pass-through amount is additional gross income subject to GET again.
 
 ### Tax on virtually everything
 
-Hawaii has one of the broadest tax bases in the US. Legal, accounting, medical, consulting -- all subject to GET at 4%.
+- **Broad tax base including professional services** — Hawaii has one of the broadest tax bases in the US. Legal, accounting, medical, consulting -- all subject to GET at 4%.
 
 ## Section 10 -- Prohibitions
 
-- NEVER call Hawaii's tax a "sales tax" -- it is a General Excise Tax on the seller's gross income.
-- NEVER assume food is exempt -- Hawaii taxes grocery food under GET.
-- NEVER assume services are exempt -- Hawaii taxes virtually ALL services.
-- NEVER forget the pyramiding effect -- GET cascades through the supply chain.
-- NEVER forget the Oahu county surcharge (0.50% additional).
-- NEVER compute any number.
+- **Prohibition 1** — NEVER call Hawaii's tax a "sales tax" -- it is a General Excise Tax on the seller's gross income.
+- **Prohibition 2** — NEVER assume food is exempt -- Hawaii taxes grocery food under GET.
+- **Prohibition 3** — NEVER assume services are exempt -- Hawaii taxes virtually ALL services.
+- **Prohibition 4** — NEVER forget the pyramiding effect -- GET cascades through the supply chain.
+- **Prohibition 5** — NEVER forget the Oahu county surcharge (0.50% additional).
+- **Never compute numbers** — NEVER compute any number.
 
 ## Disclaimer
 
 Informational only. Review by qualified professional required before filing.
-
----
 
 ## Disclaimer
 
@@ -83,6 +83,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/hi-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `hi-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/hi-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

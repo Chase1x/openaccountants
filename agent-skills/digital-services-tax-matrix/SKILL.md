@@ -1,20 +1,17 @@
 ---
 name: digital-services-tax-matrix
-description: "> Use this skill whenever a digital services provider asks about country-level Digital Services Tax (DST) exposure. Trigger on phrases like \"DST\", \"digital services tax\", \"digital tax\", \"France DST\", \"UK DST\", \"Italy DST\", \"Spain DST\", \"Austria DST\", \"Turkey DST\", \"India equalisation levy\", \"Kenya DST\", \"Canada DST\", \"DST nexus\", \"DST scope\", \"user location attribution\", \"DST and Pillar One\", \"DST sunset\", or any request to assess whether a service falls within a country's DST. Covers all DSTs in force or proposed as of mid-2025 across 25+ jurisdictions including the Canada DST (in force from 28 June 2024, retroactive to 2022) and India's equalisation levy regime. Maps the scope, rate, threshold, taxable services definition, user-location attribution method, filing/payment mechanics, and Pillar One Amount A interaction."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever a digital services provider asks about country-level Digital Services Tax (DST) exposure. Trigger on phrases like \"DST\", \"digital services tax\", \"digital tax\", \"France DST\", \"UK DST\", \"Italy DST\", \"Spain DST\", \"Austria DST\", \"Turkey DST\", \"India equalisation levy\", \"Kenya DST\", \"Canada DST\", \"DST nexus\", \"DST scope\", \"user location attribution\", \"DST and Pillar One\", \"DST sunset\", or any request to assess whether a service falls within a country's DST. Covers all DSTs in force or proposed as of mid-2025 across 25+ jurisdictions including the Canada DST (in force from 28 June 2024, retroactive to 2022) and India's equalisation levy regime. Maps the scope, rate, threshold, taxable services definition, user-location attribution method, filing/payment mechanics, and Pillar One Amount A interaction. Does NOT cover: corporate income tax / permanent establishment; VAT/GST on digital services (B2C and OSS); EU DAC7 platform reporting; OECD Pillar One Amount A computatio"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/digital-services-tax-matrix"
-  tax_year: 2025
-  obligation: DST
+  openaccountants_url: "https://www.openaccountants.com/skills/digital-services-tax-matrix"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Digital Services Tax (DST) Matrix v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Digital Services Tax Matrix
 
 ## What this file is
 
@@ -27,8 +24,6 @@ metadata:
 - US §301 retaliatory tariff threats on certain DSTs (active discussion through 2024-2025)
 
 **The reviewer is the customer of this output.** DST scope is contested per service line and changes with national budget cycles. Every output must be reviewed by a credentialed tax practitioner in the source country before filing.
-
----
 
 ## Section 1 — Scope statement
 
@@ -50,14 +45,14 @@ This skill does NOT cover:
 - **Pillar One Amount A computation** — see `pillar-one-amount-a-b.md` (forthcoming).
 - **Withholding tax on royalties / technical services** to digital service providers — see `withholding-tax-matrix.md`.
 
----
-
 ## Section 2 — Country-by-country DST matrix
 
 ### 2.1 In-force DSTs (Europe)
 
+**In-force DSTs (Europe)**  _(see individual statutes per row)_
+
 | Country | Rate | Global revenue threshold | Domestic revenue threshold | Effective from | Statute |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Austria** | 5% | EUR 750m worldwide | EUR 25m Austrian online ad revenue | 1 Jan 2020 | Digitalsteuergesetz 2020 |
 | **France** | 3% | EUR 750m worldwide digital services | EUR 25m France-attributable digital services | 1 Jan 2019 | CGI Article 299 et seq., Loi 2019-759 |
 | **Hungary** (advertising tax) | 0% (suspended through 31 Dec 2025) | HUF 100m Hungarian ad revenue | n/a (no global threshold) | 2014; rate currently 0% but the regime remains in force | Act XXII of 2014 |
@@ -68,14 +63,18 @@ This skill does NOT cover:
 
 ### 2.2 In-force DSTs (Americas)
 
+**In-force DSTs (Americas)**  _(Digital Services Tax Act, SC 2024 c. 17)_
+
 | Country | Rate | Threshold | Effective from | Statute |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Canada** | 3% | CAD 1.1bn (EUR 750m equivalent) global digital services revenue; CAD 20m Canadian digital services revenue | 28 June 2024, with retroactive liability accruing from 1 January 2022 (deemed payment 30 June 2024 for the 2022-2024 catch-up) | Digital Services Tax Act, SC 2024 c. 17 |
 
 ### 2.3 In-force DSTs (Asia, Africa, Oceania)
 
+**In-force DSTs (Asia, Africa, Oceania)**  _(see individual statutes per row)_
+
 | Country | Rate | Threshold | Effective from | Statute |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **India — Equalisation Levy 2.0** | 6% on advertising payments by non-residents from Indian payors to non-resident providers; the **2% e-commerce supply levy was repealed effective 1 August 2024** | Per-payment threshold INR 1 lakh aggregate per payer per year for advertising levy | 2016 (advertising), 2020 (e-commerce — repealed 2024) | Finance Act 2016 Chapter VIII; Finance Act 2020 (e-commerce, since repealed) |
 | **Kenya** | 1.5% (DST repealed 25 Dec 2024 and replaced by Significant Economic Presence Tax — SEPT — at 6% effective 27 Dec 2024) | No global threshold; KES 5m local | DST: 1 Jan 2021–24 Dec 2024; SEPT: from 27 Dec 2024 | Finance Act 2020, Finance Act 2024 |
 | **Nepal** | 2% | NPR 2m | Mar 2022 | Finance Act 2022 |
@@ -88,8 +87,10 @@ This skill does NOT cover:
 
 ### 2.4 Repealed or paused
 
+**Repealed or paused**
+
 | Country | Status |
-|---|---|
+| --- | --- |
 | **Belgium** | Bill never enacted; politically paused |
 | **Czech Republic** | DST bill withdrawn 2021 |
 | **New Zealand** | DST Bill paused 2024 pending Pillar One |
@@ -99,14 +100,14 @@ This skill does NOT cover:
 | **India e-commerce levy (2%)** | Repealed effective 1 August 2024 |
 | **Kenya DST (1.5%)** | Repealed 25 December 2024 (replaced by SEPT 6%) |
 
----
-
 ## Section 3 — Scope (taxable services)
 
 The taxable services definition is the single most contested element. Major categories:
 
+**Taxable service category matrix**
+
 | Service category | UK | FR | IT | ES | AT | TR | CA | IN-ad |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Online advertising** (sale of ad targeted at users in country) | Yes | Yes | Yes | Yes | Yes (sole) | Yes | Yes | Yes |
 | **Sale of user data** | Yes | Yes | Yes | Yes | No | Yes | Yes | No |
 | **Online intermediation / marketplace** (matching buyers/sellers) | Yes | Yes | Yes | No | No | Yes | Yes | No |
@@ -114,23 +115,20 @@ The taxable services definition is the single most contested element. Major cate
 | **Search engine** | Yes | Yes | Yes (within ads) | Yes (within ads) | Yes (within ads) | Yes | Yes (within ads) | No |
 | **Social media platforms** | Yes | Yes | Yes | Yes | No | Yes | Yes | No |
 
-**[T1] Carve-outs commonly applied:**
-- Payment services (e.g., card processing) — usually excluded
-- E-commerce sale of own goods to consumers — usually excluded (not DST; VAT applies)
-- Direct B2B sales of SaaS services not advertising-funded — usually excluded but check Turkey (broader scope)
-
----
+- **Carve-outs commonly applied [T1]** — Payment services (e.g., card processing) — usually excluded; E-commerce sale of own goods to consumers — usually excluded (not DST; VAT applies); Direct B2B sales of SaaS services not advertising-funded — usually excluded but check Turkey (broader scope)  _([T1])_
 
 ## Section 4 — User-location attribution
 
 ### 4.1 The general principle
 
-**[T1]** Revenue is allocated to a DST jurisdiction if the user / advertiser / data subject is located in that jurisdiction. Multiple users in different jurisdictions for the same transaction result in pro-rata allocation.
+- **General principle of revenue allocation** — Revenue is allocated to a DST jurisdiction if the user / advertiser / data subject is located in that jurisdiction. Multiple users in different jurisdictions for the same transaction result in pro-rata allocation.  _([T1])_
 
 ### 4.2 Country-specific attribution rules
 
+**Country-specific attribution rules**  _(see per-row citations)_
+
 | Country | Method |
-|---|---|
+| --- | --- |
 | **UK** | User is "normally located" in UK based on indicators (IP address, billing address, telephone, payment instrument, real-world facts). FA 2020 Sch 9 ¶7 |
 | **France** | User is located in France if used the device in France during the calendar year. CGI Art. 299 ter |
 | **Italy** | User device located in Italy; for ad targeting, indicators include IP, payment, user account country. D.M. 23/06/2022 |
@@ -142,54 +140,36 @@ The taxable services definition is the single most contested element. Major cate
 
 ### 4.3 Mixed-jurisdiction transactions
 
-**[T2]** For multi-user transactions (e.g., a UK advertiser targeting a French user via a Spanish platform), allocation generally:
-1. Identify the taxable service line per country's scope.
-2. Identify whose user/advertiser/data the revenue is attributable to.
-3. Allocate the gross revenue pro-rata to each in-scope jurisdiction using each country's attribution method.
-
-Each country administers its own DST independently — double DST is structurally possible. Practitioners model the exposure per country.
-
----
+- **Mixed-jurisdiction transaction allocation** — For multi-user transactions (e.g., a UK advertiser targeting a French user via a Spanish platform), allocation generally: 1. Identify the taxable service line per country's scope. 2. Identify whose user/advertiser/data the revenue is attributable to. 3. Allocate the gross revenue pro-rata to each in-scope jurisdiction using each country's attribution method. Each country administers its own DST independently — double DST is structurally possible. Practitioners model the exposure per country.  _([T2])_
 
 ## Section 5 — Computing DST liability
 
 ### Step 1 — Determine if MNE group is in scope
 
-**[T1]**
-1. Test global revenue against the country's threshold (where applicable).
-2. Test in-country revenue against the country's threshold.
-3. If both met → in scope.
-
-Group thresholds use the entire MNE group (Article 3 group definition per country). For UK / France / Italy / Spain / Canada / Austria the EUR 750m / equivalent figure aligns with CbCR scope.
+- **MNE group in-scope test** — 1. Test global revenue against the country's threshold (where applicable). 2. Test in-country revenue against the country's threshold. 3. If both met → in scope. Group thresholds use the entire MNE group (Article 3 group definition per country). For UK / France / Italy / Spain / Canada / Austria the EUR 750m / equivalent figure aligns with CbCR scope.  _([T1])_
 
 ### Step 2 — Determine taxable revenue
 
-**[T1]**
-- Take total revenue from the taxable services (Section 3) for the year.
-- Apply user-location attribution to determine the share allocable to the country.
-- Apply any country-specific allowance (e.g., UK GBP 25m allowance subtracted from UK taxable revenue).
+- **Determine taxable revenue** — Take total revenue from the taxable services (Section 3) for the year. Apply user-location attribution to determine the share allocable to the country. Apply any country-specific allowance (e.g., UK GBP 25m allowance subtracted from UK taxable revenue).  _([T1])_
 
 ### Step 3 — Apply rate
 
-**[T1]** Multiply attributable revenue × rate (Section 2).
+- **DST liability formula** — Attributable revenue × rate (Section 2)  _([T1])_
 
 ### Step 4 — Loss / deduction relief
 
-**[T1]** Some countries allow:
-- **UK:** "Safe harbour" alternative computation under FA 2020 Sch 8 ¶6, allowing a margin-based reduction where the business has a low UK margin on the taxable activities.
-- **France / Italy / Spain:** general expense deduction is NOT allowed — DST is a turnover tax.
-- **Canada:** the in-scope revenue is gross; a CAD 20m deduction is the only allowance.
+- **Loss / deduction relief by country** — UK: "Safe harbour" alternative computation under FA 2020 Sch 8 ¶6, allowing a margin-based reduction where the business has a low UK margin on the taxable activities. France / Italy / Spain: general expense deduction is NOT allowed — DST is a turnover tax. Canada: the in-scope revenue is gross; a CAD 20m deduction is the only allowance.  _([T1]; FA 2020 Sch 8 ¶6)_
 
 ### Step 5 — Translation and payment
 
-**[T1]** Translate to local currency at average annual exchange rate (UK), end-of-period (some others). Pay by the country's deadline.
-
----
+- **Currency translation and payment** — Translate to local currency at average annual exchange rate (UK), end-of-period (some others). Pay by the country's deadline.  _([T1])_
 
 ## Section 6 — Filing mechanics and deadlines
 
+**Filing mechanics and deadlines**  _(see per-row citations)_
+
 | Country | Filing portal | Deadline (annual) | Instalments |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **UK** | HMRC online DST return | 9 months 1 day after end of accounting period | Quarterly payments on account at 5%, 17.5%, 32.5%, 45% (FA 2020 Sch 9 ¶22) |
 | **France** | DGFiP forms n° 3310-A-SD and n° 3310-CA3 | 25 October for prior calendar year | One instalment in April + one in October (50% each based on prior year) |
 | **Italy** | Agenzia delle Entrate F24 form | 16 May (for prior calendar year) | Single payment |
@@ -199,43 +179,39 @@ Group thresholds use the entire MNE group (Article 3 group definition per countr
 | **Canada** | CRA RC4731 form via My Business Account | 30 June following calendar year | One annual payment |
 | **India** (advertising EL) | Form 1 (annual) + statement under §40(a)(ib) deduction blackout | Annual + transaction-level reporting | Withheld by payer at transaction level |
 
----
-
 ## Section 7 — Edge cases and special rules
 
 ### 7.1 Pillar One Amount A — DST sunset commitments
 
-**[T1]** Under the OECD/G20 IF Statement of October 2021 and the 2024 Multilateral Convention text, signatory jurisdictions committed to remove DSTs (and refrain from imposing new DSTs) upon Pillar One Amount A entering into force. As of mid-2025 Amount A has not been ratified — DSTs remain in force.
+- **Pillar One Amount A DST sunset commitments** — Under the OECD/G20 IF Statement of October 2021 and the 2024 Multilateral Convention text, signatory jurisdictions committed to remove DSTs (and refrain from imposing new DSTs) upon Pillar One Amount A entering into force. As of mid-2025 Amount A has not been ratified — DSTs remain in force.  _([T1]; OECD/G20 IF Statement of October 2021; 2024 Multilateral Convention text)_
 
 ### 7.2 US §301 retaliatory tariffs
 
-**[T2]** USTR investigations have concluded (against multiple countries) that DSTs unreasonably discriminate against US digital companies. Most tariffs were suspended pending Pillar One. Tariff risk remains live if DSTs continue post-Amount A.
+- **US §301 retaliatory tariffs** — USTR investigations have concluded (against multiple countries) that DSTs unreasonably discriminate against US digital companies. Most tariffs were suspended pending Pillar One. Tariff risk remains live if DSTs continue post-Amount A.  _([T2])_
 
 ### 7.3 India equalisation levy 2.0 → repeal of e-commerce levy
 
-The 2% e-commerce levy on non-resident e-commerce supplies (introduced 2020) was repealed effective 1 August 2024 by the Finance (No.2) Act 2024. The 6% advertising equalisation levy remains in force.
+- **India e-commerce levy repeal** — The 2% e-commerce levy on non-resident e-commerce supplies (introduced 2020) was repealed effective 1 August 2024 by the Finance (No.2) Act 2024. The 6% advertising equalisation levy remains in force.  _(Finance (No.2) Act 2024)_
 
 ### 7.4 Kenya DST → SEPT transition
 
-The 1.5% DST was repealed by the Tax Laws (Amendment) Act 2024 effective 25 December 2024 and replaced with the **Significant Economic Presence Tax (SEPT)** at 6% effective 27 December 2024. SEPT applies to non-resident persons whose income from the provision of a service is derived from or accrued in Kenya through a digital marketplace. The 6% rate applies on gross turnover; SEPT is creditable against any Kenya CIT for the same business activity (which is rare for non-residents without PE).
+- **Kenya DST to SEPT transition** — The 1.5% DST was repealed by the Tax Laws (Amendment) Act 2024 effective 25 December 2024 and replaced with the Significant Economic Presence Tax (SEPT) at 6% effective 27 December 2024. SEPT applies to non-resident persons whose income from the provision of a service is derived from or accrued in Kenya through a digital marketplace. The 6% rate applies on gross turnover; SEPT is creditable against any Kenya CIT for the same business activity (which is rare for non-residents without PE).  _(Tax Laws (Amendment) Act 2024)_
 
 ### 7.5 Canada DST — retroactive period and US response
 
-The Canada DSTA imposes liability for calendar years 2022–2023 in a one-time payment due 30 June 2025 (the "retrospective period payment"), in addition to the prospective 2024 onward liability. The US has consistently opposed the retroactive design; potential WTO and §301 challenges remain live.
+- **Canada DST retroactive period and US response** — The Canada DSTA imposes liability for calendar years 2022–2023 in a one-time payment due 30 June 2025 (the "retrospective period payment"), in addition to the prospective 2024 onward liability. The US has consistently opposed the retroactive design; potential WTO and §301 challenges remain live.  _(Digital Services Tax Act, SC 2024 c. 17)_
 
 ### 7.6 Group-level vs entity-level
 
-DSTs are generally imposed at the **MNE group level** with the in-country entity (or designated entity) responsible for filing. Where a group has multiple entities in the same jurisdiction, the group nominates one filer.
+- **Group-level vs entity-level filing** — DSTs are generally imposed at the MNE group level with the in-country entity (or designated entity) responsible for filing. Where a group has multiple entities in the same jurisdiction, the group nominates one filer.
 
 ### 7.7 Withholding interaction (India advertising EL)
 
-The 6% Indian advertising equalisation levy is collected by **withholding by the Indian payer** at the time of payment to the non-resident. The payer must withhold and remit. Failure to withhold leads to disallowance of the deduction under §40(a)(ib) ITA.
+- **India advertising EL withholding** — The 6% Indian advertising equalisation levy is collected by withholding by the Indian payer at the time of payment to the non-resident. The payer must withhold and remit. Failure to withhold leads to disallowance of the deduction under §40(a)(ib) ITA.  _(§40(a)(ib) ITA)_
 
 ### 7.8 VAT / GST overlap
 
-Many DST-imposing countries also impose VAT/GST on the same B2C digital services. The two are independent: VAT collected from the consumer; DST paid by the platform on the gross revenue. No netting.
-
----
+- **VAT/GST overlap with DST** — Many DST-imposing countries also impose VAT/GST on the same B2C digital services. The two are independent: VAT collected from the consumer; DST paid by the platform on the gross revenue. No netting.
 
 ## Section 8 — Output specification
 
@@ -250,8 +226,6 @@ The reviewer brief must include:
 7. **Pillar One Amount A status update** — note if any DST has sunset triggered.
 8. **Withholding obligations** (India equalisation levy).
 9. **Reviewer questions** — open items flagged as [T2] or [T3].
-
----
 
 ## Section 9 — Self-checks
 
@@ -269,8 +243,6 @@ Before delivering output, verify:
 - [ ] Pillar One Amount A status checked before relying on long-term DST liability.
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement.
 
----
-
 ## Section 10 — Prohibitions
 
 - **Do not** assume an exemption from VAT/GST means DST does not apply — they are independent regimes.
@@ -279,14 +251,30 @@ Before delivering output, verify:
 - **Do not** advise on structuring to escape DST scope (e.g., moving the contracting entity outside the group) without confirming anti-avoidance rules in each affected country.
 - **Do not** ignore the retroactive Canada DST liability for calendar 2022 and 2023 — it is due regardless of any going-forward Pillar One outcome.
 
----
-
 ## Section 11 — Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. DST regimes change with each national budget and the Pillar One political process. Every output must be reviewed and signed off by a credentialed practitioner in each source country before any DST return is filed.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/digital-services-tax-matrix) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `digital-services-tax-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/digital-services-tax-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

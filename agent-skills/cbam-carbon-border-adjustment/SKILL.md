@@ -1,20 +1,17 @@
 ---
 name: cbam-carbon-border-adjustment
-description: "> Use this skill whenever an EU importer (declarant), an indirect customs representative, or a non-EU producer asks about the EU Carbon Border Adjustment Mechanism. Trigger on phrases like \"CBAM\", \"carbon border adjustment\", \"CBAM certificates\", \"embedded emissions\", \"default values\", \"verified emissions\", \"CN code 7208\", \"CN code 28080000\", \"fertiliser CBAM\", \"cement CBAM\", \"aluminium CBAM\", \"hydrogen CBAM\", \"electricity CBAM\", \"iron and steel CBAM\", \"quarterly CBAM report\", \"CBAM declarant\", \"CBAM authorised declarant\", or any request to assess CBAM scope, compute embedded emissions, prepare the quarterly report (transitional period) or annual CBAM declaration (definitive period from 2026). Covers Regulation (EU) 2023/956, Implementing Regulation (EU) 2023/1773 (transitional period reporting), the Default Values Implementing Regulation and the Commission's 2025 sectoral guidance."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever an EU importer (declarant), an indirect customs representative, or a non-EU producer asks about the EU Carbon Border Adjustment Mechanism. Trigger on phrases like \"CBAM\", \"carbon border adjustment\", \"CBAM certificates\", \"embedded emissions\", \"default values\", \"verified emissions\", \"CN code 7208\", \"CN code 28080000\", \"fertiliser CBAM\", \"cement CBAM\", \"aluminium CBAM\", \"hydrogen CBAM\", \"electricity CBAM\", \"iron and steel CBAM\", \"quarterly CBAM report\", \"CBAM declarant\", \"CBAM authorised declarant\", or any request to assess CBAM scope, compute embedded emissions, prepare the quarterly report (transitional period) or annual CBAM declaration (definitive period from 2026). Covers Regulation (EU) 2023/956, Implementing Regulation (EU) 2023/1773 (transitional period reporting), the Default Values Implementing Regulation and the Commission's 2025 sectoral guidance. Does NOT cover: emissions trading system (EU ETS), domestic carbon taxes (UK CBAM, Australia Safeguard Mech"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: EU-27
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cbam-carbon-border-adjustment"
-  tax_year: 2025
-  obligation: CBAM
+  openaccountants_url: "https://www.openaccountants.com/skills/cbam-carbon-border-adjustment"
+  jurisdiction: "EU-27"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# EU Carbon Border Adjustment Mechanism (CBAM) v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# CBAM Carbon Border Adjustment
 
 ## What this file is
 
@@ -28,8 +25,6 @@ metadata:
 **Tax year coverage.** Current for **calendar 2025** (transitional reporting) and the **early definitive period 2026**, reflecting the **Omnibus simplification proposal of February 2025** which introduced a small-importer de minimis (50 tonnes/year per declarant) and clarified default-value usage.
 
 **The reviewer is the customer of this output.** CBAM emissions data flows from production-site engineering records, customs classifications, and external verification. Every output must be reviewed by a credentialed practitioner (customs broker, EU import lawyer, or accredited verifier under Implementing Regulation (EU) 2018/2067) before submission.
-
----
 
 ## Section 1 — Scope statement
 
@@ -56,12 +51,12 @@ This skill does NOT cover:
 - **Preference treatment** under FTAs.
 - **Indirect emissions** for sectors where they are out of scope (currently iron and steel and aluminium — confirm the latest delegated act).
 
----
-
 ## Section 2 — Timeline
 
+**Timeline table**
+
 | Date | Event |
-|---|---|
+| --- | --- |
 | 1 October 2023 | Transitional period begins; first quarterly report due |
 | 31 January 2024 | First quarterly report (Q4 2023) due |
 | 31 January 2025 | Quarterly report (Q4 2024) due |
@@ -70,155 +65,95 @@ This skill does NOT cover:
 | 31 May 2027 | First annual CBAM declaration (for 2026) due, with certificate surrender |
 | Phased ETS free allocation phaseout | 2026: 97.5% free → reduces to 0% by 2034 (annual schedule in Article 36) |
 
----
-
 ## Section 3 — Filing requirements
 
 ### Transitional period (to 31 December 2025)
 
-**[T1] Reporting declarant** (importer or indirect customs representative) submits a **quarterly CBAM report** within **one month** of quarter end via the CBAM Transitional Registry.
-
-Contents per Implementing Regulation (EU) 2023/1773:
-- Total quantity of CBAM goods imported (by CN code and country of origin)
-- Total embedded emissions (direct and where applicable indirect) in tonnes CO₂e per tonne of goods
-- Methodology used (verified actual data; default values from the Commission; equivalent national methodologies during a grace period)
-- Carbon price paid in the country of production with supporting documentation
-
-**Transitional period flexibility:**
-- Q3 2023 → Q3 2024: any methodology, including default values, allowed.
-- From Q4 2024 onwards: must use actual values where available; default values only allowed within Commission-set limits.
+- **[T1] Reporting declarant quarterly CBAM report** — Reporting declarant (importer or indirect customs representative) submits a quarterly CBAM report within one month of quarter end via the CBAM Transitional Registry.  _(Implementing Regulation (EU) 2023/1773)_
+- **Contents of quarterly CBAM report** — Total quantity of CBAM goods imported (by CN code and country of origin); Total embedded emissions (direct and where applicable indirect) in tonnes CO₂e per tonne of goods; Methodology used (verified actual data; default values from the Commission; equivalent national methodologies during a grace period); Carbon price paid in the country of production with supporting documentation.  _(Implementing Regulation (EU) 2023/1773)_
+- **Transitional period flexibility** — Q3 2023 → Q3 2024: any methodology, including default values, allowed. From Q4 2024 onwards: must use actual values where available; default values only allowed within Commission-set limits.  _(Implementing Regulation (EU) 2023/1773)_
 
 ### Definitive period (from 1 January 2026)
 
-**[T1] Only an Authorised CBAM Declarant** can import CBAM goods.
-
-Application via the national Competent Authority of the importer's Member State. Approval requires:
-- No serious or repeated infringements of customs, tax, or market abuse rules
-- Financial standing
-- Established in the Member State
-
-**Annual CBAM declaration** due 31 May for the prior calendar year, containing:
-- Total quantity imported per CN code per country of origin
-- Total embedded emissions (verified by accredited verifier, except where default values used)
-- Total CBAM certificates to be surrendered
-- Carbon price paid in country of origin
-
-**Certificate purchase**: declarant buys CBAM certificates at the weekly average price of EU ETS auctions, on the Common Central Platform managed by a designated entity (likely the European Energy Exchange).
-
-**Certificate surrender**: equal to embedded emissions × applicable factor (reflecting any ETS free allocation phasing — Article 31 / Annex II).
-
----
+- **[T1] Only an Authorised CBAM Declarant can import CBAM goods** — Only an Authorised CBAM Declarant can import CBAM goods. Application via the national Competent Authority of the importer's Member State. Approval requires: No serious or repeated infringements of customs, tax, or market abuse rules; Financial standing; Established in the Member State.  _(Regulation (EU) 2023/956)_
+- **Annual CBAM declaration contents** — Annual CBAM declaration due 31 May for the prior calendar year, containing: Total quantity imported per CN code per country of origin; Total embedded emissions (verified by accredited verifier, except where default values used); Total CBAM certificates to be surrendered; Carbon price paid in country of origin.  _(Regulation (EU) 2023/956)_
+- **Certificate purchase** — Declarant buys CBAM certificates at the weekly average price of EU ETS auctions, on the Common Central Platform managed by a designated entity (likely the European Energy Exchange).  _(Regulation (EU) 2023/956)_
+- **Certificate surrender** — Certificate surrender: equal to embedded emissions × applicable factor (reflecting any ETS free allocation phasing).  _(Article 31 / Annex II)_
 
 ## Section 4 — Computing embedded emissions
 
 ### Step 1 — Classify the import
 
-**[T1] Match the goods to a CN (Combined Nomenclature) code.** CBAM scope is determined by Annex I of Regulation (EU) 2023/956 — a list of specific 4-/6-/8-digit CN codes. If the CN code is not in Annex I, the import is out of scope (this period).
+- **[T1] Match the goods to a CN code** — Match the goods to a CN (Combined Nomenclature) code. CBAM scope is determined by Annex I of Regulation (EU) 2023/956 — a list of specific 4-/6-/8-digit CN codes. If the CN code is not in Annex I, the import is out of scope (this period).  _(Annex I of Regulation (EU) 2023/956)_
 
 ### Step 2 — Determine the country of origin
 
-**[T1]** Use customs rules of origin. CBAM applies to imports from third countries EXCEPT:
-- EEA states (Iceland, Liechtenstein, Norway)
-- Switzerland
-- Certain territories with full EU ETS coverage (Northern Ireland for electricity, Büsingen, etc. — Annex III)
+- **[T1] CBAM applies to imports from third countries EXCEPT** — Use customs rules of origin. CBAM applies to imports from third countries EXCEPT: EEA states (Iceland, Liechtenstein, Norway); Switzerland; Certain territories with full EU ETS coverage (Northern Ireland for electricity, Büsingen, etc. — Annex III).  _(Annex III)_
 
 ### Step 3 — Identify the production installation
 
-**[T1]** Embedded emissions are computed at the installation level. Importer must obtain from the third-country operator:
-- Installation identification (name, address, UNLOCODE if available, operator name)
-- Direct emissions: Specific Direct Embedded Emissions (SDEE) per tonne of product
-- Indirect emissions (electricity used in production) — applicable currently for cement, fertilisers, electricity, hydrogen; **not** applicable for iron and steel or aluminium during the transitional period and currently in the definitive period (confirm latest delegated act)
-- Production route (e.g., for steel: integrated route via BOF vs electric arc furnace)
-- Carbon price paid (per Article 9)
+- **[T1] Embedded emissions computed at installation level** — Embedded emissions are computed at the installation level. Importer must obtain from the third-country operator: Installation identification (name, address, UNLOCODE if available, operator name); Direct emissions: Specific Direct Embedded Emissions (SDEE) per tonne of product; Indirect emissions (electricity used in production) — applicable currently for cement, fertilisers, electricity, hydrogen; not applicable for iron and steel or aluminium during the transitional period and currently in the definitive period (confirm latest delegated act); Production route (e.g., for steel: integrated route via BOF vs electric arc furnace); Carbon price paid (per Article 9).  _(Article 9)_
 
 ### Step 4 — Methodology selection
 
-**[T1] Hierarchy (Annex IV):**
-
-1. **Actual emissions data** from the installation, calculated per the EU methodology equivalent to ETS Monitoring and Reporting Regulation (EU) 2018/2066, verified by an accredited verifier.
-2. **Default values** — Commission-published per sector and country/region. Use only:
-   - During transitional period freely until end of Q3 2024
-   - From Q4 2024: only for ≤ 20% of imported product weight per declarant per quarter
-   - In definitive period: only where actual values cannot reasonably be obtained
-3. **Other methodologies** — equivalent national methodologies of the producing country may be accepted during transitional period; not generally in definitive period.
+- **[T1] Hierarchy (Annex IV)** — 1. Actual emissions data from the installation, calculated per the EU methodology equivalent to ETS Monitoring and Reporting Regulation (EU) 2018/2066, verified by an accredited verifier. 2. Default values — Commission-published per sector and country/region. Use only: During transitional period freely until end of Q3 2024; From Q4 2024: only for ≤ 20% of imported product weight per declarant per quarter; In definitive period: only where actual values cannot reasonably be obtained. 3. Other methodologies — equivalent national methodologies of the producing country may be accepted during transitional period; not generally in definitive period.  _(Annex IV)_
 
 ### Step 5 — Compute embedded emissions
 
-**[T1]** For each shipment:
-
-```
-Embedded Emissions (tCO₂e) = Quantity (t) × Specific Embedded Emissions (tCO₂e / t)
-```
-
-Sum across all shipments for the reporting period.
+- **[T1] Embedded Emissions formula** — Embedded Emissions (tCO₂e) = Quantity (t) × Specific Embedded Emissions (tCO₂e / t). Sum across all shipments for the reporting period.  _(Section 4, Step 5)_
 
 ### Step 6 — Adjustment for carbon price paid
 
-**[T1]** Article 9 allows a deduction for carbon price paid in country of origin on the embedded emissions of the imported goods, provided:
-- The price was effectively paid (e.g., national ETS, carbon tax)
-- Documentation provided (proof of payment, accreditation of the carbon-pricing regime)
-- Not offset by subsidies or other rebates
-
-Adjustment in EUR converted at exchange rate of payment date.
+- **[T1] Article 9 carbon price deduction conditions** — Article 9 allows a deduction for carbon price paid in country of origin on the embedded emissions of the imported goods, provided: The price was effectively paid (e.g., national ETS, carbon tax); Documentation provided (proof of payment, accreditation of the carbon-pricing regime); Not offset by subsidies or other rebates. Adjustment in EUR converted at exchange rate of payment date.  _(Article 9)_
 
 ### Step 7 — Compute certificate surrender (definitive period from 2026)
 
-```
-Certificates to surrender = Embedded Emissions − Free Allocation Factor − Carbon Price Adjustment
-```
-
-**Free Allocation Factor (Annex II):** in 2026 = 97.5% of the free allocation share for the equivalent ETS product (i.e., importer surrenders only 2.5% × benchmark emissions); reduces annually to 0% in 2034.
-
-Each certificate represents 1 tCO₂e and is purchased at the weekly average EU ETS auction price.
-
----
+- **Certificates to surrender formula** — Certificates to surrender = Embedded Emissions − Free Allocation Factor − Carbon Price Adjustment  _(Annex II)_
+- **Free Allocation Factor (Annex II)** — In 2026 = 97.5% of the free allocation share for the equivalent ETS product (i.e., importer surrenders only 2.5% × benchmark emissions); reduces annually to 0% in 2034. Each certificate represents 1 tCO₂e and is purchased at the weekly average EU ETS auction price.  _(Annex II)_
 
 ## Section 5 — Edge cases and special rules
 
 ### 5.1 Indirect emissions
 
-Currently in scope for: cement, fertilisers, electricity, hydrogen.
-Out of scope (transitional + early definitive period) for: iron and steel, aluminium.
-The Commission's 2025 review will reassess scope inclusion.
+- **Indirect emissions scope** — Currently in scope for: cement, fertilisers, electricity, hydrogen. Out of scope (transitional + early definitive period) for: iron and steel, aluminium. The Commission's 2025 review will reassess scope inclusion.
 
 ### 5.2 De minimis exemption (Article 2(3) and Omnibus 2025)
 
-**[T1]** Originally: shipments ≤ EUR 150 in value exempt.
-**Omnibus 2025 (proposed):** 50-tonne annual de minimis per importer. Confirm the as-enacted text before relying.
+- **[T1] De minimis exemption** — Originally: shipments ≤ EUR 150 in value exempt. Omnibus 2025 (proposed): 50-tonne annual de minimis per importer. Confirm the as-enacted text before relying.  _(Article 2(3) and Omnibus 2025)_
 
 ### 5.3 Re-imports of EU-originating goods
 
-Goods of EU origin that are re-imported are out of scope.
+- **Re-imports of EU-originating goods out of scope** — Goods of EU origin that are re-imported are out of scope.
 
 ### 5.4 Inward processing and special procedures
 
-Goods placed under inward processing, customs warehousing, transit, or other suspensive procedures are generally not yet released for free circulation and do not trigger CBAM. CBAM triggers on release for free circulation.
+- **Suspensive procedures do not trigger CBAM** — Goods placed under inward processing, customs warehousing, transit, or other suspensive procedures are generally not yet released for free circulation and do not trigger CBAM. CBAM triggers on release for free circulation.
 
 ### 5.5 Precursor materials
 
-For complex goods (e.g., steel articles, aluminium articles), embedded emissions of CBAM-relevant precursor materials must be included. The Commission's sectoral guidance maps each CN code to its in-scope precursors.
+- **Precursor materials must be included** — For complex goods (e.g., steel articles, aluminium articles), embedded emissions of CBAM-relevant precursor materials must be included. The Commission's sectoral guidance maps each CN code to its in-scope precursors.
 
 ### 5.6 Common Central Platform certificate handling
 
-Authorised CBAM Declarants maintain a certificate account. Up to 1/3 of certificates held at the end of each quarter may be sold back at original price (mitigates price volatility). Certificates not surrendered by 31 May of the year following the import year are cancelled.
+- **Certificate account handling** — Authorised CBAM Declarants maintain a certificate account. Up to 1/3 of certificates held at the end of each quarter may be sold back at original price (mitigates price volatility). Certificates not surrendered by 31 May of the year following the import year are cancelled.
 
 ### 5.7 Penalty exposure
 
+**Penalty exposure table**
+
 | Trigger | Penalty |
-|---|---|
+| --- | --- |
 | Failure to file quarterly report (transitional period) | EUR 10 – EUR 50 per tonne of unreported emissions (Implementing Regulation (EU) 2023/1773 Article 16) |
 | Failure to surrender certificates (definitive period) | 3 × the average price of certificates over preceding year × shortfall in tonnes (Article 26) |
 | Unauthorised import in definitive period | Goods may be denied release; declarant penalties per Member State implementation |
 
 ### 5.8 Verification requirements (definitive period)
 
-**[T1]** Actual emissions data must be verified by an accredited verifier under Implementing Regulation (EU) 2018/2067. Default values do not require verification. The verifier must be accredited in an EU Member State; non-EU verifiers may operate through mutual recognition where established.
+- **[T1] Verification requirements** — Actual emissions data must be verified by an accredited verifier under Implementing Regulation (EU) 2018/2067. Default values do not require verification. The verifier must be accredited in an EU Member State; non-EU verifiers may operate through mutual recognition where established.  _(Implementing Regulation (EU) 2018/2067)_
 
 ### 5.9 Interaction with UK CBAM (from 2027)
 
 The UK announced a domestic CBAM effective 1 January 2027 covering aluminium, cement, ceramics, fertilisers, glass, hydrogen, iron and steel (not electricity). Scope and methodology align broadly with EU CBAM. Goods that pass through the UK before importation to the EU may face double pricing in some scenarios — review preference treatment and customs sequencing.
-
----
 
 ## Section 6 — Output specification
 
@@ -234,8 +169,6 @@ The reviewer brief must include:
 8. **Quarterly transitional reports** — XML payload per quarter through Q4 2025.
 9. **Annual CBAM declaration** draft (definitive period) — verified emissions, certificates to surrender, supporting documentation.
 10. **Reviewer questions** — open items flagged as [T2] or [T3].
-
----
 
 ## Section 7 — Self-checks
 
@@ -255,17 +188,13 @@ Before delivering output, verify:
 - [ ] Quarterly reports filed within one month of quarter end.
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement.
 
----
-
 ## Section 8 — Prohibitions
 
-- **Do not** apply CBAM to CN codes not in Annex I, even if commercially related (CBAM is enumerated, not analogous).
-- **Do not** use default values beyond the transitional Q4 2024 limit without documenting the exception under Implementing Regulation (EU) 2023/1773 Article 4.
-- **Do not** deduct carbon price paid without proof of effective payment and a copy of the underlying regime certification.
-- **Do not** treat indirect emissions as in scope for iron, steel, or aluminium during the transitional period and current definitive period (verify the latest delegated act).
-- **Do not** advise on structuring imports to circumvent CBAM (e.g., processing in a third country to change CN code) without explicit escalation — anti-circumvention rules apply under Article 27.
-
----
+- **Prohibition: CN codes not in Annex I** — Do not apply CBAM to CN codes not in Annex I, even if commercially related (CBAM is enumerated, not analogous).  _(Annex I)_
+- **Prohibition: default values beyond Q4 2024 limit** — Do not use default values beyond the transitional Q4 2024 limit without documenting the exception under Implementing Regulation (EU) 2023/1773 Article 4.  _(Implementing Regulation (EU) 2023/1773 Article 4)_
+- **Prohibition: carbon price deduction without proof** — Do not deduct carbon price paid without proof of effective payment and a copy of the underlying regime certification.
+- **Prohibition: indirect emissions for iron, steel, aluminium** — Do not treat indirect emissions as in scope for iron, steel, or aluminium during the transitional period and current definitive period (verify the latest delegated act).
+- **Prohibition: advising on circumvention** — Do not advise on structuring imports to circumvent CBAM (e.g., processing in a third country to change CN code) without explicit escalation — anti-circumvention rules apply under Article 27.  _(Article 27)_
 
 ## Section 9 — Disclaimer
 
@@ -273,6 +202,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cbam-carbon-border-adjustment) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cbam-carbon-border-adjustment` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cbam-carbon-border-adjustment. If neither is available, confirm every figure against the official source pages cited above before relying on it.

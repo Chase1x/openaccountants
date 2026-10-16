@@ -1,19 +1,33 @@
 ---
 name: us-schedule-c-and-se-computation
-description: "> Tier 2 content skill for computing Schedule C bottom line, Form 8829 home office (actual method), and Schedule SE self-employment tax for US sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 with the 2025 Social Security wage base of $176,100, the 92.35% net SE earnings adjustment under IRC 1402(a)(12), the 12.4% OASDI rate, the 2.9% Medicare rate, and the 0.9% Additional Medicare Tax thresholds. Handles Schedule C Lines 1-32, the 280A home office gross income limitation and carryover, Form 8829 indirect expense allocation, the 1402 net SE earnings computation, the optional methods under 1402(a)(15) and 1402(l), the deductible half of SE tax under 164(f), and the at-risk indicators on Line 32. Consumes classified transactions from us-sole-prop-bookkeeping. Defers QBI, retirement, SE health insurance, and quarterly estimated tax to companion skills. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Tier 2 content skill for computing Schedule C bottom line, Form 8829 home office (actual method), and Schedule SE self-employment tax for US sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 with the 2025 Social Security wage base of $176,100, the 92.35% net SE earnings adjustment under IRC 1402(a)(12), the 12.4% OASDI rate, the 2.9% Medicare rate, and the 0.9% Additional Medicare Tax thresholds. Handles Schedule C Lines 1-32, the 280A home office gross income limitation and carryover, Form 8829 indirect expense allocation, the 1402 net SE earnings computation, the optional methods under 1402(a)(15) and 1402(l), the deductible half of SE tax under 164(f), and the at-risk indicators on Line 32. Consumes classified transactions from us-sole-prop-bookkeeping. Defers QBI, retirement, SE health insurance, and quarterly estimated tax to companion skills. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only. ALWAYS read this skill before co"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: accountant-reviewed
-  openaccountants_url: "https://openaccountants.com/skills/us-schedule-c-and-se-computation"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/us-schedule-c-and-se-computation"
+  jurisdiction: "US"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "A licensed accountant (name withheld at their request)"
+  review_status: "current"
 ---
 
-# US Schedule C and SE Computation Skill v2.0
+# US Schedule C And SE Computation
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## US Schedule C and SE Computation Skill v2.0
+
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Schedule C & SE
+
+- **SE rate** — 15.3% (12.4% OASDI + 2.9% Medicare) on net SE earnings  _(IRC 1401; Schedule SE.)_
+- **SS base** — 2025 Social Security wage base = $176,100  _(SSA 2025; IRS.)_
+- **Add'l Medicare** — 0.9% Additional Medicare Tax above $200,000 (Single)/$250,000 (MFJ)/$125,000 (MFS)  _(IRC 3101(b)(2); Form 8959.)_
+- **Deductible** — One-half of SE tax is deductible above the line  _(IRC 164(f); Schedule 1.)_
 
 ## Section 1 — Quick Reference
 
@@ -35,8 +49,10 @@ Tax year: 2025. Currency date: April 2026.
 
 ### Self-Employment Tax Core Figures (TY2025)
 
+**Self-Employment Tax Core Figures (TY2025)**
+
 | Figure | Value | Source |
-|---|---|---|
+| --- | --- | --- |
 | Net SE earnings adjustment factor | 92.35% | IRC 1402(a)(12) |
 | OASDI (Social Security) rate | 12.4% | IRC 1401(a) |
 | Medicare rate | 2.9% | IRC 1401(b)(1) |
@@ -51,8 +67,10 @@ Tax year: 2025. Currency date: April 2026.
 
 ### Schedule SE Optional Methods (TY2025)
 
+**Schedule SE Optional Methods (TY2025)**
+
 | Figure | Value |
-|---|---|
+| --- | --- |
 | Nonfarm optional method max SE earnings | $7,320 |
 | Nonfarm gross income threshold | $10,380 minimum gross |
 | Nonfarm profit threshold | < $7,320 net AND < 72.189% of gross |
@@ -60,17 +78,21 @@ Tax year: 2025. Currency date: April 2026.
 
 ### Home Office Methods
 
+**Home Office Methods**
+
 | Method | Deduction | Carryover | Depreciation | 1250 Recapture |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Simplified | $5/sq ft x min(sq ft, 300) = max $1,500 | NO | NO | NO |
 | Actual (Form 8829) | Actual expenses x business % | YES (indefinite) | YES (39-year SL) | YES |
 
-Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Schedule C Line 29 tentative profit).
+- **280A(c)(5) gross income limitation** — Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Schedule C Line 29 tentative profit).  _(IRC 280A(c)(5))_
 
 ### Schedule C Computation Structure
 
+**Schedule C Computation Structure**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | 1 | Gross receipts or sales |
 | 2 | Returns and allowances |
 | 3 | Line 1 minus Line 2 |
@@ -87,8 +109,10 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### Schedule SE Part I Structure
 
+**Schedule SE Part I Structure**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | 2 | Net profit from Schedule C Line 31 |
 | 4a | Line 3 x 92.35% |
 | 6 | Net SE earnings subject to tax |
@@ -102,8 +126,10 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Conservative Default |
-|---|---|
+| --- | --- |
 | 92.35% adjustment forgotten | Apply it; defensive check |
 | 2025 SS wage base unknown | Use $176,100 (verified) |
 | W-2 wage coordination unknown | Assume no W-2 (full SS base available); flag |
@@ -117,8 +143,10 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Schedule C Line 31 >= $200,000 | Approaches Additional Medicare Tax threshold (single) |
 | Schedule C Line 31 <= -$5,000 | Loss territory; check at-risk and hobby loss |
 | Form 8829 deduction >= $5,000 | Material; substantiation review |
@@ -127,8 +155,6 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 | Net SE earnings near $176,100 wage base | Verify W-2 coordination |
 | Combined SE + W-2 >= Additional Medicare Tax threshold | Form 8959 required |
 | Gross receipts < 1099 totals | IRS computer match risk |
-
----
 
 ## Section 2 — Required Inputs + Refusal Catalogue
 
@@ -149,8 +175,10 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### Refusal Catalogue
 
+**Refusal Catalogue**
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-COMP-NOL | Net operating loss generated | Stop — 172 analysis required; outside scope |
 | R-COMP-ATRISK | At-risk limitation may apply (Form 6198) | Stop — 465 analysis required |
 | R-COMP-FORM8959-COMPLEX | Additional Medicare Tax with complex W-2 coordination | Flag — compute basic liability; reviewer verifies withholding |
@@ -158,14 +186,21 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 | R-COMP-CHURCH | Church employee income | Stop — 1402(j) special rules; specialist needed |
 | R-COMP-PRIORYEAR | No prior-year return for carryover verification | Soft stop — proceed with zero carryover assumption; flag |
 
----
+- **R-COMP-NOL** — Net operating loss generated  _(Stop — 172 analysis required; outside scope)_
+- **R-COMP-ATRISK** — At-risk limitation may apply (Form 6198)  _(Stop — 465 analysis required)_
+- **R-COMP-FORM8959-COMPLEX** — Additional Medicare Tax with complex W-2 coordination  _(Flag — compute basic liability; reviewer verifies withholding)_
+- **R-COMP-FARM** — Farm income present  _(Stop — Schedule F, not Schedule C)_
+- **R-COMP-CHURCH** — Church employee income  _(Stop — 1402(j) special rules; specialist needed)_
+- **R-COMP-PRIORYEAR** — No prior-year return for carryover verification  _(Soft stop — proceed with zero carryover assumption; flag)_
 
 ## Section 3 — Transaction Pattern Library
 
 ### 3.1 Income Patterns (US Banks)
 
+**3.1 Income Patterns (US Banks)**
+
 | # | Narration Pattern | Schedule C Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `ACH CREDIT [client name]` / `DIRECT DEP [client]` | Line 1 — Gross receipts | Standard ACH deposit from client |
 | I-02 | `WIRE TRANSFER FROM [client]` / `INCOMING WIRE` | Line 1 — Gross receipts | Wire transfer from client |
 | I-03 | `ZELLE FROM [client]` / `ZELLE PAYMENT` | Line 1 — Gross receipts | Zelle instant payment |
@@ -181,8 +216,10 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### 3.2 Expense Patterns (US Banks)
 
+**3.2 Expense Patterns (US Banks)**
+
 | # | Narration Pattern | Schedule C Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `GOOGLE ADS` / `FACEBOOK ADS` / `META ADS` | Line 8 — Advertising | Marketing spend |
 | E-02 | `GEICO` / `STATE FARM` / `PROGRESSIVE` (vehicle) | Line 9 — Car/truck expenses | If standard mileage: not deductible separately |
 | E-03 | `[Subcontractor name] ACH` / `1099 CONTRACTOR` | Line 11 — Contract labor | 1099-NEC issuance may be required |
@@ -206,15 +243,17 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### 3.3 US Bank Fees (Deductible as Line 27b)
 
+**3.3 US Bank Fees (Deductible as Line 27b)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CHASE, JPMORGAN CHASE | Deductible (Line 27b) for business account fees | Largest US bank |
-| WELLS FARGO | Deductible (Line 27b) for business account fees | |
-| BANK OF AMERICA, BOFA | Deductible (Line 27b) for business account fees | |
-| CITIBANK | Deductible (Line 27b) for business account fees | |
-| US BANK | Deductible (Line 27b) for business account fees | |
-| PNC | Deductible (Line 27b) for business account fees | |
-| CAPITAL ONE | Deductible (Line 27b) for business account fees | |
+| WELLS FARGO | Deductible (Line 27b) for business account fees |  |
+| BANK OF AMERICA, BOFA | Deductible (Line 27b) for business account fees |  |
+| CITIBANK | Deductible (Line 27b) for business account fees |  |
+| US BANK | Deductible (Line 27b) for business account fees |  |
+| PNC | Deductible (Line 27b) for business account fees |  |
+| CAPITAL ONE | Deductible (Line 27b) for business account fees |  |
 | SVB, SILICON VALLEY | Deductible (Line 27b) for business account fees | Tech banking |
 | MERCURY | Deductible (Line 27b) for business account fees | Startup banking |
 | RELAY, NOVO, BLUEVINE | Deductible (Line 27b) for business account fees | SMB digital banks |
@@ -223,16 +262,16 @@ Both subject to 280A(c)(5) gross income limitation (deduction cannot exceed Sche
 
 ### 3.4 Internal Transfers and Exclusions
 
+**3.4 Internal Transfers and Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TRANSFER FROM SAVINGS, TRANSFER FROM CHECKING | EXCLUDE | Internal movement |
 | OWNER CONTRIBUTION, PERSONAL DEPOSIT | EXCLUDE | Capital contribution, not income |
 | LOAN PROCEEDS, SBA LOAN | EXCLUDE | Debt, not income |
 | LOAN PAYMENT, PRINCIPAL PAYMENT | EXCLUDE (interest portion may be deductible) | Separate interest vs principal |
 | IRS TREAS 310, STATE TAX REFUND | EXCLUDE | Tax refunds |
 | CREDIT CARD PAYMENT | EXCLUDE | Paying off CC; expenses on the CC are already classified |
-
----
 
 ## Section 4 — Worked Examples
 
@@ -369,48 +408,29 @@ Carryover: $4,200 - $1,500 = $2,700 carried to next year (Form 8829 lines 43-44)
 
 Line 30: $1,500. Line 31: $0. SE tax: $0 ($0 < $400 minimum).
 
----
-
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
-**T1-US-SE-1 — Always apply the 92.35% adjustment**
-Net SE earnings = Schedule C net profit x 92.35%. This is the 1402(a)(12) adjustment. Never compute SE tax on the full Schedule C net profit.
-
-**T1-US-SE-2 — SS wage base coordination with W-2**
-If the taxpayer has W-2 wages, subtract W-2 Box 3 SS wages from $176,100 to get the remaining SS base for SE. If W-2 wages already exceed $176,100, the SS portion of SE tax is $0 — only Medicare applies.
-
-**T1-US-SE-3 — Additional Medicare Tax is on Form 8959, NOT Schedule SE**
-The 0.9% Additional Medicare Tax is computed on Form 8959, not blended into Schedule SE. Schedule SE Line 11 uses 2.9% only. Never include 0.9% in Schedule SE.
-
-**T1-US-SE-4 — Minimum $400 threshold**
-If net SE earnings (after 92.35% adjustment) are less than $400, no SE tax is due. Do not compute SE tax on sub-$400 amounts.
-
-**T1-US-SE-5 — Home office deduction cannot exceed Line 29**
-The 280A(c)(5) gross income limitation caps the home office deduction at the tentative profit. Excess carries over under actual method; is lost under simplified method.
-
-**T1-US-SE-6 — Deductible half of SE tax is NOT a Schedule C expense**
-The deductible half (Schedule SE Line 13) flows to Schedule 1 line 15 as an above-the-line deduction. It does NOT reduce Schedule C net profit and does NOT reduce QBI.
-
-**T1-US-SE-7 — EFTPS / estimated tax payments are credits, not expenses**
-Quarterly estimated tax payments made via EFTPS are credits against the annual tax liability. Never include them as Schedule C expenses.
-
-**T1-US-SE-8 — 1250 recapture warning for actual home office depreciation**
-Taking home depreciation creates 1250 recapture on future home sale. The 121 home sale exclusion does NOT shelter this. Flag prominently. Note: depreciation is "allowed or allowable" — skipping the deduction does not avoid recapture.
-
----
+- **T1-US-SE-1 — Always apply the 92.35% adjustment** — Net SE earnings = Schedule C net profit x 92.35%. This is the 1402(a)(12) adjustment. Never compute SE tax on the full Schedule C net profit.  _(IRC 1402(a)(12))_
+- **T1-US-SE-2 — SS wage base coordination with W-2** — If the taxpayer has W-2 wages, subtract W-2 Box 3 SS wages from $176,100 to get the remaining SS base for SE. If W-2 wages already exceed $176,100, the SS portion of SE tax is $0 — only Medicare applies.
+- **T1-US-SE-3 — Additional Medicare Tax is on Form 8959, NOT Schedule SE** — The 0.9% Additional Medicare Tax is computed on Form 8959, not blended into Schedule SE. Schedule SE Line 11 uses 2.9% only. Never include 0.9% in Schedule SE.
+- **T1-US-SE-4 — Minimum $400 threshold** — If net SE earnings (after 92.35% adjustment) are less than $400, no SE tax is due. Do not compute SE tax on sub-$400 amounts.
+- **T1-US-SE-5 — Home office deduction cannot exceed Line 29** — The 280A(c)(5) gross income limitation caps the home office deduction at the tentative profit. Excess carries over under actual method; is lost under simplified method.  _(IRC 280A(c)(5))_
+- **T1-US-SE-6 — Deductible half of SE tax is NOT a Schedule C expense** — The deductible half (Schedule SE Line 13) flows to Schedule 1 line 15 as an above-the-line deduction. It does NOT reduce Schedule C net profit and does NOT reduce QBI.
+- **T1-US-SE-7 — EFTPS / estimated tax payments are credits, not expenses** — Quarterly estimated tax payments made via EFTPS are credits against the annual tax liability. Never include them as Schedule C expenses.
+- **T1-US-SE-8 — 1250 recapture warning for actual home office depreciation** — Taking home depreciation creates 1250 recapture on future home sale. The 121 home sale exclusion does NOT shelter this. Flag prominently. Note: depreciation is "allowed or allowable" — skipping the deduction does not avoid recapture.
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)**
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-US-SE-1 | Simplified vs actual home office comparison | Both methods available each year; no lock-in | Present both calculations; reviewer confirms taxpayer preference |
 | T2-US-SE-2 | Vehicle actual vs standard mileage | Cannot switch from actual to standard on same vehicle | Flag — verify prior-year method for the vehicle |
 | T2-US-SE-3 | Hobby loss exposure (3+ year loss streak) | 183 rebuttable presumption | Flag — do not refuse; reviewer assesses profit motive |
 | T2-US-SE-4 | At-risk status uncertain | Form 6198 may be required | Flag — if any nonrecourse debt or sheltered investment |
 | T2-US-SE-5 | SE optional method consideration | Low-income earner may want to "buy" SS credits | Skip unless taxpayer asks; present if near retirement |
 | T2-US-SE-6 | Home office depreciation: claim or skip | 1250 recapture applies either way; claiming is usually better | Flag — reviewer should confirm taxpayer understands trade-off |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -498,11 +518,10 @@ SECTION H — REVIEWER FLAGS
 [ ] EFTPS payments excluded from expenses?
 ```
 
----
-
 ## Section 8 — Bank Statement Reading Guide
 
 ### Chase (JPMorgan Chase)
+
 - Export: CSV/OFX from Chase Business Online → "Download account activity"
 - Columns: `Details,Posting Date,Description,Amount,Type,Balance,Check or Slip #`
 - Amount format: positive = credit, negative = debit (or vice versa depending on download type)
@@ -511,6 +530,7 @@ SECTION H — REVIEWER FLAGS
 - Debits: `ACH DEBIT [payee]`, `CHASE CREDIT CRD AUTOPAY`, `CHECKCARD [merchant]`
 
 ### Wells Fargo
+
 - Export: CSV from Wells Fargo Business Online → "Download" → CSV
 - Columns: `Date,Amount,*,Check Number,Description`
 - Negative amount = debit; positive = credit
@@ -519,56 +539,64 @@ SECTION H — REVIEWER FLAGS
 - Debits: `PURCHASE AUTHORIZED [merchant]`, `BILL PAY [payee]`
 
 ### Bank of America
+
 - Export: CSV from BOA Business Online → "Download Transactions"
 - Columns: `Date,Description,Amount,Running Bal.`
 - Negative = debit; positive = credit
 - Credits: `ACH CREDITS [sender]`, `WIRE [sender]`
 
 ### Citibank
+
 - Export: CSV from Citi Business Online
 - Standard US format; `Date,Description,Debit,Credit,Status`
 
 ### US Bank
+
 - Export: CSV from USB Business Online
 - Standard: `Date,Transaction,Name,Memo,Amount`
 
 ### Mercury (Startup Banking)
+
 - Export: CSV from Mercury dashboard → "Transactions" → "Export"
 - Columns: `Date,Description,Amount,Status,Bank Description,Note`
 - Clean format; positive = credit, negative = debit
 - Stripe/PayPal payouts clearly labeled
 
 ### Relay Financial
+
 - Export: CSV from Relay dashboard
 - Columns: `Date,Description,Amount,Balance`
 - Positive = credit; negative = debit
 
 ### Novo / Bluevine (SMB Digital)
+
 - Export: CSV from dashboard
 - Simple format; single amount column with sign
 
 ### Square / Cash App for Business
+
 - Settlements appear as `SQ *[business name]` or `SQUARE INC` deposits
 - Gross-up required — Square deducts 2.6% + $0.10 before settlement
 
 ### Stripe
+
 - Payouts appear as `STRIPE TRANSFER` or `STRIPE` in bank statement
 - Cross-reference with Stripe dashboard → Payouts for gross amounts and fees
 - 1099-K issued by Stripe if > $600
 
 ### PayPal
+
 - Payouts appear as `PAYPAL INST XFER` or `PAYPAL TRANSFER`
 - Cross-reference with PayPal activity → Reports for gross amounts
 - 1099-K issued if > $600
 
 ### Key US Banking Notes
+
 - US banks use MM/DD/YYYY date format
 - Amount sign conventions vary by bank and export format — always verify
 - ACH (Automated Clearing House) is the standard inter-bank transfer
 - Zelle is an instant payment system; appears as `ZELLE FROM/TO [name]`
 - EFTPS (Electronic Federal Tax Payment System) payments are estimated tax — never an expense
-
----
 
 ## Section 9 — Onboarding Fallback
 
@@ -584,25 +612,25 @@ SECTION H — REVIEWER FLAGS
 **1099 cross-check:**
 > "Did you receive any 1099-NEC, 1099-MISC, or 1099-K forms for 2025? The IRS computer-matches these against your Schedule C gross receipts. I need to verify that your Line 1 gross receipts equal or exceed the total of all 1099 forms received."
 
----
-
 ## Section 10 — Reference Material
 
 ### Key Legislation
-- **IRC 61** — Gross income definition
-- **IRC 164(f)** — Deductible half of self-employment tax
-- **IRC 168(c)** — Recovery periods (39-year for home office depreciation)
-- **IRC 280A** — Business use of home
-- **IRC 280A(c)(5)** — Gross income limitation
-- **IRC 465** — At-risk limitations
-- **IRC 1401** — Self-employment tax rates
-- **IRC 1402** — Net earnings from self-employment
-- **IRC 1402(a)(12)** — 92.35% adjustment
-- **IRC 1402(b)(2)** — $400 minimum threshold
-- **IRC 1402(l)** — Nonfarm optional method
-- **IRC 3101(b)(2)** — Additional Medicare Tax thresholds
+
+- **IRC 61** — Gross income definition  _(IRC 61)_
+- **IRC 164(f)** — Deductible half of self-employment tax  _(IRC 164(f))_
+- **IRC 168(c)** — Recovery periods (39-year for home office depreciation)  _(IRC 168(c))_
+- **Treas. Reg. §1.280A-1, §1.280A-2** — Business use of home  _(Item 9)_
+- **IRC 280A(c)(5)** — Gross income limitation  _(IRC 280A(c)(5))_
+- **IRC 465** — At-risk limitations  _(IRC 465)_
+- **IRC 1401** — Self-employment tax rates  _(IRC 1401)_
+- **IRC 1402** — Net earnings from self-employment  _(IRC 1402)_
+- **IRC 1402(a)(12)** — 92.35% adjustment  _(IRC 1402(a)(12))_
+- **IRC 1402(b)(2)** — $400 minimum threshold  _(IRC 1402(b)(2))_
+- **IRC 1402(l)** — Nonfarm optional method  _(IRC 1402(l))_
+- **IRC 3101(b)(2)** — Additional Medicare Tax thresholds  _(IRC 3101(b)(2))_
 
 ### IRS Publications and Forms
+
 - **Pub 334 (2025)** — Tax Guide for Small Business
 - **Pub 587 (2025)** — Business Use of Your Home
 - **Pub 946 (2025)** — How to Depreciate Property
@@ -613,20 +641,25 @@ SECTION H — REVIEWER FLAGS
 
 ### Filing Deadlines
 
+**Filing Deadlines**
+
 | Deadline | Event |
-|---|---|
+| --- | --- |
 | April 15, 2026 | Return due (TY2025) |
 | October 15, 2026 | Extended due date |
 | Quarterly (4/15, 6/15, 9/15, 1/15) | Estimated tax payments (EFTPS) |
 
 ### Key Court Decisions
+
 - **Commissioner v. Soliman, 506 U.S. 168 (1993)** — Principal place of business test
 - **Welch v. Helvering, 290 U.S. 111 (1933)** — "Ordinary and necessary" standard
 
 ### 2025 Year-Specific Figures Summary
 
+**2025 Year-Specific Figures Summary**
+
 | Figure | Value |
-|---|---|
+| --- | --- |
 | SS wage base | $176,100 |
 | SE tax rate | 15.3% (12.4% + 2.9%) |
 | 92.35% adjustment | 0.9235 |
@@ -636,14 +669,30 @@ SECTION H — REVIEWER FLAGS
 | 179 expensing limit | $1,250,000 (OBBBA) |
 | Bonus depreciation | 100% (OBBBA restored) |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-schedule-c-and-se-computation) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **accountant-reviewed**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-schedule-c-and-se-computation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-schedule-c-and-se-computation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

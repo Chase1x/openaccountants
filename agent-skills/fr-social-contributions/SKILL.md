@@ -1,27 +1,28 @@
 ---
 name: fr-social-contributions
-description: "> Use this skill whenever asked about French social contributions (cotisations sociales URSSAF) for self-employed individuals (travailleurs independants), including professions liberales and BNC taxpayers. Trigger on phrases like \"cotisations URSSAF\", \"charges sociales independant\", \"CSG CRDS freelance France\", \"CIPAV retraite\", \"ACRE reduction\", \"social contributions France\", \"cotisations minimales\", \"prelevement URSSAF\", \"cotisations trimestrielles\", or any question about French self-employed social security. Also trigger when classifying bank statement transactions showing URSSAF prelevements, CIPAV debits, or cotisations trimestrielles. ALWAYS read this skill before touching any French social contribution work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about French social contributions (cotisations sociales URSSAF) for self-employed individuals (travailleurs independants), including professions liberales and BNC taxpayers. Trigger on phrases like \"cotisations URSSAF\", \"charges sociales independant\", \"CSG CRDS freelance France\", \"CIPAV retraite\", \"ACRE reduction\", \"social contributions France\", \"cotisations minimales\", \"prelevement URSSAF\", \"cotisations trimestrielles\", or any question about French self-employed social security. Also trigger when classifying bank statement transactions showing URSSAF prelevements, CIPAV debits, or cotisations trimestrielles. ALWAYS read this skill before touching any French social contribution work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: FR
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/fr-social-contributions"
-  tax_year: 2025
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/fr-social-contributions"
+  jurisdiction: "FR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# France Social Contributions (Cotisations URSSAF) -- Self-Employed Skill v2.0
+# FR Social Contributions
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## France Social Contributions (Cotisations URSSAF) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 
 **Read this whole section before computing or classifying anything.**
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | France |
 | Primary Legislation | Code de la Securite Sociale (CSS); LFSS 2025 |
 | Supporting Legislation | CGI Art. 154 bis (deductibility); Decret n 2024-688 (assiette reform) |
@@ -44,10 +45,10 @@ metadata:
 | Validated by | Pending -- requires sign-off by a French expert-comptable |
 | Validation date | Pending |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown activity type | STOP -- do not compute |
 | Unknown BIC or BNC | Ask -- determines caisse affiliation |
 | Unknown CIPAV vs SSI | Ask -- retraite complementaire rates differ |
@@ -55,29 +56,20 @@ metadata:
 | Unknown ACRE eligibility | Do not apply ACRE without verification |
 | Unknown CSG/CRDS base method | Use current pre-reform method; flag for reviewer if 2025 regularisation |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- activity type (profession liberale reglementee/non reglementee, artisan, commercant), caisse affiliation (CIPAV or SSI), and prior year net professional income.
-
-**Recommended** -- bank statements showing URSSAF prelevements, CIPAV statements, avis de cotisation URSSAF, 2042 declaration.
-
-**Ideal** -- complete 2042-C-PRO, URSSAF echeancier, CIPAV releve de situation, ACRE confirmation letter.
+- **Minimum viable** — activity type (profession liberale reglementee/non reglementee, artisan, commercant), caisse affiliation (CIPAV or SSI), and prior year net professional income.
+- **Recommended** — bank statements showing URSSAF prelevements, CIPAV statements, avis de cotisation URSSAF, 2042 declaration.
+- **Ideal** — complete 2042-C-PRO, URSSAF echeancier, CIPAV releve de situation, ACRE confirmation letter.
 
 ### Refusal catalogue
 
-**R-FR-SC-1 -- Activity type unknown.** *Trigger:* activity type not provided. *Message:* "Activity type and caisse affiliation are mandatory. CIPAV and SSI have different retraite rates. Cannot proceed."
-
-**R-FR-SC-2 -- Caisses professionelles other than CIPAV/SSI.** *Trigger:* client is avocats (CNBF), medecins (CARMF), paramedics (CARPIMKO), experts-comptables (CNPADC), etc. *Message:* "This skill covers CIPAV and SSI only. Other caisses professionelles have their own rate schedules. Escalate to the relevant caisse or expert-comptable."
-
-**R-FR-SC-3 -- Micro-entrepreneur.** *Trigger:* client is under micro-entrepreneur regime. *Message:* "Micro-entrepreneurs pay a simplified percentage on turnover. This skill covers regime reel rates only. Do not use this rate table for micro-entrepreneurs."
-
-**R-FR-SC-4 -- International social security.** *Trigger:* EU A1 or bilateral treaty question. *Message:* "EU social security coordination (Regulation EC 883/2004) requires specialist advice. Escalate."
-
----
+- **R-FR-SC-1 -- Activity type unknown** — Trigger: activity type not provided. Message: "Activity type and caisse affiliation are mandatory. CIPAV and SSI have different retraite rates. Cannot proceed."  _(R-FR-SC-1)_
+- **R-FR-SC-2 -- Caisses professionelles other than CIPAV/SSI** — Trigger: client is avocats (CNBF), medecins (CARMF), paramedics (CARPIMKO), experts-comptables (CNPADC), etc. Message: "This skill covers CIPAV and SSI only. Other caisses professionelles have their own rate schedules. Escalate to the relevant caisse or expert-comptable."  _(R-FR-SC-2)_
+- **R-FR-SC-3 -- Micro-entrepreneur** — Trigger: client is under micro-entrepreneur regime. Message: "Micro-entrepreneurs pay a simplified percentage on turnover. This skill covers regime reel rates only. Do not use this rate table for micro-entrepreneurs."  _(R-FR-SC-3)_
+- **R-FR-SC-4 -- International social security** — Trigger: EU A1 or bilateral treaty question. Message: "EU social security coordination (Regulation EC 883/2004) requires specialist advice. Escalate."  _(R-FR-SC-4)_
 
 ## Section 3 -- Payment pattern library
 
@@ -85,8 +77,10 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 URSSAF prelevements (monthly or quarterly)
 
+**URSSAF prelevements patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | URSSAF | EXCLUDE -- cotisations sociales | Monthly or quarterly prelevement |
 | URSSAF IDF, URSSAF PACA, URSSAF RHONE-ALPES | EXCLUDE -- cotisations | Regional URSSAF entities |
 | COTISATIONS SOCIALES | EXCLUDE -- cotisations | Generic reference |
@@ -96,15 +90,19 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.2 CIPAV debits (profession liberale reglementee)
 
+**CIPAV debits patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CIPAV | EXCLUDE -- retraite complementaire | CIPAV pension contribution |
 | CAISSE INTERPROFESSIONNELLE DE PREVOYANCE | EXCLUDE -- CIPAV | Full name |
 
 ### 3.3 Other caisses (escalate -- do not classify)
 
+**Other caisses patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CNBF | ESCALATE -- avocats caisse | Out of scope |
 | CARMF | ESCALATE -- medecins caisse | Out of scope |
 | CARPIMKO | ESCALATE -- paramedics caisse | Out of scope |
@@ -113,26 +111,30 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.4 CSG/CRDS (collected via URSSAF)
 
+**CSG/CRDS patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CSG, CRDS | EXCLUDE -- social levies | Typically included in URSSAF prelevement, not separate |
 
 ### 3.5 Formation professionnelle (CFP)
 
+**CFP patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CFP, CONTRIBUTION FORMATION | EXCLUDE -- training levy | EUR 117.75 annually, may be separate debit or included in URSSAF |
 
 ### 3.6 Tax authority (NOT social contributions)
 
+**Tax authority patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DGFIP, DIRECTION GENERALE DES FINANCES | EXCLUDE -- income tax | Not cotisations sociales |
 | IMPOT, IMPOTS.GOUV | EXCLUDE -- income tax | Not cotisations |
 | TVA, TAXE SUR LA VALEUR AJOUTEE | EXCLUDE -- VAT | Not cotisations |
 | PRELEVEMENT A LA SOURCE | EXCLUDE -- income tax withholding | Not cotisations |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -198,14 +200,14 @@ Matches "URSSAF" + "ACRE" (pattern 3.1). First-year self-employed with ACRE exon
 
 **Classification:** EXCLUDE -- ACRE-reduced cotisations. Deductible (the actual amount paid, not the pre-ACRE amount).
 
----
-
 ## Section 5 -- Tier 1 rules
 
 ### Rule 1 -- Cotisation rate table (SSI: artisans, commercants, PLNR)
 
+**Cotisation rate table**
+
 | Cotisation | Rate | Base / Plafond |
-|---|---|---|
+| --- | --- | --- |
 | Maladie-maternite (IJ) | 0.50% | Up to 500% PASS (EUR 235,500) |
 | Maladie-maternite (main) | Progressive: 0%-6.50% | See progressive scale below |
 | Retraite de base (plafonnee) | 17.75% | Up to 1 PASS (EUR 47,100) |
@@ -220,8 +222,10 @@ Matches "URSSAF" + "ACRE" (pattern 3.1). First-year self-employed with ACRE exon
 
 ### Rule 2 -- Maladie-maternite progressive scale
 
+**Maladie-maternite progressive scale**
+
 | Income Level | Rate |
-|---|---|
+| --- | --- |
 | <= 40% PASS (EUR 18,840) | 0% |
 | 40% to 60% PASS (EUR 28,260) | Progressive 0% to 4.00% |
 | 60% to 110% PASS (EUR 51,810) | Progressive 4.00% to 6.50% |
@@ -229,98 +233,85 @@ Matches "URSSAF" + "ACRE" (pattern 3.1). First-year self-employed with ACRE exon
 
 ### Rule 3 -- Allocations familiales progressive scale
 
+**Allocations familiales progressive scale**
+
 | Income Level | Rate |
-|---|---|
+| --- | --- |
 | <= 110% PASS (EUR 51,810) | 0% |
 | 110% to 140% PASS (EUR 65,940) | Progressive 0% to 3.10% |
 | Above 140% PASS | 3.10% flat |
 
 ### Rule 4 -- CIPAV rates (professions liberales reglementees)
 
+**CIPAV rates table**
+
 | Cotisation | Rate | Base |
-|---|---|---|
-| Retraite de base CNAVPL | 8.23% up to 1 PASS + 1.87% total |
-| Retraite complementaire CIPAV T1 | 9.00% up to 1 PASS |
-| Retraite complementaire CIPAV T2 | 22.00% above 1 PASS |
+| --- | --- | --- |
+| Retraite de base CNAVPL | 8.23% up to 1 PASS + 1.87% total |  |
+| Retraite complementaire CIPAV T1 | 9.00% up to 1 PASS |  |
+| Retraite complementaire CIPAV T2 | 22.00% above 1 PASS |  |
 
 Other cotisations (maladie, AF, CSG/CRDS) same as SSI.
 
 ### Rule 5 -- CSG/CRDS base
 
-```
-CSG/CRDS base = Net professional income + mandatory cotisations obligatoires
-```
-
-CSG: 6.80% deductible, 2.40% non-deductible. CRDS: non-deductible.
+- **CSG/CRDS base formula** — CSG/CRDS base = Net professional income + mandatory cotisations obligatoires
+- **CSG/CRDS deductibility split** — CSG: 6.80% deductible, 2.40% non-deductible. CRDS: non-deductible.
 
 ### Rule 6 -- Cotisations minimales (zero or very low income)
 
+**Cotisations minimales table**
+
 | Cotisation | Min Base | Approx. Min Amount (2025) |
-|---|---|---|
+| --- | --- | --- |
 | Maladie (IJ) | 40% PASS | EUR 94 |
 | Retraite de base | 450 x SMIC horaire | EUR 930 |
 | Invalidite-deces | 11.50% PASS | EUR 70 |
 | Formation professionnelle | 1 PASS | EUR 118 |
 
-Total minimum approximately EUR 1,212/year. No minimum for: AF, CSG/CRDS, retraite complementaire.
+- **Total minimum note** — Total minimum approximately EUR 1,212/year. No minimum for: AF, CSG/CRDS, retraite complementaire.
 
 ### Rule 7 -- ACRE (first year, 2025 activities)
 
-50% reduction on maladie, retraite de base, invalidite-deces, and AF for first 4 quarters. NOT reduced: CSG, CRDS, formation professionnelle, retraite complementaire. Income ceiling: exoneration applies on income up to 1 PASS only.
+- **ACRE reduction rule** — 50% reduction on maladie, retraite de base, invalidite-deces, and AF for first 4 quarters. NOT reduced: CSG, CRDS, formation professionnelle, retraite complementaire. Income ceiling: exoneration applies on income up to 1 PASS only.
 
 ### Rule 8 -- Payment schedule
 
-Monthly: 12 debits on the 5th or 20th. Quarterly: 4 payments on 5 Feb, 5 May, 5 Aug, 5 Nov. Regularisation after annual declaration on impots.gouv.fr (ex-DSI, integrated into 2042).
+- **Payment schedule** — Monthly: 12 debits on the 5th or 20th. Quarterly: 4 payments on 5 Feb, 5 May, 5 Aug, 5 Nov. Regularisation after annual declaration on impots.gouv.fr (ex-DSI, integrated into 2042).
 
 ### Rule 9 -- First two years (forfait provisoire)
 
-Year 1 (without ACRE): provisional base 19% PASS (EUR 8,949), approximately EUR 3,500 total. Year 1 (with ACRE): approximately EUR 1,750. Regularised retroactively.
+- **First two years forfait provisoire** — Year 1 (without ACRE): provisional base 19% PASS (EUR 8,949), approximately EUR 3,500 total. Year 1 (with ACRE): approximately EUR 1,750. Regularised retroactively.
 
 ### Rule 10 -- Tax deductibility
 
-Mandatory cotisations: fully deductible from professional income. CSG: 6.80% deductible, 2.40% non-deductible. CRDS: non-deductible. Deducted on 2042-C-PRO.
-
----
+- **Tax deductibility rule** — Mandatory cotisations: fully deductible from professional income. CSG: 6.80% deductible, 2.40% non-deductible. CRDS: non-deductible. Deducted on 2042-C-PRO.
 
 ## Section 6 -- Tier 2 catalogue
 
 ### T2-1 -- ACRE eligibility
 
-**Trigger:** Client claims ACRE exoneration.
-**Issue:** Eligibility conditions must be verified case by case. Not automatic for all creators (post-2026 rules tightened).
-**Action:** Flag for reviewer. Verify with URSSAF.
+- **T2-1** — Trigger: Client claims ACRE exoneration. Issue: Eligibility conditions must be verified case by case. Not automatic for all creators (post-2026 rules tightened). Action: Flag for reviewer. Verify with URSSAF.
 
 ### T2-2 -- CIPAV to SSI transfer
 
-**Trigger:** Client was CIPAV-affiliated but profession transferred to SSI under 2018 reform.
-**Issue:** Depends on registration date and opt-out exercise.
-**Action:** Escalate to expert-comptable.
+- **T2-2** — Trigger: Client was CIPAV-affiliated but profession transferred to SSI under 2018 reform. Issue: Depends on registration date and opt-out exercise. Action: Escalate to expert-comptable.
 
 ### T2-3 -- Dual salarie + independant
 
-**Trigger:** Client is both salaried and self-employed.
-**Issue:** Both sets of cotisations apply. Retraite de base may be capped at 1 PASS across regimes.
-**Action:** Flag for reviewer to verify retraite base cap interaction.
+- **T2-3** — Trigger: Client is both salaried and self-employed. Issue: Both sets of cotisations apply. Retraite de base may be capped at 1 PASS across regimes. Action: Flag for reviewer to verify retraite base cap interaction.
 
 ### T2-4 -- 2025 assiette reform (new unified base)
 
-**Trigger:** Computing regularisation of 2025 cotisations (processed in 2026).
-**Issue:** New unified base with 26% flat abatement replaces prior system of deducting actual cotisations from CSG/CRDS base.
-**Action:** Flag for reviewer. Verify which base applies.
+- **T2-4** — Trigger: Computing regularisation of 2025 cotisations (processed in 2026). Issue: New unified base with 26% flat abatement replaces prior system of deducting actual cotisations from CSG/CRDS base. Action: Flag for reviewer. Verify which base applies.
 
 ### T2-5 -- Late registration (activite non declaree)
 
-**Trigger:** Client has been working independently without URSSAF registration.
-**Issue:** URSSAF can claim cotisations retroactively with penalties.
-**Action:** Escalate to expert-comptable immediately.
+- **T2-5** — Trigger: Client has been working independently without URSSAF registration. Issue: URSSAF can claim cotisations retroactively with penalties. Action: Escalate to expert-comptable immediately.
 
 ### T2-6 -- First year income exceeds PASS (ACRE)
 
-**Trigger:** ACRE client earns above EUR 47,100 in first year.
-**Issue:** ACRE 50% reduction only applies on income up to 1 PASS. Income above PASS subject to full cotisations.
-**Action:** Flag for reviewer. Compute the split.
-
----
+- **T2-6** — Trigger: ACRE client earns above EUR 47,100 in first year. Issue: ACRE 50% reduction only applies on income up to 1 PASS. Income above PASS subject to full cotisations. Action: Flag for reviewer. Compute the split.
 
 ## Section 7 -- Excel working paper template
 
@@ -366,8 +357,6 @@ REVIEWER FLAGS
   [List any Tier 2 flags]
 ```
 
----
-
 ## Section 8 -- Bank statement reading guide
 
 ### How French social contribution debits appear
@@ -390,8 +379,6 @@ REVIEWER FLAGS
 4. DGFIP debits are TAX (prelevement a la source), not cotisations
 5. First-year amounts are low (forfait provisoire) -- expect large regularisation later
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -402,14 +389,14 @@ If the client provides only a bank statement:
 4. **Identify regularisation adjustments** -- large mid-year debits or credits from URSSAF
 5. **Flag:** "Cotisation classification derived from bank statement patterns. Actual caisse affiliation, ACRE status, and income base have not been independently verified. Reviewer must confirm before completing 2042-C-PRO."
 
----
-
 ## Section 10 -- Reference material
 
 ### Key reference values (2025)
 
+**Key reference values table**
+
 | Reference | Value |
-|---|---|
+| --- | --- |
 | PASS | EUR 47,100 |
 | 110% PASS | EUR 51,810 |
 | 140% PASS | EUR 65,940 |
@@ -444,14 +431,30 @@ If the client provides only a bank statement:
 - NEVER estimate penalties without escalating
 - NEVER advise on international social security coordination
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/fr-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `fr-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/fr-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

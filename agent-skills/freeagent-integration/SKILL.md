@@ -1,14 +1,12 @@
 ---
 name: freeagent-integration
-description: "> Integration skill for FreeAgent accounting software CSV exports and imports. Activate when the user uploads a FreeAgent CSV, FreeAgent bank statement, or mentions FreeAgent. Popular UK accounting software for freelancers and micro-businesses."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Integration skill for FreeAgent accounting software CSV exports and imports. Activate when the user uploads a FreeAgent CSV, FreeAgent bank statement, or mentions FreeAgent. Popular UK accounting software for freelancers and micro-businesses."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: integration
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/freeagent-integration"
-  obligation: INT
+  openaccountants_url: "https://www.openaccountants.com/skills/freeagent-integration"
+  jurisdiction: "GLOBAL"
+  last_updated: "2026-06-12"
 ---
 
 # FreeAgent Integration Skill v1.0
@@ -224,6 +222,6 @@ Account Code,Account Name,Debit,Credit
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/freeagent-integration) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `freeagent-integration` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/freeagent-integration. If neither is available, confirm every figure against the official source pages cited above before relying on it.

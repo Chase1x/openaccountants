@@ -1,29 +1,28 @@
 ---
 name: cross-border-payroll-coordination
-description: "> Cross-border payroll compliance for companies with employees or contractors in multiple countries. Use when the user asks about: cross-border payroll, remote worker payroll, shadow payroll, hypothetical tax, employer of record, EOR, 183-day rule, economic employer, PE risk from employees, A1 certificate, social security certificate, bilateral social security, posted worker, business traveler tax, contractor vs employee cross-border, misclassification, equity compensation cross-border, RSU cross-border, stock options international, payroll obligations foreign employee, remote worker abroad, digital nomad payroll, cross-border withholding, or any question about payroll compliance when workers cross borders."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Cross-border payroll compliance for companies with employees or contractors in multiple countries. Use when the user asks about: cross-border payroll, remote worker payroll, shadow payroll, hypothetical tax, employer of record, EOR, 183-day rule, economic employer, PE risk from employees, A1 certificate, social security certificate, bilateral social security, posted worker, business traveler tax, contractor vs employee cross-border, misclassification, equity compensation cross-border, RSU cross-border, stock options international, payroll obligations foreign employee, remote worker abroad, digital nomad payroll, cross-border withholding, or any question about payroll compliance when workers cross borders."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cross-border-payroll-coordination"
-  tax_year: 2025-2026
-  obligation: PAY
+  openaccountants_url: "https://www.openaccountants.com/skills/cross-border-payroll-coordination"
+  jurisdiction: "INTL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Cross-Border Payroll Coordination
+# Cross Border Payroll Coordination
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Cross-Border Payroll Coordination
 
 > **Disclaimer:** This skill provides general guidance on cross-border payroll obligations. Employment law, tax, and social security rules are jurisdiction-specific and change frequently. Consult qualified employment tax and legal advisors before acting on this information.
 
----
-
 ## Skill Metadata
 
+**Skill Metadata**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | Multi-jurisdiction (EU, UK, US, Australia, India, Singapore, and general principles) |
 | Primary Legislation | OECD Model Tax Convention Art 15; EU Regulation 883/2004 (social security coordination); country-specific employment and tax laws |
 | Scope | Payroll tax, social security, and employment law obligations when employees or contractors work across borders |
@@ -32,16 +31,16 @@ metadata:
 | Skill Version | 1.0 |
 | Cross-references | `non-eu-export-services.md`, `permanent-establishment-risk.md`, country-specific payroll skills |
 
----
-
 ## Section 1: When Does a Foreign Employee Create Payroll Obligations?
 
 ### The Core Question [T1]
 
 If your company is in Country A and you hire someone who works in Country B, you may owe:
 
+**Obligations triggered table**
+
 | Obligation | Triggered by |
-|-----------|-------------|
+| --- | --- |
 | **Income tax withholding** in Country B | Employee performing work in Country B (subject to treaty exemptions) |
 | **Social security contributions** in Country B | Employee working in Country B (subject to A1/bilateral agreements) |
 | **Employment law compliance** in Country B | Employment relationship with a person habitually working in Country B |
@@ -49,8 +48,10 @@ If your company is in Country A and you hire someone who works in Country B, you
 
 ### Three Approaches to Employing Abroad [T1]
 
+**Three approaches table**
+
 | Approach | How It Works | When to Use |
-|----------|-------------|-------------|
+| --- | --- | --- |
 | **Set up a local entity** | Establish a subsidiary or branch in Country B. Full local payroll. | Long-term, multiple employees, need full legal presence |
 | **Employer of Record (EOR)** | Third-party company becomes the legal employer in Country B. You manage the work; EOR handles payroll, tax, social security. | 1–10 employees, speed, no local entity desired. Cost: $300–$700/employee/month. |
 | **Direct employment (no local entity)** | You employ the person from Country A. Run payroll from Country A + shadow payroll or local registration in Country B. | Single employee, short-term. High compliance risk — not recommended without expert advice. |
@@ -59,21 +60,23 @@ If your company is in Country A and you hire someone who works in Country B, you
 
 An employee working in Country B can create a **permanent establishment** for the employer, triggering corporate tax in Country B:
 
+**PE trigger table**
+
 | PE Trigger | Risk Level |
-|-----------|-----------|
+| --- | --- |
 | Employee has authority to conclude contracts on behalf of employer | **High** — "dependent agent" PE under OECD Art 5(5) |
 | Employee works from a fixed location (home office) regularly | **Medium** — "fixed place of business" PE if employer consents to arrangement |
 | Employee performs auxiliary activities only (e.g., market research) | **Low** — typically excluded under Art 5(4) |
 | Employee works from Country B for >6 months on a project | **High** — construction/service PE threshold in many treaties |
 
----
-
 ## Section 2: Remote Worker Scenarios
 
 ### Employee in Country B, Employer in Country A [T1]
 
+**Remote worker scenarios table**
+
 | Scenario | Tax Obligation | Social Security | Action Required |
-|----------|---------------|----------------|----------------|
+| --- | --- | --- | --- |
 | Short-term (<183 days, treaty conditions met) | Likely exempt from Country B tax | Country A (with A1/certificate) | Obtain social security certificate. Monitor day count. |
 | Long-term (>183 days or treaty conditions not met) | Country B income tax withholding required | Country B (unless A1 applies) | Register for payroll in Country B or use EOR. Shadow payroll may be needed. |
 | Permanent relocation to Country B | Full Country B tax and employment law | Country B | Establish local payroll. Update employment contract. |
@@ -97,8 +100,6 @@ An employee working in Country B can create a **permanent establishment** for th
    - Many companies limit remote work abroad to 30–90 days/year to avoid triggering obligations
    - Some companies maintain a list of "approved" vs "prohibited" countries
 
----
-
 ## Section 3: Short-Term Business Travelers
 
 ### The 183-Day Rule — OECD Model Art 15(2) [T1]
@@ -107,18 +108,22 @@ The "183-day rule" is the most cited — and most misunderstood — rule in cros
 
 **All three conditions must be met for the exemption to apply:**
 
+**Three conditions table**
+
 | Condition | Requirement |
-|-----------|-------------|
+| --- | --- |
 | (a) Days present | The employee is present in the host country for ≤183 days in the relevant period |
 | (b) Employer not resident | The remuneration is paid by, or on behalf of, an employer who is NOT a resident of the host country |
 | (c) Not borne by PE | The remuneration is NOT borne by a permanent establishment the employer has in the host country |
 
-**If ANY condition fails → host-country tax applies from day one.**
+- **Condition failure consequence** — If ANY condition fails → host-country tax applies from day one.  _(OECD Model Art 15(2))_
 
 ### Counting the 183 Days [T1]
 
+**Counting the 183 days table**
+
 | Treaty Version | Counting Period | Days Counted |
-|---------------|----------------|-------------|
+| --- | --- | --- |
 | OECD Model (current) | Any 12-month period starting or ending in the fiscal year | Days of physical presence (including arrival, departure, weekends, holidays, sick days) |
 | Older treaties | Calendar year or fiscal year | Same |
 
@@ -126,37 +131,41 @@ The "183-day rule" is the most cited — and most misunderstood — rule in cros
 
 Many countries now look beyond the formal employer to the **substance** of the relationship:
 
+**Economic employer factors table**
+
 | Factor | Question |
-|--------|----------|
+| --- | --- |
 | Supervision | Who directs and controls the employee's daily work? |
 | Risk | Who bears the risk of the employee's work product? |
 | Integration | Is the employee integrated into the host entity's organisation? |
 | Cost reallocation | Is the home entity cross-charging the employee's cost to the host entity? |
 
-**If the host entity is the "economic employer," condition (b) of Art 15(2) fails — even if the employee is formally employed and paid by the home entity.** Host-country tax withholding is then required from day one.
+- **Economic employer effect on condition (b)** — If the host entity is the "economic employer," condition (b) of Art 15(2) fails — even if the employee is formally employed and paid by the home entity. Host-country tax withholding is then required from day one.  _(OECD Model Art 15(2))_
 
 Countries actively applying economic employer concepts: **Germany, Sweden, Denmark, Norway, Finland, UK, Australia, India, Singapore.**
 
 ### Business Traveler Compliance Matrix [T1]
 
+**Business traveler compliance matrix**
+
 | Days in Host Country | Treaty Exemption Likely? | Recommended Action |
-|---------------------|------------------------|-------------------|
+| --- | --- | --- |
 | 1–30 days/year | Usually exempt | Track days. Obtain A1 if EU. |
 | 31–60 days/year | Usually exempt | Track days carefully. Check local de minimis rules. |
 | 61–90 days/year | Likely exempt if treaty conditions met | Track days. Consider shadow payroll registration as precaution. |
 | 91–183 days/year | Exempt only if ALL three conditions met | Formal assessment required. Shadow payroll likely needed. |
 | >183 days/year | Condition (a) fails — host tax applies | Full payroll registration in host country. |
 
----
-
 ## Section 4: Shadow Payroll / Hypothetical Tax
 
 ### What Is Shadow Payroll? [T1]
 
-Shadow payroll is a **parallel payroll record** in the host country that calculates and remits host-country income tax and (sometimes) social security, while the employee continues to be paid through home-country payroll.
+- **Shadow payroll** — Shadow payroll is a **parallel payroll record** in the host country that calculates and remits host-country income tax and (sometimes) social security, while the employee continues to be paid through home-country payroll.
+
+**Home vs shadow payroll comparison table**
 
 | Element | Home Payroll | Shadow Payroll (Host) |
-|---------|-------------|----------------------|
+| --- | --- | --- |
 | Salary payment | YES — employee is paid through home payroll | NO — no separate payment to employee |
 | Tax withholding | May need adjustment (home country) | YES — calculates and remits host-country tax |
 | Social security | Depends on A1/certificate | Depends on applicable legislation |
@@ -164,8 +173,10 @@ Shadow payroll is a **parallel payroll record** in the host country that calcula
 
 ### When Shadow Payroll Is Required [T1]
 
+**Shadow payroll triggers table**
+
 | Trigger | Example |
-|---------|---------|
+| --- | --- |
 | Assignment exceeds treaty de minimis | Employee works 200 days in Germany but is paid from UK payroll |
 | Cost recharged to host entity | US parent recharged employee cost to German subsidiary — condition (c) fails |
 | Economic employer in host country | Swedish tax authority determines Swedish entity is the economic employer |
@@ -173,22 +184,24 @@ Shadow payroll is a **parallel payroll record** in the host country that calcula
 
 ### Hypothetical Tax (Tax Equalisation) [T2]
 
+**Tax equalisation concepts table**
+
 | Concept | Explanation |
-|---------|-------------|
+| --- | --- |
 | Tax equalisation | Company ensures the employee pays no more (and no less) tax than they would have paid staying in their home country |
 | Hypothetical tax | The home-country tax the employee "would have" paid — deducted from salary. Company pays the actual tax in both countries and absorbs any difference. |
 | Tax protection | Employee pays actual taxes, but company reimburses if host-country tax exceeds what home-country tax would have been |
-
----
 
 ## Section 5: Social Security Certificates
 
 ### EU: A1 Certificate (Portable Document A1) [T1]
 
-**Legislation:** Regulation (EC) No 883/2004, coordinated by Regulation (EC) No 987/2009.
+- **Legislation** — Legislation: Regulation (EC) No 883/2004, coordinated by Regulation (EC) No 987/2009.  _(Regulation (EC) No 883/2004; Regulation (EC) No 987/2009)_
+
+**A1 certificate elements table**
 
 | Element | Detail |
-|---------|--------|
+| --- | --- |
 | Purpose | Proves which country's social security system applies, preventing double contributions |
 | When needed | Any time a person works in an EU/EEA/Swiss country other than where they normally pay social security |
 | Who applies | The employer or self-employed person, to the competent institution of the home country |
@@ -197,8 +210,10 @@ Shadow payroll is a **parallel payroll record** in the host country that calcula
 
 ### Key EU Social Security Rules [T1]
 
+**Key EU social security rules table**
+
 | Situation | Applicable Legislation |
-|-----------|----------------------|
+| --- | --- |
 | Posted worker (temporary, ≤24 months) | Home country (Art 12) — A1 required |
 | Working in 2+ EU countries | Country of residence if ≥25% of activity there; otherwise employer's country (Art 13) |
 | Teleworking (Multilateral Framework Agreement, 2023) | If 25–49.99% of working time in residence country, may remain under employer's country legislation |
@@ -214,28 +229,30 @@ In April 2026, the EU reached a provisional agreement to modernize Regulation 88
 
 ### Non-EU: Bilateral Social Security Agreements [T1]
 
+**Bilateral social security agreements table**
+
 | Countries | Agreement Covers |
-|-----------|-----------------|
+| --- | --- |
 | US–UK | Totalization agreement — prevents double social security |
 | US–Germany, US–France, US–Italy, US–Japan | Same principle — worker pays into one system only |
 | UK–EU (TCA Protocol) | 24-month posting limit; governed by Trade and Cooperation Agreement |
 | Australia–numerous | Bilateral agreements with 30+ countries |
 | India–select countries | Agreements with Germany, France, Belgium, Netherlands, and others |
 
-**Without a bilateral agreement:** The employee may owe social security in **both** countries simultaneously — a potentially devastating cost for freelancers and small companies.
-
----
+- **No bilateral agreement risk** — Without a bilateral agreement: The employee may owe social security in both countries simultaneously — a potentially devastating cost for freelancers and small companies.
 
 ## Section 6: Contractor vs Employee Cross-Border
 
 ### The Misclassification Risk [T1]
 
-A worker can be a legitimate contractor under one country's law and a misclassified employee under another's. **The host country's classification rules apply to work performed there, regardless of what the contract says.**
+- **Misclassification risk** — A worker can be a legitimate contractor under one country's law and a misclassified employee under another's. The host country's classification rules apply to work performed there, regardless of what the contract says.
 
 ### Classification Tests by Country [T1]
 
+**Classification tests by country table**
+
 | Country | Test | Key Factors |
-|---------|------|-------------|
+| --- | --- | --- |
 | **US** | Common-law (IRS) / ABC test (California AB5) | Behavioral control, financial control, type of relationship. CA: strict ABC test — B (outside usual course of business) is hardest to meet. |
 | **UK** | IR35 off-payroll rules | Personal service, mutuality of obligation, control. Since April 2021, medium/large hirers determine status. |
 | **Germany** | Deutsche Rentenversicherung | Integration into business, economic dependence, single-client >83% of income triggers mandatory pension |
@@ -247,8 +264,10 @@ A worker can be a legitimate contractor under one country's law and a misclassif
 
 ### Penalties for Misclassification [T1]
 
+**Penalties for misclassification table**
+
 | Country | Penalty |
-|---------|---------|
+| --- | --- |
 | Germany | Retroactive social security for 4 years (30 years if intentional); fines up to €500,000; criminal prosecution possible (§266a StGB) |
 | France | Fines from €45,000; potential imprisonment for repeat offenders |
 | UK | Employer pays back-tax, NICs, and penalties for IR35 failures |
@@ -259,33 +278,24 @@ A worker can be a legitimate contractor under one country's law and a misclassif
 
 ### EU Platform Work Directive (2024/2831) [T1]
 
-Effective December 1, 2024. Member states must transpose by **December 2, 2026**:
-
-- Creates a **rebuttable presumption of employment** for platform workers
-- Platforms must rebut the presumption to maintain contractor status
-- Does **not** apply to tax, criminal, or social security proceedings (employment law only)
-- Member states will define penalties — must be "effective, dissuasive, and proportionate"
-
----
+- **Platform Work Directive provisions** — Effective December 1, 2024. Member states must transpose by December 2, 2026: - Creates a rebuttable presumption of employment for platform workers - Platforms must rebut the presumption to maintain contractor status - Does not apply to tax, criminal, or social security proceedings (employment law only) - Member states will define penalties — must be "effective, dissuasive, and proportionate"  _(EU Platform Work Directive 2024/2831)_
 
 ## Section 7: Equity Compensation Cross-Border
 
 ### The Problem [T2]
 
-When an employee receives stock options or RSUs and **works in multiple countries during the vesting period**, multiple countries may claim the right to tax the same income.
+When an employee receives stock options or RSUs and works in multiple countries during the vesting period, multiple countries may claim the right to tax the same income.
 
 ### Time-Based Apportionment Formula [T1]
 
-Most jurisdictions and tax treaties use:
-
-```
-Income sourced to Country X = (Days worked in Country X during vesting period ÷ Total days in vesting period) × Total vest value
-```
+- **Time-based apportionment formula** — Income sourced to Country X = (Days worked in Country X during vesting period ÷ Total days in vesting period) × Total vest value  _(Most jurisdictions and tax treaties)_
 
 ### Country-Specific Timing of Tax [T2]
 
+**Country-specific timing of tax table**
+
 | Country | RSUs Taxed At | Stock Options Taxed At | Character |
-|---------|--------------|----------------------|-----------|
+| --- | --- | --- | --- |
 | US | Vesting | Exercise (NSO) or sale (ISO) | Ordinary income (RSU/NSO); capital gain (ISO at sale) |
 | UK | Vesting | Exercise | Employment income; capital gains on sale |
 | Germany | Vesting | Exercise | Employment income; Abgeltungsteuer on sale |
@@ -295,8 +305,10 @@ Income sourced to Country X = (Days worked in Country X during vesting period ÷
 
 ### Double Taxation Relief [T2]
 
+**Double taxation relief mechanisms table**
+
 | Mechanism | How It Works |
-|-----------|-------------|
+| --- | --- |
 | **Foreign Tax Credit** | Home country gives credit for tax paid abroad on the same equity income (limited to home-country tax on that income) |
 | **Treaty allocation** | Tax treaty may allocate taxing rights based on where services were performed during vesting |
 | **Tax equalisation** | Employer absorbs excess tax burden through hypothetical tax arrangement |
@@ -305,14 +317,14 @@ Income sourced to Country X = (Days worked in Country X during vesting period ÷
 
 **Facts:** Employee granted 1,000 RSUs with 4-year vest. Works in Germany for years 1–2, then moves to UK for years 3–4. Vest value: €200,000.
 
+**Apportionment table**
+
 | Country | Apportionment | Taxable Amount |
-|---------|--------------|---------------|
+| --- | --- | --- |
 | Germany | 730 / 1,460 days = 50% | €100,000 at German income tax rates |
 | UK | 730 / 1,460 days = 50% | £85,000 (converted) at UK income tax rates |
 
 Both countries tax their portion. Employee claims Foreign Tax Credit in whichever country is the residence at vest to avoid double taxation. Coordination between German and UK advisors is essential.
-
----
 
 ## Section 8: Practical Scenarios
 
@@ -363,19 +375,15 @@ Both countries tax their portion. Employee claims Foreign Tax Credit in whicheve
 - Shadow payroll needed in Germany
 - EU Posted Workers Directive: employee must receive at least German minimum wage, working time limits, and other core conditions
 
----
-
 ## PROHIBITIONS
 
-1. **NEVER** assume the 183-day rule is an automatic exemption. All three conditions must be met.
-2. **NEVER** ignore the economic employer concept in countries that apply it — host-country tax can be triggered from day one.
-3. **NEVER** rely on the contract label (contractor vs employee) to determine classification. Host-country substance-over-form rules apply.
-4. **NEVER** skip the A1 certificate for EU/EEA cross-border work. Without it, the host country can demand contributions.
-5. **NEVER** assume equity compensation is only taxed in the country where the employee is at vest. Multi-country apportionment applies.
-6. **NEVER** let an employee work remotely from a foreign country without assessing PE risk, tax obligations, and social security.
-7. **NEVER** ignore employment law in the host country. Local minimum wage, termination rules, and benefits may apply regardless of what the contract says.
-
----
+- **Prohibition 1** — NEVER assume the 183-day rule is an automatic exemption. All three conditions must be met.
+- **Prohibition 2** — NEVER ignore the economic employer concept in countries that apply it — host-country tax can be triggered from day one.
+- **Prohibition 3** — NEVER rely on the contract label (contractor vs employee) to determine classification. Host-country substance-over-form rules apply.
+- **Prohibition 4** — NEVER skip the A1 certificate for EU/EEA cross-border work. Without it, the host country can demand contributions.
+- **Prohibition 5** — NEVER assume equity compensation is only taxed in the country where the employee is at vest. Multi-country apportionment applies.
+- **Prohibition 6** — NEVER let an employee work remotely from a foreign country without assessing PE risk, tax obligations, and social security.
+- **Prohibition 7** — NEVER ignore employment law in the host country. Local minimum wage, termination rules, and benefits may apply regardless of what the contract says.
 
 ## Disclaimer
 
@@ -383,6 +391,24 @@ This skill and its outputs are provided for informational and computational purp
 
 *Data reflects 2025–2026 rules. OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cross-border-payroll-coordination) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cross-border-payroll-coordination` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cross-border-payroll-coordination. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,26 +1,56 @@
 ---
 name: india-payroll
-description: "> Use this skill whenever asked about Indian payroll processing, employee salary calculations, TDS on salary (Section 192), Provident Fund (PF/EPF), Employee State Insurance (ESI), employer cost calculations, CTC breakdowns, net-to-gross or gross-to-net conversions, Indian payslip structure, Form 24Q/Form 138 filings, or any question about computing wages, deductions, or employer obligations in India. Trigger on phrases like \"Indian payroll\", \"TDS on salary\", \"PF contribution\", \"ESI contribution\", \"EPF\", \"CTC breakdown\", \"new tax regime India\", \"old tax regime\", \"Form 16\", \"Form 130\", \"salary structure India\", \"basic DA HRA\", \"professional tax\", \"gratuity\", \"bonus India\", or \"minimum wages India\"."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Indian payroll processing, employee salary calculations, TDS on salary (Section 192), Provident Fund (PF/EPF), Employee State Insurance (ESI), employer cost calculations, CTC breakdowns, net-to-gross or gross-to-net conversions, Indian payslip structure, Form 24Q/Form 138 filings, or any question about computing wages, deductions, or employer obligations in India. Trigger on phrases like \"Indian payroll\", \"TDS on salary\", \"PF contribution\", \"ESI contribution\", \"EPF\", \"CTC breakdown\", \"new tax regime India\", \"old tax regime\", \"Form 16\", \"Form 130\", \"salary structure India\", \"basic DA HRA\", \"professional tax\", \"gratuity\", \"bonus India\", or \"minimum wages India\"."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: IN
-  category: payroll
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/india-payroll"
-  obligation: PAY
+  openaccountants_url: "https://www.openaccountants.com/skills/india-payroll"
+  jurisdiction: "IN"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mayur Deokar"
+  review_status: "current"
 ---
 
-# India Payroll Skill v1.0
+# India Payroll
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## India Payroll Skill v1.0
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Payroll
+
+- **Rate** — 3.25% of gross  _(ESI Act)_
+- **Wage ceiling** — ₹21,000/month  _(ESI Act)_
+- **New Tax Regime s 115BAC — 0 – ₹4,00,000** — 0%  _(Finance Act 2025; s 115BAC)_
+- **New Tax Regime s 115BAC — ₹4,00,001 – ₹8,00,000** — 5%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹8,00,001 – ₹12,00,000** — 10%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹12,00,001 – ₹16,00,000** — 15%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹16,00,001 – ₹20,00,000** — 20%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹20,00,001 – ₹24,00,000** — 25%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — Above ₹24,00,000** — 30%  _(s 115BAC)_
+- **EPF** — 3.67% of Basic+DA  _(EPF Act)_
+- **EPS** — 8.33% (capped ₹15,000)  _(EPF Act)_
+- **EDLI** — 0.50% (capped ₹15,000)  _(EPF Act)_
+- **PF Admin** — 0.50%  _(EPFO)_
+- **Total employer PF** — ~13%  _(EPF Act)_
+- **Employer ESI Rate** — 3.25% of gross  _(ESI Act)_
+- **Employer ESI Wage ceiling** — ₹21,000/month  _(ESI Act)_
+- **TDS deposit** — 7th of following month (30th April for March)  _(ITA)_
+- **PF/ESI deposit** — 15th of following month  _(EPF/ESI Acts)_
+- **Form 24Q (TDS return)** — Last day of the month following the end of the quarter  _(ITA)_
+- **Form 16 (annual certificate)** — By 15 June  _(ITA)_
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | India (Republic of India) |
 | Currency | INR (Indian Rupee) |
 | Payroll frequency | Monthly (typically paid last working day or 1st of next month) |
@@ -38,14 +68,14 @@ metadata:
 | Filing | TDS deposit by 7th; PF/ESI by 15th; Form 24Q/138 quarterly |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- Income Tax Withholding (TDS on Salary)
 
 ### New Tax Regime Slabs -- FY 2025-26 (Default)
 
+**New Tax Regime Slabs -- FY 2025-26 (Default)**
+
 | Annual Taxable Income (INR) | Rate |
-|---|---|
+| --- | --- |
 | Up to 4,00,000 | Nil |
 | 4,00,001 -- 8,00,000 | 5% |
 | 8,00,001 -- 12,00,000 | 10% |
@@ -54,29 +84,30 @@ metadata:
 | 20,00,001 -- 24,00,000 | 25% |
 | Above 24,00,000 | 30% |
 
-Plus: 4% Health and Education Cess on total tax.
-
-**Rebate under Section 87A**: Income up to INR 12,00,000 is effectively tax-free (rebate of up to INR 60,000).
-
-**Standard deduction**: INR 75,000 for salaried employees (new regime).
+- **Cess** — Plus: 4% Health and Education Cess on total tax.
+- **Rebate under Section 87A** — Income up to INR 12,00,000 is effectively tax-free (rebate of up to INR 60,000).
+- **Standard deduction** — INR 75,000 for salaried employees (new regime).
 
 ### Old Tax Regime Slabs -- FY 2025-26 (Optional, Employee Must Opt)
 
+**Old Tax Regime Slabs -- FY 2025-26 (Optional, Employee Must Opt)**
+
 | Annual Taxable Income (INR) | Rate |
-|---|---|
+| --- | --- |
 | Up to 2,50,000 | Nil |
 | 2,50,001 -- 5,00,000 | 5% |
 | 5,00,001 -- 10,00,000 | 20% |
 | Above 10,00,000 | 30% |
 
-Plus: 4% Health and Education Cess.
-
-**Old regime deductions**: Section 80C (up to 1.5L), 80D (health insurance), HRA, LTA, home loan interest (Section 24b), NPS (80CCD).
+- **Cess** — Plus: 4% Health and Education Cess.
+- **Old regime deductions** — Section 80C (up to 1.5L), 80D (health insurance), HRA, LTA, home loan interest (Section 24b), NPS (80CCD).
 
 ### TDS Calculation Method
 
+**TDS Calculation Method**
+
 | Step | Detail |
-|---|---|
+| --- | --- |
 | 1. Estimate annual salary | Project total CTC components for the year |
 | 2. Deduct exemptions | Standard deduction; HRA/LTA (old regime only) |
 | 3. Deduct Chapter VIA | 80C, 80D, 80CCD etc. (old regime only) |
@@ -87,21 +118,23 @@ Plus: 4% Health and Education Cess.
 
 ### Surcharge (Higher Incomes)
 
+**Surcharge (Higher Incomes)**
+
 | Annual Income (INR) | Surcharge |
-|---|---|
+| --- | --- |
 | 50L -- 1 Cr | 10% |
 | 1 Cr -- 2 Cr | 15% |
 | 2 Cr -- 5 Cr | 25% |
 | Above 5 Cr | 25% (marginal relief applies) |
 
----
-
 ## Section 3 -- Social Security: Employee Deductions
 
 ### Employees' Provident Fund (EPF)
 
+**Employees' Provident Fund (EPF)**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Employee contribution | 12% of Basic wages + Dearness Allowance (DA) |
 | Wage ceiling for PF | INR 15,000/month (contributions mandatory up to this; voluntary above) |
 | Minimum Basic + DA | Must be ≥ 50% of total remuneration (Labour Codes) |
@@ -109,8 +142,10 @@ Plus: 4% Health and Education Cess.
 
 ### Employee State Insurance (ESI)
 
+**Employee State Insurance (ESI)**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Employee contribution | 0.75% of gross wages |
 | Wage ceiling | INR 21,000/month (INR 25,000 for persons with disability) |
 | Applies to | Establishments with 10+ employees where employee wages ≤ ceiling |
@@ -118,21 +153,23 @@ Plus: 4% Health and Education Cess.
 
 ### Professional Tax (PT)
 
+**Professional Tax (PT)**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Rate | State-specific (typically INR 150-200/month; max INR 2,500/year) |
 | Applicability | Varies by state (Maharashtra, Karnataka, West Bengal, etc.) |
 | Deducted by | Employer at source |
 | Deposited | To state government monthly (by 15th-21st depending on state) |
 
----
-
 ## Section 4 -- Social Security: Employer Contributions
 
 ### Employer PF Contributions
 
+**Employer PF Contributions**
+
 | Component | Rate | On |
-|---|---|---|
+| --- | --- | --- |
 | EPF (Provident Fund) | 3.67% | Basic + DA |
 | EPS (Pension Scheme) | 8.33% | Basic + DA (max INR 15,000) |
 | EDLI (Life Insurance) | 0.50% | Basic + DA (max INR 15,000) |
@@ -141,23 +178,25 @@ Plus: 4% Health and Education Cess.
 
 ### Employer ESI Contribution
 
+**Employer ESI Contribution**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Rate | 3.25% of gross wages |
 | Wage ceiling | INR 21,000/month |
 | Applies when | Any covered employee earns ≤ INR 21,000/month |
 
 ### Employer Total Statutory Cost (Typical)
 
+**Employer Total Statutory Cost (Typical)**
+
 | Component | Rate | Base |
-|---|---|---|
+| --- | --- | --- |
 | EPF + EPS + EDLI + Admin | ~13% | Basic + DA |
 | ESI (if applicable) | 3.25% | Gross wages |
 | Gratuity provision | ~4.81% | Basic + DA (15/26 × salary for each year of service) |
 | Bonus (statutory minimum) | 8.33% | Basic + DA (min) up to 20% (max) |
 | LWF (Labour Welfare Fund) | State-specific | Nominal amount |
-
----
 
 ## Section 5 -- Minimum Wage and Overtime
 
@@ -165,16 +204,20 @@ Plus: 4% Health and Education Cess.
 
 India does NOT have a single national minimum wage. Rates are set by:
 
+**Minimum Wages Authority Table**
+
 | Authority | Coverage |
-|---|---|
+| --- | --- |
 | Central Government | Scheduled employments (railways, mines, ports) |
 | State Governments | All other employments within the state |
 | Skill classification | Unskilled, Semi-skilled, Skilled, Highly skilled |
 
 ### Indicative Minimum Wages (2025-26, Selected States)
 
+**Indicative Minimum Wages (2025-26, Selected States)**
+
 | State | Unskilled (INR/month approx.) | Skilled (INR/month approx.) |
-|---|---|---|
+| --- | --- | --- |
 | Delhi | 17,494 | 19,279 |
 | Maharashtra | 13,500 | 15,500 |
 | Karnataka | 13,500 | 15,800 |
@@ -183,26 +226,28 @@ India does NOT have a single national minimum wage. Rates are set by:
 
 ### National Floor Wage (Proposed under Code on Wages)
 
-- Proposed floor: INR 178/day (~INR 4,628/month)
-- Not yet notified as of May 2026
-- States cannot set minimum wages below this floor once notified
+- **Proposed floor** — INR 178/day (~INR 4,628/month)
+- **Status** — Not yet notified as of May 2026
+- **State constraint** — States cannot set minimum wages below this floor once notified
 
 ### Working Hours and Overtime
 
+**Working Hours and Overtime**
+
 | Parameter | Standard |
-|---|---|
+| --- | --- |
 | Standard working hours | 8 hours/day, 48 hours/week |
 | Overtime rate | 2× the ordinary rate of wages |
 | Maximum overtime | Varies by state (Factories Act: limited hours) |
 | Weekly rest | 1 day per week mandatory |
 | Spread-over | Maximum 10.5 hours including rest intervals |
 
----
-
 ## Section 6 -- Mandatory Benefits
 
+**Mandatory Benefits**
+
 | Benefit | Detail |
-|---|---|
+| --- | --- |
 | Earned Leave (EL/PL) | 1 day per 20 days worked (Factories); varies by state Shops & Est. Act |
 | Casual Leave | Typically 7-12 days/year (state-specific) |
 | Sick Leave | Typically 7-12 days/year (state-specific) |
@@ -215,8 +260,10 @@ India does NOT have a single national minimum wage. Rates are set by:
 
 ### Gratuity Calculation
 
+**Gratuity Calculation**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Formula | (15 × last drawn salary × years of service) / 26 |
 | Salary for gratuity | Basic + DA |
 | Eligibility | 5 years continuous service (relaxed for death/disability) |
@@ -225,22 +272,24 @@ India does NOT have a single national minimum wage. Rates are set by:
 
 ### Statutory Bonus
 
+**Statutory Bonus**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Minimum bonus | 8.33% of Basic + DA |
 | Maximum bonus | 20% of Basic + DA |
 | Eligibility | Employees with Basic + DA ≤ INR 21,000/month |
 | Calculation base | Capped at INR 7,000/month (or actual if lower) |
 | Payment deadline | Within 8 months of closing of accounting year |
 
----
-
 ## Section 7 -- Payslip Requirements
 
 Indian employers MUST issue monthly payslips under the Code on Wages 2019 and various state Shops and Establishments Acts. Required elements:
 
+**Payslip Elements**
+
 | Element | Mandatory |
-|---|---|
+| --- | --- |
 | Employer name and establishment code | Yes |
 | Employee name, ID, designation | Yes |
 | Pay period (month) | Yes |
@@ -263,8 +312,10 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 
 ### CTC (Cost to Company) Structure -- Typical
 
+**CTC (Cost to Company) Structure -- Typical**
+
 | Component | Typical % of CTC |
-|---|---|
+| --- | --- |
 | Basic salary | 40-50% |
 | HRA | 40-50% of Basic |
 | Special Allowance | Flexible component |
@@ -273,12 +324,12 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 | Gratuity (funded) | 4.81% of Basic |
 | Medical insurance (group) | Fixed premium |
 
----
-
 ## Section 8 -- Filing Obligations
 
+**Filing Obligations**
+
 | Filing | Frequency | Deadline | Authority |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | TDS deposit (Challan 281) | Monthly | 7th of following month (March: 30 April) | CBDT/IT Department |
 | PF ECR (Electronic Challan cum Return) | Monthly | 15th of following month | EPFO |
 | ESI contribution | Monthly | 15th of following month | ESIC |
@@ -291,8 +342,10 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 
 ### Key Filing Details
 
+**Key Filing Details**
+
 | Filing | Detail |
-|---|---|
+| --- | --- |
 | Challan 281 (TDS) | Online payment via NSDL/TIN portal; generates BSR code for Form 24Q |
 | ECR (PF) | Upload member-wise file on EPFO Unified Portal; payment via approved banks |
 | Form 24Q → Form 138 | Form 24Q replaced by Form 138 under Income Tax Act 2025 (from FY 2026-27) |
@@ -300,15 +353,15 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 
 ### Penalties
 
+**Penalties**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late TDS deposit | 1%/month (from due date to deposit) + 1.5%/month (from deduction to deposit if not deducted on time) |
 | Late TDS return | INR 200/day until filed (max = TDS amount); plus INR 10,000-1,00,000 under Section 271H |
 | Late PF deposit | 12% p.a. interest + damages up to 25% of arrears |
 | Late ESI | 12% p.a. interest + damages up to 25% |
 | Non-issuance of Form 16/130 | Penalty under Section 272A: INR 500/day |
-
----
 
 ## Section 9 -- Common Payroll Patterns
 
@@ -375,12 +428,12 @@ Tax calculation:
   Monthly TDS:                      INR   8,125
 ```
 
----
-
 ## Section 10 -- Interaction with Other Skills
 
+**Interaction with Other Skills**
+
 | Skill | Interaction |
-|---|---|
+| --- | --- |
 | india-einvoice | No direct interaction (e-invoicing is GST/B2B; payroll is separate) |
 | payroll-workflow-base | General payroll processing workflow; India-specific overrides in this skill |
 
@@ -394,14 +447,30 @@ Tax calculation:
 - **Income Tax Act 2025**: Takes effect from 1 April 2026 (FY 2026-27). Form 24Q → Form 138; Form 16 → Form 130. Same slab rates expected; procedural/section number changes.
 - **Arrears/bonus**: When arrears or bonuses are paid, TDS must be computed on total projected annual income including such payments. Relief under Section 89 may apply.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/india-payroll) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `india-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/india-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

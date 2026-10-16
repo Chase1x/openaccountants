@@ -1,49 +1,70 @@
 ---
 name: in-tds-freelance
-description: "> Use this skill whenever asked about Indian TDS (Tax Deducted at Source) on payments to freelancers, contractors, or professionals. Trigger on phrases like \"TDS freelance India\", \"Section 194J\", \"Section 194C\", \"Section 194O\", \"TDS rate professional services\", \"Form 26Q\", \"Form 16A\", \"TDS certificate\", \"26AS\", \"AIS reconciliation\", \"TDS return India\", \"lower deduction certificate\", \"Section 197\", \"Section 206AA\", \"PAN not provided TDS\", or any question about TDS obligations when paying or receiving freelance/contractor payments in India. Covers Section 194J (professional/technical services), 194C (contractor payments), 194O (e-commerce), TDS return filing (Form 26Q), TDS certificates (Form 16A), Form 26AS/AIS reconciliation, higher rate for missing PAN (Section 206AA), and lower deduction certificates (Section 197). ALWAYS read this skill before touching any India TDS work involving freelancers or contractors."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Indian TDS (Tax Deducted at Source) on payments to freelancers, contractors, or professionals. Trigger on phrases like \"TDS freelance India\", \"Section 194J\", \"Section 194C\", \"Section 194O\", \"TDS rate professional services\", \"Form 26Q\", \"Form 16A\", \"TDS certificate\", \"26AS\", \"AIS reconciliation\", \"TDS return India\", \"lower deduction certificate\", \"Section 197\", \"Section 206AA\", \"PAN not provided TDS\", or any question about TDS obligations when paying or receiving freelance/contractor payments in India. Covers Section 194J (professional/technical services), 194C (contractor payments), 194O (e-commerce), TDS return filing (Form 26Q), TDS certificates (Form 16A), Form 26AS/AIS reconciliation, higher rate for missing PAN (Section 206AA), and lower deduction certificates (Section 197). ALWAYS read this skill before touching any India TDS work involving freelancers or contractors."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: IN
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/in-tds-freelance"
-  tax_year: 2025-26
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/in-tds-freelance"
+  jurisdiction: "IN"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mayur Deokar"
+  review_status: "current"
 ---
 
-# India TDS on Freelance & Contractor Payments Skill
+# IN Tds Freelance
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Verified rates & thresholds (accountant-reviewed)
 
----
+Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### TDS on Freelancers
+
+- **Threshold** — Threshold increase to Rs 50,000 from financial Year 2025-26 (ITA 194J)  _(ITA s 194J)_
+- **Individual/HUF rate** — 1%  _(ITA s 194C)_
+- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
+- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
+- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
+- **Rate** — Rate is 0.1%.New Section 393 applicable as per Income tax act 2025 from FY 2026-27  _(ITA s 194O)_
+- **Threshold (individual/HUF)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
+- **Who deducts** — E-commerce operator (platform)  _(ITA s 194O)_
+- **Rate without PAN** — 5% in case of section 194O and 194Q.(Section 206AA as per ITA 1961 and section 393 as per new ITA 2025)  _(ITA s 206AA)_
+- **Professional services rate** — 10%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(a))_
+- **Technical services rate** — 2%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(b))_
+- **Threshold (s 194J)** — INR 50,000 per annum per payee  _(ITA s 194J)_
+- **Individual/HUF rate** — 1%  _(ITA s 194C)_
+- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
+- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
+- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
+- **Rate (s 194O — E-commerce)** — 0.1%  _(ITA s 194O; New Income Tax Act 2025 s 393)_
+- **Threshold — individual/HUF (s 194O)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
+- **Who deducts (s 194O)** — E-commerce operator (platform)  _(ITA s 194O)_
+- **Rate without PAN (s 206AA)** — 5% in case of s 194O and s 194Q; otherwise higher of section rate, rate in force, or 20%  _(ITA s 206AA (ITA 1961); New Income Tax Act 2025 s 393)_
+- **194J professional without PAN** — 20% (vs normal 10%)  _(ITA s 206AA)_
+- **194C individual without PAN** — 20% (vs normal 1%)  _(ITA s 206AA)_
 
 ## Skill Metadata
 
-| Field | Value |
-|-------|-------|
-| Jurisdiction | India |
-| Jurisdiction Code | IN |
-| Primary Legislation | Income Tax Act, 1961 -- Sections 194C, 194J, 194O, 197, 206AA |
-| Supporting Legislation | Finance Act 2025; Income-tax Rules, 1962; CBDT Circulars and Notifications |
-| Tax Authority | Central Board of Direct Taxes (CBDT) / Income Tax Department |
-| Filing Portal | https://www.incometax.gov.in (TRACES for TDS: https://www.tdscpc.gov.in) |
-| Contributor | Open Accountants Community |
-| Validated By | Pending -- requires sign-off by a Chartered Accountant (India) |
-| Validation Date | Pending |
-| Skill Version | 1.0 |
-| Tax Year | FY 2025-26 (AY 2026-27) |
-| Confidence Coverage | Tier 1: TDS rates per section, threshold amounts, Form 26Q due dates, Form 16A timelines, 206AA rates, PAN requirements. Tier 2: classification of payment as 194J vs 194C, mixed contracts, lower deduction certificate process. Tier 3: NRI payments (Section 195), transfer pricing, international services, DTAA treaty benefits. |
-
----
+- **Jurisdiction** — India
+- **Jurisdiction Code** — IN
+- **Primary Legislation** — Income Tax Act, 1961 -- Sections 194C, 194J, 194O, 197, 206AA
+- **Supporting Legislation** — Finance Act 2025; Income-tax Rules, 1962; CBDT Circulars and Notifications
+- **Tax Authority** — Central Board of Direct Taxes (CBDT) / Income Tax Department
+- **Filing Portal** — https://www.incometax.gov.in (TRACES for TDS: https://www.tdscpc.gov.in)
+- **Contributor** — Open Accountants Community
+- **Validated By** — Pending -- requires sign-off by a Chartered Accountant (India)
+- **Validation Date** — Verified by Mayur Deokar (615638) on 2026-06-06
+- **Skill Version** — 1.0
+- **Tax Year** — FY 2025-26 (AY 2026-27)
+- **Confidence Coverage** — Tier 1: TDS rates per section, threshold amounts, Form 26Q due dates, Form 16A timelines, 206AA rates, PAN requirements. Tier 2: classification of payment as 194J vs 194C, mixed contracts, lower deduction certificate process. Tier 3: NRI payments (Section 195), transfer pricing, international services, DTAA treaty benefits.
 
 ## Confidence Tier Definitions
 
-- **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
-- **[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags and presents options. Chartered Accountant must confirm.
-- **[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate and document.
-
----
+**[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
+**[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags and presents options. Chartered Accountant must confirm.
+**[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate and document.
 
 ## Step 0: Client Onboarding Questions
 
@@ -60,14 +81,14 @@ Before computing any TDS figure, you MUST know:
 
 **If the payee is a non-resident, STOP. Section 195 applies, not 194C/194J. Escalate to [T3].**
 
----
-
 ## Step 1: Section 194J -- Professional / Technical Services [T1]
 
-**Legislation:** Income Tax Act, 1961, Section 194J
+- **Legislation** — Income Tax Act, 1961, Section 194J
+
+**Section 194J details**  _(Income Tax Act, 1961, Section 194J)_
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Applies to | Fees for professional services OR fees for technical services |
 | TDS rate | 10% |
 | Reduced rate | 2% for fees for technical services (NOT professional services) paid to a resident |
@@ -76,46 +97,46 @@ Before computing any TDS figure, you MUST know:
 
 ### What Constitutes "Professional Services"
 
+**Included vs Excluded**
+
 | Included | Excluded |
-|----------|----------|
+| --- | --- |
 | Legal services | Salary payments (covered by Section 192) |
 | Medical services | Goods purchases |
 | Engineering services | Reimbursement of expenses (if separately billed and identifiable) |
 | Architectural services | Payments to government bodies |
-| Accountancy services | |
-| Technical consultancy | |
-| Interior decoration | |
-| Advertising (certain) | |
-| Sports commentary | |
+| Accountancy services |  |
+| Technical consultancy |  |
+| Interior decoration |  |
+| Advertising (certain) |  |
+| Sports commentary |  |
 
 ### What Constitutes "Technical Services" (2% rate)
 
+**Included**
+
 | Included |
-|----------|
+| --- |
 | Managerial services |
 | Technical services |
 | Consultancy services |
 | Any service requiring technical expertise (call centre, data processing, etc.) |
 
-**Key distinction:** Professional services (listed in Explanation to 194J) = 10%. Technical/managerial services (not in that list) = 2%. [T2] flag for CA if the classification is ambiguous.
+- **Key distinction** — Professional services (listed in Explanation to 194J) = 10%. Technical/managerial services (not in that list) = 2%. [T2] flag for CA if the classification is ambiguous.
 
 ### Threshold Rule
 
-```
-if aggregate_payment_to_payee_in_FY <= INR 30,000: no TDS
-if aggregate_payment_to_payee_in_FY > INR 30,000: TDS on entire amount (not just excess)
-```
-
-**WARNING:** Once the INR 30,000 threshold is crossed, TDS applies to the FULL amount (including the first INR 30,000), not just the excess.
-
----
+- **194J threshold rule** — if aggregate_payment_to_payee_in_FY <= INR 30,000: no TDS if aggregate_payment_to_payee_in_FY > INR 30,000: TDS on entire amount (not just excess)
+- **WARNING** — Once the INR 30,000 threshold is crossed, TDS applies to the FULL amount (including the first INR 30,000), not just the excess.
 
 ## Step 2: Section 194C -- Contractor Payments [T1]
 
-**Legislation:** Income Tax Act, 1961, Section 194C
+- **Legislation** — Income Tax Act, 1961, Section 194C
+
+**Section 194C details**  _(Income Tax Act, 1961, Section 194C)_
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Applies to | Payments to contractors/sub-contractors for carrying out any work (including supply of labour) |
 | TDS rate (individual/HUF) | 1% |
 | TDS rate (others: company, firm, AOP, etc.) | 2% |
@@ -125,28 +146,28 @@ if aggregate_payment_to_payee_in_FY > INR 30,000: TDS on entire amount (not just
 
 ### What Constitutes "Work" Under 194C
 
+**Included vs Excluded**
+
 | Included | Excluded |
-|----------|----------|
+| --- | --- |
 | Contract for manufacturing/supply of a product per buyer's specification | Purchase of goods from a seller's stock (not a contract) |
 | Catering | Professional services (covered by 194J) |
 | Transport/freight | Payments to employees |
 | Printing | Personal purchases |
-| Construction | |
-| Software development (if contract for work, not professional service) | |
-| Housekeeping, security services | |
+| Construction |  |
+| Software development (if contract for work, not professional service) |  |
+| Housekeeping, security services |  |
 
 ### Threshold Rules
 
-```
-if single_payment <= INR 30,000 AND aggregate_in_FY <= INR 1,00,000: no TDS
-if single_payment > INR 30,000: TDS on that payment
-if aggregate_in_FY > INR 1,00,000: TDS on all payments from the date threshold is crossed
-```
+- **194C threshold rules** — if single_payment <= INR 30,000 AND aggregate_in_FY <= INR 1,00,000: no TDS if single_payment > INR 30,000: TDS on that payment if aggregate_in_FY > INR 1,00,000: TDS on all payments from the date threshold is crossed
 
 ### 194C vs 194J -- Decision Matrix [T2]
 
+**Decision matrix**
+
 | Nature of Service | Section | Rate |
-|-------------------|---------|------|
+| --- | --- | --- |
 | Freelance software developer writing custom code | 194J (professional/technical) | 10% or 2% |
 | IT company providing manpower on contract | 194C | 1% / 2% |
 | Architect designing a building | 194J (professional) | 10% |
@@ -154,16 +175,16 @@ if aggregate_in_FY > INR 1,00,000: TDS on all payments from the date threshold i
 | Chartered Accountant preparing accounts | 194J (professional) | 10% |
 | Data entry operator on contract | 194C | 1% / 2% |
 
-**[T2] If the contract involves both professional services and execution work (e.g., architect who also supervises construction), flag for CA to determine dominant nature of the contract.**
-
----
+- **Mixed contract flag** — **[T2] If the contract involves both professional services and execution work (e.g., architect who also supervises construction), flag for CA to determine dominant nature of the contract.**
 
 ## Step 3: Section 194O -- E-Commerce Operator Payments [T1]
 
-**Legislation:** Income Tax Act, 1961, Section 194O
+- **Legislation** — Income Tax Act, 1961, Section 194O
+
+**Section 194O details**  _(Income Tax Act, 1961, Section 194O)_
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Applies to | E-commerce operators facilitating sale of goods/services by e-commerce participants |
 | TDS rate | 1% |
 | Threshold | INR 5,00,000 per annum per participant (for individuals/HUFs only) |
@@ -177,40 +198,39 @@ if aggregate_in_FY > INR 1,00,000: TDS on all payments from the date threshold i
 - If 194O applies, 194C/194J do NOT apply to the same transaction (194O takes precedence for e-commerce transactions)
 - Individual/HUF participants with gross amount <= INR 5,00,000 are exempt (threshold added by Finance Act 2023)
 
----
-
 ## Step 4: Section 206AA -- Higher Rate for Missing PAN [T1]
 
-**Legislation:** Income Tax Act, 1961, Section 206AA
+- **Legislation** — Income Tax Act, 1961, Section 206AA
 
-If the payee does not provide a valid PAN to the deductor:
+**Normal rate vs 206AA rate**  _(Income Tax Act, 1961, Section 206AA)_
 
 | Normal Rate | 206AA Rate |
-|-------------|-----------|
+| --- | --- |
 | Any rate under Chapter XVII-B | Higher of: (a) the rate specified in the section, (b) the rate in force, or (c) **20%** |
 
 ### Practical Application
 
+**Practical application table**
+
 | Section | Normal Rate | Rate Without PAN |
-|---------|-------------|-----------------|
+| --- | --- | --- |
 | 194J (professional) | 10% | 20% |
 | 194J (technical) | 2% | 20% |
 | 194C (individual/HUF) | 1% | 20% |
 | 194C (others) | 2% | 20% |
 | 194O | 1% | 20% (but 5% if 206AB applies) |
 
-**WARNING:** 20% is the MINIMUM rate when PAN is not provided. Always verify PAN before making any payment.
-
----
+- **WARNING** — 20% is the MINIMUM rate when PAN is not provided. Always verify PAN before making any payment.
 
 ## Step 5: Section 206AB -- Higher Rate for Non-Filers [T1]
 
-**Legislation:** Income Tax Act, 1961, Section 206AB
+- **Legislation** — Income Tax Act, 1961, Section 206AB
+- **Condition** — If the payee has NOT filed income tax returns for the two preceding years AND the aggregate TDS/TCS in each of those years exceeded INR 50,000, the higher rate under 206AB applies.
 
-If the payee has NOT filed income tax returns for the two preceding years AND the aggregate TDS/TCS in each of those years exceeded INR 50,000:
+**Rate table**  _(Income Tax Act, 1961, Section 206AB)_
 
 | Rate | Detail |
-|------|--------|
+| --- | --- |
 | Higher of | (a) twice the rate specified in the relevant section, OR (b) 5% |
 
 ### Verification
@@ -218,14 +238,14 @@ If the payee has NOT filed income tax returns for the two preceding years AND th
 - Deductors can verify payee's filing status on the Income Tax portal's "Compliance Check for Section 206AB & 206CCA" utility
 - If both 206AA (no PAN) and 206AB (non-filer) apply, the HIGHER rate applies
 
----
-
 ## Step 6: TDS Deposit (Remittance to Government) [T1]
 
-**Legislation:** Rule 30 of Income-tax Rules, 1962
+- **Legislation** — Rule 30 of Income-tax Rules, 1962
+
+**Deposit due dates**  _(Rule 30 of Income-tax Rules, 1962)_
 
 | Deductor Type | Due Date for Deposit |
-|---------------|---------------------|
+| --- | --- |
 | Government deductors | Same day of deduction |
 | Non-government deductors | 7th of the following month |
 | March deductions | 30 April (extended deadline for March TDS) |
@@ -235,16 +255,16 @@ If the payee has NOT filed income tax returns for the two preceding years AND th
 - Challan No. ITNS 281 (available on TIN-NSDL or the Income Tax portal)
 - Payment via net banking or authorised bank branch
 
----
-
 ## Step 7: TDS Return Filing -- Form 26Q [T1]
 
-**Legislation:** Section 200(3); Rule 31A
+- **Legislation** — Section 200(3); Rule 31A
 
 Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 194J, 194O).
 
+**Quarterly filing due dates**  _(Section 200(3); Rule 31A)_
+
 | Quarter | Period | Filing Due Date |
-|---------|--------|----------------|
+| --- | --- | --- |
 | Q1 | 1 April -- 30 June | 31 July |
 | Q2 | 1 July -- 30 September | 31 October |
 | Q3 | 1 October -- 31 December | 31 January |
@@ -252,8 +272,10 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 
 ### Filing Requirements
 
+**Filing requirements**
+
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Who must file | Any person who has deducted TDS under Chapter XVII-B |
 | How | Online via TRACES (tdscpc.gov.in) using DSC or EVC |
 | Software | Return Preparation Utility (RPU) from TRACES, or commercial TDS software |
@@ -262,19 +284,21 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 
 ### Late Filing Penalty
 
+**Penalty table**
+
 | Penalty | Amount |
-|---------|--------|
+| --- | --- |
 | Section 234E | INR 200 per day of delay (maximum = total TDS deductible) |
 | Section 271H | INR 10,000 to INR 1,00,000 (at AO's discretion for delay > 1 year or incorrect information) |
 
----
-
 ## Step 8: TDS Certificates -- Form 16A [T1]
 
-**Legislation:** Section 203; Rule 31
+- **Legislation** — Section 203; Rule 31
+
+**Form 16A details**  _(Section 203; Rule 31)_
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Form | Form 16A (certificate for non-salary TDS) |
 | Issued by | Deductor to deductee |
 | Frequency | Quarterly (one per quarter of deduction) |
@@ -283,21 +307,23 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 
 ### Form 16A Due Dates
 
+**Due dates by quarter**
+
 | Quarter | 26Q Due | 16A Due |
-|---------|---------|---------|
+| --- | --- | --- |
 | Q1 (Apr-Jun) | 31 July | 15 August |
 | Q2 (Jul-Sep) | 31 October | 15 November |
 | Q3 (Oct-Dec) | 31 January | 15 February |
 | Q4 (Jan-Mar) | 31 May | 15 June |
 
----
-
 ## Step 9: Form 26AS and AIS Reconciliation [T1]
 
-**Legislation:** Section 203AA; Rule 31AB
+- **Legislation** — Section 203AA; Rule 31AB
+
+**Forms table**  _(Section 203AA; Rule 31AB)_
 
 | Form | Purpose |
-|------|---------|
+| --- | --- |
 | Form 26AS | Annual Tax Statement -- shows all TDS/TCS credited against the taxpayer's PAN |
 | AIS (Annual Information Statement) | Extended version showing financial transactions (SFT data, interest, dividends, purchases, etc.) |
 | TIS (Taxpayer Information Summary) | Aggregated and categorised summary of AIS data |
@@ -313,16 +339,15 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 
 **WARNING:** TDS credit is allowed ONLY if reflected in Form 26AS. If the deductor has deducted TDS but not deposited or filed 26Q, the DEDUCTEE cannot claim credit. The deductee should pursue the deductor.
 
----
-
 ## Step 10: Lower Deduction Certificate -- Section 197 [T2]
 
-**Legislation:** Income Tax Act, 1961, Section 197
+- **Legislation** — Income Tax Act, 1961, Section 197
+- **Condition** — If the payee's total income is below the taxable threshold or the effective tax rate is lower than TDS rates, a lower deduction certificate may be sought.
 
-If the payee's total income is below the taxable threshold or the effective tax rate is lower than TDS rates:
+**Certificate details**  _(Income Tax Act, 1961, Section 197)_
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Application | Form 13 filed online on the Income Tax portal |
 | Issued by | Assessing Officer (AO) |
 | Certificate specifies | NIL rate or a reduced rate |
@@ -331,59 +356,67 @@ If the payee's total income is below the taxable threshold or the effective tax 
 
 ### When to Recommend
 
+**Recommendation scenarios**
+
 | Scenario | Action |
-|----------|--------|
+| --- | --- |
 | Freelancer with income below basic exemption limit | Recommend applying for NIL certificate |
 | Professional with high expenses and low taxable income | Recommend applying for reduced rate certificate |
 | Multiple deductors deducting at full rate causing cash flow issues | Recommend lower deduction certificate |
 
-**[T2] Always flag for CA before advising on Section 197. The application requires projected income computation and supporting documentation.**
-
----
+- **CA flag** — **[T2] Always flag for CA before advising on Section 197. The application requires projected income computation and supporting documentation.**
 
 ## Step 11: Edge Case Registry
 
 ### EC1 -- Payment is mix of goods and services [T2]
+
 **Situation:** Invoice includes INR 2,00,000 for software development (service) and INR 50,000 for hardware (goods purchase).
 **Resolution:** If amounts are separately identifiable in the invoice, TDS applies only to the service component (194J on INR 2,00,000). If not separately stated, TDS on the entire amount. [T2] flag for CA.
 
 ### EC2 -- Reimbursement of expenses included in invoice [T2]
+
 **Situation:** Freelancer invoices INR 1,00,000 for consulting + INR 20,000 for travel reimbursement.
 **Resolution:** If reimbursement is separately billed and supported by actual receipts, TDS may not apply to the reimbursement component (per CBDT Circular 715/1995 and subsequent judicial decisions). However, this is frequently disputed. [T2] flag for CA.
 
 ### EC3 -- Payee is a partnership firm -- which rate? [T1]
+
 **Situation:** Payment under 194C to a partnership firm.
 **Resolution:** Partnership firm is NOT an individual/HUF. Rate = 2% (not 1%).
 
 ### EC4 -- Aggregate threshold crossed mid-year (194C) [T1]
+
 **Situation:** Four payments of INR 28,000 each to the same contractor. Total = INR 1,12,000. No single payment exceeded INR 30,000.
 **Resolution:** Aggregate exceeded INR 1,00,000. TDS should have been deducted from the 4th payment onward (when the aggregate crossed INR 1,00,000). If not deducted on earlier payments, the deductor is treated as an assessee in default. Deduct TDS on subsequent payments and consider depositing shortfall with interest.
 
 ### EC5 -- Freelancer on e-commerce platform (194O vs 194J) [T2]
+
 **Situation:** Graphic designer sells services via an e-commerce platform like Fiverr or Urban Company.
 **Resolution:** 194O applies (1% TDS by the e-commerce operator). The hiring client does NOT additionally deduct 194J. 194O takes precedence for transactions facilitated through the platform. If the client hires the freelancer directly (off-platform), 194J applies.
 
 ### EC6 -- TDS deducted but not deposited by deductor [T1]
+
 **Situation:** Deductor deducted TDS of INR 50,000 from the freelancer's payment but has not deposited to the government. 26AS shows no credit.
 **Resolution:** The DEDUCTEE cannot claim credit until it appears in 26AS. The deductee should: (1) demand Form 16A from the deductor, (2) report to the Income Tax Department if deductor refuses, (3) file ITR without the credit and claim it via rectification once 26AS is updated.
 
 ### EC7 -- Section 194J threshold: multiple professional services [T1]
+
 **Situation:** Client pays a freelancer INR 15,000 for accounting and INR 20,000 for tax advisory in the same FY. Total = INR 35,000.
 **Resolution:** Aggregate exceeds INR 30,000. TDS applies to the entire INR 35,000 (not just the excess). The deductor should have started deducting from the payment that pushed the aggregate over INR 30,000.
 
 ### EC8 -- GST component in the invoice and TDS [T1]
+
 **Situation:** Invoice: Base fee INR 1,00,000 + GST 18% = INR 18,000. Total invoice INR 1,18,000.
 **Resolution:** Per CBDT Circular 23/2017, TDS is to be deducted on the base amount EXCLUDING GST, provided GST is separately shown in the invoice. TDS = 10% of INR 1,00,000 = INR 10,000 (not INR 11,800).
 
 ### EC9 -- Presumptive taxation payee and TDS credit [T1]
+
 **Situation:** Freelancer files under Section 44ADA (presumptive). Has TDS of INR 80,000 deducted. Presumptive tax liability = INR 50,000.
 **Resolution:** TDS credit (INR 80,000) exceeds tax liability (INR 50,000). Excess INR 30,000 is refundable via ITR filing. The freelancer MUST file ITR to claim the refund.
 
 ### EC10 -- Section 194R -- benefits or perquisites in kind [T2]
+
 **Situation:** Company provides a freelancer with a laptop worth INR 50,000 as part of the engagement.
 **Resolution:** Section 194R (introduced in 2022) requires TDS at 10% on benefits/perquisites exceeding INR 20,000 provided to resident contractors/professionals. TDS = 10% x INR 50,000 = INR 5,000. The deductor may provide cash to cover the TDS. [T2] flag for CA.
-
----
 
 ## Step 12: Reviewer Escalation Protocol
 
@@ -411,39 +444,42 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to Chartered Accountant. Document gap.
 ```
 
----
-
 ## Step 13: Test Suite
 
 ### Test 1 -- Standard 194J deduction
+
 **Input:** Payment of INR 1,50,000 to a freelance chartered accountant for audit services. PAN provided.
 **Expected output:** Section 194J applies. TDS = 10% x INR 1,50,000 = INR 15,000. Deposit by 7th of the following month.
 
 ### Test 2 -- 194C to individual contractor
+
 **Input:** Single payment of INR 45,000 to an individual contractor for office renovation. PAN provided.
 **Expected output:** Section 194C. Single payment exceeds INR 30,000 threshold. TDS = 1% x INR 45,000 = INR 450.
 
 ### Test 3 -- No TDS below threshold (194J)
+
 **Input:** Two payments of INR 12,000 each to a freelance designer in the same FY. Total = INR 24,000. PAN provided.
 **Expected output:** Aggregate INR 24,000 < INR 30,000 threshold. No TDS required.
 
 ### Test 4 -- Missing PAN (Section 206AA)
+
 **Input:** Payment of INR 60,000 for professional services. Payee has NOT provided PAN.
 **Expected output:** Section 206AA applies. TDS = 20% x INR 60,000 = INR 12,000 (instead of normal 10% = INR 6,000).
 
 ### Test 5 -- GST excluded from TDS base
+
 **Input:** Invoice: Professional fees INR 2,00,000 + GST 18% = INR 36,000. Total = INR 2,36,000. GST shown separately. PAN provided.
 **Expected output:** TDS on base amount only. TDS = 10% x INR 2,00,000 = INR 20,000.
 
 ### Test 6 -- 194C aggregate threshold crossed
+
 **Input:** Q1: INR 25,000. Q2: INR 25,000. Q3: INR 25,000. Q4: INR 30,000. All to same individual contractor. PAN provided.
 **Expected output:** No single payment > INR 30,000. But aggregate = INR 1,05,000 > INR 1,00,000. TDS obligation arose when aggregate crossed INR 1,00,000 (during Q4 payment). TDS = 1% on the Q4 payment = INR 300. Future payments also subject to TDS.
 
 ### Test 7 -- Form 26Q filing timeline
+
 **Input:** TDS deducted in July, August, September (Q2).
 **Expected output:** Form 26Q for Q2 due by 31 October. Form 16A due by 15 November.
-
----
 
 ## PROHIBITIONS
 
@@ -458,14 +494,30 @@ Action Required: Do not advise. Refer to Chartered Accountant. Document gap.
 - NEVER estimate Section 197 lower deduction certificate outcomes without CA review
 - NEVER ignore late filing penalties under Section 234E -- INR 200/day accrues quickly
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/in-tds-freelance) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-tds-freelance` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-tds-freelance. If neither is available, confirm every figure against the official source pages cited above before relying on it.

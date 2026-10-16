@@ -1,27 +1,24 @@
 ---
 name: chile-iva
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Chile IVA (Impuesto al Valor Agregado) return or advise on Chilean VAT registration, filing, and SII compliance. Trigger on phrases like \"prepare IVA return Chile\", \"Chilean VAT\", \"IVA Chile\", \"SII\", \"RUT\", or any Chile IVA request. ALWAYS read this skill before touching any Chile IVA work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/chile-iva"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/chile-iva"
+  jurisdiction: "CL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Chile IVA (Impuesto al Valor Agregado) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Chile IVA
 
 ## Section 1 — Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Chile (República de Chile) |
 | Tax | IVA (Impuesto al Valor Agregado) |
 | Currency | CLP (Chilean Peso — $) |
@@ -43,8 +40,10 @@ metadata:
 
 ### Key Formulario 29 codes
 
+**Key Formulario 29 codes**
+
 | Code | Meaning |
-|---|---|
+| --- | --- |
 | Code 502 | Net taxable sales (base 19%) |
 | Code 503 | IVA on sales (débito fiscal) |
 | Code 505 | Export sales |
@@ -57,8 +56,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 19% standard |
 | Unknown whether exempt | 19% until confirmed |
 | Unknown whether export documentation complete | Treat as domestic 19% |
@@ -69,8 +70,10 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | CLP 50,000,000 |
 | HIGH tax delta on single conservative default | CLP 9,500,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
@@ -83,8 +86,10 @@ Source: `LibreDTE/libredte-lib-core` (`resources/data/repository/impuestos_adici
 
 These are the SII tax classification codes used in DTE documents for additional taxes (A) and withholdings (R) beyond the standard 19% IVA:
 
+**SII additional taxes and withholdings table**  _(LibreDTE/libredte-lib-core (resources/data/repository/impuestos_adicionales_retenciones.php), AGPL-3.0)_
+
 | SII Code | Type | Description | Rate |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 15 | R | IVA retenido (total) | 19% |
 | 17 | A | IVA anticipado faenamiento carne | 5% |
 | 18 | A | IVA anticipado carne | 5% |
@@ -114,8 +119,10 @@ These are the SII tax classification codes used in DTE documents for additional 
 
 Source: `LibreDTE/libredte-lib-core` (`resources/data/repository/tipos_documento.php`), AGPL-3.0.
 
+**SII electronic document type codes table**  _(LibreDTE/libredte-lib-core (resources/data/repository/tipos_documento.php), AGPL-3.0)_
+
 | Code | Document | Electronic | Purchase | Sale |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 29 | Factura de inicio | No | — | — |
 | 30 | Factura | No | Yes | Yes |
 | 32 | Factura exenta de IVA | No | Yes | Yes |
@@ -138,41 +145,24 @@ Source: `LibreDTE/libredte-lib-core` (`resources/data/repository/tipos_documento
 | 111 | Nota de débito de exportación electrónica | Yes | Yes | Yes |
 | 112 | Nota de crédito de exportación electrónica | Yes | Yes | Yes |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before starting any Chile IVA work, obtain:
-
-1. RUT (Rol Único Tributario) and SII contributor registration (Inicio de Actividades)
-2. Monthly bank statements in CLP (all business accounts)
-3. DTE (Documento Tributario Electrónico) files — Facturas Electrónicas issued (XML from SII portal)
-4. Facturas Electrónicas received from suppliers (XML or PDF with folio and SII verification)
-5. Prior month Formulario 29 (for remanente crédito fiscal carried forward)
-6. Import customs declarations (DUS — Declaración de Importación) for imported goods
-7. Export documentation (DUS exportación, AWB/BL) for zero-rated exports
+- **Required inputs before starting Chile IVA work** — 1. RUT (Rol Único Tributario) and SII contributor registration (Inicio de Actividades) 2. Monthly bank statements in CLP (all business accounts) 3. DTE (Documento Tributario Electrónico) files — Facturas Electrónicas issued (XML from SII portal) 4. Facturas Electrónicas received from suppliers (XML or PDF with folio and SII verification) 5. Prior month Formulario 29 (for remanente crédito fiscal carried forward) 6. Import customs declarations (DUS — Declaración de Importación) for imported goods 7. Export documentation (DUS exportación, AWB/BL) for zero-rated exports
 
 ### Refusal catalogue
 
-Refuse and escalate to a contador auditor for:
-- Proporcionalidad (partial exemption) — businesses with mixed exempt/taxable supplies
-- IVA on real estate (complex rules — IVA on first sale of construction)
-- IVA retenciones — withholding agents in construction and other sectors
-- Export IVA refund (recuperación de IVA exportadores) — complex SII process
-- IVA on leasing / leaseback structures
-- Zone franca (free trade zone — Iquique/Punta Arenas) special treatment
-- Non-resident digital service provider registration compliance
-
----
+- **Refusal catalogue — escalate to contador auditor** — Proporcionalidad (partial exemption) — businesses with mixed exempt/taxable supplies; IVA on real estate (complex rules — IVA on first sale of construction); IVA retenciones — withholding agents in construction and other sectors; Export IVA refund (recuperación de IVA exportadores) — complex SII process; IVA on leasing / leaseback structures; Zone franca (free trade zone — Iquique/Punta Arenas) special treatment; Non-resident digital service provider registration compliance
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banking and financial services
 
+**Banking and financial services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BancoEstado | Bank fees, transfers | Exempt | No |
 | Banco de Chile | Account maintenance, credit | Exempt | No |
 | Santander Chile | Commercial banking | Exempt | No |
@@ -186,8 +176,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.2 Electricity, gas, and utilities
 
+**Electricity, gas, and utilities suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Enel Distribución Chile (formerly Chilectra) | Electricity — Santiago Metropolitan | 19% | Yes (business) |
 | CGE (Compañía General de Electricidad) | Electricity — regions | 19% | Yes (business) |
 | Engie Chile (formerly GNL Quintero) | Natural gas distribution | 19% | Yes (business) |
@@ -197,8 +189,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.3 Telecommunications
 
+**Telecommunications suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Entel Chile | Mobile, broadband, enterprise | 19% | Yes (business use) |
 | Movistar Chile (Telefónica) | Mobile, fixed, ADSL | 19% | Yes (business use) |
 | Claro Chile | Mobile, cable TV | 19% | Yes (business use) |
@@ -208,8 +202,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.4 Transport and travel
 
+**Transport and travel suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | LATAM Airlines (domestic) | Domestic flights Chile | Exempt (domestic air) | No |
 | LATAM Airlines (international) | International flights | 0% (export) | No |
 | Sky Airline (domestic) | Domestic budget | Exempt | No |
@@ -222,8 +218,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.5 Fuel
 
+**Fuel suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | COPEC | Fuel (petrol/diesel) | 19% + specific impuesto | Yes (business vehicles) |
 | Enex | Fuel stations | 19% + specific impuesto | Yes |
 | Petrobras Chile | Fuel | 19% | Yes |
@@ -231,8 +229,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.6 Logistics and courier
 
+**Logistics and courier suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Chilexpress | Domestic courier | 19% | Yes |
 | StarKen | Domestic freight | 19% | Yes |
 | DHL Chile | International courier | 0% (export) / 19% (domestic) | Yes |
@@ -242,8 +242,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.7 Retail and office supplies
 
+**Retail and office supplies suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Falabella (retail) | Department store — mixed goods | 19% | Yes |
 | Ripley | Department store | 19% | Yes |
 | Jumbo (Cencosud) | Supermarket | 19% | Yes |
@@ -253,8 +255,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.8 Software and digital services
 
+**Software and digital services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Nubox | Cloud accounting for SMEs | 19% | Yes |
 | Bsale | POS and invoicing software | 19% | Yes |
 | Defontana | ERP — Chilean SMEs | 19% | Yes |
@@ -267,8 +271,10 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.9 Professional services
 
+**Professional services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Contador auditor / CPA | Accounting, audit, tax | 19% | Yes |
 | Estudio de abogados | Legal services | 19% | Yes |
 | Agencia de publicidad | Advertising | 19% | Yes |
@@ -277,15 +283,15 @@ Refuse and escalate to a contador auditor for:
 
 ### 3.10 Insurance and healthcare
 
+**Insurance and healthcare suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Banco Estado Seguros | Business insurance | Exempt | No |
 | Metlife Chile | Life, health insurance | Exempt | No |
 | Clínica privada / hospital | Private medical | Exempt | No |
 | Isapre (health fund) | Healthcare contributions | Exempt | No |
 | Farmacia Cruz Verde / Salcobrand | Medicines | Exempt (medicines) | No |
-
----
 
 ## Section 4 — Worked examples
 
@@ -307,8 +313,6 @@ Monto       : +$23.800.000
 
 *Note: CLP amounts use period as thousands separator; no decimal places commonly shown*
 
----
-
 ### Example 2 — Export of services (0%)
 
 **Scenario:** Chilean software firm exports SaaS to US client — USD wire.
@@ -326,8 +330,6 @@ Monto       : +$47.600.000 (USD 50.000)
 - Issue Factura de Exportación Electrónica (DTE tipo 110)
 - Return entry: Code 505 — $47,600,000 | IVA: $0
 
----
-
 ### Example 3 — IVA on fuel (business vehicle)
 
 **Scenario:** Company fills up business vehicle at COPEC.
@@ -344,8 +346,6 @@ Monto       : -$119.000
 - COPEC DTE: net $100,000 + IVA 19% $19,000 = $119,000
 - Input credit: $19,000 if vehicle registered in company's name for business
 - Return entry: Code 524 — $100,000; Code 525 (crédito fiscal): $19,000
-
----
 
 ### Example 4 — Non-resident digital service (SII simplified scheme)
 
@@ -365,8 +365,6 @@ Monto       : -$892.500
 - Input credit: $142,500 if B2B (need DTE with buyer's RUT)
 - Return entry: Code 524 — $750,000; Code 525: $142,500
 
----
-
 ### Example 5 — Domestic air transport (exempt)
 
 **Scenario:** Employee flies Santiago–Puerto Montt on LATAM domestic.
@@ -385,14 +383,12 @@ Monto       : -$185.000
 - Record as exempt expenditure; no input credit
 - Return entry: Not entered in IVA return — expense record only
 
----
-
 ### Example 6 — Monthly return summary
 
-**Scenario:** Services company — April 2025.
+**Monthly return summary**
 
 | Item | Net (CLP) | IVA (CLP) |
-|---|---|---|
+| --- | --- | --- |
 | Domestic sales 19% | 200,000,000 | 38,000,000 |
 | Export sales (0%) | 50,000,000 | 0 |
 | Exempt sales | 10,000,000 | 0 |
@@ -400,9 +396,7 @@ Monto       : -$185.000
 | Local purchases | 100,000,000 | 19,000,000 |
 | Import VAT (customs) | 30,000,000 | 5,700,000 |
 | Total Input | 130,000,000 | 24,700,000 |
-| **Net IVA payable** | | **13,300,000** |
-
----
+| **Net IVA payable** |  | **13,300,000** |
 
 ## Section 5 — Tier 1 rules (compressed)
 
@@ -423,20 +417,18 @@ Monto       : -$185.000
 - All sales require DTE (Factura Electrónica tipo 33 for B2B; Boleta Electrónica tipo 39 for B2C)
 - Remanente crédito fiscal carries forward indefinitely; export refund available via SII
 
----
-
 ## Section 6 — Tier 2 catalogue (genuinely data-unknowable items)
 
+**Tier 2 catalogue**
+
 | Item | Why unknowable | What to ask |
-|---|---|---|
+| --- | --- | --- |
 | Transport exemption | Depends on mode and route — bus/metro exempt, ride-hailing taxable, domestic air exempt | "What transport mode? Uber/Cabify (taxable) or bus/metro/domestic flight (exempt)?" |
 | Fuel — business vs personal | Only business vehicle use qualifies for input credit | "Is the vehicle registered in the company's name? What % business use?" |
 | Construction services | May include IVA on materials but exempt on labour — complex split | "Break down contract into materials vs labour components." |
 | Real estate (first sale) | First sale of new construction subject to IVA on construction cost portion | "Is this a first sale from developer? Or resale? Get deed details." |
 | Non-resident digital service | Whether provider registered under SII simplified scheme affects how IVA flows | "Did the foreign provider issue a DTE with your RUT? Or is this reverse-charge?" |
 | Mixed-use property | Business portion of home office — IVA credit only on business % | "What % of property is exclusively for business?" |
-
----
 
 ## Section 7 — Excel working paper
 
@@ -449,11 +441,10 @@ Monto       : -$185.000
 4. `F29_Summary` — monthly Formulario 29 totals
 5. `Tier2_Items` — awaiting client response
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Banco de Chile format
+
 ```
 Fecha       : 15/04/2025
 Tipo        : Abono / Transferencia Electrónica
@@ -463,36 +454,29 @@ Saldo       : $123.800.000
 ```
 
 ### BancoEstado format
+
 ```
 15/04/2025  |  Transferencia recibida  |  COMPANY NAME  |  +23.800.000  |  Saldo: 123.800.000
 ```
 
 ### Key patterns:
+
 - **CLP number format:** Period = thousands separator; no decimal places for CLP (whole pesos) — $23.800.000 = CLP 23,800,000
 - **Abono:** Credit (money in) — match to issued Factura Electrónica for débito fiscal
 - **Cargo:** Debit (money out) — match to received Factura Electrónica for crédito fiscal
 - **Abono ME:** Foreign currency credit — check for export or non-resident service
 - **Débito Automático:** Direct debit — utilities, subscriptions; request DTE
 
----
-
 ## Section 9 — Onboarding fallback
 
-When client cannot provide DTEs for all transactions:
-
-1. Use bank statement amounts as IVA-inclusive totals and back-calculate:
-   - Net = Total ÷ 1.19 | IVA = Total − Net
-2. Apply conservative defaults: 19% output; 0% input credit without valid DTE with buyer's RUT
-3. Flag all non-DTE items in Tier2_Items tab
-4. Issue data request for missing folio numbers
-5. Warn client: SII can disallow crédito fiscal without valid Factura Electrónica from registered contributor
-
----
+- **Onboarding fallback when DTEs unavailable** — When client cannot provide DTEs for all transactions: 1. Use bank statement amounts as IVA-inclusive totals and back-calculate: - Net = Total ÷ 1.19 | IVA = Total − Net 2. Apply conservative defaults: 19% output; 0% input credit without valid DTE with buyer's RUT 3. Flag all non-DTE items in Tier2_Items tab 4. Issue data request for missing folio numbers 5. Warn client: SII can disallow crédito fiscal without valid Factura Electrónica from registered contributor
 
 ## Section 10 — Reference material
 
+**Reference material table**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | SII portal (Declaración F29, DTE) | https://www.sii.cl |
 | DTE verification portal | https://maullin.sii.cl/cgi_dte/UF_srv_bouncer |
 | Ley de IVA (DL 825/1974 and amendments) | SII — legislación |
@@ -501,14 +485,30 @@ When client cannot provide DTEs for all transactions:
 | IVA exportadores — refund guide | SII — guías de usuario |
 | LibreDTE lib-core (SII codes, AGPL-3.0) | https://github.com/LibreDTE/libredte-lib-core |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/chile-iva) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `chile-iva` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/chile-iva. If neither is available, confirm every figure against the official source pages cited above before relying on it.

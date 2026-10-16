@@ -1,24 +1,24 @@
 ---
 name: oman-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for an Oman VAT return for any client. Trigger on phrases like \"prepare VAT return\", \"Oman VAT\", \"OTA return\", or any request involving Oman VAT filing. Oman applies VAT at 5% under Royal Decree No. 121/2020, administered by the Oman Tax Authority (OTA). ALWAYS read this skill before touching any Oman VAT-related work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/oman-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/oman-vat"
+  jurisdiction: "OM"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Oman VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Oman VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Sultanate of Oman |
 | Standard rate | 5% |
 | Zero rate | 0% (exports, international transport, oil/gas exploration, healthcare, education, specified foodstuffs, first supply of residential property) |
@@ -36,16 +36,14 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 5% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Oman |
 | Unknown blocked-input status | Blocked |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -59,20 +57,18 @@ metadata:
 
 ### Refusal catalogue
 
-**R-OM-1 -- VAT group.** Trigger: client is part of a VAT group. Message: "VAT group consolidation is outside this skill. Escalate to licensed tax advisor."
-
-**R-OM-2 -- Free zone / SEZ.** Trigger: client operates in designated free zone. Message: "Free zone and SEZ entities have specific VAT treatment. Escalate to specialist."
-
-**R-OM-3 -- Partial exemption.** Trigger: mixed taxable and exempt supplies without agreed method. Message: "Partial exemption requires OTA-agreed apportionment. Escalate."
-
----
+- **R-OM-1 -- VAT group** — Trigger: client is part of a VAT group. Message: "VAT group consolidation is outside this skill. Escalate to licensed tax advisor."  _(Section 2 -- Refusal catalogue)_
+- **R-OM-2 -- Free zone / SEZ** — Trigger: client operates in designated free zone. Message: "Free zone and SEZ entities have specific VAT treatment. Escalate to specialist."  _(Section 2 -- Refusal catalogue)_
+- **R-OM-3 -- Partial exemption** — Trigger: mixed taxable and exempt supplies without agreed method. Message: "Partial exemption requires OTA-agreed apportionment. Escalate."  _(Section 2 -- Refusal catalogue)_
 
 ## Section 3 -- Supplier pattern library
 
 ### 3.1 Omani banks (fees: exempt -- exclude)
 
+**Omani banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BANK MUSCAT, BANKMUSCAT | EXCLUDE | Margin-based financial service |
 | NBO, NATIONAL BANK OF OMAN | EXCLUDE | Same |
 | BANK DHOFAR | EXCLUDE | Same |
@@ -83,8 +79,10 @@ metadata:
 
 ### 3.2 Government and regulatory
 
+**Government and regulatory pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OTA, OMAN TAX AUTHORITY | EXCLUDE | Tax payment |
 | CUSTOMS, ROYAL OMAN POLICE | EXCLUDE | Government levy (check for import VAT separately) |
 | PASI, PUBLIC AUTHORITY FOR SOCIAL INSURANCE | EXCLUDE | Social insurance |
@@ -92,29 +90,33 @@ metadata:
 
 ### 3.3 Utilities
 
+**Utilities pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NAMA, MAZOON, MUSCAT ELECTRICITY | Domestic 5% | Electricity |
 | OMANTEL, OOREDOO OMAN | Domestic 5% | Telecoms |
 | HAYA WATER | Domestic 5% | Water/wastewater |
 
 ### 3.4 SaaS and digital services
 
+**SaaS and digital services pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Reverse charge 5% | Non-resident digital |
 | AWS, ZOOM, SLACK, NOTION | Reverse charge 5% | Non-resident |
 | ANTHROPIC, OPENAI, GITHUB, FIGMA | Reverse charge 5% | Non-resident |
 
 ### 3.5 Payroll and transfers
 
+**Payroll and transfers pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SALARY, WAGES | EXCLUDE | Out of scope |
 | OWN TRANSFER, INTERNAL | EXCLUDE | Internal |
 | DIVIDEND | EXCLUDE | Out of scope |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -136,49 +138,32 @@ Domestic sale. Standard rate 5%. Output VAT = OMR 100.
 
 Motor vehicle < 9 seats for personal transport. Input VAT blocked.
 
----
-
 ## Section 5 -- Classification rules
 
 ### 5.1 Standard rate 5%
 
-Default rate for all taxable supplies. Legislation: Royal Decree 121/2020, Art. 41.
+- **Standard rate** — 5% (Default rate for all taxable supplies)  _(Royal Decree 121/2020, Art. 41)_
 
 ### 5.2 Zero-rated supplies (0%, input recoverable)
 
-- Exports of goods outside Oman
-- International transport
-- First supply of residential property (within 3 years)
-- Healthcare and education (licensed providers)
-- Specified basic foodstuffs
-- Oil and gas exploration/production
-- Financial services for explicit fees to non-residents
-- Supplies to designated free zones
-
-Legislation: Royal Decree 121/2020, Art. 42-46.
+- **Zero-rated supplies list** — Exports of goods outside Oman; International transport; First supply of residential property (within 3 years); Healthcare and education (licensed providers); Specified basic foodstuffs; Oil and gas exploration/production; Financial services for explicit fees to non-residents; Supplies to designated free zones  _(Royal Decree 121/2020, Art. 42-46)_
 
 ### 5.3 Exempt supplies
 
-- Financial services (margin-based)
-- Bare land
-- Local passenger transport
-- Residential rental
-- Life insurance
-
-Legislation: Royal Decree 121/2020, Art. 47-50.
+- **Exempt supplies list** — Financial services (margin-based); Bare land; Local passenger transport; Residential rental; Life insurance  _(Royal Decree 121/2020, Art. 47-50)_
 
 ### 5.4 GCC transitional rules
 
-Same framework as Bahrain. Qatar and Kuwait treated as non-GCC (non-implementing).
-
----
+- **GCC transitional rules** — Same framework as Bahrain. Qatar and Kuwait treated as non-GCC (non-implementing).
 
 ## Section 6 -- VAT return form structure
 
 ### Output section
 
+**Output section boxes**
+
 | Box | Description |
-|---|---|
+| --- | --- |
 | 1 | Standard rated supplies (5%) |
 | 2 | Zero-rated supplies |
 | 3 | Exempt supplies |
@@ -191,8 +176,10 @@ Same framework as Bahrain. Qatar and Kuwait treated as non-GCC (non-implementing
 
 ### Input section
 
+**Input section boxes**
+
 | Box | Description |
-|---|---|
+| --- | --- |
 | 10 | Input VAT on local purchases |
 | 11 | Input VAT on imports |
 | 12 | Input VAT on imported services (reverse charge) |
@@ -202,13 +189,13 @@ Same framework as Bahrain. Qatar and Kuwait treated as non-GCC (non-implementing
 
 ### Net calculation
 
+**Net calculation boxes**
+
 | Box | Description |
-|---|---|
+| --- | --- |
 | 16 | Net VAT (9 minus 15) |
 | 17 | Credit brought forward |
 | 18 | Net payable / (refundable) |
-
----
 
 ## Section 7 -- Reverse charge and imports
 
@@ -219,9 +206,7 @@ When a VAT-registered person receives services from a non-resident not registere
 
 Import of goods: VAT at 5% on CIF plus customs duty. Collected by Oman Customs. Recoverable if for taxable supplies.
 
-Legislation: Royal Decree 121/2020, Art. 36.
-
----
+- **Reverse charge and import legislation reference** — Reverse charge on non-resident services, self-assess output VAT at 5%, claim input VAT at 5%; import of goods VAT at 5% on CIF plus customs duty  _(Royal Decree 121/2020, Art. 36)_
 
 ## Section 8 -- Deductibility and blocked input
 
@@ -234,23 +219,23 @@ Blocked categories (Ministerial Decision No. 54/2021):
 
 Partial exemption: turnover-based apportionment, OTA approval required.
 
----
-
 ## Section 9 -- Filing, deadlines, and penalties
 
+**Filing obligations table**
+
 | Obligation | Deadline |
-|---|---|
+| --- | --- |
 | VAT return | Last day of month following period |
 | Payment | Same |
 
+**Penalties table**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | OMR 25 per day (max OMR 2,500) |
 | Late payment | 1% per month on unpaid amount |
 | Failure to register | OMR 5,000 |
 | Tax evasion | Fines and imprisonment |
-
----
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
@@ -307,14 +292,30 @@ REVIEWER FLAG / ESCALATION REQUIRED
 - NEVER compute numbers -- engine handles arithmetic
 - NEVER file without checking credit brought forward
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/oman-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `oman-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/oman-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

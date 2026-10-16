@@ -1,27 +1,24 @@
 ---
 name: spain-crypto-tax
-description: "> Use this skill whenever asked about Spain cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Spain\", \"Bitcoin Spain\", \"criptomonedas IRPF\", \"cryptocurrency gains Spain\", \"crypto income Spain\", \"staking Spain\", \"mining income Spain\", \"NFT tax Spain\", \"Modelo 721\", \"Modelo 100 crypto\", \"rentas del ahorro crypto\", \"base del ahorro\", \"AEAT crypto\", \"Binance Spain tax\", \"Coinbase Spain tax\", \"Revolut crypto Spain\", \"DeFi tax Spain\", \"Hacienda crypto\", \"declaración renta criptomonedas\", or any question about the income tax, capital gains, or VAT treatment of cryptocurrency, tokens, or digital assets for Spanish tax residents or Spain-source crypto income. Covers IRPF savings base taxation, Modelo 721 foreign crypto reporting, FIFO cost basis, Ley 11/2021 anti-fraud provisions, and DAC8 reporting. ALWAYS read this skill before touching any Spain crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Spain cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Spain\", \"Bitcoin Spain\", \"criptomonedas IRPF\", \"cryptocurrency gains Spain\", \"crypto income Spain\", \"staking Spain\", \"mining income Spain\", \"NFT tax Spain\", \"Modelo 721\", \"Modelo 100 crypto\", \"rentas del ahorro crypto\", \"base del ahorro\", \"AEAT crypto\", \"Binance Spain tax\", \"Coinbase Spain tax\", \"Revolut crypto Spain\", \"DeFi tax Spain\", \"Hacienda crypto\", \"declaración renta criptomonedas\", or any question about the income tax, capital gains, or VAT treatment of cryptocurrency, tokens, or digital assets for Spanish tax residents or Spain-source crypto income. Covers IRPF savings base taxation, Modelo 721 foreign crypto reporting, FIFO cost basis, Ley 11/2021 anti-fraud provisions, and DAC8 reporting. ALWAYS read this skill before touching any Spain crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: ES
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/spain-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/spain-crypto-tax"
+  jurisdiction: "ES"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Spain Crypto / Digital Assets Tax Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Spain Crypto Tax
 
 ## Section 1 — Quick Reference
 
+**Section 1 Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Spain (Reino de España) |
 | Tax | IRPF — Impuesto sobre la Renta de las Personas Físicas |
 | Currency | EUR (all values must be in EUR at transaction date) |
@@ -38,8 +35,10 @@ metadata:
 
 ### Crypto Classification Under IRPF
 
+**Crypto Classification Under IRPF**
+
 | Activity | IRPF Classification | Tax Base |
-|---|---|---|
+| --- | --- | --- |
 | Buying/selling crypto for fiat | Ganancia/pérdida patrimonial (capital gain/loss) | Base del ahorro (savings) |
 | Crypto-to-crypto swap (permuta) | Ganancia/pérdida patrimonial | Base del ahorro (savings) |
 | Staking / lending / yield farming rewards | Rendimiento del capital mobiliario | Base del ahorro (savings) |
@@ -50,15 +49,15 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether habitual trading or occasional | Treat as occasional (savings base) unless clear business indicators |
 | Unknown cost basis | STOP — cannot compute gain without acquisition cost |
 | Unknown whether foreign or Spanish exchange | Assume foreign — check Modelo 721 obligation |
 | Unknown residency status | STOP — affects worldwide vs source taxation |
 | Unknown whether staking reward or airdrop | Treat as staking reward (savings base — rendimiento del capital mobiliario) |
-
----
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -72,17 +71,11 @@ metadata:
 
 ### Refusal Catalogue
 
-**R-ESC-1 — Residency unknown.** "Spain taxes worldwide income of tax residents. Non-residents are only taxed on Spain-source income. Cannot proceed without confirming tax residency status."
-
-**R-ESC-2 — No transaction records.** "Crypto tax computations require detailed transaction records with dates, amounts, and counterparties. AEAT applies FIFO method across ALL exchanges — without complete records, gains cannot be calculated. Cannot proceed."
-
-**R-ESC-3 — Corporate crypto holdings.** "Companies holding crypto (Impuesto sobre Sociedades) have different accounting and tax treatment. This skill covers individuals (IRPF) only. Escalate to an asesor fiscal."
-
-**R-ESC-4 — Actividad económica classification disputes.** "Whether crypto activity constitutes a business (actividad económica) under Article 27 LIRPF has complex indicators including regularity, infrastructure, and intent. Escalate to a qualified professional."
-
-**R-ESC-5 — Cross-border DeFi/DAO structures.** "Complex DeFi arrangements involving multiple jurisdictions, DAOs, or governance tokens require specialist international tax advice. Escalate."
-
----
+- **R-ESC-1 — Residency unknown** — Spain taxes worldwide income of tax residents. Non-residents are only taxed on Spain-source income. Cannot proceed without confirming tax residency status.
+- **R-ESC-2 — No transaction records** — Crypto tax computations require detailed transaction records with dates, amounts, and counterparties. AEAT applies FIFO method across ALL exchanges — without complete records, gains cannot be calculated. Cannot proceed.
+- **R-ESC-3 — Corporate crypto holdings** — Companies holding crypto (Impuesto sobre Sociedades) have different accounting and tax treatment. This skill covers individuals (IRPF) only. Escalate to an asesor fiscal.
+- **R-ESC-4 — Actividad económica classification disputes** — Whether crypto activity constitutes a business (actividad económica) under Article 27 LIRPF has complex indicators including regularity, infrastructure, and intent. Escalate to a qualified professional.
+- **R-ESC-5 — Cross-border DeFi/DAO structures** — Complex DeFi arrangements involving multiple jurisdictions, DAOs, or governance tokens require specialist international tax advice. Escalate.
 
 ## Section 3 — Rate Tables
 
@@ -90,24 +83,26 @@ metadata:
 
 Crypto capital gains and investment income are taxed at progressive rates on the savings base. Rates updated by Ley 7/2024 effective 1 January 2025.
 
+**Savings Base rate table 2025**  _(Ley 7/2024, disposición final séptima, modifying Article 66 LIRPF. Confirmed by AEAT Manual de Renta 2025.)_
+
 | Taxable Savings Income | Rate | Cumulative Tax |
-|---|---|---|
+| --- | --- | --- |
 | First €6,000 | 19% | €1,140 |
 | €6,001 – €50,000 | 21% | €10,380 |
 | €50,001 – €200,000 | 23% | €44,880 |
 | €200,001 – €300,000 | 27% | €71,880 |
 | Over €300,000 | 30% | — |
 
-**Citation:** Ley 7/2024, disposición final séptima, modifying Article 66 LIRPF. Confirmed by AEAT Manual de Renta 2025.
-
-**Note:** The top rate was increased from 28% to 30% by Ley 7/2024 effective 1 January 2025. The combined rate includes both the state portion (cuota íntegra estatal) and the autonomous community portion (cuota íntegra autonómica).
+- **Top rate increase note** — The top rate was increased from 28% to 30% by Ley 7/2024 effective 1 January 2025. The combined rate includes both the state portion (cuota íntegra estatal) and the autonomous community portion (cuota íntegra autonómica).  _(Ley 7/2024, disposición final séptima, modifying Article 66 LIRPF)_
 
 ### 3.2 General Base (Base General) — Progressive Rates for 2025
 
 Applies to airdrops (not derived from a transfer), mining income if occasional, and habitual trading classified as actividad económica.
 
+**General Base progressive rates 2025**
+
 | Taxable General Income | Marginal Rate (approx. combined) |
-|---|---|
+| --- | --- |
 | Up to €12,450 | 19% |
 | €12,451 – €20,200 | 24% |
 | €20,201 – €35,200 | 30% |
@@ -115,124 +110,116 @@ Applies to airdrops (not derived from a transfer), mining income if occasional, 
 | €60,001 – €300,000 | 45% |
 | Over €300,000 | 47% |
 
-**Note:** Exact rates vary by autonomous community. Rates shown are approximate combined state + CCAA.
+Exact rates vary by autonomous community. Rates shown are approximate combined state + CCAA.
 
 ### 3.3 Wealth Tax (Impuesto sobre el Patrimonio)
 
-Crypto holdings count toward net wealth. National threshold: €700,000 exemption (plus €300,000 for primary residence). Rates from 0.2% to 3.5% depending on CCAA. Madrid and Andalusia effectively exempt via 99-100% bonification. Catalonia and Valencia apply full rates.
-
-**Impuesto Temporal de Solidaridad de Grandes Fortunas (ITSGF):** Net wealth > €3 million taxed at 1.7%–3.5% regardless of CCAA bonifications. Applies 2022–2024; check status for 2025.
-
----
+- **National exemption threshold** — €700,000 exemption (plus €300,000 for primary residence) EUR
+- **Wealth tax rates by CCAA** — 0.2% to 3.5% depending on CCAA. Madrid and Andalusia effectively exempt via 99-100% bonification. Catalonia and Valencia apply full rates.
+- **Impuesto Temporal de Solidaridad de Grandes Fortunas (ITSGF)** — Net wealth > €3 million taxed at 1.7%–3.5% regardless of CCAA bonifications. Applies 2022–2024; check status for 2025.
 
 ## Section 4 — Cost Basis Methods
 
 ### 4.1 FIFO — Mandatory
 
+**FIFO method status table**
+
 | Method | Status |
-|---|---|
+| --- | --- |
 | FIFO (First In, First Out) | **Mandatory** — required by AEAT per DGT consulta V1604-18 |
 | LIFO | NOT permitted |
 | Average cost | NOT permitted |
 | Specific identification | NOT permitted |
 
-**Critical rule:** FIFO must be applied **per type of homogeneous cryptocurrency** (e.g. all BTC, all ETH) and **consolidated across all exchanges and wallets**. You cannot apply FIFO per exchange — it must be a single global FIFO queue per coin.
+- **Critical rule — global FIFO per coin** — FIFO must be applied per type of homogeneous cryptocurrency (e.g. all BTC, all ETH) and consolidated across all exchanges and wallets. You cannot apply FIFO per exchange — it must be a single global FIFO queue per coin.
 
 ### 4.2 Cost Basis Components
 
-The acquisition cost (valor de adquisición) includes:
-- Purchase price in EUR (converted at exchange rate on acquisition date)
-- Exchange fees, commissions, and spreads paid on acquisition
-- Network/gas fees directly attributable to the acquisition
-
-The disposal value (valor de transmisión) includes:
-- Sale proceeds in EUR (or market value of asset received in a swap)
-- Less: exchange fees, commissions paid on disposal
+- **Acquisition cost (valor de adquisición)** — Includes: purchase price in EUR (converted at exchange rate on acquisition date); exchange fees, commissions, and spreads paid on acquisition; network/gas fees directly attributable to the acquisition.
+- **Disposal value (valor de transmisión)** — Includes: sale proceeds in EUR (or market value of asset received in a swap); less exchange fees, commissions paid on disposal.
 
 ### 4.3 Crypto-to-Crypto Swaps (Permutas)
 
-Every crypto-to-crypto swap is a **taxable event** (permuta under Article 37.1.h LIRPF). AEAT treats it as a simultaneous disposal of the outgoing crypto and acquisition of the incoming crypto.
-
-- Disposal value = market value of the crypto received at the time of the swap
-- Acquisition cost of new crypto = same market value (plus any fees)
-- Gain/loss = disposal value minus FIFO cost basis of the outgoing crypto
-
----
+- **Taxable event on swap** — Every crypto-to-crypto swap is a taxable event (permuta under Article 37.1.h LIRPF). AEAT treats it as a simultaneous disposal of the outgoing crypto and acquisition of the incoming crypto.  _(Article 37.1.h LIRPF)_
+- **Swap gain/loss formula** — Disposal value = market value of the crypto received at the time of the swap. Acquisition cost of new crypto = same market value (plus any fees). Gain/loss = disposal value minus FIFO cost basis of the outgoing crypto.  _(Article 37.1.h LIRPF)_
 
 ## Section 5 — DeFi, Staking, Mining, and Airdrop Treatment
 
 ### 5.1 Staking and Lending Rewards
 
+**Staking and Lending Rewards table**
+
 | Type | Treatment | Tax Base |
-|---|---|---|
+| --- | --- | --- |
 | Staking rewards (PoS validation) | Rendimiento del capital mobiliario | Base del ahorro — 19%–30% |
 | Lending interest (Aave, Compound, etc.) | Rendimiento del capital mobiliario | Base del ahorro — 19%–30% |
 | Yield farming rewards | Rendimiento del capital mobiliario | Base del ahorro — 19%–30% |
 | Liquidity mining tokens | Rendimiento del capital mobiliario (if passive) or ganancia patrimonial | Context-dependent |
 
-- Taxable at market value in EUR on receipt date
-- Cost basis of received tokens = market value at receipt (for future disposals)
+- **Taxable timing and cost basis** — Taxable at market value in EUR on receipt date. Cost basis of received tokens = market value at receipt (for future disposals).
 
 ### 5.2 Mining
 
+**Mining treatment table**
+
 | Scenario | Treatment | Tax Base |
-|---|---|---|
+| --- | --- | --- |
 | Occasional / hobby mining | Ganancia patrimonial no derivada de transmisión | Base general — progressive rates 19%–47% |
 | Habitual / commercial mining (actividad económica) | Rendimiento de actividades económicas | Base general — progressive rates, plus alta en Modelo 036, epígrafe IAE 831.9, and RETA registration |
 
-Indicators of actividad económica: regular mining operation, dedicated hardware, systematic approach, intent to generate ongoing income (per Article 27 LIRPF).
+- **Indicators of actividad económica** — Indicators of actividad económica: regular mining operation, dedicated hardware, systematic approach, intent to generate ongoing income (per Article 27 LIRPF).  _(Article 27 LIRPF)_
 
 ### 5.3 Airdrops
 
+**Airdrops table**
+
 | Type | Treatment |
-|---|---|
+| --- | --- |
 | Gratuitous airdrop (no action required) | Ganancia patrimonial no derivada de transmisión — base general at progressive rates |
 | Airdrop for service (sign-up, referral, task) | Ganancia patrimonial no derivada de transmisión — base general |
 
-- Taxable at market value on receipt
-- Cost basis for future disposal = market value at receipt
+- **Taxable timing and cost basis** — Taxable at market value on receipt. Cost basis for future disposal = market value at receipt.
 
 ### 5.4 Hard Forks
 
-No specific AEAT guidance. Conservative treatment:
-- Cost basis of original coin: unchanged
-- Cost basis of forked coin: €0
-- Subsequent disposal: full proceeds treated as gain
-
----
+- **Conservative treatment of hard forks** — No specific AEAT guidance. Conservative treatment: Cost basis of original coin: unchanged. Cost basis of forked coin: €0. Subsequent disposal: full proceeds treated as gain.
 
 ## Section 6 — NFT Treatment
 
 NFTs are treated as crypto-assets under Spanish tax law. No separate regime exists.
 
+**NFT Treatment table**
+
 | Activity | Treatment |
-|---|---|
+| --- | --- |
 | Purchase of NFT with crypto | Disposal of crypto (taxable event) + acquisition of NFT |
 | Sale of NFT for fiat | Capital gain/loss on savings base |
 | Sale of NFT for crypto | Permuta — taxable at market value |
 | Creation and sale of NFT (artist) | Actividad económica if habitual — base general |
 | NFT royalties | Rendimiento del capital mobiliario or actividad económica depending on regularity |
 
-FIFO applies if you hold multiple identical NFTs (e.g. editions from the same collection).
-
----
+- **FIFO applies to identical NFTs** — FIFO applies if you hold multiple identical NFTs (e.g. editions from the same collection).
 
 ## Section 7 — Reporting Requirements
 
 ### 7.1 Modelo 100 — Annual IRPF Return
 
+**Modelo 100 table**
+
 | Section | Content |
-|---|---|
+| --- | --- |
 | Casillas 1800–1814 | Ganancias y pérdidas patrimoniales por transmisión de monedas virtuales — detail each transaction: acquisition date, disposal date, acquisition value, disposal value |
 | Casilla 0031 | Rendimientos del capital mobiliario (staking, lending rewards) |
 | Casilla 0304/0305 | Pérdidas patrimoniales to offset (if applicable) |
 
-**Filing:** 1 April – 30 June of the following year via Renta WEB.
+- **Filing** — Filing: 1 April – 30 June of the following year via Renta WEB.
 
 ### 7.2 Modelo 721 — Foreign Crypto Declaration
 
+**Modelo 721 table**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Obligation | Mandatory when the aggregate value of crypto held on foreign exchanges/custodians exceeds €50,000 as of 31 December |
 | Who must file | Spanish tax residents (individuals and entities) |
 | Deadline | 1 January – 31 March of the following year |
@@ -242,28 +229,26 @@ FIFO applies if you hold multiple identical NFTs (e.g. editions from the same co
 
 ### 7.3 Modelos 172 and 173 — Exchange Reporting
 
-Since 2024, Spanish-registered crypto exchanges (Bit2Me, Bitnovo, Criptan, etc.) must file:
-- **Modelo 172:** Annual report of client crypto balances
-- **Modelo 173:** Annual report of client crypto operations
-
-This means AEAT has independent data to cross-reference against your Modelo 100.
+- **Exchange reporting since 2024** — Since 2024, Spanish-registered crypto exchanges (Bit2Me, Bitnovo, Criptan, etc.) must file: Modelo 172: Annual report of client crypto balances. Modelo 173: Annual report of client crypto operations. This means AEAT has independent data to cross-reference against your Modelo 100.
 
 ### 7.4 Record-Keeping
 
+**Record-Keeping table**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 4 years from end of relevant tax year (general prescription period under Article 66 LGT) |
 | Records to maintain | Full transaction logs from all exchanges, wallet addresses, global FIFO ledger per coin, staking/mining logs, Modelo 721 copies |
 | Burden of proof | On the taxpayer — AEAT can request supporting documentation in an inspection |
-
----
 
 ## Section 8 — Loss Offset and Carry-Forward
 
 ### 8.1 Savings Base Losses
 
+**Savings Base Losses table**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Same-year offset | Pérdidas patrimoniales on the savings base can offset ganancias patrimoniales on the savings base |
 | Cross-category offset (same base) | Up to 25% of rendimientos del capital mobiliario can be offset by capital losses (and vice versa) |
 | Carry-forward | Uncompensated losses carry forward for **4 years** |
@@ -271,37 +256,29 @@ This means AEAT has independent data to cross-reference against your Modelo 100.
 
 ### 8.2 General Base Losses
 
+**General Base Losses table**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Same-year offset | Losses on the general base can offset general base income |
 | Carry-forward | 4 years |
 
 ### 8.3 Anti-Abuse Rule (Norma Antirecompra) — Article 33.5.f LIRPF
 
-Spain has a re-acquisition rule similar to (but distinct from) the US wash sale rule:
-
-- If you sell a crypto asset **at a loss** and reacquire **the same asset** (homogeneous) within **2 months** (before or after the sale), the loss is **suspended** — it cannot be recognised until the replacement asset is itself disposed of outside the 2-month window.
-- For assets traded on a regulated market, the period extends to **1 year** (before or after). Most crypto is NOT on a regulated market, so the 2-month rule applies.
-- The suspended loss is **not lost** — it is added to the cost basis of the replacement asset.
-- **Citation:** Article 33.5.f Ley 35/2006 LIRPF; DGT consulta V1604-18.
-
----
+- **Re-acquisition rule (2 months)** — Spain has a re-acquisition rule similar to (but distinct from) the US wash sale rule: If you sell a crypto asset at a loss and reacquire the same asset (homogeneous) within 2 months (before or after the sale), the loss is suspended — it cannot be recognised until the replacement asset is itself disposed of outside the 2-month window. For assets traded on a regulated market, the period extends to 1 year (before or after). Most crypto is NOT on a regulated market, so the 2-month rule applies. The suspended loss is not lost — it is added to the cost basis of the replacement asset.  _(Article 33.5.f Ley 35/2006 LIRPF; DGT consulta V1604-18)_
 
 ## Section 9 — Anti-Avoidance Rules
 
 ### 9.1 General Anti-Abuse Provision (Norma General Antielusión)
 
-Article 15 of the Ley General Tributaria (LGT) empowers AEAT to disregard arrangements that are:
-- Wholly or partly artificial
-- Entered into with the main purpose of obtaining a tax advantage
-- Contrary to the spirit of the legislation
-
-AEAT can recharacterise transactions to reflect their economic substance.
+- **Article 15 LGT general anti-abuse** — Article 15 of the Ley General Tributaria (LGT) empowers AEAT to disregard arrangements that are: wholly or partly artificial; entered into with the main purpose of obtaining a tax advantage; contrary to the spirit of the legislation. AEAT can recharacterise transactions to reflect their economic substance.  _(Article 15 LGT)_
 
 ### 9.2 Specific Crypto Anti-Avoidance
 
+**Specific Crypto Anti-Avoidance table**
+
 | Measure | Detail |
-|---|---|
+| --- | --- |
 | Modelo 721 (foreign holdings) | Failure to declare → €5,000 per datum penalty; unjustified capital gains may be imputed |
 | Modelos 172/173 (exchange data) | AEAT receives automatic data from Spanish exchanges since 2024 |
 | DAC8 / CARF (from 2026) | Cross-border automatic exchange of crypto data from EU and partner jurisdictions |
@@ -310,13 +287,13 @@ AEAT can recharacterise transactions to reflect their economic substance.
 
 ### 9.3 Penalties for Non-Compliance
 
+**Penalties table**
+
 | Violation | Penalty Range |
-|---|---|
+| --- | --- |
 | Failure to file Modelo 100 with crypto | 50%–150% of unpaid tax (sanción grave/muy grave) |
 | Failure to file Modelo 721 | €5,000 per datum omitted (minimum €10,000) |
 | Late filing | Recargo (surcharge) 1%–20% depending on delay, plus interest |
-
----
 
 ## Section 10 — Worked Examples
 
@@ -370,8 +347,6 @@ cost basis and will be recognised when the replacement BTC
 is disposed of (outside the 2-month window).
 ```
 
----
-
 ## Self-Checks
 
 Before delivering any Spain crypto tax computation, verify:
@@ -387,8 +362,6 @@ Before delivering any Spain crypto tax computation, verify:
 - [ ] Wealth tax exposure checked (especially for Catalonia/Valencia residents)
 - [ ] Output labelled as estimated — flag for professional review
 
----
-
 ## PROHIBITIONS
 
 - NEVER use the old top savings rate of 28% — it is 30% from 2025 per Ley 7/2024
@@ -401,14 +374,30 @@ Before delivering any Spain crypto tax computation, verify:
 - NEVER advise on CNMV regulatory matters — this skill covers tax only
 - NEVER compute gains without verified cost basis and complete FIFO records
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal, economista colegiado, or abogado tributarista in Spain) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/spain-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `spain-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/spain-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

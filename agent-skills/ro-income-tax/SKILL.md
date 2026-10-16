@@ -1,27 +1,28 @@
 ---
 name: ro-income-tax
-description: "> Use this skill whenever asked about Romanian income tax for self-employed individuals (PFA). Trigger on phrases like \"how much tax do I pay\", \"Declarația Unică\", \"PFA tax\", \"norma de venit\", \"impozit pe venit\", \"CAS\", \"CASS\", \"self-employed tax Romania\", or any question about filing or computing income tax for a self-employed or freelance client in Romania. ALWAYS read this skill before touching any Romanian income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Romanian income tax for self-employed individuals (PFA). Trigger on phrases like \"how much tax do I pay\", \"Declarația Unică\", \"PFA tax\", \"norma de venit\", \"impozit pe venit\", \"CAS\", \"CASS\", \"self-employed tax Romania\", or any question about filing or computing income tax for a self-employed or freelance client in Romania. ALWAYS read this skill before touching any Romanian income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: RO
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ro-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/ro-income-tax"
+  jurisdiction: "RO"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Romania Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
+# RO Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Romania Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything.**
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Romania (România) |
 | Tax type | Impozit pe venit (income tax on independent activities) |
 | Primary legislation | Codul Fiscal (Legea 227/2015), Titlul IV |
@@ -38,61 +39,54 @@ metadata:
 | Validated by | Pending -- requires Romanian expert contabil or consultant fiscal sign-off |
 | Validation date | Pending |
 
-**Income determination methods:**
+**Income determination methods**
 
 | Method | Tax base | Bookkeeping |
-|---|---|---|
+| --- | --- | --- |
 | Sistem real | Revenue - documented expenses | Full daňová evidence required |
 | Norma de venit | Fixed deemed amount by CAEN/county | Revenue records only |
 
-**CAS/CASS threshold tiers (2025):**
+**CAS/CASS threshold tiers (2025)**
 
 | Threshold | CAS (25%) | CASS (10%) |
-|---|---|---|
+| --- | --- | --- |
 | Below 6x min wage (RON 24,300) | Optional | Mandatory minimum RON 2,430 |
 | 6x--12x (RON 24,300--48,600) | Optional | RON 2,430 |
 | 12x--24x (RON 48,600--97,200) | RON 12,150 | RON 4,860 |
 | Above 24x (RON 97,200+) | RON 24,300 | RON 9,720 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown entity type | STOP -- PFA vs SRL changes everything |
 | Unknown income method | STOP -- sistem real vs norma |
 | Unknown expense category | Not deductible |
 | Unknown CAEN code for norma | STOP -- norma varies by code and county |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the tax year. Acceptable from: BCR (Banca Comercială Română), BRD (Groupe Société Générale), Banca Transilvania, ING Romania, Raiffeisen Romania, CEC Bank, or fintech (Revolut, Wise).
-
-**Recommended** -- invoices, CAEN code, county (județ), chosen income method, prior year Declarația Unică.
-
-**Ideal** -- complete bookkeeping, norma de venit published amount, CAS/CASS payment statements.
+- **Minimum viable** — Bank statement for the tax year. Acceptable from: BCR (Banca Comercială Română), BRD (Groupe Société Générale), Banca Transilvania, ING Romania, Raiffeisen Romania, CEC Bank, or fintech (Revolut, Wise).
+- **Recommended** — Invoices, CAEN code, county (județ), chosen income method, prior year Declarația Unică.
+- **Ideal** — Complete bookkeeping, norma de venit published amount, CAS/CASS payment statements.
 
 ### Refusal catalogue
 
-**R-RO-1 -- SRL.** *Trigger:* client is a limited company. *Message:* "This skill covers PFA/II/IF only. SRL files corporate income tax (impozit pe profit) or micro-enterprise tax. Please use a separate skill."
-
-**R-RO-2 -- International income.** *Trigger:* significant foreign income. *Message:* "International income is outside scope. Consult a consultant fiscal."
-
-**R-RO-3 -- Crypto.** *Trigger:* crypto trading income. *Message:* "Crypto taxation is outside scope."
-
-**R-RO-4 -- Income method unknown.** *Trigger:* not confirmed. *Message:* "I cannot compute without knowing: sistem real or norma de venit?"
-
----
+- **R-RO-1 -- SRL** — This skill covers PFA/II/IF only. SRL files corporate income tax (impozit pe profit) or micro-enterprise tax. Please use a separate skill. (Trigger: client is a limited company.)  _(R-RO-1)_
+- **R-RO-2 -- International income** — International income is outside scope. Consult a consultant fiscal. (Trigger: significant foreign income.)  _(R-RO-2)_
+- **R-RO-3 -- Crypto** — Crypto taxation is outside scope. (Trigger: crypto trading income.)  _(R-RO-3)_
+- **R-RO-4 -- Income method unknown** — I cannot compute without knowing: sistem real or norma de venit? (Trigger: not confirmed.)  _(R-RO-4)_
 
 ## Section 3 -- Transaction pattern library (the lookup table)
 
 ### 3.1 Romanian banks (fees and interest)
 
+**Romanian banks (fees and interest)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BCR, BANCA COMERCIALĂ ROMÂNĂ | Bank charges: deductible (sistem real) | Monthly fees |
 | BRD, GROUPE SOCIÉTÉ GÉNÉRALE | Bank charges: deductible | Same |
 | BANCA TRANSILVANIA, BT | Bank charges: deductible | Same |
@@ -106,8 +100,10 @@ metadata:
 
 ### 3.2 Romanian government and statutory bodies
 
+**Romanian government and statutory bodies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ANAF | EXCLUDE | Tax payment |
 | IMPOZIT PE VENIT | EXCLUDE | Income tax payment |
 | CAS, CASA NAȚIONALĂ DE PENSII | Deductible from gross income (sistem real) | Pension contribution |
@@ -116,8 +112,10 @@ metadata:
 
 ### 3.3 Romanian utilities and telecoms
 
+**Romanian utilities and telecoms**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ENEL, E-DISTRIBUȚIE, ELECTRICA | Deductible if business premises | Electricity; apportion if home |
 | ENGIE, E.ON ENERGIE | Deductible if business premises | Gas |
 | ORANGE RO, VODAFONE RO, DIGI, RCS & RDS | Deductible: business phone/internet | Mixed: apportion |
@@ -125,23 +123,29 @@ metadata:
 
 ### 3.4 Insurance
 
+**Insurance**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALLIANZ-ȚIRIAC, EUROINS, GROUPAMA, OMNIASIG | Deductible if business insurance | Personal: NOT deductible |
 | ASIGURARE AUTO (RCA/CASCO) | Deductible: business vehicle portion | Personal vehicle: NOT deductible |
 
 ### 3.5 SaaS and software -- international
 
+**SaaS and software -- international**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Deductible expense | EU reverse charge TVA |
 | GITHUB, OPENAI, ANTHROPIC | Deductible expense | Non-EU |
 | SLACK, ZOOM, ATLASSIAN | Deductible expense | Check entity |
 
 ### 3.6 Professional services (Romania)
 
+**Professional services (Romania)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CONTABIL, CONTABILITATE, EXPERT CONTABIL | Deductible | Accounting fees |
 | AVOCAT, CABINET AVOCAT | Deductible if business | Legal fees |
 | NOTAR, BIROU NOTARIAL | Deductible if business | Notary fees |
@@ -149,8 +153,10 @@ metadata:
 
 ### 3.7 Transport and travel
 
+**Transport and travel**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CFR CĂLĂTORI | Deductible if business | Train |
 | TAROM, WIZZAIR, RYANAIR | Deductible if business travel | Flights |
 | UBER, BOLT | Deductible if business | Ride services |
@@ -158,20 +164,22 @@ metadata:
 
 ### 3.8 Food and entertainment
 
+**Food and entertainment**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KAUFLAND, LIDL, CARREFOUR, MEGA IMAGE, AUCHAN | Default: NOT deductible | Personal provisioning |
 | RESTAURANT, PENSIUNE | Protocol expenses: limited to 2% of adjusted gross income | Must document business purpose |
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TRANSFER PROPRIU, OWN TRANSFER | EXCLUDE | Internal |
 | NUMERAR, ATM | EXCLUDE (default: drawings) | Ask client |
 | DEPUNERE | EXCLUDE | Owner deposit |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -195,58 +203,63 @@ metadata:
 **Input:** Registered July 2025 (6 months), net income RON 30,000.
 **Computation:** Tax = RON 3,000. CAS prorated: 6/12 x RON 48,600 = RON 24,300 threshold. RON 30,000 > RON 24,300, so CAS = 25% x RON 24,300 = RON 6,075. CASS prorated similarly = RON 1,215. Total = RON 10,290.
 
----
-
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 Income tax rate
-Flat 10% on net income from independent activities. No progressive bands. **Legislation:** Codul Fiscal, Art. 68-69.
+
+- **Income tax rate** — 10% percent (Flat on net income from independent activities. No progressive bands.)  _(Codul Fiscal, Art. 68-69)_
 
 ### 5.2 Sistem real
-Net income = gross revenue - deductible expenses. CAS/CASS paid are deductible. Expenses must be documented and incurred for business purpose. Protocol/entertainment limited to 2% of adjusted gross income. **Legislation:** Art. 68.
+
+- **Sistem real** — Net income = gross revenue - deductible expenses. CAS/CASS paid are deductible. Expenses must be documented and incurred for business purpose. Protocol/entertainment limited to 2% of adjusted gross income.  _(Art. 68)_
 
 ### 5.3 Norma de venit
-Fixed deemed income by CAEN code and county. Published by ANAF by 15 February. Tax = 10% x norma. Actual revenue/expenses irrelevant. Available only for specific CAEN codes. **Legislation:** Art. 69.
+
+- **Norma de venit** — Fixed deemed income by CAEN code and county. Published by ANAF by 15 February. Tax = 10% x norma. Actual revenue/expenses irrelevant. Available only for specific CAEN codes.  _(Art. 69)_
 
 ### 5.4 CAS thresholds
-Fixed amounts based on tier brackets, NOT percentage of actual income. Below RON 48,600: optional. RON 48,600--97,200: RON 12,150. Above RON 97,200: RON 24,300. **Legislation:** Art. 148-154.
+
+- **CAS thresholds** — Fixed amounts based on tier brackets, NOT percentage of actual income. Below RON 48,600: optional. RON 48,600--97,200: RON 12,150. Above RON 97,200: RON 24,300.  _(Art. 148-154)_
 
 ### 5.5 CASS thresholds
-Mandatory even if income is zero. Minimum RON 2,430. Tiers at RON 24,300/48,600/97,200. **Legislation:** Art. 170-174.
+
+- **CASS thresholds** — Mandatory even if income is zero. Minimum RON 2,430. Tiers at RON 24,300/48,600/97,200.  _(Art. 170-174)_
 
 ### 5.6 Part-year proration
-CAS/CASS thresholds prorated by months of registration. **Legislation:** Codul Fiscal.
+
+- **Part-year proration** — CAS/CASS thresholds prorated by months of registration.  _(Codul Fiscal)_
 
 ### 5.7 Record keeping
-Sistem real: full accounting records. Norma: revenue records only. Retention: 5 years. **Legislation:** Codul de Procedură Fiscală.
 
----
+- **Record keeping** — Sistem real: full accounting records. Norma: revenue records only. Retention: 5 years.  _(Codul de Procedură Fiscală)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### 6.1 Norma vs sistem real comparison
-*Why:* Depends on actual profit vs deemed amount. *Default:* Present both. *Question:* "What is the published norma for your CAEN code and county?"
+
+- **Norma vs sistem real comparison** — *Why:* Depends on actual profit vs deemed amount. *Default:* Present both. *Question:* "What is the published norma for your CAEN code and county?"
 
 ### 6.2 SRL micro vs PFA comparison
-*Why:* Total cost differs significantly including dividend extraction tax. Threshold drops to EUR 100,000 in 2026. *Default:* Flag for reviewer. *Question:* "Are you considering SRL structure? Revenue level?"
+
+- **SRL micro vs PFA comparison** — *Why:* Total cost differs significantly including dividend extraction tax. Threshold drops to EUR 100,000 in 2026. *Default:* Flag for reviewer. *Question:* "Are you considering SRL structure? Revenue level?"
 
 ### 6.3 Multiple CAEN codes
-*Why:* Norma applies only to qualifying activities; others must use sistem real. *Default:* Flag for reviewer. *Question:* "Do you have multiple CAEN codes? Which have published norma?"
+
+- **Multiple CAEN codes** — *Why:* Norma applies only to qualifying activities; others must use sistem real. *Default:* Flag for reviewer. *Question:* "Do you have multiple CAEN codes? Which have published norma?"
 
 ### 6.4 Minimum wage increase impact
-*Why:* CAS/CASS thresholds tied to minimum wage. *Default:* Use RON 4,050 (2025). *Question:* "Confirm current minimum wage if mid-year change occurred."
 
----
+- **Minimum wage increase impact** — *Why:* CAS/CASS thresholds tied to minimum wage. *Default:* Use RON 4,050 (2025). *Question:* "Confirm current minimum wage if mid-year change occurred."
 
 ## Section 7 -- Excel working paper template
 
 ### Sheet "Transactions"
+
 Columns: Date, Counterparty, Description, Amount (RON), Category (Revenue/Expense/CAS/CASS/EXCLUDE), Deductible amount, Default?, Question, Notes.
 
 ### Sheet "Tax Computation"
-Branches by method: sistem real or norma de venit. Includes CAS/CASS tier determination.
 
----
+Branches by method: sistem real or norma de venit. Includes CAS/CASS tier determination.
 
 ## Section 8 -- Bank statement reading guide
 
@@ -260,29 +273,31 @@ Branches by method: sistem real or norma de venit. Includes CAS/CASS tier determ
 
 **Foreign currency.** Convert to RON at BNR (National Bank) rate on transaction date.
 
----
-
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Entity type
-*Inference:* PFA from bank account name. *Fallback:* "Are you a PFA, II, IF, or SRL?"
+
+- **Entity type** — *Inference:* PFA from bank account name. *Fallback:* "Are you a PFA, II, IF, or SRL?"
 
 ### 9.2 Income method
-*Inference:* Not inferable. Always ask. *Fallback:* "Sistem real or norma de venit?"
+
+- **Income method** — *Inference:* Not inferable. Always ask. *Fallback:* "Sistem real or norma de venit?"
 
 ### 9.3 CAEN code
-*Inference:* From counterparty mix. *Fallback:* "What is your CAEN activity code?"
+
+- **CAEN code** — *Inference:* From counterparty mix. *Fallback:* "What is your CAEN activity code?"
 
 ### 9.4 County (județ)
-*Inference:* From bank branch or address. *Fallback:* "Which county (județ) are you registered in? (Affects norma de venit.)"
+
+- **County (județ)** — *Inference:* From bank branch or address. *Fallback:* "Which county (județ) are you registered in? (Affects norma de venit.)"
 
 ### 9.5 VAT status
-*Inference:* TVA payments in statement. *Fallback:* "Are you TVA registered?"
+
+- **VAT status** — *Inference:* TVA payments in statement. *Fallback:* "Are you TVA registered?"
 
 ### 9.6 Other income
-*Inference:* Salary credits. *Fallback:* "Do you have employment income? (Affects CAS/CASS.)"
 
----
+- **Other income** — *Inference:* Salary credits. *Fallback:* "Do you have employment income? (Affects CAS/CASS.)"
 
 ## Section 10 -- Reference material
 
@@ -333,6 +348,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ro-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ro-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ro-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

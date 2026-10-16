@@ -1,31 +1,54 @@
 ---
 name: ca-fed-t2125
-description: "> Use this skill whenever asked about Canadian self-employment business income reported on Form T2125 (Statement of Business or Professional Activities). Trigger on phrases like \"T2125\", \"business income Canada\", \"self-employed expenses\", \"CCA\", \"capital cost allowance\", \"home office Canada\", \"motor vehicle expenses CRA\", \"business-use-of-home\", \"sole proprietor Canada\", \"net business income\", \"business number BN\", \"fiscal year end\", \"GST ITC\", or any question about computing, classifying, or reporting business income and expenses for a Canadian sole proprietor. Covers Parts 1-8 of T2125, allowable expenses, CCA classes and rates, AccII, business-use-of-home, motor vehicle expenses, GST/HST interaction, and net income computation. ALWAYS read this skill before touching any T2125 work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Canadian self-employment business income reported on Form T2125 (Statement of Business or Professional Activities). Trigger on phrases like \"T2125\", \"business income Canada\", \"self-employed expenses\", \"CCA\", \"capital cost allowance\", \"home office Canada\", \"motor vehicle expenses CRA\", \"business-use-of-home\", \"sole proprietor Canada\", \"net business income\", \"business number BN\", \"fiscal year end\", \"GST ITC\", or any question about computing, classifying, or reporting business income and expenses for a Canadian sole proprietor. Covers Parts 1-8 of T2125, allowable expenses, CCA classes and rates, AccII, business-use-of-home, motor vehicle expenses, GST/HST interaction, and net income computation. ALWAYS read this skill before touching any T2125 work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ca-fed-t2125"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/ca-fed-t2125"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Edgar Lautsyus"
+  review_status: "current"
 ---
 
-# Canada Self-Employment (T2125) -- Sole Proprietor Skill v2.0
+# CA Fed T2125
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Canada Self-Employment (T2125) -- Sole Proprietor Skill v2.0
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by Nathan Wiebe on 2026-06-21. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### T2125 (Business)
+
+- **GST/HST registration threshold** — $30,000 in any single calendar quarter or over 4 consecutive quarters — measured on worldwide taxable supplies (before expenses) of the person AND associated persons; excludes capital property, financial services, and goodwill on the sale of a business  _(ETA s.148; CRA — Small supplier — canada.ca)_
+- **CCA deduction** — Discretionary — claim any amount from $0 up to the class maximum (never mandatory); unclaimed CCA stays in UCC for later years; watch recapture / terminal loss on disposition  _(ITA s.20(1)(a); ITR Schedule II)_
+- **Business-use-of-home** — Principal place of business OR used exclusively to earn business income AND on a regular and continuous basis for meeting clients, customers or patients  _(ITA s.18(12))_
+- **Meals deduction** — 50% deductible only  _(ITA s.67.1)_
+- **Vehicle expense — business-use %** — Claim only the business-use portion supported by records; CRA requires a logbook of business vs total kilometres (a full logbook year can support the sample-year method)  _(ITA s.18(1)(r); ITR 7307; CRA — Motor vehicle expenses — canada.ca)_
+- **Fiscal year-end (sole props)** — Generally December 31; an eligible individual may elect a non-calendar fiscal period using Form T1139 (alternative method)  _(ITA s.249.1)_
+- **Line 8299** — Gross business revenue  _(CRA — T2125 guide (T4002) — canada.ca)_
+- **Stripe/PayPal fees** — Line 8710 (bank charges) — report gross revenue on 8299  _(CRA — T4002 guide; ITA s.9)_
+- **Line 8910** — Rent (business premises)  _(CRA — T4002 guide — canada.ca)_
+- **Line 8220** — No line 8220 on Form T2125 — telephone and utilities are both claimed on line 9220  _(CRA — T4002 guide — canada.ca)_
+- **Line 8860** — Professional fees (accounting, legal)  _(CRA — T4002 guide — canada.ca)_
+- **Line 8710** — Interest and bank charges  _(CRA — T4002 guide — canada.ca)_
+- **Line 8523** — Meals and entertainment (50%)  _(CRA — T4002 guide; ITA s.67.1)_
+- **Line 8690** — Insurance  _(CRA — T4002 guide — canada.ca)_
+- **Line 8810** — Office expenses  _(CRA — T4002 guide — canada.ca)_
+- **Line 9281** — Motor vehicle — total of expenses × business %  _(CRA Form T2125 — canada.ca; CRA T4002 guide)_
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada -- Federal |
 | Tax | Federal income tax on business income + CPP self-employed contributions |
 | Currency | CAD only |
-| Tax year | Calendar year (sole proprietors must use December 31 fiscal year-end) |
+| Tax year | Calendar year (generally December 31; eligible individuals may elect a non-calendar fiscal period via Form T1139) |
 | Primary legislation | Income Tax Act (ITA), R.S.C. 1985, c. 1 (5th Supp.) |
 | Supporting legislation | Income Tax Regulations (ITR); Excise Tax Act (ETA) for GST/HST; CRA Guide T4002 |
 | Tax authority | Canada Revenue Agency (CRA) |
@@ -33,33 +56,39 @@ metadata:
 | Filing deadline | 15 June (self-employed), but tax owing due 30 April |
 | Form | T2125 -- Statement of Business or Professional Activities |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- Canadian CPA sign-off required |
+| Validated by | Verified by Nathan Wiebe on 2026-06-21 |
 | Skill version | 2.0 |
 
 ### Federal Tax Brackets (2025) [T1]
 
+**Federal Tax Brackets (2025)**
+
 | Taxable Income (CAD) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 57,375 | 15% |
 | 57,376 -- 114,750 | 20.5% |
 | 114,751 -- 158,468 | 26% |
 | 158,469 -- 220,000 | 29% |
 | 220,001+ | 33% |
 
-**Provincial tax is additional.** Each province has its own brackets. This skill covers federal only. Combined marginal rates range from ~20% to ~54% depending on province.
+Provincial tax is additional. Each province has its own brackets. This skill covers federal only. Combined marginal rates range from ~20% to ~54% depending on province.
 
 ### Basic Personal Amount (2025) [T1]
 
+**Basic Personal Amount (2025)**
+
 | Item | Amount (CAD) |
-|---|---|
+| --- | --- |
 | Basic personal amount (income under ~$177,882) | $16,129 |
 | Basic personal amount (income over ~$253,414) | $14,538 |
 | BPA clawback zone | Linear reduction between thresholds |
 
 ### CPP Self-Employed Contributions (2025) [T1]
 
+**CPP Self-Employed Contributions (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | CPP rate (self-employed pay both portions) | 11.9% (2 x 5.95%) |
 | CPP2 rate | 8% (2 x 4%) on earnings between first and second ceilings |
 | First earnings ceiling | $71,300 |
@@ -72,56 +101,54 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 
 ### Key T2125 Thresholds [T1]
 
+**Key T2125 Thresholds**
+
 | Item | Value |
-|---|---|
-| GST/HST registration required | Over $30,000 in 4 consecutive quarters |
-| CCA deduction | Optional -- can claim any amount up to the maximum |
+| --- | --- |
+| GST/HST registration required | Over $30,000 in a single calendar quarter or over 4 consecutive quarters (person + associated persons) |
+| CCA deduction | Discretionary -- any amount from $0 to the class maximum; unclaimed CCA stays in UCC |
 | Instant asset write-off (CEBA) | See AccII rules -- enhanced first-year deduction |
 | Business-use-of-home | Only if principal place of business OR used exclusively for income-earning and meeting clients |
 
 ### Conservative Defaults [T1]
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
-| Unknown business-use % (vehicle, home, phone) | 0% deduction |
+| --- | --- |
+| Unknown business-use % (vehicle, home, phone) | No claim without reasonable supporting records -- ask for the log |
 | Unknown expense category | Not deductible |
 | Unknown CCA class | Do not depreciate -- ask |
 | Unknown GST/HST status | Not registered (gross amounts are the cost) |
 | Unknown whether expense is business or personal | Personal (not deductible) |
-| Unknown vehicle km split | 0% business |
-
----
+| Unknown vehicle km split | No claim without a km log -- request it |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- bank statement for the full calendar year (January-December), confirmation of business activity and NAICS code.
+Minimum viable -- bank statement for the full calendar year (January-December), confirmation of business activity and NAICS code.
 
-**Recommended** -- all invoices issued, purchase receipts, vehicle km log, home office measurements, GST/HST returns filed, prior year T2125.
+Recommended -- all invoices issued, purchase receipts, vehicle km log, home office measurements, GST/HST returns filed, prior year T2125.
 
-**Ideal** -- complete bookkeeping records, CCA schedule from prior year, motor vehicle log, T4 slips (if also employed), prior year Notice of Assessment.
+Ideal -- complete bookkeeping records, CCA schedule from prior year, motor vehicle log, T4 slips (if also employed), prior year Notice of Assessment.
 
 ### Refusal Catalogue
 
-**R-CA-1 -- Corporations.** "Corporations file T2 corporate tax returns. This skill covers sole proprietors filing T2125 only."
-
-**R-CA-2 -- Partnerships.** "Partnerships file T2125 at the partnership level with allocation to partners. Partnership-specific rules are out of scope."
-
-**R-CA-3 -- Non-residents.** "Non-resident business income has different rules. Out of scope."
-
-**R-CA-4 -- SR&ED claims.** "Scientific Research and Experimental Development tax credits require specialised review. Escalate."
-
-**R-CA-5 -- Farming/fishing income.** "Farming (T2042) and fishing (T2121) have their own forms and special rules. Out of scope."
-
----
+- **R-CA-1 -- Corporations** — Corporations file T2 corporate tax returns. This skill covers sole proprietors filing T2125 only.
+- **R-CA-2 -- Partnerships** — Partnerships file T2125 at the partnership level with allocation to partners. Partnership-specific rules are out of scope.
+- **R-CA-3 -- Non-residents** — Non-resident business income has different rules. Out of scope.
+- **R-CA-4 -- SR&ED claims** — Scientific Research and Experimental Development tax credits require specialised review. Escalate.
+- **R-CA-5 -- Farming/fishing income** — Farming (T2042) and fishing (T2121) have their own forms and special rules. Out of scope.
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Income Patterns (Credits on Bank Statement)
 
+**Income Patterns (Credits on Bank Statement)**
+
 | Pattern | T2125 Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CLIENT DEPOSIT, CLIENT PAYMENT, [client name] | Line 8299 (Gross revenue) | Business income | Core revenue |
 | STRIPE PAYOUT, STRIPE TRANSFER | Line 8299 | Business income | Match to underlying invoices. Report gross (before Stripe fees). |
 | PAYPAL TRANSFER, PAYPAL PAYOUT | Line 8299 | Business income | Same -- report gross before fees |
@@ -136,13 +163,15 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 
 ### 3.2 Expense Patterns (Debits on Bank Statement)
 
+**Expense Patterns (Debits on Bank Statement)**
+
 | Pattern | T2125 Line | Tier | Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RENT, OFFICE RENT, COMMERCIAL LEASE | Line 8910 (Rent) | T1 | Fully deductible if business premises |
 | PROPERTY TAX (business premises) | Line 8810 (Property taxes) | T1 | Fully deductible for business property |
-| HYDRO, ELECTRICITY, GAS, ENBRIDGE, HYDRO ONE | Line 8945 (Utilities) | T2 | If home: business-use % only. If office: fully deductible. |
-| BELL, ROGERS, TELUS, SHAW | Line 8220 (Telephone/utilities) | T2 | Business portion only |
-| INTERNET, WIFI | Line 8220 | T2 | Business portion only |
+| HYDRO, ELECTRICITY, GAS, ENBRIDGE, HYDRO ONE | Line 9220 (Utilities) | T2 | If home: business-use % only. If office: fully deductible. |
+| BELL, ROGERS, TELUS, SHAW | Line 9220 (Telephone/utilities) | T2 | Business portion only |
+| INTERNET, WIFI | Line 9220 | T2 | Business portion only |
 | INSURANCE, BUSINESS INSURANCE, LIABILITY | Line 8690 (Insurance) | T1 | Fully deductible if business insurance |
 | ACCOUNTING, BOOKKEEPER, CPA | Line 8860 (Professional fees) | T1 | Fully deductible |
 | LAWYER, LEGAL FEE | Line 8860 | T1 | Deductible if business-related |
@@ -150,7 +179,7 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 | BANK FEE, MONTHLY FEE, NSF | Line 8710 (Interest and bank charges) | T1 | Fully deductible for business account |
 | STRIPE FEE, PAYPAL FEE, SQUARE FEE | Line 8710 | T1 | Payment processing fees: fully deductible |
 | INTEREST (business loan) | Line 8710 | T1 | Fully deductible |
-| ADVERTISING, GOOGLE ADS, META ADS, FACEBOOK | Line 8520 (Advertising) | T1 | Fully deductible |
+| ADVERTISING, GOOGLE ADS, META ADS, FACEBOOK | Line 8521 (Advertising) | T1 | Fully deductible |
 | MEALS (client entertainment) | Line 8523 (Meals and entertainment) | T1 | 50% deductible only. The other 50% is permanently disallowed. |
 | MEALS (business travel, alone) | Line 8523 | T1 | 50% deductible |
 | SOFTWARE, SUBSCRIPTION, SAAS | Line 8810 or 8860 | T1 | Fully deductible |
@@ -169,8 +198,10 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 
 ### 3.3 SaaS Subscriptions
 
+**SaaS Subscriptions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE WORKSPACE, MICROSOFT 365, ADOBE | Line 8810/8860 -- fully deductible | Operating expense |
 | SLACK, ZOOM, NOTION, FIGMA, GITHUB | Line 8810/8860 -- fully deductible | Same |
 | AWS, HEROKU, DIGITAL OCEAN | Line 8810 -- fully deductible | Hosting costs |
@@ -178,24 +209,24 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 
 ### 3.4 Internal Transfers and Exclusions
 
+**Internal Transfers and Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OWN TRANSFER, SAVINGS, TFSA, RRSP | EXCLUDE | Not business transaction |
 | MORTGAGE, RENT (personal) | EXCLUDE (or home office %) | Personal. Home office portion in business-use-of-home. |
 | ATM, CASH WITHDRAWAL | T2 -- ask | Default exclude |
 | DONATION, CHARITY | EXCLUDE from T2125 | Personal tax credit, not business expense |
 
----
-
 ## Section 4 -- Worked Examples
 
 ### Example 1 -- Standard Sole Proprietor (Web Developer)
 
-**Input:** Gross revenue CAD 95,000. Not GST registered (under $30K threshold last year, now over -- must register). Expenses: home office (see below), software CAD 2,400, accounting CAD 1,500, subcontractor CAD 8,000, travel CAD 3,000, meals (50%) CAD 1,200 (deductible: CAD 600).
+Input: Gross revenue CAD 95,000. Not GST registered (under $30K threshold last year, now over -- must register). Expenses: home office (see below), software CAD 2,400, accounting CAD 1,500, subcontractor CAD 8,000, travel CAD 3,000, meals (50%) CAD 1,200 (deductible: CAD 600).
 
-**Home office:** 1,200 sq ft house, 150 sq ft office (12.5%). Mortgage interest CAD 8,000, property tax CAD 4,000, utilities CAD 3,600, insurance CAD 1,800. Total: CAD 17,400 x 12.5% = CAD 2,175.
+Home office: 1,200 sq ft house, 150 sq ft office (12.5%). Mortgage interest CAD 8,000, property tax CAD 4,000, utilities CAD 3,600, insurance CAD 1,800. Total: CAD 17,400 x 12.5% = CAD 2,175.
 
-**Computation:**
+Computation:
 - Revenue: CAD 95,000
 - Expenses: 2,400 + 1,500 + 8,000 + 3,000 + 600 + 2,175 = CAD 17,675
 - Net business income: CAD 77,325
@@ -204,56 +235,48 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 
 ### Example 2 -- Vehicle (Km-Based Apportionment)
 
-**Input:** Total km driven: 25,000. Business km: 15,000 (60%). Vehicle costs: gas CAD 3,600, insurance CAD 2,400, repairs CAD 800, licence CAD 120. Car cost CAD 36,000 (Class 10).
+Input: Total km driven: 25,000. Business km: 15,000 (60%). Vehicle costs: gas CAD 3,600, insurance CAD 2,400, repairs CAD 800, licence CAD 120. Car cost CAD 36,000 (Class 10).
 
-**Computation:**
+Computation:
 - Operating costs: (3,600 + 2,400 + 800 + 120) x 60% = CAD 4,152
 - CCA: CAD 36,000 x 30% (Class 10 rate) x 60% = CAD 6,480 (first year: AccII provides 1.5x = CAD 9,720 if eligible)
 - Total vehicle deduction: CAD 4,152 + CCA amount
 
 ### Example 3 -- Meals (50% Rule)
 
-**Input:** CAD 2,500 in restaurant receipts for client meetings.
+Input: CAD 2,500 in restaurant receipts for client meetings.
 
-**Classification:** Only 50% deductible = CAD 1,250. This is a permanent restriction under ITA s67.1. The full CAD 2,500 is reported on Line 8523, then 50% is added back.
+Classification: Only 50% deductible = CAD 1,250. This is a permanent restriction under ITA s67.1. The full CAD 2,500 is reported on Line 8523, then 50% is added back.
 
 ### Example 4 -- CCA on Computer Equipment
 
-**Input:** Laptop purchased for CAD 2,800. Class 50 (55% rate). First year.
+Input: Laptop purchased for CAD 2,800. Class 50 (55% rate). First year.
 
-**Classification:** CCA Class 50 at 55%. With AccII (Accelerated Investment Incentive), first-year deduction enhanced: 1.5 x 55% x CAD 2,800 = CAD 2,310 (but cannot exceed cost, so CAD 2,310). UCC year-end: CAD 490.
-
----
+Classification: CCA Class 50 at 55%. With AccII (Accelerated Investment Incentive), first-year deduction enhanced: 1.5 x 55% x CAD 2,800 = CAD 2,310 (but cannot exceed cost, so CAD 2,310). UCC year-end: CAD 490.
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Business Income [T1]
 
-**Legislation:** ITA s9
-
-All revenue from business activities. Report gross on Line 8299. If GST/HST registered, report net of GST/HST.
+- **Business income** — All revenue from business activities. Report gross on Line 8299. If GST/HST registered, report net of GST/HST.  _(ITA s9)_
 
 ### 5.2 Deductible Expenses [T1]
 
-**Legislation:** ITA s18
-
-Must be incurred to earn business income. Must be reasonable (s67). Personal or living expenses are not deductible (s18(1)(h)).
+- **Deductible expenses** — Must be incurred to earn business income. Must be reasonable (s67). Personal or living expenses are not deductible (s18(1)(h)).  _(ITA s18)_
 
 ### 5.3 Meals and Entertainment [T1]
 
-**Legislation:** ITA s67.1
-
-50% limitation on meals and entertainment. Applies to all business meals, client entertainment, and food/drink. Long-haul truck drivers: 80%.
+- **Meals and entertainment** — 50% limitation on meals and entertainment. Applies to all business meals, client entertainment, and food/drink. Long-haul truck drivers: 80%.  _(ITA s67.1)_
 
 ### 5.4 Capital Cost Allowance (CCA) [T1]
 
-**Legislation:** ITA s20(1)(a); ITR Schedule II
+**CCA Classes**  _(ITA s20(1)(a); ITR Schedule II)_
 
 | Class | Rate | Assets |
-|---|---|---|
+| --- | --- | --- |
 | 1 | 4% | Buildings (non-residential after March 2007) |
 | 8 | 20% | Furniture, fixtures, equipment, photocopiers |
-| 10 | 30% | Motor vehicles (passenger, cost < $37,000 limit) |
+| 10 | 30% | Motor vehicles (passenger, Class 10.1 cost limit $38,000 + tax for 2025 acquisitions, $39,000 + tax for 2026) |
 | 10.1 | 30% | Passenger vehicles over $37,000 (cost capped at limit) |
 | 12 | 100% | Small tools, computer software, cutlery |
 | 43 | 30% | Manufacturing equipment |
@@ -261,28 +284,28 @@ Must be incurred to earn business income. Must be reasonable (s67). Personal or 
 | 54 | 30% | Zero-emission passenger vehicles (cost cap $61,000) |
 | 55 | 40% | Zero-emission vehicles not in class 54 |
 
-**Passenger vehicle cost limit (2025):** CAD 37,000 (excluding GST/HST). Luxury vehicles capped at this amount for CCA purposes (Class 10.1).
-
-**AccII (Accelerated Investment Incentive):** For eligible property acquired after November 20, 2018, the first-year CCA is enhanced by a 1.5x multiplier on the half-year rule. Effectively, you get 1.5 times the normal first-year CCA.
+- **Passenger vehicle cost limit (2025)** — CAD 37,000 (excluding GST/HST). Luxury vehicles capped at this amount for CCA purposes (Class 10.1).
+- **AccII (Accelerated Investment Incentive)** — For eligible property acquired after November 20, 2018, the first-year CCA is enhanced by a 1.5x multiplier on the half-year rule. Effectively, you get 1.5 times the normal first-year CCA.
 
 ### 5.5 Business-Use-of-Home [T1/T2]
 
-**Legislation:** ITA s18(12)
+**Business-Use-of-Home Conditions**  _(ITA s18(12))_
 
 | Condition | Eligibility |
-|---|---|
+| --- | --- |
 | Principal place of business | YES -- deduction allowed |
 | Exclusive use for business + regular meetings | YES -- deduction allowed |
 | Neither condition met | NO deduction |
 
-Deductible expenses: proportion of rent/mortgage interest, property tax, utilities, insurance, maintenance. Proportion = business area / total area.
-
-**Cannot create or increase a business loss.** Excess carried forward to the next year.
+- **Deductible home expenses** — Deductible expenses: proportion of rent/mortgage interest, property tax, utilities, insurance, maintenance. Proportion = business area / total area.
+- **Loss restriction** — Cannot create or increase a business loss. Excess carried forward to the next year.
 
 ### 5.6 Filing Deadlines [T1]
 
+**Filing Deadlines**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | T1 filing (self-employed) | 15 June |
 | Tax payment due | 30 April (even though filing deadline is 15 June) |
 | Quarterly instalments | 15 March, 15 June, 15 September, 15 December |
@@ -291,42 +314,35 @@ Deductible expenses: proportion of rent/mortgage interest, property tax, utiliti
 
 ### 5.7 Penalties [T1]
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 5% of balance owing + 1% per month late (max 12 months) |
 | Repeated late filing (2nd+ time in 3 years) | 10% + 2% per month (max 20 months) |
 | Late instalment | Instalment interest at prescribed rate |
 | Gross negligence | 50% of understated tax or overstated credits |
 
----
-
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Home Office [T2]
 
-Confirm: (1) principal place of business OR exclusive use + client meetings, (2) area measurements, (3) expense amounts. Cannot create or increase a loss. Excess carried forward.
-
-**Flag for reviewer:** Confirm eligibility conditions and area calculation.
+- **Home office review** — Confirm: (1) principal place of business OR exclusive use + client meetings, (2) area measurements, (3) expense amounts. Cannot create or increase a loss. Excess carried forward. Flag for reviewer: Confirm eligibility conditions and area calculation.
 
 ### 6.2 Motor Vehicle [T2]
 
-Must keep a contemporaneous km log. CRA audits vehicle claims frequently. If no log exists, default to 0% business use.
-
-**Flag for reviewer:** Confirm km log exists and business percentage is reasonable.
+- **Motor vehicle review** — Must keep a contemporaneous km log. CRA audits vehicle claims frequently. If no log exists, default to 0% business use. Flag for reviewer: Confirm km log exists and business percentage is reasonable.
 
 ### 6.3 Reasonableness (s67) [T2]
 
-All expenses must be "reasonable in the circumstances." CRA can deny excessive expenses even if legitimately incurred. Flag any single expense that appears disproportionate.
+- **Reasonableness review** — All expenses must be "reasonable in the circumstances." CRA can deny excessive expenses even if legitimately incurred. Flag any single expense that appears disproportionate.  _(s67)_
 
 ### 6.4 CCA vs Expense [T2]
 
-Items with lasting value beyond one year: CCA. Items consumed in the year: current expense. Software subscriptions: current expense. Software perpetual licences: CCA Class 12 (100%). Hardware: CCA Class 50.
-
----
+- **CCA vs expense determination** — Items with lasting value beyond one year: CCA. Items consumed in the year: current expense. Software subscriptions: current expense. Software perpetual licences: CCA Class 12 (100%). Hardware: CCA Class 50.
 
 ## Section 7 -- Excel Working Paper Template
 
-```
 T2125 WORKING PAPER -- Tax Year 2025
 
 A. GROSS INCOME
@@ -335,7 +351,7 @@ A. GROSS INCOME
   A3. Net sales (A1 - A2 if applicable)            ___________
 
 B. EXPENSES
-  B1. Advertising (8520)                           ___________
+  B1. Advertising (8521)                           ___________
   B2. Meals and entertainment (8523) -- 50%        ___________
   B3. Subcontracts (8340)                          ___________
   B4. Insurance (8690)                             ___________
@@ -344,7 +360,7 @@ B. EXPENSES
   B7. Office expenses (8810)                       ___________
   B8. Professional fees (8860)                     ___________
   B9. Rent (8910)                                  ___________
-  B10. Telephone and utilities (8220)              ___________
+  B10. Telephone and utilities (9220)              ___________
   B11. Travel (8520)                               ___________
   B12. Other expenses (9270)                       ___________
   B13. Total expenses                              ___________
@@ -372,16 +388,15 @@ REVIEWER FLAGS:
   [ ] CCA schedule reconciled from prior year?
   [ ] Meals at 50% applied?
   [ ] All T2 items flagged?
-```
-
----
 
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Canadian Bank Statement Formats
 
+**Canadian Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | RBC, TD, BMO, Scotiabank, CIBC | CSV, PDF | Date, Description, Debit, Credit, Balance |
 | Desjardins | CSV | Date, Description, Withdrawal, Deposit |
 | Tangerine, Simplii, EQ Bank | CSV | Date, Transaction, Amount |
@@ -389,8 +404,10 @@ REVIEWER FLAGS:
 
 ### Key Canadian Banking Terms
 
+**Key Canadian Banking Terms**
+
 | Term | Classification Hint |
-|---|---|
+| --- | --- |
 | e-Transfer / Interac | Very common -- check direction and counterparty |
 | PAD (Pre-Authorized Debit) | Regular expense |
 | POS | Point-of-sale purchase |
@@ -398,11 +415,8 @@ REVIEWER FLAGS:
 | NSF | Non-sufficient funds fee -- bank charge |
 | Service Charge | Monthly bank fee |
 
----
-
 ## Section 9 -- Onboarding Fallback
 
-```
 ONBOARDING QUESTIONS -- CANADA T2125
 1. What is your business name and NAICS code?
 2. Do you have a Business Number (BN)?
@@ -414,16 +428,15 @@ ONBOARDING QUESTIONS -- CANADA T2125
 8. Are you also employed (T4 income)?
 9. Province of residence?
 10. Prior year T2125 / CCA schedule available?
-```
-
----
 
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Business income | ITA s9 |
 | Deductible expenses | ITA s18 |
 | Reasonableness | ITA s67 |
@@ -438,14 +451,14 @@ ONBOARDING QUESTIONS -- CANADA T2125
 
 ### Interaction with GST/HST [T1]
 
+**Interaction with GST/HST**
+
 | Scenario | Income Tax Treatment |
-|---|---|
+| --- | --- |
 | GST/HST collected on sales (registrant) | NOT income. Report net of GST/HST on T2125. |
 | ITC (Input Tax Credit) recovered | NOT an expense. Report net of recoverable GST/HST. |
 | Non-registrant (under $30K threshold) | GST/HST paid on purchases IS part of the cost. Report gross. |
 | ITCs denied (personal use portion) | Non-recoverable GST/HST is part of the expense cost. |
-
----
 
 ## PROHIBITIONS
 
@@ -461,14 +474,30 @@ ONBOARDING QUESTIONS -- CANADA T2125
 - NEVER report GST/HST-inclusive amounts on T2125 if the business is a registrant
 - NEVER present tax calculations as definitive -- always label as estimated
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CGA, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ca-fed-t2125) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-fed-t2125` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-fed-t2125. If neither is available, confirm every figure against the official source pages cited above before relying on it.

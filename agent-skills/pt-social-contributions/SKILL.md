@@ -1,304 +1,291 @@
 ---
 name: pt-social-contributions
-description: "Utilize esta skill sempre que for solicitada a abordar contribuições para a Segurança Social de trabalhadores independentes em Portugal. Acione perante expressões como \"Segurança Social trabalhador independente\", \"contribuições independente Portugal\", \"declaração trimestral SS\", \"rendimento relevante\", ou qualquer questão sobre obrigações contributivas de um cliente trabalhador independente em Portugal. Abrange a taxa de 21,4% sobre o rendimento relevante (com coeficiente de 70% para serviços e 20% para comércio na Categoria B simplificada), a declaração trimestral, a isenção dos primeiros 12 meses e as escalas baseadas no IAS. LEIA SEMPRE esta skill antes de qualquer trabalho relativo a contribuições para a Segurança Social em Portugal. Trigger also on: \"Portuguese social contributions\", \"Segurança Social self-employed\", \"quarterly declaration Portugal\", \"IAS contribution base\", \"trabalhador independente rate\"."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Portuguese self-employed social contributions (contribuições para a Segurança Social). Trigger on phrases like \"Segurança Social trabalhador independente\", \"Portuguese social contributions\", \"declaração trimestral SS\", \"contribuições independente Portugal\", or any question about social contribution obligations for a self-employed client in Portugal. Covers the 21.4% rate on 70% of relevant income, quarterly declaration, and first-year exemption. ALWAYS read this skill before touching any Portugal social contributions work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pt-social-contributions"
-  tax_year: 2025
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/pt-social-contributions"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — Segurança Social do Trabalhador Independente — Skill v2.1
+# PT Social Contributions
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal Social Contributions -- Self-Employed Skill v2.0
 
-## Secção 1 — Referência rápida
+## Verified rates & thresholds (accountant-reviewed)
 
-| Campo | Valor |
-|---|---|
-| País | Portugal (República Portuguesa) |
-| Autoridade | DGSS (Direção-Geral da Segurança Social) / ISS (Instituto da Segurança Social) para contribuições; AT (Autoridade Tributária e Aduaneira) para impostos |
-| Legislação principal | Código Contributivo (Lei n.º 110/2009, art. 139.º a 170.º) |
-| Legislação complementar | Decreto Regulamentar n.º 1-A/2011; atualizações anuais por Portaria |
-| Taxa do trabalhador independente | 21,4% |
-| Taxa do empresário em nome individual | 25,2% |
-| Rendimento relevante — serviços (coeficiente Categoria B) | 70% do bruto |
-| Rendimento relevante — comércio/bens (coeficiente Categoria B) | 20% do bruto |
-| IAS (Indexante dos Apoios Sociais), 2025 | €522,50 |
-| Contribuição mínima mensal | €20,00 |
-| Base máxima mensal (12 × IAS) | €6.270,00 |
-| Primeiros 12 meses | Isenção de contribuições |
-| Periodicidade da declaração | Trimestral |
-| Periodicidade do pagamento | Mensal (entre o dia 10 e o dia 20) |
-| Moeda | EUR apenas |
-| Contribuidor | Open Accountants |
-| Validado por | Pendente — requer validação por contabilista certificado português |
-| Data de validação | Pendente |
+Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
----
+### Segurança Social
 
-## Secção 2 — Inputs obrigatórios e catálogo de recusas
+- **Trabalhador independente** — 21,4%  _(Código Contributivo Art. 163)_
+- **Empresário em nome individual** — 25,2%  _(Código Contributivo)_
+- **Rendimento relevante — serviços** — 70% do bruto  _(Código Contributivo Art. 162)_
+- **Rendimento relevante — bens** — 20% do bruto  _(Código Contributivo Art. 162)_
+- **Base mínima mensal (IAS)** — €522,50  _(Portaria n.º 6-B/2025/1, de 6 de janeiro)_
+- **Base máxima mensal (12×IAS)** — €6.270,00  _(Código Contributivo Art.º 163º, nº 5)_
+- **Primeiros 12 meses** — Isento de contribuições  _(Código Contributivo)_
+- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês (em 2025 4 x 522,50 = €2.090)  _(Código Contributivo Art.º 157º, nº 1, a))_
+- **Declaração trimestral** — Janeiro (out-dez), abril (jan-mar), julho (abr-jun), outubro (jul-set)  _(Código Contributivo)_
+- **Pagamento mensal** — Entre 10 e 20 do mês  _(Código Contributivo)_
+- **Dedutibilidade fiscal** — SIM — dedutíveis do IRS  _(CIRS)_
 
-### Inputs obrigatórios
+## Section 1 -- Quick reference
 
-Antes de qualquer cálculo, DEVE obter:
+**Quick reference**
 
-1. **Tipo de atividade** — trabalhador independente, empresário em nome individual ou profissional liberal?
-2. **Rendimento bruto trimestral (rendimento relevante)** — proveniente da declaração trimestral.
-3. **Ano de início de atividade** — primeiros 12 meses isentos de contribuições.
-4. **Existe atividade por conta de outrem em simultâneo?** — pode aplicar-se taxa reduzida ou isenção.
-5. **Categoria do rendimento** — prestação de serviços vs venda de bens (comércio)?
-6. **O cliente tem contabilidade organizada?** — afeta o cálculo do rendimento relevante.
+| Field | Value |
+| --- | --- |
+| Country | Portugal (Portuguese Republic) |
+| Authority | ISS (Instituto da Segurança Social) for contributions; AT (Autoridade Tributária) for tax |
+| Primary legislation | Código Contributivo (Lei n.o 110/2009, art. 139-170) |
+| Supporting legislation | Decreto Regulamentar 1-A/2011; annual updates via Portaria |
+| Self-employed rate | 21.4% |
+| Empresário em nome individual rate | 25.2% |
+| Relevant income -- services | 70% of gross |
+| Relevant income -- goods | 20% of gross |
+| Minimum monthly base (IAS, 2025) | EUR 480.43 |
+| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+| First 12 months | Exempt from contributions |
+| Declaration frequency | Quarterly |
+| Payment frequency | Monthly (between 10th and 20th) |
+| Currency | EUR only |
+| Contributor | Open Accountants |
+| Validated by | Verified by Mário Jorge da costa Vale (CA - 85883) on 2026-06-04 |
+| Validation date | Verified by Mário Jorge da costa Vale (CA - 85883) on 2026-06-04 |
 
-**Se o tipo de rendimento (serviços vs bens) for desconhecido, PARE. O coeficiente de rendimento relevante difere.**
+## Section 2 -- Required inputs and refusal catalogue
 
-### Catálogo de recusas
+### Required inputs
 
-**R-PT-SOC-1 — Trabalhador transfronteiriço da UE.** Acionador: o cliente é residente em Portugal e presta serviços noutro Estado-Membro da UE. Mensagem: "A segurança social transfronteiriça exige análise do certificado A1 ao abrigo do Regulamento (CE) n.º 883/2004. Escalar para consultor qualificado."
+- **Required inputs before computing** — Before computing, you MUST obtain: 1. Activity type -- trabalhador independente, empresário em nome individual, or profissional liberal? 2. Gross quarterly income (rendimento relevante) -- from the quarterly declaration 3. Year of activity -- first 12 months exempt from contributions 4. Any concurrent employment? -- reduced rate may apply 5. Category of services -- services (prestação de serviços) vs sales of goods (venda de bens)? 6. Does the client have an accountant (contabilidade organizada)? -- affects relevant income calculation. If income type (services vs goods) is unknown, STOP. The relevant income percentage differs.
 
-**R-PT-SOC-2 — Taxas reduzidas para pensionistas.** Acionador: trabalhador independente pensionista pergunta sobre taxa contributiva reduzida. Mensagem: "As taxas contributivas para pensionistas requerem confirmação junto da Segurança Social (DGSS/ISS). Sinalizar para revisor."
+### Refusal catalogue
 
-### Proibições
+- **R-PT-SOC-1 -- Cross-border EU worker** — Trigger: client is a Portuguese resident providing services in another EU state. Message: "Cross-border social insurance requires A1 certificate analysis under EU Regulation 883/2004. Escalate to qualified adviser."
+- **R-PT-SOC-2 -- Pensioner reduced rates** — Trigger: self-employed pensioner asks about reduced contribution rate. Message: "Pensioner contribution rates require confirmation with ISS. Flag for reviewer."
 
-- NUNCA aplicar 21,4% diretamente ao rendimento bruto — o coeficiente de rendimento relevante (70% para serviços, 20% para comércio) tem de ser aplicado primeiro.
-- NUNCA esquecer a isenção dos primeiros 12 meses para novos trabalhadores independentes.
-- NUNCA ignorar a contribuição mínima mensal de €20 — mesmo com rendimento zero, este mínimo aplica-se após o período de isenção.
-- NUNCA confundir a taxa do trabalhador independente (21,4%) com a taxa do empresário em nome individual (25,2%).
-- NUNCA apresentar o rendimento da declaração trimestral como base contributiva — tem de ser convertido para mensal.
-- NUNCA esquecer de aplicar o limite máximo de 12 × IAS (€6.270,00 em 2025).
-- NUNCA afirmar que as contribuições NÃO são dedutíveis fiscalmente — SÃO dedutíveis em sede de IRS.
-- NUNCA aconselhar sobre a isenção por acumulação de atividade sem verificar o limiar de 4 × IAS.
+### Prohibitions
 
----
+- **Prohibitions list** — NEVER apply 21.4% to gross income directly -- the relevant income percentage (70% for services, 20% for goods) must be applied first. NEVER forget the first 12 months exemption for new self-employed. NEVER ignore the minimum base of EUR 480.43 (IAS) -- even with zero income, this minimum applies after the exemption period. NEVER confuse the self-employed rate (21.4%) with the empresário rate (25.2%). NEVER present quarterly declaration income as the contribution base -- it must be converted to monthly. NEVER forget to clamp at the maximum of 12 x IAS (EUR 5,765.16). NEVER state that contributions are NOT tax-deductible -- they ARE deductible from IRS income. NEVER advise on concurrent employment exemption without verifying the 4 x IAS threshold.
 
-## Secção 3 — Cálculo do rendimento relevante
+## Section 3 -- Relevant income calculation
 
-**Legislação:** Código Contributivo, art. 162.º
+Legislation: Código Contributivo, art. 162
 
-### Sem contabilidade organizada (Categoria B simplificada)
+### Without organized accounting (sem contabilidade organizada)
 
-| Tipo de rendimento | % de rendimento relevante |
-|---|---|
-| Prestação de serviços | 70% do bruto |
-| Produção e venda de bens (comércio) | 20% do bruto |
-| Misto (serviços + bens) | Aplicar cada % à respetiva categoria |
+**Relevant income percentages without organized accounting**
 
-### Com contabilidade organizada
+| Income type | Relevant income % |
+| --- | --- |
+| Prestação de serviços (services) | 70% of gross |
+| Produção e venda de bens (goods) | 20% of gross |
+| Mixed (services + goods) | Apply each % to respective category |
 
-Rendimento relevante = lucro líquido efetivo apurado pelos registos contabilísticos.
+### With organized accounting (com contabilidade organizada)
 
-### Conversão de trimestral para mensal
+- **Relevant income with organized accounting** — Relevant income = actual net profit from accounting records.
+
+### Quarterly to monthly conversion
+
+- **Quarterly to monthly conversion formula** — quarterly_relevant_income = sum of relevant_income for the 3 months in the quarter monthly_relevant_income = quarterly_relevant_income / 3
+
+## Section 4 -- Rates, base, and bounds (2025)
+
+Legislation: Código Contributivo, art. 163, 168
+
+### Contribution rates
+
+**Contribution rates**
+
+| Category | Rate |
+| --- | --- |
+| Trabalhador independente | 21.4% |
+| Empresário em nome individual (with employees) | 25.2% |
+
+### Base bounds
+
+**Base bounds**
+
+| Bound | Amount |
+| --- | --- |
+| Minimum monthly base (IAS) | EUR 480.43 |
+| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+
+- **Monthly base clamp formula** — monthly_base = clamp(480.43, monthly_relevant_income, 5,765.16)
+
+## Section 5 -- Computation steps
+
+### Step 5.1 -- Quarterly declaration
+
+**Quarterly declaration schedule**
+
+| Declaration period | Income period covered | Filing deadline |
+| --- | --- | --- |
+| January | Oct--Dec (prior year) | End of January |
+| April | Jan--Mar | End of April |
+| July | Apr--Jun | End of July |
+| October | Jul--Sep | End of October |
+
+### Step 5.2 -- Calculate monthly relevant income
+
+- **Monthly relevant income calculation** — IF services_only (sem contabilidade): relevant_income = quarterly_gross x 70% / 3 ELIF goods_only: relevant_income = quarterly_gross x 20% / 3 ELIF mixed: relevant_income = (services_gross x 70% + goods_gross x 20%) / 3 ELIF contabilidade_organizada: relevant_income = quarterly_net_profit / 3
+
+### Step 5.3 -- Apply bounds and calculate
+
+- **Apply bounds and calculate contribution** — monthly_base = max(480.43, min(relevant_income, 5,765.16)) monthly_contribution = monthly_base x 21.4%
+
+### Step 5.4 -- Contributions apply for the next quarter
+
+- **Contributions apply for next quarter** — The quarterly declaration determines contributions for the following 3 months.
+
+## Section 6 -- Payment schedule, exemptions, and tax deductibility
+
+### Payment schedule
+
+**Payment schedule**
+
+| Obligation | Due date |
+| --- | --- |
+| Monthly contribution payment | Between 10th and 20th of each month |
+| Payment method | Direct debit, ATM, or Segurança Social Direta portal |
+
+- **Late payment** — Late payment: interest at legal rate + potential loss of benefits.
+
+### Exemptions
+
+- **First 12 months** — new self-employed workers are exempt from contributions for the first 12 months of activity.
+- **Concurrent employment exemption** — if the self-employed person also has employment where the employer pays at least the minimum contribution base: If employment income >= IAS: self-employed contributions may be reduced or exempt. If self-employed income >= 4 x IAS (EUR 1,921.72): exemption does NOT apply
+
+### Tax deductibility
+
+**Tax deductibility**
+
+| Question | Answer |
+| --- | --- |
+| Are Segurança Social contributions deductible? | YES -- from gross income for IRS purposes |
+| Classification | Category B deductions |
+| When deductible? | In the year they are paid |
+
+## Section 7 -- Organized accounting and recibos verdes
+
+### Self-employed with organized accounting
+
+- **Organized accounting net profit rule** — Relevant income = actual net profit (not deemed %). If net profit is negative, minimum base still applies. Confirm profit calculation methodology with contabilista. Flag for reviewer.
+
+### Recibos verdes (green receipts) income
+
+- **Recibos verdes income treatment** — This IS self-employed income. Standard 70% relevant income rule applies. All recibos verdes amounts are reported in the quarterly declaration.
+
+## Section 8 -- Edge case registry
+
+### EC1 -- First year of activity
+
+Situation: Client opened activity in March 2025. Resolution: Exempt from contributions until February 2026 (12 months). First quarterly declaration due in April 2026. Contributions begin from the month following the first declaration.
+
+### EC2 -- Services income below minimum
+
+Situation: Client provides services with quarterly gross EUR 1,000. Resolution: Relevant income = EUR 1,000 x 70% / 3 = EUR 233.33/month. Below minimum. Monthly contribution = EUR 480.43 x 21.4% = EUR 102.81.
+
+### EC3 -- Very high income
+
+Situation: Client earns EUR 30,000/quarter from services. Resolution: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Monthly contribution = EUR 5,765.16 x 21.4% = EUR 1,233.74.
+
+### EC4 -- Mixed services and goods
+
+Situation: Client earns EUR 6,000 from services and EUR 15,000 from goods in the quarter. Resolution: Relevant income = (EUR 6,000 x 70% + EUR 15,000 x 20%) / 3 = EUR 2,400/month. Contribution = EUR 2,400 x 21.4% = EUR 513.60.
+
+### EC5 -- Concurrent employment, exemption applies
+
+Situation: Client employed at EUR 1,200/month, self-employed quarterly services EUR 2,000. Resolution: Self-employed relevant income = EUR 466.67/month (below 4 x IAS). Employment exemption applies. Contributions = EUR 0.
+
+## Section 9 -- Reviewer escalation protocol
+
+When a situation requires reviewer judgement:
 
 ```
-rendimento_relevante_trimestral = soma do rendimento relevante dos 3 meses do trimestre
-rendimento_relevante_mensal = rendimento_relevante_trimestral / 3
+REVIEWER FLAG
+Tier: T2
+Client: [name]
+Situation: [description]
+Issue: [what is ambiguous]
+Options: [possible treatments]
+Recommended: [most likely correct treatment and why]
+Action Required: Qualified contabilista certificado must confirm before advising client.
 ```
 
----
-
-## Secção 4 — Taxas, base contributiva e limites (2025)
-
-**Legislação:** Código Contributivo, art. 163.º e 168.º
-
-### Taxas contributivas (TSU — Taxa Social Única)
-
-| Categoria | Taxa |
-|---|---|
-| Trabalhador independente | 21,4% |
-| Trabalhador independente — primeiros 12 meses (isenção total) | 0% (alternativamente 15% em regimes específicos) |
-| Empresário em nome individual (com trabalhadores) | 25,2% |
-
-### Limites da base contributiva
-
-| Limite | Montante |
-|---|---|
-| Contribuição mínima mensal | €20,00 |
-| Base máxima mensal (12 × IAS) | €6.270,00 |
-| IAS de referência (2025) | €522,50 |
+When a situation is outside skill scope:
 
 ```
-base_mensal = min(rendimento_relevante_mensal, 6.270,00)
-contribuição_mensal = max(20,00, base_mensal × 21,4%)
+ESCALATION REQUIRED
+Tier: T3
+Client: [name]
+Situation: [description]
+Issue: [outside skill scope]
+Action Required: Do not advise. Refer to qualified contabilista. Document gap.
 ```
 
-### Escalões de base contributiva
+## Section 10 -- Test suite
 
-A base contributiva é determinada por escalões indexados ao IAS, revistos **trimestralmente** com base no rendimento relevante apurado nos três meses anteriores. A Segurança Social comunica o escalão aplicável após cada declaração trimestral.
+### Test 1 -- Standard services, mid-range
 
----
+Input: Quarterly gross services EUR 9,000, no employment, established. Expected output: Relevant income = EUR 2,100/month. Contribution = EUR 449.40/month. Annual: EUR 5,392.80.
 
-## Secção 5 — Etapas de cálculo
+### Test 2 -- Minimum base applies
 
-### Etapa 5.1 — Declaração trimestral
+Input: Quarterly gross services EUR 1,500. Expected output: Relevant income = EUR 350/month. Below minimum. Base = EUR 480.43. Contribution = EUR 102.81/month.
 
-| Período da declaração | Período de rendimento abrangido | Prazo de entrega |
-|---|---|---|
-| Janeiro | Out–Dez (ano anterior) | Final de janeiro |
-| Abril | Jan–Mar | Final de abril |
-| Julho | Abr–Jun | Final de julho |
-| Outubro | Jul–Set | Final de outubro |
+### Test 3 -- Maximum base applies
 
-### Etapa 5.2 — Calcular o rendimento relevante mensal
+Input: Quarterly gross services EUR 30,000. Expected output: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Contribution = EUR 1,233.74/month.
 
-```
-SE apenas_serviços (sem contabilidade organizada):
-    rendimento_relevante = bruto_trimestral × 70% / 3
-SENÃO SE apenas_bens:
-    rendimento_relevante = bruto_trimestral × 20% / 3
-SENÃO SE misto:
-    rendimento_relevante = (bruto_serviços × 70% + bruto_bens × 20%) / 3
-SENÃO SE contabilidade_organizada:
-    rendimento_relevante = lucro_líquido_trimestral / 3
-```
+### Test 4 -- First year exempt
 
-### Etapa 5.3 — Aplicar limites e calcular
+Input: Activity opened 4 months ago, quarterly gross EUR 12,000. Expected output: Exempt (within first 12 months). Contributions = EUR 0.
 
-```
-base_mensal = min(rendimento_relevante, 6.270,00)
-contribuição_mensal = max(20,00, base_mensal × 21,4%)
-```
+### Test 5 -- Goods-only income
 
-### Etapa 5.4 — As contribuições aplicam-se ao trimestre seguinte
+Input: Quarterly gross goods sales EUR 20,000, no employment. Expected output: Relevant income = EUR 1,333.33/month. Contribution = EUR 285.33/month.
 
-A declaração trimestral determina as contribuições devidas nos 3 meses subsequentes. A base contributiva é, assim, revista **trimestralmente**.
+### Test 6 -- Concurrent employment, exemption applies
 
----
+Input: Employment salary EUR 1,500/month, self-employed quarterly services EUR 2,000. Expected output: Self-employed relevant income = EUR 466.67/month (below 4 x IAS). Exemption applies. Contributions = EUR 0.
 
-## Secção 6 — Calendário de pagamentos, isenções e dedutibilidade fiscal
+### Test 7 -- Empresário em nome individual
 
-### Calendário de pagamentos
+Input: Sole proprietor with employees, quarterly services EUR 15,000. Expected output: Rate = 25.2%. Relevant income = EUR 3,500/month. Contribution = EUR 882.00/month.
 
-| Obrigação | Prazo |
-|---|---|
-| Pagamento mensal da contribuição | Entre o dia 10 e o dia 20 de cada mês |
-| Meios de pagamento | Débito direto, Multibanco ou portal da Segurança Social Direta |
+## Disclaimer
 
-Atraso no pagamento: juros à taxa legal e potencial perda de prestações sociais.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-### Isenções
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
-**Primeiros 12 meses:** os novos trabalhadores independentes estão isentos de contribuições durante os primeiros 12 meses de atividade. Em determinados regimes transitórios, pode aplicar-se uma taxa reduzida de 15% em vez da isenção total — confirmar com o ISS.
-
-**Isenção por acumulação com trabalho dependente:** se o trabalhador independente exercer também atividade por conta de outrem e o empregador descontar pelo menos sobre a base contributiva mínima:
-- Se o rendimento por conta de outrem ≥ IAS: as contribuições do trabalhador independente podem ser reduzidas ou isentas.
-- Se o rendimento como trabalhador independente ≥ 4 × IAS (€2.090,00 em 2025): a isenção NÃO se aplica.
-
-### Dedutibilidade fiscal
-
-| Questão | Resposta |
-|---|---|
-| As contribuições para a Segurança Social são dedutíveis? | SIM — ao rendimento bruto em sede de IRS |
-| Classificação | Deduções da Categoria B |
-| Quando são dedutíveis? | No ano em que são pagas |
-
----
-
-## Secção 7 — Contabilidade organizada e recibos verdes
-
-### Trabalhador independente com contabilidade organizada
-
-Rendimento relevante = lucro líquido efetivo (e não o coeficiente presumido). Se o lucro líquido for negativo, aplica-se igualmente a contribuição mínima de €20. Confirmar a metodologia de apuramento do lucro com o contabilista certificado. Sinalizar para revisor.
-
-### Rendimentos por recibos verdes
-
-Estes rendimentos SÃO rendimentos de trabalhador independente. Aplica-se a regra-padrão do coeficiente de 70% do rendimento relevante. Todos os montantes faturados em recibos verdes são reportados na declaração trimestral.
-
----
-
-## Secção 8 — Registo de casos-limite
-
-### EC1 — Primeiro ano de atividade
-**Situação:** O cliente abriu atividade em março de 2025.
-**Resolução:** Isento de contribuições até fevereiro de 2026 (12 meses). Primeira declaração trimestral devida em abril de 2026. As contribuições começam a partir do mês seguinte à primeira declaração.
-
-### EC2 — Rendimento de serviços abaixo da contribuição mínima
-**Situação:** O cliente presta serviços com rendimento bruto trimestral de €1.000.
-**Resolução:** Rendimento relevante = €1.000 × 70% / 3 = €233,33/mês. Contribuição calculada = €233,33 × 21,4% = €49,93/mês (acima do mínimo de €20).
-
-### EC3 — Rendimento muito elevado
-**Situação:** O cliente aufere €30.000/trimestre em serviços.
-**Resolução:** Rendimento relevante = €7.000/mês. Limitado a €6.270,00 (12 × IAS). Contribuição mensal = €6.270,00 × 21,4% = €1.341,78.
-
-### EC4 — Misto de serviços e bens
-**Situação:** O cliente aufere €6.000 de serviços e €15.000 de bens no trimestre.
-**Resolução:** Rendimento relevante = (€6.000 × 70% + €15.000 × 20%) / 3 = €2.400/mês. Contribuição = €2.400 × 21,4% = €513,60.
-
-### EC5 — Acumulação com trabalho dependente, isenção aplicável
-**Situação:** Cliente com vencimento de €1.200/mês por conta de outrem e prestação de serviços trimestral de €2.000 como independente.
-**Resolução:** Rendimento relevante como independente = €466,67/mês (inferior a 4 × IAS). Aplica-se a isenção por acumulação. Contribuições = €0.
-
----
-
-## Secção 9 — Protocolo de escalonamento para revisor
-
-Quando uma situação exige juízo do revisor:
-
-```
-SINALIZAÇÃO PARA REVISOR
-Nível: T2
-Cliente: [nome]
-Situação: [descrição]
-Questão: [o que é ambíguo]
-Opções: [tratamentos possíveis]
-Recomendação: [tratamento mais provavelmente correto e fundamentação]
-Ação requerida: Contabilista certificado qualificado deve confirmar antes de aconselhar o cliente.
-```
-
-Quando uma situação está fora do âmbito da skill:
-
-```
-ESCALONAMENTO NECESSÁRIO
-Nível: T3
-Cliente: [nome]
-Situação: [descrição]
-Questão: [fora do âmbito da skill]
-Ação requerida: Não aconselhar. Encaminhar para contabilista certificado qualificado. Documentar a lacuna.
-```
-
----
-
-## Secção 10 — Bateria de testes
-
-### Teste 1 — Serviços padrão, escalão intermédio
-**Input:** Bruto trimestral de serviços €9.000, sem trabalho dependente, atividade já estabelecida.
-**Output esperado:** Rendimento relevante = €2.100/mês. Contribuição = €449,40/mês. Anual: €5.392,80.
-
-### Teste 2 — Aplicação da contribuição mínima
-**Input:** Bruto trimestral de serviços €1.500.
-**Output esperado:** Rendimento relevante = €350/mês. Contribuição calculada = €350 × 21,4% = €74,90/mês (acima do mínimo de €20).
-
-### Teste 3 — Aplicação da base máxima
-**Input:** Bruto trimestral de serviços €30.000.
-**Output esperado:** Rendimento relevante = €7.000/mês. Limitado a €6.270,00. Contribuição = €1.341,78/mês.
-
-### Teste 4 — Primeiro ano isento
-**Input:** Atividade aberta há 4 meses, bruto trimestral €12.000.
-**Output esperado:** Isento (dentro dos primeiros 12 meses). Contribuições = €0.
-
-### Teste 5 — Rendimento apenas de comércio (bens)
-**Input:** Bruto trimestral de venda de bens €20.000, sem trabalho dependente.
-**Output esperado:** Rendimento relevante = €1.333,33/mês. Contribuição = €285,33/mês.
-
-### Teste 6 — Acumulação com trabalho dependente, isenção aplicável
-**Input:** Vencimento por conta de outrem €1.500/mês, prestação de serviços trimestral €2.000 como independente.
-**Output esperado:** Rendimento relevante como independente = €466,67/mês (inferior a 4 × IAS). Aplica-se isenção. Contribuições = €0.
-
-### Teste 7 — Empresário em nome individual
-**Input:** Empresário em nome individual com trabalhadores, serviços trimestrais €15.000.
-**Output esperado:** Taxa = 25,2%. Rendimento relevante = €3.500/mês. Contribuição = €882,00/mês.
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Aviso legal
+## Talk to a verified accountant
 
-Esta skill e os respetivos outputs são fornecidos apenas para fins informativos e de cálculo, não constituindo aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os outputs devem ser revistos e validados por um profissional qualificado (contabilista certificado, revisor oficial de contas, advogado fiscalista ou equivalente licenciado na jurisdição aplicável) antes de qualquer entrega ou ato baseado nos mesmos.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação fiscal evolui.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
----
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pt-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pt-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pt-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

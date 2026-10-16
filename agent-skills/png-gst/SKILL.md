@@ -1,26 +1,24 @@
 ---
 name: png-gst
 description: "Use this skill whenever asked to prepare, review, or create a Papua New Guinea GST return or any GST filing for a PNG business. Trigger on phrases like \"prepare GST return\", \"PNG GST\", \"IRC filing\", \"Papua New Guinea tax\", or any request involving PNG GST. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill contains the complete PNG GST classification rules, return form mappings, input credit rules, and filing deadlines. ALWAYS read this skill before touching any PNG GST-related work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/png-gst"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/png-gst"
+  jurisdiction: "PG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Papua New Guinea GST Return Preparation Skill
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Png GST
 
 ## Skill Metadata
 
+**Skill Metadata**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | Papua New Guinea |
 | Jurisdiction Code | PG |
 | Primary Legislation | Goods and Services Tax Act 2003 |
@@ -34,8 +32,6 @@ metadata:
 | Skill Version | 1.1 |
 | Confidence Coverage | Tier 1: standard rate classification, input-output mapping, return structure. Tier 2: resource sector, exempt supplies, partial credit. Tier 3: mining/petroleum agreements, LNG project tax, complex group structures. |
 
----
-
 ## Confidence Tier Definitions
 
 Every rule in this skill is tagged with a confidence tier:
@@ -43,8 +39,6 @@ Every rule in this skill is tagged with a confidence tier:
 - **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
 - **[T2] Tier 2 -- Reviewer Judgement Required.** Flag the issue and present options. A qualified accountant must confirm before filing.
 - **[T3] Tier 3 -- Out of Scope / Escalate.** Skill does not cover this. Do not guess. Escalate to qualified accountant and document the gap.
-
----
 
 ## Step 0: Client Onboarding Questions
 
@@ -61,53 +55,38 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 
 **If any of items 1-3 are unknown, STOP.**
 
----
-
 ## Step 1: Transaction Classification Rules
 
+- **Step 1: Transaction Classification Rules (heading)** — See subsections 1a-1d for detail.
+
 ### 1a. Determine Transaction Type [T1]
-- Sale (output GST) or Purchase (input GST)
-- Salaries, superannuation, loan repayments, dividends = OUT OF SCOPE
-- **Legislation:** GST Act 2003, Section 4
+
+- **Determine Transaction Type** — Sale (output GST) or Purchase (input GST). Salaries, superannuation, loan repayments, dividends = OUT OF SCOPE.  _(GST Act 2003, Section 4)_
 
 ### 1b. Determine Supply Location [T1]
-- Domestic (within PNG)
-- Import (outside PNG)
-- Export (outside PNG)
-- **Legislation:** GST Act 2003, Section 11-12
+
+- **Determine Supply Location** — Domestic (within PNG); Import (outside PNG); Export (outside PNG).  _(GST Act 2003, Section 11-12)_
 
 ### 1c. Determine GST Rate [T1]
-- **Standard rate:** 10%
-- **Zero-rated (0%):**
-  - Exports of goods and services
-  - International transport
-  - Supply of fine metal (gold, silver, platinum)
-  - Certain medical supplies
-- **Exempt:**
-  - Financial services (interest, insurance premiums)
-  - Residential rental
-  - Education (registered institutions)
-  - Medical services (hospitals, clinics)
-  - Unprocessed food (fresh fruit, vegetables, fish)
-  - Water and sewerage (domestic)
-  - Public transport
-- **Legislation:** GST Act 2003, Section 17 (rate); Schedule 1 (zero-rated); Schedule 2 (exempt)
+
+- **Standard rate** — 10%  _(GST Act 2003, Section 17 (rate); Schedule 1 (zero-rated); Schedule 2 (exempt))_
+- **Zero-rated (0%) categories** — Exports of goods and services; International transport; Supply of fine metal (gold, silver, platinum); Certain medical supplies  _(GST Act 2003, Section 17 (rate); Schedule 1 (zero-rated); Schedule 2 (exempt))_
+- **Exempt categories** — Financial services (interest, insurance premiums); Residential rental; Education (registered institutions); Medical services (hospitals, clinics); Unprocessed food (fresh fruit, vegetables, fish); Water and sewerage (domestic); Public transport  _(GST Act 2003, Section 17 (rate); Schedule 1 (zero-rated); Schedule 2 (exempt))_
 
 ### 1d. Determine Expense Category [T1]
-- Capital goods: assets > 1 year useful life
-- Trading stock: goods for resale
-- Services/overheads: rent, utilities, professional fees
 
----
+- **Determine Expense Category** — Capital goods: assets > 1 year useful life; Trading stock: goods for resale; Services/overheads: rent, utilities, professional fees.
 
 ## Step 2: GST Return Form Structure [T1]
 
-**Legislation:** GST Act 2003; IRC prescribed form.
+- **Step 2: GST Return Form Structure** — Legislation applies to prescribed form.  _(GST Act 2003; IRC prescribed form.)_
 
 ### GST Return Sections
 
+**GST Return Sections**
+
 | Section | Description |
-|---------|-------------|
+| --- | --- |
 | Part A | Entity information (TIN, name, period) |
 | Part B | Output / Sales |
 | B.1 | Taxable supplies at 10% |
@@ -129,183 +108,128 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 | F.2 | Credit brought forward |
 | F.3 | Net payable or refundable |
 
----
-
 ## Step 3: Input Tax Credit Mechanism [T1]
 
-**Legislation:** GST Act 2003, Sections 29-35.
+- **Step 3: Input Tax Credit Mechanism** — Sections govern input tax credit mechanism.  _(GST Act 2003, Sections 29-35.)_
 
 ### Eligibility
 
-1. Business must be GST registered [T1]
-2. Purchase must relate to making taxable supplies [T1]
-3. Valid tax invoice held [T1]
-4. Supplier must be registered [T1]
-5. Goods/services received [T1]
+- **Input Credit Eligibility** — 1. Business must be GST registered [T1] 2. Purchase must relate to making taxable supplies [T1] 3. Valid tax invoice held [T1] 4. Supplier must be registered [T1] 5. Goods/services received [T1]
 
 ### Input Credit Apportionment [T2]
 
-```
-Creditable Input GST = Total Input GST x (Taxable + Zero-rated Supplies / Total Supplies)
-```
-**Flag for reviewer: confirm apportionment.**
-
----
+- **Creditable Input GST formula** — Creditable Input GST = Total Input GST x (Taxable + Zero-rated Supplies / Total Supplies) (Flag for reviewer: confirm apportionment.)
 
 ## Step 4: Deductibility Check
 
+- **Step 4: Deductibility Check (heading)** — See Blocked Input GST Credit subsection.
+
 ### Blocked Input GST Credit [T1]
 
-**Legislation:** GST Act 2003, Section 31.
-
-These have ZERO input GST credit:
-
-- Motor vehicles (private use)
-- Entertainment
-- Personal consumption
-- Club memberships
-- Purchases without valid tax invoice
-- Purchases from non-registered suppliers
-- Goods/services for exempt supplies
-- Alcohol and tobacco (unless resale)
-
-Blocked categories OVERRIDE any other rule. Check blocked FIRST.
-
----
+- **Blocked Input GST Credit categories** — These have ZERO input GST credit: Motor vehicles (private use); Entertainment; Personal consumption; Club memberships; Purchases without valid tax invoice; Purchases from non-registered suppliers; Goods/services for exempt supplies; Alcohol and tobacco (unless resale). Blocked categories OVERRIDE any other rule. Check blocked FIRST.  _(GST Act 2003, Section 31.)_
 
 ## Step 5: GST on Imports [T1]
 
-**Legislation:** GST Act 2003, Section 24; Customs Act.
-
-### Import GST
-- GST payable at importation
-- Calculated on: Customs Value + Customs Duty + Excise
-- Rate: 10%
-- Paid to PNG Customs
-- Recoverable if for taxable supplies
-
----
+- **Import GST** — GST payable at importation. Calculated on: Customs Value + Customs Duty + Excise. Rate: 10%. Paid to PNG Customs. Recoverable if for taxable supplies.  _(GST Act 2003, Section 24; Customs Act.)_
 
 ## Step 6: Resource Sector GST [T3]
 
-**Legislation:** GST Act 2003, Part 5; Mining Act; Oil and Gas Act.
-
-Resource sector entities (mining, petroleum, LNG) may have:
-- Specific GST provisions under their fiscal stability agreements
-- Different input credit rules
-- Special treatment for imported equipment during development phase
-- Zero-rating on certain supplies within the project
-
-**Do not classify resource sector transactions without reviewing the specific agreement. Escalate.**
-
----
+- **Resource Sector GST** — Resource sector entities (mining, petroleum, LNG) may have: Specific GST provisions under their fiscal stability agreements; Different input credit rules; Special treatment for imported equipment during development phase; Zero-rating on certain supplies within the project. Do not classify resource sector transactions without reviewing the specific agreement. Escalate.  _(GST Act 2003, Part 5; Mining Act; Oil and Gas Act.)_
 
 ## Step 7: Key Thresholds [T1]
 
+**Key Thresholds**
+
 | Threshold | Value |
-|-----------|-------|
+| --- | --- |
 | Mandatory GST registration | Annual turnover > PGK 250,000 |
 | Voluntary registration | Below threshold |
 | Monthly filing | Annual turnover > PGK 1,500,000 |
 | Quarterly filing | PGK 250,000 - PGK 1,500,000 (threshold raised from PGK 1,000,000 per 2025 National Budget) |
 
----
-
 ## Step 8: Filing Deadlines [T1]
 
+**Filing Deadlines**
+
 | Category | Period | Deadline |
-|----------|--------|----------|
+| --- | --- | --- |
 | Monthly filers | Monthly | 21st of following month |
 | Quarterly filers | Quarterly | 21st of month following quarter end |
 | Payment | Same as return | Same deadline |
 
 ### Late Filing Penalties [T1]
 
+**Late Filing Penalties**
+
 | Default | Penalty |
-|---------|---------|
+| --- | --- |
 | Late filing | PGK 500 per day (max PGK 10,000) |
 | Late payment | 20% of unpaid amount |
 | Non-filing | Assessment by IRC + penalties |
 | Tax evasion | Criminal prosecution |
 
----
-
 ## Step 9: Derived Calculations [T1]
 
-```
-Total Output GST       = GST on all taxable supplies (10%)
-Total Input GST        = GST on domestic purchases + GST on imports
-Net GST Payable        = Total Output GST - Total Input GST - Credit B/F
-If Net < 0             = Refundable or carried forward
-Total Payable          = Net GST + Penalties (if any)
-```
-
----
+- **Derived Calculations** — Total Output GST       = GST on all taxable supplies (10%) Total Input GST        = GST on domestic purchases + GST on imports Net GST Payable        = Total Output GST - Total Input GST - Credit B/F If Net < 0             = Refundable or carried forward Total Payable          = Net GST + Penalties (if any)
 
 ## Step 10: Refund Mechanism [T2]
 
-**Legislation:** GST Act 2003, Section 40-42.
+- **Step 10: Refund Mechanism (heading)** — Legislation applies.  _(GST Act 2003, Section 40-42.)_
 
 ### Refund Eligibility
-- Excess credits for 3+ consecutive months
-- Exporters with persistent credit positions
-- Resource sector (per agreement terms)
+
+- **Refund Eligibility** — Excess credits for 3+ consecutive months; Exporters with persistent credit positions; Resource sector (per agreement terms).
 
 ### Process
-1. Apply to IRC
-2. Audit may be conducted
-3. Processing: 30-60 days
 
----
+- **Refund Process** — 1. Apply to IRC 2. Audit may be conducted 3. Processing: 30-60 days
 
 ## PROHIBITIONS [T1]
 
-- NEVER allow unregistered entities to claim input GST credit
-- NEVER classify exempt supplies as zero-rated
-- NEVER accept input credit without valid tax invoice
-- NEVER apply input credit on blocked categories
-- NEVER classify resource sector transactions without reviewing the specific agreement
-- NEVER file return without reconciling records
-- NEVER compute any number -- all arithmetic is handled by the deterministic engine, not the AI
-
----
+- **Prohibitions** — - NEVER allow unregistered entities to claim input GST credit - NEVER classify exempt supplies as zero-rated - NEVER accept input credit without valid tax invoice - NEVER apply input credit on blocked categories - NEVER classify resource sector transactions without reviewing the specific agreement - NEVER file return without reconciling records - NEVER compute any number -- all arithmetic is handled by the deterministic engine, not the AI
 
 ## Step 11: Edge Case Registry
 
+See EC1-EC8 subsections.
+
 ### EC1 -- Mining company equipment imports [T3]
+
 **Situation:** Mining company imports heavy machinery during development.
 **Resolution:** May have special GST treatment under fiscal stability agreement. Escalate.
 
 ### EC2 -- Reverse charge on imported services [T2]
+
 **Situation:** PNG company pays for consulting from Australian firm.
 **Resolution:** Self-assess GST at 10%. Claim input credit if for taxable supplies. Flag for reviewer.
 
 ### EC3 -- Supply of gold (fine metal) [T1]
-**Situation:** Gold mining company sells refined gold.
-**Resolution:** Zero-rated supply. No output GST. Full input credit on related costs.
-**Legislation:** GST Act 2003, Schedule 1.
+
+- **EC3** — **Situation:** Gold mining company sells refined gold. **Resolution:** Zero-rated supply. No output GST. Full input credit on related costs.  _(GST Act 2003, Schedule 1.)_
 
 ### EC4 -- Unprocessed food exemption [T1]
+
 **Situation:** Farmer sells fresh vegetables at market.
 **Resolution:** Exempt supply. No GST. Seller cannot claim input credit on farming inputs.
 
 ### EC5 -- Credit notes [T1]
+
 **Situation:** Customer returns goods, credit note issued.
 **Resolution:** Seller reduces output GST. Buyer reverses input credit.
 
 ### EC6 -- Second-hand goods from unregistered seller [T1]
+
 **Situation:** Business buys used vehicle from individual.
 **Resolution:** No input credit. No GST charged. Full cost as expense.
 
 ### EC7 -- Construction in remote area [T2]
+
 **Situation:** Construction company works in remote location, purchases from unregistered village suppliers.
 **Resolution:** No input credit on purchases from unregistered suppliers. Flag for reviewer if amounts are material.
 
 ### EC8 -- International shipping services [T1]
+
 **Situation:** Shipping company provides international freight services.
 **Resolution:** Zero-rated. No output GST. Full input credit on vessel costs, fuel, port charges.
-
----
 
 ## Step 12: Reviewer Escalation Protocol
 
@@ -331,121 +255,100 @@ Issue: [what is outside skill scope]
 Action Required: Do not classify. Refer to qualified accountant. Document gap.
 ```
 
----
-
 ## Step 13: Test Suite
 
+See Test 1-8 subsections.
+
 ### Test 1 -- Standard local sale at 10%
+
 **Input:** Domestic sale of hardware supplies, net PGK 50,000, GST PGK 5,000. Registered.
 **Expected output:** B.1: PGK 50,000. C.1: Output GST PGK 5,000.
 
 ### Test 2 -- Purchase with input credit
+
 **Input:** Purchase from registered supplier, net PGK 20,000, GST PGK 2,000. Valid invoice.
 **Expected output:** E.1: Input GST PGK 2,000. Full credit.
 
 ### Test 3 -- Export (zero-rated)
+
 **Input:** Export of coffee, FOB PGK 200,000. Documentation complete.
 **Expected output:** B.2: PGK 200,000 at 0%. Full input credit recovery.
 
 ### Test 4 -- Blocked input: entertainment
+
 **Input:** Client entertainment, PGK 3,000, GST PGK 300.
 **Expected output:** Input GST PGK 0 (BLOCKED).
 
 ### Test 5 -- Import with customs GST
+
 **Input:** Import equipment, CIF PGK 100,000. Duty PGK 10,000. GST at 10% on PGK 110,000 = PGK 11,000.
 **Expected output:** E.2: Input GST PGK 11,000. Credit allowed.
 
 ### Test 6 -- Gold sale (zero-rated)
+
 **Input:** Sale of refined gold PGK 5,000,000.
 **Expected output:** B.2: PGK 5,000,000 at 0%. No output GST.
 
 ### Test 7 -- Mixed taxable and exempt
+
 **Input:** Entity: 80% taxable, 20% exempt. Total input GST PGK 50,000.
 **Expected output:** Creditable: PGK 50,000 x 80% = PGK 40,000.
 
 ### Test 8 -- Late payment
+
 **Input:** GST payable PGK 10,000. Filed on time but paid 10 days late.
 **Expected output:** Late payment penalty: 20% x PGK 10,000 = PGK 2,000.
 
----
-
 ## Step 14: Invoice Requirements [T1]
 
-**Legislation:** GST Act 2003, Section 35.
+- **Step 14: Invoice Requirements (heading)** — Legislation applies.  _(GST Act 2003, Section 35.)_
 
 ### Mandatory Contents of Tax Invoice
-1. Supplier's name, address, and TIN
-2. Buyer's name and TIN (if registered)
-3. Date of issue
-4. Sequential invoice number
-5. Description of goods/services
-6. Quantity and unit price
-7. GST rate (10%) and GST amount
-8. Total amount including GST
-9. Words "Tax Invoice" on the document
+
+- **Mandatory Contents of Tax Invoice** — 1. Supplier's name, address, and TIN 2. Buyer's name and TIN (if registered) 3. Date of issue 4. Sequential invoice number 5. Description of goods/services 6. Quantity and unit price 7. GST rate (10%) and GST amount 8. Total amount including GST 9. Words "Tax Invoice" on the document
 
 ### Types
-- **Full Tax Invoice:** For B2B, enables input credit
-- **Abbreviated Invoice:** For retail under PGK 500
-- **Credit/Debit Note:** For adjustments
 
----
+- **Invoice Types** — Full Tax Invoice: For B2B, enables input credit. Abbreviated Invoice: For retail under PGK 500. Credit/Debit Note: For adjustments.
 
 ## Step 15: Record Keeping [T1]
 
-**Legislation:** Tax Administration Act 2015, Section 48.
+- **Step 15: Record Keeping (heading)** — Legislation applies.  _(Tax Administration Act 2015, Section 48.)_
 
 ### Mandatory Records (retain for 7 years)
-1. All purchase and sales invoices
-2. GST account / control account
-3. Import documentation (customs entries, bills of entry)
-4. Export documentation (export entries, bills of lading)
-5. Bank statements and payment receipts
-6. General ledger, journals, trial balance
-7. Stock/inventory records
-8. Fixed asset register
-9. Credit and debit notes
-10. Employment records (separate from GST but required)
 
----
+- **Mandatory Records (retain for 7 years)** — 1. All purchase and sales invoices 2. GST account / control account 3. Import documentation (customs entries, bills of entry) 4. Export documentation (export entries, bills of lading) 5. Bank statements and payment receipts 6. General ledger, journals, trial balance 7. Stock/inventory records 8. Fixed asset register 9. Credit and debit notes 10. Employment records (separate from GST but required)
 
 ## Step 16: Specific Sector Rules
 
+See sector subsections.
+
 ### Mining [T3]
-- Mining operations under fiscal stability agreements may have different GST rules
-- Equipment imports may qualify for concessional treatment
-- Gold refining and export: zero-rated
-- **Always escalate mining GST questions**
+
+- **Mining** — Mining operations under fiscal stability agreements may have different GST rules. Equipment imports may qualify for concessional treatment. Gold refining and export: zero-rated. Always escalate mining GST questions.
 
 ### Petroleum and LNG [T3]
-- LNG project entities may have GST exemptions under their Tax Credit Agreement
-- Subcontractors to LNG projects: complex treatment
-- **Always escalate petroleum/LNG questions**
+
+- **Petroleum and LNG** — LNG project entities may have GST exemptions under their Tax Credit Agreement. Subcontractors to LNG projects: complex treatment. Always escalate petroleum/LNG questions.
 
 ### Agriculture [T1]
-- Unprocessed food (fresh fruit, vegetables, fish): exempt
-- Processed food: GST at 10%
-- Agricultural inputs (seeds, fertilizer, tools): GST at 10%, credit allowed
-- Coffee, cocoa, copra exports: zero-rated
+
+- **Agriculture** — Unprocessed food (fresh fruit, vegetables, fish): exempt. Processed food: GST at 10%. Agricultural inputs (seeds, fertilizer, tools): GST at 10%, credit allowed. Coffee, cocoa, copra exports: zero-rated.
 
 ### Fisheries [T1]
-- Fresh fish (unprocessed): exempt
-- Canned/processed fish: GST at 10%
-- Export of fresh fish: zero-rated
-- Input credit on fishing equipment allowed if registered
+
+- **Fisheries** — Fresh fish (unprocessed): exempt. Canned/processed fish: GST at 10%. Export of fresh fish: zero-rated. Input credit on fishing equipment allowed if registered.
 
 ### Construction [T1]
-- Construction services: GST at 10%
-- Progress billing: GST on each stage
-- Input credit on materials and subcontractors allowed
-- Government contracts: standard GST applies
 
----
+- **Construction** — Construction services: GST at 10%. Progress billing: GST on each stage. Input credit on materials and subcontractors allowed. Government contracts: standard GST applies.
 
 ## Step 17: Penalties Detailed Summary [T1]
 
+**Penalties Detailed Summary**
+
 | Offence | Penalty |
-|---------|---------|
+| --- | --- |
 | Failure to register | PGK 1,000 + retrospective registration |
 | Late filing | PGK 500 per day (max PGK 10,000) |
 | Late payment | 20% of unpaid amount |
@@ -455,56 +358,29 @@ Action Required: Do not classify. Refer to qualified accountant. Document gap.
 | Under-declaration | Additional tax + penalty |
 | Tax evasion | Criminal prosecution, imprisonment |
 
----
-
 ## Step 18: Audit and Appeals [T2]
 
+- **Step 18: Audit and Appeals (heading)** — See subsections.
+
 ### Audit Process
-1. IRC may audit within **6 years** of filing
-2. Types: desk review, field audit, comprehensive audit
-3. Resource sector entities: priority audit targets
-4. Risk-based selection using data analytics
+
+- **Audit Process** — 1. IRC may audit within **6 years** of filing 2. Types: desk review, field audit, comprehensive audit 3. Resource sector entities: priority audit targets 4. Risk-based selection using data analytics
 
 ### Appeals
-1. File objection with IRC within **60 days** of assessment
-2. Appeal to Tax Review Tribunal within **60 days**
-3. Further appeal to National Court
 
-**Escalate any audit situation to qualified practitioner.**
-
----
+- **Appeals** — 1. File objection with IRC within **60 days** of assessment 2. Appeal to Tax Review Tribunal within **60 days** 3. Further appeal to National Court **Escalate any audit situation to qualified practitioner.**
 
 ## Step 19: Currency and Reporting [T1]
 
-- All GST returns filed in PGK (Papua New Guinea Kina)
-- Foreign currency transactions: Bank of Papua New Guinea rate on date of supply
-- Import transactions: customs exchange rate at date of declaration
-- Resource sector entities may have USD-denominated contracts; convert per transaction
-
----
+- **Currency and Reporting** — All GST returns filed in PGK (Papua New Guinea Kina). Foreign currency transactions: Bank of Papua New Guinea rate on date of supply. Import transactions: customs exchange rate at date of declaration. Resource sector entities may have USD-denominated contracts; convert per transaction.
 
 ## Step 20: Provincial and Local Government Supplies [T1]
 
-**Legislation:** GST Act 2003.
-
-- Supplies by government agencies: generally exempt
-- Supplies TO government: standard GST at 10%
-- Government contracts: GST applies on contract value
-- Government may withhold income tax on payments (separate from GST)
-
----
+- **Provincial and Local Government Supplies** — Supplies by government agencies: generally exempt. Supplies TO government: standard GST at 10%. Government contracts: GST applies on contract value. Government may withhold income tax on payments (separate from GST).  _(GST Act 2003.)_
 
 ## Step 21: Informal Sector Considerations [T2]
 
-**Legislation:** GST Act 2003; IRC rulings.
-
-- PNG has a significant informal economy
-- Purchases from unregistered / informal sellers: no input credit
-- Market vendors below threshold: not required to register
-- Businesses buying from informal sector: full cost as expense, no GST recovery
-- **Flag for reviewer: material purchases from informal sector may attract IRC attention**
-
----
+- **Informal Sector Considerations** — PNG has a significant informal economy. Purchases from unregistered / informal sellers: no input credit. Market vendors below threshold: not required to register. Businesses buying from informal sector: full cost as expense, no GST recovery. Flag for reviewer: material purchases from informal sector may attract IRC attention.  _(GST Act 2003; IRC rulings.)_
 
 ## Contribution Notes
 
@@ -512,14 +388,30 @@ This skill must be validated by a qualified CPA practicing in PNG before use in 
 
 **A skill may not be published without sign-off from a qualified practitioner in PNG.**
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/png-gst) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `png-gst` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/png-gst. If neither is available, confirm every figure against the official source pages cited above before relying on it.

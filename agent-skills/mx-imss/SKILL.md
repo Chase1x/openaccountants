@@ -1,27 +1,24 @@
 ---
 name: mx-imss
-description: "> Use this skill whenever asked about Mexican IMSS social security for self-employed individuals. Trigger on phrases like \"IMSS\", \"seguro social Mexico\", \"regimen voluntario\", \"incorporacion voluntaria\", \"IMSS freelancer\", \"aseguramiento voluntario\", \"Modalidad 40\", or any question about voluntary IMSS enrollment, contribution calculation, or benefits for self-employed persons in Mexico. Covers voluntary inscription (Modalidad 40, regimen voluntario), contribution bases, health/maternity/retirement/disability benefits, and tax deductibility. ALWAYS read this skill before touching any Mexican IMSS work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Mexican IMSS social security for self-employed individuals. Trigger on phrases like \"IMSS\", \"seguro social Mexico\", \"regimen voluntario\", \"incorporacion voluntaria\", \"IMSS freelancer\", \"aseguramiento voluntario\", \"Modalidad 40\", or any question about voluntary IMSS enrollment, contribution calculation, or benefits for self-employed persons in Mexico. Covers voluntary inscription (Modalidad 40, regimen voluntario), contribution bases, health/maternity/retirement/disability benefits, and tax deductibility. ALWAYS read this skill before touching any Mexican IMSS work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MX
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/mx-imss"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/mx-imss"
+  jurisdiction: "MX"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Mexico IMSS Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# MX Imss
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Mexico |
 | Tax/Contribution | IMSS Social Security (voluntary self-employed) |
 | Currency | MXN only |
@@ -36,16 +33,20 @@ metadata:
 
 ### UMA Reference Values (2025 -- verify with INEGI)
 
+**UMA Reference Values**
+
 | Item | Approximate Value |
-|---|---|
+| --- | --- |
 | Daily UMA | MXN 113.14 |
 | Monthly UMA | MXN 3,439.46 |
 | Annual UMA | MXN 41,273.52 |
 
 ### IMSS Five Branches of Insurance
 
+**IMSS Five Branches of Insurance**
+
 | Branch | Coverage |
-|---|---|
+| --- | --- |
 | Enfermedades y Maternidad | Medical care, prescriptions, maternity leave |
 | Invalidez y Vida | Disability pension, death benefits |
 | Retiro, Cesantia y Vejez | Old-age pension, unemployment in advanced age |
@@ -54,44 +55,39 @@ metadata:
 
 ### Voluntary Enrolment Options
 
+**Voluntary Enrolment Options**
+
 | Option | Who | Coverage | Key Detail |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IVRO (Art. 13) | Self-employed, freelancers | All 5 branches | Total contribution approx. 31-33% of chosen base |
 | Seguro de Salud para la Familia (Art. 240) | Any non-covered person | Health only | Fixed annual cost by age bracket; NO pension |
 | Modalidad 40 (Art. 218) | Former employees with 52+ prior weeks | Pension only (Invalidez y Vida + Retiro) | Total approx. 10.075% of chosen base; max 25 UMA |
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Employment status unknown | STOP -- do not proceed |
 | Prior contribution weeks unknown | Assume ineligible for Modalidad 40 until confirmed |
 | Desired salary base unknown | Use 1 UMA (minimum) for estimates |
 | UMA value unconfirmed | Direct client to INEGI for current value |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable:** Confirmation of self-employed status, CURP, RFC, and whether currently enrolled in any IMSS regime.
-
-**Recommended:** Prior IMSS contribution history (semanas cotizadas), desired salary base for contributions, family members to cover.
-
-**Ideal:** Full contribution statement from IMSS, prior year ISR return, INFONAVIT status.
+- **Minimum viable inputs** — Confirmation of self-employed status, CURP, RFC, and whether currently enrolled in any IMSS regime.
+- **Recommended inputs** — Prior IMSS contribution history (semanas cotizadas), desired salary base for contributions, family members to cover.
+- **Ideal inputs** — Full contribution statement from IMSS, prior year ISR return, INFONAVIT status.
 
 ### Refusal Catalogue
 
-**R-MX-1 -- Salaried employees.** "If the client is a salaried employee, the EMPLOYER handles IMSS. This skill covers self-employed/voluntary enrolment only. Stop."
-
-**R-MX-2 -- Employer-employee IMSS disputes.** "Disputes between employers and IMSS regarding contributions or registrations are outside this skill scope. Escalate to a specialist."
-
-**R-MX-3 -- Disability claims.** "IMSS disability benefit claims require medical and legal evaluation. Escalate."
-
-**R-MX-4 -- INFONAVIT complex cases.** "INFONAVIT credit interaction with voluntary IMSS is outside this skill scope. Escalate."
-
----
+- **R-MX-1 -- Salaried employees** — If the client is a salaried employee, the EMPLOYER handles IMSS. This skill covers self-employed/voluntary enrolment only. Stop.  _(R-MX-1)_
+- **R-MX-2 -- Employer-employee IMSS disputes** — Disputes between employers and IMSS regarding contributions or registrations are outside this skill scope. Escalate to a specialist.  _(R-MX-2)_
+- **R-MX-3 -- Disability claims** — IMSS disability benefit claims require medical and legal evaluation. Escalate.  _(R-MX-3)_
+- **R-MX-4 -- INFONAVIT complex cases** — INFONAVIT credit interaction with voluntary IMSS is outside this skill scope. Escalate.  _(R-MX-4)_
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -99,8 +95,10 @@ This is the deterministic pre-classifier for bank statement lines related to IMS
 
 ### 3.1 IMSS Payment Patterns (Debits)
 
+**IMSS Payment Patterns (Debits)**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IMSS CUOTA OBRERO PATRONAL / IMSS PAGO | IMSS contribution | EXCLUDE from business expenses | Personal social security -- ISR deduction (Art. 151) |
 | IMSS REGIMEN VOLUNTARIO / IMSS IVRO | IVRO contribution | EXCLUDE from business expenses | Personal deduction for ISR |
 | IMSS MODALIDAD 40 / IMSS MOD 40 | Modalidad 40 payment | EXCLUDE from business expenses | Personal deduction for ISR |
@@ -109,13 +107,13 @@ This is the deterministic pre-classifier for bank statement lines related to IMS
 
 ### 3.2 IMSS Benefit Patterns (Credits)
 
+**IMSS Benefit Patterns (Credits)**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IMSS PENSION / PENSION IMSS | Pension income | Taxable income | Report as pension income on ISR return |
 | IMSS INCAPACIDAD / SUBSIDIO IMSS | Disability/sickness benefit | Verify tax treatment | May be exempt up to certain amounts |
 | IMSS REEMBOLSO | IMSS refund | EXCLUDE | Not income |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -155,16 +153,16 @@ Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN
 
 **Classification:** Modalidad 40 contribution MXN 8,663/month. Maximum pension strategy. Flag for reviewer to assess long-term pension impact.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 IVRO Contribution Rates (Art. 13, 106, 147, 168, 211)
 
-For IVRO, the self-employed person pays BOTH employer and employee portions:
+- **IVRO both shares** — For IVRO, the self-employed person pays BOTH employer and employee portions.  _(LSS Art. 13, 106, 147, 168, 211)_
+
+**IVRO Contribution Rates**  _(LSS Art. 13, 106, 147, 168, 211)_
 
 | Branch | Total Rate (% of base salary) |
-|---|---|
+| --- | --- |
 | Enfermedades y Maternidad (in kind, fixed) | approx. 20.40% |
 | Enfermedades y Maternidad (in kind, excess) | Varies by salary above 3 UMA |
 | Enfermedades y Maternidad (cash) | approx. 1.00% |
@@ -177,49 +175,53 @@ For IVRO, the self-employed person pays BOTH employer and employee portions:
 
 ### 5.2 Modalidad 40 Contribution Rates (Art. 218)
 
+**Modalidad 40 Contribution Rates**  _(LSS Art. 218)_
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Invalidez y Vida | approx. 2.375% |
 | Retiro | 2.00% |
 | Cesantia y Vejez | approx. 4.375% |
 | **Total** | **approx. 10.075%** |
 
-Maximum base: 25 UMA daily.
+- **Modalidad 40 maximum base** — 25 UMA daily UMA  _(LSS Art. 218)_
 
 ### 5.3 Seguro de Salud para la Familia (Art. 240-245)
 
-Annual cost per family member:
+**Seguro de Salud para la Familia Annual Cost by Age**  _(LSS Art. 240-245)_
 
 | Age Group | Annual Cost (approx. % of annual UMA) |
-|---|---|
+| --- | --- |
 | Under 19 | approx. 5.9% |
 | 19-39 | approx. 7.5% |
 | 40-59 | approx. 9.1% |
 | 60+ | approx. 11.9% |
 
-Payment: annual, upfront.
+- **Payment schedule** — Payment: annual, upfront.  _(LSS Art. 240-245)_
 
 ### 5.4 Tax Deductibility (ISR Art. 151)
 
+**Tax Deductibility**  _(Ley del ISR Art. 151)_
+
 | Contribution Type | Deductible? |
-|---|---|
+| --- | --- |
 | IVRO contributions | Yes -- social security contribution deduction |
 | Modalidad 40 | Yes -- deductible for ISR |
 | Seguro de Salud para la Familia | Yes -- medical expense deduction (limited) |
 
 ### 5.5 Eligibility Rules
 
+**Eligibility Rules**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | IVRO eligibility | Self-employed workers, freelancers, independent professionals |
 | Modalidad 40 eligibility | Minimum 52 weeks prior contributions; must enrol within 5 years of last employer contribution |
 | Seguro de Salud eligibility | Any person not otherwise covered by IMSS |
 
 ### 5.6 2020 Reform Impact
 
-The 2020 pension reform gradually increases the employer share of Cesantia en Edad Avanzada y Vejez from 3.15% (2023) to 11.875% (2030). For IVRO, the self-employed pays both shares, so total contribution increases annually through 2030.
-
----
+- **2020 pension reform impact** — The 2020 pension reform gradually increases the employer share of Cesantia en Edad Avanzada y Vejez from 3.15% (2023) to 11.875% (2030). For IVRO, the self-employed pays both shares, so total contribution increases annually through 2030.  _(Reforma LSS 2020)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -238,8 +240,6 @@ Modalidad 40 allows choosing up to 25 UMA base to maximize future pension. This 
 ### 6.4 Gap in Contributions
 
 If client had employer IMSS, left more than 5 years ago with no contributions since, the Modalidad 40 right has lapsed. IVRO is the only voluntary option.
-
----
 
 ## Section 7 -- Working Paper Template
 
@@ -283,14 +283,14 @@ REVIEWER FLAGS:
   [ ] 2020 reform rate adjustments applied?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Mexican Bank Statement Formats
 
+**Mexican Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | BBVA Mexico (Bancomer) | CSV / PDF | Fecha, Descripcion, Cargo, Abono, Saldo |
 | Banorte | CSV | Fecha, Concepto, Retiro, Deposito, Saldo |
 | Citibanamex | CSV / PDF | Fecha, Descripcion, Cargos, Abonos, Saldo |
@@ -300,15 +300,15 @@ REVIEWER FLAGS:
 
 ### Key IMSS-Related Narrations
 
+**Key IMSS-Related Narrations**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | IMSS CUOTA / PAGO IMSS | IMSS contribution | Social security -- personal deduction |
 | IMSS MOD 40 / MODALIDAD 40 | Modalidad 40 payment | Pension contribution -- personal deduction |
 | IMSS SSF / SEGURO SALUD | Family health insurance | Medical expense deduction |
 | INFONAVIT / PAGO INFONAVIT | Housing fund payment | Separate from IMSS |
 | PENSION IMSS / RETIRO IMSS | Pension receipt | Taxable pension income |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -333,14 +333,14 @@ ONBOARDING QUESTIONS -- MEXICO IMSS SELF-EMPLOYED
 8. Are you interested in health coverage, pension coverage, or both?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | IMSS coverage branches | LSS Art. 6, 11 |
 | IVRO voluntary enrolment | LSS Art. 13 |
 | Modalidad 40 | LSS Art. 218 |
@@ -360,8 +360,10 @@ ONBOARDING QUESTIONS -- MEXICO IMSS SELF-EMPLOYED
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; bank statement patterns; worked examples |
 | 1.0 | 2025 | Initial version |
 
@@ -373,8 +375,6 @@ ONBOARDING QUESTIONS -- MEXICO IMSS SELF-EMPLOYED
 - [ ] UMA values verified with INEGI for current year?
 - [ ] 2020 reform rate increases applied?
 - [ ] Contributions classified as personal deductions (NOT business expenses)?
-
----
 
 ## PROHIBITIONS
 
@@ -388,14 +388,30 @@ ONBOARDING QUESTIONS -- MEXICO IMSS SELF-EMPLOYED
 - NEVER classify IMSS contributions as business expenses -- they are personal deductions under ISR Art. 151
 - NEVER present calculations as definitive -- always label as estimated and direct client to IMSS or a qualified Mexican contador publico
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a contador publico, social security specialist, or equivalent licensed practitioner in Mexico) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/mx-imss) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mx-imss` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mx-imss. If neither is available, confirm every figure against the official source pages cited above before relying on it.

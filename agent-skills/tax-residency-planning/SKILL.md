@@ -1,49 +1,52 @@
 ---
 name: tax-residency-planning
-description: "> Personal tax residency rules, the 183-day rule, digital nomad visas, exit taxes, and tax residency planning for international founders and freelancers. Use when the user asks about: tax residency, 183-day rule, where am I taxed, digital nomad visa, tax residency change, exit tax, departure tax, territorial tax countries, zero tax countries, tax nowhere, permanent establishment risk, center of vital interests, tax treaty tie-breaker, DTA tie-breaker, OECD Article 4, split tax year, mid-year relocation, FEIE, Foreign Earned Income Exclusion, bona fide residence test, tax residency certificate, 税务居民, 居住者, 非居住者, residencia fiscal, digital nomad tax, Beckham Law Spain, NHR Portugal, Thailand LTR visa, Panama territorial tax, Georgia micro business, Dubai 0% tax, flag theory, or any question about personal tax residency and where to pay personal income tax as an international founder."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Personal tax residency rules, the 183-day rule, digital nomad visas, exit taxes, and tax residency planning for international founders and freelancers. Use when the user asks about: tax residency, 183-day rule, where am I taxed, digital nomad visa, tax residency change, exit tax, departure tax, territorial tax countries, zero tax countries, tax nowhere, permanent establishment risk, center of vital interests, tax treaty tie-breaker, DTA tie-breaker, OECD Article 4, split tax year, mid-year relocation, FEIE, Foreign Earned Income Exclusion, bona fide residence test, tax residency certificate, 税务居民, 居住者, 非居住者, residencia fiscal, digital nomad tax, Beckham Law Spain, NHR Portugal, Thailand LTR visa, Panama territorial tax, Georgia micro business, Dubai 0% tax, flag theory, or any question about personal tax residency and where to pay personal income tax as an international founder."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/tax-residency-planning"
-  tax_year: 2025-2026
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/tax-residency-planning"
+  jurisdiction: "INTL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Tax Residency Planning — Personal Tax Rules for International Founders
+# Tax Residency Planning
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Introduction
+
+xaxcscdwscdwcedkhjcbhefqvc beq saodc dshib cedw HELLO MY NAME IS JEFF
+
+## Tax Residency Planning — Personal Tax Rules for International Founders
 
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general guidance on personal tax residency. It does not constitute tax or legal advice. Tax residency determinations are fact-specific and can have severe financial consequences if handled incorrectly. Consult a qualified cross-border tax advisor before changing your tax residency or structuring around residency rules.
 
----
-
 ## Core Concepts
 
-Three separate concepts determine how an international founder is taxed:
+**Core Concepts**
 
 | Concept | Definition | Can You Change It? |
-|---------|------------|--------------------|
+| --- | --- | --- |
 | Company incorporation | Where the business is registered | Yes — choose jurisdiction |
 | Company tax residency | Where the business pays corporate tax (usually where it's managed) | Partially — depends on substance |
 | Personal tax residency | Where YOU pay personal income tax | Yes — but requires genuine relocation |
 
-For solo founders using pass-through entities (e.g., US LLC), personal tax residency is the primary tax determinant.
+Three separate concepts determine how an international founder is taxed:
 
----
+For solo founders using pass-through entities (e.g., US LLC), personal tax residency is the primary tax determinant.
 
 ## The 183-Day Rule
 
 Most countries use 183 days of physical presence as a threshold for tax residency. However, the rule is more complex than it appears.
 
-### Variations by Country
+## Variations by Country
+
+**Variations by Country**
 
 | Variation | Countries | Detail |
-|-----------|-----------|--------|
+| --- | --- | --- |
 | Any partial day = 1 day | Most countries | Arriving at 11pm counts as a full day |
 | Calendar year basis | US (substantial presence), most EU | January 1 – December 31 |
 | Fiscal year basis | UK (April 6), Australia (July 1) | Offset calendar |
@@ -51,30 +54,32 @@ Most countries use 183 days of physical presence as a threshold for tax residenc
 | Permanent home test | Most OECD countries | Having a home available can trigger residency even with <183 days |
 | Citizenship-based | United States | US citizens are ALWAYS US tax residents regardless of location |
 
-### What 183 Days Does NOT Capture
+## What 183 Days Does NOT Capture
 
 - A country may claim residency with <183 days if you maintain a "permanent home" there
 - Some countries use a lookback period (US substantial presence test: weighted 3-year count)
 - "Center of vital interests" (family, property, social ties) can override day counts
 - Leaving a country does not automatically end tax residency — formal deregistration is often required
 
----
-
 ## Country-by-Country Tax Residency Rules
 
-### Zero / Very Low Personal Income Tax Countries
+## Zero / Very Low Personal Income Tax Countries
+
+**Zero / Very Low Personal Income Tax Countries**
 
 | Country | Tax on Foreign Income | Residency Visa | Annual Cost | Notes |
-|---------|----------------------|----------------|-------------|-------|
+| --- | --- | --- | --- | --- |
 | UAE/Dubai | 5% (effective January 2026; was 0% until December 2025) | Via freezone visa | $3,000–10,000 | Must establish genuine residency |
 | Cayman Islands | 0% | Investment-based | $18,000–24,000 | Expensive but total tax freedom |
 | Bahamas | 0% | Permanent Residency available | ~$1,000 | Caribbean lifestyle |
 | Monaco | 0% | Deposit required | €500,000+ deposit | Ultra-high-net-worth only |
 
-### Territorial Tax Countries (0% on Foreign Income)
+## Territorial Tax Countries (0% on Foreign Income)
+
+**Territorial Tax Countries (0% on Foreign Income)**
 
 | Country | Local Tax Rate | Foreign Income Tax | Digital Nomad Visa | Notes |
-|---------|---------------|--------------------|--------------------|-------|
+| --- | --- | --- | --- | --- |
 | Panama | 15–25% | 0% (territorial) | Friendly Nations Visa | Easy residency |
 | Costa Rica | 10–25% | 0% (territorial) | Rentista visa | Growing tech scene |
 | Georgia | 1% (micro business) | 0% (territorial) | Easy residency | Ultra-low tax for <GEL 500,000 revenue |
@@ -82,10 +87,12 @@ Most countries use 183 days of physical presence as a threshold for tax residenc
 | Malaysia | 0–30% | 0% (pre-2024, changing) | MM2H visa | Rules tightening — verify current status |
 | Thailand | 0–35% | Changing (2024+ remittance rule) | LTR visa | LTR visa holders: flat 17% |
 
-### Popular Digital Nomad Visas
+## Popular Digital Nomad Visas
+
+**Popular Digital Nomad Visas**
 
 | Country | Visa Name | Duration | Minimum Income | Tax Implication |
-|---------|-----------|----------|----------------|-----------------|
+| --- | --- | --- | --- | --- |
 | Portugal | D8 (Digital Nomad) | 1 year + renew | €3,500/month | NHR abolished 2024; now taxed at standard rates |
 | Spain | Digital Nomad Visa | 1 year + renew | €2,520/month | Beckham Law: 24% flat rate (limited applicability) |
 | Croatia | Digital Nomad | 1 year | €2,540/month | 0% local tax in first year |
@@ -94,14 +101,12 @@ Most countries use 183 days of physical presence as a threshold for tax residenc
 | Dubai | Virtual Working Program | 1 year | $5,000/month | 5% PIT (effective January 2026) |
 | Thailand | LTR Visa | 5–10 years | Varies | Flat 17% (vs normal up to 35%) |
 
----
-
 ## Effective Tax Rate Comparison by Residency
 
-On $100,000 and $200,000 annual profit from a pass-through entity:
+**Effective Tax Rate Comparison by Residency**
 
 | Residency | On $100K Profit | On $200K Profit | Effort to Establish |
-|-----------|-----------------|-----------------|---------------------|
+| --- | --- | --- | --- |
 | UAE/Dubai | ~$5,000 (5% PIT) | ~$10,000 | High (must live there) |
 | Panama | $0 (foreign income) | $0 | Medium |
 | Georgia | ~$1,000 (1% micro) | ~$2,000 | Low |
@@ -109,11 +114,11 @@ On $100,000 and $200,000 annual profit from a pass-through entity:
 | Germany | ~$35,000 | ~$80,000 | Already there |
 | US citizen (abroad) | ~$0–15,000 (after FEIE) | ~$20,000–35,000 | Complex |
 
----
+On $100,000 and $200,000 annual profit from a pass-through entity:
 
 ## Tax Traps for International Founders
 
-### Trap 1: US Citizens Cannot Escape US Tax
+## Trap 1: US Citizens Cannot Escape US Tax
 
 - US taxes worldwide income regardless of where the citizen lives
 - Must file US return even if living abroad permanently
@@ -122,39 +127,39 @@ On $100,000 and $200,000 annual profit from a pass-through entity:
 - **CFC rules:** Owning >50% of a foreign corporation triggers Subpart F / GILTI — Form 5471 mandatory ($10,000+ penalty per year if missed)
 - **Solution for US citizens:** US LLC (pass-through) avoids CFC complexity
 
-### Trap 2: Permanent Establishment (PE) Risk
+## Trap 2: Permanent Establishment (PE) Risk
 
 - Working from a co-working space in Country X for >90–183 days may create a PE for your company there
 - PE = your company owes corporate tax in that country on attributable profits
 - "Service PE" triggered by extended project work in a country
 - **Mitigation:** Track days carefully, don't sign contracts locally, hold board meetings in the incorporation country
 
-### Trap 3: Company Tax Residency ≠ Incorporation
+## Trap 3: Company Tax Residency ≠ Incorporation
 
 - A company incorporated in Singapore but managed from a laptop in Portugal may be tax resident in Portugal
 - Tax authorities examine where "central management and control" happens
 - **Mitigation:** Hold board meetings (even virtual) in the incorporation country, keep documented minutes
 
-### Trap 4: "Nowhere" Tax Residency Does Not Work
+## Trap 4: "Nowhere" Tax Residency Does Not Work
 
 - Traveling constantly and claiming no tax residency invites problems
 - Tax authorities examine: passport, bank accounts, property, family, center of vital interests
 - **Mitigation:** Deliberately establish tax residency in ONE favorable country
 
-### Trap 5: Social Security Double Contribution
+## Trap 5: Social Security Double Contribution
 
 - Many countries require social security contributions from residents
 - Without totalization agreements, the founder may pay into two systems
 - EU countries have coordination rules; US has agreements with ~30 countries
 
----
-
 ## Exit Tax (Departure Tax)
 
 When leaving a high-tax country, departure can trigger a large one-time tax bill. This is often the single largest tax event in a founder's life.
 
+**Exit Tax (Departure Tax) table**
+
 | Country | Rule | Trigger | Deferral? |
-|---------|------|---------|-----------|
+| --- | --- | --- | --- |
 | Germany | § 6 AStG | Deemed disposal of shares in foreign companies on departure (>1% shareholding held 5+ years) | 5-year deferral within EU/EEA; installments for non-EU moves |
 | United States | HEART Act (2008) | Mark-to-market on all worldwide assets for covered expatriates renouncing citizenship | No deferral; net worth >$2M OR avg annual net income tax >$190K (2024, indexed) |
 | Australia | CGT Event I1 | Deemed disposal of all taxable Australian property on becoming non-resident | Main residence exemption may apply |
@@ -168,26 +173,26 @@ When leaving a high-tax country, departure can trigger a large one-time tax bill
 - Germany § 6 deferral only works for EU/EEA moves; moving to Dubai triggers installment payments
 - US covered expatriates: $800K per-person lifetime exclusion on mark-to-market gain
 
----
-
 ## Split Tax Year (Mid-Year Relocation)
 
-### Countries WITH Formal Split-Year Treatment
+## Countries WITH Formal Split-Year Treatment
+
+**Countries WITH Formal Split-Year Treatment**
 
 | Country | Rule | Detail |
-|---------|------|--------|
+| --- | --- | --- |
 | UK | Statutory Residence Test (SRT) | 8 defined "cases" for split-year treatment; each half taxed separately |
 | Germany | Prorated income | Unlimited liability ends on Abmeldung date; limited liability continues for German-source income |
 | Australia | Partial-year resident | ATO determines residency date based on facts; foreign income not taxed in non-resident portion |
 
-### Countries WITHOUT Split-Year Treatment
+## Countries WITHOUT Split-Year Treatment
 
 - **USA:** No split year for citizens (always filing). Dual-status return applies for green card holders.
 - **Singapore:** No formal split; authorities consider tax residency for the full year.
 - **UAE:** No income tax, so split year is irrelevant.
 - **Panama / Georgia / Paraguay:** Territorial systems; foreign income not taxed regardless.
 
-### Practical Steps for Transition Year
+## Practical Steps for Transition Year
 
 1. **Formal deregistration** — Get paper proof (Abmeldung in Germany, P85 form in UK, departure notification in Australia)
 2. **Establish new residency immediately** — Signed lease, local bank account, utility bill, all dated early
@@ -195,23 +200,25 @@ When leaving a high-tax country, departure can trigger a large one-time tax bill
 4. **File returns in BOTH countries** for the transition year — even if nothing is owed in one
 5. **Claim DTA tie-breaker** if both countries assert full-year residency
 
----
-
 ## Tax Treaty Tie-Breaker Rules (OECD Article 4)
 
 When two countries both claim a person as their tax resident, the DTA tie-breaker is applied sequentially:
 
+**Tax Treaty Tie-Breaker Rules (OECD Article 4) table**  _(OECD Article 4)_
+
 | Step | Test | Key Details |
-|------|------|-------------|
+| --- | --- | --- |
 | 1 | Permanent home availability | Where do you have a home available for continuous use? Rented accommodation counts. A home rented OUT to tenants is NOT available. |
 | 2 | Center of vital interests | Where are your closest personal and economic ties? Family, employment, bank accounts, property. Holistic assessment. |
 | 3 | Habitual abode | Where do you spend time habitually? Assessed over an extended period, not just the current year. |
 | 4 | Nationality | Citizenship as final tie-breaker. Dual nationals may fall through to mutual agreement (MAP, 24–36 months). |
 
-### Documentation Required for Tie-Breaker Claims
+## Documentation Required for Tie-Breaker Claims
+
+**Documentation Required for Tie-Breaker Claims**
 
 | Document | Purpose |
-|----------|---------|
+| --- | --- |
 | Lease agreements / property ownership | Proves permanent home availability |
 | Utility bills in your name | Evidence of actual use of accommodation |
 | Passport stamps / border crossing records | Day-count evidence for habitual abode |
@@ -220,11 +227,9 @@ When two countries both claim a person as their tax resident, the DTA tie-breake
 | School enrollment records (children) | Strong personal ties evidence |
 | Tax Residency Certificate (TRC) | Primary official evidence — single most important document |
 
----
-
 ## Recommended Strategies by Profile
 
-### Profile A: US Citizen, Digital Nomad
+## Profile A: US Citizen, Digital Nomad
 
 - **Structure:** Wyoming/Delaware LLC (pass-through)
 - **Tax strategy:** FEIE (~$130K exclusion) + FTC for amounts above
@@ -232,7 +237,7 @@ When two countries both claim a person as their tax resident, the DTA tie-breake
 - **Banking:** Mercury + Wise
 - **Avoid:** Foreign corporations (triggers CFC/GILTI complexity)
 
-### Profile B: Non-US, Digital Nomad, Revenue <$100K
+## Profile B: Non-US, Digital Nomad, Revenue <$100K
 
 - **Structure:** Wyoming LLC (0% US tax for non-residents)
 - **Tax residency:** Establish in territorial tax country (Panama, Georgia, Paraguay)
@@ -240,13 +245,13 @@ When two countries both claim a person as their tax resident, the DTA tie-breake
 - **Total tax:** Near 0% legally
 - **Annual cost:** ~$1,500 all-in
 
-### Profile C: Non-US, Living in One Country, Revenue >$100K
+## Profile C: Non-US, Living in One Country, Revenue >$100K
 
 - **Structure:** Depends on customer location (US customers → Wyoming LLC; EU → Estonia OÜ; Asia → Singapore)
 - **Tax residency:** Country of residence (file there)
 - **Optimization:** Use DTA between personal country and company country
 
-### Profile D: Founder Seeking Lowest Legal Tax
+## Profile D: Founder Seeking Lowest Legal Tax
 
 - **Structure:** Dubai Freezone (or Wyoming LLC)
 - **Tax residency:** UAE (5% PIT effective January 2026)
@@ -254,14 +259,14 @@ When two countries both claim a person as their tax resident, the DTA tie-breake
 - **Total tax:** 9% corporate on >AED 375K + 5% personal = effective ~12–15%
 - **NOT for US citizens** (still owe US tax)
 
----
-
 ## Flag Theory for Solo Founders
 
 Five "flags" that do NOT need to be in the same country:
 
+**Flag Theory for Solo Founders table**
+
 | Flag | What It Is | Can You Change It? |
-|------|------------|--------------------|
+| --- | --- | --- |
 | Passport | Citizenship | Difficult |
 | Tax residency | Where you pay personal tax | Yes — requires genuine relocation |
 | Company | Where your business is registered | Yes — choose based on customers/tax |
@@ -269,8 +274,6 @@ Five "flags" that do NOT need to be in the same country:
 | Living | Where you actually spend time | Yes — but must align with tax residency claim |
 
 **Example (legal):** Chinese citizen → Dubai tax residency (5% PIT) → Wyoming LLC (0% US tax) → Mercury (US) + Wise (multi-currency) → Living in Dubai + travel.
-
----
 
 ## Official Sources & Further Reading
 
@@ -280,12 +283,28 @@ Five "flags" that do NOT need to be in the same country:
 - **UK Statutory Residence Test**: https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt
 - **Dubai Virtual Working Program**: https://www.visitdubai.com/en/sc7/one-year-virtual-working-programme
 
----
-
 *Data reflects 2024–2026 rules. Tax residency changes are high-stakes decisions — verify all rules with a qualified cross-border tax advisor before acting.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*
+*OpenAccountants — open-source tax computation skills — info@openaccountants.com*
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/tax-residency-planning) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `tax-residency-planning` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/tax-residency-planning. If neither is available, confirm every figure against the official source pages cited above before relying on it.

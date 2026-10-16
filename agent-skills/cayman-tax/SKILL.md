@@ -1,27 +1,24 @@
 ---
 name: cayman-tax
-description: "> Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like \"Cayman tax\", \"Cayman Islands VAT\", \"Cayman Islands income tax\", \"Cayman corporate tax\", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like \"Cayman tax\", \"Cayman Islands VAT\", \"Cayman Islands income tax\", \"Cayman corporate tax\", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KY
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cayman-tax"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/cayman-tax"
+  jurisdiction: "KY"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Cayman Islands Tax Compliance Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Cayman Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Cayman Islands |
 | Tax | Import duties (primary), work permit fees, financial services fees, stamp duty, tourism tax |
 | Currency | KYD (1 KYD = ~1.22 USD) |
@@ -36,8 +33,10 @@ metadata:
 
 ### Tax Landscape
 
+**Tax Landscape**
+
 | Tax Type | Status |
-|---|---|
+| --- | --- |
 | Income Tax (personal/corporate) | None |
 | Capital Gains Tax | None |
 | VAT / Sales Tax | None |
@@ -51,12 +50,14 @@ metadata:
 | Stamp Duty | Yes -- on real estate transfers |
 | Tourism Tax | Yes -- 13% hotel tax |
 
-Tax Undertaking Certificate: up to 50 years for companies, 30 years for individuals.
+- **Tax Undertaking Certificate duration** — up to 50 years for companies, 30 years for individuals years
 
 ### Import Duty Rates
 
+**Import Duty Rates**
+
 | Category | Rate |
-|---|---|
+| --- | --- |
 | General merchandise | 22% -- 27% |
 | Food | 15% -- 22% |
 | Motor vehicles (standard) | 29.5% |
@@ -64,65 +65,62 @@ Tax Undertaking Certificate: up to 50 years for companies, 30 years for individu
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown duty rate | General merchandise (22%) |
 | Unknown economic substance | Assume relevant activity |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- nature of inquiry (employment, imports, entity registration, property).
-
-**Recommended** -- entity type, number of employees, import values, property details.
-
-**Ideal** -- complete registration documents, prior customs filings, economic substance reports.
+- **Minimum viable** — nature of inquiry (employment, imports, entity registration, property).
+- **Recommended** — entity type, number of employees, import values, property details.
+- **Ideal** — complete registration documents, prior customs filings, economic substance reports.
 
 ### Refusal Catalogue
 
-**R-KY-1 -- Income tax.** "Cayman Islands has no income tax."
-
-**R-KY-2 -- VAT/sales tax.** "Cayman Islands has no VAT or sales tax."
-
-**R-KY-3 -- Economic substance detail.** "Escalate to specialist."
-
-**R-KY-4 -- CRS/FATCA reporting.** "Escalate to specialist."
-
----
+- **R-KY-1 -- Income tax** — Cayman Islands has no income tax.
+- **R-KY-2 -- VAT/sales tax** — Cayman Islands has no VAT or sales tax.
+- **R-KY-3 -- Economic substance detail** — Escalate to specialist.
+- **R-KY-4 -- CRS/FATCA reporting** — Escalate to specialist.
 
 ## Section 3 -- Compliance Pattern Library
 
 ### 3.1 Employer Obligations
 
+**Employer Obligations**  _(National Pensions Act)_
+
 | Obligation | Amount/Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Pension (mandatory) | 10% (5% employer + 5% employee) | National Pensions Act |
 | Health insurance | Employer must provide | Minimum coverage prescribed |
 | Work permit fees | Varies by category | Non-Caymanian workers |
-| Payroll tax | None | |
+| Payroll tax | None |  |
 
 ### 3.2 Import Duty Categories
 
+**Import Duty Categories**
+
 | Category | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | General merchandise | 22% | Most goods |
-| Food items | 15% -- 22% | |
-| Motor vehicles (standard) | 29.5% | |
-| Luxury vehicles | 42% | |
+| Food items | 15% -- 22% |  |
+| Motor vehicles (standard) | 29.5% |  |
+| Luxury vehicles | 42% |  |
 | Fuel | Specific rates | Per gallon |
 
 ### 3.3 Entity Registration Fees
 
+**Entity Registration Fees**
+
 | Entity Type | Annual Fee (approx. KYD) |
-|---|---|
+| --- | --- |
 | Exempted company | 850 -- 3,000+ |
 | Exempted limited partnership | 750 -- 2,500+ |
 | Mutual fund (regulated) | 3,000 -- 4,000+ |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -144,39 +142,33 @@ Tax Undertaking Certificate: up to 50 years for companies, 30 years for individu
 
 **Computation:** Tourism tax: 13% x KYD 500 = KYD 65.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 No Direct Taxes
 
-No income tax of any kind. No capital gains tax. No VAT/sales tax. No withholding tax. No payroll tax. No property tax. No estate tax. Tax Undertaking Certificates guarantee this for up to 50 years.
+- **No direct taxes** — No income tax of any kind. No capital gains tax. No VAT/sales tax. No withholding tax. No payroll tax. No property tax. No estate tax. Tax Undertaking Certificates guarantee this for up to 50 years.
 
 ### 5.2 Stamp Duty
 
-Real estate transfers: 7.5% of consideration or market value. First-time Caymanian buyer concessions may apply.
+- **Stamp duty on real estate transfers** — 7.5% % of consideration or market value (First-time Caymanian buyer concessions may apply.)
 
 ### 5.3 Pension and Health Insurance
 
-Mandatory for all employees aged 18-65. Pension: 10% split equally. Health insurance: employer must provide compliant plan.
-
----
+- **Pension and health insurance mandatory** — Mandatory for all employees aged 18-65. Pension: 10% split equally. Health insurance: employer must provide compliant plan.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Economic Substance
 
-Entities conducting relevant activities must demonstrate adequate substance. Flag for specialist.
+- **Economic substance** — Entities conducting relevant activities must demonstrate adequate substance. Flag for specialist.
 
 ### 6.2 Duty Concessions
 
-Development agreements may include duty waivers. Flag for practitioner.
+- **Duty concessions** — Development agreements may include duty waivers. Flag for practitioner.
 
 ### 6.3 Real Estate (Non-Caymanian)
 
-Foreign ownership restrictions may apply. Stamp duty 7.5%. Flag for practitioner.
-
----
+- **Real estate (non-Caymanian)** — Foreign ownership restrictions may apply. Stamp duty 7.5%. Flag for practitioner.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -203,16 +195,14 @@ REVIEWER FLAGS:
   [ ] Pension contributions current?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
+**Bank Statement Reading Guide**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Cayman National, Butterfield | PDF, CSV | Date, Description, Debit, Credit, Balance |
 | CIBC FirstCaribbean | CSV | Date, Narrative, Amount |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -230,12 +220,12 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 10. Prior customs/duty filings available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Tax concessions | Tax Concessions Act (Revised) |
 | Customs duties | Customs Tariff Act (Revised) |
 | Companies | Companies Act (Revised) |
@@ -244,8 +234,6 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 | Health insurance | Health Insurance Act |
 | Stamp duty | Stamp Duty Act |
 | Tourism tax | Tourism Accommodation Tax |
-
----
 
 ## PROHIBITIONS
 
@@ -258,14 +246,30 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 - NEVER ignore CRS/FATCA reporting for financial institutions
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cayman-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cayman-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cayman-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

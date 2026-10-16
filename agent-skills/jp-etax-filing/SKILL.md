@@ -1,29 +1,28 @@
 ---
 name: jp-etax-filing
-description: "> Use this skill whenever asked about filing a Japanese tax return electronically via e-Tax (確定申告書等作成コーナー). Trigger on phrases like \"e-Tax\", \"電子申告\", \"e-Tax filing\", \"確定申告書等作成コーナー\", \"how to file taxes in Japan online\", \"e-Tax submission\", \"マイナンバーカード認証\", \"QR code authentication e-Tax\", \"blue return financial statements\", \"決算書入力\", \"所得税申告書\", \"consumption tax return filing\", \"消費税申告書作成\", or any question about the step-by-step process of filing income tax or consumption tax returns electronically in Japan. This skill covers the complete e-Tax workflow: authentication, financial statement entry (決算書), income tax return entry (申告書B), consumption tax return entry, and electronic submission. ALWAYS read this skill before assisting with any Japan e-Tax filing work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about filing a Japanese tax return electronically via e-Tax (確定申告書等作成コーナー). Trigger on phrases like \"e-Tax\", \"電子申告\", \"e-Tax filing\", \"確定申告書等作成コーナー\", \"how to file taxes in Japan online\", \"e-Tax submission\", \"マイナンバーカード認証\", \"QR code authentication e-Tax\", \"blue return financial statements\", \"決算書入力\", \"所得税申告書\", \"consumption tax return filing\", \"消費税申告書作成\", or any question about the step-by-step process of filing income tax or consumption tax returns electronically in Japan. This skill covers the complete e-Tax workflow: authentication, financial statement entry (決算書), income tax return entry (申告書B), consumption tax return entry, and electronic submission. ALWAYS read this skill before assisting with any Japan e-Tax filing work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: JP
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/jp-etax-filing"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/jp-etax-filing"
+  jurisdiction: "JP"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Japan e-Tax Filing (電子申告) -- Self-Employed Skill v1.0
+# JP Etax Filing
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Japan e-Tax Filing (電子申告) -- Self-Employed Skill v1.0
 
-> **Based on work by [Kazuki Nagata (@kazukinagata)](https://github.com/kazukinagata/shinkoku)**, licensed under MIT. Adapted for the OpenAccountants format.
-
----
+> Based on work by [Kazuki Nagata (@kazukinagata)](https://github.com/kazukinagata/shinkoku), licensed under MIT. Adapted for the OpenAccountants format.
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Japan (日本) |
 | System | e-Tax (国税電子申告・納税システム) |
 | Portal URL | https://www.keisan.nta.go.jp/ |
@@ -35,8 +34,6 @@ metadata:
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a Japanese 税理士 (Zeirishi) |
 | Skill version | 1.0 |
-
----
 
 ## Section 2 -- Prerequisites
 
@@ -50,16 +47,16 @@ Before starting the e-Tax filing process, ensure:
 
 ### Required Documents at Hand
 
+**Required Documents at Hand**
+
 | Document | Japanese Name | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | My Number Card | マイナンバーカード | Authentication + electronic signature |
 | Withholding certificates | 源泉徴収票 | Employment income data |
 | Payment records | 支払調書 | Business withholding data |
 | Insurance premium certificates | 控除証明書 | Deduction claims |
 | Prior year return (optional) | 前年の確定申告書 | Reference for estimated tax |
 | Bank account details | 口座情報 | Refund account or payment method |
-
----
 
 ## Section 3 -- e-Tax Screen Flow Overview
 
@@ -105,28 +102,24 @@ Step 9: Electronic Signature & Submission ★ Manual step
 Step 10: Data File Save (.data)
 ```
 
----
-
 ## Section 4 -- Step-by-Step Filing Workflow
 
 ### 4.1 Submission Method Selection (提出方法の選択)
 
-**Screen: CC-AA-010**
+**Submission Method Selection (Screen: CC-AA-010)**  _(Screen: CC-AA-010)_
 
 | Question | Answer |
-|---|---|
+| --- | --- |
 | Do you have a My Number Card (マイナンバーカード)? | Yes (はい) |
 | Do you have a compatible smartphone or IC card reader? | Yes (はい) |
 | Method | Select "Use Smartphone" (スマートフォンを使用する) |
 
 ### 4.2 Return Type Selection (申告書等の選択)
 
-**Screen: CC-AE-090**
-
-Select the appropriate return type for the tax year:
+**Return Type Selection (Screen: CC-AE-090)**  _(Screen: CC-AE-090)_
 
 | Option | When to Select |
-|---|---|
+| --- | --- |
 | Income Tax (所得税) | Salary income only, no business income |
 | Financial Statements + Income Tax (決算書・収支内訳書＋所得税) | **Self-employed with business income** -- most common |
 | Consumption Tax (消費税) | File separately after income tax |
@@ -136,19 +129,13 @@ Select the appropriate return type for the tax year:
 
 ### 4.3 My Number Portal Linkage
 
-**Screen: CC-AE-600**
-
 Select "Do not use My Number Portal linkage" (マイナポータル連携を利用しない) unless you have already configured the linkage.
 
 ### 4.4 Pre-submission Confirmation
 
-**Screen: CC-AA-024**
-
 Review the terms of use and click "Agree and proceed" (利用規約に同意して次へ).
 
 ### 4.5 QR Code Authentication (QRコード認証)
-
-**Screen: CC-AA-440**
 
 **This requires manual action by the taxpayer:**
 
@@ -161,16 +148,16 @@ Review the terms of use and click "Agree and proceed" (利用規約に同意し�
 
 **Troubleshooting:** If the QR code does not display, ensure you are using a supported browser (Chrome or Edge on Windows, Safari on macOS). Linux is not officially supported.
 
----
-
 ## Section 5 -- Financial Statements Entry (決算書コーナー)
 
 This section applies to self-employed taxpayers filing a blue return (青色申告).
 
 ### 5.1 Select Statement Type
 
+**Select Statement Type**
+
 | Option | When to Select |
-|---|---|
+| --- | --- |
 | Blue Return Financial Statements (青色申告決算書) | Blue return filers (most common) |
 | Income/Expense Statement (収支内訳書) | White return filers |
 | Blue Return -- Cash Basis (青色申告決算書・現金主義用) | Cash-basis filers (rare) |
@@ -185,10 +172,10 @@ Enter the fiscal period (typically January 1 -- December 31) and the following d
 - Personal consumption (家事消費等)
 - Miscellaneous income (雑収入)
 
-**Expense Section (経費):**
+**Expense Section (経費)**
 
 | Line | Expense Category | Japanese Name |
-|---|---|---|
+| --- | --- | --- |
 | 8 | Taxes and public charges | 租税公課 |
 | 9 | Packing and shipping | 荷造運賃 |
 | 10 | Utilities | 水道光熱費 |
@@ -212,15 +199,15 @@ Enter the fiscal period (typically January 1 -- December 31) and the following d
 
 ### 5.3 Blue Return Special Deduction (青色申告特別控除)
 
-The system presents a Q&A to determine the deduction amount:
+**Blue Return Special Deduction Q&A**
 
 | Deduction | Conditions |
-|---|---|
+| --- | --- |
 | JPY 650,000 | Double-entry bookkeeping + e-Tax submission (required for this amount) |
 | JPY 550,000 | Double-entry bookkeeping + paper submission |
 | JPY 100,000 | Simplified bookkeeping |
 
-**If filing via e-Tax and selecting JPY 650,000, the system will verify e-Tax submission is being used. Paper filing with this selection will trigger error KS-E10089.**
+- **KS-E10089** — If filing via e-Tax and selecting JPY 650,000, the system will verify e-Tax submission is being used. Paper filing with this selection will trigger error KS-E10089.  _(KS-E10089)_
 
 ### 5.4 Balance Sheet (貸借対照表) Entry
 
@@ -234,12 +221,14 @@ Notes payable, accounts payable, borrowings, accrued expenses, deposits received
 
 **The system will reject the entry (error KS-E40003) if total assets ≠ total liabilities + equity at year-end.**
 
+- **KS-E40003** — The system will reject the entry (error KS-E40003) if total assets ≠ total liabilities + equity at year-end.  _(KS-E40003)_
+
 ### 5.5 Address and Name Entry (住所・氏名等)
 
-Enter personal details, business information, and the submitting tax office:
+**Address and Name Entry**
 
 | Field | Details |
-|---|---|
+| --- | --- |
 | Postal code | 7-digit postal code |
 | Prefecture and address | Full residential address |
 | Business address | If different from home |
@@ -249,18 +238,16 @@ Enter personal details, business information, and the submitting tax office:
 | Trade name (屋号) | If applicable |
 | Submission date | Date of filing |
 
----
-
 ## Section 6 -- Income Tax Return Entry (所得税コーナー)
 
 After completing financial statements, the system transitions to the income tax return.
 
 ### 6.1 Income Type Selection (所得種類の選択)
 
-Check all applicable income types:
+**Income Type Selection**
 
 | Income Type | Japanese | Typical Selection |
-|---|---|---|
+| --- | --- | --- |
 | Employment | 給与 | If also employed |
 | Business (commercial) | 事業（営業等） | **Self-employed: always check** |
 | Business (agriculture) | 事業（農業） | If applicable |
@@ -283,8 +270,10 @@ For each selected income type, enter the relevant data through dedicated sub-for
 
 ### 6.3 Deductions Entry -- Part 1 (支出系控除)
 
+**Deductions Entry -- Part 1**
+
 | Deduction | Japanese | Data Source |
-|---|---|---|
+| --- | --- | --- |
 | Social insurance premiums | 社会保険料控除 | Partially from withholding certificate |
 | Small enterprise mutual aid | 小規模企業共済等掛金控除 | iDeCo, mutual aid contribution certificates |
 | Life insurance premiums | 生命保険料控除 | Insurance premium certificates |
@@ -295,8 +284,10 @@ For each selected income type, enter the relevant data through dedicated sub-for
 
 ### 6.4 Deductions Entry -- Part 2 (人的控除・住宅控除等)
 
+**Deductions Entry -- Part 2**
+
 | Deduction | Japanese | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Spouse deduction | 配偶者（特別）控除 | Based on spouse's income |
 | Dependent deduction | 扶養控除 | By age category |
 | Widow/single parent | 寡婦・ひとり親控除 | If applicable |
@@ -309,10 +300,10 @@ For each selected income type, enter the relevant data through dedicated sub-for
 
 ### 6.5 Calculation Result Confirmation (計算結果の確認)
 
-The system displays the computed tax:
+**Calculation Result Confirmation**
 
 | Item | What to Verify |
-|---|---|
+| --- | --- |
 | Total income (合計所得金額) | Matches your working paper |
 | Total deductions (所得控除合計) | Matches your calculations |
 | Taxable income (課税所得金額) | Rounded down to nearest JPY 1,000 |
@@ -327,10 +318,10 @@ The system displays the computed tax:
 
 ### 6.6 Payment Method (納付方法)
 
-If tax is due:
+**Payment Method**
 
 | Method | Japanese | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Account transfer | 振替納税 | Auto-debit from bank account |
 | Electronic payment | 電子納税 | Direct debit or internet banking |
 | Credit card | クレジットカード納付 | Fee applies |
@@ -343,25 +334,25 @@ If a refund is due, enter bank account details (bank name, branch, account numbe
 
 Enter personal details (name in kana and kanji, phone number, address, tax office, occupation, trade name) and your 12-digit My Number (マイナンバー). The system validates the check digit.
 
----
-
 ## Section 7 -- Consumption Tax Return (消費税コーナー)
 
 If you are a taxable business (課税事業者) for consumption tax, file the consumption tax return after completing the income tax return.
 
 ### 7.1 Method Determination (条件判定)
 
+**Method Determination Fields**
+
 | Field | What to Enter |
-|---|---|
+| --- | --- |
 | Base period taxable sales (基準期間の課税売上高) | Sales from 2 years prior |
 | Qualified invoice issuer (インボイス発行事業者) | Yes/No |
 | Simplified taxation elected (簡易課税) | Yes/No |
 | Accounting method | Tax-inclusive (税込) or tax-exclusive (税抜) |
 
-The system determines which computation route to use:
+**Computation Route Determination**
 
 | Condition | Route |
-|---|---|
+| --- | --- |
 | Invoice registrant + 20% special measure elected | 2割特例 route |
 | Simplified taxation elected + base sales ≤ JPY 50M | 簡易課税 route |
 | All other cases | 本則課税 (general) route |
@@ -377,10 +368,10 @@ Enter total sales broken down by:
 
 ### 7.3 Calculation Result (計算結果)
 
-The system displays:
+**Calculation Result**
 
 | Item | Description |
-|---|---|
+| --- | --- |
 | Taxable base amount (課税標準額) | Sales ÷ 1.10 (or 1.08), rounded down to JPY 1,000 |
 | National consumption tax (消費税額) | Base × 7.8% (standard) or 6.24% (reduced) |
 | Input tax credit (控除税額) | Varies by method |
@@ -391,8 +382,6 @@ The system displays:
 ### 7.4 Taxpayer Information
 
 Enter address, tax office, name, My Number, and payment method for the consumption tax return.
-
----
 
 ## Section 8 -- Electronic Signature and Submission
 
@@ -423,12 +412,12 @@ After confirming all figures are correct, click the submit button. Record the re
 3. **If consumption tax return is pending**, proceed to file it after the income tax submission
 4. **Note payment deadlines:** Income tax by March 15, consumption tax by March 31
 
----
-
 ## Section 9 -- Common Errors and Troubleshooting
 
+**Common Errors and Troubleshooting**
+
 | Error Code | Description | Resolution |
-|---|---|---|
+| --- | --- | --- |
 | KS-E10089 | e-Tax submission required for JPY 650,000 deduction | Must submit electronically, not on paper |
 | KS-E10001 | Required field missing | Check all mandatory fields are filled |
 | KS-E40003 | Balance sheet does not balance | Verify total assets = total liabilities + equity |
@@ -448,12 +437,12 @@ If the QR code does not appear on the authentication screen:
 - Check that the correct PIN is being used (4-digit user authentication PIN, not the 6-16 digit signature PIN)
 - Hold the card steady against the phone's NFC reader for several seconds
 
----
-
 ## Section 10 -- Key Deadlines and Calendar
 
+**Key Deadlines and Calendar**
+
 | Item | Deadline | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Income tax filing | March 15 | 確定申告 deadline |
 | Income tax payment | March 15 | Same as filing |
 | Consumption tax filing | March 31 | Sole proprietors |
@@ -462,16 +451,16 @@ If the QR code does not appear on the authentication screen:
 | Estimated tax 1st instalment | July 31 | If prior year tax > JPY 150,000 |
 | Estimated tax 2nd instalment | November 30 | If prior year tax > JPY 150,000 |
 
----
-
 ## Section 11 -- Data File Management
-
-### The `.data` File
 
 The 確定申告書等作成コーナー allows saving and loading `.data` files at any point during the process.
 
+### The `.data` File
+
+**The `.data` File**
+
 | Action | When to Use |
-|---|---|
+| --- | --- |
 | Save during entry | To create a checkpoint before complex sections |
 | Save before submission | To preserve a pre-submission backup |
 | Save after submission | To preserve receipt number and submission details |
@@ -479,19 +468,9 @@ The 確定申告書等作成コーナー allows saving and loading `.data` files
 
 **Best practice:** Save `.data` files at three points: (1) after completing financial statements, (2) before electronic submission, and (3) after successful submission.
 
----
-
 ## PROHIBITIONS
 
-- NEVER submit a tax return without the taxpayer's explicit confirmation of all figures
-- NEVER enter the electronic signature PIN -- this must be done by the taxpayer personally
-- NEVER click the final submission button -- this must be done by the taxpayer personally
-- NEVER select the JPY 650,000 blue return deduction for paper filing (will cause error KS-E10089)
-- NEVER skip the balance sheet balance check -- assets must equal liabilities + equity
-- NEVER proceed past the QR code authentication step without confirmation that authentication succeeded
-- NEVER present e-Tax filing as a substitute for professional review -- all returns should be reviewed by a 税理士
-
----
+- **Prohibitions list** — NEVER submit a tax return without the taxpayer's explicit confirmation of all figures; NEVER enter the electronic signature PIN -- this must be done by the taxpayer personally; NEVER click the final submission button -- this must be done by the taxpayer personally; NEVER select the JPY 650,000 blue return deduction for paper filing (will cause error KS-E10089); NEVER skip the balance sheet balance check -- assets must equal liabilities + equity; NEVER proceed past the QR code authentication step without confirmation that authentication succeeded; NEVER present e-Tax filing as a substitute for professional review -- all returns should be reviewed by a 税理士
 
 ## Disclaimer
 
@@ -501,6 +480,45 @@ The 確定申告書等作成コーナー screen layout and form fields are maint
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+## Section 4 -- Step-by-Step Filing Workflow
+
+0. **Prerequisite step: income tax calculations** — Use jp-income-tax skill to compute all figures before starting e-Tax filing
+0. **Prerequisite step: consumption tax calculations** — Use jp-consumption-tax skill to compute consumption tax figures if applicable
+0. **Submission Method Selection** — Select submission method (My Number Card + smartphone or IC card reader)
+
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/jp-etax-filing) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `jp-etax-filing` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/jp-etax-filing. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,27 +1,26 @@
 ---
 name: jp-income-tax
-description: "> Use this skill whenever asked about Japanese income tax for self-employed individuals filing a final tax return (確定申告 Kakutei Shinkoku). Trigger on phrases like \"how much tax do I pay in Japan\", \"kakutei shinkoku\", \"確定申告\", \"blue return\", \"青色申告\", \"white return\", \"白色申告\", \"business income Japan\", \"事業所得\", \"necessary expenses\", \"必要経費\", \"basic deduction\", \"基礎控除\", \"reconstruction tax\", \"resident tax\", \"住民税\", \"self-employed tax Japan\", \"e-Tax\", \"Rakuten Bank\", \"Japan Post Bank\", \"freee Japan\", \"Misoca\", or any question about filing or computing income tax for a self-employed individual in Japan. This skill covers progressive brackets (5%-45%), blue vs white return, special deductions, reconstruction surtax, resident tax, necessary expenses, social insurance, and filing deadlines. ALWAYS read this skill before touching any Japan income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Japanese income tax for self-employed individuals filing a final tax return (確定申告 Kakutei Shinkoku). Trigger on phrases like \"how much tax do I pay in Japan\", \"kakutei shinkoku\", \"確定申告\", \"blue return\", \"青色申告\", \"white return\", \"白色申告\", \"business income Japan\", \"事業所得\", \"necessary expenses\", \"必要経費\", \"basic deduction\", \"基礎控除\", \"reconstruction tax\", \"resident tax\", \"住民税\", \"self-employed tax Japan\", \"e-Tax\", \"Rakuten Bank\", \"Japan Post Bank\", \"freee Japan\", \"Misoca\", or any question about filing or computing income tax for a self-employed individual in Japan. This skill covers progressive brackets (5%-45%), blue vs white return, special deductions, reconstruction surtax, resident tax, necessary expenses, social insurance, and filing deadlines. ALWAYS read this skill before touching any Japan income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: JP
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/jp-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/jp-income-tax"
+  jurisdiction: "JP"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Japan Income Tax (確定申告) -- Self-Employed Skill v2.0
+# JP Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Japan Income Tax (確定申告) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Japan (日本) |
 | Tax | Shotokuzei (所得税) + Fukko Tokubetsu Shotokuzei (復興特別所得税 2.1%) + Juminzei (住民税 10%) |
 | Currency | JPY only |
@@ -36,8 +35,10 @@ metadata:
 
 ### National Income Tax Rate Table (2025) [T1]
 
+**National Income Tax Rate Table (2025)**
+
 | Taxable Income (JPY) | Rate | Deduction Amount (控除額) |
-|---|---|---|
+| --- | --- | --- |
 | 0 -- 1,950,000 | 5% | 0 |
 | 1,950,001 -- 3,300,000 | 10% | 97,500 |
 | 3,300,001 -- 6,950,000 | 20% | 427,500 |
@@ -46,16 +47,16 @@ metadata:
 | 18,000,001 -- 40,000,000 | 40% | 2,796,000 |
 | 40,000,001+ | 45% | 4,796,000 |
 
-**Shortcut formula:** Tax = (Taxable Income x Rate) - Deduction Amount.
-
-**Reconstruction Surtax:** All national income tax x 2.1% (2013--2037). Total national tax = income tax x 102.1%.
-
-**Resident Tax:** Flat 10% of taxable income (4% prefectural + 6% municipal) + per-capita levy ~5,000/year + forest environment tax 1,000 (from 2024). Assessed by municipality from the final return data.
+- **Shortcut formula** — Tax = (Taxable Income x Rate) - Deduction Amount.
+- **Reconstruction Surtax** — All national income tax x 2.1% (2013--2037). Total national tax = income tax x 102.1%.
+- **Resident Tax** — Flat 10% of taxable income (4% prefectural + 6% municipal) + per-capita levy ~5,000/year + forest environment tax 1,000 (from 2024). Assessed by municipality from the final return data.
 
 ### Blue Return Special Deduction (2025) [T1]
 
+**Blue Return Special Deduction (2025)**
+
 | Condition | Deduction (JPY) |
-|---|---|
+| --- | --- |
 | Double-entry (複式簿記) + e-Tax filing | 650,000 |
 | Double-entry + paper filing | 550,000 |
 | Simplified bookkeeping (簡易簿記) | 100,000 |
@@ -63,8 +64,10 @@ metadata:
 
 ### Conservative Defaults [T1]
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Return type unknown | White return (0 special deduction) |
 | Bookkeeping method unknown | Simplified (100,000 deduction) |
 | Home office apportionment unknown | 0% deduction until confirmed |
@@ -73,15 +76,15 @@ metadata:
 
 ### Red Flag Thresholds [T1]
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Consumption tax registration required | Annual revenue > JPY 10,000,000 in prior 2 years |
 | Withholding applies to professional fees | Client is a corporation paying > JPY 1,000 per payment |
 | Blue return requires advance application | Form 144 (青色申告承認申請書) by 15 March of target year |
 | Loss carry-forward | Blue return only -- 3 years |
 | Blue return asset expensing limit | JPY 300,000/item (aggregate JPY 3,000,000/year) |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -95,17 +98,11 @@ metadata:
 
 ### Refusal Catalogue
 
-**R-JP-1 -- Non-residents (非居住者).** "Non-resident taxation has different sourcing rules and treaty interactions. Out of scope -- escalate."
-
-**R-JP-2 -- Corporate entities (法人).** "Corporations file Corporate Tax (法人税), not income tax. Out of scope."
-
-**R-JP-3 -- Real estate capital gains / inherited property.** "Separate computation with different rates. Escalate."
-
-**R-JP-4 -- Cryptocurrency (暗号資産).** "Crypto profits are 'miscellaneous income' (雑所得) taxed up to 55% including resident tax. Complex classification rules apply. Escalate."
-
-**R-JP-5 -- Non-permanent resident status (非永住者).** "Non-permanent residents have limited worldwide income taxation. Requires specialist review. Escalate."
-
----
+- **R-JP-1 -- Non-residents (非居住者)** — Non-resident taxation has different sourcing rules and treaty interactions. Out of scope -- escalate.
+- **R-JP-2 -- Corporate entities (法人)** — Corporations file Corporate Tax (法人税), not income tax. Out of scope.
+- **R-JP-3 -- Real estate capital gains / inherited property** — Separate computation with different rates. Escalate.
+- **R-JP-4 -- Cryptocurrency (暗号資産)** — Crypto profits are 'miscellaneous income' (雑所得) taxed up to 55% including resident tax. Complex classification rules apply. Escalate.
+- **R-JP-5 -- Non-permanent resident status (非永住者)** — Non-permanent residents have limited worldwide income taxation. Requires specialist review. Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -113,8 +110,10 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 
 ### 3.1 Income Patterns (Credits -- 入金)
 
+**Income Patterns (Credits -- 入金)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 振込 [client name] / 入金 [client company] | 事業収入 (business revenue) | Gross revenue | Professional fee from client |
 | 銀行振込 [sender] / 普通振込 | 事業収入 | Revenue | Standard bank transfer from client |
 | STRIPE PAYOUT / STRIPE TRANSFER | 事業収入 | Revenue | Stripe Japan / international clients -- match to invoices |
@@ -133,8 +132,10 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 
 ### 3.2 Expense Patterns (Debits -- 出金)
 
+**Expense Patterns (Debits -- 出金)**
+
 | Pattern | Tax Line (必要経費) | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 事務所賃料 / オフィス家賃 [landlord] | 地代家賃 (rent) | Fully deductible | Dedicated business premises |
 | 電気料金 [TEPCO/関西電力/中部電力/九州電力] | 水道光熱費 (utilities) | Business portion deductible | Home office: apportion by floor area or time |
 | 水道料金 / 水道局 | 水道光熱費 | Business portion | Apportion if home office |
@@ -143,13 +144,13 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 | 交通費 [JR/東京メトロ/新幹線/バス] | 旅費交通費 (travel) | Fully deductible if business | IC card statements are acceptable |
 | 航空券 [ANA/JAL/LCC] | 旅費交通費 | Fully deductible if business purpose | Keep booking confirmation |
 | 接待 [restaurant] / 飲食 | 接待交際費 (entertainment) | Deductible if business purpose | No statutory cap for sole proprietors; document names, purpose |
-| 書籍 [Amazon Japan/紀伊國屋/丸善] | 新聞図書費 (books/publications) | Fully deductible if professional | |
-| セミナー [event] / 研修費 | 研修費 (training) | Fully deductible | |
+| 書籍 [Amazon Japan/紀伊國屋/丸善] | 新聞図書費 (books/publications) | Fully deductible if professional |  |
+| セミナー [event] / 研修費 | 研修費 (training) | Fully deductible |  |
 | ソフトウェア [Adobe/Microsoft/Figma/Notion] | 消耗品費 or 減価償却費 | Under JPY 100,000: fully deductible; over: depreciate | Subscription vs perpetual licence distinction |
-| 広告費 [Google Ads/Meta Ads] | 広告宣伝費 (advertising) | Fully deductible | |
+| 広告費 [Google Ads/Meta Ads] | 広告宣伝費 (advertising) | Fully deductible |  |
 | 税理士報酬 / 会計士報酬 | 税理士・弁護士費用 | Fully deductible | Professional adviser fees |
 | 損害保険 [business] | 損害保険料 (insurance) | Fully deductible | Business liability only |
-| 外注費 / フリーランス費用 | 外注工賃 (subcontracting) | Fully deductible | |
+| 外注費 / フリーランス費用 | 外注工賃 (subcontracting) | Fully deductible |  |
 | 銀行手数料 / 振込手数料 | 雑費 (miscellaneous) | Fully deductible | Business account only |
 | 国民年金 / 国民年金保険料 | 社会保険料控除 (NOT 必要経費) | EXCLUDE from business expenses | Deducted as income deduction (所得控除), not business expense |
 | 国民健康保険 / 国保料 | 社会保険料控除 (NOT 必要経費) | EXCLUDE from business expenses | Same -- income deduction, not business expense |
@@ -159,16 +160,16 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 
 ### 3.3 SaaS / Cloud Service Patterns
 
+**SaaS / Cloud Service Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Adobe Systems / Adobe Creative Cloud | 消耗品費 (operating expense) | Subscription: fully deductible. Check if annual or monthly. |
 | Microsoft / Office 365 / M365 | 消耗品費 | Subscription: deductible |
 | Google Workspace / G Suite | 消耗品費 | Subscription: deductible |
 | freee / Money Forward Cloud / Yayoi | 消耗品費 | Accounting software: deductible |
 | Slack / Notion / Figma | 消耗品費 | Business SaaS: deductible |
 | AWS Japan / Amazon Web Services | 消耗品費 | Cloud hosting: deductible |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -232,28 +233,22 @@ Restaurant meal JPY 48,000. If this was a client entertainment dinner (接待交
 
 **Classification:** 接待交際費 JPY 48,000. Fully deductible if properly documented. Flag for reviewer if aggregate entertainment is high.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Business Revenue (事業収入)
 
-**Legislation:** Income Tax Act Article 27
-
-All business revenue (professional fees, contract income, product sales) is 事業収入. For consumption tax (消費税) registered taxpayers, report net of consumption tax. For non-registered (below JPY 10M threshold), report gross including CT.
+- **Business Revenue (事業収入)** — All business revenue (professional fees, contract income, product sales) is 事業収入. For consumption tax (消費税) registered taxpayers, report net of consumption tax. For non-registered (below JPY 10M threshold), report gross including CT.  _(Income Tax Act Article 27)_
 
 ### 5.2 Necessary Expenses (必要経費)
 
-**Legislation:** Income Tax Act Article 37
-
-Expenses are deductible if directly incurred for earning business income (業務の遂行に直接必要). Japan allows apportionment of mixed-use expenses where business and personal portions can be separated objectively (按分 -- 按分計算).
+- **Necessary Expenses (必要経費)** — Expenses are deductible if directly incurred for earning business income (業務の遂行に直接必要). Japan allows apportionment of mixed-use expenses where business and personal portions can be separated objectively (按分 -- 按分計算).  _(Income Tax Act Article 37)_
 
 ### 5.3 Blue Return Special Deduction (青色申告特別控除)
 
-**Legislation:** Measures Act Article 25-2
+**Blue Return Special Deduction (青色申告特別控除)**  _(Measures Act Article 25-2)_
 
 | Method | Deduction | Conditions |
-|---|---|---|
+| --- | --- | --- |
 | Double-entry + e-Tax | JPY 650,000 | Must file via e-Tax AND maintain double-entry books |
 | Double-entry + paper | JPY 550,000 | Double-entry books, paper filing |
 | Simplified bookkeeping | JPY 100,000 | Simplified (簡易簿記) books, either filing method |
@@ -261,25 +256,24 @@ Expenses are deductible if directly incurred for earning business income (業務
 
 ### 5.4 Depreciation (減価償却)
 
-**Legislation:** Income Tax Act Article 49; NTA depreciation tables
+**Depreciation (減価償却)**  _(Income Tax Act Article 49; NTA depreciation tables)_
 
 | Asset | Useful Life | Declining Balance Rate |
-|---|---|---|
+| --- | --- | --- |
 | Personal computers | 4 years | 0.500 |
 | Servers | 5 years | 0.400 |
 | Office furniture (wood) | 8 years | 0.250 |
 | Motor vehicles (standard) | 6 years | 0.333 |
 | Software (purchased) | 3-5 years | varies |
 
-**Expensing rules:**
-- Under JPY 100,000: expense immediately (少額減価償却資産)
-- JPY 100,000 -- JPY 199,999: option to depreciate uniformly over 3 years (一括償却資産)
-- Blue return filers: under JPY 300,000 can be expensed immediately, subject to aggregate limit of JPY 3,000,000/year
+- **Expensing rules** — Under JPY 100,000: expense immediately (少額減価償却資産). JPY 100,000 -- JPY 199,999: option to depreciate uniformly over 3 years (一括償却資産). Blue return filers: under JPY 300,000 can be expensed immediately, subject to aggregate limit of JPY 3,000,000/year  _(Income Tax Act Article 49; NTA depreciation tables)_
 
 ### 5.5 Income Deductions (所得控除)
 
+**Income Deductions (所得控除)**
+
 | Deduction | Amount (2025) |
-|---|---|
+| --- | --- |
 | Basic deduction (基礎控除) | JPY 580,000 (standard); temporary enhancement for income ≤ JPY 6,550,000 -- see below |
 | Social insurance (社会保険料控除) | Full amount paid (national pension + health insurance) |
 | Small enterprise mutual aid (小規模企業共済) | Full amount paid |
@@ -288,10 +282,10 @@ Expenses are deductible if directly incurred for earning business income (業務
 | Spouse deduction (配偶者控除) | Up to JPY 380,000 (if spouse income ≤ JPY 480,000) |
 | Dependent deduction (扶養控除) | JPY 380,000--630,000 per dependent |
 
-**2025 Temporary Enhanced Basic Deduction:**
+**2025 Temporary Enhanced Basic Deduction**
 
 | Total Income (合計所得金額) | Basic Deduction (2025) |
-|---|---|
+| --- | --- |
 | Up to JPY 1,320,000 | JPY 950,000 |
 | JPY 1,320,001 -- 2,695,000 | JPY 880,000 |
 | JPY 2,695,001 -- 6,550,000 | JPY 680,000 |
@@ -300,12 +294,14 @@ Expenses are deductible if directly incurred for earning business income (業務
 
 ### 5.6 Advance Tax / Estimated Tax (予定納税)
 
-Applies to taxpayers whose prior year national income tax exceeded JPY 150,000. NTA sends a notification. Two instalments: July 31 and November 30, each = 1/3 of prior year's tax.
+- **Advance Tax / Estimated Tax (予定納税)** — Applies to taxpayers whose prior year national income tax exceeded JPY 150,000. NTA sends a notification. Two instalments: July 31 and November 30, each = 1/3 of prior year's tax.
 
 ### 5.7 Filing Deadlines
 
+**Filing Deadlines**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | Final return (確定申告) | 15 March of following year |
 | Tax payment | 15 March |
 | Estimated tax (予定納税) 1st | 31 July |
@@ -314,15 +310,15 @@ Applies to taxpayers whose prior year national income tax exceeded JPY 150,000. 
 
 ### 5.8 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing (within 1 month, voluntary) | 5% of additional tax (無申告加算税) |
 | Late filing (after notice or > 1 month) | 15% on first JPY 500,000 + 20% on excess |
 | Under-reporting | 10% of additional tax |
 | Fraud / concealment | 35-40% (重加算税) |
 | Late payment interest (延滞税) | ~2.4% for first 2 months, ~8.7% thereafter |
-
----
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -349,8 +345,6 @@ Blue return filers may deduct salaries paid to family members working in the bus
 ### 6.5 iDeCo / Small Enterprise Mutual Aid
 
 Contributions to iDeCo (個人型確定拠出年金) or small enterprise mutual aid (小規模企業共済) are fully deductible as income deductions. Large contributions can significantly reduce tax liability. Flag if client mentions these -- confirm amounts from contribution statements.
-
----
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -415,14 +409,14 @@ REVIEWER FLAGS:
   [ ] National pension / NHI receipts confirmed?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Japanese Bank Statement Formats
 
+**Japanese Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | 三菱UFJ (MUFG) | CSV / PDF | 日付, 摘要, お引出し, お預入れ, 残高 |
 | みずほ銀行 (Mizuho) | CSV | 取引年月日, 摘要, お支払金額, お預り金額, 差引残高 |
 | 三井住友銀行 (SMBC) | CSV / PDF | 年月日, 摘要, 支払金額, 預入金額, 残高 |
@@ -432,8 +426,10 @@ REVIEWER FLAGS:
 
 ### Key Japanese Banking Terms
 
+**Key Japanese Banking Terms**
+
 | Japanese Term | English | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | 振込入金 | Wire transfer in | Potential income |
 | 振込出金 / 振込手数料 | Wire transfer out / fee | Potential expense or bank fee |
 | 自動振替 | Auto debit | Regular expense (utilities, insurance) |
@@ -443,8 +439,6 @@ REVIEWER FLAGS:
 | 税金 口座振替 | Tax payment auto-debit | Exclude (tax payment) |
 | 国民年金 振替 | Pension auto-debit | Income deduction (not expense) |
 | 国保 振替 | Health insurance auto-debit | Income deduction (not expense) |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -472,14 +466,14 @@ ONBOARDING QUESTIONS -- JAPAN INCOME TAX (確定申告)
 10. Prior year estimated tax (予定納税) notices?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Article |
-|---|---|
+| --- | --- |
 | Business income (事業所得) | Income Tax Act Art. 27 |
 | Necessary expenses (必要経費) | ITA Art. 37 |
 | Blue return (青色申告) | ITA Art. 143-148 |
@@ -499,8 +493,10 @@ ONBOARDING QUESTIONS -- JAPAN INCOME TAX (確定申告)
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Japanese bank format guide; local platform patterns; worked examples |
 | 1.0 | 2025 | Initial version |
 
@@ -514,8 +510,6 @@ ONBOARDING QUESTIONS -- JAPAN INCOME TAX (確定申告)
 - [ ] Withholding credits verified against 支払調書, not just bank statement?
 - [ ] Blue return advance application verified (Form 144)?
 
----
-
 ## PROHIBITIONS
 
 - NEVER omit the reconstruction special income tax (2.1%) -- it applies to all income tax through 2037
@@ -527,14 +521,30 @@ ONBOARDING QUESTIONS -- JAPAN INCOME TAX (確定申告)
 - NEVER skip rounding down final tax to nearest JPY 100
 - NEVER present tax calculations as definitive -- always label as estimated and direct client to their 税理士 for confirmation
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a 税理士 or equivalent licensed practitioner in Japan) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/jp-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `jp-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/jp-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

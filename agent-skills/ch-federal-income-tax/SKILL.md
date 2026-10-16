@@ -1,27 +1,26 @@
 ---
 name: ch-federal-income-tax
-description: "> Use this skill whenever asked about Swiss federal income tax (direkte Bundessteuer / impot federal direct) for self-employed individuals. Trigger on phrases like \"Bundessteuer\", \"direkte Bundessteuer\", \"impot federal direct\", \"Steuererklarung Schweiz\", \"selbstandig Steuern Schweiz\", \"Swiss federal income tax\", \"self-employed tax Switzerland\", \"AHV deduction\", \"Saule 3a\", \"BVG\", \"Geschaftsaufwand\", or any question about computing or filing FEDERAL income tax for a self-employed person in Switzerland. This skill covers FEDERAL progressive brackets only (0--11.5%), Geschaftsaufwand, AHV/IV/EO deductibility, BVG/Saule 3a deductions, and federal filing. Cantonal and municipal taxes are out of scope. ALWAYS read this skill before touching any Swiss federal income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Swiss federal income tax (direkte Bundessteuer / impot federal direct) for self-employed individuals. Trigger on phrases like \"Bundessteuer\", \"direkte Bundessteuer\", \"impot federal direct\", \"Steuererklarung Schweiz\", \"selbstandig Steuern Schweiz\", \"Swiss federal income tax\", \"self-employed tax Switzerland\", \"AHV deduction\", \"Saule 3a\", \"BVG\", \"Geschaftsaufwand\", or any question about computing or filing FEDERAL income tax for a self-employed person in Switzerland. This skill covers FEDERAL progressive brackets only (0--11.5%), Geschaftsaufwand, AHV/IV/EO deductibility, BVG/Saule 3a deductions, and federal filing. Cantonal and municipal taxes are out of scope. ALWAYS read this skill before touching any Swiss federal income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CH
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ch-federal-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/ch-federal-income-tax"
+  jurisdiction: "CH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.0
+# CH Federal Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Switzerland (Federal level only) |
 | Tax | Direkte Bundessteuer (DBSt) |
 | Currency | CHF only |
@@ -40,8 +39,10 @@ metadata:
 
 ### Federal Tax Tariff -- Grundtarif (Single) -- Approximate
 
+**Federal Tax Tariff -- Grundtarif (Single) -- Approximate**
+
 | Taxable Income (CHF) | Approx. Marginal Rate |
-|---|---|
+| --- | --- |
 | 0 -- 17,800 | 0% |
 | 17,801 -- 31,600 | 0.77% |
 | 31,601 -- 41,400 | 0.88% -- 2.64% |
@@ -53,7 +54,7 @@ metadata:
 | 134,601 -- 176,000 | 13.20% |
 | 176,001+ | 11.50% max effective rate |
 
-**NEVER compute Swiss federal tax from these approximate brackets. Use official ESTV tariff tables.**
+- **Never compute from approximate brackets** — NEVER compute Swiss federal tax from these approximate brackets. Use official ESTV tariff tables.
 
 ### Verheiratetentarif (Married)
 
@@ -61,23 +62,29 @@ More favourable. Tax-free threshold ~CHF 30,800. Maximum effective rate 11.5% re
 
 ### Saule 3a Limits (2025)
 
+**Saule 3a Limits (2025)**
+
 | Category | Maximum (CHF) |
-|---|---|
+| --- | --- |
 | With BVG (Pensionskasse) | 7,258 |
 | Without BVG | 20% of net earned income, max 36,288 |
 
 ### AHV/IV/EO (Self-Employed)
 
+**AHV/IV/EO (Self-Employed)**
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Total AHV/IV/EO | 10.0% |
 
-Fully deductible. Rate 10.0% on income above CHF 10,100 (declining scale below).
+- **AHV/IV/EO deductibility** — Fully deductible. Rate 10.0% on income above CHF 10,100 (declining scale below).
 
 ### Key Deduction Lines
 
+**Key Deduction Lines**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | Geschaftsaufwand | Business expenses |
 | Abschreibungen | Depreciation |
 | AHV/IV/EO | Social insurance contributions |
@@ -87,41 +94,32 @@ Fully deductible. Rate 10.0% on income above CHF 10,100 (declining scale below).
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown marital status | STOP -- determines tariff |
 | Unknown BVG status | Without BVG (higher 3a limit applies) |
 | Unknown business-use % | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown cantonal question | ESCALATE -- federal only |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- bank statement for the full tax year, marital status, canton of residence.
-
-**Recommended** -- all invoices, AHV/IV/EO contribution statements, BVG certificate, Saule 3a statements, prior year Steuerveranlagung.
-
-**Ideal** -- complete business accounts, Anlageverzeichnis, provisional tax notices.
-
-**Refusal if minimum is missing -- SOFT WARN.** No bank statement = hard stop. Unknown marital status = hard stop.
+- **Minimum viable inputs** — **Minimum viable** -- bank statement for the full tax year, marital status, canton of residence.
+- **Recommended inputs** — **Recommended** -- all invoices, AHV/IV/EO contribution statements, BVG certificate, Saule 3a statements, prior year Steuerveranlagung.
+- **Ideal inputs** — **Ideal** -- complete business accounts, Anlageverzeichnis, provisional tax notices.
+- **Refusal if minimum missing** — **Refusal if minimum is missing -- SOFT WARN.** No bank statement = hard stop. Unknown marital status = hard stop.
 
 ### Refusal Catalogue
 
-**R-CH-1 -- Cantonal / municipal tax.** "This skill covers FEDERAL tax only. Cantonal and municipal taxes require separate cantonal skills or Treuhnder consultation. Do not estimate."
-
-**R-CH-2 -- Corporations (AG, GmbH, Verein).** "Corporate taxation is separate. Out of scope."
-
-**R-CH-3 -- Non-resident / Quellensteuer.** "Source tax for non-residents has different rules. Escalate."
-
-**R-CH-4 -- Interkantonale Steuerausscheidung.** "Multi-canton allocation is out of scope."
-
-**R-CH-5 -- Steuererlass / tax relief applications.** "Escalate to Treuhnder."
-
----
+- **R-CH-1** — Cantonal / municipal tax. "This skill covers FEDERAL tax only. Cantonal and municipal taxes require separate cantonal skills or Treuhnder consultation. Do not estimate."
+- **R-CH-2** — Corporations (AG, GmbH, Verein). "Corporate taxation is separate. Out of scope."
+- **R-CH-3** — Non-resident / Quellensteuer. "Source tax for non-residents has different rules. Escalate."
+- **R-CH-4** — Interkantonale Steuerausscheidung. "Multi-canton allocation is out of scope."
+- **R-CH-5** — Steuererlass / tax relief applications. "Escalate to Treuhnder."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -129,8 +127,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.1 Income Patterns (Credits)
 
+**3.1 Income Patterns (Credits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ZAHLUNG, UBERWEISUNG [client], HONORAR | Einkünfte selbstandige Erwerbstatigkeit | Business income | Extract net if MWST-registered |
 | STRIPE PAYOUT, PAYPAL PAYOUT | Business income | Revenue | Platform payout |
 | LOHN, GEHALT, ARBEITGEBER | Einkünfte unselbstandige Erwerbstatigkeit | NOT self-employment | Employment income |
@@ -140,42 +140,50 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Expense Patterns (Debits) -- Fully Deductible (Geschaftsaufwand)
 
+**3.2 Expense Patterns (Debits) -- Fully Deductible (Geschaftsaufwand)**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BÜROMIETE, GESCHÄFTSMIETE, OFFICE RENT | Raumkosten | Fully deductible | Dedicated premises |
 | BERUFSHAFTPFLICHT, VERSICHERUNG (business) | Versicherung | Fully deductible | Professional insurance |
-| TREUHAND, BUCHHALTER, STEUERBERATER | Beratungskosten | Fully deductible | |
-| RECHTSANWALT, NOTAR (business) | Rechtskosten | Fully deductible | |
-| BÜROMATERIAL | Bürobedarf | Fully deductible | |
-| WERBUNG, MARKETING, GOOGLE ADS | Werbekosten | Fully deductible | |
+| TREUHAND, BUCHHALTER, STEUERBERATER | Beratungskosten | Fully deductible |  |
+| RECHTSANWALT, NOTAR (business) | Rechtskosten | Fully deductible |  |
+| BÜROMATERIAL | Bürobedarf | Fully deductible |  |
+| WERBUNG, MARKETING, GOOGLE ADS | Werbekosten | Fully deductible |  |
 | WEITERBILDUNG, KURS, SEMINAR | Weiterbildung | Fully deductible (up to CHF 12,900) | Job-related |
 | VERBANDSBEITRAG, MITGLIEDSCHAFT | Beitrge | Fully deductible | Professional associations |
 | BANKGEBÜHR, KONTOFÜHRUNG | Bankspesen | Fully deductible | Business account |
-| STRIPE FEE, PAYPAL FEE | Transaktionskosten | Fully deductible | |
+| STRIPE FEE, PAYPAL FEE | Transaktionskosten | Fully deductible |  |
 | SOFTWARE, LIZENZ, ABONNEMENT (under CHF 1,000) | IT-Kosten | Fully deductible | Low-value = immediate expense |
 
 ### 3.3 Expense Patterns -- Social Insurance
 
+**3.3 Expense Patterns -- Social Insurance**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AHV, AUSGLEICHSKASSE, SVA | Fully deductible | AHV/IV/EO contributions |
 | BVG, PENSIONSKASSE, AUFFANGEINRICHTUNG | Fully deductible | Pillar 2 |
 | SÄULE 3A, VORSORGE 3A | Deductible within limits | CHF 7,258 or CHF 36,288 |
 
 ### 3.4 Expense Patterns -- Travel
 
+**3.4 Expense Patterns -- Travel**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FLUG, SWISS, EASYJET, RYANAIR | Reisekosten | Fully deductible | Business purpose |
 | HOTEL, BOOKING.COM | Reisekosten | Fully deductible | Business travel |
 | SBB, BLS, ZVV | Reisekosten | Fully deductible | Business travel |
 | TAXI, UBER | Reisekosten | Fully deductible | Business purpose |
-| TANKSTELLE, MIGROL, COOP PRONTO, BP | Fahrzeugkosten | T2 -- business % only | |
+| TANKSTELLE, MIGROL, COOP PRONTO, BP | Fahrzeugkosten | T2 -- business % only |  |
 
 ### 3.5 Expense Patterns -- NOT Deductible
 
+**3.5 Expense Patterns -- NOT Deductible**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PRIVAT, LEBENSMITTEL, MIGROS, COOP (groceries) | NOT deductible | Lebenshaltungskosten |
 | BUSSE, ORDNUNGSBUSSE | NOT deductible | Fines |
 | BUNDESSTEUER, KANTONSSTEUER, STEUERN | NOT deductible | Income tax |
@@ -183,19 +191,23 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.6 Capital Items
 
+**3.6 Capital Items**
+
 | Pattern | Straight-Line | Reducing Balance | Notes |
-|---|---|---|---|
-| COMPUTER, LAPTOP, PC | 40% | 50% | |
-| BÜROMÖBEL | 12.5% | 25% | |
-| FAHRZEUG, AUTO (business) | 20% | 40% | |
-| MASCHINE, EQUIPMENT | 12.5%-20% | 25%-40% | |
-| GEBÄUDE (commercial) | 2%-4% | 3%-7% | |
-| Low-value (under CHF 1,000) | 100% immediate | -- | |
+| --- | --- | --- | --- |
+| COMPUTER, LAPTOP, PC | 40% | 50% |  |
+| BÜROMÖBEL | 12.5% | 25% |  |
+| FAHRZEUG, AUTO (business) | 20% | 40% |  |
+| MASCHINE, EQUIPMENT | 12.5%-20% | 25%-40% |  |
+| GEBÄUDE (commercial) | 2%-4% | 3%-7% |  |
+| Low-value (under CHF 1,000) | 100% immediate | -- |  |
 
 ### 3.7 Exclusions
 
+**3.7 Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EIGENÜBERWEISUNG, INTERNAL | EXCLUDE | Own-account transfer |
 | DARLEHEN, KREDIT, AMORTISATION | EXCLUDE | Loan principal |
 | DARLEHENSZINS (business) | Deductible | Business loan interest |
@@ -204,16 +216,16 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.8 Swiss Banks -- Statement Format Reference
 
+**3.8 Swiss Banks -- Statement Format Reference**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | UBS | CSV, PDF, MT940 | Buchungsdatum, Text, Betrag | UBS e-banking export |
 | PostFinance | CSV, PDF | Datum, Buchungstext, Gutschrift/Belastung | PostFinance e-Finance |
-| ZKB (Zurcher Kantonalbank) | CSV, PDF | Datum, Text, Betrag | |
+| ZKB (Zurcher Kantonalbank) | CSV, PDF | Datum, Text, Betrag |  |
 | Credit Suisse / UBS (merged) | CSV, PDF | Datum, Beschreibung, Betrag | Post-merger formats |
-| Raiffeisen CH | CSV, PDF | Datum, Buchungstext, Betrag | |
+| Raiffeisen CH | CSV, PDF | Datum, Buchungstext, Betrag |  |
 | Revolut, Wise | CSV | Date, Counterparty, Amount | Multi-currency |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -277,44 +289,44 @@ Printer CHF 890. Under CHF 1,000 low-value threshold. Immediate full deduction.
 
 **Classification:** Geschaftsaufwand. Fully deductible in year of purchase.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Business Income
 
-All self-employment income is Einkünfte aus selbstandiger Erwerbstatigkeit (Art. 18 DBG). For MWST-registered, report net.
+- **Business income treatment** — All self-employment income is Einkünfte aus selbstandiger Erwerbstatigkeit (Art. 18 DBG). For MWST-registered, report net.  _(Art. 18 DBG)_
 
 ### 5.2 Geschaftsaufwand
 
-Business expenses deductible under DBG Art. 27-31. Must be business-related.
+- **Business expense deductibility** — Business expenses deductible under DBG Art. 27-31. Must be business-related.  _(DBG Art. 27-31)_
 
 ### 5.3 Abschreibungen (Depreciation)
 
-Choose straight-line or reducing balance (consistent per asset). ESTV guideline rates apply. Low-value under CHF 1,000 may be expensed immediately.
+- **Depreciation method** — Choose straight-line or reducing balance (consistent per asset). ESTV guideline rates apply. Low-value under CHF 1,000 may be expensed immediately.
 
 ### 5.4 AHV/IV/EO Deductibility
 
-Fully deductible. Self-employed pay 10.0% on income above CHF 10,100 (declining scale below). Circular calculation resolved by Ausgleichskasse.
+- **AHV/IV/EO deductibility detail** — Fully deductible. Self-employed pay 10.0% on income above CHF 10,100 (declining scale below). Circular calculation resolved by Ausgleichskasse.
 
 ### 5.5 Saule 3a and BVG
 
-- With BVG: max CHF 7,258
-- Without BVG: 20% of net earned income, max CHF 36,288
-- Hard cap -- excess not deductible
+- **Saule 3a and BVG limits** — - With BVG: max CHF 7,258 - Without BVG: 20% of net earned income, max CHF 36,288 - Hard cap -- excess not deductible
 
 ### 5.6 Personal Deductions (Federal)
 
+**5.6 Personal Deductions (Federal)**
+
 | Deduction | CHF |
-|---|---|
+| --- | --- |
 | Married couple | 2,800 |
 | Kinderabzug | 6,700 per child |
 | Unterstützungsabzug | Up to 7,050 |
 
 ### 5.7 Non-Deductible
 
+**5.7 Non-Deductible**
+
 | Expense | Reason |
-|---|---|
+| --- | --- |
 | Personal living expenses | Art. 34 DBG |
 | Fines (Bussen) | Public policy |
 | Income tax (all levels) | Tax on income |
@@ -322,8 +334,10 @@ Fully deductible. Self-employed pay 10.0% on income above CHF 10,100 (declining 
 
 ### 5.8 Filing and Penalties
 
+**5.8 Filing and Penalties**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Standard deadline | 31 March (varies by canton) |
 | Extensions | Routinely available |
 | Late filing | Reminder + fee; estimated assessment |
@@ -332,33 +346,29 @@ Fully deductible. Self-employed pay 10.0% on income above CHF 10,100 (declining 
 
 ### 5.9 Provisional Tax
 
-Billed by canton based on prior assessment. Interest on under/overpayment (Ausgleichszins).
-
----
+- **Provisional tax billing** — Billed by canton based on prior assessment. Interest on under/overpayment (Ausgleichszins).
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Home Office (Arbeitszimmer)
 
-Deductible if predominantly business use AND no separate business premises. Proportion by floor area. Flag for reviewer.
+- **Home office deductibility** — Deductible if predominantly business use AND no separate business premises. Proportion by floor area. Flag for reviewer.
 
 ### 6.2 Vehicle Business Use
 
-Business vs private split required. Private use of business vehicle = taxable benefit (Naturallohn). Flag for reviewer.
+- **Vehicle business use split** — Business vs private split required. Private use of business vehicle = taxable benefit (Naturallohn). Flag for reviewer.
 
 ### 6.3 Phone / Internet Mixed Use
 
-Business portion only. Default 0%.
+- **Phone/internet mixed use default** — Business portion only. Default 0%.
 
 ### 6.4 BVG Voluntary Contributions
 
-Self-employed may voluntarily join BVG. Contributions fully deductible. Flag for reviewer to confirm BVG status.
+- **BVG voluntary contributions** — Self-employed may voluntarily join BVG. Contributions fully deductible. Flag for reviewer to confirm BVG status.
 
 ### 6.5 AHV Declining Scale
 
-For income CHF 10,100-58,800, rate is less than 10%. Use official AHV table.
-
----
+- **AHV declining scale** — For income CHF 10,100-58,800, rate is less than 10%. Use official AHV table.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -411,25 +421,27 @@ REVIEWER FLAGS:
   [ ] AHV contribution rate confirmed (declining scale)?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Swiss Bank Statement Formats
 
+**Swiss Bank Statement Formats**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | UBS | CSV, PDF, MT940 | Buchungsdatum, Text, Betrag | E-banking export |
 | PostFinance | CSV, PDF | Datum, Buchungstext, Gutschrift/Belastung | E-Finance export |
-| ZKB | CSV, PDF | Datum, Text, Betrag | |
-| Raiffeisen CH | CSV, PDF | Datum, Buchungstext, Betrag | |
+| ZKB | CSV, PDF | Datum, Text, Betrag |  |
+| Raiffeisen CH | CSV, PDF | Datum, Buchungstext, Betrag |  |
 | Credit Suisse (now UBS) | CSV, PDF | Datum, Beschreibung, Betrag | Legacy format |
 | Revolut, Wise | CSV | Date, Counterparty, Amount | Multi-currency |
 
 ### Key Swiss Banking Terms
 
+**Key Swiss Banking Terms**
+
 | Term | English | Hint |
-|---|---|---|
+| --- | --- | --- |
 | Gutschrift | Credit | Potential income |
 | Belastung / Lastschrift | Debit | Potential expense |
 | Überweisung | Transfer | Check direction |
@@ -438,8 +450,6 @@ REVIEWER FLAGS:
 | Bargeldbezug | Cash withdrawal | Ask purpose |
 | Kontoführung | Account maintenance | Bank charge |
 | Vergütung | Payment/remuneration | Often income |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -457,14 +467,14 @@ ONBOARDING QUESTIONS -- SWITZERLAND FEDERAL INCOME TAX
 10. Children / dependants?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Self-employment income | DBG Art. 18 |
 | Business expenses | DBG Art. 27-31 |
 | Non-deductible | DBG Art. 34 |
@@ -502,21 +512,9 @@ Expected: Immediate expense.
 Input: "How much tax in Zurich?"
 Expected: ESCALATE. Federal only.
 
----
-
 ## PROHIBITIONS
 
-- NEVER compute Swiss federal tax from approximate brackets -- use ESTV tariff tables
-- NEVER apply Grundtarif to married or Verheiratetentarif to single
-- NEVER estimate cantonal or municipal taxes -- FEDERAL ONLY
-- NEVER allow Saule 3a above applicable maximum
-- NEVER allow income tax as a deduction
-- NEVER allow fines as deductions
-- NEVER allow capital expenditure directly as expense
-- NEVER present federal tax as total tax burden
-- NEVER present calculations as definitive
-
----
+- **Prohibitions list** — - NEVER compute Swiss federal tax from approximate brackets -- use ESTV tariff tables - NEVER apply Grundtarif to married or Verheiratetentarif to single - NEVER estimate cantonal or municipal taxes -- FEDERAL ONLY - NEVER allow Saule 3a above applicable maximum - NEVER allow income tax as a deduction - NEVER allow fines as deductions - NEVER allow capital expenditure directly as expense - NEVER present federal tax as total tax burden - NEVER present calculations as definitive
 
 ## Disclaimer
 
@@ -524,6 +522,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ch-federal-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ch-federal-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ch-federal-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

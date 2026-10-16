@@ -8,7 +8,7 @@
     {
       "name": "openaccountants",
       "source": "./plugins/openaccountants",
-      "description": "Accountant-verified tax skills for AI — connects the hosted OpenAccountants MCP (190+ jurisdictions) and adds a /openaccountants command."
+      "description": "AI skills (tax rules your AI follows) for MT, NL, DE, IE and GB bundled as Agent Skills, plus the hosted OpenAccountants connector (190+ jurisdictions) and a /openaccountants command."
     }
   ]
 }

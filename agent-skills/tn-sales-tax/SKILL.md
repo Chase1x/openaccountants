@@ -1,25 +1,24 @@
 ---
 name: tn-sales-tax
 description: "Use this skill whenever asked about Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee exemption certificates, taxability of goods or services in Tennessee, or any request involving Tennessee state-level consumption taxes. Trigger on phrases like \"Tennessee sales tax\", \"TN sales tax\", \"Tennessee use tax\", \"Tennessee nexus\", \"T.C.A. 67-6\", \"Tennessee DOR sales tax\", or any request involving Tennessee sales and use tax filing, classification, or compliance. NOTE: Tennessee has NO state income tax, making sales tax revenue critical. Tennessee has among the HIGHEST combined sales tax rates in the US (up to 9.75%). ALWAYS read the parent us-sales-tax skill first for federal context."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-TN
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/tn-sales-tax"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/tn-sales-tax"
+  jurisdiction: "US-TN"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Tennessee Sales and Use Tax Skill
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# TN Sales Tax
 
 ## Skill Metadata
+
+**Skill Metadata**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | Tennessee, United States |
 | Jurisdiction Code | US-TN |
 | Tax Type | Sales and Use Tax |
@@ -38,23 +37,24 @@ metadata:
 | Confidence Coverage | Tier 1: rate lookups, basic nexus, standard taxability. Tier 2: single article cap, SaaS taxability, food rate distinctions. Tier 3: audit defense, penalty abatement, complex bundled transactions. |
 | Format | Restructured to Q1 execution format, April 2026 |
 
----
-
 ## Confidence Tier Definitions
+
 Every rule in this skill is tagged with a confidence tier:
 
 - **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
 - **[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags the issue and presents options. A licensed CPA, EA, or tax attorney must confirm before filing.
 - **[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate to a licensed tax professional.
 
----
-
 ## Step 0: Client Onboarding Questions
 
 Before proceeding with any Tennessee sales tax analysis, collect the following from the client: [T1]
 
+**If the client cannot answer questions 1-4, STOP and gather this information before proceeding.** [T1]
+
+**Client Onboarding Questions**
+
 | # | Question | Why It Matters |
-|---|----------|---------------|
+| --- | --- | --- |
 | 1 | Do you have a Tennessee sales tax registration / tax ID? | Determines whether registration is needed before filing. |
 | 2 | What is your current filing frequency (monthly / quarterly / annually)? | Controls which return periods to prepare. |
 | 3 | What is your nexus type -- physical presence, economic nexus, or both? | Determines registration obligations and applicable rules. |
@@ -64,71 +64,52 @@ Before proceeding with any Tennessee sales tax analysis, collect the following f
 | 7 | Do you have locations, employees, or inventory in Tennessee? | Physical presence creates nexus independent of economic thresholds. |
 | 8 | Do you sell into multiple Tennessee local jurisdictions? | Local tax rates vary; determines compliance complexity. |
 
-**If the client cannot answer questions 1-4, STOP and gather this information before proceeding.** [T1]
-
----
-
 ## Step 1: Tax Rate Structure
+
 ### 1.1 State Rate
 
-Tennessee imposes a **7% state sales tax** on the retail sale of tangible personal property and certain services. This is one of the **highest state-level sales tax rates** in the US.
-
-**Statutory authority:** T.C.A. Section 67-6-202.
+- **State sales tax rate** — 7% percent (retail sale of tangible personal property and certain services; one of the highest state-level sales tax rates in the US)  _(T.C.A. Section 67-6-202)_
 
 ### 1.2 Reduced Rate on Grocery Food
 
-Tennessee taxes grocery food at a **reduced state rate of 4%** (down from the 5% rate that was in effect previously):
-
-- **Effective January 1, 2024:** The state rate on food and food ingredients (as defined by Tennessee) was reduced to **4%**. [T1]
-- Local taxes still apply to food. [T1]
-
-**Authority:** T.C.A. Section 67-6-228.
+- **Reduced rate on grocery food effective Jan 1, 2024** — State rate on food and food ingredients reduced to 4% effective January 1, 2024 (down from 5%); local taxes still apply to food  _(T.C.A. Section 67-6-228)_
 
 ### 1.3 Local Rates
 
-Counties and cities levy additional local sales taxes:
+**Local Rates**
 
 | Tax Component | Rate Range | Authority |
-|---------------|-----------|-----------|
+| --- | --- | --- |
 | State tax (general) | 7.0% | T.C.A. Section 67-6-202 |
 | State tax (grocery food) | 4.0% | T.C.A. Section 67-6-228 |
 | Local option tax (county) | 1.5% -- 2.75% | T.C.A. Section 67-6-702 |
-| **Maximum combined (general)** | **9.75%** | |
-| **Maximum combined (grocery)** | **6.75%** | |
+| **Maximum combined (general)** | **9.75%** |  |
+| **Maximum combined (grocery)** | **6.75%** |  |
 
 **Tennessee has among the highest combined sales tax rates in the United States.** Some jurisdictions reach the 9.75% maximum. [T1]
 
 ### 1.4 Single Article Cap on Local Tax [T1]
 
-Tennessee caps the local sales tax on a **single article** (single item) at **$1,600**:
-
-- Local tax applies only to the first **$1,600** of the sales price of a single article. [T1]
-- The **state** 7% tax applies to the full price (no cap). [T1]
-- The cap applies per individual item, not per transaction. [T1]
+- **Single article cap on local tax** — Tennessee caps the local sales tax on a single article (single item) at $1,600. Local tax applies only to the first $1,600 of the sales price of a single article. The state 7% tax applies to the full price (no cap). The cap applies per individual item, not per transaction.  _(T.C.A. Section 67-6-702(a))_
 
 **Example:** A $50,000 boat -- state tax: $50,000 x 7% = $3,500 (no cap). Local tax: $1,600 x 2.75% (max) = $44 (capped at local tax on $1,600 only).
 
-**Authority:** T.C.A. Section 67-6-702(a).
-
 ### 1.5 Sourcing Rules [T1]
 
-Tennessee is generally an **origin-based** sourcing state for intrastate sales:
-
-- **Intrastate over-the-counter:** Seller's location. [T1]
-- **Intrastate shipped:** Origin-based (seller's location). [T1]
-- **Interstate (remote sellers):** Destination-based. [T1]
-
----
+- **Sourcing rules** — Tennessee is generally an origin-based sourcing state for intrastate sales. Intrastate over-the-counter: seller's location. Intrastate shipped: origin-based (seller's location). Interstate (remote sellers): destination-based.
 
 ## Step 2: Transaction Classification Rules
+
 ### 2.1 General Rule
 
-Tennessee sales tax applies to the retail sale of tangible personal property and certain enumerated services. T.C.A. Section 67-6-201.
+- **General taxability rule** — Tennessee sales tax applies to the retail sale of tangible personal property and certain enumerated services.  _(T.C.A. Section 67-6-201)_
 
 ### 2.2 Taxability Matrix
 
+**Taxability Matrix**
+
 | Item Category | Taxable? | Rate | Authority | Tier |
-|---------------|----------|------|-----------|------|
+| --- | --- | --- | --- | --- |
 | General tangible personal property | Yes | 7% state + local | T.C.A. Section 67-6-202 | [T1] |
 | Grocery food (food for home consumption) | Yes (reduced rate) | **4% state + local** | T.C.A. Section 67-6-228 | [T1] |
 | Prepared food (restaurant meals) | Yes | 7% state + local | T.C.A. Section 67-6-102(31)(F) | [T1] |
@@ -152,20 +133,14 @@ Tennessee sales tax applies to the retail sale of tangible personal property and
 
 ### 2.3 SaaS Taxability -- Tennessee Position [T2]
 
-Tennessee **taxes SaaS** and digital products broadly:
-
-- Tennessee enacted specific legislation (effective July 1, 2015) taxing "specified digital products" and "software access services" (which includes SaaS). [T1]
-- **Specified digital products** include digital audio works, digital audiovisual works, digital books, and any other electronically transferred product. [T1]
-- **Software access services** (SaaS) are defined as the right to access and use software where the end user does not receive a copy. This is explicitly taxable. [T2]
-
-**Authority:** T.C.A. Section 67-6-231; T.C.A. Section 67-6-102(89).
+- **SaaS taxability position** — Tennessee taxes SaaS and digital products broadly. Tennessee enacted specific legislation (effective July 1, 2015) taxing "specified digital products" and "software access services" (which includes SaaS). Specified digital products include digital audio works, digital audiovisual works, digital books, and any other electronically transferred product. Software access services (SaaS) are defined as the right to access and use software where the end user does not receive a copy. This is explicitly taxable.  _(T.C.A. Section 67-6-231; T.C.A. Section 67-6-102(89))_
 
 ### 2.4 Services Taxability [T2]
 
-Tennessee taxes several enumerated services:
+**Services Taxability**
 
 | Service | Taxable? | Authority |
-|---------|----------|-----------|
+| --- | --- | --- |
 | Repair and installation of TPP (labor + parts) | Yes | T.C.A. Section 67-6-102(44) |
 | Telecommunications | Yes | T.C.A. Section 67-6-102(44)(C) |
 | Cable/satellite TV | Yes | T.C.A. Section 67-6-226 |
@@ -177,19 +152,18 @@ Tennessee taxes several enumerated services:
 | Construction/real property | No (materials taxable at purchase) | DOR guidance |
 | Transportation/freight (separately stated) | Not taxable | T.C.A. Section 67-6-102(44) |
 
----
-
 ## Step 3: Return Form Structure
+
 ### 3.1 Registration
 
-All sellers with nexus must register through TNTAP for a **sales and use tax certificate of registration**. No fee for registration.
-
-**Authority:** T.C.A. Section 67-6-601.
+- **Registration requirement** — All sellers with nexus must register through TNTAP for a sales and use tax certificate of registration. No fee for registration.  _(T.C.A. Section 67-6-601)_
 
 ### 3.2 Filing Frequency
 
+**Filing Frequency**
+
 | Monthly Tax Liability | Filing Frequency | Due Date |
-|-----------------------|------------------|----------|
+| --- | --- | --- |
 | Over $400 per month | Monthly | 20th of the following month |
 | Under $400 per month | Quarterly | 20th of month following quarter-end |
 
@@ -197,38 +171,32 @@ All sellers with nexus must register through TNTAP for a **sales and use tax cer
 
 ### 3.3 Returns and Payment
 
-- **Form SLS 450** (Sales and Use Tax Return) is filed through TNTAP. [T1]
-- Electronic filing is required for all registrants. [T1]
-- Payment is due on the same date as the return. [T1]
-- Both state and local taxes are reported on the same return. [T1]
+- **Returns and payment requirements** — Form SLS 450 (Sales and Use Tax Return) is filed through TNTAP. Electronic filing is required for all registrants. Payment is due on the same date as the return. Both state and local taxes are reported on the same return.
 
 ### 3.4 Vendor Discount
 
-Tennessee provides a **vendor discount** for timely filing:
-
-- **2%** of the first $2,500 of tax due per return period. [T1]
-- Maximum discount: **$50** per return period. [T1]
-- Available only for timely filing and payment. [T1]
-
-**Authority:** T.C.A. Section 67-6-508.
+- **Vendor discount for timely filing** — 2% of the first $2,500 of tax due per return period. Maximum discount: $50 per return period. Available only for timely filing and payment.  _(T.C.A. Section 67-6-508)_
 
 ### 3.5 Penalties and Interest
 
+**Penalties and Interest**
+
 | Violation | Penalty | Authority |
-|-----------|---------|-----------|
+| --- | --- | --- |
 | Late filing | 5% per month, up to 25% | T.C.A. Section 67-1-804 |
 | Late payment | Same as late filing | T.C.A. Section 67-1-804 |
 | Failure to file | Estimated assessment + penalties | T.C.A. Section 67-1-1501 |
 | Fraud | 50% of deficiency | T.C.A. Section 67-1-804 |
 | Interest | Statutory rate (currently ~7.25%) | T.C.A. Section 67-1-801 |
 
----
-
 ## Step 4: Deductibility / Exemptions
+
 ### 5.1 Tennessee Exemption Certificates
 
+**Tennessee Exemption Certificates**
+
 | Certificate | Use Case | Authority |
-|-------------|----------|-----------|
+| --- | --- | --- |
 | **Form ST-14** (Certificate of Resale) | Purchases for resale | TNDOR |
 | **Form F-13** (Sales Tax Exemption -- Industrial Machinery) | Manufacturing equipment | T.C.A. Section 67-6-206 |
 | **Form ST-18** (Agricultural Exemption Certificate) | Farm equipment and supplies | T.C.A. Section 67-6-207 |
@@ -237,64 +205,52 @@ Tennessee provides a **vendor discount** for timely filing:
 
 ### 5.2 Requirements [T1]
 
-Valid certificates must include purchaser information, Tennessee registration number (for resale), reason for exemption, description of goods, signature, and date. [T1]
+- **Valid exemption certificate requirements** — Valid certificates must include purchaser information, Tennessee registration number (for resale), reason for exemption, description of goods, signature, and date.
 
 ### 5.3 Good Faith and Retention [T2]
 
-Good faith acceptance protects sellers. Certificates must be retained for **3 years** from the date of the last transaction. [T1]
-
----
+- **Good faith and retention rule** — Good faith acceptance protects sellers. Certificates must be retained for 3 years from the date of the last transaction.
 
 ### 6.1 When Use Tax Applies
 
-Tennessee use tax applies when sales tax was not collected on items used, stored, or consumed in Tennessee. [T1]
+- **When use tax applies** — Tennessee use tax applies when sales tax was not collected on items used, stored, or consumed in Tennessee.
 
 ### 6.2 Use Tax Rate
 
-The use tax rate equals the sales tax rate: 7% state + applicable local. The single article cap applies to local use tax as well. [T1]
+- **Use tax rate** — The use tax rate equals the sales tax rate: 7% state + applicable local. The single article cap applies to local use tax as well.
 
 ### 6.3 Use Tax Reporting
 
-- **Businesses:** Report on Form SLS 450. [T1]
-- **Individuals:** Report on Tennessee Consumer Use Tax Return (or via optional reporting on any state filing). [T1]
-
----
+- **Use tax reporting** — Businesses: Report on Form SLS 450. Individuals: Report on Tennessee Consumer Use Tax Return (or via optional reporting on any state filing).
 
 ## Step 5: Key Thresholds
+
 ### 4.1 Physical Nexus
 
-Standard physical nexus principles apply. [T1]
+- **Physical nexus** — Standard physical nexus principles apply.
 
 ### 4.2 Economic Nexus [T1]
 
 Tennessee enacted economic nexus effective **October 1, 2019**.
 
-| Threshold | Value | Measurement Period |
-|-----------|-------|--------------------|
-| Revenue | **$100,000** in sales into Tennessee | Previous 12 months |
-| Transactions | N/A (revenue only) | |
-| Test | Revenue only | |
+**Economic Nexus Thresholds**  _(T.C.A. Section 67-6-524)_
 
-**Authority:** T.C.A. Section 67-6-524.
+| Threshold | Value | Measurement Period |
+| --- | --- | --- |
+| Revenue | **$100,000** in sales into Tennessee | Previous 12 months |
+| Transactions | N/A (revenue only) |  |
+| Test | Revenue only |  |
 
 ### 4.3 Marketplace Facilitator Rules [T1]
 
-Effective **October 1, 2020**:
-
-- Marketplace facilitators meeting the nexus threshold must collect and remit. [T1]
-- Marketplace sellers relieved for facilitated sales. [T1]
-
-**Authority:** T.C.A. Section 67-6-102(24)(C).
-
----
+- **Marketplace facilitator rules effective October 1, 2020** — Marketplace facilitators meeting the nexus threshold must collect and remit. Marketplace sellers relieved for facilitated sales.  _(T.C.A. Section 67-6-102(24)(C))_
 
 ## Step 6: Filing Deadlines and Penalties
 
 Refer to Step 3 for filing frequencies and due dates. [T1]
 
----
-
 ## PROHIBITIONS
+
 1. **NEVER** advise that grocery food is exempt in Tennessee (it is taxable at a reduced 4% state rate + local). [T1]
 2. **NEVER** advise that SaaS or digital goods are not taxable in Tennessee (both are explicitly taxable). [T1]
 3. **NEVER** ignore the single article cap on local tax when calculating tax on items over $1,600. [T1]
@@ -306,72 +262,35 @@ Refer to Step 3 for filing frequencies and due dates. [T1]
 9. **NEVER** cap the state tax at $1,600 -- only the LOCAL tax has the single article cap. [T1]
 10. **NEVER** advise that Tennessee offers a generous vendor discount -- the maximum is $50 per period. [T1]
 
----
-
 ## Edge Case Registry
 
 ### 7.1 Single Article Cap Application [T1]
 
-The single article cap on local tax ($1,600) creates interesting scenarios:
-
-- **High-value items:** A $100,000 piece of equipment pays 7% state tax ($7,000) on the full price, but local tax only on $1,600 (e.g., at 2.75% = $44 local). Total: $7,044. [T1]
-- **Multiple items:** Each item in a transaction is evaluated separately. A purchase of 10 items at $500 each: local tax applies to the full $500 per item (since each is under $1,600). [T1]
-- **Bundled items:** If items are sold as a unit, the bundle is treated as one article. [T2]
+- **Single article cap application scenarios** — The single article cap on local tax ($1,600) creates interesting scenarios: High-value items: A $100,000 piece of equipment pays 7% state tax ($7,000) on the full price, but local tax only on $1,600 (e.g., at 2.75% = $44 local). Total: $7,044. Multiple items: Each item in a transaction is evaluated separately. A purchase of 10 items at $500 each: local tax applies to the full $500 per item (since each is under $1,600). Bundled items: If items are sold as a unit, the bundle is treated as one article. [T2]
 
 ### 7.2 No State Income Tax Impact [T1]
 
-Tennessee has **no state income tax** (the Hall Tax on interest and dividends was fully repealed effective January 1, 2021). This means:
-
-- Sales tax is a critical revenue source for the state. [T1]
-- Tennessee has less incentive to reduce sales tax rates. [T1]
-- The high combined rate (up to 9.75%) partially compensates for no income tax. [T1]
-- Businesses relocating to Tennessee for income tax savings must budget for higher sales tax costs. [T2]
+- **No state income tax impact** — Tennessee has no state income tax (the Hall Tax on interest and dividends was fully repealed effective January 1, 2021). Sales tax is a critical revenue source for the state. Tennessee has less incentive to reduce sales tax rates. The high combined rate (up to 9.75%) partially compensates for no income tax. Businesses relocating to Tennessee for income tax savings must budget for higher sales tax costs. [T2]
 
 ### 7.3 Manufacturing Exemptions [T2]
 
-Tennessee provides a broad manufacturing exemption:
-
-- Machinery used directly and primarily in manufacturing is exempt. [T2]
-- Raw materials incorporated into finished products are exempt. [T1]
-- The "directly and primarily" test requires that the machinery's primary purpose be manufacturing (51%+ of use). [T2]
-- Energy fuel and water used in manufacturing are exempt. [T2]
-
-**Authority:** T.C.A. Section 67-6-206.
+- **Manufacturing exemptions** — Tennessee provides a broad manufacturing exemption: Machinery used directly and primarily in manufacturing is exempt. [T2] Raw materials incorporated into finished products are exempt. [T1] The "directly and primarily" test requires that the machinery's primary purpose be manufacturing (51%+ of use). [T2] Energy fuel and water used in manufacturing are exempt. [T2]  _(T.C.A. Section 67-6-206)_
 
 ### 7.4 Sales Tax Holiday [T1]
 
-Tennessee holds an annual **sales tax holiday** (typically late July/early August):
-
-- Clothing ($100 or less per item): exempt from state and local tax. [T1]
-- School supplies ($100 or less per item): exempt. [T1]
-- Computers ($1,500 or less): exempt. [T1]
-- Specific dates and items vary annually -- verify with TNDOR each year. [T1]
+- **Sales tax holiday** — Tennessee holds an annual sales tax holiday (typically late July/early August): Clothing ($100 or less per item): exempt from state and local tax. School supplies ($100 or less per item): exempt. Computers ($1,500 or less): exempt. Specific dates and items vary annually -- verify with TNDOR each year.
 
 ### 7.5 Short-Term Rental Tax [T2]
 
-Short-term rentals (less than 90 consecutive days) are subject to:
-
-- State sales tax (7%). [T1]
-- Local sales tax. [T1]
-- Additional state and local occupancy taxes. [T2]
-- Marketplace facilitators (Airbnb, VRBO) collect and remit. [T1]
+- **Short-term rental tax rules** — Short-term rentals (less than 90 consecutive days) are subject to: State sales tax (7%). Local sales tax. Additional state and local occupancy taxes. [T2] Marketplace facilitators (Airbnb, VRBO) collect and remit.
 
 ### 7.6 Amusement Tax / Admissions [T1]
 
-Admissions to amusement, sports, and entertainment events are taxable:
-
-- State rate of 7% applies. [T1]
-- Local rates apply. [T1]
-- Nonprofit exempt events may be excluded with proper documentation. [T2]
+- **Amusement tax / admissions rules** — Admissions to amusement, sports, and entertainment events are taxable: State rate of 7% applies. Local rates apply. Nonprofit exempt events may be excluded with proper documentation. [T2]
 
 ### 7.7 Waste Collection Services [T2]
 
-Tennessee taxes certain waste collection and disposal services:
-
-- Commercial waste collection: taxable. [T2]
-- Residential waste collection: may be exempt in some circumstances. [T2]
-
----
+- **Waste collection services taxability** — Tennessee taxes certain waste collection and disposal services: Commercial waste collection: taxable. [T2] Residential waste collection: may be exempt in some circumstances. [T2]
 
 ## Test Suite
 
@@ -417,19 +336,17 @@ Tennessee taxes certain waste collection and disposal services:
 
 **Expected Answer:** The $90 shirt qualifies ($100 or less) and is exempt. The $120 boots do NOT qualify (exceeds $100 threshold) and are fully taxable.
 
----
-
 ## Reviewer Escalation Protocol
 
+**Reviewer Escalation Protocol**
+
 | Trigger | Action |
-|---------|--------|
+| --- | --- |
 | Any [T3] tagged item encountered | STOP. Do not guess. Escalate to licensed CPA, EA, or tax attorney. |
 | Client has audit notice or assessment | Escalate immediately. Do not advise on audit response. |
 | Multi-state nexus question involving 3+ states | Flag for senior reviewer with multi-state experience. |
 | Penalty abatement or voluntary disclosure | Escalate to licensed professional with state-specific experience. |
 | Ambiguous taxability of a product/service | Present both interpretations to reviewer with supporting authority. |
-
----
 
 ## Contribution Notes
 
@@ -439,13 +356,30 @@ Tennessee taxes certain waste collection and disposal services:
 - To update this skill, submit a pull request with the specific section, supporting statutory authority, and effective date of the change.
 - All changes require validation by a US CPA or EA before merging.
 
----
-
 ## Disclaimer
+
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/tn-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `tn-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/tn-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

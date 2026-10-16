@@ -1,26 +1,24 @@
 ---
 name: france-financial-statements
-description: "> Use this skill when preparing, reviewing, or advising on annual financial statements (comptes annuels) for a French company. Trigger on phrases like \"comptes annuels\", \"dépôt des comptes\", \"greffe\", \"Plan Comptable Général\", \"PCG\", \"bilan\", \"compte de résultat\", \"annexe\", \"commissaire aux comptes\", \"audit France\", \"petite entreprise\", \"micro-entreprise comptable\", \"liasse fiscale\", or any question about preparing and filing statutory accounts under French commercial law. Covers PCG framework, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill when preparing, reviewing, or advising on annual financial statements (comptes annuels) for a French company. Trigger on phrases like \"comptes annuels\", \"dépôt des comptes\", \"greffe\", \"Plan Comptable Général\", \"PCG\", \"bilan\", \"compte de résultat\", \"annexe\", \"commissaire aux comptes\", \"audit France\", \"petite entreprise\", \"micro-entreprise comptable\", \"liasse fiscale\", or any question about preparing and filing statutory accounts under French commercial law. Covers PCG framework, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: FR
-  category: financial-statements
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/france-financial-statements"
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/france-financial-statements"
+  jurisdiction: "FR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# France Financial Statements Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# France Financial Statements
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | France (République française) |
 | Currency | EUR |
 | Filing authority | Greffe du Tribunal de Commerce (via Guichet Unique / Infogreffe) |
@@ -33,40 +31,40 @@ metadata:
 | Late filing penalty | EUR 1,500 (individual); EUR 7,500 (company); possible criminal sanctions |
 | Digital filing | Electronic via Guichet Unique or Infogreffe |
 
----
-
 ## Section 2 -- Reporting Framework
 
+**Reporting Framework**
+
 | Entity type | Applicable standard |
-|---|---|
+| --- | --- |
 | All commercial companies | PCG (Règlement ANC 2014-03) |
 | Micro-entreprises (accounting) | Simplified PCG with no annexe required |
 | Petites entreprises | PCG with simplified annexe and presentation |
 | Listed groups (consolidated) | IFRS as adopted by the EU (mandatory) |
 | Non-listed groups (consolidated) | PCG or IFRS (choice) |
 
-The PCG is the sole framework for individual statutory accounts in France. IFRS cannot be used for individual company accounts filed with the greffe.
-
----
+- **PCG as sole framework for individual accounts** — The PCG is the sole framework for individual statutory accounts in France. IFRS cannot be used for individual company accounts filed with the greffe.
 
 ## Section 3 -- Size Thresholds
 
 Effective for financial years beginning on or after 1 January 2024 (Décret 2024-152):
 
+**Size Thresholds**
+
 | Criterion | Micro | Petite (Small) | Moyenne (Medium) | Grande (Large) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Total du bilan (Balance sheet) | ≤ EUR 450,000 | ≤ EUR 7,500,000 | ≤ EUR 25,000,000 | > EUR 25,000,000 |
 | Chiffre d'affaires net (Turnover) | ≤ EUR 900,000 | ≤ EUR 15,000,000 | ≤ EUR 50,000,000 | > EUR 50,000,000 |
 | Nombre moyen de salariés (Employees) | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
 
-Must not exceed **2 out of 3** thresholds. Assessment based on the balance sheet date of the most recently closed financial year.
-
----
+- **Threshold exceedance test** — Must not exceed 2 out of 3 thresholds. Assessment based on the balance sheet date of the most recently closed financial year.
 
 ## Section 4 -- Required Financial Statements
 
+**Required Financial Statements**
+
 | Document | Micro | Petite | Moyenne/Grande |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Bilan (Balance sheet) | Required (simplified) | Required (simplified option) | Required (full) |
 | Compte de résultat (P&L) | Required (simplified) | Required (simplified option) | Required (full) |
 | Annexe (Notes) | Not required | Required (simplified) | Required (full) |
@@ -74,12 +72,12 @@ Must not exceed **2 out of 3** thresholds. Assessment based on the balance sheet
 | Rapport de gestion (Management report) | Not required (small SARL) | Required | Required |
 | Rapport du CAC (Auditor's report) | If CAC appointed | If CAC appointed | Required |
 
----
-
 ## Section 5 -- Year-End Adjustments Checklist
 
+**Year-End Adjustments Checklist**
+
 | # | Adjustment | France-specific notes |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Amortissements (Depreciation) | Linear or dégressif (declining balance with fiscal coefficient); component approach |
 | 2 | Provisions pour charges | Règlement ANC: obligation probable, amount reliably estimable |
 | 3 | Charges constatées d'avance (Prepayments) | Strict matching principle |
@@ -92,8 +90,6 @@ Must not exceed **2 out of 3** thresholds. Assessment based on the balance sheet
 | 10 | Congés payés (Holiday pay) | Provision for untaken leave + social charges |
 | 11 | Indemnités de départ (Retirement benefits) | Engagement or provision under PCG (recommendation ANC) |
 | 12 | CET/CVAE provision | Cotisation sur la Valeur Ajoutée des Entreprises |
-
----
 
 ## Section 6 -- Compte de Résultat Format (P&L)
 
@@ -147,8 +143,6 @@ Participation des salariés
 Impôt sur les bénéfices
   ─── RÉSULTAT NET ───
 ```
-
----
 
 ## Section 7 -- Bilan Format (Balance Sheet)
 
@@ -212,12 +206,12 @@ Comptes de régularisation
   Produits constatés d'avance
 ```
 
----
-
 ## Section 8 -- Notes to Accounts (Annexe)
 
+**Notes to Accounts (Annexe)**
+
 | # | Disclosure | Micro | Petite | Moyenne/Grande |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Accounting policies (méthodes) | Exempt | Required | Required |
 | 2 | Fixed asset movements | Exempt | Simplified | Required |
 | 3 | Maturity of receivables/payables | Exempt | Required | Required |
@@ -231,12 +225,12 @@ Comptes de régularisation
 | 11 | Equity movements | Exempt | Not required | Required |
 | 12 | Consolidation scope (if parent) | N/A | If applicable | Required |
 
----
-
 ## Section 9 -- Filing Requirements
 
+**Filing Requirements**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Filing authority | Greffe du Tribunal de Commerce |
 | Filing method | Electronic (Guichet Unique / Infogreffe) or paper deposit at greffe |
 | AGM approval deadline | Within 6 months from financial year-end |
@@ -250,16 +244,16 @@ Comptes de régularisation
 | Format | PDF (each file ≤ 10 MB) |
 | Late filing penalties | EUR 1,500 (person); EUR 7,500 (legal entity); potential injonction by tribunal |
 
----
-
 ## Section 10 -- Audit Requirements
 
 ### Mandatory appointment of Commissaire aux Comptes (CAC)
 
-A company must appoint a CAC when it exceeds **2 of 3** thresholds at the close of a financial year:
+- **CAC appointment trigger** — A company must appoint a CAC when it exceeds 2 of 3 thresholds at the close of a financial year.
+
+**CAC thresholds by entity type**
 
 | Entity type | Balance sheet | Turnover (HT) | Employees |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Independent companies (SARL, SAS, SA, etc.) | EUR 5,000,000 | EUR 10,000,000 | 50 |
 | Controlled subsidiaries (significant) | EUR 2,500,000 | EUR 5,000,000 | 25 |
 | Civil companies with economic activity | EUR 1,550,000 | EUR 3,100,000 | 50 |
@@ -267,19 +261,35 @@ A company must appoint a CAC when it exceeds **2 of 3** thresholds at the close 
 
 ### CAC mandate duration
 
-- 6 financial years (standard)
-- Current mandates continue until expiry even if thresholds increase
+- **Mandate duration** — 6 financial years (standard)
+- **Mandate continuation despite threshold changes** — Current mandates continue until expiry even if thresholds increase
 
 ### Auditor qualification
 
-Commissaire aux Comptes inscrit on the official list held by the Compagnie Nationale des Commissaires aux Comptes (CNCC) and registered with the Haut Conseil du Commissariat aux Comptes (H3C).
-
----
+- **Commissaire aux Comptes qualification** — Commissaire aux Comptes inscrit on the official list held by the Compagnie Nationale des Commissaires aux Comptes (CNCC) and registered with the Haut Conseil du Commissariat aux Comptes (H3C).
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/france-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `france-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/france-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

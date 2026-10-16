@@ -1,26 +1,28 @@
 ---
 name: ch-cantonal-tax
-description: "> Use this skill whenever asked about Swiss cantonal and communal income tax (Staatssteuer / Gemeindesteuer / impot cantonal et communal) for self-employed individuals. Trigger on phrases like \"Kantonssteuer\", \"Gemeindesteuer\", \"cantonal tax Switzerland\", \"Steuerfuss\", \"tax multiplier Swiss\", \"kirchensteuer Schweiz\", \"impot cantonal\", \"communal tax rate\", \"Steuerausscheidung\", \"Swiss income tax\", \"einfache Steuer\", or any question about cantonal/communal income tax for a self-employed person in Switzerland. This skill covers the cantonal tax multiplier system (Steuerfuss), church tax, inter-cantonal allocation, and the interaction between cantonal and federal returns. MUST be loaded alongside ch-federal-income-tax for the complete picture. ALWAYS read this skill before touching any Swiss cantonal tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Swiss cantonal and communal income tax (Staatssteuer / Gemeindesteuer / impot cantonal et communal) for self-employed individuals. Trigger on phrases like \"Kantonssteuer\", \"Gemeindesteuer\", \"cantonal tax Switzerland\", \"Steuerfuss\", \"tax multiplier Swiss\", \"kirchensteuer Schweiz\", \"impot cantonal\", \"communal tax rate\", \"Steuerausscheidung\", \"Swiss income tax\", \"einfache Steuer\", or any question about cantonal/communal income tax for a self-employed person in Switzerland. This skill covers the cantonal tax multiplier system (Steuerfuss), church tax, inter-cantonal allocation, and the interaction between cantonal and federal returns. MUST be loaded alongside ch-federal-income-tax for the complete picture. ALWAYS read this skill before touching any Swiss cantonal tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ch-cantonal-tax"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/ch-cantonal-tax"
+  jurisdiction: "CH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Switzerland Cantonal and Communal Income Tax — Self-Employed v2.0
+# CH Cantonal Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Switzerland Cantonal and Communal Income Tax — Self-Employed v2.0
 
 ## Section 1 — Quick Reference
 
 ### Swiss Three-Level Tax System
 
+**Swiss Three-Level Tax System**  _(DBG (SR 642.11))_
+
 | Level | Tax Name | Legislation | Rate Structure |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Federal | Direkte Bundessteuer (dBSt) | DBG (SR 642.11) | Fixed progressive schedule, same nationwide |
 | Cantonal | Staatssteuer / Kantonssteuer | Each canton's Steuergesetz | Base tariff x cantonal Steuerfuss |
 | Communal | Gemeindesteuer | Each commune's Steuerfuss | Base tariff x communal Steuerfuss |
@@ -29,18 +31,14 @@ All three levels filed on a single combined Steuererklarung through the cantonal
 
 ### The Steuerfuss / Multiplier System
 
-```
-Einfache Steuer = base tariff applied to steuerbares Einkommen
-Kantonssteuer = Einfache Steuer x kantonaler Steuerfuss (%)
-Gemeindesteuer = Einfache Steuer x Gemeindesteuerfuss (%)
-Kirchensteuer = Einfache Steuer x Kirchensteuerfuss (%) [if church member]
-Total cantonal/communal tax = sum of above
-```
+- **Steuerfuss / Multiplier computation** — Einfache Steuer = base tariff applied to steuerbares Einkommen Kantonssteuer = Einfache Steuer x kantonaler Steuerfuss (%) Gemeindesteuer = Einfache Steuer x Gemeindesteuerfuss (%) Kirchensteuer = Einfache Steuer x Kirchensteuerfuss (%) [if church member] Total cantonal/communal tax = sum of above  _(Section 1 — The Steuerfuss / Multiplier System)_
 
 ### Selected Cantonal/Municipal Steuerfuss (2025, Approximate)
 
+**Selected Cantonal/Municipal Steuerfuss (2025, Approximate)**  _(Selected Cantonal/Municipal Steuerfuss (2025, Approximate))_
+
 | Canton | Capital City | Cantonal SF | Municipal SF (Capital) | Church (Reformed) | Effective Combined |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Zurich (ZH) | Zurich | 100% | ~119% | ~11% | ~230% of Grundtarif |
 | Bern (BE) | Bern | 3.06 units | 1.54 | 0.194 | ~4.79 units |
 | Luzern (LU) | Luzern | 1.60 units | 1.75 | 0.24 | ~3.59 units |
@@ -55,15 +53,17 @@ WARNING: Steuerfuss values change annually. Always verify the current year's val
 
 ### Exceptions to the Multiplier System
 
-- **Basel-Stadt (BS):** Direct tariff, no multiplier. Canton and city merged.
-- **Geneva (GE):** Centimes additionnels system.
-- **Appenzell Innerrhoden (AI):** Simplified multiplier.
-- **Graubunden (GR):** Multiplier plus municipal surtaxes.
+- **Basel-Stadt (BS)** — Direct tariff, no multiplier. Canton and city merged.  _(Exceptions to the Multiplier System)_
+- **Geneva (GE)** — Centimes additionnels system.  _(Exceptions to the Multiplier System)_
+- **Appenzell Innerrhoden (AI)** — Simplified multiplier.  _(Exceptions to the Multiplier System)_
+- **Graubunden (GR)** — Multiplier plus municipal surtaxes.  _(Exceptions to the Multiplier System)_
 
 ### Key Cantonal Deduction Differences from Federal
 
+**Key Cantonal Deduction Differences from Federal**  _(Key Cantonal Deduction Differences from Federal)_
+
 | Item | Federal (DBG) | Cantonal (StHG) |
-|---|---|---|
+| --- | --- | --- |
 | Kinderabzug (child) | CHF 6,600/child | Varies: CHF 6,500 -- 13,000+ |
 | Versicherungsabzug (insurance) | CHF 1,800 (single) / CHF 3,600 (married) | Often higher |
 | Saeule 3a (Pillar 3a) | CHF 35,280 (self-employed without BVG) or CHF 7,056 (with BVG) | Same |
@@ -72,29 +72,14 @@ WARNING: Steuerfuss values change annually. Always verify the current year's val
 
 ### Computation Steps
 
-```
-1. Determine steuerbares Einkommen (cantonal)
-   = Gross self-employment income
-   - Geschaeftsaufwand (business expenses)
-   - AHV/IV/EO contributions
-   - BVG contributions
-   - Saeule 3a contributions
-   - Cantonal-specific deductions (Kinderabzug, Versicherungsabzug, etc.)
-
-2. Look up einfache Steuer from cantonal base tariff
-
-3. Apply multipliers:
-   Kantonssteuer = einfache_steuer x kantonaler_steuerfuss
-   Gemeindesteuer = einfache_steuer x gemeinde_steuerfuss
-   Kirchensteuer = einfache_steuer x kirchen_steuerfuss
-
-4. Total = Kantonssteuer + Gemeindesteuer + Kirchensteuer + Bundessteuer
-```
+- **Computation Steps** — 1. Determine steuerbares Einkommen (cantonal) = Gross self-employment income - Geschaeftsaufwand (business expenses) - AHV/IV/EO contributions - BVG contributions - Saeule 3a contributions - Cantonal-specific deductions (Kinderabzug, Versicherungsabzug, etc.) 2. Look up einfache Steuer from cantonal base tariff 3. Apply multipliers: Kantonssteuer = einfache_steuer x kantonaler_steuerfuss Gemeindesteuer = einfache_steuer x gemeinde_steuerfuss Kirchensteuer = einfache_steuer x kirchen_steuerfuss 4. Total = Kantonssteuer + Gemeindesteuer + Kirchensteuer + Bundessteuer  _(Section 1 — Computation Steps)_
 
 ### Conservative Defaults
 
+**Conservative Defaults**  _(Conservative Defaults)_
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Canton/municipality unknown | STOP — rates vary enormously |
 | Church membership unknown | Assume member (higher tax); ask to confirm |
 | Steuerfuss year uncertain | Verify current year with cantonal Steuerverwaltung |
@@ -104,49 +89,42 @@ WARNING: Steuerfuss values change annually. Always verify the current year's val
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds**  _(Red Flag Thresholds)_
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Canton/municipality not specified | Cannot compute — stop |
 | Business in multiple cantons | Steuerausscheidung required |
 | Real property in another canton | Inter-cantonal allocation triggered |
 | Church membership not confirmed | Church tax may apply (5-15% of einfache Steuer) |
 | Mid-year cantonal move | Only 31 December residence canton taxes full year |
 
----
-
 ## Section 2 — Required Inputs + Refusal Catalogue
 
 ### Required Inputs
 
-1. **Canton of tax residence** — determines cantonal law and base tariff
-2. **Municipality (Gemeinde)** — determines communal Steuerfuss
-3. **Marital status** — single, married, registered partnership
-4. **Church membership** — member of recognised church? Which denomination?
-5. **Steuerbares Einkommen** — after all deductions
-6. **Business activity in multiple cantons?** — triggers Steuerausscheidung
-7. **Real property in another canton?** — triggers allocation
-8. **Children / dependants** — Kinderabzug varies by canton
-9. **Prior year Steuerrechnung** — for provisional payment reconciliation
-10. **Bank statements** — 12 months
+- **Required Inputs list** — 1. Canton of tax residence — determines cantonal law and base tariff 2. Municipality (Gemeinde) — determines communal Steuerfuss 3. Marital status — single, married, registered partnership 4. Church membership — member of recognised church? Which denomination? 5. Steuerbares Einkommen — after all deductions 6. Business activity in multiple cantons? — triggers Steuerausscheidung 7. Real property in another canton? — triggers allocation 8. Children / dependants — Kinderabzug varies by canton 9. Prior year Steuerrechnung — for provisional payment reconciliation 10. Bank statements — 12 months  _(Section 2 — Required Inputs)_
 
 ### Refusal Catalogue
 
+**Refusal Catalogue**  _(Section 2 — Refusal Catalogue)_
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-CH-1 | Canton and municipality unknown | Stop — cannot compute without specific location |
 | R-CH-2 | Quellensteuer (source tax) for foreign nationals | Escalate — different regime for non-C-permit holders |
 | R-CH-3 | Inter-cantonal allocation dispute | Escalate — Doppelbesteuerungsverbot requires specialist |
 | R-CH-4 | Wealth tax (Vermogenssteuer) computation | Flag — separate computation, filed on same return |
 | R-CH-5 | Steuererlass (tax relief) application | Escalate — hardship case outside scope |
 
----
-
 ## Section 3 — Transaction Pattern Library
 
 ### 3.1 Income Patterns
 
+**3.1 Income Patterns**  _(3.1 Income Patterns)_
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `GUTSCHRIFT [client]` / `EINGANG [client]` | Gross self-employment income | Standard bank credit from client |
 | I-02 | `VERGUTUNG [client]` / `ZAHLUNG VON [client]` | Gross self-employment income | Payment from client |
 | I-03 | `TWINT EINGANG [client]` | Gross self-employment income | TWINT (Swiss mobile payment) receipt |
@@ -160,13 +138,15 @@ WARNING: Steuerfuss values change annually. Always verify the current year's val
 
 ### 3.2 Expense Patterns
 
+**3.2 Expense Patterns**  _(3.2 Expense Patterns)_
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `MIETE BURO` / `MIETZINS GESCHAFT` / `LOYER BUREAU` | Office rent — Geschaeftsaufwand | Fully deductible |
 | E-02 | `STROM` / `ELEKTRIZITAET` / `EW ZURICH` / `BKW` / `ALPIQ` | Electricity — deductible (business proportion) | Require invoice |
 | E-03 | `SWISSCOM` / `SUNRISE` / `SALT` / `UPC` | Telecom/internet — deductible (business %) | Require invoice |
 | E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — fully deductible | Professional tools |
-| E-05 | `TREUHANDER` / `STEUERBERATER` / `BUCHHALTER` / `FIDUCIAIRE` | Tax advisor/accountant — fully deductible | |
+| E-05 | `TREUHANDER` / `STEUERBERATER` / `BUCHHALTER` / `FIDUCIAIRE` | Tax advisor/accountant — fully deductible |  |
 | E-06 | `SBB` / `BLS` / `SWISS FEDERAL RAILWAYS` | Train travel — deductible (business purpose) | Swiss Federal Railways |
 | E-07 | `SWISS` / `EASYJET` / `HELVETIC AIRWAYS` | Air travel — deductible (business purpose) | Document purpose |
 | E-08 | `AHV` / `AUSGLEICHSKASSE` / `AVS` / `CAISSE DE COMPENSATION` | AHV/IV/EO contributions — fully deductible | Social security; always deduct |
@@ -176,45 +156,49 @@ WARNING: Steuerfuss values change annually. Always verify the current year's val
 | E-12 | `STEUERN` / `STEUERAMT` / `KANTONALE STEUERN` | Tax payment — NOT a Geschaeftsaufwand | Tax payments reduce Schulden (wealth), not income |
 | E-13 | `MWST` / `UST` / `TVA PAIEMENT` | VAT payment — NOT deductible | VAT is separate |
 | E-14 | `BENZIN` / `DIESEL` / `TANKSTELLE` / `MIGROL` / `COOP PRONTO` | Fuel — deductible (business proportion) | Document business use |
-| E-15 | `BUROMATERIAL` / `PAPETERIE` | Office supplies — fully deductible | |
+| E-15 | `BUROMATERIAL` / `PAPETERIE` | Office supplies — fully deductible |  |
 | E-16 | `WEITERBILDUNG` / `KURS` / `SEMINAR` / `FORMATION` | Training — deductible | Professional development |
 | E-17 | `VERSICHERUNG` / `ASSURANCE` / `BERUFSHAFTPFLICHT` | Professional insurance — fully deductible | Liability/professional insurance |
 | E-18 | `SPENDE` / `DONATION` / `GEMEINNUETZIGE` | Charitable donations — deductible | 20% of net income (federal); cantonal may differ |
 
 ### 3.3 Swiss Bank Fees (Deductible)
 
+**3.3 Swiss Bank Fees (Deductible)**  _(3.3 Swiss Bank Fees (Deductible))_
+
 | Pattern | Treatment | Notes |
-|---|---|---|
-| UBS, UBS SWITZERLAND | Deductible for business account fees | |
-| CREDIT SUISSE, CS (now UBS) | Deductible for business account fees | |
+| --- | --- | --- |
+| UBS, UBS SWITZERLAND | Deductible for business account fees |  |
+| CREDIT SUISSE, CS (now UBS) | Deductible for business account fees |  |
 | ZKB, ZURCHER KANTONALBANK | Deductible for business account fees | Cantonal bank |
 | RAIFFEISEN | Deductible for business account fees | Cooperative bank |
-| POSTFINANCE | Deductible for business account fees | |
-| BCGE, BANQUE CANTONALE DE GENEVE | Deductible for business account fees | |
-| BCV, BANQUE CANTONALE VAUDOISE | Deductible for business account fees | |
+| POSTFINANCE | Deductible for business account fees |  |
+| BCGE, BANQUE CANTONALE DE GENEVE | Deductible for business account fees |  |
+| BCV, BANQUE CANTONALE VAUDOISE | Deductible for business account fees |  |
 | BERNER KB, BLKB, LUKB, SGKB | Deductible — cantonal banks | Various cantonal banks |
 | KONTOGEBUHR, FRAIS DE COMPTE | Deductible | Account maintenance fee |
 | ZAHLUNGSVERKEHR, TRAFIC DES PAIEMENTS | Deductible | Payment transaction fees |
 
 ### 3.4 Government and Statutory (Exclude)
 
+**3.4 Government and Statutory (Exclude)**  _(3.4 Government and Statutory (Exclude))_
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STEUERAMT, STEUERVERWALTUNG | EXCLUDE | Cantonal tax authority payment |
 | EIDG. STEUERVERWALTUNG | EXCLUDE | Federal tax authority |
-| AUSGLEICHSKASSE (if tax portion) | Separate AHV (deductible) from other payments | |
+| AUSGLEICHSKASSE (if tax portion) | Separate AHV (deductible) from other payments |  |
 | GEMEINDE (if tax payment) | EXCLUDE | Communal tax payment |
 | HANDELSREGISTERAMT | Deductible | Commercial registry fee |
 
 ### 3.5 Internal Transfers and Exclusions
 
+**3.5 Internal Transfers and Exclusions**  _(3.5 Internal Transfers and Exclusions)_
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EIGENE UBERTRAGUNG, UMBUCHUNG | EXCLUDE | Internal movement |
 | BARGELDBEZUG, RETRAIT | TIER 2 — ask | Default exclude; determine purpose |
 | HYPOTHEK, HYPOTHEQUE | EXCLUDE | Mortgage payment (interest may be wealth deduction) |
-
----
 
 ## Section 4 — Worked Examples
 
@@ -308,42 +292,27 @@ Verify Vaud-specific church tax proration rules.
 
 Saving: ~10% of einfache Steuer for remaining 9 months.
 
----
-
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
-**T1-CH-1 — Only 31 December residence canton taxes the full year**
-For Praenumerando cantons (most cantons since 2003), the canton where the taxpayer resides on 31 December is the sole tax canton for the entire year. A mid-year move means the new canton taxes all income.
-
-**T1-CH-2 — NEVER compute einfache Steuer manually**
-Always use official cantonal tariff tables or the ESTV calculator. The base tariffs are complex progressive schedules that vary by canton and marital status.
-
-**T1-CH-3 — AHV/IV/EO and BVG are always fully deductible**
-Social security contributions (AHV/IV/EO) and pension fund contributions (BVG, Pillar 2) are deductible at both federal and cantonal level. Apply without escalating.
-
-**T1-CH-4 — Cantonal deductions differ from federal**
-Kinderabzug, Versicherungsabzug, and other personal deductions have different amounts at cantonal vs federal level. The cantonal amounts are often higher. Use the correct deduction for each level.
-
-**T1-CH-5 — Church tax only applies to church members**
-Only members of recognised churches (Evangelisch-Reformiert, Romisch-Katholisch, Christkatholisch, and in some cantons Jewish communities) pay Kirchensteuer. Confirm membership before applying.
-
-**T1-CH-6 — Saeule 3a cap: CHF 35,280 (self-employed without BVG) or CHF 7,056 (with BVG)**
-The Pillar 3a contribution limit depends on whether the taxpayer has BVG coverage. Self-employed without BVG can contribute up to 20% of net income, capped at CHF 35,280. With BVG: CHF 7,056.
-
----
+- **T1-CH-1 — Only 31 December residence canton taxes the full year** — For Praenumerando cantons (most cantons since 2003), the canton where the taxpayer resides on 31 December is the sole tax canton for the entire year. A mid-year move means the new canton taxes all income.  _(T1-CH-1)_
+- **T1-CH-2 — NEVER compute einfache Steuer manually** — Always use official cantonal tariff tables or the ESTV calculator. The base tariffs are complex progressive schedules that vary by canton and marital status.  _(T1-CH-2)_
+- **T1-CH-3 — AHV/IV/EO and BVG are always fully deductible** — Social security contributions (AHV/IV/EO) and pension fund contributions (BVG, Pillar 2) are deductible at both federal and cantonal level. Apply without escalating.  _(T1-CH-3)_
+- **T1-CH-4 — Cantonal deductions differ from federal** — Kinderabzug, Versicherungsabzug, and other personal deductions have different amounts at cantonal vs federal level. The cantonal amounts are often higher. Use the correct deduction for each level.  _(T1-CH-4)_
+- **T1-CH-5 — Church tax only applies to church members** — Only members of recognised churches (Evangelisch-Reformiert, Romisch-Katholisch, Christkatholisch, and in some cantons Jewish communities) pay Kirchensteuer. Confirm membership before applying.  _(T1-CH-5)_
+- **T1-CH-6 — Saeule 3a cap: CHF 35,280 (self-employed without BVG) or CHF 7,056 (with BVG)** — The Pillar 3a contribution limit depends on whether the taxpayer has BVG coverage. Self-employed without BVG can contribute up to 20% of net income, capped at CHF 35,280. With BVG: CHF 7,056.  _(T1-CH-6)_
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Tier 2 Catalogue**  _(Section 6 — Tier 2 Catalogue)_
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-CH-1 | Inter-cantonal Steuerausscheidung | Complex allocation of income between cantons; Doppelbesteuerungsverbot | Flag for Treuhaender — document allocation methodology |
 | T2-CH-2 | Cantonal-specific deduction amounts | Each canton sets own Kinderabzug, Versicherungsabzug, etc. | Verify with cantonal Steuerverwaltung before applying |
 | T2-CH-3 | Basel-Stadt or Geneva computation | Different mechanics from standard multiplier system | Use canton-specific calculator; do not apply generic formula |
 | T2-CH-4 | Married couple dual-income (Zweiverdienerabzug) | Available in some cantons; mitigates marriage penalty | Check cantonal availability and limits |
 | T2-CH-5 | Wealth tax (Vermogenssteuer) | Separate tax on net assets; filed on same return | Flag — separate computation required; out of scope |
 | T2-CH-6 | Quellensteuer for foreign nationals without C permit | Different tax regime entirely | Escalate — this skill does not cover Quellensteuer |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -398,11 +367,10 @@ SECTION F — REVIEWER FLAGS
 [ ] Provisional payments reconciled?
 ```
 
----
-
 ## Section 8 — Bank Statement Reading Guide
 
 ### UBS
+
 - Export: CSV/Excel from UBS e-Banking / UBS key4
 - Columns: `Datum;Text;Belastung;Gutschrift;Saldo`
 - Amount format: apostrophe thousands, period decimal (e.g., `12'500.00`)
@@ -410,45 +378,51 @@ SECTION F — REVIEWER FLAGS
 - Credits: `GUTSCHRIFT [sender]`, `EINGANG [sender]`
 
 ### ZKB (Zurcher Kantonalbank)
+
 - Export: CSV from ZKB eBanking
 - Same Swiss format as UBS
 - Credits: `GUTSCHRIFT [sender]`, `VERGUTUNG [sender]`
 
 ### Raiffeisen
+
 - Export: CSV from Raiffeisen e-Banking
 - Standard Swiss format
 - Credits: `EINZAHLUNG [sender]`, `GUTSCHRIFT [sender]`
 
 ### PostFinance
+
 - Export: CSV/XML from PostFinance e-Finance
 - Columns: `Buchungsdatum;Text;Gutschrift;Lastschrift;Saldo`
 - Credits: `GUTSCHRIFT [sender]`
 
 ### Credit Suisse (now UBS)
+
 - Export: CSV from CS Direct / migrated to UBS
 - Standard Swiss format
 
 ### Cantonal Banks (BCGE, BCV, BLKB, LUKB, SGKB, etc.)
+
 - Export varies; typically CSV with Swiss format
 - Each cantonal bank serves its region; narration language matches canton (DE/FR/IT)
 
 ### TWINT
+
 - Not a bank — TWINT payments appear in primary bank statement
 - Look for: `TWINT EINGANG [sender]`, `TWINT GUTSCHRIFT`
 - Increasingly used for small business payments
 
 ### QR-Rechnung (QR-Bill)
+
 - Swiss standard payment slip; receipts appear as `QR-RECHNUNG EINGANG`
 - Reference number allows matching to invoices
 
 ### Key Swiss Banking Notes
+
 - Amounts in CHF; apostrophe as thousands separator (e.g., `12'500.00`), period decimal
 - German-speaking cantons: `Gutschrift`, `Belastung`
 - French-speaking cantons: `Credit`, `Debit`, `Versement`
 - Italian-speaking cantons: `Accredito`, `Addebito`
 - Swiss banks are multilingual; narration language may vary
-
----
 
 ## Section 9 — Onboarding Fallback
 
@@ -464,21 +438,18 @@ SECTION F — REVIEWER FLAGS
 **Inter-cantonal activity:**
 > "Do you conduct business activities in a canton other than your residence, or do you own real property in another canton? If so, an inter-cantonal Steuerausscheidung (tax allocation) is required to determine which canton taxes which portion of your income. This is a complex area that typically requires a Treuhaender."
 
----
-
 ## Section 10 — Reference Material
 
 ### Key Legislation
-- **StHG (SR 642.14)** — Federal Tax Harmonisation Act (Steuerharmonisierungsgesetz)
-- **DBG (SR 642.11)** — Federal Direct Tax Act (for federal tax; companion to cantonal)
-- **Individual cantonal Steuergesetze** — each of 26 cantons has its own tax law
-- **BGE (Federal Supreme Court)** — rulings on inter-cantonal allocation and Doppelbesteuerungsverbot
-- **Bundesverfassung Art. 127 Abs. 3** — prohibition of double taxation between cantons
+
+- **Key Legislation list** — - StHG (SR 642.14) — Federal Tax Harmonisation Act (Steuerharmonisierungsgesetz) - DBG (SR 642.11) — Federal Direct Tax Act (for federal tax; companion to cantonal) - Individual cantonal Steuergesetze — each of 26 cantons has its own tax law - BGE (Federal Supreme Court) — rulings on inter-cantonal allocation and Doppelbesteuerungsverbot - Bundesverfassung Art. 127 Abs. 3 — prohibition of double taxation between cantons  _(StHG (SR 642.14); DBG (SR 642.11); Bundesverfassung Art. 127 Abs. 3)_
 
 ### Filing Deadlines
 
+**Filing Deadlines**  _(Filing Deadlines)_
+
 | Canton | Standard Deadline | Extension |
-|---|---|---|
+| --- | --- | --- |
 | Most cantons | 31 March following year | Yes — typically to 30 September or 30 November |
 | Zurich (ZH) | 31 March | Online Fristverlaengerung |
 | Bern (BE) | 15 March | Extension available |
@@ -487,22 +458,16 @@ SECTION F — REVIEWER FLAGS
 | Ticino (TI) | 30 April | Extension available |
 
 ### Provisional Payments
-- Most cantons issue provisional tax invoices based on prior year
-- 9-12 monthly or 3-4 quarterly instalments
-- Overpayment: Vergutungszins (credit interest) ~0-1%
-- Underpayment: Verzugszins (arrears interest) ~3-5%
+
+- **Provisional Payments** — - Most cantons issue provisional tax invoices based on prior year - 9-12 monthly or 3-4 quarterly instalments - Overpayment: Vergutungszins (credit interest) ~0-1% - Underpayment: Verzugszins (arrears interest) ~3-5%  _(Section 10 — Provisional Payments)_
 
 ### Where to Find Current Steuerfuss
-- ESTV tax calculator: swisstaxcalculator.estv.admin.ch
-- SSK cantonal comparison: www.steuerkonferenz.ch
-- Individual cantonal portals (ZH: steuern.zh.ch, BE: taxme.ch, GE: ge.ch/impots)
+
+- **Where to Find Current Steuerfuss** — - ESTV tax calculator: swisstaxcalculator.estv.admin.ch - SSK cantonal comparison: www.steuerkonferenz.ch - Individual cantonal portals (ZH: steuern.zh.ch, BE: taxme.ch, GE: ge.ch/impots)  _(Section 10 — Where to Find Current Steuerfuss)_
 
 ### Record Keeping
-- Steuererklarung and Beilagen: 10 years
-- Business records (Buchfuhrung): 10 years (OR Art. 958f)
-- Church exit documentation: retain permanently
 
----
+- **Record Keeping** — - Steuererklarung and Beilagen: 10 years - Business records (Buchfuhrung): 10 years (OR Art. 958f) - Church exit documentation: retain permanently  _(OR Art. 958f)_
 
 ## Disclaimer
 
@@ -510,6 +475,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ch-cantonal-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ch-cantonal-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ch-cantonal-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

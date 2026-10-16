@@ -1,14 +1,12 @@
 ---
 name: medical-professional
 description: "Industry vertical for medical and healthcare professionals in private practice including doctors, dentists, physiotherapists, psychologists, therapists, optometrists, and allied health practitioners. Loaded alongside any country skill to provide industry-specific classification guidance for patient fee income, insurance reimbursements, medical equipment, clinical premises, and healthcare-specific regulatory costs. Trigger phrases — doctor, dentist, private practice, physiotherapist, therapist, GP, medical practice, dental practice, chiropractor, psychologist, optometrist, allied health, private healthcare, clinic."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: vertical
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/medical-professional"
-  obligation: VERT
+  openaccountants_url: "https://www.openaccountants.com/skills/medical-professional"
+  jurisdiction: "GLOBAL"
+  last_updated: "2026-06-12"
 ---
 
 # Medical Professional Vertical Skill v1.0
@@ -495,8 +493,8 @@ This skill and its outputs are provided for informational and computational purp
 
 This skill does NOT provide medical, clinical, or healthcare advice. No output from this skill should influence clinical decision-making. Healthcare professionals must exercise independent clinical judgment at all times.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/medical-professional) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `medical-professional` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/medical-professional. If neither is available, confirm every figure against the official source pages cited above before relying on it.

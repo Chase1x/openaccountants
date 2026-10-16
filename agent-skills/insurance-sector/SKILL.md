@@ -1,25 +1,23 @@
 ---
 name: insurance-sector
-description: "> Use this skill whenever an insurer, reinsurer, captive, MGA, or insurance broker asks about accounting, regulatory, or tax issues specific to insurance entities. Trigger on phrases like \"IFRS 17\", \"ASC 944\", \"LDTI\", \"Solvency II\", \"Bermuda EBT\", \"captive insurance\", \"PFIC insurance exclusion\", \"PRA Pillar 1/2/3\", \"SCR\", \"MCR\", \"Lloyd's syndicate\", \"reinsurance recoverable\", \"deferred acquisition costs\", \"DAC\", \"premium deficiency reserve\", \"loss reserve discount\", \"insurance premium tax\", \"IPT\", \"consumption levy on insurance\", or any insurance-specific accounting/tax question. Covers IFRS 17 transition, US ASC 944 Long-Duration Targeted Improvements (LDTI), Solvency II prudential interaction with tax, captive insurance regimes (Bermuda, Cayman, Guernsey, Vermont), insurance premium tax matrix, and the PFIC active insurance exception. Does NOT cover: insurance product design / pricing, actuarial valuation methodology beyond reference, or insurance regulatory authorisation."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever an insurer, reinsurer, captive, MGA, or insurance broker asks about accounting, regulatory, or tax issues specific to insurance entities. Trigger on phrases like \"IFRS 17\", \"ASC 944\", \"LDTI\", \"Solvency II\", \"Bermuda EBT\", \"captive insurance\", \"PFIC insurance exclusion\", \"PRA Pillar 1/2/3\", \"SCR\", \"MCR\", \"Lloyd's syndicate\", \"reinsurance recoverable\", \"deferred acquisition costs\", \"DAC\", \"premium deficiency reserve\", \"loss reserve discount\", \"insurance premium tax\", \"IPT\", \"consumption levy on insurance\", or any insurance-specific accounting/tax question. Covers IFRS 17 transition, US ASC 944 Long-Duration Targeted Improvements (LDTI), Solvency II prudential interaction with tax, captive insurance regimes (Bermuda, Cayman, Guernsey, Vermont), insurance premium tax matrix, and the PFIC active insurance exception. Does NOT cover: insurance product design / pricing, actuarial valuation methodology beyond reference, or insurance regulatory authorisation."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: vertical
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/insurance-sector"
-  obligation: VERT
+  openaccountants_url: "https://www.openaccountants.com/skills/insurance-sector"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Insurance Sector Tax & Accounting v0.1
+# Insurance Sector
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Insurance Sector Tax & Accounting v0.1
 
 ## What this file is
 
 A sector overlay for life insurers, non-life insurers, reinsurers, captives, MGAs, and brokers.
-
----
 
 ## Section 1 — Scope
 
@@ -41,14 +39,14 @@ This skill does NOT cover:
 - **Insurance regulatory authorisation** procedures
 - **Lloyd's of London-specific syndicate tax** (separate specialist skill)
 
----
-
 ## Section 2 — IFRS 17 ↔ ASC 944 LDTI differences
 
 **[T1] See `ifrs-local-gaap-reconciliation.md` for foundation. Insurance-specific:**
 
+**IFRS 17 vs ASC 944 LDTI differences**  _(Section 2 — IFRS 17 ↔ ASC 944 LDTI differences)_
+
 | Topic | IFRS 17 | ASC 944 LDTI |
-|---|---|---|
+| --- | --- | --- |
 | Liability measurement | Building Block Approach (BBA), Premium Allocation Approach (PAA) for short-duration, Variable Fee Approach (VFA) for direct participating | Net premium reserve; updated assumptions through P&L (LDTI improvements) |
 | Discount rate | Top-down or bottom-up; reflects characteristics of cash flows | Single A-quality corporate yield curve (LDTI prescribed) |
 | Contractual Service Margin (CSM) | Recognised in P&L over coverage period | No equivalent — gain at issue spread differently |
@@ -56,34 +54,32 @@ This skill does NOT cover:
 | Onerous contract | Loss recognised immediately + Loss Component tracking | Premium Deficiency Reserve (PDR) at portfolio level |
 | Reinsurance held | Asset/liability separately; expected to mirror underlying when treaty matches | Recognised as reduction of net premium |
 
-**[T1] Material tax interaction:** IFRS 17 CSM creates a deferred tax balance — the CSM is recognised in equity at transition but released to P&L over time. Deferred tax tracks this release.
-
----
+- **Material tax interaction** — IFRS 17 CSM creates a deferred tax balance — the CSM is recognised in equity at transition but released to P&L over time. Deferred tax tracks this release.  _([T1] Material tax interaction)_
 
 ## Section 3 — Specific insurance tax items
 
 ### 3.1 US insurance taxation
 
-**[T1]**
-- **Subchapter L (IRC §§801-848)** — separate corporate income tax regime for insurance companies
-- **Life insurer** (§816(a) test: >50% reserves life or non-cancellable A&H): special reserves deduction, DAC capitalisation under §848
-- **Non-life insurer**: §832 "underwriting income" + investment income; loss reserves discounted per §846
-- **Captive PFIC exception** (§1297(f)): "qualifying insurance corporation" status if applicable insurance liabilities ≥ 25% of total assets (10% with safe harbour facts)
-- **§953(d) election** for foreign insurance corporations to be treated as US for tax (election common for Bermuda captives owned by US)
-- **§953(c)** for related-party captive income — Subpart F
+- **Subchapter L** — Separate corporate income tax regime for insurance companies  _(IRC §§801-848)_
+- **Life insurer** — §816(a) test: >50% reserves life or non-cancellable A&H: special reserves deduction, DAC capitalisation under §848  _(IRC §816(a), §848)_
+- **Non-life insurer** — §832 "underwriting income" + investment income; loss reserves discounted per §846  _(IRC §832, §846)_
+- **Captive PFIC exception** — "Qualifying insurance corporation" status if applicable insurance liabilities ≥ 25% of total assets (10% with safe harbour facts)  _(IRC §1297(f))_
+- **§953(d) election** — Election for foreign insurance corporations to be treated as US for tax (election common for Bermuda captives owned by US)  _(IRC §953(d))_
+- **§953(c)** — Related-party captive income — Subpart F  _(IRC §953(c))_
 
 ### 3.2 UK insurance taxation
 
-**[T1]**
-- **General Insurer Tax Regulation (GITR)** — FA 2012 Part 2 / s.65
-- **Life Insurer "I-E" basis** — Income less Expenses; complex calculations
-- **Lloyd's of London** — special rules for syndicate members
-- **IPT (Insurance Premium Tax)**: 12% standard; 20% higher rate (travel, mechanical/electrical insurance); 0% reinsurance
+- **General Insurer Tax Regulation (GITR)** — FA 2012 Part 2 / s.65  _(FA 2012 Part 2 / s.65)_
+- **Life Insurer "I-E" basis** — Income less Expenses; complex calculations  _([T1] 3.2 UK insurance taxation)_
+- **Lloyd's of London** — Special rules for syndicate members  _([T1] 3.2 UK insurance taxation)_
+- **IPT (Insurance Premium Tax) — UK** — 12% standard; 20% higher rate (travel, mechanical/electrical insurance); 0% reinsurance  _([T1] 3.2 UK insurance taxation)_
 
 ### 3.3 EU IPT matrix
 
+**EU IPT matrix**  _(3.3 EU IPT matrix)_
+
 | Country | Standard rate | Notable |
-|---|---|---|
+| --- | --- | --- |
 | **Germany** | 19% | Plus 22% on fire insurance |
 | **France** | 9-30% by class | Auto 18%; health 7%; fire 30% |
 | **Italy** | 21.25% standard; 12.5% life; 2.5% professional liability | Plus regional |
@@ -95,16 +91,16 @@ This skill does NOT cover:
 
 ### 3.4 Bermuda corporate income tax (2025)
 
-**[T1]** Bermuda introduced 15% Corporate Income Tax effective 1 January 2025 for Bermuda Constituent Entity Groups (BCEG) within an MNE group with consolidated revenue ≥ EUR 750m. Insurance and reinsurance companies are within scope. Substantial transition relief and intra-group reorganisation rules.
-
----
+- **Bermuda 15% CIT** — Bermuda introduced 15% Corporate Income Tax effective 1 January 2025 for Bermuda Constituent Entity Groups (BCEG) within an MNE group with consolidated revenue ≥ EUR 750m. Insurance and reinsurance companies are within scope. Substantial transition relief and intra-group reorganisation rules.  _([T1] 3.4 Bermuda corporate income tax (2025))_
 
 ## Section 4 — Captive insurance
 
 **[T1] Common captive jurisdictions:**
 
+**Common captive jurisdictions**  _(Section 4 — Captive insurance)_
+
 | Jurisdiction | Captive count | Notable |
-|---|---|---|
+| --- | --- | --- |
 | Bermuda | ~700+ | 15% CIT from 2025; long-standing EBT regime; ART (alternative risk transfer) hub |
 | Cayman | ~700+ | No CIT; Pillar Two QDMTT 2025 |
 | Vermont (US) | ~600+ | US state captive; favorable regulatory; subject to US federal CIT |
@@ -116,12 +112,7 @@ This skill does NOT cover:
 | Singapore | n/a | Captive Insurance Act 2015 |
 | Luxembourg | n/a | Reinsurance captive favoured by EU groups |
 
-**[T1] Captive tax planning watch-points:**
-- Sham insurance / lack of risk transfer challenges (US §831(b) "micro-captives" face IRS scrutiny under Notice 2016-66 and Listed Transaction status confirmed 2023)
-- BEAT on premium / reinsurance premium payments
-- Pillar Two now neutralises low-tax captive jurisdictions for in-scope MNE groups
-
----
+- **Captive tax planning watch-points** — - Sham insurance / lack of risk transfer challenges (US §831(b) "micro-captives" face IRS scrutiny under Notice 2016-66 and Listed Transaction status confirmed 2023) - BEAT on premium / reinsurance premium payments - Pillar Two now neutralises low-tax captive jurisdictions for in-scope MNE groups  _([T1] Captive tax planning watch-points)_
 
 ## Section 5 — Self-checks
 
@@ -137,12 +128,28 @@ This skill does NOT cover:
 - [ ] IPT collected and remitted per country
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement
 
----
-
 ## Section 6 — Disclaimer
 
 Insurance accounting and tax are highly specialised. Outputs must be reviewed by credentialed insurance-sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/insurance-sector) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `insurance-sector` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/insurance-sector. If neither is available, confirm every figure against the official source pages cited above before relying on it.

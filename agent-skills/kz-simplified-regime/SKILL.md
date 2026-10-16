@@ -1,15 +1,13 @@
 ---
 name: kz-simplified-regime
-description: "> Use this skill whenever asked about Kazakhstan SPECIAL TAX REGIMES for small business and individual entrepreneurs (ИП / ЖК) — the simplified declaration regime, the self-employed regime, and registration/choice of regime under the NEW 2026 Tax Code. Trigger on phrases like \"упрощёнка Казахстан\", \"упрощённая декларация\", \"Form 910\", \"Форма 910\", \"simplified declaration Kazakhstan\", \"ИП налог\", \"ИП на упрощёнке\", \"retail tax Kazakhstan\", \"розничный налог\", \"patent Kazakhstan\", \"патент Казахстан\", \"самозанятый Казахстан\", \"self-employed regime Kazakhstan\", \"E-Salyq Business\", \"какой налоговый режим выбрать\", \"СНР Казахстан 2026\", \"регистрация ИП\", \"оборот лимит ИП\", or any request to choose, compute, classify, or advise on a Kazakhstan small-business special tax regime under the 2026 Tax Code."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Kazakhstan SPECIAL TAX REGIMES for small business and individual entrepreneurs (ИП / ЖК) — the simplified declaration regime, the self-employed regime, and registration/choice of regime under the NEW 2026 Tax Code. Trigger on phrases like \"упрощёнка Казахстан\", \"упрощённая декларация\", \"Form 910\", \"Форма 910\", \"simplified declaration Kazakhstan\", \"ИП налог\", \"ИП на упрощёнке\", \"retail tax Kazakhstan\", \"розничный налог\", \"patent Kazakhstan\", \"патент Казахстан\", \"самозанятый Казахстан\", \"self-employed regime Kazakhstan\", \"E-Salyq Business\", \"какой налоговый режим выбрать\", \"СНР Казахстан 2026\", \"регистрация ИП\", \"оборот лимит ИП\", or any request to choose, compute, classify, or advise on a Kazakhstan small-business special tax regime under the 2026 Tax Code. This skill covers the simplified declaration (Форма 910.00, half-year filing, turnover ceiling, the combined 4% rate with maslikhat ±50% adjustment), the new self-employed regime (replaces the abol"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-simplified-regime"
-  tax_year: 2026
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-simplified-regime"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Special Tax Regimes for Small Business (СНР) — Self-Employed Skill v1.0
@@ -356,6 +354,6 @@ legal or tax advice for a specific person. Always confirm with the **State Reven
 or a licensed Kazakhstan practitioner before filing or making decisions. Provided by
 **openaccountants.com** under its open-source tax-skills project.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-simplified-regime) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-simplified-regime` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-simplified-regime. If neither is available, confirm every figure against the official source pages cited above before relying on it.

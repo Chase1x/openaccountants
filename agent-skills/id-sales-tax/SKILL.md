@@ -1,24 +1,26 @@
 ---
 name: id-sales-tax
 description: "Use this skill whenever asked about Idaho sales and use tax. Trigger on phrases like \"Idaho sales tax\", \"ID sales tax\", \"Idaho Code §63-3619\", \"Idaho SST\". ALWAYS load us-sales-tax first."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-ID
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/id-sales-tax"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/id-sales-tax"
+  jurisdiction: "US-ID"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Idaho Sales and Use Tax Skill v2.0
+# ID Sales Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Idaho Sales and Use Tax Skill v2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | Idaho |
 | State rate | 6.00% |
 | Local taxes | Resort city taxes up to 3% |
@@ -32,30 +34,30 @@ metadata:
 
 ## Section 3 -- Transaction pattern library
 
+**Transaction pattern library**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
-| General TPP | TAXABLE 6% | |
+| --- | --- | --- |
+| General TPP | TAXABLE 6% |  |
 | Clothing | TAXABLE | No exemption |
-| Grocery food | EXEMPT | |
-| Prepared food | TAXABLE | |
+| Grocery food | EXEMPT |  |
+| Prepared food | TAXABLE |  |
 | SaaS | NOT TAXABLE | Idaho has not enacted SaaS taxation |
-| Canned software (download) | TAXABLE | |
-| Professional services | NOT TAXABLE | |
+| Canned software (download) | TAXABLE |  |
+| Professional services | NOT TAXABLE |  |
 | Manufacturing equipment | EXEMPT | Production exemption |
-| Prescription drugs | EXEMPT | |
-| Resale | EXEMPT | |
+| Prescription drugs | EXEMPT |  |
+| Resale | EXEMPT |  |
 
 ## Section 10 -- Prohibitions
 
-- NEVER forget resort city taxes (Sun Valley, McCall up to 3% additional).
-- NEVER treat SaaS as taxable in Idaho.
-- NEVER compute any number.
+- **Resort city taxes reminder** — NEVER forget resort city taxes (Sun Valley, McCall up to 3% additional).
+- **SaaS taxability prohibition** — NEVER treat SaaS as taxable in Idaho.
+- **No computation prohibition** — NEVER compute any number.
 
 ## Disclaimer
 
 Informational only. Review by qualified professional required before filing.
-
----
 
 ## Disclaimer
 
@@ -63,6 +65,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/id-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `id-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/id-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

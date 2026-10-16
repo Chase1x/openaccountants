@@ -1,15 +1,13 @@
 ---
 name: kz-tax-optimization
-description: "> Use this skill whenever asked about legally reducing tax for a self-employed person or small business in Kazakhstan. Trigger on phrases like \"reduce tax Kazakhstan\", \"simplified vs general Kazakhstan\", \"tax planning Kazakhstan ИП\", \"VAT threshold Kazakhstan\", \"Astana Hub tax\". Covers choosing the optimal special tax regime, the VAT-threshold lever, the Astana Hub IT relief, and the disguised-employment risk — legal planning only. ALWAYS read this before Kazakhstan planning."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about legally reducing tax for a self-employed person or small business in Kazakhstan. Trigger on phrases like \"reduce tax Kazakhstan\", \"simplified vs general Kazakhstan\", \"tax planning Kazakhstan ИП\", \"VAT threshold Kazakhstan\", \"Astana Hub tax\". Covers choosing the optimal special tax regime, the VAT-threshold lever, the Astana Hub IT relief, and the disguised-employment risk — legal planning only. ALWAYS read this before Kazakhstan planning."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-tax-optimization"
-  tax_year: 2026
-  obligation: OPT
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-tax-optimization"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Tax Optimization (Self-Employed) — Skill v1.0
@@ -60,8 +58,8 @@ For software/IT freelancers, **Astana Hub** accreditation can deliver the single
 - NEVER state VAT threshold / rates without verifying the 2026 Tax Code.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Kazakhstan accountant. Verify all 2026 figures with the КГД. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Kazakhstan accountant. Verify all 2026 figures with the КГД. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-tax-optimization) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.

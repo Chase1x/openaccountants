@@ -1,40 +1,32 @@
 ---
 name: slovakia-vat-return
 description: "Use this skill whenever asked to prepare, review, or create a Slovak VAT return (DPH form / DPHv25) for any client. Trigger on phrases like \"prepare VAT return\", \"do the DPH\", \"fill in DPH\", \"create the return\", \"Slovak VAT\", or any request involving Slovakia VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Slovak VAT classification rules, box mappings, deductibility rules, reverse charge treatment, import VAT reverse charge, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any VAT-related work for Slovakia."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/slovakia-vat-return"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/slovakia-vat-return"
+  jurisdiction: "SK"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Slovakia VAT Return Preparation Skill
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Slovakia VAT Return
 
 ## Skill Metadata
 
-| Field | Value |
-|-------|-------|
-| Jurisdiction | Slovakia |
-| Jurisdiction Code | SK |
-| Primary Legislation | Zakon c. 222/2004 Z.z. o dani z pridanej hodnoty (VAT Act No. 222/2004 Coll., as amended by Consolidation Act 2025) |
-| Supporting Legislation | EU VAT Directive 2006/112/EC; Act No. 563/2009 Coll. (Tax Administration Act); Act No. 595/2003 Coll. (Income Tax Act) |
-| Tax Authority | Financna sprava Slovenskej republiky (Financial Administration of the Slovak Republic) |
-| Filing Portal | https://www.financnasprava.sk (eDane / eTax portal) |
-| Contributor | Auto-generated draft -- requires validation |
-| Validated By | Deep research verification April 2026; Section 7/7a operating mode added May 2026 after reconciliation against a real Slovak §7a entity's filed April 2026 DPH return |
-| Validation Date | 2026-05-25 |
-| Skill Version | 1.1 |
-| Status | validated |
-| Confidence Coverage | Tier 1: box assignment, reverse charge, deductibility blocks, derived calculations. Tier 2: partial exemption coefficient, vehicle use documentation, import VAT reverse charge. Tier 3: complex group structures, non-standard supplies, triangulation, SOPARFI-like structures. |
-
----
+- **Jurisdiction** — Slovakia
+- **Jurisdiction Code** — SK
+- **Primary Legislation** — Zakon c. 222/2004 Z.z. o dani z pridanej hodnoty (VAT Act No. 222/2004 Coll., as amended by Consolidation Act 2025)
+- **Supporting Legislation** — EU VAT Directive 2006/112/EC; Act No. 563/2009 Coll. (Tax Administration Act); Act No. 595/2003 Coll. (Income Tax Act)
+- **Tax Authority** — Financna sprava Slovenskej republiky (Financial Administration of the Slovak Republic)
+- **Filing Portal** — https://www.financnasprava.sk (eDane / eTax portal)
+- **Contributor** — Auto-generated draft -- requires validation
+- **Validated By** — Deep research verification, April 2026
+- **Validation Date** — 2026-04-10
+- **Skill Version** — 1.0
+- **Status** — validated
+- **Confidence Coverage** — Tier 1: box assignment, reverse charge, deductibility blocks, derived calculations. Tier 2: partial exemption coefficient, vehicle use documentation, import VAT reverse charge. Tier 3: complex group structures, non-standard supplies, triangulation, SOPARFI-like structures.
 
 ## Confidence Tier Definitions
 
@@ -43,8 +35,6 @@ Every rule in this skill is tagged with a confidence tier:
 - **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
 - **[T2] Tier 2 -- Reviewer Judgement Required.** Flag the issue and present options. A qualified danovy poradca must confirm before filing.
 - **[T3] Tier 3 -- Out of Scope / Escalate.** Skill does not cover this. Do not guess. Escalate to qualified adviser.
-
----
 
 ## Step 0: Client Onboarding Questions
 
@@ -62,31 +52,24 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 
 **If any of items 1-3 are unknown, STOP. Do not classify any transactions until confirmed.**
 
----
-
 ## Step 1: Transaction Classification Rules
 
-### 1.0 Source completeness check [T1]
-
-Before classifying transactions from a PDF folder or document set, cross-reference the bank statement against the source document folder. For every known cross-border subscription supplier (Anthropic, OpenAI, Google, AWS, GitHub, Stripe, etc.), confirm that every charge on the bank statement is matched by an invoice or receipt in the source folder. Small charges (prorated upgrade adjustments, one-time credits, FX rounding lines, mid-cycle plan changes) are often present on the supplier's billing portal but absent from the local folder, and still trigger reverse-charge obligations under §69(2)-(3). A missing sub-EUR 20 line can change the resulting Row 32 liability by exactly its 23% (or applicable rate). If any charge cannot be matched, retrieve the invoice from the supplier's billing console before finalising the return.
-
 ### 1a. Determine Transaction Type [T1]
-- Sale (output DPH / dan na vystupe) or Purchase (input DPH / dan na vstupe / odpocitanie dane)
-- Salaries, social contributions (Socialna poistovna, zdravotne poistenie), tax payments, loan repayments, dividends, bank charges = OUT OF SCOPE
-- **Legislation:** VAT Act Sec. 2-3 (scope of tax), Sec. 8-10 (supply of goods), Sec. 9 (supply of services)
+
+- **Transaction type classification** — Sale (output DPH / dan na vystupe) or Purchase (input DPH / dan na vstupe / odpocitanie dane); Salaries, social contributions (Socialna poistovna, zdravotne poistenie), tax payments, loan repayments, dividends, bank charges = OUT OF SCOPE  _(VAT Act Sec. 2-3 (scope of tax), Sec. 8-10 (supply of goods), Sec. 9 (supply of services))_
 
 ### 1b. Determine Counterparty Location [T1]
-- Slovakia (domestic): supplier/customer country is SK
-- EU: AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV, LT, LU, MT, NL, PL, PT, RO, SI, ES, SE
-- Non-EU: everything else
-- **Note:** UK is Non-EU post-Brexit. Ukraine is Non-EU. Czech Republic is a separate EU member.
+
+- **Counterparty location classification** — Slovakia (domestic): supplier/customer country is SK; EU: AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV, LT, LU, MT, NL, PL, PT, RO, SI, ES, SE; Non-EU: everything else. Note: UK is Non-EU post-Brexit. Ukraine is Non-EU. Czech Republic is a separate EU member.
 
 ### 1c. Determine VAT Rate [T1]
 
-**Rates from 1 January 2025 (Consolidation Act amendments):**
+**Rates from 1 January 2025 (Consolidation Act amendments)**
+
+**Rates from 1 January 2025 (Consolidation Act amendments)**  _(VAT Act Sec. 27)_
 
 | Rate | Category | Legislation |
-|------|----------|-------------|
+| --- | --- | --- |
 | 23% | Standard rate -- most goods and services | VAT Act Sec. 27(1) |
 | 19% | Reduced rate -- foodstuffs, non-alcoholic beverages, medicines, certain construction/renovation of residential housing, sporting events entrance, accommodation, newspapers | VAT Act Sec. 27(2), Annex 7 |
 | 5% | Super-reduced rate -- basic foodstuffs (bread, butter, milk, meat, fish, fruit, vegetables, eggs), books and periodicals | VAT Act Sec. 27(3), Annex 7a |
@@ -94,26 +77,22 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 | Exempt with credit | International transport, supplies connected with international trade | VAT Act Sec. 47 |
 | Exempt without credit | Financial services (Sec. 39), insurance (Sec. 37), healthcare (Sec. 29), education (Sec. 31), postal services (Sec. 28), residential rental (Sec. 38(3)), gambling, transfer of going concern | VAT Act Sec. 28-42 |
 
-**Pre-2025 rates (for historical periods):** Standard 20%, Reduced 10%
+Pre-2025 rates (for historical periods): Standard 20%, Reduced 10%
 
 ### 1d. Determine Expense Category [T1]
-- Capital goods: investment property and tangible assets used for business; adjustment applies on change of use
-- Immovable property: 20-year adjustment period (VAT Act Sec. 54a)
-- Movable capital goods: 5-year adjustment period (VAT Act Sec. 54)
-- Resale: goods bought to resell
-- Overhead/services: everything else
-- **Legislation:** VAT Act Sec. 54-54a (adjustment of deduction for capital goods)
 
----
+- **Expense category classification** — Capital goods: investment property and tangible assets used for business; adjustment applies on change of use. Immovable property: 20-year adjustment period. Movable capital goods: 5-year adjustment period. Resale: goods bought to resell. Overhead/services: everything else.  _(VAT Act Sec. 54-54a (adjustment of deduction for capital goods))_
 
 ## Step 2: VAT Return Form Structure (DPHv25 -- from July 2025) [T1]
 
-**Legislation:** VAT Act Sec. 78; form DPHv25 prescribed by Financial Administration.
+Legislation: VAT Act Sec. 78; form DPHv25 prescribed by Financial Administration.
 
 ### Output DPH Section
 
+**Output DPH Section**  _(VAT Act Sec. 78)_
+
 | Row | Description | Rate | Notes |
-|-----|-------------|------|-------|
+| --- | --- | --- | --- |
 | 01 | Domestic supplies at 23% -- taxable base | 23% | Standard-rated sales |
 | 01a | Output DPH at 23% | -- | Calculated |
 | 02 | Domestic supplies at 19% -- taxable base | 19% | Food, accommodation, etc. |
@@ -137,8 +116,10 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Input DPH Section
 
+**Input DPH Section**  _(VAT Act Sec. 78)_
+
 | Row | Description | Notes |
-|-----|-------------|-------|
+| --- | --- | --- |
 | 20 | Input DPH on domestic purchases at 23% | Standard-rated input |
 | 21 | Input DPH on domestic purchases at 19% | Reduced-rated input |
 | 22 | Input DPH on domestic purchases at 5% | Super-reduced input |
@@ -152,22 +133,24 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Summary Section
 
+**Summary Section**  _(VAT Act Sec. 78)_
+
 | Row | Description | Notes |
-|-----|-------------|-------|
+| --- | --- | --- |
 | 30 | Total output DPH | Sum of all output rows |
 | 31 | Total input DPH | Row 28 |
 | 32 | DPH liability (Row 30 - Row 31) -- if positive | TO PAY |
 | 33 | Excess DPH (Row 31 - Row 30) -- if positive | TO REFUND |
 | 34 | Coefficient of proportional deduction (%) | For mixed businesses |
 
----
-
 ## Step 3: Transaction Classification Matrix [T1]
 
 ### Purchases -- Domestic (Slovak Supplier)
 
+**Purchases -- Domestic (Slovak Supplier)**
+
 | VAT Rate | Category | Input Row | Notes |
-|----------|----------|-----------|-------|
+| --- | --- | --- | --- |
 | 23% | Overhead/services | Row 20 | Standard domestic |
 | 19% | Overhead/services | Row 21 | Food, accommodation |
 | 5% | Overhead/services | Row 22 | Basic food, books |
@@ -178,8 +161,10 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Purchases -- EU Supplier (Reverse Charge)
 
+**Purchases -- EU Supplier (Reverse Charge)**
+
 | Type | Output Row | Input Row | Notes |
-|------|-----------|-----------|-------|
+| --- | --- | --- | --- |
 | Physical goods | Row 07/07a | Row 23 | Intra-EU acquisition |
 | Services (B2B) | Row 08/08a | Row 24 | EU service RC |
 | Out-of-scope | -- | -- | NEVER reverse charge |
@@ -187,8 +172,10 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Purchases -- Non-EU Supplier
 
+**Purchases -- Non-EU Supplier**
+
 | Type | Output Row | Input Row | Notes |
-|------|-----------|-----------|-------|
+| --- | --- | --- | --- |
 | Services (B2B) | Row 09/09a | Row 25 | Non-EU service import |
 | Physical goods (customs, traditional) | -- | Row 20 | VAT paid at customs border |
 | Physical goods (import RC from July 2025) | Row 11/11a | Row 23a | New self-assessment |
@@ -196,8 +183,10 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Sales -- Domestic
 
+**Sales -- Domestic**
+
 | Rate | Row | Notes |
-|------|-----|-------|
+| --- | --- | --- |
 | 23% | Row 01/01a | Standard-rated |
 | 19% | Row 02/02a | Food, accommodation, etc. |
 | 5% | Row 03/03a | Basic food, books |
@@ -206,39 +195,36 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 
 ### Sales -- EU / Non-EU
 
+**Sales -- EU / Non-EU**
+
 | Location | Type | Row | Notes |
-|----------|------|-----|-------|
+| --- | --- | --- | --- |
 | EU B2B goods | Intra-EU supply | Row 04 | Zero-rated, EC Sales List |
 | EU B2B services | Place of supply in customer MS | Reported separately | VIES |
 | Non-EU | Export | Row 05 | Zero-rated, customs docs |
 
----
-
 ## Step 4: Reverse Charge Mechanics [T1]
 
-**Legislation:** VAT Act Sec. 69 (reverse charge); Sec. 11 (intra-EU acquisition).
+Legislation: VAT Act Sec. 69 (reverse charge); Sec. 11 (intra-EU acquisition).
 
 ### Intra-EU Acquisitions of Goods (Sec. 11)
-1. Report taxable base in Row 07 and self-assessed output DPH in Row 07a
-2. Claim input DPH in Row 23
-3. Net effect: zero for fully taxable businesses
-4. Report on EC Sales List
+
+- **Intra-EU acquisition procedure** — 1. Report taxable base in Row 07 and self-assessed output DPH in Row 07a. 2. Claim input DPH in Row 23. 3. Net effect: zero for fully taxable businesses. 4. Report on EC Sales List.  _(VAT Act Sec. 11)_
 
 ### EU Services Received -- B2B (Sec. 15(1))
-1. Report in Row 08 (base) / Row 08a (output DPH)
-2. Claim in Row 24
-3. Net effect: zero
+
+- **EU services received procedure** — 1. Report in Row 08 (base) / Row 08a (output DPH). 2. Claim in Row 24. 3. Net effect: zero.  _(VAT Act Sec. 15(1))_
 
 ### Non-EU Services Received (Sec. 69(2)-(3))
-1. Report in Row 09 (base) / Row 09a (output DPH)
-2. Claim in Row 25
-3. Net effect: zero
+
+- **Non-EU services received procedure** — 1. Report in Row 09 (base) / Row 09a (output DPH). 2. Claim in Row 25. 3. Net effect: zero.  _(VAT Act Sec. 69(2)-(3))_
 
 ### Import VAT Reverse Charge (from July 2025) [T2]
-**Legislation:** VAT Act Sec. 69(6)-(8) (new); DPHv25 form.
+
+**Import VAT Reverse Charge features**  _(VAT Act Sec. 69(6)-(8) (new); DPHv25 form)_
 
 | Feature | Detail |
-|---------|--------|
+| --- | --- |
 | Eligibility | Registered businesses importing goods into Slovakia |
 | How it works | Instead of paying import DPH at customs, self-assess on DPH return |
 | Output side | Row 11 (base) / Row 11a (output DPH at applicable rate) |
@@ -246,13 +232,14 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 | Net effect | Zero for fully taxable businesses |
 | Documentation | Must have customs declaration and proper authorization |
 
-**Flag for reviewer: confirm client is eligible for import reverse charge and has proper customs documentation.**
+Flag for reviewer: confirm client is eligible for import reverse charge and has proper customs documentation.
 
 ### Domestic Reverse Charge [T1]
-**Legislation:** VAT Act Sec. 69(12).
+
+**Domestic Reverse Charge supply types**  _(VAT Act Sec. 69(12))_
 
 | Supply Type | Legislation | Threshold |
-|-------------|-------------|-----------|
+| --- | --- | --- |
 | Construction services | Sec. 69(12)(a) | No threshold |
 | Supply of waste and scrap metals | Sec. 69(12)(b) | No threshold |
 | Supply of certain agricultural products | Sec. 69(12)(c) | As specified |
@@ -260,26 +247,20 @@ Before classifying transactions from a PDF folder or document set, cross-referen
 | CO2 emission allowances | Sec. 69(12)(e) | No threshold |
 | Supply of immovable property (when seller opts to tax) | Sec. 69(12)(f) | No threshold |
 
-Domestic reverse charge procedure:
-1. Report in Row 10 (base) / Row 10a (output DPH)
-2. Claim in Row 26
-3. Net effect: zero
+- **Domestic reverse charge procedure** — 1. Report in Row 10 (base) / Row 10a (output DPH). 2. Claim in Row 26. 3. Net effect: zero.  _(VAT Act Sec. 69(12))_
 
 ### Exceptions to Reverse Charge [T1]
-- Out-of-scope categories: NEVER reverse charge
-- Local consumption abroad: NOT reverse charge
-- EU supplier charged local VAT > 0%: NOT reverse charge
-- Mobile phones/circuits below EUR 5,000: normal DPH applies
 
----
+- **Exceptions to reverse charge** — Out-of-scope categories: NEVER reverse charge. Local consumption abroad: NOT reverse charge. EU supplier charged local VAT > 0%: NOT reverse charge. Mobile phones/circuits below EUR 5,000: normal DPH applies.
 
 ## Step 5: Deductibility Check
 
 ### Blocked / Restricted Categories [T1]
-**Legislation:** VAT Act Sec. 49(7).
+
+**Blocked / Restricted Categories**  _(VAT Act Sec. 49(7))_
 
 | Category | DPH Recovery | Legislation | Notes |
-|----------|-------------|-------------|-------|
+| --- | --- | --- | --- |
 | Hospitality and entertainment (pohostenie a zabava) | 0% | Sec. 49(7)(a) | Always blocked, no exceptions |
 | Business gifts | 0% | Sec. 49(7)(a) | Part of entertainment |
 | Passenger vehicles M1 (from 2026) | 50% | Sec. 49(7)(b) (new) | Unless proven 100% business |
@@ -290,10 +271,11 @@ Domestic reverse charge procedure:
 | Supplies for exempt-without-credit activities | 0% | Sec. 49(2) | Financial, insurance inputs |
 
 ### Vehicle Restriction Rules (from 1 January 2026) [T1]
-**Legislation:** VAT Act Sec. 49(7)(b) (Consolidation Act 2025 amendment).
+
+**Vehicle Restriction Rules**  _(VAT Act Sec. 49(7)(b) (Consolidation Act 2025 amendment))_
 
 | Scenario | DPH Deduction | Evidence Required |
-|----------|--------------|-------------------|
+| --- | --- | --- |
 | M1 passenger car, mixed use | 50% | Default assumption |
 | M1 passenger car, exclusively business | 100% | Electronic records + notification to tax authority [T2] |
 | L1e/L3e motorcycle, mixed use | 50% | Default assumption |
@@ -303,84 +285,42 @@ Domestic reverse charge procedure:
 | Fuel for 50% vehicle | 50% | Follows vehicle classification |
 | Fuel for 100% vehicle | 100% | Follows vehicle classification |
 
-**To claim 100% deduction:** Taxpayer must (1) maintain electronic records of vehicle usage, (2) notify the tax authority in advance, and (3) demonstrate exclusive business use. Flag for reviewer.
+- **To claim 100% deduction** — Taxpayer must (1) maintain electronic records of vehicle usage, (2) notify the tax authority in advance, and (3) demonstrate exclusive business use. Flag for reviewer.  _(VAT Act Sec. 49(7)(b))_
 
 ### Registration-Based Recovery [T1]
 
+**Registration-Based Recovery**
+
 | Registration Type | Input VAT Recovery | Legislation |
-|-------------------|-------------------|-------------|
+| --- | --- | --- |
 | Section 4 registered (standard) | Full recovery (subject to blocks) | Sec. 49 |
 | Section 4a (voluntary) | Full recovery once registered | Sec. 49 |
 | Section 7/7a (EU purposes only) | NO input VAT recovery | Sec. 7 |
 | Non-registered | NO recovery | -- |
 
 ### Partial Exemption -- Coefficient [T2]
-**Legislation:** VAT Act Sec. 50.
 
-If business makes both taxable and exempt supplies:
+- **Coefficient of proportional deduction** — Coefficient = Taxable Supplies / (Taxable Supplies + Exempt Supplies)  _(VAT Act Sec. 50)_
 
-`Coefficient = Taxable Supplies / (Taxable Supplies + Exempt Supplies)`
+**Coefficient rules**  _(VAT Act Sec. 50)_
 
 | Rule | Detail | Legislation |
-|------|--------|-------------|
+| --- | --- | --- |
 | Rounding | Round UP to nearest whole percent | Sec. 50(4) |
 | De minimis | If >= 95%, treated as 100% | Sec. 50(4) |
 | Provisional | Use prior year coefficient during year | Sec. 50(5) |
 | Annual adjustment | True-up at year-end | Sec. 50(6) |
 | Excluded | Incidental financial/property transactions, sale of capital goods | Sec. 50(3) |
 
-**Flag for reviewer: coefficient must be confirmed by qualified accountant. Annual adjustment applies.**
-
----
-
-## Step 5a: Section 7 / 7a Operating Mode [T1]
-
-Entities registered under VAT Act §7 or §7a (typically displayed on invoices as IČ DPH SK + "Neplatiteľ DPH" / "Not registered for VAT") operate under a distinct rule set that is easy to misapply. This step consolidates the rules that are scattered across Steps 1, 5, 6, 9 and EC11.
-
-**Legislation:** VAT Act §7, §7a, §49(1).
-
-### Who they are
-- Have an IČ DPH (SK + 10 digits) **but are not "platitelia DPH"**.
-- Typically registered to receive cross-border B2B services (§7a) or for intra-Community acquisitions of goods (§7).
-- Below the §4 mandatory registration threshold and have not voluntarily upgraded.
-
-### What they do on the DPH return
-
-| Event | DPH return treatment |
-|-------|----------------------|
-| Domestic sale to SK customer | **Not on DPH return** -- issued without DPH; entity is not a platiteľ for domestic supplies |
-| Domestic purchase from SK platiteľ (DPH charged on invoice) | **Not on DPH return** -- full gross is irrecoverable cost (§49(1)) |
-| B2B service received from EU supplier | Row 08 (base) / Row 08a (output DPH at applicable SK rate). **Row 24 = 0** -- NO input recovery |
-| B2B service received from non-EU supplier | Row 09 (base) / Row 09a (output DPH at applicable SK rate). **Row 25 = 0** -- NO input recovery |
-| Intra-Community acquisition of goods | Row 07 (base) / Row 07a (output DPH). **Row 23 = 0** -- NO input recovery |
-| Domestic reverse charge supply received (construction, waste, electronics > EUR 5,000, etc.) | Row 10 / 10a. **Row 26 = 0** -- NO input recovery |
-| Supply of B2B service to EU customer | **Not in DPH return boxes** -- place of supply is customer MS (§15(1)). Goes on Súhrnný výkaz only |
-| Local consumption abroad, international passenger transport (Art. 48 EU Dir.), foreign supplier charging local VAT > 0% | **Not on DPH return** -- foreign VAT at source, not recoverable |
-
-### What they do NOT file
-- **Kontrolný výkaz** -- §78a binds only "platitelia DPH". §7 / §7a entities are exempt. [T1]
-
-### What they DO file
-- **DPH return (DPHv25)** -- for each calendar month in which a reportable reverse-charge event or §15(1) EU-service supply occurs. No return is required for months with no reportable events. Quarterly aggregation is **not** available regardless of turnover.
-- **Súhrnný výkaz (EC Sales List)** -- for each calendar month in which a B2B service is supplied to an EU customer, or an intra-Community acquisition of goods is made.
-
-### Net effect
-Unlike a §4 platiteľ where reverse charge is a wash (output and input rows cancel), **for §7 / §7a entities the self-assessed output DPH is a real cash cost** because the matching input row stays at zero (§49(1)). Treat the resulting Row 32 liability as genuinely payable.
-
-### Cross-references
-- EC11 -- §7 entity receives EU services (concrete example)
-- EC17 -- Foreign supplier applied SK OSS VAT (B2C billing); affects how §7 / §7a entities classify cross-border SaaS
-- PROHIBITION: "NEVER allow non-registered or Section 7/7a entities to claim input DPH"
-
----
+Flag for reviewer: coefficient must be confirmed by qualified accountant. Annual adjustment applies.
 
 ## Step 6: Control Statement (Kontrolny vykaz) [T1]
 
-**Legislation:** VAT Act Sec. 78a.
+**Control Statement features**  _(VAT Act Sec. 78a)_
 
 | Feature | Detail |
-|---------|--------|
-| Filing obligation | Mandatory for "platitelia DPH" (§4 / §4a / §4b) alongside DPH return. **§7 / §7a entities are NOT required to file Kontrolný výkaz** -- §78a binds only platitelia [T1]. See Step 5a |
+| --- | --- |
+| Filing obligation | Mandatory for all VAT payers alongside DPH return |
 | Filing deadline | Same as VAT return (25th of following month/quarter) |
 | Content | Transaction-level detail for cross-checking with trading partners |
 | Structure | Sections A (supplies made) and B (supplies received) |
@@ -388,12 +328,12 @@ Unlike a §4 platiteľ where reverse charge is a wash (output and input rows can
 | Aggregation | Invoices <= EUR 5,000 may be aggregated |
 | Penalty for non-filing | Up to EUR 10,000 |
 
----
-
 ## Step 7: Key Thresholds
 
+**Key Thresholds**
+
 | Threshold | Value | Legislation |
-|-----------|-------|-------------|
+| --- | --- | --- |
 | Mandatory VAT registration | EUR 50,000 prior year turnover OR EUR 62,500 current year turnover (from 2025); proposed increase to EUR 85,000 from July 2026 | Sec. 4(1) |
 | Quarterly filing eligibility | Annual turnover < EUR 100,000 (after first year) | Sec. 78(2) |
 | EU distance selling threshold | EUR 10,000/calendar year | EU Directive 2017/2455 |
@@ -405,12 +345,12 @@ Unlike a §4 platiteľ where reverse charge is a wash (output and input rows can
 | Capital goods -- immovable | 20-year adjustment | Sec. 54a |
 | Refund minimum | EUR 10 | Sec. 79(2) |
 
----
-
 ## Step 8: VAT Registration [T1]
 
+**VAT Registration**
+
 | Feature | Detail | Legislation |
-|---------|--------|-------------|
+| --- | --- | --- |
 | VAT number format | SK + 10 digits | Sec. 4 |
 | Mandatory registration | Turnover > EUR 50,000 prior calendar year OR > EUR 62,500 in current calendar year (from 2025); proposed increase to EUR 85,000 from July 2026 | Sec. 4(1) |
 | Registration deadline | Immediate if EUR 62,500 exceeded in current year; by 20th of month following calendar year if EUR 50,000 prior-year threshold exceeded | Sec. 4(2) |
@@ -420,14 +360,14 @@ Unlike a §4 platiteľ where reverse charge is a wash (output and input rows can
 | Deregistration | After 1 year, if no longer obligated | Sec. 81 |
 | Fiscal representative | Required for non-EU businesses | Sec. 69a |
 
----
-
 ## Step 9: Filing Deadlines and Penalties
 
 ### Filing Deadlines [T1]
 
+**Filing Deadlines**
+
 | Filing | Period | Deadline | Legislation |
-|--------|--------|----------|-------------|
+| --- | --- | --- | --- |
 | DPH return (monthly) | Monthly | 25th of following month | Sec. 78(1) |
 | DPH return (quarterly) | Quarterly | 25th of month following quarter end | Sec. 78(2) |
 | Control Statement (Kontrolny vykaz) | Same as VAT return | 25th of following month/quarter | Sec. 78a |
@@ -435,12 +375,12 @@ Unlike a §4 platiteľ where reverse charge is a wash (output and input rows can
 | DPH payment | Same as return | 25th of following month/quarter | Sec. 78 |
 | Intrastat | Monthly | 15th of following month | Statistical Office regulation |
 
-**§7 / §7a filing rhythm [T1]:** §7 / §7a entities file a DPH return per calendar month in which a reportable reverse-charge event (services received from EU/non-EU, intra-Community acquisition of goods, domestic reverse charge supply received) or §15(1) EU-service supply occurs. Months with no reportable events require no DPH return. Quarterly aggregation under §78(2) is **not** available to §7 / §7a registrants regardless of turnover. See Step 5a.
-
 ### Penalties [T1]
 
+**Penalties**
+
 | Violation | Penalty | Legislation |
-|-----------|---------|-------------|
+| --- | --- | --- |
 | Late filing of DPH return | EUR 30 - EUR 16,000 | Tax Administration Act Sec. 155 |
 | Late payment of DPH | Interest at ECB rate + 10% p.a., from day after due date | Tax Administration Act Sec. 156 |
 | Tax shortfall (additional assessment) | 10% of additional tax (if voluntary disclosure) / 20% (if audit) | Tax Administration Act Sec. 154 |
@@ -449,121 +389,116 @@ Unlike a §4 platiteľ where reverse charge is a wash (output and input rows can
 | Failure to register | Back-assessment + penalty | Sec. 4 |
 | Repeated non-compliance | Double penalties | Tax Administration Act Sec. 155(3) |
 
----
-
 ## Step 10: Derived Box Calculations [T1]
 
-```
-Row 30 = Sum of all output DPH rows (01a + 02a + 03a + 07a + 08a + 09a + 10a + 11a + ...)
-Row 31 = Row 28 = Sum of all input DPH rows (20 + 21 + 22 + 23 + 23a + 24 + 25 + 26 + 27)
-
-IF Row 30 > Row 31 THEN
-  Row 32 = Row 30 - Row 31  -- Tax Payable
-  Row 33 = 0
-ELSE
-  Row 32 = 0
-  Row 33 = Row 31 - Row 30  -- Excess Credit (Refund)
-END
-```
-
----
+- **Derived box calculations** — Row 30 = Sum of all output DPH rows (01a + 02a + 03a + 07a + 08a + 09a + 10a + 11a + ...) Row 31 = Row 28 = Sum of all input DPH rows (20 + 21 + 22 + 23 + 23a + 24 + 25 + 26 + 27) IF Row 30 > Row 31 THEN Row 32 = Row 30 - Row 31  -- Tax Payable Row 33 = 0 ELSE Row 32 = 0 Row 33 = Row 31 - Row 30  -- Excess Credit (Refund) END
 
 ## Step 11: Edge Case Registry
 
 ### EC1 -- EU hotel / restaurant / taxi booked abroad [T1]
-**Situation:** Slovak DPH-registered client pays for hotel in Austria. Invoice shows Austrian 13% VAT.
-**Resolution:** NOT reverse charge. Foreign VAT was charged at source. No DPH boxes. Austrian VAT is irrecoverable.
-**Legislation:** VAT Act Sec. 16 -- place of supply for accommodation is where property is located.
+
+Situation: Slovak DPH-registered client pays for hotel in Austria. Invoice shows Austrian 13% VAT.
+Resolution: NOT reverse charge. Foreign VAT was charged at source. No DPH boxes. Austrian VAT is irrecoverable.
+Legislation: VAT Act Sec. 16 -- place of supply for accommodation is where property is located.
 
 ### EC2 -- SaaS subscription from non-EU provider (AWS, Notion) [T1]
-**Situation:** Monthly charge from US company, no VAT on invoice.
-**Resolution:** Reverse charge. Row 09 (base) / Row 09a (output DPH at 23%). Row 25 (input DPH at 23%). Net effect zero.
-**Legislation:** VAT Act Sec. 15(1) -- place of supply for B2B services is customer's establishment.
+
+Situation: Monthly charge from US company, no VAT on invoice.
+Resolution: Reverse charge. Row 09 (base) / Row 09a (output DPH at 23%). Row 25 (input DPH at 23%). Net effect zero.
+Legislation: VAT Act Sec. 15(1) -- place of supply for B2B services is customer's establishment.
 
 ### EC3 -- Construction services (domestic reverse charge) [T1]
-**Situation:** Slovak construction company provides services to another Slovak VAT-registered business. EUR 30,000.
-**Resolution:** Domestic reverse charge. Supplier invoices without DPH. Recipient: Row 10 = EUR 30,000, Row 10a = EUR 6,900 (23%). Row 26 = EUR 6,900. Net zero.
-**Legislation:** VAT Act Sec. 69(12)(a).
+
+Situation: Slovak construction company provides services to another Slovak VAT-registered business. EUR 30,000.
+Resolution: Domestic reverse charge. Supplier invoices without DPH. Recipient: Row 10 = EUR 30,000, Row 10a = EUR 6,900 (23%). Row 26 = EUR 6,900. Net zero.
+Legislation: VAT Act Sec. 69(12)(a).
 
 ### EC4 -- Passenger vehicle purchase (from 2026, 50% restriction) [T2]
-**Situation:** Client purchases M1 car EUR 25,000 + DPH EUR 5,750 (23%). Mixed business/private.
-**Resolution:** From 1 January 2026, input DPH limited to 50% = EUR 2,875. Unless taxpayer proves 100% business use with electronic records and tax authority notification. Flag for reviewer.
-**Legislation:** VAT Act Sec. 49(7)(b).
+
+Situation: Client purchases M1 car EUR 25,000 + DPH EUR 5,750 (23%). Mixed business/private.
+Resolution: From 1 January 2026, input DPH limited to 50% = EUR 2,875. Unless taxpayer proves 100% business use with electronic records and tax authority notification. Flag for reviewer.
+Legislation: VAT Act Sec. 49(7)(b).
 
 ### EC5 -- Business dinner / entertainment (blocked) [T1]
-**Situation:** Client hosts business dinner at restaurant. EUR 300 + DPH EUR 69 (23%).
-**Resolution:** Input DPH is NOT deductible. 0% recovery on entertainment/hospitality under Sec. 49(7)(a). Full EUR 369 is cost.
-**Legislation:** VAT Act Sec. 49(7)(a).
+
+Situation: Client hosts business dinner at restaurant. EUR 300 + DPH EUR 69 (23%).
+Resolution: Input DPH is NOT deductible. 0% recovery on entertainment/hospitality under Sec. 49(7)(a). Full EUR 369 is cost.
+Legislation: VAT Act Sec. 49(7)(a).
 
 ### EC6 -- Import VAT reverse charge (from July 2025) [T2]
-**Situation:** Client imports goods from China and opts for import VAT reverse charge on DPHv25 form.
-**Resolution:** Output side in Row 11/11a, input side in Row 23a. Net effect zero. Flag for reviewer: confirm eligibility and customs documentation.
-**Legislation:** VAT Act Sec. 69(6)-(8).
+
+Situation: Client imports goods from China and opts for import VAT reverse charge on DPHv25 form.
+Resolution: Output side in Row 11/11a, input side in Row 23a. Net effect zero. Flag for reviewer: confirm eligibility and customs documentation.
+Legislation: VAT Act Sec. 69(6)-(8).
 
 ### EC7 -- Credit notes [T1]
-**Situation:** Client receives a credit note from supplier.
-**Resolution:** Reverse the original entry. Reduce applicable input DPH row by credit note amount.
-**Legislation:** VAT Act Sec. 25 (correction of tax base).
+
+Situation: Client receives a credit note from supplier.
+Resolution: Reverse the original entry. Reduce applicable input DPH row by credit note amount.
+Legislation: VAT Act Sec. 25 (correction of tax base).
 
 ### EC8 -- EU B2B sale (intra-EU supply) [T1]
-**Situation:** Registered client sells goods to Czech company at 0% DPH.
-**Resolution:** Row 04 (intra-Community supply). No output DPH. Report on EC Sales List (Suhrny vykaz).
-**Legislation:** VAT Act Sec. 43.
+
+Situation: Registered client sells goods to Czech company at 0% DPH.
+Resolution: Row 04 (intra-Community supply). No output DPH. Report on EC Sales List (Suhrny vykaz).
+Legislation: VAT Act Sec. 43.
 
 ### EC9 -- Mobile phones above EUR 5,000 (domestic RC) [T1]
-**Situation:** Slovak company buys mobile phones worth EUR 8,000 from another Slovak company.
-**Resolution:** Domestic reverse charge applies (above EUR 5,000). Buyer: Row 10/10a (output), Row 26 (input). Net zero.
-**Legislation:** VAT Act Sec. 69(12)(d).
+
+Situation: Slovak company buys mobile phones worth EUR 8,000 from another Slovak company.
+Resolution: Domestic reverse charge applies (above EUR 5,000). Buyer: Row 10/10a (output), Row 26 (input). Net zero.
+Legislation: VAT Act Sec. 69(12)(d).
 
 ### EC10 -- Mobile phones below EUR 5,000 (normal DPH) [T1]
-**Situation:** Slovak company buys phones worth EUR 3,000 from another Slovak company.
-**Resolution:** Normal DPH applies. Domestic RC threshold not met. Seller charges DPH at 23%.
-**Legislation:** VAT Act Sec. 69(12)(d) -- threshold not met.
+
+Situation: Slovak company buys phones worth EUR 3,000 from another Slovak company.
+Resolution: Normal DPH applies. Domestic RC threshold not met. Seller charges DPH at 23%.
+Legislation: VAT Act Sec. 69(12)(d) -- threshold not met.
 
 ### EC11 -- Section 7/7a registered entity receives EU services [T1]
-**Situation:** Entity registered under Section 7 (EU purposes only) receives consulting from German supplier.
-**Resolution:** Must self-assess output DPH (Row 08/08a). But CANNOT claim input DPH (no deduction rights). Must pay the DPH.
-**Legislation:** VAT Act Sec. 7, Sec. 49(1). See Step 5a for the full §7 / §7a operating mode.
+
+Situation: Entity registered under Section 7 (EU purposes only) receives consulting from German supplier.
+Resolution: Must self-assess output DPH (Row 08/08a). But CANNOT claim input DPH (no deduction rights). Must pay the DPH.
+Legislation: VAT Act Sec. 7, Sec. 49(1).
 
 ### EC12 -- Intra-EU goods acquisition [T1]
-**Situation:** Slovak company buys goods from Polish supplier at 0% with PL VAT number.
-**Resolution:** Row 07 = EUR value, Row 07a = DPH at 23%, Row 23 = same. Net zero. EC Sales List.
-**Legislation:** VAT Act Sec. 11.
+
+Situation: Slovak company buys goods from Polish supplier at 0% with PL VAT number.
+Resolution: Row 07 = EUR value, Row 07a = DPH at 23%, Row 23 = same. Net zero. EC Sales List.
+Legislation: VAT Act Sec. 11.
 
 ### EC13 -- Export of goods [T1]
-**Situation:** Slovak company exports goods to US customer. EUR 10,000.
-**Resolution:** Row 05 = EUR 10,000. No output DPH. Zero-rated. Customs documentation required.
-**Legislation:** VAT Act Sec. 47.
+
+Situation: Slovak company exports goods to US customer. EUR 10,000.
+Resolution: Row 05 = EUR 10,000. No output DPH. Zero-rated. Customs documentation required.
+Legislation: VAT Act Sec. 47.
 
 ### EC14 -- Immovable property sale (option to tax) [T2]
-**Situation:** Company sells an office building 6 years after first occupation (default exempt).
-**Resolution:** Seller may opt to tax under Sec. 38(8), in which case domestic reverse charge applies (Sec. 69(12)(f)). Buyer self-assesses. Flag for reviewer: confirm option-to-tax election and buyer's agreement.
-**Legislation:** VAT Act Sec. 38(8) and Sec. 69(12)(f).
+
+Situation: Company sells an office building 6 years after first occupation (default exempt).
+Resolution: Seller may opt to tax under Sec. 38(8), in which case domestic reverse charge applies (Sec. 69(12)(f)). Buyer self-assesses. Flag for reviewer: confirm option-to-tax election and buyer's agreement.
+Legislation: VAT Act Sec. 38(8) and Sec. 69(12)(f).
 
 ### EC15 -- Fuel for unrestricted vehicle (100%) [T1]
-**Situation:** Client buys diesel for N1 delivery van. EUR 200 + DPH EUR 46 (23%).
-**Resolution:** Row 20 += EUR 46. Fully deductible (N1 category, no restriction).
-**Legislation:** VAT Act Sec. 49 -- no restriction on commercial vehicles.
+
+Situation: Client buys diesel for N1 delivery van. EUR 200 + DPH EUR 46 (23%).
+Resolution: Row 20 += EUR 46. Fully deductible (N1 category, no restriction).
+Legislation: VAT Act Sec. 49 -- no restriction on commercial vehicles.
 
 ### EC16 -- Passenger vehicle before 2026 (full deduction) [T1]
-**Situation:** M1 car purchased in December 2025, EUR 15,000 + DPH EUR 3,450.
-**Resolution:** Full deduction: Row 20 += EUR 3,450. The 50% restriction only applies from 1 January 2026. Pre-2026 purchases have full deduction rights.
-**Legislation:** VAT Act Sec. 49(7)(b) -- effective date 1 January 2026.
 
-### EC17 -- Foreign supplier applied SK OSS VAT because billing details lacked the customer's IČ DPH [T2]
-**Situation:** SaaS / digital-service invoice from a non-EU or EU supplier (Anthropic, Google, AWS, OpenAI, GitHub, etc.) shows a line such as "VAT - Slovakia 23%" charged on top of the net price, because the customer's account at the supplier is configured without their Slovak IČ DPH -- the supplier treated them as a consumer and remitted the VAT via OSS.
-**Resolution:** **NOT reverse charge.** The skill prohibition "NEVER apply reverse charge when supplier charged local VAT > 0%" applies. The OSS VAT has already been remitted to Finančná správa by the supplier; applying RC on top would double-tax the same supply. The full gross amount is an irrecoverable cost (and for a §7 / §7a entity, the standard "no input recovery" rule already prevents any deduction regardless). Flag for cleanup: customer must add their IČ DPH to the supplier's billing profile so future invoices are issued at 0% with reverse-charge notation, restoring the normal §69(2)-(3) RC flow.
-**Detection signal:** Invoice line shows "VAT - Slovakia 23%" (or similar local-VAT line) AND the customer's IČ DPH is missing from the bill-to block. A receipt from the same supplier in the same period showing 0% with a "reverse charge" note confirms which billing path was used.
-**Legislation:** VAT Act §69(2)-(3); PROHIBITIONS list; EU VAT OSS regime (Directive 2017/2455).
-
----
+Situation: M1 car purchased in December 2025, EUR 15,000 + DPH EUR 3,450.
+Resolution: Full deduction: Row 20 += EUR 3,450. The 50% restriction only applies from 1 January 2026. Pre-2026 purchases have full deduction rights.
+Legislation: VAT Act Sec. 49(7)(b) -- effective date 1 January 2026.
 
 ## Step 12: VAT Rates -- Detailed Supply Classification [T1]
 
 ### 23% Standard Rate (Sec. 27(1))
 
+**23% Standard Rate examples**
+
 | Supply Category | Examples |
-|----------------|----------|
+| --- | --- |
 | General goods | Electronics, furniture, clothing, motor vehicles, household items |
 | Professional services | Legal, accounting, consulting, IT, advertising |
 | Telecommunications | Mobile, fixed-line, internet |
@@ -574,8 +509,10 @@ END
 
 ### 19% Reduced Rate (Sec. 27(2), Annex 7)
 
+**19% Reduced Rate examples**
+
 | Supply Category | Examples |
-|----------------|----------|
+| --- | --- |
 | Foodstuffs (general) | Processed foods, confectionery, non-basic items |
 | Non-alcoholic beverages | Soft drinks, juice, coffee, tea |
 | Medicines | Prescription and OTC pharmaceuticals |
@@ -586,18 +523,20 @@ END
 
 ### 5% Super-Reduced Rate (Sec. 27(3), Annex 7a)
 
+**5% Super-Reduced Rate examples**
+
 | Supply Category | Examples |
-|----------------|----------|
+| --- | --- |
 | Basic foodstuffs | Bread, butter, milk, meat, fish, fruit, vegetables, eggs |
 | Books | Printed and electronic books |
 | Periodicals | Magazines, journals |
 
----
-
 ## Step 13: Comparison with Malta
 
+**Comparison with Malta**
+
 | Feature | Slovakia (SK) | Malta (MT) |
-|---------|--------------|------------|
+| --- | --- | --- |
 | Standard rate | 23% (from 2025; previously 20%) | 18% |
 | Reduced rates | 19%, 5% (from 2025; previously 10%) | 12%, 7%, 5% |
 | Return form | DPHv25 (~34 rows from July 2025) | Malta periodic VAT return (~45 boxes) |
@@ -614,8 +553,6 @@ END
 | Domestic reverse charge | Construction, waste, electronics > EUR 5K, emissions | No domestic reverse charge |
 | Currency | EUR | EUR |
 | Tax authority | Financna sprava | CFR |
-
----
 
 ## Step 14: Reviewer Escalation Protocol
 
@@ -641,64 +578,74 @@ Issue: [what is outside skill scope]
 Action Required: Do not classify. Refer to danovy poradca. Document gap.
 ```
 
----
-
 ## Step 15: Test Suite
 
 ### Test 1 -- Standard domestic purchase, 23% DPH [T1]
-**Input:** Slovak supplier, office supplies, gross EUR 246, DPH EUR 46, net EUR 200. Registered taxpayer.
-**Expected output:** Row 20 += EUR 46. Fully recoverable.
+
+Input: Slovak supplier, office supplies, gross EUR 246, DPH EUR 46, net EUR 200. Registered taxpayer.
+Expected output: Row 20 += EUR 46. Fully recoverable.
 
 ### Test 2 -- EU service, reverse charge [T1]
-**Input:** German supplier, consulting EUR 1,000, no VAT. Registered taxpayer.
-**Expected output:** Row 08 = EUR 1,000. Row 08a = EUR 230 (23%). Row 24 = EUR 230. Net = zero.
+
+Input: German supplier, consulting EUR 1,000, no VAT. Registered taxpayer.
+Expected output: Row 08 = EUR 1,000. Row 08a = EUR 230 (23%). Row 24 = EUR 230. Net = zero.
 
 ### Test 3 -- Entertainment expense (blocked) [T1]
-**Input:** Slovak restaurant, business dinner EUR 500 gross, DPH EUR 94 (23%), net EUR 406.
-**Expected output:** Input DPH = EUR 0. Entertainment fully blocked (Sec. 49(7)(a)). No recovery.
+
+Input: Slovak restaurant, business dinner EUR 500 gross, DPH EUR 94 (23%), net EUR 406.
+Expected output: Input DPH = EUR 0. Entertainment fully blocked (Sec. 49(7)(a)). No recovery.
 
 ### Test 4 -- EU B2B sale [T1]
-**Input:** Registered client sells goods to Polish company EUR 5,000, 0% DPH.
-**Expected output:** Row 04 = EUR 5,000. No output DPH. EC Sales List.
+
+Input: Registered client sells goods to Polish company EUR 5,000, 0% DPH.
+Expected output: Row 04 = EUR 5,000. No output DPH. EC Sales List.
 
 ### Test 5 -- Non-EU software subscription [T1]
-**Input:** US supplier (Notion), EUR 20/month, no VAT. Registered taxpayer.
-**Expected output:** Row 09 = EUR 20. Row 09a = EUR 4.60 (23%). Row 25 = EUR 4.60. Net = zero.
+
+Input: US supplier (Notion), EUR 20/month, no VAT. Registered taxpayer.
+Expected output: Row 09 = EUR 20. Row 09a = EUR 4.60 (23%). Row 25 = EUR 4.60. Net = zero.
 
 ### Test 6 -- Reduced rate domestic purchase (5%) [T1]
-**Input:** Slovak supplier, bread and milk at 5%, gross EUR 105, DPH EUR 5, net EUR 100.
-**Expected output:** Row 22 += EUR 5. Fully recoverable.
+
+Input: Slovak supplier, bread and milk at 5%, gross EUR 105, DPH EUR 5, net EUR 100.
+Expected output: Row 22 += EUR 5. Fully recoverable.
 
 ### Test 7 -- Import VAT reverse charge (from July 2025) [T2]
-**Input:** Client imports machinery from US, customs value EUR 50,000. Opts for import RC.
-**Expected output:** Row 11 = EUR 50,000. Row 11a = EUR 11,500 (23%). Row 23a = EUR 11,500. Net = zero. Flag for reviewer: confirm eligibility.
+
+Input: Client imports machinery from US, customs value EUR 50,000. Opts for import RC.
+Expected output: Row 11 = EUR 50,000. Row 11a = EUR 11,500 (23%). Row 23a = EUR 11,500. Net = zero. Flag for reviewer: confirm eligibility.
 
 ### Test 8 -- Passenger vehicle (from 2026, 50%) [T2]
-**Input:** M1 car EUR 20,000 + DPH EUR 4,600 (23%). Mixed business/private use. No electronic records.
-**Expected output:** Row 20 += EUR 2,300 (50%). Remaining EUR 2,300 is cost. Flag for reviewer.
+
+Input: M1 car EUR 20,000 + DPH EUR 4,600 (23%). Mixed business/private use. No electronic records.
+Expected output: Row 20 += EUR 2,300 (50%). Remaining EUR 2,300 is cost. Flag for reviewer.
 
 ### Test 9 -- Construction services (domestic RC) [T1]
-**Input:** Slovak subcontractor, construction EUR 15,000. Both parties registered.
-**Expected output:** Buyer: Row 10 = EUR 15,000, Row 10a = EUR 3,450 (23%). Row 26 = EUR 3,450. Net = zero.
+
+Input: Slovak subcontractor, construction EUR 15,000. Both parties registered.
+Expected output: Buyer: Row 10 = EUR 15,000, Row 10a = EUR 3,450 (23%). Row 26 = EUR 3,450. Net = zero.
 
 ### Test 10 -- Export of goods [T1]
-**Input:** Slovak company exports to US client, EUR 8,000.
-**Expected output:** Row 05 = EUR 8,000. No output DPH. Zero-rated.
+
+Input: Slovak company exports to US client, EUR 8,000.
+Expected output: Row 05 = EUR 8,000. No output DPH. Zero-rated.
 
 ### Test 11 -- Intra-EU goods acquisition [T1]
-**Input:** Austrian supplier, goods EUR 3,000, 0% with AT VAT number.
-**Expected output:** Row 07 = EUR 3,000. Row 07a = EUR 690 (23%). Row 23 = EUR 690. Net = zero.
+
+Input: Austrian supplier, goods EUR 3,000, 0% with AT VAT number.
+Expected output: Row 07 = EUR 3,000. Row 07a = EUR 690 (23%). Row 23 = EUR 690. Net = zero.
 
 ### Test 12 -- Section 7 entity receives EU services (no deduction) [T1]
-**Input:** Section 7 registered entity receives German consulting EUR 500.
-**Expected output:** Row 08 = EUR 500. Row 08a = EUR 115 (23%). NO input deduction. Must pay EUR 115.
 
----
+Input: Section 7 registered entity receives German consulting EUR 500.
+Expected output: Row 08 = EUR 500. Row 08a = EUR 115 (23%). NO input deduction. Must pay EUR 115.
 
 ## Step 16: Refund Process [T1]
 
+**Refund Process**
+
 | Feature | Detail | Legislation |
-|---------|--------|-------------|
+| --- | --- | --- |
 | Automatic refund | If excess DPH (Row 33 > 0) and no outstanding tax liabilities | Sec. 79 |
 | Refund threshold | Minimum EUR 10 | Sec. 79(2) |
 | Refund timeline | Within 30 days of filing deadline (standard) | Sec. 79(1) |
@@ -707,18 +654,16 @@ Action Required: Do not classify. Refer to danovy poradca. Document gap.
 | Offset | Tax authority may offset against other tax liabilities | Tax Administration Act |
 | New registrations | First 12 months: refund within 60 days (extended verification possible) | Sec. 79(4) |
 
----
-
 ## Step 17: Penalty-Free Voluntary Disclosure [T1]
 
+**Penalty-Free Voluntary Disclosure**
+
 | Feature | Detail | Legislation |
-|---------|--------|-------------|
+| --- | --- | --- |
 | Additional return | Can file amended return within 4 years | Tax Administration Act Sec. 16 |
 | Reduced penalty | 10% of additional tax (vs 20% if found by audit) | Tax Administration Act Sec. 154(1) |
 | Late payment interest | Still applies on any additional amount due | Tax Administration Act Sec. 156 |
 | Deadline | Before tax authority starts audit proceedings | Tax Administration Act Sec. 16(2) |
-
----
 
 ## Step 18: Out of Scope -- Direct Tax (Reference Only) [T3]
 
@@ -737,24 +682,9 @@ This skill does not compute income tax. The following is reference information o
 - **Withholding tax:** 19% on royalties, interest, and management fees paid to non-residents (reduced by DTTs)
 - **MOSS/OSS:** One-stop shop for B2C digital services and distance sales to EU consumers
 
----
-
 ## PROHIBITIONS [T1]
 
-- NEVER let AI guess VAT box -- it is 100% deterministic from facts
-- NEVER apply reverse charge to out-of-scope categories (wages, dividends, bank charges)
-- NEVER apply reverse charge to local consumption services abroad (hotel, restaurant, taxi)
-- NEVER allow non-registered or Section 7/7a entities to claim input DPH
-- NEVER confuse zero-rated (exports/intra-EU) with exempt without credit (financial, insurance)
-- NEVER apply reverse charge when EU supplier charged local VAT > 0%
-- NEVER apply 100% input deduction on entertainment/hospitality expenses (Sec. 49(7)(a))
-- NEVER apply 100% vehicle deduction without confirmed exclusive business use documentation (from 2026, Sec. 49(7)(b))
-- NEVER apply domestic RC to mobile phones/circuits below EUR 5,000 (Sec. 69(12)(d))
-- NEVER apply old rates (20%/10%) to transactions from 2025 onward without checking transitional rules
-- NEVER omit Control Statement -- it is mandatory alongside the DPH return
-- NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude
-
----
+- **Prohibitions** — NEVER let AI guess VAT box -- it is 100% deterministic from facts. NEVER apply reverse charge to out-of-scope categories (wages, dividends, bank charges). NEVER apply reverse charge to local consumption services abroad (hotel, restaurant, taxi). NEVER allow non-registered or Section 7/7a entities to claim input DPH. NEVER confuse zero-rated (exports/intra-EU) with exempt without credit (financial, insurance). NEVER apply reverse charge when EU supplier charged local VAT > 0%. NEVER apply 100% input deduction on entertainment/hospitality expenses (Sec. 49(7)(a)). NEVER apply 100% vehicle deduction without confirmed exclusive business use documentation (from 2026, Sec. 49(7)(b)). NEVER apply domestic RC to mobile phones/circuits below EUR 5,000 (Sec. 69(12)(d)). NEVER apply old rates (20%/10%) to transactions from 2025 onward without checking transitional rules. NEVER omit Control Statement -- it is mandatory alongside the DPH return. NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
 
 ## Contribution Notes
 
@@ -762,19 +692,30 @@ This skill covers Slovakia's VAT system based on Act No. 222/2004 Coll. as amend
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
 
-### Changelog
-
-- **v1.1 (2026-05-25)** -- Added Step 5a (consolidated §7 / §7a operating mode), EC17 (foreign supplier applied SK OSS VAT because billing details lacked the customer's IČ DPH), source-completeness cross-check in Step 1.0, explicit §7 / §7a filing-rhythm note in Step 9, and Kontrolný výkaz exemption clarification in Step 6. Cross-reference added in EC11. Changes motivated by reconciliation against a real Slovak §7a entity's filed April 2026 DPH return where three independent applications of the v1.0 skill produced three different liability figures, and the v1.0 text did not unambiguously rule out the incorrect ones.
-- **v1.0 (2026-04-10)** -- Initial deep-research draft.
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/slovakia-vat-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `slovakia-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/slovakia-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

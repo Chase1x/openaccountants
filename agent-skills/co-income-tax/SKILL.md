@@ -1,14 +1,12 @@
 ---
 name: co-income-tax
-description: "> Use this skill whenever asked about Colombian income tax for self-employed individuals (trabajadores independientes / personas naturales). Trigger on phrases like \"declaración de renta\", \"renta personas naturales\", \"Formulario 210\", \"cédula general\", \"UVT\", \"retención en la fuente\", \"renta presuntiva\", \"DIAN\", \"NIT Colombia\", \"deducciones Colombia\", \"rentas exentas\", \"income tax Colombia\", or any question about filing or computing income tax for a self-employed or independent worker in Colombia. This skill covers cédula general progressive rates (0-39%), UVT-based thresholds, the 40%/5,040 UVT cap on exemptions and deductions, renta presuntiva, retención en la fuente, social security for independents, and DIAN filing. ALWAYS read this skill before touching any Colombian income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Colombian income tax for self-employed individuals (trabajadores independientes / personas naturales). Trigger on phrases like \"declaración de renta\", \"renta personas naturales\", \"Formulario 210\", \"cédula general\", \"UVT\", \"retención en la fuente\", \"renta presuntiva\", \"DIAN\", \"NIT Colombia\", \"deducciones Colombia\", \"rentas exentas\", \"income tax Colombia\", or any question about filing or computing income tax for a self-employed or independent worker in Colombia. This skill covers cédula general progressive rates (0-39%), UVT-based thresholds, the 40%/5,040 UVT cap on exemptions and deductions, renta presuntiva, retención en la fuente, social security for independents, and DIAN filing. ALWAYS read this skill before touching any Colombian income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/co-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/co-income-tax"
+  jurisdiction: "CO"
+  last_updated: "2026-06-12"
 ---
 
 # Colombian Income Tax — Trabajador Independiente / Persona Natural (Renta) v2.0
@@ -542,8 +540,8 @@ SECTION J — REVIEWER FLAGS
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/co-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `co-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/co-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

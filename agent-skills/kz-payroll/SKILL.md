@@ -1,15 +1,13 @@
 ---
 name: kz-payroll
-description: "> Use this skill whenever asked about Kazakhstan payroll, salary taxes, or employer contributions for staff. Trigger on phrases like \"Kazakhstan payroll\", \"salary tax Kazakhstan\", \"ОПВ ОСМС СО\", \"employer contributions Kazakhstan\", \"зарплатные налоги Казахстан\", \"ИПН с зарплаты\". Covers individual income tax withholding, the pension contributions (ОПВ/ОПВР), social contributions (СО), mandatory medical insurance (ОСМС/ВОСМС), and social tax under the 2026 Tax Code. ALWAYS read this before any Kazakhstan payroll work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Kazakhstan payroll, salary taxes, or employer contributions for staff. Trigger on phrases like \"Kazakhstan payroll\", \"salary tax Kazakhstan\", \"ОПВ ОСМС СО\", \"employer contributions Kazakhstan\", \"зарплатные налоги Казахстан\", \"ИПН с зарплаты\". Covers individual income tax withholding, the pension contributions (ОПВ/ОПВР), social contributions (СО), mandatory medical insurance (ОСМС/ВОСМС), and social tax under the 2026 Tax Code. ALWAYS read this before any Kazakhstan payroll work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-payroll"
-  tax_year: 2026
-  obligation: PAY
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-payroll"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Payroll & Salary Taxes — Skill v1.0
@@ -64,8 +62,8 @@ Gross ₸500,000/month, main job:
 - NEVER state employer rates as final without verifying the 2026 Tax Code values.
 
 ## Disclaimer
-Informational only; not advice. Kazakhstan contribution rates and caps changed under the 2026 Tax Code — verify all rates with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before use. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Kazakhstan contribution rates and caps changed under the 2026 Tax Code — verify all rates with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before use. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-payroll) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

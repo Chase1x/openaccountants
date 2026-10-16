@@ -1,27 +1,24 @@
 ---
 name: vietnam-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Vietnam VAT (thuế giá trị gia tăng / GTGT) return, classify transactions for Vietnamese VAT purposes, or advise on VAT registration and filing in Vietnam. Trigger on phrases like \"thuế GTGT\", \"Vietnam VAT\", \"tờ khai thuế GTGT\", \"hóa đơn điện tử\", \"phương pháp khấu trừ\", \"phương pháp trực tiếp\", or any Vietnam VAT request. ALWAYS read this skill before touching any Vietnam VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: VN
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/vietnam-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/vietnam-vat"
+  jurisdiction: "VN"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Vietnam VAT (Thuế Giá Trị Gia Tăng / GTGT) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Vietnam VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Vietnam (Cộng hòa Xã hội chủ nghĩa Việt Nam) |
 | Tax | Thuế Giá Trị Gia Tăng (GTGT — VAT) |
 | Currency | VND (Vietnamese Dong / đồng) |
@@ -43,8 +40,10 @@ metadata:
 
 ### Key return form lines (Mẫu 01/GTGT — Deduction method)
 
+**Key return form lines**
+
 | Line | Meaning |
-|---|---|
+| --- | --- |
 | [26] | Taxable sales at 10% (doanh thu chịu thuế 10%) |
 | [27] | Output VAT at 10% |
 | [28] | Taxable sales at 5% |
@@ -61,8 +60,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 10% standard |
 | Unknown whether 5% rate applies | 10% until confirmed |
 | Unknown counterparty country | Domestic Vietnam |
@@ -73,41 +74,32 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | VND 50,000,000 |
 | HIGH tax delta on single default | VND 5,000,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net VAT position | VND 20,000,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** — bank statement for the period in CSV, PDF, or pasted text. Confirmation of VAT calculation method (deduction 方法khấu trừ or direct 方法trực tiếp) and MST (Mã số thuế — 10-digit tax code).
-
-**Recommended** — hóa đơn GTGT (VAT invoices) for all purchases, electronic invoices (hóa đơn điện tử) for sales, prior period return and excess credit carried forward.
-
-**Ideal** — complete ledger, export customs declarations (tờ khai hải quan), asset register, full invoice register.
-
-**Refusal if minimum missing — SOFT WARN.** No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử. All credits are provisional pending invoice verification."
+- **Minimum viable inputs** — Bank statement for the period in CSV, PDF, or pasted text. Confirmation of VAT calculation method (deduction phương pháp khấu trừ or direct phương pháp trực tiếp) and MST (Mã số thuế — 10-digit tax code).
+- **Recommended inputs** — Hóa đơn GTGT (VAT invoices) for all purchases, electronic invoices (hóa đơn điện tử) for sales, prior period return and excess credit carried forward.
+- **Ideal inputs** — Complete ledger, export customs declarations (tờ khai hải quan), asset register, full invoice register.
+- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử. All credits are provisional pending invoice verification."
 
 ### Refusal catalogue
 
-**R-VN-1 — Direct method taxpayers (phương pháp trực tiếp).** "Direct method taxpayers pay VAT on the value-added margin, not on gross output minus gross input. They cannot claim input credits in the same way. Confirm the calculation method before proceeding. This skill primarily covers the deduction method."
-
-**R-VN-2 — Businesses below VND 1 billion threshold.** "Businesses below the registration threshold use a simplified approach. Confirm registration status before proceeding."
-
-**R-VN-3 — Partial exemption proration.** "If the business makes both taxable and exempt supplies, input VAT must be apportioned. Apportionment requires the taxable/total revenue ratio for the year. Out of scope without full-year data — escalate."
-
-**R-VN-4 — Real estate and construction.** "Real estate development and construction have special VAT treatment for housing and land. Out of scope — escalate to a licensed tax agent."
-
-**R-VN-5 — Foreign contractor withholding tax (FCT).** "Foreign contractors providing services in Vietnam are subject to Foreign Contractor Tax (FCT = CIT + VAT withholding). FCT is different from the regular GTGT return. Out of scope."
-
----
+- **R-VN-1 — Direct method taxpayers (phương pháp trực tiếp)** — "Direct method taxpayers pay VAT on the value-added margin, not on gross output minus gross input. They cannot claim input credits in the same way. Confirm the calculation method before proceeding. This skill primarily covers the deduction method."
+- **R-VN-2 — Businesses below VND 1 billion threshold** — "Businesses below the registration threshold use a simplified approach. Confirm registration status before proceeding."
+- **R-VN-3 — Partial exemption proration** — "If the business makes both taxable and exempt supplies, input VAT must be apportioned. Apportionment requires the taxable/total revenue ratio for the year. Out of scope without full-year data — escalate."
+- **R-VN-4 — Real estate and construction** — "Real estate development and construction have special VAT treatment for housing and land. Out of scope — escalate to a licensed tax agent."
+- **R-VN-5 — Foreign contractor withholding tax (FCT)** — "Foreign contractors providing services in Vietnam are subject to Foreign Contractor Tax (FCT = CIT + VAT withholding). FCT is different from the regular GTGT return. Out of scope."
 
 ## Section 3 — Supplier pattern library
 
@@ -115,8 +107,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.1 Vietnamese banks — fees and charges (exempt / exclude)
 
+**Vietnamese banks**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | VIETCOMBANK, NGÂN HÀNG NGOẠI THƯƠNG, VCB | EXCLUDE (fee lines) | Financial service — exempt from GTGT |
 | BIDV, NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN | EXCLUDE (fee lines) | Same |
 | VIETINBANK, NGÂN HÀNG CÔNG THƯƠNG, CTG | EXCLUDE (fee lines) | Same |
@@ -131,8 +125,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.2 Vietnamese government and statutory (exclude)
 
+**Government/statutory**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TỔNG CỤC THUẾ, CỤC THUẾ, TAX AUTHORITY | EXCLUDE | Tax payment |
 | THUẾ GTGT, THUẾ TNDN, THUẾ TNCN | EXCLUDE | Tax remittance |
 | BẢO HIỂM XÃ HỘI, BHXH, SOCIAL INSURANCE | EXCLUDE | Social insurance |
@@ -142,8 +138,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.3 Vietnamese utilities (taxable at 10%)
 
+**Utilities**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | EVN, TẬP ĐOÀN ĐIỆN LỰC, ĐIỆN LỰC | Input 10% | 10% | Electricity — standard rate |
 | CÔNG TY ĐIỆN LỰC (regional utilities) | Input 10% | 10% | Regional electricity distribution |
 | SAWACO, HAWACO, CẤP NƯỚC (water company) | Input 5% | 5% | Clean water — reduced rate 5% |
@@ -155,8 +153,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.4 Transport and logistics
 
+**Transport and logistics**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | VIETNAM AIRLINES, VNA, HÀNG KHÔNG VIỆT NAM | Check route | 0%/10% | International 0%; domestic 10% |
 | VIETJET AIR, VIETJET | Check route | 0%/10% | International 0%; domestic 10% |
 | BAMBOO AIRWAYS | Check route | 0%/10% | International 0%; domestic 10% |
@@ -174,8 +174,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.5 Food and retail
 
+**Food and retail**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | WINMART, VINMART, WINCOMMERCE | Input 10% | 10% | Supermarket — 10% (no food reduced rate in Vietnam at retail level) |
 | BIG C VIỆT NAM (now GO!) | Input 10% | 10% | Hypermarket — 10% |
 | AEON VIỆT NAM | Input 10% | 10% | Department store — 10% |
@@ -186,8 +188,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.6 SaaS — local Vietnamese suppliers (10%)
 
+**SaaS local**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | MISA, PHẦN MỀM MISA | Input 10% | 10% | Vietnamese accounting SaaS |
 | FAST ACCOUNTING | Input 10% | 10% | Vietnamese accounting software |
 | VIETTEL CLOUD | Input 10% | 10% | Cloud services — 10% |
@@ -198,8 +202,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 Foreign digital service providers in Vietnam: for B2B, the Vietnamese buyer may be required to withhold Foreign Contractor Tax (FCT = VAT component + CIT component). The VAT portion of FCT is generally not creditable as input VAT. This is complex — flag for specialist review.
 
+**International SaaS suppliers**
+
 | Pattern | Notes |
-|---|---|
+| --- | --- |
 | GOOGLE (Workspace, Ads, Cloud) | FCT applies — flag; may be registered via Google's Vietnam registration |
 | MICROSOFT (365, Azure) | FCT may apply — check if Vietnam entity invoices |
 | META, FACEBOOK ADS | FCT applies — flag |
@@ -208,8 +214,10 @@ Foreign digital service providers in Vietnam: for B2B, the Vietnamese buyer may 
 
 ### 3.8 Payment processors (exempt fees)
 
+**Payment processors**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | VNPAY (phí giao dịch) | EXCLUDE | Payment processing fee — exempt |
 | MOMO (phí) | EXCLUDE | E-wallet fee — exempt |
 | ZALOPAY (phí) | EXCLUDE | Payment fee — exempt |
@@ -217,16 +225,16 @@ Foreign digital service providers in Vietnam: for B2B, the Vietnamese buyer may 
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CHUYỂN KHOẢN NỘI BỘ, INTERNAL | EXCLUDE | Internal movement |
 | VAY VỐN, TRẢ NỢ, LOAN | EXCLUDE | Loan principal |
 | LƯƠNG, TIỀN LƯƠNG, SALARY | EXCLUDE | Wages — outside VAT scope |
 | CỔ TỨC, DIVIDEND | EXCLUDE | Out of scope |
 | ĐẶT CỌC, DEPOSIT | EXCLUDE | Deposit — out of scope until applied |
 | RÚT TIỀN, ATM | Tier 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -292,95 +300,78 @@ Payment to Google Ireland for cloud services. This triggers the Foreign Contract
 
 **Classification:** Tier 2 — FLAG for specialist. FCT rules may apply. Do not claim input credit until registration status confirmed.
 
----
-
 ## Section 5 — Tier 1 rules (compressed)
 
 ### 5.1 Standard rate 10%
 
-Default rate for all taxable goods and services. Legislation: VAT Law No. 13/2008/QH12 as amended; Circular 219/2013/TT-BTC Article 11.
+- **Standard rate** — 10% (Default rate for all taxable goods and services)  _(VAT Law No. 13/2008/QH12 as amended; Circular 219/2013/TT-BTC Article 11)_
 
 ### 5.2 Reduced rate 5%
 
-Applies to: clean water; fertilizers, animal feed, plant protection chemicals; medical equipment and health services (some — check specifics); teaching aids; books (not newspapers); sugar; unprocessed agricultural products sold by non-farmers to businesses. Legislation: VAT Law Article 9; Circular 219/2013 Article 10.
+- **Reduced rate** — 5% (Applies to: clean water; fertilizers, animal feed, plant protection chemicals; medical equipment and health services (some — check specifics); teaching aids; books (not newspapers); sugar; unprocessed agricultural products sold by non-farmers to businesses.)  _(VAT Law Article 9; Circular 219/2013 Article 10)_
 
 ### 5.3 Zero rate — exports
 
-Exports of goods and services. Services are zero-rated if (1) provided for consumption outside Vietnam, (2) the counterparty is a foreign entity, (3) payment is made in foreign currency, and (4) the service is not performed in Vietnam (for some categories). Legislation: VAT Law Article 8; Circular 219/2013 Article 9.
+- **Zero rate exports** — 0% (Services are zero-rated if (1) provided for consumption outside Vietnam, (2) the counterparty is a foreign entity, (3) payment is made in foreign currency, and (4) the service is not performed in Vietnam (for some categories).)  _(VAT Law Article 8; Circular 219/2013 Article 9)_
 
 ### 5.4 Exempt supplies
 
-Financial services (interest, currency exchange, insurance), healthcare and medical, education and vocational training, certain cultural/artistic activities, land use right transfers, housing sold by developer (first sale below certain threshold), universal postal services (stamps, basic postal). Legislation: VAT Law Article 5.
+- **Exempt supplies** — Financial services (interest, currency exchange, insurance), healthcare and medical, education and vocational training, certain cultural/artistic activities, land use right transfers, housing sold by developer (first sale below certain threshold), universal postal services (stamps, basic postal).  _(VAT Law Article 5)_
 
 ### 5.5 Deduction method (phương pháp khấu trừ)
 
-General taxpayers with annual revenue ≥ VND 1 billion use the deduction method: Output VAT − Input VAT = Net VAT payable. Input credits require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử.
+- **Deduction method** — General taxpayers with annual revenue ≥ VND 1 billion use the deduction method: Output VAT − Input VAT = Net VAT payable. Input credits require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử.
 
 ### 5.6 Direct method (phương pháp trực tiếp)
 
-Available to small taxpayers (revenue < VND 1 billion) or businesses in specific sectors (gold, silver, precious metals). Tax = VAT rate × value added (selling price − purchase price). No input credit mechanism. File using Form 04/GTGT.
+- **Direct method** — Available to small taxpayers (revenue < VND 1 billion) or businesses in specific sectors (gold, silver, precious metals). Tax = VAT rate × value added (selling price − purchase price). No input credit mechanism. File using Form 04/GTGT.
 
 ### 5.7 e-Invoice requirements
 
-From 1 July 2022, all registered businesses must issue electronic invoices (hóa đơn điện tử) registered with the GDT portal. Required fields: seller's MST (tax code), buyer's MST, invoice date, goods/service description, quantity, unit price, net amount, VAT rate, VAT amount, total. Paper invoices no longer accepted for new issuances.
+- **e-Invoice requirements** — From 1 July 2022, all registered businesses must issue electronic invoices (hóa đơn điện tử) registered with the GDT portal. Required fields: seller's MST (tax code), buyer's MST, invoice date, goods/service description, quantity, unit price, net amount, VAT rate, VAT amount, total. Paper invoices no longer accepted for new issuances.
 
 ### 5.8 Filing deadlines
 
+**Filing deadlines**
+
 | Filer | Period | Due date |
-|---|---|---|
+| --- | --- | --- |
 | Monthly filer (revenue > VND 50B) | Monthly | 20th of following month |
 | Quarterly filer (revenue ≤ VND 50B) | Quarterly | 30th of month following quarter |
 | Annual settlement | Calendar year | 31 March following year |
 
 ### 5.9 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | VND 2,000,000–25,000,000 |
 | Late payment | 0.03% per day of unpaid tax |
 | Tax evasion | 1×–3× evaded tax + criminal liability |
 | False invoice | Administrative + potential criminal |
 
----
-
 ## Section 6 — Tier 2 catalogue
 
 ### 6.1 Foreign contractor tax (FCT) on international services
 
-**What it shows:** Payment to a foreign service provider.
-**What's missing:** Whether the foreign supplier has registered in Vietnam directly or whether FCT withholding applies.
-**Conservative default:** Flag — do not claim input credit until status confirmed.
-**Question to ask:** "Has this foreign supplier registered for VAT in Vietnam? Do they issue Vietnamese electronic invoices? If not, FCT withholding may be required."
+- **FCT on international services** — **What it shows:** Payment to a foreign service provider. **What's missing:** Whether the foreign supplier has registered in Vietnam directly or whether FCT withholding applies. **Conservative default:** Flag — do not claim input credit until status confirmed. **Question to ask:** "Has this foreign supplier registered for VAT in Vietnam? Do they issue Vietnamese electronic invoices? If not, FCT withholding may be required."
 
 ### 6.2 Export qualification for services
 
-**What it shows:** Revenue from a foreign client.
-**What's missing:** Whether the service was consumed outside Vietnam, paid in foreign currency, and the counterparty is a foreign entity.
-**Conservative default:** 10% domestic rate.
-**Question to ask:** "Was this service entirely consumed outside Vietnam? Is the client a foreign entity? Was payment received in USD/EUR or other foreign currency?"
+- **Export qualification for services** — **What it shows:** Revenue from a foreign client. **What's missing:** Whether the service was consumed outside Vietnam, paid in foreign currency, and the counterparty is a foreign entity. **Conservative default:** 10% domestic rate. **Question to ask:** "Was this service entirely consumed outside Vietnam? Is the client a foreign entity? Was payment received in USD/EUR or other foreign currency?"
 
 ### 6.3 Reduced rate confirmation (5% items)
 
-**What it shows:** Purchase that might qualify for 5% (e.g., water, agricultural inputs, books).
-**What's missing:** Confirmation of specific product category.
-**Conservative default:** 10%.
-**Question to ask:** "What exactly was purchased? Is it on the 5% reduced rate list (clean water, fertilizer, animal feed, medical equipment, books, etc.)?"
+- **Reduced rate confirmation** — **What it shows:** Purchase that might qualify for 5% (e.g., water, agricultural inputs, books). **What's missing:** Confirmation of specific product category. **Conservative default:** 10%. **Question to ask:** "What exactly was purchased? Is it on the 5% reduced rate list (clean water, fertilizer, animal feed, medical equipment, books, etc.)?"
 
 ### 6.4 Partial exemption — businesses with mixed supplies
 
-**What it shows:** Business making both taxable and exempt sales (e.g., IT consulting + financial advisory).
-**What's missing:** The taxable/total revenue ratio for the period.
-**Conservative default:** 0% credit on shared overhead costs.
-**Question to ask:** "What proportion of your sales are taxable vs. exempt? Provide a monthly revenue breakdown."
+- **Partial exemption** — **What it shows:** Business making both taxable and exempt sales (e.g., IT consulting + financial advisory). **What's missing:** The taxable/total revenue ratio for the period. **Conservative default:** 0% credit on shared overhead costs. **Question to ask:** "What proportion of your sales are taxable vs. exempt? Provide a monthly revenue breakdown."
 
 ### 6.5 VAT on vehicle expenses
 
-**What it shows:** Vehicle purchase, lease, fuel, or maintenance.
-**What's missing:** Whether the vehicle is used exclusively for business and whether input VAT is claimable.
-**Conservative default:** 0% input credit.
-**Question to ask:** "Is this vehicle registered in the company's name and used exclusively for business? VAT on personal-use or mixed vehicles is limited."
-
----
+- **VAT on vehicle expenses** — **What it shows:** Vehicle purchase, lease, fuel, or maintenance. **What's missing:** Whether the vehicle is used exclusively for business and whether input VAT is claimable. **Conservative default:** 0% input credit. **Question to ask:** "Is this vehicle registered in the company's name and used exclusively for business? VAT on personal-use or mixed vehicles is limited."
 
 ## Section 7 — Excel working paper template
 
@@ -421,14 +412,14 @@ REVIEWER FLAGS:
   [ ] Proration calculated for any exempt supplies?
 ```
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Common Vietnamese bank statement formats
 
+**Bank statement formats**
+
 | Bank | Key columns | Date format | Amount |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Vietcombank VCB | Ngày GD, Nội dung, Phát sinh nợ (debit), Phát sinh có (credit), Số dư | DD/MM/YYYY | VND (no decimals typically) |
 | BIDV | Ngày, Mô tả, Số tiền ghi nợ, Số tiền ghi có, Số dư | DD/MM/YYYY | VND |
 | Vietinbank | Ngày giao dịch, Nội dung, Số tiền, Số dư | DD/MM/YYYY | VND |
@@ -437,8 +428,10 @@ REVIEWER FLAGS:
 
 ### Key Vietnamese banking terms
 
+**Banking terms**
+
 | Vietnamese | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | Nhận chuyển khoản | Incoming wire transfer | Potential revenue |
 | Thanh toán / Chuyển khoản | Outgoing payment | Potential expense |
 | Nhận ngoại tệ | Foreign currency receipt | Potential export |
@@ -449,8 +442,6 @@ REVIEWER FLAGS:
 | Thuế GTGT | VAT | Tax payment — exclude |
 | Rút tiền ATM | ATM withdrawal | Tier 2 — ask |
 | Thanh toán tự động | Auto-payment | Subscription/utility |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -475,14 +466,14 @@ VIETNAM GTGT ONBOARDING — CÂU HỎI TỐI THIỂU
 8. Có doanh thu không chịu thuế (exempt supplies) không?
 ```
 
----
-
 ## Section 10 — Reference material
 
 ### Key legislation
 
+**Key legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | VAT Law | Luật Thuế GTGT No. 13/2008/QH12 (amended 2013, 2014, 2016) |
 | VAT rates | VAT Law Articles 8–10 |
 | Exempt supplies | VAT Law Article 5 |
@@ -512,12 +503,12 @@ VIETNAM GTGT ONBOARDING — CÂU HỎI TỐI THIỂU
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, FCT note, no inline tier tags |
-
----
 
 ## Prohibitions
 
@@ -527,14 +518,30 @@ VIETNAM GTGT ONBOARDING — CÂU HỎI TỐI THIỂU
 - NEVER ignore FCT implications for international service payments
 - NEVER present calculations as definitive — direct to a licensed Vietnamese tax agent (đại lý thuế)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional before filing.
 
 The most up-to-date version is maintained at openaccountants.com.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/vietnam-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `vietnam-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/vietnam-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

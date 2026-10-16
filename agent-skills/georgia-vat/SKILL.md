@@ -1,24 +1,25 @@
 ---
 name: georgia-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Georgia VAT return for any client. Trigger on phrases like \"Georgia VAT\", \"RS filing\", \"Revenue Service Georgia\", or any request involving Georgian VAT. This skill covers standard VAT payers filing monthly returns. Small Business Status, Micro Business, Fixed Tax, and Virtual Zone IT regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Georgian VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/georgia-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/georgia-vat"
+  jurisdiction: "GE"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Gvantsa Amiridze, ACCA"
+  review_status: "current"
 ---
 
-# Georgia VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Georgia VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Georgia |
 | Tax name | VAT (ghirebuleba damatebiti gadasakhadi) |
 | Standard rate | 18% |
@@ -35,10 +36,10 @@ metadata:
 | Validated by | Pending local practitioner validation |
 | Validation date | April 2026 |
 
-**Key VAT return sections:**
+**Key VAT return sections**
 
 | Section | Meaning |
-|---|---|
+| --- | --- |
 | Part 1 | Taxpayer information (TIN, name, period) |
 | Part 2 | Taxable supplies at 18% — base |
 | Part 3 | Zero-rated supplies (exports) |
@@ -55,10 +56,10 @@ metadata:
 | Part 14 | Credit brought forward |
 | Part 15 | Net payable or credit |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 18% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Georgia |
@@ -66,17 +67,15 @@ metadata:
 | Unknown SaaS billing entity | Reverse charge (Part 7/11) |
 | Unknown blocked-input status | Blocked |
 
-**Red flag thresholds:**
+**Red flag thresholds**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | GEL 15,000 |
 | HIGH tax-delta on a single default | GEL 1,000 |
 | MEDIUM counterparty concentration | >40% |
 | MEDIUM conservative-default count | >4 |
 | LOW absolute net VAT position | GEL 25,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -90,28 +89,22 @@ metadata:
 
 ### Refusal catalogue
 
-**R-GE-1 — Small Business Status.** *Trigger:* client on SBS (1% turnover tax, below GEL 500,000). *Message:* "Small Business Status entities do not file VAT returns. Out of scope."
-
-**R-GE-2 — Micro Business.** *Trigger:* client is micro business (below GEL 30,000, exempt). *Message:* "Micro businesses are exempt from VAT. Out of scope."
-
-**R-GE-3 — Fixed Tax.** *Trigger:* client on fixed tax regime. *Message:* "Fixed tax entities have separate obligations. Out of scope."
-
-**R-GE-4 — Virtual Zone IT company.** *Trigger:* registered Virtual Zone IT entity. *Message:* "Virtual Zone IT companies have special tax treatment. Please use a qualified Georgian practitioner for confirmation of scope."
-
-**R-GE-5 — Free Industrial Zone (FIZ).** *Trigger:* FIZ entity. *Message:* "FIZ entities have special VAT rules. Out of scope."
-
-**R-GE-6 — Partial exemption.** *Trigger:* mixed taxable and exempt. *Message:* "Input VAT apportionment required. Use a qualified practitioner."
-
-**R-GE-7 — Income tax.** *Trigger:* user asks about income/profit tax. *Message:* "This skill handles VAT only."
-
----
+- **R-GE-1 — Small Business Status** — "Small Business Status entities do not file VAT returns. Out of scope." (Trigger: client on SBS (1% turnover tax, below GEL 500,000))
+- **R-GE-2 — Micro Business** — "Micro businesses are exempt from VAT. Out of scope." (Trigger: client is micro business (below GEL 30,000, exempt))
+- **R-GE-3 — Fixed Tax** — "Fixed tax entities have separate obligations. Out of scope." (Trigger: client on fixed tax regime)
+- **R-GE-4 — Virtual Zone IT company** — "Virtual Zone IT companies have special tax treatment. Please use a qualified Georgian practitioner for confirmation of scope." (Trigger: registered Virtual Zone IT entity)
+- **R-GE-5 — Free Industrial Zone (FIZ)** — "FIZ entities have special VAT rules. Out of scope." (Trigger: FIZ entity)
+- **R-GE-6 — Partial exemption** — "Input VAT apportionment required. Use a qualified practitioner." (Trigger: mixed taxable and exempt)
+- **R-GE-7 — Income tax** — "This skill handles VAT only." (Trigger: user asks about income/profit tax)
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Georgian banks (fees exempt — exclude)
 
+**Georgian banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TBC BANK, TBC | EXCLUDE | Financial service, exempt |
 | BANK OF GEORGIA, BOG | EXCLUDE | Same |
 | LIBERTY BANK, BASIS BANK, CREDO BANK | EXCLUDE | Same |
@@ -121,8 +114,10 @@ metadata:
 
 ### 3.2 Government and statutory bodies (exclude)
 
+**Government bodies pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | REVENUE SERVICE, RS.GE | EXCLUDE | Tax payment |
 | SABAZHOEBI, CUSTOMS | EXCLUDE | Duty (import VAT separate) |
 | SAPENSIA, PENSION AGENCY | EXCLUDE | Pension contribution |
@@ -130,8 +125,10 @@ metadata:
 
 ### 3.3 Utilities
 
+**Utilities pattern table**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | TELASI, GWP, ENERGO-PRO | Domestic 18% | Part 9 | Electricity/water |
 | SOCAR GEORGIA, GAZPROM GE | Domestic 18% | Part 9 | Gas |
 | MAGTICOM, BEELINE GE, GEOCELL | Domestic 18% | Part 9 | Telecoms |
@@ -139,43 +136,51 @@ metadata:
 
 ### 3.4 Insurance (exempt — exclude)
 
+**Insurance pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALDAGI, IC GROUP, TBC INSURANCE | EXCLUDE | Exempt |
 | DAZGHVEVA, INSURANCE | EXCLUDE | Same |
 
 ### 3.5 Food and entertainment (blocked)
 
+**Food and entertainment pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CARREFOUR GE, GOODWILL, NIKORA, FRESCO | Default BLOCK | Personal provisioning |
 | RESTORAN, RESTORANI, KAFE, BAR | Default BLOCK | Entertainment blocked |
 
 ### 3.6 SaaS — non-resident (reverse charge)
 
+**SaaS pattern table**
+
 | Pattern | Box | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Part 7/11 | Reverse charge at 18% |
 | SLACK, ZOOM, NOTION, AWS, ANTHROPIC, OPENAI | Part 7/11 | Same |
 
 ### 3.7 Professional services
 
+**Professional services pattern table**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | NOTARIUSI, NOTARY | Domestic 18% | Part 9 | If business purpose |
 | AUDITORI, BUKHGALTER | Domestic 18% | Part 9 | Deductible |
 | ADVOKATI, LAWYER | Domestic 18% | Part 9 | If business matter |
 
 ### 3.8 Payroll and exclusions
 
+**Payroll and exclusions pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KHELFASI, SALARY | EXCLUDE | Wages |
 | DIVIDENDI | EXCLUDE | Out of scope |
 | SHIDA, INTERNAL, OWN TRANSFER | EXCLUDE | Internal |
 | ATM, NAGHDI | TIER 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -185,97 +190,138 @@ metadata:
 
 **Reasoning:** US entity. Reverse charge at 18%. Part 7 (output VAT), Part 11 (input credit). Net zero.
 
+**Example 1 result table**
+
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (in) | Box (out) | Default? |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 03.04.2026 | NOTION LABS INC | -43.20 | -43.20 | 7.78 | 18% | Part 11 | Part 7 | N |
 
 ### Example 2 — Domestic purchase
 
 **Input line:** `10.04.2026 ; MAGTICOM ; DEBIT ; Internet April ; -45.00 ; GEL`
 
+**Example 2 result table**
+
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 10.04.2026 | MAGTICOM | -45.00 | -38.14 | -6.86 | 18% | Part 9 | N |
 
 ### Example 3 — Entertainment blocked
 
 **Input line:** `15.04.2026 ; RESTORAN SHEMOIKHEDE ; DEBIT ; Business dinner ; -250.00 ; GEL`
 
+**Example 3 result table**
+
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Excluded? |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2026 | RESTORAN SHEMOIKHEDE | -250.00 | -250.00 | 0 | — | — | Y | "Entertainment: blocked" |
 
 ### Example 4 — Export of IT services (zero-rated)
 
 **Input line:** `22.04.2026 ; TECHCORP GMBH ; CREDIT ; IT services ; +8,100.00 ; GEL`
 
+**Example 4 result table**
+
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Question? |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 22.04.2026 | TECHCORP GMBH | +8,100 | +8,100 | 0 | 0% | Part 3 | Y | "Verify export docs" |
 
 ### Example 5 — Motor vehicle blocked
 
 **Input line:** `28.04.2026 ; TEGETA MOTORS ; DEBIT ; Car lease ; -1,200.00 ; GEL`
 
+**Example 5 result table**
+
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Excluded? |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 28.04.2026 | TEGETA MOTORS | -1,200.00 | -1,200.00 | 0 | — | — | Y | "Vehicle: blocked" |
 
 ### Example 6 — Import of goods
 
 **Input line:** `25.04.2026 ; CUSTOMS ; DEBIT ; Import VAT ; -5,400.00 ; GEL`
 
-| Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? |
-|---|---|---|---|---|---|---|---|
-| 25.04.2026 | CUSTOMS | -5,400 | -4,576 | -824 | 18% | Part 10 | N |
+**Example 6 result table**
 
----
+| Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 25.04.2026 | CUSTOMS | -5,400 | -4,576 | -824 | 18% | Part 10 | N |
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
 ### 5.1 Standard rate 18% (Tax Code Article 164)
-Single rate. Sales to Part 2/6. Purchases to Part 9.
+
+- **Standard rate** — 18% (Single rate. Sales to Part 2/6. Purchases to Part 9.)  _(Tax Code of Georgia, Article 166)_
 
 ### 5.2 Zero rate
-Exports, international transport, FIZ supplies, diplomatic. Part 3.
+
+- **Zero rate applicability** — Exports, international transport, FIZ supplies, diplomatic. Part 3.
 
 ### 5.3 Exempt supplies (Article 168)
-Financial, insurance, medical, educational, residential rental, public transport, postal, cultural, agricultural land, government.
+
+- **Exempt supplies** — Financial, insurance, medical, educational, residential rental, public transport, postal, cultural, agricultural land, government.  _(Tax Code of Georgia, Articles 170–171)_
 
 ### 5.4 Reverse charge — non-resident services (Article 161)
-Self-assess at 18%. Part 7 (output), Part 11 (input credit). Net zero.
+
+- **Reverse charge treatment** — Self-assess at 18%. Part 7 (output), Part 11 (input credit). Net zero.  _(Tax Code of Georgia, Article 160)_
 
 ### 5.5 Import VAT
-At customs. Base = customs value + duties + excise. 18%. Part 10.
+
+- **Import VAT rule** — At customs. Base = customs value + duties + excise. 18%. Part 10.
+- **Import VAT base formula** — Base = customs value + duties + excise
 
 ### 5.6 Blocked input VAT (Article 177)
-Motor vehicles for personal use, entertainment/representation, personal consumption, no valid invoice, from non-VAT-registered supplier, for exempt supplies, fuel for non-commercial vehicles, gifts/donations.
+
+- **Blocked input VAT categories** — Motor vehicles for personal use, entertainment/representation, personal consumption, no valid invoice, from non-VAT-registered supplier, for exempt supplies, fuel for non-commercial vehicles, gifts/donations.  _(Tax Code of Georgia, Article 178)_
 
 ### 5.7 Electronic invoicing
-All VAT-registered taxpayers issue invoices via rs.ge. Input credit validated against system.
 
----
+- **Electronic invoicing requirement** — All VAT-registered taxpayers issue invoices via rs.ge. Input credit validated against system.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
 ### 6.1 Fuel/vehicles — *Default:* 0%. *Question:* "Car or commercial?"
+
+- **Fuel/vehicles default** — Default: 0%. Question: "Car or commercial?"
+
 ### 6.2 Entertainment — *Default:* block.
+
+- **Entertainment default** — Default: block.  _(Tax Code of Georgia, Article 178)_
+
 ### 6.3 SaaS entities — *Default:* reverse charge. *Question:* "Check invoice."
+
+- **SaaS entities default** — Default: reverse charge. Question: "Check invoice."  _(Tax Code of Georgia, Article 160)_
+
 ### 6.4 Virtual Zone IT — *Default:* R-GE-4 fires if suspected.
+
+- **Virtual Zone IT default** — Default: R-GE-4 fires if suspected.
+
 ### 6.5 Owner transfers — *Default:* exclude.
+
+- **Owner transfers default** — Default: exclude.
+
 ### 6.6 Foreign incoming — *Default:* zero-rated. *Question:* "Export docs?"
+
+- **Foreign incoming default** — Default: zero-rated. Question: "Export docs?"
+
 ### 6.7 Large purchases — *Question:* "Capital asset?"
+
+- **Large purchases question** — Question: "Capital asset?"
+
 ### 6.8 Mixed-use phone — *Default:* 0%.
+
+- **Mixed-use phone default** — Default: 0%.
+
 ### 6.9 Cash withdrawals — *Default:* exclude.
+
+- **Cash withdrawals default** — Default: exclude.
+
 ### 6.10 Wine industry — *Default:* 18% domestic, 0% export. *Question:* "Confirm excise obligations."
 
----
+- **Wine industry default** — Default: 18% domestic, 0% export. Question: "Confirm excise obligations."
 
 ## Section 7 — Excel working paper template
 
 Per `vat-workflow-base` Section 3 with Georgia-specific box codes.
-
----
 
 ## Section 8 — Georgian bank statement reading guide
 
@@ -289,37 +335,57 @@ Per `vat-workflow-base` Section 3 with Georgia-specific box codes.
 
 **Wine exports.** Georgia is a major wine exporter. Wine export receipts are zero-rated. Excise is separate.
 
----
-
 ## Section 9 — Onboarding fallback
 
 ### 9.1 Entity type — *Fallback:* "Sole trader or company (LLC/JSC)?"
+
+- **Entity type fallback** — Fallback: "Sole trader or company (LLC/JSC)?"
+
 ### 9.2 VAT registration — *Fallback:* "Standard VAT, Small Business, Micro, or Fixed Tax?"
+
+- **VAT registration fallback** — Fallback: "Standard VAT, Small Business, Micro, or Fixed Tax?"
+
 ### 9.3 TIN — *Fallback:* "What is your TIN?"
+
+- **TIN fallback** — Fallback: "What is your TIN?"
+
 ### 9.4 Period — *Inference:* statement dates.
+
+- **Period inference** — Inference: statement dates.
+
 ### 9.5 Industry — *Inference:* wine, IT, tourism from counterparties. *Fallback:* "What does the business do?"
+
+- **Industry inference/fallback** — Inference: wine, IT, tourism from counterparties. Fallback: "What does the business do?"
+
 ### 9.6 Virtual Zone — *Fallback:* "Are you a Virtual Zone IT company?"
+
+- **Virtual Zone fallback** — Fallback: "Are you a Virtual Zone IT company?"
+
 ### 9.7 Credit B/F — *Always ask.*
+
+- **Credit B/F** — Always ask.
+
 ### 9.8 Cross-border — *Fallback:* "Customers outside Georgia?"
 
----
+- **Cross-border fallback** — Fallback: "Customers outside Georgia?"
 
 ## Section 10 — Reference material
 
 ### Sources
-1. Tax Code of Georgia — Articles 156-184
+
+1. Tax Code of Georgia — Articles 156–181
 2. Revenue Service — https://rs.ge
 3. National Bank of Georgia rates — https://www.nbg.gov.ge
 
 ### Known gaps
+
 1. Virtual Zone IT regime not covered in detail. 2. FIZ rules not covered. 3. Wine excise not covered.
 
 ### Change log
+
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
 ## End of Georgia VAT Skill v2.0
-
----
 
 ## Disclaimer
 
@@ -327,6 +393,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/georgia-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `georgia-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/georgia-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

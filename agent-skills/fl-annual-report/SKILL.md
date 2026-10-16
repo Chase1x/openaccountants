@@ -1,20 +1,20 @@
 ---
 name: fl-annual-report
-description: "> Florida Annual Report filing for LLCs and corporations registered with the Division of Corporations (Sunbiz). Covers the annual report requirement, $138.75 fee for LLCs, filing deadline, late filing penalties, and administrative dissolution risk. Primary source: Florida Statutes Chapter 605 (LLCs) and Chapter 607 (corporations)."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Florida Annual Report filing for LLCs and corporations registered with the Division of Corporations (Sunbiz). Covers the annual report requirement, $138.75 fee for LLCs, filing deadline, late filing penalties, and administrative dissolution risk. Primary source: Florida Statutes Chapter 605 (LLCs) and Chapter 607 (corporations)."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-FL
-  category: state
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/fl-annual-report"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/fl-annual-report"
+  jurisdiction: "US-FL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Rob Hoffman"
+  review_status: "current"
 ---
 
-# Florida Annual Report (Sunbiz) v1.0
+# FL Annual Report
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Florida Annual Report (Sunbiz) v1.0
 
 ## What this file is
 
@@ -27,8 +27,6 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 **Tax year coverage.** This skill targets **reporting year 2025** (report due by May 1, 2025, for entities formed or qualified before January 1, 2025).
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs off on the filing. The skill produces working papers and a brief, not the filed report itself.
-
----
 
 ## Section 1 -- Scope statement
 
@@ -50,18 +48,18 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 - Florida corporate income tax (Form F-1120) -- separate skill
 - Reinstatement of administratively dissolved entities
 
----
-
 ## Section 2 -- Filing requirements
 
 ### Who must file
 
-Every LLC, corporation, and not-for-profit corporation registered with the Florida Division of Corporations must file an annual report each year to maintain active status. **Source:** §605.0212, F.S. (LLCs); §607.1622, F.S. (corporations).
+- **Who must file** — Every LLC, corporation, and not-for-profit corporation registered with the Florida Division of Corporations must file an annual report each year to maintain active status.  _(§605.0212, F.S. (LLCs); §607.1622, F.S. (corporations).)_
 
 ### When to file
 
+**When to file**  _(See table)_
+
 | Item | Detail | Source |
-|------|--------|--------|
+| --- | --- | --- |
 | Filing window opens | January 1 of each year | Sunbiz filing instructions |
 | Filing deadline | May 1 of each year | §605.0212(5), F.S.; §607.1622, F.S. |
 | Late filing (supplemental fee) | After May 1, $400 supplemental late fee applies | §605.0212(5)(b), F.S. |
@@ -69,93 +67,71 @@ Every LLC, corporation, and not-for-profit corporation registered with the Flori
 
 ### How to file
 
-The annual report must be filed electronically through the Division of Corporations website (sunbiz.org). Paper filings are not accepted for annual reports.
-
----
+- **How to file** — The annual report must be filed electronically through the Division of Corporations website (sunbiz.org). Paper filings are not accepted for annual reports.  _(sunbiz.org)_
 
 ## Section 3 -- Fees
 
+**Fees**  _(See table)_
+
 | Entity type | Annual report fee | Source |
-|-------------|-------------------|--------|
+| --- | --- | --- |
 | LLC (domestic or foreign) | $138.75 | §605.0212(5)(a), F.S. |
 | For-profit corporation (domestic or foreign) | $150.00 | §607.0122(1), F.S. |
 | Not-for-profit corporation | $61.25 | §617.0122, F.S. |
 | Late fee (all entity types) | $400.00 | §605.0212(5)(b), F.S. |
 | Registered agent fee (if changing) | $25.00 | §605.0212(5)(a), F.S. |
 
-**Note on the $138.75 LLC fee:** This is a combined fee. It includes the $100 annual report fee plus the $38.75 registered agent fee when the registered agent remains the same. If the registered agent is changed, the total may differ.
+## Section 3 -- Fees
 
----
+- **Note on the $138.75 LLC fee** — This is a combined fee. It includes the $100 annual report fee plus the $38.75 registered agent fee when the registered agent remains the same. If the registered agent is changed, the total may differ.  _(§605.0212(5)(a), F.S.)_
 
 ## Section 4 -- Computation rules (Step format)
 
 ### Step 1: Determine filing obligation
 
-- Confirm the entity is registered with the Florida Division of Corporations (search sunbiz.org by entity name or document number).
-- Confirm the entity's status is Active or Inactive (if inactive, this skill does not cover reinstatement).
-- If the entity was formed or qualified after January 1 of the current year, no annual report is due until the following year.
+- **Determine filing obligation** — - Confirm the entity is registered with the Florida Division of Corporations (search sunbiz.org by entity name or document number). - Confirm the entity's status is Active or Inactive (if inactive, this skill does not cover reinstatement). - If the entity was formed or qualified after January 1 of the current year, no annual report is due until the following year.  _(unsure)_
 
 ### Step 2: Gather required information
 
-The annual report requires the following data points:
-
-1. Entity name (as registered)
-2. Federal Employer Identification Number (FEIN)
-3. Principal office address (street address required; P.O. Box alone is insufficient)
-4. Mailing address
-5. Registered agent name and address (must be a Florida street address)
-6. Name and address of each manager/managing member (LLCs) or officer/director (corporations)
-7. For LLCs: name and address of each authorized person (if different from manager)
+- **Gather required information** — The annual report requires the following data points: 1. Entity name (as registered) 2. Federal Employer Identification Number (FEIN) 3. Principal office address (street address required; P.O. Box alone is insufficient) 4. Mailing address 5. Registered agent name and address (must be a Florida street address) 6. Name and address of each manager/managing member (LLCs) or officer/director (corporations) 7. For LLCs: name and address of each authorized person (if different from manager)  _(unsure)_
 
 ### Step 3: Verify registered agent
 
-- The registered agent must be a Florida resident or a business entity authorized to transact business in Florida.
-- The registered agent's address must be a Florida street address (not a P.O. Box).
-- If changing the registered agent, the new agent must sign an acceptance.
+- **Verify registered agent** — - The registered agent must be a Florida resident or a business entity authorized to transact business in Florida. - The registered agent's address must be a Florida street address (not a P.O. Box). - If changing the registered agent, the new agent must sign an acceptance.  _(unsure)_
 
 ### Step 4: Complete the filing
 
-- Log in to sunbiz.org annual report filing system.
-- Enter the entity's document number.
-- Review pre-populated information and update any changes.
-- Confirm all manager/member or officer/director information is current.
-- Pay the filing fee electronically.
+- **Complete the filing** — - Log in to sunbiz.org annual report filing system. - Enter the entity's document number. - Review pre-populated information and update any changes. - Confirm all manager/member or officer/director information is current. - Pay the filing fee electronically.  _(unsure)_
 
 ### Step 5: Document the filing
 
-- Record the confirmation number provided by Sunbiz.
-- Save/print the filing confirmation for the entity's records.
-- Note the filing date for the reviewer brief.
-
----
+- **Document the filing** — - Record the confirmation number provided by Sunbiz. - Save/print the filing confirmation for the entity's records. - Note the filing date for the reviewer brief.  _(unsure)_
 
 ## Section 5 -- Edge cases and special rules
 
 ### E-1: Entity formed mid-year
 
-An LLC formed on July 15, 2024, must file its first annual report by May 1, 2025. The report covers the entity's current information as of the filing date, not a specific fiscal period. **Source:** §605.0212, F.S.
+- **Entity formed mid-year** — An LLC formed on July 15, 2024, must file its first annual report by May 1, 2025. The report covers the entity's current information as of the filing date, not a specific fiscal period.  _(§605.0212, F.S.)_
 
 ### E-2: Multiple LLCs under same ownership
 
-Each LLC is a separate filing. There is no consolidated annual report. Each pays its own $138.75 fee. Flag for reviewer if client has many LLCs -- the aggregate cost may be significant.
+- **Multiple LLCs under same ownership** — Each LLC is a separate filing. There is no consolidated annual report. Each pays its own $138.75 fee. Flag for reviewer if client has many LLCs -- the aggregate cost may be significant.  _(unsure)_
 
 ### E-3: Address changes during the year
 
-Address changes can be made on the annual report. If an address changes after the annual report is filed, a supplemental filing ($50 fee) can update the records before the next annual report cycle.
+- **Address changes during the year** — Address changes can be made on the annual report. If an address changes after the annual report is filed, a supplemental filing ($50 fee) can update the records before the next annual report cycle.  _(unsure)_
 
 ### E-4: Foreign LLC withdrawing from Florida
 
-A foreign LLC that has filed a certificate of withdrawal is not required to file an annual report for the year following the effective date of withdrawal. However, the annual report for the year of withdrawal is still due. **Source:** §605.0906, F.S.
+- **Foreign LLC withdrawing from Florida** — A foreign LLC that has filed a certificate of withdrawal is not required to file an annual report for the year following the effective date of withdrawal. However, the annual report for the year of withdrawal is still due.  _(§605.0906, F.S.)_
 
 ### E-5: Administrative dissolution risk
 
-If the annual report is not filed by the third Friday in September, the entity will be administratively dissolved (LLCs) or revoked (corporations). This means the entity loses its legal authority to transact business in Florida. Reinstatement requires additional fees and filings. **Source:** §605.0714, F.S.
+- **Administrative dissolution risk** — If the annual report is not filed by the third Friday in September, the entity will be administratively dissolved (LLCs) or revoked (corporations). This means the entity loses its legal authority to transact business in Florida. Reinstatement requires additional fees and filings.  _(§605.0714, F.S.)_
 
 ### E-6: Disregarded entity status
 
-A single-member LLC that is disregarded for federal tax purposes is still treated as a separate legal entity under Florida law and must file the annual report. The federal tax classification does not affect the Sunbiz filing obligation.
-
----
+- **Disregarded entity status** — A single-member LLC that is disregarded for federal tax purposes is still treated as a separate legal entity under Florida law and must file the annual report. The federal tax classification does not affect the Sunbiz filing obligation.  _(unsure)_
 
 ## Section 6 -- Test suite
 
@@ -187,8 +163,6 @@ A single-member LLC that is disregarded for federal tax purposes is still treate
 - **Input:** Same owner operates 3 Florida LLCs.
 - **Expected output:** 3 separate filings. Total fees: 3 x $138.75 = $416.25.
 
----
-
 ## Section 7 -- Prohibitions
 
 - **P-1:** Do NOT file the annual report without confirming current manager/member or officer/director information with the client. Stale data creates legal liability.
@@ -196,8 +170,6 @@ A single-member LLC that is disregarded for federal tax purposes is still treate
 - **P-3:** Do NOT assume a disregarded LLC is exempt from annual report filing.
 - **P-4:** Do NOT advise on whether to let an entity dissolve for tax planning purposes. That is legal advice outside this skill's scope.
 - **P-5:** Do NOT attempt to file a paper annual report. Sunbiz requires electronic filing.
-
----
 
 ## Section 8 -- Self-checks
 
@@ -213,14 +185,30 @@ Before delivering output, verify:
 - [ ] Confirmation number documented after filing
 - [ ] Reviewer brief includes any flags (late filing, address changes, dissolution risk)
 
----
-
 ## Section 9 -- Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/fl-annual-report) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `fl-annual-report` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/fl-annual-report. If neither is available, confirm every figure against the official source pages cited above before relying on it.

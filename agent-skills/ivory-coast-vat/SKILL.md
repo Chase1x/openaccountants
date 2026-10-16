@@ -1,24 +1,24 @@
 ---
 name: ivory-coast-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Cote d'Ivoire VAT (TVA) return. Trigger on phrases like \"TVA Cote d'Ivoire\", \"DGI return\". Standard rate 18%, reduced 9%. WAEMU member. ALWAYS read before handling Ivory Coast VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ivory-coast-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/ivory-coast-vat"
+  jurisdiction: "CI"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Cote d'Ivoire VAT (TVA) Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Ivory Coast VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Cote d'Ivoire |
 | Standard rate | 18% |
 | Reduced rate | 9% (milk, pasta, specified goods) |
@@ -34,22 +34,19 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
-**Minimum viable** -- bank statement. Acceptable from SGCI (Societe Generale CI), BICICI, Ecobank CI, NSIA Banque, BOA CI, or any Ivorian bank.
-
-**R-CI-1 -- Investment Code.** Trigger: company under Code des Investissements. Message: "Escalate. Specific decree required."
-
----
+- **Minimum viable input** — Minimum viable -- bank statement. Acceptable from SGCI (Societe Generale CI), BICICI, Ecobank CI, NSIA Banque, BOA CI, or any Ivorian bank.
+- **R-CI-1 -- Investment Code** — Escalate. Specific decree required. (Trigger: company under Code des Investissements.)
 
 ## Section 3 -- Supplier pattern library
 
 ### 3.1 Ivorian banks (exempt -- exclude)
 
+**Ivorian banks (exempt -- exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SGCI, SOCIETE GENERALE CI | EXCLUDE | Exempt financial service |
 | BICICI | EXCLUDE | Same |
 | ECOBANK CI, NSIA BANQUE | EXCLUDE | Same |
@@ -57,27 +54,31 @@ metadata:
 
 ### 3.2 Government
 
+**Government**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DGI | EXCLUDE | Tax payment |
 | DOUANE | Check for import TVA | TVA recoverable |
 | CNPS | EXCLUDE | Social security |
 
 ### 3.3 Utilities
 
+**Utilities**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CIE, ELECTRICITE | Domestic 18% | Electricity |
 | SODECI | Domestic 18% | Water |
 | MTN CI, ORANGE CI, MOOV | Domestic 18% | Telecoms |
 
 ### 3.4 SaaS
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| GOOGLE, MICROSOFT, AWS | Autoliquidation 18% | Non-resident |
+**SaaS**
 
----
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| GOOGLE, MICROSOFT, AWS | Autoliquidation 18% | Non-resident |
 
 ## Section 4 -- Worked examples
 
@@ -89,57 +90,53 @@ FCFA 20M net. TVA = FCFA 3.6M. Line 1 = FCFA 20M. Line 6 = FCFA 3.6M.
 
 FCFA 5M processed milk. TVA = FCFA 450K. Line 2 = FCFA 5M. Line 7 = FCFA 450K.
 
----
-
 ## Section 5 -- Classification rules
 
-18% standard, 9% reduced (milk, pasta), 0% exports, exempt (basic foodstuffs, financial, medical, education, residential rental, solar equipment, agricultural inputs).
-
----
+- **Classification rules** — 18% standard, 9% reduced (milk, pasta), 0% exports, exempt (basic foodstuffs, financial, medical, education, residential rental, solar equipment, agricultural inputs).
 
 ## Section 6 -- VAT return form structure
 
-Output: Lines 1-10 (18% sales, 9% sales, exempt, exports, total, TVA 18%, TVA 9%, autoliquidation, adjustments, total brute).
-
-Input: Lines 11-17 (local goods, local services, imports, capital goods, autoliquidation input, exclusions, total deductible).
-
-Net: Lines 18-21 (net, credit reporte, precompte, payable/credit).
-
----
+- **Output lines 1-10** — Lines 1-10 (18% sales, 9% sales, exempt, exports, total, TVA 18%, TVA 9%, autoliquidation, adjustments, total brute).
+- **Input lines 11-17** — Lines 11-17 (local goods, local services, imports, capital goods, autoliquidation input, exclusions, total deductible).
+- **Net lines 18-21** — Lines 18-21 (net, credit reporte, precompte, payable/credit).
 
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 18%. Claim input if taxable. Net zero. CGI Art. 344.
-
----
+- **Non-resident services reverse charge** — Non-resident services: self-assess 18%. Claim input if taxable. Net zero.  _(CGI Art. 344)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (CGI Art. 360-363): vehicles < 9 seats, staff accommodation, entertainment/gifts > FCFA 500K/year/recipient, fuel for blocked vehicles, personal use, invoices without NCC.
-
-Prorata: CGI Art. 359. Annual recalculation.
-
----
+- **Blocked input items** — Blocked: vehicles < 9 seats, staff accommodation, entertainment/gifts > FCFA 500K/year/recipient, fuel for blocked vehicles, personal use, invoices without NCC.  _(CGI Art. 360-363)_
+- **Prorata rule** — Prorata. Annual recalculation.  _(CGI Art. 359)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly 10th (large) or 15th (others). Quarterly for simplifie. Late filing: 25% surcharge (min FCFA 100K). Late payment: 1%/month. Failure to register: 100%.
-
----
+- **Filing deadlines** — Monthly 10th (large) or 15th (others). Quarterly for simplifie.
+- **Late filing penalty** — 25% surcharge (min FCFA 100K).
+- **Late payment penalty** — 1%/month.
+- **Failure to register penalty** — 100%.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Autoliquidation 18%. Net zero.
-**EC2 -- Cocoa export.** Zero-rated. Input recoverable.
-**EC3 -- Motor vehicle blocked.**
-**EC4 -- WAEMU import (Senegal).** VAT 18% at Ivorian customs. No intra-community.
-**EC5 -- Capital goods adjustment.** 10yr immovable, 5yr movable. Reviewer flag.
+EC1 -- SaaS. Autoliquidation 18%. Net zero.
 
-**Test 1** -- FCFA 20M sale. TVA FCFA 3.6M.
-**Test 2** -- FCFA 5M milk at 9%. TVA FCFA 450K.
-**Test 3** -- French services FCFA 15M. Output 2.7M, input 2.7M. Net zero.
-**Test 4** -- Rubber export FCFA 100M. Zero-rated.
-**Test 5** -- Car purchase. Input blocked. Cost = gross.
+EC2 -- Cocoa export. Zero-rated. Input recoverable.
+
+EC3 -- Motor vehicle blocked.
+
+EC4 -- WAEMU import (Senegal). VAT 18% at Ivorian customs. No intra-community.
+
+EC5 -- Capital goods adjustment. 10yr immovable, 5yr movable. Reviewer flag.
+
+Test 1 -- FCFA 20M sale. TVA FCFA 3.6M.
+
+Test 2 -- FCFA 5M milk at 9%. TVA FCFA 450K.
+
+Test 3 -- French services FCFA 15M. Output 2.7M, input 2.7M. Net zero.
+
+Test 4 -- Rubber export FCFA 100M. Zero-rated.
+
+Test 5 -- Car purchase. Input blocked. Cost = gross.
 
 Out of scope: BIC 25%, PAYE progressive, CNPS contributions.
 
@@ -150,14 +147,30 @@ Out of scope: BIC 25%, PAYE progressive, CNPS contributions.
 - NEVER accept invoices without NCC
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ivory-coast-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ivory-coast-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ivory-coast-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

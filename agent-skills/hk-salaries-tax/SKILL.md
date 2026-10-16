@@ -1,27 +1,28 @@
 ---
 name: hk-salaries-tax
-description: "> Use this skill whenever asked about Hong Kong salaries tax. Trigger on phrases like \"Hong Kong tax\", \"salaries tax\", \"BIR60\", \"IRD\", \"net chargeable income\", \"standard rate\", \"progressive rate HK\", \"personal allowance Hong Kong\", \"provisional tax HK\", \"tax return Hong Kong\", or any question about computing, filing, or planning salaries tax for an individual in Hong Kong. This skill covers progressive and standard rate calculations, allowances, deductions, provisional tax, and BIR60 filing. ALWAYS read this skill before advising on Hong Kong salaries tax."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Hong Kong salaries tax. Trigger on phrases like \"Hong Kong tax\", \"salaries tax\", \"BIR60\", \"IRD\", \"net chargeable income\", \"standard rate\", \"progressive rate HK\", \"personal allowance Hong Kong\", \"provisional tax HK\", \"tax return Hong Kong\", or any question about computing, filing, or planning salaries tax for an individual in Hong Kong. This skill covers progressive and standard rate calculations, allowances, deductions, provisional tax, and BIR60 filing. ALWAYS read this skill before advising on Hong Kong salaries tax."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: HK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/hk-salaries-tax"
-  tax_year: 2024-25
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/hk-salaries-tax"
+  jurisdiction: "HK"
+  tax_year: "2024"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Hong Kong Salaries Tax -- Skill v1.0
+# HK Salaries Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Hong Kong Salaries Tax -- Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country / Territory | Hong Kong SAR, China |
 | Tax | Salaries Tax (薪俸稅) |
 | Currency | HKD (Hong Kong Dollar) only |
@@ -35,14 +36,14 @@ metadata:
 
 ### Tax Calculation Method
 
-Salaries tax is the LOWER of:
-1. **Progressive rates** on Net Chargeable Income (after deductions AND allowances)
-2. **Standard rate** on Net Income (after deductions but BEFORE allowances)
+- **Salaries tax method** — Salaries tax is the LOWER of: 1. Progressive rates on Net Chargeable Income (after deductions AND allowances) 2. Standard rate on Net Income (after deductions but BEFORE allowances)
 
 ### Progressive Tax Rates (2024/25 onwards)
 
+**Progressive Tax Rates (2024/25 onwards)**
+
 | Net Chargeable Income Band (HK$) | Rate | Tax in Band | Cumulative Tax |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | First 50,000 | 2% | 1,000 | 1,000 |
 | Next 50,000 | 6% | 3,000 | 4,000 |
 | Next 50,000 | 10% | 5,000 | 9,000 |
@@ -51,15 +52,19 @@ Salaries tax is the LOWER of:
 
 ### Standard Rate (2024/25 onwards -- Two-Tiered)
 
+**Standard Rate (2024/25 onwards -- Two-Tiered)**
+
 | Net Income (HK$) | Rate |
-|---|---|
+| --- | --- |
 | First 5,000,000 | 15% |
 | Exceeding 5,000,000 | 16% |
 
 ### Personal Allowances (2024/25)
 
+**Personal Allowances (2024/25)**
+
 | Allowance | Amount (HK$) |
-|---|---|
+| --- | --- |
 | Basic allowance | 132,000 |
 | Married person's allowance | 264,000 |
 | Child allowance (each child) | 130,000 |
@@ -75,8 +80,10 @@ Salaries tax is the LOWER of:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown marital status | Apply basic allowance (HK$132,000) only |
 | Unknown whether children qualify | Do not claim child allowance |
 | Unknown dependent parent arrangement | Do not claim additional allowance for living together |
@@ -84,21 +91,16 @@ Salaries tax is the LOWER of:
 | Unknown whether progressive or standard rate lower | Calculate both; apply lower |
 | Tax reduction year | Apply 2024/25 reduction: 100%, ceiling HK$1,500 |
 
----
-
-## Section 2 -- Rules
-
 ### 2.1 Charge to Salaries Tax (IRO Sec. 8)
 
-Salaries tax is charged on every person in respect of income arising in or derived from Hong Kong from:
-- Office or employment
-- Pension
-- Lump sum payments in connection with services rendered in Hong Kong
+- **Charge to salaries tax** — Salaries tax is charged on every person in respect of income arising in or derived from Hong Kong from: Office or employment; Pension; Lump sum payments in connection with services rendered in Hong Kong  _(IRO Sec. 8)_
 
 ### 2.2 Assessable Income
 
+**Assessable Income**
+
 | Component | Treatment |
-|---|---|
+| --- | --- |
 | Salary, wages, commission | Fully assessable |
 | Bonus (discretionary or contractual) | Fully assessable |
 | Leave pay, end-of-contract gratuity | Fully assessable (time-apportioned if partly HK service) |
@@ -111,8 +113,10 @@ Salaries tax is charged on every person in respect of income arising in or deriv
 
 ### 2.3 Deductions (IRO Sec. 12)
 
+**Deductions (IRO Sec. 12)**  _(IRO Sec. 12)_
+
 | Deduction | Limit (2024/25) |
-|---|---|
+| --- | --- |
 | Self-education expenses | HK$100,000 |
 | MPF mandatory contributions (employee) | HK$18,000 |
 | Approved charitable donations | 35% of assessable income |
@@ -123,74 +127,22 @@ Salaries tax is charged on every person in respect of income arising in or deriv
 | MPF voluntary contributions (TVC) | HK$60,000 |
 | Domestic rent deduction | HK$100,000 |
 
-**Note:** QDAP + TVC deduction combined cap = HK$60,000.
+- **QDAP + TVC combined cap** — QDAP + TVC deduction combined cap = HK$60,000.  _(IRO Sec. 12)_
 
 ### 2.4 Rental Value of Quarters (IRO Sec. 9)
 
-If employer provides housing:
-- Rental value = 10% of net income (after other deductions) for a house/flat
-- 8% for a service occupancy (hostel)
-- 4% for hotel/boarding house
-- If employer pays rent (not provides quarters): assessable as Place of Residence benefit, but capped at rent paid or 10% rental value, whichever lower
-
----
-
-## Section 3 -- Computation
+- **Rental value of quarters** — If employer provides housing: Rental value = 10% of net income (after other deductions) for a house/flat; 8% for a service occupancy (hostel); 4% for hotel/boarding house; If employer pays rent (not provides quarters): assessable as Place of Residence benefit, but capped at rent paid or 10% rental value, whichever lower  _(IRO Sec. 9)_
 
 ### 3.1 Progressive Rate Calculation
 
-```
-A. ASSESSABLE INCOME
-   A1. Salary / wages / commission                      ___________
-   A2. Bonus / allowances                               ___________
-   A3. Rental value of quarters (10% of net)            ___________
-   A4. Share option gains                               ___________
-   A5. Other perquisites                                ___________
-   A6. Total Assessable Income                          ___________
-
-B. DEDUCTIONS (Section 12)
-   B1. MPF mandatory contributions (max $18,000)        ___________
-   B2. Self-education expenses (max $100,000)           ___________
-   B3. Charitable donations (max 35% of A6)             ___________
-   B4. Home loan interest (max $100,000)                ___________
-   B5. QDAP + TVC (combined max $60,000)                ___________
-   B6. VHIS premiums (max $8,000 per person)            ___________
-   B7. Domestic rent (max $100,000)                     ___________
-   B8. Total Deductions                                 ___________
-
-C. NET INCOME (A6 - B8)                                 ___________
-   [Used for standard rate calculation]
-
-D. ALLOWANCES
-   D1. Basic / Married                                  ___________
-   D2. Child allowances                                 ___________
-   D3. Dependent parent/grandparent                     ___________
-   D4. Other allowances                                 ___________
-   D5. Total Allowances                                 ___________
-
-E. NET CHARGEABLE INCOME (C - D5)                       ___________
-   [Used for progressive rate calculation]
-
-F. TAX COMPUTATION
-   F1. Progressive tax on E                             ___________
-   F2. Standard rate tax on C (15% on first $5M, 16% excess) ___________
-   F3. Tax payable = LOWER of F1 and F2                 ___________
-
-G. TAX REDUCTION (2024/25)
-   G1. 100% reduction, capped at $1,500                 ___________
-
-H. FINAL TAX (F3 - G1)                                  ___________
-
-I. PROVISIONAL TAX
-   I1. Less: provisional tax already paid for 2024/25   ___________
-   I2. Plus: provisional tax for 2025/26                ___________
-   I3. NET AMOUNT PAYABLE                               ___________
-```
+- **Progressive rate calculation worksheet** — A. ASSESSABLE INCOME A1. Salary / wages / commission                      ___________ A2. Bonus / allowances                               ___________ A3. Rental value of quarters (10% of net)            ___________ A4. Share option gains                               ___________ A5. Other perquisites                                ___________ A6. Total Assessable Income                          ___________ B. DEDUCTIONS (Section 12) B1. MPF mandatory contributions (max $18,000)        ___________ B2. Self-education expenses (max $100,000)           ___________ B3. Charitable donations (max 35% of A6)             ___________ B4. Home loan interest (max $100,000)                ___________ B5. QDAP + TVC (combined max $60,000)                ___________ B6. VHIS premiums (max $8,000 per person)            ___________ B7. Domestic rent (max $100,000)                     ___________ B8. Total Deductions                                 ___________ C. NET INCOME (A6 - B8)                                 ___________ [Used for standard rate calculation] D. ALLOWANCES D1. Basic / Married                                  ___________ D2. Child allowances                                 ___________ D3. Dependent parent/grandparent                     ___________ D4. Other allowances                                 ___________ D5. Total Allowances                                 ___________ E. NET CHARGEABLE INCOME (C - D5)                       ___________ [Used for progressive rate calculation] F. TAX COMPUTATION F1. Progressive tax on E                             ___________ F2. Standard rate tax on C (15% on first $5M, 16% excess) ___________ F3. Tax payable = LOWER of F1 and F2                 ___________ G. TAX REDUCTION (2024/25) G1. 100% reduction, capped at $1,500                 ___________ H. FINAL TAX (F3 - G1)                                  ___________ I. PROVISIONAL TAX I1. Less: provisional tax already paid for 2024/25   ___________ I2. Plus: provisional tax for 2025/26                ___________ I3. NET AMOUNT PAYABLE                               ___________
 
 ### 3.2 Worked Example -- Single Employee
 
+**Worked Example -- Single Employee**
+
 | Item | Amount (HK$) |
-|---|---|
+| --- | --- |
 | Annual salary | 600,000 |
 | Bonus | 50,000 |
 | Total assessable income | 650,000 |
@@ -214,8 +166,10 @@ Less 2024/25 reduction (100%, max $1,500): **HK$65,500**
 
 ### 3.3 Worked Example -- Married with Children
 
+**Worked Example -- Married with Children**
+
 | Item | Amount (HK$) |
-|---|---|
+| --- | --- |
 | Annual salary | 1,200,000 |
 | Total assessable income | 1,200,000 |
 | Less: MPF mandatory (capped) | (18,000) |
@@ -234,14 +188,12 @@ Standard rate: 1,182,000 × 15% = **177,300**
 Tax payable = lower = **HK$93,860**
 Less 2024/25 reduction: **HK$92,360**
 
----
-
-## Section 4 -- Filing
-
 ### 4.1 BIR60 (Tax Return -- Individuals)
 
+**BIR60 (Tax Return -- Individuals)**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Form | BIR60 (個別人士報稅表) |
 | Issue date | Usually first working day of May |
 | Filing deadline (paper) | 1 month from date of issue (usually early June) |
@@ -251,8 +203,10 @@ Less 2024/25 reduction: **HK$92,360**
 
 ### 4.2 Provisional Salaries Tax (IRO Sec. 63E)
 
+**Provisional Salaries Tax (IRO Sec. 63E)**  _(IRO Sec. 63E)_
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Basis | Estimated at 100% of current year final tax |
 | Payment | In two instalments (75% + 25%) |
 | First instalment | Usually January |
@@ -262,54 +216,43 @@ Less 2024/25 reduction: **HK$92,360**
 
 ### 4.3 Objection and Appeal
 
+**Objection and Appeal**
+
 | Step | Deadline |
-|---|---|
+| --- | --- |
 | Objection to assessment | Within 1 month of Notice of Assessment |
 | Form | Written notice to Assessor stating grounds |
 | Appeal to Board of Review | Within 1 month of Commissioner's determination |
 | Appeal to Court | Within 1 month of Board's determination |
 
----
-
-## Section 5 -- Edge Cases
-
 ### 5.1 Non-Hong Kong Employment (Sec. 8(1A)(b))
 
-If employment is exercised partly outside Hong Kong:
-- Income is time-apportioned (HK days / total days)
-- Only HK-sourced portion is assessable
-- "60-day rule": visits totalling ≤60 days in a year = exempt
+- **Non-Hong Kong employment** — If employment is exercised partly outside Hong Kong: Income is time-apportioned (HK days / total days); Only HK-sourced portion is assessable; "60-day rule": visits totalling ≤60 days in a year = exempt  _(IRO Sec. 8(1A)(b))_
 
 ### 5.2 Lump Sum Payments (Sec. 11D)
 
-- Gratuity, severance: assessable if connected to HK employment
-- Retirement scheme lump sum: exempt if from recognised scheme and meets conditions
-- Golden handshake: fully assessable
+- **Lump sum payments** — Gratuity, severance: assessable if connected to HK employment; Retirement scheme lump sum: exempt if from recognised scheme and meets conditions; Golden handshake: fully assessable  _(IRO Sec. 11D)_
 
 ### 5.3 Personal Assessment (IRO Sec. 41)
 
-Individuals may elect Personal Assessment to:
-- Set off business losses against salaries income
-- Claim home loan interest deduction
-- Pool married couple's income for progressive rates
-
-Requirements:
-- Hong Kong permanent resident OR temporary resident for full year
-- Married couple must both elect if one does
-- May be beneficial when one spouse has losses/low income
+- **Personal Assessment** — Individuals may elect Personal Assessment to: Set off business losses against salaries income; Claim home loan interest deduction; Pool married couple's income for progressive rates. Requirements: Hong Kong permanent resident OR temporary resident for full year; Married couple must both elect if one does; May be beneficial when one spouse has losses/low income  _(IRO Sec. 41)_
 
 ### 5.4 Joint Assessment vs Separate Taxation (Married Couples)
 
+**Joint Assessment vs Separate Taxation (Married Couples)**
+
 | Method | When Beneficial |
-|---|---|
+| --- | --- |
 | Joint assessment | One spouse has low/no income; unused allowances transfer |
 | Separate taxation | Both spouses have high income; standard rate applies separately |
 | Personal assessment (joint) | Business losses to offset; mortgage interest claim |
 
 ### 5.5 Domestic Rent Deduction (from 2022/23)
 
+**Domestic Rent Deduction (from 2022/23)**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Cap | HK$100,000 per year |
 | Condition | Taxpayer not provided with quarters by employer |
 | Condition | Property not owned by taxpayer or connected person |
@@ -318,31 +261,33 @@ Requirements:
 
 ### 5.6 Tax Reduction History (Recent Years)
 
+**Tax Reduction History (Recent Years)**
+
 | Year of Assessment | Reduction | Ceiling |
-|---|---|---|
+| --- | --- | --- |
 | 2022/23 | 100% | HK$6,000 |
 | 2023/24 | 100% | HK$3,000 |
 | 2024/25 | 100% | HK$1,500 |
 | 2025/26 (proposed) | 100% | HK$3,000 |
 
----
-
 ## Section 6 -- Penalties and Surcharges
 
+**Penalties and Surcharges**  _(IRO Sec. 80(2))_
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing without reasonable excuse | Up to HK$10,000 + 3× tax undercharged (IRO Sec. 80(2)) |
 | Failure to notify chargeability | Fine up to HK$10,000 + 3× tax undercharged |
 | Incorrect return | Fine up to HK$10,000 + 3× tax undercharged; or on conviction HK$50,000 + imprisonment |
 | Late payment surcharge | 5% immediately on overdue amount; additional 10% after 6 months |
 | Fraud or wilful evasion | Fine up to HK$50,000 + 3× tax + imprisonment up to 3 years |
 
----
-
 ## Section 7 -- Key Dates Calendar
 
+**Key Dates Calendar**
+
 | Date | Event |
-|---|---|
+| --- | --- |
 | 1 April | Start of Year of Assessment |
 | Early May | BIR60 issued by IRD |
 | Early June | Filing deadline (paper) |
@@ -352,12 +297,12 @@ Requirements:
 | 31 March | End of Year of Assessment |
 | April | Second instalment of provisional tax due |
 
----
-
 ## Section 8 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Charge to salaries tax | IRO Sec. 8 |
 | Assessable income | IRO Sec. 9 |
 | Deductions | IRO Sec. 12, 12AA, 12B, 12BA, 16AA, 26I, 26J |
@@ -372,14 +317,30 @@ Requirements:
 | eTAX portal | etax.ird.gov.hk |
 | Salaries Tax computation guide | DIPN No. 9 (Rev. 2024) |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Hong Kong CPA, tax representative, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/hk-salaries-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `hk-salaries-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/hk-salaries-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

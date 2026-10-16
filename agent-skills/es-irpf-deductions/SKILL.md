@@ -1,29 +1,24 @@
 ---
 name: es-irpf-deductions
-description: "> Use this skill whenever asked about Spanish regional tax deductions (deducciones autonomicas), IRPF deductions by Comunidad Autonoma, or territory-specific tax benefits. Trigger on phrases like \"deducciones autonomicas\", \"deduccion por vivienda\", \"deduccion por familia numerosa\", \"deduccion por nacimiento\", \"deduccion Madrid\", \"deduccion Cataluna\", \"deduccion Valencia\", \"deducciones por discapacidad\", \"deducciones por alquiler\", \"deducciones IRPF por comunidad\", \"casilla AEAT\", \"territory deductions Spain\", \"regional tax credits Spain\", \"Ceuta Melilla deduction\", \"foral deductions\", \"Pais Vasco IRPF\", \"Navarra IRPF\", \"deduccion por donativo\", \"deduccion por guarderia\", \"deduccion por maternidad autonomica\", or any question about which IRPF deductions apply in a specific Spanish territory. ALWAYS read this skill before advising on territory-specific deductions."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Spanish regional tax deductions (deducciones autonomicas), IRPF deductions by Comunidad Autonoma, or territory-specific tax benefits. Trigger on phrases like \"deducciones autonomicas\", \"deduccion por vivienda\", \"deduccion por familia numerosa\", \"deduccion por nacimiento\", \"deduccion Madrid\", \"deduccion Cataluna\", \"deduccion Valencia\", \"deducciones por discapacidad\", \"deducciones por alquiler\", \"deducciones IRPF por comunidad\", \"casilla AEAT\", \"territory deductions Spain\", \"regional tax credits Spain\", \"Ceuta Melilla deduction\", \"foral deductions\", \"Pais Vasco IRPF\", \"Navarra IRPF\", \"deduccion por donativo\", \"deduccion por guarderia\", \"deduccion por maternidad autonomica\", or any question about which IRPF deductions apply in a specific Spanish territory. ALWAYS read this skill before advising on territory-specific deductions."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: ES
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/es-irpf-deductions"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/es-irpf-deductions"
+  jurisdiction: "ES"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Spain IRPF Regional Deductions (Deducciones Autonómicas) Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
-> **Based on work by [Nambu89 (Impuestify)](https://github.com/Nambu89/Impuestify)** and **[Pau March (larenta)](https://github.com/paumrch/larenta)**, licensed under MIT. Adapted for the OpenAccountants format.
-
----
+# ES Irpf Deductions
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Spain (Estado Español) |
 | Tax | IRPF -- Deducciones Autonómicas (Cuota Autonómica) |
 | Currency | EUR only |
@@ -34,35 +29,24 @@ metadata:
 | Territories covered | 15 common territory CCAA + 4 foral (Álava, Bizkaia, Gipuzkoa, Navarra) + Ceuta + Melilla |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- How Regional Deductions Work
 
 ### The Dual Structure of Spanish IRPF
 
-Spanish IRPF is split 50/50 between the State (cuota estatal) and the Autonomous Community (cuota autonómica). The state portion is fixed nationwide; the regional portion is where each CCAA can:
-
-1. **Modify the regional tax brackets** (escala autonómica)
-2. **Create regional deductions** (deducciones autonómicas) that reduce the cuota autonómica
-
-Regional deductions apply AFTER computing the cuota íntegra autonómica. They reduce the tax owed to the regional government. They do NOT reduce the state portion.
+- **Dual structure of IRPF** — Spanish IRPF is split 50/50 between the State (cuota estatal) and the Autonomous Community (cuota autonómica). The state portion is fixed nationwide; the regional portion is where each CCAA can: 1. Modify the regional tax brackets (escala autonómica) 2. Create regional deductions (deducciones autonómicas) that reduce the cuota autonómica. Regional deductions apply AFTER computing the cuota íntegra autonómica. They reduce the tax owed to the regional government. They do NOT reduce the state portion.
 
 ### Key Principles
 
-- Deductions are claimed on Modelo 100 (annual IRPF return), in the autonomous community section
-- Each deduction has a specific AEAT casilla (box number)
-- Most deductions have income limits (base imponible general + base imponible del ahorro)
-- Joint filing (tributación conjunta) may double some limits
-- Deductions cannot generate a negative cuota autonómica (floor = 0)
-
----
+- **Key principles** — Deductions are claimed on Modelo 100 (annual IRPF return), in the autonomous community section. Each deduction has a specific AEAT casilla (box number). Most deductions have income limits (base imponible general + base imponible del ahorro). Joint filing (tributación conjunta) may double some limits. Deductions cannot generate a negative cuota autonómica (floor = 0).
 
 ## Section 3 -- Deductions by Territory: Common Territory (Territorio Común)
 
 ### 3.1 Andalucía (15 deductions)
 
+**Andalucía deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Por nacimiento o adopción de hijos | Recent birth/adoption |
 | Familia | Por adopción internacional | International adoption |
 | Familia | Familia monoparental | Single parent with dependents |
@@ -77,8 +61,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.2 Aragón (21 deductions)
 
+**Aragón deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción tercer hijo+ | 3rd or subsequent child |
 | Educación | Libros de texto y material escolar | School-age children |
 | Vivienda | Adquisición vivienda habitual víctimas terrorismo | Terrorism victims |
@@ -89,8 +75,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.3 Asturias (Principado de Asturias) (27 deductions)
 
+**Asturias deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Adopción internacional | International adoption |
 | Familia | Partos múltiples / adopción simultánea | Multiple births |
 | Familia | Familias numerosas | Large families |
@@ -105,8 +93,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.4 Islas Baleares (Illes Balears) (25 deductions)
 
+**Islas Baleares deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Gastos adquisición libros texto | School books |
 | Familia | Gastos aprendizaje extraescolar idiomas | Language classes |
 | Vivienda | Arrendamiento vivienda habitual jóvenes/discapacitados | Under 36 or disabled, rental |
@@ -116,8 +106,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.5 Canarias (27 deductions)
 
+**Canarias deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Donaciones | Donaciones finalidad ecológica | Ecological donations |
 | Donaciones | Donaciones rehabilitación patrimonio | Heritage rehabilitation |
 | Educación | Gastos estudios educación superior | University/higher education |
@@ -126,12 +118,16 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 | Familia | Nacimiento o adopción | Birth/adoption |
 | Familia | Gastos guardería | Nursery expenses |
 
-**Note:** Canarias also has specific indirect tax benefits (IGIC instead of IVA) and the RIC (Reserva para Inversiones en Canarias) which affects corporate tax. These are NOT IRPF deductions.
+### 3.5 Canarias (27 deductions)
+
+Note: Canarias also has specific indirect tax benefits (IGIC instead of IVA) and the RIC (Reserva para Inversiones en Canarias) which affects corporate tax. These are NOT IRPF deductions.
 
 ### 3.6 Cantabria (18 deductions)
 
+**Cantabria deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Cuidado familiares dependientes | Dependent family care |
 | Familia | Gastos guardería menores 3 años | Nursery for children under 3 |
 | Vivienda | Arrendamiento vivienda habitual jóvenes | Rental for young people |
@@ -140,8 +136,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.7 Castilla y León (22 deductions)
 
+**Castilla y León deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción | Birth/adoption |
 | Familia | Cuidado hijos menores | Childcare expenses |
 | Familia | Familias numerosas | Large families |
@@ -151,8 +149,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.8 Castilla-La Mancha (25 deductions)
 
+**Castilla-La Mancha deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción | Birth/adoption |
 | Familia | Familia numerosa | Large family |
 | Discapacidad | Contribuyentes con discapacidad | Disability ≥33% |
@@ -163,20 +163,26 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.9 Cataluña (Catalunya) (10 deductions)
 
+**Cataluña deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción hijo | Birth/adoption |
 | Donaciones | Donativos lengua catalana/occitana | Catalan/Occitan language promotion |
 | Donaciones | Donativos investigación científica | Scientific research donations |
 | Vivienda | Alquiler vivienda habitual | Habitual residence rental |
 | Educación | Intereses préstamos máster/doctorado | Loan interest for postgraduate studies |
 
-**Note:** Cataluña has fewer deductions but applies modified regional brackets that can result in a higher overall rate for high earners.
+### 3.9 Cataluña (Catalunya) (10 deductions)
+
+Note: Cataluña has fewer deductions but applies modified regional brackets that can result in a higher overall rate for high earners.
 
 ### 3.10 Comunidad Valenciana (44 deductions -- most of any CCAA)
 
+**Comunidad Valenciana deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento, adopción, acogimiento | Birth/adoption/foster care |
 | Familia | Nacimiento o adopción múltiples | Multiple births |
 | Familia | Hijos con discapacidad | Children with disabilities |
@@ -194,8 +200,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.11 Extremadura (13 deductions)
 
+**Extremadura deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Cuidado hijos menores 14 años | Childcare for children under 14 |
 | Vivienda | Adquisición vivienda habitual jóvenes | Young people buying home |
 | Vivienda | Alquiler vivienda habitual jóvenes | Young people renting |
@@ -204,8 +212,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.12 Galicia (21 deductions)
 
+**Galicia deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción | Birth/adoption |
 | Familia | Familia numerosa | Large family |
 | Familia | Cuidado hijos menores | Childcare |
@@ -217,8 +227,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.13 La Rioja (23 deductions)
 
+**La Rioja deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento y adopción | Birth/adoption |
 | Vivienda | Inversión vivienda habitual jóvenes | Young people buying |
 | Vivienda | Alquiler vivienda habitual jóvenes | Young people renting |
@@ -228,8 +240,10 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 
 ### 3.14 Comunidad de Madrid (26 deductions)
 
+**Madrid deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Nacimiento o adopción | EUR 600/child (EUR 600 additional if multiple) |
 | Familia | Adopción internacional | EUR 600/child |
 | Familia | Acogimiento familiar menores | EUR 600-900/minor |
@@ -241,13 +255,17 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 | Donaciones | Donativos medioambientales | 15% of donations |
 | Educación | Gastos educativos (escolaridad, idiomas, vestuario) | EUR 400-900/child depending on stage |
 
-**Madrid typical income limits for housing deductions:**
+### 3.14 Comunidad de Madrid (26 deductions)
+
+Madrid typical income limits for housing deductions:
 - Base imponible general + ahorro < EUR 25,620 (individual) / EUR 36,200 (joint)
 
 ### 3.15 Región de Murcia (22 deductions)
 
+**Murcia deductions**
+
 | Category | Deduction | Key Requirements |
-|---|---|---|
+| --- | --- | --- |
 | Familia | Gastos guardería menores 3 años | Nursery for children under 3 |
 | Vivienda | Inversión vivienda habitual jóvenes | Young people buying home |
 | Vivienda | Arrendamiento vivienda habitual | Rental deduction |
@@ -255,48 +273,26 @@ Regional deductions apply AFTER computing the cuota íntegra autonómica. They r
 | Donaciones | Donativos medioambientales | Environmental donations |
 | Discapacidad | Contribuyentes con discapacidad | Disability ≥33% |
 
----
-
 ## Section 4 -- Foral Territories
 
 ### 4.1 País Vasco (Álava, Bizkaia, Gipuzkoa)
 
-The three Basque provinces have their OWN IRPF system entirely separate from the common territory. They set their own:
-- Tax brackets (generally lower than common territory for low-to-mid incomes)
-- Deductions (different catalogue)
-- Minimum exemptions
-
-**Key differences from common territory:**
-- IRPF brackets: 7 progressive brackets from 23% to 49% (2025)
-- Mínimo personal exento: EUR 5,472
-- No split state/regional -- single scale
-- Own deductions catalogue not covered by AEAT XSD
-
-**Regime classifier:** If the taxpayer's fiscal residence is in País Vasco, use foral basque rules. Do NOT apply common territory deductions.
+- **País Vasco foral system** — The three Basque provinces have their OWN IRPF system entirely separate from the common territory. They set their own: Tax brackets (generally lower than common territory for low-to-mid incomes); Deductions (different catalogue); Minimum exemptions. Key differences from common territory: IRPF brackets: 7 progressive brackets from 23% to 49% (2025); Mínimo personal exento: EUR 5,472; No split state/regional -- single scale; Own deductions catalogue not covered by AEAT XSD. Regime classifier: If the taxpayer's fiscal residence is in País Vasco, use foral basque rules. Do NOT apply common territory deductions.
 
 ### 4.2 Navarra (Comunidad Foral de Navarra)
 
-Navarra has its own complete IRPF system:
-- 11 progressive brackets from 13% to 52.8%
-- Mínimo personal: ~EUR 5,500
-- Own deductions set
-- Filed with Hacienda Foral de Navarra, NOT AEAT
-
-**Regime classifier:** If fiscal residence is Navarra, use foral navarra rules exclusively.
+- **Navarra foral system** — Navarra has its own complete IRPF system: 11 progressive brackets from 13% to 52.8%; Mínimo personal: ~EUR 5,500; Own deductions set; Filed with Hacienda Foral de Navarra, NOT AEAT. Regime classifier: If fiscal residence is Navarra, use foral navarra rules exclusively.
 
 ### 4.3 Ceuta and Melilla
 
-Ceuta and Melilla are NOT autonomous communities but autonomous cities. They use the common territory IRPF scale but benefit from:
-- **60% deduction on cuota íntegra** (Art. 68.4 LIRPF) for income generated there
-- **50% bonificación on cuota autónomos** for specific sectors (Agriculture, Industry, Commerce, Tourism)
-- This effectively means total IRPF rates are ~40% of what common territory taxpayers pay
-
----
+- **Ceuta and Melilla benefits** — Ceuta and Melilla are NOT autonomous communities but autonomous cities. They use the common territory IRPF scale but benefit from: 60% deduction on cuota íntegra (Art. 68.4 LIRPF) for income generated there; 50% bonificación on cuota autónomos for specific sectors (Agriculture, Industry, Commerce, Tourism). This effectively means total IRPF rates are ~40% of what common territory taxpayers pay.  _(Art. 68.4 LIRPF)_
 
 ## Section 5 -- Deduction Categories Explained
 
+**Deduction categories**
+
 | Category | Count | Description |
-|---|---|---|
+| --- | --- | --- |
 | Familia | 74 | Birth, adoption, large families, childcare, single parents |
 | Vivienda | 74 | Home purchase, rental, renovation, protected housing |
 | General | 65 | Broad-application deductions, income-based |
@@ -311,33 +307,22 @@ Ceuta and Melilla are NOT autonomous communities but autonomous cities. They use
 | Movilidad | 2 | Vehicle/bicycle purchase |
 | Actividad Económica | 2 | Self-employment, entrepreneurship |
 
----
-
 ## Section 6 -- How to Apply Regional Deductions (Computation)
 
 ### Step-by-Step Process
 
-1. **Identify the taxpayer's Comunidad Autónoma** of fiscal residence (where they lived on 31 December of the tax year)
-2. **Compute the cuota íntegra autonómica** using that CCAA's regional brackets
-3. **Apply mínimo personal y familiar** at the regional rate to get cuota líquida autonómica
-4. **Sum all applicable regional deductions** for which the taxpayer qualifies
-5. **Cap:** Total deductions cannot exceed the cuota líquida autonómica (floor = 0)
-6. **Result:** Cuota diferencial autonómica = cuota líquida autonómica - deducciones autonómicas
+- **Step-by-step computation process** — 1. Identify the taxpayer's Comunidad Autónoma of fiscal residence (where they lived on 31 December of the tax year) 2. Compute the cuota íntegra autonómica using that CCAA's regional brackets 3. Apply mínimo personal y familiar at the regional rate to get cuota líquida autonómica 4. Sum all applicable regional deductions for which the taxpayer qualifies 5. Cap: Total deductions cannot exceed the cuota líquida autonómica (floor = 0) 6. Result: Cuota diferencial autonómica = cuota líquida autonómica - deducciones autonómicas
 
 ### Common Eligibility Requirements
 
-Most deductions require:
-- **Income limit:** Base imponible general + base imponible del ahorro below a threshold (varies by CCAA, typically EUR 25,000-30,000 individual, EUR 36,000-50,000 joint)
-- **Residency:** Fiscal residence in the CCAA during the full tax year
-- **Documentation:** Supporting invoices, certificates, or official documents
-- **Non-duplication:** Cannot apply overlapping state and regional deductions for the same expense
-
----
+- **Common eligibility requirements** — Most deductions require: Income limit: Base imponible general + base imponible del ahorro below a threshold (varies by CCAA, typically EUR 25,000-30,000 individual, EUR 36,000-50,000 joint); Residency: Fiscal residence in the CCAA during the full tax year; Documentation: Supporting invoices, certificates, or official documents; Non-duplication: Cannot apply overlapping state and regional deductions for the same expense.
 
 ## Section 7 -- Conservative Defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown Comunidad Autónoma | DO NOT apply any regional deductions; ask first |
 | Income limit unknown | Assume limit is exceeded (conservative = no deduction) |
 | Foral vs common territory unknown | Ask -- critical difference in entire tax computation |
@@ -345,27 +330,27 @@ Most deductions require:
 | Child disability not documented | Do not apply disability deduction |
 | Duration of residency in CCAA unknown | Ask -- partial-year residency affects eligibility |
 
----
-
 ## Section 8 -- Worked Example: Madrid Taxpayer
 
-**Input:** María, 32, single, one child born 2025, rents apartment EUR 800/month. Base imponible EUR 22,000. Fiscal residence: Madrid.
+Input: María, 32, single, one child born 2025, rents apartment EUR 800/month. Base imponible EUR 22,000. Fiscal residence: Madrid.
 
-**Applicable Madrid deductions:**
+Applicable Madrid deductions:
 1. Por nacimiento de hijos: EUR 600
 2. Arrendamiento vivienda habitual (under 35): 30% × EUR 9,600 annual rent = EUR 2,880, capped at EUR 1,000
 3. Total deductions: EUR 600 + EUR 1,000 = EUR 1,600
 
-**Result:** María's cuota autonómica is reduced by EUR 1,600.
-
----
+Result: María's cuota autonómica is reduced by EUR 1,600.
 
 ## Section 9 -- Casilla Reference (AEAT Modelo 100)
 
 Regional deductions are declared in casillas 0850-1200+ of the AEAT Modelo 100 form. Each CCAA has assigned casilla ranges. Key ranges:
 
+## Section 9 -- Casilla Reference (AEAT Modelo 100)
+
+**CCAA casilla ranges**
+
 | CCAA | Casilla Range (approximate) |
-|---|---|
+| --- | --- |
 | Andalucía | 0850-0870 |
 | Aragón | 0871-0900 |
 | Asturias | 0901-0930 |
@@ -382,19 +367,9 @@ Regional deductions are declared in casillas 0850-1200+ of the AEAT Modelo 100 f
 | Madrid | 1211-1240 |
 | Murcia | 1241-1270 |
 
----
-
 ## Section 10 -- Interaction with State Deductions
 
-Some deductions exist at BOTH state and regional level:
-- **Maternidad** (maternity): State deduction EUR 1,200/year + some CCAA add regional top-up
-- **Familia numerosa**: State deduction + some CCAA add extra
-- **Donativos**: State deduction (Ley 49/2002) + CCAA-specific donation deductions
-- **Vivienda habitual pre-2013**: State transitional deduction + CCAA may maintain their own
-
-**Rule:** State and regional deductions for the SAME concept may coexist (they reduce different portions of the tax). However, the same expense cannot generate deductions at BOTH levels if the law explicitly prohibits it.
-
----
+- **State/regional deduction interaction** — Some deductions exist at BOTH state and regional level: Maternidad (maternity): State deduction EUR 1,200/year + some CCAA add regional top-up; Familia numerosa: State deduction + some CCAA add extra; Donativos: State deduction (Ley 49/2002) + CCAA-specific donation deductions; Vivienda habitual pre-2013: State transitional deduction + CCAA may maintain their own. Rule: State and regional deductions for the SAME concept may coexist (they reduce different portions of the tax). However, the same expense cannot generate deductions at BOTH levels if the law explicitly prohibits it.  _(Ley 49/2002)_
 
 ## PROHIBITIONS
 
@@ -407,8 +382,6 @@ Some deductions exist at BOTH state and regional level:
 - NEVER claim a deduction without proper documentation (facturas, certificates, padron)
 - NEVER apply Madrid deductions to a taxpayer whose fiscal residence is in another CCAA
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
@@ -417,6 +390,24 @@ The deduction catalogue changes annually. CCAA legislatures modify amounts, add 
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/es-irpf-deductions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `es-irpf-deductions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/es-irpf-deductions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

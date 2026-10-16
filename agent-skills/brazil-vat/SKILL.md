@@ -1,27 +1,65 @@
 ---
 name: brazil-vat
-description: "> Use esta skill sempre que perguntarem sobre tributos indiretos brasileiros, IVA, tributos sobre o consumo, PIS, Cofins, ICMS, ISS, IPI, CBS, IBS, Imposto Seletivo, NF-e (Nota Fiscal Eletronica), NFS-e, Simples Nacional, registro de CNPJ, reforma tributaria (EC 132/2023, LC 214/2025, LC 227/2026) ou qualquer questao envolvendo tributacao brasileira de bens e servicos, apuracao, conformidade ou classificacao. Esta skill cobre integralmente tanto o sistema antigo (PIS/Cofins/ICMS/ISS/IPI) quanto o novo sistema dual de IVA (CBS/IBS/IS) sob a Emenda Constitucional 132/2023, a Lei Complementar 214/2025 e a Lei Complementar 227/2026 (segunda fase). SEMPRE leia esta skill antes de tocar em qualquer trabalho de tributo indireto brasileiro."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Brazilian indirect taxes, VAT, consumption taxes, PIS, COFINS, ICMS, ISS, IPI, CBS, IBS, Imposto Seletivo, NF-e (Nota Fiscal Eletronica), Simples Nacional, CNPJ registration, tax reform (EC 132/2023), or any request involving Brazilian goods and services taxation, filing, compliance, or classification. Trigger on phrases like \"Brazil tax\", \"Brazilian VAT\", \"PIS/COFINS\", \"ICMS\", \"ISS\", \"IPI\", \"CBS\", \"IBS\", \"NF-e\", \"nota fiscal\", \"Simples Nacional\", \"CNPJ\", \"tax reform Brazil\", or any request involving Brazilian indirect tax compliance. This skill contains the complete Brazilian indirect tax framework covering both the current multi-tax system (PIS/COFINS/ICMS/ISS/IPI) and the new unified system (CBS/IBS/IS) under Constitutional Amendment 132/2023. ALWAYS read this skill before touching any Brazilian indirect tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/brazil-vat"
-  obligation: CT
-  reviewed_by: "pending depends_on: - income-tax-workflow-base"
+  openaccountants_url: "https://www.openaccountants.com/skills/brazil-vat"
+  jurisdiction: "BR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Ariane Marrocos"
+  review_status: "current"
 ---
 
-# Brasil — Tributos Indiretos (Sistema Antigo PIS/Cofins/ICMS/IPI/ISS + Sistema Novo CBS/IBS) — Skill v3.0
+# Brazil VAT
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Brasil — Tributos Indiretos (Sistema Antigo PIS/Cofins/ICMS/IPI/ISS + Sistema Novo CBS/IBS) — Skill v3.0
+
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Tributos Indiretos (PIS-Cofins-
+
+- **PIS não cumulativo (Lucro Real)** — 1,65% sobre o total das receitas auferidas pela pessoa jurídica, com créditos previstos no art. 3º da Lei nº 10.637/2002; aplicável predominantemente a Lucro Real percent  _(Lei 10.637/2002)_
+- **Cofins não cumulativo** — 7,60% incidente sobre o total das receitas auferidas pela pessoa jurídica, admitindo créditos previstos no art. 3º da Lei nº 10.833/2003 percent  _(Lei 10.833/2003)_
+- **PIS+Cofins não cumulativo combinado** — 9,25% (com créditos de entrada) percent  _(Leis 10.637/10.833)_
+- **PIS cumulativo (Lucro Presumido)** — 0,65% sobre receita bruta, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido percent  _(Lei nº 10.637/2002 instituiu a sistemática não cumulativa do PIS. Principal fundamento: Lei nº 9.718/1998)_
+- **Cofins cumulativo** — 3,00% sobre receita bruta, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido percent  _(Lei nº 10.833/2003 (Art. 1º base de cálculo; Art. 2º alíquota 7,6%; Art. 3º créditos); Principal fundamento: Lei nº 9.718/1998)_
+- **PIS+Cofins cumulativo combinado** — 3,65% (sem créditos) percent  _(Lei nº 10.637/2002; Lei nº 10.833/2003; Lei nº 9.718/1998; Lei nº 9.715/1998)_
+- **Sao Paulo** — 18%
+- **Rio de Janeiro (RJ)** — A alíquota interna geral do ICMS no Estado do Rio de Janeiro é de 20%, acrescida em regra do adicional de 2% destinado ao FECP, resultando em carga tributária geral de 22%. percent  _(Lei Estadual nº 2.657/1996 Art. 14; Lei Estadual nº 10.253/2023; LC Estadual nº 210/2023)_
+- **Minas Gerais** — 18%
+- **Bahia (BA)** — A alíquota interna geral do ICMS no Estado da Bahia é de 20,5%, conforme a Lei nº 14.629/2023, aplicável quando não houver previsão de alíquota específica percent  _(Lei nº 7.014/1996; Lei nº 14.629/2023)_
+- **Paraná (PR)** — A alíquota interna geral do ICMS no Estado do Paraná é de 19,5%, aplicável quando não houver previsão específica, conforme o art. 17, inciso V, do RICMS/PR percent  _(RICMS/PR Art. 17, inciso V; Lei nº 11.580/1996)_
+- **Rio Grande do Sul (RS)** — 17%
+- **Santa Catarina (SC)** — 17%
+- **Sul/Sudeste → Sul/Sudeste (exceto ES)** — 12% percent  _(CF Art. 155; Resolução SF 22/89)_
+- **South/Southeast to North/Northeast/Center-West/ES** — 7%
+- **N/NE/CO/ES → qualquer estado** — Nas operações interestaduais originadas nos estados das regiões Norte, Nordeste, Centro-Oeste e no Espírito Santo, aplica-se, como regra geral, a alíquota interestadual de 12% percent  _(Constituição Federal de 1988; Resolução do Senado Federal nº 22/1989; CF Art. 155)_
+- **Mercadorias importadas (interestadual)** — Aplica-se a alíquota interestadual de 4% às operações com bens e mercadorias importados do exterior ou com conteúdo de importação superior a 40%, observadas as exceções previstas na Resolução do Senado Federal nº 13/2012 percent  _(Resolução do Senado Federal nº 13/2012; Lei Complementar nº 87/1996)_
+- **Alíquota ISS** — 2% a 5% (definida por município, mínimo 2%) percent  _(LC 116/2003; LC 157/2016)_
+- **Alíquota IPI** — 0% a 300%+ (por NCM via tabela TIPI). As alíquotas do IPI são definidas por NCM na TIPI, variando conforme o produto, observadas as regras do RIPI percent  _(Decreto nº 7.212/2010 (RIPI); TIPI - Tabela de Incidência do IPI)_
+- **CBS alíquota-teste 2026** — 0,9% percent  _(EC 132/2023; LC 214/2025)_
+- **IBS alíquota-teste 2026** — 0,1% percent  _(EC 132/2023; LC 214/2025)_
+- **CBS+IBS estimada (plena)** — ~26,5% (sujeita a ajuste), podendo sofrer ajustes conforme os mecanismos de revisão previstos na Reforma Tributária e na LC nº 214/2025 percent  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
+- **CBS plena (extinção PIS/Cofins)** — A partir de 2027, a CBS passa a substituir o PIS/Pasep e a COFINS, que serão extintos, conforme as regras de transição estabelecidas pela EC nº 132/2023 e regulamentadas pela LC nº 214/2025  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
+- **ICMS/ISS totalmente extintos** — O ICMS e o ISS serão gradualmente substituídos pelo IBS durante o período de transição da Reforma Tributária, sendo totalmente extintos em 2033  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
+- **MEI** — Até R$ 81.000/ano BRL  _(LC 123/2006)_
+- **Sublimite ICMS/ISS** — O sublimite para recolhimento de ICMS e ISS no âmbito do Simples Nacional é de R$ 3.600.000,00 BRL  _(Lei Complementar nº 123/2006 Arts. 19 e 20)_
+- **Limite EPP** — R$ 4.800.000 BRL  _(LC 123/2006 Art. 3)_
 
 ## Seção 1 — Referência rápida
 
 **Leia esta seção inteira antes de classificar qualquer transação. O Brasil NÃO possui um IVA unificado. Possui cinco tributos indiretos em três níveis de governo, atualmente em processo de reforma para um IVA dual (CBS+IBS) com adição de um Imposto Seletivo (IS).**
 
+**Tabela de referência rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | República Federativa do Brasil |
 | Sistema tributário (atual) | Cinco tributos indiretos principais: PIS, Cofins, ICMS, ISS, IPI |
 | Sistema tributário (novo, em transição) | CBS + IBS + Imposto Seletivo (IS), sob EC 132/2023, LC 214/2025 e LC 227/2026 |
@@ -49,10 +87,10 @@ metadata:
 | Validado por | Pendente — requer assinatura de contador brasileiro registrado no CRC |
 | Versão da skill | 3.0 |
 
-**Alíquotas-chave do sistema atual em um relance:**
+**Alíquotas-chave do sistema atual em um relance**
 
 | Tributo | Esfera | Alíquota | Gera crédito? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PIS (não cumulativo) | Federal | 1,65% | Sim |
 | Cofins (não cumulativo) | Federal | 7,60% | Sim |
 | PIS (cumulativo) | Federal | 0,65% | Não |
@@ -64,10 +102,10 @@ metadata:
 | ISS | Municipal | 2% a 5% | Não (cumulativo, em cascata) |
 | IPI | Federal | Específica por NCM (TIPI) | Sim (na cadeia industrial) |
 
-**Faixa de alíquotas internas de ICMS por estado (amostra principal):**
+**Faixa de alíquotas internas de ICMS por estado (amostra principal)**
 
 | Estado | Alíquota interna padrão |
-|---|---|
+| --- | --- |
 | São Paulo (SP) | 18% |
 | Rio de Janeiro (RJ) | 20% (18% + FECP 2%) |
 | Minas Gerais (MG) | 18% |
@@ -78,23 +116,21 @@ metadata:
 | Demais estados | 17% a 20% (média) |
 | Estados com adicional FECP/FECOEP | Acrescentar 1% a 4% conforme estado e produto |
 
-**Matriz de alíquotas interestaduais de ICMS:**
+**Matriz de alíquotas interestaduais de ICMS**
 
 | Rota | Alíquota |
-|---|---|
+| --- | --- |
 | Sul/Sudeste para Sul/Sudeste (exceto ES) | 12% |
 | Sul/Sudeste (exceto ES) para Norte/Nordeste/Centro-Oeste/ES | 7% |
 | Norte/Nordeste/Centro-Oeste/ES para qualquer estado | 12% |
 | Mercadorias importadas (qualquer interestadual) | 4% |
 
-**Contexto da reforma tributária (CBS + IBS + IS) — marco legal e cronograma detalhado:**
-
 A EC 132/2023 substitui PIS+Cofins pela CBS (federal), e ICMS+ISS pelo IBS (estadual + municipal compartilhado). A LC 214/2025 regulamenta a primeira fase. A LC 227/2026 (segunda fase, janeiro de 2026) detalha o Comitê Gestor do IBS e regras de partilha. O Imposto Seletivo (IS) tributa bens e serviços específicos prejudiciais à saúde ou ao meio ambiente.
 
-**Cronograma detalhado da transição:**
+**Cronograma detalhado da transição**
 
 | Ano | Evento |
-|---|---|
+| --- | --- |
 | 2026 | Fase de teste. As notas fiscais devem trazer CBS (0,9%) + IBS (0,1%) = 1% simbólico. O pagamento fica suspenso por 3 meses sem multa após a publicação dos regulamentos. |
 | 2027 | CBS plenamente vigente. PIS e Cofins extintos. IPI extinto (com exceções limitadas para a Zona Franca de Manaus). |
 | 2028 | CBS plena; IPI residual apenas para ZFM. |
@@ -102,26 +138,25 @@ A EC 132/2023 substitui PIS+Cofins pela CBS (federal), e ICMS+ISS pelo IBS (esta
 | 2030 a 2032 | Aumento progressivo do IBS e redução do ICMS/ISS, em escala anual. |
 | 2033 | Transição completa. ICMS, ISS, PIS, Cofins, IPI todos eliminados. Sistema Dual VAT pleno: CBS (federal) + IBS (subnacional) + IS (seletivo). |
 
-**Regimes especiais durante a transição:**
 - **MEI (Microempreendedor Individual):** continua isento de IBS/CBS.
 - **Simples Nacional:** permanece com opção de regime híbrido (art. 21-A da LC 123/2006, incluído pela LC 214/2025) — permitindo recolher CBS/IBS separadamente para transferir créditos aos clientes adquirentes que estejam fora do Simples.
 - **Zona Franca de Manaus (ZFM):** mantém regime diferenciado de IPI residual e fundo de compensação previsto na EC 132/2023.
 
 Todas as regras relativas à reforma estão marcadas como de julgamento exigido do revisor, pois os regulamentos ainda estão sendo publicados pelo Comitê Gestor do IBS, pela Receita Federal e pelo CONFAZ.
 
-**Limites do Simples Nacional:**
+**Limites do Simples Nacional**
 
 | Faixa de receita (BRL, últimos 12 meses) | Elegibilidade |
-|---|---|
+| --- | --- |
 | Até BRL 81.000 | MEI (Microempreendedor Individual) — regime simplificado |
 | Até BRL 3.600.000 | Sublimite estadual/municipal — ICMS e ISS dentro do DAS |
 | Acima de BRL 3.600.000 até BRL 4.800.000 | Permanece no Simples para tributos federais; ICMS e ISS recolhidos fora do DAS conforme regras estaduais e municipais (LC 123/2006, Art. 13, §1º, e Art. 18) |
 | Acima de BRL 4.800.000 | Deve utilizar Lucro Presumido ou Lucro Real |
 
-**Defaults conservadores — específicos do Brasil:**
+**Defaults conservadores — específicos do Brasil**
 
 | Ambiguidade | Default |
-|---|---|
+| --- | --- |
 | Regime tributário desconhecido | Lucro Presumido (PIS/Cofins cumulativos, sem créditos) |
 | Alíquota de ICMS desconhecida | Maior alíquota interna plausível para o estado (conservador) |
 | Alíquota de ISS desconhecida | 5% (máximo legal) |
@@ -136,17 +171,15 @@ Todas as regras relativas à reforma estão marcadas como de julgamento exigido 
 | Classificação CNAE desconhecida | Serviços (ISS) |
 | Rota interestadual desconhecida | 7% (mais conservador para fins de crédito) |
 
-**Limiares de alerta (red flag):**
+**Limiares de alerta (red flag)**
 
 | Limiar | Valor |
-|---|---|
+| --- | --- |
 | ALTO — valor de transação individual | BRL 50.000 |
 | ALTO — delta tributário de um default conservador | BRL 5.000 |
 | MÉDIO — concentração de contraparte | >40% do output OU input |
 | MÉDIO — número de defaults conservadores | >4 ao longo da apuração |
 | BAIXO — posição líquida absoluta de tributo | BRL 100.000 |
-
----
 
 ## Seção 2 — Entradas obrigatórias e catálogo de recusas
 
@@ -162,23 +195,14 @@ Todas as regras relativas à reforma estão marcadas como de julgamento exigido 
 
 ### Catálogo de recusas específicas do Brasil
 
-**R-BR-1 — Cálculos complexos de MVA em ICMS-ST.** *Gatilho:* produto sujeito a ICMS Substituição Tributária com necessidade de MVA (Margem de Valor Agregado) ou MVA ajustada. *Mensagem:* "Os cálculos de margem de ICMS-ST exigem consulta a protocolos CONFAZ específicos do produto e fórmulas de ajuste da MVA. Isto está fora do escopo da classificação automatizada. Escalar para Contador inscrito no CRC com experiência em ICMS-ST para o par produto/estado em questão."
-
-**R-BR-2 — Incentivos da Zona Franca de Manaus (ZFM).** *Gatilho:* cliente opera ou despacha para a Zona Franca de Manaus. *Mensagem:* "Os incentivos da ZFM (isenção de IPI, redução de ICMS, créditos SUFRAMA) requerem verificação de PPB e procedimentos específicos da SUFRAMA. Escalar para especialista."
-
-**R-BR-3 — Litígio sobre incentivos estaduais de ICMS (guerra fiscal).** *Gatilho:* cliente se beneficia de incentivo estadual de ICMS que pode não ser reconhecido pelo CONFAZ. *Mensagem:* "Incentivos estaduais de ICMS não reconhecidos carregam risco de glosa no estado de destino. Escalar para advogado tributarista."
-
-**R-BR-4 — Interação com preços de transferência.** *Gatilho:* operações intercompany com partes vinculadas estrangeiras que afetem a base dos tributos indiretos. *Mensagem:* "Ajustes de preços de transferência que afetam a base de tributo indireto requerem análise especializada. Escalar."
-
-**R-BR-5 — Defesa em fiscalização ou parcelamento/redução de multa.** *Gatilho:* cliente em fiscalização ou buscando redução de multa. *Mensagem:* "Defesa em fiscalização e redução de multa estão fora do escopo desta skill. Engajar advogado tributarista."
-
-**R-BR-6 — Declaração de imposto de renda em vez de tributo indireto.** *Gatilho:* usuário pergunta sobre IRPJ/CSLL (pessoa jurídica) ou IRPF (pessoa física). *Mensagem:* "Esta skill cobre apenas tributos indiretos (PIS, Cofins, ICMS, ISS, IPI, CBS, IBS, IS). Para imposto de renda, utilizar a skill apropriada."
-
-**R-BR-7 — Cadeias complexas de crédito de IPI.** *Gatilho:* cadeias de crédito de IPI em industrialização em múltiplas etapas. *Mensagem:* "Cadeias de crédito de IPI em industrialização em múltiplas etapas exigem análise especializada. Escalar."
-
-**R-BR-8 — Disputas de transição CBS/IBS sob a EC 132/2023.** *Gatilho:* perguntas sobre questões controvertidas da transição CBS/IBS ainda pendentes de regulamento. *Mensagem:* "A reforma CBS/IBS ainda está sendo regulamentada (LC 214/2025 e LC 227/2026). Regras de transição não estão totalmente publicadas. Escalar todas as perguntas controversas de transição."
-
----
+- **R-BR-1** — Gatilho: produto sujeito a ICMS Substituição Tributária com necessidade de MVA (Margem de Valor Agregado) ou MVA ajustada. Mensagem: "Os cálculos de margem de ICMS-ST exigem consulta a protocolos CONFAZ específicos do produto e fórmulas de ajuste da MVA. Isto está fora do escopo da classificação automatizada. Escalar para Contador inscrito no CRC com experiência em ICMS-ST para o par produto/estado em questão."
+- **R-BR-2** — Gatilho: cliente opera ou despacha para a Zona Franca de Manaus. Mensagem: "Os incentivos da ZFM (isenção de IPI, redução de ICMS, créditos SUFRAMA) requerem verificação de PPB e procedimentos específicos da SUFRAMA. Escalar para especialista."
+- **R-BR-3** — Gatilho: cliente se beneficia de incentivo estadual de ICMS que pode não ser reconhecido pelo CONFAZ. Mensagem: "Incentivos estaduais de ICMS não reconhecidos carregam risco de glosa no estado de destino. Escalar para advogado tributarista."
+- **R-BR-4** — Gatilho: operações intercompany com partes vinculadas estrangeiras que afetem a base dos tributos indiretos. Mensagem: "Ajustes de preços de transferência que afetam a base de tributo indireto requerem análise especializada. Escalar."
+- **R-BR-5** — Gatilho: cliente em fiscalização ou buscando redução de multa. Mensagem: "Defesa em fiscalização e redução de multa estão fora do escopo desta skill. Engajar advogado tributarista."
+- **R-BR-6** — Gatilho: usuário pergunta sobre IRPJ/CSLL (pessoa jurídica) ou IRPF (pessoa física). Mensagem: "Esta skill cobre apenas tributos indiretos (PIS, Cofins, ICMS, ISS, IPI, CBS, IBS, IS). Para imposto de renda, utilizar a skill apropriada."
+- **R-BR-7** — Gatilho: cadeias de crédito de IPI em industrialização em múltiplas etapas. Mensagem: "Cadeias de crédito de IPI em industrialização em múltiplas etapas exigem análise especializada. Escalar."
+- **R-BR-8** — Gatilho: perguntas sobre questões controvertidas da transição CBS/IBS ainda pendentes de regulamento. Mensagem: "A reforma CBS/IBS ainda está sendo regulamentada (LC 214/2025 e LC 227/2026). Regras de transição não estão totalmente publicadas. Escalar todas as perguntas controversas de transição."
 
 ## Seção 3 — Biblioteca de padrões de fornecedores (tabela de consulta)
 
@@ -188,8 +212,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.1 Bancos brasileiros (tarifas — serviço financeiro, isentas de PIS/Cofins)
 
+**Padrões de bancos brasileiros**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | BANCO DO BRASIL, BB | EXCLUIR para tarifas | Serviço financeiro, isento. Sem PIS/Cofins, sem ICMS, sem ISS. |
 | ITAU, ITAU UNIBANCO | EXCLUIR para tarifas | Idem |
 | BRADESCO | EXCLUIR para tarifas | Idem |
@@ -207,8 +233,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.2 Governo brasileiro, autoridades fiscais e entidades estatutárias (excluir integralmente)
 
+**Padrões governo brasileiro**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | RECEITA FEDERAL, RFB, DARF | EXCLUIR | Pagamento de tributo federal (IRPJ, CSLL, PIS, Cofins, IPI) |
 | SEFAZ, SECRETARIA DA FAZENDA | EXCLUIR | Pagamento de tributo estadual (ICMS) |
 | PREFEITURA, SECRETARIA DE FINANCAS | EXCLUIR | Pagamento de tributo municipal / ISS |
@@ -222,8 +250,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.3 Serviços públicos brasileiros (concessionárias)
 
+**Padrões serviços públicos**
+
 | Padrão | Tratamento | Tributos | Notas |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CPFL, CPFL ENERGIA | ICMS aplica (alíquota estadual) | ICMS + PIS/Cofins | Energia elétrica — ICMS varia por estado; PIS/Cofins sobre fatura. NF-e emitida. |
 | CEMIG | ICMS aplica | ICMS + PIS/Cofins | Energia — Minas Gerais |
 | LIGHT, LIGHT SA | ICMS aplica | ICMS + PIS/Cofins | Energia — Rio de Janeiro |
@@ -239,8 +269,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.4 Seguros (isento — excluir do tributo indireto)
 
+**Padrões seguros**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | PORTO SEGURO | EXCLUIR | Prêmio de seguro — isento de ICMS/ISS; sujeito a IOF (separado) |
 | BRADESCO SEGUROS, BRADESCO AUTO | EXCLUIR | Idem |
 | SULAMERICA, SUL AMERICA | EXCLUIR | Idem |
@@ -250,8 +282,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.5 Transporte e logística
 
+**Padrões transporte e logística**
+
 | Padrão | Tratamento | Tributos | Notas |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CORREIOS, ECT | ICMS (serviço postal é ICMS, não ISS) | ICMS + PIS/Cofins | Postal/courier — CT-e emitido para transporte |
 | JADLOG, TOTAL EXPRESS | ICMS | ICMS + PIS/Cofins | Frete expresso |
 | AZUL CARGO, LATAM CARGO | ICMS | ICMS + PIS/Cofins | Frete aéreo |
@@ -259,12 +293,14 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 | UBER, UBER BRASIL | ISS | ISS + PIS/Cofins | Idem — app de transporte é serviço |
 | IFOOD, IFOOD AGENCIA | ISS | ISS + PIS/Cofins | Plataforma de delivery — ISS sobre a comissão. Itens de comida podem ter tratamento próprio. |
 | RAPPI | ISS | ISS + PIS/Cofins | Idem iFood |
-| GOL, LATAM, AZUL (companhia aérea) | ICMS isento ou zero | | Voos domésticos — transporte interestadual de passageiros possui tratamento específico de ICMS (geralmente não tributável de ICMS; ISS não se aplica a transporte) |
+| GOL, LATAM, AZUL (companhia aérea) | ICMS isento ou zero |  | Voos domésticos — transporte interestadual de passageiros possui tratamento específico de ICMS (geralmente não tributável de ICMS; ISS não se aplica a transporte) |
 
 ### 3.6 Grandes varejistas e e-commerce brasileiros
 
+**Padrões varejistas e e-commerce**
+
 | Padrão | Tratamento | Tributos | Notas |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | MAGAZINE LUIZA, MAGALU | ICMS + PIS/Cofins | Cadeia completa | Mercadoria geral — NF-e emitida. Verificar NCM para IPI se industrializado. |
 | CASAS BAHIA, PONTO (VIA) | ICMS + PIS/Cofins | Cadeia completa | Idem |
 | AMERICANAS, B2W | ICMS + PIS/Cofins | Cadeia completa | Idem |
@@ -277,12 +313,14 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.7 SaaS e serviços digitais — fornecedores estrangeiros
 
+**Padrões SaaS estrangeiros**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE (Ads, Workspace, Cloud) | ISS-Importação + PIS/Cofins-Importação + IRRF + IOF | Serviço digital estrangeiro. Adquirente brasileiro deve reter/auto-apurar. ISS por município (2-5%). PIS-Importação 1,65%, Cofins-Importação 7,60%, IRRF 15% (ou 25% se paraíso fiscal), IOF 0,38%. |
 | MICROSOFT (365, Azure) | Igual ao Google | Verificar se faturado pela Microsoft Brasil (doméstico) ou Microsoft Corp (importação) |
 | ADOBE | Idem | Verificar entidade emissora |
-| META, FACEBOOK ADS | Idem | |
+| META, FACEBOOK ADS | Idem |  |
 | AWS, AMAZON WEB SERVICES | Idem | Verificar se AWS Brasil ou AWS Inc |
 | SLACK, NOTION, FIGMA, CANVA | ISS-Importação + PIS/Cofins-Importação + IRRF + IOF | Entidades dos EUA — tributação plena de importação de serviço |
 | ANTHROPIC, OPENAI, CHATGPT | Idem | Entidades dos EUA |
@@ -290,20 +328,24 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.8 Processadores de pagamento
 
+**Padrões processadores de pagamento**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | PAGSEGURO, PAGBANK | EXCLUIR (serviço financeiro) ou ISS | Comissão de processamento — pode ser serviço financeiro isento ou sujeita a ISS dependendo da caracterização |
-| STONE, STONE PAGAMENTOS | Idem | |
-| CIELO | Idem | |
-| REDE, GETNET | Idem | |
+| STONE, STONE PAGAMENTOS | Idem |  |
+| CIELO | Idem |  |
+| REDE, GETNET | Idem |  |
 | MERCADO PAGO (taxas de transação) | EXCLUIR (financeiro) | Comissão de processamento de transação |
 | PAYPAL BRASIL | EXCLUIR (financeiro) | Processamento de pagamento |
 | STRIPE (se entidade brasileira) | ISS | Se Stripe Brasil: ISS sobre a comissão. Se estrangeiro: tratamento de importação de serviço. |
 
 ### 3.9 Serviços profissionais
 
+**Padrões serviços profissionais**
+
 | Padrão | Tratamento | Tributos | Notas |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CONTADOR, CONTABILIDADE, ESCRITORIO CONTABIL | ISS | ISS + PIS/Cofins | Serviços contábeis — ISS à alíquota municipal. NFS-e emitida. |
 | ADVOGADO, ADVOCACIA, ESCRITORIO DE ADVOCACIA | ISS | ISS + PIS/Cofins | Serviços jurídicos |
 | CONSULTORIA | ISS | ISS + PIS/Cofins | Serviços de consultoria |
@@ -311,8 +353,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.10 Folha de pagamento e relações de trabalho (excluir integralmente)
 
+**Padrões folha de pagamento**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | FOLHA, SALARIO, HOLERITE | EXCLUIR | Salários — fora do escopo de tributo indireto |
 | INSS, PREVIDENCIA | EXCLUIR | Contribuição previdenciária |
 | FGTS, FUNDO DE GARANTIA | EXCLUIR | Fundo de garantia |
@@ -322,8 +366,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.11 Transferências internas e exclusões
 
+**Padrões transferências internas**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | TRANSFERENCIA PROPRIA, MESMA TITULARIDADE | EXCLUIR | Movimento interno entre contas |
 | TED PROPRIA, PIX PROPRIO | EXCLUIR | Transferência de mesma titularidade via PIX ou TED |
 | APLICACAO, RESGATE, CDB, LCI, LCA | EXCLUIR | Aplicação/resgate de investimento — financeiro, fora do escopo |
@@ -333,8 +379,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.12 Padrões de receita (vendas e prestação)
 
+**Padrões de receita**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | VENDA MERCADORIA, NF-E | ICMS sobre venda de mercadoria | Aplica alíquota interna |
 | PRESTACAO SERVICO, NFS-E | ISS sobre o serviço | Aplica alíquota municipal |
 | VENDA INTERESTADUAL | ICMS à alíquota interestadual | 7% ou 12% conforme rota |
@@ -344,8 +392,10 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.13 Padrões de entradas/insumos
 
+**Padrões de entradas/insumos**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | COMPRA MERCADORIA, NF-E ENTRADA | Crédito de ICMS (se fora do Simples) | Crédito não cumulativo |
 | MATERIA PRIMA, INSUMO | Crédito de ICMS + IPI | Insumos para industrialização |
 | SERVICO TOMADO, NFS-E | ISS pode ser retido na fonte | Verificar regras de retenção |
@@ -355,13 +405,13 @@ Este é o pré-classificador determinístico. Quando o contraparte de uma transa
 
 ### 3.14 Padrões do Simples Nacional
 
+**Padrões Simples Nacional**
+
 | Padrão | Tratamento | Notas |
-|---|---|---|
+| --- | --- | --- |
 | DAS SIMPLES NACIONAL | Pagamento unificado, inclui ICMS/ISS | A menos que acima do sublimite (BRL 3.600.000) |
 | ICMS-ST SEPARADO | Pago fora do Simples mesmo dentro do Simples | Produtos com substituição tributária |
 | ICMS IMPORTACAO | Pago separadamente no desembaraço | Mesmo no Simples |
-
----
 
 ## Seção 4 — Exemplos resolvidos
 
@@ -375,10 +425,10 @@ Estes são exemplos integralmente resolvidos baseados em um extrato bancário hi
 **Raciocínio:**
 Serviço de consultoria em software. Sujeito a ISS (não a ICMS, pois consta da lista da LC 116/2003). Alíquota de ISS em São Paulo para consultoria em TI: 2-5% (varia conforme código municipal). Também sujeito a PIS/Cofins: regime cumulativo (Lucro Presumido) = 0,65% PIS + 3% Cofins = 3,65% sobre a receita. NFS-e emitida pelo prestador.
 
-**Saída:**
+**Saída Exemplo 1**
 
 | Data | Contraparte | Bruto | Base ISS | Alíquota ISS | PIS | Cofins | Notas |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 05.04.2026 | EMPRESA ALFA LTDA | +10.000 | 10.000 | 5% (padrão SP) | 65,00 | 300,00 | Confirmar alíquota de ISS para o município de SP |
 
 ### Exemplo 2 — Venda interestadual de mercadoria
@@ -389,10 +439,10 @@ Serviço de consultoria em software. Sujeito a ISS (não a ICMS, pois consta da 
 **Raciocínio:**
 Venda de mercadoria de SP para RJ. Alíquota interestadual de ICMS: SP (Sul/Sudeste) para RJ (Sul/Sudeste) = 12%. PIS/Cofins cumulativo = 3,65% sobre o bruto. IPI: depende do NCM; presumir 0% para revenda (IPI incide apenas em mercadorias industrializadas/importadas). DIFAL pode aplicar se comprador for consumidor final (não é o caso — comprador é distribuidor com IE).
 
-**Saída:**
+**Saída Exemplo 2**
 
 | Data | Contraparte | Bruto | Alíquota ICMS | ICMS | PIS/Cofins | IPI | Notas |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 10.04.2026 | DISTRIBUIDORA BETA SA (RJ) | +50.000 | 12% (interestadual SP>RJ) | Incluso no preço (por dentro) | 3,65% | 0% (revenda) | Verificar NF-e e NCM |
 
 ### Exemplo 3 — Importação de serviço digital (SaaS dos EUA)
@@ -403,10 +453,10 @@ Venda de mercadoria de SP para RJ. Alíquota interestadual de ICMS: SP (Sul/Sude
 **Raciocínio:**
 Notion é entidade dos EUA. Importação de serviço. Adquirente brasileiro deve auto-apurar: ISS-Importação (alíquota SP, ex. 2,9% para serviços de TI), PIS-Importação (1,65%), Cofins-Importação (7,60%), IRRF (15% de retenção sobre a remessa), IOF (0,38% sobre o câmbio). Tributação efetiva total na remessa pode ultrapassar 25%. Sem NFS-e do fornecedor; obrigação do adquirente recolher e remeter.
 
-**Saída:**
+**Saída Exemplo 3**
 
 | Data | Contraparte | Bruto BRL | ISS-Imp | PIS-Imp | Cofins-Imp | IRRF | IOF | Notas |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2026 | NOTION LABS INC | -85,00 | ~2,47 | ~1,40 | ~6,46 | ~12,75 | ~0,32 | Serviço importado — auto-apurar todos os tributos. Confirmar alíquota ISS. |
 
 ### Exemplo 4 — Venda a cliente do Simples Nacional
@@ -417,10 +467,10 @@ Notion é entidade dos EUA. Importação de serviço. Adquirente brasileiro deve
 **Raciocínio:**
 Se o cliente é Simples Nacional (pagador de DAS), todos os tributos (ICMS, ISS, PIS, Cofins, IRPJ, CSLL, CPP) são pagos pelo DAS unificado, conforme a faixa de receita. Anexo I (comércio) ou Anexo III/V (serviços). Não há cálculo separado de PIS/Cofins/ICMS/ISS — o DAS cobre tudo. A alíquota efetiva depende da receita dos últimos 12 meses (RBT12).
 
-**Saída:**
+**Saída Exemplo 4**
 
 | Data | Contraparte | Bruto | Tratamento | Notas |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 18.04.2026 | CLIENTE VAREJO | +5.000 | Simples Nacional — incluído no DAS | Calcular DAS com base no Anexo e na faixa de RBT12. Sem linhas separadas de ICMS/PIS/Cofins. |
 
 ### Exemplo 5 — Despesa com entretenimento / pessoal
@@ -431,10 +481,10 @@ Se o cliente é Simples Nacional (pagador de DAS), todos os tributos (ICMS, ISS,
 **Raciocínio:**
 Refeição em restaurante. Para PIS/Cofins não cumulativo, créditos de entrada estão disponíveis apenas em insumos de produção, mercadorias para revenda, energia, aluguel, depreciação e outras categorias específicas. Refeições em restaurante não geram crédito. Para ICMS: não se aplica (restaurante é serviço). Para Lucro Presumido (PIS/Cofins cumulativos): sem créditos em nenhum caso. Default: sem recuperação de crédito.
 
-**Saída:**
+**Saída Exemplo 5**
 
 | Data | Contraparte | Bruto | Recuperação de crédito | Notas |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 22.04.2026 | RESTAURANTE FOGO DE CHAO | -800,00 | Nenhuma | Entretenimento — sem crédito de PIS/Cofins. Não é compra creditável de ICMS. |
 
 ### Exemplo 6 — Fatura de energia elétrica com ICMS
@@ -445,10 +495,10 @@ Refeição em restaurante. Para PIS/Cofins não cumulativo, créditos de entrada
 **Raciocínio:**
 Fatura de energia. Sujeita a ICMS na alíquota interna de SP (18% geral, mas a energia pode ter alíquota específica de ICMS — frequentemente 25% para consumidor comercial em SP). PIS/Cofins também incidem na fatura. No regime não cumulativo, PIS/Cofins sobre energia gera crédito (Lei 10.637/2002, Art. 3º, III). No regime cumulativo: sem crédito. ICMS sobre energia gera crédito pelo regime normal de débito/crédito se o adquirente for contribuinte do ICMS.
 
-**Saída:**
+**Saída Exemplo 6**
 
 | Data | Contraparte | Bruto | Crédito de ICMS | Crédito PIS/Cofins | Notas |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 28.04.2026 | ENEL DISTRIBUICAO SP | -1.500,00 | Sim (se contribuinte ICMS) | Sim (Lucro Real) / Não (Lucro Presumido) | Conferir NF-e quanto a valores exatos de ICMS e PIS/Cofins |
 
 ### Exemplo 7 — Apuração de ICMS intra-SP (Lucro Real, comércio)
@@ -480,131 +530,121 @@ Fatura de energia. Sujeita a ICMS na alíquota interna de SP (18% geral, mas a e
 - O prestador NÃO recolhe o ISS separadamente sobre essa fatura
 - O prestador escritura a fatura com indicação de "ISS retido na fonte"
 
----
-
 ## Seção 5 — Regras Tier 1 (comprimidas)
 
 ### 5.1 Árvore de decisão de classificação
 
-Mercadoria = ICMS + IPI (se manufaturada/importada) + PIS/Cofins. Serviço = ISS + PIS/Cofins. Transporte/comunicação = ICMS (não ISS) + PIS/Cofins. ICMS e ISS são mutuamente excludentes (exceto em fornecimento misto, hipótese específica de aplicação).
+- **Árvore de decisão** — Mercadoria = ICMS + IPI (se manufaturada/importada) + PIS/Cofins. Serviço = ISS + PIS/Cofins. Transporte/comunicação = ICMS (não ISS) + PIS/Cofins. ICMS e ISS são mutuamente excludentes (exceto em fornecimento misto, hipótese específica de aplicação).
 
 ### 5.2 Determinação do regime de PIS/Cofins
 
-Lucro Real = não cumulativo (1,65% + 7,60% = 9,25%, com créditos de entrada). Lucro Presumido = cumulativo (0,65% + 3,00% = 3,65%, sem créditos de entrada). Simples Nacional = incluído no DAS (sem apuração separada de PIS/Cofins). Determinar o regime PRIMEIRO — ele muda toda a apuração.
+- **Determinação do regime** — Lucro Real = não cumulativo (1,65% + 7,60% = 9,25%, com créditos de entrada). Lucro Presumido = cumulativo (0,65% + 3,00% = 3,65%, sem créditos de entrada). Simples Nacional = incluído no DAS (sem apuração separada de PIS/Cofins). Determinar o regime PRIMEIRO — ele muda toda a apuração.
 
 ### 5.3 Alíquotas internas de ICMS
 
-Variam por estado, de 17% a 23%. Aplicar a alíquota interna do estado em que ocorre a operação. Para operações interestaduais, usar 7% (S/SE → N/NE/CO) ou 12% (demais combinações). Mercadorias importadas com >40% de conteúdo de importação: 4% interestadual (Resolução SF 13/2012). Atenção a adicionais FECP/FECOEP em estados específicos.
+- **Alíquotas internas de ICMS** — Variam por estado, de 17% a 23%. Aplicar a alíquota interna do estado em que ocorre a operação. Para operações interestaduais, usar 7% (S/SE → N/NE/CO) ou 12% (demais combinações). Mercadorias importadas com >40% de conteúdo de importação: 4% interestadual (Resolução SF 13/2012). Atenção a adicionais FECP/FECOEP em estados específicos.  _(Resolução SF 13/2012)_
 
 ### 5.4 Cálculo "por dentro" do ICMS
 
-O ICMS é calculado por dentro do preço. Uma alíquota nominal de 18% sobre um preço bruto de R$ 100 significa que R$ 18 de ICMS já está incluído (R$ 100 × 18% = R$ 18). A base tributo-excluída é R$ 82; a alíquota efetiva sobre a base tributo-excluída é ~21,95%.
+- **Cálculo por dentro do ICMS** — O ICMS é calculado por dentro do preço. Uma alíquota nominal de 18% sobre um preço bruto de R$ 100 significa que R$ 18 de ICMS já está incluído (R$ 100 × 18% = R$ 18). A base tributo-excluída é R$ 82; a alíquota efetiva sobre a base tributo-excluída é ~21,95%.
 
 ### 5.5 Classificação do ISS
 
-Serviços previstos na lista da LC 116/2003 (cerca de 200 itens em ~40 subitens). Alíquota definida pelo município (2% a 5%, com piso de 2% por força da LC 157/2016). ISS devido no local do estabelecimento do prestador, exceto em ~20 categorias específicas (construção civil, segurança, limpeza, etc.) em que o ISS é devido no local da prestação (LC 116/2003, Art. 3º, incisos).
+- **Classificação do ISS** — Serviços previstos na lista da LC 116/2003 (cerca de 200 itens em ~40 subitens). Alíquota definida pelo município (2% a 5%, com piso de 2% por força da LC 157/2016). ISS devido no local do estabelecimento do prestador, exceto em ~20 categorias específicas (construção civil, segurança, limpeza, etc.) em que o ISS é devido no local da prestação (LC 116/2003, Art. 3º, incisos).  _(LC 116/2003; LC 157/2016)_
 
 ### 5.6 Classificação do IPI
 
-Aplica-se apenas a produtos industrializados e importados. Alíquota por NCM, conforme tabela TIPI. Cobrado por fora (acrescido ao preço). Gera créditos sobre insumos da industrialização. Não incide sobre revenda por estabelecimento meramente comercial.
+- **Classificação do IPI** — Aplica-se apenas a produtos industrializados e importados. Alíquota por NCM, conforme tabela TIPI. Cobrado por fora (acrescido ao preço). Gera créditos sobre insumos da industrialização. Não incide sobre revenda por estabelecimento meramente comercial.
 
 ### 5.7 Tratamento de exportações
 
-Exportações são isentas/imunes em todos os tributos indiretos: ICMS imune (Lei Kandir, LC 87/1996, Art. 3º; imunidade constitucional CF/88 Art. 155 §2º, X, "a"), IPI imune, PIS/Cofins alíquota zero com manutenção dos créditos, ISS isento (se o resultado ocorrer no exterior — LC 116/2003, Art. 2º, I). Preservação integral dos créditos de entrada.
+- **Tratamento de exportações** — Exportações são isentas/imunes em todos os tributos indiretos: ICMS imune (Lei Kandir, LC 87/1996, Art. 3º; imunidade constitucional CF/88 Art. 155 §2º, X, "a"), IPI imune, PIS/Cofins alíquota zero com manutenção dos créditos, ISS isento (se o resultado ocorrer no exterior — LC 116/2003, Art. 2º, I). Preservação integral dos créditos de entrada.  _(LC 87/1996 Art. 3º; CF/88 Art. 155 §2º, X, "a"; LC 116/2003 Art. 2º, I)_
 
 ### 5.8 Tratamento de importações
 
-Importação de mercadorias: II (imposto de importação) + IPI + ICMS + PIS-Importação (2,1%) + Cofins-Importação (9,65% ou 10,65%). Importação de serviços: ISS-Importação + PIS-Importação (1,65%) + Cofins-Importação (7,60%) + IRRF (15%/25%) + IOF (0,38%) + eventualmente CIDE (10% para transferência de tecnologia). A tributação efetiva sobre serviços importados pode ultrapassar 40%.
+- **Tratamento de importações** — Importação de mercadorias: II (imposto de importação) + IPI + ICMS + PIS-Importação (2,1%) + Cofins-Importação (9,65% ou 10,65%). Importação de serviços: ISS-Importação + PIS-Importação (1,65%) + Cofins-Importação (7,60%) + IRRF (15%/25%) + IOF (0,38%) + eventualmente CIDE (10% para transferência de tecnologia). A tributação efetiva sobre serviços importados pode ultrapassar 40%.
 
 ### 5.9 Requisitos de NF-e para créditos de ICMS / PIS / Cofins
 
-Créditos exigem NF-e válida (Modelo 55 para mercadorias) ou NFS-e (para ISS em serviços, onde relevante). Crédito de ICMS = ICMS destacado na NF-e. Crédito de PIS/Cofins (apenas não cumulativo) = valores na NF-e ou calculados a partir dos itens creditáveis previstos na Lei 10.637/2002 Art. 3º e Lei 10.833/2003 Art. 3º.
+- **Requisitos de NF-e para créditos** — Créditos exigem NF-e válida (Modelo 55 para mercadorias) ou NFS-e (para ISS em serviços, onde relevante). Crédito de ICMS = ICMS destacado na NF-e. Crédito de PIS/Cofins (apenas não cumulativo) = valores na NF-e ou calculados a partir dos itens creditáveis previstos na Lei 10.637/2002 Art. 3º e Lei 10.833/2003 Art. 3º.  _(Lei 10.637/2002 Art. 3º; Lei 10.833/2003 Art. 3º)_
 
 ### 5.10 Créditos de entrada de PIS/Cofins (apenas não cumulativo)
 
-Itens creditáveis: mercadorias para revenda, insumos para industrialização/produção, energia consumida na produção, aluguel de imóveis/máquinas usados no negócio, depreciação de bens do ativo, frete sobre compras. NÃO creditáveis: entretenimento, despesas pessoais, itens não diretamente vinculados à atividade geradora de receita.
+- **Créditos de entrada PIS/Cofins** — Itens creditáveis: mercadorias para revenda, insumos para industrialização/produção, energia consumida na produção, aluguel de imóveis/máquinas usados no negócio, depreciação de bens do ativo, frete sobre compras. NÃO creditáveis: entretenimento, despesas pessoais, itens não diretamente vinculados à atividade geradora de receita.
 
 ### 5.11 Tratamento no Simples Nacional
 
-Todos os tributos (ICMS, ISS, PIS, Cofins, IRPJ, CSLL, CPP) recolhidos pela guia DAS. Alíquota efetiva determinada pelo Anexo (I-V) e pela faixa de receita dos últimos 12 meses (RBT12). Sem apuração separada de ICMS/ISS/PIS/Cofins, exceto:
-- **Sublimite estadual/municipal de BRL 3.600.000** (LC 123/2006, Art. 13, §1º, e Art. 18): acima desse sublimite, ICMS e ISS são recolhidos fora do DAS, pelas regras normais do estado/município.
-- **ICMS-ST**, **ICMS na importação** e **DIFAL** são pagos separadamente, mesmo no Simples.
-
-Comprador que recebe nota de fornecedor do Simples: crédito de ICMS limitado (percentual destacado na NF-e) e crédito de PIS/Cofins limitado.
+- **Tratamento no Simples Nacional** — Todos os tributos (ICMS, ISS, PIS, Cofins, IRPJ, CSLL, CPP) recolhidos pela guia DAS. Alíquota efetiva determinada pelo Anexo (I-V) e pela faixa de receita dos últimos 12 meses (RBT12). Sem apuração separada de ICMS/ISS/PIS/Cofins, exceto: - **Sublimite estadual/municipal de BRL 3.600.000** (LC 123/2006, Art. 13, §1º, e Art. 18): acima desse sublimite, ICMS e ISS são recolhidos fora do DAS, pelas regras normais do estado/município. - **ICMS-ST**, **ICMS na importação** e **DIFAL** são pagos separadamente, mesmo no Simples. Comprador que recebe nota de fornecedor do Simples: crédito de ICMS limitado (percentual destacado na NF-e) e crédito de PIS/Cofins limitado.  _(LC 123/2006, Art. 13, §1º, e Art. 18)_
 
 ### 5.12 Regras de transição (CBS/IBS, 2026+)
 
-**2026**: CBS 0,9% + IBS 0,1% aplicam-se como alíquotas-teste, em paralelo aos tributos existentes. São creditáveis contra PIS/Cofins e ICMS/ISS, respectivamente. Pagamento suspenso por 3 meses, sem multa, após a publicação dos regulamentos. **2027**: CBS substitui PIS/Cofins integralmente (tributos antigos extintos); IPI extinto, com exceções para a Zona Franca de Manaus. **2029-2032**: IBS substitui gradualmente ICMS/ISS. **2033**: restam apenas CBS + IBS + IS. Todas as regras de transição são marcadas como julgamento exigido do revisor.
+- **Regras de transição** — **2026**: CBS 0,9% + IBS 0,1% aplicam-se como alíquotas-teste, em paralelo aos tributos existentes. São creditáveis contra PIS/Cofins e ICMS/ISS, respectivamente. Pagamento suspenso por 3 meses, sem multa, após a publicação dos regulamentos. **2027**: CBS substitui PIS/Cofins integralmente (tributos antigos extintos); IPI extinto, com exceções para a Zona Franca de Manaus. **2029-2032**: IBS substitui gradualmente ICMS/ISS. **2033**: restam apenas CBS + IBS + IS. Todas as regras de transição são marcadas como julgamento exigido do revisor.
 
 ### 5.13 DIFAL (Diferencial de Alíquota)
 
-DIFAL aplica-se quando há venda interestadual a não contribuinte (consumidor final). DIFAL = alíquota interna do estado de destino menos a alíquota interestadual. Recolhido ao estado de destino por força da EC 87/2015 (atualmente partilha de 100% para destino, conforme LC 190/2022). Sinalizar para revisor todos os cálculos de DIFAL.
+- **DIFAL** — DIFAL aplica-se quando há venda interestadual a não contribuinte (consumidor final). DIFAL = alíquota interna do estado de destino menos a alíquota interestadual. Recolhido ao estado de destino por força da EC 87/2015 (atualmente partilha de 100% para destino, conforme LC 190/2022). Sinalizar para revisor todos os cálculos de DIFAL.  _(EC 87/2015; LC 190/2022)_
 
 ### 5.14 Classificação de software
 
-SaaS / serviços em nuvem são, em geral, ISS (STF ADIs 1.945 e 5.659). Software empacotado era historicamente ICMS, mas modernamente é predominantemente ISS por força das mesmas ADIs. Sinalizar para revisor — exigir verificação da legislação estadual e municipal aplicável.
+- **Classificação de software** — SaaS / serviços em nuvem são, em geral, ISS (STF ADIs 1.945 e 5.659). Software empacotado era historicamente ICMS, mas modernamente é predominantemente ISS por força das mesmas ADIs. Sinalizar para revisor — exigir verificação da legislação estadual e municipal aplicável.  _(STF ADIs 1.945 e 5.659)_
 
 ### 5.15 Tipos de nota fiscal eletrônica
 
-NF-e (mercadorias / ICMS), NFS-e (serviços / ISS), NFC-e (venda ao consumidor no varejo), CT-e (transporte). NFS-e é emitida pelo portal municipal, contendo CNPJ do prestador, CNPJ/CPF do tomador, código de serviço, valor, alíquota de ISS e valor do ISS.
-
----
+- **Tipos de nota fiscal eletrônica** — NF-e (mercadorias / ICMS), NFS-e (serviços / ISS), NFC-e (venda ao consumidor no varejo), CT-e (transporte). NFS-e é emitida pelo portal municipal, contendo CNPJ do prestador, CNPJ/CPF do tomador, código de serviço, valor, alíquota de ISS e valor do ISS.
 
 ## Seção 6 — Catálogo Tier 2 (comprimido)
 
 ### 6.1 Determinação de regime tributário
 
-*Padrão:* cliente não sabe se está em Lucro Real, Lucro Presumido ou Simples Nacional. *Default:* Lucro Presumido (cumulativo, sem créditos). *Pergunta:* "Qual seu regime tributário? Verifique o cartão CNPJ ou consulte seu Contador."
+- **Determinação de regime tributário** — *Padrão:* cliente não sabe se está em Lucro Real, Lucro Presumido ou Simples Nacional. *Default:* Lucro Presumido (cumulativo, sem créditos). *Pergunta:* "Qual seu regime tributário? Verifique o cartão CNPJ ou consulte seu Contador."
 
 ### 6.2 Aplicabilidade de ICMS-ST
 
-*Padrão:* o produto pode estar sujeito a ICMS Substituição Tributária. *Default:* presumir que não está sujeito a ST (sinalizar para revisor). *Pergunta:* "Este produto está sujeito a ICMS-ST no seu estado? Qual é a MVA aplicável segundo o protocolo CONFAZ?"
+- **Aplicabilidade de ICMS-ST** — *Padrão:* o produto pode estar sujeito a ICMS Substituição Tributária. *Default:* presumir que não está sujeito a ST (sinalizar para revisor). *Pergunta:* "Este produto está sujeito a ICMS-ST no seu estado? Qual é a MVA aplicável segundo o protocolo CONFAZ?"
 
 ### 6.3 Operação interestadual ou interna
 
-*Padrão:* venda ou compra em que origem/destino não é claro. *Default:* interna (aplicar alíquota interna). *Pergunta:* "Em qual estado está o comprador/vendedor?"
+- **Operação interestadual ou interna** — *Padrão:* venda ou compra em que origem/destino não é claro. *Default:* interna (aplicar alíquota interna). *Pergunta:* "Em qual estado está o comprador/vendedor?"
 
 ### 6.4 Alíquota de ISS por município
 
-*Padrão:* serviço em que a alíquota municipal exata não é conhecida. *Default:* 5% (máximo, com piso de 2% por LC 157/2016). *Pergunta:* "Qual município é competente para o ISS dessa prestação? Qual é a alíquota aplicável?"
+- **Alíquota de ISS por município** — *Padrão:* serviço em que a alíquota municipal exata não é conhecida. *Default:* 5% (máximo, com piso de 2% por LC 157/2016). *Pergunta:* "Qual município é competente para o ISS dessa prestação? Qual é a alíquota aplicável?"  _(LC 157/2016)_
 
 ### 6.5 Tratamento de transição CBS/IBS
 
-*Padrão:* transação em 2026 em que as alíquotas-teste CBS/IBS possam aplicar. *Default:* aplicar apenas o sistema atual (não adicionar CBS/IBS sem confirmação). *Pergunta:* "Seu sistema de NF-e/NFS-e está atualizado para incluir os campos de CBS/IBS? Seu Contador confirmou o tratamento de transição?"
+- **Tratamento de transição CBS/IBS** — *Padrão:* transação em 2026 em que as alíquotas-teste CBS/IBS possam aplicar. *Default:* aplicar apenas o sistema atual (não adicionar CBS/IBS sem confirmação). *Pergunta:* "Seu sistema de NF-e/NFS-e está atualizado para incluir os campos de CBS/IBS? Seu Contador confirmou o tratamento de transição?"
 
 ### 6.6 Retenção sobre serviço importado
 
-*Padrão:* pagamento a prestador estrangeiro. *Default:* aplicar tributação plena de importação (ISS, PIS/Cofins-Importação, IRRF 15%, IOF). *Pergunta:* "O prestador é de país com tratado tributário? É jurisdição de paraíso fiscal (IRRF 25%)?"
+- **Retenção sobre serviço importado** — *Padrão:* pagamento a prestador estrangeiro. *Default:* aplicar tributação plena de importação (ISS, PIS/Cofins-Importação, IRRF 15%, IOF). *Pergunta:* "O prestador é de país com tratado tributário? É jurisdição de paraíso fiscal (IRRF 25%)?"
 
 ### 6.7 Fornecimento misto (mercadoria + serviço)
 
-*Padrão:* transação que inclui mercadoria e serviço. *Default:* tratar como mercadoria (ICMS, alíquota maior). *Pergunta:* "Pode separar os componentes de mercadoria e serviço? A parte de mercadoria sujeita-se a ICMS e a de serviço a ISS."
+- **Fornecimento misto** — *Padrão:* transação que inclui mercadoria e serviço. *Default:* tratar como mercadoria (ICMS, alíquota maior). *Pergunta:* "Pode separar os componentes de mercadoria e serviço? A parte de mercadoria sujeita-se a ICMS e a de serviço a ISS."
 
 ### 6.8 Veículos e combustível
 
-*Padrão:* compra de combustível, manutenção de veículo. *Default:* sem crédito (sinalizar para revisor). *Pergunta:* "Esse veículo é de uso exclusivo do negócio? O combustível é para veículo da empresa?"
+- **Veículos e combustível** — *Padrão:* compra de combustível, manutenção de veículo. *Default:* sem crédito (sinalizar para revisor). *Pergunta:* "Esse veículo é de uso exclusivo do negócio? O combustível é para veículo da empresa?"
 
 ### 6.9 Transferências de entrada com valores redondos
 
-*Padrão:* grande crédito de valor redondo proveniente de contraparte com nome do sócio. *Default:* excluir como aporte de sócio. *Pergunta:* "Esse valor é pagamento de cliente, aporte de capital ou empréstimo?"
+- **Transferências com valores redondos** — *Padrão:* grande crédito de valor redondo proveniente de contraparte com nome do sócio. *Default:* excluir como aporte de sócio. *Pergunta:* "Esse valor é pagamento de cliente, aporte de capital ou empréstimo?"
 
 ### 6.10 Saques em espécie
 
-*Padrão:* "saque", "saque ATM", "saque caixa". *Default:* excluir. *Pergunta:* "Para que foi usado o caixa?"
+- **Saques em espécie** — *Padrão:* "saque", "saque ATM", "saque caixa". *Default:* excluir. *Pergunta:* "Para que foi usado o caixa?"
 
 ### 6.11 Local de tributação do ISS
 
-*Padrão:* o serviço é prestado em município diferente do município de registro do prestador. *Default:* tributar no município do prestador. *Pergunta:* "O serviço se enquadra em alguma das hipóteses do Art. 3º da LC 116/2003 (construção, segurança, limpeza etc.), em que o ISS é devido no local da prestação?"
+- **Local de tributação do ISS** — *Padrão:* o serviço é prestado em município diferente do município de registro do prestador. *Default:* tributar no município do prestador. *Pergunta:* "O serviço se enquadra em alguma das hipóteses do Art. 3º da LC 116/2003 (construção, segurança, limpeza etc.), em que o ISS é devido no local da prestação?"  _(LC 116/2003 Art. 3º)_
 
 ### 6.12 Computação do DIFAL
 
-*Padrão:* venda interestadual a consumidor final. *Default:* aplicar DIFAL (alíquota interna do estado de destino menos alíquota interestadual). *Pergunta:* "O comprador é contribuinte (com IE) ou consumidor final? Em qual estado?"
+- **Computação do DIFAL** — *Padrão:* venda interestadual a consumidor final. *Default:* aplicar DIFAL (alíquota interna do estado de destino menos alíquota interestadual). *Pergunta:* "O comprador é contribuinte (com IE) ou consumidor final? Em qual estado?"
 
 ### 6.13 Classificação de software (SaaS vs licenciado)
 
-*Padrão:* fornecimento de software. *Default:* ISS (conforme STF ADIs 1.945 e 5.659). *Pergunta:* "É SaaS, software de prateleira (entrega física), ou licença por download? Sinalizar para revisor."
-
----
+- **Classificação de software (SaaS vs licenciado)** — *Padrão:* fornecimento de software. *Default:* ISS (conforme STF ADIs 1.945 e 5.659). *Pergunta:* "É SaaS, software de prateleira (entrega física), ou licença por download? Sinalizar para revisor."  _(STF ADIs 1.945 e 5.659)_
 
 ## Seção 7 — Modelo de papel de trabalho em Excel (específico para Brasil)
 
@@ -674,22 +714,22 @@ FLAGS DE REVISOR:
 
 Azul para valores travados do extrato/NF-e. Preto para fórmulas. Verde para referências entre abas. Fundo amarelo em qualquer linha em que Default = "S". Fundo vermelho em linhas que exigem verificação de alíquota específica do estado.
 
----
-
 ## Seção 8 — Guia de leitura de extrato bancário brasileiro
 
 **Convenções de formato.** Bancos brasileiros exportam extratos em PDF (mais comum), OFX, CSV ou via internet banking. Formato de data: DD/MM/AAAA. Colunas comuns: Data, Histórico ou Descrição, Valor (negativo para débitos), Saldo. Alguns bancos exibem Documento (número de documento) e Agência/Conta.
 
+**Formatos de extrato por banco**
+
 | Banco | Formatos | Campos-chave |
-|---|---|---|
+| --- | --- | --- |
 | Banco do Brasil, Caixa, Itaú | CSV, PDF, OFX | Data, Histórico, Valor, Saldo |
 | Bradesco, Santander | CSV, PDF | Data, Descrição, Débito, Crédito |
 | Nubank, Inter, C6 | CSV | Data, Descrição, Valor |
 
-**Termos bancários-chave (pistas de classificação):**
+**Termos bancários-chave (pistas de classificação)**
 
 | Termo | Pista de classificação |
-|---|---|
+| --- | --- |
 | TED, DOC, PIX | Transferência — checar direção |
 | BOLETO | Pagamento de boleto — provável despesa |
 | DAS, SIMPLES | Pagamento de Simples Nacional |
@@ -717,53 +757,63 @@ Azul para valores travados do extrato/NF-e. Preto para fórmulas. Verde para ref
 
 **Pagamentos de DAS / DARF.** "PAGAMENTO DAS" (Simples Nacional), "PAGAMENTO DARF" (federal). Excluir — pagamento de tributo, não fornecimento.
 
----
-
 ## Seção 9 — Fallback de onboarding (apenas quando a inferência falhar)
 
 ### 9.1 CNPJ e tipo de entidade jurídica
-*Regra de inferência:* o formato CNPJ (XX.XXX.XXX/YYYY-ZZ) pode aparecer em descrições de transferência. Filial 0001 = matriz. *Pergunta fallback:* "Qual seu CNPJ?"
+
+- **9.1 CNPJ e tipo de entidade jurídica** — Regra de inferência: o formato CNPJ (XX.XXX.XXX/YYYY-ZZ) pode aparecer em descrições de transferência. Filial 0001 = matriz. Pergunta fallback: "Qual seu CNPJ?"
 
 ### 9.2 Regime tributário
-*Regra de inferência:* pagamentos de DAS sugerem Simples Nacional. DARF código 5952 sugere PIS não cumulativo (Lucro Real). DARF código 8109 sugere PIS cumulativo (Lucro Presumido). *Pergunta fallback:* "Você é Lucro Real, Lucro Presumido ou Simples Nacional?"
+
+- **9.2 Regime tributário** — Regra de inferência: pagamentos de DAS sugerem Simples Nacional. DARF código 5952 sugere PIS não cumulativo (Lucro Real). DARF código 8109 sugere PIS cumulativo (Lucro Presumido). Pergunta fallback: "Você é Lucro Real, Lucro Presumido ou Simples Nacional?"
 
 ### 9.3 Estado(s) de atuação
-*Regra de inferência:* localização da agência bancária, concessionárias de utilities (CPFL = SP, CEMIG = MG, LIGHT = RJ). *Pergunta fallback:* "Em quais estados você possui inscrição estadual?"
+
+- **9.3 Estado(s) de atuação** — Regra de inferência: localização da agência bancária, concessionárias de utilities (CPFL = SP, CEMIG = MG, LIGHT = RJ). Pergunta fallback: "Em quais estados você possui inscrição estadual?"
 
 ### 9.4 Período de apuração
-*Regra de inferência:* primeira e última data de transação. Apuração mensal é padrão. *Pergunta fallback:* "A qual mês refere-se este extrato?"
+
+- **9.4 Período de apuração** — Regra de inferência: primeira e última data de transação. Apuração mensal é padrão. Pergunta fallback: "A qual mês refere-se este extrato?"
 
 ### 9.5 Setor e atividade principal
-*Regra de inferência:* mix de contrapartes, descrições de NF-e, código CNAE no cartão CNPJ. *Pergunta fallback:* "Qual sua atividade principal — mercadoria, serviço, indústria ou misto?"
+
+- **9.5 Setor e atividade principal** — Regra de inferência: mix de contrapartes, descrições de NF-e, código CNAE no cartão CNPJ. Pergunta fallback: "Qual sua atividade principal — mercadoria, serviço, indústria ou misto?"
 
 ### 9.6 Status de Simples Nacional
-*Regra de inferência:* pagamentos de DAS no extrato. *Pergunta fallback:* "Você é optante do Simples Nacional? Em caso afirmativo, qual Anexo se aplica?"
+
+- **9.6 Status de Simples Nacional** — Regra de inferência: pagamentos de DAS no extrato. Pergunta fallback: "Você é optante do Simples Nacional? Em caso afirmativo, qual Anexo se aplica?"
 
 ### 9.7 Operações interestaduais
-*Regra de inferência:* contrapartes com agências bancárias ou endereços fora do estado. *Pergunta fallback:* "Você vende para ou compra de outros estados? Quais?"
+
+- **9.7 Operações interestaduais** — Regra de inferência: contrapartes com agências bancárias ou endereços fora do estado. Pergunta fallback: "Você vende para ou compra de outros estados? Quais?"
 
 ### 9.8 Atividades de exportação
-*Regra de inferência:* créditos em moeda estrangeira, contrapartes com nomes estrangeiros. *Pergunta fallback:* "Você exporta mercadorias ou serviços?"
+
+- **9.8 Atividades de exportação** — Regra de inferência: créditos em moeda estrangeira, contrapartes com nomes estrangeiros. Pergunta fallback: "Você exporta mercadorias ou serviços?"
 
 ### 9.9 Créditos de períodos anteriores
-*Regra de inferência:* não inferível de um único período. Sempre perguntar. *Pergunta:* "Você possui créditos de PIS/Cofins ou ICMS transportados de meses anteriores?"
+
+- **9.9 Créditos de períodos anteriores** — Regra de inferência: não inferível de um único período. Sempre perguntar. Pergunta: "Você possui créditos de PIS/Cofins ou ICMS transportados de meses anteriores?"
 
 ### 9.10 Disponibilidade de NF-e
-*Regra de inferência:* se o cliente fornecer XMLs de NF-e ou arquivo SPED, está respondido. *Pergunta fallback:* "Pode fornecer os XMLs de NF-e ou o arquivo SPED Fiscal deste período?"
+
+- **9.10 Disponibilidade de NF-e** — Regra de inferência: se o cliente fornecer XMLs de NF-e ou arquivo SPED, está respondido. Pergunta fallback: "Pode fornecer os XMLs de NF-e ou o arquivo SPED Fiscal deste período?"
 
 ### 9.11 Códigos CNAE
-*Regra de inferência:* não inferível do extrato isolado; confirmar no cartão CNPJ. *Pergunta fallback:* "Quais são seus códigos CNAE? Algum deles altera o tratamento de ISS ou anexo do Simples?"
+
+- **9.11 Códigos CNAE** — Regra de inferência: não inferível do extrato isolado; confirmar no cartão CNPJ. Pergunta fallback: "Quais são seus códigos CNAE? Algum deles altera o tratamento de ISS ou anexo do Simples?"
 
 ### 9.12 Retenção de ISS na fonte
-*Regra de inferência:* faturas a entes públicos ou grandes corporativos podem implicar retenção. *Pergunta fallback:* "Você teve faturas com ISS retido na fonte no período?"
+
+- **9.12 Retenção de ISS na fonte** — Regra de inferência: faturas a entes públicos ou grandes corporativos podem implicar retenção. Pergunta fallback: "Você teve faturas com ISS retido na fonte no período?"
 
 ### 9.13 RBT12 (se Simples)
-*Regra de inferência:* não inferível de um único mês. *Pergunta fallback:* "Qual é seu RBT12 (receita dos últimos 12 meses) atual?"
+
+- **9.13 RBT12 (se Simples)** — Regra de inferência: não inferível de um único mês. Pergunta fallback: "Qual é seu RBT12 (receita dos últimos 12 meses) atual?"
 
 ### 9.14 ICMS-ST
-*Regra de inferência:* observar NF-e de entrada com indicação de ST. *Pergunta fallback:* "Algum de seus produtos está sujeito a ICMS Substituição Tributária?"
 
----
+- **9.14 ICMS-ST** — Regra de inferência: observar NF-e de entrada com indicação de ST. Pergunta fallback: "Algum de seus produtos está sujeito a ICMS Substituição Tributária?"
 
 ## Seção 10 — Material de referência
 
@@ -834,8 +884,6 @@ Azul para valores travados do extrato/NF-e. Preto para fórmulas. Verde para ref
 
 ## Fim da Skill Brasil — Tributos Indiretos v3.0
 
----
-
 ## PROIBIÇÕES
 
 - NUNCA aplicar ICMS a serviços puros — serviços sujeitam-se a ISS (exceto telecomunicações e transporte interestadual).
@@ -848,14 +896,30 @@ Azul para valores travados do extrato/NF-e. Preto para fórmulas. Verde para ref
 - NUNCA opinar sobre a reforma IBS/CBS como se já estivesse plenamente em vigor.
 - NUNCA apresentar cálculos como definitivos — sempre rotular como estimativos e direcionar o cliente a um contador registrado no CRC.
 
----
-
 ## Disclaimer
 
 Esta skill e seus produtos são fornecidos exclusivamente para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. Open Accountants e seus contribuintes não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e assinados por profissional qualificado (contador registrado no CRC, advogado tributarista ou profissional licenciado equivalente) antes do envio ou da tomada de decisão.
 
 A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional de contador licenciado e acompanhar atualizações conforme a legislação tributária evolui.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/brazil-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - income-tax-workflow-base. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `brazil-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/brazil-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

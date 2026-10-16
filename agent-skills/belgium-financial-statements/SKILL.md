@@ -1,26 +1,24 @@
 ---
 name: belgium-financial-statements
-description: "> Use this skill when preparing, reviewing, or advising on annual financial statements (jaarrekening / comptes annuels) for a Belgian company. Trigger on phrases like \"jaarrekening\", \"comptes annuels Belgique\", \"NBB deposit\", \"Nationale Bank\", \"Banque Nationale de Belgique\", \"BNB\", \"Belgian GAAP\", \"Code des sociétés et associations\", \"WVV\", \"audit Belgium\", \"commissaris\", \"verkort schema\", \"volledig schema\", or any question about preparing and filing statutory accounts under Belgian company law. Covers Belgian GAAP frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill when preparing, reviewing, or advising on annual financial statements (jaarrekening / comptes annuels) for a Belgian company. Trigger on phrases like \"jaarrekening\", \"comptes annuels Belgique\", \"NBB deposit\", \"Nationale Bank\", \"Banque Nationale de Belgique\", \"BNB\", \"Belgian GAAP\", \"Code des sociétés et associations\", \"WVV\", \"audit Belgium\", \"commissaris\", \"verkort schema\", \"volledig schema\", or any question about preparing and filing statutory accounts under Belgian company law. Covers Belgian GAAP frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: BE
-  category: financial-statements
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/belgium-financial-statements"
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/belgium-financial-statements"
+  jurisdiction: "BE"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Belgium Financial Statements Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Belgium Financial Statements
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Belgium (Koninkrijk België / Royaume de Belgique) |
 | Currency | EUR |
 | Filing authority | Nationale Bank van België / Banque Nationale de Belgique (NBB/BNB) — Centrale des Bilans |
@@ -32,12 +30,12 @@ metadata:
 | Filing fee | EUR 71.80–426.40 (depending on model and filing method) |
 | Digital filing | XBRL via NBB Filing application (filing.nbb.be) |
 
----
-
 ## Section 2 -- Reporting Framework
 
+**Reporting Framework**
+
 | Entity type | Applicable standard |
-|---|---|
+| --- | --- |
 | Large companies | Belgian GAAP — volledig schema / schéma complet (full model) |
 | Small companies | Belgian GAAP — verkort schema / schéma abrégé (abbreviated model) |
 | Micro companies | Belgian GAAP — micro schema / schéma micro (micro model) |
@@ -46,42 +44,44 @@ metadata:
 
 Belgian GAAP is unique to Belgium and differs significantly from IFRS in areas such as extraordinary items, provisions, revaluations, and revenue recognition.
 
----
-
 ## Section 3 -- Size Thresholds
 
 Effective for financial years beginning on or after 1 January 2024 (Art. 1:24, 1:25 CSA/WVV):
 
 ### Large company (Art. 1:24)
 
-A company is **large** if it exceeds more than one of:
+- **Large company classification** — A company is large if it exceeds more than one of the listed thresholds.  _(Art. 1:24 CSA/WVV)_
+
+**Large company thresholds**  _(Art. 1:24 CSA/WVV)_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Jaaromzet / Chiffre d'affaires (Turnover excl. VAT) | EUR 11,250,000 |
 | Balanstotaal / Total du bilan (Balance sheet total) | EUR 6,000,000 |
 | Gemiddeld personeelsbestand / Effectif moyen (FTE) | 50 |
 
-If no more than one is exceeded → company is **small**.
+- **Small company classification (residual)** — If no more than one is exceeded → company is small.  _(Art. 1:24 CSA/WVV)_
 
 ### Micro company (Art. 1:25)
 
-A small company is **micro** if it exceeds no more than one of:
+- **Micro company classification** — A small company is micro if it exceeds no more than one of the listed thresholds.  _(Art. 1:25 CSA/WVV)_
+
+**Micro company thresholds**  _(Art. 1:25 CSA/WVV)_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Jaaromzet / Chiffre d'affaires (Turnover excl. VAT) | EUR 900,000 |
 | Balanstotaal / Total du bilan (Balance sheet total) | EUR 450,000 |
 | Gemiddeld personeelsbestand / Effectif moyen (FTE) | 10 |
 
-Assessment based on the **consistency principle**: exceeding (or no longer exceeding) thresholds has consequences only if it occurs for **two consecutive** years.
-
----
+- **Consistency principle** — Assessment based on the consistency principle: exceeding (or no longer exceeding) thresholds has consequences only if it occurs for two consecutive years.
 
 ## Section 4 -- Required Financial Statements
 
+**Required Financial Statements**
+
 | Document | Micro | Small (verkort) | Large (volledig) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Balans (Balance sheet) | Required (micro model) | Required (abbreviated) | Required (full) |
 | Resultatenrekening (P&L) | Required (micro model) | Required (abbreviated) | Required (full) |
 | Toelichting (Notes) | Required (minimal) | Required (abbreviated) | Required (full) |
@@ -89,14 +89,14 @@ Assessment based on the **consistency principle**: exceeding (or no longer excee
 | Jaarverslag (Management report) | Not required | Not required | Required |
 | Verslag commissaris (Audit report) | Not required | Not required | Required |
 
-The **sociale balans** (social balance sheet reporting employee information) is mandatory for all Belgian companies filing annual accounts.
-
----
+- **Sociale balans requirement** — The sociale balans (social balance sheet reporting employee information) is mandatory for all Belgian companies filing annual accounts.
 
 ## Section 5 -- Year-End Adjustments Checklist
 
+**Year-End Adjustments Checklist**
+
 | # | Adjustment | Belgium-specific notes |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Afschrijvingen (Depreciation) | Linear depreciation standard; declining balance if justified; minimum fiscal rates often applied |
 | 2 | Voorzieningen voor risico's en kosten | CBN/CNC advice; probable and estimable obligations |
 | 3 | Overlopende rekeningen (Accruals) | Strict matching; prorata temporis |
@@ -109,8 +109,6 @@ The **sociale balans** (social balance sheet reporting employee information) is 
 | 10 | Eindejaarspremie (13th month provision) | Provision for year-end premium if applicable per CLA |
 | 11 | Investeringsaftrek (Investment deduction) | Tax computation item; off-balance sheet |
 | 12 | Ontvangen subsidies (Grants) | Capital grants: balance sheet item released over asset life |
-
----
 
 ## Section 6 -- Resultatenrekening Format (P&L)
 
@@ -151,8 +149,6 @@ XII.  Onttrekking aan belastingvrije reserves
 XIII. Overboeking naar belastingvrije reserves
 XIV.  Te bestemmen winst / verlies van het boekjaar
 ```
-
----
 
 ## Section 7 -- Balans Format (Balance Sheet)
 
@@ -203,12 +199,12 @@ SCHULDEN (Liabilities)
   XI.   Overlopende rekeningen (Accrued charges/deferred income)
 ```
 
----
-
 ## Section 8 -- Toelichting (Notes to Accounts)
 
+**Notes to Accounts requirements by size**
+
 | # | Disclosure | Micro | Small (verkort) | Large (volledig) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Accounting policies (waarderingsregels) | Simplified | Required | Required |
 | 2 | Fixed asset movements | Not required | Required (summary) | Required (full) |
 | 3 | Financial fixed assets detail | Not required | Required | Required (full) |
@@ -222,12 +218,12 @@ SCHULDEN (Liabilities)
 | 11 | Revaluations detail | Not required | If applicable | Required |
 | 12 | Profit appropriation | Required | Required | Required |
 
----
-
 ## Section 9 -- Filing Requirements
 
+**Filing Requirements**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Filing authority | Nationale Bank van België (NBB) — Centrale des Bilans |
 | Filing method | XBRL via filing.nbb.be (web application or software interface) |
 | AGM approval deadline | Within 6 months from financial year-end |
@@ -240,52 +236,65 @@ SCHULDEN (Liabilities)
 
 ### Late filing cost calculation
 
+**Late filing cost calculation**
+
 | Month after 7-month deadline | Additional surcharge |
-|---|---|
+| --- | --- |
 | 1st month (month 8) | EUR 120 |
 | 2nd month | EUR 240 |
 | 3rd month | EUR 360 |
 | Each subsequent month | EUR 600 (to max EUR 1,200) |
 
----
-
 ## Section 10 -- Audit Requirements
 
 ### Mandatory appointment of commissaris (statutory auditor)
 
-Required when the company is classified as **large** (Art. 1:24 CSA/WVV) — exceeds more than one of:
+- **Mandatory auditor appointment** — Required when the company is classified as large (Art. 1:24 CSA/WVV) — exceeds more than one of the listed thresholds.  _(Art. 1:24 CSA/WVV)_
+
+**Large company thresholds (audit)**  _(Art. 1:24 CSA/WVV)_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Turnover (excl. VAT) | EUR 11,250,000 |
 | Balance sheet total | EUR 6,000,000 |
 | Employees (FTE) | 50 |
 
-Must exceed for **two consecutive** years (consistency principle).
+- **Consistency principle for audit threshold** — Must exceed for two consecutive years (consistency principle).
 
 ### Always subject to audit
 
-- Listed companies (regardless of size)
-- Public interest entities
-- Companies forming part of a group that must consolidate (Art. 3:72 CSA)
-- Companies with a works council (Ondernemingsraad) employing ≥ 100 employees
+- **Always subject to audit categories** — Listed companies (regardless of size); Public interest entities; Companies forming part of a group that must consolidate (Art. 3:72 CSA); Companies with a works council (Ondernemingsraad) employing ≥ 100 employees  _(Art. 3:72 CSA)_
 
 ### Auditor qualification
 
-Bedrijfsrevisor / Réviseur d'entreprises registered with the Instituut van de Bedrijfsrevisoren (IBR) / Institut des Réviseurs d'Entreprises (IRE).
+- **Bedrijfsrevisor / Réviseur d'entreprises** — Registered with the Instituut van de Bedrijfsrevisoren (IBR) / Institut des Réviseurs d'Entreprises (IRE).
 
 ### Audit mandate
 
-- Duration: 3 renewable years (Art. 3:58 CSA)
-- Appointed by AGM
-- Cannot be dismissed without just cause
-
----
+- **Audit mandate terms** — Duration: 3 renewable years (Art. 3:58 CSA); Appointed by AGM; Cannot be dismissed without just cause  _(Art. 3:58 CSA)_
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/belgium-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `belgium-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/belgium-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,26 +1,54 @@
 ---
 name: india-financial-statements
-description: "> Use this skill when preparing, reviewing, or advising on annual financial statements for an Indian company. Trigger on phrases like \"financial statements India\", \"MCA filing\", \"AOC-4\", \"Schedule III\", \"Ind AS\", \"Indian Accounting Standards\", \"Companies Act 2013\", \"CARO\", \"statutory audit India\", \"ROC filing\", \"small company India\", \"OPC\", \"balance sheet format India\", or any question about preparing and filing statutory accounts under the Companies Act 2013. Covers Ind AS/AS frameworks, Schedule III formats, size thresholds, required statements, notes, MCA filing, and audit requirements."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill when preparing, reviewing, or advising on annual financial statements for an Indian company. Trigger on phrases like \"financial statements India\", \"MCA filing\", \"AOC-4\", \"Schedule III\", \"Ind AS\", \"Indian Accounting Standards\", \"Companies Act 2013\", \"CARO\", \"statutory audit India\", \"ROC filing\", \"small company India\", \"OPC\", \"balance sheet format India\", or any question about preparing and filing statutory accounts under the Companies Act 2013. Covers Ind AS/AS frameworks, Schedule III formats, size thresholds, required statements, notes, MCA filing, and audit requirements."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: IN
-  category: financial-statements
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/india-financial-statements"
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/india-financial-statements"
+  jurisdiction: "IN"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mayur Deokar"
+  review_status: "current"
 ---
 
-# India Financial Statements Skill v1.0
+# India Financial Statements
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## India Financial Statements Skill v1.0
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified skill_facts — edit the facts, not the prose.
+
+### Financial Statements
+
+- **Listed companies** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — net worth ≥ ₹250 crore** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — below ₹250 crore** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
+- **Form** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
+- **AGM deadline** — 6 months from FY-end  _(Companies Act s 96)_
+- **Listed companies — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — net worth ≥ ₹250 crore — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — below ₹250 crore — Ind AS Applicability** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
+- **Form (Filing)** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
+- **AGM deadline (repeat)** — 6 months from FY-end  _(Companies Act s 96)_
+- **AOC-4 deadline** — 30 days from AGM  _(Companies Act s 137)_
+- **XBRL mandatory if** — Capital ≥ ₹5 crore OR turnover ≥ ₹100 crore; all listed; all companies implementing IND AS  _(MCA Rules)_
+- **Late fee** — ₹100/day of delay  _(Companies Act s 403)_
+- **Statutory audit** — ALL companies — mandatory (no size exemption)  _(Companies Act s 139)_
+- **CARO 2020 — small company** — Exempt  _(CARO 2020)_
+- **Auditor rotation — individual** — 1 term of 5 years (listed)  _(Companies Act s 139(2))_
+- **Auditor rotation — firm** — 2 terms of 5 years = 10 years (listed)  _(Companies Act s 139(2))_
+- **Internal audit** — Mandatory for every listed company. For unlisted public company: turnover ≥ ₹200 crore or loans > ₹100 crore or paid-up share capital ≥ ₹50 crore or deposits ≥ ₹25 crore. For unlisted private company: required if turnover ≥ ₹200 crore or loans ≥ ₹100 crore.  _(Companies Act s 138)_
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | India (Republic of India) |
 | Currency | INR |
 | Filing authority | Ministry of Corporate Affairs (MCA) — Registrar of Companies (ROC) |
@@ -32,12 +60,12 @@ metadata:
 | Late filing penalty | Additional fee of INR 100 per day of delay |
 | Digital filing | MCA21 portal (e-Form AOC-4 / AOC-4 XBRL / AOC-4 CFS) |
 
----
-
 ## Section 2 -- Reporting Framework
 
+**Reporting Framework**
+
 | Entity type | Applicable standard |
-|---|---|
+| --- | --- |
 | Listed companies | Ind AS (mandatory) |
 | Unlisted companies — net worth ≥ INR 250 crore | Ind AS (mandatory) |
 | Unlisted companies — net worth < INR 250 crore | AS (Indian GAAP) unless voluntarily adopting Ind AS |
@@ -49,31 +77,33 @@ metadata:
 
 ### Ind AS applicability (phased rollout)
 
+**Ind AS applicability (phased rollout)**
+
 | Phase | Companies covered | Effective from |
-|---|---|---|
+| --- | --- | --- |
 | Phase I | Listed + net worth ≥ INR 500 crore | 1 April 2016 |
 | Phase II | Unlisted net worth ≥ INR 250 crore + listed on SME exchange | 1 April 2017 |
 | Others | Voluntary adoption permitted; mandatory if thresholds met | Ongoing |
-
----
 
 ## Section 3 -- Size Thresholds
 
 ### Small Company (Section 2(85) — effective 1 December 2025)
 
-A private company qualifies as a "Small Company" if:
+**Small Company thresholds**
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Paid-up share capital | ≤ INR 10 crore (INR 100,000,000) |
 | Turnover (per last P&L) | ≤ INR 100 crore (INR 1,000,000,000) |
 
-Both conditions must be met. Excludes: public companies, Section 8 companies, and companies governed by special Acts.
+- **Small Company qualification conditions** — Both conditions must be met. Excludes: public companies, Section 8 companies, and companies governed by special Acts.  _(Section 2(85))_
 
 ### One Person Company (OPC) — Section 2(62)
 
+**OPC thresholds**
+
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Paid-up share capital | ≤ INR 50 lakh |
 | Turnover | ≤ INR 2 crore |
 
@@ -86,14 +116,14 @@ Both conditions must be met. Excludes: public companies, Section 8 companies, an
 - No requirement for internal financial controls (IFC) reporting by auditor
 - Board meetings: minimum 2 per year (instead of 4)
 
----
-
 ## Section 4 -- Required Financial Statements
 
-Under Section 2(40) and Section 129 of Companies Act 2013:
+- **legal basis** — Under Section 2(40) and Section 129 of Companies Act 2013  _(Section 2(40), Section 129)_
+
+**Required Financial Statements**
 
 | Document | All companies | Small company exemptions |
-|---|---|---|
+| --- | --- | --- |
 | Balance Sheet | Required (Schedule III format) | Required |
 | Statement of Profit and Loss | Required (Schedule III format) | Required |
 | Statement of Changes in Equity | Required (Ind AS companies) | Not required (AS companies) |
@@ -103,12 +133,12 @@ Under Section 2(40) and Section 129 of Companies Act 2013:
 | Auditor's Report | Required (all companies must be audited) | Required (but CARO exempt) |
 | Consolidated Financial Statements | Required if subsidiary/associate/JV exists (Section 129(3)) | Required if applicable |
 
----
-
 ## Section 5 -- Year-End Adjustments Checklist
 
+**Year-End Adjustments Checklist**
+
 | # | Adjustment | India-specific notes |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Depreciation | Schedule II to Companies Act prescribes useful lives; component accounting under Ind AS |
 | 2 | Provisions | Ind AS 37 / AS 29; present obligation, probable, reliably estimable |
 | 3 | Employee benefits | Ind AS 19 / AS 15; gratuity (actuarial valuation mandatory); leave encashment |
@@ -122,13 +152,10 @@ Under Section 2(40) and Section 129 of Companies Act 2013:
 | 11 | Gratuity provision | Payment of Gratuity Act 1972; actuarial valuation by qualified actuary |
 | 12 | CSR provision | Section 135; if criteria met, provide for unspent CSR amount |
 
----
-
 ## Section 6 -- Statement of Profit and Loss Format
 
-Schedule III, Part II (by nature/function — Division I for non-Ind AS; Division II for Ind AS):
+- **P&L format basis** — Schedule III, Part II (by nature/function — Division I for non-Ind AS; Division II for Ind AS):  _(Schedule III, Part II)_
 
-```
 I.   Revenue from operations
      (a) Sale of products
      (b) Sale of services
@@ -166,15 +193,11 @@ XI.  Other comprehensive income (Ind AS only)
      (b) Items that will be reclassified to profit or loss
 
 XII. Total comprehensive income (X + XI)
-```
-
----
 
 ## Section 7 -- Balance Sheet Format
 
-Schedule III, Part I:
+- **Balance sheet format basis** — Schedule III, Part I:  _(Schedule III, Part I)_
 
-```
 EQUITY AND LIABILITIES
 
 Shareholders' Funds
@@ -224,16 +247,15 @@ Current Assets
   (f) Other current assets
 
 TOTAL
-```
 
 Note: Ind AS companies use Division II format which presents equity separately and has a different ordering.
 
----
-
 ## Section 8 -- Notes to Financial Statements
 
+**Notes to Financial Statements**
+
 | # | Disclosure | AS (non-Ind AS) | Ind AS |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | Significant accounting policies | Required (AS 1) | Required (Ind AS 1/8) |
 | 2 | Property, plant and equipment | Required (Schedule III) | Required (Ind AS 16) |
 | 3 | Share capital details | Required | Required |
@@ -249,12 +271,12 @@ Note: Ind AS companies use Division II format which presents equity separately a
 | 13 | Segment reporting | Required (AS 17) — listed | Required (Ind AS 108) — listed |
 | 14 | CSR expenditure | Required (if Section 135 applies) | Required |
 
----
-
 ## Section 9 -- Filing Requirements
 
+**Filing Requirements**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Filing authority | MCA (Ministry of Corporate Affairs) via MCA21 portal |
 | Filing form | e-Form AOC-4 (standalone); AOC-4 CFS (consolidated); AOC-4 XBRL (if applicable) |
 | AGM deadline | Within 6 months from financial year-end (i.e., by 30 September for March year-end) |
@@ -272,16 +294,16 @@ Note: Ind AS companies use Division II format which presents equity separately a
 - Directors may be disqualified under Section 164(2) if 3 consecutive years' filings are missed
 - Company may be struck off under Section 248
 
----
-
 ## Section 10 -- Audit Requirements
 
 ### Statutory audit (Section 139–147)
 
-**ALL companies** incorporated under the Companies Act 2013 must have their financial statements audited by a Chartered Accountant. There is no audit exemption by size in India.
+- **Statutory audit requirement** — ALL companies incorporated under the Companies Act 2013 must have their financial statements audited by a Chartered Accountant. There is no audit exemption by size in India.  _(Section 139–147)_
+
+**Statutory audit table**
 
 | Category | Audit requirement | CARO 2020 applicable? |
-|---|---|---|
+| --- | --- | --- |
 | Listed companies | Mandatory; audit + CARO | Yes |
 | Public companies (non-listed) | Mandatory; audit + CARO | Yes (unless exempt) |
 | Private companies (non-small) | Mandatory; audit + CARO | Yes (unless exempt) |
@@ -291,36 +313,48 @@ Note: Ind AS companies use Division II format which presents equity separately a
 
 ### CARO 2020 exemption for private companies
 
-A private company is also exempt from CARO 2020 (in addition to small companies) if it simultaneously meets ALL of:
-- Paid-up capital + reserves ≤ INR 1 crore
-- Total borrowings ≤ INR 1 crore (from banks/financial institutions)
-- Total revenue ≤ INR 10 crore
+- **CARO 2020 exemption conditions** — A private company is also exempt from CARO 2020 (in addition to small companies) if it simultaneously meets ALL of: Paid-up capital + reserves ≤ INR 1 crore; Total borrowings ≤ INR 1 crore (from banks/financial institutions); Total revenue ≤ INR 10 crore  _(CARO 2020)_
 
 ### Auditor rotation (Section 139(2))
 
+**Auditor rotation table**  _(Section 139(2))_
+
 | Company type | Individual auditor | Audit firm |
-|---|---|---|
+| --- | --- | --- |
 | Listed / prescribed class | 1 term of 5 consecutive years | 2 terms of 5 years (total 10 years) |
 | Small companies | Exempt from rotation | Exempt from rotation |
 | OPC | Exempt from rotation | Exempt from rotation |
 
 ### Internal audit (Section 138)
 
-Required if:
-- Listed company
-- Unlisted public company with: turnover ≥ INR 200 crore OR paid-up capital ≥ INR 50 crore OR loans/borrowings ≥ INR 100 crore OR deposits ≥ INR 25 crore
-- Private company with: turnover ≥ INR 200 crore OR loans/borrowings ≥ INR 100 crore
+- **Internal audit requirement conditions** — Required if: Listed company; Unlisted public company with: turnover ≥ INR 200 crore OR paid-up capital ≥ INR 50 crore OR loans/borrowings ≥ INR 100 crore OR deposits ≥ INR 25 crore; Private company with: turnover ≥ INR 200 crore OR loans/borrowings ≥ INR 100 crore  _(Section 138)_
 
 ### Auditor qualification
 
-Chartered Accountant (CA) holding Certificate of Practice, or firm of Chartered Accountants, registered with the Institute of Chartered Accountants of India (ICAI). For companies requiring CARO reporting, the auditor must also comply with Standards on Auditing (SA) issued by ICAI.
-
----
+- **Auditor qualification requirement** — Chartered Accountant (CA) holding Certificate of Practice, or firm of Chartered Accountants, registered with the Institute of Chartered Accountants of India (ICAI). For companies requiring CARO reporting, the auditor must also comply with Standards on Auditing (SA) issued by ICAI.  _(ICAI / CARO)_
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/india-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `india-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/india-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,26 +1,28 @@
 ---
 name: ng-income-tax
-description: "> Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like \"Nigeria income tax\", \"PITA\", \"FIRS\", \"self-assessment Nigeria\", \"progressive tax Nigeria\", \"minimum tax Nigeria\", \"consolidated relief\", \"CRA Nigeria\", \"TIN Nigeria\", \"WHT Nigeria\", \"income tax Lagos\", \"income tax Abuja\", \"state IRS\", or any question about computing or filing income tax for a self-employed person in Nigeria. This skill covers progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. ALWAYS read this skill before touching any Nigerian income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like \"Nigeria income tax\", \"PITA\", \"FIRS\", \"self-assessment Nigeria\", \"progressive tax Nigeria\", \"minimum tax Nigeria\", \"consolidated relief\", \"CRA Nigeria\", \"TIN Nigeria\", \"WHT Nigeria\", \"income tax Lagos\", \"income tax Abuja\", \"state IRS\", or any question about computing or filing income tax for a self-employed person in Nigeria. This skill covers progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. ALWAYS read this skill before touching any Nigerian income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ng-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/ng-income-tax"
+  jurisdiction: "NG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Nigerian Personal Income Tax — Self-Employed / Sole Proprietor (PITA) v2.0
+# NG Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Nigerian Personal Income Tax — Self-Employed / Sole Proprietor (PITA) v2.0
 
 ## Section 1 — Quick Reference
 
 ### Progressive Tax Rates (PITA, Sixth Schedule)
 
+**Progressive Tax Rates (PITA, Sixth Schedule)**
+
 | Taxable Income (NGN) | Rate |
-|---|---|
+| --- | --- |
 | First 300,000 | 7% |
 | Next 300,000 (300,001 -- 600,000) | 11% |
 | Next 500,000 (600,001 -- 1,100,000) | 15% |
@@ -30,22 +32,26 @@ metadata:
 
 ### Consolidated Relief Allowance (CRA)
 
-CRA = max(NGN 200,000, 1% x Gross Income) + 20% x Gross Income
+- **CRA formula** — CRA = max(NGN 200,000, 1% x Gross Income) + 20% x Gross Income
 
 The CRA replaced the previous personal allowance / children's allowance system from 2020.
 
 ### Minimum Tax
 
+**Minimum Tax**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Rate | 1% of gross income |
 | When it applies | When computed tax (per progressive rates) is LESS than minimum tax |
 | Effect | Taxpayer pays the HIGHER of computed tax or minimum tax |
 
 ### Capital Allowances (PITA, Fifth Schedule)
 
+**Capital Allowances (PITA, Fifth Schedule)**
+
 | Asset | Initial Allowance | Annual Allowance |
-|---|---|---|
+| --- | --- | --- |
 | Building (industrial) | 15% | 10% |
 | Motor vehicles | 50% | 25% |
 | Plant and machinery | 50% | 25% |
@@ -54,8 +60,10 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### Computation Structure
 
+**Computation Structure**
+
 | Step | Description |
-|---|---|
+| --- | --- |
 | A | Gross income from business |
 | B | Less: Allowable business deductions |
 | C | Assessable income (A minus B) |
@@ -72,8 +80,10 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### Other Reliefs (PITA, s 33)
 
+**Other Reliefs (PITA, s 33)**  _(PITA, s 33)_
+
 | Relief | Amount / Rule |
-|---|---|
+| --- | --- |
 | Pension contribution | Actual contribution to approved scheme (min 8% of basic + housing + transport) |
 | National Housing Fund | 2.5% of basic salary (voluntary for self-employed) |
 | Life insurance premium | Actual premium paid |
@@ -81,8 +91,10 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Residency unknown | STOP — non-residents taxed differently |
 | State of residence unknown | STOP — determines filing authority |
 | CRA computed on net income | WRONG — CRA is on GROSS income |
@@ -93,15 +105,15 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Computed tax = 0 but minimum tax > 0 | Minimum tax applies |
 | No WHT certificates from clients | Cannot credit without certificates |
 | Expenses close to income (high ratio) | Minimum tax likely applies |
 | Multiple state operations | Verify correct filing authority |
 | Capital expenditure directly expensed | Must use capital allowance schedule |
-
----
 
 ## Section 2 — Required Inputs + Refusal Catalogue
 
@@ -121,23 +133,21 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### Refusal Catalogue
 
-| Code | Situation | Action |
-|---|---|---|
-| R-NG-1 | Non-resident earning Nigeria-source income | Stop — WHT as final tax (10% on professional services); different rules |
-| R-NG-2 | Residency unknown | Stop — different treatment |
-| R-NG-3 | State of residence unknown | Stop — determines filing authority |
-| R-NG-4 | Capital expenditure claimed as expense | Reject — must use capital allowance schedule |
-| R-NG-5 | Old personal allowance / children's allowance system | Stop — replaced by CRA from 2020 |
-| R-NG-6 | Petroleum profits tax | Escalate — separate regime |
-
----
+- **R-NG-1** — Non-resident earning Nigeria-source income  _(Stop — WHT as final tax (10% on professional services); different rules)_
+- **R-NG-2** — Residency unknown  _(Stop — different treatment)_
+- **R-NG-3** — State of residence unknown  _(Stop — determines filing authority)_
+- **R-NG-4** — Capital expenditure claimed as expense  _(Reject — must use capital allowance schedule)_
+- **R-NG-5** — Old personal allowance / children's allowance system  _(Stop — replaced by CRA from 2020)_
+- **R-NG-6** — Petroleum profits tax  _(Escalate — separate regime)_
 
 ## Section 3 — Transaction Pattern Library
 
 ### 3.1 Income Patterns
 
+**3.1 Income Patterns**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `TRANSFER FROM [client]` / `NIP CR [client]` | Gross income — PITA taxable | Standard NIP (NIBSS Instant Payment) transfer from client |
 | I-02 | `USSD CREDIT` / `*737 CREDIT` | Gross income — PITA taxable | USSD banking credit from client |
 | I-03 | `POS SETTLEMENT` / `CARD COLLECTION` | Gross income — gross-up | POS terminal settlement |
@@ -154,14 +164,16 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### 3.2 Expense Patterns
 
+**3.2 Expense Patterns**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `OFFICE RENT` / `RENT PAYMENT [landlord]` | Rent — fully deductible | Require receipt/invoice |
 | E-02 | `EKEDC` / `IKEDC` / `AEDC` / `BEDC` / `PHED` / `KAEDCO` | Electricity — deductible (business proportion) | Distribution company payment |
 | E-03 | `MTN` / `AIRTEL` / `GLO` / `9MOBILE` | Phone/internet — deductible (business %) | Telecom provider |
 | E-04 | `SPECTRANET` / `SMILE` / `IPNX` / `SWIFT NETWORK` | Internet — deductible (business %) | ISP provider |
 | E-05 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — fully deductible | Professional tools |
-| E-06 | `ACCOUNTANT` / `AUDIT FEE` / `TAX CONSULTANT` | Professional fees — fully deductible | |
+| E-06 | `ACCOUNTANT` / `AUDIT FEE` / `TAX CONSULTANT` | Professional fees — fully deductible |  |
 | E-07 | `ARIK AIR` / `AIR PEACE` / `DANA AIR` / `IBOM AIR` | Air travel — deductible (business purpose) | Document purpose |
 | E-08 | `HOTEL` / `BOOKING.COM` / `AIRBNB` | Accommodation — deductible (business travel) | Business purpose |
 | E-09 | `PENSION CONTRIBUTION` / `RSA [fund name]` | Pension — relief deduction | Approved pension scheme contribution |
@@ -170,26 +182,28 @@ The CRA replaced the previous personal allowance / children's allowance system f
 | E-12 | `NHIS` / `HEALTH INSURANCE` | Health insurance — relief deduction | National/private health |
 | E-13 | `TAX PAYMENT FIRS` / `SIRS PAYMENT` | Tax payment — NOT deductible | Payment of tax liability |
 | E-14 | `FUEL` / `PETROL` / `DIESEL` / `TOTAL` / `OANDO` / `CONOIL` | Fuel — deductible (business proportion) | Document business use |
-| E-15 | `OFFICE SUPPLIES` / `STATIONERY` | Supplies — fully deductible | |
-| E-16 | `MARKETING` / `GOOGLE ADS` / `META ADS` / `ADVERTISING` | Marketing — fully deductible | |
+| E-15 | `OFFICE SUPPLIES` / `STATIONERY` | Supplies — fully deductible |  |
+| E-16 | `MARKETING` / `GOOGLE ADS` / `META ADS` / `ADVERTISING` | Marketing — fully deductible |  |
 | E-17 | `STAFF SALARY` / `PAYROLL` | Staff costs — fully deductible | Include PAYE obligations for staff |
 | E-18 | `TRAINING` / `COURSE` / `CERTIFICATION` | Training — fully deductible | Professional development |
 | E-19 | `GENERATOR FUEL` / `DIESEL GEN` | Generator fuel — deductible (business %) | Common in Nigeria due to power supply |
 
 ### 3.3 Nigerian Bank Fees (Deductible)
 
+**3.3 Nigerian Bank Fees (Deductible)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GTBANK, GUARANTY TRUST | Deductible for business account fees | Now GTCo |
 | ACCESS BANK | Deductible for business account fees | Merged with Diamond Bank |
-| ZENITH BANK | Deductible for business account fees | |
-| UBA, UNITED BANK FOR AFRICA | Deductible for business account fees | |
-| FIRST BANK, FBN | Deductible for business account fees | |
-| STANBIC IBTC | Deductible for business account fees | |
-| FCMB, FIRST CITY MONUMENT | Deductible for business account fees | |
-| FIDELITY BANK | Deductible for business account fees | |
-| STERLING BANK | Deductible for business account fees | |
-| WEMA BANK / ALAT | Deductible for business account fees | |
+| ZENITH BANK | Deductible for business account fees |  |
+| UBA, UNITED BANK FOR AFRICA | Deductible for business account fees |  |
+| FIRST BANK, FBN | Deductible for business account fees |  |
+| STANBIC IBTC | Deductible for business account fees |  |
+| FCMB, FIRST CITY MONUMENT | Deductible for business account fees |  |
+| FIDELITY BANK | Deductible for business account fees |  |
+| STERLING BANK | Deductible for business account fees |  |
+| WEMA BANK / ALAT | Deductible for business account fees |  |
 | KUDA BANK, OPAY, PALMPAY, MONIEPOINT | Deductible for business account fees | Fintech/digital banks |
 | ACCOUNT MAINTENANCE FEE, COT | Deductible | Commission on turnover / maintenance |
 | SMS ALERT FEE, NOTIFICATION FEE | Deductible | Banking notification charges |
@@ -198,8 +212,10 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### 3.4 Government and Statutory (Exclude)
 
+**3.4 Government and Statutory (Exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | FIRS, FEDERAL INLAND REVENUE | EXCLUDE | Federal tax authority payment |
 | LIRS, LAGOS STATE IRS | EXCLUDE | State tax authority |
 | CAC, CORPORATE AFFAIRS COMMISSION | Deductible | Business registration fee |
@@ -207,14 +223,14 @@ The CRA replaced the previous personal allowance / children's allowance system f
 
 ### 3.5 Internal Transfers and Exclusions
 
+**3.5 Internal Transfers and Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OWN ACCOUNT TRANSFER, SELF TRANSFER | EXCLUDE | Internal movement |
 | ATM WITHDRAWAL | TIER 2 — ask | Default exclude; determine purpose |
 | LOAN DISBURSEMENT | EXCLUDE | Loan proceeds, not income |
 | LOAN REPAYMENT | EXCLUDE | Loan principal, out of scope |
-
----
 
 ## Section 4 — Worked Examples
 
@@ -335,42 +351,27 @@ CRA on total gross: 200,000 + 1,680,000 = NGN 1,880,000.
 All income aggregates. Apply expenses per source. Progressive rates on combined taxable income.
 File with Kano State IRS.
 
----
-
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
-**T1-NG-1 — CRA is computed on GROSS income, not net**
-The Consolidated Relief Allowance formula uses gross total income (before expenses), not assessable or taxable income. This is a common error. Always apply CRA to gross.
-
-**T1-NG-2 — Minimum tax is a floor**
-Always compare computed tax per progressive rates with 1% of gross income. The taxpayer pays whichever is HIGHER. Minimum tax cannot be avoided by high expenses.
-
-**T1-NG-3 — Capital expenditure must use capital allowances**
-Never deduct capital expenditure directly as a business expense. Use the Fifth Schedule rates (initial allowance in year of first use, annual allowance thereafter).
-
-**T1-NG-4 — WHT is a credit, not income reduction**
-Withholding tax (10% on professional fees, 5% on contracts) deducted by clients is a credit against final tax. It does not reduce gross income. Must have WHT certificate to claim credit.
-
-**T1-NG-5 — Filing authority depends on state of residence**
-FCT (Abuja) residents file with FIRS. All other states file with the State Internal Revenue Service (SIRS). This is not optional.
-
-**T1-NG-6 — Old personal allowance system is abolished**
-The pre-2020 system of personal allowance + children's allowance + dependent relative allowance was replaced by CRA. Never apply the old deductions.
-
----
+- **T1-NG-1 — CRA is computed on GROSS income, not net** — The Consolidated Relief Allowance formula uses gross total income (before expenses), not assessable or taxable income. This is a common error. Always apply CRA to gross.  _(T1-NG-1)_
+- **T1-NG-2 — Minimum tax is a floor** — Always compare computed tax per progressive rates with 1% of gross income. The taxpayer pays whichever is HIGHER. Minimum tax cannot be avoided by high expenses.  _(T1-NG-2)_
+- **T1-NG-3 — Capital expenditure must use capital allowances** — Never deduct capital expenditure directly as a business expense. Use the Fifth Schedule rates (initial allowance in year of first use, annual allowance thereafter).  _(T1-NG-3)_
+- **T1-NG-4 — WHT is a credit, not income reduction** — Withholding tax (10% on professional fees, 5% on contracts) deducted by clients is a credit against final tax. It does not reduce gross income. Must have WHT certificate to claim credit.  _(T1-NG-4)_
+- **T1-NG-5 — Filing authority depends on state of residence** — FCT (Abuja) residents file with FIRS. All other states file with the State Internal Revenue Service (SIRS). This is not optional.  _(T1-NG-5)_
+- **T1-NG-6 — Old personal allowance system is abolished** — The pre-2020 system of personal allowance + children's allowance + dependent relative allowance was replaced by CRA. Never apply the old deductions.  _(T1-NG-6)_
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)**
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-NG-1 | Mixed-use vehicle | Business proportion must be documented | Flag — reviewer determines reasonable business-use % |
 | T2-NG-2 | Home office expenses | Proportional deduction for dedicated space | Flag — document proportion and exclusivity |
 | T2-NG-3 | Capital allowance computation for complex assets | Initial vs annual allowance; residual value tracking | Flag — verify asset register and allowance schedule |
 | T2-NG-4 | Multiple state operations | Dual filing obligation possible | Flag — verify correct filing authority for each income source |
 | T2-NG-5 | Foreign income for Nigerian resident | Worldwide income taxable; treaty credits may apply | Escalate — treaty analysis required |
 | T2-NG-6 | Voluntary NHF / NHIS contributions | Relief amounts depend on actual contribution vs statutory basis | Verify contribution receipts and applicable relief limits |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -442,11 +443,10 @@ SECTION I — REVIEWER FLAGS
 [ ] Multiple income sources properly aggregated?
 ```
 
----
-
 ## Section 8 — Bank Statement Reading Guide
 
 ### GTBank (Guaranty Trust / GTCo)
+
 - Export: CSV/PDF from GTBank Internet Banking / GTWorld app
 - Columns: `Date;Description;Debit;Credit;Balance`
 - Amount format: comma thousands, period decimal (e.g., `2,500,000.00`)
@@ -454,28 +454,34 @@ SECTION I — REVIEWER FLAGS
 - Credits: `NIP CR FROM [sender]`, `MOBILE TRANSFER FROM [sender]`
 
 ### Access Bank
+
 - Export: CSV/Excel from Access More app / Internet Banking
 - Columns: `Date;Narration;Debit;Credit;Balance`
 - Credits: `NIP CREDIT FROM [sender]`, `TRANSFER FROM [sender]`
 
 ### Zenith Bank
+
 - Export: CSV from Zenith Internet Banking / ZMobile
 - Columns: `Trans Date;Value Date;Description;Debit;Credit;Balance`
 - Credits: `NIP CR [sender]`, `INWARD TRF FROM [sender]`
 
 ### UBA (United Bank for Africa)
+
 - Export: CSV/PDF from UBA Internet Banking / UBA Mobile
 - Standard Nigerian bank format
 
 ### First Bank of Nigeria (FBN)
+
 - Export: CSV from FirstBank Online / FirstMobile
 - Columns: `Date;Description;Debit;Credit;Balance`
 
 ### Stanbic IBTC
+
 - Export: CSV from Stanbic IBTC Internet Banking
 - Standard format
 
 ### Kuda Bank / OPay / PalmPay / Moniepoint (Digital)
+
 - Export: CSV/PDF from app
 - Simple format; credit/debit columns or single column
 - Narrations: `Transfer from [name]`, `Received from [name]`
@@ -484,19 +490,19 @@ SECTION I — REVIEWER FLAGS
 - Moniepoint: `Moniepoint Transfer from [name]`
 
 ### Paystack / Flutterwave Settlements
+
 - Appear in primary bank statement as `PAYSTACK SETTLEMENT` or `FLUTTERWAVE PAYOUT`
 - Gross-up required — platform deducts fees before settlement
 - Cross-reference with Paystack/Flutterwave merchant dashboard for gross amounts
 
 ### Key Nigerian Banking Notes
+
 - All amounts in NGN (Nigerian naira); comma thousands, period decimal
 - NIP (NIBSS Instant Payment) is the standard inter-bank transfer system
 - USSD banking (*737 for GTBank, *901 for Access, *966 for Zenith, etc.) common for mobile transfers
 - POS (Point of Sale) settlements may be delayed 1-3 days
 - Stamp duty charges (NGN 50 on transactions above NGN 10,000) are not deductible business expenses
 - Multiple accounts across banks is common — consolidate all statements
-
----
 
 ## Section 9 — Onboarding Fallback
 
@@ -512,28 +518,31 @@ SECTION I — REVIEWER FLAGS
 **Minimum tax:**
 > "Even if your computed tax per the progressive rates is very low or zero (due to high expenses), you are still required to pay a minimum tax of 1% of your gross income. The minimum tax acts as a floor — you pay whichever is higher between computed tax and minimum tax."
 
----
-
 ## Section 10 — Reference Material
 
 ### Key Legislation
-- **Personal Income Tax Act (PITA)** — Cap P8 LFN 2004, as amended by Finance Act 2020, 2021, 2023
-- **FIRS Establishment Act** — Federal Inland Revenue Service
-- **Pension Reform Act 2014** — pension contribution requirements
-- **Finance Act 2020** — introduced CRA and simplified minimum tax
+
+- **Personal Income Tax Act (PITA)** — Cap P8 LFN 2004, as amended by Finance Act 2020, 2021, 2023  _(Personal Income Tax Act (PITA))_
+- **FIRS Establishment Act** — Federal Inland Revenue Service  _(FIRS Establishment Act)_
+- **Pension Reform Act 2014** — Pension contribution requirements  _(Pension Reform Act 2014)_
+- **Finance Act 2020** — Introduced CRA and simplified minimum tax  _(Finance Act 2020)_
 
 ### Filing Calendar
 
+**Filing Calendar**  _(PITA s 41-44)_
+
 | Deadline | Event |
-|---|---|
+| --- | --- |
 | 31 March | Self-assessment return (PITA s 41-44) |
 | 31 March | Payment of tax due |
 | Monthly | WHT remittance (if agente de retención) |
 
 ### Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | NGN 50,000 first month + NGN 25,000/subsequent month |
 | Late payment | 10% of tax due + interest at CBN MPR + spread |
 | Failure to keep records | NGN 50,000 fine |
@@ -541,17 +550,17 @@ SECTION I — REVIEWER FLAGS
 | Tax evasion | NGN 20,000 fine or 3 years imprisonment or both |
 
 ### Record Keeping
+
 - Minimum retention: 6 years
 - Business records, invoices, receipts, bank statements, contracts
 - WHT certificates: retain permanently for audit
 
 ### Useful References
+
 - FIRS: www.firs.gov.ng
 - TaxPro Max: taxpromax.firs.gov.ng
 - State IRS portals: vary by state (LIRS: lirs.gov.ng, etc.)
 - Joint Tax Board (JTB): www.jtb.gov.ng
-
----
 
 ## Disclaimer
 
@@ -559,6 +568,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ng-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ng-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ng-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

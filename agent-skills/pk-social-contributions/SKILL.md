@@ -1,15 +1,13 @@
 ---
 name: pk-social-contributions
-description: "> Use this skill whenever asked about social security and pension contributions for workers and the self-employed in Pakistan. Trigger on phrases like \"EOBI Pakistan\", \"social security Pakistan\", \"pension contribution Pakistan\", \"ESSI PESSI SESSI\", \"do freelancers pay social security Pakistan\". Covers EOBI old-age benefits, the provincial social security institutions, and the (limited) position of the self-employed. ALWAYS read before any Pakistan social-contribution work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about social security and pension contributions for workers and the self-employed in Pakistan. Trigger on phrases like \"EOBI Pakistan\", \"social security Pakistan\", \"pension contribution Pakistan\", \"ESSI PESSI SESSI\", \"do freelancers pay social security Pakistan\". Covers EOBI old-age benefits, the provincial social security institutions, and the (limited) position of the self-employed. ALWAYS read before any Pakistan social-contribution work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pk-social-contributions"
-  tax_year: 2026
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/pk-social-contributions"
+  jurisdiction: "PK"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Pakistan Social Security & Pension Contributions — Skill v1.0
@@ -46,8 +44,8 @@ A solo freelancer with no staff: **no** EOBI/ESSI contribution due; obligations 
 - NEVER state contribution rates without verifying current EOBI/provincial figures.
 
 ## Disclaimer
-Informational only; not advice. Verify EOBI and provincial ESSI rules with the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify EOBI and provincial ESSI rules with the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pk-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pk-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,29 +1,27 @@
 ---
 name: us-gaap-asc606-revenue
-description: "> US GAAP revenue recognition under ASC 606 (Revenue from Contracts with Customers) and the related contract-cost guidance in ASC 340-40. Covers the five-step model — identify the contract, identify performance obligations, determine the transaction price, allocate it, and recognize revenue as or when obligations are satisfied — plus variable consideration and the constraint, significant financing components, principal-versus-agent, licenses, contract modifications, contract assets and liabilities, and the cost-to-obtain and cost-to-fulfill rules. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the revenue topic; see ifrs15-revenue for the IFRS edition. MUST load alongside financial-reporting-workflow-base."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "US GAAP revenue recognition under ASC 606 (Revenue from Contracts with Customers) and the related contract-cost guidance in ASC 340-40. Covers the five-step model — identify the contract, identify performance obligations, determine the transaction price, allocate it, and recognize revenue as or when obligations are satisfied — plus variable consideration and the constraint, significant financing components, principal-versus-agent, licenses, contract modifications, contract assets and liabilities, and the cost-to-obtain and cost-to-fulfill rules. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the revenue topic; see ifrs15-revenue for the IFRS edition. MUST load alongside financial-reporting-workflow-base."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US
-  category: financial-reporting
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/us-gaap-asc606-revenue"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/us-gaap-asc606-revenue"
+  jurisdiction: "US"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "James Wallach"
+  review_status: "current"
 ---
 
-# US GAAP Revenue — ASC 606 v0.1
+# US GAAP Asc606 Revenue
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## US GAAP Revenue — ASC 606 v0.1
 
 ## What this file is
 
 **This is a content skill that loads on top of `financial-reporting-workflow-base`.** It supplies the recognition, measurement, presentation, and disclosure rules for revenue from contracts with customers under US GAAP. The base supplies the two-layer output contract, the journal-entry format, and the self-checks.
 
-**Standard currency.** ASC 606 and ASC 340-40 as effective for all entities (public business entities since annual periods beginning after 15 Dec 2017; all others after 15 Dec 2018). No subsequent ASU has displaced the five-step core. Confirm no entity-specific industry guidance (e.g. ASC 924, 942, 944, 980) overrides.
-
-**Scope.** ASC 606 applies to contracts with customers except: leases (ASC 842), insurance (ASC 944), financial instruments (ASC 310, 320, 815, 825, 860), guarantees other than product/service warranties (ASC 460), and certain non-monetary exchanges between entities in the same line of business to facilitate sales to customers (`ASC 606-10-15-2`).
-
----
+- **Standard currency** — ASC 606 and ASC 340-40 as effective for all entities (public business entities since annual periods beginning after 15 Dec 2017; all others after 15 Dec 2018). No subsequent ASU has displaced the five-step core. Confirm no entity-specific industry guidance (e.g. ASC 924, 942, 944, 980) overrides.  _(ASC 606; ASC 340-40)_
+- **Scope exclusions** — ASC 606 applies to contracts with customers except: leases (ASC 842), insurance (ASC 944), financial instruments (ASC 310, 320, 815, 825, 860), guarantees other than product/service warranties (ASC 460), and certain non-monetary exchanges between entities in the same line of business to facilitate sales to customers.  _(ASC 606-10-15-2)_
 
 ## Section 1 — Scope statement
 
@@ -38,95 +36,65 @@ This skill covers:
 
 This skill does NOT cover: lease revenue (`ASC 842`), interest/dividend income (`ASC 310`/`325`), insurance (`ASC 944`), or collaborative arrangements outside the customer relationship (`ASC 808`). It defers the IFRS treatment to `ifrs15-revenue`.
 
----
-
 ## Section 2 — Reference layer (Layer A): the five-step model
 
 ### Step 1 — Identify the contract — `ASC 606-10-25-1` to `25-8`
 
-A contract exists when **all five** criteria are met:
-
-1. Parties have **approved** the contract and are committed to perform.
-2. Each party's **rights** to goods/services are identifiable.
-3. **Payment terms** are identifiable.
-4. The contract has **commercial substance**.
-5. It is **probable** the entity will collect the consideration it is entitled to (a *collectibility* gate). "Probable" under US GAAP = **likely to occur** (a higher threshold than IFRS's "probable").
-
-If the criteria are not met, no revenue; consideration received is a deposit liability until criteria are met or the `ASC 606-10-25-7` release events occur (contract terminated and consideration non-refundable, or no remaining obligations and substantially all consideration received).
-
-**Combine contracts** entered into at/near the same time with the same customer when they are negotiated as a package, consideration in one depends on the other, or the goods/services are a single performance obligation (`ASC 606-10-25-9`).
+- **Five criteria for a contract to exist** — A contract exists when **all five** criteria are met: 1. Parties have **approved** the contract and are committed to perform. 2. Each party's **rights** to goods/services are identifiable. 3. **Payment terms** are identifiable. 4. The contract has **commercial substance**. 5. It is **probable** the entity will collect the consideration it is entitled to (a *collectibility* gate). "Probable" under US GAAP = **likely to occur** (a higher threshold than IFRS's "probable").  _(ASC 606-10-25-1 to 25-8)_
+- **Criteria not met — deposit liability** — If the criteria are not met, no revenue; consideration received is a deposit liability until criteria are met or the release events occur (contract terminated and consideration non-refundable, or no remaining obligations and substantially all consideration received).  _(ASC 606-10-25-7)_
+- **Combine contracts** — Combine contracts entered into at/near the same time with the same customer when they are negotiated as a package, consideration in one depends on the other, or the goods/services are a single performance obligation.  _(ASC 606-10-25-9)_
 
 > **⚑ AUDIT FLASH POINT — collectibility gate.** Step 1 collectibility is assessed at the *customer* level on the consideration the entity expects to be entitled to (it may reflect an intention to offer a price concession, which is variable consideration, not a collectibility failure). Misusing Step 1 to defer revenue for a credit-risky customer when the real issue is a concession is a common error.
 
 ### Step 2 — Identify the performance obligations — `ASC 606-10-25-14` to `25-22`
 
-A performance obligation (PO) is a promise to transfer a **distinct** good/service, or a **series** of distinct goods/services that are substantially the same and have the same pattern of transfer.
-
-A good/service is **distinct** when both:
-- **Capable of being distinct** — the customer can benefit from it on its own or with readily available resources (`25-19`); and
-- **Distinct within the context of the contract** — the promise is separately identifiable, i.e. the entity is not providing a significant integration service, the item does not significantly modify/customize another, and it is not highly interdependent/interrelated with other promises (`25-21`).
-
-If not distinct, **combine** with other goods/services until a distinct bundle is identified.
+- **Performance obligation (PO)** — A promise to transfer a **distinct** good/service, or a **series** of distinct goods/services that are substantially the same and have the same pattern of transfer.  _(ASC 606-10-25-14 to 25-22)_
+- **Distinct — two conditions** — A good/service is **distinct** when both: **Capable of being distinct** — the customer can benefit from it on its own or with readily available resources (`25-19`); and **Distinct within the context of the contract** — the promise is separately identifiable, i.e. the entity is not providing a significant integration service, the item does not significantly modify/customize another, and it is not highly interdependent/interrelated with other promises (`25-21`).  _(ASC 606-10-25-19; 25-21)_
+- **Not distinct — combine** — If not distinct, combine with other goods/services until a distinct bundle is identified.  _(ASC 606-10-25-14 to 25-22)_
 
 > **⚑ AUDIT FLASH POINT — bundling/unbundling.** Whether implementation, setup, or customization is a separate PO or is bundled with a license/SaaS drives the timing of large amounts. Document the integration / interdependence analysis.
 
 ### Step 3 — Determine the transaction price — `ASC 606-10-32-2` to `32-27`
 
-Transaction price = consideration the entity expects to be **entitled to** in exchange for transferring goods/services, excluding amounts collected for third parties (e.g. sales taxes). Components:
-
-- **Variable consideration** (`32-5` to `32-9`): discounts, rebates, refunds, credits, price concessions, incentives, performance bonuses, penalties, returns. Estimate using **expected value** (probability-weighted) or **most likely amount**, whichever better predicts.
-- **The constraint** (`32-11` to `32-13`): include variable consideration only to the extent it is **probable** that a significant reversal will **not** occur when the uncertainty resolves. Factors that increase reversal risk: susceptibility to factors outside the entity's influence, long time to resolution, limited experience, broad range of outcomes.
-- **Significant financing component** (`32-15` to `32-20`): adjust for the time value of money when timing gives the customer/entity a significant financing benefit. Practical expedient: ignore if the period between transfer and payment is ≤ 1 year.
-- **Noncash consideration** (`32-21` to `32-24`): measure at fair value at contract inception.
-- **Consideration payable to a customer** (`32-25` to `32-27`): a reduction of transaction price unless it is payment for a distinct good/service received (then account for as a purchase).
+- **Transaction price** — Consideration the entity expects to be **entitled to** in exchange for transferring goods/services, excluding amounts collected for third parties (e.g. sales taxes).  _(ASC 606-10-32-2 to 32-27)_
+- **Variable consideration** — Discounts, rebates, refunds, credits, price concessions, incentives, performance bonuses, penalties, returns. Estimate using **expected value** (probability-weighted) or **most likely amount**, whichever better predicts.  _(ASC 606-10-32-5 to 32-9)_
+- **The constraint** — Include variable consideration only to the extent it is **probable** that a significant reversal will **not** occur when the uncertainty resolves. Factors that increase reversal risk: susceptibility to factors outside the entity's influence, long time to resolution, limited experience, broad range of outcomes.  _(ASC 606-10-32-11 to 32-13)_
+- **Significant financing component** — Adjust for the time value of money when timing gives the customer/entity a significant financing benefit. Practical expedient: ignore if the period between transfer and payment is ≤ 1 year.  _(ASC 606-10-32-15 to 32-20)_
+- **Noncash consideration** — Measure at fair value at contract inception.  _(ASC 606-10-32-21 to 32-24)_
+- **Consideration payable to a customer** — A reduction of transaction price unless it is payment for a distinct good/service received (then account for as a purchase).  _(ASC 606-10-32-25 to 32-27)_
 
 ### Step 4 — Allocate the transaction price — `ASC 606-10-32-28` to `32-41`
 
-Allocate to each PO in proportion to **standalone selling prices (SSP)** (`32-31`). If SSP is not observable, **estimate** it (adjusted market assessment, expected cost plus margin, or residual approach — residual only if the price is highly variable/uncertain, `32-34`).
-
-- Allocate a **discount** to the PO(s) to which it relates if the criteria in `32-37` are met; otherwise pro-rata to all POs.
-- Allocate **variable consideration** entirely to one PO (or distinct good in a series) if the `32-40` criteria are met.
+- **Allocation basis** — Allocate to each PO in proportion to **standalone selling prices (SSP)** (`32-31`). If SSP is not observable, **estimate** it (adjusted market assessment, expected cost plus margin, or residual approach — residual only if the price is highly variable/uncertain, `32-34`).  _(ASC 606-10-32-31; 32-34)_
+- **Discount allocation** — Allocate a **discount** to the PO(s) to which it relates if the criteria in `32-37` are met; otherwise pro-rata to all POs.  _(ASC 606-10-32-37)_
+- **Variable consideration allocation** — Allocate **variable consideration** entirely to one PO (or distinct good in a series) if the `32-40` criteria are met.  _(ASC 606-10-32-40)_
 
 ### Step 5 — Recognize revenue when/as a PO is satisfied — `ASC 606-10-25-23` to `25-37`
 
-Recognize revenue when the entity transfers **control** of the good/service to the customer. Control = ability to direct the use of, and obtain substantially all the remaining benefits from, the asset.
-
-**Over time** if **any one** of three criteria is met (`25-27`):
-1. The customer **simultaneously receives and consumes** the benefits as the entity performs (routine/recurring services); or
-2. The entity's performance **creates or enhances an asset the customer controls** as it is created; or
-3. Performance does **not create an asset with alternative use** to the entity **and** the entity has an **enforceable right to payment** for performance completed to date (incl. reasonable margin).
-
-If over time, **measure progress** with an output method (units, milestones, value transferred) or input method (costs incurred, labor hours), applied consistently (`25-31` to `25-37`). If progress cannot be reasonably measured but costs are recoverable, recognize revenue only to the extent of costs (`25-36`).
-
-**Point in time** otherwise — recognize when control transfers, using indicators (`25-30`): present right to payment, legal title, physical possession, risks and rewards of ownership, customer acceptance.
-
----
+- **Control** — Recognize revenue when the entity transfers **control** of the good/service to the customer. Control = ability to direct the use of, and obtain substantially all the remaining benefits from, the asset.  _(ASC 606-10-25-23 to 25-37)_
+- **Over time criteria** — **Over time** if **any one** of three criteria is met: 1. The customer **simultaneously receives and consumes** the benefits as the entity performs (routine/recurring services); or 2. The entity's performance **creates or enhances an asset the customer controls** as it is created; or 3. Performance does **not create an asset with alternative use** to the entity **and** the entity has an **enforceable right to payment** for performance completed to date (incl. reasonable margin).  _(ASC 606-10-25-27)_
+- **Measuring progress over time** — If over time, **measure progress** with an output method (units, milestones, value transferred) or input method (costs incurred, labor hours), applied consistently. If progress cannot be reasonably measured but costs are recoverable, recognize revenue only to the extent of costs.  _(ASC 606-10-25-31 to 25-37; 25-36)_
+- **Point in time indicators** — **Point in time** otherwise — recognize when control transfers, using indicators: present right to payment, legal title, physical possession, risks and rewards of ownership, customer acceptance.  _(ASC 606-10-25-30)_
 
 ## Section 3 — Reference layer: high-frequency special topics
 
-- **Principal vs. agent** (`ASC 606-10-55-36` to `55-40`): the entity is **principal** if it controls the good/service before transfer (indicators: primary responsibility for fulfillment, inventory risk, discretion in pricing). Principal recognizes **gross**; agent recognizes **net** (the fee/commission). This is the single most common gross-vs-net dispute.
-- **Licenses of IP** (`55-54` to `55-65`): **right to access** IP as it exists throughout the license period → **over time**; **right to use** IP as it exists at the point in time the license is granted → **point in time**. Sales/usage-based royalties on licenses of IP: recognize at the **later** of the subsequent sale/usage or satisfaction of the PO (`55-65`, the royalty exception).
-- **Warranties** (`55-30` to `55-35`): assurance-type warranty → `ASC 460` cost accrual, not a PO; service-type warranty → a separate PO.
-- **Customer options / material rights** (`55-41` to `55-45`): an option that gives a material right (discount the customer would not otherwise get) is a separate PO; allocate consideration to it.
-- **Contract modifications** (`ASC 606-10-25-10` to `25-13`): separate contract if it adds distinct goods/services at SSP; otherwise, if remaining goods are distinct → **prospective** (treat as termination + new contract); if not distinct → **cumulative catch-up**.
-
----
+- **Principal vs. agent** — The entity is **principal** if it controls the good/service before transfer (indicators: primary responsibility for fulfillment, inventory risk, discretion in pricing). Principal recognizes **gross**; agent recognizes **net** (the fee/commission). This is the single most common gross-vs-net dispute.  _(ASC 606-10-55-36 to 55-40)_
+- **Licenses of IP** — **Right to access** IP as it exists throughout the license period → **over time**; **right to use** IP as it exists at the point in time the license is granted → **point in time**. Sales/usage-based royalties on licenses of IP: recognize at the **later** of the subsequent sale/usage or satisfaction of the PO (the royalty exception).  _(ASC 606-10-55-54 to 55-65; 55-65)_
+- **Warranties** — Assurance-type warranty → `ASC 460` cost accrual, not a PO; service-type warranty → a separate PO.  _(ASC 606-10-55-30 to 55-35)_
+- **Customer options / material rights** — An option that gives a material right (discount the customer would not otherwise get) is a separate PO; allocate consideration to it.  _(ASC 606-10-55-41 to 55-45)_
+- **Contract modifications** — Separate contract if it adds distinct goods/services at SSP; otherwise, if remaining goods are distinct → **prospective** (treat as termination + new contract); if not distinct → **cumulative catch-up**.  _(ASC 606-10-25-10 to 25-13)_
 
 ## Section 4 — Reference layer: contract costs — `ASC 340-40`
 
-- **Incremental costs to obtain** a contract (e.g. sales commissions) are **capitalized** if expected to be recovered (`340-40-25-1`). Practical expedient: expense if the amortization period would be ≤ 1 year (`340-40-25-4`).
-- **Costs to fulfill** a contract are capitalized if they relate directly to a contract, generate/enhance resources used to satisfy POs, and are expected to be recovered (`340-40-25-5`), and are not in another standard's scope.
-- **Amortize** on a systematic basis consistent with the transfer of the related goods/services; review for impairment (`340-40-35`).
-
----
+- **Incremental costs to obtain** — Incremental costs to obtain a contract (e.g. sales commissions) are **capitalized** if expected to be recovered. Practical expedient: expense if the amortization period would be ≤ 1 year.  _(ASC 340-40-25-1; 340-40-25-4)_
+- **Costs to fulfill** — Costs to fulfill a contract are capitalized if they relate directly to a contract, generate/enhance resources used to satisfy POs, and are expected to be recovered, and are not in another standard's scope.  _(ASC 340-40-25-5)_
+- **Amortization** — Amortize on a systematic basis consistent with the transfer of the related goods/services; review for impairment.  _(ASC 340-40-35)_
 
 ## Section 5 — Presentation — `ASC 606-10-45`
 
-- **Contract liability** (deferred revenue): consideration received/due before the entity transfers goods/services.
-- **Contract asset**: the entity's right to consideration in exchange for goods/services already transferred, when that right is conditional on something other than the passage of time. Once unconditional → **receivable**.
-- **Refund liability**: consideration the entity expects to refund (e.g. expected returns); paired with an **asset for the right to recover returned goods** at former carrying amount less recovery costs.
-
----
+- **Contract liability (deferred revenue)** — Consideration received/due before the entity transfers goods/services.  _(ASC 606-10-45)_
+- **Contract asset** — The entity's right to consideration in exchange for goods/services already transferred, when that right is conditional on something other than the passage of time. Once unconditional → **receivable**.  _(ASC 606-10-45)_
+- **Refund liability** — Consideration the entity expects to refund (e.g. expected returns); paired with an **asset for the right to recover returned goods** at former carrying amount less recovery costs.  _(ASC 606-10-45)_
 
 ## Section 6 — Executable layer (Layer B): the procedure
 
@@ -171,14 +139,14 @@ Each month (×24) — amortize cost — driving rule: ASC 340-40-35-1
 
 > **⚑ AUDIT FLASH POINT — combine vs. separate the setup PO.** If setup were instead judged *distinct*, $6,000 would (after SSP allocation) be recognized at a point in time on go-live, accelerating revenue. The integration/interdependence conclusion must be evidenced.
 
----
-
 ## Section 7 — Divergence from IFRS 15
 
 ASC 606 and IFRS 15 share the five-step model and converge on most outcomes. Known divergences a dual-reporter must check:
 
+**Divergence from IFRS 15 table**  _(ASC 606; IFRS 15)_
+
 | Area | US GAAP (ASC 606) | IFRS (IFRS 15) |
-|------|-------------------|----------------|
+| --- | --- | --- |
 | Collectibility threshold (Step 1) | "Probable" = **likely** (higher bar) | "Probable" = **more likely than not** (lower bar) — `IFRS 15.9(e)` |
 | Licenses — sales/usage royalty exception | Applies to licenses of IP only | Same, but interaction with other guidance differs in edge cases |
 | Shipping & handling | Policy election to treat as a fulfillment activity (`606-10-25-18A`) | No equivalent election |
@@ -187,8 +155,6 @@ ASC 606 and IFRS 15 share the five-step model and converge on most outcomes. Kno
 | Disclosure / interim | Different interim disclosure requirements (US public entities) | IAS 34 interim regime |
 
 Always run `ifrs15-revenue` in parallel for dual-reporters and present both answers (base §2).
-
----
 
 ## Section 8 — Disclosure checklist — `ASC 606-10-50`
 
@@ -201,8 +167,6 @@ Trigger and produce as relevant:
 - [ ] Significant judgments: timing of satisfaction, determining/allocating transaction price (`50-17` to `50-20`)
 - [ ] Contract cost assets: closing balances by category and amortization (`340-40-50-2`)
 - [ ] Practical expedients elected (`50-22`, `50-23`)
-
----
 
 ## Section 9 — Topic self-checks (in addition to base §7)
 
@@ -218,12 +182,28 @@ Trigger and produce as relevant:
 - [ ] Balances classified: contract asset vs. receivable vs. contract liability vs. refund liability
 - [ ] Divergence from IFRS 15 checked for dual-reporters
 
----
-
 ## Section 10 — Disclaimer
 
 Provides computational and interpretive guidance on ASC 606 / ASC 340-40 only. Not an audit and not assurance. Revenue recognition turns heavily on entity-specific facts and significant judgment. Have outputs reviewed and signed by a qualified accountant before they are reflected in financial statements relied upon by third parties.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-gaap-asc606-revenue) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-gaap-asc606-revenue` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-gaap-asc606-revenue. If neither is available, confirm every figure against the official source pages cited above before relying on it.

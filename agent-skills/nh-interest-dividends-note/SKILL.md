@@ -1,17 +1,19 @@
 ---
 name: nh-interest-dividends-note
-description: "OpenAccountants tax and accounting reference for INTL: nh interest dividends note. Use for tax questions in INTL (tax year )."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use when asked about NH Interest Dividends Note. Last updated: May 22, 2026"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/nh-interest-dividends-note"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/nh-interest-dividends-note"
+  jurisdiction: "US-NH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# New Hampshire — Interest & Dividends Tax Repeal Note
+# NH Interest Dividends Note
+
+## New Hampshire — Interest & Dividends Tax Repeal Note
 
 _Last updated: May 22, 2026_
 
@@ -26,23 +28,31 @@ New Hampshire's Interest & Dividends (I&D) Tax has been **fully repealed** effec
 
 ## Phase-out schedule
 
+**Phase-out schedule**
+
 | Tax year ending | Rate |
-|---|---|
+| --- | --- |
 | Before Dec 31, 2023 | 5% |
 | On or after Dec 31, 2023 | 4% |
 | On or after Dec 31, 2024 | 3% |
 | **On or after Jan 1, 2025** | **0% — repealed** |
 
+- **Before Dec 31, 2023** — 5%
+- **On or after Dec 31, 2023** — 4%
+- **On or after Dec 31, 2024** — 3%
+- ****On or after Jan 1, 2025**** — **0% — repealed**
+
 ## What this means for tax year 2025+
 
-- **No I&D tax return is required** for taxable periods beginning on or after January 1, 2025.
-- New Hampshire has **no statewide income tax** on wages, salaries, or self-employment income — it never did.
-- New Hampshire has **no statewide sales tax**.
-- The state does still levy a **Business Profits Tax** (8.5%) and **Business Enterprise Tax** (0.55%) on businesses meeting certain thresholds, but those are separate from the repealed I&D tax.
+- **No I&D tax return required** — No I&D tax return is required for taxable periods beginning on or after January 1, 2025.
+- **No statewide income tax** — New Hampshire has no statewide income tax on wages, salaries, or self-employment income — it never did.
+- **No statewide sales tax** — New Hampshire has no statewide sales tax.
+- **Business Profits Tax** — 8.5% (Levied on businesses meeting certain thresholds, separate from the repealed I&D tax.)
+- **Business Enterprise Tax** — 0.55% (Levied on businesses meeting certain thresholds, separate from the repealed I&D tax.)
 
 ## Prior-year obligations
 
-Taxpayers who owe I&D tax for tax year 2024 or earlier must still file and pay. The repeal does not provide amnesty for prior tax years.
+- **Prior-year filing obligation** — Taxpayers who owe I&D tax for tax year 2024 or earlier must still file and pay. The repeal does not provide amnesty for prior tax years.
 
 ## Source
 
@@ -50,6 +60,24 @@ Taxpayers who owe I&D tax for tax year 2024 or earlier must still file and pay. 
 - [NH DRA — Interest & Dividends Tax overview](https://www.revenue.nh.gov/taxes-glance/interest-dividends-tax)
 - RSA 77 (Interest and Dividends Tax statute)
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/nh-interest-dividends-note) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nh-interest-dividends-note` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nh-interest-dividends-note. If neither is available, confirm every figure against the official source pages cited above before relying on it.

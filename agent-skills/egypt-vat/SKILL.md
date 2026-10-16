@@ -1,27 +1,24 @@
 ---
 name: egypt-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for an Egypt VAT return or advise on Egyptian VAT registration, filing, and e-invoicing compliance. Trigger on phrases like \"prepare Egypt VAT return\", \"Egyptian VAT\", \"ضريبة القيمة المضافة مصر\", \"ETA e-invoice\", or any Egypt VAT request. ALWAYS read this skill before touching any Egypt VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: EG
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/egypt-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/egypt-vat"
+  jurisdiction: "EG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Egypt VAT (ضريبة القيمة المضافة) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Egypt VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Egypt (جمهورية مصر العربية) |
 | Tax | Value Added Tax (ضريبة القيمة المضافة — VAT) |
 | Currency | EGP (Egyptian Pound — ج.م) |
@@ -42,8 +39,10 @@ metadata:
 
 ### Key return sections
 
+**Key return sections**
+
 | Section | Meaning |
-|---|---|
+| --- | --- |
 | Section A | Taxable sales at 14% (net) |
 | Section B | Taxable sales at 5% (net) |
 | Section C | Zero-rated exports (net) |
@@ -58,8 +57,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 14% standard |
 | Unknown whether 5% rate applies | 14% until confirmed |
 | Unknown whether export documentation complete | Treat as domestic 14% |
@@ -70,49 +71,34 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | EGP 500,000 |
 | HIGH tax delta on single conservative default | EGP 70,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per return |
 | LOW absolute net VAT position | EGP 1,000,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before starting any Egypt VAT work, obtain:
-
-1. ETA Tax Registration Number (TRN — رقم التسجيل الضريبي — 9 digits)
-2. ETA e-Invoice portal credentials and API key for accessing issued/received e-invoices
-3. Monthly bank statements in EGP (all business accounts)
-4. ETA e-Invoice XML downloads for all sales and purchases
-5. Import customs declarations (بيان جمركي) from Egyptian Customs Authority
-6. Prior month VAT return (for carried-forward excess input credit)
-7. Details of export transactions with shipping documentation
+- **Required inputs before starting Egypt VAT work** — 1. ETA Tax Registration Number (TRN — رقم التسجيل الضريبي — 9 digits) 2. ETA e-Invoice portal credentials and API key for accessing issued/received e-invoices 3. Monthly bank statements in EGP (all business accounts) 4. ETA e-Invoice XML downloads for all sales and purchases 5. Import customs declarations (بيان جمركي) from Egyptian Customs Authority 6. Prior month VAT return (for carried-forward excess input credit) 7. Details of export transactions with shipping documentation
 
 ### Refusal catalogue
 
-Refuse and escalate to a licensed Egyptian tax consultant for:
-- Partial exemption calculations (businesses with mixed taxable/exempt supplies)
-- VAT on real estate and construction (complex rules)
-- Special tax regimes (simplified VAT for certain agricultural cooperatives)
-- Reverse-charge on imported services — complex cases involving multiple service types
-- VAT refund claims for exporters (long process requiring ETA audit)
-- Turnover tax (ضريبة المبيعات) on certain categories — replaced by VAT but some transitional issues remain
-- VAT on free zones and special economic zones
-
----
+- **Refuse and escalate to licensed Egyptian tax consultant** — - Partial exemption calculations (businesses with mixed taxable/exempt supplies) - VAT on real estate and construction (complex rules) - Special tax regimes (simplified VAT for certain agricultural cooperatives) - Reverse-charge on imported services — complex cases involving multiple service types - VAT refund claims for exporters (long process requiring ETA audit) - Turnover tax (ضريبة المبيعات) on certain categories — replaced by VAT but some transitional issues remain - VAT on free zones and special economic zones
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banking and financial services
 
+**Banking and financial services**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Commercial International Bank (CIB) | Bank fees, transfers | Exempt | No |
 | National Bank of Egypt (NBE — البنك الأهلي المصري) | Loans, account fees | Exempt | No |
 | Banque Misr (بنك مصر) | Commercial banking | Exempt | No |
@@ -126,8 +112,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.2 Electricity and utilities
 
+**Electricity and utilities**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | EEHC / Cairo Electricity (شركة القاهرة لتوزيع الكهرباء) | Electricity — commercial | 14% | Yes |
 | Alexandria Electricity (شركة الإسكندرية لتوزيع الكهرباء) | Electricity — commercial | 14% | Yes |
 | Cairo Water (شركة مياه القاهرة) | Water supply | 14% | Yes |
@@ -136,8 +124,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.3 Telecommunications
 
+**Telecommunications**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Vodafone Egypt (فودافون مصر) | Mobile, data | 14% | Yes (business use) |
 | Orange Egypt (أورنج مصر) | Mobile, fiber internet | 14% | Yes (business use) |
 | Etisalat Egypt / e& Egypt | Mobile, business lines | 14% | Yes (business use) |
@@ -146,8 +136,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.4 Transport and travel
 
+**Transport and travel**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | EgyptAir (مصر للطيران) | Domestic flights | 14% | Yes |
 | EgyptAir | International flights | 0% (export) | No input applicable |
 | Air Arabia Egypt | Domestic/regional flights | 14% (domestic) | Yes |
@@ -159,8 +151,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.5 Logistics and courier
 
+**Logistics and courier**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Aramex Egypt (أرامكس مصر) | International/domestic courier | 14% | Yes |
 | DHL Egypt | International courier | 0% (export) / 14% (domestic) | Yes |
 | FedEx Egypt | International courier | 0% / 14% | Yes |
@@ -170,8 +164,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.6 Retail and office supplies
 
+**Retail and office supplies**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Carrefour Egypt (كارفور مصر) | Supermarket — mixed goods | 14% / exempt food mix | Partial |
 | Spinneys Egypt | Premium supermarket | 14% | Yes |
 | Seoudi Market | Upscale grocery | 14% | Yes |
@@ -182,8 +178,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.7 Software and digital services
 
+**Software and digital services**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Odoo Egypt | ERP — B2B | 14% | Yes |
 | Fintech Galaxy / Khazna | Fintech platform | 14% | Yes |
 | Microsoft Egypt (Azure, M365) | Cloud services — B2B | 14% (buyer reverse-charge) | Yes |
@@ -194,8 +192,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.8 Professional services
 
+**Professional services**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Certified Public Accountant (محاسب قانوني) | Audit, tax advisory | 14% | Yes |
 | Law firm (مكتب محاماة) | Legal services | 14% | Yes |
 | Engineering / consulting firm | Technical consulting | 14% | Yes |
@@ -204,8 +204,10 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.9 Insurance
 
+**Insurance**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Misr Insurance (مصر للتأمين) | All lines | Exempt | No |
 | Suez Canal Insurance | Marine, property | Exempt | No |
 | AXA Egypt | Health, motor, property | Exempt | No |
@@ -213,14 +215,14 @@ Refuse and escalate to a licensed Egyptian tax consultant for:
 
 ### 3.10 Healthcare
 
+**Healthcare**
+
 | Supplier | Typical description | VAT rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Private hospital / clinic | Medical treatment | Exempt | No |
 | Pharmacy (صيدلية) | Medicines | Exempt | No |
 | Medical equipment supplier | Devices | 5% (reduced) | Yes |
 | Seif Pharmacy / El-Ezaby | Pharmacy chain | Exempt (medicines) | No |
-
----
 
 ## Section 4 — Worked examples
 
@@ -241,8 +243,6 @@ Balance     : EGP 2,570,000.00
 - ETA e-Invoice: net EGP 500,000 + VAT 14% EGP 70,000 = EGP 570,000
 - Return entry: Section A — EGP 500,000 | Output VAT: EGP 70,000
 
----
-
 ### Example 2 — Export of services (zero-rated)
 
 **Scenario:** Egyptian software firm exports SaaS to UK client. Payment in GBP.
@@ -259,8 +259,6 @@ Amount      : +EGP 1,250,000.00 (GBP 28,000)
 - Export of services consumed outside Egypt by foreign entity — 0% VAT
 - Requires: contract, bank transfer evidence, service agreement showing UK consumption
 - Return entry: Section C — EGP 1,250,000 | VAT: EGP 0
-
----
 
 ### Example 3 — Reverse-charge on foreign digital service
 
@@ -280,8 +278,6 @@ Amount      : -EGP 112,000.00
 - Declare as output VAT AND claim as input — net zero for fully taxable business
 - Include in VAT return both output (Section E) and input (Section I)
 
----
-
 ### Example 4 — Fawry payment collection (14% service fee)
 
 **Scenario:** Company uses Fawry to collect customer payments; Fawry charges a collection fee.
@@ -298,8 +294,6 @@ Amount      : -EGP 57,000.00
 - Fawry e-Invoice: net EGP 50,000 + VAT 14% EGP 7,000 = EGP 57,000
 - Input credit: EGP 7,000 — deductible (business service)
 - Return entry: Section F — EGP 50,000; Input VAT: EGP 7,000
-
----
 
 ### Example 5 — Import of goods (customs VAT)
 
@@ -318,14 +312,12 @@ Amount      : -EGP 700,000.00
 - Pay at customs; claim as input VAT in monthly return (Section H)
 - Input credit: EGP 700,000 — full credit if machinery for taxable production
 
----
-
 ### Example 6 — Monthly return summary
 
-**Scenario:** Trading company — April 2025.
+**Monthly return summary**
 
 | Item | Net (EGP) | VAT (EGP) |
-|---|---|---|
+| --- | --- | --- |
 | Domestic sales at 14% | 3,000,000 | 420,000 |
 | Export sales (0%) | 1,000,000 | 0 |
 | Total Output | 4,000,000 | 420,000 |
@@ -333,9 +325,7 @@ Amount      : -EGP 700,000.00
 | Import VAT (customs) | 2,000,000 | 280,000 |
 | Foreign services (reverse-charge) | 200,000 | 28,000 |
 | Total Input | 3,700,000 | 518,000 |
-| **Excess input c/f** | | **98,000** |
-
----
+| **Excess input c/f** |  | **98,000** |
 
 ## Section 5 — Tier 1 rules (compressed)
 
@@ -357,12 +347,12 @@ Amount      : -EGP 700,000.00
 - All B2B sales require ETA e-Invoice (UUID-stamped) transmitted to ETA in real time
 - Excess input VAT carries forward; refunds available for exporters after ETA audit
 
----
-
 ## Section 6 — Tier 2 catalogue (genuinely data-unknowable items)
 
+**Tier 2 catalogue**
+
 | Item | Why unknowable | What to ask |
-|---|---|---|
+| --- | --- | --- |
 | Reduced-rate machinery (5%) | Whether specific item is on the ministerial reduced-rate schedule | "Provide item description and HS code — need to check ETA 5% schedule." |
 | Mixed-use property rent | Commercial (14%) vs residential (exempt) | "Is the lease for commercial or residential use? Provide contract." |
 | Export qualification | Whether service consumed outside Egypt | "Where is the customer? Evidence of offshore service consumption?" |
@@ -370,8 +360,6 @@ Amount      : -EGP 700,000.00
 | Vehicle purchase | Business vs personal — determines input credit eligibility | "Is this vehicle registered in the company's name for business use?" |
 | Entertainment | Must prove business purpose for input credit | "List attendees and business purpose." |
 | e-Invoice validity | Old paper invoices may not qualify for input credit post-mandate | "Confirm supplier is ETA e-Invoice registered — provide UUID reference." |
-
----
 
 ## Section 7 — Excel working paper
 
@@ -385,16 +373,14 @@ Amount      : -EGP 700,000.00
 5. `VATSummary` — monthly return totals
 6. `Tier2_Items` — awaiting client response
 
-**Key formula:**
-```
-Net_VAT = Total_Output_VAT - Total_Input_VAT - Prior_Excess_Credit
-```
+## Section 7 — Excel working paper
 
----
+- **Key formula** — Net_VAT = Total_Output_VAT - Total_Input_VAT - Prior_Excess_Credit
 
 ## Section 8 — Bank statement reading guide
 
 ### CIB format
+
 ```
 Date        : 15/04/2025
 Transaction : Credit Transfer
@@ -404,35 +390,28 @@ Balance     : EGP 2,570,000.00
 ```
 
 ### NBE (National Bank of Egypt) format
+
 ```
 15/04/2025  |  Incoming Transfer  |  COMPANY NAME  |  REF: INV-041  |  +570,000.00 EGP
 ```
 
 ### Key patterns:
+
 - **EGP number format:** Comma = thousands; period = decimal (EGP 570,000.00)
 - **Foreign Currency Credit:** Foreign payment — check for export zero-rate or reverse-charge
 - **Customs Payment:** Import duty + VAT — claim VAT as input with customs declaration
 - **SWIFT/Foreign Payment:** May trigger reverse-charge on imported services
 
----
-
 ## Section 9 — Onboarding fallback
 
-When client cannot provide ETA e-Invoices for all transactions:
-
-1. Use bank statement amounts as VAT-inclusive totals and back-calculate:
-   - Net = Total ÷ 1.14 | VAT = Total − Net
-2. Apply conservative defaults: 14% output; 0% input credit without ETA e-Invoice UUID
-3. Flag all items without e-Invoice UUID in Tier2_Items tab
-4. Issue data request listing missing invoice references
-5. Warn client: ETA can disallow input credit for invoices without valid UUID — systemic risk if supplier not e-Invoice registered
-
----
+- **When client cannot provide ETA e-Invoices for all transactions** — 1. Use bank statement amounts as VAT-inclusive totals and back-calculate: - Net = Total ÷ 1.14 | VAT = Total − Net 2. Apply conservative defaults: 14% output; 0% input credit without ETA e-Invoice UUID 3. Flag all items without e-Invoice UUID in Tier2_Items tab 4. Issue data request listing missing invoice references 5. Warn client: ETA can disallow input credit for invoices without valid UUID — systemic risk if supplier not e-Invoice registered
 
 ## Section 10 — Reference material
 
+**Reference material**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | ETA e-Invoice portal | https://invoicing.eta.gov.eg |
 | ETA main portal | https://www.eta.gov.eg |
 | VAT Law No. 67 of 2016 | ETA website — legislation section |
@@ -440,14 +419,30 @@ When client cannot provide ETA e-Invoices for all transactions:
 | ETA e-Invoice mandatory rules | ETA Decree 2020/2021 — phased rollout |
 | Reduced rate schedule | Annex to VAT Law — ministerial updates |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/egypt-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `egypt-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/egypt-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,14 +1,12 @@
 ---
 name: property-investor
 description: "Industry vertical for property investors including residential landlords, short-term rental operators (Airbnb/Booking.com), commercial property investors, and property developers. Loaded alongside any country skill to provide industry-specific classification guidance for rental income, mortgage interest treatment, capital vs revenue repairs, and property-specific deductions. Trigger phrases — landlord, rental property, property investor, Airbnb host, short-term rental, buy-to-let, commercial property, real estate investor, rental income, property portfolio."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: vertical
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/property-investor"
-  obligation: VERT
+  openaccountants_url: "https://www.openaccountants.com/skills/property-investor"
+  jurisdiction: "GLOBAL"
+  last_updated: "2026-06-12"
 ---
 
 # Property Investor Vertical Skill v1.0
@@ -460,8 +458,8 @@ Consider incorporation when:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/property-investor) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `property-investor` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/property-investor. If neither is available, confirm every figure against the official source pages cited above before relying on it.

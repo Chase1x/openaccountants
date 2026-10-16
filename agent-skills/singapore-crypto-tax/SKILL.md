@@ -1,27 +1,24 @@
 ---
 name: singapore-crypto-tax
-description: "> Use this skill whenever asked about Singapore cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Singapore\", \"Bitcoin Singapore\", \"digital tokens Singapore\", \"cryptocurrency gains Singapore\", \"IRAS crypto\", \"GST crypto Singapore\", \"staking Singapore\", \"mining income Singapore\", \"NFT tax Singapore\", \"Coinbase Singapore\", \"Binance Singapore\", \"payment tokens\", \"digital payment tokens\", \"capital gains Singapore crypto\", \"crypto business income Singapore\", or any question about the income tax, GST, or reporting obligations for cryptocurrency, tokens, or digital assets for Singapore tax residents or Singapore-source crypto income. Covers IRAS e-Tax Guide on Digital Tokens (income tax and GST), trader vs investor distinction, badges of trade, and GST exemption for digital payment tokens. ALWAYS read this skill before touching any Singapore crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Singapore cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Singapore\", \"Bitcoin Singapore\", \"digital tokens Singapore\", \"cryptocurrency gains Singapore\", \"IRAS crypto\", \"GST crypto Singapore\", \"staking Singapore\", \"mining income Singapore\", \"NFT tax Singapore\", \"Coinbase Singapore\", \"Binance Singapore\", \"payment tokens\", \"digital payment tokens\", \"capital gains Singapore crypto\", \"crypto business income Singapore\", or any question about the income tax, GST, or reporting obligations for cryptocurrency, tokens, or digital assets for Singapore tax residents or Singapore-source crypto income. Covers IRAS e-Tax Guide on Digital Tokens (income tax and GST), trader vs investor distinction, badges of trade, and GST exemption for digital payment tokens. ALWAYS read this skill before touching any Singapore crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: SG
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/singapore-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/singapore-crypto-tax"
+  jurisdiction: "SG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Singapore Crypto / Digital Assets Tax Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Singapore Crypto Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Singapore (Republic of Singapore) |
 | Tax | Income Tax (no capital gains tax) |
 | Currency | SGD (values must be converted to SGD at transaction date) |
@@ -43,32 +40,36 @@ Singapore has **no capital gains tax**. Gains from disposal of crypto assets hel
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether trading or investment | Assess against badges of trade; if unclear, treat as potentially taxable (trading) and seek IRAS ruling |
 | Unknown token classification | Treat as payment token (most common) |
 | Unknown cost basis | STOP — cannot compute gain without acquisition cost |
 | Unknown residency | STOP — affects Singapore-source income determination |
 | Unknown whether mining is hobby or business | Companies → presumed business; individuals → evaluate frequency and scale |
 
----
-
 ## Section 2 -- Classification Rules
 
 ### 2.1 IRAS Digital Token Classification
 
-IRAS classifies digital tokens into three categories for tax purposes (per the e-Tax Guide, October 2020):
+**IRAS Digital Token Classification**  _(IRAS e-Tax Guide (October 2020))_
 
 | Token Type | Definition | Examples | Tax Treatment on Disposal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Payment tokens** | Tokens that function or are intended to function as a medium of exchange | BTC, ETH, LTC, XRP, SOL, stablecoins (USDT, USDC) | Capital gain (not taxable) if investment; income if trading business |
 | **Utility tokens** | Tokens that provide access to a current or prospective product/service on a DLT platform | Filecoin (FIL), BAT, service access tokens | Capital gain (not taxable) if investment; income if trading business |
 | **Security tokens** | Tokens that represent ownership rights (equity, debt, units in a fund) | Tokenised shares, tokenised bonds, fund tokens | May attract withholding tax if dividend-like distributions; capital gain (not taxable) if investment disposal |
 
+IRAS classifies digital tokens into three categories for tax purposes (per the e-Tax Guide, October 2020):
+
 ### 2.2 Taxable vs Non-Taxable Events
 
+**Taxable vs Non-Taxable Events**
+
 | Event | Taxable? | Condition |
-|---|---|---|
+| --- | --- | --- |
 | Disposal of crypto investment (capital gain) | **No** | Held as long-term investment; no capital gains tax in Singapore |
 | Disposal of crypto trading stock (revenue gain) | **Yes** | Part of a trading business; taxed as income |
 | Receiving crypto as payment for goods/services | **Yes** | Revenue of the business at FMV when received |
@@ -83,14 +84,14 @@ IRAS classifies digital tokens into three categories for tax purposes (per the e
 | Crypto-to-crypto swap (trader) | **Yes** | Revenue transaction; gain/loss is taxable |
 | Transfer between own wallets | **No** | No change in beneficial ownership |
 
----
-
 ## Section 3 -- Rate Tables
 
 ### 3.1 Personal Income Tax Rates (YA 2025, Resident Individuals)
 
+**Personal Income Tax Rates (YA 2025, Resident Individuals)**  _(IRAS, Individual Income Tax rates, effective from YA 2024 onwards.)_
+
 | Chargeable Income (S$) | Rate | Cumulative Tax (S$) |
-|---|---|---|
+| --- | --- | --- |
 | First 20,000 | 0% | 0 |
 | Next 10,000 | 2% | 200 |
 | Next 10,000 | 3.5% | 550 |
@@ -105,42 +106,42 @@ IRAS classifies digital tokens into three categories for tax purposes (per the e
 | Next 500,000 | 23% | 199,150 |
 | Above 1,000,000 | 24% | — |
 
-**Citation:** IRAS, Individual Income Tax rates, effective from YA 2024 onwards.
-
-**YA 2025 rebate:** 60% personal income tax rebate, capped at S$200.
+- **YA 2025 rebate** — 60% personal income tax rebate, capped at S$200  _(IRAS, Individual Income Tax rates, effective from YA 2024 onwards.)_
 
 ### 3.2 Corporate Income Tax Rate
 
+**Corporate Income Tax Rate**  _(Income Tax Act 1947 (ITA), Section 43; IRAS corporate tax guide.)_
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Headline rate | 17% |
 | First S$10,000 chargeable income | 75% exemption → effective 4.25% |
 | Next S$190,000 chargeable income | 50% exemption → effective 8.5% |
 
-**Citation:** Income Tax Act 1947 (ITA), Section 43; IRAS corporate tax guide.
-
 ### 3.3 Non-Resident Rates
 
+**Non-Resident Rates**
+
 | Income Type | Rate |
-|---|---|
+| --- | --- |
 | Employment income | Higher of 15% flat or progressive resident rates |
 | Director's fees / consultant fees | 24% flat (from YA 2024) |
 | Business income (PE in Singapore) | 17% corporate rate or progressive personal rates |
-
----
 
 ## Section 4 -- Cost Basis Methods
 
 ### 4.1 Accepted Methods
 
+**Accepted Methods**
+
 | Method | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Specific identification | Acceptable | Must be clearly documented |
 | FIFO (First In, First Out) | Acceptable | Commonly used; IRAS does not mandate a specific method |
 | Weighted average cost | Acceptable | Particularly for fungible tokens traded in volume |
 | LIFO | Not commonly used | Not prohibited but may be questioned |
 
-**Consistent application:** Once a method is chosen, apply it consistently across the tax year and across years.
+- **Consistent application** — Once a method is chosen, apply it consistently across the tax year and across years.
 
 ### 4.2 Cost Basis Components
 
@@ -155,26 +156,26 @@ IRAS classifies digital tokens into three categories for tax purposes (per the e
 - Standard accounting principles (FRS 102 / SFRS(I)) apply
 - Inventory valuation: lower of cost or net realisable value at year-end
 
----
-
 ## Section 5 -- DeFi, Staking, Mining, and Airdrops
 
 ### 5.1 Mining
 
-**Per IRAS e-Tax Guide (Digital Tokens, paras 3.1--3.5):**
+**Mining**  _(IRAS e-Tax Guide (Digital Tokens, paras 3.1--3.5))_
 
 | Scenario | Tax Treatment |
-|---|---|
+| --- | --- |
 | Company mining | Business income — taxed at point of **disposal**, not at mining receipt. Company can claim mining expenses (electricity, hardware, etc.) as deductions. |
 | Individual mining (habitual, systematic) | Vocation income — profits from sale of mined tokens are taxable |
 | Individual mining (hobby) | Not taxable — gains on sale are capital gains (no CGT) |
 
-**Key nuance:** For miners, IRAS taxes at the **point of disposal**, not at receipt. The miner holds the token at cost (incurred mining costs) until sold.
+- **Key nuance** — For miners, IRAS taxes at the point of disposal, not at receipt. The miner holds the token at cost (incurred mining costs) until sold.  _(IRAS e-Tax Guide (Digital Tokens, paras 3.1--3.5))_
 
 ### 5.2 Staking and DeFi
 
+**Staking and DeFi**
+
 | Activity | Business Context | Tax Treatment |
-|---|---|---|
+| --- | --- | --- |
 | Staking rewards | Part of business operations | Business income at FMV when received; or at disposal depending on accounting |
 | Staking rewards | Individual, passive | Likely capital in nature; not taxable |
 | DeFi lending interest | Business | Taxable income |
@@ -185,18 +186,20 @@ IRAS classifies digital tokens into three categories for tax purposes (per the e
 
 ### 5.3 Airdrops and Hard Forks
 
+**Airdrops and Hard Forks**
+
 | Event | Tax Treatment |
-|---|---|
+| --- | --- |
 | Airdrop (no consideration given) | Not income; cost basis = S$0; gain on disposal is capital (not taxable for investors) |
 | Airdrop (in return for service, e.g. referral) | Taxable income at FMV |
 | Hard fork (new coin received) | Not a taxable event; cost basis of new coin = S$0; original coin cost basis unchanged |
 
----
-
 ## Section 6 -- NFT Treatment
 
+**NFT Treatment**
+
 | Scenario | Treatment |
-|---|---|
+| --- | --- |
 | Purchase of NFT | Acquisition at cost — cost basis for future disposal |
 | Sale of NFT (investor) | Capital gain — not taxable (no CGT) |
 | Sale of NFT (trader/business) | Taxable business income |
@@ -206,16 +209,14 @@ IRAS classifies digital tokens into three categories for tax purposes (per the e
 | NFT royalties | Income when received; taxable if part of business or vocation |
 | GST on NFT sales | If NFT is not a digital payment token → standard GST rules may apply (9% from 1 January 2024) |
 
----
-
 ## Section 7 -- Reporting Requirements
 
 ### 7.1 Badges of Trade (Trader vs Investor Determination)
 
-IRAS applies the common law "badges of trade" to distinguish trading (taxable) from investment (not taxable):
+**Badges of Trade (Trader vs Investor Determination)**
 
 | Badge | Indicates Trading | Indicates Investment |
-|---|---|---|
+| --- | --- | --- |
 | Subject matter | Commodities or items typically traded | Assets typically held for long-term appreciation |
 | Frequency of transactions | High volume, repeated transactions | Infrequent, isolated transactions |
 | Holding period | Short (days to weeks) | Long (months to years) |
@@ -225,10 +226,14 @@ IRAS applies the common law "badges of trade" to distinguish trading (taxable) f
 | Financing | Borrowed funds to trade | Own savings |
 | Organisation | Business-like structure, dedicated accounts | Casual, alongside primary employment |
 
+IRAS applies the common law "badges of trade" to distinguish trading (taxable) from investment (not taxable):
+
 ### 7.2 Filing Forms
 
+**Filing Forms**
+
 | Form | Who Files | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Form B (individuals with self-employment / business income) | Individuals with crypto trading business income | 15 April (paper) / 18 April (e-filing) |
 | Form B1 (individuals with employment income only) | Individuals with crypto employment payment only | 15 April (paper) / 18 April (e-filing) |
 | Form C-S / Form C (companies) | Companies with crypto business income | 30 November of YA |
@@ -236,10 +241,10 @@ IRAS applies the common law "badges of trade" to distinguish trading (taxable) f
 
 ### 7.3 GST Reporting
 
-**Legal basis:** IRAS e-Tax Guide: GST — Digital Payment Tokens (effective 1 January 2020).
+**GST Reporting**  _(IRAS e-Tax Guide: GST — Digital Payment Tokens (effective 1 January 2020))_
 
 | Transaction | GST Treatment |
-|---|---|
+| --- | --- |
 | Exchange of digital payment tokens for fiat (or vice versa) | **Exempt supply** (no GST) |
 | Exchange of digital payment tokens for other digital payment tokens | **Exempt supply** |
 | Use of digital payment tokens to pay for goods/services | GST on the goods/services; **not** on the token itself |
@@ -248,7 +253,7 @@ IRAS applies the common law "badges of trade" to distinguish trading (taxable) f
 | Mining services (identifiable recipient) | Standard-rated supply (9%) |
 | NFT sale | Not a digital payment token — standard GST rules apply |
 
-**GST registration threshold:** S$1 million in taxable supplies in past 12 months (or expected next 12 months). Exempt supplies (including payment token exchanges) count towards the threshold for registration purposes.
+- **GST registration threshold** — S$1 million in taxable supplies in past 12 months (or expected next 12 months). Exempt supplies (including payment token exchanges) count towards the threshold for registration purposes.  _(IRAS e-Tax Guide: GST — Digital Payment Tokens (effective 1 January 2020))_
 
 ### 7.4 No FBAR Equivalent
 
@@ -256,31 +261,29 @@ Singapore does not have an FBAR-like foreign asset reporting obligation for indi
 - Businesses holding significant crypto may have reporting obligations under MAS (Monetary Authority of Singapore) regulations
 - Licensed payment service providers under the Payment Services Act 2019 have AML/CFT reporting requirements
 
----
-
 ## Section 8 -- Loss Offset and Carry-Forward
 
+**Loss Offset and Carry-Forward**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Trading losses | Can offset against other income in the same YA (Section 37 ITA) |
 | Carry-forward of unabsorbed losses | Indefinite carry-forward, subject to shareholding test (Section 37 ITA) |
 | Carry-back | Up to 3 preceding YAs, capped at S$100,000 per YA (Section 37E ITA) — for companies only |
 | Capital losses | Not deductible — there is no capital gains tax regime to offset against |
 | Investment losses (individual) | Not deductible — capital in nature |
 
----
-
 ## Section 9 -- Anti-Avoidance Rules
 
+**Anti-Avoidance Rules**
+
 | Rule | Description |
-|---|---|
+| --- | --- |
 | General anti-avoidance (Section 33 ITA) | IRAS can disregard or vary any arrangement that has the purpose of tax avoidance |
 | Transfer pricing (Section 34D ITA) | Arm's length standard applies to related-party crypto transactions |
 | Substance over form | IRAS may recharacterise transactions based on economic substance |
 | Recharacterisation of capital as revenue | If IRAS determines activity is trading despite taxpayer's claim of investment, gains become taxable |
 | MAS compliance | Unlicensed crypto activities may attract regulatory scrutiny and affect tax positions |
-
----
 
 ## Section 10 -- Worked Examples
 
@@ -355,8 +358,6 @@ Corporate tax (17%):
 
 **Reporting:** File ECI within 3 months of year-end. File Form C-S/C by 30 November 2025.
 
----
-
 ## Self-Checks
 
 Before finalising any Singapore crypto tax computation:
@@ -371,14 +372,30 @@ Before finalising any Singapore crypto tax computation:
 - [ ] Trading losses properly offset or carried forward
 - [ ] YA 2025 personal income tax rebate applied where applicable
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an IRAS-accredited tax agent, Singapore chartered accountant, or equivalent licensed practitioner) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/singapore-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `singapore-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/singapore-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

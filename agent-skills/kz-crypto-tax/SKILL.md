@@ -1,15 +1,13 @@
 ---
 name: kz-crypto-tax
-description: "> Use this skill whenever asked about taxation of cryptocurrency and digital mining in Kazakhstan. Trigger on phrases like \"Kazakhstan crypto tax\", \"crypto mining tax Kazakhstan\", \"майнинг налог Казахстан\", \"AIFC crypto\", \"digital asset tax Kazakhstan\", \"плата за цифровой майнинг\". Covers the digital-mining fee on electricity, taxation of mining income, the AIFC (Astana) regulated-exchange framework, and how individuals' gains on digital assets are taxed under the 2026 Tax Code. ALWAYS read this before any Kazakhstan crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about taxation of cryptocurrency and digital mining in Kazakhstan. Trigger on phrases like \"Kazakhstan crypto tax\", \"crypto mining tax Kazakhstan\", \"майнинг налог Казахстан\", \"AIFC crypto\", \"digital asset tax Kazakhstan\", \"плата за цифровой майнинг\". Covers the digital-mining fee on electricity, taxation of mining income, the AIFC (Astana) regulated-exchange framework, and how individuals' gains on digital assets are taxed under the 2026 Tax Code. ALWAYS read this before any Kazakhstan crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-crypto-tax"
-  tax_year: 2026
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-crypto-tax"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Cryptocurrency & Digital Mining Tax — Skill v1.0
@@ -69,8 +67,8 @@ metadata:
 - NEVER present a figure as final — direct the client to a Kazakhstan accountant.
 
 ## Disclaimer
-This skill is informational only and not tax, legal, or financial advice. Kazakhstan's digital-asset and mining rules are evolving (new Tax Code 2026, AIFC rules) — verify current rates, the digital-mining fee bands, and licensing status with the КГД and AIFC. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill is informational only and not tax, legal, or financial advice. Kazakhstan's digital-asset and mining rules are evolving (new Tax Code 2026, AIFC rules) — verify current rates, the digital-mining fee bands, and licensing status with the КГД and AIFC. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

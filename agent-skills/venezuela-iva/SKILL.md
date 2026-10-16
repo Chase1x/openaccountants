@@ -1,27 +1,76 @@
 ---
 name: venezuela-iva
-description: "> Use this skill whenever asked to prepare, review, or create a Venezuela IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like \"prepare IVA return\", \"do the IVA\", \"Venezuela VAT\", \"SENIAT IVA\", \"Forma 30\", \"debito fiscal\", \"credito fiscal\", \"Contribuyente Especial\", or any request involving Venezuela value added tax filing. CRITICAL -- Venezuela's economic instability means rates and thresholds change frequently; ALWAYS verify current rates before filing. ALWAYS read this skill before touching any Venezuela IVA work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked to prepare, review, or create a Venezuela IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like \"prepare IVA return\", \"do the IVA\", \"Venezuela VAT\", \"SENIAT IVA\", \"Forma 30\", \"debito fiscal\", \"credito fiscal\", \"Contribuyente Especial\", or any request involving Venezuela value added tax filing. CRITICAL -- Venezuela's economic instability means rates and thresholds change frequently; ALWAYS verify current rates before filing. ALWAYS read this skill before touching any Venezuela IVA work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: VE
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/venezuela-iva"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/venezuela-iva"
+  jurisdiction: "VE"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Jose Padilla"
+  review_status: "current"
 ---
 
-# Venezuela IVA Return -- Self-Employed Skill v2.0
+# Venezuela IVA
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Venezuela IVA Return -- Self-Employed Skill v2.0
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### venezuela-iva
+
+- **Alícuota general** — 16%  _(Ley del IVA Articles 27, 61, 62)_
+- **Alícuota reducida (ciertos alimentos y bienes de primera necesidad)** — 8%  _(Ley del IVA Articles 27, 61, 62)_
+- **Alícuota adicional por lujo (sobre la alícuota general)** — Hasta 15%  _(Ley del IVA Articles 27, 61, 62)_
+- **Tasa combinada máxima (alícuota general + alícuota adicional por lujo)** — Hasta 31%  _(Ley del IVA)_
+- **Alícuota para exportaciones** — 0%  _(Ley del IVA)_
+- **Bienes y servicios exentos — Alimentos básicos, medicamentos, insumos agrícolas, libros, combustible, salud, educación, arrendamiento residencial, transporte público** — Exento (0% / sin IVA)  _(Ley del IVA Article 18; Ley del IVA Article 19)_
+- **Frecuencia de declaración — Contribuyente Ordinario** — Mensual  _(Ley del IVA)_
+- **Base para la fecha límite de declaración** — Calendario publicado por el SENIAT según el último dígito del RIF  _(Providencias SENIAT)_
+- **Formulario de declaración** — Forma 30  _(Ley del IVA)_
+- **Retención de Contribuyente Especial — fecha límite de declaración del período quincenal del 1 al 15** — Declarado a más tardar el día 20 del mismo mes  _(Providencia SNAT 2005-0056)_
+- **Retención de Contribuyente Especial — fecha límite de declaración del período quincenal del 16 al fin de mes** — Declarado a más tardar el día 5 del mes siguiente  _(Providencia SNAT 2005-0056)_
+- **Retención de Contribuyente Especial — compras a contribuyente ordinario con domicilio fiscal** — 75% del IVA  _(Providencia SNAT 2005-0056)_
+- **Retención de Contribuyente Especial — compras a proveedor sin domicilio fiscal** — 100% del IVA  _(Providencia SNAT 2005-0056)_
+- **Retención de Contribuyente Especial — entes gubernamentales** — 75% o 100% del IVA  _(Providencia SNAT 2005-0056)_
+- **Vehículos automotores (de pasajeros) — crédito fiscal de IVA soportado** — BLOQUEADO — no credito fiscal  _(Ley del IVA Article 33)_
+- **Entretenimiento — crédito fiscal de IVA soportado** — BLOQUEADO — no credito fiscal  _(Ley del IVA Article 33)_
+- **Uso personal — crédito fiscal de IVA soportado** — BLOQUEADO — no crédito fiscal  _(Ley del IVA Article 33)_
+- **Compras sin factura válida — crédito fiscal de IVA soportado** — BLOQUEADO — no crédito fiscal  _(Ley del IVA Article 33)_
+- **Declaración extemporánea** — 5 UT to 50 UT per return  _(Ley del IVA)_
+- **Pago extemporáneo** — 1% per month + monetary correction  _(Ley del IVA)_
+- **Incumplimiento de la obligación de retener** — 100% to 300% of amount not withheld  _(Ley del IVA)_
+- **Incumplimiento de la obligación de llevar Libros (libros de compras y ventas)** — 50 UT to 200 UT  _(Ley del IVA Article 56)_
+- **Incumplimiento de la obligación de emitir factura** — Business closure 1–5 days  _(Ley del IVA Article 54)_
+- **Fraude fiscal** — 100% to 300% of tax evaded + criminal prosecution  _(Ley del IVA)_
+- **Unidad monetaria para umbrales y sanciones** — Unidades Tributarias (UT) — ajustadas periódicamente  _(Ley del IVA)_
+- **Denominación monetaria vigente** — Bolívar Digital (introducido en 2021)
+- **Tipo de cambio a utilizar en transacciones en moneda extranjera** — Tasa oficial del BCV en la fecha de la transacción
+- **Fórmula de recuperación por prorrata** — % de Recuperación = Ventas Gravadas / Ventas Totales  _(Ley del IVA)_
+- **Libro de Compras y Ventas — campos obligatorios** — RIF, base imponible, monto del IVA, total — por transacción; los totales resumen se trasladan a la Forma 30  _(Ley del IVA Article 56)_
+- **Campos obligatorios de la factura fiscal** — RIF, fecha, descripción, base imponible, monto del IVA, total  _(Ley del IVA Article 54)_
+- **Frecuencia de declaración de retenciones del Contribuyente Especial** — Quincenal  _(Providencia SNAT 2005-0056)_
+- **Intereses bancarios (Intereses / Int Ganados)** — Exento — no gravable a efectos del IVA  _(Ley del IVA Article 19)_
+- **Tasa aplicable al momento del hecho imponible cuando la tasa cambia en el transcurso del período** — La tasa vigente al momento del hecho imponible  _(Ley del IVA)_
+- **Retención CE — Providencia rectora** — Providencia SNAT 2005-0056  _(Providencia SNAT 2005-0056)_
+- **Artículos de la legislación sobre alícuotas del IVA** — Ley del IVA Articles 27, 61, 62  _(Ley del IVA Articles 27, 61, 62)_
+- **Artículo de la legislación sobre bienes exentos** — Ley del IVA Article 18  _(Ley del IVA Article 18)_
+- **Artículo de la legislación sobre servicios exentos** — Ley del IVA Article 19  _(Ley del IVA Article 19)_
+- **Artículo de la legislación sobre créditos fiscales bloqueados del IVA** — Ley del IVA Article 33  _(Ley del IVA Article 33)_
+- **Artículo de la legislación sobre facturas fiscales** — Ley del IVA Article 54  _(Ley del IVA Article 54)_
+- **Artículo de la legislación sobre libros contables** — Ley del IVA Article 56  _(Ley del IVA Article 56)_
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference Table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Venezuela (Republica Bolivariana de Venezuela) |
 | Tax | IVA (Impuesto al Valor Agregado) |
 | Currency | Bolivares (Bs.) -- current denomination: Bolivar Digital (2021) |
@@ -35,7 +84,7 @@ metadata:
 | Filing frequency | Monthly (Contribuyente Ordinario) |
 | Filing deadline | Calendar published by SENIAT based on last digit of RIF |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- requires sign-off by a licensed Venezuelan CPA (Contador Publico Colegiado) |
+| Validated by | Verified by Jose Padilla (CPA) on 2026-06-21 |
 | Skill version | 2.0 |
 
 ### CRITICAL WARNING
@@ -44,8 +93,10 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### Rate Table (VERIFY BEFORE EACH FILING)
 
+**Rate Table**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 16% | Standard rate (alicuota general) -- VERIFY |
 | 8% | Reduced rate on certain essentials (when enacted) |
 | Up to 15% additional | Luxury goods (Alicuota Adicional) -- on top of standard |
@@ -54,8 +105,10 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### Key Thresholds
 
+**Key Thresholds Table**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Contribuyente Ordinario | All persons making habitual taxable sales above threshold |
 | Contribuyente Formal | Small taxpayers -- simplified obligations |
 | Contribuyente Especial | Designated by SENIAT -- special withholding agent |
@@ -63,14 +116,14 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### Conservative Defaults
 
+**Conservative Defaults Table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | IVA rate unknown | STOP -- verify current rate before proceeding |
 | Currency denomination unknown | STOP -- verify current Bolivar denomination |
 | Contribuyente type unknown | Contribuyente Ordinario (monthly filing) |
 | Exchange rate for foreign currency | Official BCV rate on date of transaction |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -84,22 +137,19 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### Refusal Catalogue
 
-**R-VE-1 -- Rate not verified.** "The current IVA rate has NOT been verified against the latest Gaceta Oficial. Do not proceed until rate is confirmed."
-
-**R-VE-2 -- Hyperinflation accounting.** "Hyperinflation adjustments and their interaction with IVA are complex. Escalate to specialist."
-
-**R-VE-3 -- Currency controls.** "Foreign currency transactions involving IGTF interaction require specialist review. IGTF is separate from IVA."
-
-**R-VE-4 -- Oil and gas sector.** "Hydrocarbon sector transactions require specialist knowledge. Escalate."
-
----
+- **R-VE-1 -- Rate not verified.** — The current IVA rate has NOT been verified against the latest Gaceta Oficial. Do not proceed until rate is confirmed.
+- **R-VE-2 -- Hyperinflation accounting.** — Hyperinflation adjustments and their interaction with IVA are complex. Escalate to specialist.
+- **R-VE-3 -- Currency controls.** — Foreign currency transactions involving IGTF interaction require specialist review. IGTF is separate from IVA.
+- **R-VE-4 -- Oil and gas sector.** — Hydrocarbon sector transactions require specialist knowledge. Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Income Patterns (Credits)
 
+**Income Patterns Table**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | TRANSFERENCIA [client] / TRF DESDE | Taxable supply | Output IVA at current rate | Wire transfer |
 | DEPOSITO EFECTIVO / CASH DEPOSIT | Taxable supply | Revenue | Cash receipt |
 | PAGO MOVIL / BIOPAGO | Taxable supply | Revenue | Mobile payment |
@@ -111,8 +161,10 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### 3.2 Expense Patterns (Debits)
 
+**Expense Patterns Table**
+
 | Pattern | Expense Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ALQUILER / ARRENDAMIENTO | Rent | Input IVA at current rate | Business premises |
 | CORPOELEC / ELECTRICIDAD | Utilities | Input IVA | Commercial electricity |
 | CANTV / MOVILNET / MOVISTAR / DIGITEL | Communications | Business portion | Mixed use: apportion |
@@ -125,15 +177,15 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### 3.3 Exempt Supply Indicators
 
+**Exempt Supply Indicators Table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ARROZ / HARINA / PAN / CARNE / LECHE | Exempt | Basic food |
 | FARMACIA / MEDICINA | Exempt | Pharmaceutical |
 | COLEGIO / UNIVERSIDAD | Exempt | Education |
 | CONSULTA MEDICA / HOSPITAL | Exempt | Health services |
 | GASOLINA / DIESEL | Exempt | Fuel (regulated) |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -169,14 +221,14 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 **Classification:** IVA Bs. 32,000 BLOCKED.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Forma 30 Return Structure
 
+**Forma 30 Return Structure Table**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | 1 | Ventas internas gravadas (domestic taxable sales) |
 | 2 | Debito fiscal en ventas internas |
 | 3 | Ventas de exportacion (exports, 0%) |
@@ -197,30 +249,34 @@ Venezuela's economic and regulatory environment is highly volatile. The IVA rate
 
 ### 5.2 Blocked Input IVA (Article 33)
 
-No credit: motor vehicles (passenger), entertainment, personal use, exempt operations, purchases without valid factura.
+- **Blocked input categories** — No credit: motor vehicles (passenger), entertainment, personal use, exempt operations, purchases without valid factura.  _(Ley del IVA Article 33)_
 
 ### 5.3 Contribuyente Especial Withholding (Providencia 2005-0056)
 
+**CE Withholding Table**
+
 | Scenario | Rate |
-|---|---|
+| --- | --- |
 | Purchasing from ordinary taxpayer with fiscal domicile | 75% of IVA |
 | Purchasing from supplier without fiscal domicile address | 100% of IVA |
 | Government entities | 75% or 100% of IVA |
 
-Bi-weekly filing: 1st-15th filed by 20th; 16th-end filed by 5th of following month.
+- **Bi-weekly filing deadlines** — Bi-weekly filing: 1st-15th filed by 20th; 16th-end filed by 5th of following month.  _(Providencia SNAT 2005-0056)_
 
 ### 5.4 Libro de Compras y Ventas (Article 56)
 
-All IVA taxpayers must maintain purchase and sales ledgers with RIF, base, IVA, total. Summary totals flow to Forma 30.
+- **Libro de Compras y Ventas requirement** — All IVA taxpayers must maintain purchase and sales ledgers with RIF, base, IVA, total. Summary totals flow to Forma 30.  _(Ley del IVA Article 56)_
 
 ### 5.5 Fiscal Invoice Requirements (Article 54)
 
-Must include RIF, date, description, base imponible, IVA amount, total. Fiscal machines required for certain taxpayers.
+- **Fiscal invoice requirements** — Must include RIF, date, description, base imponible, IVA amount, total. Fiscal machines required for certain taxpayers.  _(Ley del IVA Article 54)_
 
 ### 5.6 Penalties
 
+**Penalties Table**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 5 UT to 50 UT per return |
 | Late payment | 1% per month + monetary correction |
 | Failure to withhold | 100% to 300% of amount not withheld |
@@ -228,31 +284,27 @@ Must include RIF, date, description, base imponible, IVA amount, total. Fiscal m
 | Failure to issue factura | Business closure (1-5 days) |
 | Fraud | 100% to 300% of tax evaded + criminal prosecution |
 
----
-
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Rate Change Mid-Period
 
-If IVA rate changes during a filing period, apply the rate in effect at the time of the taxable event. A single period may have transactions at different rates. Flag for reviewer.
+- **Rate change mid-period** — If IVA rate changes during a filing period, apply the rate in effect at the time of the taxable event. A single period may have transactions at different rates. Flag for reviewer.
 
 ### 6.2 Luxury Goods Additional Rate
 
-May be subject to standard rate + additional luxury rate (up to 31% total). Verify current gazette for product list. Flag for reviewer.
+- **Luxury goods additional rate** — May be subject to standard rate + additional luxury rate (up to 31% total). Verify current gazette for product list. Flag for reviewer.
 
 ### 6.3 USD/Foreign Currency Transactions
 
-Convert to Bolivares at BCV official rate on date of transaction. IGTF may also apply on foreign currency portion. IGTF is separate from IVA. Flag for reviewer.
+- **USD/Foreign currency transactions** — Convert to Bolivares at BCV official rate on date of transaction. IGTF may also apply on foreign currency portion. IGTF is separate from IVA. Flag for reviewer.
 
 ### 6.4 Partial Exemption
 
-Direct attribution + proportional (prorrata). Recovery % = Taxable Sales / Total Sales. Flag for reviewer.
+- **Partial exemption recovery formula** — Direct attribution + proportional (prorrata). Recovery % = Taxable Sales / Total Sales. Flag for reviewer.
 
 ### 6.5 SENIAT Portal Downtime
 
-Document system unavailability. File as soon as available. Penalties may be contested on force majeure. Flag for reviewer.
-
----
+- **SENIAT portal downtime** — Document system unavailability. File as soon as available. Penalties may be contested on force majeure. Flag for reviewer.
 
 ## Section 7 -- Working Paper Template
 
@@ -290,14 +342,14 @@ REVIEWER FLAGS:
   [ ] IGTF separated from IVA?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Venezuelan Bank Statement Formats
 
+**Venezuelan Bank Statement Formats Table**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Banco de Venezuela | PDF | Fecha, Descripcion, Debito, Credito, Saldo |
 | Banesco | CSV / PDF | Fecha, Referencia, Descripcion, Monto, Saldo |
 | Banco Mercantil | CSV | Fecha, Descripcion, Cargo, Abono, Saldo |
@@ -307,8 +359,10 @@ REVIEWER FLAGS:
 
 ### Key Venezuelan Banking Narrations
 
+**Key Venezuelan Banking Narrations Table**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | TRANSFERENCIA / TRF | Wire transfer | Income or expense |
 | PAGO MOVIL | Mobile payment | Income or expense |
 | PUNTO DE VENTA / POS | Card terminal | Income or expense |
@@ -316,8 +370,6 @@ REVIEWER FLAGS:
 | SENIAT | Tax payment | Exclude |
 | IVSS / BANAVIH / FAOV | Social security | Exclude |
 | INTERESES | Interest | Exempt |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -344,14 +396,14 @@ ONBOARDING QUESTIONS -- VENEZUELA IVA
 9. Do you sell any luxury goods subject to additional rate?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation Table**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | IVA imposition | Ley del IVA |
 | Rates | Ley del IVA Articles 27, 61, 62 |
 | Exempt goods | Ley del IVA Article 18 |
@@ -372,8 +424,10 @@ ONBOARDING QUESTIONS -- VENEZUELA IVA
 
 ### Changelog
 
+**Changelog Table**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Venezuelan bank formats; local payment patterns; critical volatility warnings; CE withholding detail |
 | 1.1 | April 2026 | Rates and thresholds re-verified |
 | 1.0 | 2025 | Initial version |
@@ -388,8 +442,6 @@ ONBOARDING QUESTIONS -- VENEZUELA IVA
 - [ ] All fiscal invoices compliant?
 - [ ] BCV exchange rate used for foreign currency?
 
----
-
 ## PROHIBITIONS
 
 - NEVER assume IVA rate without verification -- rates change frequently in Venezuela
@@ -401,14 +453,30 @@ ONBOARDING QUESTIONS -- VENEZUELA IVA
 - NEVER apply reverse charge to out-of-scope categories
 - NEVER present calculations as definitive -- always label as estimated and direct client to a licensed Venezuelan Contador Publico Colegiado
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed Contador Publico Colegiado or equivalent practitioner in Venezuela) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/venezuela-iva) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `venezuela-iva` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/venezuela-iva. If neither is available, confirm every figure against the official source pages cited above before relying on it.

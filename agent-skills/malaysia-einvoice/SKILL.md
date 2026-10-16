@@ -1,26 +1,25 @@
 ---
 name: malaysia-einvoice
-description: "> Use this skill whenever asked about Malaysia e-invoicing, MyInvois system, LHDN/LHDNM/IRBM e-invoice, Inland Revenue Board Malaysia, UBL 2.1 for Malaysia, e-invoice mandatory timeline, RM threshold phases, MyInvois portal, MyInvois API, e-invoice validation, digital signature for Malaysian e-invoice, self-billed invoice, consolidated invoice, B2B/B2C/B2G e-invoice Malaysia, or any question about generating, submitting, validating, or troubleshooting Malaysian e-invoices. Also trigger when advising on compliance phases, relaxation periods, exemptions, or technical integration with IRBM. ALWAYS read this skill before touching any Malaysia e-invoice work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Malaysia e-invoicing, MyInvois system, LHDN/LHDNM/IRBM e-invoice, Inland Revenue Board Malaysia, UBL 2.1 for Malaysia, e-invoice mandatory timeline, RM threshold phases, MyInvois portal, MyInvois API, e-invoice validation, digital signature for Malaysian e-invoice, self-billed invoice, consolidated invoice, B2B/B2C/B2G e-invoice Malaysia, or any question about generating, submitting, validating, or troubleshooting Malaysian e-invoices. Also trigger when advising on compliance phases, relaxation periods, exemptions, or technical integration with IRBM. ALWAYS read this skill before touching any Malaysia e-invoice work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MY
-  category: invoicing
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/malaysia-einvoice"
-  obligation: EINV
+  openaccountants_url: "https://www.openaccountants.com/skills/malaysia-einvoice"
+  jurisdiction: "MY"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "MUHAMMAD HANIS MAT HUSSIN"
+  review_status: "current"
 ---
 
-# Malaysia E-Invoice (MyInvois) Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Malaysia Einvoice
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malaysia |
 | Currency | MYR (Malaysian Ringgit) |
 | E-Invoicing System | MyInvois |
@@ -36,8 +35,10 @@ metadata:
 
 ### Implementation Timeline
 
+**Implementation Timeline**
+
 | Phase | Annual Revenue (FY2022) | Mandatory From | Relaxation Ends | Full Enforcement |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Phase 1 | > RM100 million | 1 August 2024 | 31 January 2025 | Active |
 | Phase 2 | RM25M -- RM100M | 1 January 2025 | 30 June 2025 | Active |
 | Phase 3 | RM5M -- RM25M | 1 July 2025 | 31 December 2025 | Active |
@@ -50,8 +51,6 @@ metadata:
 - Revenue determination based on FY2022 Audited Financial Statements (or tax return if no audit required)
 - For new businesses commencing from 2026 onwards: mandatory from 1 July 2026 or commencement date (unless first-year revenue < RM1M)
 
----
-
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
@@ -62,8 +61,10 @@ metadata:
 
 ### Transaction Coverage
 
+**Transaction Coverage**
+
 | Transaction Type | E-Invoice Required |
-|---|---|
+| --- | --- |
 | B2B (business to business) | Yes — individual e-invoice per transaction |
 | B2G (business to government) | Yes — individual e-invoice per transaction |
 | B2C (business to consumer) | Yes — individual e-invoice for transactions > RM10,000 (from 1 Jan 2026); consolidated for smaller |
@@ -73,8 +74,10 @@ metadata:
 
 ### Document Types
 
+**Document Types**
+
 | Type Code | Document | Description |
-|---|---|---|
+| --- | --- | --- |
 | 01 | Invoice | Standard tax invoice |
 | 02 | Credit Note | Adjustment reducing amount |
 | 03 | Debit Note | Adjustment increasing amount |
@@ -91,14 +94,14 @@ metadata:
 - Aggregate all transactions for the period into a single submission
 - From 1 January 2026: individual e-invoice mandatory for B2C transactions exceeding RM10,000
 
----
-
 ## Section 3 -- Technical Format
 
 ### UBL 2.1 Structure
 
+**UBL 2.1 Structure**
+
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Standard | Universal Business Language 2.1 (ISO/IEC 19845) |
 | Submission Format | XML or JSON (both accepted) |
 | Root Element (XML) | `<Invoice>` |
@@ -110,8 +113,10 @@ metadata:
 
 ### Data Structure Categories (55 Fields in 8 Groups)
 
+**Data Structure Categories (55 Fields in 8 Groups)**
+
 | Category | Fields Included |
-|---|---|
+| --- | --- |
 | 1. Address | Street, city, state, postal code, country |
 | 2. Business Details | TIN, BRN/SST number, MSIC code, tourism tax number |
 | 3. Contact Number | Telephone, email |
@@ -128,14 +133,14 @@ metadata:
 - Signature embedded in UBL `cac:Signature` element
 - XAdES format for XML; equivalent JSON structure for JSON submissions
 
----
-
 ## Section 4 -- Mandatory Fields
 
 ### Invoice Header
 
+**Invoice Header**
+
 | UBL Path | Field Name | Description | Example |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | cbc:InvoiceTypeCode/@listVersionID | e-Invoice Version | Current version | 1.1 |
 | cbc:InvoiceTypeCode | e-Invoice Type Code | Document type | 01 |
 | cbc:ID | e-Invoice Code/Number | Unique reference | INV-2026-001 |
@@ -146,8 +151,10 @@ metadata:
 
 ### Supplier (cac:AccountingSupplierParty)
 
+**Supplier (cac:AccountingSupplierParty)**
+
 | Field | Description | Mandatory |
-|---|---|---|
+| --- | --- | --- |
 | TIN | Tax Identification Number | Yes |
 | BRN / NRIC / Passport | Registration/ID number | Yes |
 | SST Registration Number | Sales & Service Tax number | If registered |
@@ -162,8 +169,10 @@ metadata:
 
 ### Buyer (cac:AccountingCustomerParty)
 
+**Buyer (cac:AccountingCustomerParty)**
+
 | Field | Description | Mandatory |
-|---|---|---|
+| --- | --- | --- |
 | TIN | Tax Identification Number | Yes |
 | BRN / NRIC / Passport | Registration/ID number | Yes |
 | SST Registration Number | Sales & Service Tax number | If applicable |
@@ -174,8 +183,10 @@ metadata:
 
 ### Line Items (cac:InvoiceLine)
 
+**Line Items (cac:InvoiceLine)**
+
 | Field | Description | Mandatory |
-|---|---|---|
+| --- | --- | --- |
 | Item Classification Code | IRBM classification code | Yes |
 | Item Description | Product/service description | Yes |
 | Unit Price | Price per unit | Yes |
@@ -190,29 +201,33 @@ metadata:
 
 ### Totals
 
+**Totals**
+
 | Field | Description |
-|---|---|
+| --- | --- |
 | Total Excluding Tax | Sum of all line totals before tax |
 | Total Tax Amount | Sum of all tax amounts |
 | Total Including Tax | Grand total |
 | Total Payable Amount | Amount due from buyer |
 
----
-
 ## Section 5 -- Transmission Method
 
 ### Submission Channels
 
+**Submission Channels**
+
 | Channel | Description | Use Case |
-|---|---|---|
+| --- | --- | --- |
 | MyInvois Portal | Web-based manual submission | Low volume (< 50 invoices/month) |
 | System-to-System API | Direct API integration | Medium-to-high volume |
 | ERP/Accounting Software | Pre-built integration via middleware | Enterprise |
 
 ### API Endpoints (Production)
 
+**API Endpoints (Production)**
+
 | Endpoint | Method | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | /api/v1.0/login/taxpayer | POST | Authenticate via OAuth 2.0 (client credentials) |
 | /api/v1.0/login/intermediary | POST | Authenticate as intermediary system |
 | /api/v1.0/documentsubmissions | POST | Submit e-invoice(s) for validation |
@@ -224,8 +239,10 @@ metadata:
 
 ### Base URLs
 
+**Base URLs**
+
 | Environment | URL |
-|---|---|
+| --- | --- |
 | Production | https://myinvois.hasil.gov.my |
 | Sandbox | https://preprod-api.myinvois.hasil.gov.my |
 | SDK Portal | https://sdk.myinvois.hasil.gov.my |
@@ -247,8 +264,6 @@ metadata:
 6. Validated e-invoice shared with buyer (via MyInvois or direct)
 7. Buyer has 72 hours to reject (if disputed)
 
----
-
 ## Section 6 -- Validation Rules
 
 ### IRBM Validation Checks
@@ -265,8 +280,10 @@ metadata:
 
 ### Validation Statuses
 
+**Validation Statuses**
+
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | Submitted | Received, awaiting validation |
 | Valid | Passed all checks; legally valid e-invoice |
 | Invalid | Failed validation; must correct and resubmit |
@@ -275,8 +292,10 @@ metadata:
 
 ### Common Rejection Reasons
 
+**Common Rejection Reasons**
+
 | Error | Description | Resolution |
-|---|---|---|
+| --- | --- | --- |
 | Invalid TIN | TIN not found or inactive | Verify TIN at IRBM portal |
 | Missing mandatory field | Required field absent | Add missing field per SDK spec |
 | Invalid digital signature | Certificate expired or unrecognized | Renew certificate from approved CA |
@@ -284,14 +303,14 @@ metadata:
 | Invalid classification code | Item code not in IRBM table | Look up correct code in classification list |
 | Duplicate submission | Same ID already validated | Use unique invoice number |
 
----
-
 ## Section 7 -- Tax Computation Rules
 
 ### Applicable Taxes
 
+**Applicable Taxes**
+
 | Tax Type | Code | Rate | Applicable To |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Sales Tax | 01 | 5% or 10% | Manufactured/imported goods |
 | Service Tax | 02 | 6% or 8% | Prescribed services |
 | Tourism Tax | 03 | RM10/room/night | Accommodation |
@@ -300,11 +319,7 @@ metadata:
 
 ### Calculation Rules
 
-- Line Tax Amount = Taxable Amount × Tax Rate / 100
-- Rounding: 2 decimal places (standard rounding)
-- Document-level Tax Total = sum of all line tax amounts
-- Total Including Tax = Total Excluding Tax + Total Tax Amount
-- Multiple tax types can appear on same invoice (different lines)
+- **Line Tax Amount formula** — Line Tax Amount = Taxable Amount × Tax Rate / 100; Rounding: 2 decimal places (standard rounding); Document-level Tax Total = sum of all line tax amounts; Total Including Tax = Total Excluding Tax + Total Tax Amount; Multiple tax types can appear on same invoice (different lines)  _(Section 7 -- Tax Computation Rules)_
 
 ### Multi-Rate Invoice
 
@@ -324,12 +339,12 @@ metadata:
 - Tax amounts may need to be expressed in MYR for SST purposes
 - Use Bank Negara Malaysia published rates
 
----
-
 ## Section 8 -- Archiving Requirements
 
+**Section 8 -- Archiving Requirements**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention Period | 7 years from end of the year of assessment (Income Tax Act 1967) |
 | Format | Original validated XML/JSON (with IRBM validation response) |
 | Accessibility | Must be retrievable from MyInvois portal; also maintain own copy |
@@ -340,12 +355,12 @@ metadata:
 | Medium | Electronic storage acceptable; no paper copy required for tax purposes |
 | Audit | IRBM can request access to any e-invoice via MyInvois system directly |
 
----
-
 ## Section 9 -- Penalties for Non-Compliance
 
+**Section 9 -- Penalties for Non-Compliance**
+
 | Violation | Penalty | Legal Basis |
-|---|---|---|
+| --- | --- | --- |
 | Failure to issue e-invoice | RM200 -- RM20,000 fine per instance OR up to 6 months imprisonment | Section 82C, Income Tax Act 1967 |
 | Issuing e-invoice with incorrect information | RM200 -- RM20,000 fine per instance | Section 82C |
 | Late submission | Subject to penalty after relaxation period ends | P.U.(A) 265 |
@@ -361,8 +376,6 @@ metadata:
 
 - Buyers may not claim tax deductions without valid e-invoice from supplier
 - Self-billed e-invoices required for certain expense types (foreign services, employee benefits)
-
----
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -405,14 +418,30 @@ metadata:
 - Full digital audit trail from issuance to payment
 - Reduces paper-based audit requirements; enables data-driven risk assessment
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a tax agent, chartered accountant, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/malaysia-einvoice) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malaysia-einvoice` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malaysia-einvoice. If neither is available, confirm every figure against the official source pages cited above before relying on it.
