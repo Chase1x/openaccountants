@@ -1,439 +1,193 @@
 ---
 name: netherlands-crypto-tax
-description: "> Use this skill whenever asked about Netherlands cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Netherlands\", \"Bitcoin Netherlands\", \"crypto belasting\", \"Box 3 crypto\", \"vermogensrendementsheffing crypto\", \"cryptocurrency Netherlands\", \"crypto income Netherlands\", \"staking Netherlands\", \"mining income Netherlands\", \"NFT tax Netherlands\", \"Belastingdienst crypto\", \"Dutch crypto tax\", \"fictief rendement crypto\", \"heffingsvrij vermogen\", \"Overbruggingswet box 3\", \"Binance Netherlands tax\", \"Coinbase Netherlands tax\", \"aangifte crypto\", or any question about the income tax, wealth tax, or VAT treatment of cryptocurrency, tokens, or digital assets for Dutch tax residents or Netherlands-source crypto income. Covers Box 3 wealth taxation, fictional return system, actual return counter-evidence, Box 1 business classification, and DAC8 reporting. ALWAYS read this skill before touching any Netherlands crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Netherlands cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Netherlands\", \"Bitcoin Netherlands\", \"crypto belasting\", \"Box 3 crypto\", \"vermogensrendementsheffing crypto\", \"cryptocurrency Netherlands\", \"crypto income Netherlands\", \"staking Netherlands\", \"mining income Netherlands\", \"NFT tax Netherlands\", \"Belastingdienst crypto\", \"Dutch crypto tax\", \"fictief rendement crypto\", \"heffingsvrij vermogen\", \"Overbruggingswet box 3\", \"Binance Netherlands tax\", \"Coinbase Netherlands tax\", \"aangifte crypto\", or any question about the income tax, wealth tax, or VAT treatment of cryptocurrency, tokens, or digital assets for Dutch tax residents or Netherlands-source crypto income. Covers Box 3 wealth taxation, fictional return system, actual return counter-evidence, Box 1 business classification, and DAC8 reporting. ALWAYS read this skill before touching any Netherlands crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: NL
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/netherlands-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/netherlands-crypto-tax"
+  jurisdiction: "NL"
+  tax_year: "2026"
+  last_updated: "2026-09-28"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Netherlands Crypto / Digital Assets Tax Skill v1.0
+# Netherlands crypto and digital assets: classification, valuation and income tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+Tax year: 2026 estimates; 2025 returns.
 
----
+## Scope and period
 
-## Section 1 — Quick Reference
+Use this method for an individual's Dutch crypto tax classification and the crypto component of a complete income-tax return. It covers the 2025 return and separately labelled 2026 estimates. It also identifies payroll, business, VAT and company branches that require their own return method. Establish residence, ownership and the tax year before calculating. Migration, non-residence, trusts, companies and treaty questions require a specific scope decision; a Dutch exchange account alone does not establish Dutch taxing rights.
 
-| Field | Value |
+Private investment crypto normally belongs to Box 3. The ordinary method uses prescribed returns on reference-date assets, but the actual-return alternative includes annual income and value changes, including unrealised changes. Therefore neither “all gains are exempt” nor “only the January value ever matters” is an adequate instruction. Do not apply announced future Box 3 legislation to these years. Recheck enacted rules before extending this method to another year.
+
+Sources: [crypto classifications](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/cryptovaluta), [2025 tax calculation](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/belastingberekening), [2026 tax calculation](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/belastingberekening).
+
+## Ask the client first
+
+Collect the following before producing a filing-ready result:
+
+- Tax year, residence periods, age, fiscal-partner status and allocation, beneficial owner, minor-child holdings, employment and business connections.
+- Every exchange, wallet, custodian and protocol; token quantities, legal rights and obligations, euro values on the reference date, and evidence of the pricing source and time. Include locked, lent, wrapped and collateralised positions, debts and bankruptcy claims.
+- All other Box 3 assets and debts, exemptions and debt classification. A crypto-only total cannot calculate the taxpayer's overall Box 3 liability.
+- For actual return: opening and closing values, purchases, sales, swaps, rewards, income, gifts/inheritances, transfers and debt interest throughout the year. Reconcile external cash movements and remove transfers between the same owner's wallets from purchases and sales.
+- For mining, trading services, validators or NFT creation: what work was done, its economic purpose, expected and actual benefits, costs, organisation, contracts and whether the activity exceeds ordinary investment management. For employment or business receipts, record euro value at the relevant receipt or revenue recognition point.
+- Existing return, assessment, actual-return request and any applicable filing deadline or extension.
+
+## When to refuse or refer
+
+- Missing residence/ownership prevents a final scope conclusion. 
+- Missing reference-date values prevents ordinary Box 3 computation. 
+- Missing whole-portfolio annual records prevents a reliable actual-return comparison. Return a bounded calculation only when its assumptions are explicit; identify the exact missing evidence and its effect. Never silently value an unavailable or disputed position at nil.
+
+Source: [crypto return instructions](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/aangifte-doen-en-belasting-betalen-met-cryptos).
+
+## Classify before calculating
+
+| Situation | Method and decision |
 |---|---|
-| Country | Netherlands (Koninkrijk der Nederlanden) |
-| Tax | Inkomstenbelasting — Box 3 (Inkomen uit sparen en beleggen) |
-| Currency | EUR (all values must be in EUR) |
-| Tax year | Calendar year (1 January – 31 December) |
-| Primary authority | Wet inkomstenbelasting 2001 (Wet IB 2001), Articles 5.1–5.3; Overbruggingswet box 3 (2023–2027 transitional legislation); Wet tegenbewijsregeling box 3 (enacted 8 July 2025) |
-| Future reform | Wet werkelijk rendement box 3 — planned effective 1 January 2028 (actual-return system) |
-| Tax authority | Belastingdienst (Dutch Tax and Customs Administration) |
-| Filing portal | Mijn Belastingdienst (mijn.belastingdienst.nl) |
-| Filing deadline | 1 May of the following year (extensions possible until 1 September) |
-| EU reporting | DAC8 / CARF — from 2026 |
-| Validated by | Pending — requires sign-off by a Dutch belastingadviseur or registeraccountant |
-| Skill version | 1.0 |
+| Private investment and speculative trading | Normally Box 3. Frequency, a trading bot, leverage or time spent does not by itself establish Box 1. Investigate whether extra work beyond investment activities regularly produces additional income. |
+| Mining or other remunerated work | Determine whether a taxable source exists and whether it is other-work income or enterprise profit. The authority notes mining costs often prevent a benefit; proceeds exceeding costs can require Box 1 reporting. Do not classify solely by hardware count. |
+| Salary paid in crypto | Employer converts to euros at receipt; this is wage in kind. Subsequent private holdings require their own Box 3 assessment. |
+| Individual enterprise paid in crypto | Convert the consideration into euro turnover; later exchange results enter profit and loss. Crypto retained as business assets is valued at cost or lower market value. Purchases belong to enterprise assets only within normal business operations; permanently surplus funds invested privately can belong in Box 3. |
+| BV crypto | The BV conducts an enterprise with its assets. Use corporate accounting and tax, not an individual's Box 3 allowance. Authority guidance uses cost or lower market value for crypto on the balance sheet; it does not require taxing every unrealised appreciation. |
+| VAT on supplies paid in crypto | Convert payment to euros for the VAT return; payment medium does not decide the underlying supply's VAT treatment. Mining, token issuance, exchange services and complex protocols require separate VAT analysis. |
 
-### Key Principle: Box 3 Wealth Tax — NOT Capital Gains Tax
+Entrepreneur relief is not available merely because an activity is taxed in Box 1. Confirm income-tax entrepreneur status and each relief's conditions separately. Genuine business assets are not also included as the same taxpayer's private Box 3 assets.
 
-The Netherlands does **not** tax crypto capital gains for private investors. Instead, crypto is taxed as an asset under Box 3 based on its **value on 1 January** of the tax year. A fictional (notional) return is applied to this value, and tax is levied on that fictional return — regardless of whether the taxpayer actually made or lost money during the year.
+Source: [Belastingdienst crypto situation guide](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/cryptovaluta).
 
-### Box 3 Categories and Crypto Classification
+## Value the rights actually held
 
-| Asset Category | 2025 Notional Return | Examples |
-|---|---|---|
-| Banktegoeden (bank balances) | 1.37% | Savings, current accounts, cash above threshold |
-| Beleggingen en overige bezittingen (investments and other assets) | **5.88%** | **Cryptocurrency**, shares, bonds, real estate (not primary home), NFTs |
-| Schulden (deductible debts) | 2.70% | Loans, mortgages not in Box 1 |
+For ordinary crypto holdings use economic value at **1 January, 00:00**, in euros, using the reference-date quotation of the exchange used. Retain quantity, price, euro conversion and timestamp. For self-custody, document a relevant market quotation consistently; an unrelated closing price chosen because it is lower is not a justified reference-date valuation.
 
-**Crypto falls under "beleggingen en overige bezittingen" at 5.88% notional return.**
+For DeFi, staking, lending, liquidity pools, wrapped tokens and NFTs, first identify the asset or enforceable claim actually owned. Do not count both a receipt token and the underlying assets when they represent one economic position. Conversely, do not omit separately owned rewards or claims. A locked staking claim or a depegged wrapper is not automatically worth the unrestricted underlying token. Examine transfer restrictions, redemption terms, market transactions, recoverability and counterparty insolvency. Refer material illiquid or unique positions for a supported valuation instead of inventing a universal discount or floor-price rule.
 
-### Conservative Defaults
+Passive staking or lending does not automatically become a business; paid validator services, professional creation and other work may change classification. An airdrop is not automatically either tax-free or enterprise income: establish why it was received and any work or consideration. Investment NFTs, NFTs linked to services and personal-use rights may need different legal classification. This guide provides the intake and valuation process; it does not assert a tax ruling for every protocol or NFT.
 
-| Ambiguity | Default |
-|---|---|
-| Unknown whether trading is hobby or business | Treat as Box 3 (private investment) unless clear business indicators |
-| Unknown January 1 valuation | STOP — cannot compute Box 3 without peildatum value |
-| Unknown residency status | STOP — affects worldwide vs limited tax obligation |
-| DeFi positions with unclear valuation | Estimate fair market value on 1 January; flag for review |
-| Staking rewards received during year | Add to Box 3 value on next 1 January; if habitual business, escalate |
+Under the ordinary Box 3 method an individual trading cost-basis convention is not the tax base. Actual return needs annual flows and values. Business cost and recognition policies must follow the applicable accounting rules; do not impose a universal FIFO or average-cost election from this guide.
 
----
+Sources: [valuation and classification](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/cryptovaluta), [reference-date instructions](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/aangifte-doen-en-belasting-betalen-met-cryptos).
 
-## Section 2 — Required Inputs and Refusal Catalogue
+## The method, step by step
 
-### Required Inputs
+### Ordinary Box 3 method
 
-**Minimum viable** — total market value of all crypto holdings in EUR as of 1 January 2025, confirmation of Dutch tax residency, and indication of whether activity is passive holding or active business.
+The table concerns ordinary taxable categories, after checking ownership, exemptions and classification. Crypto is an investment/other asset, including a stablecoin merely intended to track a currency; do not label a token as a bank deposit without establishing the legal nature of the holding.
 
-**Recommended** — portfolio snapshots on 1 January from all exchanges (Binance, Coinbase, Kraken, Bitvavo, etc.), wallet balances on 1 January, DeFi position values, and overview of all other Box 3 assets and debts.
+| Parameter | 2025 return | 2026 estimate |
+|---|---:|---:|
+| Bank return | 1.37% | 1.28% provisional |
+| Investments/other assets return | 5.88% | 6.00% |
+| Debt return | 2.70% | 2.70% provisional |
+| Tax-free assets, individual | €57,684 | €59,357 |
+| Tax-free assets, fiscal partners together | €115,368 | €118,714 |
+| Debt threshold, individual | €3,800 | €3,800 |
+| Debt threshold, fiscal partners together | €7,600 | €7,600 |
+| Box 3 tax rate | 36% | 36% |
+| Official sources | [2025 parameters](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/bezittingen_en_schulden_box_3_) and [final rates](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/) | [2026 parameters](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026) |
 
-**Ideal** — complete Mijn Belastingdienst pre-populated data, portfolio tracker export with January 1 snapshots, full transaction history (to evaluate actual return option), and records of staking/mining activity frequency.
+The pooled fiscal-partner allowance, debt threshold and allocation below apply only to qualifying whole-year partners or partners eligible for and making the whole-year election. Establish that status before pooling; otherwise use the applicable individual/part-year rules.
 
-### Refusal Catalogue
+The 2026 bank/debt percentages are provisional-assessment parameters, not final annual rates. Preserve that status in every estimate.
 
-**R-NLC-1 — Residency unknown.** "Dutch tax residents are subject to Box 3 on worldwide assets. Non-residents may only be taxed on Dutch-source assets. Cannot proceed without confirming tax residency."
+Let B be bank balances, O investments/other taxable assets, D qualifying debts, T the debt threshold and H the appropriate tax-free allowance. Apply any reference-date anti-arbitrage adjustment first.
 
-**R-NLC-2 — No January 1 valuation.** "Box 3 tax is based entirely on the value of crypto holdings on 1 January. Without this valuation, the tax cannot be computed. Cannot proceed."
+1. Deductible debt A = max(D − T, nil).
+2. Net asset base R = max(B + O − A, nil).
+3. Taxable base G = max(R − H, nil).
+4. Aggregate deemed return F = max(B × bank rate + O × investment rate − A × debt rate, nil). Article 5.2 requires this nil floor even if R is positive.
+5. If R or G is nil, ordinary Box 3 income is nil. Otherwise ordinary income = F × G / R. Keep precision through this ratio and reconcile the return's rounding.
+6. Allocate a fiscal partnership's taxable base consistently with the return, calculate each person's income and apply the tax rate. The actual-return allocation must follow the applicable same allocation; do not independently assign losses for a better result.
 
-**R-NLC-3 — Corporate crypto holdings.** "Companies (BVs, NVs) holding crypto pay vennootschapsbelasting (corporate income tax) on realised and unrealised gains. This skill covers individuals (inkomstenbelasting) only. Escalate to a belastingadviseur."
+The tax-free allowance is not a universal threshold below which assets never need reporting. The return asks for assets for income-dependent schemes at lower limits. Follow the return questions and filing notice even if the calculation yields no Box 3 tax.
 
-**R-NLC-4 — Box 1 business classification.** "If crypto activity constitutes a business (onderneming) or work (resultaat uit overige werkzaamheden), it falls under Box 1 with different rules. This requires professional assessment. Escalate."
+Sources: [historical final rates](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/), [2025 assets/debts](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/bezittingen_en_schulden_box_3_), [2026 calculation and provisional status](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026), [Wet IB article 5.2](https://wetten.overheid.nl/BWBR0011353).
 
-**R-NLC-5 — Complex international structures.** "Non-resident taxpayers with Dutch crypto assets, or Dutch residents with foreign structures holding crypto, require specialist international tax advice. Escalate."
+## Actual-return comparison
 
----
+Compute the entire relevant Box 3 portfolio, including assets acquired during the year, not just the losing crypto position. Include direct income and realised and unrealised value changes. The basic crypto reconciliation for ordinary purchases and sales is:
 
-## Section 3 — Rate Tables and Computation
+**Closing value − opening value − purchases + sales**, with all values in euros.
 
-### 3.1 Box 3 Parameters for 2025
+Record swaps as a disposal and acquisition at supported euro values, so the portfolio reconciliation remains complete. Own-wallet transfers do not generate an external purchase or sale. Check rewards, gifts, inheritances, service receipts and other non-purchase movements separately so that income and capital movements are neither omitted nor double counted. Complex protocol rewards or transfers require a documented classification before finalising the formula.
 
-| Parameter | 2025 Value |
-|---|---|
-| Tax rate | **36%** |
-| Heffingsvrij vermogen (tax-free allowance) — single | **€57,684** |
-| Heffingsvrij vermogen — fiscal partners (combined) | **€115,368** |
-| Notional return: bank balances | 1.37% |
-| Notional return: investments & other assets (incl. crypto) | **5.88%** |
-| Notional return: debts | 2.70% |
-| Debt threshold — single | €3,800 |
-| Debt threshold — fiscal partners | €7,600 |
+Add the return on other Box 3 assets and subtract allowable debt interest. Ordinary expenses such as trading fees are not a general deduction under this actual-return method; do not net them silently into purchases or sales. Follow the official treatment for any specific exception. There is no tax-free asset allowance or debt threshold in this actual-return calculation, no inflation adjustment and no carryforward of a negative annual return. A negative overall annual result is floored at nil.
 
-**Citation:** Belastingdienst official calculation page (belastingdienst.nl/box-3); Overbruggingswet box 3; Belastingplan 2025.
+Compare this whole-portfolio actual income, allocated correctly for partners, with **ordinary taxable Box 3 income after the allowance ratio**, not with the gross deemed return F. Use the more favourable permitted result. A large crypto loss cannot be used selectively while excluding gains on other assets.
 
-### 3.2 Box 3 Computation Steps
+From 2025 the income-tax return offers the actual-return questions. The separate Opgaaf werkelijk rendement form is the route for 2024 and earlier where applicable. Older-year eligibility, assessment finality and deadlines must be checked for that taxpayer; do not promise reopening every year from 2017. Keep submission evidence and reconcile the resulting assessment.
 
-1. **Determine asset values on 1 January 2025** — total banktegoeden, total beleggingen en overige bezittingen (including all crypto), total schulden
-2. **Calculate notional return per category:**
-   - Bank balances × 1.37%
-   - Investments & other assets × 5.88%
-   - Debts (above threshold) × 2.70%
-3. **Taxable return** = (return on banks + return on investments) − return on debts
-4. **Capital yield tax base** = total assets − total debts (but debts reduced by threshold)
-5. **Effective return %** = taxable return ÷ capital yield tax base
-6. **Box 3 income** = (capital yield tax base − heffingsvrij vermogen) × effective return %
-7. **Tax** = Box 3 income × 36%
+Sources: [official crypto and other portfolio examples](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/rekenvoorbeelden-berekening-werkelijk-rendement), [2025 calculation and actual-return rules](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/belastingberekening).
 
-### 3.3 Actual Return Option (Tegenbewijsregeling) — Available from 2025
+## Reference-date transactions and losses
 
-Since the Hoge Raad (Supreme Court) Kerstarrest (24 December 2021) and subsequent rulings (June 2024), taxpayers can claim their **actual return** if it is lower than the notional return. The Wet tegenbewijsregeling box 3 was enacted on 8 July 2025.
+A temporary conversion of investments into bank balances around the reference date can be disregarded under peildatumarbitrage. The official rule covers a sale in the three months immediately before January followed by a purchase after January, with no more than three months between sale and purchase, and relevant temporary borrowing. Evidence that the transactions were not undertaken to save tax matters. Where the rule applies, report the affected assets/debts as though the temporary transactions had not occurred, and follow the official corresponding actual-return transaction adjustment. Do not recommend a December sale/January repurchase as automatically effective planning. Transfers between tax boxes require their own anti-abuse assessment.
 
-| Element | Detail |
-|---|---|
-| How to claim | Via the "Opgaaf Werkelijk Rendement" (OWR) form in Mijn Belastingdienst (available since 10 July 2025) |
-| What counts as actual return | Received income (interest, dividends, rent) PLUS realised and unrealised value changes of all Box 3 assets over the calendar year |
-| For crypto | Must include both realised gains/losses AND unrealised appreciation/depreciation (1 Jan value vs 31 Dec value) |
-| Tax treatment | Belastingdienst automatically applies the more favourable of notional vs actual return |
-| Available years | 2017 onwards (for years with open assessments) |
+Selling all crypto does not remove the proceeds from wealth: retained bank balances or other assets still enter the next relevant calculation. An exchange bankruptcy does not automatically make a recoverable claim worthless. Determine economic value, evidence and timing.
 
-**Key insight:** If crypto prices fell during 2025 but you held a large position on 1 January, the actual return method may produce a lower (or negative) return, reducing your tax liability.
+A negative overall Box 3 actual return gives no cross-year loss carryforward. For a Box 1 enterprise loss, first offset positive Box 1 income in the same year. A remaining assessed Box 1 loss is offset against the **three preceding years**, then the **nine following years**, in the mandatory order. It cannot offset Box 2 or Box 3 income. Obtain and reconcile the loss determination; corporate loss rules do not apply to this individual calculation.
 
-### 3.4 Future: Wet Werkelijk Rendement Box 3 (from 2028)
+Sources: [peildatumarbitrage and actual-return adjustment](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/regels_voor_het_tijdelijk_verplaatsen_van_bezittingen_en_schulden), [individual enterprise losses](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/verlies_uit_onderneming).
 
-From 1 January 2028, the system is planned to change fundamentally:
-- Tax based on **actual** income: received interest, dividends, rental income, and realised + unrealised value changes
-- Heffingsvrij **inkomen** (income exemption) of approximately €1,800 per person replaces heffingsvrij vermogen
-- Tax rate expected to remain 36%
-- Crypto unrealised gains/losses will be part of the taxable base
+## Worked checks
 
----
+These are isolated calculations, not a complete personal tax assessment. Keep the assumptions visible.
 
-## Section 4 — Cost Basis Methods
+### A — Ordinary private holdings in 2025
 
-### 4.1 Box 3 — No Cost Basis Needed for Standard Computation
+Single resident, no debts or other assets: bank €20,000 and crypto €150,000 at the reference date. Deemed return is €274 + €8,820 = €9,094. Net base is €170,000; taxable base €112,316. Ordinary income is €9,094 × €112,316 / €170,000 = **€6,008.245318**, giving **€2,162.968314** before filing-system rounding. Rounding the effective return rate early would distort this result. [Calculation basis](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/belastingberekening).
 
-Under the standard Box 3 notional return system, **cost basis is irrelevant** — only the market value on 1 January matters.
+### B — Falling portfolio, actual-return route
 
-| Method | Relevance |
-|---|---|
-| FIFO | Not required for Box 3 notional return |
-| Average cost | Not required for Box 3 notional return |
-| Specific identification | Not required for Box 3 notional return |
+Same person and opening balances as A. No crypto purchases, sales or rewards; closing crypto €90,000 and bank interest €250. Actual return is €90,000 − €150,000 + €250 = **−€59,750**, floored to nil. With no other Box 3 return, the actual-return comparison produces nil Box 3 income. For 2025 provide it through the annual return questions. [Calculation basis](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/rekenvoorbeelden-berekening-werkelijk-rendement).
 
-### 4.2 Actual Return (Tegenbewijsregeling) — Cost Basis Required
+### C — Purchases and sales
 
-If claiming actual return, you need:
-- Value of all crypto on 1 January and 31 December
-- All acquisition costs and disposal proceeds during the year
-- The Belastingdienst does not prescribe a specific method for calculating individual trade gains in the actual-return context; the total portfolio return over the year is what matters
+Assumed private portfolio: opening €80,000, closing €90,000, purchases €5,000, sales €17,000, no other flows. Actual crypto return is **€22,000**. This is not merely the €10,000 change in the wallet balance. Combine it with all other relevant Box 3 returns before comparing methods. [Calculation basis](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/rekenvoorbeelden-berekening-werkelijk-rendement).
 
-### 4.3 Box 1 Business — Cost Basis Required
+### D — Mining work: limited Box 1 rate illustration
 
-If crypto activity is classified as Box 1 business income, standard accounting methods apply (typically FIFO or weighted average under good bookkeeping practice — goed koopmansgebruik under Article 3.25 Wet IB 2001).
+Assume a supported taxable other-work classification, full Dutch national-insurance coverage and below AOW age throughout 2025. Revenue €40,000 less **established current deductible expenses** €15,000 leaves €25,000 taxable Box 1 income; no other Box 1 items. This expense assumption does not authorise immediate deduction of mining equipment: capital assets require the appropriate depreciation analysis. Gross income tax/national insurance is €25,000 × **35.82%** = **€8,955**, before credits and separate healthcare contribution. Other-work income does not receive entrepreneur/MKB deductions. If instead the facts establish enterprise profit, determine eligible deductions before applying tax bands; use the full income-tax method for the final liability. [Calculation basis](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/box_1/).
+
+### E — Nil-floor and missing-data decisions
+
+If deductible debt exceeds assets, stop at the nil net/taxable base without dividing by it. If the aggregate deemed return is negative but the taxable asset base is positive, apply the statutory deemed-return nil floor. If actual-return records cover only one wallet, do not claim that its loss eliminates the household's complete Box 3 liability.
+
+Sources: [Box 1 annual tables](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/box_1/), [official portfolio examples](https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/rekenvoorbeelden-berekening-werkelijk-rendement), [2025 computation](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/belastingberekening).
+
+## Filing, records and output
+
+In the 2025 and later return select cryptobezittingen under bank accounts and other assets; follow its annual asset, income and actual-return questions. A return's ordinary summary figures do not remove the need to retain transaction evidence. Do not substitute a generic deadline for the date on the filing invitation or an approved extension. Review the submitted return and assessment together; use the proper correction/objection route if an earlier return used the wrong method.
+
+Keep wallet ownership and reconciliation records, exchange exports, valuations, token rights, receipts, rewards, debt agreements, interest, source versions, calculation assumptions and submission confirmations. Individuals do not have the blanket business bookkeeping retention duty merely for privately owning crypto. Government guidance recommends retaining private tax records for at least five years; retain relevant older evidence where assessments, foreign matters or a dispute require it. Businesses normally retain core administration for seven years, with longer categories where applicable.
+
+DAC8 requires crypto service providers to report client and transaction data from 2026. It does not replace the taxpayer's return or automatically establish the correct tax classification. This guide does not provide a service provider's regulatory reporting implementation or AFM/DNB authorisation advice.
+
+Return the tax year, ownership/residence scope, classification reasoning, complete asset inventory, ordinary calculation, actual-return comparison or missing evidence, partner allocation, rounding, assumptions, source URLs and required referrals. Label a partial calculation as partial and keep any provisional 2026 parameters visible. Do not present a source review as an accountant's attestation.
+
+Sources: [crypto return fields](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/aangifte-doen-en-belasting-betalen-met-cryptos), [DAC8 summary](https://www.belastingdienst.nl/wps/wcm/connect/nl/werk-en-inkomen/content/cryptovaluta), [retention guidance](https://www.rijksoverheid.nl/vraag-en-antwoord/inkomstenbelasting/hoe-lang-moet-ik-mijn-financiele-administratie-bewaren).
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 5 — DeFi, Staking, Mining, and Airdrop Treatment
+## Talk to a verified accountant
 
-### 5.1 General Principle
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-For private investors, all crypto assets and DeFi positions are simply part of Box 3 — valued on 1 January. The nature of the holding (staking, lending, LP tokens) doesn't change the Box 3 treatment; it only matters for valuation.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-| Activity | Private Investor (Box 3) | Business/Professional (Box 1) |
-|---|---|---|
-| Passive holding | Box 3 — value on 1 Jan | N/A |
-| Staking (passive, via exchange) | Box 3 — include staking position value on 1 Jan | Box 1 if habitual business activity |
-| Mining (occasional) | Box 3 — include mined coins value on 1 Jan | Box 1 if habitual/organised |
-| Mining (systematic, with infrastructure) | Likely Box 1 — resultaat uit overige werkzaamheden or winst uit onderneming | Box 1 business income |
-| DeFi lending (e.g. Aave) | Box 3 — value of deposited crypto + accrued interest on 1 Jan | Box 1 if part of active trading business |
-| Liquidity provision (e.g. Uniswap) | Box 3 — value of LP tokens on 1 Jan | Box 1 if part of active business |
-| Active DeFi trading (frequent, systematic) | May be reclassified to Box 1 | Box 1 — resultaat uit overige werkzaamheden |
-| Airdrops | Box 3 — value on next 1 Jan if still held | Box 1 if received as part of business activity |
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-### 5.2 Box 1 Indicators (When Does Crypto Become Business?)
+## Today's figures and who stands behind this skill
 
-The Belastingdienst applies general income tax principles. There is no specific crypto threshold. Indicators for Box 1 classification:
-
-| Factor | Indicates Box 1 |
-|---|---|
-| Volume and frequency | Hundreds/thousands of trades, daily activity |
-| Specialist knowledge | Use of bots, algorithms, technical analysis |
-| Organisation | Dedicated infrastructure, office, employees |
-| Time investment | Significant hours spent on trading |
-| Leverage and borrowing | Trading with borrowed funds |
-| Source of income | Crypto trading is primary income source |
-
-**Box 1 consequences:** Income taxed at progressive rates (up to 49.50% in 2025), but business deductions and losses are available.
-
-### 5.3 Valuation of DeFi Positions on 1 January
-
-| Position Type | Valuation Method |
-|---|---|
-| Tokens on exchange | Exchange balance × price on 1 Jan |
-| Tokens in hardware wallet | Balance × price on 1 Jan (use CoinGecko/CoinMarketCap closing price) |
-| Staked tokens (locked) | Market value of underlying tokens on 1 Jan (not the staking derivative) |
-| LP tokens (Uniswap, etc.) | Fair market value of the LP position on 1 Jan (underlying tokens × prices) |
-| Lending deposits (Aave, Compound) | Principal + accrued interest in crypto × price on 1 Jan |
-| Wrapped tokens (WETH, WBTC) | Same as underlying token value |
-| Governance tokens (UNI, AAVE, etc.) | Market price on 1 Jan |
-
----
-
-## Section 6 — NFT Treatment
-
-NFTs are treated as "overige bezittingen" (other assets) in Box 3.
-
-| Activity | Treatment |
-|---|---|
-| Holding NFTs | Box 3 — fair market value on 1 January |
-| Buying NFTs with crypto | Crypto position decreases, NFT position increases — both valued on next 1 Jan |
-| Selling NFTs | Proceeds are part of your overall assets; capital gain is not separately taxed (Box 3 only) |
-| Creating and selling NFTs (artist) | If habitual/professional → Box 1 business income |
-| NFT valuation challenge | Use last sale price, floor price of collection, or best available fair market estimate |
-
-**Special issue:** Illiquid or unique NFTs with no clear market value — use conservative best estimate and document your methodology. The Belastingdienst may challenge valuations.
-
----
-
-## Section 7 — Reporting Requirements
-
-### 7.1 Aangifte Inkomstenbelasting (Income Tax Return)
-
-| Section | Content |
-|---|---|
-| Box 3, "beleggingen en andere bezittingen" | Total value of all crypto holdings as of 1 January 2025 in EUR |
-| "cryptovaluta" subcategory | Specifically listed in the Box 3 form — enter total EUR value |
-| Schulden (debts) | If you have crypto-related debts (margin loans, etc.) above the threshold |
-| Werkelijk rendement (if applicable) | Complete the Opgaaf Werkelijk Rendement (OWR) form if actual return < notional return |
-
-**Filing deadline:** 1 May of the following year (extended to 1 September upon request).
-
-### 7.2 What You Do NOT Report
-
-- Individual transactions (buys, sells, swaps)
-- Capital gains or losses on individual trades
-- Cost basis or FIFO calculations
-- Staking/mining reward details
-
-You only report the **total value on 1 January**.
-
-### 7.3 DAC8 / CARF (from 2026)
-
-Crypto exchanges will report Dutch users' transaction data to the Belastingdienst automatically. This will enable cross-referencing of reported Box 3 values against actual holdings.
-
-### 7.4 Record-Keeping
-
-| Requirement | Detail |
-|---|---|
-| Retention period | 7 years (algemene bewaarplicht under Article 52 AWR) |
-| Records to maintain | Portfolio snapshots on 1 January of each year, exchange statements, wallet balances, transaction history (especially if claiming actual return or for Box 1 classification) |
-| Format | Exchange exports, portfolio tracker screenshots, on-chain records |
-
----
-
-## Section 8 — Loss Offset and Carry-Forward
-
-### 8.1 Box 3 — No Loss Offset in Standard System
-
-Under the standard notional return system, there is **no concept of losses**. Tax is based on the fictional return, not actual results.
-
-| Scenario | Treatment |
-|---|---|
-| Crypto lost 50% value during 2025 | Irrelevant under notional return — tax based on 1 Jan value |
-| Crypto exchange went bankrupt | If holdings are worthless on next 1 Jan, Box 3 value = €0 for that year |
-| Sold all crypto at a loss | No Box 3 liability in following year (no assets on 1 Jan) |
-
-**This means Dutch crypto holders can pay tax even when they lost money — a major source of controversy and the reason for the Kerstarrest reform.**
-
-### 8.2 Actual Return — Negative Return Possible
-
-If using the tegenbewijsregeling (actual return):
-- A negative actual return (losses exceed income) results in **€0 Box 3 income** for that year
-- Negative returns can NOT be carried forward to offset future years' Box 3 income
-- The Belastingdienst applies the more favourable of notional vs actual return
-
-### 8.3 Box 1 — Standard Loss Rules
-
-If classified as Box 1 business income:
-- Losses from crypto business can offset other Box 1 income in the same year
-- Carry-back: 1 year
-- Carry-forward: indefinite (but limited to €1,000,000 + 50% of profits exceeding €1,000,000 per year)
-
----
-
-## Section 9 — Anti-Avoidance Rules
-
-### 9.1 General Anti-Abuse (Fraus Legis)
-
-Dutch tax law includes the doctrine of fraus legis — the Belastingdienst can disregard arrangements entered into primarily for tax avoidance purposes that conflict with the purpose and intent of the law.
-
-### 9.2 Peildatumarbitrage (Reference Date Manipulation)
-
-| Risk | Detail |
-|---|---|
-| Selling crypto before 31 December and rebuying after 1 January | Legitimate tax planning (Box 3 value on 1 Jan is zero), but must be genuine — if considered artificial, fraus legis may apply |
-| Moving crypto to non-reportable structures around 1 January | High audit risk — Belastingdienst is aware of this practice |
-| Using stablecoins to "park" value before 1 January | Stablecoins are also crypto — still counted as "overige bezittingen" |
-
-### 9.3 Box Hopping
-
-Moving assets between Box 1, Box 2, and Box 3 to minimise tax is subject to anti-avoidance scrutiny. The Belastingdienst can reclassify.
-
-### 9.4 DAC8 Cross-Referencing (from 2026)
-
-Automatic data exchange will make it much harder to underreport Box 3 crypto values. Exchanges report:
-- Account balances
-- Transaction volumes
-- User identity
-
----
-
-## Section 10 — Worked Examples
-
-### Example 1 — Standard Box 3 Computation
-
-**Input:** Dutch tax resident (single, no fiscal partner). On 1 January 2025:
-- Bank balances: €20,000
-- Crypto portfolio: €150,000 (BTC, ETH, various altcoins)
-- No debts, no other Box 3 assets
-
-**Computation:**
-```
-Step 1 — Notional return:
-  Bank balances:  €20,000 × 1.37%  =   €274.00
-  Crypto:        €150,000 × 5.88%  = €8,820.00
-  Total return:                       €9,094.00
-
-Step 2 — Capital yield tax base:
-  Total assets:  €20,000 + €150,000 = €170,000
-  Less debts:    €0
-  Tax base:      €170,000
-
-Step 3 — Effective return percentage:
-  €9,094 ÷ €170,000 = 5.3494%
-
-Step 4 — Box 3 income:
-  (€170,000 − €57,684) × 5.3494% = €112,316 × 5.3494% = €6,008.53
-
-Step 5 — Tax:
-  €6,008.53 × 36% = €2,163.07
-```
-
-### Example 2 — Actual Return Lower Than Notional
-
-**Input:** Same taxpayer as Example 1. During 2025, crypto portfolio fell from €150,000 (1 Jan) to €90,000 (31 Dec). No crypto was sold. Bank interest earned: €250.
-
-**Actual return computation:**
-```
-Actual return:
-  Bank interest:        €250.00
-  Crypto value change:  €90,000 − €150,000 = −€60,000.00
-  Total actual return:  €250 + (−€60,000) = −€59,750.00
-
-Since actual return (−€59,750) < notional return (€9,094),
-the Belastingdienst uses the actual return.
-
-Actual return is negative → Box 3 income = €0
-Tax = €0
-
-Savings compared to notional method: €2,163.07
-```
-
-The taxpayer should file the Opgaaf Werkelijk Rendement (OWR) to claim this benefit.
-
-### Example 3 — Crypto Miner (Box 1)
-
-**Input:** Dutch tax resident operates a mining farm with 20 GPUs, dedicated premises, and regular income from mining. Total mining revenue in 2025: €40,000. Electricity and hardware costs: €15,000. No other employment.
-
-**Computation:**
-```
-Classification: Box 1 — winst uit onderneming (business profits)
-
-Revenue:        €40,000
-Expenses:       €15,000
-Taxable profit: €25,000
-
-Box 1 tax (2025 rates, approximate):
-  Up to €38,441: 36.97%
-  €25,000 × 36.97% = €9,242.50
-
-Less: small business deduction (zelfstandigenaftrek) 
-  and other Box 1 deductions if applicable.
-
-Mined crypto still held on 1 January: NOT counted in
-Box 3 (already in Box 1 as business assets).
-```
-
----
-
-## Self-Checks
-
-Before delivering any Netherlands crypto tax computation, verify:
-
-- [ ] Residency confirmed — Dutch tax resident (worldwide) or non-resident?
-- [ ] 1 January valuation obtained for ALL crypto holdings across ALL platforms and wallets
-- [ ] Correct category: crypto is "beleggingen en overige bezittingen" at 5.88% (2025)
-- [ ] Heffingsvrij vermogen correctly applied (€57,684 single / €115,368 partners)
-- [ ] Fiscal partner status checked — can allocate Box 3 assets optimally
-- [ ] Actual return option evaluated — is actual return lower than notional?
-- [ ] Box 1 indicators assessed — is activity hobby or business?
-- [ ] DeFi positions included in Box 3 at fair market value on 1 Jan
-- [ ] Peildatumarbitrage risk flagged if large sales occurred near year-end
-- [ ] Output labelled as estimated — flag for professional review
-
----
-
-## PROHIBITIONS
-
-- NEVER apply capital gains tax to crypto for Dutch private investors — there is no CGT in the Netherlands for Box 3 assets
-- NEVER confuse Box 3 notional return with actual gains — the tax is based on fictional return, not real profits (unless actual return option is used)
-- NEVER forget that crypto holders pay tax even in loss years under the standard system
-- NEVER use mid-year or year-end values — Box 3 is based strictly on 1 January values (peildatum)
-- NEVER assume staking/mining is automatically Box 1 — only habitual, organised, business-like activity qualifies
-- NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
-- NEVER ignore the actual return option — it can save significant tax in down markets
-- NEVER advise on AFM/DNB regulatory matters — this skill covers tax only
-- NEVER assume the system will continue unchanged — Box 3 reform (werkelijk rendement) is planned for 2028
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a belastingadviseur, registeraccountant, or fiscalist in the Netherlands) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/netherlands-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-28. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

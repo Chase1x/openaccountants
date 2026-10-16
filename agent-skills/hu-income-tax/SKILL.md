@@ -1,27 +1,24 @@
 ---
 name: hu-income-tax
-description: "> Use this skill whenever asked about Hungarian income tax for self-employed individuals (egyéni vállalkozó). Trigger on phrases like \"how much tax do I pay\", \"SZJA\", \"personal income tax Hungary\", \"KATA\", \"átalányadózás\", \"flat-rate taxation\", \"egyéni vállalkozó\", \"self-employed tax Hungary\", \"SZOCHO\", \"TB járulék\", or any question about filing or computing income tax for a self-employed or freelance client in Hungary. ALWAYS read this skill before touching any Hungarian income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Hungarian income tax for self-employed individuals (egyéni vállalkozó). Trigger on phrases like \"how much tax do I pay\", \"SZJA\", \"personal income tax Hungary\", \"KATA\", \"átalányadózás\", \"flat-rate taxation\", \"egyéni vállalkozó\", \"self-employed tax Hungary\", \"SZOCHO\", \"TB járulék\", or any question about filing or computing income tax for a self-employed or freelance client in Hungary. ALWAYS read this skill before touching any Hungarian income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: HU
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/hu-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/hu-income-tax"
+  jurisdiction: "HU"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Hungary Income Tax (SZJA) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# HU Income Tax
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before classifying anything.**
+**Quick reference field table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Hungary (Magyarország) |
 | Tax type | Személyi jövedelemadó (SZJA -- personal income tax) |
 | Primary legislation | 1995. évi CXVII. törvény (SZJA Act) |
@@ -39,59 +36,55 @@ metadata:
 | Validated by | Pending -- requires Hungarian adótanácsadó sign-off |
 | Validation date | Pending |
 
-**Tax regime summary:**
+**Read this whole section before classifying anything.**
+
+**Tax regime summary**
 
 | Regime | Tax on | Rate | Best for |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | KATA | Fixed monthly | HUF 50,000/mo | B2C services, low admin |
 | Átalányadózás | Deemed income | 15% SZJA | Services with low real expenses |
 | Standard (vállalkozói) | Actual profit | 9% + 15% on withdrawal | High-expense businesses |
 
-**Átalányadó cost ratios:**
+**Átalányadó cost ratios**
 
 | Activity | Cost ratio |
-|---|---|
+| --- | --- |
 | Retail (non-food) | 90% |
 | Listed activities (hair, repair, taxi) | 80% |
 | All other activities | 40% |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown tax regime | STOP -- must determine |
 | Unknown expense category | Not deductible |
 | Unknown ÖVTJ code for átalányadó | STOP -- ratio depends on code |
 | Unknown client type for KATA | Assume company (disqualifies KATA) |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the tax year. Acceptable from: OTP Bank, K&H Bank, Erste Bank Hungary, CIB Bank, Raiffeisen HU, MBH Bank, or fintech (Revolut, Wise).
-
-**Recommended** -- invoices, chosen regime confirmation, ÖVTJ code(s), NAV correspondence.
-
-**Ideal** -- complete bookkeeping, prior year SZJA return, contribution statements.
+- **Minimum viable input** — bank statement for the tax year. Acceptable from: OTP Bank, K&H Bank, Erste Bank Hungary, CIB Bank, Raiffeisen HU, MBH Bank, or fintech (Revolut, Wise).
+- **Recommended inputs** — invoices, chosen regime confirmation, ÖVTJ code(s), NAV correspondence.
+- **Ideal inputs** — complete bookkeeping, prior year SZJA return, contribution statements.
 
 ### Refusal catalogue
 
-**R-HU-1 -- Kft./Zrt.** *Trigger:* client is a limited company. *Message:* "This skill covers egyéni vállalkozó only. Kft. files corporate income tax (TAO). Please use a separate skill."
-
-**R-HU-2 -- International income.** *Trigger:* significant foreign income. *Message:* "International income is outside scope. Consult an adótanácsadó."
-
-**R-HU-3 -- Regime unknown.** *Trigger:* client has not confirmed KATA/átalányadó/standard. *Message:* "I cannot compute without knowing your chosen tax regime."
-
----
+- **R-HU-1 -- Kft./Zrt.** — Trigger: client is a limited company. Message: "This skill covers egyéni vállalkozó only. Kft. files corporate income tax (TAO). Please use a separate skill."  _(R-HU-1)_
+- **R-HU-2 -- International income.** — Trigger: significant foreign income. Message: "International income is outside scope. Consult an adótanácsadó."  _(R-HU-2)_
+- **R-HU-3 -- Regime unknown.** — Trigger: client has not confirmed KATA/átalányadó/standard. Message: "I cannot compute without knowing your chosen tax regime."  _(R-HU-3)_
 
 ## Section 3 -- Transaction pattern library (the lookup table)
 
 ### 3.1 Hungarian banks (fees and interest)
 
+**Hungarian banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OTP BANK, OTP | Bank charges: deductible (standard regime) | Monthly fees |
 | K&H BANK | Bank charges: deductible | Same |
 | ERSTE BANK | Bank charges: deductible | Same |
@@ -105,8 +98,10 @@ metadata:
 
 ### 3.2 Hungarian government and statutory bodies
 
+**Government/statutory bodies pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NAV, NEMZETI ADÓ | EXCLUDE | Tax payment |
 | KATA BEFIZETÉS | EXCLUDE (if on KATA: this IS the tax) | KATA monthly payment |
 | SZOCHO, TB JÁRULÉK | Deductible under standard regime | Social contributions |
@@ -115,8 +110,10 @@ metadata:
 
 ### 3.3 Hungarian utilities and telecoms
 
+**Utilities and telecoms pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MVM, ELMŰ-ÉMÁSZ, E.ON HU | Deductible if business premises | Electricity; apportion if home |
 | FŐGÁZ, TIGÁZ | Deductible if business premises | Gas |
 | TELEKOM (MAGYAR TELEKOM), TELENOR, VODAFONE HU, YETTEL | Deductible: business phone/internet | Mixed: apportion |
@@ -124,16 +121,20 @@ metadata:
 
 ### 3.4 SaaS and software -- international
 
+**SaaS and software pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Deductible expense | EU reverse charge ÁFA |
 | GITHUB, OPENAI, ANTHROPIC | Deductible expense | Non-EU |
 | SLACK, ZOOM, ATLASSIAN | Deductible expense | Check entity |
 
 ### 3.5 Professional services (Hungary)
 
+**Professional services pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KÖNYVELŐ, KÖNYVELÉS | Deductible | Accounting fees |
 | ÜGYVÉD | Deductible if business | Legal fees |
 | KÖZJEGYZŐ | Deductible if business | Notary |
@@ -141,8 +142,10 @@ metadata:
 
 ### 3.6 Transport and travel
 
+**Transport and travel pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MÁV, MÁVINFORM | Deductible if business | Train |
 | BKK, BKV | Deductible if business | Budapest public transport |
 | MOL, OMV, SHELL HU | Deductible: business portion | Fuel |
@@ -151,20 +154,22 @@ metadata:
 
 ### 3.7 Food and entertainment
 
+**Food and entertainment pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TESCO, ALDI, LIDL HU, SPAR, PENNY | Default: NOT deductible | Personal provisioning |
 | ÉTTEREM, RESTAURANT | Deductible if documented business | Representation with documentation |
 
 ### 3.8 Internal transfers and exclusions
 
+**Internal transfers and exclusions pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SAJÁT ÁTUTALÁS, OWN TRANSFER | EXCLUDE | Internal |
 | KÉSZPÉNZFELVÉTEL, ATM | EXCLUDE (default: drawings) | Ask client |
 | BEFIZETÉS | EXCLUDE | Owner deposit |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -188,55 +193,59 @@ metadata:
 **Input:** Revenue HUF 1,500,000/year.
 **Computation:** Monthly income HUF 125,000. Minimum base HUF 290,800. SZOCHO = HUF 37,804/mo. TB = HUF 53,798/mo. Annual contributions = HUF 1,099,224. This is 73% of revenue -- flag as potentially unviable.
 
----
-
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 SZJA rate
-Flat 15% on all personal income. No progressive bands. **Legislation:** SZJA tv. § 8.
+
+- **SZJA rate** — Flat 15% on all personal income. No progressive bands. percent  _(SZJA tv. § 8.)_
 
 ### 5.2 KATA rules (post-2022 reform)
-B2C only -- ANY invoice to a legal entity disqualifies for the entire year. HUF 50,000/month (main) or HUF 25,000/month (auxiliary). Covers income tax + social contributions. Does NOT cover ÁFA or IPA. Revenue above HUF 12,000,000: must register for ÁFA. **Legislation:** 2022. évi XIII. törvény.
+
+- **KATA B2C only rule** — B2C only -- ANY invoice to a legal entity disqualifies for the entire year. HUF 50,000/month (main) or HUF 25,000/month (auxiliary). Covers income tax + social contributions. Does NOT cover ÁFA or IPA. Revenue above HUF 12,000,000: must register for ÁFA.  _(2022. évi XIII. törvény.)_
 
 ### 5.3 Átalányadózás
-Revenue limit: HUF 24,000,000 (HUF 36,000,000 for listed retail). Max 1 employee. Cost ratios: 90%/80%/40%. Taxable = revenue x (1 - ratio). **Legislation:** SZJA tv. § 50-56.
+
+- **Átalányadózás rules** — Revenue limit: HUF 24,000,000 (HUF 36,000,000 for listed retail). Max 1 employee. Cost ratios: 90%/80%/40%. Taxable = revenue x (1 - ratio).  _(SZJA tv. § 50-56.)_
 
 ### 5.4 Standard regime
-Two-layer: 9% vállalkozói jövedelemadó on profit + 15% SZJA on withdrawn amounts. **Legislation:** SZJA tv. § 44-49.
+
+- **Standard regime two-layer taxation** — Two-layer: 9% vállalkozói jövedelemadó on profit + 15% SZJA on withdrawn amounts.  _(SZJA tv. § 44-49.)_
 
 ### 5.5 Social contributions
-SZOCHO: 13%. TB: 18.5% (pension 10%, health 4%, labour 3%, accident 1.5%). Minimum base: HUF 290,800 (no qualification) or HUF 348,800 (qualification required). Mandatory regardless of income. **Legislation:** 2019. évi CXXII. tv.
+
+- **Social contribution rates and minimum base** — SZOCHO: 13%. TB: 18.5% (pension 10%, health 4%, labour 3%, accident 1.5%). Minimum base: HUF 290,800 (no qualification) or HUF 348,800 (qualification required). Mandatory regardless of income.  _(2019. évi CXXII. tv.)_
 
 ### 5.6 Local business tax (IPA)
-Up to 2% of net revenue. Set by municipality. Applies to all regimes including KATA. Deductible from standard regime income. **Legislation:** 1990. évi C. tv.
+
+- **IPA rules** — Up to 2% of net revenue. Set by municipality. Applies to all regimes including KATA. Deductible from standard regime income.  _(1990. évi C. tv.)_
 
 ### 5.7 Regime switching
-Must notify NAV by 31 December of prior year. Cannot switch mid-year. **Legislation:** SZJA tv.
 
----
+- **Regime switching rule** — Must notify NAV by 31 December of prior year. Cannot switch mid-year.  _(SZJA tv.)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### 6.1 Choosing between regimes
-*Why:* Total burden (tax + contributions) varies significantly. *Default:* Present comparison. *Question:* "What are your actual expenses? Do you invoice businesses or individuals only?"
+
+- **Choosing between regimes guidance** — *Why:* Total burden (tax + contributions) varies significantly. *Default:* Present comparison. *Question:* "What are your actual expenses? Do you invoice businesses or individuals only?"
 
 ### 6.2 Mixed-activity cost ratios
-*Why:* If multiple ÖVTJ codes, different ratios may apply. *Default:* Use 40% (conservative). *Question:* "What are your ÖVTJ activity codes?"
+
+- **Mixed-activity cost ratios guidance** — *Why:* If multiple ÖVTJ codes, different ratios may apply. *Default:* Use 40% (conservative). *Question:* "What are your ÖVTJ activity codes?"
 
 ### 6.3 Dual KATA + employment
-*Why:* Hours threshold (36/week) and B2C-only requirement. *Default:* Verify eligibility. *Question:* "How many hours/week are you employed? Are all KATA clients individuals?"
 
----
+- **Dual KATA + employment guidance** — *Why:* Hours threshold (36/week) and B2C-only requirement. *Default:* Verify eligibility. *Question:* "How many hours/week are you employed? Are all KATA clients individuals?"
 
 ## Section 7 -- Excel working paper template
 
 ### Sheet "Transactions"
+
 Columns: Date, Counterparty, Description, Amount (HUF), Category, Deductible amount, Default?, Question, Notes.
 
 ### Sheet "Tax Computation"
-Branches by regime: KATA, átalányadó, or standard.
 
----
+Branches by regime: KATA, átalányadó, or standard.
 
 ## Section 8 -- Bank statement reading guide
 
@@ -248,26 +257,27 @@ Branches by regime: KATA, átalányadó, or standard.
 
 **IPA payments.** Twice yearly (March 15, September 15) to local municipality (önkormányzat).
 
----
-
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Entity type
-*Inference:* Egyéni vállalkozó from bank account type. *Fallback:* "Are you an egyéni vállalkozó or Kft.?"
+
+- **Entity type inference/fallback** — *Inference:* Egyéni vállalkozó from bank account type. *Fallback:* "Are you an egyéni vállalkozó or Kft.?"
 
 ### 9.2 Tax regime
-*Inference:* KATA payments = KATA. Átalányadó from NAV correspondence. *Fallback:* "Which tax regime: KATA, átalányadózás, or standard?"
+
+- **Tax regime inference/fallback** — *Inference:* KATA payments = KATA. Átalányadó from NAV correspondence. *Fallback:* "Which tax regime: KATA, átalányadózás, or standard?"
 
 ### 9.3 Client base
-*Inference:* Incoming from company names vs individuals. *Fallback:* "Do you invoice companies (Kft., Zrt.) or only individuals?"
+
+- **Client base inference/fallback** — *Inference:* Incoming from company names vs individuals. *Fallback:* "Do you invoice companies (Kft., Zrt.) or only individuals?"
 
 ### 9.4 ÖVTJ code
-*Inference:* From trade licence or activity description. *Fallback:* "What is your ÖVTJ activity code?"
+
+- **ÖVTJ code inference/fallback** — *Inference:* From trade licence or activity description. *Fallback:* "What is your ÖVTJ activity code?"
 
 ### 9.5 Employees
-*Inference:* Salary outflows. *Fallback:* "Do you have employees?"
 
----
+- **Employees inference/fallback** — *Inference:* Salary outflows. *Fallback:* "Do you have employees?"
 
 ## Section 10 -- Reference material
 
@@ -317,6 +327,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/hu-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `hu-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/hu-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

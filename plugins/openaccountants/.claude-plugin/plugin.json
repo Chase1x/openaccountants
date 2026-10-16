@@ -1,7 +1,7 @@
 {
   "name": "openaccountants",
-  "description": "Tax computation skills verified by licensed accountants, served via the hosted OpenAccountants MCP. Income tax, VAT/GST, payroll, formation, crypto, and cross-border across 220+ jurisdictions.",
-  "version": "0.1.0",
+  "description": "AI skills (tax rules your AI follows) for Malta, the Netherlands, Germany, Ireland and the UK, bundled, plus the hosted OpenAccountants connector for today's figures in 190+ jurisdictions.",
+  "version": "0.2.0",
   "author": {
     "name": "OpenAccountants",
     "url": "https://www.openaccountants.com"
@@ -9,7 +9,14 @@
   "homepage": "https://www.openaccountants.com/connect",
   "repository": "https://github.com/openaccountants/openaccountants",
   "license": "AGPL-3.0-only",
-  "keywords": ["tax", "accounting", "vat", "gst", "mcp", "openaccountants"],
+  "keywords": [
+    "tax",
+    "accounting",
+    "vat",
+    "gst",
+    "mcp",
+    "openaccountants"
+  ],
   "mcpServers": {
     "openaccountants": {
       "type": "http",

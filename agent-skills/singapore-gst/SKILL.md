@@ -1,690 +1,420 @@
 ---
 name: singapore-gst
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Singapore GST return (GST F5 form) for any client. Trigger on phrases like \"prepare GST return\", \"do the GST\", \"fill in GST F5\", \"create the return\", \"Singapore GST\", \"IRAS filing\", or any request involving Singapore GST filing. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill covers Singapore only and only standard GST-registered persons filing GST F5. Group registrations, partial exemption with non-de-minimis exempt supplies, Approved 3rd Party Logistics schemes, and Major Exporter Scheme applications are all in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any Singapore GST work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/singapore-gst"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/singapore-gst"
+  jurisdiction: "SG"
+  tax_year: "2026"
+  last_updated: "2026-09-27"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Singapore GST Return Skill (GST F5) v2.0
+# Singapore GST: registration, the GST F5 return, input tax, reverse charge and penalties (2026)
+
+Tax year 2026. The rules below are those published by the Inland Revenue Authority of Singapore (IRAS) and in force on 25 September 2026. All amounts are Singapore dollars. Source: [IRAS GST pages](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns).
+
+## Scope and who this is for
+
+- Businesses that are, or may have to become, GST-registered in Singapore and file the quarterly GST F5 return, and the people preparing that return for them.
+- Covers: the GST rate; compulsory and voluntary registration; standard-rated, zero-rated and exempt supplies; the GST F5 box by box; input tax conditions and blocked items; reverse charge on imported services and low-value goods; the overseas vendor registration (OVR) regime; the GST InvoiceNow Requirement; correcting errors; filing, payment and penalties.
+- Does not cover in depth: GST group registration, the Major Exporter Scheme (MES) and other import GST suspension schemes, the Import GST Deferment Scheme, customer accounting for prescribed goods, the gross margin scheme, partial exemption apportionment beyond the de minimis test, the Tourist Refund Scheme and the final GST F8 return. These are listed under "When to refuse or refer".
+- This Guide explains how IRAS says the return works. It does not replace IRAS's e-Tax Guides where a case turns on detail.
+
+## Ask the client first
+
+- Are you GST-registered? If yes, since when, and was the registration compulsory or voluntary? (Voluntary registrants have a minimum registration period and, for newer registrations, InvoiceNow duties.)
+- If not registered: what were your taxable supplies for each calendar year, and what do you expect over the next 12 months? Do you have signed contracts or purchase orders that point to a large increase?
+- Which accounting period is this return for, and is it a quarterly or a special accounting period?
+- Do you make any exempt supplies (interest income, residential rent or sale, financial services, digital payment tokens, investment precious metals)? Do you have non-business receipts such as donations or grants? This decides the de minimis test and whether you must reverse charge.
+- Do you buy services from overseas suppliers or buy low-value goods from overseas? Get the invoices and check whether the supplier charged Singapore GST.
+- Do you sell to overseas customers? For services, who is the contracting customer, where do they belong, and who directly benefits from the service? For goods, do you have export documents?
+- Do you run an online marketplace or act as a redeliverer, or sell goods held overseas to Singapore consumers?
+- Do you hold valid tax invoices for every input tax claim, and import permits in your name for imports?
+- Any motor car, club, staff medical, family benefit or private expenses in the purchase ledger?
+- Any errors found in past returns? For which periods, and what are the GST and value amounts involved?
+- Are any returns or payments overdue? Have you received an estimated Notice of Assessment or penalty notice?
+- Are you under GST group registration, MES, the Approved Third Party Logistics scheme, IGDS or any other special scheme?
+
+## The method, step by step
+
+1. **Confirm registration status and the period.** If the client is not registered, run the registration tests first (see "Registration"). If registered, confirm the accounting period and its due date.
+2. **List every sale for the period** from the sales ledger and invoices, not the bank statement alone. Classify each as standard-rated (9%, [IRAS current GST rates](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/basics-of-gst/current-gst-rates)), zero-rated (export of goods or an international service under section 21(3) of the GST Act), exempt, or out of scope.
+3. **Handle the special sale items.** Deemed supplies (gifts costing more than the IRAS limit where input tax was claimed, business assets put to private use), sales of business assets, and credit or debit notes in the period.
+4. **List every purchase and import.** For each, check the input tax conditions: tax invoice or import permit in the client's name, business purpose, attributable to taxable supplies, not a disallowed expense, supplier actually GST-registered.
+5. **Take out blocked items** (motor cars, club subscriptions, most staff medical costs and medical or accident insurance, family benefits, betting) from both Box 5 and Box 7.
+6. **Decide whether the client is a reverse charge business.** Only a business not entitled to full input tax credit (because it makes exempt supplies or has non-business receipts) reverse charges imported services and low-value goods. A fully taxable business does not.
+7. **If the client makes exempt supplies, run the de minimis test.** If it is not met, input tax directly attributable to exempt supplies is not claimable and residual input tax must be apportioned; refer if needed.
+8. **Fill Boxes 1 to 17** using the box table below. Track output tax and input tax from the invoices; do not recompute them from Box 1 or Box 5.
+9. **Check prior-period errors.** Decide whether each can be adjusted in this return under the IRAS concession or needs a GST F7.
+10. **File on myTax Portal and pay** by one month after the period end. File a nil return if there was no activity.
+11. **For InvoiceNow-covered businesses**, make sure invoice data for the period has been transmitted by the earlier of the filing date and the filing due date.
+
+## Rates, thresholds and deadlines for 2026
+
+### GST rate ([IRAS current GST rates](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/basics-of-gst/current-gst-rates))
+
+| Period | Standard rate |
+| --- | --- |
+| From 1 Jan 2024 (current, all of 2026) | 9% |
+| 1 Jan 2023 to 31 Dec 2023 | 8% |
+| 1 Jul 2007 to 31 Dec 2022 | 7% |
+
+- Zero-rated supplies are taxed at 0%. Exempt supplies carry no GST.
+- A supply that straddles a rate change (for example a 2023 invoice for 2024 work) follows the IRAS rate-change rules; refer it rather than guess.
+
+### Registration ([IRAS: Do I need to register for GST](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst))
+
+| Test | Trigger (strictly "more than") | When to apply | Registered from |
+| --- | --- | --- | --- |
+| Retrospective view | Taxable turnover for the calendar year (1 Jan to 31 Dec) more than $1 million | 1 Jan to 30 Jan of the following year | 1 Mar of the following year |
+| Prospective view, forecast date before 1 Jul 2025 | Taxable turnover expected to be more than $1 million in the next 12 months | Within 30 days after the date of the forecast | The 31st day after the forecast date |
+| Prospective view, liability arising on or after 1 Jul 2025 | Same | Within 30 days after the date of the forecast (unchanged) | 2 months from the date of the forecast (two-month grace period to start charging GST) |
+
+- **Taxable turnover** is standard-rated plus zero-rated supplies made in Singapore in the course of business, including low-value goods sold to non-registered customers in Singapore from 1 Jan 2023. It excludes exempt supplies, out-of-scope supplies and sales of capital assets such as machinery, equipment, office buildings and furniture.
+- **Exactly $1 million is not over the line.** Both views use "more than".
+- **Prospective view needs evidence.** IRAS lists signed contracts, accepted quotations or confirmed purchase orders, fixed monthly fee invoices, or income statements showing the past 12 months already close to $1 million and rising.
+- **Retrospective exception.** A business caught only by the retrospective view need not register if it is certain that taxable turnover for the next 12 months will not exceed $1 million because of specific circumstances (for example large-scale downsizing), and it keeps documentary evidence and a detailed computation. It must keep monitoring.
+- **Mid-year crossing.** If turnover passes $1 million during the year but the prospective view does not apply, the business may wait for the year end and apply under the retrospective view in January, or register voluntarily.
+- **Exemption from registration** may be applied for where taxable supplies are wholly or mainly zero-rated.
+- **Reverse charge and OVR** can also create a registration liability (see below).
+
+### Voluntary registration ([IRAS: Factors to consider before registering voluntarily](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/factors-to-consider-before-registering-voluntarily-for-gst))
+
+- A business that is not liable may register voluntarily if it makes taxable supplies, makes only out-of-scope supplies, makes exempt financial services that are also international services, or procures imported services or low-value goods and would not be entitled to full input tax credit if registered. A business with firm intentions to start such transactions may also apply.
+- Voluntarily registered businesses must remain registered for 2 years, and must meet the conditions IRAS imposes before and after registration (IRAS e-Tax Guide "GST: Conditions for GST Voluntary Registration").
+- A voluntary registrant from 1 Apr 2026 falls under the GST InvoiceNow Requirement from the start (see "GST InvoiceNow Requirement").
+
+### Filing and payment deadlines ([IRAS: Due dates and requests for extension](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/due-dates-and-requests-for-extension))
+
+Both the return and the payment are due one month after the end of the accounting period. Returns are filed electronically on myTax Portal.
+
+| Accounting period (2026) | Filing and payment due | GIRO deduction (if on GIRO) |
+| --- | --- | --- |
+| Jan to Mar 2026 | 30 Apr 2026 | 15 May 2026 |
+| Apr to Jun 2026 | 31 Jul 2026 | 15 Aug 2026 |
+| Jul to Sep 2026 | 31 Oct 2026 | 15 Nov 2026 |
+| Oct to Dec 2026 | 31 Jan 2027 | 15 Feb 2027 |
+
+- Special accounting periods: due one month from the end date of the period.
+- No extension is granted as a rule. IRAS may extend for a newly registered business's first return (up to one month) or for listed reasons such as a computer breakdown (up to two weeks); the request must reach IRAS at least 5 working days before the due date.
+- A nil return is required when there was no activity.
+- Refunds are paid by GIRO or PayNow within a period equal to the accounting period (for quarterly filers, within three months of IRAS receiving the return).
+
+### The GST F5 box by box ([IRAS: Completing GST return](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns))
+
+All values are in Singapore dollars and exclude GST. Track output tax (Box 6) and input tax (Box 7) from the invoices and import permits; IRAS says not to compute them by applying 9% to Box 1 or Box 5, because rounding differs.
+
+| Box | What goes in | Notes |
+| --- | --- | --- |
+| 1 | Total value of standard-rated supplies | Sales at 9% net of GST (sell for $100 plus $9 GST: $100 here, $9 in Box 6). Includes deemed supplies, sales of business assets, and the value of imported services and low-value goods that you reverse charge. Deduct credit notes issued, discounts and returns. |
+| 2 | Total value of zero-rated supplies | Exported goods (with export documents) and international services under section 21(3) of the GST Act. |
+| 3 | Total value of exempt supplies | Residential sale or lease, Fourth Schedule financial services (including bank deposit interest), investment precious metals, digital payment tokens. Report the absolute value of the net realised exchange gain or loss for the period here. |
+| 4 | Total of Boxes 1 + 2 + 3 | Computed automatically. |
+| 5 | Total value of taxable purchases | Standard-rated purchases and imports where the GST can be claimed, zero-rated purchases, and reverse-charged imported services and low-value goods. Exclude disallowed expenses, private purchases, exempt purchases, purchases from non-registered suppliers, wages. |
+| 6 | Output tax due | GST charged on Box 1 supplies, GST on reverse charge, GST on customer-accounted supplies received, GST on debts recovered after bad debt relief. |
+| 7 | Input tax and refunds claimed | Claimable GST on Box 5 purchases and imports; the claimable part of reverse charge GST; tourist refunds; bad debt relief; pre-registration GST (first return only). Deduct credit notes received and input tax repaid for suppliers unpaid after 12 months. |
+| 8 | Net GST to pay or claim | Box 6 minus Box 7, computed automatically. Under $5 payable: no payment needed; under $5 refundable: no refund and nothing carried forward. |
+| 9 | Value of goods imported under MES, A3PL or other approved schemes | Import GST suspended, so no input tax on those imports. Value also in Box 5. |
+| 10 | Did you claim GST refunded to tourists? | Yes/No plus amount, if included in Box 7. |
+| 11 | Bad debt relief and/or refund claims for reverse charge transactions? | Yes/No plus amount, if included in Box 7. |
+| 12 | Pre-registration claims? | First return only. |
+| 13 | Revenue | Main operating income from the accounts; best estimate allowed. An error only in Box 13 does not need a GST F7. |
+| 14 | Imported services and/or low-value goods subject to reverse charge? | Reverse charge businesses only. The same value also goes in Box 1. |
+| 15 | Electronic marketplace operator supplying remote services for third parties? | Marketplace operators only; same value also in Box 1. |
+| 16 | Redeliverer or marketplace operator supplying imported low-value goods for third parties? | Same value also in Box 1. |
+| 17 | Own supplies of imported low-value goods subject to GST? | Same value also in Box 1. |
+| 18 to 21 | Import GST Deferment Scheme section | Only for IGDS-approved businesses. |
+
+### Supplies: standard-rated, zero-rated, exempt, out of scope ([IRAS: Supplies exempt from GST](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/charging-gst-%28output-tax%29/when-is-gst-not-charged/supplies-exempt-from-gst); [IRAS: Providing international services](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/charging-gst-%28output-tax%29/when-to-charge-0-gst-%28zero-rate%29/providing-international-services))
+
+- **Standard-rated (9%):** every supply of goods or services in Singapore that is not zero-rated or exempt, including sales of business assets (furniture, equipment, commercial property), leases of commercial property and hotel rooms, and sales to staff.
+- **Zero-rated exports of goods:** only where the goods are, or will be, exported at the time of supply and the business keeps the required export documents.
+- **Zero-rated international services:** only if the service falls within section 21(3) of the GST Act. Not every service to an overseas customer qualifies. The general provision, section 21(3)(j), needs the service to be supplied under a contract with an overseas person and to directly benefit an overseas person who is outside Singapore when the services are performed, or a GST-registered person who belongs in Singapore; the service must not relate to land or goods in Singapore (other than goods for export). Other paragraphs cover transport, services performed wholly outside Singapore and prescribed consultancy services. Check the customer's belonging status: an individual with a Singapore residential address is treated as belonging in Singapore.
+- **Exempt:** most financial services under the Fourth Schedule (bank account charges, currency exchange, issuing or selling shares or bonds, loans, life policies), digital payment tokens (from 1 Jan 2020), sale and lease of residential property, and the import and local supply of investment precious metals. Arranging, broking or advising on financial transactions is not exempt: an insurance broker charges 9% on a commission for arranging a life policy for a local policyholder.
+- **Out of scope:** for example goods sold from one overseas place to another without entering Singapore. Not reported in Boxes 1 to 3.
+
+### Input tax: conditions ([IRAS: Conditions for claiming input tax](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/conditions-for-claiming-input-tax))
+
+Input tax is claimable only when all of these are met:
+
+1. The business is GST-registered.
+2. The goods or services are supplied to, or imported by, the business.
+3. They are used or will be used for the business.
+4. Local purchases have a valid tax invoice addressed to the business, or a simplified tax invoice, when the claim is made. For purchases over $1,000 the invoice must show the words "tax invoice", the customer's name and the GST amount; for purchases of $1,000 or less it must show the GST amount or say the price includes GST. The supplier must actually be GST-registered.
+5. Imports have an import permit showing the business as importer, plus supporting documents.
+6. The input tax is directly attributable to taxable supplies, or to out-of-scope supplies that would be taxable if made in Singapore.
+7. The claim is not disallowed under Regulations 26 and 27 of the GST (General) Regulations.
+8. The business has taken reasonable steps to conclude that the goods or services were not part of a missing trader fraud arrangement.
+
+- Claim in the accounting period of the invoice or import permit date.
+- If a GST-registered business is charged GST by an overseas vendor registered under the OVR pay-only regime on remote services or low-value goods, it should not claim that GST; it asks the vendor for a refund.
+- Entertainment is not a blocked category. It is claimable if the conditions are met; a simplified tax invoice works where the purchase (including GST) is not more than $1,000.
+
+### Input tax: disallowed (blocked) expenses ([IRAS: Conditions for claiming input tax](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/conditions-for-claiming-input-tax))
+
+| Expense | Rule | Exceptions IRAS publishes |
+| --- | --- | --- |
+| Club subscription fees, including joining and transfer fees, charged by sports and recreation clubs | Disallowed (Regulation 26) | Use of club facilities (green fees, buggy fees, locker rental, dining at club restaurants) is claimable if the normal conditions are met. |
+| Motor car purchase and running costs (cars registered in the business's or an individual's name, or hired) | Disallowed (Regulation 27) | Vehicles outside the "motor car" definition in Regulation 25(1) (lorries, vans, motorcycles; a motor car is built for not more than seven passengers excluding the driver and weighs not more than 3,000 kg unladen). From 1 Apr 2022, pay-per-trip chauffeured private hire car transport. From 1 Jan 2023, costs of a car used by a third party (for example a customer's parking). Cars used by a connected person only where the costs are recovered and the recovery is not ancillary to another supply. |
+| Medical expenses for staff | Disallowed (Regulation 26) | Obligatory under the Work Injury Compensation Act or a collective agreement under the Industrial Relations Act; or (for expenses on or after 1 Oct 2021) treatment linked to health risks of the work and incurred under Singapore written law; or COVID-19 treatment under a government advisory. |
+| Medical and accident insurance premiums for staff | Disallowed | Obligatory under the Work Injury Compensation Act or a collective agreement. |
+| Benefits for family members or relatives of staff (for example school fees of expatriates' children) | Disallowed (Regulation 26) | None published. |
+| Betting, sweepstakes, lotteries, fruit machines or games of chance | Disallowed | None published. |
+
+Also not claimable: purely private purchases, and household costs of staff working from home.
+
+### Exempt supplies and the de minimis rule ([IRAS: Claiming input tax incurred to make exempt supplies](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/claiming-input-tax-incurred-to-make-exempt-supplies))
+
+- Input tax incurred in making exempt supplies is not claimable unless the De Minimis Rule is satisfied.
+- The rule is satisfied when the value of exempt supplies is less than or equal to both: an average of $40,000 per month, and 5% of the total value of all taxable and exempt supplies in the period. Reverse-charged imports, customer-accounted supplies received and marketplace supplies made for underlying suppliers are left out of taxable supplies for this test.
+- If satisfied, all input tax is claimable except blocked items, but only provisionally: a longer-period adjustment repeats the test.
+- If not satisfied, input tax directly attributable to exempt supplies is not claimable, and residual input tax is apportioned under IRAS's formula. Refer this.
+
+### Reverse charge: imported services and low-value goods ([IRAS: Local businesses importing services and low-value goods](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-and-digital-economy/local-businesses))
+
+- **Who:** only a GST-registered business belonging in Singapore that is not entitled to full input tax credit because it makes exempt supplies or receives non-business receipts (an "RC business"). IRAS's examples: banks and financial institutions, investment-holding companies with dividend income, companies with substantial inter-company loan interest, residential or mixed-use developers, and charities providing free or subsidised services.
+- **A business that makes only taxable supplies does not reverse charge** and leaves Box 14 blank. An overseas software subscription for such a business is simply a purchase with no Singapore GST.
+- **What:** from 1 Jan 2020, all services procured from overseas suppliers except those specifically excluded; from 1 Jan 2023, low-value goods bought from local or overseas suppliers, marketplaces or redeliverers, registered or not.
+- **How:** account for GST as if you were the supplier: value in Box 1 and Box 14, GST in Box 6; the value in Box 5 and the claimable part of the GST in Box 7 under the normal recovery rules.
+- **Unregistered businesses:** a business that would not get full input tax credit if registered must register when its taxable turnover and/or the total value of its imported services and low-value goods is more than $1 million over 12 months.
+- **Unpaid overseas supplier:** if reverse charge was applied but the overseas supplier was not paid within 12 months of the due date, an adjustment may be claimed under conditions in the IRAS e-Tax Guide "GST: Reverse Charge" (flag in Box 11).
+
+**Low-value goods** are goods that, at the point of sale, are not dutiable (or the duty is waived under section 11 of the Customs Act), are not exempt from GST, are outside Singapore and are delivered to Singapore by air or post, and are valued at not more than the import relief threshold of $400. A GST-registered local supplier must charge GST on its own direct sales of such goods to customers in Singapore who are not GST-registered; a non-registered local supplier counts those sales towards the $1 million registration threshold.
+
+### Overseas vendor registration (OVR) ([IRAS: Overseas businesses supplying remote services and low-value goods](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-and-digital-economy/overseas-businesses))
+
+- An overseas business must register for GST in Singapore when its annual global turnover exceeds $1 million and its business-to-consumer supplies of remote services and/or low-value goods to customers in Singapore exceed $100,000 a year. It registers under a simplified pay-only regime.
+- Remote services are services the customer need not be physically present to receive.
+- Overseas marketplace operators and redeliverers may be treated as the supplier of low-value goods and remote services sold through them, and count those supplies towards the thresholds.
+- OVR vendors charge GST only on business-to-consumer supplies. A GST-registered Singapore business should not be charged GST by them; if it is, it asks the vendor for a refund rather than claiming input tax (see input tax condition 4).
+
+### GST InvoiceNow Requirement ([IRAS: GST InvoiceNow Requirement](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-invoicenow-requirement))
+
+GST-registered businesses must submit invoice data to IRAS through InvoiceNow (the Peppol-based network) using an InvoiceNow-Ready Solution. IRAS publishes this phased timetable:
+
+| From | Who |
+| --- | --- |
+| 1 Nov 2025 | Companies that register for GST voluntarily within 6 months of their incorporation date |
+| 1 Apr 2026 | Businesses that apply for voluntary GST registration on or after 1 Apr 2026, whatever their incorporation date or structure |
+| 1 Apr 2028 | Businesses applying for compulsory registration on or after 1 Apr 2028; existing registrants with total annual supplies of S$200,000 or less |
+| 1 Apr 2029 | Existing registrants with total annual supplies of S$1,000,000 or less |
+| 1 Apr 2030 | Existing registrants with total annual supplies of S$4,000,000 or less |
+| 1 Apr 2031 | Existing registrants with total annual supplies above S$4,000,000 |
+
+- "Total annual supplies" means Box 4 totals for accounting periods ending in calendar year 2025. IRAS has notified businesses registered before 2026 of their implementation dates and provides an implementation date calculator; rely on the notification.
+- Excluded: overseas entities (including OVR vendors) and businesses registered only because of reverse charge.
+- Data covers standard-rated and zero-rated supplies and purchases and exempt supplies. Not needed for deemed supplies, reverse charge transactions, exempt financial services and digital payment token exchanges or loans, and import permits.
+- Due: by the earlier of the date the relevant GST return is filed and that return's filing due date.
+- InvoiceNow does not replace the GST F5: returns must still be accurate and records kept for at least 5 years.
+
+### Deemed supplies and other output tax items ([IRAS: Completing GST return](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns))
+
+- Gifts of goods: output tax is due on a gift that costs more than $200 where input tax on it was claimed (including gifts to staff). IRAS's input tax page says the value is the open market value.
+- Business assets put to private use, and free use of business premises by a third party, are deemed supplies in Box 1.
+- Sales of business assets (office furniture, equipment, machinery, commercial property) are standard-rated even though they are not trading stock.
+- On cancellation (GST F8), business assets held on the last day of registration are taxed if their total value exceeds $10,000 and input tax was allowed.
+
+## Boundary and exception table
+
+| Situation | Treatment | Source |
+| --- | --- | --- |
+| Taxable turnover for the calendar year exactly $1 million | Not liable under the retrospective view ("more than") | [IRAS registration](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst) |
+| Sale of a used machine or office building | Excluded from taxable turnover for registration, but standard-rated in Box 1 once registered | [IRAS registration](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst); [Box 1](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns) |
+| Services to an overseas company whose staff receive the benefit in Singapore | Fails section 21(3)(j), which needs the direct beneficiary to be outside Singapore (or GST-registered in Singapore). Check the prescribed services under section 21(3)(k), where the overseas customer may be in Singapore; otherwise standard-rated. Refer if unsure | [IRAS international services](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/charging-gst-%28output-tax%29/when-to-charge-0-gst-%28zero-rate%29/providing-international-services) |
+| Customer with a Singapore residential address | Treated as belonging in Singapore | Same |
+| Goods sold with no export documents | Standard-rated, not zero-rated | [IRAS completing returns](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns) |
+| Exempt supplies averaging exactly $40,000 a month and not more than 5% of total supplies | De minimis met ("less than or equal to") | [IRAS de minimis](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/claiming-input-tax-incurred-to-make-exempt-supplies) |
+| Fully taxable business buys software from a US supplier with no Singapore GST | No reverse charge, no Box 14 | [IRAS completing returns](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns) |
+| Club green fees and club restaurant meals | Claimable if conditions met; the membership fee itself is blocked | [IRAS input tax](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/conditions-for-claiming-input-tax) |
+| Petrol for a van or lorry | Claimable (not a "motor car") | Same |
+| Airport limousine paid per trip | Claimable from 1 Apr 2022 with a valid invoice | Same |
+| Tax invoice for a purchase over $1,000 without the customer's name | Not valid; ask the supplier to reissue before claiming | Same |
+| Supplier not paid within 12 months of the payment due date | Repay the input tax claimed (deduct in Box 5 and Box 7) | [IRAS completing returns](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns) |
+| Net GST payable under $5 | No payment; not carried forward | Same |
+| Error only in Box 13 (revenue) | No GST F7 needed | [IRAS GST F7](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/correcting-errors-made-in-gst-return-%28filing-gst-f7%29) |
+| Error with net GST exactly $3,000 and value errors within 5% of Box 4 | Concession available ("not more than") | Same |
+
+## Worked cases
+
+Amounts in cases 1 to 5 are hypothetical. Cases 6 and 7 are IRAS's own published examples.
+
+### Case 1: retrospective registration ([IRAS registration](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst))
+
+A trading company made standard-rated and zero-rated sales of $1,050,000 in calendar year 2025 and also sold a used delivery machine for $150,000. It does not expect more than $1 million of taxable supplies in the next 12 months, but has no specified circumstance to show a drop.
+
+- Taxable turnover is $1,050,000: the machine is a capital asset and is excluded.
+- $1,050,000 is more than $1 million, so the company is liable under the retrospective view. It must apply between 1 Jan and 30 Jan 2026 and is registered from 1 Mar 2026. Its first GST F5 is due one month after the end of the first accounting period IRAS assigns, and may carry pre-registration input tax claims (Box 12).
+- Had taxable turnover been exactly $1,000,000, there would be no liability under the retrospective view.
+
+### Case 2: prospective registration after 1 Jul 2025 ([IRAS registration](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst))
+
+On 15 Aug 2026 a consultancy signs a 12-month contract worth $1,200,000.
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+- Its taxable turnover is expected to be more than $1 million in the next 12 months, so it is liable under the prospective view on 15 Aug 2026.
+- It must apply within 30 days after that forecast date, that is by 14 Sep 2026.
+- Because the liability arises after 1 Jul 2025, it is registered 2 months from the forecast date and starts charging GST then. Use the effective date IRAS confirms.
+- Keep the signed contract as the supporting document.
+
+### Case 3: a quarterly GST F5 for Jul to Sep 2026 ([IRAS completing returns](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/completing-gst-returns))
 
-## Section 1 — Quick reference
-
-**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content.**
-
-| Field | Value |
-|---|---|
-| Country | Singapore (Republic of Singapore) |
-| Standard rate | 9% (from 1 January 2024) |
-| Prior rates | 8% (1 Jan 2023 – 31 Dec 2023), 7% (before 1 Jan 2023) |
-| Zero rate | 0% (exports of goods, prescribed international services under Fifth Schedule) |
-| Exempt supplies | Financial services (Fourth Schedule Part I), residential property (Part II), investment precious metals (Part III), digital payment tokens (Part IV) |
-| Return form | GST F5 (standard quarterly return) |
-| Filing portal | https://mytax.iras.gov.sg (myTax Portal) — electronic only, no paper filing |
-| Authority | Inland Revenue Authority of Singapore (IRAS) |
-| Currency | SGD only |
-| Filing frequency | Quarterly (standard); Monthly (by special arrangement with IRAS, typically major exporters) |
-| Deadline | One month after end of prescribed accounting period |
-| Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
-| Contributor | Open Accounting Skills Registry |
-| Validated by | Deep research verification, April 2026 |
-| Validation date | April 2026 |
-
-**Key GST F5 boxes (the boxes you will use most):**
-
-| Box | Meaning |
-|---|---|
-| 1 | Total value of standard-rated supplies (net, before GST) |
-| 2 | Total value of zero-rated supplies (exports, international services) |
-| 3 | Total value of exempt supplies |
-| 4 | Total value of supplies (derived: 1 + 2 + 3) |
-| 5 | Total value of taxable purchases (net, before GST — informational for IRAS cross-check) |
-| 6 | Output tax due (GST on Box 1 at 9%, plus reverse charge output, plus adjustments) |
-| 7 | Input tax and refunds claimed (input GST on business purchases, bad debt relief, pre-registration claims) |
-| 8 | Net GST to be paid to / (refunded by) IRAS (derived: 6 − 7) |
-| 9 | Total value of goods imported under MES / Approved 3PL / other import GST suspension schemes |
-| 10 | Tourist Refund Scheme claims (Yes/No) |
-| 11 | Bad debt relief / reverse charge refund claims (Yes/No) |
-| 12 | Pre-registration input tax claims (Yes/No) |
-| 13 | Revenue (gross sales/income — informational) |
-| 14 | Value of imported services / low-value goods subject to reverse charge |
-
-**Conservative defaults — Singapore-specific values for the universal categories in `vat-workflow-base` Section 2:**
-
-| Ambiguity | Default |
-|---|---|
-| Unknown rate on a sale | 9% (standard rate) |
-| Unknown VAT status of a purchase | Not claimable |
-| Unknown counterparty location | Domestic Singapore |
-| Unknown whether customer "belongs" overseas (for zero-rating) | Belongs in Singapore, charge 9% |
-| Unknown business-use proportion (vehicle, phone, home office) | 0% recovery |
-| Unknown SaaS billing entity | Reverse charge (non-resident supplier) |
-| Unknown blocked-input status (motor car, club, entertainment) | Blocked |
-| Unknown whether transaction is in scope | In scope |
-
-**Red flag thresholds — country slot values for the reviewer brief in `vat-workflow-base` Section 3:**
-
-| Threshold | Value |
-|---|---|
-| HIGH single-transaction size | SGD 5,000 |
-| HIGH tax-delta on a single conservative default | SGD 300 |
-| MEDIUM counterparty concentration | >40% of output OR input |
-| MEDIUM conservative-default count | >4 across the return |
-| LOW absolute net GST position | SGD 10,000 |
-
----
-
-## Section 2 — Required inputs and refusal catalogue
-
-### Required inputs
-
-**Minimum viable** — bank statement for the quarter in CSV, PDF, or pasted text. Must cover the full period. Acceptable from any Singapore business bank: DBS, OCBC, UOB, Standard Chartered, HSBC Singapore, Citibank Singapore, Maybank Singapore, Revolut Business, Wise Business, or any other.
-
-**Recommended** — sales invoices for the period (especially for zero-rated international services and exports), purchase invoices for any input tax claim above SGD 300, the client's GST registration number in writing (UEN format or M-format).
-
-**Ideal** — complete invoice register, GST registration certificate, prior period GST F5, reconciliation of any brought-forward excess input tax.
-
-**Refusal policy if minimum is missing — SOFT WARN.** If no bank statement is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This GST F5 was produced from bank statement alone. The reviewer must verify, before approval, that input tax claims above SGD 300 are supported by valid tax invoices and that all zero-rating and reverse charge classifications match the supplier's invoice."
-
-### Singapore-specific refusal catalogue
-
-If any trigger fires, stop, output the refusal message verbatim, end the conversation.
-
-**R-SG-1 — Partial exemption with non-de-minimis exempt supplies.** *Trigger:* client makes both taxable and exempt supplies and the exempt input tax exceeds SGD 5,000 per quarter OR exceeds 5% of total input tax (i.e., de minimis test fails). *Message:* "Your exempt input tax exceeds the de minimis thresholds (SGD 5,000/quarter and 5% of total input tax). Input tax apportionment is required under Regulation 29 of the GST (General) Regulations. This skill cannot compute the apportionment ratio. Please engage a GST-registered tax agent to determine and confirm the recovery rate before input tax is claimed."
-
-**R-SG-2 — GST group registration.** *Trigger:* client is part of a GST group registration. *Message:* "GST group registrations require consolidation across all group members and disregard of intra-group supplies. This skill covers single-entity GST F5 returns only. Please engage a GST-registered tax agent."
-
-**R-SG-3 — Major Exporter Scheme (MES) or Approved 3PL.** *Trigger:* client is approved under MES or Approved 3PL scheme and is claiming import GST suspension. *Message:* "MES and Approved 3PL schemes have specific reporting and compliance requirements that go beyond standard GST F5 filing. This skill covers standard filing only. Please engage a GST-registered tax agent."
-
-**R-SG-4 — Customer accounting for prescribed goods.** *Trigger:* client supplies or acquires prescribed goods (investment precious metals in non-qualifying form, mobile phones, memory cards above SGD 10,000). *Message:* "Customer accounting for prescribed goods requires specific Box 1/Box 6/Box 7 entries that differ from standard classification. Out of scope for this skill."
-
-**R-SG-5 — Margin scheme.** *Trigger:* client deals in second-hand goods under the gross margin scheme. *Message:* "Margin scheme transactions require transaction-level margin computation. Out of scope."
-
-**R-SG-6 — Voluntary disclosure of errors exceeding SGD 1,500.** *Trigger:* user wants to correct errors in a prior period that exceed the SGD 1,500 administrative concession threshold. *Message:* "Errors exceeding SGD 1,500 net GST per period cannot be corrected in the current return. A GST F7 voluntary disclosure must be filed separately. Please engage a GST-registered tax agent."
-
----
-
-## Section 3 — Supplier pattern library (the lookup table)
-
-This is the deterministic pre-classifier. When a transaction's counterparty matches a pattern in this table, apply the treatment from the table directly. Do not second-guess. If none match, fall through to Tier 1 rules in Section 5.
-
-**How to read this table.** Match by case-insensitive substring on the counterparty name as it appears in the bank statement. If multiple patterns match, use the most specific.
-
-### 3.1 Singapore banks (fees exempt — exclude)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| DBS, DEVELOPMENT BANK OF SINGAPORE, POSB | EXCLUDE for bank charges/fees | Financial service, exempt (Fourth Schedule Part I) |
-| OCBC, OVERSEA-CHINESE BANKING | EXCLUDE for bank charges/fees | Same |
-| UOB, UNITED OVERSEAS BANK | EXCLUDE for bank charges/fees | Same |
-| STANDARD CHARTERED SG, STANCHART | EXCLUDE for bank charges/fees | Same |
-| HSBC SINGAPORE | EXCLUDE for bank charges/fees | Same |
-| CITIBANK SINGAPORE, CITI | EXCLUDE for bank charges/fees | Same |
-| MAYBANK SINGAPORE | EXCLUDE for bank charges/fees | Same |
-| REVOLUT, WISE, ASPIRE (fee lines) | EXCLUDE for transaction/maintenance fees | Check for separate taxable subscription invoices |
-| INTEREST, INT EARNED, INT CHARGED | EXCLUDE | Interest income/expense, exempt financial service |
-| LOAN, TERM LOAN, CREDIT FACILITY | EXCLUDE | Loan principal movement, out of scope |
-
-### 3.2 Singapore government, regulators, and statutory bodies (exclude entirely)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| IRAS, INLAND REVENUE | EXCLUDE | Tax payment, not a supply |
-| GST PAYMENT, GST REFUND | EXCLUDE | GST payment/refund, not a supply |
-| ACRA, ACCOUNTING AND CORPORATE REGULATORY | EXCLUDE | Registration/filing fees, government sovereign act |
-| CPF, CENTRAL PROVIDENT FUND | EXCLUDE | Statutory contributions, out of scope |
-| MOM, MINISTRY OF MANPOWER | EXCLUDE | Government levy (foreign worker levy, etc.) |
-| CUSTOMS, SINGAPORE CUSTOMS | EXCLUDE for duty | Customs duty (but check for import GST — see Section 5.10) |
-| GOVTECH, GOVERNMENT TECHNOLOGY AGENCY | EXCLUDE | Government fees |
-| LTA, LAND TRANSPORT AUTHORITY | EXCLUDE | Government fees, COE, road tax |
-| HDB, HOUSING DEVELOPMENT BOARD | EXCLUDE | Government housing, sovereign act |
-| NEA, NATIONAL ENVIRONMENT AGENCY | EXCLUDE | Licence fees, government |
-| EDB, ECONOMIC DEVELOPMENT BOARD | EXCLUDE | Government grants/fees |
-| ENTERPRISE SINGAPORE, ESG | EXCLUDE | Government grants |
-
-### 3.3 Singapore telecoms and utilities
-
-| Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| SINGTEL, SINGAPORE TELECOMMUNICATIONS | Domestic 9% | 5 (purchase) / 1 (if selling) | Telecoms — overhead, input tax claimable on business line |
-| STARHUB | Domestic 9% | 5 / 1 | Same |
-| M1, M1 LIMITED | Domestic 9% | 5 / 1 | Same |
-| SIMBA TELECOM, CIRCLES.LIFE | Domestic 9% | 5 / 1 | MVNO telecoms |
-| SP SERVICES, SP GROUP, SINGAPORE POWER | Domestic 9% | 5 | Electricity, gas, water — overhead |
-| SEMBCORP POWER, GENECO, KEPPEL ELECTRIC | Domestic 9% | 5 | Electricity retailer — overhead |
-| PUB, PUBLIC UTILITIES BOARD | Domestic 9% | 5 | Water — overhead |
-
-### 3.4 Insurance (exempt — exclude)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| GREAT EASTERN, GE LIFE | EXCLUDE | Life insurance exempt (Fourth Schedule) |
-| PRUDENTIAL SINGAPORE | EXCLUDE | Life insurance exempt |
-| AIA SINGAPORE | EXCLUDE | Life insurance exempt |
-| NTUC INCOME, INCOME INSURANCE | EXCLUDE | Life insurance exempt; general insurance is standard-rated — check invoice |
-| AVIVA, SINGLIFE | EXCLUDE | Life insurance exempt |
-| INSURANCE PREMIUM, LIFE INSURANCE | EXCLUDE | Default exempt unless clearly general/property insurance |
-
-### 3.5 Transport (Singapore domestic)
-
-| Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| GRAB, GRABCAR, GRABTAXI | Domestic 9% | 5 | Ride-hailing, taxable. Check: platform fee vs ride fare on invoice |
-| GOJEK, GOJEK SG | Domestic 9% | 5 | Same |
-| COMFORTDELGRO, COMFORT TAXI, CITYCAB | Domestic 9% | 5 | Taxi, standard rated |
-| SMRT, SMRT CORPORATION | Domestic 9% | 5 | Taxi/bus services standard rated |
-| EZ-LINK, EZLINK, TRANSITLINK | Domestic 9% | 5 | Top-up for public transport |
-| SINGAPORE AIRLINES, SIA (domestic) | Domestic 9% if domestic charter | 1 / 5 | International flights — see 3.6 |
-| BUS, MRT (generic transport labels) | Domestic 9% | 5 | Standard rated local transport |
-
-### 3.6 Airlines and international transport (zero-rated or exclude)
-
-| Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| SINGAPORE AIRLINES, SIA (international) | Zero-rated / EXCLUDE | 2 (if selling) | International passenger transport zero-rated |
-| SCOOT, SCOOT TIGERAIR | Zero-rated / EXCLUDE | 2 | Same |
-| JETSTAR ASIA | Zero-rated / EXCLUDE | 2 | International flights |
-| CATHAY PACIFIC, EMIRATES, QANTAS | EXCLUDE | | Foreign airline, international flight |
-
-### 3.7 Food retail (blocked unless hospitality/F&B business)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| NTUC FAIRPRICE, FAIRPRICE | Default BLOCK input tax | Personal provisioning. Claimable only if F&B/hospitality business purchasing stock-in-trade |
-| COLD STORAGE, GIANT, SHENG SIONG | Default BLOCK | Same |
-| RESTAURANTS, CAFES (any named restaurant) | Default BLOCK | Entertainment blocked unless staff welfare meal at workplace |
-| FOODPANDA, DELIVEROO | Default BLOCK | Food delivery — personal provisioning default |
-
-### 3.8 SaaS — non-resident suppliers (reverse charge)
-
-From 1 January 2020, imported services from non-resident suppliers to GST-registered persons are subject to reverse charge under Section 14(2) of the GST Act. The recipient self-assesses output tax in Box 6 and claims input tax in Box 7 (net zero for fully taxable business). Report value in Box 14.
-
-| Pattern | Billing entity | Box | Notes |
-|---|---|---|---|
-| GOOGLE (Ads, Workspace, Cloud) | Google Asia Pacific Pte Ltd (SG) or Google Ireland Ltd (IE) or Google LLC (US) | Check invoice | If SG entity: domestic 9%, Box 5. If non-resident: reverse charge, Box 14/6/7 |
-| MICROSOFT (365, Azure) | Microsoft Regional Sales Pte Ltd (SG) or Microsoft Ireland Operations Ltd (IE) | Check invoice | If SG entity: domestic 9%. If non-resident: reverse charge |
-| ADOBE | Adobe Systems Software Ireland Ltd (IE) or Adobe Inc (US) | 14/6/7 | Typically non-resident, reverse charge |
-| META, FACEBOOK ADS | Meta Platforms Ireland Ltd (IE) | 14/6/7 | Non-resident, reverse charge |
-| LINKEDIN (paid) | LinkedIn Ireland Unlimited (IE) | 14/6/7 | Non-resident, reverse charge |
-| AWS, AMAZON WEB SERVICES | Amazon Web Services Inc (US) or AWS Singapore entity | Check invoice | US entity: reverse charge. SG entity: domestic 9% |
-| NOTION | Notion Labs Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| ANTHROPIC, CLAUDE | Anthropic PBC (US) | 14/6/7 | Non-resident, reverse charge |
-| OPENAI, CHATGPT | OpenAI Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| GITHUB | GitHub Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| FIGMA | Figma Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| CANVA | Canva Pty Ltd (AU) | 14/6/7 | Non-resident, reverse charge |
-| SLACK | Slack Technologies LLC (US) or Salesforce SG | Check invoice | US: reverse charge. SG entity: domestic 9% |
-| ATLASSIAN (Jira, Confluence) | Atlassian Pty Ltd (AU) or Atlassian Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| ZOOM | Zoom Video Communications Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| HUBSPOT | HubSpot Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| STRIPE (subscription fees) | Stripe Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| TWILIO | Twilio Inc (US) | 14/6/7 | Non-resident, reverse charge |
-| SHOPIFY | Shopify Inc (CA) | 14/6/7 | Non-resident, reverse charge |
-
-### 3.9 Payment processors
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| STRIPE (transaction fees) | EXCLUDE (exempt) | Payment processing / financial intermediation, exempt |
-| PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
-| STRIPE (monthly subscription) | Reverse charge Box 14/6/7 | US entity — separate from exempt transaction fees |
-| HITPAY, ATOME | Check invoice | If SG entity: domestic 9%. If not: reverse charge |
-
-### 3.10 Retail and supermarkets (Singapore)
-
-| Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| NTUC FAIRPRICE, FAIRPRICE | Domestic 9% | 5 | Input claimable only for business stock-in-trade purchases |
-| COLD STORAGE, MARKETPLACE | Domestic 9% | 5 | Same |
-| GIANT, SHENG SIONG | Domestic 9% | 5 | Same |
-| GUARDIAN, WATSONS | Domestic 9% | 5 | Pharmacy/personal care |
-| DON DON DONKI, DAISO | Domestic 9% | 5 | Retail |
-
-### 3.11 Professional services (Singapore)
-
-| Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| LAW FIRM names, ADVOCATES, SOLICITORS | Domestic 9% | 5 | Legal fees, input claimable if business purpose |
-| ACCOUNTANT, CPA, AUDIT FIRM | Domestic 9% | 5 | Accounting/audit, always claimable |
-| CORPORATE SECRETARY, BOARDROOM | Domestic 9% | 5 | Company secretarial, claimable |
-| ACRA (filing fees) | EXCLUDE | | Government fee |
-
-### 3.12 Payroll and statutory contributions (exclude entirely)
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| CPF, CENTRAL PROVIDENT FUND | EXCLUDE | Statutory CPF contributions |
-| SALARY, WAGES, PAYROLL | EXCLUDE | Employment, out of scope |
-| SDL, SKILLS DEVELOPMENT LEVY | EXCLUDE | Statutory levy |
-| FWL, FOREIGN WORKER LEVY | EXCLUDE | Government levy |
-| BONUS, COMMISSION (to employees) | EXCLUDE | Employment, out of scope |
-
-### 3.13 Property and rent
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| COMMERCIAL RENT, OFFICE RENT (with GST invoice) | Domestic 9%, Box 5 | Commercial property lease, input claimable |
-| HDB RENT (residential) | EXCLUDE | Residential lease, exempt (Fourth Schedule Part II) |
-| RESIDENTIAL RENT, CONDO RENT | EXCLUDE | Residential lease, exempt |
-| SERVICED APARTMENT, HOTEL (short-stay) | Domestic 9%, Box 5 | Hotel/serviced apartment is standard rated, not exempt |
-| JTC, JURONG TOWN CORPORATION | Domestic 9%, Box 5 | Industrial property, standard rated |
-
-### 3.14 Internal transfers and exclusions
-
-| Pattern | Treatment | Notes |
-|---|---|---|
-| OWN TRANSFER, INTERNAL, ACCOUNT TRANSFER | EXCLUDE | Internal movement |
-| DIVIDEND, DIV PAYMENT | EXCLUDE | Dividend, out of scope |
-| LOAN REPAYMENT, REPAYMENT | EXCLUDE | Loan principal, out of scope |
-| CASH WITHDRAWAL, ATM | TIER 2 — ask | Default exclude; ask what cash was spent on |
-| DIRECTOR FEE (paid to director as employee) | EXCLUDE | Employment relationship, out of scope |
-
----
-
-## Section 4 — Worked examples
-
-These are six fully worked classifications drawn from a hypothetical bank statement of a Singapore-based self-employed IT consultant. They illustrate the trickiest cases.
-
-### Example 1 — Non-resident SaaS reverse charge (Notion)
-
-**Input line:**
-`03.04.2026 ; NOTION LABS INC ; DEBIT ; Monthly subscription ; USD 16.00 ; SGD 21.44`
-
-**Reasoning:**
-Notion Labs Inc is a US entity (Section 3.8). No GST on the invoice. This is an imported service from a non-resident supplier. Under Section 14(2), the recipient must self-assess reverse charge: output tax in Box 6, input tax in Box 7. Report the value in Box 14. Net effect zero for a fully taxable business. Also include in Box 5 (taxable purchases).
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box (input) | Box (output) | Box 14 | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 03.04.2026 | NOTION LABS INC | -21.44 | -21.44 | 1.93 | 9% | 7 | 6 | 21.44 | N | — | — |
-
-### Example 2 — Zero-rated international service sale
-
-**Input line:**
-`10.04.2026 ; TECHCORP PTY LTD ; CREDIT ; Invoice SG-2026-018 IT consultancy March ; +5,000.00 ; SGD`
-
-**Reasoning:**
-Incoming SGD 5,000 from an Australian company. The client provides IT consulting services. The customer "belongs" outside Singapore (no GST registration in SG, no SG establishment). Under Fifth Schedule Para 1, this is a zero-rated international service — provided the service is not performed on goods in Singapore and does not directly benefit a person in SG other than the overseas customer. Report in Box 2. No output tax. Confirm: the customer has no SG establishment and the service has no direct SG benefit.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 10.04.2026 | TECHCORP PTY LTD | +5,000.00 | +5,000.00 | 0 | 0% | 2 | Y | Q1 (HIGH) | "Verify customer belongs overseas — no SG establishment?" |
-
-### Example 3 — Motor car expense, permanently blocked
-
-**Input line:**
-`15.04.2026 ; SHELL SINGAPORE ; DEBIT ; Petrol ; -120.00 ; SGD`
-
-**Reasoning:**
-Petrol purchase. Input tax on motor car expenses (purchase, hire, running costs including petrol, maintenance, parking, ERP) is permanently blocked under Regulation 26(1) of the GST (General) Regulations. The only exceptions are taxis, private hire cars used exclusively for chauffeured transport, motor dealers' stock-in-trade, and driving schools. An IT consultant does not qualify. Default: full block, no input tax recovery.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 15.04.2026 | SHELL SINGAPORE | -120.00 | -120.00 | 0 | — | — | Y | Q2 | "Motor car expense: blocked under Reg 26(1)" |
-
-### Example 4 — Domestic standard-rated purchase (office equipment)
-
-**Input line:**
-`18.04.2026 ; COURTS SINGAPORE ; DEBIT ; Invoice CT-2026-441 Office desk ; -856.00 ; SGD`
-
-**Reasoning:**
-Courts Singapore is a local retailer. The gross amount is SGD 856 inclusive of 9% GST. Net = 856 x (100/109) = SGD 785.32. GST = SGD 70.68. Standard-rated domestic purchase used for business. Input tax claimable. Goes to Box 5 (taxable purchases) and Box 7 (input tax).
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box (purchase) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 18.04.2026 | COURTS SINGAPORE | -856.00 | -785.32 | -70.68 | 9% | 5 | 7 | N | — | — |
-
-### Example 5 — Club membership, permanently blocked
-
-**Input line:**
-`22.04.2026 ; SINGAPORE RECREATION CLUB ; DEBIT ; Annual subscription ; -3,200.00 ; SGD`
-
-**Reasoning:**
-Club membership fee. Input tax on club membership fees (country club, golf club, recreation club subscriptions) is permanently blocked under Regulation 27(1)(a). No exceptions. Default: full block.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 22.04.2026 | SINGAPORE RECREATION CLUB | -3,200.00 | -3,200.00 | 0 | — | — | Y | Q3 | "Club membership: blocked under Reg 27(1)(a)" |
-
-### Example 6 — Exempt financial service (bank charges)
-
-**Input line:**
-`28.04.2026 ; DBS BANK ; DEBIT ; Monthly account maintenance fee ; -15.00 ; SGD`
-
-**Reasoning:**
-Bank maintenance fee. Financial services are exempt under Fourth Schedule Part I. No GST is charged by the bank. No input tax to claim. Exclude from the return.
-
-**Output:**
-
-| Date | Counterparty | Gross | Net | GST | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
-| 28.04.2026 | DBS BANK | -15.00 | — | — | — | — | N | — | "Exempt financial service" |
-
----
-
-## Section 5 — Tier 1 classification rules (compressed)
-
-Each rule states the legal source and the box mapping. Apply silently if the data is unambiguous.
-
-### 5.1 Standard rate 9% (GST Act Section 7, Section 16)
-
-Default rate for any taxable supply in Singapore unless zero-rated or exempt. Sales go to Box 1. Output tax goes to Box 6. Purchases go to Box 5. Input tax goes to Box 7.
-
-### 5.2 Zero-rated supplies (GST Act Section 21, 22; Fifth Schedule)
-
-Exports of goods physically shipped out of Singapore with export documentation. International services meeting Fifth Schedule conditions (especially Para 1 — service to overseas person, not performed on goods in SG, no direct SG benefit). Sales go to Box 2. No output tax. Input tax on related purchases is claimable.
-
-### 5.3 Exempt supplies (Fourth Schedule)
-
-Prescribed financial services (interest, currency exchange, securities, life insurance, bank account operation). Residential property sale or lease (not hotel/serviced apartment). Investment precious metals meeting purity standards. Digital payment tokens. Sales go to Box 3. No output tax. No input tax recovery on directly attributable costs.
-
-### 5.4 Out of scope
-
-Salaries, wages, CPF contributions, government grants/subsidies, dividends, loan principal, private transactions, TOGC, statutory penalties. Not reported on GST F5. Exclude entirely.
-
-### 5.5 Reverse charge — imported services (GST Act Section 14(2))
-
-From 1 January 2020, when the client receives services from a non-resident supplier who is not GST-registered in SG: self-assess output tax at 9% in Box 6, claim input tax in Box 7 (if entitled), report value in Box 14. Net effect zero for a fully taxable business. Applies to all services and from 1 January 2023, also to imported low-value goods (value not exceeding SGD 400).
-
-### 5.6 Domestic purchases — standard rated
-
-Input tax on a valid tax invoice from a GST-registered Singapore supplier is claimable for purchases used in taxable business activity. Subject to blocked-input rules (5.8) and the five conditions in Section 20. Report in Box 5 (value) and Box 7 (input tax).
-
-### 5.7 Import of goods
-
-Goods imported via Singapore Customs. Import GST is paid at the border (or deferred under IGDS for approved businesses). Report in Box 5 (value). Input GST claimed in Box 7. Customs import permit is the supporting document (not a tax invoice).
-
-### 5.8 Blocked input tax (GST (General) Regulations, Reg 26-27)
-
-The following categories have zero GST recovery with no exceptions unless specifically noted:
-- Motor cars: purchase, hire, import of motor cars and related running expenses (petrol, maintenance, parking, ERP) — Reg 26(1). Exception: taxis, private hire cars for chauffeured transport, motor dealers' stock-in-trade, driving schools.
-- Club membership fees: country club, golf club, recreation club — Reg 27(1)(a). No exceptions.
-- Medical expenses for employees — Reg 27(1)(b). Exception: medical expenses required under Work Injury Compensation Act or Employment Act.
-- Family benefits for employees/directors' family members — Reg 27(1)(c). No exceptions.
-- Costs of non-business transactions — Reg 26(2). No exceptions.
-
-Blocked categories override any other recovery rule. Check blocked status before applying recovery.
-
-### 5.9 Deemed supplies
-
-Gifts exceeding SGD 200 per recipient in a 12-month period — deemed supply, output tax due at 9% on cost. Private use of business assets — deemed supply if not insignificant. Report in Box 1 (value) and Box 6 (output tax).
-
-### 5.10 Transitional rate rules (8% to 9%, 1 January 2024)
-
-Supply made before 1 Jan 2024: apply 8%. Supply made on/after 1 Jan 2024: apply 9%. Spanning supplies: apportion. For current periods (2024 onward), always use 9%.
-
-### 5.11 Sales — domestic standard
-
-Charge 9% on all local sales of goods and services. No distinction between B2B and B2C for domestic supplies. Map to Box 1 (net) and Box 6 (output tax).
-
-### 5.12 Sales — zero-rated export of goods
-
-Goods physically shipped out of Singapore. Retain export documentation (export permit, bill of lading, airway bill). Map to Box 2. No output tax.
-
-### 5.13 Sales — zero-rated international services (Fifth Schedule)
-
-Service to customer who "belongs" outside Singapore. Customer must not be GST-registered in SG, must have no SG establishment, must have usual residence outside SG. The service must not be performed on goods in SG (unless goods are subsequently exported), and must not directly benefit a person in SG other than the overseas customer. Map to Box 2. No output tax.
-
-### 5.14 Credit notes and adjustments
-
-Credit notes issued reduce output tax. Credit notes received reduce input tax. Adjust in the period the credit note is issued/received. For errors in prior periods: if net GST error does not exceed SGD 1,500, adjust in the next return. If exceeds SGD 1,500, file GST F7.
+A Singapore distributor (not an RC business) has, for 1 Jul to 30 Sep 2026:
+
+- Local sales $200,000 plus GST $18,000 (per invoices).
+- Exports $50,000 with export permits and bills of lading.
+- Fixed deposit interest $400.
+- Local stock and overhead purchases $80,000 plus GST $7,200, all with valid tax invoices.
+- Golf club annual subscription $3,000 plus GST $270, and petrol for a company saloon car $500 plus GST $45.
+- A $1,000 project-management subscription from a US supplier that charged no Singapore GST.
+
+Working:
+
+- De minimis: exempt supplies of $400 for the quarter are far below an average of $40,000 a month and below 5% of total supplies of $250,400, so the rule is met.
+- The club subscription and car petrol are blocked: they stay out of Box 5 and Box 7.
+- The US subscription is not reverse charged because the distributor is fully taxable; it is not on IRAS's list of Box 5 taxable purchases.
+
+| Box | Amount |
+| --- | --- |
+| 1 | $200,000 |
+| 2 | $50,000 |
+| 3 | $400 |
+| 4 | $250,400 |
+| 5 | $80,000 |
+| 6 | $18,000 |
+| 7 | $7,200 |
+| 8 | $10,800 payable by 31 Oct 2026 |
+| 14 | Not applicable |
+
+### Case 4: reverse charge for a partially exempt business ([IRAS reverse charge for local businesses](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-and-digital-economy/local-businesses))
+
+An investment-holding company that receives dividend income is GST-registered and is not entitled to full input tax credit. In the Jul to Sep 2026 quarter it buys $10,000 of consulting services from a US firm that charges no Singapore GST.
+
+- It must reverse charge: $10,000 in Box 1 and Box 14 and in Box 5; GST of $900 (9% of $10,000) in Box 6.
+- Only the part of the $900 allowed by its input tax recovery rules goes in Box 7. That fraction depends on its apportionment and is not computed here; refer if it has not been agreed.
+- Contrast case 3: a fully taxable business buying the same service does nothing under reverse charge.
+
+### Case 5: correcting an error ([IRAS GST F7](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/correcting-errors-made-in-gst-return-%28filing-gst-f7%29))
+
+In July 2026 a business finds that its Jan to Mar 2026 return (Box 4 total supplies $500,000) left out a standard-rated sale of $20,000 plus GST $1,800.
+
+- Net GST in error is $1,800, not more than $3,000.
+- The value error in the other boxes is $20,000, not more than 5% of $500,000 ($25,000).
+- Both criteria are met, so it may adjust in its next GST F5 (Apr to Jun 2026, due 31 Jul 2026) instead of filing a GST F7.
+- If the omitted sale had been $40,000 plus GST $3,600, neither test would be met and a GST F7 would be needed. Filed within 1 year of the original filing deadline and meeting the Voluntary Disclosure Programme conditions, no late payment penalty is imposed on the additional GST disclosed.
+
+### Case 6: IRAS's de minimis example ([IRAS de minimis](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/claiming-gst-%28input-tax%29/claiming-input-tax-incurred-to-make-exempt-supplies))
+
+For a quarter IRAS takes standard-rated supplies of $2,080,000, zero-rated supplies of $300,000 and exempt supplies of $120,000, total $2,500,000.
+
+- Average exempt supplies: $120,000 ÷ 3 = $40,000 a month, not more than $40,000.
+- Exempt share: $120,000 ÷ $2,500,000 = 4.8%, not more than 5%.
+- The rule is met; all input tax for exempt supplies is provisionally claimable, subject to the longer-period adjustment.
+
+### Case 7: IRAS's late payment example ([IRAS late payment](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-payments-refunds/late-payment-or-non-payment-of-gst))
+
+A business filed its return for the period ending 30 Jun 2025 on time (due 31 Jul 2025) but did not pay GST of $10,000. It paid on 16 Dec 2025.
+
+- 5% late payment penalty: $500.
+- The tax stayed unpaid 60 days after the penalty, so 2% a month applied for Aug, Sep, Oct and Nov 2025: $10,000 × 2% × 4 = $800.
+- Total penalties: $1,300.
+
+### Case 8: late filing ([IRAS late filing](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/late-filing-or-non-filing-of-GST-returns-f5-f8))
+
+A return stays outstanding for 3 completed months after its due date.
+
+- $200 immediately, plus $200 for each of the 3 completed months: $800 in total, on top of the 5% late payment penalty on any estimated assessment.
+- The late submission penalty for one return is capped at $10,000.
+
+## When to refuse or refer
+
+- GST group or divisional registration: intra-group supplies and consolidation are outside this Guide.
+- Major Exporter Scheme, Approved Third Party Logistics scheme, licensed or zero GST warehouses, or the Import GST Deferment Scheme (Boxes 9 and 18 to 21).
+- Customer accounting for prescribed goods, the gross margin scheme or the discounted sale price scheme for used vehicles.
+- The de minimis rule is not met, or the longer-period adjustment is due: apportionment of residual input tax needs the IRAS formula and the e-Tax Guide "GST: Partial Exemption and Input Tax Recovery".
+- An RC business whose input tax recovery fraction has not been worked out.
+- Electronic marketplace operators, redeliverers and OVR vendors (Boxes 15 to 17).
+- Zero-rating of services where the customer's belonging status or the direct beneficiary is unclear, or where the service relates to land or goods in Singapore.
+- Supplies that straddle the 2023 or 2024 rate changes.
+- Errors that need a GST F7 and may involve penalties, an estimated Notice of Assessment, a Notice to Attend Court, or suspected fraud.
+- The GST F8 on cancellation, and the Tourist Refund Scheme.
+- Any request to backdate an invoice, zero-rate without documents, or claim input tax without a valid tax invoice: refuse.
+
+## Filing and payment
+
+### Filing the GST F5 ([IRAS: Due dates](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/due-dates-and-requests-for-extension); [IRAS: Late filing](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/late-filing-or-non-filing-of-GST-returns-f5-f8))
+
+- File on myTax Portal one month after the end of each accounting period, and pay by the same date. See the 2026 due-date table above.
+- A nil return is needed for a period with no activity. A business that has ceased should apply to cancel its registration.
+- Failing to file on time is an offence. IRAS may issue an estimated Notice of Assessment with a 5% late payment penalty on the estimated tax, impose a late submission penalty, and summon the business or the people running it. The estimate is revised when the actual return is filed; it can only be revised if the return is filed within 5 years of the period end.
+
+### Correcting errors ([IRAS: Correcting errors (GST F7)](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/correcting-errors-made-in-gst-return-%28filing-gst-f7%29))
+
+- **Administrative concession:** errors may be adjusted in the next GST F5 only if both criteria are met: (a) the net GST amount in error for all affected periods is not more than $3,000 (additional Box 6 output tax less additional Box 7 input tax); and (b) for each affected period, the total error in all boxes other than Boxes 6, 7 and 12 is not more than 5% of that period's Box 4 (or Box 5 if there were no supplies). Errors in Box 12 cannot use the concession. IRAS offers a GST F7 calculator to test this.
+- **Otherwise file a GST F7** on myTax Portal. Request it and file within 14 days, entering the full revised figures for every box; it supersedes the earlier return. Errors across several periods in one year may be consolidated into the F7 for the last period of that year.
+- **Time limits:** errors must be corrected within five years from the end of the accounting period; refund claims for GST overpaid must also be made within five years. Corrections made more than one year after the end of the period may attract penalties.
+- **Voluntary disclosure:** IRAS may reduce penalties for disclosures that meet the Voluntary Disclosure Programme conditions. A GST F7 filed within 1 year from the original filing deadline that meets those conditions carries no late payment penalty on the additional GST.
+- **Incorrect returns:** penalties of up to 200% of the tax undercharged, plus a fine and imprisonment; fraud is dealt with more severely.
+
+### Penalties ([IRAS: Late payment](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-payments-refunds/late-payment-or-non-payment-of-gst); [IRAS: Late filing](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/late-filing-or-non-filing-of-GST-returns-f5-f8))
+
+| Failure | Penalty |
+| --- | --- |
+| Return filed on time, GST not paid by the due date | 5% late payment penalty on the tax declared |
+| Return not filed or filed late | 5% late payment penalty on IRAS's estimated tax, revised to the actual liability once filed |
+| GST F7 filed more than 1 year after the original due date | 5% late payment penalty on the additional tax |
+| Tax still unpaid 60 days after the 5% penalty | Additional 2% for each month the tax remains unpaid, capped at 50% of the unpaid tax |
+| Return not filed by the due date | $200 immediately, then $200 for every completed month it remains outstanding, capped at $10,000 per return |
+| Incorrect return | Up to 200% of the tax undercharged, plus possible fine and imprisonment |
+
+- IRAS can also appoint agents such as banks, tenants or lawyers to recover overdue GST, issue Travel Restriction Orders to sole proprietors or partners, and take legal action.
+- Penalty waivers are requested through the Appeal Penalty Waiver service on myTax Portal. For a late submission penalty IRAS considers an appeal only if all outstanding returns have been filed, all overdue GST has been paid, and returns have been filed on time for the past year.
+- Paying the late submission penalty does not end the obligation: the outstanding return must still be filed.
+
+## Returns being filed now for 2025
+
+### 2025 periods ([IRAS current GST rates](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/basics-of-gst/current-gst-rates); [IRAS: Due dates](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/filing-gst/due-dates-and-requests-for-extension))
+
+- Periods in 2025 were taxed at 9%, with the same boxes, deadlines and penalties as above. The Oct to Dec 2025 return was due by 31 Jan 2026.
+- The GST InvoiceNow Requirement applied during 2025 only from 1 Nov 2025, and only to companies registering voluntarily within 6 months of incorporation.
+- Prospective registrations with a forecast date before 1 Jul 2025 were effective on the 31st day after the forecast date; from 1 Jul 2025 the two-month rule applies.
+- Errors in 2025 returns can be corrected until five years after the end of each period; the concession tests above apply.
+
+## Completion checklist
+
+- [ ] Registration status and accounting period confirmed; for unregistered clients, both the retrospective and prospective tests run with "more than" [IRAS registration](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst).
+- [ ] Every sale classified as standard-rated, zero-rated (with export documents or a section 21(3) basis), exempt or out of scope.
+- [ ] Deemed supplies, asset sales and credit notes included.
+- [ ] Every input tax claim backed by a valid tax invoice or import permit in the client's name, for business use, in the right period.
+- [ ] Blocked items (club subscriptions, motor cars, staff medical costs and insurance, family benefits, betting) removed from Boxes 5 and 7.
+- [ ] Reverse charge applied only if the client is an RC business, with the value in Boxes 1, 5 and 14.
+- [ ] De minimis test run if there are any exempt supplies, including exchange differences and interest in Box 3.
+- [ ] Boxes 1 to 17 completed; Box 6 and Box 7 taken from invoices, not recomputed.
+- [ ] Prior-period errors tested against both concession criteria; GST F7 prepared where needed.
+- [ ] Return filed and GST paid by one month after the period end; nil return filed if no activity.
+- [ ] InvoiceNow data transmitted where the business is in scope [IRAS InvoiceNow](https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-invoicenow-requirement).
+- [ ] Records kept for at least 5 years.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 6 — Tier 2 catalogue (compressed)
+## Talk to a verified accountant
 
-For each ambiguity type: pattern, why the bank statement is insufficient, conservative default, question for the structured form.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-### 6.1 Motor car vs commercial vehicle
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-*Pattern:* Shell, SPC, Esso, petrol, parking, ERP, car wash. *Why insufficient:* vehicle type unknown. Motor car expenses are permanently blocked; commercial vehicle (van, lorry, motorcycle) expenses are claimable. *Default:* 0% recovery (assume motor car). *Question:* "Is this for a motor car (blocked) or a commercial vehicle/motorcycle used for business?"
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-### 6.2 Entertainment and hospitality
+## Today's figures and who stands behind this skill
 
-*Pattern:* restaurant, cafe, bar, catering, event. *Why insufficient:* entertainment for non-business purposes is blocked; staff welfare meals at workplace may be claimable. *Default:* block. *Question:* "Was this entertainment (blocked) or a staff welfare meal at the workplace?"
-
-### 6.3 Ambiguous SaaS billing entities
-
-*Pattern:* Google, Microsoft, AWS, Slack, Shopify where the legal entity is not visible. *Why insufficient:* some brands have Singapore entities (domestic 9%) and overseas entities (reverse charge). *Default:* reverse charge (non-resident). *Question:* "Could you check the invoice for the legal entity name? I need to know if it is a Singapore-registered entity or an overseas company."
-
-### 6.4 Round-number incoming transfers from owner-named counterparties
-
-*Pattern:* large round credit from a name matching the client's name. *Why insufficient:* could be a customer sale, owner injection, or loan. *Default:* exclude as owner injection. *Question:* "The SGD X transfer from [name] — is this a customer payment, your own money going in, or a loan?"
-
-### 6.5 Incoming transfers from individual names (not owner)
-
-*Pattern:* incoming from private-looking counterparties. *Why insufficient:* could be B2C sale, refund, loan. *Default:* domestic sale at 9%, Box 1/6. *Question:* "For each: was it a sale? Business or consumer? Local or overseas customer?"
-
-### 6.6 Incoming transfers from foreign counterparties
-
-*Pattern:* foreign bank, foreign currency. *Why insufficient:* could be zero-rated service, domestic supply paid from overseas, refund. *Default:* domestic 9%. *Question:* "What was this — a service to an overseas customer (potentially zero-rated), a domestic sale, or something else? Does the customer have any SG establishment?"
-
-### 6.7 Medical expenses
-
-*Pattern:* clinic, hospital, medical, dental, health insurance. *Why insufficient:* medical expenses for employees are blocked under Reg 27(1)(b) unless required by Work Injury Compensation Act or Employment Act. *Default:* blocked. *Question:* "Is this medical expense required by statute (Work Injury Compensation Act)? If so, input tax may be claimable."
-
-### 6.8 Mixed-use phone, internet, home office
-
-*Pattern:* Singtel, StarHub, M1 personal lines; home electricity. *Why insufficient:* business proportion unknown. *Default:* 0% if mixed without declared %, 100% if confirmed pure business line. *Question:* "Is this a dedicated business line or mixed-use? What business percentage would you estimate?"
-
-### 6.9 Outgoing transfers to individuals
-
-*Pattern:* outgoing to private-looking names. *Why insufficient:* could be contractor payment, wages, refund, drawings. *Default:* exclude as drawings. *Question:* "Was this a contractor you paid (with invoice), wages, a refund to a customer, or a personal transfer?"
-
-### 6.10 Cash withdrawals
-
-*Pattern:* ATM, cash withdrawal. *Why insufficient:* unknown what cash was spent on. *Default:* exclude as owner drawing. *Question:* "What was the cash used for?"
-
-### 6.11 Rent payments
-
-*Pattern:* monthly rent to a landlord-sounding counterparty. *Why insufficient:* commercial vs residential. *Default:* no GST, exclude (residential default). *Question:* "Is this commercial property rent (GST claimable with tax invoice) or residential (exempt)?"
-
-### 6.12 Insurance payments
-
-*Pattern:* insurance premium payments. *Why insufficient:* life insurance is exempt; general insurance (property, motor, health, travel) is standard-rated at 9%. *Default:* exclude (life insurance default). *Question:* "Is this life insurance (exempt) or general/property/motor insurance (standard-rated, input tax claimable)?"
-
----
-
-## Section 7 — Excel working paper template (Singapore-specific)
-
-The base specification is in `vat-workflow-base` Section 3. This section provides the Singapore-specific overlay.
-
-### Sheet "Transactions"
-
-Columns A–L per the base. Column H ("Box code") accepts only valid Singapore GST F5 box codes from Section 1 of this skill: 1, 2, 3, 5, 6, 7, 14. Use blank for excluded transactions. For reverse-charge transactions, enter "RC" in column H and the value will feed into Box 6 (output), Box 7 (input), and Box 14 (value).
-
-### Sheet "Box Summary"
-
-One row per box. Column A is the box number, column B is the description, column C is the value computed via formula. Mandatory rows:
-
-```
-Supply boxes:
-| 1  | Standard-rated supplies | =SUMIFS(Transactions!E:E, Transactions!H:H, "1") |
-| 2  | Zero-rated supplies | =SUMIFS(Transactions!E:E, Transactions!H:H, "2") |
-| 3  | Exempt supplies | =SUMIFS(Transactions!E:E, Transactions!H:H, "3") |
-| 4  | Total supplies | =Box_Summary!C[1_row]+C[2_row]+C[3_row] |
-
-Purchase box:
-| 5  | Total taxable purchases | =SUMIFS(Transactions!E:E, Transactions!H:H, "5")+SUMIFS(Transactions!E:E, Transactions!H:H, "RC") |
-
-Tax boxes:
-| 6  | Output tax due | =C[1_row]*0.09 + SUMIFS(Transactions!E:E, Transactions!H:H, "RC")*0.09 |
-| 7  | Input tax claimed | =SUMIFS(Transactions!F:F, Transactions!H:H, "5") + SUMIFS(Transactions!E:E, Transactions!H:H, "RC")*0.09 |
-| 8  | Net GST | =C[6_row]-C[7_row] |
-
-Reporting boxes:
-| 14 | Reverse charge value | =SUMIFS(Transactions!E:E, Transactions!H:H, "RC") |
-```
-
-### Sheet "Return Form"
-
-Final GST F5-ready figures. The bottom-line cell is Box 8:
-```
-Box 8 = Box 6 - Box 7
-
-IF Box 8 > 0:
-  GST payable to IRAS
-ELSE:
-  GST refundable by IRAS
-```
-
-### Color and formatting conventions
-
-Per the xlsx skill: blue for hardcoded values from the bank statement (column D of Transactions), black for formulas (everything in Box Summary and Return Form), green for cross-sheet references (Return Form referencing Box Summary), yellow background for any row in Sheet "Transactions" where Default? = "Y".
-
-### Mandatory recalc step
-
-After building the workbook, run:
-
-```bash
-python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/singapore-gst-<period>-working-paper.xlsx
-```
-
-Check the JSON output. If `status` is `errors_found`, fix the formulas and re-run. If `status` is `success`, present via `present_files`.
-
----
-
-## Section 8 — Singapore bank statement reading guide
-
-Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these Singapore-specific patterns.
-
-**DBS / POSB statement format.** DBS Business banking exports typically use CSV with DD/MM/YYYY or YYYY-MM-DD dates. Common columns: Transaction Date, Reference, Debit Amount, Credit Amount, Transaction Ref1, Transaction Ref2. The description field is often split across Ref1 and Ref2 — concatenate them for counterparty identification. DBS ibanking exports may use "CR" and "DR" labels. POSB business accounts follow the same format as DBS.
-
-**OCBC statement format.** OCBC Velocity exports use CSV with columns: Transaction date, Value date, Description, Withdrawals, Deposits, Balance. Description field contains the counterparty name and reference. Cheque numbers appear as separate entries. FAST/PayNow transfers show as "FAST PAYMENT" or "PAYNOW" with the recipient name in the description.
-
-**UOB statement format.** UOB BIBPlus exports use CSV with columns: Transaction Date, Transaction Description, Withdrawal, Deposit, Balance. The description field is a single concatenated field. GIRO payments appear as "GIRO" with the beneficiary name.
-
-**Revolut / Wise Business.** ISO date format (YYYY-MM-DD). Revolut shows counterparty name clearly. Wise shows the recipient name and currency conversion details. Both may have separate fee lines — exclude fee lines (exempt financial service).
-
-**Internal transfers and exclusions.** Own-account transfers between the client's DBS, OCBC, UOB, Revolut accounts. Labelled "own transfer", "internal transfer", "IBT" (inter-bank transfer). Always exclude.
-
-**Sole proprietor draws.** A self-employed sole trader cannot pay themselves wages. Any transfer to their personal account is a drawing. Exclude. A director of a company receiving director fees: exclude from GST (out of scope) but flag for income tax records.
-
-**Refunds and reversals.** Identify by "refund", "reversal", "chargeback", "returned". Book as a negative in the same box as the original transaction. Correction is in the period the refund is booked.
-
-**PayNow and FAST transfers.** PayNow transfers appear as "PAYNOW-" followed by mobile number or UEN. FAST transfers show "FAST" or "FAST PAYMENT". The counterparty name may be truncated — if unidentifiable, ask the client.
-
-**Foreign currency transactions.** Convert to SGD at the exchange rate on the transaction date. Use the MAS exchange rate or the rate shown on the bank statement. Note the rate used in the Transactions sheet column L (Notes).
-
-**CPF, SDL, FWL entries.** These are statutory contributions and levies, always out of scope. Exclude immediately without further analysis.
-
-**GIRO entries.** GIRO debits for recurring payments (rent, utilities, insurance). The description usually contains the beneficiary name. Map to the appropriate category using Section 3.
-
----
-
-## Section 9 — Onboarding fallback (only when inference fails)
-
-The workflow in `vat-workflow-base` Section 1 mandates inferring the client profile from the data first and only confirming with the client in Step 4. The questionnaire below is a fallback.
-
-### 9.1 Entity type and trading name
-*Inference rule:* sole proprietor names often match the account holder name; company names include "Pte Ltd", "Pte. Ltd.", "LLP". *Fallback question:* "Are you a sole proprietor, a private limited company (Pte Ltd), or a partnership/LLP?"
-
-### 9.2 GST registration status
-*Inference rule:* if the client is asking for a GST F5, they are GST-registered. *Fallback question:* "Confirm you are GST-registered? What is your GST registration number (UEN format)?"
-
-### 9.3 Filing period
-*Inference rule:* first and last transaction dates on the bank statement. Standard is quarterly (calendar quarters). *Fallback question:* "Which quarter does this cover? Q1 (Jan–Mar), Q2 (Apr–Jun), Q3 (Jul–Sep), or Q4 (Oct–Dec)?"
-
-### 9.4 Industry and sector
-*Inference rule:* counterparty mix, sales description patterns. IT, consultancy, F&B, retail, logistics are recognisable. *Fallback question:* "In one sentence, what does the business do?"
-
-### 9.5 Employees
-*Inference rule:* CPF, salary, SDL, FWL outgoing transfers. *Fallback question:* "Do you have employees? If so, how many?"
-
-### 9.6 Exempt supplies
-*Inference rule:* presence of financial service income, residential rental income, precious metals trading. *Fallback question:* "Do you make any GST-exempt sales (financial services, residential property, investment precious metals)?" *If yes and non-de-minimis, R-SG-1 refuses.*
-
-### 9.7 International customers
-*Inference rule:* foreign bank credits, foreign currency, overseas company names. *Fallback question:* "Do you have customers outside Singapore? Are they businesses or consumers? Do any of them have an establishment in Singapore?"
-
-### 9.8 Brought-forward excess input tax
-*Inference rule:* not inferable from a single period statement. Always ask. *Question:* "Do you have any excess input tax carried forward from the previous quarter?"
-
----
-
-## Section 10 — Reference material
-
-### Validation status
-
-This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structure (quick reference at top, supplier library as lookup tables, worked examples, compressed rules, bank statement guide, onboarding fallback). It supersedes v1.0.
-
-### Sources
-
-**Primary legislation:**
-1. Goods and Services Tax Act 1993 (Cap. 117A) — Sections 7, 14, 16, 20, 21, 22, 25; First Schedule (registration); Fourth Schedule (exempt); Fifth Schedule (international services)
-2. GST (General) Regulations — Regulations 26-29 (blocked input tax, apportionment), 29A (de minimis), 40 (pre-registration claims), 46 (returns)
-3. GST (Amendment) Act 2022 (rate change to 8% and 9%)
-
-**IRAS guidance:**
-4. IRAS e-Tax Guide "GST: General Guide for Businesses"
-5. IRAS e-Tax Guide "GST: Guide on Imports"
-6. IRAS e-Tax Guide "GST: Reverse Charge"
-7. IRAS e-Tax Guide "GST: Rate Change (2024)"
-8. IRAS e-Tax Guide "GST: Voluntary Disclosure of Errors"
-
-**Other:**
-9. myTax Portal — https://mytax.iras.gov.sg
-10. MAS exchange rates — https://www.mas.gov.sg/statistics/exchange-rates
-
-### Known gaps
-
-1. The supplier pattern library covers the most common Singapore and international counterparties but does not cover every local SME or regional brand.
-2. The worked examples are drawn from a hypothetical IT consultant. They do not cover F&B, retail, e-commerce, or construction specifically.
-3. The de minimis test (SGD 5,000 / 5%) is referenced as a refusal trigger but the longer-period annual adjustment is not computed by this skill.
-4. InvoiceNow (e-invoicing) requirements for voluntary registrants (from November 2025 / April 2026) are not covered in detail.
-5. Customer accounting for prescribed goods (mobile phones, memory cards, IPM) is refused, not handled.
-6. The OVR regime for non-resident suppliers is referenced but not a filing scenario this skill supports.
-
-### Change log
-
-- **v2.0 (April 2026):** Full rewrite to align with Malta v2.0 structure. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3) with Singapore-specific vendors (DBS, OCBC, UOB, Singtel, StarHub, M1, NTUC FairPrice, Grab, ComfortDelGro, GovTech, IRAS). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured (Section 6). Excel working paper specification added (Section 7). Singapore bank statement reading guide added with DBS/OCBC format details (Section 8). Onboarding moved to fallback role (Section 9). Reference material moved to bottom (Section 10). Companion skill reference updated to vat-workflow-base v0.1.
-- **v1.0 (April 2026):** Initial skill. Standalone document covering GST Act, box mappings, reverse charge, blocked categories, registration, filing deadlines, and penalties.
-
-### Self-check (v2.0 of this document)
-
-1. Quick reference at top with box table and conservative defaults: yes (Section 1).
-2. Supplier library as literal lookup tables: yes (Section 3, 14 sub-tables).
-3. Worked examples drawn from hypothetical IT consultant: yes (Section 4, 6 examples).
-4. Tier 1 rules compressed: yes (Section 5, 14 rules).
-5. Tier 2 catalogue compressed with inference rules: yes (Section 6, 12 items).
-6. Excel template specification with mandatory recalc: yes (Section 7).
-7. Onboarding as fallback only, inference rules first: yes (Section 9, 8 items).
-8. All 6 Singapore-specific refusals present: yes (Section 2, R-SG-1 through R-SG-6).
-9. Reference material at bottom: yes (Section 10).
-10. Motor car hard-block explicit: yes (Section 5.8 + Example 3).
-11. Club membership hard-block explicit: yes (Section 5.8 + Example 5).
-12. Reverse charge for imported services (Section 14(2)) explicit: yes (Example 1 + Section 5.5).
-13. Zero-rated international service and "belongs" test explicit: yes (Example 2 + Section 5.13).
-14. DBS/OCBC bank statement format guide: yes (Section 8).
-
-## End of Singapore GST Return Skill v2.0
-
-This skill is incomplete without the companion file loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a GST F5 without both files loaded.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, accredited tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/singapore-gst) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `singapore-gst` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/singapore-gst. If neither is available, confirm every figure against the official source pages cited above before relying on it.

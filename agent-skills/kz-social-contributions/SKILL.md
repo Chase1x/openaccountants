@@ -1,15 +1,13 @@
 ---
 name: kz-social-contributions
-description: "> Use this skill whenever asked about Kazakhstan mandatory social payments for the self-employed (ИП / individual entrepreneurs) or for employers — pension contributions, social contributions, medical insurance, and social tax. Trigger on phrases like \"ОПВ Казахстан\", \"ОПВР\", \"социальные отчисления\", \"ОСМС\", \"социальный налог\", \"social contributions Kazakhstan ИП\", \"Kazakhstan payroll contributions 2026\", \"сколько платит ИП за себя\", \"пенсионные взносы Казахстан\", or any request to compute what an individual entrepreneur or employer owes to the pension fund (ЕНПФ/UAPF), the State Social Insurance Fund (ГФСС), or the Social Health Insurance Fund (ФСМС). Covers tax year 2026 under the new Tax Code effective 1 January 2026. The AI must reply in the user's language (Russian, Kazakh, or English). Does NOT cover individual income tax (ИПН), VAT (НДС), corporate tax, or the simplified declaration mechanics themselves — this skill only computes the social-payment layer that sits on top of any regime."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Kazakhstan mandatory social payments for the self-employed (ИП / individual entrepreneurs) or for employers — pension contributions, social contributions, medical insurance, and social tax. Trigger on phrases like \"ОПВ Казахстан\", \"ОПВР\", \"социальные отчисления\", \"ОСМС\", \"социальный налог\", \"social contributions Kazakhstan ИП\", \"Kazakhstan payroll contributions 2026\", \"сколько платит ИП за себя\", \"пенсионные взносы Казахстан\", or any request to compute what an individual entrepreneur or employer owes to the pension fund (ЕНПФ/UAPF), the State Social Insurance Fund (ГФСС), or the Social Health Insurance Fund (ФСМС). Covers tax year 2026 under the new Tax Code effective 1 January 2026. The AI must reply in the user's language (Russian, Kazakh, or English). Does NOT cover individual income tax (ИПН), VAT (НДС), corporate tax, or the simplified declaration mechanics themselves — this skill only computes the social-payment layer that sits on top of any re"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-social-contributions"
-  tax_year: 2026
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-social-contributions"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Mandatory Social Payments — Self-Employed (ИП) & Employers (2026)
@@ -300,6 +298,6 @@ Social Insurance Fund (ГФСС), the Social Health Insurance Fund (ФСМС), a
 a real filing. No liability is accepted for reliance on unverified figures. Provided as part
 of the open-source tax skills project at openaccountants.com.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

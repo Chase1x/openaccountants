@@ -1,27 +1,68 @@
 ---
 name: brazil-payroll
-description: "> Use esta skill sempre que perguntarem sobre processamento de folha de pagamento brasileira, cálculo de salários, IRRF (Imposto de Renda Retido na Fonte), contribuições ao INSS, depósitos de FGTS, 13º salário (décimo terceiro), custo do empregador, conversões de líquido para bruto ou de bruto para líquido, estrutura de holerite/contracheque, eventos do eSocial, ou qualquer questão sobre cálculo de remuneração, deduções ou obrigações do empregador no Brasil. Acione com frases como \"folha de pagamento brasileira\", \"folha de pagamento\", \"INSS\", \"IRRF\", \"FGTS\", \"13º salário\", \"décimo terceiro\", \"férias\", \"salário líquido\", \"holerite\", \"eSocial\", \"DCTF Web\", \"custo do empregador Brasil\", \"CLT\", \"rescisão\", \"aviso prévio\", ou \"salário mínimo Brasil\". / Use this skill whenever asked about Brazilian payroll processing, employee salary calculations, IRRF, INSS contributions, FGTS deposits, 13th salary, employer cost, gross-to-net or net-to-gross conversions, Brazilian payslip structure, eSocial filings, or any…"
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use esta skill sempre que perguntarem sobre processamento de folha de pagamento brasileira, cálculo de salários, IRRF (Imposto de Renda Retido na Fonte), contribuições ao INSS, depósitos de FGTS, 13º salário (décimo terceiro), custo do empregador, conversões de líquido para bruto ou de bruto para líquido, estrutura de holerite/contracheque, eventos do eSocial, ou qualquer questão sobre cálculo de remuneração, deduções ou obrigações do empregador no Brasil. Acione com frases como \"folha de pagamento brasileira\", \"folha de pagamento\", \"INSS\", \"IRRF\", \"FGTS\", \"13º salário\", \"décimo terceiro\", \"férias\", \"salário líquido\", \"holerite\", \"eSocial\", \"DCTF Web\", \"custo do empregador Brasil\", \"CLT\", \"rescisão\", \"aviso prévio\", ou \"salário mínimo Brasil\". / Use this skill whenever asked about Brazilian payroll processing, employee salary calculations, IRRF, INSS contributions, FGTS deposits, 13th salary, employer cost, gross-to-net or net-to-gross conversions, Brazilian payslip structure, eSocial "
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: BR
-  category: payroll
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/brazil-payroll"
-  obligation: PAY
-  reviewed_by: "pending depends_on: - payroll-workflow-base"
+  openaccountants_url: "https://www.openaccountants.com/skills/brazil-payroll"
+  jurisdiction: "BR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Ariane Marrocos"
+  review_status: "current"
 ---
 
-# Brasil — Folha de Pagamento (INSS, FGTS, IRRF) — Skill v1.1
+# Brazil Payroll
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Brasil — Folha de Pagamento (INSS, FGTS, IRRF) — Skill v1.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Folha de Pagamento
+
+- **Salário mínimo 2025** — R$ 1.518,00/mês  _(Decreto nº 12.342/2024)_
+- **Salário mínimo 2026** — R$ 1.630,00/mês  _(Decreto Federal do Salário Mínimo 2026)_
+- **IRRF isenção** — R$ 2.428,80 — Isento  _(Lei nº 11.482/2007)_
+- **IRRF faixa de R$ 2.428,81 a R$ 2.826,65** — 7,5% - parcela R$ 182,16  _(Lei nº 11.482/2007)_
+- **IRRF faixa R$ 2.826,66 – R$ 3.751,05** — 15% - parcela R$ 394,16  _(Lei nº 11.482/2007)_
+- **IRRF faixa R$ 3.751,06 – R$ 4.664,68** — 22,5% - parcela R$ 675,49  _(Lei nº 11.482/2007)_
+- **IRRF Acima de R$ 4.664,68** — 27,5% - parcela R$ 908,73  _(Lei nº 11.482/2007)_
+- **Dedução por dependente** — R$ 189,59/mês  _(Lei nº 9.250/1995)_
+- **INSS faixa Até R$ 1.621,00** — Até R$ 1.630,00  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **INSS faixa R$ 1.621,01 – R$ 2.902,84** — R$ 1.630,01 – R$ 2.902,84  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **INSS faixa R$ 2.902,85 – R$ 4.354,27** — 12%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **INSS faixa R$ 4.354,28 – R$ 8.475,55 (teto)** — 14%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **INSS patronal básico** — 20% da folha total (sem teto)  _(Lei 8.212/1991)_
+- **RAT/SAT** — 1%, 2% ou 3% (conforme CNAE)  _(Lei 8.212/1991)_
+- **Ajuste FAP** — 0,5× a 2,0× sobre o RAT  _(Lei 10.666/2003)_
+- **Terceiros** — ~5,8% (SENAI, SESI, SEBRAE, etc.)  _(Leis específicas)_
+- **Total típico INSS patronal** — ~26,8% – 28,8%  _(Lei 8.212/1991)_
+- **Alíquota FGTS** — 8% do bruto mensal (empregador)  _(Lei 8.036/1990)_
+- **Prazo depósito FGTS** — Até dia 20 do mês seguinte (FGTS Digital)  _(Lei 8.036/1990)_
+- **Multa rescisória (sem justa causa)** — 40% do saldo total do FGTS  _(Lei 8.036/1990)_
+- **Estimativa acima do bruto** — ~60-70% (INSS+FGTS+13º+férias+encargos)  _(Consolidado)_
+- **Jornada semanal padrão** — 44 horas  _(CLT Art. 58)_
+- **Hora extra (dias úteis)** — Mínimo 50%  _(CF/88 Art. 7º XVI)_
+- **Hora extra (domingos/feriados)** — Geralmente 100%, conforme legislação e convenção coletiva  _(Lei 605/1949)_
+- **Adicional noturno (22h-5h)** — Mínimo 20%  _(CLT Art. 73)_
+- **Insalubridade** — 10%, 20% ou 40% do salário mínimo  _(CLT Art. 192)_
+- **Periculosidade** — 30% do salário-base  _(CLT Art. 193)_
+- **13º salário** — 1 salário integral (duas parcelas)  _(Lei 4.090/1962)_
+- **Férias** — 30 dias + 1/3 constitucional  _(CF Art. 7º XVII; CLT)_
+- **Vale-transporte** — Empregado contribui com até 6% do salário básico; empregador paga o excedente.  _(Lei 7.418/1985)_
+- **Licença-maternidade** — 120 dias (180 dias no Programa Empresa Cidadã)  _(CF Art. 7º XVIII)_
+- **Licença-paternidade** — 5 dias (20 dias no Programa Empresa Cidadã)  _(ADCT Art. 10 §1º)_
 
 ## Seção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Brasil (República Federativa do Brasil) |
 | Moeda | BRL (Real Brasileiro) |
 | Periodicidade da folha | Mensal (pagamento até o 5º dia útil do mês seguinte) |
@@ -39,16 +80,16 @@ metadata:
 | FGTS Digital | Depósito mensal até o dia 20 do mês seguinte |
 | Versão da skill | 1.1 |
 
-A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) é sobre tributos sobre consumo (CBS/IBS substituindo PIS/Cofins/ICMS/ISS/IPI). **Folha de pagamento — INSS, FGTS, IRRF, salário-família, salário-maternidade — não é afetada.**
-
----
+- **Reforma Tributária 2026 e folha** — A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) é sobre tributos sobre consumo (CBS/IBS substituindo PIS/Cofins/ICMS/ISS/IPI). Folha de pagamento — INSS, FGTS, IRRF, salário-família, salário-maternidade — não é afetada.
 
 ## Seção 2 — Retenção de Imposto de Renda (IRRF)
 
 ### Tabela Mensal do IRRF (2026)
 
+**Tabela Mensal do IRRF (2026)**
+
 | Base de Cálculo Mensal (BRL) | Alíquota | Parcela a deduzir (BRL) |
-|---|---|---|
+| --- | --- | --- |
 | Até 2.259,20 | 0% (isento) | — |
 | 2.259,21 — 2.826,65 | 7,5% | 169,44 |
 | 2.826,66 — 3.751,05 | 15% | 381,44 |
@@ -57,8 +98,10 @@ A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) é sobre tributos sobre co
 
 ### Método de Cálculo do IRRF
 
+**Método de Cálculo do IRRF**
+
 | Etapa | Detalhe |
-|---|---|
+| --- | --- |
 | 1. Partir do salário bruto | Toda remuneração tributável do mês |
 | 2. Deduzir INSS (empregado) | Contribuição previdenciária progressiva |
 | 3. Deduzir dependentes | BRL 189,59 por dependente (2026) |
@@ -68,22 +111,24 @@ A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) é sobre tributos sobre co
 
 ### Regras Especiais do IRRF
 
+**Regras Especiais do IRRF**
+
 | Situação | Tratamento |
-|---|---|
+| --- | --- |
 | 13º salário | IRRF calculado separadamente (não agregado ao salário mensal) |
 | Férias | IRRF calculado sobre férias + 1/3 constitucional separadamente |
 | Participação nos lucros (PLR) | Tabela progressiva específica (anual) |
 | Verbas indenizatórias na rescisão | Geralmente isentas de IRRF |
 | Horas extras, bônus, comissões | Somados ao bruto mensal para cálculo do IRRF |
 
----
-
 ## Seção 3 — Previdência Social: Deduções do Empregado (INSS)
 
 ### Tabela Progressiva do INSS (2026)
 
+**Tabela Progressiva do INSS (2026)**
+
 | Salário Mensal (BRL) | Alíquota |
-|---|---|
+| --- | --- |
 | Até 1.621,00 | 7,5% |
 | 1.621,01 — 2.902,84 | 9% |
 | 2.902,85 — 4.354,27 | 12% |
@@ -108,14 +153,14 @@ Faixa 4: (5.000,00 − 4.354,27) × 14% =   90,40
 Total INSS:                          =  501,52
 ```
 
----
-
 ## Seção 4 — Previdência Social: Contribuições do Empregador
 
 ### INSS Patronal (Contribuição Patronal)
 
+**INSS Patronal (Contribuição Patronal)**
+
 | Componente | Alíquota | Base |
-|---|---|---|
+| --- | --- | --- |
 | INSS patronal básico | 20% | Folha total (sem teto) |
 | RAT/SAT (acidente de trabalho) | 1%, 2% ou 3% | Conforme classificação de risco do CNAE |
 | Ajuste FAP | 0,5× a 2,0× | Multiplicador aplicado ao RAT (específico por empresa) |
@@ -124,8 +169,10 @@ Total INSS:                          =  501,52
 
 ### FGTS (Fundo de Garantia do Tempo de Serviço)
 
+**FGTS (Fundo de Garantia do Tempo de Serviço)**
+
 | Parâmetro | Detalhe |
-|---|---|
+| --- | --- |
 | Alíquota | 8% da remuneração mensal bruta |
 | Pago por | Apenas pelo empregador (NÃO deduzido do empregado) |
 | Base | Toda remuneração: salário, horas extras, bônus, 13º, férias |
@@ -136,8 +183,10 @@ Total INSS:                          =  501,52
 
 ### Encargo Total do Empregador (Aproximado)
 
+**Encargo Total do Empregador (Aproximado)**
+
 | Componente | Alíquota |
-|---|---|
+| --- | --- |
 | INSS patronal + RAT + Terceiros | ~28,8% |
 | FGTS | 8% |
 | Provisão de 13º salário (1/12) | 8,33% |
@@ -146,14 +195,14 @@ Total INSS:                          =  501,52
 | FGTS/INSS sobre provisões | ~7% |
 | **Custo total aproximado do empregador acima do bruto** | **~60-70%** |
 
----
-
 ## Seção 5 — Salário Mínimo e Horas Extras
 
 ### Salário Mínimo Nacional
 
+**Salário Mínimo Nacional**
+
 | Ano | Mensal (BRL) | Diário (BRL) | Hora (BRL) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 2026 | 1.621,00 | 54,04 | 7,37 |
 | 2025 | 1.518,00 | 50,60 | 6,91 |
 
@@ -164,8 +213,10 @@ Total INSS:                          =  501,52
 
 ### Jornada de Trabalho e Horas Extras
 
+**Jornada de Trabalho e Horas Extras**
+
 | Parâmetro | Padrão |
-|---|---|
+| --- | --- |
 | Jornada semanal padrão | 44 horas (8h/dia seg-sex + 4h sábado) |
 | Alternativa comum | 40 horas (acordo coletivo) |
 | Jornada diária máxima | 10 horas (8 + 2 de hora extra) |
@@ -177,18 +228,20 @@ Total INSS:                          =  501,52
 
 ### Insalubridade / Periculosidade
 
+**Insalubridade / Periculosidade**
+
 | Tipo | Adicional |
-|---|---|
+| --- | --- |
 | Insalubridade (condições insalubres) | 10%, 20% ou 40% do salário mínimo |
 | Periculosidade (condições perigosas) | 30% do salário-base |
 | Não acumuláveis | Empregado escolhe a opção mais vantajosa |
 
----
-
 ## Seção 6 — Benefícios Obrigatórios
 
+**Benefícios Obrigatórios**
+
 | Benefício | Detalhe |
-|---|---|
+| --- | --- |
 | 13º salário (gratificação natalina) | Um salário mensal integral, pago em duas parcelas |
 | Férias | 30 dias corridos + 1/3 constitucional |
 | Vale-transporte | Obrigatório; empregador arca com o custo que exceder 6% do salário-base |
@@ -201,8 +254,10 @@ Total INSS:                          =  501,52
 
 ### 13º Salário (Décimo Terceiro)
 
+**13º Salário (Décimo Terceiro)**
+
 | Parcela | Valor | Prazo | Deduções |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1ª parcela | 50% do salário do mês anterior | Até 30 de novembro | Sem desconto de INSS/IRRF |
 | 2ª parcela | 50% restantes | Até 20 de dezembro | INSS + IRRF sobre o 13º integral |
 | FGTS | 8% sobre cada parcela | Junto ao depósito mensal de FGTS | N/A |
@@ -210,8 +265,10 @@ Total INSS:                          =  501,52
 
 ### Férias
 
+**Férias**
+
 | Parâmetro | Detalhe |
-|---|---|
+| --- | --- |
 | Direito | 30 dias corridos após 12 meses (período aquisitivo) |
 | Pagamento | Salário + 1/3 constitucional (terço de férias) |
 | Prazo de pagamento | Até 2 dias úteis antes do início das férias |
@@ -223,22 +280,24 @@ Total INSS:                          =  501,52
 
 ### Vale-Transporte
 
+**Vale-Transporte**
+
 | Parâmetro | Detalhe |
-|---|---|
+| --- | --- |
 | Obrigatório | Sim, para todos os empregados CLT que solicitarem |
 | Contribuição do empregado | Até 6% do salário-base |
 | Empregador arca com | Custo total menos a dedução de 6% do empregado |
 | Isento de | INSS, FGTS, IRRF (não considerado salário) |
 | Forma | Cartão de transporte pré-pago ou equivalente |
 
----
-
 ## Seção 7 — Requisitos do Holerite
 
 Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento de salário. Elementos exigidos pelo art. 464 da CLT:
 
+**Elementos do Holerite**  _(art. 464 da CLT)_
+
 | Elemento | Obrigatório |
-|---|---|
+| --- | --- |
 | Nome do empregador, CNPJ, endereço | Sim |
 | Nome do empregado, CPF, registro em CTPS | Sim |
 | Cargo e departamento | Sim |
@@ -259,16 +318,16 @@ Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento 
 
 ### Guarda de Documentos
 
-- Registros de folha de pagamento: mínimo de 5 anos (CLT)
-- Registros de FGTS: 30 anos
-- Registros fiscais (IRRF): 5 anos a partir da entrega da declaração
-
----
+- **Registros de folha de pagamento** — mínimo de 5 anos  _(CLT)_
+- **Registros de FGTS** — 30 anos
+- **Registros fiscais (IRRF)** — 5 anos a partir da entrega da declaração
 
 ## Seção 8 — Obrigações Acessórias
 
+**Obrigações Acessórias**
+
 | Declaração | Periodicidade | Prazo | Autoridade |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Eventos periódicos do eSocial (S-1200 remuneração) | Mensal | Dia 15 do mês seguinte | RFB/MTE |
 | Fechamento do eSocial (S-1299) | Mensal | Dia 15 do mês seguinte | RFB/MTE |
 | DCTFWeb (declaração tributária) | Mensal | Dia 15 do mês seguinte (após fechamento do eSocial) | Receita Federal |
@@ -281,8 +340,10 @@ Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento 
 
 ### Eventos do eSocial (Principais Eventos de Folha)
 
+**Eventos do eSocial (Principais Eventos de Folha)**
+
 | Evento | Descrição | Prazo |
-|---|---|---|
+| --- | --- | --- |
 | S-1200 | Remuneração do trabalhador (mensal) | Dia 15 do mês seguinte |
 | S-1210 | Pagamentos realizados (datas e valores) | Dia 15 do mês seguinte |
 | S-1299 | Fechamento dos eventos periódicos | Dia 15 do mês seguinte |
@@ -294,8 +355,10 @@ Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento 
 
 ### FGTS Digital
 
+**FGTS Digital**
+
 | Parâmetro | Detalhe |
-|---|---|
+| --- | --- |
 | Substituiu | SEFIP/GFIP (sistema legado) |
 | Integração | Automática a partir dos eventos do eSocial |
 | Pagamento | Via portal do FGTS Digital (gera guia) |
@@ -304,16 +367,16 @@ Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento 
 
 ### Penalidades
 
+**Penalidades**
+
 | Infração | Penalidade |
-|---|---|
+| --- | --- |
 | FGTS em atraso | Juros (TR + 3% ao ano) + multa (5% no primeiro mês, 10% a partir do segundo) |
 | INSS em atraso | Multa de 20% + juros SELIC |
 | IRRF em atraso | Multa de 0,33%/dia (máx. 20%) + juros SELIC |
 | Falta de eventos do eSocial | Multa variável; pode gerar fiscalização/autuação |
 | Não pagamento do 13º | Multa por empregado + possível reclamação trabalhista |
 | Pagamento atrasado de férias | Pagamento em dobro (jurisprudência do TST) |
-
----
 
 ## Seção 9 — Padrões Comuns de Folha de Pagamento
 
@@ -374,8 +437,10 @@ Custo mensal do empregador:
 
 ### Padrão 4: Rescisão Sem Justa Causa
 
+**Padrão 4: Rescisão Sem Justa Causa**
+
 | Componente | Cálculo |
-|---|---|
+| --- | --- |
 | Saldo de salário | Dias trabalhados / 30 × salário mensal |
 | 13º proporcional | Meses trabalhados / 12 × salário |
 | Férias proporcionais + 1/3 | Meses desde o último período aquisitivo / 12 × salário × 4/3 |
@@ -384,12 +449,12 @@ Custo mensal do empregador:
 | Multa de 40% do FGTS | 40% do saldo total do FGTS (empregador deposita na conta de FGTS do empregado) |
 | FGTS sobre verbas rescisórias | 8% sobre todos os valores rescisórios |
 
----
-
 ## Seção 10 — Interação com Outras Skills
 
+**Interação com Outras Skills**
+
 | Skill | Interação |
-|---|---|
+| --- | --- |
 | brazil-einvoice | Sem interação direta (NF-e é para mercadorias/serviços; folha utiliza eSocial) |
 | payroll-workflow-base | Fluxo geral de processamento de folha; especificidades do Brasil tratadas nesta skill |
 
@@ -405,14 +470,30 @@ Custo mensal do empregador:
 - **Simples Nacional**: Microempresas e empresas de pequeno porte no Simples Nacional possuem regras distintas de INSS patronal (incluído no DAS unificado).
 - **RAT/FAP**: A alíquota efetiva de acidente de trabalho depende do histórico de acidentes da própria empresa (multiplicador FAP publicado anualmente pelo governo). Sempre verifique o FAP vigente antes de calcular o INSS patronal.
 
----
-
 ## Aviso Legal
 
 Esta skill e seus resultados são fornecidos exclusivamente para fins informativos e de cálculo e não constituem assessoria tributária, jurídica ou financeira. A Open Accountants e seus colaboradores não se responsabilizam por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e validados por um profissional habilitado antes de qualquer entrega ou tomada de decisão.
 
 A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/brazil-payroll) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. Reviewed by pending depends_on: - payroll-workflow-base. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `brazil-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/brazil-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

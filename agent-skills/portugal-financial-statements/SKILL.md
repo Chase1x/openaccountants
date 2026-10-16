@@ -1,27 +1,57 @@
 ---
 name: portugal-financial-statements
-description: "> Utilize esta skill na preparação, revisão ou aconselhamento sobre demonstrações financeiras anuais de uma sociedade portuguesa. Acione com expressões como \"demonstrações financeiras\", \"IES\", \"Informação Empresarial Simplificada\", \"SNC\", \"NCRF\", \"NC-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"demonstração de fluxos de caixa\", \"anexo\", \"Portal das Finanças\", \"depósito de contas\", \"ROC\", \"revisão legal de contas\" ou qualquer questão sobre preparação e depósito de contas estatutárias ao abrigo da lei portuguesa. Abrange o referencial SNC, limiares dimensionais, demonstrações obrigatórias, formatos, anexo, submissão da IES e requisitos de auditoria. Trigger also on: \"Portuguese financial statements\", \"SNC accounts\", \"IES filing Portugal\", \"NCRF\", \"NC-ME microentities\", \"NC-PE small entities\", \"balanço\", \"demonstração de resultados\", \"Portal das Finanças deposit of accounts\", \"ROC statutory audit Portugal\"."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Utilize esta skill na preparação, revisão ou aconselhamento sobre demonstrações financeiras anuais de uma sociedade portuguesa. Acione com expressões como \"demonstrações financeiras\", \"IES\", \"Informação Empresarial Simplificada\", \"SNC\", \"NCRF\", \"NC-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"demonstração de fluxos de caixa\", \"anexo\", \"Portal das Finanças\", \"depósito de contas\", \"ROC\", \"revisão legal de contas\" ou qualquer questão sobre preparação e depósito de contas estatutárias ao abrigo da lei portuguesa. Abrange o referencial SNC, limiares dimensionais, demonstrações obrigatórias, formatos, anexo, submissão da IES e requisitos de auditoria. Trigger also on: \"Portuguese financial statements\", \"SNC accounts\", \"IES filing Portugal\", \"NCRF\", \"NC-ME microentities\", \"NC-PE small entities\", \"balanço\", \"demonstração de resultados\", \"Portal das Finanças deposit of accounts\", \"ROC statutory audit Portugal\"."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: financial-statements
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-financial-statements"
-  tax_year: 2025
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-financial-statements"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — Demonstrações Financeiras (SNC) — Skill v1.1
+# Portugal Financial Statements
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal — Demonstrações Financeiras (SNC) — Skill v1.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Demonstrações Financeiras
+
+- **Micro — balanço** — ≤ €350.000  _(DL 158/2009)_
+- **Micro — volume negócios** — ≤ €700.000  _(DL 158/2009)_
+- **Micro — empregados** — ≤ 10  _(DL 158/2009)_
+- **Pequena — balanço** — ≤ €4.000.000  _(DL 98/2015)_
+- **Pequena — volume negócios** — ≤ €8.000.000  _(DL 98/2015)_
+- **Pequena — empregados** — ≤ 50  _(DL 98/2015)_
+- **Micro — balanço** — ≤ €450.000  _(DL 126-B/2025)_
+- **Micro — volume negócios** — ≤ €900.000  _(DL 126-B/2025)_
+- **Pequena — balanço** — ≤ €5.000.000  _(DL 126-B/2025)_
+- **Pequena — volume negócios** — ≤ €10.000.000  _(DL 126-B/2025)_
+- **Média — balanço** — ≤ €25.000.000  _(DL 126-B/2025)_
+- **Média — volume negócios** — ≤ €50.000.000  _(DL 126-B/2025)_
+- **Teste** — 2 de 3 critérios no ano corrente + anterior  _(DL 158/2009)_
+- **IES — prazo** — 15.º dia do 7.º mês após encerramento (15 julho)  _(Código IRC)_
+- **Taxa de registo** — €80  _(IRN)_
+- **Multa atraso** — €150–€3.750  _(RGIT)_
+- **Balanço** — > €1.500.000  _(CSC)_
+- **Volume de negócios** — > €3.000.000  _(CSC)_
+- **Empregados** — > 50  _(CSC)_
+- **Teste** — 2 de 3 por dois anos consecutivos  _(CSC)_
+- **SA (Sociedade Anónima)** — Sempre obrigatória  _(CSC)_
 
 ## Secção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Moeda | EUR |
 | Entidade competente | Portal das Finanças (AT — Autoridade Tributária e Aduaneira) + Conservatória do Registo Comercial |
@@ -33,12 +63,12 @@ metadata:
 | Taxa de depósito | EUR 80 (registo da prestação de contas) |
 | Submissão eletrónica | Via Portal das Finanças (submissão da IES) |
 
----
-
 ## Secção 2 — Referencial de Relato
 
+**Referencial de Relato**
+
 | Tipo de entidade | Normativo aplicável |
-|---|---|
+| --- | --- |
 | Grandes e médias entidades | NCRF completas (28 normas, alinhadas com IFRS for SMEs) |
 | Pequenas entidades | NC-PE (Norma Contabilística e de Relato Financeiro para Pequenas Entidades) |
 | Microentidades | NC-ME (Norma Contabilística para Microentidades — muito simplificada) |
@@ -48,34 +78,36 @@ metadata:
 
 As entidades podem sempre optar por aplicar um normativo de nível superior (e.g., uma microentidade pode optar por aplicar a NC-PE ou as NCRF completas).
 
----
-
 ## Secção 3 — Limiares Dimensionais
 
 Em vigor para os exercícios económicos até 31 de dezembro de 2025:
 
+**Limiares Dimensionais (até 31 dez 2025)**
+
 | Critério | Micro (NC-ME) | Pequena (NC-PE) | Média | Grande |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Total do balanço | ≤ EUR 350 000 | ≤ EUR 4 000 000 | ≤ EUR 20 000 000 | > EUR 20 000 000 |
 | Volume de negócios líquido | ≤ EUR 700 000 | ≤ EUR 8 000 000 | ≤ EUR 40 000 000 | > EUR 40 000 000 |
 | Número médio de empregados | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
 
 **A partir dos exercícios económicos com início em 1 de janeiro de 2026** (DL 126-B/2025):
 
+**Limiares Dimensionais (a partir de 1 jan 2026)**  _(DL 126-B/2025)_
+
 | Critério | Micro | Pequena | Média | Grande |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Total do balanço | ≤ EUR 450 000 | ≤ EUR 5 000 000 | ≤ EUR 25 000 000 | > EUR 25 000 000 |
 | Volume de negócios líquido | ≤ EUR 900 000 | ≤ EUR 10 000 000 | ≤ EUR 50 000 000 | > EUR 50 000 000 |
 | Número médio de empregados | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
 
-Não pode ultrapassar **2 dos 3** limiares. Avaliação no primeiro exercício, ou durante **dois exercícios consecutivos** subsequentes.
-
----
+- **Teste de limiares** — Não pode ultrapassar 2 dos 3 limiares. Avaliação no primeiro exercício, ou durante dois exercícios consecutivos subsequentes.
 
 ## Secção 4 — Demonstrações Financeiras Obrigatórias
 
+**Demonstrações Financeiras Obrigatórias**
+
 | Documento | Micro (NC-ME) | Pequena (NC-PE) | Média/Grande (NCRF) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Balanço | Obrigatório (simplificado) | Obrigatório | Obrigatório |
 | Demonstração de resultados por naturezas | Obrigatório (simplificado) | Obrigatório | Obrigatório |
 | Demonstração de alterações no capital próprio | Não obrigatório | Não obrigatório | Obrigatório |
@@ -84,12 +116,12 @@ Não pode ultrapassar **2 dos 3** limiares. Avaliação no primeiro exercício, 
 | Relatório de gestão | Obrigatório (todas as sociedades) | Obrigatório | Obrigatório |
 | Certificação legal de contas | Se aplicável | Se aplicável | Obrigatória (se reunidos os limiares) |
 
----
-
 ## Secção 5 — Checklist de Ajustamentos de Fim de Exercício
 
+**Checklist de Ajustamentos de Fim de Exercício**
+
 | # | Ajustamento | Notas específicas de Portugal |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Depreciações e amortizações | NCRF 7; método sistemático; taxas fiscais (Decreto Regulamentar 25/2009) como máximo |
 | 2 | Provisões | NCRF 21; obrigação presente, saída provável de recursos, estimativa fiável |
 | 3 | Acréscimos e diferimentos | Princípio rigoroso da periodização económica (especialização dos exercícios) |
@@ -102,8 +134,6 @@ Não pode ultrapassar **2 dos 3** limiares. Avaliação no primeiro exercício, 
 | 10 | Subsídios do governo | NCRF 22; rendimento diferido reconhecido em resultados |
 | 11 | Ativos intangíveis | NCRF 6; capitalização de despesas de desenvolvimento se cumpridos os critérios |
 | 12 | Estimativa de IRC | Imposto corrente + tributações autónomas + derrama municipal |
-
----
 
 ## Secção 6 — Demonstração de Resultados por Naturezas
 
@@ -138,8 +168,6 @@ Juros e gastos similares suportados
 Imposto sobre o rendimento do período
   ─── Resultado líquido do período ───
 ```
-
----
 
 ## Secção 7 — Formato do Balanço
 
@@ -203,12 +231,12 @@ TOTAL DO PASSIVO
 TOTAL DO CAPITAL PRÓPRIO E PASSIVO
 ```
 
----
-
 ## Secção 8 — Anexo às Demonstrações Financeiras
 
+**Anexo às Demonstrações Financeiras**
+
 | # | Divulgação | Micro | Pequena (NC-PE) | Média/Grande |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Políticas contabilísticas | Simplificadas | Obrigatório | Obrigatório (completo) |
 | 2 | Movimentos de ativos fixos tangíveis | Resumo | Obrigatório | Obrigatório |
 | 3 | Locações | Não obrigatório | Se material | Obrigatório |
@@ -222,12 +250,12 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO
 | 11 | Subsídios do governo | Se aplicável | Obrigatório | Obrigatório |
 | 12 | Acontecimentos após a data do balanço | Obrigatório | Obrigatório | Obrigatório |
 
----
-
 ## Secção 9 — Requisitos de Submissão
 
+**Requisitos de Submissão**
+
 | Item | Detalhe |
-|---|---|
+| --- | --- |
 | Forma de submissão | IES (Informação Empresarial Simplificada) — eletrónica via Portal das Finanças |
 | Cobertura da submissão única | Declaração fiscal (IRC), depósito no registo comercial, estatísticas (INE) e dados para o Banco de Portugal |
 | Prazo de entrega | 15.º dia do 7.º mês após o fim do exercício (15 de julho para sociedades de ano civil) |
@@ -239,42 +267,54 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO
 | Coima por entrega fora de prazo | EUR 150 a EUR 3 750 (coimas — sanções contraordenacionais) |
 | Consequências da não entrega | Impossibilidade de obtenção de certidões comerciais; eventual processo de dissolução |
 
----
-
 ## Secção 10 — Requisitos de Auditoria
 
 ### Nomeação obrigatória de ROC (Revisor Oficial de Contas)
 
-As sociedades têm de nomear um auditor estatutário (certificação legal de contas) se ultrapassarem **2 dos 3** limiares durante **dois exercícios consecutivos**:
+- **Condição de nomeação** — As sociedades têm de nomear um auditor estatutário (certificação legal de contas) se ultrapassarem 2 dos 3 limiares durante dois exercícios consecutivos.
+
+**Limiares de nomeação de ROC**
 
 | Critério | Limiar |
-|---|---|
+| --- | --- |
 | Total do balanço | EUR 1 500 000 |
 | Volume de negócios líquido | EUR 3 000 000 |
 | Número médio de empregados | 50 |
 
 ### Sempre sujeitas a revisão legal de contas
 
-- Sociedades Anónimas (SA): exigem sempre ROC (conselho fiscal ou conselho de auditoria)
-- Entidades emitentes de valores mobiliários admitidos à negociação em mercado regulamentado
-- Entidades que preparam contas consolidadas
-- Entidades de interesse público
+- **Entidades sempre sujeitas a ROC** — Sociedades Anónimas (SA): exigem sempre ROC (conselho fiscal ou conselho de auditoria); Entidades emitentes de valores mobiliários admitidos à negociação em mercado regulamentado; Entidades que preparam contas consolidadas; Entidades de interesse público.
 
 ### Qualificação do auditor
 
-Revisor Oficial de Contas (ROC) ou Sociedade de Revisores Oficiais de Contas (SROC), inscritos na Ordem dos Revisores Oficiais de Contas (OROC).
+- **Qualificação do auditor** — Revisor Oficial de Contas (ROC) ou Sociedade de Revisores Oficiais de Contas (SROC), inscritos na Ordem dos Revisores Oficiais de Contas (OROC).
 
 ### Mandato do auditor
 
-- Duração: 3 a 4 anos (consoante o modelo de governo societário)
-- Mandato máximo: aplicam-se regras de rotação para entidades de interesse público
-
----
+- **Duração e rotação do mandato** — Duração: 3 a 4 anos (consoante o modelo de governo societário); Mandato máximo: aplicam-se regras de rotação para entidades de interesse público.
 
 ## Aviso Legal
 
 Esta skill e os respetivos resultados são disponibilizados apenas para fins informativos e de cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado antes de serem submetidos ou utilizados como base de decisão.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

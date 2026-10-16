@@ -1,26 +1,28 @@
 ---
 name: latvia-vat-return
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Latvian VAT return (PVN deklaracija / PVN 1 form) for any client. Trigger on phrases like \"prepare VAT return\", \"Latvian VAT\", \"PVN return\", \"PVN1\", \"pievienotas vertibas nodoklis\", or any request involving Latvia VAT filing. This skill covers standard PVN-registered businesses only. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive companion skills. ALWAYS read this skill before touching any Latvia VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/latvia-vat-return"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/latvia-vat-return"
+  jurisdiction: "LV"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Latvia PVN Return Skill (PVN 1) v2.0
+# Latvia VAT Return
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Latvia PVN Return Skill (PVN 1) v2.0
 
 ## Section 1 — Quick reference
 
-**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1. The EU directive content is in `eu-vat-directive`.**
+Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1. The EU directive content is in `eu-vat-directive`.
+
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Latvia (Latvija) |
 | Standard rate | 21% |
 | Reduced rates | 12% (food, pharmaceuticals, hotel accommodation, domestic heating, passenger transport, books/periodicals), 5% (locally produced fruits/vegetables — seasonal) |
@@ -37,10 +39,10 @@ metadata:
 | Validated by | Pending — requires validation by licensed Latvian accountant |
 | Validation date | Pending |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 21% |
 | Unknown PVN status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Latvia |
@@ -48,209 +50,238 @@ metadata:
 | Unknown business-use proportion | 0% recovery |
 | Unknown blocked-input status | Blocked |
 
-**Red flag thresholds:**
+**Red flag thresholds**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | EUR 3,000 |
 | HIGH tax-delta on a single conservative default | EUR 200 |
 | MEDIUM counterparty concentration | >40% |
 | MEDIUM conservative-default count | >4 |
 | LOW absolute net PVN position | EUR 5,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** — bank statement for the period. Acceptable from: Swedbank Latvia, SEB banka, Citadele, Luminor, BlueOrange, or any other.
-
-**Recommended** — sales/purchase invoices, VAT number (LV + 11 digits).
-
-**Ideal** — complete invoice register, prior PVN 1.
+- **Minimum viable** — bank statement for the period. Acceptable from: Swedbank Latvia, SEB banka, Citadele, Luminor, BlueOrange, or any other.
+- **Recommended** — sales/purchase invoices, VAT number (LV + 11 digits).
+- **Ideal** — complete invoice register, prior PVN 1.
 
 ### Latvia-specific refusal catalogue (supplements eu-vat-directive R-EU-1 through R-EU-12)
 
-**R-LV-1 — Micro-enterprise tax regime.** *Trigger:* client is on micro-enterprise tax. *Message:* "Micro-enterprise taxpayers may have different PVN obligations. Flag for reviewer."
-
-**R-LV-2 — Partial exemption.** *Trigger:* mixed taxable/exempt. *Message:* "Pro-rata required. Flag for reviewer."
-
-**R-LV-3 — Timber/construction domestic reverse charge.** *Trigger:* timber or construction services. *Message:* "Domestic reverse charge applies for timber and construction. Specialist analysis required."
-
----
+- **R-LV-1 — Micro-enterprise tax regime** — Trigger: client is on micro-enterprise tax. Message: "Micro-enterprise taxpayers may have different PVN obligations. Flag for reviewer."  _(R-LV-1)_
+- **R-LV-2 — Partial exemption** — Trigger: mixed taxable/exempt. Message: "Pro-rata required. Flag for reviewer."  _(R-LV-2)_
+- **R-LV-3 — Timber/construction domestic reverse charge** — Trigger: timber or construction services. Message: "Domestic reverse charge applies for timber and construction. Specialist analysis required."  _(R-LV-3)_
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Latvian banks (fees exempt — exclude)
+
+**3.1 Latvian banks (fees exempt — exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SWEDBANK, SEB, CITADELE, LUMINOR | EXCLUDE for fees | Financial service exempt |
 | PROCENTI, INTEREST | EXCLUDE | Interest exempt |
 
 ### 3.2 Government (exclude)
+
+**3.2 Government (exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | VID, VALSTS IENEMUMU DIENESTS | EXCLUDE | Tax payment |
 | VSAA | EXCLUDE | Social security |
 | UZNEMUMU REGISTRS | EXCLUDE | Company registration |
 
 ### 3.3 Utilities
+
+**3.3 Utilities**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | LATVENERGO, SADALES TIKLS | Domestic 21% | Electricity |
 | LATVIJAS GAZE, ENERĢIJAS PUBLISKAIS TIRGOTĀJS | Domestic 21% | Gas/heating — check 12% for domestic heating |
 | LMT, TELE2, BITE | Domestic 21% | Telecoms |
 
 ### 3.4 SaaS — EU (reverse charge)
+
+**3.4 SaaS — EU (reverse charge)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE IRELAND, MICROSOFT IRELAND, ADOBE IRELAND | EU reverse charge | Intra-EU services |
 | SPOTIFY AB (SE), ATLASSIAN (NL) | EU reverse charge | Same |
 
 ### 3.5 SaaS — non-EU (reverse charge)
+
+**3.5 SaaS — non-EU (reverse charge)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
-| NOTION, ANTHROPIC, OPENAI, FIGMA, CANVA | Non-EU reverse charge | |
+| --- | --- | --- |
+| NOTION, ANTHROPIC, OPENAI, FIGMA, CANVA | Non-EU reverse charge |  |
 | GITHUB (US) | Non-EU reverse charge | Check if billed by IE entity |
 
 ### 3.6 Food and entertainment (blocked)
+
+**3.6 Food and entertainment (blocked)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | RIMI, MAXIMA, LIDL, TOP, MEGO | Default BLOCK | Personal provisioning |
 | RESTORĀNS, KAFEJNĪCA | Default BLOCK | Entertainment — 60% cap on representation |
 
 ### 3.7 Insurance (exempt)
+
+**3.7 Insurance (exempt)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BALTA, BTA, IF APDROŠINĀŠANA | EXCLUDE | Insurance exempt |
 
 ### 3.8 Professional services
+
+**3.8 Professional services**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
-| ZVĒRINĀTAIS REVIDENTS, AUDITORS | Domestic 21% | |
-| ADVOKĀTS, JURISTA BIROJS | Domestic 21% | |
-| NOTĀRS | Domestic 21% | |
+| --- | --- | --- |
+| ZVĒRINĀTAIS REVIDENTS, AUDITORS | Domestic 21% |  |
+| ADVOKĀTS, JURISTA BIROJS | Domestic 21% |  |
+| NOTĀRS | Domestic 21% |  |
 
 ### 3.9 Internal transfers
-| Pattern | Treatment | Notes |
-|---|---|---|
-| IEKŠĒJAIS PĀRSKAITĪJUMS | EXCLUDE | |
-| ALGA, DARBA SAMAKSA | EXCLUDE | Salary |
 
----
+**3.9 Internal transfers**
+
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| IEKŠĒJAIS PĀRSKAITĪJUMS | EXCLUDE |  |
+| ALGA, DARBA SAMAKSA | EXCLUDE | Salary |
 
 ## Section 4 — Worked examples
 
 ### Example 1 — Non-EU SaaS reverse charge
+
 **Input:** `NOTION LABS INC ; DEBIT ; EUR 14.68`
 **Treatment:** Non-EU reverse charge. Output and input PVN at 21%. Net zero.
 
 ### Example 2 — EU service reverse charge (Google Ads)
+
 **Input:** `GOOGLE IRELAND LIMITED ; DEBIT ; EUR 850.00`
 **Treatment:** EU reverse charge. Intra-EU services. Output and input PVN at 21%.
 
 ### Example 3 — Entertainment (representation — 60% cap)
+
 **Input:** `RESTORĀNS VINCENTS ; DEBIT ; EUR 220`
 **Treatment:** Representation expenses have 60% PVN recovery cap in Latvia. Flag for reviewer. Conservative default: 0%.
 
 ### Example 4 — Capital goods
+
 **Input:** `DELL TECHNOLOGIES ; DEBIT ; EUR 1,595`
 **Treatment:** Capital goods. Input PVN at 21%.
 
 ### Example 5 — EU B2B service sale
+
 **Input:** `STUDIO KREBS GMBH (DE) ; CREDIT ; EUR 3,500`
 **Treatment:** B2B service to EU customer. Zero-rated. Verify DE USt-IdNr via VIES.
 
 ### Example 6 — Motor vehicle, partial block
+
 **Input:** `SIA AUTOCENTRS ; DEBIT ; car lease ; EUR 650`
 **Treatment:** Latvia limits PVN recovery on passenger vehicles. Conservative default: 0%. Flag for reviewer.
-
----
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
 ### 5.1 Standard rate 21%
-Default. Most goods and services.
+
+- **Unknown rate on a sale** — 21%
 
 ### 5.2 Reduced rate 12%
-Food products, pharmaceuticals, hotel accommodation, domestic heating, passenger transport, books/periodicals.
+
+- **Reduced rate 12%** — 12% (Food products, pharmaceuticals, hotel accommodation, domestic heating, passenger transport, books/periodicals.)
 
 ### 5.3 Reduced rate 5%
-Locally produced seasonal fruits and vegetables.
+
+- **Reduced rate 5%** — 5% (Locally produced seasonal fruits and vegetables.)
 
 ### 5.4 Zero rate
-Exports, intra-EU B2B supplies (goods and services).
+
+- **Zero rate** — 0% (Exports, intra-EU B2B supplies (goods and services).)
 
 ### 5.5 Exempt without credit
-Financial services, insurance, medical, education, residential rental, postal universal service.
+
+- **Exempt without credit** — Financial services, insurance, medical, education, residential rental, postal universal service.
 
 ### 5.6 Reverse charge — EU services
-Standard EU reverse charge per eu-vat-directive.
+
+- **Reverse charge — EU services** — Standard EU reverse charge per eu-vat-directive.
 
 ### 5.7 Reverse charge — non-EU services
-Self-assess at 21%.
+
+- **Reverse charge — non-EU services** — Self-assess at 21%.
 
 ### 5.8 Domestic reverse charge
-Timber, scrap metal, construction services — domestic reverse charge.
+
+- **Domestic reverse charge** — Timber, scrap metal, construction services — domestic reverse charge.
 
 ### 5.9 Blocked input PVN
-Entertainment (above 60% representation cap), passenger vehicles (limited recovery), personal use.
 
----
+- **Blocked input PVN** — Entertainment (above 60% representation cap), passenger vehicles (limited recovery), personal use.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
 ### 6.1 Vehicle costs
-*Default:* 0%. *Question:* "Confirm vehicle type and business-use proportion."
+
+- **Vehicle costs** — Default: 0%. Question: "Confirm vehicle type and business-use proportion."
 
 ### 6.2 Representation expenses
-*Default:* 0%. *Question:* "60% cap applies for documented business representation. Confirm."
+
+- **Representation expenses** — Default: 0%. Question: "60% cap applies for documented business representation. Confirm."
 
 ### 6.3 Timber/construction reverse charge
-*Default:* flag. *Question:* "Confirm if domestic reverse charge applies."
+
+- **Timber/construction reverse charge** — Default: flag. Question: "Confirm if domestic reverse charge applies."
 
 ### 6.4 Mixed-use expenses
-*Default:* 0%. *Question:* "Business proportion?"
 
----
+- **Mixed-use expenses** — Default: 0%. Question: "Business proportion?"
 
 ## Section 7 — Excel working paper template
+
 Standard layout. Column H accepts PVN 1 row codes.
 
----
-
 ## Section 8 — Bank statement reading guide
+
 **Format:** Swedbank/SEB CSV, DD.MM.YYYY, EUR. **Language:** Latvian or English.
 **Internal transfers:** "Iekšējais pārskaitījums". Exclude.
-
----
 
 ## Section 9 — Onboarding fallback
 
 ### 9.1 PVN number
-*Fallback:* "What is your PVN number? (LV + 11 digits)"
+
+- **PVN number** — Fallback: "What is your PVN number? (LV + 11 digits)"
 
 ### 9.2 Filing frequency
-*Inference:* from turnover. *Fallback:* "Monthly, quarterly, or bi-annual?"
+
+- **Filing frequency** — Inference: from turnover. Fallback: "Monthly, quarterly, or bi-annual?"
 
 ### 9.3 Credit brought forward
-Always ask.
 
----
+- **Credit brought forward** — Always ask.
 
 ## Section 10 — Reference material
 
 ### Sources
+
 1. Pievienotas vertibas nodokla likums (PVN likums) — Latvian VAT Act
 2. EU VAT Directive 2006/112/EC
 3. VID EDS portal — https://eds.vid.gov.lv
 
 ### Change log
+
 - **v2.0 (April 2026):** Full rewrite to 10-section architecture with companion skill references.
 - **v1.0-draft:** Initial skill.
-
----
 
 ## Disclaimer
 
@@ -258,6 +289,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/latvia-vat-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `latvia-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/latvia-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

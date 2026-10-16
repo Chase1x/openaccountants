@@ -1,26 +1,45 @@
 ---
 name: us-sole-prop-bookkeeping
 description: "Tier 2 content skill for classifying business transactions into US federal Schedule C (Form 1040) line items for sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 under OBBBA (P.L. 119-21) with post-OBBBA depreciation rules, permanent QBI framework, and new tip/overtime/auto loan interest deductions. Handles Schedule C Parts I-V, the §162 ordinary and necessary standard, §263 capitalization, §280A home office, §280F vehicle and listed property, §274 substantiation and meals, §168(k) bonus depreciation cutoff at January 19 2025, §179 expensing, §471(c) small business inventory exception, §183 hobby loss, and §6001 / §274(d) recordkeeping. Defers Schedule C net profit, Schedule SE, QBI, retirement contributions, and quarterly estimated tax to companion content skills. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: accountant-reviewed
-  openaccountants_url: "https://openaccountants.com/skills/us-sole-prop-bookkeeping"
-  obligation: BT
+  openaccountants_url: "https://www.openaccountants.com/skills/us-sole-prop-bookkeeping"
+  jurisdiction: "US"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "A licensed accountant (name withheld at their request)"
+  review_status: "current"
 ---
 
-# US Sole Prop Bookkeeping Skill v2.0
+# US Sole Prop Bookkeeping
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## US Sole Prop Bookkeeping Skill v2.0
+
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Bookkeeping (Sched C)
+
+- **§179** — $2,500,000 for 2025; phase-out begins at $4,000,000 (fully phased at $6.5M), per OBBBA for TY beginning after 12/31/2024  _(IRC 179; OBBBA (PL 119-21); 2025 Form 2106 instr.)_
+- **§168(k)** — 100% bonus for property acquired AND placed in service after Jan 19, 2025 (property placed in service 1/1-1/19/2025 = 40%), made permanent by OBBBA  _(IRC 168(k); OBBBA; IRS Pub 463.)_
+- **Mileage** — 70 cents/mile business for 2025  _(IRS Notice 2025-5.)_
+- **§280F yr1** — $20,200 first-year limit for autos placed in service in 2025 when bonus applies ($12,200 without bonus)  _(Rev. Proc. 2025-16, Table 1; IRS Pub 463.)_
+- **Home office** — Simplified method: $5/sq ft up to 300 sq ft = $1,500 maximum  _(Rev. Proc. 2013-13; IRS Pub 587.)_
 
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `us-tax-workflow-base` Section 1 — follow that runbook with this skill providing the federal Schedule C content.**
 
+**Quick reference fields**
+
+**Quick reference fields**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United States of America |
 | Tax form | Schedule C (Form 1040), Profit or Loss From Business |
 | Taxpayer type | Sole proprietor or single-member LLC disregarded for federal tax |
@@ -31,10 +50,10 @@ metadata:
 | Contributor | Open Accountants |
 | Currency date | April 2026 |
 
-**Schedule C line structure (Part II — Expenses):**
+**Schedule C line structure (Part II — Expenses)**
 
 | Line | Content |
-|---|---|
+| --- | --- |
 | 1 | Gross receipts or sales |
 | 2 | Returns and allowances |
 | 4 | Cost of goods sold (from Part III line 42) |
@@ -64,10 +83,10 @@ metadata:
 | 27a | Other expenses (from Part V line 48) |
 | 27b | Reserved |
 
-**Year-specific figures for tax year 2025:**
+**Year-specific figures for tax year 2025**
 
 | Figure | Value | Primary source |
-|---|---|---|
+| --- | --- | --- |
 | §179 expensing limit | $2,500,000 | OBBBA P.L. 119-21 §70306; IRC §179(b)(1) as amended |
 | §179 phase-out threshold | $4,000,000 | OBBBA P.L. 119-21 §70306; IRC §179(b)(2) as amended |
 | §179 heavy SUV cap | $31,300 | IRC §179(b)(5); inflation-adjusted |
@@ -95,10 +114,10 @@ metadata:
 
 **OBBBA depreciation note:** The 100% restaurant meal deduction is NOT available in 2025. The temporary 100% deduction under CAA 2021 §210 expired December 31, 2022. OBBBA did NOT reinstate it. The simplified home office rate remains $5/sq ft, NOT $6/sq ft.
 
-**Conservative defaults — US-specific values:**
+**Conservative defaults — US-specific values**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown business-use % for vehicle | 0% (no deduction) |
 | Unknown business-use % for home office | 0% (no deduction) |
 | Unknown business-use % for phone/internet | 0% (no deduction) |
@@ -114,10 +133,10 @@ metadata:
 | Cash withdrawal | Owner draw (exclude) |
 | Unknown whether payment processor fee is transaction vs subscription | Transaction fee (Line 27a bank charges) |
 
-**Red flag thresholds — values for the reviewer brief:**
+**Red flag thresholds — values for the reviewer brief**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | $5,000 |
 | HIGH vehicle business-use claim without mileage log | Any amount |
 | HIGH meals exceeding 20% of gross receipts | Any percentage above 20% |
@@ -125,8 +144,6 @@ metadata:
 | MEDIUM home office deduction without measurements | Any amount |
 | MEDIUM conservative-default count | >5 across the return |
 | LOW Schedule C net loss (hobby loss risk under §183) | Any net loss |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -138,33 +155,22 @@ metadata:
 
 **Ideal** — contemporaneous mileage log meeting §274(d) requirements, home office measurements (square footage of office and total home), complete invoice register, W-9s collected from all contractors paid $600+, prior Form 4562 for depreciation schedules, health insurance premium statements (Form 1095-A/B/C).
 
-**Refusal policy if minimum is missing — SOFT WARN.** If no bank statement at all, hard stop. If bank statement only without 1099-NECs or prior return, proceed but record in the reviewer brief: "This Schedule C working paper was produced from bank statements alone. The reviewer must verify: (a) all 1099-NEC income is captured, (b) depreciation elections from prior years are correctly carried forward, (c) vehicle method elections from the first year of use are honored, and (d) §274(d) substantiation exists for travel, meals, and listed property."
+- **Refusal policy if minimum is missing** — SOFT WARN. If no bank statement at all, hard stop. If bank statement only without 1099-NECs or prior return, proceed but record in the reviewer brief: "This Schedule C working paper was produced from bank statements alone. The reviewer must verify: (a) all 1099-NEC income is captured, (b) depreciation elections from prior years are correctly carried forward, (c) vehicle method elections from the first year of use are honored, and (d) §274(d) substantiation exists for travel, meals, and listed property."
 
 ### Refusal catalogue
 
 These refusals are safety mechanisms. If any trigger fires, stop, output the refusal message verbatim, end the conversation.
 
-**R-US-PARTNERSHIP — Partnership or multi-member LLC.** *Trigger:* user mentions partners, partnership agreement, Form 1065, Schedule K-1, or more than one member of the LLC. *Message:* "This skill covers sole proprietors and single-member LLCs only. Partnerships and multi-member LLCs file Form 1065 and issue Schedule K-1s to partners. Please use a CPA or EA experienced in partnership taxation."
-
-**R-US-RENTAL — Rental property income.** *Trigger:* user mentions rental income, landlord activities, Schedule E, Form 8825, rental properties. *Message:* "Rental real estate income is reported on Schedule E, not Schedule C (unless the taxpayer qualifies as a real estate professional providing substantial services). This skill does not cover Schedule E. Please use a CPA or EA experienced in rental property taxation."
-
-**R-US-CRYPTO — Cryptocurrency transactions.** *Trigger:* user mentions crypto trading, DeFi, NFT sales, mining income, staking rewards, token swaps. *Message:* "Cryptocurrency transactions involve complex basis tracking, wash sale considerations (post-2025), and Form 8949 reporting. This skill does not cover crypto. Please use a CPA or EA experienced in digital asset taxation."
-
-**R-US-EMPLOYEES — Employer with W-2 employees (payroll).** *Trigger:* user has W-2 employees (not contractors), mentions payroll, Form 941, Form 940, state unemployment. *Message:* "This skill covers the Schedule C expense classification side. The payroll compliance obligations (Form 941, 940, W-2 issuance, state withholding) are out of scope. The contractor payments on Line 11 and employee wages on Line 26 are classified by this skill, but payroll tax compliance requires a payroll service or specialist."
-
-**R-US-SCORP — S-corporation elected.** *Trigger:* user mentions S-corp election, Form 2553, Form 1120-S, reasonable compensation, officer salary. *Message:* "S-corporations file Form 1120-S, not Schedule C. This skill covers sole proprietors and single-member LLCs that have NOT elected S-corp status. Please use the us-s-corp-election-decision skill for evaluation or a CPA for S-corp return preparation."
-
-**R-US-CCORP — C-corporation.** *Trigger:* user mentions C-corp, Form 1120, corporate tax return, dividends from own corporation. *Message:* "C-corporations file Form 1120. This skill covers sole proprietors only. Please use a CPA experienced in corporate taxation."
-
-**R-US-FARMING — Farm income.** *Trigger:* user mentions farming, Schedule F, crop income, livestock. *Message:* "Farm income is reported on Schedule F, not Schedule C. Different rules apply. Please use a CPA or EA experienced in agricultural taxation."
-
-**R-US-DEPLETION — Natural resources.** *Trigger:* user mentions oil/gas royalties, mineral rights, timber, depletion deductions. *Message:* "Depletion deductions under IRC §611-§613 require specialist knowledge. Out of scope for this skill."
-
-**R-US-FOREIGN-INCOME — Foreign earned income or FBAR.** *Trigger:* user mentions foreign bank accounts, FBAR, Form 8938, foreign earned income exclusion, Form 2555. *Message:* "Foreign income reporting and FBAR/FATCA compliance are out of scope. Please use a CPA or EA experienced in international tax."
-
-**R-US-ESTATE-TRUST — Estate or trust income.** *Trigger:* user mentions estate, trust, Form 1041, fiduciary return. *Message:* "Estate and trust taxation is out of scope. Please use a CPA or attorney experienced in fiduciary taxation."
-
----
+- **R-US-PARTNERSHIP — Partnership or multi-member LLC** — This skill covers sole proprietors and single-member LLCs only. Partnerships and multi-member LLCs file Form 1065 and issue Schedule K-1s to partners. Please use a CPA or EA experienced in partnership taxation. (Trigger: user mentions partners, partnership agreement, Form 1065, Schedule K-1, or more than one member of the LLC.)
+- **R-US-RENTAL — Rental property income** — Rental real estate income is reported on Schedule E, not Schedule C (unless the taxpayer qualifies as a real estate professional providing substantial services). This skill does not cover Schedule E. Please use a CPA or EA experienced in rental property taxation. (Trigger: user mentions rental income, landlord activities, Schedule E, Form 8825, rental properties.)
+- **R-US-CRYPTO — Cryptocurrency transactions** — Cryptocurrency transactions involve complex basis tracking, wash sale considerations (post-2025), and Form 8949 reporting. This skill does not cover crypto. Please use a CPA or EA experienced in digital asset taxation. (Trigger: user mentions crypto trading, DeFi, NFT sales, mining income, staking rewards, token swaps.)
+- **R-US-EMPLOYEES — Employer with W-2 employees (payroll)** — This skill covers the Schedule C expense classification side. The payroll compliance obligations (Form 941, 940, W-2 issuance, state withholding) are out of scope. The contractor payments on Line 11 and employee wages on Line 26 are classified by this skill, but payroll tax compliance requires a payroll service or specialist. (Trigger: user has W-2 employees (not contractors), mentions payroll, Form 941, Form 940, state unemployment.)
+- **R-US-SCORP — S-corporation elected** — S-corporations file Form 1120-S, not Schedule C. This skill covers sole proprietors and single-member LLCs that have NOT elected S-corp status. Please use the us-s-corp-election-decision skill for evaluation or a CPA for S-corp return preparation. (Trigger: user mentions S-corp election, Form 2553, Form 1120-S, reasonable compensation, officer salary.)
+- **R-US-CCORP — C-corporation** — C-corporations file Form 1120. This skill covers sole proprietors only. Please use a CPA experienced in corporate taxation. (Trigger: user mentions C-corp, Form 1120, corporate tax return, dividends from own corporation.)
+- **R-US-FARMING — Farm income** — Farm income is reported on Schedule F, not Schedule C. Different rules apply. Please use a CPA or EA experienced in agricultural taxation. (Trigger: user mentions farming, Schedule F, crop income, livestock.)
+- **R-US-DEPLETION — Natural resources** — Depletion deductions under IRC §611-§613 require specialist knowledge. Out of scope for this skill. (Trigger: user mentions oil/gas royalties, mineral rights, timber, depletion deductions.)
+- **R-US-FOREIGN-INCOME — Foreign earned income or FBAR** — Foreign income reporting and FBAR/FATCA compliance are out of scope. Please use a CPA or EA experienced in international tax. (Trigger: user mentions foreign bank accounts, FBAR, Form 8938, foreign earned income exclusion, Form 2555.)
+- **R-US-ESTATE-TRUST — Estate or trust income** — Estate and trust taxation is out of scope. Please use a CPA or attorney experienced in fiduciary taxation. (Trigger: user mentions estate, trust, Form 1041, fiduciary return.)
 
 ## Section 3 — Supplier pattern library (US vendors)
 
@@ -174,8 +180,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.1 US banks (fees = bank charges Line 27a)
 
+**US banks pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CHASE, JPMORGAN CHASE | Bank fees/charges → Line 27a "Bank charges" | 27a | Monthly service charges, wire fees, overdraft fees |
 | WELLS FARGO, WFBNA | Bank fees/charges → Line 27a "Bank charges" | 27a | Same |
 | BANK OF AMERICA, BOA, BOFA | Bank fees/charges → Line 27a "Bank charges" | 27a | Same |
@@ -186,20 +194,24 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.2 Payment processors (payout is NOT revenue recognition)
 
+**Payment processors pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | STRIPE TRANSFER, STRIPE PAYOUT | EXCLUDE as internal transfer | — | Stripe payout to bank is NOT revenue. Revenue is the gross on the Stripe dashboard. Reconcile gross sales to Line 1, fees to Line 27a "Merchant processing fees". |
 | PAYPAL TRANSFER, PAYPAL INST XFER | EXCLUDE as internal transfer | — | Same as Stripe. PayPal settlement is not revenue. |
 | SQUARE, SQ *, SQUAREUP | EXCLUDE as internal transfer | — | Same. Square deposit is net of fees. |
 | VENMO BUSINESS, VENMO CASHOUT | EXCLUDE as internal transfer | — | Business Venmo payouts. Gross is revenue. |
 | STRIPE FEE, PAYPAL FEE, SQ FEE | Line 27a "Merchant processing fees" | 27a | If fees appear as separate line items on statement |
 
-**Critical rule:** Payment processor payouts appear on the bank statement as deposits, but they are NOT the gross revenue figure. The gross revenue (before processor fees) is the correct Line 1 amount. Processor fees are deductible on Line 27a. If the user provides only bank statements, the deposits from Stripe/PayPal/Square represent NET revenue. The working paper must note: "Revenue from [processor] is reported net of fees. Reviewer should verify gross revenue from [processor] dashboard and add back fees to both Line 1 (gross) and Line 27a (fees)."
+- **Critical rule** — Payment processor payouts appear on the bank statement as deposits, but they are NOT the gross revenue figure. The gross revenue (before processor fees) is the correct Line 1 amount. Processor fees are deductible on Line 27a. If the user provides only bank statements, the deposits from Stripe/PayPal/Square represent NET revenue. The working paper must note: "Revenue from [processor] is reported net of fees. Reviewer should verify gross revenue from [processor] dashboard and add back fees to both Line 1 (gross) and Line 27a (fees)."
 
 ### 3.3 SaaS/cloud (business expenses)
 
+**SaaS/cloud pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AWS, AMAZON WEB SERVICES | Line 27a "Cloud hosting" | 27a | Hosting and infrastructure |
 | GOOGLE WORKSPACE, GOOGLE CLOUD, GOOGLE *GSUITE | Line 27a "Software subscriptions" | 27a | Business productivity suite |
 | MICROSOFT 365, MSFT *OFFICE, AZURE | Line 27a "Software subscriptions" | 27a | Office suite or cloud hosting |
@@ -218,8 +230,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.4 Office/coworking (rent Line 20b)
 
+**Office/coworking pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | WEWORK | Line 20b Rent — other business property | 20b | Coworking space rent |
 | REGUS, IWG, SPACES | Line 20b Rent — other business property | 20b | Coworking/serviced office |
 | INDUSTRIOUS | Line 20b Rent — other business property | 20b | Coworking |
@@ -227,8 +241,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.5 Communication (utilities Line 25)
 
+**Communication pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | VERIZON, VZ WIRELESS | Line 25 Utilities (business %) | 25 | Phone/internet — business portion only. If personal phone with some business use, Tier 2 (Section 6.4). |
 | AT&T, ATT | Line 25 Utilities (business %) | 25 | Same |
 | T-MOBILE, TMOBILE | Line 25 Utilities (business %) | 25 | Same |
@@ -238,8 +254,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.6 Insurance
 
+**Insurance pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | STATE FARM, GEICO, PROGRESSIVE, ALLSTATE, USAA (auto) | NOT deductible unless business vehicle | — | Personal auto insurance is not a business expense. If business vehicle with actual expense method, business % goes to Line 9. |
 | HARTFORD, HISCOX, NEXT INSURANCE, THIMBLE | Line 15 Insurance | 15 | Business liability, E&O, professional indemnity insurance |
 | GENERAL LIABILITY, E&O INSURANCE, PROFESSIONAL LIABILITY | Line 15 Insurance | 15 | Business insurance premiums |
@@ -248,19 +266,23 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.7 Meals (Line 24b at 50%)
 
+**Meals pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Restaurant charges (any named restaurant) | Line 24b at 50% IF business purpose documented | 24b | Must have: (a) business purpose, (b) who was present, (c) business discussion. §274(d) substantiation required. |
 | UBER EATS, DOORDASH, GRUBHUB, POSTMATES | Line 24b at 50% IF business purpose | 24b | Same substantiation requirements as restaurant meals. |
 | STARBUCKS, DUNKIN, coffee shops | Line 24b at 50% IF business meeting | 24b | Solo coffee while working is generally NOT deductible. Must involve a client/prospect/business contact. |
 | ENTERTAINMENT, CONCERTS, SPORTS TICKETS | NOT deductible (0%) | — | Entertainment is 0% deductible post-TCJA under IRC §274(a)(1). Not even 50%. |
 
-**Critical rule:** There is NO 100% restaurant meal deduction in 2025. The temporary 100% deduction (CAA 2021 §210) expired December 31, 2022. Business meals are 50% deductible under §274(n)(1). Entertainment is 0% deductible under §274(a)(1). The only 100% meal deductions are de minimis fringes (office snacks/coffee under §132(e)) and meals provided for employer convenience under §119.
+- **Critical rule** — There is NO 100% restaurant meal deduction in 2025. The temporary 100% deduction (CAA 2021 §210) expired December 31, 2022. Business meals are 50% deductible under §274(n)(1). Entertainment is 0% deductible under §274(a)(1). The only 100% meal deductions are de minimis fringes (office snacks/coffee under §132(e)) and meals provided for employer convenience under §119.  _(§274(n)(1); §274(a)(1); §132(e); §119)_
 
 ### 3.8 Travel (Line 24a)
 
+**Travel pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | UNITED AIRLINES, DELTA, AMERICAN AIRLINES, SOUTHWEST, JETBLUE, ALASKA AIR, FRONTIER, SPIRIT | Line 24a Travel | 24a | Airfare for business travel. Must be primarily business purpose. Personal extension days → allocate and exclude personal portion. |
 | MARRIOTT, HILTON, HYATT, IHG, BEST WESTERN, HOLIDAY INN | Line 24a Travel | 24a | Business lodging. Same allocation rule for mixed trips. |
 | AIRBNB (lodging for business travel) | Line 24a Travel | 24a | Business travel accommodation. Distinguish from Airbnb hosting income (R-US-RENTAL). |
@@ -270,8 +292,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.9 Vehicle (car/truck expenses Line 9)
 
+**Vehicle pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SHELL, CHEVRON, BP, EXXON, MOBIL, SUNOCO, MARATHON, SPEEDWAY, WAWA (fuel) | Line 9 Car/truck (business % only) | 9 | Only if actual expense method AND business-use % is documented. If standard mileage method, fuel is already included in the 70 cents/mile rate. |
 | JIFFY LUBE, VALVOLINE, MIDAS, PEP BOYS, AUTOZONE, O'REILLY | Line 9 Car/truck (business % only) | 9 | Vehicle maintenance/parts — same rules as fuel |
 | CARWASH | Line 9 Car/truck (business % only) | 9 | Same |
@@ -280,8 +304,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.10 Professional services (Line 17)
 
+**Professional services pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CPA, ACCOUNTING, TAX PREPARATION, ENROLLED AGENT | Line 17 Legal and professional | 17 | Tax prep fees for business return. Personal return prep is NOT deductible post-TCJA. If combined, allocate. |
 | ATTORNEY, LAW OFFICE, LEGAL SERVICES, ESQ | Line 17 Legal and professional | 17 | Business legal matters only. Personal legal is not deductible. |
 | BOOKKEEPER, BOOKKEEPING SERVICE | Line 17 Legal and professional | 17 | Business bookkeeping |
@@ -290,17 +316,21 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.11 Contractors (Line 11, 1099-NEC threshold)
 
+**Contractors pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FIVERR, UPWORK, TOPTAL | Line 11 Contract labor | 11 | Platform contractor payments. 1099-NEC obligation depends on payment method — if paid via platform (credit card), platform issues 1099-K. If paid off-platform via Zelle/ACH, taxpayer must issue 1099-NEC at $600. |
 | Contractor names (individuals paid for services) | Line 11 Contract labor | 11 | Flag for 1099-NEC if $600+ cumulative for the year. Verify payment method (see Section 5 for Zelle/ACH rules). |
 
-**1099-NEC payment method trap:** Zelle is NOT a TPSO under §6050W. Zelle payments DO require the payor to issue 1099-NEC at $600. Same for Venmo personal, ACH, wire, check, and cash. Only credit cards, PayPal Business, Stripe, Square, Venmo Business, and Cash App Business are TPSOs that handle the 1099-K reporting.
+- **1099-NEC payment method trap** — Zelle is NOT a TPSO under §6050W. Zelle payments DO require the payor to issue 1099-NEC at $600. Same for Venmo personal, ACH, wire, check, and cash. Only credit cards, PayPal Business, Stripe, Square, Venmo Business, and Cash App Business are TPSOs that handle the 1099-K reporting.  _(§6050W)_
 
 ### 3.12 Government (tax payments — exclude from Schedule C)
 
+**Government pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IRS, UNITED STATES TREASURY, EFTPS, US TREASURY | EXCLUDE | — | Federal tax payments (income tax, SE tax, estimated tax) are NOT deductible on Schedule C. They are personal tax obligations. |
 | FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT, subject to $10K cap). |
 | EDD, EMPLOYMENT DEVELOPMENT (CA) | EXCLUDE from Schedule C OR Line 23 | — or 23 | State unemployment tax (employer portion) → Line 23. Personal income tax withholding → EXCLUDE. |
@@ -311,8 +341,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.13 Personal (EXCLUDE — not business)
 
+**Personal pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | NETFLIX, HULU, DISNEY+, HBO MAX, PARAMOUNT+ | EXCLUDE | — | Personal entertainment streaming. Not deductible. |
 | SPOTIFY (personal), APPLE MUSIC, PANDORA | EXCLUDE | — | Personal music. Not deductible. Exception: background music for a business location could be Line 27a, but must be documented. |
 | GYM, PLANET FITNESS, EQUINOX, LA FITNESS, ORANGETHEORY | EXCLUDE | — | Personal fitness. Not deductible regardless of "stress relief" claims. |
@@ -327,8 +359,6 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | VENMO (personal transfers), ZELLE (personal), CASH APP (personal) | EXCLUDE | — | Personal transfers between accounts or to friends/family |
 | CHILD CARE, DAYCARE, TUITION (children) | EXCLUDE | — | Personal expenses. May qualify for child care credit (Form 2441), not Schedule C. |
 
----
-
 ## Section 4 — Worked examples
 
 Six fully worked classifications from a hypothetical Chase Business Checking statement for a US-based freelance software developer.
@@ -341,10 +371,10 @@ Six fully worked classifications from a hypothetical Chase Business Checking sta
 **Reasoning:**
 Stripe payout is the net amount after Stripe fees. This is an internal settlement transfer, NOT the gross revenue. The gross revenue for this period (from the Stripe dashboard) may be $5,000 with $172.50 in fees. The bank deposit should be EXCLUDED as a transfer. Revenue is captured from 1099-K or Stripe reports at the gross level on Line 1. Stripe fees are deducted on Line 27a.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 01/15/2025 | STRIPE TRANSFER | +$4,827.50 | — | Y | Q1 | EXCLUDED: Stripe payout — reconcile to gross revenue from Stripe dashboard |
 
 ### Example 2 — SaaS subscription (clear business expense)
@@ -355,10 +385,10 @@ Stripe payout is the net amount after Stripe fees. This is an internal settlemen
 **Reasoning:**
 GitHub is a developer tool used for business. Pattern match to Section 3.3. Monthly subscription well under the $2,500 de minimis safe harbor. Expense directly on Line 27a as "Software subscriptions."
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 02/01/2025 | GITHUB INC | -$19.00 | 27a "Software subscriptions" | N | — | — |
 
 ### Example 3 — Restaurant meal (needs substantiation)
@@ -369,10 +399,10 @@ GitHub is a developer tool used for business. Pattern match to Section 3.3. Mont
 **Reasoning:**
 Restaurant charge. Under §274(n)(1), business meals are 50% deductible. Under §274(d), the taxpayer must have: (a) the amount, (b) the date and place, (c) the business purpose, and (d) the business relationship of the people present. The bank statement alone provides (a) and (b) but NOT (c) or (d). Conservative default: exclude as personal until business purpose is confirmed. Flag as Tier 2.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 03/12/2025 | THE CAPITAL GRILLE | -$187.42 | 24b (50%) or EXCLUDE | Y | Q2 (HIGH if >$75) | "Meal: needs §274(d) substantiation — who was present and business purpose?" |
 
 ### Example 4 — Laptop purchase near OBBBA cutoff
@@ -383,10 +413,10 @@ Restaurant charge. Under §274(n)(1), business meals are 50% deductible. Under �
 **Reasoning:**
 $3,499 exceeds the $2,500 de minimis safe harbor (assuming no AFS). This must be capitalized. Acquisition date is January 22, 2025 — three days AFTER the OBBBA cutoff of January 19, 2025. Eligible for 100% bonus depreciation under IRC §168(k) as amended by OBBBA. However, the bank transaction date is NOT necessarily the acquisition date — the order may have been placed earlier. This falls within the 30-day OBBBA cutoff window (Dec 20, 2024 through Feb 18, 2025). Both treatments must be prepared.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 01/22/2025 | APPLE STORE | -$3,499.00 | 13 (Form 4562) | Y | Q3 (HIGH) | "Asset in OBBBA cutoff window. 100% bonus if acquired after Jan 19; 40% if before. Verify order/purchase date." |
 
 ### Example 5 — Gas station (vehicle business use unknown)
@@ -397,10 +427,10 @@ $3,499 exceeds the $2,500 de minimis safe harbor (assuming no AFS). This must be
 **Reasoning:**
 Gas station charge. Could be business vehicle fuel (Line 9) or personal vehicle. If the taxpayer uses the standard mileage method, fuel is already included and this is NOT separately deductible. If actual expense method, only the business-use % is deductible. Without a mileage log or confirmed vehicle method election, conservative default is 0% business use. Tier 2 flag.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 04/08/2025 | SHELL OIL | -$62.18 | 9 (0%) or EXCLUDE | Y | Q4 | "Vehicle expense: what vehicle, what method (standard mileage or actual), what business-use %? Mileage log?" |
 
 ### Example 6 — IRS estimated tax payment (always exclude)
@@ -411,13 +441,11 @@ Gas station charge. Could be business vehicle fuel (Line 9) or personal vehicle.
 **Reasoning:**
 Federal estimated tax payment. This is a personal income tax obligation, NOT a business expense. Never deductible on Schedule C. Always exclude.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Amount | Line | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 06/15/2025 | IRS USATAXPYMT | -$5,000.00 | — | N | — | EXCLUDED: Federal tax payment — personal, not business |
-
----
 
 ## Section 5 — Tier 1 rules (when data is clear)
 
@@ -425,97 +453,72 @@ Each rule states the legal source and the Schedule C line assignment. Apply sile
 
 ### 5.1 Revenue recognition (Line 1)
 
-Gross receipts include all income from the trade or business. Report on the CASH basis for most sole proprietors (unless the taxpayer has elected accrual or is required to use it under §448). Include: client payments, 1099-NEC amounts, 1099-K amounts, cash/barter income, tips. Do NOT net out expenses. Payment processor deposits must be reconciled to gross (see Section 3.2). IRC §61; §446; Schedule C Instructions Line 1.
+- **Revenue recognition** — Gross receipts include all income from the trade or business. Report on the CASH basis for most sole proprietors (unless the taxpayer has elected accrual or is required to use it under §448). Include: client payments, 1099-NEC amounts, 1099-K amounts, cash/barter income, tips. Do NOT net out expenses. Payment processor deposits must be reconciled to gross (see Section 3.2).  _(IRC §61; §446; Schedule C Instructions Line 1.)_
 
 ### 5.2 Depreciation — the OBBBA framework (Line 13)
 
-**Property acquired after January 19, 2025:** 100% bonus depreciation under §168(k) as amended by OBBBA. No phase-down. §179 expensing also available ($2.5M limit, $4M phase-out).
-
-**Property acquired on or before January 19, 2025:** 40% bonus depreciation under pre-OBBBA phase-down schedule. §179 expensing available under OBBBA limits (applies to property placed in service in tax years beginning after Dec 31, 2024).
-
-**The acquisition date** is the date of the binding written contract, or the date the property was ordered for retail purchases, or the date construction began for self-constructed property. The bank transaction date is NOT necessarily the acquisition date.
-
-**30-day OBBBA cutoff window (Dec 20, 2024 through Feb 18, 2025):** Any asset acquired in this window requires dual treatment in the working paper — both 40% and 100% bonus calculated. Reviewer decides based on documentation.
-
-**De minimis safe harbor:** Items costing $2,500 or less per item (no AFS) may be expensed directly to Line 18 (office expense) or Line 22 (supplies) rather than capitalized. Election made annually on the return.
-
-**§179 vs bonus decision:** §179 is income-limited (cannot create NOL); bonus is not. §179 can be elected per-asset; bonus applies to all qualifying property in a class unless the taxpayer elects out of an entire class. The skill captures both options; the reviewer decides.
-
-IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.
+- **Property acquired after January 19, 2025** — 100% bonus depreciation under §168(k) as amended by OBBBA. No phase-down. §179 expensing also available ($2.5M limit, $4M phase-out).  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
+- **Property acquired on or before January 19, 2025** — 40% bonus depreciation under pre-OBBBA phase-down schedule. §179 expensing available under OBBBA limits (applies to property placed in service in tax years beginning after Dec 31, 2024).  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
+- **The acquisition date** — The date of the binding written contract, or the date the property was ordered for retail purchases, or the date construction began for self-constructed property. The bank transaction date is NOT necessarily the acquisition date.  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
+- **30-day OBBBA cutoff window (Dec 20, 2024 through Feb 18, 2025)** — Any asset acquired in this window requires dual treatment in the working paper — both 40% and 100% bonus calculated. Reviewer decides based on documentation.  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
+- **De minimis safe harbor** — Items costing $2,500 or less per item (no AFS) may be expensed directly to Line 18 (office expense) or Line 22 (supplies) rather than capitalized. Election made annually on the return.  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
+- **§179 vs bonus decision** — §179 is income-limited (cannot create NOL); bonus is not. §179 can be elected per-asset; bonus applies to all qualifying property in a class unless the taxpayer elects out of an entire class. The skill captures both options; the reviewer decides.  _(IRC §167; §168; §168(k); §179; §263; Treas. Reg. §1.263(a)-1(f); OBBBA P.L. 119-21; Pub 946 (2025); Form 4562 Instructions.)_
 
 ### 5.3 Home office (Form 8829 or simplified method)
 
-**Two methods:**
-- **Simplified method:** $5/sq ft, max 300 sq ft, max $1,500 deduction. No carryover. No depreciation of the home. Cannot exceed gross income from the business.
-- **Actual method (Form 8829):** Allocate actual expenses (mortgage interest, rent, insurance, utilities, repairs, depreciation) by the business-use percentage (office sq ft / total home sq ft). Subject to gross income limitation; excess carries forward.
-
-**Qualification:** The home office must be used REGULARLY and EXCLUSIVELY for business. It must be the taxpayer's PRINCIPAL place of business, a place where the taxpayer meets clients, or a separate structure. The "exclusively" test means no dual use (no guest bedroom that doubles as an office). IRC §280A; Pub 587 (2025).
-
-**Conservative default:** If no home office measurements provided, deduction is $0. Do not estimate.
+- **Simplified method** — $5/sq ft, max 300 sq ft, max $1,500 deduction. No carryover. No depreciation of the home. Cannot exceed gross income from the business.  _(IRC §280A; Pub 587 (2025).)_
+- **Actual method (Form 8829)** — Allocate actual expenses (mortgage interest, rent, insurance, utilities, repairs, depreciation) by the business-use percentage (office sq ft / total home sq ft). Subject to gross income limitation; excess carries forward.  _(IRC §280A; Pub 587 (2025).)_
+- **Qualification** — The home office must be used REGULARLY and EXCLUSIVELY for business. It must be the taxpayer's PRINCIPAL place of business, a place where the taxpayer meets clients, or a separate structure. The "exclusively" test means no dual use (no guest bedroom that doubles as an office).  _(IRC §280A; Pub 587 (2025).)_
+- **Conservative default** — If no home office measurements provided, deduction is $0. Do not estimate.  _(IRC §280A; Pub 587 (2025).)_
 
 ### 5.4 Vehicle expenses (Line 9)
 
-**Standard mileage method:** 70 cents/mile for 2025 (Notice 2025-5). Multiply by business miles. Parking and tolls deductible separately. Depreciation is included in the rate.
-
-**Actual expense method:** Gas, oil, repairs, insurance, registration, depreciation, lease payments — all multiplied by business-use %. Subject to §280F luxury auto caps for passenger vehicles under 6,000 lbs.
-
-**Method lock-in:** If standard mileage was elected in the first year the vehicle was used for business, taxpayer may switch to actual later (with straight-line depreciation). If actual method with MACRS was elected first, taxpayer is LOCKED IN to actual for that vehicle's life.
-
-**§274(d) substantiation:** A contemporaneous mileage log is required showing: date, destination, business purpose, and miles driven. Without the log, the deduction is $0 under the strict §274(d) rule. Reconstructed estimates are not sufficient.
-
-**Commuting is NEVER deductible.** Treas. Reg. §1.162-2(e); Rev. Rul. 99-7. Exception: if the home office qualifies as the principal place of business, trips from home to client sites are business miles, not commuting.
-
-**Heavy vehicles (>6,000 lbs GVW):** Not subject to §280F caps. Eligible for §179 (subject to $31,300 SUV cap) and 100% bonus depreciation if acquired after Jan 19, 2025.
+- **Standard mileage method** — 70 cents/mile for 2025 (Notice 2025-5). Multiply by business miles. Parking and tolls deductible separately. Depreciation is included in the rate.  _(Notice 2025-5)_
+- **Actual expense method** — Gas, oil, repairs, insurance, registration, depreciation, lease payments — all multiplied by business-use %. Subject to §280F luxury auto caps for passenger vehicles under 6,000 lbs.  _(§280F)_
+- **Method lock-in** — If standard mileage was elected in the first year the vehicle was used for business, taxpayer may switch to actual later (with straight-line depreciation). If actual method with MACRS was elected first, taxpayer is LOCKED IN to actual for that vehicle's life.
+- **§274(d) substantiation** — A contemporaneous mileage log is required showing: date, destination, business purpose, and miles driven. Without the log, the deduction is $0 under the strict §274(d) rule. Reconstructed estimates are not sufficient.  _(§274(d))_
+- **Commuting is NEVER deductible** — Exception: if the home office qualifies as the principal place of business, trips from home to client sites are business miles, not commuting.  _(Treas. Reg. §1.162-2(e); Rev. Rul. 99-7)_
+- **Heavy vehicles (>6,000 lbs GVW)** — Not subject to §280F caps. Eligible for §179 (subject to $31,300 SUV cap) and 100% bonus depreciation if acquired after Jan 19, 2025.
 
 ### 5.5 Meals (Line 24b — 50% deductible)
 
-Business meals are 50% deductible under §274(n)(1). Must satisfy §274(d) substantiation: amount, date, place, business purpose, business relationship of attendees. Entertainment is 0% deductible under §274(a)(1) post-TCJA — no exceptions.
-
-De minimis fringes (office snacks, coffee for the workplace) are 100% deductible under §132(e).
-
-The 100% restaurant meal deduction DOES NOT EXIST in 2025. Expired December 31, 2022.
+- **Meals deductibility** — Business meals are 50% deductible under §274(n)(1). Must satisfy §274(d) substantiation: amount, date, place, business purpose, business relationship of attendees. Entertainment is 0% deductible under §274(a)(1) post-TCJA — no exceptions. De minimis fringes (office snacks, coffee for the workplace) are 100% deductible under §132(e). The 100% restaurant meal deduction DOES NOT EXIST in 2025. Expired December 31, 2022.  _(§274(n)(1); §274(d); §274(a)(1); §132(e))_
 
 ### 5.6 Travel (Line 24a)
 
-Business travel away from the tax home is deductible: airfare, lodging, rental car, ground transportation, tips, dry cleaning, and 50% of meals while traveling. The travel must be primarily for business. If a trip has both business and personal days, only the business-purpose portion of transportation is deductible (for domestic travel); lodging/meals only for business days. For international travel, special allocation rules apply if the trip exceeds 7 days and personal days exceed 25%.
-
-IRC §162; §274(d); Pub 463 (2025).
+- **Travel deductibility** — Business travel away from the tax home is deductible: airfare, lodging, rental car, ground transportation, tips, dry cleaning, and 50% of meals while traveling. The travel must be primarily for business. If a trip has both business and personal days, only the business-purpose portion of transportation is deductible (for domestic travel); lodging/meals only for business days. For international travel, special allocation rules apply if the trip exceeds 7 days and personal days exceed 25%.  _(IRC §162; §274(d); Pub 463 (2025).)_
 
 ### 5.7 Contract labor and 1099-NEC (Line 11)
 
-Payments to independent contractors for services performed for the business. Every contractor paid $600+ in the calendar year via non-TPSO methods (Zelle, ACH, wire, check, cash, Venmo personal) requires a 1099-NEC by January 31 of the following year. Payments via credit card, PayPal, Stripe, Square, or Venmo Business are reported by the platform on 1099-K and do NOT require a 1099-NEC from the payor.
-
-**Zelle is the most common trap.** Zelle is bank-to-bank, not a TPSO under §6050W. The payor must issue the 1099-NEC.
-
-IRC §162; §6041A; §6050W; §6071(c); §3406; §6721; §6722.
+- **Contract labor and 1099-NEC** — Payments to independent contractors for services performed for the business. Every contractor paid $600+ in the calendar year via non-TPSO methods (Zelle, ACH, wire, check, cash, Venmo personal) requires a 1099-NEC by January 31 of the following year. Payments via credit card, PayPal, Stripe, Square, or Venmo Business are reported by the platform on 1099-K and do NOT require a 1099-NEC from the payor. **Zelle is the most common trap.** Zelle is bank-to-bank, not a TPSO under §6050W. The payor must issue the 1099-NEC.  _(IRC §162; §6041A; §6050W; §6071(c); §3406; §6721; §6722.)_
 
 ### 5.8 Insurance (Line 15)
 
-Business insurance premiums (general liability, professional liability, E&O, workers comp, business property, cyber liability). Personal insurance (auto, home, health, life) is NOT on Schedule C. Self-employed health insurance goes on Schedule 1 line 17. IRC §162; Schedule C Instructions Line 15.
+- **Insurance** — Business insurance premiums (general liability, professional liability, E&O, workers comp, business property, cyber liability). Personal insurance (auto, home, health, life) is NOT on Schedule C. Self-employed health insurance goes on Schedule 1 line 17.  _(IRC §162; Schedule C Instructions Line 15.)_
 
 ### 5.9 Taxes and licenses (Line 23)
 
-Business licenses, permits, state/local business taxes (NOT income tax), employer portion of FICA/FUTA, property tax on business assets. Federal income tax and state personal income tax are NEVER on Schedule C. Sales tax remittance: if included in Line 1 gross receipts, the remittance goes to Line 23; if excluded from Line 1, it does not appear. IRC §164; Schedule C Instructions Line 23.
+- **Taxes and licenses** — Business licenses, permits, state/local business taxes (NOT income tax), employer portion of FICA/FUTA, property tax on business assets. Federal income tax and state personal income tax are NEVER on Schedule C. Sales tax remittance: if included in Line 1 gross receipts, the remittance goes to Line 23; if excluded from Line 1, it does not appear.  _(IRC §164; Schedule C Instructions Line 23.)_
 
 ### 5.10 Interest (Lines 16a/16b)
 
-Business mortgage interest (Line 16a) and other business interest (Line 16b). Vehicle loan interest (business-use %) goes to Line 16b. The OBBBA personal auto loan interest deduction flows to Schedule 1-A, NOT Schedule C. Only the business-use portion of vehicle loan interest belongs on Line 16b. IRC §163; §163(j).
+- **Interest** — Business mortgage interest (Line 16a) and other business interest (Line 16b). Vehicle loan interest (business-use %) goes to Line 16b. The OBBBA personal auto loan interest deduction flows to Schedule 1-A, NOT Schedule C. Only the business-use portion of vehicle loan interest belongs on Line 16b.  _(IRC §163; §163(j).)_
 
 ### 5.11 Rent (Lines 20a/20b)
 
-Vehicle/equipment leases → Line 20a. Office rent, coworking → Line 20b. Personal rent is NOT deductible (home office is handled separately via Form 8829). IRC §162.
+- **Rent** — Vehicle/equipment leases → Line 20a. Office rent, coworking → Line 20b. Personal rent is NOT deductible (home office is handled separately via Form 8829).  _(IRC §162.)_
 
 ### 5.12 Advertising (Line 8)
 
-Costs of promoting the business: digital ads (Google, Meta, LinkedIn), print ads, business cards, website hosting/design, domain registration, SEO, email marketing, trade show booths, promotional items. Political contributions and lobbying are NOT deductible (§162(e)). Client gifts are limited to $25/recipient/year under §274(b)(1) — excess is nondeductible. IRC §162; §274(b).
+- **Advertising** — Costs of promoting the business: digital ads (Google, Meta, LinkedIn), print ads, business cards, website hosting/design, domain registration, SEO, email marketing, trade show booths, promotional items. Political contributions and lobbying are NOT deductible (§162(e)). Client gifts are limited to $25/recipient/year under §274(b)(1) — excess is nondeductible.  _(IRC §162; §274(b).)_
 
 ### 5.13 Supplies and office expense (Lines 18/22)
 
-Office supplies, postage, printing, small equipment under the de minimis safe harbor ($2,500). Line 18 vs Line 22 distinction is flexible; the skill defaults to Line 18 for office/admin items and Line 22 for operational supplies used in delivering the service/product. IRC §162; Treas. Reg. §1.162-3.
+- **Supplies and office expense** — Office supplies, postage, printing, small equipment under the de minimis safe harbor ($2,500). Line 18 vs Line 22 distinction is flexible; the skill defaults to Line 18 for office/admin items and Line 22 for operational supplies used in delivering the service/product.  _(IRC §162; Treas. Reg. §1.162-3.)_
 
 ### 5.14 Hobby loss rule (§183)
 
-If Schedule C shows a net loss, the IRS may challenge the activity as a hobby under §183. The presumption of profit-motive is met if the activity is profitable in 3 of the last 5 years. Nine factors under Treas. Reg. §1.183-2 are considered. If hobby: income is reported but deductions are limited to hobby income amount. The skill flags any net loss for reviewer awareness.
+- **Hobby loss rule** — If Schedule C shows a net loss, the IRS may challenge the activity as a hobby under §183. The presumption of profit-motive is met if the activity is profitable in 3 of the last 5 years. Nine factors under Treas. Reg. §1.183-2 are considered. If hobby: income is reported but deductions are limited to hobby income amount. The skill flags any net loss for reviewer awareness.  _(§183; Treas. Reg. §1.183-2)_
 
 ### 5.15 Items that NEVER go on Schedule C
 
@@ -533,45 +536,41 @@ If Schedule C shows a net loss, the IRS may challenge the activity as a hobby un
 - Personal loan payments
 - Personal credit card payments
 
----
-
 ## Section 6 — Tier 2 catalogue (when data is insufficient)
 
 For each ambiguity type: pattern, why the bank statement alone is insufficient, conservative default, question for the structured form.
 
 ### 6.1 Vehicle business-use percentage
 
-*Pattern:* SHELL, CHEVRON, BP, EXXON, car wash, Jiffy Lube, any fuel/vehicle maintenance charge. *Why insufficient:* The bank statement shows the charge but not: (a) which vehicle, (b) whether it is used for business, (c) what percentage is business vs personal, (d) whether the taxpayer uses standard mileage or actual expense method, (e) whether a §274(d) mileage log exists. *Default:* 0% business use (no deduction). *Question:* "Do you use a vehicle for business? Which method do you use — standard mileage (70 cents/mile) or actual expenses? What percentage of total miles are business? Do you have a contemporaneous mileage log?"
+- **Vehicle business-use percentage** — *Pattern:* SHELL, CHEVRON, BP, EXXON, car wash, Jiffy Lube, any fuel/vehicle maintenance charge. *Why insufficient:* The bank statement shows the charge but not: (a) which vehicle, (b) whether it is used for business, (c) what percentage is business vs personal, (d) whether the taxpayer uses standard mileage or actual expense method, (e) whether a §274(d) mileage log exists. *Default:* 0% business use (no deduction). *Question:* "Do you use a vehicle for business? Which method do you use — standard mileage (70 cents/mile) or actual expenses? What percentage of total miles are business? Do you have a contemporaneous mileage log?"
 
 ### 6.2 Home office
 
-*Pattern:* home utility bills (electric, gas, internet at home address), home insurance, home mortgage interest. *Why insufficient:* The bank statement shows the utility payment but not: (a) whether the taxpayer has a qualifying home office, (b) the square footage of the office, (c) the total square footage of the home, (d) whether the space is used regularly and exclusively for business. *Default:* 0% (no deduction). *Question:* "Do you have a dedicated home office used regularly and exclusively for business? What is the square footage of the office space? What is the total square footage of your home? Do you prefer the simplified method ($5/sq ft, max $1,500) or the actual expense method (Form 8829)?"
+- **Home office** — *Pattern:* home utility bills (electric, gas, internet at home address), home insurance, home mortgage interest. *Why insufficient:* The bank statement shows the utility payment but not: (a) whether the taxpayer has a qualifying home office, (b) the square footage of the office, (c) the total square footage of the home, (d) whether the space is used regularly and exclusively for business. *Default:* 0% (no deduction). *Question:* "Do you have a dedicated home office used regularly and exclusively for business? What is the square footage of the office space? What is the total square footage of your home? Do you prefer the simplified method ($5/sq ft, max $1,500) or the actual expense method (Form 8829)?"
 
 ### 6.3 Meals (business purpose unknown)
 
-*Pattern:* any restaurant, cafe, bar, food delivery (Uber Eats, DoorDash, Grubhub). *Why insufficient:* §274(d) requires documentation of business purpose and attendees. A bank statement charge at a restaurant could be: (a) a business meal with a client (50% deductible), (b) a solo working lunch (generally NOT deductible unless traveling away from tax home), (c) a personal meal (not deductible). *Default:* personal (exclude). *Question:* "For each restaurant charge, was it a business meal? If yes: who was present, and what was the business purpose?"
+- **Meals (business purpose unknown)** — *Pattern:* any restaurant, cafe, bar, food delivery (Uber Eats, DoorDash, Grubhub). *Why insufficient:* §274(d) requires documentation of business purpose and attendees. A bank statement charge at a restaurant could be: (a) a business meal with a client (50% deductible), (b) a solo working lunch (generally NOT deductible unless traveling away from tax home), (c) a personal meal (not deductible). *Default:* personal (exclude). *Question:* "For each restaurant charge, was it a business meal? If yes: who was present, and what was the business purpose?"
 
 ### 6.4 Phone/internet business percentage
 
-*Pattern:* VERIZON, AT&T, T-MOBILE, COMCAST, XFINITY — personal phone or home internet plan. *Why insufficient:* A single phone line or home internet plan shared between personal and business use. The business % is not determinable from the statement. *Default:* 0% (no deduction). *Question:* "Is this a dedicated business phone/internet line, or a personal plan with some business use? If shared, what percentage do you estimate is business use?"
+- **Phone/internet business percentage** — *Pattern:* VERIZON, AT&T, T-MOBILE, COMCAST, XFINITY — personal phone or home internet plan. *Why insufficient:* A single phone line or home internet plan shared between personal and business use. The business % is not determinable from the statement. *Default:* 0% (no deduction). *Question:* "Is this a dedicated business phone/internet line, or a personal plan with some business use? If shared, what percentage do you estimate is business use?"
 
 ### 6.5 Amazon purchases
 
-*Pattern:* AMAZON, AMZN, AMAZON.COM, AMZN MKTP. *Why insufficient:* Amazon sells everything from office supplies to personal groceries. The bank statement description rarely identifies the specific product. *Default:* personal (exclude). *Question:* "Could you check your Amazon order history for these dates and identify which purchases were for business? For each business item, what was it and how is it used in your business?"
+- **Amazon purchases** — *Pattern:* AMAZON, AMZN, AMAZON.COM, AMZN MKTP. *Why insufficient:* Amazon sells everything from office supplies to personal groceries. The bank statement description rarely identifies the specific product. *Default:* personal (exclude). *Question:* "Could you check your Amazon order history for these dates and identify which purchases were for business? For each business item, what was it and how is it used in your business?"
 
 ### 6.6 Cash withdrawals
 
-*Pattern:* ATM WITHDRAWAL, CASH WITHDRAWAL, ATM FEE. *Why insufficient:* Unknown what the cash was spent on. Could be business supplies, could be personal. *Default:* owner draw (exclude). *Question:* "What was the cash used for? If business, do you have receipts?"
+- **Cash withdrawals** — *Pattern:* ATM WITHDRAWAL, CASH WITHDRAWAL, ATM FEE. *Why insufficient:* Unknown what the cash was spent on. Could be business supplies, could be personal. *Default:* owner draw (exclude). *Question:* "What was the cash used for? If business, do you have receipts?"
 
 ### 6.7 Mixed business/personal subscriptions
 
-*Pattern:* ADOBE, MICROSOFT, Apple (iCloud, Apple One), Google (YouTube Premium). *Why insufficient:* Some subscriptions are clearly business (Adobe Creative Cloud for a designer), others are clearly personal (Netflix), but many are mixed (Adobe plan that includes personal Lightroom use). *Default:* if the pattern matches Section 3.3 (SaaS/cloud), treat as business. If not in Section 3.3, treat as personal. *Question:* "Is the [subscription name] used primarily for business? If mixed, what percentage is business use?"
+- **Mixed business/personal subscriptions** — *Pattern:* ADOBE, MICROSOFT, Apple (iCloud, Apple One), Google (YouTube Premium). *Why insufficient:* Some subscriptions are clearly business (Adobe Creative Cloud for a designer), others are clearly personal (Netflix), but many are mixed (Adobe plan that includes personal Lightroom use). *Default:* if the pattern matches Section 3.3 (SaaS/cloud), treat as business. If not in Section 3.3, treat as personal. *Question:* "Is the [subscription name] used primarily for business? If mixed, what percentage is business use?"
 
 ### 6.8 Travel with personal days
 
-*Pattern:* a flight + hotel sequence where the trip duration suggests personal extension (e.g., departing Friday, returning the following Sunday — a weekend trip tacked onto a business meeting). *Why insufficient:* The allocation between business and personal days is fact-dependent. For domestic travel, transportation is 100% deductible if the trip is primarily business. Lodging and meals are deductible only for business days. *Default:* exclude the entire trip until the business/personal day split is documented. *Question:* "For this trip to [destination]: how many days were for business? How many were personal? What was the business purpose?"
-
----
+- **Travel with personal days** — *Pattern:* a flight + hotel sequence where the trip duration suggests personal extension (e.g., departing Friday, returning the following Sunday — a weekend trip tacked onto a business meeting). *Why insufficient:* The allocation between business and personal days is fact-dependent. For domestic travel, transportation is 100% deductible if the trip is primarily business. Lodging and meals are deductible only for business days. *Default:* exclude the entire trip until the business/personal day split is documented. *Question:* "For this trip to [destination]: how many days were for business? How many were personal? What was the business purpose?"
 
 ## Section 7 — Excel working paper template
 
@@ -579,10 +578,10 @@ The base specification is in `us-tax-workflow-base` Section 3. This section prov
 
 ### Sheet "Transactions"
 
-Columns:
+**Transactions columns**
 
 | Column | Content |
-|---|---|
+| --- | --- |
 | A | Date |
 | B | Counterparty (as on statement) |
 | C | Description |
@@ -633,24 +632,14 @@ Part II — Expenses:
 
 ### Sheet "Return Form"
 
-Final Schedule C-ready figures:
-```
-Line 7  = Gross income = (Line 1 - Line 2 - Line 4) + Line 6
-Line 28 = Total expenses = SUM(Lines 8 through 27a)
-Line 29 = Tentative profit/loss = Line 7 - Line 28
-Line 30 = Business use of home (from Form 8829 or simplified method)
-Line 31 = Net profit or loss = Line 29 - Line 30
-```
-
-Positive Line 31 = net profit (flows to Form 1040 Schedule 1 and Schedule SE).
-Negative Line 31 = net loss (flag for §183 hobby loss risk).
+- **Final Schedule C-ready figures** — Line 7  = Gross income = (Line 1 - Line 2 - Line 4) + Line 6 Line 28 = Total expenses = SUM(Lines 8 through 27a) Line 29 = Tentative profit/loss = Line 7 - Line 28 Line 30 = Business use of home (from Form 8829 or simplified method) Line 31 = Net profit or loss = Line 29 - Line 30 Positive Line 31 = net profit (flows to Form 1040 Schedule 1 and Schedule SE). Negative Line 31 = net loss (flag for §183 hobby loss risk).
 
 ### Sheet "Asset Register" (for Form 4562)
 
-One row per depreciable asset:
+**Asset Register columns**
 
 | Column | Content |
-|---|---|
+| --- | --- |
 | A | Asset description |
 | B | Date acquired |
 | C | Date placed in service |
@@ -678,137 +667,130 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/schedule
 
 Check the JSON output. If `status` is `errors_found`, fix and re-run. If `status` is `success`, present via `present_files`.
 
----
-
 ## Section 8 — US bank statement reading guide
 
 Follow the universal exclusion rules in `us-tax-workflow-base` Step 6, plus these US-specific patterns.
 
 ### Chase Business Checking CSV format
 
-Typical columns: `Details, Posting Date, Description, Amount, Type, Balance, Check or Slip #`. Dates in MM/DD/YYYY. Debits are negative amounts. Credits are positive. Description field contains the counterparty name, often with terminal codes or reference numbers appended.
-
-Common Chase patterns:
-- `ORIG CO NAME:STRIPE TRANSFER` — Stripe payout
-- `CHASE CREDIT CRD AUTOPAY` — personal credit card payment from business account (EXCLUDE as owner draw)
-- `GUSTO` or `ADP` — payroll service (Line 26 for wages, Line 23 for employer taxes)
-- `ONLINE TRANSFER TO CHK...` — internal transfer between Chase accounts (EXCLUDE)
+- **Format description** — Typical columns: `Details, Posting Date, Description, Amount, Type, Balance, Check or Slip #`. Dates in MM/DD/YYYY. Debits are negative amounts. Credits are positive. Description field contains the counterparty name, often with terminal codes or reference numbers appended. Common Chase patterns: - `ORIG CO NAME:STRIPE TRANSFER` — Stripe payout - `CHASE CREDIT CRD AUTOPAY` — personal credit card payment from business account (EXCLUDE as owner draw) - `GUSTO` or `ADP` — payroll service (Line 26 for wages, Line 23 for employer taxes) - `ONLINE TRANSFER TO CHK...` — internal transfer between Chase accounts (EXCLUDE)
 
 ### Wells Fargo Business CSV format
 
-Typical columns: `Date, Amount, *, Check Number, Description`. Dates in MM/DD/YYYY. Debits are negative. Description is usually `PURCHASE AUTHORIZED ON MM/DD [COUNTERPARTY] CARD XXXX` or `ONLINE TRANSFER REF [number]`.
-
-Common Wells Fargo patterns:
-- `PURCHASE AUTHORIZED ON` — card purchase; counterparty name follows the date
-- `BILL PAY` — scheduled payment; payee name follows
-- `WIRE TYPE:WIRE IN` — incoming wire (could be client payment)
+- **Format description** — Typical columns: `Date, Amount, *, Check Number, Description`. Dates in MM/DD/YYYY. Debits are negative. Description is usually `PURCHASE AUTHORIZED ON MM/DD [COUNTERPARTY] CARD XXXX` or `ONLINE TRANSFER REF [number]`. Common Wells Fargo patterns: - `PURCHASE AUTHORIZED ON` — card purchase; counterparty name follows the date - `BILL PAY` — scheduled payment; payee name follows - `WIRE TYPE:WIRE IN` — incoming wire (could be client payment)
 
 ### Mercury CSV format
 
-Typical columns: `Date, Description, Amount, Status, Bank Description, Running Balance`. Clean, fintech-friendly format. Dates in YYYY-MM-DD. Description is usually clear. Stripe/PayPal payouts clearly labeled.
+- **Format description** — Typical columns: `Date, Description, Amount, Status, Bank Description, Running Balance`. Clean, fintech-friendly format. Dates in YYYY-MM-DD. Description is usually clear. Stripe/PayPal payouts clearly labeled.
 
 ### Internal transfers and exclusions
 
-Own-account transfers between the taxpayer's bank accounts. Labeled "transfer," "online transfer," "ACH transfer" between accounts with similar ownership. Always exclude. Credit card payments from the business account: if paying a personal card, exclude as owner draw. If paying a business credit card, the individual charges on the card are the deductible items (not the lump payment).
+- **Internal transfers and exclusions** — Own-account transfers between the taxpayer's bank accounts. Labeled "transfer," "online transfer," "ACH transfer" between accounts with similar ownership. Always exclude. Credit card payments from the business account: if paying a personal card, exclude as owner draw. If paying a business credit card, the individual charges on the card are the deductible items (not the lump payment).
 
 ### Owner draws and personal use
 
-Any payment to the owner personally, transfer to a personal account, or use of business funds for personal expenses is an owner draw. Exclude. Not a business expense. Not a deduction.
+- **Owner draws and personal use** — Any payment to the owner personally, transfer to a personal account, or use of business funds for personal expenses is an owner draw. Exclude. Not a business expense. Not a deduction.
 
 ### Refunds and returns
 
-Identify by "refund", "return", "credit", "reversal", "chargeback". Book as a negative against the original line item. If the original classification is unknown, default to Line 2 (returns and allowances) if it appears to be a customer refund, or reduce the relevant expense line if it is a vendor refund.
+- **Refunds and returns** — Identify by "refund", "return", "credit", "reversal", "chargeback". Book as a negative against the original line item. If the original classification is unknown, default to Line 2 (returns and allowances) if it appears to be a customer refund, or reduce the relevant expense line if it is a vendor refund.
 
 ### Credit card statements as supplementary data
 
-If the taxpayer provides credit card statements in addition to bank statements, the credit card charges are the line-item transactions to classify. The bank statement will show a lump credit card payment — that payment is NOT a deductible expense (it is a debt payment). The individual charges on the credit card are the deductible items.
+- **Credit card statements as supplementary data** — If the taxpayer provides credit card statements in addition to bank statements, the credit card charges are the line-item transactions to classify. The bank statement will show a lump credit card payment — that payment is NOT a deductible expense (it is a debt payment). The individual charges on the credit card are the deductible items.
 
 ### Duplicate detection
 
-Watch for the same transaction appearing on both the bank statement (as a card purchase) and a credit card statement. This is the same expense and must not be double-counted. The credit card statement is the detail; the bank statement payment is the settlement.
-
----
+- **Duplicate detection** — Watch for the same transaction appearing on both the bank statement (as a card purchase) and a credit card statement. This is the same expense and must not be double-counted. The credit card statement is the detail; the bank statement payment is the settlement.
 
 ## Section 9 — Onboarding fallback
 
 The workflow in `us-tax-workflow-base` mandates inferring the client profile from the data first and only confirming with the client when inference fails. The questionnaire below is a fallback — ask only the questions the data could not answer.
 
 ### 9.1 Entity type
-*Inference rule:* "DBA" or individual name = sole prop. "LLC" in the business name = single-member LLC. Multiple names = possible partnership (trigger R-US-PARTNERSHIP if confirmed). *Fallback:* "Are you a sole proprietor, single-member LLC, partnership, S-corp, or C-corp?"
+
+- **Entity type inference and fallback** — Inference rule: "DBA" or individual name = sole prop. "LLC" in the business name = single-member LLC. Multiple names = possible partnership (trigger R-US-PARTNERSHIP if confirmed). Fallback: "Are you a sole proprietor, single-member LLC, partnership, S-corp, or C-corp?"  _(Section 9.1)_
 
 ### 9.2 Accounting method
-*Inference rule:* most sole props use cash basis. If the taxpayer has inventory and gross receipts above $31M, accrual may be required. *Fallback:* "Do you use the cash or accrual method of accounting?"
+
+- **Accounting method inference and fallback** — Inference rule: most sole props use cash basis. If the taxpayer has inventory and gross receipts above $31M, accrual may be required. Fallback: "Do you use the cash or accrual method of accounting?"  _(Section 9.2)_
 
 ### 9.3 Principal business activity
-*Inference rule:* counterparty mix, 1099-NEC descriptions, nature of income. IT, consulting, design, writing, photography, construction are recognizable from transaction patterns. *Fallback:* "What does your business do? (Need the NAICS code for Schedule C line B.)"
+
+- **Principal business activity inference and fallback** — Inference rule: counterparty mix, 1099-NEC descriptions, nature of income. IT, consulting, design, writing, photography, construction are recognizable from transaction patterns. Fallback: "What does your business do? (Need the NAICS code for Schedule C line B.)"  _(Section 9.3)_
 
 ### 9.4 EIN or SSN
-*Inference rule:* not inferable from bank statements. *Fallback:* "Do you have an EIN for the business, or do you use your SSN?"
+
+- **EIN or SSN inference and fallback** — Inference rule: not inferable from bank statements. Fallback: "Do you have an EIN for the business, or do you use your SSN?"  _(Section 9.4)_
 
 ### 9.5 Prior year return
-*Inference rule:* not inferable. Always ask. *Question:* "Do you have last year's Schedule C and Form 4562? (Needed for depreciation carry-forward and vehicle method elections.)"
+
+- **Prior year return inference and question** — Inference rule: not inferable. Always ask. Question: "Do you have last year's Schedule C and Form 4562? (Needed for depreciation carry-forward and vehicle method elections.)"  _(Section 9.5)_
 
 ### 9.6 Home office
-*Inference rule:* if the taxpayer's address is residential and there is no separate office rent payment, a home office is possible. *Fallback:* "Do you have a home office? Is it used regularly and exclusively for business?"
+
+- **Home office inference and fallback** — Inference rule: if the taxpayer's address is residential and there is no separate office rent payment, a home office is possible. Fallback: "Do you have a home office? Is it used regularly and exclusively for business?"  _(Section 9.6)_
 
 ### 9.7 Vehicle use
-*Inference rule:* presence of fuel/vehicle maintenance charges. *Fallback:* "Do you use a vehicle for business? Do you have a mileage log? What method do you use — standard mileage or actual expenses?"
+
+- **Vehicle use inference and fallback** — Inference rule: presence of fuel/vehicle maintenance charges. Fallback: "Do you use a vehicle for business? Do you have a mileage log? What method do you use — standard mileage or actual expenses?"  _(Section 9.7)_
 
 ### 9.8 Employees
-*Inference rule:* presence of payroll service charges (Gusto, ADP), multiple large regular payments to individuals. *Fallback:* "Do you have any employees (W-2)?"
+
+- **Employees inference and fallback** — Inference rule: presence of payroll service charges (Gusto, ADP), multiple large regular payments to individuals. Fallback: "Do you have any employees (W-2)?"  _(Section 9.8)_
 
 ### 9.9 Inventory
-*Inference rule:* presence of wholesale supplier payments, COGS-like patterns. *Fallback:* "Do you sell physical products? Do you maintain inventory?" If yes and gross receipts are under $31M, the §471(c) small business exception likely applies (treat inventory as non-incidental materials and supplies, deduct when used/sold).
+
+- **Inventory inference and fallback** — Inference rule: presence of wholesale supplier payments, COGS-like patterns. Fallback: "Do you sell physical products? Do you maintain inventory?" If yes and gross receipts are under $31M, the §471(c) small business exception likely applies (treat inventory as non-incidental materials and supplies, deduct when used/sold).  _(Section 9.9; §471(c))_
 
 ### 9.10 Health insurance
-*Inference rule:* presence of health insurance premium payments. *Fallback:* "Do you pay for your own health insurance? Were you eligible for employer-sponsored coverage from a spouse's employer at any time during the year?" (Affects the self-employed health insurance deduction on Schedule 1.)
 
----
+- **Health insurance inference and fallback** — Inference rule: presence of health insurance premium payments. Fallback: "Do you pay for your own health insurance? Were you eligible for employer-sponsored coverage from a spouse's employer at any time during the year?" (Affects the self-employed health insurance deduction on Schedule 1.)  _(Section 9.10)_
 
 ## Section 10 — Reference material
 
 ### Primary legislation
 
-1. **Internal Revenue Code** (Title 26 USC) — all sections cited throughout this skill
-2. **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20% (rising to 23% in 2026), new tip/overtime/auto loan interest deductions on Schedule 1-A
+- **Internal Revenue Code** — Internal Revenue Code (Title 26 USC) — all sections cited throughout this skill  _(Item 1)_
+- **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20% (rising to 23% in 2026), new tip/overtime/auto loan interest deductions on Schedule 1-A  _(Item 2)_
 
 ### Treasury Regulations (26 CFR)
 
-3. Treas. Reg. §1.162-1 through §1.162-5 — Business expenses, traveling expenses, materials and supplies, repairs, education
-4. Treas. Reg. §1.179-1 through §1.179-6 — Section 179 elections
-5. Treas. Reg. §1.183-1, §1.183-2 — Hobby loss factors
-6. Treas. Reg. §1.263(a)-1(f) — De minimis safe harbor
-7. Treas. Reg. §1.263(a)-2, §1.263(a)-3 — Tangible property, improvements (betterments, restorations, adaptations)
-8. Treas. Reg. §1.274-2, §1.274-5T, §1.274-12 — Entertainment disallowance, substantiation, meals limitation
-9. Treas. Reg. §1.280A-1, §1.280A-2 — Business use of home
-10. Treas. Reg. §1.280F-6 — Listed property
-11. Treas. Reg. §1.471-1 — Inventories
+- **Treas. Reg. §1.162-1 through §1.162-5** — Business expenses, traveling expenses, materials and supplies, repairs, education  _(Item 3)_
+- **Treas. Reg. §1.179-1 through §1.179-6** — Section 179 elections  _(Item 4)_
+- **Treas. Reg. §1.183-1, §1.183-2** — Hobby loss factors  _(Item 5)_
+- **Treas. Reg. §1.263(a)-1(f)** — De minimis safe harbor  _(Item 6)_
+- **Treas. Reg. §1.263(a)-2, §1.263(a)-3** — Tangible property, improvements (betterments, restorations, adaptations)  _(Item 7)_
+- **Treas. Reg. §1.274-2, §1.274-5T, §1.274-12** — Entertainment disallowance, substantiation, meals limitation  _(Item 8)_
+- **Treas. Reg. §1.280A-1, §1.280A-2** — Business use of home  _(Item 9)_
+- **Treas. Reg. §1.280F-6** — Listed property  _(Item 10)_
+- **Treas. Reg. §1.471-1** — Inventories  _(Item 11)_
 
 ### Revenue Procedures, Notices, Revenue Rulings
 
-12. Rev. Proc. 2013-13 — Simplified method for home office deduction
-13. Rev. Proc. 2024-40 — 2025 inflation adjustments
-14. Rev. Proc. 2025-16 — 2025 luxury auto depreciation caps and lease inclusion
-15. Notice 2024-80 — 2025 retirement plan limitations
-16. Notice 2025-5 — 2025 standard mileage rates
-17. Rev. Rul. 99-7 — Commuting expenses
+- **Rev. Proc. 2013-13** — Simplified method for home office deduction  _(Item 12)_
+- **Rev. Proc. 2024-40** — 2025 inflation adjustments  _(Item 13)_
+- **Rev. Proc. 2025-16** — 2025 luxury auto depreciation caps and lease inclusion  _(Item 14)_
+- **Notice 2024-80** — 2025 retirement plan limitations  _(Item 15)_
+- **Notice 2025-5** — 2025 standard mileage rates  _(Item 16)_
+- **Rev. Rul. 99-7** — Commuting expenses  _(Item 17)_
 
 ### IRS Publications and Form Instructions
 
-18. Pub 334 (2025) — Tax Guide for Small Business
-19. Pub 463 (2025) — Travel, Gift, and Car Expenses
-20. Pub 587 (2025) — Business Use of Your Home
-21. Pub 946 (2025) — How to Depreciate Property
-22. Schedule C (Form 1040) Instructions (2025)
-23. Form 4562 Instructions (2025)
-24. Form 8829 Instructions (2025)
-25. Form 1099-NEC Instructions (2025)
+- **Pub 334 (2025)** — Tax Guide for Small Business  _(Item 18)_
+- **Pub 463 (2025)** — Travel, Gift, and Car Expenses  _(Item 19)_
+- **Pub 587 (2025)** — Business Use of Your Home  _(Item 20)_
+- **Pub 946 (2025)** — How to Depreciate Property  _(Item 21)_
+- **Schedule C (Form 1040) Instructions (2025)** — Schedule C (Form 1040) Instructions (2025)  _(Item 22)_
+- **Form 4562 Instructions (2025)** — Form 4562 Instructions (2025)  _(Item 23)_
+- **Form 8829 Instructions (2025)** — Form 8829 Instructions (2025)  _(Item 24)_
+- **Form 1099-NEC Instructions (2025)** — Form 1099-NEC Instructions (2025)  _(Item 25)_
 
 ### Court decisions
 
-26. Welch v. Helvering, 290 U.S. 111 (1933) — "Ordinary and necessary" standard
-27. Cohan v. Commissioner, 39 F.2d 540 (2d Cir. 1930) — Estimation of expenses (substantially limited by §274(d))
-28. Commissioner v. Soliman, 506 U.S. 168 (1993) — Principal place of business for home office
+- **Welch v. Helvering, 290 U.S. 111 (1933)** — "Ordinary and necessary" standard  _(Item 26)_
+- **Cohan v. Commissioner, 39 F.2d 540 (2d Cir. 1930)** — Estimation of expenses (substantially limited by §274(d))  _(Item 27)_
+- **Commissioner v. Soliman, 506 U.S. 168 (1993)** — Principal place of business for home office  _(Item 28)_
 
 ### Known gaps
 
@@ -820,9 +802,9 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to Malta v2.0 structure. Quick reference with year-specific figures and conservative defaults table moved to Section 1. Required inputs and refusal catalogue restructured (Section 2, 10 refusals). Supplier pattern library with 13 US vendor categories (Section 3). Six worked examples from Chase Business Checking (Section 4). Tier 1 rules as sections without inline tags (Section 5, 15 rules). Tier 2 catalogue with 8 ambiguity types (Section 6). Excel working paper template with asset register (Section 7). US bank statement reading guide with Chase/Wells Fargo/Mercury formats (Section 8). Onboarding fallback with inference rules (Section 9, 10 items). Reference material consolidated (Section 10).
-- **v0.2 (prior):** Added 1099-NEC payment method trap (Zelle/ACH), OBBBA 30-day cutoff dual treatment, expanded contract labor section.
-- **v0.1 (initial):** Initial skill covering Schedule C classification, OBBBA depreciation, §274 substantiation.
+- v2.0 (April 2026): Full rewrite to Malta v2.0 structure. Quick reference with year-specific figures and conservative defaults table moved to Section 1. Required inputs and refusal catalogue restructured (Section 2, 10 refusals). Supplier pattern library with 13 US vendor categories (Section 3). Six worked examples from Chase Business Checking (Section 4). Tier 1 rules as sections without inline tags (Section 5, 15 rules). Tier 2 catalogue with 8 ambiguity types (Section 6). Excel working paper template with asset register (Section 7). US bank statement reading guide with Chase/Wells Fargo/Mercury formats (Section 8). Onboarding fallback with inference rules (Section 9, 10 items). Reference material consolidated (Section 10).
+- v0.2 (prior): Added 1099-NEC payment method trap (Zelle/ACH), OBBBA 30-day cutoff dual treatment, expanded contract labor section.
+- v0.1 (initial): Initial skill covering Schedule C classification, OBBBA depreciation, §274 substantiation.
 
 ### Self-check (v2.0 of this document)
 
@@ -849,14 +831,30 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 
 This skill is incomplete without the companion workflow file loaded alongside it: `us-tax-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a Schedule C working paper without the base loaded.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-sole-prop-bookkeeping) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **accountant-reviewed**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-sole-prop-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-sole-prop-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.

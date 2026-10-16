@@ -1,24 +1,24 @@
 ---
 name: ks-sales-tax
 description: "Use this skill whenever asked about Kansas sales and use tax. Trigger on phrases like \"Kansas sales tax\", \"KS sales tax\", \"KDOR\", \"K.S.A. §79-3603\", \"Kansas grocery tax\". ALWAYS load us-sales-tax first."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-KS
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ks-sales-tax"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/ks-sales-tax"
+  jurisdiction: "US-KS"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Kansas Sales and Use Tax Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# KS Sales Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | Kansas |
 | State rate | 6.50% |
 | Grocery food state rate | 0.00% (effective January 1, 2025 -- phased down from 6.5%) |
@@ -32,30 +32,30 @@ metadata:
 
 ## Section 3 -- Transaction pattern library
 
+**Transaction pattern library**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
-| General TPP | TAXABLE 6.50% + local | |
+| --- | --- | --- |
+| General TPP | TAXABLE 6.50% + local |  |
 | Clothing | TAXABLE | No exemption |
 | Grocery food (unprepared) | 0% state (as of Jan 2025) | Local rates still apply; phased down from 6.5% |
-| Prepared food | TAXABLE 6.50% | |
+| Prepared food | TAXABLE 6.50% |  |
 | SaaS | NOT TAXABLE | Kansas has not clearly taxed SaaS |
-| Canned software (download) | TAXABLE | |
-| Professional services | NOT TAXABLE | |
-| Manufacturing equipment | EXEMPT | |
-| Prescription drugs | EXEMPT | |
-| Resale | EXEMPT | |
+| Canned software (download) | TAXABLE |  |
+| Professional services | NOT TAXABLE |  |
+| Manufacturing equipment | EXEMPT |  |
+| Prescription drugs | EXEMPT |  |
+| Resale | EXEMPT |  |
 
 ## Section 10 -- Prohibitions
 
-- NEVER apply state tax to grocery food as of 2025 -- state rate is 0%. Local still applies.
-- NEVER forget the phase-down history of grocery food taxation.
-- NEVER compute any number.
+- **Prohibition - grocery food state tax** — NEVER apply state tax to grocery food as of 2025 -- state rate is 0%. Local still applies.  _(Section 10 -- Prohibitions)_
+- **Prohibition - phase-down history** — NEVER forget the phase-down history of grocery food taxation.  _(Section 10 -- Prohibitions)_
+- **Prohibition - computation** — NEVER compute any number.  _(Section 10 -- Prohibitions)_
 
 ## Disclaimer
 
 Informational only. Review by qualified professional required before filing.
-
----
 
 ## Disclaimer
 
@@ -63,6 +63,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ks-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ks-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ks-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,24 +1,24 @@
 ---
 name: rwanda-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Rwanda VAT return. Standard rate 18%. Mandatory EBM (Electronic Billing Machine). No EBM = no input recovery. EAC member. ALWAYS read before handling Rwanda VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/rwanda-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/rwanda-vat"
+  jurisdiction: "RW"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Rwanda VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Rwanda VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Rwanda |
 | Standard rate | 18% |
 | Zero rate | 0% (exports, diplomatic, SEZ) |
@@ -34,32 +34,28 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
-**Key 2025 changes (Law 009/2025):** Mobile phones, ICT equipment, fuel, fee-based financial services, local road transport now taxable from July 2025.
-
----
+- **Key 2025 changes (Law 009/2025)** — Mobile phones, ICT equipment, fuel, fee-based financial services, local road transport now taxable from July 2025.  _(Law 009/2025)_
 
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from BK (Bank of Kigali), I&M Bank Rwanda, Equity Bank RW, BPR, Access Bank RW, or any Rwandan bank.
 
----
-
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BK, BANK OF KIGALI | EXCLUDE | Exempt financial |
 | I&M RWANDA, I&M BANK RW | EXCLUDE | Same |
 | EQUITY BANK RW, BPR | EXCLUDE | Same |
 | RRA, RWANDA REVENUE | EXCLUDE | Tax payment |
-| CUSTOMS | Check for import VAT | |
+| CUSTOMS | Check for import VAT |  |
 | RSSB | EXCLUDE | Social security |
 | REG, EUCL | Domestic 18% | Electricity |
 | WASAC | Domestic 18% | Water |
 | MTN RW, AIRTEL RW | Domestic 18% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Reverse charge 18% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -71,15 +67,12 @@ VAT-registered supplier provides services but issues handwritten invoice without
 
 Exporter ships tea to Mombasa. Zero-rated. Input VAT fully recoverable. Must have export documentation.
 
----
-
 ## Section 5 -- Classification rules
 
-18% standard. 0% exports, diplomatic, SEZ. Exempt: unprocessed agricultural, financial (margin-based; fee-based now taxable from July 2025), medical, education, residential rental, public transport (road transport of goods now taxable from July 2025), books/newspapers, water/electricity (domestic), funeral.
-
-EBM: mandatory for all VAT-registered. No EBM = no input claim.
-
----
+- **Standard rate** — 18%
+- **Zero rate** — 0% (exports, diplomatic, SEZ)
+- **Exempt categories** — Exempt: unprocessed agricultural, financial (margin-based; fee-based now taxable from July 2025), medical, education, residential rental, public transport (road transport of goods now taxable from July 2025), books/newspapers, water/electricity (domestic), funeral.
+- **EBM requirement** — EBM: mandatory for all VAT-registered. No EBM = no input claim.
 
 ## Section 6 -- VAT return form
 
@@ -89,60 +82,65 @@ Input: B1-B9 (local with EBM, imports, imported services, input local, input imp
 
 Net: C1-C3 (net, credit b/f, net payable).
 
----
-
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 18%. Net zero. Law 049/2023 Art. 13.
-
-EAC: no intra-community mechanism.
-
----
+- **Reverse charge on non-resident services** — Non-resident services: self-assess 18%. Net zero.  _(Law 049/2023 Art. 13)_
+- **EAC treatment** — EAC: no intra-community mechanism.
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (Art. 17): entertainment, vehicles < 10 seats (unless taxi/hire), clubs, personal use, purchases without EBM receipt.
-
-Partial exemption: Art. 16(3). RRA approval.
-
----
+- **Blocked input items** — Blocked (Art. 17): entertainment, vehicles < 10 seats (unless taxi/hire), clubs, personal use, purchases without EBM receipt.  _(Art. 17)_
+- **Partial exemption** — Partial exemption: Art. 16(3). RRA approval.  _(Art. 16(3))_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly 15th (quarterly for small). Late filing: 20% + RWF 100K minimum. Late payment: 1.5%/month. Non-EBM: 100% of unreported tax.
-
----
+- **Filing deadline** — Monthly 15th (quarterly for small).
+- **Late filing penalty** — 20% + RWF 100K minimum
+- **Late payment penalty** — 1.5%/month
+- **Non-EBM penalty** — 100% of unreported tax
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
 **EC1 -- SaaS.** Reverse charge 18%. Net zero.
+
 **EC2 -- Non-EBM invoice.** Input NOT recoverable.
+
 **EC3 -- Tea export.** Zero-rated.
+
 **EC4 -- EAC import (Kenya).** VAT at customs. Recoverable.
+
 **EC5 -- Motor vehicle blocked.**
+
 **EC6 -- SEZ supply.** May be zero-rated. Verify certificate.
+
 **EC7 -- Credit note.** Adjust A6.
+
 **EC8 -- Deemed supply cessation.** 18% on market value.
 
 **Test 1** -- RWF 5M sale. Output 900K.
+
 **Test 2** -- EBM receipt RWF 1M + 180K VAT. Recoverable.
+
 **Test 3** -- Handwritten receipt RWF 500K + 90K VAT. Input = 0.
+
 **Test 4** -- Indian IT RWF 3M. Output 540K, input 540K.
+
 **Test 5** -- Mineral export RWF 50M. Zero-rated.
+
 **Test 6** -- Entertainment. Blocked.
+
 **Test 7** -- Hospital services RWF 10M. Exempt. Input not recoverable.
+
 **Test 8** -- Tanzania import RWF 8M. Customs VAT 1.44M. Recoverable.
 
 Out of scope: CIT 30%, PAYE 0%-30%, RSSB 5%+3% pension, 0.3% maternity.
 
 ### Prohibitions
 
-- NEVER allow input recovery without EBM receipt
-- NEVER treat EAC as intra-community
-- NEVER accept non-EBM invoices
-- NEVER compute numbers -- engine handles arithmetic
-
----
+- **NEVER allow input recovery without EBM receipt** — NEVER allow input recovery without EBM receipt
+- **NEVER treat EAC as intra-community** — NEVER treat EAC as intra-community
+- **NEVER accept non-EBM invoices** — NEVER accept non-EBM invoices
+- **NEVER compute numbers -- engine handles arithmetic** — NEVER compute numbers -- engine handles arithmetic
 
 ## Disclaimer
 
@@ -150,6 +148,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/rwanda-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `rwanda-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/rwanda-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

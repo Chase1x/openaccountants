@@ -1,26 +1,23 @@
 ---
 name: cross-border-vat-gst
-description: "> VAT, GST, and sales tax compliance for international digital businesses. Use when the user asks about: VAT, GST, sales tax, value added tax, goods and services tax, EU VAT, UK VAT, VAT OSS, One-Stop Shop, VAT registration, reverse charge, Merchant of Record, Paddle, Lemon Squeezy, Stripe Tax, digital services tax, DST, IOSS, Import One-Stop Shop, B2C digital VAT, B2B reverse charge, VIES validation, Australia GST, Singapore GST, Japan JCT, consumption tax, Canada GST/HST, US sales tax, economic nexus, SaaS tax, digital product tax, VAT compliance, VAT threshold, EU B2C sales, cross-border VAT, international VAT, when to register for VAT, VAT penalties, late registration, Mehrwertsteuer, TVA, IVA, 消費税, or any question about indirect tax compliance for businesses selling digital products or services internationally."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "VAT, GST, and sales tax compliance for international digital businesses. Use when the user asks about: VAT, GST, sales tax, value added tax, goods and services tax, EU VAT, UK VAT, VAT OSS, One-Stop Shop, VAT registration, reverse charge, Merchant of Record, Paddle, Lemon Squeezy, Stripe Tax, digital services tax, DST, IOSS, Import One-Stop Shop, B2C digital VAT, B2B reverse charge, VIES validation, Australia GST, Singapore GST, Japan JCT, consumption tax, Canada GST/HST, US sales tax, economic nexus, SaaS tax, digital product tax, VAT compliance, VAT threshold, EU B2C sales, cross-border VAT, international VAT, when to register for VAT, VAT penalties, late registration, Mehrwertsteuer, TVA, IVA, 消費税, or any question about indirect tax compliance for businesses selling digital products or services internationally."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cross-border-vat-gst"
-  tax_year: 2025-2026
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/cross-border-vat-gst"
+  jurisdiction: "INTL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Cross-Border VAT/GST Compliance — International Digital Businesses
+# Cross Border VAT GST
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Cross-Border VAT/GST Compliance — International Digital Businesses
 
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general guidance on VAT/GST compliance for digital services. VAT rules are complex, jurisdiction-specific, and change frequently. Consult a qualified indirect tax advisor before registering, filing, or taking positions on VAT/GST obligations. Errors can result in retroactive assessments, penalties, and interest.
-
----
 
 ## Core Decision: Do You Need to Collect Tax from Customers?
 
@@ -30,20 +27,22 @@ The answer depends on three factors:
 2. **WHAT** are you selling (digital product, SaaS, physical goods, consulting)?
 3. **HOW MUCH** do you sell into that jurisdiction?
 
----
-
 ## Compliance Strategy by Revenue Level
 
+**Compliance Strategy by Revenue Level**
+
 | Revenue Level | Recommendation | Estimated Cost |
-|---------------|----------------|----------------|
+| --- | --- | --- |
 | <€10,000 from any single jurisdiction | Monitor only — below most thresholds | $0 |
 | €10,000–€100,000 with global customers | Use a Merchant of Record (Paddle, Lemon Squeezy) — they handle all tax | 5–10% of revenue |
 | >€100,000 with concentrated markets | Self-register in top 2–3 markets + Stripe Tax for automation | $2,000–5,000/year in accounting |
 
 ### Merchant of Record (MoR) Decision Framework
 
+**Merchant of Record (MoR) Decision Framework**
+
 | Revenue | Complexity Tolerance | Recommendation |
-|---------|----------------------|----------------|
+| --- | --- | --- |
 | <$50,000 | Any | MoR (Paddle / Lemon Squeezy) |
 | $50,000–$200,000 | Low | MoR |
 | $50,000–$200,000 | High | Self-register top markets + Stripe Tax |
@@ -55,20 +54,19 @@ The answer depends on three factors:
 - You receive net payment
 - Cost: 5–10% of revenue (includes payment processing)
 
----
-
 ## EU VAT (Value Added Tax)
 
 ### When It Applies
 
-- Selling digital products/services (SaaS, ebooks, courses, software) to EU consumers (B2C)
-- Applies regardless of where YOUR company is registered
-- Threshold: **€10,000/year** in total EU B2C sales → must register
+- **EU VAT applicability** — Selling digital products/services (SaaS, ebooks, courses, software) to EU consumers (B2C); applies regardless of where YOUR company is registered
+- **EU B2C VAT registration threshold** — €10,000/year EUR/year (total EU B2C sales → must register)
 
 ### EU VAT Rates (Digital Services)
 
+**EU VAT Rates (Digital Services)**
+
 | Country | Standard Rate |
-|---------|---------------|
+| --- | --- |
 | Germany | 19% |
 | France | 20% |
 | Netherlands | 21% |
@@ -79,117 +77,106 @@ The answer depends on three factors:
 
 ### VAT OSS (One-Stop Shop)
 
-- Register in ONE EU country → report all EU B2C sales through one portal
-- No need to register in each country separately
-- Available to non-EU businesses via "Non-Union OSS" scheme
-- File quarterly returns
+- **VAT OSS mechanics** — Register in ONE EU country → report all EU B2C sales through one portal; no need to register in each country separately; available to non-EU businesses via "Non-Union OSS" scheme; file quarterly returns
 
 ### B2B Sales to EU
 
-- If the EU customer provides a valid VAT number → **reverse charge** (0% VAT; customer self-assesses)
-- Always validate EU VAT numbers via VIES system before zero-rating
-- URL: https://ec.europa.eu/taxation_customs/vies/
-
----
+- **B2B reverse charge and VIES validation** — If the EU customer provides a valid VAT number → reverse charge (0% VAT; customer self-assesses). Always validate EU VAT numbers via VIES system before zero-rating.  _(https://ec.europa.eu/taxation_customs/vies/)_
 
 ## UK VAT
 
 ### When It Applies
 
-- Selling digital services to UK consumers (B2C)
-- **No threshold for non-UK businesses** — must register from first sale
-- UK businesses: £90,000 threshold
+- **UK VAT applicability and threshold** — Selling digital services to UK consumers (B2C). No threshold for non-UK businesses — must register from first sale. UK businesses: £90,000 threshold.
 
 ### UK VAT Rate
 
-- **20%** standard rate
-
----
+- **UK VAT standard rate** — 20% % (standard rate)
 
 ## US Sales Tax
 
 ### When It Applies
 
-- Selling to US customers (digital or physical)
-- "Nexus" required: physical presence OR **economic nexus**
-- Economic nexus: most states trigger at **$100,000 in sales OR 200 transactions/year**
+- **US sales tax nexus rules** — Selling to US customers (digital or physical). "Nexus" required: physical presence OR economic nexus. Economic nexus: most states trigger at $100,000 in sales OR 200 transactions/year.
 
 ### Key Facts
 
-- US has NO federal sales tax — it is state-by-state (45 states + DC)
-- Digital products/SaaS taxability varies by state:
-  - **Taxable in:** TX, NY, PA, WA, and ~20 others
-  - **Not taxable in:** CA (SaaS), GA, MO, and others
-- If you have no US nexus: you may not need to collect (rules evolving)
+US has NO federal sales tax — it is state-by-state (45 states + DC)
+Digital products/SaaS taxability varies by state:
+- **Taxable in:** TX, NY, PA, WA, and ~20 others
+- **Not taxable in:** CA (SaaS), GA, MO, and others
+If you have no US nexus: you may not need to collect (rules evolving)
 
 ### Solutions
 
+**Solutions**
+
 | Tool | Cost | Detail |
-|------|------|--------|
+| --- | --- | --- |
 | Stripe Tax | $0.50/transaction | Automatic calculation and collection |
 | TaxJar / Avalara | Varies | Full compliance automation |
 | Paddle / Lemon Squeezy | 5–10% of revenue | MoR handles everything |
 
----
-
 ## Australia GST
 
+**Australia GST**
+
 | Factor | Detail |
-|--------|--------|
+| --- | --- |
 | Trigger | Selling digital services to Australian consumers (B2C) |
 | Threshold | AUD 75,000/year in Australian sales |
 | Rate | **10%** on digital supplies |
 | Filing | Quarterly BAS (Business Activity Statement) |
 | Non-resident suppliers | Must register for GST if above threshold |
 
----
-
 ## Singapore GST
 
+**Singapore GST**
+
 | Factor | Detail |
-|--------|--------|
+| --- | --- |
 | Trigger | Taxable turnover >SGD 1,000,000/year (mandatory); voluntary registration available |
 | Non-resident digital services | Must register if >SGD 100,000 in SG consumer sales |
 | Rate | **9%** (increased from 8% in 2024) |
 | Filing | Quarterly |
 
----
-
 ## Japan Consumption Tax (JCT — 消費税)
 
+**Japan Consumption Tax (JCT — 消費税)**
+
 | Factor | Detail |
-|--------|--------|
+| --- | --- |
 | Trigger | Foreign businesses selling digital services to Japanese consumers |
 | Threshold | Must register regardless of revenue threshold |
 | Rate | **10%** (8% reduced rate for some items) |
 
----
-
 ## New Zealand GST
 
+**New Zealand GST**
+
 | Factor | Detail |
-|--------|--------|
+| --- | --- |
 | Trigger | Non-resident suppliers of digital services to NZ consumers |
 | Threshold | NZD 60,000/year in NZ sales |
 | Rate | **15%** |
 
----
-
 ## Canada GST/HST
 
+**Canada GST/HST**
+
 | Factor | Detail |
-|--------|--------|
+| --- | --- |
 | Trigger | Non-resident suppliers selling digital services to Canadian consumers |
 | Threshold | CAD 30,000/year in Canadian sales |
 | Rate | 5% GST (federal) + 0–10% provincial (HST combined up to 15%) |
 | Registration | Simplified registration available for non-residents |
 
----
-
 ## Filing Deadlines Summary
 
+**Filing Deadlines Summary**
+
 | Jurisdiction | Filing Frequency | Typical Deadline |
-|--------------|------------------|------------------|
+| --- | --- | --- |
 | EU VAT OSS | Quarterly | End of month after quarter |
 | UK VAT | Quarterly | 1 month + 7 days after period |
 | Australia GST | Quarterly | 28 days after quarter |
@@ -198,16 +185,16 @@ The answer depends on three factors:
 | Canada GST/HST | Annually or quarterly | Varies by reporting period |
 | US Sales Tax | Varies by state | Monthly / quarterly / annually |
 
----
-
 ## Digital Services Tax (DST) — NOT the Same as VAT
 
-DST is a revenue-based tax on digital services. Unlike VAT (transaction-level, charged to customers) and corporate tax (profit-based), DST is calculated on gross revenue and comes out of your own revenue.
+- **DST definition** — DST is a revenue-based tax on digital services. Unlike VAT (transaction-level, charged to customers) and corporate tax (profit-based), DST is calculated on gross revenue and comes out of your own revenue.
 
 ### DST Rates and Thresholds
 
+**DST Rates and Thresholds**
+
 | Country | DST Rate | Global Revenue Threshold | Local Revenue Threshold |
-|---------|----------|--------------------------|------------------------|
+| --- | --- | --- | --- |
 | UK | 2% | £500M global | £25M UK |
 | France | 3% | €750M global | €25M France |
 | Italy | 3% | €750M global | €5.5M Italy |
@@ -222,27 +209,26 @@ DST is a revenue-based tax on digital services. Unlike VAT (transaction-level, c
 - **India Equalization Levy:** 2% on gross consideration for non-resident e-commerce operators selling digital services to Indian customers. Must register and file quarterly.
 - **Kenya Digital Service Tax:** 1.5% on gross transaction value. No minimum threshold.
 
+**Your India/Kenya Revenue action table**
+
 | Your India/Kenya Revenue | Action |
-|--------------------------|--------|
+| --- | --- |
 | <$10,000/year | Monitor; enforcement limited at this scale |
 | $10,000–$50,000/year | Consult tax advisor; weigh registration cost vs exposure |
 | >$50,000/year | Register and comply; enforcement risk is real |
-
----
 
 ## Penalties and Remediation
 
 ### Late Registration Penalties
 
-Most EU countries impose penalties for selling above the €10,000 threshold without registration:
-- **Minimum penalty:** ~€500 (small/first-time violation)
-- **Maximum penalty:** ~5% of unpaid VAT (sustained non-compliance)
-- Interest accrues from the date VAT was originally due
+- **EU late registration penalty structure** — Most EU countries impose penalties for selling above the €10,000 threshold without registration: - **Minimum penalty:** ~€500 (small/first-time violation) - **Maximum penalty:** ~5% of unpaid VAT (sustained non-compliance) - Interest accrues from the date VAT was originally due
 
 ### Voluntary Disclosure Programs
 
+**Voluntary Disclosure Programs**
+
 | Jurisdiction | Program | Penalty Reduction |
-|--------------|---------|-------------------|
+| --- | --- | --- |
 | EU (most countries) | Voluntary correction | 50–75% reduction |
 | UK | Unprompted disclosure to HMRC | Best terms (~30% of maximum) |
 | Australia | Voluntary disclosure | Significant reduction; no penalty if minor |
@@ -260,14 +246,14 @@ Most EU countries impose penalties for selling above the €10,000 threshold wit
 
 ### When to Get Professional Help
 
-If total exposure exceeds **€5,000** or involves **multiple countries**, hire a VAT specialist. Typical remediation cost: €500–2,000 per engagement — almost always cheaper than the penalties avoided.
-
----
+- **Professional help exposure threshold** — €5,000 EUR (If total exposure exceeds this or involves multiple countries, hire a VAT specialist. Typical remediation cost: €500–2,000 per engagement.)
 
 ## Physical Goods — Key Differences from Digital Services
 
+**Physical Goods — Key Differences from Digital Services**
+
 | Dimension | Digital Services | Physical Goods |
-|-----------|-----------------|----------------|
+| --- | --- | --- |
 | Delivery | Instant, borderless | Shipping, customs clearance |
 | VAT trigger | Customer location | Import entry |
 | Additional taxes | DST (rare) | Customs duty, tariffs |
@@ -275,27 +261,15 @@ If total exposure exceeds **€5,000** or involves **multiple countries**, hire 
 
 ### EU Physical Goods (Post-2021)
 
-- **No de minimis exemption** — ALL imports subject to VAT (was €22 before 2021)
-- Customs duty threshold: €150 still applies
-- **IOSS (Import One-Stop Shop):** Lets non-EU sellers collect and remit VAT at point of sale for goods <€150. Without IOSS, carrier or customs collects VAT from buyer on delivery (poor customer experience).
+- **EU physical goods import VAT rules** — No de minimis exemption — ALL imports subject to VAT (was €22 before 2021). Customs duty threshold: €150 still applies. IOSS (Import One-Stop Shop): Lets non-EU sellers collect and remit VAT at point of sale for goods <€150. Without IOSS, carrier or customs collects VAT from buyer on delivery (poor customer experience).
 
 ### US De Minimis (Section 321)
 
-- Shipments ≤**$800 USD** per day per importer: exempt from customs duty
-- Above $800: customs duty + potential tariffs apply
-- Threshold under legislative review — verify before building logistics around it
-
----
+- **US de minimis customs duty exemption** — $800 USD USD/day/importer (Shipments ≤$800 USD per day per importer: exempt from customs duty. Above $800: customs duty + potential tariffs apply. Threshold under legislative review — verify before building logistics around it.)
 
 ## Platform Income — VAT Threshold Aggregation
 
-If earning across multiple platforms (YouTube, Patreon, Substack, Gumroad), **aggregate total EU digital services revenue** for VAT threshold purposes:
-
-- EU VAT OSS threshold: **€10,000/year** across ALL EU B2C digital sales (not per platform)
-- Gumroad and Paddle handle VAT for their platform sales (they are MoR)
-- Stripe, Patreon, and AdSense do NOT handle VAT — the seller is responsible
-
----
+- **Aggregation of platform income for VAT threshold purposes** — If earning across multiple platforms (YouTube, Patreon, Substack, Gumroad), aggregate total EU digital services revenue for VAT threshold purposes: - EU VAT OSS threshold: €10,000/year across ALL EU B2C digital sales (not per platform) - Gumroad and Paddle handle VAT for their platform sales (they are MoR) - Stripe, Patreon, and AdSense do NOT handle VAT — the seller is responsible
 
 ## Official Sources & Further Reading
 
@@ -310,12 +284,30 @@ If earning across multiple platforms (YouTube, Patreon, Substack, Gumroad), **ag
 - **Paddle:** https://www.paddle.com
 - **Lemon Squeezy:** https://www.lemonsqueezy.com
 
----
+## closing-notes
 
 *Data reflects 2024–2026 rules. VAT/GST thresholds, rates, and registration requirements change frequently. Verify all figures with official sources and a qualified indirect tax advisor.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cross-border-vat-gst) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cross-border-vat-gst` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cross-border-vat-gst. If neither is available, confirm every figure against the official source pages cited above before relying on it.

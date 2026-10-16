@@ -1,27 +1,24 @@
 ---
 name: sk-individual-return
-description: "> Use this skill whenever asked about Saskatchewan provincial individual income tax. Trigger on phrases like \"Saskatchewan tax\", \"SK provincial tax\", \"Saskatchewan T1\", \"Saskatchewan brackets\", \"PST Saskatchewan\", \"Saskatchewan credits\", or any question about computing Saskatchewan provincial tax for an individual return. This skill covers Saskatchewan's three-bracket tax system, PST at 6%, provincial credits, and filing requirements. ALWAYS read this skill before touching any Saskatchewan individual tax return work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Saskatchewan provincial individual income tax. Trigger on phrases like \"Saskatchewan tax\", \"SK provincial tax\", \"Saskatchewan T1\", \"Saskatchewan brackets\", \"PST Saskatchewan\", \"Saskatchewan credits\", or any question about computing Saskatchewan provincial tax for an individual return. This skill covers Saskatchewan's three-bracket tax system, PST at 6%, provincial credits, and filing requirements. ALWAYS read this skill before touching any Saskatchewan individual tax return work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/sk-individual-return"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/sk-individual-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Saskatchewan Individual Tax Return -- Provincial T1 Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# SK Individual Return
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Province | Saskatchewan (Canada) |
 | Tax | Provincial Personal Income Tax |
 | Currency | CAD only |
@@ -34,16 +31,20 @@ metadata:
 
 ### Saskatchewan Provincial Tax Rates (2025)
 
+**Saskatchewan Provincial Tax Rates (2025)**
+
 | Taxable Income (CAD) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 52,057 | 10.5% |
 | 52,058 -- 148,734 | 12.5% |
 | 148,735+ | 14.5% |
 
 ### Key Saskatchewan Features
 
+**Key Saskatchewan Features**
+
 | Feature | Detail |
-|---|---|
+| --- | --- |
 | Provincial sales tax (PST) | 6% |
 | GST | 5% federal (no HST -- GST + PST are separate) |
 | Basic personal amount (2025) | $17,661 |
@@ -56,8 +57,10 @@ metadata:
 
 ### Combined Federal + Saskatchewan Marginal Rates (2025)
 
+**Combined Federal + Saskatchewan Marginal Rates (2025)**
+
 | Taxable Income (CAD) | Combined Rate |
-|---|---|
+| --- | --- |
 | 0 -- 52,057 | 25.5% |
 | 52,058 -- 57,375 | 25.5% |
 | 57,376 -- 114,750 | 31% |
@@ -68,28 +71,32 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown residency province on Dec 31 | Do not compute provincial tax -- confirm province |
 | Unknown marital status | Single (no spousal credit) |
 | Unknown number of dependants | Zero |
-
----
 
 ## Section 2 -- Classification and Filing
 
 ### 2.1 T1 Structure
 
+**T1 Structure**
+
 | Schedule | Purpose |
-|---|---|
+| --- | --- |
 | T1 General | Federal return |
 | Form SK428 | Saskatchewan Tax and Credits |
 | Schedule SK(S12) | Saskatchewan Tax calculation |
 
 ### 2.2 Provincial Non-Refundable Credits (Form SK428)
 
+**Provincial Non-Refundable Credits (Form SK428)**
+
 | Credit | Amount (2025) | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Basic personal amount | $17,661 | 10.5% |
 | Spousal / common-law partner | $17,661 | 10.5% |
 | CPP/EI contributions | Actual | 10.5% |
@@ -102,54 +109,57 @@ metadata:
 
 ### 2.3 Saskatchewan Refundable Credits
 
+**Saskatchewan Refundable Credits**
+
 | Credit | Detail |
-|---|---|
+| --- | --- |
 | Saskatchewan Low-Income Tax Credit | $388/adult + $150/child; income-tested |
 | Saskatchewan Sales Tax Credit | Built into federal GST/HST credit |
 | Graduate Retention Program (GRP) | Up to $20,000 rebate of tuition over 7 years post-graduation |
 | Active Families Benefit | $150/child for eligible activities |
 
----
-
 ## Section 3 -- Computation Method
 
 ### Step 1: Calculate Taxable Income
-Same as federal taxable income (Line 26000).
+
+- **Calculate Taxable Income** — Same as federal taxable income (Line 26000).  _(Line 26000)_
 
 ### Step 2: Apply Saskatchewan Bracket Rates
-- First $52,057 × 10.5%
-- $52,058 to $148,734 × 12.5%
-- Above $148,734 × 14.5%
+
+- **Apply Saskatchewan Bracket Rates** — First $52,057 × 10.5%; $52,058 to $148,734 × 12.5%; Above $148,734 × 14.5%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
-Total credit amounts × lowest bracket rate (10.5%).
+
+- **Subtract Non-Refundable Tax Credits** — Total credit amounts × lowest bracket rate (10.5%).
 
 ### Step 4: Net Provincial Tax
-Result = Saskatchewan tax payable.
+
+- **Net Provincial Tax** — Result = Saskatchewan tax payable.
 
 ### Step 5: Apply Refundable Credits
-Subtract applicable refundable credits.
 
----
+- **Apply Refundable Credits** — Subtract applicable refundable credits.
 
 ## Section 4 -- PST Considerations
 
+**PST Considerations**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | PST rate | 6% on most goods and some services |
 | Exemptions | Basic groceries, prescription drugs, children's clothing (under 15) |
 | Application | PST is separate from GST (not combined into HST) |
 | Business input | PST is NOT recoverable as input tax credit -- it's a cost |
 | Impact on income tax | PST paid on business purchases is part of the expense cost (fully deductible) |
 
----
-
 ## Section 5 -- Transaction Patterns and Income Types
 
 ### 5.1 Income Types
 
+**Income Types**
+
 | Income Source | Reporting | Notes |
-|---|---|---|
+| --- | --- | --- |
 | T4 Employment income | Line 10100 | Main source for most SK residents |
 | T4A Pension / retirement | Line 11500/13000 | May qualify for pension income amount |
 | T5 Investment income | Various lines | Eligible dividends get enhanced gross-up and dividend tax credit |
@@ -161,44 +171,37 @@ Subtract applicable refundable credits.
 
 ### 5.2 Saskatchewan-Specific Dividend Tax Credit
 
+**Saskatchewan-Specific Dividend Tax Credit**
+
 | Dividend Type | Federal Gross-Up | SK Credit Rate |
-|---|---|---|
+| --- | --- | --- |
 | Eligible dividends (public corps) | 38% gross-up | 11% of taxable amount |
 | Non-eligible dividends (CCPCs) | 15% gross-up | 2.105% of taxable amount |
 
 ### 5.3 Capital Gains
 
-Capital gains for Saskatchewan residents follow federal rules:
-- 50% inclusion rate for individuals (first $250,000 of net gains)
-- 66.67% inclusion for gains above $250,000 (effective June 2024)
-- Capital gains on qualified small business corporation shares eligible for Lifetime Capital Gains Exemption ($1,250,000 in 2025)
-
----
+- **Capital Gains for Saskatchewan residents** — Capital gains for Saskatchewan residents follow federal rules: 50% inclusion rate for individuals (first $250,000 of net gains); 66.67% inclusion for gains above $250,000 (effective June 2024); Capital gains on qualified small business corporation shares eligible for Lifetime Capital Gains Exemption ($1,250,000 in 2025)
 
 ## Section 6 -- Edge Cases
 
 ### 6.1 Farm Income
-Saskatchewan has significant agricultural activity. Farm losses may be restricted under Section 31 (restricted farm losses limited to $2,500 + 50% of next $30,000 = max $17,500 per year). Full farm losses available if farming is chief source of income.
 
-Saskatchewan farmers may benefit from:
-- Cash vs accrual accounting election for farming
-- AgriStability and AgriInvest payments (taxable)
-- Deferral of proceeds on grain deliveries to next year (ITA s. 76)
-- Saskatchewan Farm and Ranch Water Infrastructure Program (non-taxable grants in some cases)
+- **Farm Income** — Saskatchewan has significant agricultural activity. Farm losses may be restricted under Section 31 (restricted farm losses limited to $2,500 + 50% of next $30,000 = max $17,500 per year). Full farm losses available if farming is chief source of income. Saskatchewan farmers may benefit from: - Cash vs accrual accounting election for farming - AgriStability and AgriInvest payments (taxable) - Deferral of proceeds on grain deliveries to next year (ITA s. 76) - Saskatchewan Farm and Ranch Water Infrastructure Program (non-taxable grants in some cases)  _(ITA s. 76; Section 31)_
 
 ### 6.2 Resource Income
-Saskatchewan resource surcharge may apply to corporations with Saskatchewan resource income. Not applicable to individuals directly. However, individuals receiving royalties from potash, oil, or uranium properties report as other income.
+
+- **Resource Income** — Saskatchewan resource surcharge may apply to corporations with Saskatchewan resource income. Not applicable to individuals directly. However, individuals receiving royalties from potash, oil, or uranium properties report as other income.
 
 ### 6.3 Northern Residents Deduction
-Residents of prescribed northern zones in Saskatchewan (e.g., northern communities above ~54th parallel) may claim the northern residents deduction:
-- Basic residency amount: $11.00/day ($4,015/year for full-year residents)
-- Additional 50% if in prescribed northern zone (vs intermediate zone)
-- Travel benefits: deduction for up to 2 trips per household member
+
+- **Northern Residents Deduction** — Residents of prescribed northern zones in Saskatchewan (e.g., northern communities above ~54th parallel) may claim the northern residents deduction: Basic residency amount: $11.00/day ($4,015/year for full-year residents); Additional 50% if in prescribed northern zone (vs intermediate zone); Travel benefits: deduction for up to 2 trips per household member
 
 ### 6.4 Graduate Retention Program (GRP) Detail
 
+**Graduate Retention Program (GRP) Detail**
+
 | Element | Detail |
-|---|---|
+| --- | --- |
 | Eligibility | Graduates of eligible Saskatchewan post-secondary institutions |
 | Maximum rebate | Up to $20,000 of tuition rebated |
 | Claim period | 7 years from graduation |
@@ -207,39 +210,32 @@ Residents of prescribed northern zones in Saskatchewan (e.g., northern communiti
 | Not transferable | Cannot be transferred to spouse/parent |
 
 ### 6.5 Saskatchewan Pension Plan (SPP)
-Voluntary supplemental pension for SK residents. Contributions deductible as RRSP contributions (reduces RRSP room). Maximum contribution $7,000/year.
 
----
+- **Saskatchewan Pension Plan (SPP)** — Voluntary supplemental pension for SK residents. Contributions deductible as RRSP contributions (reduces RRSP room). Maximum contribution $7,000/year.
 
 ## Section 7 -- Worked Example
 
 ### Single taxpayer, employment income $85,000 (2025)
 
+**Single taxpayer, employment income $85,000 (2025)**
+
 | Step | Calculation | Amount |
-|---|---|---|
-| Taxable income | | $85,000 |
+| --- | --- | --- |
+| Taxable income |  | $85,000 |
 | SK tax on first $52,057 | $52,057 × 10.5% | $5,466 |
 | SK tax on $52,058 -- $85,000 | $32,943 × 12.5% | $4,118 |
-| Gross SK provincial tax | | $9,584 |
+| Gross SK provincial tax |  | $9,584 |
 | Less: Basic personal credit | $17,661 × 10.5% | ($1,854) |
 | Less: CPP credit | ~$3,867 × 10.5% | ($406) |
 | Less: EI credit | ~$1,049 × 10.5% | ($110) |
-| Net SK provincial tax | | $7,214 |
-| Federal tax (for reference) | | $12,252 |
-| Total combined tax (approx.) | | $19,466 |
-| Effective combined rate | | ~22.9% |
-
----
+| Net SK provincial tax |  | $7,214 |
+| Federal tax (for reference) |  | $12,252 |
+| Total combined tax (approx.) |  | $19,466 |
+| Effective combined rate |  | ~22.9% |
 
 ## Section 6 -- Prohibitions
 
-- NEVER apply Alberta flat rate or other provincial rates to a Saskatchewan resident
-- NEVER combine PST and GST into HST -- Saskatchewan does not have HST
-- NEVER claim Graduate Retention Program without confirming graduation from eligible Saskatchewan institution
-- NEVER ignore the three-bracket structure -- Saskatchewan is NOT a flat-rate province
-- NEVER present tax calculations as definitive -- always label as estimated
-
----
+- **Prohibitions** — NEVER apply Alberta flat rate or other provincial rates to a Saskatchewan resident; NEVER combine PST and GST into HST -- Saskatchewan does not have HST; NEVER claim Graduate Retention Program without confirming graduation from eligible Saskatchewan institution; NEVER ignore the three-bracket structure -- Saskatchewan is NOT a flat-rate province; NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 
@@ -247,6 +243,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/sk-individual-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `sk-individual-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/sk-individual-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,27 +1,24 @@
 ---
 name: qc-individual-return
-description: "> Use this skill whenever asked about Quebec provincial income tax (TP-1) for a self-employed sole proprietor. Trigger on phrases like \"Quebec tax\", \"TP-1\", \"Quebec income tax\", \"QPP\", \"QPIP\", \"Revenu Quebec\", \"QHSF\", \"health services fund\", \"solidarity tax credit\", \"Quebec abatement\", or any question about computing Quebec provincial tax. ALWAYS read this skill before touching any Quebec provincial tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Quebec provincial income tax (TP-1) for a self-employed sole proprietor. Trigger on phrases like \"Quebec tax\", \"TP-1\", \"Quebec income tax\", \"QPP\", \"QPIP\", \"Revenu Quebec\", \"QHSF\", \"health services fund\", \"solidarity tax credit\", \"Quebec abatement\", or any question about computing Quebec provincial tax. ALWAYS read this skill before touching any Quebec provincial tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/qc-individual-return"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/qc-individual-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Quebec TP-1 Provincial Income Tax -- Sole Proprietor Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# QC Individual Return
 
 ## Section 1 -- Quick Reference
 
+**Section 1 -- Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada -- Quebec |
 | Tax | Quebec provincial income tax (TP-1) + QPP + QPIP + QHSF |
 | Currency | CAD only |
@@ -33,15 +30,17 @@ metadata:
 | Form | TP-1 + Schedule E (QPP) + Schedule F (QPIP) + TP-80 (self-employment) |
 | Filing deadline | June 15 (self-employed); payment due April 30 |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- Canadian CPA sign-off required |
+| Validated by | Live status: https://openaccountants.com/skills/qc-individual-return |
 | Skill version | 2.0 |
 
-**CRITICAL: Quebec files a SEPARATE provincial return (TP-1) with Revenu Quebec, not through CRA.**
+- **Separate provincial return requirement** — CRITICAL: Quebec files a SEPARATE provincial return (TP-1) with Revenu Quebec, not through CRA.
 
 ### Quebec Tax Rates (2025)
 
+**Quebec Tax Rates (2025)**
+
 | Taxable Income (CAD) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 53,255 | 14% |
 | 53,256 -- 106,495 | 19% |
 | 106,496 -- 129,590 | 24% |
@@ -49,8 +48,10 @@ metadata:
 
 ### QPP Self-Employed (2025)
 
+**QPP Self-Employed (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | QPP rate (double) | 12.80% (vs CPP 11.90%) |
 | QPP2 rate (double) | 8.00% |
 | Max QPP contribution | $8,678.40 |
@@ -58,51 +59,45 @@ metadata:
 
 ### QPIP Self-Employed (2025)
 
+**QPIP Self-Employed (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Rate | 0.878% |
 | Max insurable earnings | $98,000 |
 | Max premium | $860.44 |
 
 ### QHSF Self-Employed
 
-0% below $16,780. Graduated to 1% at $59,885. 1% above $59,885.
+- **QHSF graduated rate formula** — 0% below $16,780. Graduated to 1% at $59,885. 1% above $59,885.
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown province | Do not apply this skill |
 | Unknown parts familiales | 1 part (single) |
 | Unknown QHSF income | Apply graduated formula |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- province on Dec 31 (must be Quebec), net self-employment income, marital status.
-
-**Recommended** -- QPP from employment (RL-1), rent/property tax paid, family situation.
-
-**Ideal** -- complete TP-80, prior TP-1, RL slips.
+- **Minimum viable inputs** — province on Dec 31 (must be Quebec), net self-employment income, marital status. (Minimum viable)
+- **Recommended inputs** — QPP from employment (RL-1), rent/property tax paid, family situation. (Recommended)
+- **Ideal inputs** — complete TP-80, prior TP-1, RL slips. (Ideal)
 
 ### Refusal Catalogue
 
-**R-QC-1 -- Not Quebec resident.** "Province is not Quebec on December 31."
-
-**R-QC-2 -- Corporations.** "Corporate entities file separate Quebec returns."
-
-**R-QC-3 -- Part-year resident.** "Escalate."
-
----
+- **R-QC-1 -- Not Quebec resident** — Province is not Quebec on December 31.
+- **R-QC-2 -- Corporations** — Corporate entities file separate Quebec returns.
+- **R-QC-3 -- Part-year resident** — Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
-Quebec income tax is computed from TP-80 (Quebec equivalent of T2125). Transaction classification follows the same patterns as `ca-fed-t2125`. Quebec taxable income may differ from federal due to Quebec-specific rules.
-
----
+- **Transaction pattern library** — Quebec income tax is computed from TP-80 (Quebec equivalent of T2125). Transaction classification follows the same patterns as `ca-fed-t2125`. Quebec taxable income may differ from federal due to Quebec-specific rules.
 
 ## Section 4 -- Worked Examples
 
@@ -135,51 +130,45 @@ Quebec income tax is computed from TP-80 (Quebec equivalent of T2125). Transacti
 - QPP: $8,678.40. QPP2: $792.00. QPIP: $860.44. QHSF: $2,000.
 - Total: ~$51,047.68
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Separate Provincial Return
 
-Quebec is the only province that administers its own income tax. TP-1 filed with Revenu Quebec; T1 filed with CRA (with 16.5% Quebec abatement on federal tax).
+- **Separate provincial return** — Quebec is the only province that administers its own income tax. TP-1 filed with Revenu Quebec; T1 filed with CRA (with 16.5% Quebec abatement on federal tax).
 
 ### 5.2 QPP vs CPP
 
-Quebec residents always contribute to QPP, never CPP. QPP rate: 12.80% (higher than CPP 11.90%). Half deductible, half credited.
+- **QPP vs CPP** — Quebec residents always contribute to QPP, never CPP. QPP rate: 12.80% (higher than CPP 11.90%). Half deductible, half credited.
 
 ### 5.3 QPIP
 
-Replaces EI maternity/parental benefits in Quebec. Self-employed rate: 0.878%. Fully deductible from Quebec income.
+- **QPIP** — Replaces EI maternity/parental benefits in Quebec. Self-employed rate: 0.878%. Fully deductible from Quebec income.
 
 ### 5.4 QHSF
 
-Self-employed pay directly on TP-1. Graduated from 0% to 1% between $16,780 and $59,885. Flat 1% above $59,885.
+- **QHSF** — Self-employed pay directly on TP-1. Graduated from 0% to 1% between $16,780 and $59,885. Flat 1% above $59,885.
 
 ### 5.5 Quebec Abatement
 
-16.5% abatement on federal basic tax (on federal T1, line 44000).
-
----
+- **Quebec Abatement** — 16.5% abatement on federal basic tax (on federal T1, line 44000).
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Solidarity Tax Credit
 
-QST component $360/adult + housing $756 + Northern village $2,005. Reduced by 3% of family income above $40,060. Flag for reviewer.
+- **Solidarity Tax Credit** — QST component $360/adult + housing $756 + Northern village $2,005. Reduced by 3% of family income above $40,060. Flag for reviewer.
 
 ### 6.2 Work Premium
 
-Refundable credit based on work income. Varies by family status. Flag for reviewer.
+- **Work Premium** — Refundable credit based on work income. Varies by family status. Flag for reviewer.
 
 ### 6.3 Quebec vs Federal Income Differences
 
-Quebec taxable income may differ from federal. Always compute independently. Flag for reviewer.
+- **Quebec vs Federal Income Differences** — Quebec taxable income may differ from federal. Always compute independently. Flag for reviewer.
 
 ### 6.4 QPP vs CPP Interaction
 
-If client has both QPP and CPP contributions in the same year (employment outside Quebec), adjustments needed. Flag.
-
----
+- **QPP vs CPP Interaction** — If client has both QPP and CPP contributions in the same year (employment outside Quebec), adjustments needed. Flag.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -212,13 +201,9 @@ REVIEWER FLAGS:
   [ ] Quebec abatement noted on federal?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 Quebec tax is computed from TP-80 data. Bank statement classification follows `ca-fed-t2125` patterns. Quebec-specific banks: Desjardins (CSV: Date, Description, Withdrawal, Deposit).
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -236,12 +221,12 @@ ONBOARDING QUESTIONS -- QUEBEC TP-1
 10. Prior year avis de cotisation (TP-1)?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Quebec brackets | Taxation Act (Quebec), s. 750 |
 | Non-refundable credits | Taxation Act (Quebec), s. 752+ |
 | QPP | Act respecting the QPP, s. 50+ |
@@ -249,8 +234,6 @@ ONBOARDING QUESTIONS -- QUEBEC TP-1
 | QHSF | Act respecting RAMQ, s. 34 |
 | Quebec abatement | ITA (Canada), s. 120(2) |
 | Solidarity credit | Taxation Act (Quebec), s. 1029.8.116.12+ |
-
----
 
 ## PROHIBITIONS
 
@@ -262,14 +245,30 @@ ONBOARDING QUESTIONS -- QUEBEC TP-1
 - NEVER combine with another provincial skill
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/qc-individual-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `qc-individual-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/qc-individual-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

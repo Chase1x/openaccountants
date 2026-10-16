@@ -1,14 +1,12 @@
 ---
 name: sage-integration
-description: "> Integration skill for Sage 50 and Sage Business Cloud (Sage Accounting) CSV exports. Activate when the user uploads a Sage CSV, Sage transaction export, or mentions Sage 50, Sage Accounting, or Sage Business Cloud."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Integration skill for Sage 50 and Sage Business Cloud (Sage Accounting) CSV exports. Activate when the user uploads a Sage CSV, Sage transaction export, or mentions Sage 50, Sage Accounting, or Sage Business Cloud."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: integration
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/sage-integration"
-  obligation: INT
+  openaccountants_url: "https://www.openaccountants.com/skills/sage-integration"
+  jurisdiction: "GLOBAL"
+  last_updated: "2026-06-12"
 ---
 
 # Sage Integration Skill v1.0
@@ -258,6 +256,6 @@ Date,Description,Amount
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/sage-integration) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `sage-integration` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/sage-integration. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,470 +1,202 @@
 ---
 name: malta-ssc
-description: "> Use this skill whenever asked about Malta Social Security Contributions (SSC) for self-employed or self-occupied individuals. Trigger on phrases like \"how much SSC do I pay\", \"Class 2 contributions\", \"social security self-employed\", \"SSC calculation\", \"SSC arrears\", \"do I need to pay SSC\", \"SSC and income tax\", \"DSS payment\", \"Class 2 quarterly debit\", or any question about Malta SSC obligations for a self-employed client. Also trigger when classifying bank statement transactions that relate to DSS debits, SSC direct debits, or government social security payments from BOV, HSBC, or other Maltese banks. Also trigger when preparing a TA24 income tax return where SSC deductibility (Box 20) is relevant. This skill covers Class 2 rates, min/max caps, payment schedule, registration, penalties, interaction with income tax, TA22 part-time regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any SSC-related work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Malta Social Security Contributions (SSC) for self-employed or self-occupied individuals. Trigger on phrases like \"how much SSC do I pay\", \"Class 2 contributions\", \"social security self-employed\", \"SSC calculation\", \"SSC arrears\", \"do I need to pay SSC\", \"SSC and income tax\", \"DSS payment\", \"Class 2 quarterly debit\", or any question about Malta SSC obligations for a self-employed client. Also trigger when classifying bank statement transactions that relate to DSS debits, SSC direct debits, or government social security payments from BOV, HSBC, or other Maltese banks. Also trigger when preparing a TA24 income tax return where SSC deductibility (Box 20) is relevant. This skill covers Class 2 rates, min/max caps, payment schedule, registration, penalties, interaction with income tax, TA22 part-time regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any SSC-related work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MT
-  category: international
-  quality: accountant-reviewed
-  openaccountants_url: "https://openaccountants.com/skills/malta-ssc"
-  tax_year: 2026
-  obligation: SSC
-  reviewed_by: "Michael Cutajar, CPA (Malta)"
+  openaccountants_url: "https://www.openaccountants.com/skills/malta-ssc"
+  jurisdiction: "MT"
+  tax_year: "2026"
+  last_updated: "2026-09-27"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Malta Social Security Contributions (SSC) -- Self-Employed Skill v2.0
+# Malta social security contributions: Class 2 (self-employed and self-occupied), Class 1 and the Maternity Leave Fund
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Scope ([Social Security Act, Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-## Section 1 -- Quick reference
+This Guide covers Malta social security contributions under the Social Security Act (Cap. 318):
 
-**Read this whole section before computing or classifying anything.**
+- **Class 2**, paid by self-occupied and self-employed people. This is the main subject.
+- **Class 1**, paid by employees and their employers, and the employer-only **Maternity Leave Fund** contribution. These are summarised only. For payroll mechanics (basic weekly wage, FSS, FS5/FS3/FS7), use the malta-payroll Guide.
 
-| Field | Value |
-|---|---|
-| Country | Malta (Republic of Malta) |
-| Primary Legislation | Social Security Act, Chapter 318 |
-| Supporting Legislation | Income Tax Act Article 14 (SSC deductibility); Income Tax Act Article 4C (TA22 regime) |
-| Tax Authority | Department of Social Security (DSS), Malta |
-| Rate Publisher | MTCA (publishes annual rate tables) |
-| Self-employed rate | 15% of prior year net income (clamped to min/max) |
-| SA minimum (2026) | EUR 1,881.36/year (EUR 36.18/week) |
-| SC maximum, pre-1962 | EUR 3,825.12/year (EUR 73.56/week) |
-| SC maximum, post-1962 | EUR 4,362.28/year (EUR 83.89/week) |
-| Payment frequency | Quarterly |
-| Payment method | Direct debit or bank transfer to DSS |
-| Deadlines | Q1: 30 Apr, Q2: 31 Jul, Q3: 31 Oct, Q4: 31 Jan following year |
-| Currency | EUR only |
-| Validated by | Pending — requires sign-off by a Maltese warranted accountant |
-| Validation date | Pending |
+**Year.** This Guide is for tax year 2026 (contribution year 2026). Contributions run by *contribution year*, which "means the period starting from the first Monday in January and ending on the last Sunday before the first Monday in January of the following year" (article 2). The primary year here is contribution year 2026: Monday 5 January 2026 to Sunday 3 January 2027, which is 52 weeks. A Class 2 category is fixed on net earnings or income of "the calendar year immediately preceding the contribution year" (Tenth Schedule). So 2026 Class 2 turns on 2025 earnings.
 
-**Class overview:**
+**Sources.** Everything here comes from the Laws of Malta (legislation.mt). The MTCA website (mtca.gov.mt), which now administers contribution collection, refused our automated source checks on 25 September 2026. Anything that exists only there is marked **check**, with no figure.
 
-| Class | Who | Rate |
-|---|---|---|
-| Class 1 | Employees | 10% employee + 10% employer |
-| Class 1A | Employers (maternity fund) | 0.3% of gross salary |
-| Class 2 | Self-employed / Self-occupied | 15% of net income (clamped to min/max) |
+**The figures problem.** The rate table in the law (the Tenth Schedule) on legislation.mt is the one substituted by [L.N. 10 of 2025](https://legislation.mt/getpdf/67a08f18b52f3e3cf8949c52), which "shall be deemed to have come into force on 1st January 2024". Its notes refer to pensionable income that "with effect from January 2024 is guaranteed at the amount of €27,679.09". These are **2024 figures**. We found no legal notice updating the table for 2025 or 2026, and [Act III of 2026](https://legislation.mt/getpdf/69d8ed326fe5fd3994d17430) does not amend it. The weekly amounts rise each year in practice, so the **2025 and 2026 weekly minimum, maximum and band limits are check**: take them from MTCA's published Class 2 and Class 1 tables. The 15% and 10% rates, the categories and the rules below are current law.
 
-**Conservative defaults:**
+**Not covered:** income tax, including whether and where contributions go on the tax return (see the malta-income-tax Guide); payroll withholding and FS forms (see malta-payroll); entitlement to benefits and pensions; cross-border cases under EU coordination rules or bilateral agreements (A1 certificates).
 
-| Ambiguity | Default |
-|---|---|
-| Unknown birth year | STOP -- do not compute SSC without birth year |
-| Unknown employment status | Assume Class 2 applies (self-employed) |
-| Unknown prior year net income | Apply SA minimum (EUR 1,881.36) |
-| First year or no TA24 filed | SA minimum applies |
-| Unknown whether full-time employed | Ask -- do not assume Class 1 exemption |
-| Unknown whether DSS debit is SSC or penalty | Classify as SSC; flag for reviewer |
+## Ask the client first
 
----
+- **Date of birth.** On or before 31 December 1961, or on or after 1 January 1962? It sets the maximum (SC) and the top of the 15% band ([Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c)). Do not compute without it.
+- **Age.** Under 65? The Act defines a self-employed person as one who "has not yet passed his sixty-fifth birthday". Over pension age, ask whether they still work and whether they draw a pension.
+- **What they do.** A trade, business or profession producing earnings (self-occupied), or only passive income such as rent or investments (self-employed, not self-occupied)?
+- **Net earnings or income for the previous calendar year** (2025 for 2026), taken net of expenses directly incurred. Is the 2025 income tax return filed?
+- **Employment.** Are they also employed, full-time or part-time? Is the employer paying Class 1?
+- **Status.** Married (and not legally separated or abandoned), single, full-time student, pensioner, part-time self-occupied woman, full-time farmer or breeder?
+- **First year?** When did the self-occupation start, and was the person self-occupied before (a returner)?
+- **Arrears.** Any unpaid or underpaid Class 2 from earlier years? Get the MTCA statement.
+- **Special work.** Outworker, tourist guide, driver of a Government impressed vehicle, host family, homeworker?
 
-## Section 2 -- Required inputs and refusal catalogue
+## The method, step by step
 
-### Required inputs
+1. **Classify the person** ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c), articles 2, 3 and 6). Every person who has passed their sixteenth birthday but not reached retirement is insured "either as an employed person, or as a self-employed person or as a self-occupied person" (article 3(1)). A person is **self-occupied** if engaged "in any activity through which earnings exceeding €910 per annum are being derived". A **self-employed person** is ordinarily resident in Malta, under 65, and neither employed nor self-occupied (for example, living on rents or investments).
+2. **Check the exclusions and exemptions first** (articles 3(2), 6 and 12; see the boundary table). Some people owe nothing, or can apply for a low-income certificate.
+3. **Measure the base.** For a self-occupied person, use *earnings*: income "from any economic activity ... net of expenses directly incurred", excluding bank interest, investment income, rents and ground rents, income not directly related to the activity, and the spouse's income (article 2). For a self-employed person, use *net income*: "total income net of expenses directly incurred in generating that income". In both cases exclude "Maternity Benefit, Children's Allowance and any ex-gratia Benefit payable under article 88" (Tenth Schedule).
+4. **Use the previous calendar year.** The category for contribution year 2026 depends on 2025 net earnings or income.
+5. **Pick the category** from the [Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c) table for the year (Part II for self-employed, Part III for self-occupied): SA flat minimum, SB 15% band, or SC flat maximum, with the maximum set by date of birth. For 2026 use MTCA's table (check).
+6. **Compute the weekly amount** ([Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c)). In the SB band it is "the weekly equivalent of 15% of their annual net earnings calculated to the nearest cent": 15% of the annual figure divided by the weeks in the year (52 for 2026).
+7. **Schedule payment** four-monthly, in arrears, for the periods ending on the last day of April, August and December, at MTCA (article 11).
+8. **Deal with late or wrong payments** under article 116: interest from 1 January 2026, and the five-year window for the person's own requests.
 
-**Minimum viable** -- birth year and employment status. Without birth year, STOP. Do not compute SSC.
+## Class 2 figures, with years ([Cap. 318, Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-**Recommended** -- prior year net self-employment income (from filed TA24), number of years of self-employment, and whether a TA24 has been filed for the prior year.
+**Rates that do not change by year.** Class 2 in the SB band is 15% of the previous year's net earnings or income, as a weekly equivalent. The Government adds a contribution "equivalent to 50% of the contribution paid by the self-employed or self-occupied person" out of the Consolidated Fund (article 10(4)). That State share is not paid by the client.
 
-**Ideal** -- DSS annual statement, bank statements showing quarterly SSC debits, prior year TA24 with Box 20 SSC deduction.
+**2026 weekly amounts and band limits: check.** Use MTCA's 2026 Class 2 table. Do not use the 2024 amounts below for 2026 bills.
 
-### Refusal catalogue
+### Self-occupied persons (Tenth Schedule, Part III): table in force from 1 January 2024 ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-**R-MT-SSC-1 -- Birth year unknown.** *Trigger:* birth year not provided. *Message:* "Birth year is mandatory for SSC computation. The maximum contribution cap (SC) differs for persons born before vs on/after 1 January 1962. Cannot proceed without this information."
+| Category | Who (net earnings in the preceding calendar year) | Weekly contribution (2024 table) |
+| --- | --- | --- |
+| SA | Earnings "less than €12,028.92" | €34.70 flat. Reduced options below |
+| SB, born 31 Dec 1961 or before | Earnings over €12,028.93, not over €22,000 | 15% of annual net earnings, weekly equivalent to the nearest cent |
+| SB, born 1 Jan 1962 or after | Earnings over €12,028.93, not over "€27,678.08" (as printed) | 15% of annual net earnings, weekly equivalent |
+| SC, born 31 Dec 1961 or before | Earnings over €22,000.01 | €63.46 flat |
+| SC, born 1 Jan 1962 or after | Earnings over €27,679.09 | €79.84 flat |
 
-**R-MT-SSC-2 -- SSC arrears computation.** *Trigger:* client has unpaid SSC from prior years. *Message:* "SSC arrears are computed at current rates (not historical rates) for post-1962 clients, with 1% per month penalties compounding indefinitely. Do not attempt to quantify arrears without a DSS statement. Escalate to a warranted accountant immediately."
+Reduced SA options in Part III:
 
-**R-MT-SSC-3 -- Disability or special exemptions.** *Trigger:* client claims disability exemption, student credited contributions, or pensioner pro-rata reduction. *Message:* "Exemptions and reduced rates for disability, students, and pensioners require case-specific confirmation from DSS. Escalate to a warranted accountant."
+- A **part-time self-occupied woman**, a **full-time student** who is part-time self-occupied, or a **pensioner** who is part-time self-occupied, with earnings not over €12,028.92, may pay "15% of the annual net earnings" instead of the SA flat amount. Paying "less than €34.70 per week" may "result in the payment of a reduced contributory benefit or contributory pension" (Note 1).
+- A **full-time farmer or breeder** pays €23.13 in SA, "10% of the annual net earning" in SB, and in SC €42.31 (born 1961 or before) or €53.23 (born 1962 or after).
 
-**R-MT-SSC-4 -- Group pension arrangements.** *Trigger:* client asks about group pension or occupational scheme interaction with SSC. *Message:* "Group pension arrangements and their interaction with statutory SSC are outside the scope of this skill. Escalate to a warranted accountant."
+### Self-employed persons, not self-occupied (Tenth Schedule, Part II): table in force from 1 January 2024 ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
----
+| Category | Who (net income in the preceding calendar year) | Weekly contribution (2024 table) |
+| --- | --- | --- |
+| SP | Income that "Exceeds € 1,005 but does not exceed €10,567.92" (single persons who are not self-occupied only) | €30.48 |
+| SA | Income "less than €12,028.92" | €34.70 |
+| SB | Same bands as self-occupied (pre-1962 top €22,000.00; post-1962 top €27,679.08) | 15% weekly equivalent |
+| SC | Over €22,000.01 (born 1961 or before) / over €27,679.09 (born 1962 or after) | €63.46 / €79.84 |
 
-## Section 3 -- Payment pattern library
+**How the flat amounts fit the 15% rule.** On the 2024 table the flat amounts are the 15% weekly equivalent at the band edges: €12,028.92 × 15% ÷ 52 = €34.70, €22,000 × 15% ÷ 52 = €63.46, and €27,679.09 × 15% ÷ 52 = €79.84. So the SC maximum is reached when earnings exceed the pensionable income ceiling for the person's birth cohort.
 
-This is the deterministic pre-classifier for bank statement transactions related to social security. When a transaction matches a pattern below, apply the treatment directly. Do not second-guess.
+**Drafting slips in the 2024 table.** The table says SA is "less than €12,028.92" while SB starts "exceeds €12,028.93", leaving a one-cent gap. Part III prints the post-1962 SB ceiling as "€27,678.08" but Part II prints "€27,679.08". Treat these as typos and follow MTCA's table.
 
-**How to read this table.** Match by case-insensitive substring on the counterparty/reference as it appears in the bank statement. SSC payments always EXCLUDE from any VAT return or revenue/expense classification -- they are statutory personal obligations, not business supplies.
+**Annual cost.** The Act sets weekly amounts. An annual figure is the weekly amount times the contribution weeks in the year. 2026 has 52 weeks; some years have 53 (2024 ran from Monday 1 January 2024 to Sunday 5 January 2025). Do not reuse an old annual total.
 
-### 3.1 DSS quarterly debits (Class 2 self-employed)
+**Old figures you may see.** Earlier versions of this Guide quoted "2025" weekly amounts and annual totals. We could not find them in the law, so we have removed them. If a client quotes a figure, check it against MTCA's table for that year.
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| DSS, DEPARTMENT OF SOCIAL SECURITY | EXCLUDE -- SSC payment | Quarterly Class 2 direct debit or bank transfer |
-| SOCIAL SECURITY, SOC SEC | EXCLUDE -- SSC payment | Same |
-| SSC, S.S.C. | EXCLUDE -- SSC payment | Abbreviated reference |
-| CLASS 2, CLASS TWO | EXCLUDE -- SSC payment | Explicit class reference |
-| KONTRIBUZZJONI SOCJALI | EXCLUDE -- SSC payment | Maltese-language reference |
+## Class 1 and the Maternity Leave Fund, in summary ([Cap. 318, article 7 and Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-### 3.2 DSS debits appearing on specific Maltese banks
+- **Who and how much.** For every person in insurable employment "three contributions per week shall be payable ... one by the employed person, one by his employer, and one out of the Consolidated Fund" (article 7(1)). Employee and employer each pay 10% "calculated to the nearest cent" of the **basic weekly wage**, between a flat low-wage amount and a weekly maximum. The State adds "50% of the combined weekly contributions" (article 7(2)(b)).
+- **Base.** The basic weekly wage excludes "overtime, any form of bonus, any extra allowances, any remuneration in kind and commissions" (article 2). With two insurable jobs, the person is treated as employed in the one "which carries the higher or highest basic wage or salary" (article 7(1)).
+- **2024 table (Part I), not 2026.** Category A (under 18, basic weekly wage not over €213.54) €6.62 each side. Category B (18 and over, not over €213.54) €21.35 each side, or 10% if part-time and electing. Category C is 10%. Category D, the maximum, is €42.31 each side (born 1961 or before) and €53.23 (born 1962 or after). Categories E and F (students on work-study schemes) cap at €4.38 and €7.94. Part I prints the Category C and D boundary inconsistently ("€423.07", "€523.28", "€532.29", "€515.99"). **2026 weekly figures: check** on MTCA's Class 1 table. The malta-payroll Guide carries the detail.
+- **Low earners.** An employee whose basic weekly earnings are below the national minimum wage for age 18 and over may elect 10% of actual pay instead of Category B. Since 1 January 2018 this applies "only ... to part-time employees whose weekly basic earnings from such part-time employment do not exceed the National Minimum Wage". A person with more than one part-time job and no full-time job may, from 1 January 2022, elect to pay on all part-time jobs up to "forty (40) hours" a week (article 7(2)(a)).
+- **Employer's share stays with the employer.** An employer who deducts its own share from pay "shall be guilty of an offence" (article 8(2)).
+- **Maternity Leave Fund (Part IV), employer only.** The employer pays 0.3% "calculated to the nearest cent" of the basic weekly wage. The 2024 table sets €0.20 (Category A), €0.64 (Category B), and a cap of €1.27 (born 1961 or before) or €1.60 (born 1962 or after); E and F cap at €0.13 and €0.24. 2026 amounts: check. Nothing is deducted from the employee, and it never applies to Class 2.
 
-| Bank | Typical debit description | Treatment |
-|---|---|---|
-| BOV (Bank of Valletta) | "DSS DIRECT DEBIT" or "DEPT OF SOCIAL SECURITY" | EXCLUDE -- SSC |
-| HSBC Malta | "DEPARTMENT OF SOCIAL SECURITY" or "DSS D/D" | EXCLUDE -- SSC |
-| APS Bank | "DSS" or "SOC SECURITY CONTRIB" | EXCLUDE -- SSC |
-| Lombard Bank | "SOCIAL SECURITY" | EXCLUDE -- SSC |
-| Revolut / Wise | Rare -- DSS debits typically come from local Maltese accounts | If present, EXCLUDE |
+## Boundary and exception table ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-### 3.3 Income tax payments (NOT SSC -- do not confuse)
+| Situation | Treatment | Law |
+| --- | --- | --- |
+| Activity earnings of €910 a year or less | Not self-occupied. May still be a self-employed person liable on other income, unless an exclusion below applies | art. 2 |
+| Self-employed (not self-occupied), yearly means not over €1,005 (or €1,470 if married and wholly maintaining a spouse who is not self-occupied or employed) | Can apply for a "certificate of low income valid for twelve months" and is then exempt. May instead opt to pay SP (single) or SA (married). Not renewing within three months of expiry can make SP or SA payable | art. 12(1), (3) |
+| Married, not legally separated or abandoned, not self-occupied | "shall not be deemed to be a self-employed person" from 5 January 2004, unless they elected to continue under the proviso | art. 3(2) |
+| Full-time student at a recognised institution | Not self-employed or self-occupied, unless paid as a self-occupied person. Then the student SA option (15%) may apply | art. 6(1)(b), 6(2); Tenth Schedule Part III |
+| Person receiving a pension under the Act "(other than an Injury Pension)" who is not gainfully occupied, or person receiving Social Assistance | Not self-employed or self-occupied | art. 6(1)(d), (f) |
+| Past the 65th birthday | Outside the definitions of employed and self-employed person. Confirm with MTCA how the year of the birthday is handled (check) | art. 2 |
+| Full-time employee who also has part-time self-occupied earnings | In practice Class 1 through the employer and no Class 2 on the side activity (check on mtca.gov.mt; the Act does not state this rule in terms) | art. 7; art. 14 |
+| Liable to Class 1 and also self-occupied, wants Class 2 instead | Allowed only with approval, and only while the Class 2 rate "exceeds the aggregate applicable rate of Class One" (employer plus employee). Cannot switch back until self-occupation ends | art. 14 |
+| Resident in Malta, employed abroad in non-insurable employment | May pay Class 1 instead of Class 2, on the Class 2 payment timetable; the foreign employer pays nothing | art. 13 |
+| Earnings from acting as a host family | Elective exemption from Class 2 on those earnings | art. 12(4) |
+| Self-occupied homeworker whose net earnings do not exceed 50% of the 18+ national minimum wage | Elective exemption | art. 12(5) |
+| Outworker, tourist guide, driver of a Government impressed vehicle | Entitled to an extra amount equal to "1/16 of the remuneration" from the engager (or Government) towards Class 2 | art. 15(1) |
+| Over 45, not gainfully occupied for five consecutive years, obtains a trading licence | Government pays the contributions on that self-occupation "for the first 52 weeks" | art. 15(7) |
+| Aged 59 up to 65 and working or self-occupied; or aged 59 or over and receiving an Invalidity Pension, Carers Allowance, Increased Carers Allowance or Carers Grant; or aged 59 up to 65, not working, where paying brings them to "a minimum of ten (10) years paid contributions" for a pension | May pay "up to five years of arrears" at the SA rate of the year of the claim | art. 116(5) provisos |
+| Abroad or in hospital when a Class 2 payment fell due | Deadline extends to "the 31st day of his return to Malta or discharge from hospital" | art. 116(1) proviso |
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| CFR, COMMISSIONER FOR REVENUE | EXCLUDE -- income tax, not SSC | Tax payment, not social security |
-| INLAND REVENUE, IRD | EXCLUDE -- income tax | Same |
-| FSS, FINAL SETTLEMENT SYSTEM | EXCLUDE -- employer PAYE/FSS | Not Class 2 SSC |
-| PAYE, PAYER TAX | EXCLUDE -- employer withholding | Not Class 2 SSC |
+## Worked cases ([Cap. 318, Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-### 3.4 Salary and payroll (exclude from SSC classification)
+These use the 2024 table because it is the only one in the law we could read. For a 2026 bill, swap in MTCA's 2026 amounts (check). The 15% steps are current law.
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| SALARY, PAGA, WAGES (outgoing) | EXCLUDE -- payroll expense | Not an SSC payment |
-| SALARY, PAGA (incoming) | EXCLUDE -- employment income received | Not an SSC payment |
+**Case 1: SB band.** Self-occupied web developer, born 1990, 2025 net earnings €20,000. €20,000 sits inside the SB band on the 2024 table (confirm on the 2026 table). Annual base: €20,000 × 15% = **€3,000**. Weekly equivalent to the nearest cent: €3,000 ÷ 52 = **€57.69**. Over the 52 weeks of 2026 that is €2,999.88. It is paid four-monthly in arrears on MTCA's bills.
 
-### 3.5 Pension payments (received -- not SSC contributions)
+**Case 2: SC maximum, born 1962 or later.** Self-occupied, born 1975, 2025 net earnings €60,000. This exceeds the post-1962 ceiling, so SC applies. On the 2024 table the weekly amount is **€79.84**. The 2026 amount is check. Income above the ceiling adds nothing.
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| DSS PENSION, PENSJONI | EXCLUDE -- pension income received | Not a contribution payment |
-| OLD AGE PENSION | EXCLUDE -- pension income | Not a contribution |
+**Case 3: SC maximum, born 1961 or earlier, turning 65.** Self-occupied, born 20 June 1961, 2025 net earnings €60,000. The pre-1962 maximum applies: **€63.46** a week on the 2024 table. The client passes their 65th birthday in June 2026 and then falls outside the definition of a self-employed person. Ask MTCA how contributions for the rest of 2026 are handled (check), and refer any pension question.
 
----
+**Case 4: SA minimum, and the part-time election.** Self-occupied, born 1990, 2025 net earnings €8,000. Below the SA limit, so the flat SA applies: **€34.70** a week on the 2024 table. If she is a part-time self-occupied woman (or a student or pensioner who is part-time self-occupied), she may pay 15% instead: €8,000 × 15% ÷ 52 = **€23.08** a week. Warn her that paying less than the SA amount may reduce contributory benefits and pension (Tenth Schedule, Part III, Note 1).
 
-## Section 4 -- Worked examples
+**Case 5: Passive income only.** Single, born 1985, not employed and not self-occupied, 2025 net rental income €9,000. This is a self-employed person. €9,000 is within the SP band (over €1,005, not over €10,567.92), so SP applies: **€30.48** a week on the 2024 table. If the same person were married and not separated, article 3(2) says they are not deemed self-employed, so no Class 2 is due. If their means were €900, they could apply for a low-income certificate (limit €1,005) and pay nothing while it lasts.
 
-Six bank statement classifications showing SSC-related transactions from a hypothetical self-employed Maltese IT consultant.
+**Case 6: Late payment in 2026.** €500 of Class 2 due in 2026 is paid three months late. From 1 January 2026, article 116 charges interest per month at the rate in ITMA article 44(2A). That article sets 0.6% "for every month or part thereof", unless the Minister prescribes another rate. On that basis: €500 × 0.6% × 3 = **€9.00**. Confirm the rate applied on the MTCA statement (check).
 
-### Example 1 -- Standard quarterly SSC debit (BOV)
+## When to refuse or refer
 
-**Input line:**
-`30.04.2026 ; DEPT OF SOCIAL SECURITY ; DEBIT ; Q1 2026 CLASS 2 ; -470.34 ; EUR`
+- **Refuse to compute without the date of birth.** The maximum and the top of the SB band depend on it.
+- **Refuse to give a 2025 or 2026 weekly amount, band limit or annual total from this Guide.** Those figures must come from MTCA's current Class 2 and Class 1 tables. The 2024 table is shown for method only.
+- **Refer arrears and late charges.** Do not quantify unpaid contributions, interest or older-period additions without an official statement of what is due. Under article 116(4), "a notice by the Director ... showing the number and the amount of contributions" unpaid is "sufficient evidence ... unless the contrary is proved". For article 116 the "Director" is the Director General (Social Security), not the Commissioner for Tax and Customs (article 2), even though MTCA collects the payments. Which office issues the statement in practice is check.
+- **Refer** disability, invalidity and carer situations, students and pensioners claiming an exclusion, religious-order and Libya-employment arrears provisions, court-ordered transfers of contributions (articles 8(6), 10(5)), and anyone past pension age.
+- **Refer** cross-border cases: A1 certificates, EU coordination, bilateral agreements, and non-residents.
+- **Flag for a Maltese warranted accountant**: an employee who is also a director drawing fees; a returner restarting self-occupation after years out; a mid-year switch between employment and self-occupation; a first year of self-occupation (see below); two part-time self-occupations with no employment.
+- **Route** income tax questions, including how contributions are treated on the return, to the malta-income-tax Guide, and payroll mechanics to malta-payroll.
 
-**Reasoning:**
-Matches "DEPT OF SOCIAL SECURITY" (pattern 3.1). Amount EUR 470.34 = SA minimum quarterly (EUR 1,881.36 / 4). This is the Q1 2026 Class 2 contribution. Exclude from VAT classification. Record as SSC expense deductible in Box 20 of TA24.
+## Filing and payment ([Cap. 318, articles 11 and 116](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-**Classification:** EXCLUDE -- SSC payment. Deductible in TA24 Box 20.
+**Who collects.** Class 2 is paid "at the Malta Tax and Customs Administration in such form and manner as may from time to time be determined by the Director" (article 11, as amended by [Act III of 2026](https://legislation.mt/getpdf/69d8ed326fe5fd3994d17430), article 22). For articles 3 to 11 the "Director" is the Commissioner for Tax and Customs. Older bank statements may show payments to the Department of Social Security or Inland Revenue; newer ones should show MTCA.
 
-### Example 2 -- Mid-range SSC quarterly debit (HSBC)
+**When.** "in arrears at intervals of four months ending on the last day of April, August and December of each year" (article 11), unless the Director has approved other arrangements. So there are three payment periods a year: January to April, May to August, and September to December. The exact due date and amount are on MTCA's bill (check). The rates for each period are those in the Tenth Schedule "for the four months ending on the last day of April, August and December" (article 10(3)). Earlier versions of this Guide said quarterly: that was wrong.
 
-**Input line:**
-`31.07.2026 ; DSS D/D ; DEBIT ; SOCIAL SECURITY CONTRIBUTION ; -750.00 ; EUR`
+**First year.** The category depends on the previous year's earnings, which a new self-occupied person does not have. How MTCA bills the first year, and how it adjusts once the first income tax return is in, is check. Do not promise the SA minimum as a final figure.
 
-**Reasoning:**
-Matches "DSS D/D" (pattern 3.2, HSBC). Amount EUR 750.00 = quarterly payment for SB category (EUR 3,000 annual / 4 = EUR 750). Implies prior year net income of EUR 20,000 (15% x EUR 20,000 = EUR 3,000). Exclude from VAT.
+**Adjustments.** The Director can require a person "to produce his income tax returns and/or assessments for the purpose of establishing his net income, or earnings" (article 133). Where a contribution was paid in the wrong class, category or rate, the difference can be claimed.
 
-**Classification:** EXCLUDE -- SSC payment. Deductible in TA24 Box 20.
+**Late or short payment.** Article 116(1) charges a further contribution on Class 2 not paid in time: 10% for periods before 3 July 1989, 5% up to 2 January 2000, and 1% per month after that. "as from 1st January 2026" the 1% per month charges are "substituted by interest per month as provided for in article 44(2A) of the Income Tax Management Act". [ITMA article 44(2A)](https://legislation.mt/getpdf/69c65a5c7da36921dcc4f04b) sets 0.6% "for every month or part thereof" or another rate the Minister prescribes. People born on or after 1 January 1962 also pay that interest on arrears settled under article 116(5). If dues and the further contribution are not settled within three months, the Director may serve a judicial letter that becomes an executive title after ten days unless challenged (article 116(2)). Unpaid Class 2 is a privileged claim over the person's estate (article 116(3)).
 
-### Example 3 -- CFR tax payment (NOT SSC)
+**Time limits.** The Director's claim for unpaid Class 2, or for a difference in rate, category or class, "shall be barred by the lapse of thirty years" (article 116(5)(i)). The person's own request to pay missed contributions, or to get a refund after an adjustment, is "null and void if submitted after attainment of pension age or after the lapse of five years from the time when the proper rate of contribution was due, whichever is the earlier" (article 116(5)(ii)). The old statement that the Department "can recover up to 5 years" was wrong.
 
-**Input line:**
-`30.06.2026 ; COMMISSIONER FOR REVENUE ; DEBIT ; PT 2026 ; -1,200.00 ; EUR`
+**Reading bank statements.** Class 2 payments are statutory personal contributions: keep them out of VAT and out of business supplies. Payments go out; a credit from the Department (for example a pension or benefit) is income received, not a contribution. MTCA also collects income tax, provisional tax and FSS remittances, so a debit to MTCA (or to the Commissioner, Inland Revenue or CFR on older statements) is Class 2 only if its payment reference or the MTCA statement says so. A provisional tax payment is income tax, not a contribution: route it to the malta-income-tax Guide. Keep Class 1 paid by an employer (through the FSS remittance) separate from the client's own Class 2. An irregular lump sum marked as arrears may mix contributions and interest: get the MTCA breakdown before recording it.
 
-**Reasoning:**
-Matches "COMMISSIONER FOR REVENUE" (pattern 3.3). This is a provisional tax payment, NOT an SSC payment. Do not classify as social security. Exclude from VAT. Not deductible as SSC in Box 20 -- this is income tax.
+## 2025 contribution year (settling now) ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-**Classification:** EXCLUDE -- income tax payment. NOT SSC.
+Contribution year 2025 ran from Monday 6 January 2025 to Sunday 4 January 2026. Its category turned on 2024 net earnings or income. Its bills, and any late interest, fall under the rules above; late charges for periods up to 31 December 2025 were 1% per month, and from 1 January 2026 interest applies (the transition for a debt spanning both periods is check). The 2025 weekly amounts are check on MTCA's 2025 table.
 
-### Example 4 -- Salary outgoing (employer payroll, not SSC)
+## Completion checklist ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-**Input line:**
-`28.04.2026 ; JOHN DOE SALARY APR ; DEBIT ; PAGA ; -1,800.00 ; EUR`
+- [ ] Date of birth recorded: 31 December 1961 or before, or 1 January 1962 or after; age under 65 confirmed
+- [ ] Status fixed: employed, self-occupied (earnings over €910) or self-employed; exclusions in articles 3(2) and 6 checked
+- [ ] Low-income certificate, host-family, homeworker or start-up relief considered where relevant
+- [ ] Base measured on the previous calendar year, net of directly incurred expenses, excluding interest, rents, spouse's income and the listed benefits
+- [ ] Category taken from MTCA's table for the contribution year (2026: check), not from the 2024 table
+- [ ] SB weekly amount = 15% of annual net earnings ÷ weeks in the year, to the nearest cent
+- [ ] Reduced options (part-time women, students, pensioners, farmers) applied only where they fit, with the benefit warning given
+- [ ] Payment periods ending April, August and December; MTCA bill due dates checked
+- [ ] Arrears and late interest taken from an MTCA statement, not estimated
+- [ ] Class 1 and Maternity Fund questions routed to malta-payroll; income tax treatment routed to malta-income-tax
 
-**Reasoning:**
-Matches "PAGA" / salary pattern (3.4). This is a wage payment to an employee, not an SSC contribution. Class 1 employer contributions may also appear separately but are payroll costs, not the client's Class 2 SSC.
-
-**Classification:** EXCLUDE -- payroll expense. NOT the client's Class 2 SSC.
-
-### Example 5 -- Pension income received (not a contribution)
-
-**Input line:**
-`05.05.2026 ; DSS PENSION ; CREDIT ; OLD AGE PENSION MAY ; +680.00 ; EUR`
-
-**Reasoning:**
-Matches "DSS PENSION" (pattern 3.5). This is a pension benefit RECEIVED, not a contribution paid. Do not confuse inbound DSS credits with outbound SSC debits. Exclude from VAT. This is taxable income on the TA24, not a Box 20 deduction.
-
-**Classification:** EXCLUDE from VAT. Taxable income (not an SSC deduction).
-
-### Example 6 -- Ambiguous DSS debit (penalty or arrears)
-
-**Input line:**
-`15.09.2026 ; DEPARTMENT OF SOCIAL SECURITY ; DEBIT ; ARREARS PAYMENT ; -2,400.00 ; EUR`
-
-**Reasoning:**
-Matches "DEPARTMENT OF SOCIAL SECURITY" (pattern 3.1) but the amount is irregular and reference says "ARREARS PAYMENT." This could include penalties (1% per month) compounded on top of unpaid contributions. Cannot separate principal from penalty without a DSS statement. Flag for reviewer.
-
-**Classification:** EXCLUDE from VAT. Flag for reviewer -- request DSS breakdown to split contribution principal (deductible in TA24 Box 20) from penalty (not deductible).
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 5 -- Tier 1 rules
+## Talk to a verified accountant
 
-These rules apply when bank statement data is clear and all required inputs are available. Apply exactly as written.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-### Rule 1 -- SSC formula
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-```
-SSC = clamp(prior_year_net_income x 15%, SA_minimum, SC_maximum)
-```
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-Where:
-- SA minimum = EUR 1,881.36/year
-- SC maximum (pre-1962) = EUR 3,825.12/year
-- SC maximum (post-1962) = EUR 4,362.28/year
+## Today's figures and who stands behind this skill
 
-### Rule 2 -- Birth year determines ONLY the SC maximum
-
-Born before 1 January 1962: SC maximum = EUR 3,825.12. Born on or after 1 January 1962: SC maximum = EUR 4,362.28. Birth year does NOT affect SA minimum or the 15% SB rate.
-
-### Rule 3 -- SSC is based on PRIOR year net income
-
-2026 SSC = based on 2025 net income from filed TA24. Not current year estimates.
-
-### Rule 4 -- First year or no TA24 filed = SA minimum
-
-First year of self-employment: SA minimum applies as a legislative provision, not just a default. No prior year TA24 filed: SA minimum applies until DSS assessment is made.
-
-### Rule 5 -- Minimum always applies
-
-Even at zero income, the SA minimum (EUR 1,881.36) is due once registered. There is no zero-SSC outcome.
-
-### Rule 6 -- Full-time employed (Class 1) exempts from Class 2
-
-If the client is a full-time employee paying Class 1 NIC, no Class 2 is due on side income. Class 1 covers everything.
-
-### Rule 7 -- SSC is deductible in TA24 Box 20
-
-SSC paid in Year X is deducted from income in Year X's TA24 (Box 20). This reduces taxable income before tax rate application.
-
-### Rule 8 -- Payment schedule
-
-| Quarter | Period | Due Date |
-|---|---|---|
-| Q1 | Jan -- Mar | 30 April |
-| Q2 | Apr -- Jun | 31 July |
-| Q3 | Jul -- Sep | 31 October |
-| Q4 | Oct -- Dec | 31 January (following year) |
-
-### Rule 9 -- Registration threshold
-
-Self-employment income above EUR 910/year triggers SSC registration obligation. Below EUR 910 may be exempt but should still register.
-
-### Rule 10 -- Maternity fund (Class 1A) does NOT apply to self-employed
-
-Class 1A (0.3% of gross salary) is employer-only. Do not include in Class 2 calculations.
-
----
-
-## Section 6 -- Tier 2 catalogue
-
-When bank statement data is ambiguous or client circumstances are unclear, flag these situations for reviewer confirmation.
-
-### T2-1 -- Dual status ambiguity (employed but also director)
-
-**Trigger:** Client is a full-time employee but also a director of their own company drawing a director's fee.
-
-**Issue:** Director fees from a company where the client is NOT a full-time employee may trigger Class 2. If the client is a full-time employee of the same or another company with Class 1 already paid, Class 2 is not due.
-
-**Action:** Flag for reviewer. Confirm employment contract status and hours before advising.
-
-### T2-2 -- TA22 client with multiple part-time income sources
-
-**Trigger:** Client has two part-time self-employment activities, neither with full-time employment.
-
-**Issue:** TA22 requires no full-time employment. If both activities are part-time and no full-time employment exists, Class 2 applies. Unclear whether one activity tips into full-time equivalence.
-
-**Action:** Flag for reviewer.
-
-### T2-3 -- Returning self-employed (previously stopped, now restarting)
-
-**Trigger:** Client was self-employed before, stopped for several years, now restarting.
-
-**Issue:** SA minimum does NOT automatically apply to returners. SA applies only to genuine first-timers. If no prior year TA24 for self-employment exists, SA applies until assessment.
-
-**Action:** Flag for reviewer to confirm with DSS.
-
-### T2-4 -- SSC arrears from prior years
-
-**Trigger:** Client has unpaid SSC from previous years.
-
-**Issue:** DSS can recover up to 5 years. Arrears are calculated at current rates (not historical rates) for post-1962 clients. 1% per month penalty compounds indefinitely.
-
-**Action:** Do not attempt to quantify arrears without a DSS statement. Escalate to warranted accountant immediately.
-
-### T2-5 -- Mid-year switch from employment to self-employment
-
-**Trigger:** Client was employed until mid-year, then became self-employed.
-
-**Issue:** Class 1 stops when employment ends. Class 2 starts when self-employment begins. First-year SA minimum applies for the self-employment period. Quarterly SSC payments due from the relevant quarter onward.
-
-**Action:** Flag for reviewer to confirm start date and pro-rata application.
-
-### T2-6 -- Students, pensioners, and disability exemptions
-
-**Trigger:** Client may qualify for credited contributions, pro-rata reduced rate, or exemption.
-
-**Issue:** These categories require case-specific DSS confirmation.
-
-**Action:** Flag for reviewer. Do not apply exemptions without DSS confirmation.
-
----
-
-## Section 7 -- Excel working paper template
-
-When producing an SSC computation, structure the working paper as follows:
-
-```
-MALTA SSC COMPUTATION -- WORKING PAPER
-Client: [name]
-Tax Year: [year]
-Prepared: [date]
-
-INPUT DATA
-  Birth year:                    [____]
-  Born on/after 1 Jan 1962:     [YES/NO]
-  Employment status:             [Self-occupied / Self-employed / Dual]
-  First year of self-employment: [YES/NO]
-  Prior year net income (TA24):  EUR [____]
-  TA24 filed for prior year:     [YES/NO]
-
-COMPUTATION
-  Rate:                          15%
-  Gross SSC (15% x net income):  EUR [____]
-  SA minimum:                    EUR 1,881.36
-  SC maximum (pre/post-1962):    EUR [3,825.12 / 4,362.28]
-  Annual SSC (clamped):          EUR [____]
-  Quarterly SSC:                 EUR [____]
-  Category applied:              [SA / SB / SC]
-
-PAYMENT SCHEDULE
-  Q1 (due 30 Apr):              EUR [____]
-  Q2 (due 31 Jul):              EUR [____]
-  Q3 (due 31 Oct):              EUR [____]
-  Q4 (due 31 Jan):              EUR [____]
-
-TA24 INTERACTION
-  SSC paid in [year]:           EUR [____]
-  Entered in TA24 Box 20:       EUR [____]
-
-REVIEWER FLAGS
-  [List any Tier 2 flags here]
-
-CONSERVATIVE DEFAULTS APPLIED
-  [List any defaults applied and their tax impact]
-```
-
----
-
-## Section 8 -- Bank statement reading guide
-
-### How SSC debits appear on Maltese bank statements
-
-**BOV (Bank of Valletta):**
-- Description: "DSS DIRECT DEBIT" or "DEPT OF SOCIAL SECURITY" or "DEPARTMENT OF SOCIAL SECURITY"
-- Timing: End of month following quarter (30 Apr, 31 Jul, 31 Oct, 31 Jan)
-- Amount: Quarterly figure (annual / 4)
-
-**HSBC Malta:**
-- Description: "DSS D/D" or "DEPARTMENT OF SOCIAL SECURITY" or "SOC SEC CONTRIB"
-- Timing: Same quarterly cycle
-- Amount: Quarterly figure
-
-**APS Bank:**
-- Description: "DSS" or "SOC SECURITY CONTRIB" or "SOCIAL SECURITY"
-- Timing: Same quarterly cycle
-
-**Key identification tips:**
-1. SSC debits are always outgoing (DEBIT), never credits
-2. They recur quarterly with consistent amounts (unless the client changed income bracket)
-3. The amount should be divisible by 4 from a round annual figure, OR exactly EUR 470.34 (SA minimum quarterly)
-4. Do not confuse with CFR/Inland Revenue debits (income tax) or FSS debits (employer PAYE)
-5. Arrears payments may appear as irregular lump sums with "ARREARS" in the reference
-
----
-
-## Section 9 -- Onboarding fallback
-
-If the client provides only a bank statement and no other information:
-
-1. **Scan for DSS debits** -- identify all outgoing payments matching Section 3 patterns
-2. **Sum annual SSC paid** -- total all DSS debits in the year
-3. **Reverse-engineer the category:**
-   - If total approximately EUR 1,881.36 -> SA minimum (income <= EUR 12,543.72 or first year)
-   - If total between EUR 1,881.36 and EUR 3,825.12 -> SB (15% rate band)
-   - If total approximately EUR 3,825.12 -> SC pre-1962 maximum
-   - If total approximately EUR 4,362.28 -> SC post-1962 maximum
-4. **Flag for reviewer:** "SSC classification derived from bank statement amounts only. Birth year and prior year income have not been independently verified. Reviewer must confirm before filing TA24 with Box 20 deduction."
-
----
-
-## Section 10 -- Reference material
-
-### Calculation examples (2026)
-
-| Prior Year Net Income | Birth Year | Category | Annual SSC | Quarterly |
-|---|---|---|---|---|
-| EUR 8,000 | 1990 | SA | EUR 1,881.36 | EUR 470.34 |
-| EUR 0 | 1990 | SA | EUR 1,881.36 | EUR 470.34 |
-| EUR 20,000 | 1990 | SB | EUR 3,000.00 | EUR 750.00 |
-| EUR 20,000 | 1955 | SB | EUR 3,000.00 | EUR 750.00 |
-| EUR 50,000 | 1990 | SC (post-1962) | EUR 4,362.28 | EUR 1,090.57 |
-| EUR 50,000 | 1955 | SC (pre-1962) | EUR 3,825.12 | EUR 956.28 |
-
-### Self-occupied vs Self-employed
-
-- Self-occupied: trades, businesses, professions (accountant, plumber, shop owner). Entitled to pension + short-term benefits (sickness, injury, maternity).
-- Self-employed: income from rents, investments, capital gains. Entitled to pension only.
-- Both pay the same 15% Class 2 rate with the same min/max caps.
-
-### Penalties
-
-| Penalty | Rate |
-|---|---|
-| Late payment | 1% per month on outstanding amount |
-| Non-registration | All unpaid contributions + penalties |
-| Arrears lookback | DSS can claim up to 5 years of unpaid SSC |
-| Arrears rate (post-1962) | Calculated at CURRENT rates, not rates when originally due |
-
-### Test suite
-
-**Test 1:** Born 1985, prior year net income EUR 20,000, not first year. -> SB. Annual = EUR 3,000.00. Quarterly = EUR 750.00.
-
-**Test 2:** Born 1958, prior year net income EUR 60,000, not first year. -> SC (pre-1962). Annual = EUR 3,825.12. Quarterly = EUR 956.28.
-
-**Test 3:** Born 1975, prior year net income EUR 60,000, not first year. -> SC (post-1962). Annual = EUR 4,362.28. Quarterly = EUR 1,090.57.
-
-**Test 4:** Born 1990, prior year net income EUR 5,000, not first year. -> SA. Annual = EUR 1,881.36. Quarterly = EUR 470.34.
-
-**Test 5:** Born 1988, first year, no prior TA24. -> SA (first year). Annual = EUR 1,881.36. Quarterly = EUR 470.34.
-
-**Test 6:** Full-time employee paying Class 1, side income EUR 8,000. -> NO Class 2 due. Class 1 covers all.
-
-**Test 7:** Born 1992, registered self-employed, net income EUR 0. -> SA. Annual = EUR 1,881.36.
-
-**Test 8:** Client paid EUR 3,000 SSC in 2025, preparing 2025 TA24. -> EUR 3,000 in Box 20.
-
-### Prohibitions
-
-- NEVER compute SSC without knowing the client's birth year
-- NEVER use current year income -- SSC is always based on PRIOR year net income
-- NEVER tell a client they owe zero SSC because their income is low -- minimum always applies once registered
-- NEVER apply SA minimum to a returning self-employed without reviewer confirmation
-- NEVER advise on SSC arrears without a DSS statement -- do not estimate
-- NEVER conflate Class 1 and Class 2 -- they are entirely separate obligations
-- NEVER include maternity fund (Class 1A) in Class 2 calculations
-- NEVER present SSC figures as definitive -- always label as estimated and direct client to their DSS statement
-- NEVER compute SSC penalties without escalating to a warranted accountant
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/malta-ssc) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **accountant-reviewed**. Reviewed by Michael Cutajar, CPA (Malta). For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malta-ssc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malta-ssc. If neither is available, confirm every figure against the official source pages cited above before relying on it.

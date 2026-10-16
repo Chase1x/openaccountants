@@ -1,27 +1,28 @@
 ---
 name: tw-income-tax
-description: "> Use this skill whenever asked about Taiwan individual income tax. Trigger on phrases like \"Taiwan income tax\", \"綜合所得稅\", \"個人所得稅\", \"Taiwan tax return\", \"eFiling Taiwan\", \"National Taxation Bureau\", \"執行業務所得\", \"營利所得\", \"standard deduction Taiwan\", \"progressive rate Taiwan\", \"Taiwan freelance tax\", or any question about computing, filing, or planning individual income tax for a Taiwan tax resident. This skill covers the progressive rate table, deductions, exemptions, filing via eFiling, and common categories of income for self-employed professionals. ALWAYS read this skill before advising on Taiwan individual income tax."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Taiwan individual income tax. Trigger on phrases like \"Taiwan income tax\", \"綜合所得稅\", \"個人所得稅\", \"Taiwan tax return\", \"eFiling Taiwan\", \"National Taxation Bureau\", \"執行業務所得\", \"營利所得\", \"standard deduction Taiwan\", \"progressive rate Taiwan\", \"Taiwan freelance tax\", or any question about computing, filing, or planning individual income tax for a Taiwan tax resident. This skill covers the progressive rate table, deductions, exemptions, filing via eFiling, and common categories of income for self-employed professionals. ALWAYS read this skill before advising on Taiwan individual income tax."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: TW
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/tw-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/tw-income-tax"
+  jurisdiction: "TW"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Taiwan Individual Income Tax -- Skill v1.0
+# TW Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Taiwan Individual Income Tax -- Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Taiwan (Republic of China / 中華民國) |
 | Tax | Consolidated Income Tax (綜合所得稅) |
 | Currency | TWD / NTD (New Taiwan Dollar) only |
@@ -36,20 +37,24 @@ metadata:
 
 ### Progressive Tax Rates (2025)
 
+**Progressive Tax Rates (2025)**
+
 | Net Taxable Income (NT$) | Rate | Progressive Difference (NT$) |
-|---|---|---|
+| --- | --- | --- |
 | 0 -- 590,000 | 5% | 0 |
 | 590,001 -- 1,330,000 | 12% | 41,300 |
 | 1,330,001 -- 2,660,000 | 20% | 147,700 |
 | 2,660,001 -- 4,980,000 | 30% | 413,700 |
 | 4,980,001 and above | 40% | 911,700 |
 
-**Tax formula:** Net Taxable Income × Rate − Progressive Difference = Tax Payable
+- **Tax formula** — Net Taxable Income × Rate − Progressive Difference = Tax Payable
 
 ### Exemptions and Deductions (2025)
 
+**Exemptions and Deductions (2025)**
+
 | Item | Amount (NT$) |
-|---|---|
+| --- | --- |
 | Personal exemption (免稅額) | 97,000 per person |
 | Personal exemption (aged 70+) | 145,500 per person |
 | Standard deduction -- single (標準扣除額) | 131,000 |
@@ -63,8 +68,10 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown filing status | Single (individual) |
 | Unknown deduction method | Standard deduction (unless itemised clearly exceeds) |
 | Unknown income category | Clarify before proceeding |
@@ -72,14 +79,14 @@ metadata:
 | Unknown withholding | Verify via eFiling pre-filled data |
 | Business vs employment income | Employment (薪資) unless clear business/professional activity |
 
----
-
 ## Section 2 -- Income Categories
 
 ### 2.1 Categories of Income (所得類別)
 
+**Categories of Income**
+
 | Category | Chinese | Description |
-|---|---|---|
+| --- | --- | --- |
 | Category 1 | 營利所得 | Business/profit income (sole proprietor, partnership) |
 | Category 2 | 執行業務所得 | Professional practice income (lawyers, doctors, accountants, freelancers) |
 | Category 3 | 薪資所得 | Salary/wage income |
@@ -95,15 +102,17 @@ metadata:
 
 For self-employed professionals (freelancers, consultants, independent practitioners):
 
+**Computation methods**
+
 | Method | Computation | When to Use |
-|---|---|---|
+| --- | --- | --- |
 | Actual expense method | Revenue - documented expenses = net income | Better records; expenses >deemed rate |
 | Deemed expense rate (費用率) | Revenue × (1 - deemed rate) = net income | Simpler; no full records |
 
-**Common Deemed Expense Rates (費用率) by Profession:**
+**Common Deemed Expense Rates (費用率) by Profession**
 
 | Profession | Expense Rate | Net Income Rate |
-|---|---|---|
+| --- | --- | --- |
 | Lawyers (律師) | 30% | 70% |
 | CPAs / Accountants (會計師) | 30% | 70% |
 | Architects (建築師) | 35% | 65% |
@@ -118,13 +127,7 @@ For self-employed professionals (freelancers, consultants, independent practitio
 
 ### 2.3 Business Income (營利所得)
 
-For sole proprietors and small businesses:
-- Compute via bookkeeping (actual income - actual expenses)
-- OR assessed by tax authority based on industry benchmarks
-- If annual revenue ≤NT$200,000: exempt from business tax
-- If annual revenue >NT$200,000 but ≤NT$2,000,000: simplified assessment by tax authority
-
----
+- **Business income computation and thresholds** — Compute via bookkeeping (actual income - actual expenses) OR assessed by tax authority based on industry benchmarks. If annual revenue ≤NT$200,000: exempt from business tax. If annual revenue >NT$200,000 but ≤NT$2,000,000: simplified assessment by tax authority.
 
 ## Section 3 -- Computation
 
@@ -179,8 +182,10 @@ H. TAX DUE / (REFUND) = F3 - G3                        ___________
 
 ### 3.2 Worked Example -- Single Freelancer
 
+**Worked Example -- Single Freelancer**
+
 | Item | Amount (NT$) |
-|---|---|
+| --- | --- |
 | Professional practice revenue | 2,000,000 |
 | Deemed expense rate (30%) | (600,000) |
 | Net professional income | 1,400,000 |
@@ -195,8 +200,10 @@ Tax = 1,202,000 × 12% − 41,300 = **NT$102,940**
 
 ### 3.3 Worked Example -- Married with One Child
 
+**Worked Example -- Married with One Child**
+
 | Item | Amount (NT$) |
-|---|---|
+| --- | --- |
 | Husband salary income | 1,800,000 |
 | Wife professional income (net after deemed) | 700,000 |
 | Total gross income | 2,500,000 |
@@ -208,14 +215,14 @@ Tax = 1,202,000 × 12% − 41,300 = **NT$102,940**
 
 Tax = 1,579,000 × 20% − 147,700 = **NT$168,100**
 
----
-
 ## Section 4 -- Filing
 
 ### 4.1 Filing Methods
 
+**Filing Methods**
+
 | Method | Description | Notes |
-|---|---|---|
+| --- | --- | --- |
 | eFiling (網路申報) | Online via etax.nat.gov.tw | Most common; pre-filled data from withholding |
 | Tax filing software | Downloadable IRX software | Offline preparation, online submission |
 | Mobile filing | Via mobile app (手機報稅) | For simple returns |
@@ -224,8 +231,10 @@ Tax = 1,579,000 × 20% − 147,700 = **NT$168,100**
 
 ### 4.2 Filing Period and Deadlines
 
+**Filing Period and Deadlines**
+
 | Item | Date |
-|---|---|
+| --- | --- |
 | Filing period | May 1 -- May 31 |
 | Extension (for overseas taxpayers) | Automatic extension to June 30 if notified |
 | Payment deadline | May 31 (same as filing deadline) |
@@ -234,8 +243,10 @@ Tax = 1,579,000 × 20% − 147,700 = **NT$168,100**
 
 ### 4.3 Withholding Tax (扣繳)
 
+**Withholding Tax**
+
 | Income Type | Withholding Rate (Resident) |
-|---|---|
+| --- | --- |
 | Salary | Per withholding tables (progressive approximation) |
 | Professional practice fees | 10% |
 | Rent | 10% |
@@ -245,15 +256,15 @@ Tax = 1,579,000 × 20% − 147,700 = **NT$168,100**
 
 ### 4.4 Authentication for eFiling
 
+**Authentication for eFiling**
+
 | Method | Description |
-|---|---|
+| --- | --- |
 | Citizen Digital Certificate (自然人憑證) | IC card issued by MOICA |
 | Health IC card (健保卡) | NHI card + password |
 | Mobile phone verification | Via telecom-linked identity |
 | Financial certificate | Issued by banks |
 | TW FidO | Biometric mobile authentication |
-
----
 
 ## Section 5 -- Edge Cases
 
@@ -261,8 +272,10 @@ Tax = 1,579,000 × 20% − 147,700 = **NT$168,100**
 
 Since 2018, dividends are taxed under one of two methods (taxpayer chooses the more beneficial):
 
+**Dividend Taxation Methods**
+
 | Method | Treatment |
-|---|---|
+| --- | --- |
 | Method A: Include in consolidated income | Add to gross income; claim 8.5% credit (cap NT$80,000) |
 | Method B: Separate taxation | 28% flat rate on dividend income (no consolidation) |
 
@@ -270,8 +283,10 @@ Method B preferred for high-income taxpayers (marginal rate >28%).
 
 ### 5.2 Non-Resident Taxation
 
+**Non-Resident Taxation**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Resident | Present ≥183 days in tax year → progressive rates (5%--40%) |
 | Non-resident (<183 days) | Flat withholding rates on Taiwan-source income |
 | Non-resident salary | 18% (if total annual salary ≤NT$1.5M) or 5%--40% progressive |
@@ -280,8 +295,10 @@ Method B preferred for high-income taxpayers (marginal rate >28%).
 
 ### 5.3 Alternative Minimum Tax (AMT / 基本稅額)
 
+**Alternative Minimum Tax (AMT)**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Legislation | Income Basic Tax Act (所得基本稅額條例) |
 | Threshold | NT$7,500,000 |
 | Rate | 20% on amount exceeding threshold |
@@ -290,35 +307,30 @@ Method B preferred for high-income taxpayers (marginal rate >28%).
 
 ### 5.4 Property Transaction Income
 
-- Gains from selling real property acquired after Jan 1, 2016: subject to house/land consolidated income tax (房地合一稅), filed separately
-- Holding ≤2 years: 45%
-- Holding 2--5 years: 35%
-- Holding 5--10 years: 20%
-- Holding >10 years: 15%
-- Self-use residence (after 6 years): NT$4,000,000 exempt, 10% on excess
+- **Property Transaction Income rules** — Gains from selling real property acquired after Jan 1, 2016: subject to house/land consolidated income tax (房地合一稅), filed separately. Holding ≤2 years: 45%. Holding 2--5 years: 35%. Holding 5--10 years: 20%. Holding >10 years: 15%. Self-use residence (after 6 years): NT$4,000,000 exempt, 10% on excess.
 
 ### 5.5 Overseas Income (海外所得)
 
-- Included in AMT calculation if total overseas income ≥NT$1,000,000 in the year
-- NOT included in regular consolidated income tax
-- If total basic income (regular taxable + overseas + other additions) >NT$7,500,000, AMT applies
+- **Overseas Income rules** — Included in AMT calculation if total overseas income ≥NT$1,000,000 in the year. NOT included in regular consolidated income tax. If total basic income (regular taxable + overseas + other additions) >NT$7,500,000, AMT applies.
 
 ### 5.6 Married Filing
 
+**Married Filing**
+
 | Option | When |
-|---|---|
+| --- | --- |
 | Mandatory joint filing | All married couples must file jointly (combined household) |
 | Separate calculation of tax | Salary/professional income may be calculated separately for each spouse |
 | Best method | System auto-optimises in eFiling (choose lowest total tax) |
-
----
 
 ## Section 6 -- Itemised Deductions (列舉扣除額)
 
 If choosing itemised over standard deduction:
 
+**Itemised Deductions**
+
 | Deduction | Limit |
-|---|---|
+| --- | --- |
 | Insurance premiums (non-NHI) | NT$24,000 per person per year |
 | NHI premiums (健保費) | No limit (fully deductible) |
 | Medical expenses | No limit (net of insurance reimbursement) |
@@ -330,23 +342,23 @@ If choosing itemised over standard deduction:
 | Political party donations | NT$200,000 per year |
 | Election candidate donations | NT$200,000 per election |
 
----
-
 ## Section 7 -- Business Tax Interaction (營業稅)
 
+**Business Tax Interaction**
+
 | Scenario | Treatment |
-|---|---|
+| --- | --- |
 | Professional practice revenue ≤NT$200,000/month | Exempt from business tax (VAT) |
 | Professional practice revenue >NT$200,000/month | 5% business tax applies (VAT equivalent) |
 | Small-scale business (小規模營業人) | 1% assessed by tax authority (quarterly) |
 | VAT-registered business | 5% output tax - input tax; file bimonthly (odd months) |
 
----
-
 ## Section 8 -- Calendar of Key Dates
 
+**Calendar of Key Dates**
+
 | Date | Event |
-|---|---|
+| --- | --- |
 | January 1 | Start of tax year |
 | January 31 | Annual withholding statements issued by payers |
 | March 31 | Business tax annual reconciliation (for registered businesses) |
@@ -355,12 +367,12 @@ If choosing itemised over standard deduction:
 | September 30 | Estimated tax payment for current year (if no withholding) |
 | December 31 | End of tax year |
 
----
-
 ## Section 9 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Income Tax Act | 所得稅法 (Ministry of Finance) |
 | Progressive rate table | Income Tax Act Art. 5 |
 | Professional income deemed rates | MOF announcement (annually updated) |
@@ -375,14 +387,30 @@ If choosing itemised over standard deduction:
 | eFiling portal | etax.nat.gov.tw |
 | MOF | mof.gov.tw |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Taiwan CPA (會計師), tax agent (記帳士), or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/tw-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `tw-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/tw-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

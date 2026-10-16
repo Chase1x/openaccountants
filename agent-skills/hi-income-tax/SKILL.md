@@ -1,39 +1,35 @@
 ---
 name: hi-income-tax
-description: "> Hawaii Individual Income Tax Return (Form N-11) for sole proprietors and single-member LLCs. Covers the twelve-bracket graduated system (1.4%–11%), Hawaii standard deduction, personal exemptions, modifications to federal AGI, and estimated tax (Form N-1). Trigger: taxpayer is a Hawaii resident or has Hawaii-source income."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Hawaii Individual Income Tax Return (Form N-11) for sole proprietors and single-member LLCs. Covers the twelve-bracket graduated system (1.4%–11%), Hawaii standard deduction, personal exemptions, modifications to federal AGI, and estimated tax (Form N-1). Trigger: taxpayer is a Hawaii resident or has Hawaii-source income."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-HI
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/hi-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/hi-income-tax"
+  jurisdiction: "US-HI"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Hawaii Individual Income Tax Skill — Self-Employed / Sole Proprietor
+# HI Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Hawaii Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
 > **Scope.** This skill covers Hawaii individual income tax for self-employed individuals and sole proprietors filing Form N-11. Hawaii has one of the most progressive rate structures in the U.S. with 12 brackets ranging from 1.4% to 11%.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
 
----
-
 ## Section 1: Metadata
 
-| Field | Value |
-|---|---|
-| Jurisdiction | US-HI (Hawaii) |
-| Tax authority | Hawaii Department of Taxation (DOTAX) |
-| Filing portal | [Hawaii Tax Online](https://hitax.hawaii.gov/) |
-| Legislation citation | Hawaii Revised Statutes (HRS) Chapter 235 (Income Tax Law) |
-| Primary form | Form N-11 (Individual Income Tax Return — Resident) |
-| Filing deadline | April 20, 2026 (for tax year 2025) |
-| Extension | Automatic 6-month extension to October 20 if estimated tax is paid by April 20 |
-| Version | 0.1 |
-| Generated date | May 22, 2026 |
-| Validation status | AI-drafted — Q3 |
+- **Jurisdiction** — US-HI (Hawaii)
+- **Tax authority** — Hawaii Department of Taxation (DOTAX)
+- **Filing portal** — [Hawaii Tax Online](https://hitax.hawaii.gov/)
+- **Legislation citation** — Hawaii Revised Statutes (HRS) Chapter 235 (Income Tax Law)
+- **Primary form** — Form N-11 (Individual Income Tax Return — Resident)
+- **Filing deadline** — April 20, 2026 (for tax year 2025)
+- **Extension** — Automatic 6-month extension to October 20 if estimated tax is paid by April 20
+- **Version** — 0.1
+- **Generated date** — May 22, 2026
+- **Validation status** — AI-drafted — Q3
 
 ### Sources consulted
 
@@ -43,14 +39,14 @@ metadata:
 - Everlance — Guide to Hawaii Self-Employed Taxes: https://www.everlance.com/blog/hawaii-self-employed-taxes
 - TurboTax — Hawaii State Income Tax Guide: https://blog.turbotax.intuit.com/income-tax-by-state/hawaii-108220/
 
----
-
 ## Section 2: Quick reference — rates and thresholds
 
 ### Tax year 2025 brackets — Single / Married filing separately
 
+**Tax year 2025 brackets — Single / Married filing separately**  _(HRS § 235-51; Hawaii DOTAX Tax Year 2025 schedules.)_
+
 | Taxable income | Rate | Cumulative tax at top of bracket |
-|---|---|---|
+| --- | --- | --- |
 | $0 – $9,600 | 1.40% | $134 |
 | $9,601 – $14,400 | 3.20% | $288 |
 | $14,401 – $19,200 | 5.50% | $552 |
@@ -66,8 +62,10 @@ metadata:
 
 ### Tax year 2025 brackets — Married filing jointly / Qualifying surviving spouse
 
+**Tax year 2025 brackets — Married filing jointly / Qualifying surviving spouse**  _(HRS § 235-51; Hawaii DOTAX Tax Year 2025 schedules.)_
+
 | Taxable income | Rate | Cumulative tax at top of bracket |
-|---|---|---|
+| --- | --- | --- |
 | $0 – $19,200 | 1.40% | $269 |
 | $19,201 – $28,800 | 3.20% | $576 |
 | $28,801 – $38,400 | 5.50% | $1,104 |
@@ -81,12 +79,12 @@ metadata:
 | $550,001 – $650,000 | 10.00% | $51,932 |
 | Over $650,000 | 11.00% | — |
 
-Source: HRS § 235-51; Hawaii DOTAX Tax Year 2025 schedules.
-
 ### Standard deduction (tax year 2025)
 
+**Standard deduction (tax year 2025)**
+
 | Filing status | Standard deduction |
-|---|---|
+| --- | --- |
 | Single | $4,400 |
 | Married filing jointly | $8,800 |
 | Married filing separately | $4,400 |
@@ -94,79 +92,84 @@ Source: HRS § 235-51; Hawaii DOTAX Tax Year 2025 schedules.
 
 ### Personal exemptions (tax year 2025)
 
+**Personal exemptions (tax year 2025)**
+
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Personal exemption (each taxpayer/spouse) | $1,144 |
 | Dependent exemption (each) | $1,144 |
 
 ### Filing thresholds (tax year 2025)
 
+**Filing thresholds (tax year 2025)**
+
 | Filing status | Threshold (gross income) |
-|---|---|
+| --- | --- |
 | Single (under 65) | $5,544 |
 | Single (65+) | $6,688 |
 | Married filing jointly (both under 65) | $11,088 |
 | Married filing jointly (one 65+) | $12,232 |
 | Head of household (under 65) | $7,568 |
 
-Additionally, anyone "doing business" in Hawaii must file regardless of income level.
-
----
+- **Doing business filing requirement** — Additionally, anyone "doing business" in Hawaii must file regardless of income level.
 
 ## Section 3: How this skill works with the federal return
 
-**Starting point:** Hawaii begins with federal adjusted gross income (AGI) from federal Form 1040, Line 11.
+- **Starting point** — Hawaii begins with federal adjusted gross income (AGI) from federal Form 1040, Line 11.
 
 ### Key additions to Hawaii income
+
 - Interest on state/local obligations of other states
 - Amounts deducted federally but not allowed by Hawaii
 
 ### Key subtractions from Hawaii income
+
 - Social Security benefits (Hawaii does not tax Social Security)
 - Interest on U.S. government obligations (Treasury bonds, savings bonds)
 - Military reserve/National Guard pay (limited exclusion)
 - Certain pension income adjustments
 
 ### Net result
-Federal AGI ± Hawaii modifications = Hawaii AGI → minus standard or itemized deductions → minus personal exemptions = Hawaii taxable income → apply rate schedule.
 
----
-
-## Section 4: Self-employed specific rules
+- **Hawaii taxable income calculation** — Federal AGI ± Hawaii modifications = Hawaii AGI → minus standard or itemized deductions → minus personal exemptions = Hawaii taxable income → apply rate schedule.
 
 ### QBI conformity
-Hawaii starts from federal AGI. The federal QBI deduction (§199A) is below AGI and does NOT flow into Hawaii's computation.
+
+- **QBI conformity** — Hawaii starts from federal AGI. The federal QBI deduction (§199A) is below AGI and does NOT flow into Hawaii's computation.
 
 ### SE health insurance deduction
-Already reflected in federal AGI. Flows through to Hawaii automatically.
+
+- **SE health insurance deduction** — Already reflected in federal AGI. Flows through to Hawaii automatically.
 
 ### Retirement contributions (SEP, SIMPLE, solo 401(k))
-Already reflected in federal AGI. No Hawaii add-back required.
+
+- **Retirement contributions** — Already reflected in federal AGI. No Hawaii add-back required.
 
 ### Home office deduction
-Already reflected in Schedule C → federal AGI. Flows through automatically.
+
+- **Home office deduction** — Already reflected in Schedule C → federal AGI. Flows through automatically.
 
 ### Estimated tax (Form N-1)
-Self-employed individuals must make quarterly estimated payments if they expect to owe $500 or more.
 
-Voucher due dates: April 20, June 20, September 20, January 20.
+- **Quarterly estimated payment requirement** — Self-employed individuals must make quarterly estimated payments if they expect to owe $500 or more.
+- **Voucher due dates** — April 20, June 20, September 20, January 20
 
 **Note:** Hawaii's due dates are the 20th (not the 15th like most states).
 
 ### General Excise Tax (GET) interaction
-Hawaii self-employed individuals are also subject to GET on gross business income (4% general rate, 4.5% in Honolulu County with the county surcharge). GET is NOT the same as income tax. GET paid is a deductible business expense on federal Schedule C, reducing federal AGI and therefore Hawaii taxable income. See `hi-sales-tax.md` for GET details.
+
+- **GET interaction with income tax** — Hawaii self-employed individuals are also subject to GET on gross business income (4% general rate, 4.5% in Honolulu County with the county surcharge). GET is NOT the same as income tax. GET paid is a deductible business expense on federal Schedule C, reducing federal AGI and therefore Hawaii taxable income. See `hi-sales-tax.md` for GET details.
 
 ### Hawaii conformity notes
-Hawaii generally conforms to the Internal Revenue Code as of a specific date. However, Hawaii has its own depreciation rules and may not conform to all federal provisions. Key differences:
-- Hawaii does NOT conform to federal bonus depreciation (§168(k))
-- Taxpayers must use Hawaii's depreciation schedule (generally straight-line MACRS equivalent)
 
----
+- **IRC conformity and depreciation differences** — Hawaii generally conforms to the Internal Revenue Code as of a specific date. However, Hawaii has its own depreciation rules and may not conform to all federal provisions. Key differences: - Hawaii does NOT conform to federal bonus depreciation (§168(k)) - Taxpayers must use Hawaii's depreciation schedule (generally straight-line MACRS equivalent)
 
 ## Section 5: Tier 1 rules — deterministic
 
+**Tier 1 rules — deterministic**
+
 | Rule ID | Rule |
-|---|---|
+| --- | --- |
 | HI-IT-1.01 | Hawaii taxable income = Hawaii AGI − deduction − personal exemptions |
 | HI-IT-1.02 | If taxable income < $100,000, use tax table; if ≥ $100,000, use rate schedule |
 | HI-IT-1.03 | Personal exemption: $1,144 per taxpayer, spouse (if joint), and each dependent |
@@ -176,12 +179,12 @@ Hawaii generally conforms to the Internal Revenue Code as of a specific date. Ho
 | HI-IT-1.07 | Hawaii does not conform to federal §168(k) bonus depreciation |
 | HI-IT-1.08 | Hawaii allows credit for taxes paid to other states |
 
----
-
 ## Section 6: Tier 2 rules — requires judgment
 
+**Tier 2 rules — requires judgment**
+
 | Rule ID | Rule | Judgment needed |
-|---|---|---|
+| --- | --- | --- |
 | HI-IT-2.01 | Standard vs. itemized deduction election | Hawaii allows itemization independently of federal choice |
 | HI-IT-2.02 | Depreciation conformity analysis | Determine add-back for federal bonus depreciation vs. Hawaii depreciation |
 | HI-IT-2.03 | Part-year resident allocation | Prorate income for period of Hawaii residency |
@@ -189,23 +192,23 @@ Hawaii generally conforms to the Internal Revenue Code as of a specific date. Ho
 | HI-IT-2.05 | Food/excise tax credit | Available to lower-income residents; verify eligibility |
 | HI-IT-2.06 | Refundable food/excise tax credit | $110 per exemption if federal AGI ≤ $50,000 (single) |
 
----
-
 ## Section 7: Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern on bank statement | Likely meaning |
-|---|---|
+| --- | --- |
 | STATE OF HI TAX | Hawaii income tax payment |
 | HAWAII DOTAX | Hawaii Department of Taxation payment |
 | HI TAX REFUND | Hawaii income tax refund |
 | HITAX PMT | Hawaii estimated tax payment |
 
----
-
 ## Section 8: Form mapping
 
+**Form mapping**
+
 | Hawaii Form | Federal equivalent / Input |
-|---|---|
+| --- | --- |
 | Form N-11, Line 10 | Federal Form 1040, Line 11 (AGI) |
 | Form N-11, Lines 11–17 | Hawaii modifications (additions/subtractions) |
 | Form N-11, Line 22 | Hawaii AGI |
@@ -216,12 +219,12 @@ Hawaii generally conforms to the Internal Revenue Code as of a specific date. Ho
 | Form N-1 | Quarterly estimated payments |
 | Form N-210 | Underpayment of estimated tax penalty |
 
----
-
 ## Section 9: Refusal catalogue
 
+**Refusal catalogue**
+
 | Refusal ID | Topic | Reason |
-|---|---|---|
+| --- | --- | --- |
 | R-HI-01 | Corporate income tax (Form N-30) | Not individual income tax |
 | R-HI-02 | Transient accommodations tax (TAT) | Separate regime for lodging |
 | R-HI-03 | Part-year / nonresident returns (Form N-15) | Different form and allocation rules |
@@ -230,13 +233,30 @@ Hawaii generally conforms to the Internal Revenue Code as of a specific date. Ho
 | R-HI-06 | Conveyance tax | Real property transaction tax |
 | R-HI-07 | Estate tax | Separate regime |
 
----
-
 ## Disclaimer
+
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/hi-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `hi-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/hi-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

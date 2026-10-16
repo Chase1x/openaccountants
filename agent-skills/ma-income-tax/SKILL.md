@@ -1,15 +1,13 @@
 ---
 name: ma-income-tax
-description: "> Use this skill whenever asked about Morocco personal income tax — the Impôt sur le Revenu (IR) on professional / business income taxed on net profit under the general systems, the régime du résultat net réel (RNR) and the régime du résultat net simplifié (RNS). Trigger on phrases like \"impôt sur le revenu Maroc\", \"Morocco income tax\", \"IR professionnel\", \"résultat net réel\", \"résultat net simplifié\", \"RNR\", \"RNS\", \"barème IR Maroc\", \"cotisation minimale\", \"déclaration revenu global\", \"acomptes IR\", \"déduction charges professionnelles\", \"الضريبة على الدخل المغرب\", \"صافي الربح\". Covers the 2025/2026 reform progressive brackets (exempt up to MAD 40,000, top rate 37%), business income determination, allowable deductions, the cotisation minimale (CM) on turnover, the annual déclaration du revenu global, and advance payments (acomptes). Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu for the simplified turnover-based alternatives."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Morocco personal income tax — the Impôt sur le Revenu (IR) on professional / business income taxed on net profit under the general systems, the régime du résultat net réel (RNR) and the régime du résultat net simplifié (RNS). Trigger on phrases like \"impôt sur le revenu Maroc\", \"Morocco income tax\", \"IR professionnel\", \"résultat net réel\", \"résultat net simplifié\", \"RNR\", \"RNS\", \"barème IR Maroc\", \"cotisation minimale\", \"déclaration revenu global\", \"acomptes IR\", \"déduction charges professionnelles\", \"الضريبة على الدخل المغرب\", \"صافي الربح\". Covers the 2025/2026 reform progressive brackets (exempt up to MAD 40,000, top rate 37%), business income determination, allowable deductions, the cotisation minimale (CM) on turnover, the annual déclaration du revenu global, and advance payments (acomptes). Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu for the simplified turnover-base"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ma-income-tax"
-  tax_year: 2026
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/ma-income-tax"
+  jurisdiction: "MA"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Morocco — Personal Income Tax on Professional Income (Impôt sur le Revenu / IR)
@@ -478,6 +476,6 @@ be **re-verified** before use. Nothing here is a substitute for advice from a
 licensed Moroccan expert-comptable or the DGI. Part of **openaccountants.com** —
 open-source tax skills for the self-employed.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ma-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ma-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ma-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

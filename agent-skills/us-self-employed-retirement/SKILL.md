@@ -1,19 +1,33 @@
 ---
 name: us-self-employed-retirement
 description: "Tier 2 content skill for computing the self-employed retirement contribution deduction for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 SEP-IRA, Solo 401(k), SIMPLE IRA, and traditional/Roth IRA options with SECURE 2.0 super catch-up provisions. Handles the net SE earnings calculation, the 92.35% adjustment, the employer contribution formula (20% effective rate for sole props), employee deferral limits ($23,500), catch-up and super catch-up contributions, the SEP-IRA 25% limit ($70,000 cap), SIMPLE IRA rules, traditional and Roth IRA income limits and deductibility phase-outs, and establishment/contribution deadlines. Consumes Schedule C net profit and SE tax from us-schedule-c-and-se-computation. Feeds QBI computation in us-qbi-deduction. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/us-self-employed-retirement"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/us-self-employed-retirement"
+  jurisdiction: "US"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "A licensed accountant (name withheld at their request)"
+  review_status: "current"
 ---
 
-# US Self-Employed Retirement Skill v0.2
+# US Self Employed Retirement
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## US Self-Employed Retirement Skill v0.2
+
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### SE Retirement
+
+- **Solo 401k 2025 402(g) elective deferral limit** — $23,500  _(IRS Notice 2024-80.)_
+- **§415(c) 2025 total defined-contribution 415(c) limit** — $70,000  _(IRS Notice 2024-80.)_
+- **IRA 2025 IRA limit** — $7,000 (+$1,000 catch-up age 50+)  _(IRS Notice 2024-80.)_
+- **Roth S 2025 Roth IRA phase-out, Single/HoH** — $150,000-$165,000  _(IRS Notice 2024-80.)_
 
 ## What this file is, and what it is not
 
@@ -40,8 +54,6 @@ us-quarterly-estimated-tax (safe harbor for following year)
 
 **The reviewer is the customer of this output.** The skill produces a retirement contribution worksheet and a brief that the reviewing EA or CPA can audit and sign off on.
 
----
-
 ## Section 1 — Scope statement
 
 This skill covers, for tax year 2025:
@@ -66,8 +78,6 @@ This skill does NOT cover:
 - Early withdrawal penalties (§72(t)) — out of scope
 - Required minimum distributions (RMDs) — out of scope (relevant for taxpayers 73+)
 
----
-
 ## Section 2 — Year coverage and currency
 
 **Tax year covered:** 2025 (returns due April 15, 2026, or October 15, 2026 with extension).
@@ -86,14 +96,12 @@ This skill does NOT cover:
 - SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was delayed by IRS Notice 2024-02 to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
 - The super catch-up for ages 60-63 under SECURE 2.0 §109 is effective for 2025 and is reflected in this skill.
 
----
-
-## Section 3 — Year-specific figures table for tax year 2025
-
 ### Solo 401(k)
 
+**Solo 401(k) year-specific figures table for TY2025**  _(Section 3)_
+
 | Figure | Value for TY2025 | Primary source |
-|---|---|---|
+| --- | --- | --- |
 | Employee elective deferral limit | $23,500 | Notice 2024-80; IRC §402(g)(1) |
 | Catch-up contribution (age 50-59, 64+) | $7,500 | Notice 2024-80; IRC §414(v)(2)(B)(i) |
 | Super catch-up contribution (age 60-63) | $11,250 | Notice 2024-80; IRC §414(v)(2)(E); SECURE 2.0 §109 |
@@ -105,8 +113,10 @@ This skill does NOT cover:
 
 ### SEP-IRA
 
+**SEP-IRA year-specific figures table for TY2025**  _(Section 3)_
+
 | Figure | Value for TY2025 | Primary source |
-|---|---|---|
+| --- | --- | --- |
 | Maximum contribution | $70,000 | Notice 2024-80; IRC §415(c)(1)(A) |
 | Contribution rate (on compensation) | 25% of compensation | IRC §404(h)(1)(C) |
 | Effective rate for sole props | 20% of net SE earnings | See Section 5 derivation |
@@ -114,8 +124,10 @@ This skill does NOT cover:
 
 ### SIMPLE IRA
 
+**SIMPLE IRA year-specific figures table for TY2025**  _(Section 3)_
+
 | Figure | Value for TY2025 | Primary source |
-|---|---|---|
+| --- | --- | --- |
 | Employee deferral limit | $16,500 | Notice 2024-80; IRC §408(p)(2)(E) |
 | Catch-up contribution (age 50-59, 64+) | $3,500 | Notice 2024-80; IRC §414(v)(2)(B)(ii) |
 | Super catch-up contribution (age 60-63) | $5,250 | Notice 2024-80; IRC §414(v)(2)(E); SECURE 2.0 §109 |
@@ -125,8 +137,10 @@ This skill does NOT cover:
 
 ### Traditional and Roth IRA
 
+**Traditional and Roth IRA year-specific figures table for TY2025**  _(Section 3)_
+
 | Figure | Value for TY2025 | Primary source |
-|---|---|---|
+| --- | --- | --- |
 | IRA contribution limit | $7,000 | Notice 2024-80; IRC §219(b)(5)(A) |
 | IRA catch-up (age 50+) | $1,000 | IRC §219(b)(5)(B); statutory, NOT indexed |
 | Traditional IRA deductibility phase-out (single, covered by employer plan) | MAGI $79,000-$89,000 | Notice 2024-80; IRC §219(g)(3)(B)(i) |
@@ -135,10 +149,6 @@ This skill does NOT cover:
 | Roth IRA contribution phase-out (single / HoH) | MAGI $150,000-$165,000 | Notice 2024-80; IRC §408A(c)(3) |
 | Roth IRA contribution phase-out (MFJ) | MAGI $236,000-$246,000 | Notice 2024-80; IRC §408A(c)(3) |
 | Roth IRA contribution phase-out (MFS) | MAGI $0-$10,000 | IRC §408A(c)(3)(C)(iii); statutory, not indexed |
-
----
-
-## Section 4 — Primary source library
 
 ### Statute (Internal Revenue Code, Title 26 USC)
 
@@ -170,10 +180,6 @@ This skill does NOT cover:
 - **IRS Publication 590-B (2025)** — Distributions from IRAs
 - **SECURE 2.0 Act of 2022** — P.L. 117-328, Division T
 
----
-
-## Section 5 — Net self-employment earnings for retirement purposes
-
 ### The base computation
 
 For retirement contribution purposes, the sole proprietor's "compensation" is **net self-employment earnings**, defined as:
@@ -199,14 +205,9 @@ Step 4: Net SE earnings for retirement = Schedule C net profit − Deductible ha
 
 ### The 25% vs. 20% rate for sole props
 
-When an employer contributes to an employee's SEP-IRA or 401(k) profit-sharing, the limit is 25% of the employee's compensation. But for a sole proprietor, the "compensation" is reduced by the contribution itself, creating circularity. The algebraic solution:
+- **Effective employer contribution rate derivation** — Contribution = Rate × (Net SE earnings − Contribution) Contribution = Rate × Net SE earnings / (1 + Rate) At a 25% rate: Contribution = 0.25 / 1.25 × Net SE earnings = 20% of net SE earnings  _(See Section 5 derivation)_
 
-```
-Contribution = Rate × (Net SE earnings − Contribution)
-Contribution = Rate × Net SE earnings / (1 + Rate)
-```
-
-At a 25% rate: Contribution = 0.25 / 1.25 × Net SE earnings = **20% of net SE earnings**
+When an employer contributes to an employee's SEP-IRA or 401(k) profit-sharing, the limit is 25% of the employee's compensation. But for a sole proprietor, the "compensation" is reduced by the contribution itself, creating circularity. The algebraic solution is shown above.
 
 This is why the effective employer contribution rate for sole props is **20%**, not 25%.
 
@@ -236,10 +237,6 @@ Solo 401(k) with employee deferral:
   (Under §415(c) $70,000 limit — OK)
 ```
 
----
-
-## Section 6 — Solo 401(k) computation
-
 ### Overview
 
 The Solo 401(k) (also called individual 401(k) or one-participant 401(k)) is the most powerful retirement vehicle for sole props with no common-law employees. It combines:
@@ -250,8 +247,10 @@ The Solo 401(k) (also called individual 401(k) or one-participant 401(k)) is the
 
 ### Contribution limits by age
 
+**Solo 401(k) contribution limits by age**  _(Section 6)_
+
 | Age in 2025 | Employee deferral | Catch-up | Employer (max) | §415(c) cap | Maximum possible |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Under 50 | $23,500 | $0 | 20% of net SE earnings, up to $46,500 | $70,000 | $70,000 |
 | 50-59 | $23,500 | $7,500 | 20% of net SE earnings, up to $46,500 | $70,000 + $7,500 | $77,500 |
 | 60-63 | $23,500 | $11,250 | 20% of net SE earnings, up to $46,500 | $70,000 + $11,250 | $81,250 |
@@ -263,31 +262,23 @@ The Solo 401(k) (also called individual 401(k) or one-participant 401(k)) is the
 
 ### Roth elective deferral option
 
-Solo 401(k) plans can be designed to accept Roth (after-tax) elective deferrals. Roth deferrals:
-- Count against the $23,500 elective deferral limit (same as pre-tax)
-- Do NOT reduce current-year taxable income (no deduction)
-- Do NOT reduce QBI (since there is no deduction)
-- Grow tax-free and are distributed tax-free in retirement (if qualified)
-
-The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is always pre-tax (traditional).
+- **Roth elective deferrals rules** — Roth deferrals: Count against the $23,500 elective deferral limit (same as pre-tax); Do NOT reduce current-year taxable income (no deduction); Do NOT reduce QBI (since there is no deduction); Grow tax-free and are distributed tax-free in retirement (if qualified). The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is always pre-tax (traditional).  _(Solo 401(k) plans can be designed to accept Roth (after-tax) elective deferrals)_
 
 ### Establishment and contribution deadlines
 
+**Solo 401(k) establishment and contribution deadlines**  _(Section 6)_
+
 | Action | Deadline |
-|---|---|
+| --- | --- |
 | Establish a new Solo 401(k) plan | December 31, 2025 (for 2025 contributions) |
 | Make employee elective deferrals (2025) | December 31, 2025 (must be made by end of tax year) |
 | Make employer profit-sharing contributions (2025) | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026 with extension) |
 
-**Critical:** A Solo 401(k) must be established (plan adoption agreement executed) by December 31 of the tax year. If the plan was not established by December 31, 2025, the sole prop CANNOT make 2025 Solo 401(k) contributions — even if they file an extension. This is different from a SEP-IRA.
+- **Solo 401(k) December 31 establishment requirement** — A Solo 401(k) must be established (plan adoption agreement executed) by December 31 of the tax year. If the plan was not established by December 31, 2025, the sole prop CANNOT make 2025 Solo 401(k) contributions — even if they file an extension. This is different from a SEP-IRA.  _(Section 6)_
 
 ### Form 5500-EZ filing requirement
 
-If the Solo 401(k) plan assets exceed $250,000 at the end of the plan year, the sole prop must file Form 5500-EZ with the IRS. This is an annual filing, due by the last day of the 7th month after the plan year ends (July 31 for calendar-year plans). Failure to file triggers a $250/day penalty (up to $150,000). The skill flags this requirement when estimated plan assets exceed $200,000.
-
----
-
-## Section 7 — SEP-IRA computation
+- **Form 5500-EZ filing requirement** — If the Solo 401(k) plan assets exceed $250,000 at the end of the plan year, the sole prop must file Form 5500-EZ with the IRS. This is an annual filing, due by the last day of the 7th month after the plan year ends (July 31 for calendar-year plans). Failure to file triggers a $250/day penalty (up to $150,000). The skill flags this requirement when estimated plan assets exceed $200,000.  _(Section 6)_
 
 ### Overview
 
@@ -295,11 +286,7 @@ A SEP-IRA (Simplified Employee Pension) allows employer-only contributions. Ther
 
 ### Contribution formula for sole props
 
-```
-Maximum SEP contribution = lesser of:
-  (a) 20% × (Schedule C net profit − deductible half of SE tax)
-  (b) $70,000
-```
+- **Maximum SEP contribution formula** — Maximum SEP contribution = lesser of: (a) 20% × (Schedule C net profit − deductible half of SE tax) (b) $70,000  _(Section 7)_
 
 ### Advantages over Solo 401(k)
 
@@ -316,16 +303,14 @@ Maximum SEP contribution = lesser of:
 
 ### Establishment and contribution deadlines
 
+**SEP-IRA establishment and contribution deadlines**  _(Section 7)_
+
 | Action | Deadline |
-|---|---|
+| --- | --- |
 | Establish SEP-IRA | Tax filing deadline including extensions (can establish and fund on same day) |
 | Make 2025 contributions | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026) |
 
-**Key advantage:** A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). This is NOT possible with a Solo 401(k).
-
----
-
-## Section 8 — SIMPLE IRA computation
+- **SEP-IRA key advantage** — A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). This is NOT possible with a Solo 401(k).  _(Section 7)_
 
 ### Overview
 
@@ -333,105 +318,51 @@ A SIMPLE IRA (Savings Incentive Match Plan for Employees) is less common for sol
 
 ### Contribution formula for sole props
 
-```
-Employee deferral: up to $16,500 (2025)
-Catch-up (age 50-59, 64+): additional $3,500
-Super catch-up (age 60-63): additional $5,250
-
-Employer match: dollar-for-dollar up to 3% of net SE earnings
-  OR
-Employer non-elective: 2% of net SE earnings (up to $350,000 comp cap = max $7,000)
-```
+- **SIMPLE IRA contribution formula** — Employee deferral: up to $16,500 (2025) Catch-up (age 50-59, 64+): additional $3,500 Super catch-up (age 60-63): additional $5,250 Employer match: dollar-for-dollar up to 3% of net SE earnings OR Employer non-elective: 2% of net SE earnings (up to $350,000 comp cap = max $7,000)  _(Section 8)_
 
 ### When SIMPLE IRA beats Solo 401(k)
 
-Almost never for a sole prop. The SIMPLE IRA has lower deferral limits ($16,500 vs. $23,500) and lower employer contribution potential. It exists primarily for small businesses with employees who want a simpler alternative to a 401(k).
-
-**The SIMPLE IRA has a critical restriction:** If a sole prop maintains a SIMPLE IRA, they generally cannot also maintain a Solo 401(k) or SEP-IRA for the same year. The SIMPLE IRA must be the only employer plan.
+- **SIMPLE IRA restriction and comparison** — Almost never for a sole prop. The SIMPLE IRA has lower deferral limits ($16,500 vs. $23,500) and lower employer contribution potential. It exists primarily for small businesses with employees who want a simpler alternative to a 401(k). **The SIMPLE IRA has a critical restriction:** If a sole prop maintains a SIMPLE IRA, they generally cannot also maintain a Solo 401(k) or SEP-IRA for the same year. The SIMPLE IRA must be the only employer plan.  _(Section 8)_
 
 ### Establishment deadline
 
-A SIMPLE IRA must be established by October 1 of the tax year (e.g., October 1, 2025 for 2025 contributions). For a new business, it must be established as soon as administratively feasible but no later than October 1 if the business started before October 1.
-
----
-
-## Section 9 — Traditional IRA
+- **SIMPLE IRA establishment deadline** — A SIMPLE IRA must be established by October 1 of the tax year (e.g., October 1, 2025 for 2025 contributions). For a new business, it must be established as soon as administratively feasible but no later than October 1 if the business started before October 1.  _(Section 8)_
 
 ### Contribution limits (2025)
 
-- Under age 50: $7,000
-- Age 50+: $8,000 ($7,000 + $1,000 catch-up)
+- **Traditional IRA contribution limits (2025)** — Under age 50: $7,000; Age 50+: $8,000 ($7,000 + $1,000 catch-up)  _(Section 9)_
 
 ### Deductibility rules for self-employed individuals
 
-A sole prop who participates in a Solo 401(k), SEP-IRA, or SIMPLE IRA is considered an "active participant" in an employer plan. This triggers the deductibility phase-out for traditional IRA contributions:
-
-**Single / Head of Household (active participant):**
-- MAGI ≤ $79,000: fully deductible
-- $79,000 < MAGI < $89,000: partially deductible (pro-rata)
-- MAGI ≥ $89,000: not deductible (but can still contribute — nondeductible contribution tracked on Form 8606)
-
-**Married Filing Jointly (active participant):**
-- MAGI ≤ $126,000: fully deductible
-- $126,000 < MAGI < $146,000: partially deductible
-- MAGI ≥ $146,000: not deductible
-
-**MFJ (NOT active participant, but spouse IS):**
-- MAGI ≤ $236,000: fully deductible
-- $236,000 < MAGI < $246,000: partially deductible
-- MAGI ≥ $246,000: not deductible
-
-**If the sole prop does NOT have any employer plan (no SEP, no Solo 401(k), no SIMPLE):** The traditional IRA contribution is fully deductible regardless of income. However, this scenario is unlikely — the sole prop is leaving significant tax savings on the table by not having a plan.
+- **Traditional IRA deductibility phase-out rules** — A sole prop who participates in a Solo 401(k), SEP-IRA, or SIMPLE IRA is considered an "active participant" in an employer plan. This triggers the deductibility phase-out for traditional IRA contributions: **Single / Head of Household (active participant):** - MAGI ≤ $79,000: fully deductible - $79,000 < MAGI < $89,000: partially deductible (pro-rata) - MAGI ≥ $89,000: not deductible (but can still contribute — nondeductible contribution tracked on Form 8606) **Married Filing Jointly (active participant):** - MAGI ≤ $126,000: fully deductible - $126,000 < MAGI < $146,000: partially deductible - MAGI ≥ $146,000: not deductible **MFJ (NOT active participant, but spouse IS):** - MAGI ≤ $236,000: fully deductible - $236,000 < MAGI < $246,000: partially deductible - MAGI ≥ $246,000: not deductible **If the sole prop does NOT have any employer plan (no SEP, no Solo 401(k), no SIMPLE):** The traditional IRA contribution is fully deductible regardless of income. However, this scenario is unlikely — the sole prop is leaving significant tax savings on the table by not having a plan.  _(Section 9)_
 
 ### Contribution deadline
 
-Traditional IRA contributions for 2025 are due by April 15, 2026 (the tax filing deadline WITHOUT extensions). Extensions do not extend the IRA contribution deadline.
+- **Traditional IRA contribution deadline** — Traditional IRA contributions for 2025 are due by April 15, 2026 (the tax filing deadline WITHOUT extensions). Extensions do not extend the IRA contribution deadline.  _(Section 9)_
 
 ### Interaction with other plans
 
-A traditional IRA contribution is IN ADDITION to Solo 401(k) or SEP-IRA contributions. They use different limits and different IRC sections. But the deductibility phase-out kicks in when the taxpayer is an active participant in another plan.
-
----
-
-## Section 10 — Roth IRA
+- **Traditional IRA interaction with other plans** — A traditional IRA contribution is IN ADDITION to Solo 401(k) or SEP-IRA contributions. They use different limits and different IRC sections. But the deductibility phase-out kicks in when the taxpayer is an active participant in another plan.  _(Section 9)_
 
 ### Contribution limits (2025)
 
-Same as traditional IRA: $7,000 ($8,000 if age 50+). The combined traditional + Roth IRA contribution cannot exceed $7,000 ($8,000 if 50+).
+- **Roth IRA contribution limits (2025)** — Same as traditional IRA: $7,000 ($8,000 if age 50+). The combined traditional + Roth IRA contribution cannot exceed $7,000 ($8,000 if 50+).  _(Section 10)_
 
 ### Income limits (2025)
 
-**Single / Head of Household:**
-- MAGI < $150,000: full contribution allowed
-- $150,000 ≤ MAGI < $165,000: reduced contribution (pro-rata phase-out)
-- MAGI ≥ $165,000: $0 direct Roth IRA contribution
-
-**Married Filing Jointly:**
-- MAGI < $236,000: full contribution allowed
-- $236,000 ≤ MAGI < $246,000: reduced contribution
-- MAGI ≥ $246,000: $0 direct Roth IRA contribution
-
-**Married Filing Separately:**
-- MAGI < $10,000: reduced contribution
-- MAGI ≥ $10,000: $0
+- **Roth IRA income limits** — **Single / Head of Household:** - MAGI < $150,000: full contribution allowed - $150,000 ≤ MAGI < $165,000: reduced contribution (pro-rata phase-out) - MAGI ≥ $165,000: $0 direct Roth IRA contribution **Married Filing Jointly:** - MAGI < $236,000: full contribution allowed - $236,000 ≤ MAGI < $246,000: reduced contribution - MAGI ≥ $246,000: $0 direct Roth IRA contribution **Married Filing Separately:** - MAGI < $10,000: reduced contribution - MAGI ≥ $10,000: $0  _(Section 10)_
 
 ### Backdoor Roth IRA
 
-High-income sole props who exceed the Roth IRA income limits can use the "backdoor" strategy:
-1. Make a nondeductible traditional IRA contribution ($7,000/$8,000)
-2. Convert to Roth IRA (Roth conversion — taxable on any pre-tax amounts)
-
-**The skill flags this strategy when MAGI exceeds Roth limits but does NOT compute the conversion mechanics.** The pro-rata rule under §408(d)(2) (aggregation of all traditional IRA balances) makes backdoor Roth conversions complex when the taxpayer has existing pre-tax IRA balances. Refer to reviewer.
+- **Backdoor Roth IRA strategy** — High-income sole props who exceed the Roth IRA income limits can use the "backdoor" strategy: 1. Make a nondeductible traditional IRA contribution ($7,000/$8,000) 2. Convert to Roth IRA (Roth conversion — taxable on any pre-tax amounts) **The skill flags this strategy when MAGI exceeds Roth limits but does NOT compute the conversion mechanics.** The pro-rata rule under §408(d)(2) (aggregation of all traditional IRA balances) makes backdoor Roth conversions complex when the taxpayer has existing pre-tax IRA balances. Refer to reviewer.  _(§408(d)(2))_
 
 ### Roth IRA does NOT reduce QBI
 
-Roth IRA contributions are after-tax. They are not deductible and do not appear on Schedule 1. They do NOT reduce QBI.
+- **Roth IRA and QBI** — Roth IRA contributions are after-tax. They are not deductible and do not appear on Schedule 1. They do NOT reduce QBI.  _(Section 10)_
 
 ### Contribution deadline
 
-Same as traditional IRA: April 15, 2026 (no extension). This applies to both regular and catch-up contributions.
-
----
+- **Roth IRA contribution deadline** — Same as traditional IRA: April 15, 2026 (no extension). This applies to both regular and catch-up contributions.  _(Section 10)_
 
 ## Section 11 — Plan selection decision framework
 
@@ -460,24 +391,14 @@ Is net SE earnings > $0?
 
 ### The crossover point: when SEP-IRA equals Solo 401(k)
 
-```
-Solo 401(k) total = $23,500 (deferral) + 20% × net SE earnings (employer)
-SEP-IRA total = 20% × net SE earnings
-
-Solo 401(k) > SEP-IRA when net SE earnings < $117,500
-  (because the $23,500 deferral advantage is only overcome when
-   20% × net SE earnings exceeds the deferral limit, and the
-   combined Solo 401(k) is capped at $70,000 anyway)
-```
-
-At net SE earnings of ~$232,500: both Solo 401(k) employer + deferral and SEP-IRA hit the $70,000 cap ($232,500 × 20% = $46,500 employer + $23,500 deferral = $70,000). Above that, the Solo 401(k) catch-up provides the only additional room.
-
----
+- **Crossover point formula** — Solo 401(k) total = $23,500 (deferral) + 20% × net SE earnings (employer) SEP-IRA total = 20% × net SE earnings Solo 401(k) > SEP-IRA when net SE earnings < $117,500 (because the $23,500 deferral advantage is only overcome when 20% × net SE earnings exceeds the deferral limit, and the combined Solo 401(k) is capped at $70,000 anyway) At net SE earnings of ~$232,500: both Solo 401(k) employer + deferral and SEP-IRA hit the $70,000 cap ($232,500 × 20% = $46,500 employer + $23,500 deferral = $70,000). Above that, the Solo 401(k) catch-up provides the only additional room.  _(Section 11)_
 
 ## Section 12 — Conservative defaults table
 
+**Conservative defaults table**
+
 | Ambiguity | Conservative default |
-|---|---|
+| --- | --- |
 | Plan type not specified | Assume Solo 401(k) if established by Dec 31; otherwise SEP-IRA |
 | Age not provided | Assume under 50 (lowest contribution limits); ask for age |
 | Solo 401(k) establishment date unclear | Assume NOT established by Dec 31 (cannot use Solo 401(k)); default to SEP-IRA |
@@ -487,36 +408,20 @@ At net SE earnings of ~$232,500: both Solo 401(k) employer + deferral and SEP-IR
 | Plan contribution amount not specified | Compute maximum allowable; present maximum and let reviewer/taxpayer decide |
 | SIMPLE IRA vs. other plans | Do NOT default to SIMPLE; it is inferior for most sole props without employees |
 
----
-
 ## Section 13 — Topical refusal catalogue
 
-**R-RET-DB — Defined benefit plan inquiry.**
-Trigger: Taxpayer asks about a defined benefit plan, cash balance plan, or pension.
-Output: "Defined benefit plans require actuarial computation, Form 5500 filing, and ongoing plan administration that is beyond the scope of this skill. These plans can allow contributions substantially exceeding the §415(c) limit and are worth exploring for high-income sole props ($300K+ net SE earnings). Please consult an actuary or retirement plan specialist."
-
-**R-RET-EMPLOYEES — Sole prop has common-law employees.**
-Trigger: The taxpayer has employees (pays W-2 wages), which triggers nondiscrimination, top-heavy, and coverage rules for 401(k) and SEP plans.
-Output: "When a sole prop has common-law employees, retirement plan contributions for the owner must satisfy nondiscrimination and coverage rules under §401(a)(4) and §410(b). This skill covers one-participant (solo) plans only. Please consult a retirement plan administrator or CPA."
-
-**R-RET-EXCESS — Excess contributions.**
-Trigger: Taxpayer may have contributed more than the limit.
-Output: "Excess contributions to retirement plans are subject to a 6% excise tax under §4973 (IRAs) or must be corrected under the plan's terms (401(k)/SEP). This skill does not compute excess contribution penalties. Please consult a CPA or tax attorney."
-
-**R-RET-RMD — Required minimum distributions.**
-Trigger: Taxpayer is age 73+ and has retirement accounts.
-Output: "Required minimum distributions under §401(a)(9) must begin by April 1 following the year the taxpayer turns 73 (under SECURE 2.0 schedule). RMD computation is out of scope. Please consult a CPA or financial advisor."
-
-**R-RET-ROTHCONV — Roth conversion strategy.**
-Trigger: Taxpayer asks about converting traditional IRA or 401(k) to Roth.
-Output: "Roth conversions are taxable events with complex interactions (pro-rata rule, state tax, impact on ACA subsidies, Medicare IRMAA). This skill flags the backdoor Roth strategy but does not compute conversion mechanics. Please consult a CPA or financial advisor."
-
----
+- **R-RET-DB — Defined benefit plan inquiry** — Trigger: Taxpayer asks about a defined benefit plan, cash balance plan, or pension. Output: "Defined benefit plans require actuarial computation, Form 5500 filing, and ongoing plan administration that is beyond the scope of this skill. These plans can allow contributions substantially exceeding the §415(c) limit and are worth exploring for high-income sole props ($300K+ net SE earnings). Please consult an actuary or retirement plan specialist."
+- **R-RET-EMPLOYEES — Sole prop has common-law employees** — Trigger: The taxpayer has employees (pays W-2 wages), which triggers nondiscrimination, top-heavy, and coverage rules for 401(k) and SEP plans. Output: "When a sole prop has common-law employees, retirement plan contributions for the owner must satisfy nondiscrimination and coverage rules under §401(a)(4) and §410(b). This skill covers one-participant (solo) plans only. Please consult a retirement plan administrator or CPA."
+- **R-RET-EXCESS — Excess contributions** — Trigger: Taxpayer may have contributed more than the limit. Output: "Excess contributions to retirement plans are subject to a 6% excise tax under §4973 (IRAs) or must be corrected under the plan's terms (401(k)/SEP). This skill does not compute excess contribution penalties. Please consult a CPA or tax attorney."
+- **R-RET-RMD — Required minimum distributions** — Trigger: Taxpayer is age 73+ and has retirement accounts. Output: "Required minimum distributions under §401(a)(9) must begin by April 1 following the year the taxpayer turns 73 (under SECURE 2.0 schedule). RMD computation is out of scope. Please consult a CPA or financial advisor."
+- **R-RET-ROTHCONV — Roth conversion strategy** — Trigger: Taxpayer asks about converting traditional IRA or 401(k) to Roth. Output: "Roth conversions are taxable events with complex interactions (pro-rata rule, state tax, impact on ACA subsidies, Medicare IRMAA). This skill flags the backdoor Roth strategy but does not compute conversion mechanics. Please consult a CPA or financial advisor."
 
 ## Section 14 — Reviewer attention thresholds
 
+**Reviewer attention thresholds**
+
 | Threshold | Trigger | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | Total retirement contributions > $50,000 | Always flag | Verify §415(c) limit compliance |
 | Solo 401(k) established after Oct 1 | Always flag | Verify December 31 establishment was completed |
 | Sole prop has employees | Always flag | Nondiscrimination and coverage rules apply |
@@ -526,10 +431,6 @@ Output: "Roth conversions are taxable events with complex interactions (pro-rata
 | Backdoor Roth flagged | Always flag | Pro-rata rule; verify no existing pre-tax IRA balances |
 | MAGI near Roth or IRA deductibility phase-out | Always flag | Small income changes could affect eligibility |
 | Solo 401(k) assets > $200,000 | Always flag | Form 5500-EZ filing requirement approaching or triggered |
-
----
-
-## Section 15 — Worked examples
 
 ### Example 1 — Solo 401(k), under 50, moderate income
 
@@ -607,98 +508,107 @@ Traditional IRA (no employer plan, fully deductible): $7,000
 Roth IRA: $7,000 (MAGI well below $150,000)
 ```
 
----
+## Section 16 — Edge cases
+
+- **Edge case 1 — Net SE earnings negative** — Net SE earnings are negative (Schedule C loss). No SE retirement contributions allowed. May still contribute to a traditional or Roth IRA using earned income from other sources (W-2 wages).
 
 ## Section 16 — Edge cases
 
-1. **Net SE earnings are negative (Schedule C loss).** No SE retirement contributions allowed. May still contribute to a traditional or Roth IRA using earned income from other sources (W-2 wages).
+- **Edge case 2 — Employee deferral exceeds net SE earnings** — The elective deferral cannot exceed net SE earnings from the business. If net SE earnings are $15,000, the maximum deferral is $15,000, not $23,500.
 
-2. **Employee deferral exceeds net SE earnings.** The elective deferral cannot exceed net SE earnings from the business. If net SE earnings are $15,000, the maximum deferral is $15,000, not $23,500.
+## Section 16 — Edge cases
 
-3. **Multiple self-employment activities.** If the taxpayer has multiple Schedule Cs, net SE earnings are aggregated. A loss from one business reduces net SE earnings available for retirement contributions from another.
+- **Edge case 3 — Multiple self-employment activities** — If the taxpayer has multiple Schedule Cs, net SE earnings are aggregated. A loss from one business reduces net SE earnings available for retirement contributions from another.
 
-4. **Part-year self-employment.** No pro-ration of limits. If the taxpayer was self-employed for 3 months and earned $20,000, the full $23,500 deferral limit applies (subject to net SE earnings limitation).
+## Section 16 — Edge cases
 
-5. **Taxpayer also has W-2 income with employer 401(k).** The $23,500 elective deferral limit is SHARED across all 401(k) plans (including employer 401(k) and Solo 401(k)). If the taxpayer deferred $20,000 at their employer, only $3,500 remains for Solo 401(k) deferral. Employer contributions are NOT shared — each plan has its own §415(c) limit.
+- **Edge case 4 — Part-year self-employment** — No pro-ration of limits. If the taxpayer was self-employed for 3 months and earned $20,000, the full $23,500 deferral limit applies (subject to net SE earnings limitation).
 
-6. **Age 60-63 super catch-up is NOT available for SEP-IRA.** The super catch-up applies to elective deferrals only (401(k), SIMPLE). SEP-IRA has no deferral component and therefore no catch-up.
+## Section 16 — Edge cases
 
-7. **SIMPLE IRA 2-year rule.** If the taxpayer previously had a SIMPLE IRA and is within the 2-year period from the first SIMPLE contribution, rollovers to a traditional IRA or 401(k) are restricted. The 25% early withdrawal penalty (instead of the normal 10%) applies during this period.
+- **Edge case 5 — Taxpayer also has W-2 income with employer 401(k)** — The $23,500 elective deferral limit is SHARED across all 401(k) plans (including employer 401(k) and Solo 401(k)). If the taxpayer deferred $20,000 at their employer, only $3,500 remains for Solo 401(k) deferral. Employer contributions are NOT shared — each plan has its own §415(c) limit.
 
-8. **Spousal IRA.** A self-employed taxpayer filing MFJ can fund a spousal IRA ($7,000/$8,000) for a non-working or low-earning spouse, even though the spouse has no earned income of their own, as long as the combined earned income exceeds the total IRA contributions.
+## Section 16 — Edge cases
 
-9. **Contribution deadline with extension.** Solo 401(k) employer contributions and SEP-IRA contributions can be made up to October 15, 2026 if the taxpayer files an extension. The extension must actually be filed — the contribution deadline is the actual filing deadline, not an automatic grace period.
+- **Edge case 6 — Age 60-63 super catch-up not available for SEP-IRA** — The super catch-up applies to elective deferrals only (401(k), SIMPLE). SEP-IRA has no deferral component and therefore no catch-up.
 
-10. **Roth Solo 401(k) deferrals do not reduce QBI.** Pre-tax (traditional) Solo 401(k) deferrals reduce QBI via the Schedule 1 deduction. Roth deferrals do not reduce QBI because they are not deductible. This affects the downstream QBI computation.
+## Section 16 — Edge cases
 
----
+- **Edge case 7 — SIMPLE IRA 2-year rule** — If the taxpayer previously had a SIMPLE IRA and is within the 2-year period from the first SIMPLE contribution, rollovers to a traditional IRA or 401(k) are restricted. The 25% early withdrawal penalty (instead of the normal 10%) applies during this period.
+
+## Section 16 — Edge cases
+
+- **Edge case 8 — Spousal IRA** — A self-employed taxpayer filing MFJ can fund a spousal IRA ($7,000/$8,000) for a non-working or low-earning spouse, even though the spouse has no earned income of their own, as long as the combined earned income exceeds the total IRA contributions.
+
+## Section 16 — Edge cases
+
+- **Edge case 9 — Contribution deadline with extension** — Solo 401(k) employer contributions and SEP-IRA contributions can be made up to October 15, 2026 if the taxpayer files an extension. The extension must actually be filed — the contribution deadline is the actual filing deadline, not an automatic grace period.
+
+## Section 16 — Edge cases
+
+- **Edge case 10 — Roth Solo 401(k) deferrals do not reduce QBI** — Pre-tax (traditional) Solo 401(k) deferrals reduce QBI via the Schedule 1 deduction. Roth deferrals do not reduce QBI because they are not deductible. This affects the downstream QBI computation.
 
 ## Section 17 — Test suite
 
 ### Test 1 — Basic Solo 401(k), under 50
+
 **Input:** Schedule C net profit $100,000; deductible half SE tax $7,065; age 40; Solo 401(k) established.
 **Expected:** Net SE earnings for retirement = $92,935. Employee deferral = $23,500. Employer = 20% × $92,935 = $18,587. Total = $42,087. §415(c) check: $42,087 ≤ $70,000. **Deduction = $42,087.**
 
 ### Test 2 — SEP-IRA, high income hitting cap
+
 **Input:** Schedule C net profit $400,000; deductible half SE tax $23,886; age 55; no Solo 401(k).
 **Expected:** Net SE earnings = $376,114. SEP = 20% × $376,114 = $75,223, CAPPED at $70,000. **SEP deduction = $70,000.**
 
 ### Test 3 — Solo 401(k) with super catch-up
+
 **Input:** Schedule C net profit $200,000; deductible half SE tax $14,130; age 62; Solo 401(k) established.
 **Expected:** Net SE earnings = $185,870. Employee deferral = $23,500. Employer = 20% × $185,870 = $37,174. Subtotal = $60,674 ≤ $70,000 §415(c). Super catch-up = $11,250. **Total deduction = $71,924.**
 
 ### Test 4 — Low income, deferral limited by earnings
+
 **Input:** Schedule C net profit $20,000; deductible half SE tax $1,413; age 30; Solo 401(k) established.
 **Expected:** Net SE earnings = $18,587. Employee deferral = $18,587 (limited by net SE earnings, not $23,500). Employer = 20% × $18,587 = $3,717. Total = $22,304. But total cannot exceed net SE earnings in a meaningful way — verify: $23,500 deferral limit > $18,587 net SE earnings, so deferral capped at $18,587. **Total deduction = $22,304.**
 
 ### Test 5 — Shared 401(k) deferral with employer plan
+
 **Input:** Schedule C net profit $80,000; deductible half SE tax $5,652; age 45; Solo 401(k) established; also has W-2 job where deferred $15,000 in employer 401(k).
 **Expected:** Remaining Solo 401(k) deferral = $23,500 − $15,000 = $8,500. Net SE earnings = $74,348. Employer = 20% × $74,348 = $14,870. **Solo 401(k) total = $8,500 + $14,870 = $23,370.** (Employer contributions are separate from the shared deferral limit.)
 
 ### Test 6 — Traditional IRA deductibility phase-out
+
 **Input:** Schedule C net profit $120,000; SEP-IRA contribution $20,000; single; MAGI = $100,000 (after SE tax deduction); age 35.
 **Expected:** Active participant in SEP-IRA. Single phase-out: $79,000-$89,000. MAGI $100,000 > $89,000. **Traditional IRA contribution is NOT deductible** (but can still contribute nondeductibly or to Roth if MAGI < $150,000).
 
----
-
 ## Section 18 — PROHIBITIONS
 
-1. **NEVER use the 25% rate directly for a sole prop's employer contribution.** The effective rate is 20% (25% / 1.25) because the contribution reduces the base. Using 25% overstates the maximum contribution.
-
-2. **NEVER allow a Solo 401(k) for 2025 if the plan was not established by December 31, 2025.** Default to SEP-IRA if the establishment date is unknown or after December 31.
-
-3. **NEVER ignore the §415(c) $70,000 cap.** Employee deferrals + employer contributions (excluding catch-up) cannot exceed $70,000. Catch-up is on top.
-
-4. **NEVER apply the super catch-up to ages outside 60-63.** Ages 50-59 and 64+ get the regular $7,500 catch-up. Only ages 60-63 get the $11,250 super catch-up.
-
-5. **NEVER recommend a SIMPLE IRA over a Solo 401(k) for a sole prop without employees.** SIMPLE IRA has lower limits and more restrictions. It is virtually always inferior for the target demographic.
-
-6. **NEVER forget that the $23,500 deferral limit is SHARED across all 401(k) plans.** A taxpayer with both an employer 401(k) and a Solo 401(k) shares the limit.
-
-7. **NEVER allow employee deferrals to exceed net SE earnings.** The deferral is capped at the lesser of $23,500 or net SE earnings.
-
-8. **NEVER compute retirement contributions without first computing the deductible half of SE tax.** The deductible half of SE tax reduces net SE earnings, which is the base for employer contributions.
-
-9. **NEVER extend the IRA contribution deadline beyond April 15.** Filing extensions do NOT extend the IRA contribution deadline. Only Solo 401(k) employer contributions and SEP-IRA contributions get the extension benefit.
-
-10. **NEVER treat Roth contributions (IRA or Solo 401(k) Roth deferral) as reducing QBI.** Only deductible (pre-tax) contributions reduce QBI.
-
----
+- **Prohibition 1 — Employer contribution rate** — NEVER use the 25% rate directly for a sole prop's employer contribution. The effective rate is 20% (25% / 1.25) because the contribution reduces the base. Using 25% overstates the maximum contribution.
+- **Prohibition 2 — Solo 401(k) establishment deadline** — NEVER allow a Solo 401(k) for 2025 if the plan was not established by December 31, 2025. Default to SEP-IRA if the establishment date is unknown or after December 31.
+- **Prohibition 3 — §415(c) cap** — NEVER ignore the §415(c) $70,000 cap. Employee deferrals + employer contributions (excluding catch-up) cannot exceed $70,000. Catch-up is on top.
+- **Prohibition 4 — Super catch-up age restriction** — NEVER apply the super catch-up to ages outside 60-63. Ages 50-59 and 64+ get the regular $7,500 catch-up. Only ages 60-63 get the $11,250 super catch-up.
+- **Prohibition 5 — SIMPLE IRA recommendation** — NEVER recommend a SIMPLE IRA over a Solo 401(k) for a sole prop without employees. SIMPLE IRA has lower limits and more restrictions. It is virtually always inferior for the target demographic.
+- **Prohibition 6 — Shared deferral limit** — NEVER forget that the $23,500 deferral limit is SHARED across all 401(k) plans. A taxpayer with both an employer 401(k) and a Solo 401(k) shares the limit.
+- **Prohibition 7 — Deferral cannot exceed net SE earnings** — NEVER allow employee deferrals to exceed net SE earnings. The deferral is capped at the lesser of $23,500 or net SE earnings.
+- **Prohibition 8 — Compute deductible half of SE tax first** — NEVER compute retirement contributions without first computing the deductible half of SE tax. The deductible half of SE tax reduces net SE earnings, which is the base for employer contributions.
+- **Prohibition 9 — IRA contribution deadline** — NEVER extend the IRA contribution deadline beyond April 15. Filing extensions do NOT extend the IRA contribution deadline. Only Solo 401(k) employer contributions and SEP-IRA contributions get the extension benefit.
+- **Prohibition 10 — Roth contributions and QBI** — NEVER treat Roth contributions (IRA or Solo 401(k) Roth deferral) as reducing QBI. Only deductible (pre-tax) contributions reduce QBI.
 
 ## Section 19 — Cross-skill references
 
+**Upstream skill data consumed**
+
 | Upstream skill | Data consumed |
-|---|---|
+| --- | --- |
 | `us-schedule-c-and-se-computation` | Schedule C net profit (Line 31), deductible half of SE tax |
 
+**Downstream skill data provided**
+
 | Downstream skill | Data provided |
-|---|---|
+| --- | --- |
 | `us-qbi-deduction` | Deductible retirement contribution amount (reduces QBI) |
 | `us-quarterly-estimated-tax` | Retirement deduction amount (reduces estimated tax liability) |
 | `us-federal-return-assembly` | Retirement deduction for Schedule 1 Line 16 |
 | `us-ca-return-assembly` | Retirement deduction for federal return portion |
-
----
 
 ## Disclaimer
 
@@ -706,6 +616,52 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+## 
+
+- **Annual compensation limit for qualified plans (§401(a)(17))** — $360,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k) catch-up contribution limit (age 50+)** — $8,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k) enhanced catch-up contribution limit (age 60-63, SECURE 2.0)** — $11,250  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k)/403(b) employee elective deferral limit (§402(g))** — $24,500  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **Defined-contribution annual additions limit (§415(c), employee + employer, excl. catch-up)** — $72,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **IRA catch-up contribution (age 50+)** — $1,100  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **IRA contribution limit (traditional + Roth combined)** — $7,500  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits))_
+- **SIMPLE plan catch-up contribution (age 50+)** — $4,000  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **SIMPLE plan enhanced catch-up contribution (age 60-63, SECURE 2.0)** — $5,250  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **SIMPLE IRA / SIMPLE 401(k) employee elective deferral limit** — $17,000  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/us-self-employed-retirement) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-self-employed-retirement` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-self-employed-retirement. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,15 +1,13 @@
 ---
 name: de-income-tax
-description: "> Use this skill whenever asked about German income tax (Einkommensteuer) for self-employed individuals (Freiberufler or Gewerbetreibende). Trigger on phrases like \"how much tax do I pay in Germany\", \"Einkommensteuer\", \"Einkommensteuererklarung\", \"Anlage S\", \"Anlage G\", \"Anlage EUR\", \"Freiberufler tax\", \"Gewerbetreibende\", \"Solidaritatszuschlag\", \"Kirchensteuer\", \"Vorauszahlungen\", \"Betriebsausgaben\", \"AfA\", \"Abschreibung\", \"hausliches Arbeitszimmer\", \"Fahrtkosten\", \"Bewirtungskosten\", \"Grundfreibetrag\", or any question about filing or computing income tax for a self-employed client in Germany. Covers Einkommensteuer progressive rates, Solidaritatszuschlag, Kirchensteuer, Anlage S/G/EUR structure, allowable Betriebsausgaben, AfA depreciation, home office, vehicle expenses, quarterly Vorauszahlungen, Gewerbesteuer credit, and interaction with Umsatzsteuer. ALWAYS read this skill before touching any German income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about German income tax (Einkommensteuer) for self-employed individuals (Freiberufler or Gewerbetreibende). Trigger on phrases like \"how much tax do I pay in Germany\", \"Einkommensteuer\", \"Einkommensteuererklarung\", \"Anlage S\", \"Anlage G\", \"Anlage EUR\", \"Freiberufler tax\", \"Gewerbetreibende\", \"Solidaritatszuschlag\", \"Kirchensteuer\", \"Vorauszahlungen\", \"Betriebsausgaben\", \"AfA\", \"Abschreibung\", \"hausliches Arbeitszimmer\", \"Fahrtkosten\", \"Bewirtungskosten\", \"Grundfreibetrag\", or any question about filing or computing income tax for a self-employed client in Germany. Covers Einkommensteuer progressive rates, Solidaritatszuschlag, Kirchensteuer, Anlage S/G/EUR structure, allowable Betriebsausgaben, AfA depreciation, home office, vehicle expenses, quarterly Vorauszahlungen, Gewerbesteuer credit, and interaction with Umsatzsteuer. ALWAYS read this skill before touching any German income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: DE
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/de-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/de-income-tax"
+  jurisdiction: "DE"
+  tax_year: "2025"
+  last_updated: "2026-06-12"
 ---
 
 # Germany Income Tax (Einkommensteuer) -- Self-Employed Skill v2.0
@@ -572,8 +570,8 @@ Expected: Full EUR 1,000 is Betriebseinnahme. All purchase costs at gross.
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/de-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

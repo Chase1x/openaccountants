@@ -1,20 +1,19 @@
 ---
 name: saf-t-realtime-ereporting-matrix
-description: "> Use this skill whenever a tax preparer, ERP implementer, or e-invoicing project asks about country mandates for SAF-T (Standard Audit File for Tax), real-time invoice reporting, or e-receipt clearance. Trigger on phrases like \"SAF-T\", \"Standard Audit File\", \"SAF-T Poland\", \"SAF-T Portugal\", \"SAF-T Romania\", \"JPK\", \"SAF-T Norway\", \"real-time invoice reporting\", \"SII Spain\", \"RTIR Hungary\", \"KSeF Poland\", \"SDI Italy\", \"NF-e Brazil\", \"CFDI Mexico\", \"e-Fatura Turkey\", \"e-fapiao\", \"Peppol BIS\", \"ViDA\", \"DRR digital reporting requirements\", \"EN 16931\", \"structured invoice\", \"XRechnung\", \"Factur-X\", or any request to determine whether a country mandates SAF-T submission or real-time / near-real-time invoice transmission. Maps the mandate scope, file format, transmission method, threshold triggers, deadline, and penalty for 40+ countries."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever a tax preparer, ERP implementer, or e-invoicing project asks about country mandates for SAF-T (Standard Audit File for Tax), real-time invoice reporting, or e-receipt clearance. Trigger on phrases like \"SAF-T\", \"Standard Audit File\", \"SAF-T Poland\", \"SAF-T Portugal\", \"SAF-T Romania\", \"JPK\", \"SAF-T Norway\", \"real-time invoice reporting\", \"SII Spain\", \"RTIR Hungary\", \"KSeF Poland\", \"SDI Italy\", \"NF-e Brazil\", \"CFDI Mexico\", \"e-Fatura Turkey\", \"e-fapiao\", \"Peppol BIS\", \"ViDA\", \"DRR digital reporting requirements\", \"EN 16931\", \"structured invoice\", \"XRechnung\", \"Factur-X\", or any request to determine whether a country mandates SAF-T submission or real-time / near-real-time invoice transmission. Maps the mandate scope, file format, transmission method, threshold triggers, deadline, and penalty for 40+ countries. Does NOT cover: country-specific VAT rate determination (see country VAT skills); e-archiving requirements beyond minimums; structured invoice content beyond"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/saf-t-realtime-ereporting-matrix"
-  tax_year: 2025
-  obligation: SAFT
+  openaccountants_url: "https://www.openaccountants.com/skills/saf-t-realtime-ereporting-matrix"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# SAF-T and Real-Time E-Reporting Matrix v0.1
+# Saf T Realtime Ereporting Matrix
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## SAF-T and Real-Time E-Reporting Matrix v0.1
 
 ## What this file is
 
@@ -34,8 +33,6 @@ metadata:
 
 **The reviewer is the customer of this output.** E-reporting mandates carry steep penalties and ERP-blocking consequences. Every output must be reviewed by a credentialed e-invoicing / VAT specialist before any go-live decision.
 
----
-
 ## Section 1 — Scope statement
 
 This skill covers:
@@ -53,14 +50,12 @@ This skill does NOT cover:
 - **Detailed XSD schema field-level mapping** beyond format and core blocks
 - **E-archiving retention beyond the minimum**
 
----
-
 ## Section 2 — SAF-T matrix
 
-SAF-T is an XML standard published by the OECD for fiscal audit data exchange. Countries adopting it generally specify required modules (master data, GL, AR, AP, inventory, payments, source documents).
+**SAF-T matrix**  _(Section 2 — SAF-T matrix)_
 
 | Country | Status | Trigger | Frequency | Source |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Portugal** | Mandatory since 2008; expanded to invoicing 2013 | All entities with accounting obligations; threshold-based for invoicing module | Monthly transmission of invoicing SAF-T-PT; annual accounting SAF-T-PT | Decreto-Lei 28/2019; Portaria 302/2016 |
 | **Poland — JPK_V7M / V7K** | Mandatory monthly/quarterly for all VAT-registered taxpayers since 2020 | All VAT taxpayers | Monthly (V7M) or quarterly (V7K) | Ustawa o VAT art. 99 ust. 11c; Rozporządzenie MF 2019 |
 | **Poland — JPK_KR (general ledger)** | On-demand for all VAT taxpayers; mandatory periodic submission starting 2025–2026 for large taxpayers | Large taxpayers (revenue > EUR 50m); broader scope phased | Phased; periodic from 2025 | Ordynacja Podatkowa art. 193a |
@@ -76,12 +71,12 @@ SAF-T is an XML standard published by the OECD for fiscal audit data exchange. C
 | **Angola — SAF-T (AO)** | Mandatory since 2019 for VAT taxpayers | All VAT taxpayers | Monthly | Decreto Presidencial 312/18 |
 | **Cape Verde — SAF-T (CV)** | Mandatory since 2017 | VAT taxpayers | Monthly | Decreto-Lei 41/2017 |
 
----
-
 ## Section 3 — Real-time / clearance e-invoice matrix
 
+**Real-time / clearance e-invoice matrix**  _(Section 3 — Real-time / clearance e-invoice matrix)_
+
 | Country | Mandate | Effective date | Model | Format | Transmission |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Italy — SDI** | All B2B and B2C since 2019 (residents); cross-border via Esterometro merged into SDI 2022 | Live | Pre-clearance | FatturaPA XML | SDI portal (centralised) |
 | **France — PPF + PDP** | Mandatory receipt 1 Sep 2026; outbound staged Sep 2026–Sep 2027 | 2026–2027 | Centralised + accredited PDPs | Factur-X (XML-PDF hybrid), Peppol BIS, UBL | PPF (Portail Public de Facturation) or via PDP |
 | **Germany — XRechnung / B2G + ZUGFeRD / B2B** | B2B receipt mandatory 1 Jan 2025; issue mandatory 1 Jan 2027 (large), 1 Jan 2028 (others) | 2025–2028 | Pre-issue structured invoice (no central clearance) | XRechnung / ZUGFeRD / Factur-X / EN 16931-compliant | Direct (any agreed channel) — clearance NOT centralised |
@@ -106,8 +101,10 @@ SAF-T is an XML standard published by the OECD for fiscal audit data exchange. C
 
 ### Asia, Middle East, Latin America
 
+**Asia, Middle East, Latin America matrix**  _(Asia, Middle East, Latin America)_
+
 | Country | Mandate | Effective | Model | Format | Transmission |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Saudi Arabia — Fatoorah** | All VAT-registered; Phase 1 (Dec 2021) + Phase 2 integration in waves (Jan 2023 onwards) | Live (waves) | Pre-clearance (Phase 2) | XML / hybrid PDF/A-3 | ZATCA Fatoora platform |
 | **UAE** | E-invoicing scheme planned 2026 | 2026 | TBD | EN 16931-aligned | TBD |
 | **Egypt — ETA** | Mandatory B2B since 2021 | Live | Pre-clearance | ETA XML / JSON | ETA portal |
@@ -126,56 +123,40 @@ SAF-T is an XML standard published by the OECD for fiscal audit data exchange. C
 | **Ecuador — Comprobantes Electrónicos** | All taxpayers since 2018 | Live | Pre-clearance | XML | SRI |
 | **Uruguay — CFE** | All taxpayers since 2019 | Live | Pre-clearance | XML | DGI |
 
----
-
 ## Section 4 — EU ViDA — Digital Reporting Requirements
 
-**[T1] Council Directive (EU) 2025/516 amending Directive 2006/112/EC and Regulation (EU) 282/2011:**
+**[T1] Council Directive (EU) 2025/516 elements**  _(Council Directive (EU) 2025/516 amending Directive 2006/112/EC and Regulation (EU) 282/2011)_
 
 | Element | Date | Detail |
-|---|---|---|
+| --- | --- | --- |
 | Optional national e-invoicing without Article 232 derogation | 1 January 2027 | Member States may mandate B2B e-invoicing without prior Council authorisation; ViDA-aligned format required |
 | Recapitulative statements abolished | 1 July 2030 | Replaced by Digital Reporting Requirements (DRR) |
 | Mandatory structured EU intra-Community e-invoice | 1 July 2030 | EN 16931-compliant; 10-day issuance deadline; transactional reporting to each Member State of supplier and customer |
 | Single EU VAT identification + OSS expansion | 1 July 2028 | Extension of OSS to B2C movements of own goods |
 | Platform economy deemed-supplier | 1 July 2028 (with optional 2030) | Short-term accommodation and passenger transport platforms become deemed supplier |
 
-**[T2]** Member States must align national e-invoicing systems with EN 16931 by 1 July 2030. Pre-clearance models that block invoice transmission are NOT permitted under ViDA (post-clearance reporting only). Italy's SDI and France's PPF have explicit transition paths.
-
----
+- **[T2] EN 16931 alignment and pre-clearance prohibition** — Member States must align national e-invoicing systems with EN 16931 by 1 July 2030. Pre-clearance models that block invoice transmission are NOT permitted under ViDA (post-clearance reporting only). Italy's SDI and France's PPF have explicit transition paths.  _([T2])_
 
 ## Section 5 — Decision flow
 
 ### Step 1 — Determine taxpayer status in each jurisdiction
 
-For each country where the taxpayer issues invoices to local customers OR receives invoices from local suppliers OR has VAT registration:
-
-1. VAT-registered? → check the country's e-invoicing scope
-2. Threshold-based exemption? → check turnover thresholds
-3. Sector-specific carve-out? → check (e.g., Italian SDI exempts certain micro-businesses under EUR 65k revenue with forfettario regime; Spanish SII exempts < EUR 6m turnover)
+- **Taxpayer status determination steps** — For each country where the taxpayer issues invoices to local customers OR receives invoices from local suppliers OR has VAT registration: 1. VAT-registered? → check the country's e-invoicing scope 2. Threshold-based exemption? → check turnover thresholds 3. Sector-specific carve-out? → check (e.g., Italian SDI exempts certain micro-businesses under EUR 65k revenue with forfettario regime; Spanish SII exempts < EUR 6m turnover)  _(Step 1 — Determine taxpayer status in each jurisdiction)_
 
 ### Step 2 — Select format
 
-- Cross-border within EU → Peppol BIS billing 3.0 or EN 16931-aligned XML
-- Italy → FatturaPA
-- France → Factur-X (hybrid PDF/A-3 + UBL or CII) OR Peppol BIS
-- Germany → XRechnung (B2G) / ZUGFeRD or Factur-X / EN 16931 (B2B)
-- Spain → Verifactu XML for SII / Verifactu
-- Poland → KSeF FA(2) XML
-- Saudi Arabia → ZATCA XML or PDF/A-3 with embedded XML
-- LATAM → country-specific (CFDI Mexico, DTE Chile, etc.)
+- **Format selection by jurisdiction** — - Cross-border within EU → Peppol BIS billing 3.0 or EN 16931-aligned XML - Italy → FatturaPA - France → Factur-X (hybrid PDF/A-3 + UBL or CII) OR Peppol BIS - Germany → XRechnung (B2G) / ZUGFeRD or Factur-X / EN 16931 (B2B) - Spain → Verifactu XML for SII / Verifactu - Poland → KSeF FA(2) XML - Saudi Arabia → ZATCA XML or PDF/A-3 with embedded XML - LATAM → country-specific (CFDI Mexico, DTE Chile, etc.)  _(Step 2 — Select format)_
 
 ### Step 3 — Select transmission channel
 
-- Centralised → Italy SDI, Poland KSeF, France PPF, Romania SPV, Spain Verifactu/SII web service
-- Decentralised via Peppol → Belgium, Norway, Denmark, Sweden, EU intra-Community by 2030
-- Direct B2B without clearance → Germany B2B
-- LATAM PAC/PSE intermediaries → Mexico, Brazil, Peru, Chile
+- **Transmission channel selection** — - Centralised → Italy SDI, Poland KSeF, France PPF, Romania SPV, Spain Verifactu/SII web service - Decentralised via Peppol → Belgium, Norway, Denmark, Sweden, EU intra-Community by 2030 - Direct B2B without clearance → Germany B2B - LATAM PAC/PSE intermediaries → Mexico, Brazil, Peru, Chile  _(Step 3 — Select transmission channel)_
 
 ### Step 4 — Plot deadlines and penalties
 
+**Typical penalty by country**  _(Step 4 — Plot deadlines and penalties)_
+
 | Country | Typical penalty |
-|---|---|
+| --- | --- |
 | Italy SDI | EUR 250–2,000 per non-compliant invoice; deductibility disallowed |
 | Poland KSeF | Up to 100% of VAT shown on non-compliant invoice (initial 6-month grace) |
 | Germany B2B | Loss of input VAT recovery for non-EN-16931 invoice receipt |
@@ -185,8 +166,6 @@ For each country where the taxpayer issues invoices to local customers OR receiv
 | Saudi Arabia ZATCA Phase 2 | SAR 1,000+ per invoice; escalating |
 | India IRN | INR 25,000 per invoice without IRN; ITC disallowance |
 | Spain SII | EUR 0.5% of unreported amount, min EUR 300 / max EUR 6,000 per quarter |
-
----
 
 ## Section 6 — Output specification
 
@@ -201,8 +180,6 @@ The reviewer brief must include:
 7. **EU ViDA alignment** — for EU-registered taxpayers, the 1 July 2030 DRR transition plan.
 8. **Reviewer questions** — open items flagged as [T2] or [T3].
 
----
-
 ## Section 7 — Self-checks
 
 - [ ] Every country of registration / supply / receipt mapped to a mandate status.
@@ -216,8 +193,6 @@ The reviewer brief must include:
 - [ ] Penalty schedule per country in the brief.
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement.
 
----
-
 ## Section 8 — Prohibitions
 
 - **Do not** assume Peppol BIS is universally accepted — Italy SDI, Mexico CFDI, Brazil NF-e use proprietary formats and Peppol is NOT the local mandate.
@@ -226,14 +201,30 @@ The reviewer brief must include:
 - **Do not** propose a centralised-clearance go-live for ViDA-compliant intra-Community invoicing — post-clearance only is permitted under ViDA.
 - **Do not** advise on circumventing mandates (e.g., issuing PDF invoices in a clearance regime) — penalties and VAT recovery loss apply.
 
----
-
 ## Section 9 — Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax or implementation advice. E-invoicing and SAF-T mandates change frequently with national budget cycles and EU directives. Every output must be reviewed and signed off by a credentialed e-invoicing / VAT specialist before any go-live decision.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/saf-t-realtime-ereporting-matrix) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `saf-t-realtime-ereporting-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/saf-t-realtime-ereporting-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,269 +1,155 @@
 ---
 name: se-social-contributions
 description: "Use this skill whenever asked about Swedish self-employed social contributions (egenavgifter). Trigger on phrases like \"egenavgifter\", \"Swedish self-employed contributions\", \"F-skatt\", \"Swedish social insurance\", \"Skatteverket egenavgifter\", \"enskild firma avgifter\", or any question about social contribution obligations for a self-employed client in Sweden. Covers the ~28.97% combined rate, component breakdown, age-based reductions, and deductibility. ALWAYS read this skill before touching any Sweden social contributions work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/se-social-contributions"
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/se-social-contributions"
+  jurisdiction: "SE"
+  tax_year: "2026"
+  last_updated: "2026-09-25"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Sweden Social Contributions (Egenavgifter) -- Self-Employed Skill v2.0
+# Sweden: self-employed social contributions
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+Figures are for tax year 2026.
 
-## Section 1 -- Quick reference
+## Scope and required records
 
-| Field | Value |
-|---|---|
-| Country | Sweden (Kingdom of Sweden) |
-| Authority | Skatteverket (Swedish Tax Agency) |
-| Primary legislation | Socialavgiftslagen (2000:980) -- SAL |
-| Supporting legislation | Inkomstskattelagen (1999:1229); Skatteförfarandelagen (2011:1244) |
-| Total egenavgifter rate | 28.97% |
-| Effective rate after deduction | ~22.47% |
-| Age 67+ rate (born 1938-1957) | 10.21% (ålderspensionsavgift only) |
-| Age 88+ (born before 1938) | 0% |
-| First 5 years reduction | ~21.47% (on first SEK 200,000) |
-| Upper cap | None |
-| F-skatt payment | Monthly (12th of each month) |
-| Annual declaration | By 2 May |
-| Currency | SEK only |
-| Contributor | Open Accountants |
-| Validated by | Pending -- requires validation by Swedish auktoriserad revisor |
-| Validation date | Pending |
+Use this method to prepare the contribution working paper for an individual sole trader or a natural-person partner in a Swedish trading partnership (handelsbolag) or limited partnership (kommanditbolag). It covers active business own contributions (egenavgifter), passive-business special payroll tax, the provisional return deduction and its later reconciliation. It does not compute personal income tax, VAT, employer contributions on pay to employees, or pension-cost special payroll tax.
 
----
+## Ask the client first
 
-## Section 2 -- Required inputs and refusal catalogue
+- Confirm the records and decisions below before selecting a calculation branch.
 
-### Required inputs
+Obtain the business form, income year, birth year, active/passive classification, pension and sickness-benefit decisions, Swedish social-insurance coverage, chosen sickness waiting period, tax-adjusted business result, prior return and final assessment, and preliminary-tax decision. Ask separately about partnership interests, foreign work, employer-paid contributions on business receipts, cessation and regional relief. Label a missing item and pause only the affected calculation.
 
-Before computing, you MUST obtain:
+F-tax/FA-tax affects collection and payer obligations; its absence alone does not prove that all business income is exempt from contributions. With FA-tax, separate employment withholding from business preliminary tax. A partnership partner generally pays personal preliminary tax through SA-tax; do not invent a sole-trader F-tax registration requirement. [F-tax](https://www.skatteverket.se/servicelankar/otherlanguages/englishengelska/businessesandemployers/startingandrunningaswedishbusiness/registeringabusiness/approvalforftax.4.676f4884175c97df4192308.html), [personal preliminary tax](https://www.skatteverket.se/privat/skatter/arbeteochinkomst/preliminarskatt.html).
 
-1. **Business form** -- enskild firma, handelsbolag partner, or kommanditbolag?
-2. **F-skatt registration** -- confirmed?
-3. **Överskott av näringsverksamhet** -- net business income
-4. **Age/birth year** -- reduced rates for 67+
-5. **Any concurrent employment?** -- separate egenavgifter
-6. **Business year** -- first 5 years? (reduction available)
+## The method, step by step
 
-**If F-skatt status is unknown, STOP.**
+1. Establish the business classification and social-insurance coverage.
+2. Select the income-year rate, contribution components and provisional deduction.
+3. Build the return base and reconcile the prior deduction against assessed contributions.
+4. Calculate charges, then apply documented relief and its floors/caps.
+5. Reconcile preliminary payments, the final assessment and next-year return.
 
-### Refusal catalogue
+### Classify income and coverage
 
-**R-SE-SOC-1 -- Cross-border worker.** Trigger: client works in Sweden and Denmark/other EU state. Message: "EU Regulation 883/2004 applies. A1 certificate required. Escalate."
+Business requires independence, continuity and a profit purpose. Hobby income belongs to a different return route. Assess activity across the individual's sole-trader businesses together: work-dependent consulting or craft activity can be active even at low hours; asset-management activity requires its own work-intensity assessment. Passive business is not capital income. Partnership interests are separate businesses. A deficit in one business may not reduce a surplus in another business for contribution purposes. Salary and capital-income items do not enter this business calculation. [Classification](https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/enskildnaringsverksamhet/inkomstavnaringsverksamhet.4.361dc8c15312eff6fd2b612.html), [Social Contributions Act, chapter 3, section 12](https://data.riksdagen.se/dokument/sfs-2000-980.html).
 
-### Prohibitions
+For foreign work, identify where activities occur and obtain the applicable social-security decision/certificate before choosing Swedish charges. Income-tax residence alone is insufficient. Keep foreign-coverage income separate; record the certificate's dates and covered activities. Do not treat an unverified assertion about A1 coverage as an exemption. The governing Swedish contribution rules recognise EU law and social-security agreements. [Social Contributions Act, chapter 1 and chapter 3](https://data.riksdagen.se/dokument/sfs-2000-980.html).
 
-- NEVER forget the circular deduction (effective rate ~22.47%, not 28.97%)
-- NEVER apply full rate to persons born 1938-1957 -- only 10.21%
-- NEVER state there is a cap -- there is no upper limit
-- NEVER apply egenavgifter to capital income -- only näringsverksamhet
-- NEVER ignore the first-5-years reduction
-- NEVER confuse egenavgifter (28.97%) with arbetsgivaravgifter (31.42%)
-- NEVER present F-skatt as only income tax -- it includes egenavgifter
+### Keep employer contributions separate
 
----
+Own contributions (egenavgifter, 28.97% at the full rate) are not employer contributions (arbetsgivaravgifter). If the sole trader pays wages to employees, the employer contributions on that pay are a separate payroll calculation: 31.42% in 2026, only the 10.21% old-age pension contribution for an employee who had turned 67 at the start of the year, and nothing for an employee born 1937 or earlier. An employer owes them only when pay for work to one A-tax payee totals SEK 1,000 or more in the year. The temporary youth reduction is an employer relief only: on pay made from 1 April 2026 to 30 September 2027, employees born 2003–2007 (the 2026 cohort) attract 20.81% on pay up to SEK 25,000 per calendar month and 31.42% above that. None of these employer rates or reliefs changes the owner's own-contribution rate. Use the Sweden payroll Guide for that calculation. [Employer contributions](https://www.skatteverket.se/arbetsgivaravgifter).
 
-## Section 3 -- Rate components (2025)
+## Select the rate and provisional deduction
 
-**Legislation:** SAL 3 kap.
+| Income/status in the income year | Contribution or tax rate | Maximum provisional deduction |
+|---|---:|---:|
+| Active, born 1959 or later, ordinary coverage and seven-day sickness waiting period | 28.97% | 25%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Active, born 1938–1958 | 10.21% | 10%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Active, born 1937 or earlier | 0% | 0%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Active, born 1959 or later, full old-age pension throughout the year, including both income and premium pensions | 10.21% | 10%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Active, born 1959 or later, full sickness or activity compensation during all or part of the year | 10.21% | 10%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Passive business, any birth year | 24.26% | 20%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
+| Estate after a person who died during this income year or earlier | 24.26% | 20%  [Skatteverket](https://www.skatteverket.se/egenavgifter) |
 
-| Component | Rate |
-|---|---|
-| Ålderspensionsavgift (old-age pension) | 10.21% |
-| Efterlevandepensionsavgift (survivors) | 0.60% |
-| Sjukförsäkringsavgift (sickness) | 3.64% |
-| Föräldraförsäkringsavgift (parental) | 2.60% |
-| Arbetsmarknadsavgift (labour market) | 0.10% |
-| Arbetsskadeavgift (work injury) | 0.20% |
-| Allmän löneavgift (general payroll tax) | 11.62% |
-| **Total** | **28.97%** |
+Use documented benefit status, not merely early retirement or partial pension. Age-only pension treatment requires reaching 67 at the start of the year; a person who turns 67 during 2026 (born 1959) still pays the full rate for 2026. Special payroll tax on passive business income has no age reduction: it is 24.26% for a passive owner of any age. [Current table](https://www.skatteverket.se/egenavgifter), [statutory pension/status rules](https://data.riksdagen.se/dokument/sfs-2000-980.html), [special payroll tax on passive income, section 2](https://data.riksdagen.se/dokument/sfs-1990-659.html).
 
----
+The ordinary total comprises sickness 3.64%, parental 2.00%, pension 10.21%, survivor 0.30%, labour-market 0.10%, work-injury 0.10% and general payroll charge 12.62%. The latter is a tax. Keep components when applying relief floors. [Components and waiting periods](https://www.skatteverket.se/egenavgifter).
 
-## Section 4 -- Age reductions and first-5-years
+For an elected waiting period, replace only the sickness component: one day 3.75%; seven days 3.64%; fourteen days 3.54%; thirty days 3.34%; sixty days 3.08%; ninety days 2.90%. Apply that selected component up to ten price base amounts and 3.64% above that boundary. The price base amount is SEK 59,200, making the boundary SEK 592,000. The remaining components continue on their applicable base; this boundary is not an overall contribution cap, and own contributions have no income ceiling. Seven days applies automatically if no other waiting period is chosen. The person can change the waiting period at any time during the year through the Social Insurance Agency (Försäkringskassan), but after turning 55 cannot change to a shorter one. Obtain the effective election dates if it changed during the year. [Waiting-period table](https://www.skatteverket.se/egenavgifter), [price base amount](https://www.skatteverket.se/omoss/pressochmedia/nyheter/2025/nyheter/nyalagarochregler2026.5.1522bf3f19aea8075ba32a2.html).
 
-### Age-based reductions
+## Build the return base
 
-| Age category | Effective rate |
-|---|---|
-| Born 1958 or later (under ~67) | 28.97% |
-| Born 1938-1957 (67-86) | 10.21% (only ålderspensionsavgift) |
-| Born before 1938 (88+) | 0% |
+Start from the tax-adjusted business computation, after the relevant income-tax adjustments and before the current provisional contribution deduction. Do not substitute revenue, withdrawals or bank balance. Keep a bridge from accounting result through every tax adjustment.
 
-### First 5 years reduction
+Exclude sickness/rehabilitation benefits and net income on which the payer owes employer contributions from the own-contribution base. For the latter, allocate related expenses; use proportionate allocation where direct matching is not possible, and retain the declaration disclosure at point 10.5. Apply the exclusions to both the deduction calculation and contribution-base reconciliation so exempt income is not accidentally charged. [Contribution base](https://www.skatteverket.se/egenavgifter), [chapter 3, sections 9–12](https://data.riksdagen.se/dokument/sfs-2000-980.html).
 
-**Legislation:** SAL 3 kap. 18 Section
+### Sole trader: NE schedule
 
-Sjukförsäkringsavgift reduced by up to 7.5 percentage points on first SEK 200,000 of net business income. Effective rate ~21.47% for qualifying new businesses. Available only once per person.
+Bring back the previous allowed provisional deduction in R40. Deduct the previously assessed contributions in R41. Complete R42 from the return's adjustments, then calculate the applicable provisional deduction in R43 on the eligible base. The provisional deduction is a return adjustment, not a bookkeeping expense. Continue the remaining NE fields to the declared surplus/deficit; do not assume R42 minus R43 is always the final contribution base when other adjustments or exempt receipts exist. Preserve both the before-deduction base and the final contribution-liable net income as distinct numbers. [NE and reconciliation instructions](https://www.skatteverket.se/egenavgifter).
 
----
+### Partnership partner: N3A schedule
 
-## Section 5 -- Computation steps
+Use the agreed, tax-adjusted personal share, not the partnership's entire accounting profit. Reverse the previous deduction at point 25 and deduct assessed contributions at point 26. Where several businesses share an assessment, allocate those charges using their prior-year results. Sum points 20–26 at point 27; a positive eligible result supports the current provisional deduction at point 28. Sickness benefit is entered separately at point 29. Point 30 transfers to the active or passive business box in the personal return. Keep each partnership allocation and the individual aggregate relief calculation. [N3A instructions](https://www.skatteverket.se/foretag/inkomstdeklaration/deklarerasomdelagareihandelsbolag/fyllain3abilagan.4.2fb39afe18dabf1e4d251d9.html).
 
-### Step 5.1 -- Contribution base and circular deduction
+## Calculate charges and relief
 
-```
-contribution_base = net_business_income (överskott av näringsverksamhet)
-```
+Let B be the final contribution-liable net income, after the provisional deduction and relevant exclusions. No own contributions are due when B is below SEK 1,000. At SEK 1,000 or more the exemption no longer applies and the charge is on the whole of B. The same SEK 1,000 floor applies to special payroll tax on passive income. A loss does not create a negative contribution or a credit against another business. Determine any loss carry-forward or other use separately. [Contribution Act](https://data.riksdagen.se/dokument/sfs-2000-980.html), [special payroll tax act](https://data.riksdagen.se/dokument/sfs-1990-659.html), [loss guidance](https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/enskildnaringsverksamhet/underskott.4.361dc8c15312eff6fd32a54.html).
 
-Egenavgifter are deductible from income, creating a circular calculation:
+For the ordinary seven-day route, gross combined charge is B × 28.97%. For pension-only or passive routes use the appropriate table rate. Where the waiting period differs, split the sickness calculation at its boundary and add the other components. [Skatteverket](https://www.skatteverket.se/egenavgifter)
 
-```
-egenavgifter = net_business_income x rate / (1 + rate)
-```
+The general special deduction applies only if the active business contribution income is more than SEK 40,000 (exactly SEK 40,000 gives nothing), and only for a person who had not turned 67 at the start of the year and who pays full own contributions. It is not available to anyone who pays only the old-age pension contribution because of full old-age pension, or full sickness or activity compensation, and it never applies to passive income. Calculate the lesser of 7.5% of the eligible business base and SEK 15,000, constrained by the pension floor. Apply against own contributions first, then the general payroll charge. It is calculated automatically by the authority; check it once across eligible business income. There is no first-years-of-business eligibility condition. [General deduction law](https://data.riksdagen.se/dokument/sfs-2023-748.html), [Skatteverket](https://www.skatteverket.se/egenavgifter).
 
-For full rate: effective = 28.97% / 128.97% = ~22.47%.
+### Regional relief
 
-### Step 5.2 -- Apply age reduction
+Check the exact fixed-establishment location against the statutory support-area list; a postal address in a named county alone is insufficient. Separate income from that establishment. For eligible own contributions, the provisional regional amount is 10% of that base, at most SEK 18,000 annually, with the pension floor. Pension-only cases are excluded. Apply against the general payroll charge first. [Regional relief law, sections 2–6 and annex](https://data.riksdagen.se/dokument/sfs-2001-1170.html).
 
-```
-IF born_1938_to_1957: rate = 10.21%
-ELIF born_before_1938: rate = 0%
-ELSE: rate = 28.97%
-```
+Check sector exclusions, including steel/lignite/coal, transport and related infrastructure, and principally financial/insurance or specified intragroup activities. Obtain other de minimis aid and related-enterprise records, and determine the applicable general, agriculture or fisheries regulation; mixed-sector rules can change which regime applies. Do not presume unused state-aid capacity. Record the NACE code at point 13.2 and the agricultural/fisheries indicators when required; claim the relief at point 13.1. [Current declaration guidance](https://www.skatteverket.se/egenavgifter), [statutory conditions](https://data.riksdagen.se/dokument/sfs-2001-1170.html).
 
-### Step 5.3 -- Calculate
+For a partnership, the aggregate partner relief attributable to that partnership is capped at SEK 85,200 and allocated proportionately to taxable shares. Employer-side regional relief can share that ceiling: obtain the partnership/employer's amounts before allocating the remaining allowance. An individual using both employer and own-contribution regional deductions also has a combined annual SEK 85,200 cap. Check the pension floor after combined relief; never subtract a second deduction blindly from a total already reduced. If aid eligibility or shared-cap evidence is missing, report the charge before regional relief and the specific unresolved claim. [Sections 6–6d](https://data.riksdagen.se/dokument/sfs-2001-1170.html).
 
-```
-egenavgifter = net_business_income x rate / (1 + rate)
-```
+## Payments, reconciliation and corrections
 
-### Step 5.4 -- F-skatt monthly payments
+Use the authority's preliminary-tax decision and due dates; do not set monthly remittances by dividing an estimated contribution alone. Preliminary tax also reflects personal income tax and other relevant income. F-tax and special A-tax are paid in equal monthly amounts from the second month of the tax year to the month after it ends, so for income year 2026 from February 2026 to January 2027. The due date is the 17th in January and August and the 12th in every other month; for a business whose VAT taxable base for the year is expected to exceed SEK 40 million, the August date is the 12th. A person starting a business can ask for the first F-tax or special A-tax payment to be deferred by three months. This is not available if the F-tax or special A-tax decision is made after the tax year ends, if the business was taken over from someone else, if the person already runs a business, or if there are special reasons against it. A seasonal business can ask to pay only in the months it operates. [Payment dates, Tax Procedure Act chapter 62, sections 4–7](https://data.riksdagen.se/dokument/sfs-2011-1244.html), [Preliminary business tax](https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka/preliminarskattforforetagochforeningar.4.233f91f71260075abe8800010616.html).
 
-```
-monthly_F_skatt = (estimated_income_tax + estimated_egenavgifter) / 12
-```
+A revised preliminary income declaration is compulsory, not optional, when the final tax is expected to exceed the debited preliminary tax and either the difference is significant or the financial year has been changed without Skatteverket's permission. Skatteverket treats a difference of about 30%, and at least one price base amount, as significant. It must reach Skatteverket within 14 days of the obligation arising, but is not needed when less than one month of the tax year remains. A revised declaration can be filed at any time until six months after the tax year ends. Continue paying under the current decision until a new one is issued. [Tax Procedure Act chapter 28, section 4](https://data.riksdagen.se/dokument/sfs-2011-1244.html), [Preliminary business tax](https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka/preliminarskattforforetagochforeningar.4.233f91f71260075abe8800010616.html).
+
+Cost interest on final tax still to pay for income year 2026 runs from 13 February 2027. On up to SEK 30,000 of that amount, no cost interest is charged from 13 February 2027 to 3 May 2027. To avoid interest on a larger expected shortfall, make an extra payment so it is on the tax account by 12 February 2027. [Tax Procedure Act chapter 65, sections 4 and 6](https://data.riksdagen.se/dokument/sfs-2011-1244.html).
+
+In the following return, reconcile the allowed provisional deduction to assessed contributions even after cessation. A reassessment changing a deduction also changes its reversal in the following year's return; a changed assessed contribution is adjusted in R41 for the year of the reassessment decision. Retain a year-by-year bridge and amend all affected returns. [Reassessment workflow](https://www.skatteverket.se/egenavgifter).
+
+The income tax return (Inkomstdeklaration 1 with the NE or N3A schedule) for income year 2026 is due by 2 May 2027. Because 2 May 2027 is a Sunday, a return filed on Monday 3 May 2027 is on time. The return date for a person using a tax agent can differ; confirm the agent's extended date with Skatteverket before relying on it. [Tax Procedure Act chapter 32, section 1](https://data.riksdagen.se/dokument/sfs-2011-1244.html), [Act on the computation of statutory time, section 2](https://data.riksdagen.se/dokument/sfs-1930-173.html).
+
+## Worked checks
+
+All monetary inputs below are hypothetical SEK amounts. These are calculation checks, not final assessment notices; amounts shown to two decimals illustrate arithmetic, not statutory intermediate rounding. Reconcile the final whole-krona assessment with the official service. [Skatteverket](https://www.skatteverket.se/egenavgifter)
+
+- **Ordinary trader:** Born 1985, active Swedish coverage, seven-day waiting period, no regional relief or exclusions. Eligible NE base before R43 is 200,000. A 25% provisional deduction is 50,000; resulting B is 150,000. Gross charge is 43,455; general relief is 11,250; estimated combined charge is 32,205. The relief base is the post-deduction 150,000, not 200,000. [Skatteverket](https://www.skatteverket.se/egenavgifter)
+- **Relief boundary:** With already established B of 40,000, general relief is zero; gross combined charge is 11,588. At B of 40,100, relief is 3,007.50 and gross charge is 11,616.97, leaving 8,609.47 before any regional relief.
+- **Contribution boundary:** Already established B of 999 incurs no own contributions. At B of 1,000, the ordinary combined charge is 289.70 with no general relief.
+- **Pension-only:** Born 1958, active business, eligible pre-deduction base 200,000. Provisional deduction 20,000; B 180,000; pension contribution 18,378; no general relief.
+- **Passive business:** Eligible pre-deduction base 200,000; provisional deduction 40,000; B 160,000; special payroll tax 38,816. Do not apply the active-business general relief.
+- **Different waiting period:** Already established B 600,000 and a documented thirty-day election throughout the year. Sickness charge is 592,000 × 3.34% plus 8,000 × 3.64% = 20,064. Other components total 25.33%, giving 151,980. Gross combined charge is 172,044; eligible capped general relief 15,000 leaves 157,044 before regional relief. [Skatteverket](https://www.skatteverket.se/egenavgifter)
+- **Partnership reconciliation:** Prior allowed deduction 50,000 and allocated assessed charges 32,205 give a net upward adjustment of 17,795 at points 25–26. Keep allocation evidence; do not deduct the entire multi-business assessment again.
+- **Passive owner aged 70:** Born 1956, passive business, B 100,000. Special payroll tax is 24,260 at 24.26%; the 10.21% age rate does not apply to passive income, and there is no general relief.
+- **Loss and salary:** A sole-trader loss of 30,000 does not produce negative contributions and does not reduce an unrelated partnership contribution base. Employment payroll stays outside this computation.
+- **Regional evidence missing:** An eligible-looking establishment without aid-history or shared-cap evidence produces a charge before regional relief plus an unresolved relief calculation. Do not assert the full cap is available.
+
+## Required working-paper output
+
+Return: taxpayer and income year; classification and coverage evidence; pre-deduction base; rate/status and waiting-period decision; prior reversal and assessed-charge allocation; current provisional deduction; exclusions; final contribution base; gross components; each relief and floor/cap check; estimated charge; preliminary payments and their due dates; income tax return due date; exact NE/N3A fields; source dates; unresolved items; and next-year reconciliation amounts. Keep the contribution estimate distinct from personal income tax and from the final assessment.
+
+## When to refuse or refer
+
+- Do not calculate a Swedish charge until unresolved international coverage or benefit-status facts are established.
+- Do not claim regional relief without the establishment, sector, aid-history and shared-cap evidence. Calculate the supported pre-relief charge while resolving the claim.
+- If the starting tax-adjusted result cannot be reconciled, resolve the income-tax working paper before calculating contributions.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 6 -- Payment schedule and tax deductibility
+## Talk to a verified accountant
 
-### Payment schedule
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-| Payment | Due date |
-|---|---|
-| Monthly F-skatt | 12th of each month (17th for Feb/Aug) |
-| Annual reconciliation | Inkomstdeklaration by 2 May |
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-Client can request jämkning if income changes significantly.
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-### Tax deductibility
+## Today's figures and who stands behind this skill
 
-| Question | Answer |
-|---|---|
-| Are egenavgifter deductible? | YES -- reduce net business income for income tax |
-| When deductible? | In the income year they relate to |
-| Effect | Reduces base for both kommunalskatt and statlig skatt |
-
----
-
-## Section 7 -- Marginal burden context
-
-| Income level | Kommunalskatt (~32%) | Statlig skatt | Egenavgifter (~22.47%) | Combined |
-|---|---|---|---|---|
-| Below ~SEK 614,000 | ~32% | 0% | ~22.47% | ~47% |
-| Above ~SEK 614,000 | ~32% | 20% | ~22.47% | ~55% |
-
-Kommunalskatt varies by municipality (average ~32%).
-
----
-
-## Section 8 -- Edge case registry
-
-### EC1 -- Aged 68 (born 1957)
-**Situation:** Still running enskild firma.
-**Resolution:** Only ålderspensionsavgift (10.21%). Effective ~9.27%.
-
-### EC2 -- First year, low income
-**Situation:** Started enskild firma in June, net SEK 80,000.
-**Resolution:** First-5-years reduction. Effective ~21.47%.
-
-### EC3 -- Handelsbolag partner
-**Situation:** Partner in handelsbolag.
-**Resolution:** Same rules as sole proprietor on their share of profit.
-
-### EC4 -- Concurrent employment + self-employment
-**Situation:** Employed and runs side enskild firma.
-**Resolution:** Full egenavgifter on self-employment income. No offset with employer charges.
-
-### EC5 -- Business loss
-**Situation:** Net income SEK -30,000.
-**Resolution:** Egenavgifter = SEK 0. Loss carried forward per IL rules.
-
-### EC6 -- Passive business income
-**Situation:** Kapitalinkomst from business activity.
-**Resolution:** Egenavgifter only on active näringsverksamhet income. Flag for reviewer.
-
----
-
-## Section 9 -- Reviewer escalation protocol
-
-When a situation requires reviewer judgement:
-
-```
-REVIEWER FLAG
-Tier: T2
-Client: [name]
-Situation: [description]
-Issue: [what is ambiguous]
-Options: [possible treatments]
-Recommended: [most likely correct treatment and why]
-Action Required: Qualified auktoriserad revisor must confirm before advising client.
-```
-
-When a situation is outside skill scope:
-
-```
-ESCALATION REQUIRED
-Tier: T3
-Client: [name]
-Situation: [description]
-Issue: [outside skill scope]
-Action Required: Do not advise. Refer to qualified revisor. Document gap.
-```
-
----
-
-## Section 10 -- Test suite
-
-### Test 1 -- Standard sole proprietor
-**Input:** Net income SEK 500,000, age 40, established.
-**Expected output:** Egenavgifter = SEK 500,000 x 28.97% / 1.2897 = SEK 112,315.
-
-### Test 2 -- Low income
-**Input:** Net income SEK 100,000, age 35.
-**Expected output:** SEK 22,463.
-
-### Test 3 -- New business, first year
-**Input:** Net income SEK 150,000, age 30, year 1.
-**Expected output:** Reduced ~21.47%. SEK 26,505.
-
-### Test 4 -- Aged 68
-**Input:** Net income SEK 300,000, age 68.
-**Expected output:** Rate 10.21%. SEK 27,792.
-
-### Test 5 -- High income
-**Input:** Net income SEK 2,000,000, age 45.
-**Expected output:** SEK 449,256. No cap.
-
-### Test 6 -- Business loss
-**Input:** Net income SEK -50,000, age 38.
-**Expected output:** SEK 0.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/se-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `se-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/se-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

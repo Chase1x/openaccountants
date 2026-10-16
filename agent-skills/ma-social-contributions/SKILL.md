@@ -1,20 +1,19 @@
 ---
 name: ma-social-contributions
-description: "> Use this skill whenever asked about Morocco social contributions for the self-employed — the CNSS scheme for travailleurs non-salariés (TNS), the mandatory AMO health-insurance generalisation, and the dedicated social cover for auto-entrepreneurs. Trigger on phrases like \"CNSS auto-entrepreneur\", \"AMO Maroc\", \"social security Morocco self-employed\", \"TNS Maroc\", \"cotisation CNSS indépendant\", \"couverture sociale travailleur non salarié\", \"تغطية صحية للعمل الحر\", \"CNSS Maroc cotisation\", \"retraite TNS Maroc\", \"AMO travailleur non salarié\". Covers the profession-by-profession TNS rollout, the forfaitaire (SMIG-indexed) contribution base, AMO and retraite rates and minimums, registration and quarterly payment, and the contrast with employee CNSS (employer/employee split, salary ceiling) for those who hire. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu, which bundle their own social-cover components."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Morocco social contributions for the self-employed — the CNSS scheme for travailleurs non-salariés (TNS), the mandatory AMO health-insurance generalisation, and the dedicated social cover for auto-entrepreneurs. Trigger on phrases like \"CNSS auto-entrepreneur\", \"AMO Maroc\", \"social security Morocco self-employed\", \"TNS Maroc\", \"cotisation CNSS indépendant\", \"couverture sociale travailleur non salarié\", \"تغطية صحية للعمل الحر\", \"CNSS Maroc cotisation\", \"retraite TNS Maroc\", \"AMO travailleur non salarié\". Covers the profession-by-profession TNS rollout, the forfaitaire (SMIG-indexed) contribution base, AMO and retraite rates and minimums, registration and quarterly payment, and the contrast with employee CNSS (employer/employee split, salary ceiling) for those who hire. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu, which bundle their own social-cover components."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ma-social-contributions"
-  tax_year: 2026
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/ma-social-contributions"
+  jurisdiction: "MA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Morocco — Social Contributions for the Self-Employed (CNSS / AMO / Retraite TNS)
+# MA Social Contributions
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Morocco — Social Contributions for the Self-Employed (CNSS / AMO / Retraite TNS)
 
 Morocco is in the middle of a multi-year **généralisation de la protection sociale**
 (social-protection roll-out, Loi-cadre n° 09-21). The headline goal is to bring every
@@ -32,12 +31,12 @@ This skill replies in the user's language. Moroccan users mix English, French, a
 Darija — keep the native terms (CNSS, AMO, TNS, retraite, SMIG, DGI) and explain them
 in the user's chosen language.
 
----
-
 ## 1. Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Morocco (MA) |
 | Topic | Social contributions for the self-employed — CNSS / AMO / retraite |
 | Authority | **CNSS** (Caisse Nationale de Sécurité Sociale) — cnss.ma |
@@ -81,8 +80,6 @@ flags it for the reviewer:
   current value"; check the **Loi de Finances 2026**, the relevant **décret**, and
   **cnss.ma** before finalising any number.
 
----
-
 ## 2. Who Contributes
 
 Three distinct populations, three different mechanics. Identify which one the user is in
@@ -123,30 +120,21 @@ If a self-employed person **hires staff**, they become an **employer** with the
 **employer / employee**, with a **ceiling** on some branches. This is **separate** from
 the owner's own TNS/AE cover and is handled below in §3c.
 
----
-
 ## 3. Base, Rates & Minimums
 
 ### 3a. TNS (regulated/independent professions)
 
-Contributions are computed on a **forfaitaire (flat) base** set by the worker's
-**category décret**, indexed to the **SMIG**, in a band of roughly **1.75× to 2.75×
-SMIG**. A TNS may, on registration, **opt for a higher base** than the category default,
-and may **change the base once a year** (request filed ~60 days before it takes effect)
-*(verify)*.
+- **Forfaitaire base and opting up** — Contributions are computed on a **forfaitaire (flat) base** set by the worker's **category décret**, indexed to the **SMIG**, in a band of roughly **1.75× to 2.75× SMIG**. A TNS may, on registration, **opt for a higher base** than the category default, and may **change the base once a year** (request filed ~60 days before it takes effect) *(verify)*.  _((verify))_
+
+**TNS regime rates and bases**
 
 | Regime | Rate (active) | Base |
-|---|---|---|
+| --- | --- | --- |
 | **AMO** (health) | **6.37%** *(verify)* | Forfaitaire base (1.75×–2.75× SMIG) |
 | **Retraite** (pension) | **10%** *(verify)* | Same forfaitaire base |
 | **AMO** (pensioners) | **4.52%** of base pensions *(verify)* | Pension, precompted by the payer |
 
-**Formula:**
-
-```
-Monthly TNS contribution = forfaitaire base × (AMO rate + retraite rate)
-                         ≈ base × (6.37% + 10%)        (verify both rates)
-```
+- **Monthly TNS contribution formula** — Monthly TNS contribution = forfaitaire base × (AMO rate + retraite rate) ≈ base × (6.37% + 10%)        (verify both rates)  _((verify))_
 
 > The AMO and retraite are **distinct regimes** with distinct décrets; retraite
 > enrolment timing has been **phased** after AMO for some categories. Confirm whether
@@ -154,22 +142,12 @@ Monthly TNS contribution = forfaitaire base × (AMO rate + retraite rate)
 
 ### 3b. Auto-entrepreneurs
 
-The auto-entrepreneur base is derived **from turnover**, not from a category forfait:
-
-- **Services (prestations):** base ≈ **50% of collected turnover** *(verify)*.
-- **Commercial / industrial / artisanal:** base ≈ **20% of collected turnover**
-  *(verify)*.
-
-The CNSS applies the TNS rates (AMO + retraite) to that derived base, and the result is
-**collected quarterly with the tax** via the AE portal. The scheme is commonly described
-through **fixed brackets (tranches) T1–T8**, each with a set quarterly amount.
-
-- A **minimum** applies even at **zero turnover** — cited as **~MAD 300/quarter
-  (≈ MAD 1,200/year)** *(verify)*.
-- The **annual** contribution is cited in a range of **MAD 1,200 to ~14,400** depending
-  on turnover *(verify the current bracket table)*.
-- AMO benefits start after a **3-month stage (waiting period)** from the first
-  contribution *(verify)*.
+- **Auto-entrepreneur base — services** — ≈ 50% of collected turnover *(verify)* % (services (prestations))  _((verify))_
+- **Auto-entrepreneur base — commercial/industrial/artisanal** — ≈ 20% of collected turnover *(verify)* % (commercial / industrial / artisanal)  _((verify))_
+- **Auto-entrepreneur base derivation and brackets** — The auto-entrepreneur base is derived **from turnover**, not from a category forfait. The CNSS applies the TNS rates (AMO + retraite) to that derived base, and the result is **collected quarterly with the tax** via the AE portal. The scheme is commonly described through **fixed brackets (tranches) T1–T8**, each with a set quarterly amount.  _((verify the current bracket table))_
+- **Minimum contribution at zero turnover** — ~MAD 300/quarter (≈ MAD 1,200/year) MAD (applies even at zero turnover)  _((verify))_
+- **Annual contribution range** — MAD 1,200 to ~14,400 depending on turnover MAD  _((verify the current bracket table))_
+- **AMO waiting period for auto-entrepreneurs** — AMO benefits start after a 3-month stage (waiting period) from the first contribution *(verify)*.  _((verify))_
 
 > **Default:** when the exact bracket amount is unknown, quote the **~MAD 300/quarter**
 > floor and send the user to **cnss.ma / ae.gov.ma** for their bracket. Do **not**
@@ -177,53 +155,37 @@ through **fixed brackets (tranches) T1–T8**, each with a set quarterly amount.
 
 ### 3c. Employee CNSS (employer / employee split) — for those who hire
 
-Ordinary employee social charges in 2026 total roughly **27.83%** of gross salary,
-split **employer ~21.09% / employee ~6.74%** *(verify)*. Critically, **some branches
-are capped** and **some are not**:
+- **Employee CNSS total split** — Ordinary employee social charges in 2026 total roughly **27.83%** of gross salary, split **employer ~21.09% / employee ~6.74%** *(verify)*. Critically, **some branches are capped** and **some are not**.  _((verify))_
+
+**Employee CNSS branches — capped vs uncapped**
 
 | Branch | Capped at MAD 6,000/month? | Notes *(all rates verify)* |
-|---|---|---|
+| --- | --- | --- |
 | Prestations sociales (short + long term, incl. base pension) | **Yes** — capped | Employee ~4.48%; employer ~8.98% on the capped salary |
 | AMO (health) | **No** — whole salary | Employee ~2.26%; employer ~2.26% base + AMO Solidarité ~1.85% |
 | Allocations familiales (family allowances) | **No** — whole salary | Employer ~6.40% |
 | Taxe de formation professionnelle (TFP) | **No** — whole salary | Employer ~1.60% |
 
-> The **MAD 6,000/month ceiling** applies **only** to the capped (prestations
-> sociales) branch. AMO, family allowances, and TFP are computed on the **full**
-> salary. This is the central contrast with the self-employed: the **TNS base is a
-> SMIG-indexed forfait**, whereas the **employee base is real salary, partly capped**.
-
----
+- **Ceiling application scope** — > The **MAD 6,000/month ceiling** applies **only** to the capped (prestations > sociales) branch. AMO, family allowances, and TFP are computed on the **full** > salary. This is the central contrast with the self-employed: the **TNS base is a > SMIG-indexed forfait**, whereas the **employee base is real salary, partly capped**.  _((verify))_
 
 ## 4. Registration & Payment
 
 ### TNS / regulated professions
 
-1. Affiliate with **CNSS** under the décret for your **category** (some ordres
-   professionnels coordinate this).
-2. CNSS assigns the **forfaitaire base**; you may **opt up** to a higher base.
-3. **Declare and pay quarterly**, online via **cnss.ma** *(verify portal/dates)*.
+- **TNS registration and payment steps** — 1. Affiliate with **CNSS** under the décret for your **category** (some ordres professionnels coordinate this). 2. CNSS assigns the **forfaitaire base**; you may **opt up** to a higher base. 3. **Declare and pay quarterly**, online via **cnss.ma** *(verify portal/dates)*.  _((verify portal/dates))_
 
 ### Auto-entrepreneurs
 
-1. Registration in the **RNAE** (rn.ae.gov.ma, Poste Maroc / Al Barid Bank)
-   **automatically** triggers CNSS affiliation.
-2. Social contribution is **collected quarterly alongside the impôt libératoire** via
-   the AE portal — including **nil (néant)** quarters.
-3. AMO benefits begin after the **3-month stage**.
+- **Auto-entrepreneur registration and payment steps** — 1. Registration in the **RNAE** (rn.ae.gov.ma, Poste Maroc / Al Barid Bank) **automatically** triggers CNSS affiliation. 2. Social contribution is **collected quarterly alongside the impôt libératoire** via the AE portal — including **nil (néant)** quarters. 3. AMO benefits begin after the **3-month stage**.
 
 ### Employers (those who hire)
 
-1. Register the **business** as an employer with CNSS and obtain the **affiliation
-   number**.
-2. **Declare and pay monthly** via **DAMANCOM** (teledeclaration), withholding the
-   employee share from payroll *(verify deadline — typically before the end of the
-   month following the period)*.
+- **Employer registration and payment steps** — 1. Register the **business** as an employer with CNSS and obtain the **affiliation number**. 2. **Declare and pay monthly** via **DAMANCOM** (teledeclaration), withholding the employee share from payroll *(verify deadline — typically before the end of the month following the period)*.  _((verify deadline))_
+
+## 4. Registration & Payment
 
 > A self-employed person who hires staff has **two** distinct CNSS relationships: their
 > **own** TNS/AE cover **and** the **employer** obligation for staff. Keep them separate.
-
----
 
 ## 5. Worked Examples
 
@@ -268,8 +230,6 @@ assistant** at **MAD 8,000/month** gross.
 - Khadija files this **monthly via DAMANCOM**. Her **own** social cover stays under the
   **CPU/TNS** track — it is **not** part of the employee computation.
 
----
-
 ## 6. Tier 2 — Reviewer Judgement Required
 
 Escalate to the **Moroccan expert-comptable** reviewer when:
@@ -293,24 +253,11 @@ Escalate to the **Moroccan expert-comptable** reviewer when:
 The agent must **never** present these as settled; it presents the computation, the
 assumptions, and the open items for the reviewer to sign off.
 
----
-
 ## 7. Reference + Test Suite
 
 ### Legal & source references
 
-- **Loi-cadre n° 09-21** relative à la protection sociale (généralisation roadmap).
-- **Loi n° 98-15** — régime AMO de base for the **non-salariés (TNS)**.
-- **Loi n° 99-15** — régime de **pension (retraite)** for the non-salariés.
-- **Category décrets** — fix the **forfaitaire base** per socioprofessional group
-  (CPU payers, commerçants/artisans, médecins, pharmaciens, dentistes, notaires,
-  adouls, avocats, architects, etc.). **Verify each on cnss.ma.**
-- **Décret n° 2.21.477 (2021)** — mandatory CNSS/AMO for **auto-entrepreneurs**.
-- **Loi de Finances 2026** — confirm current rates, SMIG, ceiling, and minimums.
-- Authority: **CNSS** — cnss.ma (TNS portal, DAMANCOM for employers). Tax interaction:
-  **DGI** — tax.gov.ma. AE register: **RNAE** — rn.ae.gov.ma.
-- Secondary corroboration: PwC Worldwide Tax Summaries (Morocco), CLEISS (cotisations
-  Maroc), Moroccan accounting practices (figures cross-checked May 2026).
+- **Legal & source references list** — - **Loi-cadre n° 09-21** relative à la protection sociale (généralisation roadmap). - **Loi n° 98-15** — régime AMO de base for the **non-salariés (TNS)**. - **Loi n° 99-15** — régime de **pension (retraite)** for the non-salariés. - **Category décrets** — fix the **forfaitaire base** per socioprofessional group (CPU payers, commerçants/artisans, médecins, pharmaciens, dentistes, notaires, adouls, avocats, architects, etc.). **Verify each on cnss.ma.** - **Décret n° 2.21.477 (2021)** — mandatory CNSS/AMO for **auto-entrepreneurs**. - **Loi de Finances 2026** — confirm current rates, SMIG, ceiling, and minimums. - Authority: **CNSS** — cnss.ma (TNS portal, DAMANCOM for employers). Tax interaction: **DGI** — tax.gov.ma. AE register: **RNAE** — rn.ae.gov.ma. - Secondary corroboration: PwC Worldwide Tax Summaries (Morocco), CLEISS (cotisations Maroc), Moroccan accounting practices (figures cross-checked May 2026).  _(Loi-cadre n° 09-21; Loi n° 98-15; Loi n° 99-15; Décret n° 2.21.477 (2021); Loi de Finances 2026)_
 
 ### Short test suite
 
@@ -331,31 +278,9 @@ assumptions, and the open items for the reviewer to sign off.
 7. **Q:** Self-employed CPU payer hires staff. **A:** Two relationships — own **CPU/TNS**
    cover (`ma-cpu`) **plus** ordinary **employer CNSS** via **DAMANCOM** for the staff.
 
----
-
 ## PROHIBITIONS
 
-- **Do NOT** transplant one category's **forfaitaire base** onto another — each TNS
-  category has its **own décret base**.
-- **Do NOT** invent auto-entrepreneur **T1–T8 bracket** amounts — quote the **~MAD 300
-  minimum** floor and send the user to cnss.ma / ae.gov.ma.
-- **Do NOT** apply the **MAD 6,000 ceiling** to AMO, family allowances, or the training
-  tax — the ceiling is **only** for the capped prestations-sociales branch.
-- **Do NOT** conflate **TNS / auto-entrepreneur** self-cover with the **employer/employee**
-  computation — a person who hires has **both**, computed separately.
-- **Do NOT** assume "no income → no contribution" — a **minimum** applies regardless.
-- **Do NOT** state any rate, base multiple, ceiling, SMIG, or minimum as final without
-  the **"verify current value"** caveat against the **Loi de Finances 2026** and the
-  relevant **décret**.
-- **Do NOT** advise on **employee payroll mechanics, IR withholding, TVA, or company
-  forms** under this skill — route to the relevant skill (`ma-income-tax`,
-  `morocco-vat`, etc.).
-- **Do NOT** confirm a profession's **roll-out / effective date** without checking
-  cnss.ma — escalate if uncertain.
-- **Do NOT** issue any filing or computation as final without **Moroccan
-  expert-comptable** sign-off.
-
----
+- **Prohibitions list** — - **Do NOT** transplant one category's **forfaitaire base** onto another — each TNS category has its **own décret base**. - **Do NOT** invent auto-entrepreneur **T1–T8 bracket** amounts — quote the **~MAD 300 minimum** floor and send the user to cnss.ma / ae.gov.ma. - **Do NOT** apply the **MAD 6,000 ceiling** to AMO, family allowances, or the training tax — the ceiling is **only** for the capped prestations-sociales branch. - **Do NOT** conflate **TNS / auto-entrepreneur** self-cover with the **employer/employee** computation — a person who hires has **both**, computed separately. - **Do NOT** assume "no income → no contribution" — a **minimum** applies regardless. - **Do NOT** state any rate, base multiple, ceiling, SMIG, or minimum as final without the **"verify current value"** caveat against the **Loi de Finances 2026** and the relevant **décret**. - **Do NOT** advise on **employee payroll mechanics, IR withholding, TVA, or company forms** under this skill — route to the relevant skill (`ma-income-tax`, `morocco-vat`, etc.). - **Do NOT** confirm a profession's **roll-out / effective date** without checking cnss.ma — escalate if uncertain. - **Do NOT** issue any filing or computation as final without **Moroccan expert-comptable** sign-off.
 
 ## Disclaimer
 
@@ -369,6 +294,24 @@ each Loi de Finances and must be **re-verified** before use. Nothing here substi
 for advice from a licensed Moroccan expert-comptable or the CNSS. Part of
 **openaccountants.com** — open-source tax skills for the self-employed.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ma-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ma-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ma-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

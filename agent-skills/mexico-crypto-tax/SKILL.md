@@ -1,27 +1,24 @@
 ---
 name: mexico-crypto-tax
-description: "> Use this skill whenever asked about Mexico cryptocurrency or virtual asset taxation. Trigger on phrases like \"crypto tax Mexico\", \"Bitcoin Mexico\", \"impuesto criptomonedas\", \"ISR crypto\", \"SAT crypto\", \"activos virtuales Mexico\", \"Bitso tax\", \"staking Mexico\", \"mining income Mexico\", \"NFT tax Mexico\", \"Ley Fintech crypto\", \"declaración anual crypto\", \"CFDI crypto\", or any question about the income tax, ISR, or IVA treatment of cryptocurrency, tokens, or digital assets for Mexican tax residents or Mexico-source crypto income. Covers SAT treatment of virtual assets, ISR rates, cost basis, CARF reporting, and Ley Fintech classification. ALWAYS read this skill before touching any Mexico crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Mexico cryptocurrency or virtual asset taxation. Trigger on phrases like \"crypto tax Mexico\", \"Bitcoin Mexico\", \"impuesto criptomonedas\", \"ISR crypto\", \"SAT crypto\", \"activos virtuales Mexico\", \"Bitso tax\", \"staking Mexico\", \"mining income Mexico\", \"NFT tax Mexico\", \"Ley Fintech crypto\", \"declaración anual crypto\", \"CFDI crypto\", or any question about the income tax, ISR, or IVA treatment of cryptocurrency, tokens, or digital assets for Mexican tax residents or Mexico-source crypto income. Covers SAT treatment of virtual assets, ISR rates, cost basis, CARF reporting, and Ley Fintech classification. ALWAYS read this skill before touching any Mexico crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MX
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/mexico-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/mexico-crypto-tax"
+  jurisdiction: "MX"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Mexico Crypto / Virtual Assets Tax Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Mexico Crypto Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United Mexican States (Estados Unidos Mexicanos) |
 | Tax | Impuesto Sobre la Renta (ISR) on Virtual Assets |
 | Currency | MXN (Mexican Peso) — all values must be in MXN at transaction date |
@@ -45,8 +42,10 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether trading or occasional | Treat as habitual (actividad empresarial) — higher compliance burden |
 | Unknown cost basis | STOP — cannot compute gain without documented acquisition cost |
 | Unknown residency status | STOP — Mexican residents taxed on worldwide income; non-residents on Mexico-source only |
@@ -54,22 +53,24 @@ metadata:
 | CFDI required? | If in doubt, issue CFDI for business crypto transactions |
 | RESICO eligibility unclear | Verify income does not exceed $3,500,000 MXN annually |
 
----
-
 ## Section 2 -- Classification Rules
 
 ### 2.1 Legal Classification
 
+**Legal Classification**
+
 | Term | Definition | Authority |
-|---|---|---|
+| --- | --- | --- |
 | Activos virtuales | Digital representations of value that can be electronically transferred and used as means of payment, NOT legal tender | Ley Fintech Art. 30 |
 | Bienes intangibles muebles | Intangible movable property — the SAT's fiscal classification for crypto | SAT criteria (oficios 2019–2025) |
 | Enajenación de bienes | Disposal/alienation of property — the chapter under which crypto sales are taxed | LISR Art. 126 |
 
 ### 2.2 Taxable Events
 
+**Taxable Events**
+
 | Event | Tax Treatment | LISR Chapter |
-|---|---|---|
+| --- | --- | --- |
 | Sale of crypto for MXN/fiat | Taxable — enajenación de bienes | Art. 126 (occasional) or Art. 100 (business) |
 | Crypto-to-crypto exchange (swap) | Taxable — enajenación (disposal at FMV) | Art. 126 / Art. 100 |
 | Payment for goods/services with crypto | Taxable — disposal at FMV in MXN on date of transaction | Art. 126 / Art. 100 |
@@ -84,22 +85,24 @@ metadata:
 
 The SAT distinguishes between occasional disposals and habitual business activity:
 
+**Occasional vs Business Activity**
+
 | Factor | Occasional (Enajenación de bienes) | Business (Actividad empresarial) |
-|---|---|---|
+| --- | --- | --- |
 | Frequency | Infrequent, sporadic sales | Regular, systematic trading |
 | Intent | Not primary economic activity | Profit-seeking as primary activity |
 | Tax treatment | Annual declaration; $60,000 MXN exemption may apply | Monthly provisional payments; full ISR + 16% IVA potential |
 | Reporting | In Declaración Anual under "enajenación" | Monthly declarations + annual |
 | Cost basis adjustment | INPC inflation adjustment allowed | Full deductions per business rules |
 
----
-
 ## Section 3 -- Rate Tables
 
 ### 3.1 ISR Progressive Rates — Personas Físicas (2025)
 
+**ISR Progressive Rates — Personas Físicas (2025)**  _(LISR Art. 152; Resolución Miscelánea Fiscal 2025.)_
+
 | Lower Limit (MXN) | Upper Limit (MXN) | Fixed Quota (MXN) | Marginal Rate |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | $0.01 | $8,952.49 | $0.00 | 1.92% |
 | $8,952.50 | $75,984.55 | $171.88 | 6.40% |
 | $75,984.56 | $133,536.07 | $4,461.94 | 10.88% |
@@ -112,24 +115,24 @@ The SAT distinguishes between occasional disposals and habitual business activit
 | $1,503,902.47 | $4,511,707.37 | $392,294.17 | 34.00% |
 | $4,511,707.38 | En adelante | $1,417,491.57 | 35.00% |
 
-**Citation:** LISR Art. 152; Resolución Miscelánea Fiscal 2025.
-
-Crypto gains are added to ALL other income for the year to determine the applicable bracket.
+- **Combining crypto gains with other income** — Crypto gains are added to ALL other income for the year to determine the applicable bracket.  _(LISR Art. 152; Resolución Miscelánea Fiscal 2025.)_
 
 ### 3.2 Corporate ISR Rate
 
-| Entity Type | Rate |
-|---|---|
-| Personas morales (corporations) | 30% flat on net gain |
+**Corporate ISR Rate**  _(LISR Art. 9.)_
 
-**Citation:** LISR Art. 9.
+| Entity Type | Rate |
+| --- | --- |
+| Personas morales (corporations) | 30% flat on net gain |
 
 ### 3.3 RESICO Rates (Régimen Simplificado de Confianza)
 
 If the taxpayer qualifies for RESICO (total annual income ≤ $3,500,000 MXN):
 
+**RESICO Rates (Régimen Simplificado de Confianza)**
+
 | Annual Income (MXN) | Rate |
-|---|---|
+| --- | --- |
 | Up to $300,000 | 1.00% |
 | $300,001 – $600,000 | 1.10% |
 | $600,001 – $1,000,000 | 1.50% |
@@ -140,26 +143,26 @@ If the taxpayer qualifies for RESICO (total annual income ≤ $3,500,000 MXN):
 
 ### 3.4 The 20% Alternative Rate
 
-If a taxpayer **cannot prove** their cost basis for a crypto disposal, the SAT may apply a **20% rate on gross proceeds** instead. This is not an elective option — it is a fallback when documentation is insufficient.
-
-**Citation:** LISR Art. 126, third paragraph.
+- **20% alternative rate on gross proceeds** — If a taxpayer cannot prove their cost basis for a crypto disposal, the SAT may apply a 20% rate on gross proceeds instead. This is not an elective option — it is a fallback when documentation is insufficient.  _(LISR Art. 126, third paragraph.)_
 
 ### 3.5 Annual Exemption
 
+**Annual Exemption**
+
 | Exemption | Amount | Condition |
-|---|---|---|
+| --- | --- | --- |
 | Enajenación de bienes muebles | ~$60,000 MXN per year (3× UMA anualizada, approx. $124,000 MXN for 2025 per some sources) | Non-habitual disposals only; habitual traders do NOT qualify |
 
 The exact threshold is tied to the UMA (Unidad de Medida y Actualización) and updated annually.
-
----
 
 ## Section 4 -- Cost Basis Methods
 
 ### 4.1 Accepted Methods
 
+**Accepted Methods**
+
 | Method | Status |
-|---|---|
+| --- | --- |
 | Specific identification | Primary method — match each sale to a specific acquisition lot |
 | FIFO (First In, First Out) | Accepted when specific identification impractical |
 | INPC-adjusted cost | Cost basis may be adjusted for inflation using INPC (Índice Nacional de Precios al Consumidor) from acquisition month to disposal month |
@@ -168,8 +171,10 @@ The exact threshold is tied to the UMA (Unidad de Medida y Actualización) and u
 
 ### 4.2 Cost Basis Components
 
+**Cost Basis Components**
+
 | Component | Included? |
-|---|---|
+| --- | --- |
 | Purchase price in MXN (at exchange rate on acquisition date) | Yes |
 | Exchange fees and commissions on acquisition | Yes |
 | Network/gas fees on acquisition | Yes |
@@ -178,28 +183,24 @@ The exact threshold is tied to the UMA (Unidad de Medida y Actualización) and u
 
 ### 4.3 INPC Adjustment
 
-For occasional disposals under the enajenación de bienes chapter, the cost basis can be adjusted for inflation:
+- **INPC adjustment formula** — Adjusted cost = Original cost × (INPC disposal month / INPC acquisition month)  _(LISR Art. 124.)_
 
-```
-Adjusted cost = Original cost × (INPC disposal month / INPC acquisition month)
-```
+For occasional disposals under the enajenación de bienes chapter, the cost basis can be adjusted for inflation:
 
 This can meaningfully reduce the taxable gain for long-held assets in a high-inflation environment.
 
-**Citation:** LISR Art. 124.
-
 ### 4.4 Unverifiable Cost Basis
 
-If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% tax on gross sale proceeds. This is punitive — it effectively assumes zero cost basis and then applies 20% to the full amount.
-
----
+- **Unverifiable cost basis consequence** — If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% tax on gross sale proceeds. This is punitive — it effectively assumes zero cost basis and then applies 20% to the full amount.
 
 ## Section 5 -- DeFi / Staking / Mining / Airdrop Treatment
 
 ### 5.1 Mining
 
+**Mining**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Occasional mining (hobby) | "Otros ingresos" (Art. 142 LISR) — taxable at progressive rates |
 | Commercial mining operation | Actividad empresarial — ISR at progressive rates + 16% IVA on services |
 | Valuation | FMV in MXN at date of receipt |
@@ -209,8 +210,10 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 5.2 Staking
 
+**Staking**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Staking rewards | Taxable as "otros ingresos" at FMV when received |
 | Cost basis of staking rewards | FMV at receipt date (for future disposal) |
 | Staking-as-a-service | If providing service: actividad empresarial + IVA |
@@ -218,16 +221,20 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 5.3 Airdrops
 
+**Airdrops**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Promotional airdrop | Taxable as "otros ingresos" at FMV when received |
 | Fork-based distribution | Cost basis of ₩0; taxable on disposal |
 | Airdrop in exchange for a service | Income at FMV — may be actividad empresarial |
 
 ### 5.4 DeFi
 
+**DeFi**
+
 | Activity | Treatment |
-|---|---|
+| --- | --- |
 | DeFi lending interest | Income at FMV — "otros ingresos" or business income |
 | Liquidity provision (AMM) | Depositing tokens to pool = potential disposal; LP tokens have new cost basis |
 | Yield farming rewards | Income at FMV when received |
@@ -235,12 +242,12 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 | Crypto-to-crypto swaps in DeFi | Each swap is a taxable enajenación |
 | Wrapping (e.g., ETH → WETH) | Arguable — conservative: treat as disposal |
 
----
-
 ## Section 6 -- NFT Treatment
 
+**NFT Treatment**
+
 | Aspect | Treatment |
-|---|---|
+| --- | --- |
 | Purchase of NFT | Acquisition cost for future disposal |
 | Sale of NFT at profit | Taxable — enajenación de bienes at progressive ISR rates |
 | Creation and sale (artist/creator) | Business income (actividad empresarial) — ISR + 16% IVA |
@@ -249,14 +256,14 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 | IVA on NFT sales | If business activity: 16% IVA applies to NFT sales (digital service) |
 | CFDI for NFT sales | Required for business transactions |
 
----
-
 ## Section 7 -- Reporting Requirements
 
 ### 7.1 Individual Filing
 
+**Individual Filing**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Return type | Declaración Anual de Personas Físicas |
 | Filing deadline | 30 April of the following year |
 | Filing portal | Portal SAT (sat.gob.mx) |
@@ -265,15 +272,19 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 7.2 Monthly Provisional Payments
 
+**Monthly Provisional Payments**
+
 | Who | Obligation |
-|---|---|
+| --- | --- |
 | Habitual traders (actividad empresarial) | Must make monthly ISR provisional payments (pagos provisionales) by the 17th of the following month |
 | Occasional sellers (enajenación) | No monthly obligation — annual declaration only |
 
 ### 7.3 CFDI Requirements
 
+**CFDI Requirements**
+
 | Scenario | CFDI Required? |
-|---|---|
+| --- | --- |
 | Business-to-business crypto transactions | Yes — must issue CFDI |
 | Business receiving crypto as payment | Yes — CFDI for the underlying supply |
 | Individual occasional sale | No CFDI required for personal transactions |
@@ -281,8 +292,10 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 7.4 CARF and Exchange Reporting
 
+**CARF and Exchange Reporting**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | CARF adoption | Mexico implemented CARF effective 1 April 2026 |
 | Exchange obligations | Crypto intermediaries (exchanges, brokers, platforms) report user transaction data directly to SAT |
 | What is reported | User identification, transaction amounts, gains/losses |
@@ -290,21 +303,23 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 7.5 Record-Keeping
 
+**Record-Keeping**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 5 years from filing deadline (CFF Art. 30) |
 | Records to maintain | Full transaction logs, exchange CSVs, cost basis records, CFDI documentation, INPC adjustment workpapers |
 | Format | Digital records acceptable; XML for CFDI |
 | Burden of proof | On the taxpayer — SAT can audit and request all documentation |
 
----
-
 ## Section 8 -- Loss Offset and Carry-Forward
 
 ### 8.1 Loss Offset Rules
 
+**Loss Offset Rules**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Loss offset within same category | Losses from enajenación de bienes muebles can offset gains from enajenación de bienes muebles within the same year |
 | Cross-category offset | Losses from crypto generally CANNOT offset employment income, interest, or other income categories |
 | Actividad empresarial losses | Business losses can offset business income; carry-forward for up to 10 years |
@@ -312,8 +327,10 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 ### 8.2 Business Loss Carry-Forward
 
+**Business Loss Carry-Forward**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Available to | Taxpayers under actividad empresarial regime |
 | Duration | Up to 10 years |
 | Adjustment | Must adjust for inflation using INPC |
@@ -323,14 +340,14 @@ If the taxpayer cannot document their acquisition cost, the SAT may apply a 20% 
 
 Occasional sellers (enajenación de bienes) have significantly more limited loss utilization than business traders. If crypto trading generates recurring losses, consult a tax professional about whether actividad empresarial classification is more appropriate.
 
----
-
 ## Section 9 -- Anti-Avoidance Rules
 
 ### 9.1 SAT Enforcement Powers
 
+**SAT Enforcement Powers**
+
 | Measure | Detail |
-|---|---|
+| --- | --- |
 | Exchange data access | SAT receives transaction data from Mexican exchanges (Bitso, etc.) and through CARF from foreign platforms (from April 2026) |
 | Bank account monitoring | SAT monitors bank deposits; large unexplained deposits trigger audits |
 | Discrepancia fiscal | If spending exceeds declared income, SAT can assess tax on the difference |
@@ -338,8 +355,10 @@ Occasional sellers (enajenación de bienes) have significantly more limited loss
 
 ### 9.2 Penalties
 
+**Penalties**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Failure to file | 55%–75% surcharge on unpaid tax |
 | Late filing | Inflation-adjusted surcharges (recargos) + fines |
 | Underdeclared income | 55%–75% of unpaid tax + surcharges |
@@ -348,13 +367,11 @@ Occasional sellers (enajenación de bienes) have significantly more limited loss
 
 ### 9.3 Transfer Pricing
 
-For related-party crypto transactions (e.g., between a taxpayer and a controlled entity), arm's length principles apply. The SAT can recharacterize transactions at fair market value.
+- **Transfer pricing for related-party crypto transactions** — For related-party crypto transactions (e.g., between a taxpayer and a controlled entity), arm's length principles apply. The SAT can recharacterize transactions at fair market value.
 
 ### 9.4 Crypto as Payment for Invoiced Services
 
-If crypto is used to pay for services that should be invoiced, both parties have obligations: the service provider must issue a CFDI in MXN at the transaction-date exchange rate, and the payer must recognize a disposal of the crypto at FMV.
-
----
+- **Crypto as payment for invoiced services obligations** — If crypto is used to pay for services that should be invoiced, both parties have obligations: the service provider must issue a CFDI in MXN at the transaction-date exchange rate, and the payer must recognize a disposal of the crypto at FMV.
 
 ## Section 10 -- Worked Examples
 
@@ -434,8 +451,6 @@ If classified as actividad empresarial:
 
 Conservative: declare as otros ingresos unless professional confirms business classification.
 
----
-
 ## Self-Checks
 
 Before finalising any Mexico crypto tax computation, verify:
@@ -453,8 +468,6 @@ Before finalising any Mexico crypto tax computation, verify:
 - [ ] CARF: does the taxpayer know exchanges now report to SAT?
 - [ ] Flag for reviewer: confirm UMA-based exemption threshold for the relevant year
 
----
-
 ## PROHIBITIONS
 
 - NEVER state that crypto is tax-free in Mexico — realized gains are taxable under ISR
@@ -469,14 +482,30 @@ Before finalising any Mexico crypto tax computation, verify:
 - NEVER ignore CARF reporting — SAT receives exchange data from April 2026
 - NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Mexican Contador Público, licensed tax advisor, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/mexico-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mexico-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mexico-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

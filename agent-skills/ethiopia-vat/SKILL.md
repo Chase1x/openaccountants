@@ -1,24 +1,24 @@
 ---
 name: ethiopia-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for an Ethiopia VAT return. Standard rate 15%. Turnover Tax abolished under Proclamation 1395/2025. ALWAYS read before handling Ethiopia VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ethiopia-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/ethiopia-vat"
+  jurisdiction: "ET"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Ethiopia VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Ethiopia VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Ethiopia |
 | Standard rate | 15% |
 | Zero rate | 0% (exports, gold to NBE) |
@@ -35,32 +35,28 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from CBE (Commercial Bank of Ethiopia), Dashen Bank, Awash Bank, Bank of Abyssinia, Wegagen, or any Ethiopian bank.
 
-**R-ET-1 -- Investment incentive.** Trigger: EIC certificate holder. Message: "Investment incentive may exempt capital goods imports. Verify certificate. Escalate."
-
----
+- **R-ET-1 -- Investment incentive** — Investment incentive may exempt capital goods imports. Verify certificate. Escalate. (Trigger: EIC certificate holder)
 
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CBE, COMMERCIAL BANK OF ETHIOPIA | EXCLUDE | Exempt financial |
 | DASHEN BANK | EXCLUDE | Same |
 | AWASH BANK, BANK OF ABYSSINIA | EXCLUDE | Same |
 | WEGAGEN, UNITED BANK | EXCLUDE | Same |
 | MOR, MINISTRY OF REVENUES | EXCLUDE | Tax payment |
-| CUSTOMS, ECC | Check for import VAT | |
-| PENSION, SOCIAL SECURITY | EXCLUDE | |
+| CUSTOMS, ECC | Check for import VAT |  |
+| PENSION, SOCIAL SECURITY | EXCLUDE |  |
 | EEPCO, EEU | Domestic 15% | Electricity |
 | ETHIO TELECOM | Domestic 15% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Reverse charge 15% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -72,15 +68,10 @@ ETB 100,000 net. Output VAT = ETB 15,000 (15%).
 
 Goods ETB 10,000 from market trader. No VAT invoice. Input VAT = 0. Pure cost.
 
----
-
 ## Section 5 -- Classification rules
 
-15% standard. 0% exports, gold to NBE, diplomatic supplies. Exempt: residential rental, financial services, medical, education, religious, postal, electricity/water/kerosene (domestic), bread/milk, military.
-
-TOT abolished. Below-threshold businesses: Category B income tax (2%-9% gross).
-
----
+- **Standard rate classification** — 15% standard. 0% exports, gold to NBE, diplomatic supplies. Exempt: residential rental, financial services, medical, education, religious, postal, electricity/water/kerosene (domestic), bread/milk, military.
+- **TOT abolished; below-threshold treatment** — TOT abolished. Below-threshold businesses: Category B income tax (2%-9% gross).
 
 ## Section 6 -- VAT return form
 
@@ -90,50 +81,56 @@ Input: Boxes 9-15 (local purchases, imports, input local, input imports, reverse
 
 Net: Boxes 16-18 (net, credit b/f, net payable).
 
----
-
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 15%. Net zero. Proclamation 285/2002 Art. 10.
-
-Import of goods: VAT at customs. Recoverable if for taxable supplies.
-
----
+- **Non-resident services reverse charge** — Non-resident services: self-assess 15%. Net zero. Proclamation 285/2002 Art. 10.  _(Proclamation 285/2002 Art. 10)_
+- **Import of goods VAT** — Import of goods: VAT at customs. Recoverable if for taxable supplies.
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (Art. 21): entertainment, motor vehicles < 10 seats (unless transport for hire), personal/non-business use, purchases from non-registered suppliers (no valid invoice).
-
-Cash register receipts acceptable for retail up to ETB 500.
-
-Partial exemption: Art. 20(3). Turnover-based apportionment.
-
----
+- **Blocked input categories** — Blocked (Art. 21): entertainment, motor vehicles < 10 seats (unless transport for hire), personal/non-business use, purchases from non-registered suppliers (no valid invoice).  _(Art. 21)_
+- **Cash register receipt threshold for retail** — ETB 500 ETB (Cash register receipts acceptable for retail up to this amount)
+- **Partial exemption apportionment** — Partial exemption: Art. 20(3). Turnover-based apportionment.  _(Art. 20(3))_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly. Last day of following month. Late filing: ETB 5,000/month. Late payment: 2%/month. Failure to register: 100% of tax due. Understatement: 10%.
-
----
+- **Filing frequency and deadline** — Monthly. Last day of following month.
+- **Late filing penalty** — ETB 5,000/month ETB per month
+- **Late payment penalty** — 2%/month % per month
+- **Failure to register penalty** — 100% of tax due %
+- **Understatement penalty** — 10% %
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- Cloud SaaS.** Reverse charge 15%. Net zero.
-**EC2 -- Unregistered supplier.** No input recovery.
-**EC3 -- Coffee export.** Zero-rated. Input recoverable.
-**EC4 -- Threshold crossed.** Must register for VAT.
-**EC5 -- Construction + WHT.** 2% WHT is income tax, not VAT. VAT still 15%.
-**EC6 -- Investment incentive.** Capital goods import may be exempt. Escalate.
-**EC7 -- Business gifts.** Deemed supply. Output 15% on market value.
+EC1 -- Cloud SaaS. Reverse charge 15%. Net zero.
 
-**Test 1** -- ETB 100K sale. Output ETB 15K.
-**Test 2** -- ETB 50K purchase + ETB 7.5K VAT. Recoverable.
-**Test 3** -- UK consulting ETB 200K. Output 30K, input 30K. Net zero.
-**Test 4** -- Flower export ETB 5M. Zero-rated.
-**Test 5** -- Entertainment ETB 30K + VAT 4.5K. Blocked.
-**Test 6** -- Unregistered purchase ETB 10K. No input.
-**Test 7** -- Below threshold ETB 1.5M. Not required to register. Category B tax.
-**Test 8** -- Sedan ETB 2M + VAT 300K. Blocked.
+EC2 -- Unregistered supplier. No input recovery.
+
+EC3 -- Coffee export. Zero-rated. Input recoverable.
+
+EC4 -- Threshold crossed. Must register for VAT.
+
+EC5 -- Construction + WHT. 2% WHT is income tax, not VAT. VAT still 15%.
+
+EC6 -- Investment incentive. Capital goods import may be exempt. Escalate.
+
+EC7 -- Business gifts. Deemed supply. Output 15% on market value.
+
+Test 1 -- ETB 100K sale. Output ETB 15K.
+
+Test 2 -- ETB 50K purchase + ETB 7.5K VAT. Recoverable.
+
+Test 3 -- UK consulting ETB 200K. Output 30K, input 30K. Net zero.
+
+Test 4 -- Flower export ETB 5M. Zero-rated.
+
+Test 5 -- Entertainment ETB 30K + VAT 4.5K. Blocked.
+
+Test 6 -- Unregistered purchase ETB 10K. No input.
+
+Test 7 -- Below threshold ETB 1.5M. Not required to register. Category B tax.
+
+Test 8 -- Sedan ETB 2M + VAT 300K. Blocked.
 
 Out of scope: CIT 30% (mining 25%), PAYE 0%-35%, pension 7%+7%.
 
@@ -144,14 +141,30 @@ Out of scope: CIT 30% (mining 25%), PAYE 0%-35%, pension 7%+7%.
 - NEVER allow recovery on blocked categories
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ethiopia-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ethiopia-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ethiopia-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

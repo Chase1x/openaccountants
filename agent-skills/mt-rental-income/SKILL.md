@@ -1,27 +1,24 @@
 ---
 name: mt-rental-income
-description: "> Use this skill whenever asked about Malta rental income taxation. Trigger on phrases like \"rental income Malta\", \"letting property Malta\", \"15% final withholding tax\", \"Article 31E\", \"TA24 rental\", \"property letting\", \"kiri\", \"rent received\", \"landlord tax Malta\", \"Airbnb Malta tax\", \"short-term rental Malta\", \"non-resident landlord Malta\", \"rental declaration CFR\", \"FWS rental\", or any question about computing, filing, or optimising tax on rental income from Maltese immovable property. Covers both the Final Withholding System (15% flat) and the normal progressive system, non-resident landlords, short-term letting, VAT interaction, and property transfer tax. ALWAYS read this skill before touching any Malta rental income work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Malta rental income taxation. Trigger on phrases like \"rental income Malta\", \"letting property Malta\", \"15% final withholding tax\", \"Article 31E\", \"TA24 rental\", \"property letting\", \"kiri\", \"rent received\", \"landlord tax Malta\", \"Airbnb Malta tax\", \"short-term rental Malta\", \"non-resident landlord Malta\", \"rental declaration CFR\", \"FWS rental\", or any question about computing, filing, or optimising tax on rental income from Maltese immovable property. Covers both the Final Withholding System (15% flat) and the normal progressive system, non-resident landlords, short-term letting, VAT interaction, and property transfer tax. ALWAYS read this skill before touching any Malta rental income work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MT
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/mt-rental-income"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/mt-rental-income"
+  jurisdiction: "MT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Malta Rental Income Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# MT Rental Income
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malta (Republic of Malta) |
 | Tax | Income Tax on Rental Income (Immovable Property) |
 | Currency | EUR only |
@@ -37,8 +34,10 @@ metadata:
 
 ### Two Systems for Taxing Rental Income
 
+**Two Systems for Taxing Rental Income**
+
 | Feature | Final Withholding System (FWS) | Normal Progressive System |
-|---|---|---|
+| --- | --- | --- |
 | Tax rate | 15% flat on gross rent | Progressive rates (0%--35%) on net rent |
 | Deductions | NONE — no expenses, set-offs, or refunds | Full Werbungskosten-style deductions allowed |
 | Filing form | TA24 (rental section) | Annual Income Tax Return (TA form) |
@@ -51,16 +50,16 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown system choice (FWS vs normal) | STOP — ask client which system they elect |
 | Unknown whether let is to related party | Treat as related party (FWS blocked) |
 | Unknown property type (residential vs commercial) | STOP — ask client |
 | Unknown residency status of landlord | STOP — affects withholding obligations |
 | Unknown whether furnished or unfurnished | Treat as unfurnished (no furniture premium) |
 | Unknown rental period (short-term vs long-term) | STOP — VAT treatment depends on this |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -74,41 +73,28 @@ metadata:
 
 ### Refusal Catalogue
 
-**R-MTR-1 -- System election unknown.** "The client must confirm whether they elect the 15% Final Withholding System or the normal progressive system. This affects all calculations. Cannot proceed without this election."
-
-**R-MTR-2 -- Related-party letting.** "Rental income from related parties (as defined in Article 31E) cannot benefit from the 15% FWS. If the letting is between related parties, the normal progressive system must be used. Confirm relationship before proceeding."
-
-**R-MTR-3 -- Property transfers / capital gains.** "Property disposals and transfer tax computations are outside the scope of this skill. Escalate to a warranted accountant."
-
-**R-MTR-4 -- Complex non-resident structures.** "Non-resident landlords with complex holding structures, trusts, or nominee arrangements require specialist advice. Escalate to a warranted accountant."
-
-**R-MTR-5 -- Mixed election attempted.** "A taxpayer cannot elect FWS for part of their rental income and the normal system for another part. All rental income must be under one system for any given year."
-
----
+- **R-MTR-1 -- System election unknown** — The client must confirm whether they elect the 15% Final Withholding System or the normal progressive system. This affects all calculations. Cannot proceed without this election.  _(R-MTR-1)_
+- **R-MTR-2 -- Related-party letting** — Rental income from related parties (as defined in Article 31E) cannot benefit from the 15% FWS. If the letting is between related parties, the normal progressive system must be used. Confirm relationship before proceeding.  _(R-MTR-2; Article 31E)_
+- **R-MTR-3 -- Property transfers / capital gains** — Property disposals and transfer tax computations are outside the scope of this skill. Escalate to a warranted accountant.  _(R-MTR-3)_
+- **R-MTR-4 -- Complex non-resident structures** — Non-resident landlords with complex holding structures, trusts, or nominee arrangements require specialist advice. Escalate to a warranted accountant.  _(R-MTR-4)_
+- **R-MTR-5 -- Mixed election attempted** — A taxpayer cannot elect FWS for part of their rental income and the normal system for another part. All rental income must be under one system for any given year.  _(R-MTR-5)_
 
 ## Section 3 -- Final Withholding System (FWS) -- Computation Rules
 
 ### 3.1 Core Rules (Article 31E)
 
-1. The tax is 15% of **gross rental income received** in the basis year
-2. Gross means gross — no deductions of any kind (repairs, insurance, management fees, mortgage interest, depreciation — NOTHING)
-3. The tax is **final** — no refunds, no set-offs, no credits against other tax, no carry-forward of losses
-4. Available to both residents and non-residents
-5. Available to both individuals and bodies corporate
-6. **NOT available** for rental income from related parties
+- **FWS core rules** — 1. The tax is 15% of **gross rental income received** in the basis year 2. Gross means gross — no deductions of any kind (repairs, insurance, management fees, mortgage interest, depreciation — NOTHING) 3. The tax is **final** — no refunds, no set-offs, no credits against other tax, no carry-forward of losses 4. Available to both residents and non-residents 5. Available to both individuals and bodies corporate 6. **NOT available** for rental income from related parties  _(Article 31E)_
 
 ### 3.2 Calculation
 
-```
-Tax = Gross rental income × 15%
-```
-
-There is no exempt band, no personal allowance applicable, and no threshold below which FWS is unavailable.
+- **FWS tax calculation** — Tax = Gross rental income × 15% There is no exempt band, no personal allowance applicable, and no threshold below which FWS is unavailable.  _(Article 31E)_
 
 ### 3.3 Filing and Payment
 
+**Filing and Payment**
+
 | Step | Detail |
-|---|---|
+| --- | --- |
 | Form | TA24 (rental income section) — paper or online via mytax.cfr.gov.mt |
 | Deadline | 30 April of the following year |
 | Payment | Accompanies the form; cash at MaltaPost or online |
@@ -117,23 +103,25 @@ There is no exempt band, no personal allowance applicable, and no threshold belo
 
 ### 3.4 FWS Historical Coverage
 
+**FWS Historical Coverage**
+
 | Property type | Available from |
-|---|---|
+| --- | --- |
 | Residential property | Basis year 2014 (Legal Notice 99/2014) |
 | Commercial property | Basis year 2017 (Legal Notice 158/2017) |
-
----
 
 ## Section 4 -- Normal Progressive System -- Computation Rules
 
 ### 4.1 Core Rules
 
-If FWS is not elected, rental income is declared in the annual tax return and taxed at progressive rates after deducting allowable expenses.
+- **Normal system core rule** — If FWS is not elected, rental income is declared in the annual tax return and taxed at progressive rates after deducting allowable expenses.
 
 ### 4.2 Allowable Deductions (Normal System Only)
 
+**Allowable Deductions (Normal System Only)**
+
 | Deduction | Notes |
-|---|---|
+| --- | --- |
 | Mortgage interest | Interest on loan to acquire/improve the rental property |
 | Repairs and maintenance | Revenue repairs only — not improvements or additions |
 | Insurance | Building insurance, landlord liability insurance |
@@ -148,8 +136,10 @@ If FWS is not elected, rental income is declared in the annual tax return and ta
 
 ### 4.3 Non-Deductible Items (Normal System)
 
+**Non-Deductible Items (Normal System)**
+
 | Item | Reason |
-|---|---|
+| --- | --- |
 | Capital improvements (new extension, new roof) | Capital expenditure — not revenue |
 | Mortgage principal repayments | Loan repayment, not expense |
 | Personal living costs | Not related to letting activity |
@@ -158,7 +148,7 @@ If FWS is not elected, rental income is declared in the annual tax return and ta
 
 ### 4.4 Tax Rates (Normal System)
 
-Progressive rates apply per the Income Tax Act rate tables. Rental income is added to all other income (employment, self-employment, investment) and taxed at the marginal rate. See the malta-income-tax skill for rate tables.
+- **Tax Rates (Normal System)** — Progressive rates apply per the Income Tax Act rate tables. Rental income is added to all other income (employment, self-employment, investment) and taxed at the marginal rate. See the malta-income-tax skill for rate tables.  _(Income Tax Act rate tables)_
 
 ### 4.5 When Normal System May Be Preferable
 
@@ -166,14 +156,14 @@ Progressive rates apply per the Income Tax Act rate tables. Rental income is add
 - **Rental losses** — losses can offset other income under normal system; FWS does not allow losses
 - **Low overall income** — if total income falls within the 0% band, no tax is due under normal system
 
----
-
 ## Section 5 -- Transaction Pattern Library
 
 ### 5.1 Income Patterns (Credits on Bank Statement)
 
+**Income Patterns (Credits on Bank Statement)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KIRI, RENT RECEIVED, RENTAL PAYMENT | Rental income | Gross amount = FWS base; net of expenses under normal system |
 | LETTING AGENT, PROPERTY MANAGER + DEPOSIT | Rental income | Agent collects on behalf — full gross is landlord's income |
 | AIRBNB PAYOUT, BOOKING.COM PAYOUT | Rental income | Platform rental — verify if short-term (VAT implications) |
@@ -182,8 +172,10 @@ Progressive rates apply per the Income Tax Act rate tables. Rental income is add
 
 ### 5.2 Expense Patterns (Normal System Only -- Debits)
 
+**Expense Patterns (Normal System Only -- Debits)**
+
 | Pattern | Category | Treatment |
-|---|---|---|
+| --- | --- | --- |
 | MORTGAGE INTEREST, LOAN INTEREST, BOV LOAN | Interest expense | Deductible under normal system; NOT under FWS |
 | INSURANCE, GasanMamo, MAPFRE MIDDLESEA | Property insurance | Deductible under normal system |
 | PLUMBER, ELECTRICIAN, HANDYMAN, REPAIRS | Repairs & maintenance | Deductible if revenue repair; capital improvement = not deductible |
@@ -194,38 +186,31 @@ Progressive rates apply per the Income Tax Act rate tables. Rental income is add
 
 ### 5.3 Exclusions
 
+**Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MORTGAGE REPAYMENT, LOAN PRINCIPAL | EXCLUDE | Capital repayment, not expense |
 | PROPERTY PURCHASE, NOTARY (acquisition) | EXCLUDE | Capital cost — relevant only to transfer tax or CGT |
 | INTERNAL TRANSFER, OWN ACCOUNT | EXCLUDE | Not rental transaction |
 | STAMP DUTY, PROPERTY TRANSFER TAX | EXCLUDE | Capital cost at acquisition |
 
----
-
 ## Section 6 -- Special Topics
 
 ### 6.1 Non-Resident Landlord Rules
 
-- Non-residents can elect FWS (15% on gross) just like residents
-- Non-residents can alternatively use the normal progressive system
-- Non-domiciled, non-resident landlords: Malta rental income is Malta-source and always taxable in Malta regardless of domicile or remittance
-- Double tax treaty relief may apply — landlord should check treaty with country of residence (Article 6 OECD Model typically gives primary taxing rights to the country where the property is situated)
+- **Non-Resident Landlord Rules** — - Non-residents can elect FWS (15% on gross) just like residents - Non-residents can alternatively use the normal progressive system - Non-domiciled, non-resident landlords: Malta rental income is Malta-source and always taxable in Malta regardless of domicile or remittance - Double tax treaty relief may apply — landlord should check treaty with country of residence (Article 6 OECD Model typically gives primary taxing rights to the country where the property is situated)  _(Article 6 OECD Model)_
 
 ### 6.2 Short-Term Rental / Airbnb Treatment
 
-- Short-term tourist accommodation (less than 30 days per booking) requires a Malta Tourism Authority (MTA) licence
-- Income from short-term lets is still rental income and can be taxed under FWS (15%) or normal system
-- **VAT treatment**: short-term tourist accommodation is subject to VAT at 7% (reduced rate for accommodation services) — this is separate from income tax
-- If the landlord is VAT-registered for short-term letting: VAT collected is NOT income; net of VAT is the rental income for FWS/normal system
-- Platform fees (Airbnb service fee, Booking.com commission) are deducted by the platform before payout — the gross rental income for tax purposes is the amount **before** platform deductions
+- **Short-Term Rental / Airbnb Treatment** — - Short-term tourist accommodation (less than 30 days per booking) requires a Malta Tourism Authority (MTA) licence - Income from short-term lets is still rental income and can be taxed under FWS (15%) or normal system - **VAT treatment**: short-term tourist accommodation is subject to VAT at 7% (reduced rate for accommodation services) — this is separate from income tax - If the landlord is VAT-registered for short-term letting: VAT collected is NOT income; net of VAT is the rental income for FWS/normal system - Platform fees (Airbnb service fee, Booking.com commission) are deducted by the platform before payout — the gross rental income for tax purposes is the amount **before** platform deductions
 
 ### 6.3 Property Transfer Tax (on Disposal)
 
-This skill does not compute transfer tax, but for awareness:
+**Property Transfer Tax (on Disposal)**
 
 | Scenario | Final WHT Rate |
-|---|---|
+| --- | --- |
 | General property transfer | 8% of transfer value |
 | Property acquired before 1 January 2004 | 10% of transfer value |
 | Property in Urban Conservation Area (specific conditions) | 5% of transfer value |
@@ -234,14 +219,14 @@ This skill does not compute transfer tax, but for awareness:
 
 ### 6.4 Furnished vs Unfurnished
 
-- FWS: no distinction — 15% on gross regardless
-- Normal system: furnished lets may claim wear and tear deductions on furniture and appliances (replacement basis — not initial furnishing cost)
-- Furnished premium (if charged): included in gross rental income
+- **Furnished vs Unfurnished** — - FWS: no distinction — 15% on gross regardless - Normal system: furnished lets may claim wear and tear deductions on furniture and appliances (replacement basis — not initial furnishing cost) - Furnished premium (if charged): included in gross rental income
 
 ### 6.5 VAT and Rental Income
 
+**VAT and Rental Income**
+
 | Scenario | VAT Treatment |
-|---|---|
+| --- | --- |
 | Long-term residential letting (>30 days) | Exempt from VAT (no VAT charged, no input VAT recovery) |
 | Long-term commercial letting | Exempt from VAT (with option to tax in certain circumstances) |
 | Short-term tourist accommodation (<30 days) | 7% VAT (reduced rate) — requires VAT registration |
@@ -250,8 +235,6 @@ This skill does not compute transfer tax, but for awareness:
 ### 6.6 Former EUR 1,200 Exemption
 
 The EUR 1,200 ground rent exemption for resident individuals was applicable under older rules but has been superseded by the current FWS regime. Under the current system (from 2014 for residential, 2017 for commercial), no exempt band applies within the FWS — the full gross amount is subject to 15%. Under the normal progressive system, the standard 0% income tax band applies as part of the overall rate table.
-
----
 
 ## Section 7 -- Worked Examples
 
@@ -308,8 +291,6 @@ Platform fees are NOT deducted from the FWS base — the landlord's income for F
 Additional tax = EUR 6,000 × 25% = EUR 1,500
 ```
 
----
-
 ## Section 8 -- Decision Flowchart: FWS vs Normal System
 
 ```
@@ -332,8 +313,6 @@ Additional tax = EUR 6,000 × 25% = EUR 1,500
 ALWAYS compute both options and present to reviewer for confirmation.
 ```
 
----
-
 ## Section 9 -- Filing Checklist
 
 ### FWS Filing
@@ -354,14 +333,14 @@ ALWAYS compute both options and present to reviewer for confirmation.
 - [ ] Include in annual tax return under rental income section
 - [ ] File by 30 June
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Final Withholding System | ITA Article 31E |
 | Residential property FWS | Legal Notice 99 of 2014 |
 | Commercial property FWS | Legal Notice 158 of 2017 |
@@ -370,8 +349,6 @@ ALWAYS compute both options and present to reviewer for confirmation.
 | Tax rates | ITA Rate Schedules |
 | Filing deadlines | ITMA Chapter 372 |
 | VAT on accommodation | VAT Act, 8th Schedule (Item 10) — 7% reduced rate |
-
----
 
 ## PROHIBITIONS
 
@@ -384,14 +361,30 @@ ALWAYS compute both options and present to reviewer for confirmation.
 - NEVER file FWS rental income in the annual tax return — it is declared separately on TA24
 - NEVER compute property transfer tax in this skill — escalate to warranted accountant
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/mt-rental-income) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-rental-income` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-rental-income. If neither is available, confirm every figure against the official source pages cited above before relying on it.

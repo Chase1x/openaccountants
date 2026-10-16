@@ -1,26 +1,23 @@
 ---
 name: forex-controls
-description: "> Foreign exchange controls and cross-border money movement rules by country. Use when the user asks about: forex controls, foreign exchange limits, FEMA, LRS, SAFE, 外汇管制, capital controls, money transfer limits, remittance limits, CRS reporting, TCS India, IOF Brazil, sending money abroad, receiving money from overseas, forex restrictions China, India remittance limit, Brazil forex, Taiwan outward remittance, Korea forex reporting, Japan foreign exchange, ODI filing China, cross-border transfer, 境外汇款, 购汇额度, 地下钱庄, forex quota, capital movement restrictions, repatriation of profits, sending money home, or any question about moving money across international borders as a founder or freelancer."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Foreign exchange controls and cross-border money movement rules by country. Use when the user asks about: forex controls, foreign exchange limits, FEMA, LRS, SAFE, 外汇管制, capital controls, money transfer limits, remittance limits, CRS reporting, TCS India, IOF Brazil, sending money abroad, receiving money from overseas, forex restrictions China, India remittance limit, Brazil forex, Taiwan outward remittance, Korea forex reporting, Japan foreign exchange, ODI filing China, cross-border transfer, 境外汇款, 购汇额度, 地下钱庄, forex quota, capital movement restrictions, repatriation of profits, sending money home, or any question about moving money across international borders as a founder or freelancer."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/forex-controls"
-  tax_year: 2025-2026
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/forex-controls"
+  jurisdiction: "INTL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Foreign Exchange Controls — Cross-Border Money Movement by Country
+# Forex Controls
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Foreign Exchange Controls — Cross-Border Money Movement by Country
 
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general information about foreign exchange regulations. Forex rules change frequently and enforcement varies. Violating forex controls can result in severe penalties including account freezes, fines, and criminal charges. Consult a qualified advisor in the relevant jurisdiction before structuring cross-border transactions.
-
----
 
 ## Why Forex Controls Matter
 
@@ -28,12 +25,12 @@ Forex (外汇) controls determine whether a person or business can freely move m
 
 **Key principle:** If your home country has strict forex controls, incorporate in a country WITHOUT controls (HK, SG, US, UAE). This enables unrestricted global payment receipt and selective remittance of only living expenses to the home country.
 
----
-
 ## Decision Matrix
 
+**Decision Matrix**
+
 | Nationality | Forex Impact | Annual Limit | Recommended Structure |
-|-------------|-------------|--------------|----------------------|
+| --- | --- | --- | --- |
 | Chinese (大陆) | **CRITICAL** | $50,000/year individual | HK Ltd → HK bank → Stripe HK |
 | Indian | **HIGH** | $250,000/year (LRS) + 20% TCS >₹10 lakh | US LLC or SG Pte. Ltd. via LRS |
 | Brazilian | **HIGH** | Complex bank requirements + IOF tax | US LLC + Mercury |
@@ -42,26 +39,24 @@ Forex (外汇) controls determine whether a person or business can freely move m
 | Japanese | **LOW** | Report >¥30,000,000 (~$200K USD); no hard limits | Any structure works |
 | US / EU / HK / SG / UAE | **NONE** | Free capital movement | Choose based on tax/customers |
 
----
-
 ## Country-by-Country Rules
 
 ### China — STRICT (外汇管制)
 
 #### Individual Limits
 
-- **$50,000 USD/year** purchase limit (购汇额度) per person
-- Applies to converting RMB to foreign currency
-- Each transaction requires declaring purpose (travel, education, living expenses — NOT investment)
-- **Cannot legally use individual quota for business purposes**
-- Banks may reject or flag repeated near-limit transfers
+- **China individual forex purchase quota (购汇额度)** — $50,000 USD/year USD (per person; applies to converting RMB to foreign currency)
+- **Declaration of purpose required** — Each transaction requires declaring purpose (travel, education, living expenses — NOT investment)
+- **Business use of individual quota prohibited** — Cannot legally use individual quota for business purposes
+
+Banks may reject or flag repeated near-limit transfers
 
 #### Business (Company) Forex
 
-- Legitimate trade payments: relatively smooth (with invoices + contracts)
-- Capital account (investment, loans): requires SAFE (国家外汇管理局) approval
-- Profit repatriation from overseas subsidiary: allowed with documentation
-- ODI (境外直接投资): requires NDRC + MOFCOM + SAFE approval for amounts >$5M USD (smaller amounts vary by province)
+- **Legitimate trade payments** — Relatively smooth (with invoices + contracts)
+- **Capital account transactions** — Requires SAFE (国家外汇管理局) approval
+- **Profit repatriation from overseas subsidiary** — Allowed with documentation
+- **ODI (境外直接投资) approval threshold** — >$5M USD USD (Requires NDRC + MOFCOM + SAFE approval; smaller amounts vary by province)
 
 #### Practical Strategies for Chinese Founders
 
@@ -73,16 +68,17 @@ Forex (外汇) controls determine whether a person or business can freely move m
 
 #### CRS Impact
 
-- China participates in CRS (Common Reporting Standard)
-- Foreign bank accounts are automatically reported to Chinese tax authorities
-- Applies to: HK, Singapore, most EU countries, many offshore centers
-- **Notable exception:** US does not participate in CRS (but has FATCA)
-- 2025 marks CRS enforcement expansion to mid-tier wealth brackets (<$1M assets)
+- **China CRS participation** — China participates in CRS (Common Reporting Standard); foreign bank accounts are automatically reported to Chinese tax authorities
+- **CRS applies to** — HK, Singapore, most EU countries, many offshore centers
+- **US CRS exception** — Notable exception: US does not participate in CRS (but has FATCA)
+- **2025 CRS enforcement expansion** — 2025 marks CRS enforcement expansion to mid-tier wealth brackets (<$1M assets)
 
 #### Penalties
 
+**China forex control penalties**
+
 | Violation | Consequence |
-|-----------|------------|
+| --- | --- |
 | Using individual quota for business | Accounts frozen, blacklisted from forex purchase for 2 years |
 | Undeclared overseas income | Back taxes + penalties (50–500% of unpaid amount) |
 | Illegal forex channels (地下钱庄) | Criminal offense — 5–10 years imprisonment for amounts >RMB 1,000,000 |
@@ -92,8 +88,10 @@ Forex (外汇) controls determine whether a person or business can freely move m
 
 Inbound wires to mainland bank accounts may trigger compliance review:
 
+**Inbound wire risk triggers**
+
 | Trigger | Detail |
-|---------|--------|
+| --- | --- |
 | Single transfer >$5,000 USD (frequent) | Human review likely |
 | Single transfer >$50,000 USD | Mandatory human review |
 | Multiple rapid transfers | Flagged as abnormal pattern |
@@ -101,35 +99,35 @@ Inbound wires to mainland bank accounts may trigger compliance review:
 
 **Declaration categories for inbound wires:**
 
+**Declaration categories for inbound wires**
+
 | Payment Nature | Declaration Category | Required Documents |
-|----------------|---------------------|--------------------|
+| --- | --- | --- |
 | Salary from HK company | 职工报酬 | Employment contract + payslip |
 | Dividends from HK company | 利润汇回 | Shareholder resolution + articles |
 | Service fees (个体户) | 服务贸易收入 | Service contract + VAT invoice |
 | Personal living expenses | 经常转移 | Proof of family relationship |
 
----
-
 ### India — STRICT (FEMA / RBI)
 
 #### Individual Limits (LRS — Liberalised Remittance Scheme)
 
-- **$250,000 USD/year** per person for permissible capital and current account transactions
-- Covers: investment abroad, gifts, maintenance, travel, education
-- **Can be used to fund an overseas company** (investment under LRS)
-- Requires: PAN card, A2 form through authorized dealer bank
+- **LRS annual limit** — $250,000 USD/year USD (per person for permissible capital and current account transactions)
+- **LRS coverage** — Covers: investment abroad, gifts, maintenance, travel, education
+- **LRS can fund overseas company** — Can be used to fund an overseas company (investment under LRS)
+- **LRS documentation requirements** — Requires: PAN card, A2 form through authorized dealer bank
 
 #### Tax Collected at Source (TCS)
 
-- **20% TCS on remittances >₹10 lakh/year** (effective April 2025; was ₹7 lakh)
-- TCS is refundable against income tax liability — it is not a final tax
-- Budget 2026 reduces education/medical TCS to 2%
+- **TCS on remittances** — 20% percent (on remittances >₹10 lakh/year (effective April 2025; was ₹7 lakh))
+- **TCS refundability** — TCS is refundable against income tax liability — it is not a final tax
+- **Budget 2026 TCS reduction** — 2% percent (Budget 2026 reduces education/medical TCS to 2%)
 
 #### Business Forex
 
-- Current account (trade payments): generally free with documentation
-- Capital account (ODI): RBI approval needed; automatic route available for most cases
-- Round-tripping prohibition: sending money abroad and bringing it back is strictly monitored
+- **Current account trade payments** — Generally free with documentation
+- **Capital account (ODI)** — RBI approval needed; automatic route available for most cases
+- **Round-tripping prohibition** — Sending money abroad and bringing it back is strictly monitored
 
 #### Practical Strategies for Indian Founders
 
@@ -140,36 +138,34 @@ Inbound wires to mainland bank accounts may trigger compliance review:
 
 #### Indian Tax on Foreign Income
 
-- India taxes **worldwide income** for residents
-- Must declare: salary/fees from foreign company, dividends from owned foreign company, capital gains on foreign assets
-- **DTAA relief:** India has DTAs with US, Singapore, UK, UAE — avoid double taxation
-- **Form 67:** Required to claim foreign tax credit in India
-
----
+- **Worldwide income taxation** — India taxes worldwide income for residents
+- **Declaration requirements** — Must declare: salary/fees from foreign company, dividends from owned foreign company, capital gains on foreign assets
+- **DTAA relief** — India has DTAs with US, Singapore, UK, UAE — avoid double taxation
+- **Form 67** — Required to claim foreign tax credit in India
 
 ### Brazil — STRICT
 
-- Central Bank controls all forex transactions
-- Individuals: up to $10,000 USD per day without documentation
-- Companies: all transactions need exchange contract through authorized bank
-- **IOF (Imposto sobre Operações Financeiras):** 0.38–6.38% on forex transactions
-- Brazilian founders commonly use US LLC + Mercury to avoid domestic forex complexity
+Central Bank controls all forex transactions
 
----
+- **Individual daily limit without documentation** — up to $10,000 USD per day USD (without documentation)
+- **Company forex transactions** — All transactions need exchange contract through authorized bank
+- **IOF (Imposto sobre Operações Financeiras)** — 0.38–6.38% percent (on forex transactions)
+
+Brazilian founders commonly use US LLC + Mercury to avoid domestic forex complexity
 
 ### Taiwan — MODERATE
 
 #### Individual Limits
 
-- **TWD 5,000,000** (~$150,000 USD)/year for individual outward remittance without declaration
-- Above TWD 5,000,000: must file declaration with Central Bank
-- This is a declaration threshold, NOT a hard cap (unlike China's strict quota)
+- **Taiwan individual outward remittance without declaration** — TWD 5,000,000 (~$150,000 USD)/year TWD (for individual outward remittance without declaration)
+- **Declaration above threshold** — Above TWD 5,000,000: must file declaration with Central Bank
+- **Nature of threshold** — This is a declaration threshold, NOT a hard cap (unlike China's strict quota)
 
 #### Business Forex
 
-- Generally free for trade transactions with documentation
-- Investment abroad: report to Investment Commission (MOEA) for amounts >TWD 5,000,000
-- **OBU (Offshore Banking Unit):** Tax-exempt interest income in OBU accounts
+- **Trade transactions** — Generally free for trade transactions with documentation
+- **Investment abroad reporting** — >TWD 5,000,000 TWD (Investment abroad: report to Investment Commission (MOEA))
+- **OBU (Offshore Banking Unit)** — Tax-exempt interest income in OBU accounts
 
 #### Practical Strategy
 
@@ -179,39 +175,33 @@ Inbound wires to mainland bank accounts may trigger compliance review:
 
 #### CFC Rules (2023+)
 
-Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribution for Taiwan tax. Exemption: real substance OR overseas income <NT$7,000,000.
-
----
+- **CFC trigger and exemption** — Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribution for Taiwan tax. Exemption: real substance OR overseas income <NT$7,000,000.
 
 ### South Korea — MODERATE
 
 #### Individual Limits
 
-- **$50,000 USD** per transaction without documentation
-- Annual cumulative >$50K: must report to designated foreign exchange bank
-- Investment abroad: report to Bank of Korea for amounts >$1,000,000
+- **Korea individual transaction threshold without documentation** — $50,000 USD per transaction USD (without documentation)
+- **Annual cumulative reporting** — Annual cumulative >$50K: must report to designated foreign exchange bank
+- **Investment abroad reporting** — >$1,000,000 USD (Investment abroad: report to Bank of Korea)
 
 #### Business Forex
 
-- Trade payments: generally free with invoice/contract
-- ODI: report to designated bank; amounts >$10,000,000 need Bank of Korea notification
-
----
+- **Trade payments** — Generally free with invoice/contract
+- **ODI notification threshold** — >$10,000,000 USD (ODI: report to designated bank; amounts need Bank of Korea notification)
 
 ### Japan — LIGHT
 
 #### Individual Limits
 
-- No individual remittance limits
-- Transactions >¥30,000,000 (~$200,000 USD): must report to Ministry of Finance (after the fact)
-- Foreign Exchange and Foreign Trade Act restricts investment in sensitive sectors only
+- **No individual remittance limits** — No individual remittance limits
+- **Reporting threshold to Ministry of Finance** — >¥30,000,000 (~$200,000 USD) JPY (must report to Ministry of Finance (after the fact))
+- **Sensitive sector restriction** — Foreign Exchange and Foreign Trade Act restricts investment in sensitive sectors only
 
 #### Business Forex
 
-- Generally free; Japan has very liberal forex policies
-- Large transactions reported post-facto
-
----
+- **Japan business forex policy** — Generally free; Japan has very liberal forex policies
+- **Large transaction reporting** — Large transactions reported post-facto
 
 ### Hong Kong — NONE ✓
 
@@ -221,8 +211,6 @@ Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribu
 - HKD is pegged to USD (7.75–7.85)
 - Primary reason HK is the #1 choice for Chinese and Taiwanese founders
 
----
-
 ### Singapore — NONE ✓
 
 - **Zero forex controls**
@@ -230,20 +218,18 @@ Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribu
 - MAS (Monetary Authority of Singapore) does not restrict currency transactions
 - No reporting requirements for most transfers
 
----
-
 ### United States — LIGHT (Reporting Only)
 
 - **No limits on moving money in/out**
 - Reporting requirements:
 
+**US reporting requirements**
+
 | Requirement | Threshold | Consequence of Non-Compliance |
-|-------------|-----------|-------------------------------|
+| --- | --- | --- |
 | FBAR (FinCEN 114) | Foreign accounts aggregate >$10,000 at any time during year | $10,000 penalty per unreported account per year |
 | FATCA (Form 8938) | Foreign financial assets >$50,000–$200,000 (varies by filing status) | $10,000 penalty + additional $10,000 per 30 days of non-compliance |
 | CTR | Banks auto-report cash transactions >$10,000 | Structuring to avoid is a federal crime |
-
----
 
 ### UAE / Dubai — NONE ✓
 
@@ -251,8 +237,6 @@ Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribu
 - No limits on repatriation of capital or profits
 - Free movement of funds in any currency
 - Note: UAE introduced 5% personal income tax effective January 2026; forex controls remain zero
-
----
 
 ### EU (General) — LIGHT
 
@@ -262,45 +246,40 @@ Holding >50% of a low-tax company (<14% effective rate) triggers deemed distribu
 - No limits on electronic transfers
 - Individual countries may have reporting requirements (e.g., France requires reporting of foreign accounts)
 
----
-
 ## China-Specific: Mainland Income Reporting for Offshore Earners
 
 ### Annual Filing Window (汇算清缴)
 
-- **Deadline:** March 1 – June 30 of following year (e.g., 2025 income reported by June 30, 2026)
-- Filing path: 个税APP → 综合所得年度汇算 → 其他收入 → 境外所得（附表三）
+- **Annual filing deadline** — March 1 – June 30 of following year date range (e.g., 2025 income reported by June 30, 2026)
+- **Filing path** — 个税APP → 综合所得年度汇算 → 其他收入 → 境外所得（附表三）
 
 ### Foreign Tax Credit Calculation
 
-```
-Credit limit (per country) = China total tax × (income from that country / total worldwide income)
-```
-
-- If foreign tax paid ≤ credit limit → full credit; China collects the difference
-- If foreign tax paid > credit limit → excess carries forward for 5 tax years (no refund)
+- **Credit limit formula** — Credit limit (per country) = China total tax × (income from that country / total worldwide income)
+- **Credit application when paid ≤ limit** — If foreign tax paid ≤ credit limit → full credit; China collects the difference
+- **Credit application when paid > limit** — If foreign tax paid > credit limit → excess carries forward for 5 tax years (no refund)
 
 ### Penalties for Non-Reporting
 
+**Penalties for non-reporting of overseas income**
+
 | Scenario | Consequence |
-|----------|------------|
+| --- | --- |
 | Discovered by tax authority | Back taxes + late payment surcharge (0.05%/day) + fine (50–500% of tax owed) |
 | Voluntary self-correction | Late payment surcharge applies; fine typically reduced (<50%) |
 | Tax evasion >RMB 100,000 AND >10% of tax due | Criminal liability (Article 201, Criminal Law) |
-
----
 
 ## CRS Response Protocol
 
 When receiving a CRS inquiry letter from Chinese tax authorities:
 
+**CRS inquiry letter response protocol**
+
 | Letter Type | Urgency | Action |
-|-------------|---------|--------|
+| --- | --- | --- |
 | Compliance reminder (合规提示函) | Low | Self-audit, voluntary supplemental filing |
 | Risk notice / interview summons (风险提示函/约谈通知) | Medium — respond within 30 days | Prepare HK company documents, bank statements, tax records |
 | Formal audit notice (税务稽查通知书) | **High — engage tax attorney immediately** | Do not destroy any documents; attorney-led response |
-
----
 
 ## Official Sources & Further Reading
 
@@ -311,12 +290,30 @@ When receiving a CRS inquiry letter from Chinese tax authorities:
 - **US FBAR (FinCEN):** https://www.fincen.gov/report-foreign-bank-and-financial-accounts
 - **Hong Kong Monetary Authority:** https://www.hkma.gov.hk
 
----
+## Footer notes
 
 *Data reflects 2024–2026 rules. Forex regulations are enforced with increasing rigor worldwide. Verify current limits and procedures with your bank and a qualified advisor before large cross-border transfers.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/forex-controls) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `forex-controls` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/forex-controls. If neither is available, confirm every figure against the official source pages cited above before relying on it.

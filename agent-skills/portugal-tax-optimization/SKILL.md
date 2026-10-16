@@ -1,27 +1,54 @@
 ---
 name: portugal-tax-optimization
-description: "> Utilize esta skill ao aconselhar sobre estratégias LEGAIS de minimização fiscal para contribuintes portugueses — particulares, trabalhadores independentes (recibos verdes) e pequenos empresários. Acione com expressões como \"reduzir o meu imposto Portugal\", \"planeamento fiscal\", \"regime simplificado\", \"contabilidade organizada\", \"optimização do IRS\", \"segurança social trabalhador independente\", \"IVA\", \"recibos verdes\", \"Categoria B\", \"deduções Portugal\", ou qualquer questão sobre minimização legal do IRS ou IRC português. Cobre selecção de entidade, regime simplificado vs contabilidade organizada, estratégias de dedução, amortizações, utilização de prejuízos, timing, optimização do IVA, segurança social e linhas vermelhas. LEIA SEMPRE esta skill antes de prestar aconselhamento de optimização fiscal portuguesa."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Utilize esta skill ao aconselhar sobre estratégias LEGAIS de minimização fiscal para contribuintes portugueses — particulares, trabalhadores independentes (recibos verdes) e pequenos empresários. Acione com expressões como \"reduzir o meu imposto Portugal\", \"planeamento fiscal\", \"regime simplificado\", \"contabilidade organizada\", \"optimização do IRS\", \"segurança social trabalhador independente\", \"IVA\", \"recibos verdes\", \"Categoria B\", \"deduções Portugal\", ou qualquer questão sobre minimização legal do IRS ou IRC português. Cobre selecção de entidade, regime simplificado vs contabilidade organizada, estratégias de dedução, amortizações, utilização de prejuízos, timing, optimização do IVA, segurança social e linhas vermelhas. LEIA SEMPRE esta skill antes de prestar aconselhamento de optimização fiscal portuguesa. Trigger also on: \"reduce my tax Portugal\", \"tax planning\", \"regime simplificado\", \"organized accounts\", \"IRS optimization\", \"social security self-employed\", \"IVA\", \"recibos verdes"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: tax-optimization
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-tax-optimization"
-  tax_year: 2025
-  obligation: OPT
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-tax-optimization"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — Optimização Fiscal — Skill v1.1
+# Portugal Tax Optimization
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal — Optimização Fiscal — Skill v1.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Otimização Fiscal
+
+- **Despesas gerais familiares** — 35% com NIF, máx €250/contribuinte  _(CIRS)_
+- **Saúde** — 15% das despesas, máx €1.000  _(CIRS)_
+- **Educação** — 30% das despesas, máx €800  _(CIRS)_
+- **Habitação (renda)** — 15%, máx €502  _(CIRS)_
+- **Habitação (juros)** — 15%, máx €296  _(CIRS)_
+- **Lares** — 25%, máx €403,75  _(CIRS)_
+- **IVA/fatura** — 15% do IVA (restauração, cabeleireiros, etc.), máx €250  _(CIRS)_
+- **Edifícios comerciais** — Edifícios comerciais - 2% ; Edifícios industriais - 5%  _(DR 25/2009)_
+- **Mobiliário de escritório** — 12,5%  _(Decreto Regulamentar n.º 25/2009)_
+- **Equipamento informático** — 33,33%  _(Decreto Regulamentar n.º 25/2009)_
+- **Software** — 33,33%  _(Decreto Regulamentar n.º 25/2009)_
+- **Viaturas ligeiras de passageiros** — 25%  _(Decreto Regulamentar n.º 25/2009)_
+- **PPR — dedução IRS** — 20% das contribuições (limite por idade)  _(CIRS)_
+- **Juros depósitos** — 28% taxa autónoma (ou englobamento)  _(CIRS)_
+- **Dividendos (englobamento)** — 50% incluído no rendimento (efetivo máx 24%)  _(CIRS)_
+- **Mais-valias mobiliárias** — 28% taxa autónoma; perdas compensáveis 5 anos  _(CIRS)_
+- **Mais-valias imobiliárias** — 50% do ganho incluído no rendimento; reinvestimento HPP 36 meses  _(CIRS Art. 10.º n.º 5)_
+- **Rendas (Cat. F)** — taxa autónoma 25% para habitação própria e permanente e 28% outros casos, ou englobamento  _(CIRS artº 72º)_
 
 ## Secção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Moeda | EUR |
 | Ano fiscal | Ano civil (1 de Janeiro – 31 de Dezembro) |
@@ -36,8 +63,10 @@ metadata:
 
 ### Escalões de IRS (2026)
 
+**Escalões de IRS (2026)**
+
 | Escalão | Rendimento Tributável (€) | Taxa Marginal | Parcela a Abater |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | 0 – 8.342 | 12,5% | €0 |
 | 2 | 8.342 – 12.587 | 15,7% | €266,94 |
 | 3 | 12.587 – 17.838 | 21,2% | €959,23 |
@@ -48,28 +77,17 @@ metadata:
 | 8 | 46.566 – 86.634 | 44,6% | €8.441,72 |
 | 9 | Acima de 86.634 | 48,0% | €11.387,28 |
 
-**Taxa adicional de solidariedade (Art 68.º-A CIRS):** 2,5% sobre rendimento tributável entre €80.000 e €250.000; 5% acima de €250.000.
-
-**Mínimo de Existência (2026):** €12.880 — garante que o rendimento líquido após imposto de nenhum contribuinte cai abaixo deste limiar.
-
----
+- **Taxa adicional de solidariedade** — 2,5% sobre rendimento tributável entre €80.000 e €250.000; 5% acima de €250.000  _(Art 68.º-A CIRS)_
+- **Mínimo de Existência (2026)** — €12.880 — garante que o rendimento líquido após imposto de nenhum contribuinte cai abaixo deste limiar
 
 ## Secção 2 — Repartição de Rendimentos e Estruturação
 
 ### Empresário em Nome Individual (ENI) vs Sociedade (Lda)
 
-**Trabalhador independente / freelancer (recibos verdes):** rendimento declarado como Categoria B no Modelo 3. Dois sub-regimes:
-
-1. **Regime simplificado:** rendimentos brutos ≤€200.000. Rendimento tributável = bruto × coeficiente (ex.: 0,75 para serviços profissionais listados no Art 151.º CIRS; 0,35 para outros serviços; 0,15 para venda de bens). Não pode deduzir despesas adicionais para além do coeficiente — é um pacote fechado. Tem de justificar 15% do bruto como despesas profissionais (facturas com NIF).
-
-2. **Contabilidade organizada:** obrigatória se rendimentos brutos >€200.000, opcional abaixo. Deduz despesas profissionais reais. Requer contabilista certificado (CC). Mais vantajosa quando as despesas reais excedem significativamente a dedução implícita no coeficiente.
-
-**Sociedade (Sociedade Unipessoal por Quotas, Lda, ou SA):** IRC a 21% (17% sobre os primeiros €50.000 para PMEs). Lucros distribuídos como dividendos tributados a 28% (taxa liberatória) ou incluídos no IRS por englobamento a taxas progressivas (exclusão de 50% para sócios residentes — tributação por englobamento). Carga administrativa superior.
-
-**Regra de decisão (quadro de comparação de regimes):**
-- **Cat B simplificado:** óptimo para freelancers com baixas despesas reais (o coeficiente já implica 25%+ de despesas automaticamente).
-- **Cat B organizada:** mudar quando as despesas documentadas excedam a margem implícita do coeficiente.
-- **Lda (Sociedade):** ponderar incorporação quando o lucro consistentemente excede ~€60.000–€80.000, pesando os custos adicionais de contabilidade, derrama, tributações autónomas e formalismos societários.
+- **Regime simplificado** — rendimentos brutos ≤€200.000. Rendimento tributável = bruto × coeficiente (ex.: 0,75 para serviços profissionais listados no Art 151.º CIRS; 0,35 para outros serviços; 0,15 para venda de bens). Não pode deduzir despesas adicionais para além do coeficiente — é um pacote fechado. Tem de justificar 15% do bruto como despesas profissionais (facturas com NIF).  _(Art 151.º CIRS)_
+- **Contabilidade organizada** — obrigatória se rendimentos brutos >€200.000, opcional abaixo. Deduz despesas profissionais reais. Requer contabilista certificado (CC). Mais vantajosa quando as despesas reais excedem significativamente a dedução implícita no coeficiente.
+- **Sociedade (Sociedade Unipessoal por Quotas, Lda, ou SA)** — IRC a 21% (17% sobre os primeiros €50.000 para PMEs). Lucros distribuídos como dividendos tributados a 28% (taxa liberatória) ou incluídos no IRS por englobamento a taxas progressivas (exclusão de 50% para sócios residentes — tributação por englobamento). Carga administrativa superior.
+- **Regra de decisão (quadro de comparação de regimes)** — Cat B simplificado: óptimo para freelancers com baixas despesas reais (o coeficiente já implica 25%+ de despesas automaticamente). Cat B organizada: mudar quando as despesas documentadas excedam a margem implícita do coeficiente. Lda (Sociedade): ponderar incorporação quando o lucro consistentemente excede ~€60.000–€80.000, pesando os custos adicionais de contabilidade, derrama, tributações autónomas e formalismos societários.
 
 ### Tributação Conjunta
 
@@ -79,14 +97,14 @@ Casais casados ou unidos de facto podem optar pela tributação conjunta. O rend
 
 Para optimização sob RNH/IFICI ver skill pt-nhr-ifici.
 
----
-
 ## Secção 3 — Deduções que a Maioria Esquece (Optimização equivalente a PTKP)
 
 ### Deduções à Colecta — Art 78.º CIRS
 
+**Deduções à Colecta — Art 78.º CIRS**  _(Art 78.º CIRS)_
+
 | Categoria | Dedução | Limite |
-|---|---|---|
+| --- | --- | --- |
 | Despesas gerais familiares | 35% das despesas com NIF | €250/contribuinte (€500 casal) |
 | Saúde | 15% das despesas de saúde (IVA 6% ou isento) | €1.000 |
 | Educação | 30% das despesas de educação | €800 |
@@ -98,27 +116,22 @@ Para optimização sob RNH/IFICI ver skill pt-nhr-ifici.
 
 ### Deduções Específicas da Categoria B (Contabilidade Organizada)
 
-Em contabilidade organizada, deduzem-se despesas profissionais reais: renda de escritório, equipamento, serviços profissionais, deslocações, formação, telecomunicações, seguros e amortizações. Sujeito ao princípio da indispensabilidade.
+- **Deduções Específicas da Categoria B** — Em contabilidade organizada, deduzem-se despesas profissionais reais: renda de escritório, equipamento, serviços profissionais, deslocações, formação, telecomunicações, seguros e amortizações. Sujeito ao princípio da indispensabilidade.
 
 ### Regime Simplificado — Regra de Justificação dos 15%
 
-Para coeficientes 0,75 e 0,35, tem de justificar despesas equivalentes a 15% dos rendimentos brutos. Se não totalmente justificadas, o défice é acrescido ao rendimento tributável. Fontes de justificação:
-- **Dedução específica:** €4.587,09 aplicada automaticamente (ou total das contribuições para segurança social, se superior, até 10% do bruto)
-- **Facturas profissionais** com o seu NIF (utilities, telecomunicações, serviços profissionais, deslocações, etc.)
-- **IMI** e juros de empréstimo sobre imóvel afecto à actividade
+- **Regra de Justificação dos 15%** — Para coeficientes 0,75 e 0,35, tem de justificar despesas equivalentes a 15% dos rendimentos brutos. Se não totalmente justificadas, o défice é acrescido ao rendimento tributável. Fontes de justificação: Dedução específica: €4.587,09 aplicada automaticamente (ou total das contribuições para segurança social, se superior, até 10% do bruto); Facturas profissionais com o seu NIF (utilities, telecomunicações, serviços profissionais, deslocações, etc.); IMI e juros de empréstimo sobre imóvel afecto à actividade.
 
-**Dica de planeamento:** peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,09 e 15% do bruto é o valor que deve evidenciar por facturas.
-
----
+peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,09 e 15% do bruto é o valor que deve evidenciar por facturas.
 
 ## Secção 4 — Optimização de Amortizações
 
 ### Amortizações — Contabilidade Organizada
 
-As amortizações seguem as taxas do Decreto Regulamentar n.º 25/2009:
+**Amortizações — Contabilidade Organizada**  _(Decreto Regulamentar n.º 25/2009)_
 
 | Categoria de Activo | Taxa |
-|---|---|
+| --- | --- |
 | Edifícios (comerciais) | 2%–5% |
 | Mobiliário de escritório | 12,5% |
 | Equipamento informático | 33,33% |
@@ -126,40 +139,37 @@ As amortizações seguem as taxas do Decreto Regulamentar n.º 25/2009:
 | Viaturas ligeiras de passageiros | 25% |
 | Equipamento básico | 10%–20% |
 
-A amortização de viaturas está limitada a viaturas com custo ≤€62.500 (eléctricas) ou ≤€37.500 (outras). O excesso de custo é não amortizável.
+- **Limite amortização viaturas** — A amortização de viaturas está limitada a viaturas com custo ≤€62.500 (eléctricas) ou ≤€37.500 (outras). O excesso de custo é não amortizável.
 
 ### Regime Simplificado
 
-Não há amortizações autónomas — o coeficiente subsume todas as despesas. A aquisição de activos não gera deduções adicionais.
+- **Regime Simplificado** — Não há amortizações autónomas — o coeficiente subsume todas as despesas. A aquisição de activos não gera deduções adicionais.
 
 ### Reinvestimento de Mais-Valias (IRC — Sociedades)
 
-Reinvestimento de mais-valias de activos fixos em novos activos elegíveis dentro do prazo de reinvestimento: exclusão de 50% da mais-valia (Art 48.º CIRC). Oportunidade de planeamento na alienação de instalações ou equipamento.
-
----
+- **Reinvestimento de Mais-Valias (IRC)** — Reinvestimento de mais-valias de activos fixos em novos activos elegíveis dentro do prazo de reinvestimento: exclusão de 50% da mais-valia. Oportunidade de planeamento na alienação de instalações ou equipamento.  _(Art 48.º CIRC)_
 
 ## Secção 5 — Utilização de Prejuízos
 
 ### Prejuízos da Categoria B (Trabalhadores Independentes)
 
-Em contabilidade organizada, os prejuízos da Categoria B podem compensar outros rendimentos da Categoria B no mesmo ano e reportar-se por 12 anos (Art 55.º CIRS). Os prejuízos no regime simplificado NÃO são gerados — a metodologia do coeficiente produz sempre rendimento tributável positivo.
-
-**Restrição-chave:** os prejuízos da Categoria B não podem compensar outras categorias de rendimento (Categoria A trabalho dependente, Categoria E rendimentos de capitais, etc.) — apenas outros rendimentos da Categoria B.
+- **Prejuízos da Categoria B** — Em contabilidade organizada, os prejuízos da Categoria B podem compensar outros rendimentos da Categoria B no mesmo ano e reportar-se por 12 anos. Os prejuízos no regime simplificado NÃO são gerados — a metodologia do coeficiente produz sempre rendimento tributável positivo.  _(Art 55.º CIRS)_
+- **Restrição-chave** — os prejuízos da Categoria B não podem compensar outras categorias de rendimento (Categoria A trabalho dependente, Categoria E rendimentos de capitais, etc.) — apenas outros rendimentos da Categoria B.
 
 ### IRC (Sociedades)
 
-Os prejuízos fiscais reportam-se por 12 anos. Podem compensar até 65% do lucro tributável em cada ano subsequente (Art 52.º CIRC). Sujeito à manutenção de >50% de continuidade na titularidade.
+- **IRC (Sociedades) — Prejuízos** — Os prejuízos fiscais reportam-se por 12 anos. Podem compensar até 65% do lucro tributável em cada ano subsequente. Sujeito à manutenção de >50% de continuidade na titularidade.  _(Art 52.º CIRC)_
 
 ### Menos-Valias (Categoria G)
 
-As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (Art 55.º, n.º 5 CIRS). As menos-valias imobiliárias compensam mais-valias imobiliárias.
-
----
+- **Menos-Valias (Categoria G)** — As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias. As menos-valias imobiliárias compensam mais-valias imobiliárias.  _(Art 55.º, n.º 5 CIRS)_
 
 ## Secção 6 — Estratégias de Timing
 
+**Estratégias de Timing**
+
 | Estratégia | Detalhe |
-|---|---|
+| --- | --- |
 | Pagamentos por conta de IRS | Trabalhadores independentes com IRS do ano anterior >€301 devem efectuar 3 pagamentos por conta (Julho, Setembro, Dezembro). Se o rendimento descer, solicitar redução (Art 107.º CIRS) |
 | Diferir facturação para Janeiro | Em regime simplificado e próximo do limiar de €200.000, o timing é decisivo. Também desloca rendimento para o ano fiscal seguinte |
 | Antecipar despesas antes do fim do ano | Em contabilidade organizada: adquirir equipamento, pré-pagar serviços, regularizar facturas em aberto antes de 31 de Dezembro |
@@ -168,12 +178,12 @@ As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (
 | Actualização da base contributiva | Declaração trimestral actualiza a base contributiva. Se o rendimento descer, declarar prontamente para reduzir os pagamentos trimestrais à SS |
 | Diferimento de mais-valias | Reinvestir o produto da venda em nova habitação própria permanente no prazo de 36 meses (Art 10.º, n.º 5 CIRS) para excluir a mais-valia |
 
----
-
 ## Secção 7 — Optimização do IVA
 
+**Optimização do IVA**
+
 | Tópico | Detalhe |
-|---|---|
+| --- | --- |
 | Limiar de isenção | Volume de negócios ≤€14.500 (2026): isento de IVA ao abrigo do Art 53.º CIVA. Não liquida IVA, não tem direito a dedução. Rever anualmente, dado que o limiar pode mudar |
 | Registo acima do limiar | Registo obrigatório e declarações periódicas trimestrais de IVA. Pode recuperar IVA em aquisições profissionais |
 | Regime simplificado de IVA | Não existe regime simplificado autónomo para além da isenção do Art 53.º. Pequenas empresas aplicam o regime normal acima do limiar |
@@ -182,21 +192,21 @@ As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (
 | IVA em serviços transfronteiriços | Serviços B2B intra-UE: aplica-se a regra de inversão do sujeito passivo (Art 6.º, n.º 6 a) CIVA). Não liquida IVA português; o cliente autoliquida no seu país. Registar no VIES |
 | Declaração recapitulativa | Declaração trimestral de operações intracomunitárias quando há prestações de serviços intra-UE |
 
----
-
 ## Secção 8 — Optimização da Segurança Social
 
 ### Contribuições dos Trabalhadores Independentes
 
-- **Taxa:** 21,4% sobre o rendimento relevante
-- **Cálculo do rendimento relevante:** trimestral, com base nos rendimentos brutos do trimestre anterior × coeficiente (tipicamente 70% para serviços, 20% para venda de bens)
-- **Limite máximo anual:** 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522,50 → limite ~€75.240/ano
-- **Pagamentos trimestrais:** Janeiro, Abril, Julho, Outubro
+- **Taxa** — 21,4% sobre o rendimento relevante
+- **Cálculo do rendimento relevante** — trimestral, com base nos rendimentos brutos do trimestre anterior × coeficiente (tipicamente 70% para serviços, 20% para venda de bens)
+- **Limite máximo anual** — 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522,50 → limite ~€75.240/ano
+- **Pagamentos trimestrais** — Janeiro, Abril, Julho, Outubro
 
 ### Isenções e Reduções
 
+**Isenções e Reduções**
+
 | Situação | Tratamento |
-|---|---|
+| --- | --- |
 | Primeiros 12 meses de actividade | Isenção total (apenas para primeira inscrição como trabalhador independente) |
 | Meses 13–24 | Redução de 50% |
 | Acumulação trabalho dependente + independente | Se for trabalhador por conta de outrem com descontos para SS e o rendimento do trabalho independente for <4× IAS (~€2.090/mês), pode estar dispensado de contribuições como independente |
@@ -204,17 +214,17 @@ As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (
 
 ### Estratégias de Optimização
 
-- **Rendimento inicial baixo:** aproveitar a isenção de 12 meses + redução de 50% nos 12 meses seguintes = 2 anos de SS reduzida
-- **Acumulação trabalho dependente + freelance:** manter contrato de trabalho para potencialmente isentar o rendimento freelance de contribuições à SS
-- **Contribuições voluntárias superiores:** geralmente não vantajosas — os benefícios (pensão) são modestos face ao custo adicional. Focar em poupança privada para reforma (PPR)
-- **PPR (Plano Poupança Reforma):** investimento em plano aprovado → dedução à colecta de 20% das contribuições, com limite de €400 (até 35 anos), €350 (35–50 anos), €300 (50+). Por contribuinte.
-
----
+- **Rendimento inicial baixo** — aproveitar a isenção de 12 meses + redução de 50% nos 12 meses seguintes = 2 anos de SS reduzida
+- **Acumulação trabalho dependente + freelance** — manter contrato de trabalho para potencialmente isentar o rendimento freelance de contribuições à SS
+- **Contribuições voluntárias superiores** — geralmente não vantajosas — os benefícios (pensão) são modestos face ao custo adicional. Focar em poupança privada para reforma (PPR)
+- **PPR (Plano Poupança Reforma)** — investimento em plano aprovado → dedução à colecta de 20% das contribuições, com limite de €400 (até 35 anos), €350 (35–50 anos), €300 (50+). Por contribuinte.
 
 ## Secção 9 — Investimento e Reforma
 
+**Investimento e Reforma**
+
 | Instrumento | Tratamento Fiscal |
-|---|---|
+| --- | --- |
 | PPR (Plano Poupança Reforma) | Dedução à colecta de IRS de 20% das contribuições (limite dependente da idade). Penalização de levantamento antecipado fora dos eventos qualificantes. Mais-valias tributadas a 8% (após 8+ anos) |
 | Juros de depósitos | Taxa liberatória de 28% ou opção pelo englobamento (taxas progressivas). Englobamento vantajoso se a taxa marginal for <28% |
 | Dividendos (sociedades portuguesas) | Taxa liberatória de 28%. Se optar por englobamento, apenas 50% incluídos no rendimento tributável (efectivo máximo de 24%) |
@@ -225,24 +235,24 @@ As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (
 
 ### Estratégia de Englobamento
 
-Optar pelo englobamento (inclusão nos escalões progressivos do IRS) pode reduzir o imposto sobre rendimentos de capitais se a sua taxa marginal for inferior a 28%. Contudo, o englobamento é tudo-ou-nada por categoria — não pode escolher rubricas individuais. Modelar cuidadosamente antes de optar.
+- **Estratégia de Englobamento** — Optar pelo englobamento (inclusão nos escalões progressivos do IRS) pode reduzir o imposto sobre rendimentos de capitais se a sua taxa marginal for inferior a 28%. Contudo, o englobamento é tudo-ou-nada por categoria — não pode escolher rubricas individuais. Modelar cuidadosamente antes de optar.
 
 ### Reinvestimento em Habitação Própria Permanente
 
-A mais-valia líquida da venda da habitação própria permanente é excluída de tributação se o produto for reinvestido em nova habitação própria permanente (UE/EEE) no prazo de 36 meses após a venda ou 24 meses antes. Reinvestimento parcial → exclusão parcial.
-
----
+- **Reinvestimento em Habitação Própria Permanente** — A mais-valia líquida da venda da habitação própria permanente é excluída de tributação se o produto for reinvestido em nova habitação própria permanente (UE/EEE) no prazo de 36 meses após a venda ou 24 meses antes. Reinvestimento parcial → exclusão parcial.
 
 ## Secção 10 — Linhas Vermelhas (CGAA e Riscos de Inspecção)
 
 ### CGAA (Cláusula Geral Anti-Abuso)
 
-Art 38.º, n.º 2 da Lei Geral Tributária (LGT). A AT pode desconsiderar ou requalificar operações que sejam artificiais, sem substância económica e essencialmente motivadas por evasão fiscal. Requer parecer prévio do Centro de Estudos Fiscais.
+- **CGAA** — A AT pode desconsiderar ou requalificar operações que sejam artificiais, sem substância económica e essencialmente motivadas por evasão fiscal. Requer parecer prévio do Centro de Estudos Fiscais.  _(Art 38.º, n.º 2 da Lei Geral Tributária (LGT))_
 
 ### Gatilhos de Inspecção da AT
 
+**Gatilhos de Inspecção da AT**
+
 | Gatilho | Risco |
-|---|---|
+| --- | --- |
 | Inconsistência entre rendimento declarado e e-fatura | A AT cruza facturas emitidas com rendimento declarado. Sinalização automática |
 | Regime simplificado com rendimento próximo de €200.000 | A AT verifica fragmentação de rendimento por vários NIFs/actividades |
 | Falha na justificação dos 15% de despesas (regime simplificado) | Défice automaticamente acrescido ao rendimento tributável |
@@ -255,19 +265,14 @@ Art 38.º, n.º 2 da Lei Geral Tributária (LGT). A AT pode desconsiderar ou req
 
 ### Proibições Absolutas
 
-- NUNCA aconselhar emissão de recibos verdes para trabalho que constitua relação laboral dependente
-- NUNCA aconselhar omissão de rendimento quando as facturas são rastreadas via e-fatura
-- NUNCA aconselhar declarar transmissões imobiliárias abaixo do VPT
-- NUNCA aconselhar fragmentação artificial de rendimento para se manter abaixo do limiar de €200.000 do regime simplificado
-- NUNCA aconselhar a não inscrição em IVA quando acima do limiar de isenção
-- NUNCA aconselhar evitar a inscrição na Segurança Social quando legalmente exigida
-
----
+- **Proibições Absolutas** — NUNCA aconselhar emissão de recibos verdes para trabalho que constitua relação laboral dependente; NUNCA aconselhar omissão de rendimento quando as facturas são rastreadas via e-fatura; NUNCA aconselhar declarar transmissões imobiliárias abaixo do VPT; NUNCA aconselhar fragmentação artificial de rendimento para se manter abaixo do limiar de €200.000 do regime simplificado; NUNCA aconselhar a não inscrição em IVA quando acima do limiar de isenção; NUNCA aconselhar evitar a inscrição na Segurança Social quando legalmente exigida.
 
 ## Secção 11 — Calendário Anual de Planeamento Fiscal
 
+**Calendário Anual de Planeamento Fiscal**
+
 | Quando | Acção |
-|---|---|
+| --- | --- |
 | Janeiro | Contribuição trimestral à SS. Primeira oportunidade de pagamento por conta de IRS. Rever e-fatura do ano anterior — iniciar correcções |
 | Fevereiro | Prazo de validação no e-fatura (tipicamente meados de Fevereiro). Garantir que todas as facturas com NIF estão correctamente categorizadas |
 | Março | Prazo para comunicar a composição do agregado familiar à AT. Confirmar deduções de IRS no Portal das Finanças |
@@ -279,8 +284,6 @@ Art 38.º, n.º 2 da Lei Geral Tributária (LGT). A AT pode desconsiderar ou req
 | Outubro | Contribuição trimestral à SS. Rever rendimentos de capitais para decisão sobre englobamento |
 | Novembro | Planear contribuições para PPR de fim de ano. Rever transmissões imobiliárias quanto a prazos de reinvestimento |
 | Dezembro | Terceiro pagamento por conta de IRS. **Mês crítico:** efectuar contribuições para PPR, donativos. Garantir que todas as facturas profissionais foram emitidas com NIF. Última contribuição à SS do ano. Prazo para opções relativas ao IVA |
-
----
 
 ## Secção 12 — Exemplos de Impacto Financeiro
 
@@ -318,14 +321,30 @@ Venda da habitação própria permanente por €300.000 (aquisição por €200.
 
 Reinvestir os €300.000 totais em nova habitação própria permanente em 36 meses: **€0 de imposto.** Reinvestimento parcial (€200.000 de €300.000 = 66,7%): 66,7% excluído → imposto sobre 33,3% × €50.000 = ~€4.450.
 
----
-
 ## Aviso Legal
 
 Esta skill e os seus resultados são fornecidos apenas para fins informativos e computacionais e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuintes não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado (como um Contabilista Certificado, consultor fiscal ou profissional licenciado equivalente na sua jurisdição) antes da entrega ou actuação.
 
 A versão mais actualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-tax-optimization) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.

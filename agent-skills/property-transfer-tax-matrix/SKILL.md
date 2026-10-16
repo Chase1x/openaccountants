@@ -1,20 +1,19 @@
 ---
 name: property-transfer-tax-matrix
-description: "> Use this skill whenever a property transaction triggers a tax on the transfer of real estate. Trigger on phrases like \"SDLT\", \"stamp duty land tax\", \"ADS additional dwelling supplement\", \"LBTT\", \"LTT\", \"Grunderwerbsteuer\", \"GrESt\", \"DMTO droits de mutation\", \"imposta di registro\", \"ITP impuesto transmisiones patrimoniales\", \"AJD actos jurídicos documentados\", \"IVA on new build\", \"IMT Portugal\", \"transfer duty South Africa\", \"land transfer tax Ontario\", \"Welcome tax Quebec\", \"ABSD additional buyer's stamp duty\", \"BSD buyer's stamp duty\", \"Hong Kong AVD\", \"stamp duty NSW\", \"VIC\", \"QLD\", \"WA\", \"foreign buyer surcharge\", \"vacancy tax\", \"RETT\", or any request to compute property purchase or transfer tax. Maps every major property transfer tax regime including special foreign-buyer surcharges (Canada, Australia, Singapore, NZ), regional variation in Germany (16 Länder), Spain (17 CCAA), Italy (categories of buyer/property), and the UK's four-rate jurisdictional split (England SDLT, Scotland LBTT, Wales LTT,…"
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever a property transaction triggers a tax on the transfer of real estate. Trigger on phrases like \"SDLT\", \"stamp duty land tax\", \"ADS additional dwelling supplement\", \"LBTT\", \"LTT\", \"Grunderwerbsteuer\", \"GrESt\", \"DMTO droits de mutation\", \"imposta di registro\", \"ITP impuesto transmisiones patrimoniales\", \"AJD actos jurídicos documentados\", \"IVA on new build\", \"IMT Portugal\", \"transfer duty South Africa\", \"land transfer tax Ontario\", \"Welcome tax Quebec\", \"ABSD additional buyer's stamp duty\", \"BSD buyer's stamp duty\", \"Hong Kong AVD\", \"stamp duty NSW\", \"VIC\", \"QLD\", \"WA\", \"foreign buyer surcharge\", \"vacancy tax\", \"RETT\", or any request to compute property purchase or transfer tax. Maps every major property transfer tax regime including special foreign-buyer surcharges (Canada, Australia, Singapore, NZ), regional variation in Germany (16 Länder), Spain (17 CCAA), Italy (categories of buyer/property), and the UK's four-rate jurisdictional split (England SDLT, Scotland "
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/property-transfer-tax-matrix"
-  tax_year: 2025
-  obligation: RETT
+  openaccountants_url: "https://www.openaccountants.com/skills/property-transfer-tax-matrix"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Property / Real Estate Transfer Tax Matrix v0.1
+# Property Transfer Tax Matrix
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Property / Real Estate Transfer Tax Matrix v0.1
 
 ## What this file is
 
@@ -35,8 +34,6 @@ metadata:
 
 **The reviewer is the customer of this output.** Property transfer tax rates have material magnitude and often jurisdiction-specific surcharges. Every output must be reviewed by a credentialed local conveyancing solicitor / notary / tax practitioner before completion.
 
----
-
 ## Section 1 — Scope statement
 
 This skill covers:
@@ -55,85 +52,68 @@ This skill does NOT cover:
 - **VAT/GST on commercial new-build leases** beyond binary in/out scope
 - **Stamp duty on shares** of property-owning companies (see `stamp-duty-matrix.md`)
 
----
-
 ## Section 2 — UK — SDLT (England/NI), LBTT (Scotland), LTT (Wales)
 
 ### 2.1 England and Northern Ireland — SDLT
 
-**[T1] Post-1 April 2025 residential rates (single dwelling, no surcharge):**
+**[T1] Post-1 April 2025 residential rates (single dwelling, no surcharge)**  _([T1])_
 
 | Band | Rate |
-|---|---|
+| --- | --- |
 | 0 — GBP 125,000 | 0% |
 | GBP 125,001 — 250,000 | 2% |
 | GBP 250,001 — 925,000 | 5% |
 | GBP 925,001 — 1.5m | 10% |
 | > GBP 1.5m | 12% |
 
-**[T1] First-time buyer relief** (post-1 April 2025):
-- 0% to GBP 300,000 (cut from GBP 425,000)
-- 5% on GBP 300,001 — 500,000
-- No relief if total consideration > GBP 500,000
+- **First-time buyer relief (post-1 April 2025)** — 0% to GBP 300,000 (cut from GBP 425,000); 5% on GBP 300,001 — 500,000; No relief if total consideration > GBP 500,000  _([T1])_
+- **Additional dwelling surcharge** — +5% (raised from 3% on 31 October 2024; FA 2024 amendments; on each band for additional residential property)  _([T1])_
+- **Non-resident surcharge** — +2% (on each band for non-UK residents)  _([T1])_
+- **Maximum rate stacking** — 12% + 5% (ADS) + 2% (non-resident) = 19% top marginal rate on properties > GBP 1.5m for non-resident purchasers of additional dwellings  _([T1])_
 
-**[T1] Additional dwelling surcharge:** **+5%** on each band for additional residential property (raised from 3% on 31 October 2024; FA 2024 amendments).
-
-**[T1] Non-resident surcharge:** +2% on each band for non-UK residents.
-
-**[T1] Maximum rate stacking:** 12% + 5% (ADS) + 2% (non-resident) = **19%** top marginal rate on properties > GBP 1.5m for non-resident purchasers of additional dwellings.
-
-**[T1] Non-residential / mixed-use rates:**
+**[T1] Non-residential / mixed-use rates**  _([T1])_
 
 | Band | Rate |
-|---|---|
+| --- | --- |
 | 0 — GBP 150,000 | 0% |
 | GBP 150,001 — 250,000 | 2% |
 | > GBP 250,000 | 5% |
 
-**[T1] Reliefs:**
-- Multiple Dwellings Relief (MDR) — **repealed for transactions on or after 1 June 2024** (FA(No.2) 2024)
-- Group relief (Schedule 7) for 75%+ common-ownership groups
-- Charity relief
-- Acquisition relief (s.62)
-- Sub-sale relief (s.45)
-- Filing: SDLT1 within 14 days of effective date
+- **Reliefs** — Multiple Dwellings Relief (MDR) — repealed for transactions on or after 1 June 2024 (FA(No.2) 2024); Group relief (Schedule 7) for 75%+ common-ownership groups; Charity relief; Acquisition relief (s.62); Sub-sale relief (s.45); Filing: SDLT1 within 14 days of effective date  _([T1])_
 
 ### 2.2 Scotland — LBTT
 
-**[T1] Residential rates 2025/26:**
+**[T1] Residential rates 2025/26**  _([T1])_
 
 | Band | Rate |
-|---|---|
+| --- | --- |
 | 0 — GBP 145,000 | 0% |
 | GBP 145,001 — 250,000 | 2% |
 | GBP 250,001 — 325,000 | 5% |
 | GBP 325,001 — 750,000 | 10% |
 | > GBP 750,000 | 12% |
 
-**[T1] Additional Dwelling Supplement (ADS):** **8%** (raised from 5% in 2024) on additional dwelling acquisitions > GBP 40,000.
-
-**[T1] First-time buyer relief:** 0% to GBP 175,000.
+- **Additional Dwelling Supplement (ADS)** — 8% (raised from 5% in 2024; on additional dwelling acquisitions > GBP 40,000)  _([T1])_
+- **First-time buyer relief** — 0% to GBP 175,000  _([T1])_
 
 ### 2.3 Wales — LTT
 
-**[T1] Residential rates from 11 December 2024:**
+**[T1] Residential rates from 11 December 2024**  _([T1])_
 
 | Band | Rate (main) | Rate (higher rate / additional dwelling) |
-|---|---|---|
+| --- | --- | --- |
 | 0 — GBP 225,000 | 0% | 5% |
 | GBP 225,001 — 400,000 | 6% | 11% |
 | GBP 400,001 — 750,000 | 7.5% | 12.5% |
 | GBP 750,001 — 1.5m | 10% | 15% |
 | > GBP 1.5m | 12% | 17% |
 
----
-
 ## Section 3 — Germany — Grunderwerbsteuer (GrESt)
 
-**[T1] Rates by Land** (set by each federal state; range 3.5% — 6.5%):
+**[T1] Rates by Land (set by each federal state; range 3.5% — 6.5%)**  _([T1])_
 
 | Land | Rate |
-|---|---|
+| --- | --- |
 | **Bayern, Sachsen** | 3.5% |
 | **Hamburg** | 4.5% (raised from 5.5% as of 1 January 2024 — confirm direction) |
 | **Bremen** | 5% |
@@ -150,26 +130,20 @@ This skill does NOT cover:
 | **Nordrhein-Westfalen** | 6.5% |
 | **Brandenburg** | 6.5% |
 
-**[T1] Exemptions (§3 GrEStG):**
-- Acquisitions ≤ EUR 2,500
-- Acquisitions by spouse / registered partner / descendants in direct line
-- Acquisitions on inheritance / division of estate
-- Restructuring and intra-group reorganisations under §§5-7 (75%+ common ownership; complex)
-
-**[T1] Share deals — anti-abuse rule (§1 Abs. 2a, 2b, 3 GrEStG):** transferring ≥ 90% of shares in a real-estate-owning company / partnership over a 10-year period triggers GrESt at the share-deal level (reduced from 95% in 2021 reform).
-
-**[T1] Filing:** notary submits Verlangen to Finanzamt; tax assessment issued; payment within 1 month.
-
----
+- **Exemptions (§3 GrEStG)** — Acquisitions ≤ EUR 2,500; Acquisitions by spouse / registered partner / descendants in direct line; Acquisitions on inheritance / division of estate; Restructuring and intra-group reorganisations under §§5-7 (75%+ common ownership; complex)  _([T1]; §3 GrEStG)_
+- **Share deals — anti-abuse rule** — Transferring ≥ 90% of shares in a real-estate-owning company / partnership over a 10-year period triggers GrESt at the share-deal level (reduced from 95% in 2021 reform)  _([T1]; §1 Abs. 2a, 2b, 3 GrEStG)_
+- **Filing** — Notary submits Verlangen to Finanzamt; tax assessment issued; payment within 1 month  _([T1])_
 
 ## Section 4 — Spain — ITP and AJD
 
 ### 4.1 ITP (Impuesto de Transmisiones Patrimoniales)
 
-**[T1]** Applies to second-hand property purchases. Rates set by each Comunidad Autónoma.
+- **Applicability** — Applies to second-hand property purchases. Rates set by each Comunidad Autónoma.  _([T1])_
+
+**[T1] Rate (illustrative) by CCAA**  _([T1])_
 
 | CCAA | Rate (illustrative) |
-|---|---|
+| --- | --- |
 | **Madrid** | 6% (one of lowest) |
 | **Andalucía** | 7% |
 | **Valencia** | 10% (raised from 6% in 2023) |
@@ -185,80 +159,53 @@ This skill does NOT cover:
 
 ### 4.2 AJD (Actos Jurídicos Documentados)
 
-**[T1]** Applies to new-build (where VAT/IVA also applies) and certain documented transactions. Rate by CCAA: typically 0.5%-1.5% (max 2.5% in some CCAA).
+- **AJD applicability and rate** — Applies to new-build (where VAT/IVA also applies) and certain documented transactions. Rate by CCAA: typically 0.5%-1.5% (max 2.5% in some CCAA)  _([T1])_
 
 ### 4.3 New-build (with IVA)
 
-**[T1]** New-build residential: 10% IVA + 1.5% AJD typical (Madrid 0.75% AJD; some CCAA 2%).
-
----
+- **New-build residential taxes** — New-build residential: 10% IVA + 1.5% AJD typical (Madrid 0.75% AJD; some CCAA 2%)  _([T1])_
 
 ## Section 5 — France — DMTO (Droits de Mutation à Titre Onéreux)
 
-**[T1]** Combined transfer tax, generally **5.81%** of purchase price (with minor variation by département):
-- Departmental rate: 4.50% (cap; can be reduced)
-- Communal rate: 1.20%
-- "Frais d'assiette" 2.37% on departmental rate
-- Total typically ~5.81%
-
-**[T1] Reduced rate for first-time purchases**: not generally available.
-
-**[T1] New-build properties** (< 5 years old, first sale): VAT (20%) applies; reduced DMTO at **0.715%** of purchase price.
-
-**[T1] Reliefs:**
-- Acquisitions by SCI familiale: certain registration relief
-- Transfers between spouses on divorce
-- Acquisitions of forests / agricultural land (specific reductions)
-
-**[T1]** Notary handles all formalities; tax due at signing of acte authentique.
-
----
+- **Combined transfer tax** — Generally 5.81% of purchase price (with minor variation by département): Departmental rate: 4.50% (cap; can be reduced); Communal rate: 1.20%; "Frais d'assiette" 2.37% on departmental rate; Total typically ~5.81%  _([T1])_
+- **Reduced rate for first-time purchases** — Not generally available  _([T1])_
+- **New-build properties (< 5 years old, first sale)** — VAT (20%) applies; reduced DMTO at 0.715% of purchase price  _([T1])_
+- **Reliefs** — Acquisitions by SCI familiale: certain registration relief; Transfers between spouses on divorce; Acquisitions of forests / agricultural land (specific reductions)  _([T1])_
+- **Filing** — Notary handles all formalities; tax due at signing of acte authentique  _([T1])_
 
 ## Section 6 — Italy — Imposta di registro / IVA on new build
 
 ### 6.1 Second-hand residential
 
-**[T1]**
-
-- **Primary residence ("prima casa")**: registration tax 2% of cadastral value (not purchase price); ipotecaria EUR 50; catastale EUR 50
-- **Non-primary residence**: registration tax 9% of cadastral value; ipotecaria EUR 50; catastale EUR 50
+- **Primary residence ("prima casa")** — registration tax 2% of cadastral value (not purchase price); ipotecaria EUR 50; catastale EUR 50  _([T1])_
+- **Non-primary residence** — registration tax 9% of cadastral value; ipotecaria EUR 50; catastale EUR 50  _([T1])_
 
 ### 6.2 New-build residential (with VAT)
 
-- **Primary residence**: VAT 4% of purchase price; registration EUR 200; ipotecaria EUR 200; catastale EUR 200
-- **Non-primary**: VAT 10% (luxury 22%) of purchase price; registration EUR 200; ipotecaria EUR 200; catastale EUR 200
+- **Primary residence** — VAT 4% of purchase price; registration EUR 200; ipotecaria EUR 200; catastale EUR 200 EUR
+- **Non-primary** — VAT 10% (luxury 22%) of purchase price; registration EUR 200; ipotecaria EUR 200; catastale EUR 200 EUR
 
 ### 6.3 Commercial
 
-- Registration 9% of cadastral value, OR VAT 22% election available if seller is VAT-registered enterprise
+- **Commercial registration/VAT election** — Registration 9% of cadastral value, OR VAT 22% election available if seller is VAT-registered enterprise
 
 ### 6.4 Primary residence qualifying conditions
 
-- Buyer is not owner of another habitation in the same municipality
-- Buyer does not already own a "prima casa" anywhere (or sells within 1 year of acquisition)
-- Property is not "of luxury" (categories A/1, A/8, A/9 of cadaster)
-- Buyer is resident or becomes resident within 18 months
-
----
+- **Qualifying conditions** — Buyer is not owner of another habitation in the same municipality; Buyer does not already own a "prima casa" anywhere (or sells within 1 year of acquisition); Property is not "of luxury" (categories A/1, A/8, A/9 of cadaster); Buyer is resident or becomes resident within 18 months
 
 ## Section 7 — Netherlands — Overdrachtsbelasting
 
-**[T1]**
-
-- **First-home buyer (Starters)**: 0% if buyer 18-35 years old, purchase ≤ EUR 525,000, first home, declared to use as own residence
-- **Owner-occupier non-starter**: 2%
-- **All other (investor, second home, commercial)**: 10.4% (raised from 8% in 2023)
-
-**[T1] Filing:** notary handles; collected at execution of deed.
-
----
+- **First-home buyer (Starters)** — 0% if buyer 18-35 years old, purchase ≤ EUR 525,000, first home, declared to use as own residence  _([T1])_
+- **Owner-occupier non-starter** — 2%  _([T1])_
+- **All other (investor, second home, commercial)** — 10.4% (raised from 8% in 2023)  _([T1])_
+- **Filing** — Notary handles; collected at execution of deed  _([T1])_
 
 ## Section 8 — Portugal — IMT (Imposto Municipal sobre as Transmissões Onerosas)
 
-**[T1] Urban property for permanent residence — progressive rates:**
+**[T1] Urban property for permanent residence — progressive rates**  _([T1])_
 
 | Value | Marginal Rate |
-|---|---|
+| --- | --- |
 | 0 — EUR 104,261 | 0% |
 | EUR 104,261 — EUR 142,618 | 2% |
 | EUR 142,618 — EUR 194,458 | 5% |
@@ -267,22 +214,18 @@ This skill does NOT cover:
 | EUR 648,022 — EUR 1,128,287 | 10% (Madeira / Açores adjusted) |
 | > EUR 1,128,287 | 6% flat (yes — it goes down at the top; quirk of regime) |
 
-**[T1] Second residential / investment**: 1% to 8% progressive plus flat 8% above EUR 1.13m.
-
-**[T1] Commercial / rustic**: 5% / 6.5% / others.
-
-**[T1] Imposto do Selo on real estate transactions**: 0.8%.
-
----
+- **Second residential / investment** — 1% to 8% progressive plus flat 8% above EUR 1.13m  _([T1])_
+- **Commercial / rustic** — 5% / 6.5% / others  _([T1])_
+- **Imposto do Selo on real estate transactions** — 0.8%  _([T1])_
 
 ## Section 9 — Asia-Pacific
 
 ### 9.1 Singapore — BSD + ABSD + SSD
 
-**[T1] Buyer's Stamp Duty (BSD) — applies to all buyers:**
+**[T1] Buyer's Stamp Duty (BSD) — applies to all buyers**  _([T1])_
 
 | Value | Residential | Non-residential |
-|---|---|---|
+| --- | --- | --- |
 | 0 — SGD 180,000 | 1% | 1% |
 | 180,001 — 360,000 | 2% | 2% |
 | 360,001 — 1,000,000 | 3% | 3% |
@@ -290,10 +233,10 @@ This skill does NOT cover:
 | 1,500,001 — 3,000,000 | 5% | 5% |
 | > 3,000,000 | 6% | 5% |
 
-**[T1] Additional Buyer's Stamp Duty (ABSD) — applies in addition to BSD:**
+**[T1] Additional Buyer's Stamp Duty (ABSD) — applies in addition to BSD**  _([T1])_
 
 | Buyer profile | Residential ABSD rate |
-|---|---|
+| --- | --- |
 | Singapore citizen — first home | 0% |
 | Singapore citizen — second home | 20% |
 | Singapore citizen — third+ home | 30% |
@@ -305,18 +248,14 @@ This skill does NOT cover:
 | Entities (corporates, etc.) | 65% |
 | Housing developers (after qualifying conditions) | 35% remitted on completion within 5 years |
 
-**[T1] Seller's Stamp Duty (SSD) — disposal within holding period:**
-- ≤ 1 year: 12% on residential / 5% on industrial
-- ≤ 2 years: 8%
-- ≤ 3 years: 4%
-- > 3 years: 0%
+- **Seller's Stamp Duty (SSD) — disposal within holding period** — ≤ 1 year: 12% on residential / 5% on industrial; ≤ 2 years: 8%; ≤ 3 years: 4%; > 3 years: 0%  _([T1])_
 
 ### 9.2 Hong Kong — AVD + BSD + SSD
 
-**[T1] Ad Valorem Stamp Duty (AVD) — Scale 1 (additional dwelling / non-PR / corporate) abolished October 2023; Scale 2 applies now to all individual buyers irrespective of permanent residence status:**
+**[T1] Ad Valorem Stamp Duty (AVD) — Scale 1 abolished October 2023; Scale 2 applies now to all individual buyers**  _([T1])_
 
 | Value | Rate (Scale 2 / Standard) |
-|---|---|
+| --- | --- |
 | ≤ HKD 3m | HKD 100 |
 | HKD 3,000,001 — 3,528,240 | sliding |
 | HKD 3,528,240 — 4,500,000 | 1.5% |
@@ -325,18 +264,17 @@ This skill does NOT cover:
 | HKD 9,000,000 — 20,000,000 | 3.75% |
 | > HKD 20,000,000 | 4.25% |
 
-**[T1] BSD (Buyer's Stamp Duty for non-permanent-resident / corporate)** — **abolished October 2023** (was 7.5%).
+- **BSD (Buyer's Stamp Duty for non-permanent-resident / corporate)** — Abolished October 2023 (was 7.5%)  _([T1])_
+- **SSD (Special Stamp Duty) on disposal within 24 months** — Also abolished October 2023  _([T1])_
 
-**[T1] SSD (Special Stamp Duty) on disposal within 24 months — also abolished October 2023.**
-
-**Net effect 2025:** Hong Kong property transfer tax for non-residents is now identical to residents, at Scale 2 rates.
+Hong Kong property transfer tax for non-residents is now identical to residents, at Scale 2 rates.
 
 ### 9.3 Australia — state-level transfer duty
 
-**[T1] Each state and territory has its own duty:**
+**[T1] Each state and territory has its own duty**  _([T1])_
 
 | State | Standard duty | Foreign buyer surcharge |
-|---|---|---|
+| --- | --- | --- |
 | **NSW** | 1.25% — 7% progressive | 8% (raised from 8% 2023) |
 | **Victoria** | 2.4% — 6.5% | 8% |
 | **Queensland** | 1.5% — 5.75% | 8% |
@@ -346,24 +284,24 @@ This skill does NOT cover:
 | **ACT** | 1.5% — 4.5% (currently being phased out) | 0% |
 | **NT** | 1.5% — 5.95% | 0% |
 
-**[T1] Land Tax Surcharge** — separate annual tax on foreign owners in NSW (4%), VIC (4%), QLD (3%), WA, Tasmania.
+- **Land Tax Surcharge** — Separate annual tax on foreign owners in NSW (4%), VIC (4%), QLD (3%), WA, Tasmania  _([T1])_
 
 ### 9.4 New Zealand
 
-**[T1]** No stamp duty on property since 1999. Bright-line test (income tax on disposal within 2 years; 10 years for property acquired between 27/3/2021 and 30/6/2024). **Foreign buyer ban under Overseas Investment Act 2018** with limited exemptions.
+- **NZ property tax rules** — No stamp duty on property since 1999. Bright-line test (income tax on disposal within 2 years; 10 years for property acquired between 27/3/2021 and 30/6/2024). Foreign buyer ban under Overseas Investment Act 2018 with limited exemptions.  _([T1])_
 
 ### 9.5 Japan
 
-**[T1] Real Estate Acquisition Tax (不動産取得税)** — 3% land / 4% buildings (prefecture-administered). Plus registration tax (登録免許税) 1.5%-2%. Cadastral value × rate.
-
----
+- **Real Estate Acquisition Tax (不動産取得税)** — 3% land / 4% buildings (prefecture-administered). Plus registration tax (登録免許税) 1.5%-2%. Cadastral value × rate.  _([T1])_
 
 ## Section 10 — Canada — provincial transfer duty + UHT
 
 ### 10.1 Provincial land transfer tax (LTT)
 
+**Rate by province**
+
 | Province | Rate |
-|---|---|
+| --- | --- |
 | **Ontario** | 0.5% — 2.5% progressive; **plus Toronto MLTT** (additional 0.5%-2.5% in Toronto); plus **NRST 25%** for non-residents (raised from 20% in March 2022) |
 | **British Columbia** | 1% — 5% progressive; **plus Additional Property Transfer Tax (APTT) 20%** for foreign buyers in specified regions |
 | **Quebec — "Welcome Tax"** | 0.5% — 3% progressive; municipally administered |
@@ -375,57 +313,35 @@ This skill does NOT cover:
 
 ### 10.2 Federal — Underused Housing Tax (UHT)
 
-**[T1] UHT** (Act CRA, 2022): **1% annual tax** on the assessed value of underused / vacant residential property in Canada owned by **non-resident, non-Canadian persons**. Filing required even when exemption applies. Specific exemptions for: trust ownership, corporate Canadian ownership (≥10%), primary place of residence, qualifying occupancy.
+- **UHT** — 1% annual tax on the assessed value of underused / vacant residential property in Canada owned by non-resident, non-Canadian persons. Filing required even when exemption applies. Specific exemptions for: trust ownership, corporate Canadian ownership (≥10%), primary place of residence, qualifying occupancy.  _([T1]; Act CRA, 2022)_
 
 ### 10.3 BC — Speculation and Vacancy Tax
 
-**[T1]** 0.5% (Canadian) / 2% (non-Canadian) annual tax on residential property in specified regions left vacant > 6 months.
+- **Speculation and Vacancy Tax** — 0.5% (Canadian) / 2% (non-Canadian) annual tax on residential property in specified regions left vacant > 6 months  _([T1])_
 
 ### 10.4 Toronto / Vancouver / Montreal — vacant home taxes
 
-Municipal: Toronto 3%, Vancouver 3%, etc.
-
----
-
-## Section 11 — Edge cases and special rules
+- **Municipal vacant home taxes** — Municipal: Toronto 3%, Vancouver 3%, etc.
 
 ### 11.1 Multiple dwellings relief (UK) — REPEALED 2024
 
-MDR was previously available where a transaction involved more than one dwelling, allowing the buyer to compute SDLT on the average price. **Abolished for transactions with effective date on or after 1 June 2024** (FA(No.2) 2024). Pre-1 June 2024 transactions may still claim.
+- **MDR repeal** — MDR was previously available where a transaction involved more than one dwelling, allowing the buyer to compute SDLT on the average price. Abolished for transactions with effective date on or after 1 June 2024 (FA(No.2) 2024). Pre-1 June 2024 transactions may still claim.
 
 ### 11.2 Share-deal anti-abuse
 
-Major jurisdictions tax indirect transfer of real estate via share transfer:
-- **UK** — no equivalent at federal level but "land-rich" SDLT charge exists at restructuring level via group relief abuse rules
-- **Germany** — §1 Abs. 2a, 2b, 3 GrEStG: 90%+ share transfer over 10 years
-- **France** — Article 726 CGI: SCI/SCPI partnership-style entities are subject to 5% droits d'enregistrement on share transfer if real-estate-rich
-- **Spain** — Article 314 LMV anti-abuse: share transfer of real-estate-rich companies treated as direct property transfer for ITP
-- **Singapore — ACD**: Up to 65% top duty for property-rich entity transfers
-- **Australia — Landholder duty** in NSW, VIC, QLD, WA on acquisitions of "landholder" entities
+- **Share-deal anti-abuse rules by jurisdiction** — Major jurisdictions tax indirect transfer of real estate via share transfer: - **UK** — no equivalent at federal level but "land-rich" SDLT charge exists at restructuring level via group relief abuse rules - **Germany** — §1 Abs. 2a, 2b, 3 GrEStG: 90%+ share transfer over 10 years - **France** — Article 726 CGI: SCI/SCPI partnership-style entities are subject to 5% droits d'enregistrement on share transfer if real-estate-rich - **Spain** — Article 314 LMV anti-abuse: share transfer of real-estate-rich companies treated as direct property transfer for ITP - **Singapore — ACD**: Up to 65% top duty for property-rich entity transfers - **Australia — Landholder duty** in NSW, VIC, QLD, WA on acquisitions of "landholder" entities
 
 ### 11.3 Intra-group relief
 
-Most jurisdictions allow exemption / reduced rate for intra-group transfers within 75%+ commonly owned groups. Documentary and continuing-ownership requirements (typically 3-7 years post-transfer) apply. Failure to maintain triggers clawback.
+- **Intra-group relief conditions** — Most jurisdictions allow exemption / reduced rate for intra-group transfers within 75%+ commonly owned groups. Documentary and continuing-ownership requirements (typically 3-7 years post-transfer) apply. Failure to maintain triggers clawback.
 
 ### 11.4 First-time buyer reliefs
 
-- **UK** (England/NI): 0% to GBP 300,000 (post-1 April 2025)
-- **Scotland LBTT**: 0% to GBP 175,000
-- **Ireland**: Help-to-Buy income tax rebate up to EUR 30,000
-- **Netherlands**: 0% if age 18-35, ≤ EUR 525,000
-- **France**: Reduced DMTO in certain départements (rare)
+- **First-time buyer reliefs by jurisdiction** — - **UK** (England/NI): 0% to GBP 300,000 (post-1 April 2025) - **Scotland LBTT**: 0% to GBP 175,000 - **Ireland**: Help-to-Buy income tax rebate up to EUR 30,000 - **Netherlands**: 0% if age 18-35, ≤ EUR 525,000 - **France**: Reduced DMTO in certain départements (rare)
 
 ### 11.5 Foreign buyer overlay — fast-changing
 
-Many jurisdictions have introduced foreign buyer surcharges since 2017. The landscape changes annually. Confirm before quoting:
-- UK: 2% non-resident SDLT
-- Singapore: 60% ABSD
-- Hong Kong: abolished October 2023
-- Canada: 25% (ON) / 20% (BC) NRST plus federal UHT
-- Australia: 7-8% state surcharges
-- New Zealand: outright purchase ban
-
----
+- **Foreign buyer surcharge landscape** — Many jurisdictions have introduced foreign buyer surcharges since 2017. The landscape changes annually. Confirm before quoting: - UK: 2% non-resident SDLT - Singapore: 60% ABSD - Hong Kong: abolished October 2023 - Canada: 25% (ON) / 20% (BC) NRST plus federal UHT - Australia: 7-8% state surcharges - New Zealand: outright purchase ban
 
 ## Section 12 — Output specification
 
@@ -443,8 +359,6 @@ The reviewer brief must include:
 10. **Filing schedule and deadlines** per jurisdiction
 11. **Reviewer questions** — open items flagged as [T2] or [T3]
 
----
-
 ## Section 13 — Self-checks
 
 - [ ] UK SDLT post-1 April 2025 thresholds and ADS at 5% applied
@@ -459,8 +373,6 @@ The reviewer brief must include:
 - [ ] Share-deal anti-abuse considered (Germany 90% / France SCI / Spain Article 314 / Singapore ACD / Australia landholder)
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement
 
----
-
 ## Section 14 — Prohibitions
 
 - **Do not** quote pre-1-April-2025 SDLT thresholds for England/NI residential — they have changed.
@@ -470,14 +382,30 @@ The reviewer brief must include:
 - **Do not** advise that a German share-deal escapes Grunderwerbsteuer if ≥90% of shares change over 10 years — the §1 Abs. 2a/2b/3 anti-abuse rule applies.
 - **Do not** treat trusts and corporates the same as individual buyers for ABSD / land surcharges — special, usually higher rates apply.
 
----
-
 ## Section 15 — Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Property transfer tax rules change frequently with budget cycles and have material magnitude in transactions. Every output must be reviewed and signed off by a credentialed local conveyancing solicitor / notary / tax practitioner before completion.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/property-transfer-tax-matrix) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `property-transfer-tax-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/property-transfer-tax-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

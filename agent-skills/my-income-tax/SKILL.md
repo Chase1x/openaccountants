@@ -1,27 +1,29 @@
 ---
 name: my-income-tax
-description: "> Use this skill whenever asked about Malaysia income tax for self-employed individuals or sole proprietors. Trigger on phrases like \"Malaysia income tax\", \"LHDN\", \"Lembaga Hasil Dalam Negeri\", \"hasil.gov.my\", \"Form B\", \"Form BE\", \"Section 4(a)\", \"personal reliefs Malaysia\", \"chargeable income Malaysia\", \"tax deductions Malaysia\", \"Malaysian tax return\", \"e-Filing Malaysia\", or any question about Malaysian income tax rates, filing, reliefs, or deductions for self-employed or business individuals. Covers progressive tax rates, business income, personal reliefs, deductions, and filing via e-Filing. ALWAYS read this skill before touching any Malaysia income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Malaysia income tax for self-employed individuals or sole proprietors. Trigger on phrases like \"Malaysia income tax\", \"LHDN\", \"Lembaga Hasil Dalam Negeri\", \"hasil.gov.my\", \"Form B\", \"Form BE\", \"Section 4(a)\", \"personal reliefs Malaysia\", \"chargeable income Malaysia\", \"tax deductions Malaysia\", \"Malaysian tax return\", \"e-Filing Malaysia\", or any question about Malaysian income tax rates, filing, reliefs, or deductions for self-employed or business individuals. Covers progressive tax rates, business income, personal reliefs, deductions, and filing via e-Filing. ALWAYS read this skill before touching any Malaysia income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MY
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/my-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/my-income-tax"
+  jurisdiction: "MY"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "MUHAMMAD HANIS MAT HUSSIN"
+  review_status: "current"
 ---
 
-# Malaysia Income Tax -- Self-Employed Skill v1.0
+# MY Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Malaysia Income Tax -- Self-Employed Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
+**Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malaysia |
 | Tax | Income Tax (Cukai Pendapatan) |
 | Currency | MYR (Malaysian Ringgit / RM) only |
@@ -37,8 +39,10 @@ metadata:
 
 ### Progressive Tax Rates -- Resident Individuals (YA 2025)
 
+**Progressive Tax Rates -- Resident Individuals (YA 2025)**
+
 | Chargeable Income (RM) | Rate | Tax on Band | Cumulative Tax |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 -- 5,000 | 0% | RM 0 | RM 0 |
 | 5,001 -- 20,000 | 1% | RM 150 | RM 150 |
 | 20,001 -- 35,000 | 3% | RM 450 | RM 600 |
@@ -52,62 +56,57 @@ metadata:
 
 ### Non-Resident Tax Rate
 
-Flat 30% on all Malaysian-sourced income (no personal reliefs or deductions available).
+- **Non-resident tax rate** — Flat 30% on all Malaysian-sourced income (no personal reliefs or deductions available).  _(ITA 1967)_
 
 ### Residency Test
 
-Present in Malaysia for ≥182 days in a calendar year, or qualifying periods under Section 7 ITA 1967.
+- **Residency test** — Present in Malaysia for ≥182 days in a calendar year, or qualifying periods under Section 7 ITA 1967.  _(Section 7 ITA 1967)_
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown residency status | Non-resident (30% flat) until confirmed |
 | Unknown business-use % | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown relief eligibility | Do not claim |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- bank statement for the full year, confirmation of business type (sole proprietor, partnership, or professional), and residency status.
-
-**Recommended** -- all sales invoices, purchase invoices/receipts, EPF/SOCSO/EIS statements, prior year Form B and tax assessment (Borang J), business registration (SSM).
-
-**Ideal** -- complete accounting records (income statement and balance sheet), capital allowance schedule, partnership agreement (if applicable), prior year tax computation.
+- **Required Inputs** — Minimum viable -- bank statement for the full year, confirmation of business type (sole proprietor, partnership, or professional), and residency status. Recommended -- all sales invoices, purchase invoices/receipts, EPF/SOCSO/EIS statements, prior year Form B and tax assessment (Borang J), business registration (SSM). Ideal -- complete accounting records (income statement and balance sheet), capital allowance schedule, partnership agreement (if applicable), prior year tax computation.
 
 ### Refusal Catalogue
 
-**R-MY-1 -- Residency unknown.** "Resident and non-resident individuals are taxed at very different rates. Cannot proceed without confirming residency status."
-
-**R-MY-2 -- Company (Sdn Bhd) or LLP.** "This skill covers sole proprietors and partnerships only. Companies file under corporate income tax (Form C). Escalate to a tax agent."
-
-**R-MY-3 -- Cross-border income.** "Foreign-sourced income remitted to Malaysia may be exempt or subject to tax under recent amendments. Escalate to a specialist."
-
-**R-MY-4 -- Real property gains.** "Real Property Gains Tax (RPGT) is a separate regime. Out of scope."
-
----
+- **R-MY-1** — Residency unknown. "Resident and non-resident individuals are taxed at very different rates. Cannot proceed without confirming residency status."
+- **R-MY-2** — Company (Sdn Bhd) or LLP. "This skill covers sole proprietors and partnerships only. Companies file under corporate income tax (Form C). Escalate to a tax agent."
+- **R-MY-3** — Cross-border income. "Foreign-sourced income remitted to Malaysia may be exempt or subject to tax under recent amendments. Escalate to a specialist."
+- **R-MY-4** — Real property gains. "Real Property Gains Tax (RPGT) is a separate regime. Out of scope."
 
 ## Section 3 -- Business Income (Section 4(a) ITA 1967)
 
 ### 3.1 Computation of Adjusted Income
 
+**Computation of Adjusted Income**
+
 | Step | Description |
-|---|---|
+| --- | --- |
 | Gross business income | Total revenue from business activities |
 | Less: Allowable expenses (Section 33) | Expenses wholly and exclusively incurred in the production of income |
 | = Adjusted income | Business profit before capital allowances |
 | Less: Capital allowances (Schedule 3) | Depreciation per tax rules |
 | Less: Unabsorbed losses brought forward | Prior year business losses (max 10 consecutive YA carry-forward from YA 2019) |
-| = Statutory income from business | |
+| = Statutory income from business |  |
 
 ### 3.2 Allowable Deductions (Section 33)
 
+**Allowable Deductions (Section 33)**
+
 | Category | Treatment |
-|---|---|
+| --- | --- |
 | Cost of goods sold | Fully deductible |
 | Staff salaries and EPF contributions | Fully deductible |
 | Office rent (business premises) | Fully deductible |
@@ -122,8 +121,10 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 
 ### 3.3 Capital Allowances (Schedule 3)
 
+**Capital Allowances (Schedule 3)**
+
 | Asset Category | Initial Allowance | Annual Allowance |
-|---|---|---|
+| --- | --- | --- |
 | Heavy machinery / general plant | 20% | 14% |
 | Office equipment, furniture | 20% | 10% |
 | Motor vehicles (max RM100,000 cost; RM200,000 if on-the-road price ≤RM150,000) | 20% | 20% |
@@ -132,8 +133,10 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 
 ### 3.4 Non-Deductible Expenses
 
+**Non-Deductible Expenses**
+
 | Expense | Reason |
-|---|---|
+| --- | --- |
 | Private/domestic expenses | Not business-related |
 | Income tax itself | Tax on income |
 | Entertainment (50% restriction applies to most) | 50% disallowed unless for promotional purposes |
@@ -141,12 +144,12 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 | Fines and penalties | Public policy |
 | Donations (unless to approved institutions) | Not deductible under Section 33; separate relief may apply |
 
----
-
 ## Section 4 -- Personal Reliefs (YA 2025)
 
+**Personal Reliefs (YA 2025)**
+
 | Relief | Amount (RM) |
-|---|---|
+| --- | --- |
 | Individual and dependent relatives | 9,000 |
 | Disabled individual (additional) | 7,000 |
 | Spouse (no income or electing joint assessment) | 4,000 |
@@ -168,14 +171,14 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 | Breastfeeding equipment (once per 2 YA) | max 1,000 |
 | Child care / kindergarten (child ≤6 years) | max 3,000 |
 
----
-
 ## Section 5 -- Filing
 
 ### 5.1 Forms
 
+**Forms**
+
 | Form | Who Files | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Form BE | Individuals with employment income only | 30 April (e-Filing: 15 May) |
 | Form B | Individuals with business income (sole proprietors, partnerships, freelancers) | 30 June (e-Filing: 15 July) |
 | Form P | Partnership declaration (filed by precedent partner) | 30 June |
@@ -183,66 +186,62 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 
 ### 5.2 Filing Process
 
-1. Register for e-Filing at mytax.hasil.gov.my (first-time users)
-2. Obtain Tax Identification Number (TIN) from LHDN
-3. Complete Form B with business income, personal reliefs, and tax computation
-4. Submit electronically via MyTax portal
-5. Pay any balance of tax due (after deducting CP500 instalments paid)
+- **Filing Process** — 1. Register for e-Filing at mytax.hasil.gov.my (first-time users) 2. Obtain Tax Identification Number (TIN) from LHDN 3. Complete Form B with business income, personal reliefs, and tax computation 4. Submit electronically via MyTax portal 5. Pay any balance of tax due (after deducting CP500 instalments paid)
 
 ### 5.3 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | Surcharge under Section 112(3): RM200 -- RM20,000 or imprisonment ≤6 months |
 | Late payment | 10% increase on tax unpaid after due date (Section 103(3)) |
 | Additional penalty | Further 5% on amount still unpaid 60 days after due date |
 | Incorrect return | Penalty equal to the amount of tax undercharged (Section 113) |
 | Wilful evasion | Fine RM1,000 -- RM20,000 or imprisonment ≤3 years, plus 300% penalty (Section 114) |
 
----
-
 ## Section 6 -- Worked Examples
 
 ### Example 1 -- Freelance Designer, Resident
 
-**Input:** Gross business revenue RM150,000, allowable expenses RM45,000, capital allowances RM5,000. Single, no dependants. EPF voluntary RM7,000. Lifestyle relief RM2,500.
+Input: Gross business revenue RM150,000, allowable expenses RM45,000, capital allowances RM5,000. Single, no dependants. EPF voluntary RM7,000. Lifestyle relief RM2,500.
 
-**Computation:**
+Computation:
 - Adjusted income: RM150,000 - RM45,000 = RM105,000
 - Statutory income: RM105,000 - RM5,000 = RM100,000
 - Total income: RM100,000
 - Less reliefs: Individual RM9,000 + EPF/life insurance RM7,000 + Lifestyle RM2,500 = RM18,500
 - Chargeable income: RM81,500
 
-**Tax:**
+Tax:
 - First RM70,000: RM3,700
 - Next RM11,500 at 19%: RM2,185
 - Total tax: RM5,885
 
 ### Example 2 -- Non-Resident Consultant
 
-**Input:** Malaysian-sourced consulting income RM200,000.
+Input: Malaysian-sourced consulting income RM200,000.
 
-**Tax:** RM200,000 × 30% = RM60,000. No reliefs available.
-
----
+Tax: RM200,000 × 30% = RM60,000. No reliefs available.
 
 ## Section 7 -- Interaction with Other Systems
 
+**Interaction with Other Systems**
+
 | System | Interaction |
-|---|---|
+| --- | --- |
 | CP500 (prepayment instalments) | See **my-pcb** skill for self-employed instalment payments |
 | EPF/SOCSO/EIS | See **my-epf-socso** skill for contribution rates and obligations |
 | SST (Sales and Services Tax) | Separate regime; not covered by this skill |
-
----
 
 ## Section 8 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Income tax rates | ITA 1967, Schedule 1 |
 | Business income | ITA 1967, Section 4(a) |
 | Allowable deductions | ITA 1967, Section 33 |
@@ -253,25 +252,18 @@ Present in Malaysia for ≥182 days in a calendar year, or qualifying periods un
 
 ### Key LHDN Resources
 
+**Key LHDN Resources**
+
 | Resource | URL |
-|---|---|
+| --- | --- |
 | MyTax e-Filing | https://mytax.hasil.gov.my |
 | Tax rates | https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/ |
 | Tax reliefs | https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-reliefs/ |
 | Contact centre | 03-8911 1000 / HASiL Care Line |
 
----
-
 ## Prohibitions
 
-- NEVER apply resident tax rates without confirming 182-day residency requirement
-- NEVER claim personal reliefs for non-resident taxpayers
-- NEVER allow entertainment expenses at full deduction -- 50% is disallowed unless qualifying promotion
-- NEVER claim capital expenditure as a revenue expense
-- NEVER treat CP500 instalment payments as expenses -- they are credits against final tax
-- NEVER present calculations as definitive -- always label as estimated
-
----
+- **Prohibitions** — - NEVER apply resident tax rates without confirming 182-day residency requirement - NEVER claim personal reliefs for non-resident taxpayers - NEVER allow entertainment expenses at full deduction -- 50% is disallowed unless qualifying promotion - NEVER claim capital expenditure as a revenue expense - NEVER treat CP500 instalment payments as expenses -- they are credits against final tax - NEVER present calculations as definitive -- always label as estimated
 
 ## Disclaimer
 
@@ -279,6 +271,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/my-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `my-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/my-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

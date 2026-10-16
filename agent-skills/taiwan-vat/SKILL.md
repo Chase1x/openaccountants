@@ -1,27 +1,24 @@
 ---
 name: taiwan-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Taiwan Business Tax (營業稅) return, handle uniform invoice (統一發票) compliance, or advise on VAT registration and filing in Taiwan. Trigger on phrases like \"營業稅\", \"Taiwan business tax\", \"統一發票\", \"uniform invoice\", \"401 return\", \"403 return\", \"申報營業稅\", or any Taiwan VAT/business tax request. ALWAYS read this skill before touching any Taiwan business tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: TW
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/taiwan-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/taiwan-vat"
+  jurisdiction: "TW"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Taiwan Business Tax (營業稅) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Taiwan VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Taiwan (中華民國 / Republic of China) |
 | Tax | 營業稅 (Yíngyèshuì — Business Tax / VAT) |
 | Currency | NTD (New Taiwan Dollar / 新台幣 NT$) |
@@ -43,8 +40,10 @@ metadata:
 
 ### Key 401 return boxes
 
+**Key 401 return boxes**
+
 | Box | Meaning |
-|---|---|
+| --- | --- |
 | 401-1 | Sales amount — taxable at 5% (課稅銷售額) |
 | 401-2 | Output tax at 5% (銷項稅額) |
 | 401-3 | Zero-rated sales (零稅率銷售額) |
@@ -58,8 +57,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 5% |
 | Unknown counterparty country | Domestic Taiwan |
 | Unknown B2B vs B2C for foreign customer | B2C — charge 5% |
@@ -70,41 +71,32 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | NTD 300,000 |
 | HIGH tax delta on single default | NTD 15,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net tax position | NTD 100,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** — bank statement for the bi-monthly period in CSV, PDF, or pasted text. Confirmation of taxpayer type (general 一般 or small business 小規模).
-
-**Recommended** — uniform invoices (統一發票) for all sales, purchase invoices for all input credits claimed above NTD 10,000, business registration certificate (統一編號 8-digit business ID).
-
-**Ideal** — complete invoice register, 進項憑證 (input vouchers), prior period return and credit carried forward (留抵稅額), export documentation.
-
-**Refusal if minimum missing — SOFT WARN.** No bank statement = hard stop. "Input tax credits require uniform invoices (統一發票 or 電子發票). All credits are provisional pending invoice confirmation."
+- **Minimum viable** — bank statement for the bi-monthly period in CSV, PDF, or pasted text. Confirmation of taxpayer type (general 一般 or small business 小規模).
+- **Recommended** — uniform invoices (統一發票) for all sales, purchase invoices for all input credits claimed above NTD 10,000, business registration certificate (統一編號 8-digit business ID).
+- **Ideal** — complete invoice register, 進項憑證 (input vouchers), prior period return and credit carried forward (留抵稅額), export documentation.
+- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input tax credits require uniform invoices (統一發票 or 電子發票). All credits are provisional pending invoice confirmation."
 
 ### Refusal catalogue
 
-**R-TW-1 — Small business (小規模) with input credit claims.** "Small businesses (小規模營業人) are taxed on a simplified basis and cannot claim input credits. They file quarterly using Form 403 and pay a deemed tax on purchases. This skill can compute the simplified tax but cannot process input credits for small businesses."
-
-**R-TW-2 — Special industry taxpayers.** "Banks, insurance companies, and certain financial institutions have different business tax calculation methods. Out of scope."
-
-**R-TW-3 — Partial exemption proration.** "If the business makes both taxable and exempt sales and cannot clearly allocate input tax, a proration (比例扣抵) is required. Out of scope without the annual ratio — escalate to a 會計師."
-
-**R-TW-4 — Cross-border electronic services (B2C).** "Foreign businesses providing electronic services to Taiwan consumers (B2C) must register under the special e-services regime. Out of scope for domestic filing."
-
-**R-TW-5 — Land transactions.** "Sales of land are exempt from business tax. If this forms a significant portion of transactions, proration rules apply — escalate."
-
----
+- **R-TW-1 — Small business (小規模) with input credit claims** — Small businesses (小規模營業人) are taxed on a simplified basis and cannot claim input credits. They file quarterly using Form 403 and pay a deemed tax on purchases. This skill can compute the simplified tax but cannot process input credits for small businesses.  _(R-TW-1)_
+- **R-TW-2 — Special industry taxpayers** — Banks, insurance companies, and certain financial institutions have different business tax calculation methods. Out of scope.  _(R-TW-2)_
+- **R-TW-3 — Partial exemption proration** — If the business makes both taxable and exempt sales and cannot clearly allocate input tax, a proration (比例扣抵) is required. Out of scope without the annual ratio — escalate to a 會計師.  _(R-TW-3)_
+- **R-TW-4 — Cross-border electronic services (B2C)** — Foreign businesses providing electronic services to Taiwan consumers (B2C) must register under the special e-services regime. Out of scope for domestic filing.  _(R-TW-4)_
+- **R-TW-5 — Land transactions** — Sales of land are exempt from business tax. If this forms a significant portion of transactions, proration rules apply — escalate.  _(R-TW-5)_
 
 ## Section 3 — Supplier pattern library
 
@@ -112,8 +104,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.1 Taiwanese banks — fees and charges (exempt / exclude)
 
+**3.1 Taiwanese banks — fees and charges (exempt / exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | 中華郵政, CHUNGHWA POST BANK | EXCLUDE (fee lines) | Banking — exempt financial service |
 | 台灣銀行, BANK OF TAIWAN, BOT | EXCLUDE (fee lines) | Same |
 | 合作金庫, TAIWAN COOPERATIVE BANK, TCB | EXCLUDE (fee lines) | Same |
@@ -129,8 +123,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.2 Taiwanese government and statutory (exclude)
 
+**3.2 Taiwanese government and statutory (exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | 財政部, 國稅局, NTA | EXCLUDE | Tax payment — not a supply |
 | 營業稅, 綜所稅, 所得稅 | EXCLUDE | Tax remittance |
 | 勞保, 健保, 勞工保險, 全民健康保險 | EXCLUDE | Social insurance — out of scope |
@@ -140,8 +136,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.3 Taiwanese utilities (taxable at 5%)
 
+**3.3 Taiwanese utilities (taxable at 5%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 台灣電力, TAIWAN POWER, TAIPOWER | Input 5% | 5% | Electricity — taxable |
 | 台灣自來水, TAIWAN WATER | Input 5% | 5% | Water — taxable |
 | 中華電信, CHUNGHWA TELECOM, CHT | Input 5% | 5% | Telecom/broadband — taxable |
@@ -152,8 +150,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.4 Transport and logistics (taxable at 5%)
 
+**3.4 Transport and logistics (taxable at 5%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 台灣高鐵, THSR, 高鐵 | Input 5% | 5% | High-speed rail — taxable |
 | 台灣鐵路, TRA, 台鐵 | Input 5% | 5% | Rail — taxable |
 | 台北捷運, TAIPEI MRT, 北捷 | Input 5% | 5% | Metro — taxable |
@@ -168,8 +168,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.5 Food and retail
 
+**3.5 Food and retail**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 7-ELEVEN TAIWAN, 統一超商 | Input 5% | 5% | Retail — taxable (food included at 5%) |
 | 全家便利商店, FAMILY MART TAIWAN | Input 5% | 5% | Same |
 | 萊爾富, HI-LIFE | Input 5% | 5% | Same |
@@ -182,8 +184,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 ### 3.6 SaaS — local Taiwanese suppliers (5%)
 
+**3.6 SaaS — local Taiwanese suppliers (5%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 104人力銀行, 104 JOB BANK | Input 5% | 5% | HR platform — taxable |
 | 1111人力銀行 | Input 5% | 5% | HR platform — taxable |
 | 鼎新電腦, DIGIWIN | Input 5% | 5% | Taiwanese ERP — taxable |
@@ -194,8 +198,10 @@ Match by case-insensitive substring on counterparty or reference. Most specific 
 
 Taiwan imposes business tax on cross-border electronic services to Taiwan businesses. The foreign supplier should register or the Taiwan buyer may need to self-assess.
 
+**3.7 SaaS — international suppliers (reverse charge consideration)**
+
 | Pattern | Billing entity | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Workspace, Ads, Cloud) | Google Asia Pacific (SG) | Reverse charge 5% | Foreign electronic service — self-assess |
 | MICROSOFT (365, Azure) | Microsoft Taiwan or regional | Check invoice | If Taiwan entity: 5% on invoice; if foreign: self-assess |
 | ADOBE | Adobe Systems (US/SG) | Reverse charge 5% | Foreign service |
@@ -210,8 +216,10 @@ Taiwan imposes business tax on cross-border electronic services to Taiwan busine
 
 ### 3.8 Payment processors (exempt fees)
 
+**3.8 Payment processors (exempt fees)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE | Payment processing — exempt financial service |
 | PAYPAL (fees) | EXCLUDE | Same |
 | LINE PAY 手續費 | EXCLUDE | Same |
@@ -219,16 +227,16 @@ Taiwan imposes business tax on cross-border electronic services to Taiwan busine
 
 ### 3.9 Internal transfers and exclusions
 
+**3.9 Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | 帳戶轉帳, 內部轉帳 | EXCLUDE | Internal movement |
 | 借款, 還款, 貸款 | EXCLUDE | Loan principal — out of scope |
 | 薪資, 工資 | EXCLUDE | Payroll — outside business tax scope |
 | 股利, 股息 | EXCLUDE | Dividend — outside scope |
 | 押金, 保證金 | EXCLUDE | Deposit — out of scope until applied |
 | ATM提款 | Tier 2 — ask | Default exclude; ask purpose |
-
----
 
 ## Section 4 — Worked examples
 
@@ -294,94 +302,77 @@ Bank interest credit. Interest income is exempt from business tax in Taiwan. EXC
 
 **Classification:** EXCLUDE. Exempt interest income — outside business tax scope.
 
----
-
 ## Section 5 — Tier 1 rules (compressed)
 
 ### 5.1 Standard rate 5%
 
-Default rate for all taxable sales of goods and services in Taiwan. Legislation: Business Tax Act (加值型及非加值型營業稅法) Article 10.
+- **Standard rate** — 5%
 
 ### 5.2 Zero rate — exports
 
-Exports of goods and services rendered to foreign businesses paid in foreign currency. Evidence required: export customs declaration for goods; contracts and FX transfer records for services. Legislation: Business Tax Act Article 7.
+- **Zero rate — exports** — Exports of goods and services rendered to foreign businesses paid in foreign currency. Evidence required: export customs declaration for goods; contracts and FX transfer records for services.  _(Business Tax Act Article 7)_
 
 ### 5.3 Exempt supplies
 
-Exempt (免稅) supplies: medical and hospital services, education, cultural/arts services (some), financial services (interest, insurance premiums), residential land, sale of securities, postage stamps. No output tax; no input credit claimable on costs attributable to exempt revenue. Legislation: Business Tax Act Articles 8–9.
+- **Exempt supplies** — Exempt (免稅) supplies: medical and hospital services, education, cultural/arts services (some), financial services (interest, insurance premiums), residential land, sale of securities, postage stamps. No output tax; no input credit claimable on costs attributable to exempt revenue.  _(Business Tax Act Articles 8–9)_
 
 ### 5.4 Uniform invoice (統一發票)
 
-All taxable sales must be evidenced by a uniform invoice (統一發票) with a government-issued sequential number. Required fields: seller's business number (統一編號), buyer's business number (for B2B), transaction date, description, taxable amount, tax amount. Electronic invoices (電子發票) allowed if registered on the e-invoice platform.
+- **Uniform invoice requirements** — All taxable sales must be evidenced by a uniform invoice (統一發票) with a government-issued sequential number. Required fields: seller's business number (統一編號), buyer's business number (for B2B), transaction date, description, taxable amount, tax amount. Electronic invoices (電子發票) allowed if registered on the e-invoice platform.
 
 ### 5.5 Input credit rules
 
-Input tax is deductible if: (1) a uniform invoice is held; (2) the purchase relates to taxable (not exempt) business activities; (3) not blocked (motor vehicles for mixed use, entertainment, personal expenses). Blocked inputs cannot be credited regardless of business purpose.
+- **Input credit rules** — Input tax is deductible if: (1) a uniform invoice is held; (2) the purchase relates to taxable (not exempt) business activities; (3) not blocked (motor vehicles for mixed use, entertainment, personal expenses). Blocked inputs cannot be credited regardless of business purpose.
 
 ### 5.6 Cross-border electronic services
 
-Foreign suppliers of electronic services (B2C to Taiwan consumers) must register if Taiwan B2C sales > NTD 480,000/year. Taiwan B2B buyers self-assess if the foreign supplier has not registered. Rate: 5%.
+- **Cross-border electronic services** — Foreign suppliers of electronic services (B2C to Taiwan consumers) must register if Taiwan B2C sales > NTD 480,000/year. Taiwan B2B buyers self-assess if the foreign supplier has not registered. Rate: 5%.
 
 ### 5.7 Small business tax (小規模營業人)
 
-Monthly revenue below NTD 80,000 (goods) / NTD 40,000 (services): file quarterly Form 403. Tax is assessed by the tax office on a deemed basis (usually 1% of sales for food/beverage; standard rates otherwise). No input credits. No uniform invoice required (use plain receipt).
+- **Small business tax** — Monthly revenue below NTD 80,000 (goods) / NTD 40,000 (services): file quarterly Form 403. Tax is assessed by the tax office on a deemed basis (usually 1% of sales for food/beverage; standard rates otherwise). No input credits. No uniform invoice required (use plain receipt).
 
 ### 5.8 Filing deadlines
 
+**Filing deadlines**
+
 | Filer | Period | Due date |
-|---|---|---|
+| --- | --- | --- |
 | General taxpayer (bi-monthly) | Jan–Feb, Mar–Apr, May–Jun, Jul–Aug, Sep–Oct, Nov–Dec | 15th of following month |
 | Small business (quarterly) | Q1, Q2, Q3, Q4 | 15th of month following quarter |
 
 ### 5.9 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | NTD 1,200–12,000 |
 | Late payment | 1% per month up to 30% |
 | Failure to issue uniform invoice | NTD 3,000–30,000 + 5× assessed tax |
 | Tax evasion | Up to 5× evaded tax + potential criminal liability |
 
----
-
 ## Section 6 — Tier 2 catalogue
 
 ### 6.1 Vehicle expenses — business-use percentage
 
-**What it shows:** Fuel, tolls, parking, or vehicle lease payment.
-**What's missing:** Proportion of business vs. personal use.
-**Conservative default:** 0% input credit.
-**Question to ask:** "Is this vehicle used exclusively for business? If mixed, what is the estimated business-use percentage? Is a mileage log kept?"
+- **Vehicle expenses — business-use percentage** — **What it shows:** Fuel, tolls, parking, or vehicle lease payment. **What's missing:** Proportion of business vs. personal use. **Conservative default:** 0% input credit. **Question to ask:** "Is this vehicle used exclusively for business? If mixed, what is the estimated business-use percentage? Is a mileage log kept?"
 
 ### 6.2 Export qualification for services
 
-**What it shows:** Revenue from a foreign customer.
-**What's missing:** Whether payment was received in foreign currency and the service was consumed outside Taiwan.
-**Conservative default:** Taxable at 5%.
-**Question to ask:** "Was payment received in foreign currency? Was the service entirely consumed by a foreign entity outside Taiwan?"
+- **Export qualification for services** — **What it shows:** Revenue from a foreign customer. **What's missing:** Whether payment was received in foreign currency and the service was consumed outside Taiwan. **Conservative default:** Taxable at 5%. **Question to ask:** "Was payment received in foreign currency? Was the service entirely consumed by a foreign entity outside Taiwan?"
 
 ### 6.3 International SaaS — registered or not in Taiwan
 
-**What it shows:** Payment to a foreign tech company.
-**What's missing:** Whether the foreign supplier has registered for Taiwan business tax.
-**Conservative default:** Self-assess 5% reverse charge.
-**Question to ask:** "Does the invoice from this supplier show a Taiwan business number (統一編號)? If yes, treat as standard; if no, self-assess."
+- **International SaaS — registered or not in Taiwan** — **What it shows:** Payment to a foreign tech company. **What's missing:** Whether the foreign supplier has registered for Taiwan business tax. **Conservative default:** Self-assess 5% reverse charge. **Question to ask:** "Does the invoice from this supplier show a Taiwan business number (統一編號)? If yes, treat as standard; if no, self-assess."
 
 ### 6.4 Mixed residential/commercial property rent
 
-**What it shows:** Rent payment.
-**What's missing:** Whether commercial (taxable) or residential (depends — residential land exempt but building portion taxable in some cases).
-**Conservative default:** Taxable at 5% if commercial; check for exempt status.
-**Question to ask:** "Is this rent for commercial office space or residential? Does the landlord issue a uniform invoice?"
+- **Mixed residential/commercial property rent** — **What it shows:** Rent payment. **What's missing:** Whether commercial (taxable) or residential (depends — residential land exempt but building portion taxable in some cases). **Conservative default:** Taxable at 5% if commercial; check for exempt status. **Question to ask:** "Is this rent for commercial office space or residential? Does the landlord issue a uniform invoice?"
 
 ### 6.5 ATM cash withdrawals
 
-**What it shows:** Cash withdrawal.
-**What's missing:** What the cash was spent on.
-**Conservative default:** Exclude.
-**Question to ask:** "What was this cash used for? Do you have receipts?"
-
----
+- **ATM cash withdrawals** — **What it shows:** Cash withdrawal. **What's missing:** What the cash was spent on. **Conservative default:** Exclude. **Question to ask:** "What was this cash used for? Do you have receipts?"
 
 ## Section 7 — Excel working paper template
 
@@ -418,14 +409,14 @@ REVIEWER FLAGS:
   [ ] Exempt income proration check done?
 ```
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Common Taiwanese bank CSV formats
 
+**Common Taiwanese bank CSV formats**
+
 | Bank | Key columns | Date format | Amount |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 玉山銀行 E.SUN | 交易日期, 摘要, 交易金額, 餘額 | YYYY/MM/DD | NTD integer or decimal |
 | 國泰世華 Cathay | 交易日, 說明, 存入, 提出, 餘額 | YYYY/MM/DD | NTD |
 | 中信銀行 CTBC | 交易日期, 交易說明, 轉入金額, 轉出金額, 餘額 | YYYY-MM-DD | NTD |
@@ -435,8 +426,10 @@ REVIEWER FLAGS:
 
 ### Key Taiwanese banking terms
 
+**Key Taiwanese banking terms**
+
 | Chinese | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | 轉帳收入 / 入款 | Incoming transfer | Potential revenue |
 | 轉帳支出 / 扣款 | Outgoing transfer / debit | Potential expense |
 | 自動扣款 | Auto-debit / standing order | Recurring expense |
@@ -447,8 +440,6 @@ REVIEWER FLAGS:
 | 摘要 / 說明 | Description / narrative | Key classification field |
 | ATM提款 | ATM withdrawal | Tier 2 — ask |
 | 薪資 | Salary | Out of scope |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -471,14 +462,14 @@ TAIWAN BUSINESS TAX ONBOARDING — MINIMUM QUESTIONS
 8. Prior period excess credit (留抵稅額) carried forward amount?
 ```
 
----
-
 ## Section 10 — Reference material
 
 ### Key legislation
 
+**Key legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Business Tax Act | 加值型及非加值型營業稅法 |
 | Standard rate | Business Tax Act Article 10 |
 | Zero rate | Business Tax Act Article 7 |
@@ -506,12 +497,12 @@ TAIWAN BUSINESS TAX ONBOARDING — MINIMUM QUESTIONS
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, no inline tier tags |
-
----
 
 ## Prohibitions
 
@@ -522,14 +513,30 @@ TAIWAN BUSINESS TAX ONBOARDING — MINIMUM QUESTIONS
 - NEVER classify bank interest as taxable revenue — it is exempt
 - NEVER present calculations as definitive — direct to a licensed 會計師 (CPA) for confirmation
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional (會計師 or equivalent) before filing.
 
 The most up-to-date version is maintained at openaccountants.com.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/taiwan-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `taiwan-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/taiwan-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

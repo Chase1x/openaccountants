@@ -1,26 +1,24 @@
 ---
 name: mexico-einvoice
-description: "> Use this skill whenever asked about Mexico e-invoicing, CFDI (Comprobante Fiscal Digital por Internet), SAT (Servicio de Administración Tributaria), PAC (Proveedor Autorizado de Certificación), timbrado (digital stamping), Anexo 20, CFDI version 4.0, XML schema for Mexican invoices, UUID/folio fiscal, RFC validation, complemento de pago, carta porte, nomina, cancelación de CFDI, or any question about generating, validating, certifying, or troubleshooting Mexican electronic invoices. Also trigger when advising on SAT compliance, PAC selection, XML structure, fiscal regime codes, product catalog codes (c_ClaveProdServ), or CFDI workflow. ALWAYS read this skill before touching any Mexico e-invoice work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Mexico e-invoicing, CFDI (Comprobante Fiscal Digital por Internet), SAT (Servicio de Administración Tributaria), PAC (Proveedor Autorizado de Certificación), timbrado (digital stamping), Anexo 20, CFDI version 4.0, XML schema for Mexican invoices, UUID/folio fiscal, RFC validation, complemento de pago, carta porte, nomina, cancelación de CFDI, or any question about generating, validating, certifying, or troubleshooting Mexican electronic invoices. Also trigger when advising on SAT compliance, PAC selection, XML structure, fiscal regime codes, product catalog codes (c_ClaveProdServ), or CFDI workflow. ALWAYS read this skill before touching any Mexico e-invoice work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: MX
-  category: invoicing
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/mexico-einvoice"
-  obligation: EINV
+  openaccountants_url: "https://www.openaccountants.com/skills/mexico-einvoice"
+  jurisdiction: "MX"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Mexico CFDI E-Invoice Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Mexico Einvoice
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United Mexican States (Mexico) |
 | Currency | MXN (Mexican Peso); multi-currency supported with exchange rate |
 | E-Invoicing System | CFDI (Comprobante Fiscal Digital por Internet) |
@@ -35,8 +33,10 @@ metadata:
 
 ### Key Dates
 
+**Key Dates**
+
 | Event | Date |
-|---|---|
+| --- | --- |
 | CFDI inception | 2004 (CFD); 2011 (CFDI mandatory for large) |
 | Universal mandate | 1 April 2014 (all taxpayers) |
 | CFDI 3.3 | 1 July 2017 |
@@ -44,20 +44,18 @@ metadata:
 | CFDI 4.0 sole valid version | 1 January 2023 |
 | Platform real-time access mandate | 1 May 2026 (Art. 30-B CFF, platforms must give SAT real-time data access) |
 
----
-
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
 
-- **ALL taxpayers** in Mexico (personas físicas and personas morales) who carry out economic activities
-- No threshold — every transaction requiring a tax receipt must produce a CFDI
-- Applies to: sales of goods, services, leases, payroll, donations, exports, imports
+- **Mandate applicability** — ALL taxpayers in Mexico (personas físicas and personas morales) who carry out economic activities. No threshold — every transaction requiring a tax receipt must produce a CFDI. Applies to: sales of goods, services, leases, payroll, donations, exports, imports.
 
 ### Document Types (TipoDeComprobante)
 
+**Document Types (TipoDeComprobante)**
+
 | Code | Type | Description |
-|---|---|---|
+| --- | --- | --- |
 | I | Ingreso | Income invoice (standard sales/services) |
 | E | Egreso | Credit note / refund |
 | T | Traslado | Transfer of goods (no payment) |
@@ -66,8 +64,10 @@ metadata:
 
 ### Complementos (Supplements)
 
+**Complementos (Supplements)**
+
 | Complemento | Use Case |
-|---|---|
+| --- | --- |
 | Pagos 2.0 | Payment receipts for deferred/partial payments |
 | Carta Porte 3.1 | Bill of lading for goods transport |
 | Nómina 1.2 | Payroll details |
@@ -77,18 +77,16 @@ metadata:
 
 ### B2C Treatment
 
-- B2C sales use RFC genérico: XAXX010101000 (domestic) or XEXX010101000 (foreign)
-- Still requires full CFDI generation and PAC certification
-- Simplified "factura global" available for aggregating small B2C transactions (daily/weekly/monthly)
-
----
+- **B2C rules** — B2C sales use RFC genérico: XAXX010101000 (domestic) or XEXX010101000 (foreign). Still requires full CFDI generation and PAC certification. Simplified "factura global" available for aggregating small B2C transactions (daily/weekly/monthly).
 
 ## Section 3 -- Technical Format
 
 ### XML Schema
 
+**XML Schema**
+
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Format | XML |
 | Version Attribute | Version="4.0" |
 | Root Element | `<cfdi:Comprobante>` |
@@ -101,33 +99,33 @@ metadata:
 
 ### CFDI Lifecycle
 
-```
 Taxpayer ERP/System → Generate XML → Sign with CSD (e.firma) →
 Submit to PAC → PAC validates → PAC stamps (timbrado) →
 PAC returns UUID + TimbreFiscalDigital → Invoice valid →
 PAC transmits copy to SAT
-```
 
 ### Digital Certificates
 
+**Digital Certificates**
+
 | Certificate | Purpose |
-|---|---|
+| --- | --- |
 | e.firma (FIEL) | General identity certificate (not for signing CFDI directly) |
 | CSD (Certificado de Sello Digital) | Specifically for signing CFDI; obtained from SAT portal |
 | PAC Certificate | PAC's own certificate for the timbrado (fiscal stamp) |
 
 ### Cadena Original
 
-The "cadena original" is a pipe-delimited string of all significant invoice fields, generated via XSLT transformation. The taxpayer's digital seal (sello) is a SHA-256 + RSA signature of this cadena original.
-
----
+- **Cadena Original** — The "cadena original" is a pipe-delimited string of all significant invoice fields, generated via XSLT transformation. The taxpayer's digital seal (sello) is a SHA-256 + RSA signature of this cadena original.
 
 ## Section 4 -- Mandatory Fields
 
 ### Comprobante (Root) Attributes
 
+**Comprobante (Root) Attributes**
+
 | Attribute | Description | Format/Values |
-|---|---|---|
+| --- | --- | --- |
 | Version | Schema version | "4.0" |
 | Serie | Series identifier | 1-25 alphanumeric |
 | Folio | Sequential number | 1-40 alphanumeric |
@@ -147,16 +145,20 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Emisor (Issuer)
 
+**Emisor (Issuer)**
+
 | Element/Attribute | Description |
-|---|---|
+| --- | --- |
 | Rfc | Issuer RFC (12 or 13 chars) |
 | Nombre | Legal name (must match SAT records exactly) |
 | RegimenFiscal | Fiscal regime code (c_RegimenFiscal catalog) |
 
 ### Receptor (Receiver)
 
+**Receptor (Receiver)**
+
 | Element/Attribute | Description |
-|---|---|
+| --- | --- |
 | Rfc | Receiver RFC (or XAXX010101000 for generic B2C) |
 | Nombre | Receiver legal name (must match SAT records) |
 | DomicilioFiscalReceptor | Receiver's fiscal postal code (must match SAT records) |
@@ -165,8 +167,10 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Conceptos (Line Items)
 
+**Conceptos (Line Items)**
+
 | Attribute | Description |
-|---|---|
+| --- | --- |
 | ClaveProdServ | SAT product/service catalog code (8 digits) |
 | NoIdentificacion | Internal product identifier |
 | Cantidad | Quantity |
@@ -179,8 +183,10 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Impuestos (Taxes)
 
+**Impuestos (Taxes)**
+
 | Path | Description |
-|---|---|
+| --- | --- |
 | Concepto/Impuestos/Traslados/Traslado | Tax transfer per line |
 | @Base | Taxable base |
 | @Impuesto | Tax code (002=IVA, 003=IEPS) |
@@ -192,8 +198,10 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Timbre Fiscal Digital (Added by PAC)
 
+**Timbre Fiscal Digital (Added by PAC)**
+
 | Attribute | Description |
-|---|---|
+| --- | --- |
 | Version | "1.1" |
 | UUID | Folio fiscal (36-char UUID) — the unique invoice identifier |
 | FechaTimbrado | PAC stamping timestamp |
@@ -202,14 +210,14 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 | NoCertificadoSAT | SAT certificate number used by PAC |
 | SelloSAT | PAC/SAT digital seal |
 
----
-
 ## Section 5 -- Transmission Method
 
 ### PAC Certification (Mandatory)
 
+**PAC Certification (Mandatory)**
+
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Role | PACs validate, stamp, and transmit CFDIs to SAT |
 | Number of Active PACs | ~70+ authorized by SAT |
 | Connection | SOAP or REST web services (varies by PAC) |
@@ -219,53 +227,36 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Communication Flow
 
-1. Taxpayer system generates CFDI XML (signed with CSD)
-2. Submit to PAC via web service
-3. PAC validates structure + data against SAT catalogs
-4. PAC validates receiver RFC/name/postal code against SAT database
-5. PAC generates UUID (folio fiscal)
-6. PAC applies TimbreFiscalDigital complement (SAT stamp)
-7. PAC returns stamped CFDI to taxpayer
-8. PAC sends copy to SAT within 72 hours
-9. Taxpayer delivers stamped CFDI to receiver
+- **Communication Flow** — 1. Taxpayer system generates CFDI XML (signed with CSD) 2. Submit to PAC via web service 3. PAC validates structure + data against SAT catalogs 4. PAC validates receiver RFC/name/postal code against SAT database 5. PAC generates UUID (folio fiscal) 6. PAC applies TimbreFiscalDigital complement (SAT stamp) 7. PAC returns stamped CFDI to taxpayer 8. PAC sends copy to SAT within 72 hours 9. Taxpayer delivers stamped CFDI to receiver
 
 ### SAT Free Issuance Portal
 
-- Available at portalcfdi.facturaelectronica.sat.gob.mx
-- Limited to low-volume issuance
-- Requires e.firma (FIEL) login
-- Not suitable for automated/high-volume scenarios
+- **SAT Free Issuance Portal** — Available at portalcfdi.facturaelectronica.sat.gob.mx. Limited to low-volume issuance. Requires e.firma (FIEL) login. Not suitable for automated/high-volume scenarios.
 
 ### Cancellation
 
+**Cancellation**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Method | Submit cancellation request via PAC |
 | Receiver acceptance | Required for invoices > MXN 1,000 (receiver has 72 hours to accept/reject) |
 | Motivo (reason) | 01=CFDI with errors (related doc exists), 02=CFDI with errors (no replacement), 03=Transaction did not occur, 04=Related to global invoice |
 | Time limit | Same fiscal year or month following issuance |
 | FolioSustitucion | UUID of replacement CFDI (if motivo=01) |
 
----
-
 ## Section 6 -- Validation Rules
 
 ### PAC Validation Sequence
 
-1. **Structural** — XML well-formed, conforms to cfdv40.xsd
-2. **Catalog codes** — All coded fields must exist in SAT catalogs (c_FormaPago, c_Moneda, c_ClaveProdServ, c_ClaveUnidad, c_UsoCFDI, c_RegimenFiscal, etc.)
-3. **RFC validation** — Receiver RFC must exist in SAT's valid RFC list (LRFC)
-4. **Name matching** — Receiver Nombre must match SAT records exactly (including accents/capitalization)
-5. **Postal code** — DomicilioFiscalReceptor must match SAT's registered address for that RFC
-6. **Fiscal regime** — RegimenFiscalReceptor must match SAT's records
-7. **Mathematical** — SubTotal = sum of Concepto.Importe; Total = SubTotal + taxes - retentions
-8. **CSD validity** — Certificate not expired, not revoked, belongs to issuer RFC
-9. **Seal verification** — Sello matches cadena original using CSD public key
+- **PAC Validation Sequence** — 1. Structural — XML well-formed, conforms to cfdv40.xsd 2. Catalog codes — All coded fields must exist in SAT catalogs (c_FormaPago, c_Moneda, c_ClaveProdServ, c_ClaveUnidad, c_UsoCFDI, c_RegimenFiscal, etc.) 3. RFC validation — Receiver RFC must exist in SAT's valid RFC list (LRFC) 4. Name matching — Receiver Nombre must match SAT records exactly (including accents/capitalization) 5. Postal code — DomicilioFiscalReceptor must match SAT's registered address for that RFC 6. Fiscal regime — RegimenFiscalReceptor must match SAT's records 7. Mathematical — SubTotal = sum of Concepto.Importe; Total = SubTotal + taxes - retentions 8. CSD validity — Certificate not expired, not revoked, belongs to issuer RFC 9. Seal verification — Sello matches cadena original using CSD public key
 
 ### Common Rejection Reasons
 
+**Common Rejection Reasons**
+
 | Error | Description | Fix |
-|---|---|---|
+| --- | --- | --- |
 | 301 | XML structure invalid | Validate against cfdv40.xsd |
 | 302 | CSD expired or revoked | Renew CSD at SAT portal |
 | 303 | Invalid seal | Recompute cadena original and resign |
@@ -274,51 +265,45 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 | 307 | Receiver postal code mismatch | Use fiscal domicile postal code |
 | 402 | Invalid ClaveProdServ | Look up correct 8-digit code in SAT catalog |
 
----
-
 ## Section 7 -- Tax Computation Rules
 
 ### IVA (Value Added Tax)
 
+**IVA (Value Added Tax)**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 16% | General rate (most goods and services) |
 | 0% | Basic foodstuffs, medicines, exports |
 | Exempt | Education, residential rent, medical services |
 
 ### IEPS (Special Production and Services Tax)
 
-- Applied on specific goods: alcohol, tobacco, fuel, sugary drinks, pesticides
-- Rates vary by product category
+- **IEPS applicability** — Applied on specific goods: alcohol, tobacco, fuel, sugary drinks, pesticides. Rates vary by product category.
 
 ### Tax Retention
 
+**Tax Retention**
+
 | Tax | Rate | When |
-|---|---|---|
+| --- | --- | --- |
 | ISR retention | 10% (general) | Professional services paid to individuals |
 | IVA retention | 10.6667% | Services by individuals; transport; temporary staffing |
 
 ### Calculation Rules
 
-- Tax base per line = Cantidad × ValorUnitario (before tax)
-- Tax per line = Base × TasaOCuota
-- Round to 2 decimal places at line level (6 decimal places for TasaOCuota)
-- Document SubTotal = sum of all line Importe values
-- Document Total = SubTotal + TotalImpuestosTrasladados - TotalImpuestosRetenidos
-- For PPD (deferred payment): taxes recorded in Complemento de Pago at time of actual payment
+- **Calculation Rules** — Tax base per line = Cantidad × ValorUnitario (before tax); Tax per line = Base × TasaOCuota; Round to 2 decimal places at line level (6 decimal places for TasaOCuota); Document SubTotal = sum of all line Importe values; Document Total = SubTotal + TotalImpuestosTrasladados - TotalImpuestosRetenidos; For PPD (deferred payment): taxes recorded in Complemento de Pago at time of actual payment
 
 ### Multi-Currency
 
-- If Moneda ≠ MXN, must include TipoCambio (exchange rate)
-- All amounts in the CFDI are in the stated Moneda
-- SAT computes MXN equivalent using the stated TipoCambio
-
----
+- **Multi-Currency rules** — If Moneda ≠ MXN, must include TipoCambio (exchange rate). All amounts in the CFDI are in the stated Moneda. SAT computes MXN equivalent using the stated TipoCambio.
 
 ## Section 8 -- Archiving Requirements
 
+**Archiving Requirements**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention Period | 5 years from date the tax return was filed (CFF Art. 30); effectively 6-7 years |
 | Format | Original signed XML (with TimbreFiscalDigital) |
 | Accessibility | Must be available for SAT audit; queryable from SAT portal |
@@ -328,12 +313,12 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 | Cancellation Records | Retain cancelled CFDIs with cancellation acknowledgment |
 | Platform Data (from May 2026) | Platforms must provide SAT permanent online access; data archived 5+ years |
 
----
-
 ## Section 9 -- Penalties for Non-Compliance
 
+**Penalties for Non-Compliance**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Not issuing CFDI | MXN 17,020 -- MXN 97,330 per event (CFF Art. 83-IV / 84-IV) |
 | Issuing CFDI without fiscal requirements | MXN 17,020 -- MXN 97,330 |
 | Not delivering CFDI to client upon request | MXN 17,020 -- MXN 97,330 |
@@ -344,46 +329,29 @@ The "cadena original" is a pipe-delimited string of all significant invoice fiel
 
 ### Receiver Consequences
 
-- Receiver who deducts/credits a CFDI that does not meet requirements risks deduction disallowance
-- ISR deductions and IVA credits require a valid CFDI with correct receiver data
-
----
+- **Receiver Consequences** — Receiver who deducts/credits a CFDI that does not meet requirements risks deduction disallowance. ISR deductions and IVA credits require a valid CFDI with correct receiver data.
 
 ## Section 10 -- Interaction with Tax Skills
 
 ### Monthly VAT Return (Declaración Mensual IVA)
 
-- IVA trasladado (output VAT) derived from type "I" CFDIs issued
-- IVA acreditable (input VAT) derived from type "I" CFDIs received
-- IVA retenido from retention CFDIs
-- SAT pre-fills monthly return proposals based on CFDI data
+- **Monthly VAT Return** — IVA trasladado (output VAT) derived from type "I" CFDIs issued. IVA acreditable (input VAT) derived from type "I" CFDIs received. IVA retenido from retention CFDIs. SAT pre-fills monthly return proposals based on CFDI data.
 
 ### Annual ISR Return
 
-- Income declared must match sum of type "I" CFDIs issued in the fiscal year
-- Deductions must be backed by valid received CFDIs
-- SAT cross-references reported income vs. CFDI issuance records
+- **Annual ISR Return** — Income declared must match sum of type "I" CFDIs issued in the fiscal year. Deductions must be backed by valid received CFDIs. SAT cross-references reported income vs. CFDI issuance records.
 
 ### Payroll (Nómina)
 
-- Payroll CFDIs (type "N" with Nómina complemento) feed into:
-  - Employee's annual tax return (pre-filled income)
-  - Employer's ISR withholding obligations
-  - Social security (IMSS) cross-validation
+- **Payroll (Nómina) interactions** — Payroll CFDIs (type "N" with Nómina complemento) feed into: Employee's annual tax return (pre-filled income); Employer's ISR withholding obligations; Social security (IMSS) cross-validation.
 
 ### Complemento de Pago
 
-- For PPD method invoices, actual VAT is recognized only when payment CFDI is issued
-- Cashflow-based IVA timing: VAT liability/credit arises on payment date, not invoice date
-- Monthly IVA return uses payment CFDIs for deferred-payment transactions
+- **Complemento de Pago rules** — For PPD method invoices, actual VAT is recognized only when payment CFDI is issued. Cashflow-based IVA timing: VAT liability/credit arises on payment date, not invoice date. Monthly IVA return uses payment CFDIs for deferred-payment transactions.
 
 ### SAT Audit Crossmatching
 
-- SAT automatically cross-references buyer-seller CFDI pairs
-- Discrepancies flagged in taxpayer's "Buzón Tributario" (tax mailbox)
-- Invitation letters ("carta invitación") issued for unexplained income vs. CFDI mismatches
-
----
+- **SAT Audit Crossmatching** — SAT automatically cross-references buyer-seller CFDI pairs. Discrepancies flagged in taxpayer's "Buzón Tributario" (tax mailbox). Invitation letters ("carta invitación") issued for unexplained income vs. CFDI mismatches.
 
 ## Disclaimer
 
@@ -391,6 +359,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/mexico-einvoice) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mexico-einvoice` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mexico-einvoice. If neither is available, confirm every figure against the official source pages cited above before relying on it.

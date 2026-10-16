@@ -1,28 +1,28 @@
 ---
 name: cl-income-tax
-description: "> Use this skill whenever asked about Chilean income tax for self-employed individuals (trabajadores independientes / trabajadores a honorarios). Trigger on phrases like \"Impuesto Global Complementario\", \"Operación Renta\", \"boleta de honorarios\", \"trabajador independiente\", \"PPM\", \"retención honorarios\", \"gastos presuntos\", \"segunda categoría\", \"Formulario 22\", \"SII\", \"RUT Chile\", \"cotizaciones previsionales\", \"APV\", or any question about filing or computing income tax for a self-employed or independent worker in Chile. This skill covers Impuesto Global Complementario (progressive 0-40%), honorarios withholding, PPM credits, gastos efectivos vs presuntos, cotizaciones previsionales, and SII filing. ALWAYS read this skill before touching any Chilean income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Chilean income tax for self-employed individuals (trabajadores independientes / trabajadores a honorarios). Trigger on phrases like \"Impuesto Global Complementario\", \"Operación Renta\", \"boleta de honorarios\", \"trabajador independiente\", \"PPM\", \"retención honorarios\", \"gastos presuntos\", \"segunda categoría\", \"Formulario 22\", \"SII\", \"RUT Chile\", \"cotizaciones previsionales\", \"APV\", or any question about filing or computing income tax for a self-employed or independent worker in Chile. This skill covers Impuesto Global Complementario (progressive 0-40%), honorarios withholding, PPM credits, gastos efectivos vs presuntos, cotizaciones previsionales, and SII filing. ALWAYS read this skill before touching any Chilean income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cl-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/cl-income-tax"
+  jurisdiction: "CL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.0
+# CL Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.0
 
 ## Section 1 — Quick Reference
 
 ### Impuesto Global Complementario (IGC) — Tax Year 2025 (Año Tributario 2025)
 
-The IGC uses UTA (Unidad Tributaria Anual) as the reference unit. The December 2024 UTA was approximately CLP 807,528. Always verify at www.sii.cl.
+**IGC table**
 
 | Taxable Income (UTA) | Approx CLP (at UTA 807,528) | Rate | Amount to Deduct (UTA) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 -- 13.5 UTA | 0 -- 10,901,628 | Exempt (0%) | -- |
 | 13.5 -- 30 UTA | 10,901,629 -- 24,225,840 | 4% | 0.54 UTA |
 | 30 -- 50 UTA | 24,225,841 -- 40,376,400 | 8% | 1.74 UTA |
@@ -32,18 +32,18 @@ The IGC uses UTA (Unidad Tributaria Anual) as the reference unit. The December 2
 | 120 -- 310 UTA | 96,903,361 -- 250,333,680 | 35% | 23.26 UTA |
 | 310+ UTA | 250,333,681+ | 40% | 38.76 UTA |
 
-Formula: IGC = (Taxable Income in UTA x Rate) - Amount to Deduct in UTA, then convert to CLP
-
-WARNING: UTA values change monthly. Always use the December UTA of the tax year at www.sii.cl.
+- **UTA reference unit** — The IGC uses UTA (Unidad Tributaria Anual) as the reference unit. The December 2024 UTA was approximately CLP 807,528. Always verify at www.sii.cl.  _(www.sii.cl)_
+- **IGC formula** — IGC = (Taxable Income in UTA x Rate) - Amount to Deduct in UTA, then convert to CLP
+- **UTA month warning** — WARNING: UTA values change monthly. Always use the December UTA of the tax year at www.sii.cl.  _(www.sii.cl)_
 
 ### Impuesto Único de Segunda Categoría (IUSC) — Monthly Withholding
 
-The IUSC applies the same progressive rate structure as the IGC but on a monthly basis using UTM (Unidad Tributaria Mensual) instead of UTA. This is the payroll withholding tax for employed workers.
+- **IUSC description** — The IUSC applies the same progressive rate structure as the IGC but on a monthly basis using UTM (Unidad Tributaria Mensual) instead of UTA. This is the payroll withholding tax for employed workers.  _(Source: SII (sii.cl/valores_y_fechas/impuesto_2da_categoria/); cross-validated against grblasquiz/hacecuentas and efeoncepro/greenhouse-eo.)_
 
-Source: SII (`sii.cl/valores_y_fechas/impuesto_2da_categoria/`); cross-validated against `grblasquiz/hacecuentas` and `efeoncepro/greenhouse-eo`.
+**IUSC table**  _(Source: SII (sii.cl/valores_y_fechas/impuesto_2da_categoria/); cross-validated against grblasquiz/hacecuentas and efeoncepro/greenhouse-eo.)_
 
 | Taxable Income (UTM) | Rate | Deduction (UTM) |
-|---|---|---|
+| --- | --- | --- |
 | 0 — 13.5 UTM | Exempt (0%) | — |
 | 13.5 — 30 UTM | 4% | 0.54 UTM |
 | 30 — 50 UTM | 8% | 1.74 UTM |
@@ -53,17 +53,15 @@ Source: SII (`sii.cl/valores_y_fechas/impuesto_2da_categoria/`); cross-validated
 | 120 — 310 UTM | 35% | 23.26 UTM |
 | 310+ UTM | 40% | 38.76 UTM |
 
-Formula: IUSC = (Taxable base in UTM x Rate) - Deduction in UTM, then convert to CLP.
-Taxable base = Gross salary - AFP (10% + commission) - Health (7% Fonasa or Isapre %).
-
-The UTM for 2026 is approximately CLP 66,500. Always verify at www.sii.cl.
+- **IUSC formula** — IUSC = (Taxable base in UTM x Rate) - Deduction in UTM, then convert to CLP. Taxable base = Gross salary - AFP (10% + commission) - Health (7% Fonasa or Isapre %).
+- **UTM 2026 value** — CLP 66,500 (approx) CLP (2026)  _(www.sii.cl)_
 
 ### AFP Commission Rates (2026)
 
-Source: Superintendencia de Pensiones (`spensiones.cl`); cross-validated against `grblasquiz/hacecuentas`.
+**AFP Commission Rates table**  _(Source: Superintendencia de Pensiones (spensiones.cl); cross-validated against grblasquiz/hacecuentas.)_
 
 | AFP | Commission | Total Worker Deduction (10% + commission) |
-|---|---|---|
+| --- | --- | --- |
 | Uno | 0.49% | 10.49% |
 | Modelo | 0.58% | 10.58% |
 | PlanVital | 1.16% | 11.16% |
@@ -72,12 +70,14 @@ Source: Superintendencia de Pensiones (`spensiones.cl`); cross-validated against
 | Cuprum | 1.44% | 11.44% |
 | ProVida | 1.45% | 11.45% |
 
-SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deducted from salary.
+- **SIS (Seguro de Invalidez y Sobrevivencia)** — 1.49% % (paid by employer, not deducted from salary)  _(Superintendencia de Pensiones (spensiones.cl))_
 
 ### Honorarios Withholding Rate Phase-In
 
+**Honorarios Withholding Rate Phase-In table**
+
 | Year | Withholding Rate |
-|---|---|
+| --- | --- |
 | 2024 | 13.75% |
 | 2025 | 14.5% |
 | 2026 | 15.25% |
@@ -86,24 +86,30 @@ SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deduc
 
 ### Gastos Presuntos (Deemed Expenses)
 
+**Gastos Presuntos table**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Rate | 30% of gross honorarios |
 | Annual cap | 15 UTA (~CLP 12,112,920 at UTA 807,528) |
 | Documentation | No receipts required |
 
 ### Gastos Efectivos (Actual Expenses)
 
+**Gastos Efectivos table**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Rate | Actual documented expenses |
 | Cap | No cap — must pass "necessary for income production" test |
 | Documentation | Full receipts, facturas, boletas required |
 
 ### Cotizaciones Previsionales (Mandatory Social Security)
 
+**Cotizaciones Previsionales table**
+
 | Contribution | Approximate Rate | Base |
-|---|---|---|
+| --- | --- | --- |
 | AFP (pension) | ~11.5-12.5% (incl. commission) | 80% of gross honorarios |
 | Salud (Fonasa 7% or Isapre) | 7% minimum | 80% of gross honorarios |
 | SIS (disability/survivors) | ~1.85% | 80% of gross honorarios |
@@ -111,8 +117,10 @@ SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deduc
 
 ### Computation Structure
 
+**Computation Structure table**
+
 | Step | Description |
-|---|---|
+| --- | --- |
 | A | Honorarios brutos (gross boleta income) |
 | B | Less: Cotizaciones previsionales obligatorias |
 | C | Less: Gastos (presuntos 30% capped at 15 UTA, or efectivos) |
@@ -128,8 +136,10 @@ SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deduc
 
 ### Conservative Defaults
 
+**Conservative Defaults table**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Gastos presuntos vs efectivos unclear | STOP — choice fundamentally changes computation |
 | UTA value uncertain | Verify December UTA at www.sii.cl |
 | Withholding rate unknown | Use 14.5% for 2025 boletas |
@@ -139,15 +149,15 @@ SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deduc
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds table**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Gastos presuntos hit 15 UTA cap | Compare with gastos efectivos |
 | No Formulario 29 payments (self-withholding) | If boletas issued to individuals, self-withholding required |
 | No cotizaciones paid | Verify — mandatory under Ley 21.133 |
 | Single client > 80% of income | Employment relationship risk |
 | UTA applied from wrong month | Always use December UTA |
-
----
 
 ## Section 2 — Required Inputs + Refusal Catalogue
 
@@ -168,22 +178,30 @@ Before computing Chilean IGC, collect:
 
 ### Refusal Catalogue
 
+**Refusal Catalogue table**
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-CL-1 | Expense method unknown | Stop — gastos presuntos vs efectivos fundamentally changes computation |
 | R-CL-2 | Gastos efectivos claimed without documentation | Reject — SII requires facturas/boletas for all deductible expenses |
 | R-CL-3 | Client references RIF regime | Stop — RIF does not exist in Chile; clarify regime |
 | R-CL-4 | Mixed employment + honorarios without breakdown | Flag — both incomes aggregate in IGC; need separate figures |
 | R-CL-5 | Foreign-source income with treaty implications | Escalate — Chile has extensive treaty network; requires analysis |
 
----
+- **R-CL-1** — Expense method unknown  _(Stop — gastos presuntos vs efectivos fundamentally changes computation)_
+- **R-CL-2** — Gastos efectivos claimed without documentation  _(Reject — SII requires facturas/boletas for all deductible expenses)_
+- **R-CL-3** — Client references RIF regime  _(Stop — RIF does not exist in Chile; clarify regime)_
+- **R-CL-4** — Mixed employment + honorarios without breakdown  _(Flag — both incomes aggregate in IGC; need separate figures)_
+- **R-CL-5** — Foreign-source income with treaty implications  _(Escalate — Chile has extensive treaty network; requires analysis)_
 
 ## Section 3 — Transaction Pattern Library
 
 ### 3.1 Income Patterns
 
+**Income Patterns table**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `TRANSFERENCIA DE [client]` / `TRF TEF [client]` | Gross income — honorarios | Standard TEF (inter-bank transfer) from client |
 | I-02 | `ABONO TRANSFERENCIA [client]` | Gross income — honorarios | Generic bank credit from client |
 | I-03 | `MERCADOPAGO RETIRO` / `MERCADOPAGO DEPOSITO` | Gross income — gross-up | Mercado Pago settlement; fee deductible |
@@ -197,8 +215,10 @@ Before computing Chilean IGC, collect:
 
 ### 3.2 Expense Patterns
 
+**Expense Patterns table**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `ARRIENDO OFICINA` / `ARRENDAMIENTO COMERCIAL` | Rent — deductible (gastos efectivos) | Require factura/boleta |
 | E-02 | `ENEL CHILE` / `CGE` / `SAESA` / `CHILQUINTA` | Electricity — deductible (business proportion) | Require boleta/factura |
 | E-03 | `ENTEL` / `MOVISTAR CHILE` / `CLARO CHILE` / `WOM` | Phone/internet — deductible (business %) | Require boleta/factura |
@@ -219,8 +239,10 @@ Before computing Chilean IGC, collect:
 
 ### 3.3 Bank Fees and Financial (Exclude)
 
+**Bank Fees and Financial table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BANCOESTADO | EXCLUDE for bank charges | Financial service |
 | BCI, BANCO DE CRÉDITO | EXCLUDE for bank charges | Financial service |
 | SANTANDER CHILE | EXCLUDE for bank charges | Financial service |
@@ -231,21 +253,23 @@ Before computing Chilean IGC, collect:
 
 ### 3.4 Government and Statutory (Exclude)
 
+**Government and Statutory table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SII, SERVICIO IMPUESTOS INTERNOS | EXCLUDE | Tax authority payment |
 | TESORERÍA GENERAL | EXCLUDE | Treasury payment |
 | MUNICIPALIDAD, PATENTE MUNICIPAL | EXCLUDE | Municipal licence (separate from IGC) |
 
 ### 3.5 Internal Transfers and Exclusions
 
+**Internal Transfers and Exclusions table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TRASPASO ENTRE CUENTAS | EXCLUDE | Internal movement |
 | GIRO ATM, RETIRO EFECTIVO | TIER 2 — ask | Default exclude; ask purpose |
 | CRÉDITO HIPOTECARIO | EXCLUDE | Mortgage payment, out of scope |
-
----
 
 ## Section 4 — Worked Examples
 
@@ -350,42 +374,27 @@ Total gross: CLP 18,000,000.
 At ~22.3 UTA: IGC bracket 13.5-30 UTA at 4%.
 PPM credit likely covers entire tax. Probable refund.
 
----
-
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
-**T1-CL-1 — Gastos presuntos capped at 15 UTA**
-The 30% deemed expense deduction cannot exceed 15 UTA regardless of how high the gross income is. Always check the cap. Use the December UTA of the tax year.
-
-**T1-CL-2 — Withholding rate is 14.5% for 2025**
-Boletas de honorarios issued in 2025 attract a 14.5% withholding. This covers both PPM (income tax advance) and cotizaciones previsionales. Do not use rates from other years.
-
-**T1-CL-3 — PPM is a credit, not income reduction**
-The withholding on boletas (after cotizaciones are deducted) is a credit against the annual IGC. It does not reduce gross income. Excess PPM is refunded during Operación Renta.
-
-**T1-CL-4 — Cotizaciones previsionales are mandatory**
-Under Ley 21.133, trabajadores a honorarios must contribute to AFP, salud, SIS, and ATEP. Cotizaciones are deducted from the boleta withholding before PPM is calculated. They are deductible from gross income for IGC purposes.
-
-**T1-CL-5 — December UTA only for IGC computation**
-The IGC table uses the December UTA of the tax year. Never use January or any other month's UTA. Verify at www.sii.cl.
-
-**T1-CL-6 — Tax payments are not deductible**
-PPM payments (Formulario 29) and annual tax payments (Formulario 22 balance) are credits against tax, not deductible expenses.
-
----
+- **T1-CL-1 — Gastos presuntos capped at 15 UTA** — The 30% deemed expense deduction cannot exceed 15 UTA regardless of how high the gross income is. Always check the cap. Use the December UTA of the tax year.  _(T1-CL-1)_
+- **T1-CL-2 — Withholding rate is 14.5% for 2025** — Boletas de honorarios issued in 2025 attract a 14.5% withholding. This covers both PPM (income tax advance) and cotizaciones previsionales. Do not use rates from other years.  _(T1-CL-2)_
+- **T1-CL-3 — PPM is a credit, not income reduction** — The withholding on boletas (after cotizaciones are deducted) is a credit against the annual IGC. It does not reduce gross income. Excess PPM is refunded during Operación Renta.  _(T1-CL-3)_
+- **T1-CL-4 — Cotizaciones previsionales are mandatory** — Under Ley 21.133, trabajadores a honorarios must contribute to AFP, salud, SIS, and ATEP. Cotizaciones are deducted from the boleta withholding before PPM is calculated. They are deductible from gross income for IGC purposes.  _(T1-CL-4; Ley 21.133)_
+- **T1-CL-5 — December UTA only for IGC computation** — The IGC table uses the December UTA of the tax year. Never use January or any other month's UTA. Verify at www.sii.cl.  _(T1-CL-5; www.sii.cl)_
+- **T1-CL-6 — Tax payments are not deductible** — PPM payments (Formulario 29) and annual tax payments (Formulario 22 balance) are credits against tax, not deductible expenses.  _(T1-CL-6)_
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Tier 2 Catalogue table**
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-CL-1 | Gastos efectivos with partial documentation | Only documented expenses qualify; undocumented must be removed | Flag — SII audit risk; reviewer must confirm documentation |
 | T2-CL-2 | APV Régimen A vs Régimen B choice | Optimal regime depends on marginal IGC rate | Present both options; flag for reviewer |
 | T2-CL-3 | Mixed employment and honorarios | Both incomes aggregate in IGC; PPM and PAYE are separate credits | Flag — confirm aggregation and credit coordination |
 | T2-CL-4 | Cotizaciones opt-out claim | Workers may opt out only if covered by other source (employment) | Verify eligibility under Ley 21.133 phase-in |
 | T2-CL-5 | Foreign-source income | Chilean residents taxed on worldwide income after 3 years | Escalate — treaty analysis may apply |
 | T2-CL-6 | Capital gains from investments | Separate IGC treatment under art. 17 No. 8 | Flag — different rates and exemptions apply |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -454,11 +463,10 @@ SECTION I — REVIEWER FLAGS
 [ ] Mixed income properly aggregated (if applicable)?
 ```
 
----
-
 ## Section 8 — Bank Statement Reading Guide
 
 ### BancoEstado
+
 - Export: CSV/PDF from BancoEstado Online
 - Columns: `Fecha;Descripción;Cargo;Abono;Saldo`
 - Amount format: period thousands, comma decimal (e.g., `2.500.000`)
@@ -466,45 +474,51 @@ SECTION I — REVIEWER FLAGS
 - Credits: `TRANSFERENCIA DE [sender]`, `ABONO TEF [sender]`
 
 ### BCI (Banco de Crédito e Inversiones)
+
 - Export: CSV from BCI En Línea
 - Columns: `Fecha;Detalle;Cargo;Abono;Saldo`
 - Standard Chilean format
 
 ### Santander Chile
+
 - Export: CSV/PDF from Santander Online
 - Columns: `Fecha;Descripción;Monto;Saldo`
 - Positive = credit; negative = debit
 
 ### Banco de Chile
+
 - Export: CSV/Excel from Mi Banco en Línea
 - Columns: `Fecha;Descripción;Cargo;Abono;Saldo`
 - TEF transfers: `TRANSFERENCIA RECIBIDA [sender]`
 
 ### Scotiabank Chile
+
 - Export: CSV from Scotiabank Online
 - Standard format; `Fecha;Movimiento;Cargo;Abono;Saldo`
 
 ### Banco BICE
+
 - Export: PDF/CSV from BICE Online
 - Standard Chilean bank format
 
 ### Mach / Tenpo / Fintual (Digital)
+
 - Export: CSV/PDF from app
 - Simple format; credit/debit in columns or single column (positive/negative)
 - Mach (BCI): `Transferencia recibida de [name]`
 - Tenpo: `Abono por transferencia`
 
 ### Transbank / Webpay Settlements
+
 - Appear in primary bank statement as `TRANSBANK ABONO` or `WEBPAY LIQUIDACIÓN`
 - Gross-up required — Transbank deducts commission before settlement
 - Cross-reference with Transbank merchant portal for gross amounts
 
 ### Key Chilean Banking Notes
+
 - All amounts in CLP (Chilean pesos); period as thousands separator
 - TEF (Transferencia Electrónica de Fondos) is the standard inter-bank system
 - CuentaRUT (BancoEstado universal account) narrations may differ from full banking narrations
-
----
 
 ## Section 9 — Onboarding Fallback
 
@@ -520,20 +534,21 @@ SECTION I — REVIEWER FLAGS
 **APV regime:**
 > "I see you may have voluntary pension contributions (APV). APV Régimen A deducts the contribution from taxable income now (taxed later on withdrawal). Régimen B gives no deduction now but provides a 15% state bonus. The optimal choice depends on your marginal IGC rate. Can you confirm which regime your APV is under?"
 
----
-
 ## Section 10 — Reference Material
 
 ### Key Legislation
-- **Decreto Ley 824** — Ley sobre Impuesto a la Renta
-- **Ley 21.133** — Cotizaciones previsionales obligatorias para trabajadores independientes
-- **Código Tributario** — filing deadlines, penalties
-- **Circular SII 67/2025** — annual guidance
+
+- **Decreto Ley 824** — Ley sobre Impuesto a la Renta  _(Decreto Ley 824)_
+- **Ley 21.133** — Cotizaciones previsionales obligatorias para trabajadores independientes  _(Ley 21.133)_
+- **Código Tributario** — filing deadlines, penalties  _(Código Tributario)_
+- **Circular SII 67/2025** — annual guidance  _(Circular SII 67/2025)_
 
 ### Filing Deadlines 2025 (Año Tributario 2025)
 
+**Filing Deadlines table**
+
 | Deadline | Event |
-|---|---|
+| --- | --- |
 | April 1-30, 2025 | Operación Renta (Formulario 22) |
 | 12th of each month | Formulario 29 (monthly self-withholding, if applicable) |
 | March 2025 | Declaraciones juradas (informational returns) |
@@ -541,8 +556,10 @@ SECTION I — REVIEWER FLAGS
 
 ### Penalties
 
+**Penalties table**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing of F22 | 10% of tax due + 2% per month (up to 30%) |
 | Late payment | Interest at 1.5% per month |
 | Failure to issue boleta | 50-500% of the boleta amount |
@@ -550,17 +567,17 @@ SECTION I — REVIEWER FLAGS
 | Tax evasion | 50-300% of evaded tax + criminal prosecution |
 
 ### Record Keeping
+
 - Minimum retention: 6 years from the tax year
 - Boletas electrónicas maintained on SII portal
 - All supporting documents (facturas, boletas, contracts, bank statements)
 
 ### Useful References
+
 - SII Portal: www.sii.cl
 - Operación Renta: www.sii.cl/renta
 - Previred (cotizaciones): www.previred.com
 - UTA values: www.sii.cl/valores_702/utm_uta_702.html
-
----
 
 ## Disclaimer
 
@@ -568,6 +585,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cl-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cl-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cl-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

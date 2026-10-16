@@ -1,27 +1,24 @@
 ---
 name: gr-income-tax
-description: "> Use this skill whenever asked about Greek income tax for self-employed individuals (ελεύθερος επαγγελματίας). Trigger on phrases like \"how much tax do I pay\", \"φορολογική δήλωση\", \"E1\", \"E3\", \"income tax return Greece\", \"τεκμήρια\", \"EFKA\", \"MyDATA\", \"self-employed tax Greece\", or any question about filing or computing income tax for a self-employed or freelance client in Greece. ALWAYS read this skill before touching any Greek income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Greek income tax for self-employed individuals (ελεύθερος επαγγελματίας). Trigger on phrases like \"how much tax do I pay\", \"φορολογική δήλωση\", \"E1\", \"E3\", \"income tax return Greece\", \"τεκμήρια\", \"EFKA\", \"MyDATA\", \"self-employed tax Greece\", or any question about filing or computing income tax for a self-employed or freelance client in Greece. ALWAYS read this skill before touching any Greek income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GR
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/gr-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/gr-income-tax"
+  jurisdiction: "GR"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Greece Income Tax (Φόρος Εισοδήματος) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# GR Income Tax
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Greece (Ελληνική Δημοκρατία) |
 | Tax type | Φόρος εισοδήματος (income tax on business activity) |
 | Primary legislation | ΚΦΕ, N.4172/2013 |
@@ -40,28 +37,28 @@ metadata:
 | Validated by | Pending -- requires Greek λογιστής-φοροτεχνικός sign-off |
 | Validation date | Pending |
 
-**Progressive tax brackets (self-employment, 2025):**
+**Progressive tax brackets (self-employment, 2025)**
 
 | Taxable income (EUR) | Rate | Cumulative at top |
-|---|---|---|
+| --- | --- | --- |
 | 0--10,000 | 9% | EUR 900 |
 | 10,001--20,000 | 22% | EUR 3,100 |
 | 20,001--30,000 | 28% | EUR 5,900 |
 | 30,001--40,000 | 36% | EUR 9,500 |
 | 40,001+ | 44% | -- |
 
-**Age-based reductions:**
+**Age-based reductions**
 
 | Age | Benefit |
-|---|---|
+| --- | --- |
 | Under 25 | 0% on first EUR 20,000 |
 | 26--30 | 9% on first EUR 20,000 |
 | 31+ | Standard rates above |
 
-**EFKA contribution categories (2025):**
+**EFKA contribution categories (2025)**
 
 | Category | Monthly EUR | Annual EUR |
-|---|---|---|
+| --- | --- | --- |
 | 1 (minimum) | ~255 | ~3,060 |
 | 2 | ~315 | ~3,780 |
 | 3 | ~375 | ~4,500 |
@@ -70,44 +67,38 @@ metadata:
 | 6 (maximum) | ~650 | ~7,800 |
 | Special (new, <5 years) | ~156 | ~1,877 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown expense category | Not deductible |
 | Unknown business-use proportion | 0% |
 | Cash payment above EUR 500 | NOT deductible (mandatory electronic) |
 | Unknown EFKA category | Category 1 (minimum) |
 | Τεκμήρια vs actual | Use higher of deemed or actual income |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the tax year. Acceptable from: National Bank of Greece (Εθνική), Alpha Bank, Piraeus Bank (Τράπεζα Πειραιώς), Eurobank, Optima Bank, or fintech (Revolut, Wise).
-
-**Recommended** -- invoices (transmitted via myDATA), EFKA contribution statements, KAD code, prior year E1/E3.
-
-**Ideal** -- complete accounting records per ΕΛΠ, myDATA reconciliation, EFKA category confirmation.
+- **Minimum viable inputs** — bank statement for the tax year. Acceptable from: National Bank of Greece (Εθνική), Alpha Bank, Piraeus Bank (Τράπεζα Πειραιώς), Eurobank, Optima Bank, or fintech (Revolut, Wise).
+- **Recommended inputs** — invoices (transmitted via myDATA), EFKA contribution statements, KAD code, prior year E1/E3.
+- **Ideal inputs** — complete accounting records per ΕΛΠ, myDATA reconciliation, EFKA category confirmation.
 
 ### Refusal catalogue
 
-**R-GR-1 -- Legal entity (OE, EE, AE, EPE, IKE).** *Trigger:* client is a company. *Message:* "This skill covers freelancers/sole proprietors only. Companies file corporate income tax. Please use a separate skill."
-
-**R-GR-2 -- International income / shipping.** *Trigger:* foreign income or shipping activity. *Message:* "International income and shipping are outside scope. Consult a λογιστής-φοροτεχνικός."
-
-**R-GR-3 -- 2026 reformed rates applied to 2025.** *Trigger:* client asks about N.5246/2025 changes. *Message:* "The 2026 reform takes effect 1 January 2026. For tax year 2025, use the current rates in Section 1."
-
----
+- **R-GR-1 -- Legal entity (OE, EE, AE, EPE, IKE)** — This skill covers freelancers/sole proprietors only. Companies file corporate income tax. Please use a separate skill. (Trigger: client is a company.)
+- **R-GR-2 -- International income / shipping** — International income and shipping are outside scope. Consult a λογιστής-φοροτεχνικός. (Trigger: foreign income or shipping activity.)
+- **R-GR-3 -- 2026 reformed rates applied to 2025** — The 2026 reform takes effect 1 January 2026. For tax year 2025, use the current rates in Section 1. (Trigger: client asks about N.5246/2025 changes.)
 
 ## Section 3 -- Transaction pattern library (the lookup table)
 
 ### 3.1 Greek banks (fees and interest)
 
+**Greek banks (fees and interest)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΕΘΝΙΚΗ ΤΡΑΠΕΖΑ, NATIONAL BANK OF GREECE, NBG | Bank charges: deductible | Monthly fees |
 | ALPHA BANK, ΑΛΦΑ ΤΡΑΠΕΖΑ | Bank charges: deductible | Same |
 | ΤΡΑΠΕΖΑ ΠΕΙΡΑΙΩΣ, PIRAEUS BANK | Bank charges: deductible | Same |
@@ -120,8 +111,10 @@ metadata:
 
 ### 3.2 Greek government and statutory bodies
 
+**Greek government and statutory bodies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΑΑΔΕ, ΕΦΟΡΙΑ, ΔΟΥ | EXCLUDE | Tax payment |
 | ΕΦΚΑ, EFKA | Deductible from taxable income | EFKA contributions are fully deductible |
 | ΦΟΡΟΣ ΕΙΣΟΔΗΜΑΤΟΣ | EXCLUDE | Income tax payment |
@@ -130,8 +123,10 @@ metadata:
 
 ### 3.3 Greek utilities and telecoms
 
+**Greek utilities and telecoms**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΔΕΗ (Public Power Corporation) | Deductible if business premises | Electricity; apportion if home |
 | ΦΥΣΙΚΟ ΑΕΡΙΟ, ΔΕΠΑ | Deductible if business premises | Gas |
 | COSMOTE, VODAFONE GR, WIND, NOVA | Deductible: business phone/internet | Mixed: apportion |
@@ -140,16 +135,20 @@ metadata:
 
 ### 3.4 SaaS and software -- international
 
+**SaaS and software -- international**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Deductible expense | EU reverse charge ΦΠΑ |
 | GITHUB, OPENAI, ANTHROPIC | Deductible expense | Non-EU |
 | SLACK, ZOOM, ATLASSIAN | Deductible expense | Check entity |
 
 ### 3.5 Professional services (Greece)
 
+**Professional services (Greece)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΛΟΓΙΣΤΗΣ, ΛΟΓΙΣΤΙΚΟ ΓΡΑΦΕΙΟ | Deductible | Accounting fees |
 | ΔΙΚΗΓΟΡΟΣ, ΔΙΚΗΓΟΡΙΚΟ ΓΡΑΦΕΙΟ | Deductible if business | Legal fees |
 | ΣΥΜΒΟΛΑΙΟΓΡΑΦΟΣ | Deductible if business | Notary fees |
@@ -157,8 +156,10 @@ metadata:
 
 ### 3.6 Transport and travel
 
+**Transport and travel**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΟΣΕ, TRAINOSE, HELLENIC TRAIN | Deductible if business | Train |
 | ΑΕΡΟΠΟΡΙΑ, AEGEAN, OLYMPIC AIR | Deductible if business travel | Flights |
 | ΚΤΕΛ | Deductible if business | Intercity bus |
@@ -168,35 +169,41 @@ metadata:
 
 ### 3.7 Office and supplies
 
+**Office and supplies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PUBLIC, PLAISIO, KOTSOVOLOS | Capital if > EUR 1,500; else expense | IT/electronics |
 | ΙΚΕΑ, IKEA GR | Capital or expense depending on value | Office items |
 | ΕΛΤΑ (Hellenic Post) | Deductible | Postage |
 
 ### 3.8 Food and entertainment
 
+**Food and entertainment**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΑΒ ΒΑΣΙΛΟΠΟΥΛΟΣ, ΣΚΛΑΒΕΝΙΤΗΣ, LIDL GR, ΜΑΣΟΥΤΗΣ | Default: NOT deductible | Personal provisioning |
 | ΕΣΤΙΑΤΟΡΙΟ, RESTAURANT | Deductible if documented business purpose | But >50% personal element = blocked |
 
 ### 3.9 Cash payment limit (critical)
 
+**Cash payment limit (critical)**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | All business expenses above EUR 500 | MUST be paid electronically (bank transfer, card) |
 | Cash payments above EUR 500 | NOT deductible regardless of documentation |
 
 ### 3.10 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ΜΕΤΑΦΟΡΑ, OWN TRANSFER | EXCLUDE | Internal |
 | ΑΝΑΛΗΨΗ, ATM | EXCLUDE (default: drawings) | Ask client |
 | ΚΑΤΑΘΕΣΗ | EXCLUDE | Owner deposit |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -220,64 +227,81 @@ metadata:
 **Input:** Freelancer pays EUR 800 cash for equipment.
 **Result:** NOT deductible. Above EUR 500 cash limit. Must use electronic payment.
 
----
-
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 Tax rate brackets
-Progressive 9%/22%/28%/36%/44%. Self-employed do NOT get the EUR 777 employment/pension tax reduction. Under-25: 0% on first EUR 20,000. Ages 26-30: 9% on first EUR 20,000. **Legislation:** ΚΦΕ Art. 29.
+
+- **Tax rate brackets rule** — Progressive 9%/22%/28%/36%/44%. Self-employed do NOT get the EUR 777 employment/pension tax reduction. Under-25: 0% on first EUR 20,000. Ages 26-30: 9% on first EUR 20,000.  _(ΚΦΕ Art. 29)_
 
 ### 5.2 Prepayment (προκαταβολή)
-55% of current year's tax. First 3 years: 50%. Offset against next year. Creates double burden in year 1. **Legislation:** Art. 69.
+
+- **Prepayment rule** — 55% of current year's tax. First 3 years: 50%. Offset against next year. Creates double burden in year 1.  _(Art. 69)_
 
 ### 5.3 Abolished levies
-Τέλος επιτηδεύματος: abolished from 2025. Εισφορά αλληλεγγύης: abolished from 2023. Do NOT include in any 2025 computation. **Legislation:** Various amendment acts.
+
+- **Abolished levies rule** — Τέλος επιτηδεύματος: abolished from 2025. Εισφορά αλληλεγγύης: abolished from 2023. Do NOT include in any 2025 computation.  _(Various amendment acts)_
 
 ### 5.4 Τεκμήρια (presumptive income)
-Minimum = highest of: employee-equivalent (EUR 9,960), plus 10% of labour costs up to EUR 15,000, plus 5% of revenue above KAD average. Cap EUR 50,000. First 3 years: exempt. Municipality < 1,500: 50% reduction. Disability 67%+: exempt. **Legislation:** Art. 28A-28Γ.
+
+- **Presumptive income rule** — Minimum = highest of: employee-equivalent (EUR 9,960), plus 10% of labour costs up to EUR 15,000, plus 5% of revenue above KAD average. Cap EUR 50,000. First 3 years: exempt. Municipality < 1,500: 50% reduction. Disability 67%+: exempt.  _(Art. 28A-28Γ)_
 
 ### 5.5 Cash payment limit
-EUR 500 maximum for deductible cash payments. Above: must be electronic. Non-compliance = non-deductible. **Legislation:** ΚΦΕ Art. 23.
+
+- **Cash payment limit rule** — EUR 500 maximum for deductible cash payments. Above: must be electronic. Non-compliance = non-deductible.  _(ΚΦΕ Art. 23)_
 
 ### 5.6 Depreciation
-Buildings: 4%. Equipment: 10%. Transport: 16%. Computers: 20%. Software: 20%. Tools: 33%. Assets under EUR 1,500: expense immediately. **Legislation:** Art. 24.
+
+**Depreciation rates**  _(Art. 24)_
+
+| Asset | Rate |
+| --- | --- |
+| Buildings | 4% |
+| Equipment | 10% |
+| Transport | 16% |
+| Computers | 20% |
+| Software | 20% |
+| Tools | 33% |
+| Assets under EUR 1,500 | expense immediately |
 
 ### 5.7 EFKA
-6 categories. Category choice locks in for calendar year. Selection by 31 January. New self-employed (<5 years): special reduced category. Fully deductible from taxable income. **Legislation:** N.4387/2016.
+
+- **EFKA rule** — 6 categories. Category choice locks in for calendar year. Selection by 31 January. New self-employed (<5 years): special reduced category. Fully deductible from taxable income.  _(N.4387/2016)_
 
 ### 5.8 MyDATA
-All income/expense documents must be transmitted to myDATA. Real-time or by VAT deadline. B2B e-invoicing mandatory from 2026 (phased). **Legislation:** N.4308/2014.
 
----
+- **MyDATA rule** — All income/expense documents must be transmitted to myDATA. Real-time or by VAT deadline. B2B e-invoicing mandatory from 2026 (phased).  _(N.4308/2014)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### 6.1 Τεκμήρια rebuttal
+
 *Why:* Deemed income may exceed actual. *Default:* Tax on higher amount. *Question:* "Can you provide evidence (bank statements, contracts) showing actual income is lower than deemed?"
 
 ### 6.2 EFKA category optimization
+
 *Why:* Higher category = higher deduction but higher outlay. *Default:* Category 1 (minimum). *Question:* "Which EFKA category did you choose?"
 
 ### 6.3 Dual activity (employment + freelance)
+
 *Why:* Income combined. EFKA parallel rules. *Default:* Flag for reviewer. *Question:* "Do you have employment income? Employer pays EFKA from that?"
 
 ### 6.4 Motor vehicle business proportion
+
 *Why:* Only business portion deductible. *Default:* 0%. *Question:* "What proportion of vehicle use is business?"
 
 ### 6.5 Municipality population
-*Why:* <1,500 inhabitants = 50% presumptive reduction. *Default:* Standard (no reduction). *Question:* "What is the population of your registered municipality?"
 
----
+*Why:* <1,500 inhabitants = 50% presumptive reduction. *Default:* Standard (no reduction). *Question:* "What is the population of your registered municipality?"
 
 ## Section 7 -- Excel working paper template
 
 ### Sheet "Transactions"
+
 Columns: Date, Counterparty, Description, Amount (EUR), Category (Revenue/Expense/Depreciation/EFKA/EXCLUDE), Deductible amount, Payment method (Electronic/Cash), Default?, Question, Notes.
 
 ### Sheet "Tax Computation"
-Progressive bracket calculation. Τεκμήρια comparison. Prepayment. EFKA deduction.
 
----
+Progressive bracket calculation. Τεκμήρια comparison. Prepayment. EFKA deduction.
 
 ## Section 8 -- Bank statement reading guide
 
@@ -289,29 +313,31 @@ Progressive bracket calculation. Τεκμήρια comparison. Prepayment. EFKA d
 
 **Payment method tracking.** Critical for EUR 500 cash rule. Card/transfer = deductible. Cash > EUR 500 = non-deductible.
 
----
-
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Activity type
+
 *Inference:* From counterparty mix. *Fallback:* "Freelancer or sole proprietorship? What is your KAD code?"
 
 ### 9.2 Years in business
+
 *Inference:* Not inferable. *Fallback:* "How many years have you been self-employed? (Affects presumptive exemption and prepayment rate.)"
 
 ### 9.3 EFKA category
+
 *Inference:* From EFKA payment amounts. *Fallback:* "Which EFKA category are you in?"
 
 ### 9.4 Age
+
 *Inference:* Not inferable. *Fallback:* "What is your age? (Under 25 and 26-30 get reduced rates.)"
 
 ### 9.5 Municipality
+
 *Inference:* From address. *Fallback:* "Where is your registered address? Population < 1,500?"
 
 ### 9.6 Employees
-*Inference:* Salary outflows. *Fallback:* "Do you have employees? (Affects τεκμήρια.)"
 
----
+*Inference:* Salary outflows. *Fallback:* "Do you have employees? (Affects τεκμήρια.)"
 
 ## Section 10 -- Reference material
 
@@ -365,6 +391,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/gr-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `gr-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/gr-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

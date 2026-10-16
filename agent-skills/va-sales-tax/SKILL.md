@@ -1,25 +1,24 @@
 ---
 name: va-sales-tax
 description: "Use this skill whenever asked about Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia exemption certificates, taxability of goods or services in Virginia, or any request involving Virginia state-level consumption taxes. Trigger on phrases like \"Virginia sales tax\", \"VA sales tax\", \"Virginia use tax\", \"Virginia nexus\", \"Va. Code 58.1-603\", \"Virginia Tax Department\", or any request involving Virginia sales and use tax filing, classification, or compliance. ALWAYS read the parent us-sales-tax skill first for federal context, then layer this Virginia-specific skill on top."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: US-VA
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/va-sales-tax"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/va-sales-tax"
+  jurisdiction: "US-VA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Virginia Sales and Use Tax Skill
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# VA Sales Tax
 
 ## Skill Metadata
+
+**Skill Metadata**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | Virginia, United States |
 | Jurisdiction Code | US-VA |
 | Tax Type | Retail Sales and Use Tax |
@@ -39,23 +38,20 @@ metadata:
 | Confidence Coverage | Tier 1: rate lookups, basic nexus, standard taxability. Tier 2: regional rate determinations, grocery food reduced rate, SaaS classification, multi-jurisdiction issues. Tier 3: audit defense, penalty abatement, administrative appeals. |
 | Format | Restructured to Q1 execution format, April 2026 |
 
----
-
 ## Confidence Tier Definitions
+
 Every rule in this skill is tagged with a confidence tier:
 
 - **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
 - **[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags the issue and presents options. A licensed CPA, EA, or tax attorney must confirm before filing.
 - **[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate to a licensed tax professional.
 
----
-
 ## Step 0: Client Onboarding Questions
 
-Before proceeding with any Virginia sales tax analysis, collect the following from the client: [T1]
+**Client Onboarding Questions**
 
 | # | Question | Why It Matters |
-|---|----------|---------------|
+| --- | --- | --- |
 | 1 | Do you have a Virginia sales tax registration / tax ID? | Determines whether registration is needed before filing. |
 | 2 | What is your current filing frequency (monthly / quarterly / annually)? | Controls which return periods to prepare. |
 | 3 | What is your nexus type -- physical presence, economic nexus, or both? | Determines registration obligations and applicable rules. |
@@ -67,55 +63,56 @@ Before proceeding with any Virginia sales tax analysis, collect the following fr
 
 **If the client cannot answer questions 1-4, STOP and gather this information before proceeding.** [T1]
 
----
-
 ## Step 1: Tax Rate Structure
+
 ### 1.1 Standard Rate Composition
+
+**Standard Rate Composition**
+
+| Component | Rate | Authority |
+| --- | --- | --- |
+| State tax | 4.3% | Va. Code Section 58.1-603 |
+| Local tax (mandatory statewide) | 1.0% | Va. Code Section 58.1-605 |
+| **Standard combined rate** | **5.3%** |  |
 
 Virginia's sales tax has a **mandatory local component** built into the rate structure, unlike most states:
 
-| Component | Rate | Authority |
-|-----------|------|-----------|
-| State tax | 4.3% | Va. Code Section 58.1-603 |
-| Local tax (mandatory statewide) | 1.0% | Va. Code Section 58.1-605 |
-| **Standard combined rate** | **5.3%** | |
-
 ### 1.2 Regional Rates
 
-Certain regions of Virginia have additional regional taxes:
+**Regional Rates**
 
 | Region | Additional Rate | Total Rate | Authority |
-|--------|----------------|------------|-----------|
+| --- | --- | --- | --- |
 | Northern Virginia (NOVA) | 0.7% (regional transport) | **6.0%** | Va. Code Section 58.1-603.1 |
 | Hampton Roads | 0.7% (regional transport) + 1.0% (additional regional) | **7.0%** | Va. Code Section 58.1-603.1; HB 1414 (2020) |
 | Central Virginia (Richmond metro) | 0.7% (regional transport) | **6.0%** | Va. Code Section 58.1-603.1 |
 | Rest of Virginia | None | **5.3%** | Standard rate |
 
-**Northern Virginia jurisdictions (6.0%):** Arlington, Fairfax, Loudoun, Prince William counties; cities of Alexandria, Fairfax, Falls Church, Manassas, Manassas Park. [T1]
-
-**Hampton Roads jurisdictions (7.0%):** Chesapeake, Hampton, Isle of Wight, James City, Newport News, Norfolk, Poquoson, Portsmouth, Suffolk, Virginia Beach, Williamsburg, York. [T1]
+- **Northern Virginia jurisdictions** — Northern Virginia jurisdictions (6.0%): Arlington, Fairfax, Loudoun, Prince William counties; cities of Alexandria, Fairfax, Falls Church, Manassas, Manassas Park. (T1)
+- **Hampton Roads jurisdictions** — Hampton Roads jurisdictions (7.0%): Chesapeake, Hampton, Isle of Wight, James City, Newport News, Norfolk, Poquoson, Portsmouth, Suffolk, Virginia Beach, Williamsburg, York. (T1)
 
 ### 1.3 Sourcing Rules [T1]
 
-Virginia is generally an **origin-based** sourcing state for intrastate sales:
+- **Intrastate sales sourcing** — Intrastate sales: Sourced to the seller's location for over-the-counter sales. For shipped goods, sourced to the destination. (T1)
+- **Interstate sales sourcing** — Interstate sales (remote sellers): Destination-based. (T1)
+- **Delivered sales sourcing** — Delivered sales: Destination-based (the delivery address determines the rate). (T1)
 
-- **Intrastate sales:** Sourced to the seller's location for over-the-counter sales. For shipped goods, sourced to the destination. [T1]
-- **Interstate sales (remote sellers):** Destination-based. [T1]
-- **Delivered sales:** Destination-based (the delivery address determines the rate). [T1]
+Virginia is generally an **origin-based** sourcing state for intrastate sales.
 
 **Important:** Because Virginia has regional rate differences, the sourcing determination directly affects the rate. A seller in Northern Virginia (6%) shipping to Hampton Roads (7%) charges the 7% rate. [T1]
 
----
-
 ## Step 2: Transaction Classification Rules
+
 ### 2.1 General Rule
 
-Virginia sales tax applies to the retail sale, lease, or rental of tangible personal property and certain enumerated services. Va. Code Section 58.1-603.
+- **General rule** — Virginia sales tax applies to the retail sale, lease, or rental of tangible personal property and certain enumerated services.  _(Va. Code Section 58.1-603)_
 
 ### 2.2 Taxability Matrix
 
+**Taxability Matrix**
+
 | Item Category | Taxable? | Rate | Authority | Tier |
-|---------------|----------|------|-----------|------|
+| --- | --- | --- | --- | --- |
 | General tangible personal property | Yes | Full rate | Va. Code Section 58.1-603 | [T1] |
 | Grocery food (food for home consumption) | **Reduced rate: 1%** | 1% (state removed its 1.5% portion effective Jan 1, 2023; local 1% remains in some areas) | Va. Code Section 58.1-611.1 | [T1] |
 | Prepared food (restaurant meals) | Yes | Full rate | Va. Code Section 58.1-603 | [T1] |
@@ -139,33 +136,25 @@ Virginia sales tax applies to the retail sale, lease, or rental of tangible pers
 
 ### 2.3 Grocery Food -- Critical 2023 Change [T1]
 
-Effective **January 1, 2023**, Virginia eliminated the **state** portion of sales tax on grocery food:
-
-- **Before Jan 1, 2023:** Grocery food was taxed at 2.5% (1.5% state + 1% local).
-- **After Jan 1, 2023:** Grocery food is taxed at **1%** (0% state + 1% local only).
-- In regional tax areas, the regional component is also removed from grocery food. [T1]
-- **Prepared food** remains taxable at the full applicable rate. [T1]
-- The definition of "food purchased for human consumption" follows Va. Code Section 58.1-611.1 and generally aligns with the federal SNAP definition. [T1]
-
-**Authority:** HB 90 / SB 451 (2022 Session); Va. Code Section 58.1-611.1.
+- **Grocery food before 2023** — Before Jan 1, 2023: Grocery food was taxed at 2.5% (1.5% state + 1% local). (T1)  _(HB 90 / SB 451 (2022 Session); Va. Code Section 58.1-611.1)_
+- **Grocery food after 2023** — After Jan 1, 2023: Grocery food is taxed at 1% (0% state + 1% local only). (T1)
+- **Regional grocery food removal** — In regional tax areas, the regional component is also removed from grocery food. (T1)  _(Va. Code Section 58.1-611.1)_
+- **Prepared food not reduced rate** — Prepared food remains taxable at the full applicable rate. (T1)  _(Va. Code Section 58.1-611.1)_
+- **Food purchased for human consumption** — The definition of "food purchased for human consumption" follows Va. Code Section 58.1-611.1 and generally aligns with the federal SNAP definition. (T1)  _(Va. Code Section 58.1-611.1)_
 
 ### 2.4 SaaS Taxability -- Virginia's Position [T2]
 
-Virginia **taxes SaaS** as the sale of tangible personal property delivered electronically:
-
-- Virginia has broadly interpreted its definition of tangible personal property to include electronically delivered software. [T2]
-- SaaS is treated as a subscription to use software, which Virginia considers a taxable lease of TPP. [T2]
-- The tax applies regardless of whether the software is accessed via browser or app. [T2]
-- **Infrastructure as a Service (IaaS)** and **Platform as a Service (PaaS)** taxability is less clear and should be evaluated on a case-by-case basis. [T3]
-
-**Source:** Virginia Tax Ruling PD 19-55; Public Document 19-45.
+- **SaaS treated as TPP** — Virginia has broadly interpreted its definition of tangible personal property to include electronically delivered software. (T2)  _(Virginia Tax Ruling PD 19-55; Public Document 19-45)_
+- **SaaS as taxable lease** — SaaS is treated as a subscription to use software, which Virginia considers a taxable lease of TPP. (T2)  _(Virginia Tax Ruling PD 19-55; Public Document 19-45)_
+- **SaaS access method irrelevant** — The tax applies regardless of whether the software is accessed via browser or app. (T2)  _(Virginia Tax Ruling PD 19-55; Public Document 19-45)_
+- **IaaS/PaaS unclear** — Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) taxability is less clear and should be evaluated on a case-by-case basis. (T3)  _(Virginia Tax Ruling PD 19-55; Public Document 19-45)_
 
 ### 2.5 Services Taxability [T2]
 
-Virginia taxes only specifically enumerated services:
+**Services Taxability**
 
 | Service | Taxable? | Authority |
-|---------|----------|-----------|
+| --- | --- | --- |
 | Repair and maintenance of TPP | Yes (labor + parts) | Va. Code Section 58.1-603 |
 | Telecommunications services | Yes | Va. Code Section 58.1-602 |
 | Hotel/lodging | Yes (plus local transient occupancy taxes) | Va. Code Section 58.1-603 |
@@ -175,48 +164,42 @@ Virginia taxes only specifically enumerated services:
 | Construction services | No (materials taxable at purchase) | DOR guidance |
 | Transportation/freight (separately stated) | Exempt | Va. Code Section 58.1-609.5(3) |
 
----
-
 ## Step 3: Return Form Structure
+
 ### 3.1 Registration
 
-All sellers with nexus in Virginia must register with Virginia Tax before making taxable sales. Registration is completed through the Virginia Tax Online portal.
-
-**Authority:** Va. Code Section 58.1-613.
+- **Registration requirement** — All sellers with nexus in Virginia must register with Virginia Tax before making taxable sales. Registration is completed through the Virginia Tax Online portal.  _(Va. Code Section 58.1-613)_
 
 ### 3.2 Filing Frequency
 
-Virginia uses a **monthly** filing schedule for all active registrants:
+**Filing Frequency**
 
 | Filing Status | Frequency | Due Date |
-|---------------|-----------|----------|
+| --- | --- | --- |
 | Standard (all registrants) | Monthly | 20th of the following month |
 | Seasonal filers | Monthly during active season | 20th of the following month |
 
-**Note:** Virginia does not offer quarterly or annual filing options for general sales tax filers (unlike many states). All registrants file monthly. [T1]
+- **No quarterly/annual filing** — Virginia does not offer quarterly or annual filing options for general sales tax filers (unlike many states). All registrants file monthly. (T1)
 
 ### 3.3 Returns and Payment
 
-- **Form ST-9** (Retail Sales and Use Tax Return) is the primary return. [T1]
-- The return covers both state and local taxes (the local 1% is reported and remitted with the state return). [T1]
-- Electronic filing is required for all filers. [T1]
-- Payment is due on the same date as the return (20th of the following month). [T1]
+- **Form ST-9 primary return** — Form ST-9 (Retail Sales and Use Tax Return) is the primary return. (T1)
+- **Return covers state and local** — The return covers both state and local taxes (the local 1% is reported and remitted with the state return). (T1)
+- **Electronic filing required** — Electronic filing is required for all filers. (T1)
+- **Payment due date** — Payment is due on the same date as the return (20th of the following month). (T1)
 
 ### 3.4 Dealer's Discount
 
-Virginia provides a **dealer's discount** for timely filing and payment:
-
-- Dealers may retain the greater of **$0** or an amount computed as follows: [T1]
-  - On collections of the first $62,500 of taxable sales: **1.6%** of tax due.
-  - The maximum discount is approximately **$53 per month** (for monthly filers with sufficient sales volume). [T1]
-- The discount is available only if the return is filed and payment is made on time. [T1]
-
-**Authority:** Va. Code Section 58.1-622.
+- **Dealer's discount retention** — Dealers may retain the greater of $0 or an amount computed as follows: On collections of the first $62,500 of taxable sales: 1.6% of tax due. (T1)  _(Va. Code Section 58.1-622)_
+- **Maximum discount** — The maximum discount is approximately $53 per month (for monthly filers with sufficient sales volume). (T1)  _(Va. Code Section 58.1-622)_
+- **Discount timely filing condition** — The discount is available only if the return is filed and payment is made on time.  _(Va. Code Section 58.1-622)_
 
 ### 3.5 Penalties and Interest
 
+**Penalties and Interest**
+
 | Violation | Penalty | Authority |
-|-----------|---------|-----------|
+| --- | --- | --- |
 | Late filing | 6% of tax due per month, up to 30% | Va. Code Section 58.1-635 |
 | Late payment | 6% of tax due per month, up to 30% | Va. Code Section 58.1-635 |
 | Failure to file | $10 minimum penalty per return | Va. Code Section 58.1-635 |
@@ -226,15 +209,16 @@ Virginia provides a **dealer's discount** for timely filing and payment:
 
 ### 3.6 Prepayment Requirement [T1]
 
-Virginia does **not** require sales tax prepayments (unlike some states that require estimated payments mid-month for large filers). [T1]
-
----
+- **No prepayment requirement** — Virginia does not require sales tax prepayments (unlike some states that require estimated payments mid-month for large filers). (T1)
 
 ## Step 4: Deductibility / Exemptions
+
 ### 5.1 Virginia Exemption Certificates
 
+**Virginia Exemption Certificates**
+
 | Certificate | Use Case | Form |
-|-------------|----------|------|
+| --- | --- | --- |
 | **ST-10** (Sales and Use Tax Certificate of Exemption) | General exemption certificate (resale, exempt organizations) | Form ST-10 |
 | **ST-10A** | Manufacturing exemptions | Form ST-10A |
 | **ST-11** | Certificate of exemption for government entities | Form ST-11 |
@@ -245,182 +229,139 @@ Virginia does **not** require sales tax prepayments (unlike some states that req
 
 ### 5.2 Requirements for Valid Certificates [T1]
 
-Valid exemption certificates must contain:
-
-1. Purchaser name and address. [T1]
-2. Virginia sales tax registration number (for resale). [T1]
-3. Nature of the exemption claimed. [T1]
-4. Description of property being purchased. [T1]
-5. Purchaser's signature. [T1]
-6. Date of certificate. [T1]
+- **Valid certificate requirements** — Valid exemption certificates must contain: 1. Purchaser name and address. 2. Virginia sales tax registration number (for resale). 3. Nature of the exemption claimed. 4. Description of property being purchased. 5. Purchaser's signature. 6. Date of certificate. (T1)
 
 ### 5.3 Good Faith Acceptance [T2]
 
+- **Certificate valid on its face** — The certificate must appear valid on its face. (T1)  _(Va. Code Section 58.1-623(C))_
+- **Purchase consistent with exemption** — The purchase must be consistent with the claimed exemption. (T2)  _(Va. Code Section 58.1-623(C))_
+- **Knowledge of invalid exemption** — If the seller has knowledge that the exemption is invalid, good faith does not apply. (T2)  _(Va. Code Section 58.1-623(C))_
+
 Virginia relieves sellers of liability when they accept exemption certificates in good faith. However, the seller must exercise reasonable care:
-
-- The certificate must appear valid on its face. [T1]
-- The purchase must be consistent with the claimed exemption. [T2]
-- If the seller has knowledge that the exemption is invalid, good faith does not apply. [T2]
-
-**Authority:** Va. Code Section 58.1-623(C).
 
 ### 5.4 Retention Period
 
-Exemption certificates must be retained for **3 years** from the date of the last sale made under the certificate. [T1]
-
----
+- **Exemption certificate retention period** — 3 years years (T1)
 
 ### 6.1 When Use Tax Applies
 
-Virginia use tax is due when:
-
-- Property is purchased from a seller who did not collect Virginia tax. [T1]
-- Property purchased for resale is withdrawn for personal/business use. [T1]
-- Property is purchased in another state and brought into Virginia for use. [T1]
+- **Uncollected seller tax** — Property is purchased from a seller who did not collect Virginia tax. (T1)
+- **Resale property withdrawn for use** — Property purchased for resale is withdrawn for personal/business use. (T1)
+- **Out-of-state purchase brought into VA** — Property is purchased in another state and brought into Virginia for use. (T1)
 
 ### 6.2 Use Tax Rate
 
-The use tax rate equals the applicable sales tax rate (5.3%, 6.0%, or 7.0% depending on region). [T1]
+- **Use tax rate equals sales tax rate** — The use tax rate equals the applicable sales tax rate (5.3%, 6.0%, or 7.0% depending on region). (T1)
 
 ### 6.3 Credit for Taxes Paid to Other States
 
-Virginia allows a credit for sales/use tax properly paid to another state, up to the amount of Virginia use tax that would be due. [T1]
-
-**Authority:** Va. Code Section 58.1-611.
+- **Credit for taxes paid to other states** — Virginia allows a credit for sales/use tax properly paid to another state, up to the amount of Virginia use tax that would be due. (T1)  _(Va. Code Section 58.1-611)_
 
 ### 6.4 Consumer Use Tax Return
 
-- **Businesses:** Report on Form ST-7 (Consumer Use Tax Return) or Form ST-9. [T1]
-- **Individuals:** Report on Virginia individual income tax return (Form 760). [T1]
-
----
+- **Business use tax reporting** — Businesses: Report on Form ST-7 (Consumer Use Tax Return) or Form ST-9. (T1)
+- **Individual use tax reporting** — Individuals: Report on Virginia individual income tax return (Form 760). (T1)
 
 ## Step 5: Key Thresholds
+
 ### 4.1 Physical Nexus
 
-Virginia follows standard physical nexus principles:
-
-- Place of business (office, store, warehouse) in Virginia. [T1]
-- Employees or agents operating in Virginia. [T1]
-- Inventory stored in Virginia (including FBA). [T1]
-- Regular delivery via company vehicles. [T1]
-- Affiliate nexus (related entities with physical presence). [T2]
+- **Place of business** — Place of business (office, store, warehouse) in Virginia. (T1)
+- **Employees or agents** — Employees or agents operating in Virginia. (T1)
+- **Inventory stored in Virginia** — Inventory stored in Virginia (including FBA). (T1)
+- **Regular delivery via company vehicles** — Regular delivery via company vehicles. (T1)
+- **Affiliate nexus** — Affiliate nexus (related entities with physical presence). (T2)
 
 ### 4.2 Economic Nexus [T1]
 
-Virginia enacted economic nexus effective **July 1, 2019**.
+**Economic Nexus**  _(Va. Code Section 58.1-612(C))_
 
 | Threshold | Value | Measurement Period |
-|-----------|-------|--------------------|
+| --- | --- | --- |
 | Revenue | **$100,000** in gross revenue from sales into Virginia | Current or prior calendar year |
 | Transactions | **200 transactions** delivered into Virginia | Current or prior calendar year |
-| Test | **OR** -- either threshold triggers nexus | |
+| Test | **OR** -- either threshold triggers nexus |  |
 
-**Authority:** Va. Code Section 58.1-612(C).
+Virginia enacted economic nexus effective July 1, 2019.
 
 ### 4.3 Marketplace Facilitator Rules [T1]
 
-Virginia enacted marketplace facilitator legislation effective **July 1, 2019** (concurrent with economic nexus).
+- **Marketplace facilitators must collect** — Marketplace facilitators meeting the nexus thresholds must collect and remit. (T1)  _(Va. Code Section 58.1-612(D))_
+- **Marketplace sellers relieved** — Marketplace sellers are relieved of collection obligation for facilitated sales. (T1)  _(Va. Code Section 58.1-612(D))_
+- **Marketplace facilitator definition** — A marketplace facilitator is defined as a person who facilitates a retail sale by listing or advertising, collecting payment, and/or transmitting payment to the marketplace seller. (T1)  _(Va. Code Section 58.1-612(D))_
 
-- Marketplace facilitators meeting the nexus thresholds must collect and remit. [T1]
-- Marketplace sellers are relieved of collection obligation for facilitated sales. [T1]
-- A marketplace facilitator is defined as a person who facilitates a retail sale by listing or advertising, collecting payment, and/or transmitting payment to the marketplace seller. [T1]
-
-**Authority:** Va. Code Section 58.1-612(D).
-
----
+Virginia enacted marketplace facilitator legislation effective July 1, 2019 (concurrent with economic nexus).
 
 ## Step 6: Filing Deadlines and Penalties
 
 Refer to Step 3 for filing frequencies and due dates. [T1]
 
----
-
 ## PROHIBITIONS
-1. **NEVER** apply a flat 5.3% rate statewide -- check whether the address is in Northern Virginia (6.0%), Hampton Roads (7.0%), or the rest of Virginia (5.3%). [T1]
-2. **NEVER** advise that grocery food is fully exempt from sales tax in Virginia -- it is taxed at a reduced rate of approximately 1% (local component only, after the Jan 2023 change). [T1]
-3. **NEVER** advise that SaaS is not taxable in Virginia (it is taxable per DOR rulings). [T1]
-4. **NEVER** tell a seller they can file quarterly in Virginia -- Virginia requires monthly filing for all registrants. [T1]
-5. **NEVER** confuse Virginia's mandatory 1% local tax with optional local taxes -- every Virginia transaction includes the 1% local component. [T1]
-6. **NEVER** apply the grocery food reduced rate to prepared food or restaurant meals. [T1]
-7. **NEVER** advise that over-the-counter drugs are taxable in Virginia (they are exempt). [T1]
-8. **NEVER** assume motor vehicle tax is collected by the seller -- it is collected by DMV at titling. [T1]
-9. **NEVER** ignore the data center exemption for qualifying purchases -- it is a significant incentive. [T2]
-10. **NEVER** provide Virginia tax guidance without specifying which regional rate applies to the customer's location. [T1]
 
----
+- **1** — NEVER apply a flat 5.3% rate statewide -- check whether the address is in Northern Virginia (6.0%), Hampton Roads (7.0%), or the rest of Virginia (5.3%). (T1)
+- **2** — NEVER advise that grocery food is fully exempt from sales tax in Virginia -- it is taxed at a reduced rate of approximately 1% (local component only, after the Jan 2023 change). (T1)
+- **3** — NEVER advise that SaaS is not taxable in Virginia (it is taxable per DOR rulings). (T1)
+- **4** — NEVER tell a seller they can file quarterly in Virginia -- Virginia requires monthly filing for all registrants. (T1)
+- **5** — NEVER confuse Virginia's mandatory 1% local tax with optional local taxes -- every Virginia transaction includes the 1% local component. (T1)
+- **6** — NEVER apply the grocery food reduced rate to prepared food or restaurant meals. (T1)
+- **7** — NEVER advise that over-the-counter drugs are taxable in Virginia (they are exempt). (T1)
+- **8** — NEVER assume motor vehicle tax is collected by the seller -- it is collected by DMV at titling. (T1)
+- **9** — NEVER ignore the data center exemption for qualifying purchases -- it is a significant incentive. (T2)
+- **10** — NEVER provide Virginia tax guidance without specifying which regional rate applies to the customer's location. (T1)
 
 ## Edge Case Registry
 
 ### 7.1 Data Center Equipment Exemption [T2]
 
-Virginia offers a significant sales tax exemption for qualifying data centers:
-
-- Qualifying data centers that make a capital investment of at least **$150 million** (or lower thresholds in certain localities) and create a minimum number of jobs are exempt from sales tax on computer equipment and hardware purchased for use in the data center. [T2]
-- The exemption also extends to electricity purchased for use in the data center. [T2]
-- Application and approval through Virginia Economic Development Partnership (VEDP) required. [T3]
-
-**Authority:** Va. Code Section 58.1-609.3(18).
+- **Data center capital investment threshold** — Qualifying data centers that make a capital investment of at least $150 million (or lower thresholds in certain localities) and create a minimum number of jobs are exempt from sales tax on computer equipment and hardware purchased for use in the data center. (T2)  _(Va. Code Section 58.1-609.3(18))_
+- **Electricity exemption extension** — The exemption also extends to electricity purchased for use in the data center. (T2)  _(Va. Code Section 58.1-609.3(18))_
+- **VEDP application required** — Application and approval through Virginia Economic Development Partnership (VEDP) required. (T3)  _(Va. Code Section 58.1-609.3(18))_
 
 ### 7.2 Mixed Regional Rate Sales [T2]
 
-When a Virginia seller ships within the state, rate determination can be complex:
-
-- A seller located in a 5.3% jurisdiction shipping to Hampton Roads (7.0%) must charge 7.0%. [T1]
-- A seller in Hampton Roads shipping to a 5.3% jurisdiction charges 5.3%. [T1]
-- For pick-up orders, the seller's location rate applies. [T1]
+- **Low to high rate shipment** — A seller located in a 5.3% jurisdiction shipping to Hampton Roads (7.0%) must charge 7.0%. (T1)
+- **High to low rate shipment** — A seller in Hampton Roads shipping to a 5.3% jurisdiction charges 5.3%. (T1)
+- **Pick-up orders** — For pick-up orders, the seller's location rate applies. (T1)
 
 ### 7.3 Motor Vehicle Sales Tax [T1]
 
-- Motor vehicles are subject to the standard sales tax rate, but tax is collected by the **DMV** at the time of titling, not by the dealer. [T1]
-- Trade-in allowances reduce the taxable base. [T1]
-- The maximum sales tax on motor vehicles was capped historically, but check current law. [T2]
+- **DMV collects at titling** — Motor vehicles are subject to the standard sales tax rate, but tax is collected by the DMV at the time of titling, not by the dealer. (T1)
+- **Trade-in allowances** — Trade-in allowances reduce the taxable base. (T1)
+- **Historical cap on motor vehicle tax** — The maximum sales tax on motor vehicles was capped historically, but check current law. (T2)
 
 ### 7.4 Manufacturing and Industrial Exemptions [T2]
 
-Virginia provides broad exemptions for manufacturers:
-
-- Raw materials and components that become part of the finished product. [T1]
-- Machinery and tools used directly in manufacturing. [T2]
-- Fuel used directly in manufacturing (not heating). [T2]
-- Pollution control equipment. [T2]
-
-**Authority:** Va. Code Section 58.1-609.3.
+- **Raw materials and components** — Raw materials and components that become part of the finished product. (T1)  _(Va. Code Section 58.1-609.3)_
+- **Machinery and tools** — Machinery and tools used directly in manufacturing. (T2)  _(Va. Code Section 58.1-609.3)_
+- **Fuel used directly in manufacturing** — Fuel used directly in manufacturing (not heating). (T2)  _(Va. Code Section 58.1-609.3)_
+- **Pollution control equipment** — Pollution control equipment. (T2)  _(Va. Code Section 58.1-609.3)_
 
 ### 7.5 Nonprofit and Government Exemptions [T2]
 
-- Virginia exempts purchases by federal and state government entities. [T1]
-- Qualifying **501(c)(3)** nonprofit organizations may apply for an exemption certificate. [T2]
-- The exemption is not automatic -- nonprofits must apply to Virginia Tax and receive a certificate. [T1]
-- Churches are generally exempt without needing to apply. [T2]
-
-**Authority:** Va. Code Section 58.1-609.11.
+- **Government entity exemption** — Virginia exempts purchases by federal and state government entities. (T1)  _(Va. Code Section 58.1-609.11)_
+- **501(c)(3) exemption application** — Qualifying 501(c)(3) nonprofit organizations may apply for an exemption certificate. (T2)  _(Va. Code Section 58.1-609.11)_
+- **Exemption not automatic** — The exemption is not automatic -- nonprofits must apply to Virginia Tax and receive a certificate. (T1)  _(Va. Code Section 58.1-609.11)_
+- **Churches generally exempt** — Churches are generally exempt without needing to apply. (T2)  _(Va. Code Section 58.1-609.11)_
 
 ### 7.6 Occasional or Casual Sales [T1]
 
-Virginia exempts from sales tax the **occasional sale** of tangible personal property by a person not regularly engaged in the business of selling:
+- **Occasional sale threshold** — Three or fewer sales in a 12-month period qualify. (T1)  _(Va. Code Section 58.1-602 (definition of "occasional sale"))_
+- **Excluded items from casual sale exemption** — Motor vehicles, watercraft, and aircraft are not eligible for the casual sale exemption. (T1)  _(Va. Code Section 58.1-602 (definition of "occasional sale"))_
 
-- Three or fewer sales in a 12-month period qualify. [T1]
-- Motor vehicles, watercraft, and aircraft are **not** eligible for the casual sale exemption. [T1]
-
-**Authority:** Va. Code Section 58.1-602 (definition of "occasional sale").
+Virginia exempts from sales tax the occasional sale of tangible personal property by a person not regularly engaged in the business of selling:
 
 ### 7.7 Digital Advertising Tax [T2]
 
-Unlike Maryland, Virginia does **not** impose a separate digital advertising tax. However, digital goods and SaaS remain subject to the standard sales tax. [T2]
+Unlike Maryland, Virginia does not impose a separate digital advertising tax. However, digital goods and SaaS remain subject to the standard sales tax. [T2]
 
 ### 7.8 School Supply and Clothing Tax Holiday [T1]
 
-Virginia holds an annual **sales tax holiday** (typically the first weekend in August):
+- **School supplies threshold** — School supplies ($20 or less per item): exempt. (T1)  _(Va. Code Section 58.1-611.2)_
+- **Clothing and footwear threshold** — Clothing and footwear ($100 or less per item): exempt. (T1)  _(Va. Code Section 58.1-611.2)_
+- **Energy-efficient products threshold** — Energy-efficient products (qualifying Energy Star products, $2,500 or less): exempt. (T1)  _(Va. Code Section 58.1-611.2)_
+- **Emergency preparedness items** — Hurricane and emergency preparedness items: exempt. (T1)  _(Va. Code Section 58.1-611.2)_
 
-- School supplies ($20 or less per item): exempt. [T1]
-- Clothing and footwear ($100 or less per item): exempt. [T1]
-- Energy-efficient products (qualifying Energy Star products, $2,500 or less): exempt. [T1]
-- Hurricane and emergency preparedness items: exempt. [T1]
-
-**Authority:** Va. Code Section 58.1-611.2.
-
----
+Virginia holds an annual sales tax holiday (typically the first weekend in August):
 
 ## Test Suite
 
@@ -466,19 +407,17 @@ Virginia holds an annual **sales tax holiday** (typically the first weekend in A
 
 **Expected Answer:** Virginia use tax at 7.0% = $140. Credit for tax paid to other state: $2,000 x 4% = $80. Net Virginia use tax owed: $140 - $80 = $60.
 
----
-
 ## Reviewer Escalation Protocol
 
+**Reviewer Escalation Protocol**
+
 | Trigger | Action |
-|---------|--------|
+| --- | --- |
 | Any [T3] tagged item encountered | STOP. Do not guess. Escalate to licensed CPA, EA, or tax attorney. |
 | Client has audit notice or assessment | Escalate immediately. Do not advise on audit response. |
 | Multi-state nexus question involving 3+ states | Flag for senior reviewer with multi-state experience. |
 | Penalty abatement or voluntary disclosure | Escalate to licensed professional with state-specific experience. |
 | Ambiguous taxability of a product/service | Present both interpretations to reviewer with supporting authority. |
-
----
 
 ## Contribution Notes
 
@@ -488,13 +427,30 @@ Virginia holds an annual **sales tax holiday** (typically the first weekend in A
 - To update this skill, submit a pull request with the specific section, supporting statutory authority, and effective date of the change.
 - All changes require validation by a US CPA or EA before merging.
 
----
-
 ## Disclaimer
+
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/va-sales-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `va-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/va-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

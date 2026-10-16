@@ -1,26 +1,24 @@
 ---
 name: japan-financial-statements
-description: "> Use this skill when preparing, reviewing, or advising on annual financial statements (計算書類 / 財務諸表) for a Japanese company. Trigger on phrases like \"計算書類\", \"財務諸表\", \"会社法\", \"金融商品取引法\", \"J-GAAP\", \"日本基準\", \"決算書\", \"貸借対照表\", \"損益計算書\", \"大会社\", \"会計監査人\", \"有価証券報告書\", or any question about preparing and filing statutory accounts under Japanese corporate law. Covers J-GAAP framework, company categories (大会社/中小), required statements, formats, notes, filing, and audit requirements."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill when preparing, reviewing, or advising on annual financial statements (計算書類 / 財務諸表) for a Japanese company. Trigger on phrases like \"計算書類\", \"財務諸表\", \"会社法\", \"金融商品取引法\", \"J-GAAP\", \"日本基準\", \"決算書\", \"貸借対照表\", \"損益計算書\", \"大会社\", \"会計監査人\", \"有価証券報告書\", or any question about preparing and filing statutory accounts under Japanese corporate law. Covers J-GAAP framework, company categories (大会社/中小), required statements, formats, notes, filing, and audit requirements."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: JP
-  category: financial-statements
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/japan-financial-statements"
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/japan-financial-statements"
+  jurisdiction: "JP"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Japan Financial Statements Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Japan Financial Statements
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Japan (日本国) |
 | Currency | JPY |
 | Filing authority | Legal Affairs Bureau (登記所) for Companies Act; FSA/EDINET for FIEA |
@@ -32,12 +30,12 @@ metadata:
 | Filing deadline (FIEA) | 3 months after fiscal year-end (有価証券報告書) |
 | Digital filing | EDINET (for securities filings); e-Tax (for tax filings) |
 
----
-
 ## Section 2 -- Reporting Framework
 
+**Reporting Framework**
+
 | Entity type | Applicable standard |
-|---|---|
+| --- | --- |
 | All Stock Companies (株式会社) — Companies Act | J-GAAP (会社計算規則 basis) |
 | Listed companies — FIEA | J-GAAP, IFRS, US GAAP, or modified IFRS (Japan's modified international standards) |
 | Large Company (大会社) | J-GAAP with mandatory external audit |
@@ -52,38 +50,36 @@ Japan allows a choice of four frameworks for listed companies' consolidated fina
 3. US GAAP (legacy — being phased out)
 4. Modified International Standards (JMIS — Japan-modified IFRS)
 
----
-
-## Section 3 -- Size Thresholds
-
 ### Large Company (大会社) — Companies Act Art. 2(vi)
 
-A Stock Company is a **Large Company** if either:
+- **Large Company definition** — A Stock Company is a Large Company if either criterion is met (stated capital or total liabilities threshold).  _(Companies Act Art. 2(vi))_
+
+**Large Company thresholds**  _(Companies Act Art. 2(vi))_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Stated capital (資本金) on latest balance sheet | ≥ JPY 500,000,000 (¥5 billion) |
 | Total liabilities (負債の部合計) on latest balance sheet | ≥ JPY 20,000,000,000 (¥200 billion) |
 
-Meeting **either** criterion triggers Large Company status (and mandatory external audit).
+- **Either criterion triggers Large Company status** — Meeting either criterion triggers Large Company status (and mandatory external audit).  _(Companies Act Art. 2(vi))_
 
 ### Implications
 
+**Implications table**
+
 | Category | Financial auditor required? | Consolidated required? |
-|---|---|---|
+| --- | --- | --- |
 | Large Company (大会社) | Yes — mandatory (会計監査人) | If has subsidiaries |
 | Non-large Stock Company | No (unless voluntarily appointed or articles require) | Not required under Companies Act |
 | Listed companies (FIEA) | Yes — mandatory | Yes (consolidated reporting) |
 | SME (中小企業) | No | No |
 
----
-
-## Section 4 -- Required Financial Statements
-
 ### Under Companies Act (計算書類 — for all Stock Companies)
 
+**Required financial statements under Companies Act**
+
 | Document | Required |
-|---|---|
+| --- | --- |
 | 貸借対照表 (Balance sheet) | Required |
 | 損益計算書 (Profit and loss statement) | Required |
 | 株主資本等変動計算書 (Statement of changes in shareholders' equity) | Required |
@@ -93,8 +89,10 @@ Meeting **either** criterion triggers Large Company status (and mandatory extern
 
 ### Under FIEA (財務諸表 — for listed/reporting companies)
 
+**Required financial statements under FIEA**
+
 | Document | Required |
-|---|---|
+| --- | --- |
 | 貸借対照表 (Balance sheet) | Required |
 | 損益計算書 (P&L) | Required |
 | 株主資本等変動計算書 (Changes in equity) | Required |
@@ -102,12 +100,12 @@ Meeting **either** criterion triggers Large Company status (and mandatory extern
 | 注記 (Notes) | Required (extensive) |
 | 連結財務諸表 (Consolidated financial statements) | Required (listed) |
 
----
-
 ## Section 5 -- Year-End Adjustments Checklist
 
+**Year-End Adjustments Checklist**
+
 | # | Adjustment | Japan-specific notes |
-|---|---|---|
+| --- | --- | --- |
 | 1 | 減価償却 (Depreciation) | Declining balance (定率法) or straight-line (定額法); tax useful lives per MOF ordinance |
 | 2 | 引当金 (Provisions) | 賞与引当金 (bonus), 退職給付引当金 (retirement), 貸倒引当金 (bad debts) |
 | 3 | 退職給付 (Retirement benefits) | ASBJ Statement 26; projected benefit obligation; discount rate |
@@ -120,8 +118,6 @@ Meeting **either** criterion triggers Large Company status (and mandatory extern
 | 10 | 繰延資産 (Deferred charges) | Stock issuance costs, bond issuance costs — amortise per regulations |
 | 11 | 有価証券 (Securities valuation) | Trading: fair value through P&L; available-for-sale: fair value through OCI |
 | 12 | 消費税 (Consumption tax) | Tax-exclusive or tax-inclusive method; reconcile input/output |
-
----
 
 ## Section 6 -- 損益計算書 Format (P&L)
 
@@ -159,8 +155,6 @@ VII. 特別損失 (Extraordinary losses)
 法人税等調整額 (Deferred tax adjustment)
       ─── 当期純利益 (Net income) ───
 ```
-
----
 
 ## Section 7 -- 貸借対照表 Format (Balance Sheet)
 
@@ -222,12 +216,12 @@ Companies Act standard format:
   為替換算調整勘定
 ```
 
----
-
 ## Section 8 -- 注記 / 個別注記表 (Notes)
 
+**Notes disclosure requirements**
+
 | # | Disclosure | SME | Large Company | Listed (FIEA) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Accounting policies (重要な会計方針) | Required | Required | Required (extensive) |
 | 2 | Notes on balance sheet items | Simplified | Required | Required |
 | 3 | Contingent liabilities (偶発債務) | Required | Required | Required |
@@ -241,14 +235,12 @@ Companies Act standard format:
 | 11 | Asset retirement obligations | Not required | If applicable | Required |
 | 12 | Revenue recognition details | Simplified | Required (from 2021) | Required |
 
----
-
-## Section 9 -- Filing Requirements
-
 ### Companies Act filings
 
+**Companies Act filings**  _(Companies Act Art. 440)_
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | AGM deadline | Within 3 months from fiscal year-end |
 | 計算書類 approval | By board of directors before AGM; submitted to AGM for approval |
 | Public notice of balance sheet (決算公告) | Required for all Stock Companies (Art. 440); via official gazette, newspaper, or website |
@@ -257,8 +249,10 @@ Companies Act standard format:
 
 ### FIEA filings (listed/reporting companies)
 
+**FIEA filings**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | 有価証券報告書 (Annual securities report) | Within 3 months of fiscal year-end |
 | Filing method | EDINET (Electronic Disclosure for Investors' NETwork) |
 | 四半期報告書 (Quarterly report) | Within 45 days of quarter-end (being replaced by semi-annual from 2025) |
@@ -268,18 +262,20 @@ Companies Act standard format:
 
 ### Tax filing
 
+**Tax filing**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Corporate tax return (確定申告) | Within 2 months of fiscal year-end (extendable by 1 month) |
 | Local tax returns | Same deadline; filed with prefectural/municipal tax offices |
 | Format | e-Tax (electronic) or paper |
 
----
-
 ## Section 10 -- Audit Requirements
 
+**Audit Requirements**
+
 | Category | Requirement |
-|---|---|
+| --- | --- |
 | Large Company (大会社) — capital ≥ ¥500M or liabilities ≥ ¥20B | Mandatory 会計監査人 (financial auditor) — Companies Act audit |
 | Listed companies (FIEA) | Mandatory — both Companies Act audit + FIEA audit (can be same firm) |
 | Non-large Stock Company | Not required (unless articles of incorporation specify) |
@@ -299,12 +295,28 @@ Listed companies are subject to two separate (but usually combined) audit requir
 - For Companies Act: 会計監査人 appointed by shareholders at AGM
 - For FIEA: registered audit firm meeting independence requirements
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/japan-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `japan-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/japan-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

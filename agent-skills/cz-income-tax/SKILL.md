@@ -1,27 +1,24 @@
 ---
 name: cz-income-tax
-description: "> Use this skill whenever asked about Czech income tax for self-employed individuals (OSVČ). Trigger on phrases like \"how much tax do I pay\", \"DPFO\", \"daňové přiznání\", \"income tax return\", \"výdajové paušály\", \"expense lump-sums\", \"paušální daň\", \"flat-rate tax\", \"sleva na dani\", \"tax credits\", \"self-employed tax Czech\", or any question about filing or computing income tax for a self-employed or freelance client in the Czech Republic. ALWAYS read this skill before touching any Czech income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Czech income tax for self-employed individuals (OSVČ). Trigger on phrases like \"how much tax do I pay\", \"DPFO\", \"daňové přiznání\", \"income tax return\", \"výdajové paušály\", \"expense lump-sums\", \"paušální daň\", \"flat-rate tax\", \"sleva na dani\", \"tax credits\", \"self-employed tax Czech\", or any question about filing or computing income tax for a self-employed or freelance client in the Czech Republic. ALWAYS read this skill before touching any Czech income tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cz-income-tax"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/cz-income-tax"
+  jurisdiction: "CZ"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Czech Republic Income Tax (DPFO) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# CZ Income Tax
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Czech Republic (Česká republika) |
 | Tax type | Daň z příjmů fyzických osob (DPFO -- personal income tax) |
 | Primary legislation | Zákon č. 586/1992 Sb., o daních z příjmů |
@@ -40,19 +37,21 @@ metadata:
 | Validated by | Pending -- requires Czech daňový poradce sign-off |
 | Validation date | Pending |
 
-**Expense methods at a glance:**
+**Read this whole section before classifying anything.**
+
+**Expense methods at a glance**
 
 | Activity | Lump-sum % | Cap (CZK) |
-|---|---|---|
+| --- | --- | --- |
 | Agriculture, craft trades (řemeslné živnosti) | 80% | 1,600,000 |
 | Other trades (živnostenské podnikání) | 60% | 1,200,000 |
 | Professional services (§ 7/1c, 7/2) | 40% | 800,000 |
 | Rental of business property (§ 9) | 30% | 600,000 |
 
-**Tax credits (slevy na dani, § 35ba):**
+**Tax credits (slevy na dani, § 35ba)**  _(§ 35ba)_
 
 | Credit | Annual CZK |
-|---|---|
+| --- | --- |
 | Basic taxpayer (na poplatníka) | 30,840 |
 | Spouse (caring for child under 3) | 24,840 |
 | Disability I/II | 2,520 |
@@ -63,45 +62,38 @@ metadata:
 | 2nd child | 22,320 |
 | 3rd+ child | 27,840 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown expense method | STOP -- must determine before computing |
 | Unknown expense category | Not deductible |
 | Unknown business-use proportion | 0% business use |
 | Unknown activity type for lump-sum | STOP -- rate depends on activity |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the tax year. Acceptable from: ČSOB, Komerční banka, Fio banka, Česká spořitelna, Raiffeisenbank, MONETA Money Bank, or fintech (Revolut, Wise).
-
-**Recommended** -- sales invoices, purchase invoices (if real expenses), expense method choice, živnostenský list (trade licence).
-
-**Ideal** -- complete daňová evidence or accounting records, prior year DPFO, Přehled ČSSZ/VZP.
+- **Minimum viable** — bank statement for the tax year. Acceptable from: ČSOB, Komerční banka, Fio banka, Česká spořitelna, Raiffeisenbank, MONETA Money Bank, or fintech (Revolut, Wise).
+- **Recommended** — sales invoices, purchase invoices (if real expenses), expense method choice, živnostenský list (trade licence).
+- **Ideal** — complete daňová evidence or accounting records, prior year DPFO, Přehled ČSSZ/VZP.
 
 ### Refusal catalogue
 
-**R-CZ-1 -- s.r.o. or a.s.** *Trigger:* client operates through a legal entity. *Message:* "This skill covers OSVČ only. s.r.o. files corporate income tax. Please use a separate skill."
-
-**R-CZ-2 -- International income / tax treaties.** *Trigger:* significant foreign income. *Message:* "International income is outside scope. Consult a daňový poradce."
-
-**R-CZ-3 -- Crypto taxation.** *Trigger:* significant crypto trading. *Message:* "Crypto classification is evolving. Escalate to daňový poradce."
-
-**R-CZ-4 -- Expense method unknown.** *Trigger:* client has not confirmed real/lump-sum/paušální. *Message:* "I cannot compute without knowing your expense method. Please confirm."
-
----
+- **R-CZ-1 -- s.r.o. or a.s.** — This skill covers OSVČ only. s.r.o. files corporate income tax. Please use a separate skill. (Trigger: client operates through a legal entity.)
+- **R-CZ-2 -- International income / tax treaties** — International income is outside scope. Consult a daňový poradce. (Trigger: significant foreign income.)
+- **R-CZ-3 -- Crypto taxation** — Crypto classification is evolving. Escalate to daňový poradce. (Trigger: significant crypto trading.)
+- **R-CZ-4 -- Expense method unknown** — I cannot compute without knowing your expense method. Please confirm. (Trigger: client has not confirmed real/lump-sum/paušální.)
 
 ## Section 3 -- Transaction pattern library (the lookup table)
 
 ### 3.1 Czech banks (fees and interest)
 
+**Czech banks (fees and interest)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ČSOB, ČESKOSLOVENSKÁ OBCHODNÍ BANKA | Bank charges: deductible (if real expenses) | Monthly fees |
 | KOMERČNÍ BANKA, KB | Bank charges: deductible | Same |
 | FIO BANKA, FIO | Bank charges: deductible | Same |
@@ -115,8 +107,10 @@ metadata:
 
 ### 3.2 Czech government and statutory bodies
 
+**Czech government and statutory bodies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | FINANČNÍ ÚŘAD, FÚ | EXCLUDE | Tax payment |
 | ČSSZ (social insurance) | NOT deductible from income tax base | Social insurance ≠ income deduction |
 | VZP, OBOROVÁ ZP, ZPMV (health insurance) | NOT deductible from income tax base | Health insurance ≠ income deduction |
@@ -125,8 +119,10 @@ metadata:
 
 ### 3.3 Czech utilities and telecoms
 
+**Czech utilities and telecoms**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ČEZ, E.ON, PRE | Deductible if business premises | Electricity; apportion if home |
 | INNOGY, PRAŽSKÁ PLYNÁRENSKÁ | Deductible if business premises | Gas |
 | T-MOBILE CZ, O2, VODAFONE CZ | Deductible: business phone/internet | Mixed: apportion |
@@ -134,16 +130,20 @@ metadata:
 
 ### 3.4 SaaS and software -- international
 
+**SaaS and software -- international**
+
 | Pattern | Billing entity | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | IE/LU entities | Deductible expense | Reverse charge DPH |
 | GITHUB, OPENAI, ANTHROPIC | US entities | Deductible expense | Non-EU |
 | SLACK, ZOOM, ATLASSIAN | Various | Deductible expense | Check entity |
 
 ### 3.5 Professional services (Czech)
 
+**Professional services (Czech)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ÚČETNÍ, ÚČETNICTVÍ | Deductible | Accounting fees |
 | ADVOKÁT, PRÁVNÍK | Deductible if business | Legal fees |
 | DAŇOVÝ PORADCE | Deductible | Tax advisory |
@@ -151,8 +151,10 @@ metadata:
 
 ### 3.6 Transport and travel
 
+**Transport and travel**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ČESKÉ DRÁHY, ČD | Deductible if business travel | Train |
 | REGIOJET, LEO EXPRESS | Deductible if business travel | Private rail |
 | LÍTAČKA, DPP (Prague transport) | Deductible if business travel | Public transport |
@@ -161,28 +163,32 @@ metadata:
 
 ### 3.7 Office and supplies
 
+**Office and supplies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALZA.CZ, CZC.CZ, DATART | Capital if significant; else expense | IT equipment |
 | IKEA CZ, HORNBACH | Capital or expense depending on value | Office items |
 | ČESKÁ POŠTA | Deductible | Postage |
 
 ### 3.8 Food and entertainment
 
+**Food and entertainment**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALBERT, TESCO, KAUFLAND, LIDL CZ, BILLA | Default: NOT deductible | Personal provisioning |
 | RESTAURACE (any restaurant) | Deductible if documented business purpose | Document attendees and purpose |
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | VLASTNÍ PŘEVOD, OWN TRANSFER | EXCLUDE | Internal movement |
 | VÝBĚR, ATM | EXCLUDE (default: drawings) | Ask what cash used for |
 | VKLAD | EXCLUDE | Owner deposit |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -208,55 +214,59 @@ metadata:
 **Input:** Single parent, revenue CZK 400,000, 40% lump-sum, 3 children.
 **Computation:** Tax base = CZK 240,000. Tax = CZK 36,000. Less basic CZK 30,840 = CZK 5,160. Less child credits CZK 65,364. Tax bonus (refund) = CZK 60,204 (capped at CZK 60,300).
 
----
-
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 Tax rates
-15% on first CZK 1,676,052 of tax base. 23% above. No tax-free band -- zero tax achieved through basic credit. **Legislation:** § 16.
+
+- **Tax rates** — 15% on first CZK 1,676,052 of tax base. 23% above. No tax-free band -- zero tax achieved through basic credit.  _(§ 16)_
 
 ### 5.2 Expense lump-sums
-Cannot combine lump-sum and real expenses for the same activity. Lump-sum users need not keep expense receipts but MUST keep income records. **Legislation:** § 7 odst. 7.
+
+- **Expense lump-sums rules** — Cannot combine lump-sum and real expenses for the same activity. Lump-sum users need not keep expense receipts but MUST keep income records.  _(§ 7 odst. 7)_
 
 ### 5.3 Paušální daň
-Single monthly payment (tax + social + health). Eligibility: revenue up to CZK 2,000,000, not VAT payer, no employees, no partnership, main activity. Registration by 10 January. No DPFO filing. **Legislation:** Zákon č. 540/2020 Sb.
+
+- **Paušální daň eligibility and rules** — Single monthly payment (tax + social + health). Eligibility: revenue up to CZK 2,000,000, not VAT payer, no employees, no partnership, main activity. Registration by 10 January. No DPFO filing.  _(Zákon č. 540/2020 Sb.)_
 
 ### 5.4 Social and health insurance
-Assessment base = 50% of § 7 partial tax base. Social: 29.2%. Health: 13.5%. NOT deductible from income tax base. **Legislation:** Zákon č. 589/1992, 592/1992.
+
+- **Social and health insurance** — Assessment base = 50% of § 7 partial tax base. Social: 29.2%. Health: 13.5%. NOT deductible from income tax base.  _(Zákon č. 589/1992, 592/1992)_
 
 ### 5.5 Loss carry-forward
-5 years. Only available with real expenses -- not lump-sum. **Legislation:** § 34.
+
+- **Loss carry-forward** — 5 years. Only available with real expenses -- not lump-sum.  _(§ 34)_
 
 ### 5.6 Non-taxable deductions (§ 15)
-Mortgage interest (max CZK 150,000), pension contributions (max CZK 24,000), life insurance (max CZK 24,000), charity (min CZK 1,000 or 2% of base, max 15%).
 
----
+- **Non-taxable deductions** — Mortgage interest (max CZK 150,000), pension contributions (max CZK 24,000), life insurance (max CZK 24,000), charity (min CZK 1,000 or 2% of base, max 15%).  _(§ 15)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### 6.1 Choosing real vs lump-sum expenses
-*Why:* Depends on actual expense level vs lump-sum cap. *Default:* Present both computations. *Question:* "What are your total documented business expenses?"
+
+- **Choosing real vs lump-sum expenses** — *Why:* Depends on actual expense level vs lump-sum cap. *Default:* Present both computations. *Question:* "What are your total documented business expenses?"
 
 ### 6.2 Switching expense methods (transition adjustment)
-*Why:* Receivables/payables must be adjusted. *Default:* Flag for reviewer. *Question:* "Did you switch from lump-sum to real expenses (or vice versa) this year?"
+
+- **Switching expense methods (transition adjustment)** — *Why:* Receivables/payables must be adjusted. *Default:* Flag for reviewer. *Question:* "Did you switch from lump-sum to real expenses (or vice versa) this year?"
 
 ### 6.3 Spouse credit eligibility
-*Why:* Since 2025, only when caring for child under 3. *Default:* Do not apply without confirmation. *Question:* "Do you care for a child under 3?"
+
+- **Spouse credit eligibility** — *Why:* Since 2025, only when caring for child under 3. *Default:* Do not apply without confirmation. *Question:* "Do you care for a child under 3?"
 
 ### 6.4 VAT registration forcing paušální exit
-*Why:* VAT registration terminates paušální daň. *Default:* If VAT-registered, paušální invalid. *Question:* "Are you VAT registered or approaching the CZK 2,000,000 threshold?"
 
----
+- **VAT registration forcing paušální exit** — *Why:* VAT registration terminates paušální daň. *Default:* If VAT-registered, paušální invalid. *Question:* "Are you VAT registered or approaching the CZK 2,000,000 threshold?"
 
 ## Section 7 -- Excel working paper template
 
 ### Sheet "Transactions"
+
 Columns: Date, Counterparty, Description, Amount (CZK), Category (Revenue/Expense/Depreciation/EXCLUDE), Deductible amount, Default?, Question, Notes.
 
 ### Sheet "Tax Computation"
-Step-by-step per Section 5, branching by expense method.
 
----
+Step-by-step per Section 5, branching by expense method.
 
 ## Section 8 -- Bank statement reading guide
 
@@ -264,28 +274,29 @@ Step-by-step per Section 5, branching by expense method.
 
 **Czech language variants.** Common: příjem (income), výdaj (expense), poplatek (fee), úrok (interest), převod (transfer), vklad (deposit), výběr (withdrawal).
 
-**Insurance payments.** ČSSZ (social) and health insurance payments are separate from income tax. They are NOT deductible from the income tax base (unlike Poland).
-
----
+- **Insurance payments** — ČSSZ (social) and health insurance payments are separate from income tax. They are NOT deductible from the income tax base (unlike Poland).
 
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Entity type
-*Inference:* OSVČ from bank account type. *Fallback:* "Are you OSVČ or operating through an s.r.o.?"
+
+- **Entity type** — *Inference:* OSVČ from bank account type. *Fallback:* "Are you OSVČ or operating through an s.r.o.?"
 
 ### 9.2 Expense method
-*Inference:* Not inferable. Always ask. *Fallback:* "Real expenses, lump-sum, or paušální daň?"
+
+- **Expense method** — *Inference:* Not inferable. Always ask. *Fallback:* "Real expenses, lump-sum, or paušální daň?"
 
 ### 9.3 Activity type
-*Inference:* From counterparty mix. *Fallback:* "What is your živnost type? Řemeslná, volná, or professional?"
+
+- **Activity type** — *Inference:* From counterparty mix. *Fallback:* "What is your živnost type? Řemeslná, volná, or professional?"
 
 ### 9.4 VAT status
-*Inference:* DPH payments in statement. *Fallback:* "Are you a DPH payer?"
+
+- **VAT status** — *Inference:* DPH payments in statement. *Fallback:* "Are you a DPH payer?"
 
 ### 9.5 Family status
-*Inference:* Not inferable. *Fallback:* "Married? Children? (Affects credits.)"
 
----
+- **Family status** — *Inference:* Not inferable. *Fallback:* "Married? Children? (Affects credits.)"
 
 ## Section 10 -- Reference material
 
@@ -335,6 +346,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cz-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cz-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cz-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

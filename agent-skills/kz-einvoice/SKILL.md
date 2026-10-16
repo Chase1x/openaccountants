@@ -1,15 +1,13 @@
 ---
 name: kz-einvoice
-description: "> Use this skill whenever asked about electronic invoicing and digital fiscal compliance in Kazakhstan. Trigger on phrases like \"Kazakhstan e-invoice\", \"ЭСФ\", \"электронный счёт-фактура\", \"IS ESF\", \"Kazakhstan online cash register\", \"ОФД\", \"ККМ Казахстан\", \"e-invoicing Kazakhstan\". Covers the electronic invoice system (ИС ЭСФ), who must issue ЭСФ, online cash registers (ККМ) and fiscal data operators, and the e-waybill (СНТ). ALWAYS read this before any Kazakhstan e-invoicing work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about electronic invoicing and digital fiscal compliance in Kazakhstan. Trigger on phrases like \"Kazakhstan e-invoice\", \"ЭСФ\", \"электронный счёт-фактура\", \"IS ESF\", \"Kazakhstan online cash register\", \"ОФД\", \"ККМ Казахстан\", \"e-invoicing Kazakhstan\". Covers the electronic invoice system (ИС ЭСФ), who must issue ЭСФ, online cash registers (ККМ) and fiscal data operators, and the e-waybill (СНТ). ALWAYS read this before any Kazakhstan e-invoicing work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-einvoice"
-  tax_year: 2026
-  obligation: EINV
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-einvoice"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan E-Invoicing & Fiscal Compliance — Skill v1.0
@@ -54,8 +52,8 @@ For goods subject to traceability (imports, excisable, virtual-warehouse items),
 - NEVER state ЭСФ deadlines or scope without verifying current КГД rules.
 
 ## Disclaimer
-Informational only; not advice. Verify ЭСФ scope, deadlines, and ККМ rules with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify ЭСФ scope, deadlines, and ККМ rules with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-einvoice) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-einvoice` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-einvoice. If neither is available, confirm every figure against the official source pages cited above before relying on it.

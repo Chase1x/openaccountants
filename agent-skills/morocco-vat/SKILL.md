@@ -1,24 +1,24 @@
 ---
 name: morocco-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Morocco VAT (TVA) return. Two rates from 2026 -- 20%/10% (7% and 14% phased out). Critical distinction between exempt-with-deduction (Art. 92) and exempt-without-deduction (Art. 91). ALWAYS read before handling Morocco TVA work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/morocco-vat"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/morocco-vat"
+  jurisdiction: "MA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Morocco VAT (TVA) Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Morocco VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Morocco |
 | Standard rate | 20% |
 | Reduced rate | 10% (hotels/restaurant/tourism, pharmaceuticals, water, electricity, school supplies, banking operations) |
@@ -36,32 +36,27 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
-**Minimum viable** -- bank statement. Acceptable from Attijariwafa Bank, BMCE (Bank of Africa), Banque Populaire, CIH, BMCI, Credit du Maroc, or any Moroccan bank.
-
-**R-MA-1 -- CFC entity.** Trigger: Casablanca Finance City status. Message: "CFC has specific tax regime. Escalate."
-
----
+- **Minimum viable input** — Minimum viable -- bank statement. Acceptable from Attijariwafa Bank, BMCE (Bank of Africa), Banque Populaire, CIH, BMCI, Credit du Maroc, or any Moroccan bank.
+- **R-MA-1 -- CFC entity** — Trigger: Casablanca Finance City status. Message: "CFC has specific tax regime. Escalate."
 
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ATTIJARIWAFA, AWB | EXCLUDE | Exempt financial (sans deduction) |
 | BMCE, BANK OF AFRICA | EXCLUDE | Same |
 | BANQUE POPULAIRE, BP | EXCLUDE | Same |
 | CIH, BMCI, CREDIT DU MAROC | EXCLUDE | Same |
 | DGI | EXCLUDE | Tax payment |
-| DOUANE | Check for import TVA | |
+| DOUANE | Check for import TVA |  |
 | CNSS, AMO | EXCLUDE | Social security |
 | ONE, ONEE | Domestic 10% or 20% | Electricity/water |
 | IAM, MAROC TELECOM, ORANGE MA, INWI | Domestic 20% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Autoliquidation 20% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -77,17 +72,13 @@ Textiles MAD 10M export. Line 5. No output TVA. Input fully recoverable.
 
 Bank interest MAD 10M. Line 6. No output. Related input NOT recoverable.
 
----
-
 ## Section 5 -- Classification rules
 
-20% standard. 10% reduced (hotels/restaurants/tourism, pharmaceuticals, water, electricity, school supplies, banking operations, legal/accounting). 7% and 14% PHASED OUT by 2026.
-
-Critical distinction:
-- Art. 92 (exempt WITH deduction): exports, international transport, fertilizers, investment goods (36-month window for new registrations). Functions like zero-rating.
-- Art. 91 (exempt WITHOUT deduction): financial, medical, education, bread/flour.
-
----
+- **Standard rate** — 20%
+- **Reduced rate** — 10% (hotels/restaurants/tourism, pharmaceuticals, water, electricity, school supplies, banking operations, legal/accounting)
+- **7% and 14% phased out** — 7% and 14% PHASED OUT by 2026.
+- **Art. 92 (exempt WITH deduction)** — Exports, international transport, fertilizers, investment goods (36-month window for new registrations). Functions like zero-rating.  _(Art. 92)_
+- **Art. 91 (exempt WITHOUT deduction)** — Financial, medical, education, bread/flour.  _(Art. 91)_
 
 ## Section 6 -- TVA return form
 
@@ -97,51 +88,56 @@ Input: Lines 15-20 (operating purchases, capital goods, imports, autoliquidation
 
 Net: Lines 21-23 (due, credit reporte, payable/credit).
 
----
-
 ## Section 7 -- Reverse charge and decalage
 
-Reverse charge: non-resident services. Self-assess at applicable rate (usually 20%). Net zero. CGI Art. 115.
-
-Decalage (one-month delay): progressively abolished. Capital goods: no delay. Operating purchases: check current Loi de Finances. Reviewer flag.
-
----
+- **Reverse charge** — Non-resident services. Self-assess at applicable rate (usually 20%). Net zero.  _(CGI Art. 115)_
+- **Decalage (one-month delay)** — Progressively abolished. Capital goods: no delay. Operating purchases: check current Loi de Finances. Reviewer flag.
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (CGI Art. 106): vehicles < 9 seats (unless taxi/hire/leasing), fuel for blocked vehicles, personal use, entertainment (above normal level), gifts > MAD 100/item/recipient, invoices without IF/ICE.
-
-Prorata (Art. 104): includes exempt-with-deduction in numerator. Annual regularization.
-
-36-month investment window (Art. 92-I-6): new businesses, exempt with deduction on investment goods.
-
----
+- **Blocked input** — Vehicles < 9 seats (unless taxi/hire/leasing), fuel for blocked vehicles, personal use, entertainment (above normal level), gifts > MAD 100/item/recipient, invoices without IF/ICE.  _(CGI Art. 106)_
+- **Prorata** — Includes exempt-with-deduction in numerator. Annual regularization.  _(Art. 104)_
+- **36-month investment window** — New businesses, exempt with deduction on investment goods.  _(Art. 92-I-6)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly before 20th (>= MAD 1M) or quarterly. Late filing: 15% + 0.5% first month, 0.5% thereafter. Late payment: 10% + 5% first month + 0.5% after.
-
----
+- **Filing frequency and deadline** — Monthly before 20th (>= MAD 1M) or quarterly.
+- **Late filing penalty** — 15% + 0.5% first month, 0.5% thereafter.
+- **Late payment penalty** — 10% + 5% first month + 0.5% after.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Autoliquidation 20%. Net zero.
-**EC2 -- Hotel 10%.** Not 20%.
-**EC3 -- Pharmaceuticals 10%.** Moved from 7%.
-**EC4 -- Transport 20%.** Moved from 14%.
-**EC5 -- Export (Art. 92).** Exempt with deduction. Input recoverable.
-**EC6 -- New business investment.** 36-month Art. 92-I-6 window. Reviewer verify.
-**EC7 -- Bank (Art. 91).** Exempt without deduction. Input not recoverable.
-**EC8 -- CFC entity.** Escalate.
+Autoliquidation 20%. Net zero.
 
-**Test 1** -- MAD 100K sale. TVA MAD 20K (20%).
-**Test 2** -- Hotel MAD 500K. TVA MAD 50K (10%).
-**Test 3** -- Pharmacy MAD 200K. TVA MAD 20K (10%).
-**Test 4** -- Freight MAD 300K. TVA MAD 60K (20%).
-**Test 5** -- Export MAD 5M. Zero.
-**Test 6** -- US services MAD 200K. Output 40K, input 40K.
-**Test 7** -- Motor vehicle blocked. MAD 300K + 60K. Input = 0.
-**Test 8** -- Bank interest MAD 10M. Exempt without deduction.
+Not 20%.
+
+Moved from 7%.
+
+Moved from 14%.
+
+Exempt with deduction. Input recoverable.
+
+36-month Art. 92-I-6 window. Reviewer verify.
+
+Exempt without deduction. Input not recoverable.
+
+Escalate.
+
+MAD 100K sale. TVA MAD 20K (20%).
+
+Hotel MAD 500K. TVA MAD 50K (10%).
+
+Pharmacy MAD 200K. TVA MAD 20K (10%).
+
+Freight MAD 300K. TVA MAD 60K (20%).
+
+Export MAD 5M. Zero.
+
+US services MAD 200K. Output 40K, input 40K.
+
+Motor vehicle blocked. MAD 300K + 60K. Input = 0.
+
+Bank interest MAD 10M. Exempt without deduction.
 
 Out of scope: IS 10%/20%/31%, PAYE 0%-38%, CNSS/AMO.
 
@@ -153,14 +149,30 @@ Out of scope: IS 10%/20%/31%, PAYE 0%-38%, CNSS/AMO.
 - NEVER accept invoices without IF/ICE
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/morocco-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `morocco-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/morocco-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,0 +1,51 @@
+---
+name: ch-corporate-income-tax
+description: "Source-cited draft: corporate income tax for Switzerland (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
+metadata:
+  source: openaccountants
+  openaccountants_url: "https://www.openaccountants.com/skills/ch-corporate-income-tax"
+  jurisdiction: "CH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
+---
+
+# Switzerland Corporate Income Tax
+
+## Corporate income tax rates, base and withholding
+
+- **Federal corporate income tax rate** — 8.5% flat on profit after tax (≈7.83% on pre-tax profit) %  _(Federal Act on Direct Federal Taxation (DBG/LIFD) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **Combined effective CIT rate (federal + cantonal + municipal)** — Approx. 11.85% to 21.6% depending on canton; national average ≈14.4% (2025) % (approx — confirm)  _(Federal Act on the Harmonisation of Direct Taxes of the Cantons and Communes (StHG/LHID) — https://kpmg.com/ch/en/media/press-releases/2025/05/clarity-swiss-taxes.html)_
+- **Lowest-rate canton (illustrative)** — Zug, combined effective ≈11.85% % (approx — confirm)  _(Federal Act on the Harmonisation of Direct Taxes of the Cantons and Communes (StHG/LHID) — https://kpmg.com/ch/en/media/press-releases/2025/05/clarity-swiss-taxes.html)_
+- **Tax base** — Worldwide profit per statutory accounts (with tax adjustments); income attributable to foreign permanent establishments and foreign real estate is excluded  _(Federal Act on Direct Federal Taxation (DBG/LIFD) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **Cantonal capital tax** — Annual cantonal/municipal tax on equity (taxable capital); rate varies by canton, no federal capital tax  _(Federal Act on the Harmonisation of Direct Taxes of the Cantons and Communes (StHG/LHID) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **Participation relief on dividends/capital gains** — Participation deduction effectively exempts qualifying dividends and capital gains (generally ≥10% holding or value ≥CHF 1 million) (approx — confirm thresholds)  _(Federal Act on Direct Federal Taxation (DBG/LIFD) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **TRAF tax reliefs** — OECD-compliant patent box and R&D super-deduction available at cantonal level (relief capped, generally at 70% of taxable profit) (approx — confirm cap)  _(Federal Act on Tax Reform and AHV Financing (TRAF) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **OECD Pillar Two / QDMTT** — Swiss Qualified Domestic Minimum Top-up Tax in force from 1 January 2024 for groups with revenue ≥EUR 750 million EUR  _(Ordinance on the Minimum Taxation of Large Corporate Groups (Pillar Two / OECD GloBE) — https://taxsummaries.pwc.com/switzerland/corporate/taxes-on-corporate-income)_
+- **Withholding tax on dividends** — 35% federal withholding (Verrechnungssteuer); refundable to Swiss residents and reducible under tax treaties for non-residents %  _(Federal Act on Withholding Tax (VStG/LIA) — https://taxsummaries.pwc.com/switzerland/corporate/withholding-taxes)_
+- **Withholding tax on interest** — 35% on interest from bonds and bank deposits; generally no WHT on ordinary loan interest %  _(Federal Act on Withholding Tax (VStG/LIA) — https://taxsummaries.pwc.com/switzerland/corporate/withholding-taxes)_
+- **Withholding tax on royalties** — 0% — Switzerland levies no withholding tax on royalty payments %  _(Federal Act on Withholding Tax (VStG/LIA) — https://taxsummaries.pwc.com/switzerland/corporate/withholding-taxes)_
+- **Filing & payment** — Annual return filed with the cantonal tax administration; deadline and provisional/final tax billing set per canton (approx — confirm cantonal deadline)  _(Federal Act on Direct Federal Taxation (DBG/LIFD) — https://taxsummaries.pwc.com/switzerland/corporate/tax-administration)_
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ch-corporate-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ch-corporate-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

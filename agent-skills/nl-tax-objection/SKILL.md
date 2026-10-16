@@ -1,357 +1,180 @@
 ---
 name: nl-tax-objection
-description: "> Use this skill whenever asked about Dutch tax objection procedures (bezwaar) or tax correspondence with the Belastingdienst. Trigger on phrases like \"bezwaar\", \"bezwaarschrift\", \"objection letter\", \"tax objection Netherlands\", \"reactie op aanslag\", \"aanslag betwisten\", \"bezwaartermijn\", \"6 weken termijn\", \"ambtshalve vermindering\", \"beroep belastingrechter\", \"motiveringsbrief\", \"tax appeal NL\", \"machtiging belastingdienst\", \"pro forma bezwaar\", \"uitspraak op bezwaar\", \"hoorzitting\", or any question about objecting to a Dutch tax assessment, responding to Belastingdienst correspondence, or preparing tax dispute documentation. This skill covers the bezwaar procedure, deadlines, required elements, escalation to beroep, and correspondence templates. ALWAYS read this skill before drafting any Dutch tax objection or Belastingdienst correspondence."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Dutch tax objection procedures (bezwaar) or tax correspondence with the Belastingdienst. Trigger on phrases like \"bezwaar\", \"bezwaarschrift\", \"objection letter\", \"tax objection Netherlands\", \"reactie op aanslag\", \"aanslag betwisten\", \"bezwaartermijn\", \"6 weken termijn\", \"ambtshalve vermindering\", \"beroep belastingrechter\", \"motiveringsbrief\", \"tax appeal NL\", \"machtiging belastingdienst\", \"pro forma bezwaar\", \"uitspraak op bezwaar\", \"hoorzitting\", or any question about objecting to a Dutch tax assessment, responding to Belastingdienst correspondence, or preparing tax dispute documentation. This skill covers the bezwaar procedure, deadlines, required elements, escalation to beroep, and correspondence templates. ALWAYS read this skill before drafting any Dutch tax objection or Belastingdienst correspondence."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: NL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/nl-tax-objection"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/nl-tax-objection"
+  jurisdiction: "NL"
+  tax_year: "2026"
+  last_updated: "2026-09-27"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Netherlands Tax Objection — Bezwaar & Correspondentie v1.0
+# Netherlands tax objections: decisions, payments and appeals
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Ask the client first
 
-> **Based on work by [John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. Adapted for the OpenAccountants format.
+- Which tax, taxpayer, year and exact document or payment are disputed?
+- When was it issued, notified or paid, and what evidence proves that?
+- What correction is sought, what supports it, and has any remedy already been filed?
 
----
+Use this method for Dutch national tax objections handled by the Belastingdienst. Establish the tax, year, taxpayer, document and procedural stage before drafting. A tax assessment, payment on a return, provisional assessment, objection decision and complaint about service require different responses. Collect the complete notice and its remedy instructions, envelope or electronic delivery record, return, payment evidence, earlier correspondence, disputed items and supporting documents. Record the actual taxpayer and any representative's authority; do not invent missing facts.
 
-## Section 1 — Quick Reference
+Identify administrative penalties separately from the tax calculation. A criminal tax penalty or investigation needs specialist criminal advice, rather than the ordinary objection template. Local WOZ/property tax, customs and benefits (toeslagen) require their own authority and procedure; this Guide does not supply their substantive rules. The [official objection directory](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/) links the national tax routes. A [service complaint](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/programmas_en_formulieren/klachtenformulier) cannot substitute for an objection or appeal.
 
-| Field | Value |
-|---|---|
-| Country | Netherlands (Koninkrijk der Nederlanden) |
-| Procedure | Bezwaar (objection) against tax assessments and decisions |
-| Currency | EUR only |
-| Primary legislation | Algemene wet bestuursrecht (Awb), Chapter 6 & 7; Algemene wet inzake rijksbelastingen (AWR) |
-| Tax authority | Belastingdienst |
-| Portal | Mijn Belastingdienst / Post bezwaar (or postal submission) |
-| Contributor | Open Accountants Community |
-| Validated by | Pending — requires sign-off by a qualified Dutch belastingadviseur |
-| Skill version | 1.0 |
+## The method, step by step
 
-### Key Deadlines [T1]
+1. Classify the tax and contested decision or payment using the route table.
+2. Establish and preserve the filing deadline, including evidence of submission.
+3. Assemble grounds, evidence and requested relief; submit through the permitted channel.
+4. Track payment, hearing, information requests and the adjusted decision deadline separately.
+5. Read the decision and preserve any further remedy before closing the collection balance.
 
-| Deadline | Rule |
-|---|---|
-| Bezwaartermijn | 6 weeks from date on assessment (dagtekening van de aanslag/beschikking) |
-| Pro forma bezwaar | Within 6 weeks; motivation can follow within reasonable term set by inspector |
-| Belastingdienst response deadline | They must decide within 6 weeks (or extended: max 6 months after receiving complete objection) |
-| Beroep (appeal) deadline | 6 weeks from uitspraak op bezwaar (decision on objection) |
-| Ambtshalve vermindering | Within 5 years from end of the tax year to which assessment relates |
+### Choose the document-specific route
 
-### Procedure Overview [T1]
+| What the user has | Action |
+| --- | --- |
+| Final or additional income/corporation tax assessment, or an objectionable decision | Identify each assessment/decision and submit an objection through the permitted route. |
+| Provisional income tax assessment | Request amendment. Do not object directly to the estimate. If an amendment request is rejected, examine the resulting deviation decision and its objection instructions. |
+| VAT additional assessment or VAT decision | Follow the VAT objection route; some decisions require a letter. |
+| VAT paid on a return | Object to the payment in writing, identifying the return reference and payment. Do not wait for an additional assessment. |
+| VAT entrepreneur status notification alone | The published VAT guidance says the status determination itself cannot be objected to. The route is objection to VAT paid or the refund decision after a negative return. |
+| Decision on an existing objection | Consider court appeal. A repeated objection does not replace that appeal. |
+| Assessment considered too high after the ordinary deadline | Examine excusable lateness immediately and, separately, whether ex officio reduction is available. |
 
-```
-Assessment received (aanslag/beschikking)
-        │
-        ▼ (within 6 weeks)
-   File BEZWAAR
-        │
-        ├─── Inspector reviews (may invite for hoorzitting)
-        │
-        ▼
-   UITSPRAAK OP BEZWAAR (decision)
-        │
-        ├─── Fully granted → assessment corrected
-        ├─── Partially granted → partial correction
-        └─── Denied (afgewezen) → option to file BEROEP
-                    │
-                    ▼ (within 6 weeks)
-               BEROEP bij Rechtbank (tax court)
-                    │
-                    ▼
-               HOGER BEROEP bij Gerechtshof
-                    │
-                    ▼
-               CASSATIE bij Hoge Raad
-```
+For provisional corporation tax or other provisional taxes, consult the specific amendment/refusal rules rather than copying the income-tax route. A tax year in a document is not its issue date. For several assessments, maintain a separate deadline and requested remedy for each.
 
-### Types of Objectable Decisions [T1]
+Sources: [general objection channels](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/eisen-bezwaar), [VAT routes](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/bezwaar-omzetbelasting), [provisional amendment refusal](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/kostenvergoeding-bij-bezwaar).
 
-| Decision Type | Dutch Term | Example |
-|---|---|---|
-| Income tax assessment | Aanslag inkomstenbelasting | Annual IB assessment |
-| Corporate tax assessment | Aanslag vennootschapsbelasting | Annual VPB assessment |
-| VAT assessment | Naheffingsaanslag omzetbelasting | BTW correction |
-| Penalty decision | Boetebeschikking | Late filing penalty |
-| Interest charge | Beschikking belastingrente | Interest on assessment |
-| Provisional assessment | Voorlopige aanslag | If disagree with estimate |
-| Loss determination | Verliesvaststellingsbeschikking | Denied or reduced loss |
-| WOZ valuation | WOZ-beschikking | Property value dispute |
+## Preserve the deadline
 
----
+The ordinary objection period is **6 weeks**. Under the national tax rule, it starts the day after the assessment/decision's date, except where that date precedes legally effective notification. For payment, withholding or remittance, use the day after the relevant event. Do not calculate every deadline from the day a client forwards an email. If notification is disputed, retain delivery evidence and obtain a legal assessment of the correct start. Court appeal against the inspector's decision similarly has a special date/notification rule.
 
-## Section 2 — Bezwaar Requirements
+File so the authority receives the objection before the period ends. For postal submission there is a limited rule: posting before the deadline is sufficient only if receipt occurs no later than **1 week** after that deadline. It is not another week to post. Preserve the full submitted document and proof of posting or portal receipt. When the statutory endpoint falls on a weekend or recognised holiday, apply the General Time Limits Act; check the actual calendar and legally recognised equivalent days rather than assuming ordinary business opening hours determine the deadline.
 
-### Mandatory Elements (Article 6:5 Awb) [T1]
+If grounds are unfinished, file an identifiable, signed protective objection on time and ask to provide reasons later. Track the actual supplementation deadline; there is no universal extra period promised by this Guide. Missing grounds or other formal requirements can lead to inadmissibility after the opportunity to cure. Missing the ordinary time limit is not automatically the end of every remedy: excusable lateness is a fact-sensitive legal question. Record what prevented timely filing, when it ended and what happened next; submit promptly and seek advice, without promising acceptance.
 
-A valid bezwaar MUST contain:
+Sources: [AWR, deadline and appeal-start provisions](https://wetten.overheid.nl/BWBR0002320), [Awb, submission, cure and excusable lateness](https://wetten.overheid.nl/BWBR0005537), [General Time Limits Act](https://wetten.overheid.nl/BWBR0002448/2010-10-10), [authority deadline explanation](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/wanneer-bericht-over-bezwaar).
 
-| Element | Detail |
-|---|---|
-| Name and address | Full name and postal address of taxpayer |
-| Date | Date of the bezwaar letter |
-| Description of decision | Aanslagnummer (assessment number) and date of decision being objected to |
-| Grounds (gronden) | The reasons why the decision is incorrect — factual AND legal basis |
-| Signature | Handwritten or digital signature |
-| Power of attorney (if representative) | Machtiging signed by taxpayer authorising representative |
+## Build and submit the objection
 
-### Optional but Recommended Elements [T1]
+Use the channel designated for that tax and decision. Income tax has online, PDF and letter routes; the business portal supports specified VAT and corporation-tax objections. For VAT paid on a return, the current specific instructions require a letter; a refusal to use the VAT cash-accounting scheme also requires a letter. Verify the notice's address and save confirmation.
 
-| Element | Purpose |
-|---|---|
-| Request for postponement of payment (uitstel van betaling) | Prevents collection during objection procedure |
-| Request for hoorzitting (hearing) | Right to be heard before decision |
-| Supporting documents (bijlagen) | Evidence supporting the objection grounds |
-| Summary of financial impact | Quantifies the disputed amount |
-| Preferred remedy | What outcome the taxpayer requests |
+The letter should identify the taxpayer by name and address, be dated and signed, identify the assessment/decision or payment, and explain the challenge. For each disputed item record: what the authority used; the taxpayer's proposed treatment; relevant facts; the applicable rule for that tax year; evidence; and the requested correction. Include copies of supporting documents, keeping originals. Do not turn an unsupported estimate into a statement of fact. A protective objection can preserve the filing step while evidence is collected.
 
-### Pro Forma Bezwaar [T1]
+Representation requires authority through the appropriate channel. Paper authorisations identify who acts and for what, and both parties sign; keep the original and provide it if requested. The specific commercial-software intermediary process does not require a separate objection authorisation, according to the authority's guidance. Do not insist that every taxpayer must hire a lawyer, or that every representative must attach a new paper authorisation in every channel.
 
-If the 6-week deadline is approaching and full grounds cannot yet be prepared:
+Sources: [submission requirements](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/eisen-bezwaar), [VAT submission details](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/bezwaar-omzetbelasting), [authorising a representative](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/iemand-anders-bezwaar-laten-maken).
 
-| Step | Action |
-|---|---|
-| 1 | File bezwaar within 6 weeks stating it is "pro forma" |
-| 2 | State: "De gronden van het bezwaar volgen zo spoedig mogelijk" |
-| 3 | Inspector will set a reasonable deadline for motivation (usually 4–6 weeks) |
-| 4 | File full motivation before the set deadline |
-| 5 | If deadline for motivation is missed: bezwaar may be declared niet-ontvankelijk |
+### Adaptable Dutch letter
 
----
-
-## Section 3 — Bezwaar Letter Structure
-
-### Template Structure (Dutch) [T1]
-
-```
-[Naam en adres afzender]
+```text
+[Naam en adres belastingplichtige]
 [Datum]
+Aan: [bevoegd belastingkantoor en adres volgens de aanslag/beschikking]
+Betreft: bezwaar tegen [aanslag/beschikking/betaling]
+Kenmerk: [nummer]; dagtekening/betaaldatum: [datum]; belastingtijdvak: [tijdvak]
 
-Belastingdienst / [kantoornaam]
-[Adres]
-[Postcode + Plaats]
+Hierbij maak ik bezwaar tegen [precies identificeren].
+Ik betwist [onderdeel en bedrag]. Volgens mij moet [gewenste correctie], omdat
+[feiten, toepasselijke regel en verwijzingen naar de bijgevoegde stukken].
 
-Betreft: Bezwaarschrift [type aanslag/beschikking]
-Aanslagnummer: [nummer]
-Dagtekening: [datum aanslag]
-Belastingjaar: [jaar]
-BSN: [burgerservicenummer]
+[Alleen indien nodig: Ik verzoek om een termijn om de gronden aan te vullen.]
+[Indien gewenst: Ik verzoek om uitstel van betaling voor het betwiste bedrag
+van EUR [bedrag]. Het niet-betwiste deel bedraagt EUR [bedrag].]
+Ik verzoek om te worden gehoord en vooraf inzage in de stukken.
+[Indien van toepassing: Ik verzoek vóór uw uitspraak om vergoeding van
+in aanmerking komende kosten van dit bezwaar.]
 
-Geachte heer/mevrouw,
-
-Hierbij maak ik bezwaar tegen de bovengenoemde [aanslag/beschikking] 
-van [datum dagtekening].
-
-[GRONDEN VAN HET BEZWAAR]
-
-1. Feitelijke grond: [beschrijving feit dat onjuist is verwerkt]
-2. Juridische grond: [wetsartikel / beleid dat van toepassing is]
-3. Gewenste correctie: [welk bedrag en waarom]
-
-[ONDERBOUWING]
-Ter onderbouwing verwijs ik naar de bijgevoegde stukken:
-- Bijlage 1: [omschrijving]
-- Bijlage 2: [omschrijving]
-
-[VERZOEKEN]
-- Ik verzoek u de aanslag te verminderen met EUR [bedrag].
-- Ik verzoek om uitstel van betaling voor het betwiste bedrag 
-  op grond van artikel 25 Invorderingswet 1990.
-- Ik wens te worden gehoord op grond van artikel 7:2 Awb.
-
-Hoogachtend,
-
-[Handtekening]
-[Naam]
+Bijlagen: [lijst met kopieën]
+[Naam, handtekening en contactgegevens; vertegenwoordiging indien van toepassing]
 ```
 
-### Letter Quality Checklist [T1]
+Complete placeholders before submission. The protective-ground sentence supplements identification and signature; it is not a reason to delay filing. Do not send the template to the court for an existing objection decision: use an appeal identifying that decision.
 
-| Check | Required |
-|---|---|
-| Within 6-week deadline? | YES — or letter is niet-ontvankelijk |
-| Assessment number included? | YES — identifies the specific decision |
-| Factual grounds stated? | YES — what fact is wrong |
-| Legal grounds stated? | YES — what law/rule supports the objection |
-| Quantified impact? | Recommended — EUR amount in dispute |
-| Supporting documents attached? | Recommended — strengthens position |
-| Payment postponement requested? | Recommended — prevents collection |
-| Hearing requested? | Optional — right under Awb |
-| Signed? | YES — mandatory |
-| Power of attorney attached (if representative)? | YES if advisor files on behalf |
+## Payment and interest are a separate track
 
----
+For an assessment objection, the general guidance provides postponement for the disputed portion until the objection decision; the undisputed amount remains payable on time. Explicitly identify the disputed amount and request postponement, as the VAT-specific instructions require. Check the collection response and expiry rather than treating a draft or unconfirmed filing as proof collection has stopped.
 
-## Section 4 — Specific Objection Scenarios
+Late-payment **invorderingsrente** can remain due despite postponement. This is distinct from assessment **belastingrente**. Paying on time avoids late-payment interest; payment does not make the objection unnecessary. Do not promise a refund-interest award without checking its conditions. An ex officio reduction request or court appeal requires a separate request for payment postponement; objection-stage postponement must not be assumed to continue.
 
-### 4.1 Objection to IB Assessment [T1]
+Sources: [payment during objection](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/bezwaar-en-uitstel-van-betaling), [collection interest conditions](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/standaard_functies/prive/contact/rechten_en_plichten_bij_de_belastingdienst/invorderingsrente), [reduction request payment](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/te-laat-voor-bezwaar-wat-nu), [appeal payment](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/in-beroep-tegen-uitspraak-op-bezwaar).
 
-| Common grounds | Evidence needed |
-|---|---|
-| Deduction not applied (aftrek niet verwerkt) | Proof of expense, eligibility documentation |
-| Income incorrectly included | Correct annual statement (jaaropgave), bank records |
-| Wrong box classification | Documentation proving correct classification |
-| Credits not applied (heffingskortingen) | Evidence of eligibility (e.g., working parent, AOW) |
-| Estimated assessment (geschatte aanslag) | Actual income documentation |
+## Handling, hearing and costs
 
-### 4.2 Objection to Penalty (Boete) [T1]
+For an ordinary timely objection, the usual decision period is **6 weeks after the objection period ends**, not after the objection was sent. The published ordinary assessment timetable is consequently **12 weeks from the assessment date**, before adjustments. A notified extension can add up to **6 weeks**. Formal-defect cure suspends the clock; further delay may have a statutory basis or permitted consent. Record the precise reason, start and end of every adjustment. The special Wtl decision period is **26 weeks after the objection period**, with extension up to **6 weeks**; do not apply the ordinary timetable to Wtl.
 
-| Ground | Argument |
-|---|---|
-| Reasonable cause (afwezigheid van alle schuld) | Circumstances beyond control prevented timely filing |
-| Disproportionate penalty | Amount is unreasonable given circumstances |
-| Procedural error | Penalty not properly motivated by inspector |
-| Voluntarily corrected (inkeer) | Filed correction before discovery — reduced penalty |
+Ask for a hearing and file access. A hearing is not unconditional: the authority describes exceptions for full agreement, waiver, non-response, incurable formal defects and a manifestly unfounded objection. Prepare an evidence index, inspect relevant documents and correct inaccuracies in the hearing report. Telephone clarification is not automatically consent to waive a hearing; a telephone hearing requires express agreement of both sides.
 
-**Penalty reduction factors:**
+Request eligible objection costs **before the objection decision**. Costs are not automatically reimbursed just because the taxpayer succeeds. The authority's conditions include a culpable authority error leading to revision, rather than revision only because the taxpayer first supplied missing information during objection. The current [cost guidance](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/kostenvergoeding-bij-bezwaar) states a standard legal-assistance reimbursement of **€666**, variable with complexity and higher with a hearing. This is not a promise to pay the adviser's entire invoice. Explain the facts supporting the request and recheck the tariff when filing.
 
-| Circumstance | Effect |
-|---|---|
-| First offense | Often reduced to warning (no financial penalty) |
-| Plausible cause (pleitbaar standpunt) | Penalty reduced or eliminated |
-| Voluntary disclosure (inkeer) | Significant reduction (0% if within 2 years) |
-| Financial hardship | Payment arrangement or reduction |
+Sources: [ordinary and Wtl timetables](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/wanneer-bericht-over-bezwaar), [Awb suspension/extension provisions](https://wetten.overheid.nl/BWBR0005537), [hearing procedure](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/hoorprocedure-bij-bezwaar), [cost conditions](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/kostenvergoeding-bij-bezwaar).
 
-### 4.3 Objection to WOZ Valuation [T1]
+If the adjusted decision deadline has expired, the authority's default-notice procedure asks it to decide within **2 weeks**. If that does not produce a decision, a court application for failure to decide may be available. Do not send a premature default notice or promise a penalty payment in every case. Source: [late-decision process](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/belastingdienst-is-te-laat-met-beslissen).
 
-| Ground | Evidence |
-|---|---|
-| Value too high compared to sale prices | Comparable sales data (vergelijkingsobjecten) |
-| Structural defects not accounted for | Expert report (taxatierapport) |
-| Value date vs condition date mismatch | Documentation of changes since valuation date (1 Jan prior year) |
-| Wrong object characteristics | Correct surface area, number of rooms, etc. |
+## Late objections and ex officio reduction
 
----
+Keep admissibility and the merits separate. Ask for consideration of excusable lateness where facts support it, while considering a reduction request as an alternative. The published reduction window for income and corporation tax is **5 years after the tax year**; the request must be received within it. The authority's example is income tax **2021**, with receipt by **31 December 2026**. Inheritance tax instead uses **5 years from death**, and gift tax **5 years from the gift**. Do not apply the tax-year-end shortcut to either.
 
-## Section 5 — Uitstel van Betaling (Payment Postponement)
+Beyond the reduction window, explain the reason for delay; the authority decides whether it permits further treatment. Its guidance also describes possible marginal collection review where an assessment is demonstrably excessive. This does not reopen every ordinary tax appeal or guarantee repayment. Reduction has its own substantive limits and must not be sold as an unrestricted substitute for a timely objection.
 
-### During Bezwaar [T1]
+An individual income-tax refusal of an ex officio reduction is an objectionable decision under the Income Tax Act; the former blanket statement that no appeal is available is wrong. Do not transplant that right to every tax or every collective decision. The Act has separate collective mass-objection provisions. For Box-three, tax-interest mass disputes or a collective notice, check the current designated procedure and the person's exact year/status before drafting an individual appeal.
 
-| Rule | Detail |
-|---|---|
-| Automatic for disputed portion | If bezwaar includes payment postponement request, collection is suspended for the disputed amount |
-| Undisputed portion | Must still be paid by original deadline |
-| Interest | Belastingrente continues to accrue during postponement |
-| Legislation | Article 25 Invorderingswet 1990 |
-| How to request | Include in bezwaar letter OR separately to invordering department |
+Sources: [reduction periods and payment](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/te-laat-voor-bezwaar-wat-nu), [income-tax reduction submission](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/verzoek-om-vermindering-van-aanslag-inkomstenbelasting), [Income Tax Act, individual refusal and collective rules](https://wetten.overheid.nl/BWBR0011353), [current special-procedure directory](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/).
+
+## Appeal and closeout
+
+Read the objection decision in full, including inadmissibility, tax, penalty, interest, costs and the appeal instructions. The ordinary court appeal period is **6 weeks**. Use the named competent court, identify the contested decision, state grounds and requested outcome, date and sign the appeal and attach the decision and supporting documents. The same limited postal-receipt rule applies. Court fees depend on the applicable category and current tariff; do not reuse old amounts. A lawyer is not mandatory for the ordinary tax appeal, though contested admissibility, penalties and complex substantive law warrant specialist help.
+
+Current court guidance directs electronic tax filings through **Mijn Rechtspraak**, not ordinary email or secure email. For organisations and representatives, follow the linked professional filing instructions and evidence of authority. After a court decision, follow its remedy clause: simplified decisions can require **verzet**, whereas an ordinary judgment can lead to higher appeal. Do not mechanically send every next challenge to the court of appeal.
+
+Sources: [Belastingdienst appeal instructions](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/in-beroep-tegen-uitspraak-op-bezwaar), [court procedure and channels](https://www.rechtspraak.nl/onderwerpen/belastingen/procedure).
+
+## When to refuse or refer
+
+- Do not invent a decision, payment date, authority or factual ground when documents are missing.
+- Refer uncertain notification, late filing, criminal exposure or unfamiliar special procedures for urgent specialist review.
+- Preserve an available protective filing rather than waiting for an ideal dossier.
+
+Before closing the case, reconcile the amended assessment, collection balance, refunds, interest and costs; record every remaining decision and deadline. The output to the taxpayer should state the selected route, its reason, filing deadline and assumptions, missing evidence, payment action and next review date. Seek urgent professional review for uncertain notification, expired periods, criminal exposure, complex cross-border positions or unfamiliar special procedures. These are workflow referral triggers, not invented statutory financial thresholds.
+
+## Decision checks for users and assistants
+
+- **A — Ordinary timely assessment:** Grounds are ready; choose the tax-specific objection channel, identify the decision, file on time and retain receipt. Calculate the authority's decision clock from the end of the objection period.
+- **B — Deadline imminent, evidence incomplete:** File an identifiable protective objection and request time for grounds. Do not wait for the full dossier or assume a fixed extra period.
+- **C — VAT payment disputed:** A return was paid and no additional assessment exists. The payment itself supplies the objection event; use the written route and payment evidence.
+- **D — Provisional income-tax estimate:** Request amendment, then inspect any refusal decision. Do not lodge a direct ordinary objection to the estimate.
+- **E — Posted at the deadline:** Posting before expiry and receipt within the following week satisfies the special postal rule. Posting only during that following week does not.
+- **F — Ordinary period apparently missed:** Examine notification and excusable delay; consider ex officio reduction independently. Do not promise either automatic inadmissibility or automatic acceptance.
+- **G — Income-tax reduction refused:** Identify the individual refusal and preserve its objection route. Do not tell the taxpayer their only option is the Ombudsman.
+- **H — Only part of an assessment disputed:** Request postponement for that amount; pay the undisputed part on time and consider collection interest on the postponed balance.
+- **I — Objection rejected:** Preserve the court deadline and separately request payment postponement. Use the court's accepted filing channel.
+- **J — Gift/inheritance reduction:** Use the gift/death-based window, not the income-tax year-end window.
+- **K — Formal grounds requested:** Record the suspension and supplementation date before deciding the authority is late. Do not count a flat period from the original letter.
+
+These are procedural decision checks, not promises of a successful tax outcome. Substantive grounds still need the relevant tax-year law and supporting evidence.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 6 — After the Bezwaar Decision
+## Talk to a verified accountant
 
-### Possible Outcomes [T1]
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-| Outcome | Next Step |
-|---|---|
-| Fully granted (gegrond) | Assessment corrected; any overpayment refunded |
-| Partially granted | Review residual difference; consider beroep for remainder |
-| Denied (ongegrond) | File beroep at Rechtbank within 6 weeks |
-| Not admissible (niet-ontvankelijk) | Usually deadline missed — consider ambtshalve vermindering |
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-### Beroep (Court Appeal) [T1]
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-| Parameter | Rule |
-|---|---|
-| Deadline | 6 weeks from uitspraak op bezwaar |
-| Court | Rechtbank (sector bestuursrecht / belastingkamer) |
-| Court fee (griffierecht) | EUR 53 (individuals) / EUR 365 (legal entities) — 2025 |
-| Process | Written procedure; may include oral hearing (zitting) |
-| Representation | Not mandatory but strongly recommended |
-| Possible outcomes | Assessment corrected, partially corrected, or confirmed |
-| Higher appeal | Gerechtshof (6 weeks after Rechtbank decision) |
-| Cassation | Hoge Raad — only on legal grounds (no new facts) |
+## Today's figures and who stands behind this skill
 
-### Ambtshalve Vermindering (Ex Officio Reduction) [T1]
-
-| Situation | Rule |
-|---|---|
-| When | Bezwaar deadline missed OR new facts emerge |
-| Deadline | Within 5 years from end of relevant tax year |
-| Standard | Must demonstrate assessment is "onmiskenbaar onjuist" (manifestly incorrect) |
-| No right of appeal | If denied, no beroep at court — only Nationale Ombudsman |
-| Legislation | Article 9.6 Wet IB 2001; Besluit Fiscaal Bestuursrecht |
-
----
-
-## Section 7 — Required Inputs and Refusal Catalogue
-
-### Required Inputs
-
-**Minimum viable:** Copy of the assessment/decision being objected to (aanslag/beschikking). Date of assessment (dagtekening). Taxpayer's BSN and contact details. Description of what is disputed and why.
-
-**Recommended:** Supporting calculations, relevant correspondence from Belastingdienst, prior-year filings, evidence documents for disputed items.
-
-**Ideal:** Complete dossier including all prior correspondence, professional advisor's analysis, quantified alternative computation, and legal basis memo.
-
-### Refusal Catalogue
-
-**R-BZ-1 — No assessment copy available.** "Cannot draft bezwaar without the actual assessment document. Provide aanslag or beschikking including number and date."
-
-**R-BZ-2 — Deadline possibly expired.** "Bezwaartermijn is 6 weeks from dagtekening. If deadline has passed, regular bezwaar is niet-ontvankelijk. Consider ambtshalve vermindering instead."
-
-**R-BZ-3 — No factual grounds identifiable.** "A bezwaar requires concrete grounds (gronden). Cannot draft without knowing what specific item is disputed and why."
-
-**R-BZ-4 — Complex legal interpretation required.** "The grounds involve contested legal interpretation. Escalate to a belastingadviseur or tax lawyer (belastingadvocaat)."
-
-**R-BZ-5 — High financial exposure (> EUR 25,000 disputed).** "Given the amount in dispute, professional representation is strongly recommended before filing."
-
----
-
-## Section 8 — Conservative Defaults
-
-| Situation | Default |
-|---|---|
-| Deadline calculation uncertain | Assume shortest possible deadline — file immediately or pro forma |
-| Grounds partially supported by evidence | File on supported grounds only; flag unsupported for further documentation |
-| Legal interpretation unclear | State the most conservative interpretation; flag for professional review |
-| Payment postponement: unclear if automatic | Always request explicitly in the letter |
-| Hoorzitting offered | Always accept — right to be heard strengthens position |
-| Representative without machtiging | Do NOT file — obtain signed power of attorney first |
-| Ambtshalve vs bezwaar unclear | If within 6 weeks: file bezwaar (preserves appeal rights) |
-
----
-
-## Section 9 — Official Source Verification Requirements
-
-Before any deadline, procedure, or legal reference is used:
-
-1. Verify objection procedures on `belastingdienst.nl/bezwaar`
-2. Verify statutory text on `wetten.overheid.nl` (Awb Chapter 6–7, AWR)
-3. Verify court procedures on `rechtspraak.nl`
-4. Record exact URL and retrieval date (YYYY-MM-DD)
-5. If source unavailable or conflicting: mark as **UNVERIFIED** and require professional confirmation
-
----
-
-## Section 10 — Escalation Points
-
-Escalate to a qualified belastingadviseur or belastingadvocaat when:
-
-- Disputed amount exceeds EUR 25,000
-- Legal interpretation is contested or novel
-- Penalty involves opzet (intent) or grove schuld (gross negligence)
-- Beroep (court procedure) is being considered
-- Cross-border element affects the objection
-- Criminal tax fraud investigation (FIOD) is parallel
-- Multiple related assessments across years are disputed
-- Objection involves fiscal unity or group-level issues
-- Time pressure: less than 1 week remaining before deadline
-
----
-
-**⚠️ DISCLAIMER: This skill provides workflow and drafting support only and does not constitute legal or tax advice. All bezwaar letters and tax correspondence must be reviewed and signed off by a qualified Dutch belastingadviseur or belastingadvocaat before submission. Deadlines are strict — missing the 6-week bezwaartermijn eliminates appeal rights.**
-
----
-
-*OpenAccountants — open-source accounting skills for AI*
-*openaccountants.com*
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/nl-tax-objection) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nl-tax-objection` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nl-tax-objection. If neither is available, confirm every figure against the official source pages cited above before relying on it.

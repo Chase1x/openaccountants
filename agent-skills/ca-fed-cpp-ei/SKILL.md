@@ -1,27 +1,57 @@
 ---
 name: ca-fed-cpp-ei
-description: "> Use this skill whenever asked about Canada Pension Plan (CPP) or Employment Insurance (EI) contributions for self-employed individuals. Trigger on phrases like \"CPP self-employed\", \"Schedule 8\", \"CPP2\", \"YAMPE\", \"EI opt-in self-employed\", \"how much CPP do I pay\", \"self-employed EI benefits\", \"CPP contribution calculation\", or any question about CPP/EI obligations for a self-employed sole proprietor or single-member entity in Canada. This skill covers CPP1 rates, CPP2 second ceiling, Schedule 8 computation, EI voluntary opt-in, tax treatment (line 22200 deduction and non-refundable credit), age exemptions, overpayment recovery, and edge cases. ALWAYS read this skill before touching any CPP/EI-related work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Canada Pension Plan (CPP) or Employment Insurance (EI) contributions for self-employed individuals. Trigger on phrases like \"CPP self-employed\", \"Schedule 8\", \"CPP2\", \"YAMPE\", \"EI opt-in self-employed\", \"how much CPP do I pay\", \"self-employed EI benefits\", \"CPP contribution calculation\", or any question about CPP/EI obligations for a self-employed sole proprietor or single-member entity in Canada. This skill covers CPP1 rates, CPP2 second ceiling, Schedule 8 computation, EI voluntary opt-in, tax treatment (line 22200 deduction and non-refundable credit), age exemptions, overpayment recovery, and edge cases. ALWAYS read this skill before touching any CPP/EI-related work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ca-fed-cpp-ei"
-  tax_year: 2025
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/ca-fed-cpp-ei"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Edgar Lautsyus"
+  review_status: "current"
 ---
 
-# Canada CPP/EI Self-Employed Skill v2.0
+# CA Fed CPP EI
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Canada CPP/EI Self-Employed Skill v2.0
+
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### CPP-CPP2-EI
+
+- **YMPE** — $71,300.00  _(CRA — CPP contribution rates — canada.ca)_
+- **Basic exemption** — $3,500.00  _(Canada Pension Plan Act s.20)_
+- **Maximum contributory earnings (YMPE - exemption)** — $67,800.00
+- **Employee rate** — 5.95%
+- **Self-employed rate** — 11.90%  _(Canada Pension Plan Act s.10; CRA — Schedule 8)_
+- **Max CPP contribution** — $8,068.20
+- **YAMPE** — $81,200.00  _(CRA — CPP contribution rates — canada.ca)_
+- **CPP2 contributory range** — $71,300–$81,200 ($9,900)  _(CPP Act (as amended, Bill C-97 2024); CRA)_
+- **Employee CPP2 rate** — 4.00%
+- **Self-employed CPP2 rate (2x employee)** — 8.00%
+- **Max QPP2 contribution** — $792.00
+- **Max insurable earnings (MIE)** — $65,700.00  _(CRA — EI premium rates — canada.ca)_
+- **SE premium rate** — $1.64 per $100  _(CRA — EI premium rates — canada.ca)_
+- **Max EI premium** — $1,077.48  _(CRA — EI premium rates and maximums — canada.ca)_
+- **Age 18–69, earnings > $3,500** — MUST contribute CPP  _(Canada Pension Plan Act s.10, s.12)_
+- **Age 70+** — EXEMPT from CPP  _(Canada Pension Plan Act s.12(1)(c))_
+- **Receiving CPP disability pension** — EXEMPT from CPP  _(Canada Pension Plan Act s.12(1)(b))_
+- **CPP retirement, age 60-64** — MUST contribute (since 2012)  _(Canada Pension Plan Act s.12; CRA Schedule 8 notes)_
+- **CPP retirement, age 65-69** — MAY elect to stop (Form CPT30)  _(Canada Pension Plan Act s.12(1)(d); Form CPT30)_
+- **Line 7** — CPP on SE (base + first-additional only) = (min(earnings, YMPE) − $3,500) × 11.9% − T4 CPP; CPP2 (8% on earnings between YMPE $71,300 and YAMPE $81,200) is computed separately on Schedule 8 (or Form RC381)  _(CRA — Schedule 8 instructions — canada.ca)_
+- **Deduction** — Not a flat 50% — line 22200 deduction = employer-equivalent half of the BASE contribution (4.95% of the 9.9%) plus ALL enhancement (first-additional and CPP2) contributions; only the employee-equivalent half of the base is the line 30800 credit  _(ITA s.60(e))_
 
 ## Section 1 -- Quick reference
 
-Read this whole section before computing anything.
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada (Federal) |
 | Jurisdiction Code | CA-FED |
 | Primary Legislation | Canada Pension Plan Act (R.S.C., 1985, c. C-8); Employment Insurance Act (S.C. 1996, c. 23) |
@@ -31,15 +61,17 @@ Read this whole section before computing anything.
 | Currency | CAD only |
 | Filing Deadline | June 15 (self-employed), but PAYMENT due April 30 |
 | Contributor | Open Accountants community |
-| Validated By | Pending -- requires sign-off by Canadian CPA |
-| Validation Date | Pending |
+| Validated By | Verified by Nathan Wiebe on 2026-06-21 |
+| Validation Date | Verified by Nathan Wiebe on 2026-06-21 |
 | Skill Version | 2.0 |
 | Confidence Coverage | Tier 1: CPP/CPP2 rate calculation, Schedule 8 mechanics, EI opt-in rules, tax treatment. Tier 2: mid-year status changes, partial-year contributions, Quebec QPP interactions. Tier 3: disability pension interactions, international social security agreements. |
 
-**CPP1 thresholds (2025):**
+Read this whole section before computing anything.
+
+**CPP1 thresholds (2025)**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Year's Maximum Pensionable Earnings (YMPE) | $71,300.00 |
 | Year's Basic Exemption | $3,500.00 |
 | Maximum contributory earnings (YMPE - exemption) | $67,800.00 |
@@ -47,36 +79,32 @@ Read this whole section before computing anything.
 | Self-employed rate (2x employee) | 11.90% |
 | Maximum self-employed CPP1 contribution | $8,068.20 |
 
-**CPP2 thresholds (2025):**
+**CPP2 thresholds (2025)**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Year's Additional Maximum Pensionable Earnings (YAMPE) | $81,200.00 |
 | Maximum additional contributory earnings (YAMPE - YMPE) | $9,900.00 |
 | Employee CPP2 rate | 4.00% |
 | Self-employed CPP2 rate (2x employee) | 8.00% |
 | Maximum self-employed CPP2 contribution | $792.00 |
 
-**EI thresholds (2025, outside Quebec):**
+**EI thresholds (2025, outside Quebec)**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Maximum insurable earnings (MIE) | $65,700.00 |
 | Self-employed premium rate | $1.64 per $100 (employee rate only, no employer portion) |
 | Maximum annual premium (self-employed) | $1,077.48 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown province | Ontario (non-Quebec, CPP applies) |
 | Unknown CPP pension status | Not receiving pension (contributions required) |
 | Unknown EI opt-in status | Not opted in (no EI premiums) |
 | Unknown T4 CPP already paid | $0 (full self-employed contribution required) |
-
----
-
-## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
@@ -94,13 +122,9 @@ If province is Quebec, STOP. This skill covers CPP only. QPP has different rates
 
 ### Refusal catalogue
 
-**R-CA-CPP-1 -- Quebec resident.** Trigger: client resides in Quebec. Message: "Quebec Pension Plan (QPP) applies instead of CPP. QPP has different rates (6.40% employee / 12.80% self-employed for 2025). This skill does NOT cover QPP. Please escalate to a practitioner with QPP expertise."
-
-**R-CA-CPP-2 -- Disability pension interaction.** Trigger: client receives a CPP disability pension and asks about contribution obligations or benefit impacts. Message: "CPP disability pension interactions with self-employment contributions are complex and outside this skill's scope. Please escalate to a licensed Canadian CPA."
-
-**R-CA-CPP-3 -- International social security agreement.** Trigger: client asks about CPP credits under a bilateral social security agreement. Message: "International social security agreements require case-specific analysis. Please escalate to a licensed Canadian CPA familiar with treaty provisions."
-
----
+- **R-CA-CPP-1 -- Quebec resident** — Trigger: client resides in Quebec. Message: "Quebec Pension Plan (QPP) applies instead of CPP. QPP has different rates (6.40% employee / 12.80% self-employed for 2025). This skill does NOT cover QPP. Please escalate to a practitioner with QPP expertise."
+- **R-CA-CPP-2 -- Disability pension interaction** — Trigger: client receives a CPP disability pension and asks about contribution obligations or benefit impacts. Message: "CPP disability pension interactions with self-employment contributions are complex and outside this skill's scope. Please escalate to a licensed Canadian CPA."
+- **R-CA-CPP-3 -- International social security agreement** — Trigger: client asks about CPP credits under a bilateral social security agreement. Message: "International social security agreements require case-specific analysis. Please escalate to a licensed Canadian CPA familiar with treaty provisions."
 
 ## Section 3 -- Payment pattern library
 
@@ -108,8 +132,10 @@ This is the deterministic pre-classifier for bank statement entries related to C
 
 ### 3.1 CRA payments (CPP/EI embedded in T1 balance owing)
 
+**CRA payment patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CRA, CANADA REVENUE AGENCY | T1 PAYMENT COMPONENT | Self-employed CPP/EI are not paid separately; rolled into T1 balance owing (line 42100) |
 | RECEIVER GENERAL, REC GEN CANADA | T1 PAYMENT COMPONENT | Same as CRA -- instalment or balance owing payment |
 | CRA INSTALMENT, QUARTERLY INSTALMENT | INSTALMENT PAYMENT | If net tax owing exceeds $3,000 in current AND prior years, quarterly instalments required (March 15, June 15, September 15, December 15) |
@@ -117,27 +143,29 @@ This is the deterministic pre-classifier for bank statement entries related to C
 
 ### 3.2 EI-related payments (if opted in)
 
+**EI payment patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SERVICE CANADA, ESDC | EI BENEFIT or REGISTRATION | Employment Insurance benefit payment or opt-in registration |
 | EI MATERNITY, EI PARENTAL, EI SICKNESS | EI BENEFIT RECEIPT | Special benefits available to opted-in self-employed |
 
 ### 3.3 Provincial pension (Quebec -- refusal trigger)
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| RRQ, RETRAITE QUEBEC, QPP | REFUSAL TRIGGER | Quebec Pension Plan -- fire R-CA-CPP-1 |
+**Quebec pension patterns**
 
----
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| RRQ, RETRAITE QUEBEC, QPP | REFUSAL TRIGGER | Quebec Pension Plan -- fire R-CA-CPP-1 |
 
 ## Section 4 -- CPP eligibility and computation rules
 
 ### 4.1 CPP eligibility (Tier 1)
 
-Legislation: Canada Pension Plan Act, s. 10
+**CPP eligibility table**  _(Canada Pension Plan Act, s. 10)_
 
 | Condition | CPP Obligation |
-|---|---|
+| --- | --- |
 | Age 18 to 69 (inclusive) with net self-employment earnings > $3,500 | MUST contribute |
 | Age 70 or older | EXEMPT -- no CPP contributions required |
 | Under age 18 | EXEMPT -- no CPP contributions required |
@@ -148,28 +176,18 @@ Legislation: Canada Pension Plan Act, s. 10
 
 ### 4.2 CPP1 computation (Tier 1)
 
-```
-pensionable_earnings = min(net_self_employment_income, $71,300) - $3,500
-pensionable_earnings = max(pensionable_earnings, 0)
-cpp1 = pensionable_earnings x 11.90%
-cpp1 = min(cpp1, $8,068.20)
-```
+- **CPP1 computation formula** — pensionable_earnings = min(net_self_employment_income, $71,300) - $3,500 pensionable_earnings = max(pensionable_earnings, 0) cpp1 = pensionable_earnings x 11.90% cpp1 = min(cpp1, $8,068.20)
 
 ### 4.3 CPP2 computation (Tier 1)
 
-Legislation: Canada Pension Plan Act (as amended by Bill C-97, 2024)
-
-```
-cpp2_earnings = min(net_self_employment_income, $81,200) - $71,300
-cpp2_earnings = max(cpp2_earnings, 0)
-cpp2 = cpp2_earnings x 8.00%
-cpp2 = min(cpp2, $792.00)
-```
+- **CPP2 computation formula** — cpp2_earnings = min(net_self_employment_income, $81,200) - $71,300 cpp2_earnings = max(cpp2_earnings, 0) cpp2 = cpp2_earnings x 8.00% cpp2 = min(cpp2, $792.00)  _(Canada Pension Plan Act (as amended by Bill C-97, 2024))_
 
 ### 4.4 Schedule 8 computation (Tier 1)
 
+**Schedule 8 computation table**
+
 | Line | Description | Computation |
-|---|---|---|
+| --- | --- | --- |
 | Line 1 | Total CPP pensionable employment income (from T4 slips) | Sum of Box 26 from all T4s |
 | Line 2 | CPP contributions deducted (from T4 slips) | Sum of Box 16 from all T4s |
 | Line 3 | Net self-employment earnings | From line 12200 of T1 |
@@ -180,69 +198,51 @@ cpp2 = min(cpp2, $792.00)
 | Line 8 | CPP2 additional contributions | Per Step 4.3 above |
 | Line 9 | Total contributions payable | Line 7 + Line 8 |
 
-Key rule: If the client also has T4 employment income with CPP already deducted, the employee CPP contributions (Line 2) are subtracted from the total obligation. If T4 CPP contributions already cover the maximum, self-employed CPP = $0.
+- **Key rule** — If the client also has T4 employment income with CPP already deducted, the employee CPP contributions (Line 2) are subtracted from the total obligation. If T4 CPP contributions already cover the maximum, self-employed CPP = $0.
 
 ### 4.5 Tax treatment of self-employed CPP (Tier 1)
 
-Legislation: Income Tax Act, s. 60(e), s. 118.7
-
-CPP1 split: Employer-equivalent half (50%) is a deduction from net income (line 22200). Employee-equivalent half (50%) is a non-refundable tax credit (line 30800, 15% federal credit).
-
-CPP2 split: Employer-equivalent half (50%) is a deduction from net income (line 22215). Employee-equivalent half (50%) is a non-refundable tax credit (line 30800, 15% federal credit).
+- **CPP1 split** — Employer-equivalent half of the BASE contribution (4.95% of the 9.9%) is a deduction from net income (line 22200), together with ALL first-additional enhancement contributions. Only the employee-equivalent half of the BASE is a non-refundable tax credit (line 30800, 15% federal credit).  _(Income Tax Act, s. 60(e), s. 118.7)_
+- **CPP2 split** — CPP2 contributions (8% between YMPE and YAMPE) are DEDUCTIBLE, not creditable — no portion of CPP2 is a line 30800 credit.  _(Income Tax Act, s. 60(e), s. 118.7)_
 
 The deduction is more valuable at higher marginal rates. The credit is worth a flat 15% regardless of income.
 
 ### 4.6 EI for self-employed (Tier 1)
 
-Legislation: Employment Insurance Act, Part VII.1, s. 152.07-152.21
-
-EI is voluntary for self-employed. To opt in, register with Service Canada. 12-month waiting period before claiming benefits. Once benefits are claimed, cannot opt out. Self-employed EI covers SPECIAL BENEFITS ONLY (maternity, parental, sickness, compassionate care, family caregiver). It does NOT cover regular unemployment benefits.
-
-```
-ei_premium = min(net_self_employment_income, $65,700) x 1.64%
-ei_premium = min(ei_premium, $1,077.48)
-```
-
-EI premiums are claimed as a non-refundable tax credit on line 31200 (15% federal credit).
-
----
+- **EI voluntary opt-in rules** — EI is voluntary for self-employed. To opt in, register with Service Canada. 12-month waiting period before claiming benefits. Once benefits are claimed, cannot opt out. Self-employed EI covers SPECIAL BENEFITS ONLY (maternity, parental, sickness, compassionate care, family caregiver). It does NOT cover regular unemployment benefits.  _(Employment Insurance Act, Part VII.1, s. 152.07-152.21)_
+- **EI premium formula** — ei_premium = min(net_self_employment_income, $65,700) x 1.64% ei_premium = min(ei_premium, $1,077.48)
+- **EI premium credit** — EI premiums are claimed as a non-refundable tax credit on line 31200 (15% federal credit).
 
 ## Section 5 -- Age exemptions and pro-rata rules
 
-Legislation: Canada Pension Plan Act, s. 12, s. 13
+**Age exemptions and pro-rata table**  _(Canada Pension Plan Act, s. 12, s. 13)_
 
 | Age Event | CPP Treatment | EI Treatment |
-|---|---|---|
+| --- | --- | --- |
 | Turn 18 during the year | Contribute from month after 18th birthday | No age restriction |
 | Age 18-69 all year | Full year contributions | Full year EI (if opted in) |
 | Turn 70 during the year | Contribute up to and including month of 70th birthday | No age restriction |
 | Age 70+ at start of year | NO CPP contributions | EI still available (if opted in) |
 | Under 18 all year | NO CPP contributions | No age restriction |
 
-Pro-rata basic exemption when turning 18 or 70 during the year:
-
-```
-pro_rata_exemption = ($3,500 / 12) x number_of_contributory_months
-```
-
----
-
-## Section 6 -- Overpayment recovery and filing
+- **Pro-rata basic exemption formula** — pro_rata_exemption = ($3,500 / 12) x number_of_contributory_months  _(Canada Pension Plan Act, s. 12, s. 13)_
 
 ### 6.1 Overpayment recovery (Tier 1)
 
-Legislation: Income Tax Act, s. 118.7
+**Overpayment recovery table**  _(Income Tax Act, s. 118.7)_
 
 | Overpayment Type | How Recovered |
-|---|---|
+| --- | --- |
 | CPP overpayment (employee contributions from T4s exceed maximum) | Claimed on line 44800 of T1 as refundable credit |
 | CPP2 overpayment | Claimed on line 44801 of T1 as refundable credit |
 | EI overpayment (multiple T4s) | Claimed on line 45000 of T1 as refundable credit |
 
 ### 6.2 Payment and filing (Tier 1)
 
+**Payment and filing table**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | How CPP is paid | Added to balance owing on T1 return (line 42100) |
 | Filing deadline | June 15 (self-employed), but PAYMENT due April 30 |
 | Instalment requirements | If net tax owing exceeds $3,000 ($1,800 in Quebec) in current year AND either of the two prior years |
@@ -251,43 +251,45 @@ Legislation: Income Tax Act, s. 118.7
 
 CPP and EI are NOT paid separately by self-employed individuals. They are calculated on Schedule 8 and rolled into the T1 balance owing.
 
----
-
-## Section 7 -- Edge case registry
-
 ### EC1 -- Client turns 70 mid-year (Tier 1)
+
 Situation: Client's 70th birthday is in July 2025.
 Resolution: CPP contributions required January through July (7 months). Pro-rate the basic exemption: ($3,500 / 12) x 7 = $2,041.67. Schedule 8 handles the pro-rata calculation.
 
 ### EC2 -- Client receiving CPP retirement pension, age 65-69 (Tier 2)
+
 Situation: Client started CPP retirement pension at 65 and continues to be self-employed.
 Resolution: Contributions are optional for ages 65-69 if receiving CPP retirement. Client must file Form CPT30 to elect to stop contributing. If no CPT30 filed, contributions are required. Flag for reviewer -- confirm pension status and whether CPT30 has been filed.
 
 ### EC3 -- Quebec resident (Tier 3)
+
 Situation: Client resides in Quebec.
 Resolution: QPP applies instead of CPP. QPP has different rates (6.40% employee / 12.80% self-employed for 2025). This skill does NOT cover QPP. Escalate to practitioner with QPP expertise.
 
 ### EC4 -- Self-employed EI opt-in within first 12 months (Tier 1)
+
 Situation: Client opted in to EI in August 2025, wants to claim maternity benefits in January 2026.
 Resolution: 12-month waiting period applies. Client cannot claim benefits until August 2026. Premiums are still due for August-December 2025.
 
 ### EC5 -- Net self-employment loss (Tier 1)
+
 Situation: Client has a net self-employment loss (negative income).
 Resolution: No CPP contributions are payable on a loss. Pensionable earnings = $0. Unlike Malta SSC, there is NO minimum CPP contribution.
 
 ### EC6 -- Religious exemption (Tier 2)
+
 Situation: Client is a member of a religious group that has an approved exemption from CPP.
 Resolution: Form CPT17 must have been filed and approved. Flag for reviewer -- confirm exemption status with CRA before excluding CPP.
 
 ### EC7 -- Non-resident self-employed in Canada (Tier 2)
+
 Situation: Client is a non-resident of Canada earning self-employment income from Canadian sources.
 Resolution: CPP may still apply if the work is performed in Canada, regardless of residence. Flag for reviewer -- confirm whether the Canada-source self-employment triggers CPP obligations.
 
 ### EC8 -- EI opt-out after opting in but before claiming (Tier 1)
+
 Situation: Client opted in to EI for self-employed in 2024, has not claimed benefits, wants to opt out.
 Resolution: Client may opt out by December 31 of the current year if NO benefits have been claimed. Premiums paid for the opt-in year are refundable. Once any benefit has been claimed, the client cannot opt out.
-
----
 
 ## Section 8 -- Reviewer escalation protocol
 
@@ -315,58 +317,49 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to licensed Canadian CPA. Document gap.
 ```
 
----
-
-## Section 9 -- Test suite
-
 ### Test 1 -- Standard self-employed, mid-range income
+
 Input: Born 1985, Ontario resident, net self-employment income $50,000, no T4 income, no EI opt-in.
-Expected output: CPP1 = ($50,000 - $3,500) x 11.90% = $5,533.50. CPP2 = $0 (below YMPE). EI = $0 (not opted in). Line 22200 deduction = $2,766.75. Line 30800 credit base = $2,766.75.
+Expected output: CPP1 = ($50,000 - $3,500) x 11.90% = $5,533.50. CPP2 = $0 (below YMPE). EI = $0 (not opted in). Line 22200 deduction = $3,231.75 (half of base $2,301.75 + all first-additional $930.00). Line 30800 credit base = $2,301.75 (half of base only).
 
 ### Test 2 -- High-income, both ceilings hit
+
 Input: Born 1978, Alberta resident, net self-employment income $120,000, no T4 income.
-Expected output: CPP1 = $8,068.20 (capped). CPP2 = $792.00 (capped). Total CPP = $8,860.20. Line 22200 deduction = $4,430.10. Line 30800 credit base = $4,430.10.
+Expected output: CPP1 = $8,068.20 (capped). CPP2 = $792.00 (capped). Total CPP = $8,860.20. Deductions = $5,504.10 (half of base $3,356.10 + first-additional $1,356.00 + CPP2 $792.00). Line 30800 credit base = $3,356.10 (half of base only).
 
 ### Test 3 -- Income between YMPE and YAMPE
+
 Input: Born 1990, BC resident, net self-employment income $75,000, no T4 income.
 Expected output: CPP1 = $8,068.20 (capped at YMPE). CPP2 = ($75,000 - $71,300) x 8.00% = $296.00. Total CPP = $8,364.20.
 
 ### Test 4 -- Below basic exemption
+
 Input: Born 1992, Ontario resident, net self-employment income $2,500.
 Expected output: CPP = $0.00 (below $3,500 basic exemption). No Schedule 8 contribution.
 
 ### Test 5 -- Self-employed with T4 employment income
+
 Input: Born 1988, Ontario, T4 pensionable earnings $45,000, T4 CPP deducted $2,468.25, net self-employment income $40,000.
 Expected output: Combined pensionable earnings exceed YMPE. Self-employed CPP on Schedule 8 = $8,068.20 - $2,468.25 (employee) - $2,468.25 (deemed employer) = $3,131.70.
 
 ### Test 6 -- EI opt-in calculation
+
 Input: Opted-in self-employed, Ontario, net self-employment income $50,000.
 Expected output: EI premium = $50,000 x 1.64% = $820.00. Below maximum of $1,077.48.
 
 ### Test 7 -- Age 72, self-employed
+
 Input: Born 1953, net self-employment income $80,000.
 Expected output: CPP = $0.00 (age 70+ exemption). No Schedule 8 required for CPP.
 
 ### Test 8 -- Net loss
+
 Input: Born 1985, net self-employment loss of ($5,000).
 Expected output: CPP = $0.00. No minimum contribution. No Schedule 8 obligation.
 
----
-
-## Section 10 -- Prohibitions and disclaimer
-
 ### Prohibitions
 
-- NEVER compute CPP for Quebec residents -- QPP applies, not CPP
-- NEVER tell a self-employed client they must pay EI -- it is voluntary
-- NEVER forget to split CPP into deduction (line 22200) and credit (line 30800) -- both halves must be claimed
-- NEVER apply CPP to a client aged 70 or over at the start of the year
-- NEVER ignore T4 CPP already deducted when computing self-employed CPP on Schedule 8
-- NEVER present CPP2 as optional -- it is mandatory for earnings above YMPE
-- NEVER combine CPP and EI into a single figure without showing the breakdown
-- NEVER advise on QPP rates using CPP figures -- they are different
-- NEVER state that self-employed EI covers regular (unemployment) benefits -- it covers special benefits only
-- NEVER compute figures without confirming the tax year -- rates change annually
+- **Prohibitions list** — - NEVER compute CPP for Quebec residents -- QPP applies, not CPP - NEVER tell a self-employed client they must pay EI -- it is voluntary - NEVER forget to split CPP into deduction (line 22200) and credit (line 30800) -- both halves must be claimed - NEVER apply CPP to a client aged 70 or over at the start of the year - NEVER ignore T4 CPP already deducted when computing self-employed CPP on Schedule 8 - NEVER present CPP2 as optional -- it is mandatory for earnings above YMPE - NEVER combine CPP and EI into a single figure without showing the breakdown - NEVER advise on QPP rates using CPP figures -- they are different - NEVER state that self-employed EI covers regular (unemployment) benefits -- it covers special benefits only - NEVER compute figures without confirming the tax year -- rates change annually
 
 ### Disclaimer
 
@@ -374,6 +367,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ca-fed-cpp-ei) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-fed-cpp-ei` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-fed-cpp-ei. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,387 +1,228 @@
 ---
 name: nl-zzp-deductions
-description: "> Use this skill whenever asked about Dutch self-employed (zzp) tax deductions. Trigger on phrases like \"zelfstandigenaftrek\", \"startersaftrek\", \"MKB-winstvrijstelling\", \"urencriterium\", \"1225 hours\", \"KIA\", \"kleinschaligheidsinvesteringsaftrek\", \"FOR\", \"fiscale oudedagsreserve\", \"meewerkaftrek\", \"willekeurige afschrijving\", \"zzp deductions\", \"Dutch freelancer deductions\", \"Netherlands self-employed tax benefits\", or any question about tax deductions available to Dutch sole proprietors (eenmanszaak) and freelancers (zzp'ers). This skill covers all major ondernemersaftrek components, the MKB-winstvrijstelling, investment deductions, the hours criterion, and their interaction with Box 1 computation. ALWAYS read this skill before touching any Dutch self-employed deduction work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Dutch self-employed (zzp) tax deductions. Trigger on phrases like \"zelfstandigenaftrek\", \"startersaftrek\", \"MKB-winstvrijstelling\", \"urencriterium\", \"1225 hours\", \"KIA\", \"kleinschaligheidsinvesteringsaftrek\", \"FOR\", \"fiscale oudedagsreserve\", \"meewerkaftrek\", \"willekeurige afschrijving\", \"zzp deductions\", \"Dutch freelancer deductions\", \"Netherlands self-employed tax benefits\", or any question about tax deductions available to Dutch sole proprietors (eenmanszaak) and freelancers (zzp'ers). This skill covers all major ondernemersaftrek components, the MKB-winstvrijstelling, investment deductions, the hours criterion, and their interaction with Box 1 computation. ALWAYS read this skill before touching any Dutch self-employed deduction work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: NL
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/nl-zzp-deductions"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/nl-zzp-deductions"
+  jurisdiction: "NL"
+  tax_year: "2026"
+  last_updated: "2026-09-28"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Netherlands ZZP Deductions -- Self-Employed Skill v2.0
+# Netherlands self-employed deductions — 2025 and 2026
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Scope and who this is for
 
-## Section 1 -- Quick reference
+Figures are for tax year 2025 or tax year 2026 as explicitly labelled; do not mix columns.
 
-Read this whole section before computing anything.
+Use this method for the business-profit deductions of a Netherlands-resident individual who qualifies as an entrepreneur for income tax. The ordinary computation below covers a domestic sole proprietor with reconciled fiscal profit. It screens partnership and specialist relief but refers allocation, international and cessation calculations. It does not calculate the complete personal tax bill, tax credits or healthcare contribution. A deduction reduces taxable profit; it is not a cash payment or necessarily an equal reduction in tax. [Entrepreneur assessment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/wanneer_bent_u_ondernemer_voor_de_inkomstenbelasting/) [MKB exemption](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling)
 
-| Field | Value |
-|---|---|
-| Country | Netherlands |
-| Jurisdiction Code | NL |
-| Primary Legislation | Wet inkomstenbelasting 2001 (Wet IB 2001), Articles 3.74-3.79a (ondernemersaftrek), Article 3.79a (MKB-winstvrijstelling), Articles 3.40-3.48 (investeringsaftrek) |
-| Supporting Legislation | Uitvoeringsregeling inkomstenbelasting 2001; Belastingplan 2023 (FOR abolition); Belastingplan 2025 |
-| Tax Authority | Belastingdienst (Dutch Tax and Customs Administration) |
-| Filing Portal | Mijn Belastingdienst / Aangifte inkomstenbelasting |
-| Tax Year | 2025 |
-| Currency | EUR only |
-| Contributor | Open Accountants |
-| Validated By | Pending -- requires sign-off by qualified Dutch belastingadviseur or registeraccountant |
-| Validation Date | Pending |
-| Skill Version | 2.0 |
-| Confidence Coverage | Tier 1: zelfstandigenaftrek, startersaftrek, MKB-winstvrijstelling, urencriterium, KIA table, FOR abolition, computation order. Tier 2: urencriterium documentation disputes, mixed business/hobby, meewerkaftrek valuation, BV transition. Tier 3: international structures, fiscal unity, complex partnership allocations. |
+Select the income year first. Use the 2025 column for a 2025 return prepared later, and the 2026 column for 2026 profit. Future-year announcements and proposed changes are outside these calculations; recheck enacted provisions and the annual guidance before extending this method. [2025 rules](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/ondernemersaftrek-2025/zelfstandigenaftrek-2025) [2026 rules](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026)
 
-**Key deduction amounts (2025):**
+## Ask the client first
 
-| Deduction | Amount | Requires Urencriterium? |
-|---|---|---|
-| Zelfstandigenaftrek (standard) | EUR 2,470 | YES |
-| Zelfstandigenaftrek (AOW age) | EUR 1,235 (50%) | YES |
-| Startersaftrek | EUR 2,123 (on top of zelfstandigenaftrek) | YES |
-| MKB-winstvrijstelling | 12.7% of profit after ondernemersaftrek | NO |
-| Meewerkaftrek | 1.25% - 4.00% of profit (by partner hours) | NO |
+- Income year, legal form, residence and nature of each activity; evidence supporting income-tax entrepreneur status, distinct from VAT registration and employment classification.
+- Fiscal profit before ondernemersaftrek, with the cost, depreciation, private-use, reserve and investment adjustments identified. Do not start from bank deposits or turnover.
+- Actual annual business hours and other working hours, supporting records, pregnancy interruption, and related-person partnership arrangements.
+- Entrepreneur status and use of zelfstandigenaftrek in each of the preceding five years; relevant tax-neutral return from a company; whether pension age was reached at the start of the income year.
+- Unused zelfstandigenaftrek decisions by origin year, utilisation and remaining amount; earlier business-loss decisions are a separate ledger.
+- Qualifying investment obligations, invoices, recoverable VAT, payments, first-use dates and disposals; connected-party purchases and assets made available to others.
+- Fiscal partner's work, hours and remuneration; a disability benefit, R&D certificate, cessation, business transfer or existing FOR reserve.
 
-**Zelfstandigenaftrek declining schedule:**
+Missing structure, profit, hours or prior-year decisions remain unknown. Continue computations that do not depend on the missing fact, but do not turn an unknown into a confirmed zero or award.
 
-| Year | Amount (EUR) |
-|---|---|
-| 2024 | 3,750 |
-| 2025 | 2,470 |
-| 2026 | 1,200 |
-| 2027 | 900 |
+## The method, step by step
 
-**KIA table (2025):**
+1. Confirm the income source using the evidence and conditions below.
+2. Establish the hours result using the evidence and conditions below.
+3. Reconcile fiscal profit and investments using the evidence and conditions below.
+4. Apply zelfstandigenaftrek and starter supplement using the evidence and conditions below.
+5. Assess other relief before MKB using the evidence and conditions below.
+6. Apply MKB to the remaining enterprise result using the evidence and conditions below.
+7. Preserve FOR and depreciation boundaries using the evidence and conditions below.
 
-| Total Investment (EUR) | Deduction |
-|---|---|
-| 0 -- 2,900 | No deduction |
-| 2,901 -- 70,602 | 28% of total investment |
-| 70,603 -- 130,744 | EUR 19,769 (fixed) |
-| 130,745 -- 392,230 | EUR 19,769 minus 7.56% of amount exceeding EUR 130,744 |
-| > 392,230 | No deduction |
+### Step 1: Confirm the income source
 
-**Box 1 rates (2025):**
+Assess income-tax entrepreneurship from the actual commercial activity. A registered business, a VAT number or meeting the hours threshold alone is insufficient. Employment and income from other work do not acquire entrepreneurial relief simply because the person invoices. A passive co-entitlement or lending return does not qualify for ondernemersaftrek or MKB exemption; assess investment relief separately under its own conditions. [Income sources](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/wanneer_bent_u_ondernemer_voor_de_inkomstenbelasting/) [Relief scope](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 
-| Taxable Income (EUR) | Rate |
-|---|---|
-| 0 -- 38,441 | 35.82% |
-| 38,442 -- 76,817 | 37.48% |
-| 76,818+ | 49.50% |
+### Step 2: Establish the hours result
 
-**Conservative defaults:**
+The ordinary urencriterium requires at least 1,225 business hours in the calendar year. Usually more working time must be spent on the enterprise than on other work. The latter comparison is waived if the individual was not an entrepreneur in at least one of the preceding five years; the annual hours threshold remains. Do not prorate for a partial year. [Hours](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/voorwaarden_urencriterium)
 
-| Ambiguity | Default |
-|---|---|
-| Unknown urencriterium status | Does NOT meet 1,225 hours (no zelfstandigenaftrek) |
-| Unknown starter status | Not a starter (no startersaftrek) |
-| Unknown FOR balance | No pre-2023 FOR balance |
-| Unknown business structure | Eenmanszaak (sole proprietorship) |
+Actual work includes administration, quotations and business website work, not just invoiced hours. Mere standby availability does not count. Keep a defensible record using calendars, invoices, timesheets and quotations. Assess claimed travel against actual business work and evidence; do not impose the old guide's blanket exclusion of every travel hour. Pregnancy interruption has a specific 16-week allowance. In a related-person partnership, the exclusions include an unusual arrangement with at least 70% supporting work and work for a connected person's enterprise from which the taxpayer does not themselves derive entrepreneur profit. Refer uncertain allocations. [Hours evidence and exclusions](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/voorwaarden_urencriterium)
 
----
+Failing this hours test does not itself change business income into other-work income. It can block particular deductions while MKB relief and qualifying KIA remain separately assessable. [Entrepreneur assessment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/wanneer_bent_u_ondernemer_voor_de_inkomstenbelasting/) [MKB](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling) [KIA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/kleinschaligheidsinvesteringsaftrek_kia)
 
-## Section 2 -- Required inputs and refusal catalogue
+### Step 3: Reconcile fiscal profit and investments
 
-### Required inputs
+Business expenditure must satisfy the business-purpose test. Recoverable VAT is excluded from the cost basis; irrecoverable VAT is included where the underlying expenditure is otherwise allowable, with capitalisation and private-use restrictions still applying. Supplier names do not determine deductibility or KIA. [Business costs](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/zakelijke_kosten) [Excluded investments](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/geen_recht_op_investeringsaftrek)
 
-Before computing any ZZP deduction, you MUST know:
+Identify depreciation, investment deductions, disinvestment additions and reserve movements before recording profit before ondernemersaftrek. Keep each adjustment visible and prevent duplicate deductions. KIA is additional to eligible depreciation, not a substitute for capitalising an asset. Do not subtract the asset price as a current expense merely because KIA applies. [Investment method](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/voorwaarden_investeringsregelingen) [Starter depreciation](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/willekeurige_afschrijving/startende_ondernemer)
 
-1. Business structure -- eenmanszaak, maatschap/VOF, or BV (BV is out of scope)
-2. Does the client meet the urencriterium (1,225 hours)? -- required for zelfstandigenaftrek and startersaftrek
-3. Is this a starter? -- determines startersaftrek eligibility
-4. Gross profit from the enterprise (winst uit onderneming) -- needed to compute deduction order
-5. Total business investments in the year -- needed for KIA
-6. Does the fiscal partner work in the business unpaid or for less than EUR 5,000? -- meewerkaftrek
-7. Does the client have an existing FOR balance from pre-2023? -- FOR release rules
+### Step 4: Apply zelfstandigenaftrek and starter supplement
 
-If the urencriterium status is unknown, STOP. Many deductions depend on it.
+The ordinary deduction requires entrepreneur status and the hours test. Use the annual amount below, adjusted for pension age at the beginning of that year. For a non-starter, the deduction cannot exceed profit before ondernemersaftrek; unused relief has its own carryforward. A current ordinary deduction cannot create or deepen a loss in this branch. [Self-employed deduction](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/zelfstandigenaftrek1/)
 
-### Refusal catalogue
+The startersaftrek increases the zelfstandigenaftrek where the taxpayer qualifies for it, was not an entrepreneur in at least one of the preceding five years, and had zelfstandigenaftrek applied no more than twice in those years. The tax-neutral-return-from-a-company exclusion must also be checked for the current and preceding five years. If entitled, the supplement accompanies the ordinary deduction; it is not an elective amount to save for another year. The combined current-year deduction may exceed profit and create a loss. Use the actual lookback, not “first three years” or registration age alone. A year in which the ordinary deduction was reduced to nil by the profit cap still counts as a year of application for this lookback. [Starter conditions](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/startersaftrek) [Current statute, zelfstandigenaftrek](https://wetten.overheid.nl/BWBR0011353)
 
-**R-NL-ZZP-1 -- BV structure.** Trigger: client operates through a BV (besloten vennootschap). Message: "This skill covers eenmanszaak and partnership participants only. BV corporate tax and salary/dividend structuring is outside scope. Please escalate to a qualified belastingadviseur."
+Where profit limitation leaves unused zelfstandigenaftrek, preserve the amount established by assessment. It can be used in the following nine years, subject to eligibility and available profit above the current-year deduction. The taxpayer must track and enter utilisation, using the oldest origin-year amount first; it is not simply lost or automatically claimed. Obtain the decisions before using an opening amount. A special death/cessation exception needs separate review. [Carryforward](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/zelfstandigenaftrek1/verrekenen_niet_gerealiseerde_zelfstandigenaftrek)
 
-**R-NL-ZZP-2 -- International structure.** Trigger: client has cross-border business income or a permanent establishment in another country. Message: "International tax structures require treaty analysis. This skill covers domestic Dutch ZZP deductions only. Please escalate."
+### Step 5: Assess other relief before MKB
 
-**R-NL-ZZP-3 -- Fiscal unity or complex partnership allocations.** Trigger: client is part of a fiscal unity or asks about complex partnership profit allocation. Message: "Fiscal unity and complex partnership allocations are outside this skill's scope. Please escalate to a qualified belastingadviseur."
+For meewerkaftrek, the entrepreneur must themselves satisfy the hours test. Their fiscal partner must work at least 525 hours for no remuneration or remuneration below €5,000. The partner's hours must be evidenced. Apply the table below to qualifying profit, excluding the special expropriation, cessation and foreign-transfer profit components specified by the source. [Meewerkaftrek rules](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 
----
+A payment below €5,000 is not deductible as partner remuneration and is not taxable to the partner under this rule. At €5,000 or more, the remuneration route may apply: the payment is deductible from business profit and taxable to the partner, with the real work and arrangement documented. Do not also claim meewerkaftrek for that work. [Partner remuneration](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/arbeidsbeloning_aan_fiscale_partner)
 
-## Section 3 -- Payment pattern library
+Screen separately for disability starter relief, certified research/development work and cessation relief. They have distinct conditions; they are not automatically part of the ordinary calculation. A qualifying self-employed R&D deduction exists within income tax; it is not solely an employer payroll subsidy. Refer these claims with the certificate, hours, benefit or cessation evidence. [Other entrepreneur deductions](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 
-This is the deterministic pre-classifier for bank statement entries related to ZZP deductions. Match by case-insensitive substring.
+### Step 6: Apply MKB to the remaining enterprise result
 
-### 3.1 Belastingdienst payments (tax authority)
+For eligible entrepreneur profit, apply the MKB percentage after ondernemersaftrek, aggregating qualifying enterprises where necessary. No urencriterium condition applies. The exemption also reduces a loss, so do not switch it off merely because the result is negative. It does not apply to a passive co-entitlement or lending return. [MKB exemption](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling) [Scope](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| BELASTINGDIENST | TAX PAYMENT / REFUND | Income tax, VAT, or other -- verify assessment type |
-| TOESLAGEN | SUBSIDY RECEIPT | Zorgtoeslag, huurtoeslag, etc. -- not a deduction item |
-| IB AANSLAG, INKOMSTENBELASTING | INCOME TAX PAYMENT | Final assessment payment -- includes effect of ZZP deductions |
-| VOORLOPIGE AANSLAG, VOORL. AANSLAG | PROVISIONAL ASSESSMENT | Advance income tax payment based on estimated profit |
+The practical calculation is: fiscal enterprise profit after business adjustments, minus allowable ondernemersaftrek and eligible carryforward, then subtract the MKB percentage of that remaining result. A negative MKB amount reduces the loss rather than increasing it. Apply the annual benefit-rate limitation in the full income-tax calculation; do not multiply every deduction by the taxpayer's highest marginal rate. [MKB](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling) [Annual deduction limits](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/ondernemersaftrek-2025/zelfstandigenaftrek-2025) [2026](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026)
 
-### 3.2 Business investments (KIA-eligible)
+### Step 7: Preserve FOR and depreciation boundaries
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| MEDIAMARKT, COOLBLUE, BOL.COM | POTENTIAL KIA ASSET | Verify: asset >= EUR 450, used in business, not excluded category |
-| APPLE, DELL, LENOVO, HP | POTENTIAL KIA ASSET (COMPUTER) | Computers qualify if >= EUR 450; check business use % |
-| IKEA, OFFICE DEPOT, STAPLES | POTENTIAL KIA ASSET (FURNITURE) | Office furniture qualifies if >= EUR 450 each |
+No new FOR additions are allowed from 2023 onward. An existing reserve may remain but is not guaranteed to stay unchanged while a business continues. Check whether it exceeds business equity and the relevant cessation, pension-age or consecutive-year hours condition; conversion and death have separate rules. Release normally increases enterprise profit; an eligible annuity payment is a separate private deduction. Refer conversion eligibility and timing instead of assuming ordinary pension allowance limits or a generic conversion deadline settle it. [FOR](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/fiscale_reserves/oudedagsreserve)
 
-### 3.3 Vehicle purchases (KIA exclusion check)
+Starter accelerated depreciation can apply to eligible assets bought in years of starter entitlement or the preceding startup year, subject to its exclusions and annual investment ceiling. The KIA minimum annual investment threshold does not itself block this depreciation. The book value must not fall below residual value. Retain first-use and payment evidence; refer buildings for the separate statutory floor-value rules, and special assets or recapture rather than promise unrestricted immediate write-off. [Residual-value rule](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/winst_en_verliesrekening_en_balans) [Starter depreciation](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/willekeurige_afschrijving/startende_ondernemer)
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| AUTOTRADER, AUTOMOBILE, CAR DEALER | KIA EXCLUDED if catalogue value > EUR 12,000 | Cars above EUR 12,000 catalogue value excluded from KIA; normal depreciation applies |
-| BOVAG, RDW | VEHICLE-RELATED | Registration/inspection -- not a KIA asset |
+## Figures by year
 
-### 3.4 Pension/retirement (FOR-related)
+### Ordinary deductions
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| LIJFRENTE, ANNUITY, BRAND NEW DAY | LIJFRENTE PREMIUM | Deductible within jaarruimte; may relate to FOR conversion |
-| PENSIOENFONDS, ABP | PENSION CONTRIBUTION | Not relevant for ZZP deductions (employee pension) |
+| Item | 2025 | 2026 | Conditions/source |
+| --- | --- | --- | --- |
+| Zelfstandigenaftrek before pension-age adjustment ([2025](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/ondernemersaftrek-2025/zelfstandigenaftrek-2025), [2026](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026)) | €2,470 | €1,200 | Entrepreneur and hours tests; profit cap except qualifying starter |
+| Ordinary startersaftrek supplement | €2,123 | €2,123 | Full lookback and exclusion tests |
+| Pension age reached at start of year | 50% of the applicable ordinary deduction and supplement | 50% of the applicable ordinary deduction and supplement | Use return rounding; do not assess age at filing date |
+| MKB exemption | 12.7% | 12.7% | After ondernemersaftrek; applies to loss too |
+| Maximum rate used for benefit of ordinary deduction/MKB | 37.48% | 37.56% | Full tax calculation must implement rate limitation |
 
-### 3.5 Partner payments (meewerkaftrek check)
+[2025 annual rules](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/ondernemersaftrek-2025/zelfstandigenaftrek-2025) [2026 annual rules](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026) [MKB rates](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling)
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| Partner name appearing as salary/payment < EUR 5,000/year | MEEWERKAFTREK POSSIBLE | If partner works 525+ hours unpaid or < EUR 5,000, meewerkaftrek applies |
-| Partner name appearing as salary/payment >= EUR 5,000/year | MEEWERKAFTREK EXCLUDED | Payment >= EUR 5,000 disqualifies meewerkaftrek; amount is deductible expense |
+### Meewerkaftrek — both years
 
----
+| Evidenced partner hours in the year | Percentage of qualifying profit |
+| --- | --- |
+| Below 525 | None ([official bands](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)) |
+| At least 525, below 875 | 1.25% |
+| At least 875, below 1,225 | 2% |
+| At least 1,225, below 1,750 | 3% |
+| At least 1,750 | 4% |
 
-## Section 4 -- Deduction computation rules
+The entrepreneur's own hours test and partner remuneration conditions still apply. [2025](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2025/ondernemersaftrek_en_investeringsaftrek) [2026](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 
-### 4.1 Zelfstandigenaftrek (Tier 1)
+### KIA annual table
 
-Legislation: Wet IB 2001 Article 3.76
+The following published ranges use whole-euro amounts. Use the filing software's applicable rounding; do not invent treatment of a fractional amount between displayed ranges. [2025 KIA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/investeringsaftrek-2025/kleinschaligheidsinvesteringsaftrek-2025) [2026 KIA](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/investeringsaftrek-2026/kleinschaligheidsinvesteringsaftrek-2026)
 
-2025 amount: EUR 2,470 (standard); EUR 1,235 if AOW age reached at start of year.
+| 2025 qualifying investment | KIA |
+| --- | --- |
+| Not more than €2,900 | None ([source](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/investeringsaftrek-2025/kleinschaligheidsinvesteringsaftrek-2025)) |
+| €2,901 through €70,602 | 28% of investment |
+| €70,603 through €130,744 | €19,769 |
+| €130,745 through €392,230 | €19,769 minus 7.56% of investment above €130,744 |
+| More than €392,230 | None |
 
-Requirements: must qualify as ondernemer; must meet urencriterium (1,225 hours). The zelfstandigenaftrek cannot exceed profit before ondernemersaftrek, UNLESS the startersaftrek also applies (then no profit limitation).
+| 2026 qualifying investment | KIA |
+| --- | --- |
+| Not more than €2,900 | None ([source](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/investeringsaftrek-2026/kleinschaligheidsinvesteringsaftrek-2026)) |
+| €2,901 through €71,683 | 28% of investment |
+| €71,684 through €132,746 | €20,072 |
+| €132,747 through €398,236 | €20,072 minus 7.56% of investment above €132,746 |
+| More than €398,236 | None |
 
-### 4.2 Urencriterium (Tier 1 / Tier 2)
+An individual qualifying asset must cost at least €450 on the appropriate VAT basis. Ordinary passenger cars not intended for professional transport are excluded regardless of their price; there is no general cheap-car allowance. Check other exclusions, including land, residential property, goodwill, private assets transferred into the business, connected-party transactions and assets predominantly for rental or foreign use. Exemption requests and special environmental schemes need separate assessment. [Excluded investments](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/geen_recht_op_investeringsaftrek)
 
-Legislation: Wet IB 2001 Article 3.6
+Investment generally concerns the binding obligation or production costs, not simply payment date. If an asset is not yet in use, the current deduction is limited by payments, with remaining deduction subject to later-use rules. Partnership KIA is based on joint investment and allocation rules, not independent application of this table to each partner. [Timing](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/voorwaarden_investeringsregelingen) [Partnership allocation](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/kleinschaligheidsinvesteringsaftrek_kia)
 
-Threshold: at least 1,225 hours per calendar year on enterprise activities. Counts: direct client work, administration, sales, professional development, purchasing, business meetings, strategic planning. Does NOT count: travel time, commuting, personal development unrelated to business, sick leave, vacation.
+On disposal within five years from the beginning of the investment year, check disinvestment if aggregate disposal value exceeds €2,900 under the current guidance for these years. Use the original effective deduction percentage and cap the addition at the deduction previously received. Private transfer, rental conversion and delayed use/payment can also trigger deemed disposal. Do not treat every sale as automatic clawback or ignore an asset that was gifted. [Disinvestment](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/desinvesteringsbijtelling)
 
-NOT pro-rated for part-year. Full 1,225 hours must be met even if business started mid-year. Flag for reviewer if hours are between 1,200 and 1,300 (borderline).
+## Boundary and exception table
 
-### 4.3 Startersaftrek (Tier 1)
+| Situation | Result |
+| --- | --- |
+| Below ordinary hours threshold but entrepreneur status established | No ordinary hours-dependent deduction; MKB and qualifying KIA remain separate |
+| Exactly 1,225 hours | Threshold met, but the other-work comparison and exclusions still need review |
+| Current-year profit too low, no starter supplement | Limit current deduction and preserve assessment-based unused amount |
+| Qualifying starter with low profit | Full current ordinary deduction plus supplement can create loss; MKB then reduces that loss |
+| Partner remuneration exactly €5,000 | Remuneration route; no meewerkaftrek ([source](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/arbeidsbeloning_aan_fiscale_partner)) |
+| Partner hours exactly 875 | Use the 2% band if all other conditions hold |
+| Investment exactly €2,900 | No KIA under either annual table |
+| Eligible asset exactly €450 | Not excluded by the per-asset minimum, but annual total and other rules remain |
+| Ordinary passenger car below a supposed price cap | Still excluded from KIA unless the professional-transport exception applies |
+| Existing FOR and ongoing activity | Assess release triggers; continuation alone does not prevent release |
 
-Legislation: Wet IB 2001 Article 3.76 lid 3
+## Worked cases
 
-2025 amount: EUR 2,123 on top of zelfstandigenaftrek. Requirements: qualifies for zelfstandigenaftrek; applied zelfstandigenaftrek in at most 2 of the preceding 5 years. Available in first 3 years of a 5-year window.
+The arithmetic below is illustrative, assumes the facts stated, and keeps cents for transparency. It is not a substitute for return-specific rounding or a complete tax calculation.
 
-Special rule: when startersaftrek applies, the combined deduction (zelfstandigenaftrek + startersaftrek) is NOT limited to profit. Can create negative income from enterprise that offsets other Box 1 income.
+### Ordinary profitable entrepreneur, 2026
 
-### 4.4 MKB-winstvrijstelling (Tier 1)
+Assume a sole proprietor below pension age at the start of the year, established entrepreneur status and hours-test eligibility, no starter entitlement, no carryforward or other deductions, and fiscal profit before ondernemersaftrek of €50,000. Subtract €1,200, leaving €48,800. The MKB exemption is €6,197.60, leaving taxable enterprise profit of €42,602.40. These are profit figures, not tax due. [2026 deduction](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026) [MKB](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling)
 
-Legislation: Wet IB 2001 Article 3.79a
+### Non-starter with limited profit, 2025
 
-2025 rate: 12.7% of qualifying profit. Calculated on profit AFTER ondernemersaftrek. Urencriterium is NOT required. All ondernemers qualify.
+Use the authority's carryforward example: eligible profit €1,500 and ordinary entitlement €2,470. Current deduction is €1,500, remaining profit is nil, and unused relief is €970, recorded by assessment. It is not lost. If the eligible 2026 profit is €50,000, current deduction €1,200 leaves €48,800; using the €970 carryforward leaves €47,830 before MKB. [Carryforward example](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/zelfstandigenaftrek1/verrekenen_niet_gerealiseerde_zelfstandigenaftrek)
 
-If qualifying profit is negative (loss), the MKB-winstvrijstelling reduces the loss by 12.7% (works against the taxpayer in loss years).
+### Low-profit qualifying starter, 2026
 
-### 4.5 FOR -- abolished (Tier 1)
+Assume profit before ondernemersaftrek of €2,000, full ordinary and starter eligibility, no pension-age adjustment and no other deductions. The current combined deduction is €3,323; the result before MKB is a loss of €1,323. MKB reduces that loss by €168.021, giving a result of negative €1,154.979 before filing rounding (illustratively negative €1,154.98 to cents). [Starter](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/startersaftrek) [2026](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026) [MKB](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling)
 
-The Fiscale Oudedagsreserve has been abolished as of 1 January 2023. No new additions permitted. Existing balances from pre-2023 remain on the balance sheet. Can be converted to lijfrente at any time. Released at business cessation (stakingsaftrek max EUR 3,630 in 2025 may apply). NEVER compute a new FOR addition for 2023 or later.
+### Nil deduction in the starter lookback
 
-### 4.6 KIA (Tier 1)
+A taxpayer has three preceding years in which ordinary zelfstandigenaftrek applied, including one where the profit cap reduced the amount to nil. That nil-benefit year still counts. Do not treat this as only two applications or award the starter supplement on that basis. [Statutory application rule](https://wetten.overheid.nl/BWBR0011353)
 
-Legislation: Wet IB 2001 Article 3.41
+### Investment and hours boundary
 
-Each individual asset must cost at least EUR 450. Total qualifying investment must be at least EUR 2,901. Urencriterium NOT required. Excluded: land, residential buildings, cars > EUR 12,000, assets for lease, animals, goodwill, assets from connected persons.
+An established entrepreneur who does not meet the hours test invests exactly €2,900 in otherwise eligible assets. No KIA is available under either table, and no ordinary zelfstandigenaftrek. MKB remains separately assessable on enterprise profit. Neither registration nor the purchase repairs the missing hours condition. [KIA tables](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/verandering_inkomstenbelasting_vorige_jaren/veranderingen-inkomstenbelasting-2025/investeringsaftrek-2025/kleinschaligheidsinvesteringsaftrek-2025) [2026](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/investeringsaftrek-2026/kleinschaligheidsinvesteringsaftrek-2026) [Hours](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/voorwaarden_urencriterium) [MKB](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/mkb_winstvrijstelling)
 
-Disinvestment addition: if KIA-claimed asset sold within 5 years, proportional addition to profit applies.
+### Partner and reserve decisions
 
-### 4.7 Willekeurige afschrijving voor starters (Tier 1)
+A partner performs 875 evidenced hours unpaid, but the entrepreneur fails their own hours test. Do not claim meewerkaftrek despite reaching the partner band. Separately, an ongoing business with an old FOR exceeding equity and failure of the hours test in both the current and preceding year needs a reserve-release calculation; “still trading” is insufficient. [Meewerkaftrek](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek) [FOR](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/fiscale_reserves/oudedagsreserve)
 
-Legislation: Wet IB 2001 Article 3.34
+## When to refuse or refer
 
-Qualifying starters may depreciate business assets at any pace (up to 100% in year 1). Requires startersaftrek eligibility. Asset must cost >= EUR 450. Residual value floor still applies. For buildings, limited to WOZ value.
+- Refer unresolved entrepreneur/employment status, connected-person partnership hours, partnership KIA allocation, cross-border activity, company transition, disability starter relief, R&D certificates, cessation, death, FOR conversion and property/special-asset depreciation. Preserve documents and ordinary calculations that remain independent, but do not label a dependent tax figure final.
 
-### 4.8 Meewerkaftrek (Tier 2)
+Use `nl-freelance-intake` for the evidence handoff. When passing taxable business profit to `nl-income-tax` or `nl-return-assembly`, send the complete adjustment ledger, origin-year carryforwards and open issues. Check the actual dependent method and annual sources: do not import an old MKB percentage, abandoned FOR addition, or treat business profit as the whole personal-tax or healthcare-contribution base.
 
-Legislation: Wet IB 2001 Article 3.78
+## Completion checklist
 
-| Hours worked by partner per year | Deduction (% of profit) |
-|---|---|
-| 525 -- 874 | 1.25% |
-| 875 -- 1,224 | 2.00% |
-| 1,225 -- 1,749 | 3.00% |
-| 1,750+ | 4.00% |
+- [ ] Income year and entrepreneur status supported separately from hours and VAT status.
+- [ ] Profit reconciled; costs, depreciation, KIA and reserve changes not double counted.
+- [ ] Hours threshold, other-work comparison and special exclusions checked.
+- [ ] Starter lookback, company-return exclusion and pension-age date checked.
+- [ ] Profit cap and unused deduction ledger correctly separated from loss relief.
+- [ ] Partner's and entrepreneur's conditions both checked before meewerkaftrek.
+- [ ] Correct annual investment table, exclusions, timing and disposal rules applied.
+- [ ] MKB applied after deductions, including the loss branch; rate limitation passed downstream.
+- [ ] No new FOR; old reserve assessed for release triggers.
+- [ ] Complete calculation and unresolved matters handed off without implying submission or accountant attestation.
 
-Partner must work unpaid or receive < EUR 5,000. Urencriterium for entrepreneur NOT required. Flag for reviewer -- partner hours must be documented. Being phased out from 2027.
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 5 -- Computation order
+## Talk to a verified accountant
 
-Legislation: Wet IB 2001 Article 3.2 et seq.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-```
-1. Winst uit onderneming (profit from enterprise)
-     = Revenue - Costs - Depreciation - KIA
-2. Minus: Ondernemersaftrek
-     = Zelfstandigenaftrek + Startersaftrek + Meewerkaftrek + Stakingsaftrek
-3. = Profit after ondernemersaftrek
-4. Minus: MKB-winstvrijstelling (12.7% of line 3)
-5. = Taxable profit from enterprise
-6. Add: Other Box 1 income (employment, pension, periodic payments)
-7. Minus: Personal deductions (hypotheekrenteaftrek, lijfrente, etc.)
-8. = Belastbaar inkomen Box 1
-9. Apply progressive Box 1 rates
-```
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-Key interaction: zelfstandigenaftrek and startersaftrek reduce profit BEFORE MKB-winstvrijstelling, creating a multiplied effect. EUR 2,470 zelfstandigenaftrek reduces taxable income by EUR 2,470 + (12.7% x EUR 2,470) = EUR 2,784. KIA reduces profit at step 1, also included in MKB-winstvrijstelling base. The arbeidskorting (tax credit) is applied after computing gross tax.
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
----
+## Today's figures and who stands behind this skill
 
-## Section 6 -- FOR balance management and stakingsaftrek
-
-### 6.1 Existing FOR balances (Tier 1)
-
-| Situation | Treatment |
-|---|---|
-| FOR balance on 31 Dec 2022 | Remains on balance sheet; not immediately taxed |
-| Conversion to lijfrente | Premium deductible within jaarruimte/reserveringsruimte limits |
-| Release without lijfrente | Added to Box 1 taxable income at progressive rates |
-| Business cessation | FOR must be released; stakingsaftrek (max EUR 3,630 in 2025) may apply if converted within 6 months |
-
-### 6.2 What replaced FOR
-
-Entrepreneurs use jaarruimte to make actual lijfrente contributions. Jaarruimte is based on profit and pension accrual.
-
----
-
-## Section 7 -- Edge case registry
-
-### EC1 -- Hours just below 1,225 (Tier 2)
-Situation: Client claims 1,210 hours, wants to include 20 hours of travel time.
-Resolution: Travel time does NOT count. Client does not qualify for zelfstandigenaftrek or startersaftrek. Still qualifies for MKB-winstvrijstelling and KIA (no hours requirement). Flag for reviewer.
-
-### EC2 -- Loss year with startersaftrek (Tier 1)
-Situation: Starter has profit of EUR 1,000 but qualifies for EUR 4,593 total deduction.
-Resolution: Full EUR 4,593 deducted (no profit limitation for starters). Loss of EUR 3,593 offsets other Box 1 income. MKB-winstvrijstelling reduces loss by 12.7% (loss becomes EUR 3,137).
-
-### EC3 -- Loss year without startersaftrek (Tier 1)
-Situation: Non-starter has profit of EUR 1,500, zelfstandigenaftrek EUR 2,470.
-Resolution: Zelfstandigenaftrek limited to EUR 1,500. Remaining EUR 970 is lost. MKB-winstvrijstelling on zero = zero.
-
-### EC4 -- FOR balance from pre-2023, business continues (Tier 1)
-Situation: Client has FOR balance of EUR 15,000 from 2022. Business still active.
-Resolution: Balance remains. No new additions. No forced release while business continues. May convert to lijfrente voluntarily.
-
-### EC5 -- KIA on personal car above EUR 12,000 (Tier 1)
-Situation: Client purchases car with catalogue value EUR 25,000, 70% business use.
-Resolution: Excluded from KIA regardless of business use. Normal depreciation (based on business %) does apply.
-
-### EC6 -- Disinvestment addition triggered (Tier 1)
-Situation: Machine purchased for EUR 5,000 in 2023, KIA EUR 1,400 (28%). Sold in 2025 for EUR 3,000.
-Resolution: Disinvestment addition: EUR 3,000 x 28% = EUR 840 added to 2025 profit.
-
-### EC7 -- Partner paid EUR 6,000 (Tier 1)
-Situation: Fiscal partner works 900 hours, receives EUR 6,000.
-Resolution: Meewerkaftrek requires < EUR 5,000 payment. EUR 6,000 exceeds threshold. No meewerkaftrek. The EUR 6,000 is deductible business expense; taxable for partner.
-
-### EC8 -- Mid-year starter, urencriterium not met (Tier 1)
-Situation: Business starts 1 September, client works 800 hours by 31 December.
-Resolution: 1,225 hours NOT pro-rated. No zelfstandigenaftrek or startersaftrek in 2025. MKB-winstvrijstelling and KIA still available. Year 1 of startersaftrek is not used up.
-
----
-
-## Section 8 -- Reviewer escalation protocol
-
-When a Tier 2 situation is identified:
-
-```
-REVIEWER FLAG
-Tier: T2
-Client: [name]
-Situation: [description]
-Issue: [what is ambiguous]
-Options: [possible treatments]
-Recommended: [most likely correct treatment and why]
-Action Required: Qualified belastingadviseur must confirm before filing.
-```
-
-When a Tier 3 situation is identified:
-
-```
-ESCALATION REQUIRED
-Tier: T3
-Client: [name]
-Situation: [description]
-Issue: [outside skill scope]
-Action Required: Do not advise. Refer to qualified belastingadviseur. Document gap.
-```
-
----
-
-## Section 9 -- Test suite
-
-### Test 1 -- Standard zzp'er, meets urencriterium, not a starter
-Input: Eenmanszaak, winst EUR 50,000, meets 1,225 hours, not a starter, investments EUR 2,000, no partner.
-Expected output: Zelfstandigenaftrek = EUR 2,470. No startersaftrek. No meewerkaftrek. KIA = EUR 0 (below EUR 2,901). MKB-winstvrijstelling = (EUR 50,000 - EUR 2,470) x 12.7% = EUR 6,036. Taxable profit = EUR 41,494.
-
-### Test 2 -- Starter with low profit
-Input: Eenmanszaak, first year, winst EUR 2,000, meets 1,225 hours, investments EUR 4,000.
-Expected output: Zelfstandigenaftrek EUR 2,470 + startersaftrek EUR 2,123 = EUR 4,593. KIA = EUR 1,120. Profit after KIA = EUR 880. After ondernemersaftrek = -EUR 3,713. MKB-winstvrijstelling reduces loss by 12.7%. Taxable result = -EUR 3,241.
-
-### Test 3 -- Does not meet urencriterium
-Input: Eenmanszaak, winst EUR 30,000, 900 hours, investments EUR 8,000.
-Expected output: No zelfstandigenaftrek. KIA = EUR 2,240. Profit after KIA = EUR 27,760. MKB-winstvrijstelling = EUR 3,526. Taxable profit = EUR 24,234.
-
-### Test 4 -- Large investment, KIA fixed amount
-Input: Total investments EUR 90,000.
-Expected output: KIA = EUR 19,769 (fixed amount in EUR 70,603-130,744 bracket).
-
-### Test 5 -- Very large investment, KIA phase-out
-Input: Total investments EUR 200,000.
-Expected output: KIA = EUR 19,769 - (7.56% x EUR 69,256) = EUR 14,533.
-
-### Test 6 -- FOR balance, ongoing business
-Input: FOR balance EUR 20,000 from 2022. Business active in 2025.
-Expected output: No new addition. Balance stays. May convert to lijfrente voluntarily.
-
-### Test 7 -- Meewerkaftrek
-Input: Winst EUR 60,000, fiscal partner works 1,300 hours unpaid.
-Expected output: Meewerkaftrek = 3% x EUR 60,000 = EUR 1,800. Total ondernemersaftrek = EUR 4,270. MKB-winstvrijstelling = EUR 7,078. Taxable profit = EUR 48,652.
-
-### Test 8 -- AOW-age entrepreneur
-Input: AOW age reached 1 Jan 2025. Winst EUR 25,000. Meets urencriterium.
-Expected output: Zelfstandigenaftrek = EUR 1,235. MKB-winstvrijstelling = EUR 3,018. Taxable profit = EUR 20,747.
-
----
-
-## Section 10 -- Prohibitions and disclaimer
-
-### Prohibitions
-
-- NEVER apply the zelfstandigenaftrek without confirming the urencriterium is met -- 1,225 hours is a hard threshold
-- NEVER pro-rate the urencriterium for part-year businesses -- the full 1,225 hours must be met
-- NEVER include travel time in the urencriterium count -- it is explicitly excluded
-- NEVER compute a new FOR addition for 2023 or later -- the FOR has been abolished
-- NEVER apply the startersaftrek beyond the first 3 qualifying years in a 5-year window
-- NEVER forget that MKB-winstvrijstelling is calculated AFTER the ondernemersaftrek -- the order matters
-- NEVER apply the profit limitation to the zelfstandigenaftrek when the startersaftrek also applies
-- NEVER claim KIA on cars with catalogue value above EUR 12,000
-- NEVER claim KIA on individual assets costing less than EUR 450
-- NEVER ignore the disinvestment addition when a KIA-claimed asset is sold within 5 years
-- NEVER present computed deductions as definitive -- always direct client to their belastingadviseur
-
-### Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a belastingadviseur, registeraccountant, or equivalent licensed practitioner in the Netherlands) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/nl-zzp-deductions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-28. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nl-zzp-deductions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nl-zzp-deductions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

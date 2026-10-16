@@ -1,27 +1,24 @@
 ---
 name: qc-qst-return
-description: "> Use this skill whenever asked about Quebec Sales Tax (QST / TVQ) return preparation for a self-employed sole proprietor or small business. Trigger on phrases like \"QST return\", \"TVQ\", \"Quebec sales tax\", \"QST filing\", \"input tax refund\", \"ITR\", \"QST registration\", \"Revenu Quebec QST\", \"9.975%\", or any question about computing or filing QST. ALWAYS read this skill before touching any QST work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Quebec Sales Tax (QST / TVQ) return preparation for a self-employed sole proprietor or small business. Trigger on phrases like \"QST return\", \"TVQ\", \"Quebec sales tax\", \"QST filing\", \"input tax refund\", \"ITR\", \"QST registration\", \"Revenu Quebec QST\", \"9.975%\", or any question about computing or filing QST. ALWAYS read this skill before touching any QST work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/qc-qst-return"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/qc-qst-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Quebec Sales Tax (QST) Return -- Sole Proprietor Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# QC QST Return
 
 ## Section 1 -- Quick Reference
 
+**Section 1 -- Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada -- Quebec |
 | Tax | QST (TVQ) at 9.975% -- filed SEPARATELY from federal GST |
 | Currency | CAD only |
@@ -33,31 +30,35 @@ metadata:
 | Form | VD-403 (QST Return) |
 | Filing deadline | Monthly: last day of following month; Quarterly: last day of month after quarter; Annual: 3 months after year-end |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- Canadian CPA sign-off required |
+| Validated by | Live status: https://openaccountants.com/skills/qc-qst-return |
 | Skill version | 2.0 |
 
 ### QST Rate
 
+**QST Rate**
+
 | Tax | Rate | Since |
-|---|---|---|
+| --- | --- | --- |
 | QST | 9.975% | January 1, 2013 |
 
-QST is calculated on the price EXCLUDING GST (no tax-on-tax since 2013).
+- **QST** — 9.975%  _(January 1, 2013)_
+- **QST base calculation** — QST is calculated on the price EXCLUDING GST (no tax-on-tax since 2013).
 
 ### Small Supplier Threshold
 
-$30,000 (same as GST). If taxable supplies exceed $30,000 in a single quarter or over four consecutive quarters, must register.
+- **Small supplier threshold** — $30,000 CAD (same as GST)
+- **Small supplier registration requirement** — If taxable supplies exceed $30,000 in a single quarter or over four consecutive quarters, must register.
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown QST registration status | Not registered |
 | Unknown supply category | Taxable at 9.975% |
 | Unknown business-use % | 0% ITR |
 | Unknown meals ITR | 50% (capped) |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -71,20 +72,18 @@ $30,000 (same as GST). If taxable supplies exceed $30,000 in a single quarter or
 
 ### Refusal Catalogue
 
-**R-QC-QST-1 -- Financial services.** "Exempt -- complex rules. Escalate."
-
-**R-QC-QST-2 -- Real property.** "Real property transactions require specialist analysis. Escalate."
-
-**R-QC-QST-3 -- Non-resident suppliers.** "Specified QST registration rules apply. Escalate."
-
----
+- **R-QC-QST-1 -- Financial services** — Exempt -- complex rules. Escalate.
+- **R-QC-QST-2 -- Real property** — Real property transactions require specialist analysis. Escalate.
+- **R-QC-QST-3 -- Non-resident suppliers** — Specified QST registration rules apply. Escalate.
 
 ## Section 3 -- Supplier Pattern Library
 
 ### 3.1 Output (Sales) Patterns
 
+**3.1 Output (Sales) Patterns**
+
 | Pattern | QST Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SERVICE SALE, GOODS SALE | Taxable 9.975% | Standard |
 | EXPORT, OUT-OF-PROVINCE | Zero-rated (0%) | No QST; ITRs still claimable |
 | BASIC GROCERY, PRESCRIPTION | Zero-rated | Specific items |
@@ -95,8 +94,10 @@ $30,000 (same as GST). If taxable supplies exceed $30,000 in a single quarter or
 
 ### 3.2 Input (Purchase) Patterns
 
+**3.2 Input (Purchase) Patterns**
+
 | Pattern | ITR Eligible | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OFFICE SUPPLIES, SOFTWARE | Yes (100%) | Business expense |
 | ACCOUNTING, LEGAL | Yes (100%) | Professional fees |
 | MEALS, ENTERTAINMENT | Yes (50%) | 50% restriction |
@@ -107,12 +108,12 @@ $30,000 (same as GST). If taxable supplies exceed $30,000 in a single quarter or
 
 ### 3.3 Self-Assessment Patterns
 
+**3.3 Self-Assessment Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AWS, GOOGLE, MICROSOFT (non-QC) | Self-assess QST | Imported services from non-QC suppliers |
 | CLOUD SERVICE, SAAS (non-QC) | Self-assess QST | Report on VD-403 line 104 |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -141,51 +142,49 @@ $30,000 (same as GST). If taxable supplies exceed $30,000 in a single quarter or
 **Computation:**
 - ITR: $199.50 x 50% = $99.75
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 QST Base
 
-QST applies to the sale price EXCLUDING GST. Selling price $100 -> GST $5 -> QST $9.98 (9.975% of $100, NOT $105).
+- **QST Base** — QST applies to the sale price EXCLUDING GST. Selling price $100 -> GST $5 -> QST $9.98 (9.975% of $100, NOT $105).
 
 ### 5.2 ITR Eligibility
 
-Must be for commercial activities. Must have documentation with supplier's QST number. Claim within 4 years. Mixed-use: 90%+ = claim 100%; 10% or less = claim 0%; between = actual %.
+- **ITR Eligibility** — Must be for commercial activities. Must have documentation with supplier's QST number. Claim within 4 years. Mixed-use: 90%+ = claim 100%; 10% or less = claim 0%; between = actual %.
 
 ### 5.3 VD-403 Structure
 
-Line 101: QST collected. Line 104: adjustments. Line 106: ITRs. Line 111: net QST. Line 114: net owing or refund.
+- **VD-403 Structure** — Line 101: QST collected. Line 104: adjustments. Line 106: ITRs. Line 111: net QST. Line 114: net owing or refund.
 
 ### 5.4 Filing Frequency
 
-Over $6M: monthly. $1.5M-$6M: quarterly. Under $1.5M: annual (can elect more frequent).
-
----
+- **Filing frequency threshold - monthly** — Over $6M CAD (monthly filing)
+- **Filing frequency threshold - quarterly** — $1.5M-$6M CAD (quarterly filing)
+- **Filing frequency threshold - annual** — Under $1.5M CAD (annual filing (can elect more frequent))
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Quick Method
 
-Available if annual taxable supplies <= $400,000. Services: 3.4% of QST-included revenue. Goods: 6.6%. 1% credit on first $30,000. Flag for reviewer.
+- **Quick method eligibility threshold** — $400,000 CAD (annual taxable supplies)
+- **Quick method rate - services** — 3.4% percent (of QST-included revenue)
+- **Quick method rate - goods** — 6.6% percent (of QST-included revenue)
+- **Quick method credit** — 1% credit on first $30,000. Flag for reviewer.
 
 ### 6.2 Place of Supply
 
-QST applies to supplies made in Quebec. Goods: where delivered. Services: where recipient located. Flag for cross-border/interprovincial.
+- **Place of Supply** — QST applies to supplies made in Quebec. Goods: where delivered. Services: where recipient located. Flag for cross-border/interprovincial.
 
 ### 6.3 Bad Debts
 
-Recover QST on uncollectable invoices via VD-403 line 107. Flag for reviewer.
+- **Bad Debts** — Recover QST on uncollectable invoices via VD-403 line 107. Flag for reviewer.
 
 ### 6.4 Self-Assessment on Imported Services
 
-QST must be self-assessed on taxable services from non-resident suppliers. Common for SaaS subscriptions.
-
----
+- **Self-Assessment on Imported Services** — QST must be self-assessed on taxable services from non-resident suppliers. Common for SaaS subscriptions.
 
 ## Section 7 -- Excel Working Paper Template
 
-```
 QUEBEC QST RETURN -- Working Paper
 
 A. OUTPUT
@@ -210,23 +209,19 @@ REVIEWER FLAGS:
   [ ] Separate from GST return?
   [ ] Meals ITR at 50%?
   [ ] Self-assessment on imported services?
-```
-
----
 
 ## Section 8 -- Bank Statement Reading Guide
 
+**Section 8 -- Bank Statement Reading Guide**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Desjardins | CSV | Date, Description, Withdrawal, Deposit |
 | RBC, TD, BMO, Scotiabank | CSV, PDF | Date, Description, Debit, Credit, Balance |
 | National Bank | CSV | Date, Description, Amount |
 
----
-
 ## Section 9 -- Onboarding Fallback
 
-```
 ONBOARDING QUESTIONS -- QUEBEC QST
 1. QST registration number?
 2. GST registration number?
@@ -238,14 +233,13 @@ ONBOARDING QUESTIONS -- QUEBEC QST
 8. QST paid on business expenses?
 9. Out-of-province or out-of-country sales?
 10. Using quick method?
-```
-
----
 
 ## Section 10 -- Reference Material
 
+**Section 10 -- Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | QST rate | AQST, s. 16 |
 | Registration | AQST, s. 407+ |
 | ITRs | AQST, s. 199+ |
@@ -253,8 +247,6 @@ ONBOARDING QUESTIONS -- QUEBEC QST
 | Quick method | AQST, s. 433.1+ |
 | Filing deadlines | AQST, s. 468+ |
 | Zero-rated (books, children's) | AQST specific schedules |
-
----
 
 ## PROHIBITIONS
 
@@ -268,14 +260,30 @@ ONBOARDING QUESTIONS -- QUEBEC QST
 - NEVER ignore self-assessment on imported services
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/qc-qst-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `qc-qst-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/qc-qst-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,20 +1,17 @@
 ---
 name: wealth-tax-matrix
-description: "> Use this skill whenever an individual asks about annual net wealth tax exposure. Trigger on phrases like \"wealth tax\", \"net worth tax\", \"ISP (impôt sur la fortune immobilière)\", \"IFI\", \"patrimoine\", \"patrimonio\", \"Vermögensteuer\", \"Solidaritetsskatt\", \"formueskatt\", \"förmögenhetsskatt\", \"Swiss wealth tax\", \"Norway wealth tax\", \"Spain wealth tax\", \"Spain solidarity tax\", \"patrimonio extraordinaria\", \"Madrid wealth tax exemption\", \"Argentinian bienes personales\", \"Colombian impuesto al patrimonio\", \"Uruguay impuesto al patrimonio\", or any request to compute net wealth tax. Maps in-force annual net wealth tax regimes as of mid-2025 in Switzerland (cantonal), Norway, Spain (national IP + regional + Impuesto Temporal de Solidaridad), Argentina, Colombia, Uruguay, the Netherlands (Box 3 fictitious yield as wealth-tax-equivalent), and France (IFI on real estate only)."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever an individual asks about annual net wealth tax exposure. Trigger on phrases like \"wealth tax\", \"net worth tax\", \"ISP (impôt sur la fortune immobilière)\", \"IFI\", \"patrimoine\", \"patrimonio\", \"Vermögensteuer\", \"Solidaritetsskatt\", \"formueskatt\", \"förmögenhetsskatt\", \"Swiss wealth tax\", \"Norway wealth tax\", \"Spain wealth tax\", \"Spain solidarity tax\", \"patrimonio extraordinaria\", \"Madrid wealth tax exemption\", \"Argentinian bienes personales\", \"Colombian impuesto al patrimonio\", \"Uruguay impuesto al patrimonio\", or any request to compute net wealth tax. Maps in-force annual net wealth tax regimes as of mid-2025 in Switzerland (cantonal), Norway, Spain (national IP + regional + Impuesto Temporal de Solidaridad), Argentina, Colombia, Uruguay, the Netherlands (Box 3 fictitious yield as wealth-tax-equivalent), and France (IFI on real estate only). Identifies regimes recently repealed (Italy IVAFE/IVIE remain narrow asset-specific; full wealth tax repealed long ago) and pr"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/wealth-tax-matrix"
-  tax_year: 2025
-  obligation: WT
+  openaccountants_url: "https://www.openaccountants.com/skills/wealth-tax-matrix"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Net Wealth Tax Matrix v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Wealth Tax Matrix
 
 ## What this file is
 
@@ -30,8 +27,6 @@ metadata:
 - **France IFI** unchanged (real-estate-only since 2018 replacement of the ISF)
 
 **The reviewer is the customer of this output.** Wealth tax valuation and exemptions are highly fact-specific. Every output must be reviewed by a credentialed local tax practitioner.
-
----
 
 ## Section 1 — Scope statement
 
@@ -50,26 +45,13 @@ This skill does NOT cover:
 - **Pension / retirement account taxation** beyond inclusion/exemption status
 - **Capital gains tax** — see country income tax skills
 
----
-
 ## Section 2 — Spain
 
 ### 2.1 Three-layer wealth tax stack
 
-**[T1] Layer 1 — Impuesto sobre el Patrimonio (IP) — national framework + autonomous community administration:**
-- Ley 19/1991 — national law
-- Each Comunidad Autónoma sets rates, brackets, and rebates
-- Effective rates: Catalonia ~0.21-2.75%; Madrid 100% rebate (effectively 0%); Andalucía 100% rebate (effectively 0%); Galicia ~0.2-2.5%; others vary
-- Tax-free minimum (national default): EUR 700,000 (autonomous communities may modify)
-- Habitual residence exemption: EUR 300,000 per taxpayer
-
-**[T1] Layer 2 — Impuesto Temporal de Solidaridad de las Grandes Fortunas:**
-- Introduced 28 December 2022 (Ley 38/2022) as "temporary" with sunset at end of 2024; **extended through 2025 by RDL 9/2024**
-- National tax on net wealth ≥ EUR 3 million; effectively neutralises regional rebates
-- Rates: 0% to EUR 3m; 1.7% from EUR 3m-5.347m; 2.1% from EUR 5.347m-10.696m; 3.5% above EUR 10.696m
-- Credit for IP paid in the autonomous community
-
-**[T1] Layer 3 — Combined cap:** total of personal income tax (IRPF) + IP + Solidaridad cannot exceed 60% of IRPF taxable base; cap excluded if assets are mostly non-productive
+- **Layer 1 — Impuesto sobre el Patrimonio (IP)** — National framework + autonomous community administration: Ley 19/1991 — national law; Each Comunidad Autónoma sets rates, brackets, and rebates; Effective rates: Catalonia ~0.21-2.75%; Madrid 100% rebate (effectively 0%); Andalucía 100% rebate (effectively 0%); Galicia ~0.2-2.5%; others vary; Tax-free minimum (national default): EUR 700,000 (autonomous communities may modify); Habitual residence exemption: EUR 300,000 per taxpayer  _(Ley 19/1991)_
+- **Layer 2 — Impuesto Temporal de Solidaridad de las Grandes Fortunas** — Introduced 28 December 2022 (Ley 38/2022) as "temporary" with sunset at end of 2024; extended through 2025 by RDL 9/2024. National tax on net wealth ≥ EUR 3 million; effectively neutralises regional rebates. Rates: 0% to EUR 3m; 1.7% from EUR 3m-5.347m; 2.1% from EUR 5.347m-10.696m; 3.5% above EUR 10.696m. Credit for IP paid in the autonomous community  _(Ley 38/2022; RDL 9/2024)_
+- **Layer 3 — Combined cap** — Total of personal income tax (IRPF) + IP + Solidaridad cannot exceed 60% of IRPF taxable base; cap excluded if assets are mostly non-productive
 
 ### 2.2 Computation example
 
@@ -85,8 +67,10 @@ A Catalonia resident with EUR 8m net wealth:
 
 ### 2.3 Exemptions
 
+**Spain wealth tax exemptions**
+
 | Exemption | Detail |
-|---|---|
+| --- | --- |
 | Family business shares | Exempt if ≥5% direct ownership (or 20% group), held actively, directing functions |
 | Habitual residence | First EUR 300k per taxpayer |
 | Family heirlooms | Items of historical / artistic value classified |
@@ -95,48 +79,22 @@ A Catalonia resident with EUR 8m net wealth:
 
 ### 2.4 Filing
 
-- Form 714 (IP) and Form 718 (Solidaridad)
-- Due May-June following calendar year
-- Tax base reference date: 31 December
-- Online filing mandatory above thresholds
-
----
+- **Spain filing requirements** — Form 714 (IP) and Form 718 (Solidaridad); Due May-June following calendar year; Tax base reference date: 31 December; Online filing mandatory above thresholds
 
 ## Section 3 — Norway
 
-**[T1] Norwegian Wealth Tax (Formuesskatt) — Skattlova kap. 4:**
-- **Municipal portion: 0.7%** above the threshold to municipalities
-- **State portion** (graduated):
-  - 0% to NOK 1.7m
-  - 0.4% from NOK 1.7m to NOK 20m
-  - 0.6% from NOK 20m to NOK 100m (per 2024 budget; verify 2025)
-  - 1.0% above NOK 20m for primary dwelling > NOK 10m / 2025 budget adjustments
-- **Threshold**: NOK 1.7m single / NOK 3.4m married couple (2025)
-- **Combined top rate**: up to 1.7% on highest net wealth
-
-**[T1] Valuation discounts:**
-- Primary residence: 25% of market value below NOK 10m; 70% above
-- Secondary residence: 100% of market value
-- Commercial real estate: 80% of valuation
-- Operating assets (shares in non-listed companies): 80% of share value (since 2024)
-- Listed shares: 80% of year-end price
-- Cash, deposits, bonds: 100%
-
-**[T1] Foreign assets:**
-- Worldwide taxation for Norwegian residents
-- Foreign tax credit for wealth tax paid abroad (e.g., Switzerland canton)
-- Bilateral wealth tax treaty articles where in force (rare)
-
----
+- **Norwegian Wealth Tax (Formuesskatt)** — Municipal portion: 0.7% above the threshold to municipalities. State portion (graduated): 0% to NOK 1.7m; 0.4% from NOK 1.7m to NOK 20m; 0.6% from NOK 20m to NOK 100m (per 2024 budget; verify 2025); 1.0% above NOK 20m for primary dwelling > NOK 10m / 2025 budget adjustments. Threshold: NOK 1.7m single / NOK 3.4m married couple (2025). Combined top rate: up to 1.7% on highest net wealth  _(Skattlova kap. 4)_
+- **Valuation discounts** — Primary residence: 25% of market value below NOK 10m; 70% above. Secondary residence: 100% of market value. Commercial real estate: 80% of valuation. Operating assets (shares in non-listed companies): 80% of share value (since 2024). Listed shares: 80% of year-end price. Cash, deposits, bonds: 100%  _(Skattlova kap. 4)_
+- **Foreign assets** — Worldwide taxation for Norwegian residents. Foreign tax credit for wealth tax paid abroad (e.g., Switzerland canton). Bilateral wealth tax treaty articles where in force (rare)  _(Skattlova kap. 4)_
 
 ## Section 4 — Switzerland (cantonal)
 
-**[T1] Federal Switzerland:** no federal wealth tax. Wealth tax is **cantonal and municipal**.
+- **Federal Switzerland** — No federal wealth tax. Wealth tax is cantonal and municipal.
 
-**[T1] Cantonal wealth tax matrix (illustrative, 2025):**
+**Cantonal wealth tax matrix (illustrative, 2025)**
 
 | Canton | Top combined rate | Threshold | Notable |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Geneva** | ~1.00% | CHF 73,300 single | High top rate; major changes considered annually |
 | **Vaud** | ~0.79% | CHF 56,000 | n/a |
 | **Bern** | ~0.59% | CHF 97,000 | n/a |
@@ -148,124 +106,46 @@ A Catalonia resident with EUR 8m net wealth:
 | **Valais** | ~0.50% | CHF 30,000 | n/a |
 | **Basel-Stadt** | ~0.66% | CHF 100,000 | n/a |
 
-**[T1] Tax base:**
-- All worldwide assets at fair market value on 31 December (movable property at FMV; real estate at cantonal "Steuerwert" which is typically 60-80% of market)
-- Less debts (deduction of all certified debts at face value)
-- Movable assets located abroad excluded from cantonal taxation but enter the "rate-determining wealth" calculation (progressive rate effect)
-
-**[T1] Exemptions:**
-- Household furniture for personal use
-- Personal effects
-- Pension assets (Säule 3a, 2nd pillar) until paid out
-- Annuity rights (limited)
-
----
+- **Tax base** — All worldwide assets at fair market value on 31 December (movable property at FMV; real estate at cantonal "Steuerwert" which is typically 60-80% of market). Less debts (deduction of all certified debts at face value). Movable assets located abroad excluded from cantonal taxation but enter the "rate-determining wealth" calculation (progressive rate effect)
+- **Exemptions** — Household furniture for personal use. Personal effects. Pension assets (Säule 3a, 2nd pillar) until paid out. Annuity rights (limited)
 
 ## Section 5 — Argentina — Bienes Personales
 
-**[T1] Bienes Personales (BP) — Law 23,966 as amended:**
-- **Rates 2025** (Law 27,743 reform): graduated 0.5%-1.25% on Argentine assets; 0.5%-1.5% on foreign assets if surcharge applies
-- **Threshold**: ARS 100m (2024 reform; indexed)
-- **Habitual home exemption**: ARS 350m
-
-**[T1] Plan Aporte Especial (Régimen Especial de Ingreso del Impuesto sobre los Bienes Personales — REIBP):**
-- One-time advance payment regime introduced by Ley 27.743 (2024)
-- Taxpayers electing prepay 5 years of BP at concessional rate (~0.45-1.5%)
-- Provides stability against future rate increases through 2027
-
-**[T1] Foreign assets surcharge:**
-- Higher rate (additional 50-100% multiplier) on assets outside Argentina unless repatriated
-- 5% of foreign assets brought back to Argentina secures the regular rate
-
-**[T1] Liquid assets ratio rule:**
-- Certain bank deposits and government bonds receive reduced rates
-
----
+- **Bienes Personales (BP)** — Rates 2025 (Law 27,743 reform): graduated 0.5%-1.25% on Argentine assets; 0.5%-1.5% on foreign assets if surcharge applies. Threshold: ARS 100m (2024 reform; indexed). Habitual home exemption: ARS 350m  _(Law 23,966 as amended)_
+- **Plan Aporte Especial (REIBP)** — One-time advance payment regime introduced by Ley 27.743 (2024). Taxpayers electing prepay 5 years of BP at concessional rate (~0.45-1.5%). Provides stability against future rate increases through 2027  _(Ley 27.743 (2024))_
+- **Foreign assets surcharge** — Higher rate (additional 50-100% multiplier) on assets outside Argentina unless repatriated. 5% of foreign assets brought back to Argentina secures the regular rate
+- **Liquid assets ratio rule** — Certain bank deposits and government bonds receive reduced rates
 
 ## Section 6 — Colombia — Impuesto al Patrimonio
 
-**[T1] Law 2277 of 2022 (Tax Reform):**
-- Applies to natural persons (resident and non-resident) and certain national entities
-- **Threshold**: tax base ≥ 72,000 UVT (~COP 3,388m / ~USD 850k at 2025 UVT)
-- **Rate schedule (per 2024/2025 UVT):**
-  - 0% up to 72,000 UVT
-  - 0.5% from 72,000 to 122,000 UVT
-  - 1.0% from 122,000 to 239,000 UVT
-  - 1.5% above 239,000 UVT (subject to constitutional review)
-- Filing form 420 annually
-
-**[T1] Exemptions:**
-- Habitual residence up to 12,000 UVT
-- Equity invested in active production companies (limited)
-- Cultural and family heirlooms
-
----
+- **Law 2277 of 2022 (Tax Reform)** — Applies to natural persons (resident and non-resident) and certain national entities. Threshold: tax base ≥ 72,000 UVT (~COP 3,388m / ~USD 850k at 2025 UVT). Rate schedule (per 2024/2025 UVT): 0% up to 72,000 UVT; 0.5% from 72,000 to 122,000 UVT; 1.0% from 122,000 to 239,000 UVT; 1.5% above 239,000 UVT (subject to constitutional review). Filing form 420 annually  _(Law 2277 of 2022)_
+- **Exemptions** — Habitual residence up to 12,000 UVT. Equity invested in active production companies (limited). Cultural and family heirlooms
 
 ## Section 7 — Uruguay — Impuesto al Patrimonio
 
-**[T1] Title 14 of Texto Ordenado / Decreto 318/995:**
-- Applies to natural persons resident in Uruguay (and tax-resident companies; rules differ)
-- **Threshold**: ~ UYU 5.6m for 2025 (indexed UPM)
-- **Rate schedule (graduated):** 0.2% to 0.7% for residents (rising); 1.5% for non-residents on Uruguayan assets
-- Filing annual, August following tax year
-- Deductible debts: capped (no foreign-bank debt allowed)
-- Habitual home discount: 50% of value up to threshold
-
----
+- **Title 14 of Texto Ordenado / Decreto 318/995** — Applies to natural persons resident in Uruguay (and tax-resident companies; rules differ). Threshold: ~UYU 5.6m for 2025 (indexed UPM). Rate schedule (graduated): 0.2% to 0.7% for residents (rising); 1.5% for non-residents on Uruguayan assets. Filing annual, August following tax year. Deductible debts: capped (no foreign-bank debt allowed). Habitual home discount: 50% of value up to threshold  _(Title 14 of Texto Ordenado / Decreto 318/995)_
 
 ## Section 8 — France — IFI (Impôt sur la Fortune Immobilière)
 
-**[T1] IFI replaced ISF from 1 January 2018. Real-estate-only basis:**
-- **Scope**: net real estate wealth (primary residence with 30% discount; secondary residences at FMV; SCPI, OPCI, real estate company shares pro rata to real estate)
-- **Threshold**: EUR 1.3 million
-- **Rate schedule:**
-  - 0% to EUR 800k
-  - 0.5% from EUR 800k to 1.3m (kicks in only when total reaches 1.3m)
-  - 0.7% from EUR 1.3m to 2.57m
-  - 1.0% from EUR 2.57m to 5m
-  - 1.25% from EUR 5m to 10m
-  - 1.5% above EUR 10m
-- **Décote** (reduction) between EUR 1.3m and 1.4m to smooth the threshold
-- **Cap (plafond)**: IFI + IR + PFU + CSG cannot exceed 75% of prior year income; excess refunded
-- Form 2042-IFI filed with income tax return
-
-**[T1] Exemptions:**
-- Real estate used in professional activity
-- Forestry holdings (75% discount)
-- Bois et forêts under specific contracts
-- Real estate dedicated to rental at "loyer plafonné" (rent-capped) under certain schemes
-
----
+- **IFI scope and rate schedule** — IFI replaced ISF from 1 January 2018. Real-estate-only basis. Scope: net real estate wealth (primary residence with 30% discount; secondary residences at FMV; SCPI, OPCI, real estate company shares pro rata to real estate). Threshold: EUR 1.3 million. Rate schedule: 0% to EUR 800k; 0.5% from EUR 800k to 1.3m (kicks in only when total reaches 1.3m); 0.7% from EUR 1.3m to 2.57m; 1.0% from EUR 2.57m to 5m; 1.25% from EUR 5m to 10m; 1.5% above EUR 10m. Décote (reduction) between EUR 1.3m and 1.4m to smooth the threshold. Cap (plafond): IFI + IR + PFU + CSG cannot exceed 75% of prior year income; excess refunded. Form 2042-IFI filed with income tax return
+- **Exemptions** — Real estate used in professional activity. Forestry holdings (75% discount). Bois et forêts under specific contracts. Real estate dedicated to rental at "loyer plafonné" (rent-capped) under certain schemes
 
 ## Section 9 — Netherlands — Box 3 (de facto wealth tax via fictitious yield)
 
-**[T1] Netherlands Box 3 — wealth taxed via deemed yield rather than rate on capital:**
+- **Box 3 deemed yield formula** — Deemed yield = (allocated % × yield rate per asset class) − allocated debt × debt yield rate Box 3 tax = Deemed yield × 36% (2024/2025 rate, up from 32% in 2023)  _(Hoge Raad judgment of 6 June 2024)_
+- **Background** — The Hoge Raad judgment of 6 June 2024 confirmed the existing fictitious-yield system unconstitutional where it exceeds actual return. The transitional Box 3 system in force from 2023 onwards (with retroactive cures) computes a deemed yield as per the formula.  _(Hoge Raad judgment of 6 June 2024)_
+- **Asset class yields (2025 illustrative)** — Bank deposits: ~1.03%; Other assets (real estate, shares, crypto, foreign accounts): ~6.04%; Debt yield: ~2.47%
+- **Tax-free allowance** — EUR 57,000 per taxpayer / EUR 114,000 fiscal partners
+- **Effective wealth tax rate on "other assets"** — 6.04% × 36% = 2.17% (top range; on actual return-bearing assets that perform below the deemed yield, effective rate is higher)
 
-The **Hoge Raad** judgment of 6 June 2024 confirmed the existing fictitious-yield system unconstitutional where it exceeds actual return. The transitional Box 3 system in force from 2023 onwards (with retroactive cures) computes a deemed yield:
-
-```
-Deemed yield = (allocated % × yield rate per asset class) − allocated debt × debt yield rate
-Box 3 tax = Deemed yield × 36% (2024/2025 rate, up from 32% in 2023)
-```
-
-**[T1] Asset class yields (2025 illustrative):**
-- Bank deposits: ~1.03%
-- Other assets (real estate, shares, crypto, foreign accounts): ~6.04%
-- Debt yield: ~2.47%
-
-**[T1] Tax-free allowance:** EUR 57,000 per taxpayer / EUR 114,000 fiscal partners
-
-**[T1]** Effective wealth tax rate on "other assets":
-6.04% × 36% = **2.17%** (top range; on actual return-bearing assets that perform below the deemed yield, effective rate is higher)
-
-**[T2]** Taxpayers can elect actual-yield computation (counter-proof) from 2025; complex documentation required. Permanent reform expected 2027-2028 to align with actual yield.
-
----
+Taxpayers can elect actual-yield computation (counter-proof) from 2025; complex documentation required. Permanent reform expected 2027-2028 to align with actual yield.
 
 ## Section 10 — Recently changed / proposed
 
+**Recently changed / proposed wealth tax regimes**
+
 | Jurisdiction | Status |
-|---|---|
+| --- | --- |
 | **Italy** | No general wealth tax. IVIE (0.76% on foreign real estate) and IVAFE (0.2% on foreign financial assets) remain asset-specific. Long-term ISA proposals for super-rich resurface periodically. |
 | **Germany** | Wealth tax (Vermögensteuer) suspended since 1997 (BVerfG ruling). Periodic SPD/Greens proposals; not in force as of 2025. |
 | **United Kingdom** | No annual wealth tax. Wealth Tax Commission 2020 recommended a one-off 5% wealth tax above £500k; no enactment. 2024 Labour government rejected an annual wealth tax. |
@@ -278,35 +158,21 @@ Box 3 tax = Deemed yield × 36% (2024/2025 rate, up from 32% in 2023)
 | **Denmark** | Wealth tax abolished 1997. |
 | **Finland** | Wealth tax abolished 2006. |
 
----
-
 ## Section 11 — Cross-border issues
 
 ### 11.1 Worldwide vs territorial scope
 
-- **Spain, France IFI**: worldwide for residents; Spanish-/French-situs only for non-residents
-- **Norway**: worldwide for residents; Norwegian-situs only for non-residents (limited)
-- **Switzerland (cantonal)**: worldwide for residents (rate determination); cantonal-situs only for non-residents
-- **Argentina Bienes Personales**: worldwide for residents (with foreign-asset surcharge); Argentine-situs only for non-residents
-- **Netherlands Box 3**: worldwide for residents; Dutch-situs only for non-residents
+- **Worldwide vs territorial scope by regime** — Spain, France IFI: worldwide for residents; Spanish-/French-situs only for non-residents. Norway: worldwide for residents; Norwegian-situs only for non-residents (limited). Switzerland (cantonal): worldwide for residents (rate determination); cantonal-situs only for non-residents. Argentina Bienes Personales: worldwide for residents (with foreign-asset surcharge); Argentine-situs only for non-residents. Netherlands Box 3: worldwide for residents; Dutch-situs only for non-residents
 
 ### 11.2 Double taxation relief
 
-Few tax treaties contain wealth tax articles. Where present (e.g., OECD Model Article 22):
-- Real estate taxed in the situs state
-- Business property of a PE taxed in the PE state
-- Ships and aircraft taxed in the residence state of the operator
-- All other property taxed in the residence state of the holder
+- **Double taxation relief** — Few tax treaties contain wealth tax articles. Where present (e.g., OECD Model Article 22): Real estate taxed in the situs state; Business property of a PE taxed in the PE state; Ships and aircraft taxed in the residence state of the operator; All other property taxed in the residence state of the holder  _(OECD Model Article 22)_
 
-**[T2]** In practice, double wealth taxation often results because neither state cedes primary right. Foreign tax credits available where bilateral treaty includes Article 22 (e.g., Norway-Switzerland).
+In practice, double wealth taxation often results because neither state cedes primary right. Foreign tax credits available where bilateral treaty includes Article 22 (e.g., Norway-Switzerland).
 
 ### 11.3 Lex Beckham / impatriate regimes
 
-- **Spain — Régimen Beckham**: impatriates may opt for non-resident taxation for 6 years; **IP and Solidaridad** still apply on Spanish-situs assets only during election
-- **Italy — Impatriate regime**: income tax preferential; no wealth tax in Italy (n/a)
-- **Portugal — NHR (closed to new applicants 2024)**: no wealth tax
-
----
+- **Impatriate regimes and wealth tax** — Spain — Régimen Beckham: impatriates may opt for non-resident taxation for 6 years; IP and Solidaridad still apply on Spanish-situs assets only during election. Italy — Impatriate regime: income tax preferential; no wealth tax in Italy (n/a). Portugal — NHR (closed to new applicants 2024): no wealth tax
 
 ## Section 12 — Output specification
 
@@ -321,8 +187,6 @@ The reviewer brief must include:
 7. **Cross-border tax credits** where applicable
 8. **Reviewer questions** — open items flagged as [T2] or [T3]
 
----
-
 ## Section 13 — Self-checks
 
 - [ ] Reference date applied (31 December typical)
@@ -335,8 +199,6 @@ The reviewer brief must include:
 - [ ] Filing form and deadline per regime
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement
 
----
-
 ## Section 14 — Prohibitions
 
 - **Do not** assume an asset is exempt because the country generally exempts family businesses — specific tests (≥5% ownership, active role) apply.
@@ -345,14 +207,30 @@ The reviewer brief must include:
 - **Do not** ignore the December 31 reference date — wealth tax is a snapshot, not an average.
 - **Do not** apply ISF rules to French clients — ISF was repealed in 2018; only IFI (real estate only) remains.
 
----
-
 ## Section 15 — Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Net wealth tax involves valuation judgment and frequent regime changes. Every output must be reviewed and signed off by a credentialed local tax practitioner before filing.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/wealth-tax-matrix) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `wealth-tax-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/wealth-tax-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

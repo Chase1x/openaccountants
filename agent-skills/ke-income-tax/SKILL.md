@@ -1,26 +1,24 @@
 ---
 name: ke-income-tax
 description: "Use this skill whenever asked about Kenyan income tax for self-employed individuals. Trigger on phrases like \"how much tax do I pay\", \"KRA\", \"iTax\", \"income tax return\", \"personal relief\", \"insurance relief\", \"turnover tax\", \"presumptive tax\", \"self-employed tax Kenya\", or any question about filing or computing income tax for a self-employed or sole proprietor client in Kenya. ALWAYS read this skill before touching any Kenyan income tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ke-income-tax"
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/ke-income-tax"
+  jurisdiction: "KE"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Kenya Income Tax -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# KE Income Tax
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before classifying anything.**
+**Quick reference field table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Kenya |
 | Tax type | Income tax on business income (self-assessment) |
 | Primary legislation | Income Tax Act, Chapter 470 |
@@ -39,65 +37,60 @@ metadata:
 | Validated by | Pending -- requires Kenyan CPA or registered tax agent sign-off |
 | Validation date | Pending |
 
-**Progressive tax table (resident, annual):**
+**Progressive tax table (resident, annual)**
 
 | Taxable income (KES) | Rate |
-|---|---|
+| --- | --- |
 | 0--288,000 | 10% |
 | 288,001--388,000 | 25% |
 | 388,001--6,000,000 | 30% |
 | 6,000,001--9,600,000 | 32.5% |
 | 9,600,001+ | 35% |
 
-**Wear-and-tear rates (reducing balance):**
+**Wear-and-tear rates (reducing balance)**
 
 | Asset | Rate |
-|---|---|
+| --- | --- |
 | Heavy/self-propelling machinery | 37.5% |
 | Computer/IT equipment | 30% |
 | Motor vehicles | 25% |
 | Furniture and fittings | 12.5% |
 | Farm machinery | 100% |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown residency | STOP -- non-residents pay flat 30% |
 | Unknown expense category | Not deductible |
 | Unknown business-use proportion | 0% |
 | Unknown whether turnover tax is elected | Normal tax |
 
----
+**Read this whole section before classifying anything.**
 
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the tax year. Acceptable from: Equity Bank, KCB (Kenya Commercial Bank), Co-operative Bank, NCBA, Standard Chartered Kenya, Absa Kenya, I&M Bank, DTB, or mobile money (M-Pesa via Safaricom).
-
-**Recommended** -- invoices, insurance premium certificates, instalment tax payment records, PIN certificate, WHT certificates.
-
-**Ideal** -- complete bookkeeping, prior year return, iTax account records.
+- **Minimum viable inputs** — bank statement for the tax year. Acceptable from: Equity Bank, KCB (Kenya Commercial Bank), Co-operative Bank, NCBA, Standard Chartered Kenya, Absa Kenya, I&M Bank, DTB, or mobile money (M-Pesa via Safaricom).
+- **Recommended inputs** — invoices, insurance premium certificates, instalment tax payment records, PIN certificate, WHT certificates.
+- **Ideal inputs** — complete bookkeeping, prior year return, iTax account records.
 
 ### Refusal catalogue
 
-**R-KE-1 -- Company/LLP.** *Trigger:* client is a limited company or LLP. *Message:* "This skill covers self-employed individuals only. Companies file corporate returns at 30%."
-
-**R-KE-2 -- Non-resident.** *Trigger:* non-resident status. *Message:* "Non-residents pay flat 30% on Kenya-source income with no personal relief. This skill covers residents only."
-
-**R-KE-3 -- Cross-border/WHT.** *Trigger:* complex withholding tax or treaty questions. *Message:* "Cross-border WHT and treaty analysis are outside scope. Consult a tax practitioner."
-
-**R-KE-4 -- Capital gains.** *Trigger:* property disposal. *Message:* "Capital gains tax (15%) is outside scope."
-
----
+- **R-KE-1 -- Company/LLP** — This skill covers self-employed individuals only. Companies file corporate returns at 30%. (Trigger: client is a limited company or LLP.)
+- **R-KE-2 -- Non-resident** — Non-residents pay flat 30% on Kenya-source income with no personal relief. This skill covers residents only. (Trigger: non-resident status.)
+- **R-KE-3 -- Cross-border/WHT** — Cross-border WHT and treaty analysis are outside scope. Consult a tax practitioner. (Trigger: complex withholding tax or treaty questions.)
+- **R-KE-4 -- Capital gains** — Capital gains tax (15%) is outside scope. (Trigger: property disposal.)
 
 ## Section 3 -- Transaction pattern library (the lookup table)
 
 ### 3.1 Kenyan banks (fees and interest)
 
+**Kenyan banks (fees and interest)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EQUITY BANK | Bank charges: deductible | Monthly/transaction fees |
 | KCB, KENYA COMMERCIAL BANK | Bank charges: deductible | Same |
 | CO-OPERATIVE BANK, CO-OP | Bank charges: deductible | Same |
@@ -112,8 +105,10 @@ metadata:
 
 ### 3.2 M-Pesa and mobile money
 
+**M-Pesa and mobile money**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MPESA, M-PESA, SAFARICOM | Transaction fees: deductible | Business M-Pesa charges |
 | MPESA PAYBILL, TILL NO | Revenue if incoming; deductible if outgoing business payment | Verify nature |
 | MPESA FLOAT, B2C, C2B | EXCLUDE if internal movement | Business float management |
@@ -121,8 +116,10 @@ metadata:
 
 ### 3.3 Kenyan government and statutory bodies
 
+**Kenyan government and statutory bodies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KRA, KENYA REVENUE AUTHORITY | EXCLUDE | Tax payment |
 | NSSF, NATIONAL SOCIAL SECURITY | Deductible (up to statutory limit) | Provident fund contribution |
 | SHIF, SOCIAL HEALTH INSURANCE | NOT deductible for income tax | Separate health levy |
@@ -131,8 +128,10 @@ metadata:
 
 ### 3.4 Kenyan utilities and telecoms
 
+**Kenyan utilities and telecoms**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KENYA POWER, KPLC | Deductible if business premises | Electricity; apportion if home |
 | NAIROBI WATER, ELDOWAS | Deductible if business premises | Water |
 | SAFARICOM, AIRTEL, TELKOM KENYA | Deductible: business phone/internet | Mixed: apportion |
@@ -140,24 +139,30 @@ metadata:
 
 ### 3.5 SaaS and software -- international
 
+**SaaS and software -- international**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Deductible expense | International SaaS |
 | GITHUB, OPENAI, ANTHROPIC | Deductible expense | Non-EU |
 | SLACK, ZOOM, ATLASSIAN | Deductible expense | Check entity |
 
 ### 3.6 Professional services (Kenya)
 
+**Professional services (Kenya)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ACCOUNTANT, CPA, AUDIT FIRM | Deductible | Accounting fees |
 | ADVOCATE, LAW FIRM | Deductible if business | Legal fees |
 | TAX AGENT | Deductible | Tax advisory |
 
 ### 3.7 Transport and travel
 
+**Transport and travel**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KENYA AIRWAYS, JAMBOJET | Deductible if business travel | Flights |
 | UBER, BOLT, LITTLE CAB | Deductible if business | Ride services |
 | TOTAL, SHELL, RUBIS, VIVO ENERGY | Deductible: business vehicle portion | Fuel |
@@ -165,27 +170,31 @@ metadata:
 
 ### 3.8 Insurance
 
+**Insurance**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | JUBILEE, BRITAM, CIC, UAP, APA | Deductible if business insurance | Personal life/health: insurance RELIEF (not deduction) |
 | INSURANCE PREMIUM (life/health/education) | Insurance relief: 15% of premiums, cap KES 60,000 | Credit against tax |
 
 ### 3.9 Food and entertainment
 
+**Food and entertainment**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NAIVAS, CARREFOUR KE, QUICKMART | Default: NOT deductible | Personal provisioning |
 | RESTAURANT | Deductible only if wholly and exclusively business | Must prove |
 
 ### 3.10 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OWN TRANSFER, INTERNAL | EXCLUDE | Internal movement |
 | MPESA TO BANK, BANK TO MPESA | EXCLUDE | Own account transfer |
 | DRAWINGS, PERSONAL | EXCLUDE | Owner drawings |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -209,70 +218,79 @@ metadata:
 **Input:** Small trader, turnover KES 500,000, expenses KES 350,000.
 **Computation:** Normal: profit KES 150,000. Tax = 15,000 - 28,800 relief = KES 0. Presumptive: KES 15,000. Normal is better.
 
----
-
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 Progressive rates
-10%/25%/30%/32.5%/35%. Non-residents: flat 30%. **Legislation:** ITA Cap 470, Third Schedule.
+
+- **Progressive rates** — 10%/25%/30%/32.5%/35%. Non-residents: flat 30%.  _(ITA Cap 470, Third Schedule.)_
 
 ### 5.2 Personal relief
-KES 28,800/year. Credit against tax, NOT deduction from income. Available to all residents. **Legislation:** ITA.
+
+- **Personal relief** — KES 28,800/year. Credit against tax, NOT deduction from income. Available to all residents.  _(ITA.)_
 
 ### 5.3 Insurance relief
-15% of qualifying premiums (life, health, education). Cap KES 60,000/year. Credit against tax. **Legislation:** s31.
+
+- **Insurance relief** — 15% of qualifying premiums (life, health, education). Cap KES 60,000/year. Credit against tax.  _(s31.)_
 
 ### 5.4 Instalment tax
-Quarterly: 25% each on 20th of 4th, 6th, 9th, 12th months. Based on estimated current year or prior year actual. If prior year tax < KES 40,000: not required. Under-estimation: 20% penalty. **Legislation:** s12.
+
+- **Instalment tax** — Quarterly: 25% each on 20th of 4th, 6th, 9th, 12th months. Based on estimated current year or prior year actual. If prior year tax < KES 40,000: not required. Under-estimation: 20% penalty.  _(s12.)_
 
 ### 5.5 Turnover tax
-1.5% on gross turnover KES 1M--25M. Monthly filing. Replaces income tax. No expense deductions. Excludes professional/management services. **Legislation:** s12C.
+
+- **Turnover tax** — 1.5% on gross turnover KES 1M--25M. Monthly filing. Replaces income tax. No expense deductions. Excludes professional/management services.  _(s12C.)_
 
 ### 5.6 Presumptive tax
-KES 15,000/year for specified businesses under KES 1M turnover. Final tax. **Legislation:** s12D.
+
+- **Presumptive tax** — KES 15,000/year for specified businesses under KES 1M turnover. Final tax.  _(s12D.)_
 
 ### 5.7 Wear-and-tear (capital deductions)
-Reducing balance method. Heavy machinery: 37.5%. Computers: 30%. Vehicles: 25%. Furniture: 12.5%. Farm machinery: 100%. **Legislation:** Second Schedule.
+
+- **Wear-and-tear rates** — Reducing balance method. Heavy machinery: 37.5%. Computers: 30%. Vehicles: 25%. Furniture: 12.5%. Farm machinery: 100%.  _(Second Schedule.)_
 
 ### 5.8 NSSF/SHIF
-NSSF (provident): deductible up to statutory limit. SHIF (health): NOT deductible for income tax. **Legislation:** Various acts.
+
+- **NSSF/SHIF treatment** — NSSF (provident): deductible up to statutory limit. SHIF (health): NOT deductible for income tax.  _(Various acts.)_
 
 ### 5.9 WHT credits
-Withholding tax on professional fees (5%) is a credit against final tax. Requires WHT certificates. **Legislation:** ITA.
+
+- **WHT credits** — Withholding tax on professional fees (5%) is a credit against final tax. Requires WHT certificates.  _(ITA.)_
 
 ### 5.10 Record keeping
-5 years. English or Swahili. Paper or electronic. **Legislation:** Tax Procedures Act s23.
 
----
+- **Record keeping** — 5 years. English or Swahili. Paper or electronic.  _(Tax Procedures Act s23.)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### 6.1 Turnover tax vs normal tax
+
 *Why:* Depends on expense level and qualification. *Default:* Present both. *Question:* "What are your total expenses? Professional services?"
 
 ### 6.2 Below KES 1M: presumptive vs normal
+
 *Why:* Normal may be cheaper if expenses are high. *Default:* Compute both. *Question:* "Total documented expenses?"
 
 ### 6.3 Motor vehicle business portion
+
 *Why:* Unknown split. *Default:* 0%. *Question:* "Do you maintain a logbook?"
 
 ### 6.4 Home office
+
 *Why:* Must be dedicated space. *Default:* Not deductible. *Question:* "Dedicated room for business?"
 
 ### 6.5 Capital allowances (industrial building)
-*Why:* Complex rules. *Default:* Flag for reviewer. *Question:* "Do you own business premises?"
 
----
+*Why:* Complex rules. *Default:* Flag for reviewer. *Question:* "Do you own business premises?"
 
 ## Section 7 -- Excel working paper template
 
 ### Sheet "Transactions"
+
 Columns: Date, Counterparty, Description, Amount (KES), Category (Revenue/Expense/Capital/Insurance/EXCLUDE), Deductible amount, Default?, Question, Notes.
 
 ### Sheet "Tax Computation"
-Progressive brackets. Reliefs. Instalment tax offset. WHT credits.
 
----
+Progressive brackets. Reliefs. Instalment tax offset. WHT credits.
 
 ## Section 8 -- Bank statement reading guide
 
@@ -286,32 +304,35 @@ Progressive brackets. Reliefs. Instalment tax offset. WHT credits.
 
 **Foreign currency.** Convert to KES at CBK (Central Bank of Kenya) rate on transaction date.
 
----
-
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Residency
+
 *Inference:* Kenyan bank + KRA PIN. *Fallback:* "Are you a Kenyan tax resident?"
 
 ### 9.2 Nature of trade
+
 *Inference:* From counterparty mix. *Fallback:* "What is your business activity?"
 
 ### 9.3 Annual turnover
+
 *Inference:* Sum of credits. *Fallback:* "What is your approximate annual turnover? (Determines TOT/presumptive eligibility.)"
 
 ### 9.4 Tax regime
+
 *Inference:* If TOT monthly payments visible. *Fallback:* "Are you on turnover tax, presumptive tax, or normal self-assessment?"
 
 ### 9.5 Insurance premiums
+
 *Inference:* Monthly insurance debits. *Fallback:* "Do you pay life, health, or education insurance premiums?"
 
 ### 9.6 Instalment tax
+
 *Inference:* Quarterly KRA payments. *Fallback:* "What instalment tax amounts have you paid?"
 
 ### 9.7 WHT certificates
-*Inference:* Not inferable from bank statement. *Fallback:* "Do you have WHT certificates from clients who withheld tax?"
 
----
+*Inference:* Not inferable from bank statement. *Fallback:* "Do you have WHT certificates from clients who withheld tax?"
 
 ## Section 10 -- Reference material
 
@@ -359,6 +380,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ke-income-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ke-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ke-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

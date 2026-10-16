@@ -1,20 +1,19 @@
 ---
 name: dac6-mdr-reportable-arrangements
-description: "> Use this skill whenever an intermediary (tax adviser, lawyer, accountant, bank, trust company) or a relevant taxpayer asks about mandatory disclosure of cross-border tax arrangements. Trigger on phrases like \"DAC6\", \"MDR\", \"mandatory disclosure rules\", \"reportable cross-border arrangement\", \"hallmark A1\", \"hallmark E3\", \"main benefit test\", \"MBT\", \"legal professional privilege\", \"DAC6 notification\", \"BZSt reporting\", \"arrangement reference number\", \"ARN\", \"OECD model MDR\", \"CRS avoidance arrangement\", or any request to determine whether an arrangement must be reported under DAC6 (EU Directive 2018/822) or equivalent OECD MDR rules in non-EU jurisdictions. Covers EU Member States, UK MDR (the post-Brexit OECD-aligned regime in SI 2023/38), and the OECD Model Mandatory Disclosure Rules on CRS Avoidance Arrangements and Opaque Offshore Structures (2018)."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever an intermediary (tax adviser, lawyer, accountant, bank, trust company) or a relevant taxpayer asks about mandatory disclosure of cross-border tax arrangements. Trigger on phrases like \"DAC6\", \"MDR\", \"mandatory disclosure rules\", \"reportable cross-border arrangement\", \"hallmark A1\", \"hallmark E3\", \"main benefit test\", \"MBT\", \"legal professional privilege\", \"DAC6 notification\", \"BZSt reporting\", \"arrangement reference number\", \"ARN\", \"OECD model MDR\", \"CRS avoidance arrangement\", or any request to determine whether an arrangement must be reported under DAC6 (EU Directive 2018/822) or equivalent OECD MDR rules in non-EU jurisdictions. Covers EU Member States, UK MDR (the post-Brexit OECD-aligned regime in SI 2023/38), and the OECD Model Mandatory Disclosure Rules on CRS Avoidance Arrangements and Opaque Offshore Structures (2018). Does NOT cover: domestic-only tax shelter disclosure regimes (e.g., US §6111 reportable transactions, UK DOTAS, Canada §237.3), country-"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/dac6-mdr-reportable-arrangements"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/dac6-mdr-reportable-arrangements"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# DAC6 / MDR — Mandatory Disclosure of Reportable Cross-Border Arrangements v0.1
+# DAC6 MDR Reportable Arrangements
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## DAC6 / MDR — Mandatory Disclosure of Reportable Cross-Border Arrangements v0.1
 
 ## What this file is
 
@@ -27,8 +26,6 @@ metadata:
 **Tax year coverage.** Current for **arrangements with a first step on or after 1 January 2025**. The historical DAC6 backlog (June 2018 → June 2020) is addressed in Section 5.
 
 **The reviewer is the customer of this output.** DAC6 / MDR analysis turns on legal classification, intent, and privilege. Outputs must be reviewed by a credentialed practitioner (typically a tax lawyer or Big 4 specialist) before any filing or refusal-to-file decision.
-
----
 
 ## Section 1 — Scope statement
 
@@ -49,73 +46,34 @@ This skill does NOT cover:
 - **State aid recovery and EU anti-abuse rules** — see `eu-state-aid-tax-rulings.md` (forthcoming).
 - **Pillar Two anti-abuse rules** — see `pillar-two-globe-minimum-tax.md`.
 
----
-
 ## Section 2 — Filing requirements
 
 ### Who is the reporter
 
-**[T1] Reporter priority order (Article 8ab DAC6):**
-
-1. **Intermediary** — any person that designs, markets, organises, makes available for implementation, or manages the implementation of a reportable cross-border arrangement. Includes service intermediaries (those who provide aid, assistance, or advice with respect to the foregoing).
-2. **Relevant taxpayer** — the person to whom the reportable cross-border arrangement is made available, or who is ready to implement, or who has implemented the first step. Reports only where no intermediary is reportable in the EU/UK, or where all relevant intermediaries claim privilege.
+- **Reporter priority order** — 1. **Intermediary** — any person that designs, markets, organises, makes available for implementation, or manages the implementation of a reportable cross-border arrangement. Includes service intermediaries (those who provide aid, assistance, or advice with respect to the foregoing). 2. **Relevant taxpayer** — the person to whom the reportable cross-border arrangement is made available, or who is ready to implement, or who has implemented the first step. Reports only where no intermediary is reportable in the EU/UK, or where all relevant intermediaries claim privilege.  _([T1] Article 8ab DAC6)_
 
 ### Who is an intermediary
 
-**[T1] Two tests, either of which captures the person (Article 3(21) DAC6):**
+**Two tests for intermediary status**  _([T1] Article 3(21) DAC6)_
 
 | Test | Trigger |
-|---|---|
+| --- | --- |
 | Promoter test | The person designs, markets, organises, makes available, or manages implementation |
 | Service-provider test | The person provides aid, assistance, or advice with respect to the design/marketing/organising/availability/implementation, *and* a reasonable person in the same position would have known the arrangement is reportable |
 
-**Connecting nexus to the EU (Article 3(21) DAC6) — at least one of:**
-
-- Tax resident in a Member State
-- Permanent establishment in a Member State through which services are provided
-- Incorporated/governed by laws of a Member State
-- Registered with a professional association related to legal, taxation or consultancy services in a Member State
+- **Connecting nexus to the EU** — At least one of: Tax resident in a Member State; Permanent establishment in a Member State through which services are provided; Incorporated/governed by laws of a Member State; Registered with a professional association related to legal, taxation or consultancy services in a Member State  _(Article 3(21) DAC6)_
 
 ### Reporting jurisdiction priority
 
-**[T1] If multiple intermediaries / multiple Member States could claim reporting (Article 8ab(3)):**
-
-1. Member State where the intermediary is **tax resident**.
-2. Otherwise: Member State where the intermediary has a **PE** through which the services were provided.
-3. Otherwise: Member State where the intermediary is **incorporated** or **governed**.
-4. Otherwise: Member State where the intermediary is **registered with the professional association**.
-
-An intermediary is exempt where it can prove the arrangement has already been reported by another intermediary in a Member State or by the taxpayer.
+- **Priority order if multiple intermediaries / multiple Member States could claim reporting** — 1. Member State where the intermediary is **tax resident**. 2. Otherwise: Member State where the intermediary has a **PE** through which the services were provided. 3. Otherwise: Member State where the intermediary is **incorporated** or **governed**. 4. Otherwise: Member State where the intermediary is **registered with the professional association**. An intermediary is exempt where it can prove the arrangement has already been reported by another intermediary in a Member State or by the taxpayer.  _([T1] Article 8ab(3))_
 
 ### When to report
 
-**[T1] 30-day reporting window. The clock starts on the EARLIEST of (Article 8ab(1)):**
-
-- The day after the arrangement is made available for implementation
-- The day after the arrangement is ready for implementation
-- The day after the first step of implementation has been taken
-
-**For service intermediaries** the clock starts the day after they provide aid, assistance or advice.
-
-**For marketable arrangements**, the intermediary must file a quarterly update (Article 8ab(2)).
+- **30-day reporting window trigger events** — The clock starts on the EARLIEST of: The day after the arrangement is made available for implementation; The day after the arrangement is ready for implementation; The day after the first step of implementation has been taken. For service intermediaries the clock starts the day after they provide aid, assistance or advice. For marketable arrangements, the intermediary must file a quarterly update.  _([T1] Article 8ab(1); Article 8ab(2))_
 
 ### What to report
 
-**[T1] The eleven data points (Article 8ab(14)):**
-
-1. Identification of intermediaries and relevant taxpayers (name, DoB/incorporation, tax residence, TIN)
-2. Details of the hallmarks that make the arrangement reportable
-3. Summary of the arrangement (commercial name; abstract description; no LPP-protected detail required)
-4. Date on which the first step has been or will be taken
-5. Details of national tax provisions concerned
-6. Value of the reportable cross-border arrangement
-7. Identification of the Member State of the relevant taxpayer(s) and of any other Member States likely to be concerned
-8. Identification of any other persons in a Member State likely to be affected
-9. Identification of associated enterprises
-10. The arrangement reference number (ARN) — issued by the receiving Member State and reused across all Member States
-11. Updated data points where there is a change
-
----
+- **The eleven data points** — 1. Identification of intermediaries and relevant taxpayers (name, DoB/incorporation, tax residence, TIN) 2. Details of the hallmarks that make the arrangement reportable 3. Summary of the arrangement (commercial name; abstract description; no LPP-protected detail required) 4. Date on which the first step has been or will be taken 5. Details of national tax provisions concerned 6. Value of the reportable cross-border arrangement 7. Identification of the Member State of the relevant taxpayer(s) and of any other Member States likely to be concerned 8. Identification of any other persons in a Member State likely to be affected 9. Identification of associated enterprises 10. The arrangement reference number (ARN) — issued by the receiving Member State and reused across all Member States 11. Updated data points where there is a change  _([T1] Article 8ab(14))_
 
 ## Section 3 — The five hallmark categories
 
@@ -123,24 +81,30 @@ Each Member State transposed DAC6 substantially uniformly; UK MDR substantially 
 
 ### Category A — Generic hallmarks (MBT required)
 
+**Category A hallmarks**
+
 | Hallmark | Description |
-|---|---|
+| --- | --- |
 | **A.1** | Arrangement where the relevant taxpayer / participant undertakes to comply with a confidentiality condition that may require them not to disclose how the arrangement could secure a tax advantage. |
 | **A.2** | The intermediary is entitled to a fee fixed by reference to (a) the tax advantage derived OR (b) whether a tax advantage is actually derived (e.g., contingency fee). |
 | **A.3** | The arrangement has substantially standardised documentation or structure, available to more than one taxpayer, without need for substantial customisation. |
 
 ### Category B — Specific hallmarks (MBT required)
 
+**Category B hallmarks**
+
 | Hallmark | Description |
-|---|---|
+| --- | --- |
 | **B.1** | A participant takes contrived steps consisting in acquiring a loss-making company, discontinuing its main activity, and using the losses in order to reduce its tax liability. |
 | **B.2** | Conversion of income into capital, gifts, or other categories of revenue taxed at a lower level or exempt. |
 | **B.3** | Circular transactions resulting in the round-tripping of funds through entities without primary commercial function or transactions that offset / cancel each other. |
 
 ### Category C — Cross-border deductible payments
 
+**Category C hallmarks**
+
 | Hallmark | MBT? | Description |
-|---|---|---|
+| --- | --- | --- |
 | **C.1(a)** | No | Cross-border deductible payments where the recipient is not resident in any tax jurisdiction. |
 | **C.1(b)(i)** | No | Cross-border deductible payments where the recipient is resident in a jurisdiction that levies no corporate tax or a corporate tax rate of zero or almost zero. |
 | **C.1(b)(ii)** | **Yes** | Cross-border deductible payments where the recipient is resident in a jurisdiction included on the EU list of non-cooperative jurisdictions. |
@@ -152,49 +116,38 @@ Each Member State transposed DAC6 substantially uniformly; UK MDR substantially 
 
 ### Category D — CRS/transparency hallmarks (no MBT)
 
+**Category D hallmarks**
+
 | Hallmark | Description |
-|---|---|
+| --- | --- |
 | **D.1** | An arrangement that may have the effect of undermining the reporting obligation under the laws implementing the EU automatic exchange of information legislation (CRS / DAC2) or that takes advantage of the absence of such legislation. Covers eight specific sub-features (D.1(a)–(g)) reflecting the OECD Model MDR on CRS Avoidance Arrangements. |
 | **D.2** | An arrangement involving a non-transparent legal or beneficial ownership chain with the use of persons, legal arrangements or structures (a) that do not carry on substantive economic activity supported by adequate staff, equipment, assets and premises; (b) that are incorporated, managed, resident, controlled or established in any jurisdiction other than the jurisdiction of residence of one or more of the beneficial owners of the assets held; and (c) where the beneficial owners are made unidentifiable. |
 
 ### Category E — Transfer pricing (no MBT)
 
+**Category E hallmarks**
+
 | Hallmark | Description |
-|---|---|
+| --- | --- |
 | **E.1** | An arrangement that involves the use of unilateral safe harbour rules. |
 | **E.2** | An arrangement involving the transfer of hard-to-value intangibles for which no reliable comparables exist at the time of transfer and projections of future cash flows / income are uncertain. |
 | **E.3** | An arrangement involving an intragroup cross-border transfer of functions, risks or assets if the projected annual EBIT, during the three-year period after the transfer, of the transferor(s) is less than 50% of the projected annual EBIT of such transferor(s) if the transfer had not been made. |
-
----
 
 ## Section 4 — Computation rules
 
 ### Step 1 — Identify whether the arrangement is "cross-border"
 
-**[T1] Cross-border test (Article 3(18) DAC6):**
-An arrangement that concerns more than one Member State, or a Member State and a third country, where at least one of the following:
-
-- Not all participants are tax resident in the same jurisdiction
-- One or more participants are simultaneously tax resident in more than one jurisdiction
-- One or more participants carry on business in another jurisdiction through a PE there, and the arrangement forms part or whole of the business of that PE
-- One or more participants carry on activity in another jurisdiction without being resident or creating a PE there
-- The arrangement has a possible impact on the automatic exchange of information or the identification of beneficial ownership
-
-If purely domestic → not in scope.
+- **Cross-border test** — An arrangement that concerns more than one Member State, or a Member State and a third country, where at least one of the following: Not all participants are tax resident in the same jurisdiction; One or more participants are simultaneously tax resident in more than one jurisdiction; One or more participants carry on business in another jurisdiction through a PE there, and the arrangement forms part or whole of the business of that PE; One or more participants carry on activity in another jurisdiction without being resident or creating a PE there; The arrangement has a possible impact on the automatic exchange of information or the identification of beneficial ownership. If purely domestic → not in scope.  _([T1] Article 3(18) DAC6)_
 
 ### Step 2 — Test each hallmark
 
-For each potential hallmark, walk the definition mechanically. Document:
-- Which factual elements of the arrangement meet which sub-element of the hallmark
-- Where the evidence sits
+- **Hallmark testing procedure** — For each potential hallmark, walk the definition mechanically. Document: Which factual elements of the arrangement meet which sub-element of the hallmark; Where the evidence sits.
 
 ### Step 3 — Apply the Main Benefit Test where required (Article 3(19))
 
-**[T1] MBT:** the main benefit, or one of the main benefits, that a person may reasonably expect to derive from an arrangement, having regard to all relevant facts and circumstances, is the obtaining of a tax advantage.
-
-**MBT applies to:** all Category A hallmarks, all Category B hallmarks, hallmarks C.1(b)(ii), C.1(c), C.1(d).
-
-**MBT does not apply to:** C.1(a), C.1(b)(i), C.2, C.3, C.4, Category D (all), Category E (all). These hallmarks make an arrangement reportable irrespective of tax-advantage intent.
+- **MBT definition** — the main benefit, or one of the main benefits, that a person may reasonably expect to derive from an arrangement, having regard to all relevant facts and circumstances, is the obtaining of a tax advantage.  _([T1] Article 3(19))_
+- **MBT applies to** — all Category A hallmarks, all Category B hallmarks, hallmarks C.1(b)(ii), C.1(c), C.1(d).
+- **MBT does not apply to** — C.1(a), C.1(b)(i), C.2, C.3, C.4, Category D (all), Category E (all). These hallmarks make an arrangement reportable irrespective of tax-advantage intent.
 
 **[T2] MBT analysis is judgement-heavy.** Document:
 - The tax advantage hypothesised
@@ -204,25 +157,24 @@ For each potential hallmark, walk the definition mechanically. Document:
 
 ### Step 4 — Determine the reporter and reporting jurisdiction
 
-Apply Section 2 priority rules. Document:
-- Whether the user is acting as intermediary or relevant taxpayer
-- Which Member State has primary reporting right
-- Whether other intermediaries are also reportable and whether they have filed
+- **Reporter determination procedure** — Apply Section 2 priority rules. Document: Whether the user is acting as intermediary or relevant taxpayer; Which Member State has primary reporting right; Whether other intermediaries are also reportable and whether they have filed.
 
 ### Step 5 — Assemble the 30-day timeline
 
-Identify each of the three trigger events (made available / ready / first step). Pick the earliest. Plot a 30-day countdown.
+- **Timeline assembly procedure** — Identify each of the three trigger events (made available / ready / first step). Pick the earliest. Plot a 30-day countdown.
 
 ### Step 6 — Prepare the eleven data points
 
-Use the receiving Member State's portal schema (e.g., DAC6XML 4.0 in Germany; "DAC6 manager" in Italy; "DECLOYER" in France; UK HMRC's DAC6/MDR submission portal).
+- **Portal schema by jurisdiction** — Use the receiving Member State's portal schema (e.g., DAC6XML 4.0 in Germany; "DAC6 manager" in Italy; "DECLOYER" in France; UK HMRC's DAC6/MDR submission portal).
 
 ### Step 7 — Confirm legal professional privilege if relied upon
 
 LPP carve-outs vary materially:
 
+**LPP scope by jurisdiction**
+
 | Jurisdiction | LPP scope |
-|---|---|
+| --- | --- |
 | **Germany** | Rechtsanwälte, Steuerberater, Wirtschaftsprüfer have LPP for advice-only; design/marketing falls outside |
 | **France** | Avocats are exempt for promotor and service-provider activities — full LPP carve-out post-Cour de cassation 2022 |
 | **Ireland** | Solicitors and barristers — privilege carve-out for legal advice |
@@ -239,42 +191,34 @@ LPP carve-outs vary materially:
 
 ### Step 8 — Track the Arrangement Reference Number (ARN)
 
-The receiving Member State issues an ARN at first filing. All subsequent reports for the same arrangement (by other intermediaries, by the taxpayer, or updated returns) reference the ARN.
+- **ARN tracking** — The receiving Member State issues an ARN at first filing. All subsequent reports for the same arrangement (by other intermediaries, by the taxpayer, or updated returns) reference the ARN.
 
 ### Step 9 — Annual taxpayer disclosure (Article 8ab(11))
 
-Each relevant taxpayer must, in their annual tax return, disclose the use of any reportable cross-border arrangement in which they are involved. This is independent of the 30-day intermediary report.
-
----
+- **Annual disclosure obligation** — Each relevant taxpayer must, in their annual tax return, disclose the use of any reportable cross-border arrangement in which they are involved. This is independent of the 30-day intermediary report.  _(Article 8ab(11))_
 
 ## Section 5 — Edge cases and special rules
 
 ### 5.1 The June 2018 → June 2020 backlog
 
-Arrangements where the first step was implemented between 25 June 2018 and 30 June 2020 were reportable by 28 February 2021 (extended from 31 August 2020 by Council Directive (EU) 2020/876). New filings in this window today should be rare but may still arise on discovery.
+- **Backlog filing deadline** — Arrangements where the first step was implemented between 25 June 2018 and 30 June 2020 were reportable by 28 February 2021 (extended from 31 August 2020 by Council Directive (EU) 2020/876). New filings in this window today should be rare but may still arise on discovery.  _(Council Directive (EU) 2020/876)_
 
 ### 5.2 Marketable arrangements (Article 3(24))
 
-A reportable cross-border arrangement that is designed, marketed, ready for implementation or made available for implementation without a need to be substantially customised. Quarterly updates required: by 30 April, 31 July, 31 October, 31 January, the intermediary must update the receiving Member State with the new relevant taxpayers identified in the prior quarter.
+- **Marketable arrangement definition and quarterly update rule** — A reportable cross-border arrangement that is designed, marketed, ready for implementation or made available for implementation without a need to be substantially customised. Quarterly updates required: by 30 April, 31 July, 31 October, 31 January, the intermediary must update the receiving Member State with the new relevant taxpayers identified in the prior quarter.  _(Article 3(24))_
 
 ### 5.3 Hallmark D.1 — CRS avoidance sub-features
 
-D.1 captures eight specific patterns from the OECD Model MDR on CRS Avoidance:
-
-- D.1(a) — use of an account, product or investment that is not, or purports not to be, a Financial Account
-- D.1(b) — transfer of accounts to jurisdictions not bound by automatic exchange of Financial Account information with the Member State of the taxpayer
-- D.1(c) — reclassification of income and capital into products / payments not subject to automatic exchange
-- D.1(d) — transfer or conversion of a Financial Institution or Financial Account into a Financial Institution or Financial Account not subject to CRS reporting
-- D.1(e) — use of legal entities, arrangements or structures that eliminate or purport to eliminate reporting of one or more Account Holders or Controlling Persons under CRS
-- D.1(f) — undermining or exploiting weaknesses in due diligence procedures used by Financial Institutions to identify Account Holders or Controlling Persons
-- D.1(g) — arrangements involving the transformation of a Reportable Account into a non-reportable account
+- **D.1 eight sub-features** — D.1 captures eight specific patterns from the OECD Model MDR on CRS Avoidance: - D.1(a) — use of an account, product or investment that is not, or purports not to be, a Financial Account - D.1(b) — transfer of accounts to jurisdictions not bound by automatic exchange of Financial Account information with the Member State of the taxpayer - D.1(c) — reclassification of income and capital into products / payments not subject to automatic exchange - D.1(d) — transfer or conversion of a Financial Institution or Financial Account into a Financial Institution or Financial Account not subject to CRS reporting - D.1(e) — use of legal entities, arrangements or structures that eliminate or purport to eliminate reporting of one or more Account Holders or Controlling Persons under CRS - D.1(f) — undermining or exploiting weaknesses in due diligence procedures used by Financial Institutions to identify Account Holders or Controlling Persons - D.1(g) — arrangements involving the transformation of a Reportable Account into a non-reportable account  _(OECD Model MDR on CRS Avoidance Arrangements)_
 
 ### 5.4 UK MDR specifics (SI 2023/38)
 
 The UK exited DAC6 reporting on 28 March 2023. The new UK MDR captures only **Category D** hallmarks (CRS avoidance and opaque ownership) as adopted from the OECD Model MDR. Hallmarks A, B, C and E that were reportable under UK-DAC6 are NO LONGER reportable under UK MDR.
 
+**UK MDR summary table**  _(SI 2023/38)_
+
 | Item | UK MDR |
-|---|---|
+| --- | --- |
 | In-force date | 28 March 2023 |
 | Hallmark scope | Category D only (CRS avoidance and opaque structures) |
 | Reporter | "Intermediary" (promoter or service provider) or "Reportable Taxpayer" |
@@ -285,8 +229,10 @@ The UK exited DAC6 reporting on 28 March 2023. The new UK MDR captures only **Ca
 
 ### 5.5 Penalties — illustrative
 
+**Penalties by jurisdiction**
+
 | Jurisdiction | Penalty |
-|---|---|
+| --- | --- |
 | **Germany** | Up to €25,000 per failure (§ 379 Abgabenordnung) |
 | **France** | Up to €10,000 per failure, capped at €100,000 per year (CGI art. 1729 C ter) |
 | **Italy** | €3,000 to €31,500 per failure (D.Lgs. 100/2020 art. 12) |
@@ -302,12 +248,14 @@ DAC7 (digital platform reporting) and DAC8 (crypto-assets) are separate exchange
 
 ### 5.7 Cross-EU coordination of ARNs
 
-Following Council Implementing Regulation (EU) 2020/1132, each Member State issues an ARN at first filing and all other Member States accept it for cross-references. The reporting intermediary in Member State A informs the taxpayer of the ARN, and the taxpayer or other intermediaries reference the same ARN when filing in Member State B.
+- **ARN cross-referencing across Member States** — Following Council Implementing Regulation (EU) 2020/1132, each Member State issues an ARN at first filing and all other Member States accept it for cross-references. The reporting intermediary in Member State A informs the taxpayer of the ARN, and the taxpayer or other intermediaries reference the same ARN when filing in Member State B.  _(Council Implementing Regulation (EU) 2020/1132)_
 
 ### 5.8 OECD Model MDR adoption outside the EU
 
+**OECD Model MDR adoption status by jurisdiction**
+
 | Jurisdiction | Status |
-|---|---|
+| --- | --- |
 | **UK** | Adopted (Category D only) — SI 2023/38 |
 | **Mexico** | Adopted (Ley del ISR Art. 197–202) — covers CRS avoidance hallmarks; broader hallmarks than D.1 |
 | **Argentina** | Adopted in respect of certain offshore structures (Resolución General 4838/2020) |
@@ -316,8 +264,6 @@ Following Council Implementing Regulation (EU) 2020/1132, each Member State issu
 | **South Africa** | Section 80M Income Tax Act — domestic-leaning regime |
 | **New Zealand** | Disclosure of foreign trusts; no formal adoption of OECD MDR Category D |
 | **Switzerland** | No DAC6/MDR adoption; SBA AML and tax-evasion-as-predicate-offence provisions apply |
-
----
 
 ## Section 6 — Output specification
 
@@ -332,8 +278,6 @@ The reviewer brief must include:
 7. **Data points draft** — eleven Article 8ab(14) data points filled in, ready for portal submission.
 8. **Penalty exposure** — estimated penalty if missed, by reporter and jurisdiction.
 9. **Reviewer questions** — open items at [T2]/[T3] flagged for sign-off.
-
----
 
 ## Section 7 — Self-checks
 
@@ -352,8 +296,6 @@ Before delivering output, verify:
 - [ ] Annual taxpayer disclosure obligation (Article 8ab(11)) noted on tax return checklist.
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement.
 
----
-
 ## Section 8 — Prohibitions
 
 - **Do not** advise on whether an arrangement is or is not "abusive". DAC6 is reporting, not anti-avoidance.
@@ -362,14 +304,30 @@ Before delivering output, verify:
 - **Do not** refuse to file based on LPP without also serving the notification on the next intermediary or relevant taxpayer where the Member State requires it.
 - **Do not** apply UK MDR hallmark scope (Category D only) to arrangements with EU intermediaries — the EU intermediary remains subject to the full DAC6 hallmark list.
 
----
-
 ## Section 9 — Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. DAC6 / MDR involves classification under hallmarks whose interpretation is contested in the courts and varies materially by Member State. Every output must be reviewed and signed off by a credentialed tax lawyer or equivalent in the reporting jurisdiction before filing or refusing to file.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/dac6-mdr-reportable-arrangements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dac6-mdr-reportable-arrangements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dac6-mdr-reportable-arrangements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

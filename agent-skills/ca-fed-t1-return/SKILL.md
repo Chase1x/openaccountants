@@ -1,27 +1,61 @@
 ---
 name: ca-fed-t1-return
-description: "> Use this skill whenever asked about a Canadian federal T1 General individual income tax return for a self-employed sole proprietor. Trigger on phrases like \"T1 return\", \"personal tax Canada\", \"federal tax brackets\", \"basic personal amount\", \"CPP self-employed\", \"CPP2\", \"self-employment tax Canada\", \"net income\", \"taxable income\", \"federal tax calculation\", \"non-refundable credits\", \"instalment payments\", or any question about computing federal tax for a self-employed individual in Canada. ALWAYS read this skill before touching any T1 return work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about a Canadian federal T1 General individual income tax return for a self-employed sole proprietor. Trigger on phrases like \"T1 return\", \"personal tax Canada\", \"federal tax brackets\", \"basic personal amount\", \"CPP self-employed\", \"CPP2\", \"self-employment tax Canada\", \"net income\", \"taxable income\", \"federal tax calculation\", \"non-refundable credits\", \"instalment payments\", or any question about computing federal tax for a self-employed individual in Canada. ALWAYS read this skill before touching any T1 return work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/ca-fed-t1-return"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/ca-fed-t1-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Edgar Lautsyus"
+  review_status: "current"
 ---
 
-# Canada T1 General Individual Return -- Self-Employed Skill v2.0
+# CA Fed T1 Return
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Canada T1 General Individual Return -- Self-Employed Skill v2.0
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### T1 Return
+
+- **$0–$57,375** — 14.5% (blended: 15% Jan-Jun, 14% Jul-Dec)  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
+- **$58,524–$117,045** — 20.5%  _(CRA 2026 indexed brackets (T4032))_
+- **$114,751–$177,882** — 26%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
+- **$177,883–$253,414** — 29%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
+- **$253,415+** — 33%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
+- **BPA — net income ≤$177,882** — $16,129  _(https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30000-basic-personal-amount.html)_
+- **BPA — net income ≥$253,414** — $14,538  _(https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30000-basic-personal-amount.html)_
+- **BPA reduction formula** — $16,129 − $1,591 × (NI − $177,882) / $75,532  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-d1/5000-d1-25e.pdf)_
+- **CPP rate (both portions)** — 11.9%  _(CRA — CPP contribution rates — canada.ca; Canada Pension Plan Act s.10)_
+- **CPP2 rate (both portions)** — 8.0%
+- **First ceiling (YMPE)** — $71,300  _(CRA — CPP contribution rates, maximums and exemptions — canada.ca)_
+- **Second ceiling (YAMPE)** — $81,200  _(CRA — CPP contribution rates, maximums and exemptions — canada.ca)_
+- **Basic exemption** — $3,500  _(Canada Pension Plan Act s.20; CRA — Schedule 8)_
+- **Max CPP contribution** — $8,068.20
+- **Max QPP2 contribution** — $792.00
+- **CPP deductible portion** — 50% (line 22200)  _(ITA s.60(e); CRA — Line 22200)_
+- **EI rate** — $1.64/$100  _(CRA — EI premium rates and maximums — canada.ca; Employment Insurance Act Part VII.1)_
+- **Max EI premium** — $1,077.48  _(CRA — EI premium rates and maximums — canada.ca)_
+- **Quebec EI rate** — $1.30/$100  _(CRA — EI premium rates and maximums — canada.ca)_
+- **Waiting period** — 12 months  _(Employment Insurance Act s.152.07; CRA — Self-employed EI — canada.ca)_
+- **Self-employed filing** — June 15  _(ITA s.150(1)(d))_
+- **Payment due** — April 30 (interest from May 1)  _(ITA s.156.1(1); CRA — Paying income tax — canada.ca)_
+- **Late filing penalty** — 5% + 1%/month (max 12)  _(ITA s.162(1))_
+- **Repeat offender penalty** — 10% + 2%/month (max 20)  _(ITA s.162(2))_
+- **Net tax owing threshold** — > $3,000 in the current year AND either of the two prior years ($1,800 for Quebec residents)  _(ITA s.156(1); CRA — Instalments for individuals — canada.ca)_
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada -- Federal |
 | Tax | Federal income tax + CPP/CPP2 self-employed |
 | Currency | CAD only |
@@ -33,13 +67,15 @@ metadata:
 | Form | T1 General + Schedule 1 (Federal Tax) + Schedule 8 (CPP) |
 | Filing deadline | June 15 (self-employed); payment due April 30 |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- Canadian CPA sign-off required |
+| Validated by | Verified by Nathan Wiebe on 2026-06-21 |
 | Skill version | 2.0 |
 
 ### Federal Tax Brackets (2025)
 
+**Federal Tax Brackets (2025)**
+
 | Taxable Income (CAD) | Rate | Cumulative Tax |
-|---|---|---|
+| --- | --- | --- |
 | 0 -- 57,375 | 14.5%* | 8,319 |
 | 57,376 -- 114,750 | 20.5% | 20,081 |
 | 114,751 -- 177,882 | 26% | 36,495 |
@@ -50,16 +86,20 @@ metadata:
 
 ### Basic Personal Amount (2025)
 
+**Basic Personal Amount (2025)**
+
 | Net Income | BPA |
-|---|---|
+| --- | --- |
 | $177,882 or less | $16,129 |
 | $177,882 -- $253,414 | Graduated reduction |
 | $253,414+ | $14,538 |
 
 ### CPP Self-Employed (2025)
 
+**CPP Self-Employed (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | CPP rate (both portions) | 11.9% |
 | CPP2 rate (both portions) | 8.0% |
 | First ceiling (YMPE) | $71,300 |
@@ -72,14 +112,14 @@ Half of CPP/CPP2 is deductible (line 22200); half is a non-refundable credit.
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown province | STOP -- province required |
 | Unknown RRSP room | $0 deduction |
 | Unknown EI opt-in | Not opted in |
 | Unknown BPA reduction | Apply full clawback formula |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -93,21 +133,14 @@ Half of CPP/CPP2 is deductible (line 22200); half is a non-refundable credit.
 
 ### Refusal Catalogue
 
-**R-CA-T1-1 -- Non-residents.** "Non-resident returns have different rules. Out of scope."
-
-**R-CA-T1-2 -- Deceased / bankruptcy returns.** "Require specialist handling. Escalate."
-
-**R-CA-T1-3 -- Trust income allocation.** "Out of scope."
-
-**R-CA-T1-4 -- Provincial tax computation.** "Provincial tax is separate. Use the appropriate provincial skill."
-
----
+- **R-CA-T1-1 -- Non-residents** — Non-resident returns have different rules. Out of scope.
+- **R-CA-T1-2 -- Deceased / bankruptcy returns** — Require specialist handling. Escalate.
+- **R-CA-T1-3 -- Trust income allocation** — Out of scope.
+- **R-CA-T1-4 -- Provincial tax computation** — Provincial tax is separate. Use the appropriate provincial skill.
 
 ## Section 3 -- Transaction Pattern Library
 
 The T1 skill consumes outputs from the T2125 skill (net business income) and T-slips. Transaction pattern classification is in the `ca-fed-t2125` skill. This skill assembles the return from those inputs.
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -151,47 +184,41 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 - CPP credit: $642.36
 - Basic federal tax: $58,838.38
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 T1 Income Flow
 
-Total income (line 15000) -> Net income (line 23600, after deductions including CPP employer-half) -> Taxable income (line 26000) -> Federal tax (Schedule 1).
+- **T1 Income Flow** — Total income (line 15000) -> Net income (line 23600, after deductions including CPP employer-half) -> Taxable income (line 26000) -> Federal tax (Schedule 1).
 
 ### 5.2 CPP Self-Employed Computation
 
-On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half deducted, half credited.
+- **CPP Self-Employed Computation** — On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half deducted, half credited.
 
 ### 5.3 EI Self-Employed (Voluntary)
 
-Rate $1.64/$100, max $1,077.48 (Quebec: $1.30). Covers special benefits only (maternity, parental, sickness). 12-month waiting period. Non-refundable credit at 14.5%.
+- **EI Self-Employed (Voluntary)** — Rate $1.64/$100, max $1,077.48 (Quebec: $1.30). Covers special benefits only (maternity, parental, sickness). 12-month waiting period. Non-refundable credit at 14.5%.
 
 ### 5.4 Filing Deadlines
 
-Self-employed filing: June 15. Payment due: April 30 (interest from May 1). Late filing: 5% + 1%/month (max 12). Repeat offender: 10% + 2%/month (max 20).
+- **Filing Deadlines** — Self-employed filing: June 15. Payment due: April 30 (interest from May 1). Late filing: 5% + 1%/month (max 12). Repeat offender: 10% + 2%/month (max 20).
 
 ### 5.5 Instalment Requirements
 
-Required if net tax owing > $3,000 in current year AND either of two prior years. Due: March 15, June 15, September 15, December 15.
-
----
+- **Instalment Requirements** — Required if net tax owing > $3,000 ($1,800 for Quebec residents) in the current year AND either of the two prior years. Due: March 15, June 15, September 15, December 15.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Multiple Income Sources
 
-CPP on self-employment must account for CPP already paid through employment. Schedule 8 integrates. Flag if both T4 and T2125 income.
+- **Multiple Income Sources** — CPP on self-employment must account for CPP already paid through employment. Schedule 8 integrates. Flag if both T4 and T2125 income.
 
 ### 6.2 BPA Reduction for High Earners
 
-BPA = $16,129 - $1,591 x (net income - $177,882) / $75,532. Flag if net income between $177,882 and $253,414.
+- **BPA Reduction for High Earners** — BPA = $16,129 - $1,591 x (net income - $177,882) / $75,532. Flag if net income between $177,882 and $253,414.
 
 ### 6.3 Medical Expenses and Charitable Donations
 
-Medical: amounts > lesser of 3% of net income or $2,759. Charitable: 15% on first $200 + 29%/33% on excess. Flag for reviewer.
-
----
+- **Medical Expenses and Charitable Donations** — Medical: amounts > lesser of 3% of net income or $2,759. Charitable: 15% on first $200 + 29%/33% on excess. Flag for reviewer.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -234,13 +261,9 @@ REVIEWER FLAGS:
   [ ] Payment deadline April 30 noted?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 The T1 skill does not directly process bank statements. Bank statement classification is handled by the `ca-fed-t2125` skill. T1 consumes the net business income from T2125.
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -260,12 +283,12 @@ ONBOARDING QUESTIONS -- CANADA T1
 12. CPP/QPP already paid through employment?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Tax brackets | ITA s. 117(2) |
 | BPA | ITA s. 118(1)(c) |
 | CPP self-employed | CPP Act s. 10 |
@@ -275,8 +298,6 @@ ONBOARDING QUESTIONS -- CANADA T1
 | Instalments | ITA s. 156(1) |
 | Non-refundable credits | ITA s. 118-118.95 |
 | Canada employment amount | ITA s. 118(10) -- NOT for self-employed |
-
----
 
 ## PROHIBITIONS
 
@@ -291,14 +312,30 @@ ONBOARDING QUESTIONS -- CANADA T1
 - NEVER forget payment deadline is April 30 even though filing is June 15
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, or equivalent licensed practitioner) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/ca-fed-t1-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-fed-t1-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-fed-t1-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

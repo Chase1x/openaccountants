@@ -1,27 +1,26 @@
 ---
 name: yt-individual-return
-description: "> Use this skill whenever asked about Yukon territorial income tax for a self-employed sole proprietor. Trigger on phrases like \"Yukon tax\", \"YT428\", \"Yukon income tax\", \"Yukon First Nations Income Tax Credit\", \"Pioneer Utility Grant\", \"territorial tax Yukon\", or any question about computing Yukon territorial tax. ALWAYS read this skill before touching any Yukon territorial tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Yukon territorial income tax for a self-employed sole proprietor. Trigger on phrases like \"Yukon tax\", \"YT428\", \"Yukon income tax\", \"Yukon First Nations Income Tax Credit\", \"Pioneer Utility Grant\", \"territorial tax Yukon\", or any question about computing Yukon territorial tax. ALWAYS read this skill before touching any Yukon territorial tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CA
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/yt-individual-return"
-  tax_year: 2025
-  obligation: IT
+  openaccountants_url: "https://www.openaccountants.com/skills/yt-individual-return"
+  jurisdiction: "CA"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Yukon Territorial Income Tax -- Sole Proprietor Skill v1.0
+# YT Individual Return
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Yukon Territorial Income Tax -- Sole Proprietor Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Canada -- Yukon |
 | Tax | Territorial income tax (YT428) |
 | Currency | CAD only |
@@ -32,13 +31,15 @@ metadata:
 | Form | YT428 -- Yukon Tax; YT479 (Credits); Schedule 14 (carbon rebate) |
 | Filing deadline | June 15 (self-employed); payment due April 30 |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- Canadian CPA sign-off required |
+| Validated by | Live status: https://openaccountants.com/skills/yt-individual-return |
 | Skill version | 1.0 |
 
 ### Yukon Tax Rates (2025, indexed from 2024)
 
+**Yukon Tax Rates (2025, indexed from 2024)**
+
 | Taxable Income (CAD) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 57,375 | 6.40% |
 | 57,376 -- 114,750 | 9.00% |
 | 114,751 -- 177,882 | 10.90% |
@@ -49,12 +50,14 @@ Yukon parallels the federal brackets except the top bracket starts at $500,000 (
 
 ### Basic Personal Amount (BPA)
 
-Yukon's BPA tracks the federal enhanced BPA. For 2025, BPA is approximately $16,129 (federal indexed; verify against CRA published indexation tables).
+- **Basic Personal Amount (BPA)** — approximately $16,129 CAD (Yukon's BPA tracks the federal enhanced BPA. For 2025, verify against CRA published indexation tables.)
 
 ### Yukon-specific credits
 
+**Yukon-specific credits**
+
 | Credit | Notes |
-|---|---|
+| --- | --- |
 | Yukon First Nations Income Tax Credit | For status Indians resident on settlement land of a Yukon First Nation that has a Final Agreement Income Tax Act. Effectively cedes territorial tax to the First Nation. |
 | Pioneer Utility Grant | Refundable. Seniors 65+ resident in Yukon. Not part of YT428 itself but flows through the territorial system. |
 | Yukon Children's Fitness Tax Credit | Up to $1,000 per child; non-refundable at lowest bracket rate. |
@@ -62,42 +65,33 @@ Yukon's BPA tracks the federal enhanced BPA. For 2025, BPA is approximately $16,
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown territory | Do not apply this skill |
 | Status Indian on settlement land | Escalate (FN tax may apply instead) |
 | Part-year resident | Escalate |
 | Unknown bracket year | 2025 indexed figures |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- territory of residence on Dec 31 (must be Yukon), federal taxable income (T1 line 26000), federal net income.
-
-**Recommended** -- marital status, spouse income, children, status Indian indicator, settlement land status, age (for Pioneer Utility Grant).
-
-**Ideal** -- complete T1 data, prior YT428, First Nation membership status, copy of YT479.
+- **Minimum viable inputs** — territory of residence on Dec 31 (must be Yukon), federal taxable income (T1 line 26000), federal net income.
+- **Recommended inputs** — marital status, spouse income, children, status Indian indicator, settlement land status, age (for Pioneer Utility Grant).
+- **Ideal inputs** — complete T1 data, prior YT428, First Nation membership status, copy of YT479.
 
 ### Refusal Catalogue
 
-**R-YT-1 -- Not Yukon resident.** "Province/territory is not Yukon on December 31. This skill only applies to Yukon residents."
-
-**R-YT-2 -- Corporations/trusts.** "Individual sole proprietors only."
-
-**R-YT-3 -- Part-year resident.** "Escalate. Apply YT rates only to the period the taxpayer was Yukon-resident; another province may tax the balance."
-
-**R-YT-4 -- Status Indian on Yukon First Nation settlement land.** "Escalate. A Yukon First Nation with a Final Agreement Income Tax Act may have first-priority taxing right; the Yukon First Nations Income Tax Credit reduces YT tax to nil for that income."
-
----
+- **R-YT-1 -- Not Yukon resident** — Province/territory is not Yukon on December 31. This skill only applies to Yukon residents.
+- **R-YT-2 -- Corporations/trusts** — Individual sole proprietors only.
+- **R-YT-3 -- Part-year resident** — Escalate. Apply YT rates only to the period the taxpayer was Yukon-resident; another province may tax the balance.
+- **R-YT-4 -- Status Indian on Yukon First Nation settlement land** — Escalate. A Yukon First Nation with a Final Agreement Income Tax Act may have first-priority taxing right; the Yukon First Nations Income Tax Credit reduces YT tax to nil for that income.
 
 ## Section 3 -- Transaction Pattern Library
 
 Yukon tax is computed from federal return data. Transaction classification is in `ca-fed-t2125`.
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -144,23 +138,19 @@ Yukon tax is computed from federal return data. Transaction classification is in
 - Yukon First Nation income tax (FN Final Agreement) and Yukon First Nations Income Tax Credit interact: territorial tax is effectively transferred to the FN.
 - **Escalate to a Yukon CPA familiar with FN Final Agreement Income Tax Acts.**
 
----
-
 ## Section 5 -- Edge Cases
 
 ### EC-YT-1: Carbon Rebate
 
-The federal carbon rebate (formerly Climate Action Incentive) for Yukon residents is delivered through the Yukon Government Carbon Price Rebate. This is delivered separately from YT428.
+- **Carbon Rebate** — The federal carbon rebate (formerly Climate Action Incentive) for Yukon residents is delivered through the Yukon Government Carbon Price Rebate. This is delivered separately from YT428.
 
 ### EC-YT-2: Yukon Small Business Investment Tax Credit (YSBITC)
 
-Individuals with eligible Yukon investments may claim 25% credit (max $25,000/yr). Non-refundable but carries forward 7 years and back 3. Coordinate with federal investment credits to avoid double benefit.
+- **YSBITC** — Individuals with eligible Yukon investments may claim 25% credit (max $25,000/yr). Non-refundable but carries forward 7 years and back 3. Coordinate with federal investment credits to avoid double benefit.
 
 ### EC-YT-3: Mining royalties
 
-If the taxpayer's T2125 includes Yukon mining or placer claim income, escalate — Yukon mining royalties and the Yukon-specific exploration tax credit have complex interactions.
-
----
+- **Mining royalties** — If the taxpayer's T2125 includes Yukon mining or placer claim income, escalate — Yukon mining royalties and the Yukon-specific exploration tax credit have complex interactions.
 
 ## Section 6 -- Self-checks
 
@@ -172,14 +162,30 @@ If the taxpayer's T2125 includes Yukon mining or placer claim income, escalate �
 - [ ] Yukon-specific credits (Children's Fitness, YSBITC) considered.
 - [ ] Output flags any [T2]/[T3] item for reviewer judgement.
 
----
-
 ## Section 7 -- Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (a Canadian CPA familiar with Yukon territorial tax) before filing.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/yt-individual-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `yt-individual-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/yt-individual-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

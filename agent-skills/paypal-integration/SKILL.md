@@ -1,14 +1,12 @@
 ---
 name: paypal-integration
-description: "> Integration skill for PayPal activity download CSV exports. Activate when the user uploads a PayPal CSV, PayPal activity report, or mentions PayPal transactions. This is one of the messiest exports in common use."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Integration skill for PayPal activity download CSV exports. Activate when the user uploads a PayPal CSV, PayPal activity report, or mentions PayPal transactions. This is one of the messiest exports in common use."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GLOBAL
-  category: integration
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/paypal-integration"
-  obligation: INT
+  openaccountants_url: "https://www.openaccountants.com/skills/paypal-integration"
+  jurisdiction: "GLOBAL"
+  last_updated: "2026-06-12"
 ---
 
 # PayPal Integration Skill v1.0
@@ -209,6 +207,6 @@ Date,Time,TimeZone,Name,Type,Status,Currency,Gross,Fee,Net,From Email Address,To
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/paypal-integration) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `paypal-integration` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/paypal-integration. If neither is available, confirm every figure against the official source pages cited above before relying on it.

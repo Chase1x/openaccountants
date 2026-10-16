@@ -1,24 +1,26 @@
 ---
 name: cz-social-health
 description: "Use this skill whenever asked about Czech self-employed social and health insurance contributions. Trigger on phrases like \"OSSZ\", \"Czech social insurance\", \"zdravotní pojištění OSVČ\", \"sociální pojištění\", \"paušální daň\", \"Czech self-employed contributions\", \"přehled OSSZ\", or any question about social/health insurance obligations for a self-employed client in the Czech Republic. Covers social insurance (29.2% of 50% base), health insurance (13.5% of 50% base), minimum advances, and paušální daň. ALWAYS read this skill before touching any Czech social contributions work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/cz-social-health"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/cz-social-health"
+  jurisdiction: "CZ"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Czech Social + Health Insurance -- Self-Employed (OSVČ) Skill v2.0
+# CZ Social Health
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Czech Social + Health Insurance -- Self-Employed (OSVČ) Skill v2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Czech Republic |
 | Authority | ČSSZ (social); health insurance companies (health) |
 | Primary legislation | Zákon č. 589/1992 Sb. (Social); Zákon č. 592/1992 Sb. (Health) |
@@ -38,67 +40,43 @@ metadata:
 | Validated by | Pending -- requires validation by Czech daňový poradce |
 | Validation date | Pending |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before computing, you MUST obtain:
-
-1. **Is self-employment hlavní (main) or vedlejší (secondary)?** -- thresholds differ significantly
-2. **Gross income (příjmy) from self-employment**
-3. **Deductible expenses** -- actual (skutečné) or flat-rate (paušální)?
-4. **Which flat-rate percentage?** -- 40%, 60%, or 80% depending on activity
-5. **Voluntary sickness insurance?** -- optional for OSVČ
-6. **Considering paušální daň?** -- available if turnover < CZK 2,000,000
-
-**If hlavní vs vedlejší is unknown, STOP.**
+- **Required inputs before computing** — Before computing, you MUST obtain: 1. Is self-employment hlavní (main) or vedlejší (secondary)? -- thresholds differ significantly 2. Gross income (příjmy) from self-employment 3. Deductible expenses -- actual (skutečné) or flat-rate (paušální)? 4. Which flat-rate percentage? -- 40%, 60%, or 80% depending on activity 5. Voluntary sickness insurance? -- optional for OSVČ 6. Considering paušální daň? -- available if turnover < CZK 2,000,000. If hlavní vs vedlejší is unknown, STOP.
 
 ### Refusal catalogue
 
-**R-CZ-SOC-1 -- Non-resident OSVČ.** Trigger: EU citizen working as self-employed in Czech Republic but resident elsewhere. Message: "Social/health obligations depend on EU Regulation 883/2004. A1 certificate required. Escalate."
+- **R-CZ-SOC-1 -- Non-resident OSVČ** — Trigger: EU citizen working as self-employed in Czech Republic but resident elsewhere. Message: "Social/health obligations depend on EU Regulation 883/2004. A1 certificate required. Escalate."
 
 ### Prohibitions
 
-- NEVER compute without knowing hlavní vs vedlejší -- minimums differ dramatically
-- NEVER forget that the assessment base is 50% of profit, not 50% of gross income
-- NEVER state that Czech social/health contributions are tax-deductible -- they are NOT
-- NEVER ignore the social insurance maximum cap at CZK 2,234,736
-- NEVER forget that health insurance has NO maximum cap
-- NEVER apply vedlejší minimums to a hlavní OSVČ
-- NEVER advise on paušální daň without verifying all eligibility conditions
-- NEVER present advance payments as final -- annual reconciliation via Přehled determines actual liability
-- NEVER confuse flat-rate expense percentages -- 80%/60%/40%/30% depend on activity type
-
----
+- **Prohibitions list** — NEVER compute without knowing hlavní vs vedlejší -- minimums differ dramatically; NEVER forget that the assessment base is 50% of profit, not 50% of gross income; NEVER state that Czech social/health contributions are tax-deductible -- they are NOT; NEVER ignore the social insurance maximum cap at CZK 2,234,736; NEVER forget that health insurance has NO maximum cap; NEVER apply vedlejší minimums to a hlavní OSVČ; NEVER advise on paušální daň without verifying all eligibility conditions; NEVER present advance payments as final -- annual reconciliation via Přehled determines actual liability; NEVER confuse flat-rate expense percentages -- 80%/60%/40%/30% depend on activity type
 
 ## Section 3 -- Assessment base
 
-**Legislation:** Section 5b Zákona č. 589/1992 Sb.; Section 3a Zákona č. 592/1992 Sb.
-
-```
-profit = gross_income - expenses (actual or flat-rate)
-assessment_base = profit x 50%
-```
+- **Assessment base formula** — profit = gross_income - expenses (actual or flat-rate) assessment_base = profit x 50%  _(Section 5b Zákona č. 589/1992 Sb.; Section 3a Zákona č. 592/1992 Sb.)_
 
 ### Flat-rate expense percentages
 
+**Flat-rate expense percentages**
+
 | Activity | Flat-rate % | Cap |
-|---|---|---|
+| --- | --- | --- |
 | Agriculture, crafts | 80% | CZK 1,600,000 |
 | Trade/business | 60% | CZK 1,200,000 |
 | Other business | 40% | CZK 800,000 |
 | Rental | 30% | CZK 600,000 |
 
----
-
 ## Section 4 -- Rates and thresholds (2025)
 
 ### Social insurance (ČSSZ)
 
+**Social insurance (ČSSZ)**
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Pension (důchodové pojištění) | 28.00% |
 | State employment policy (příspěvek na SPZ) | 1.20% |
 | **Total social** | **29.20%** |
@@ -106,126 +84,108 @@ assessment_base = profit x 50%
 
 ### Health insurance
 
+**Health insurance**
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Health (zdravotní pojištění) | **13.50%** |
 
 ### Minimum monthly advances (2025)
 
+**Minimum monthly advances (2025)**
+
 | Category | Social | Health |
-|---|---|---|
+| --- | --- | --- |
 | Hlavní OSVČ | CZK 3,852 | CZK 2,968 |
 | Vedlejší OSVČ | CZK 1,413 | Actual (no minimum) |
 
 ### Vedlejší threshold
 
-Vedlejší OSVČ pay no social insurance if annual profit < CZK 105,520. Health is still due on actual income.
+- **Vedlejší threshold rule** — Vedlejší OSVČ pay no social insurance if annual profit < CZK 105,520. Health is still due on actual income.
 
 ### Paušální daň (lump-sum tax)
 
+**Paušální daň (lump-sum tax)**
+
 | Band | Turnover limit | Monthly payment |
-|---|---|---|
+| --- | --- | --- |
 | Band 1 | Up to CZK 1,000,000 | CZK 7,498 |
 | Band 2 | CZK 1,000,001 -- 1,500,000 | CZK 16,745 |
 | Band 3 | CZK 1,500,001 -- 2,000,000 | CZK 27,139 |
 
-Eligibility: turnover up to CZK 2,000,000, not VAT payer, hlavní OSVČ only. No annual tax return required.
+### Paušální daň (lump-sum tax)
 
----
+- **Paušální daň eligibility** — Eligibility: turnover up to CZK 2,000,000, not VAT payer, hlavní OSVČ only. No annual tax return required.
 
 ## Section 5 -- Computation steps
 
 ### Step 5.1 -- Calculate profit and assessment base
 
-```
-profit = gross_income - expenses
-assessment_base = profit x 50%
-assessment_base = max(assessment_base, minimum_assessment_base)
-```
+- **Profit and assessment base calculation** — profit = gross_income - expenses assessment_base = profit x 50% assessment_base = max(assessment_base, minimum_assessment_base)
 
 ### Step 5.2 -- Annual social insurance
 
-```
-social_annual = assessment_base x 29.20%
-social_annual = max(social_annual, minimum_monthly_social x 12)
-```
-
-Maximum assessment base for social: CZK 2,234,736/year.
+- **Annual social insurance calculation** — social_annual = assessment_base x 29.20% social_annual = max(social_annual, minimum_monthly_social x 12)
+- **Maximum assessment base for social** — CZK 2,234,736/year
 
 ### Step 5.3 -- Annual health insurance
 
-```
-health_annual = assessment_base x 13.50%
-health_annual = max(health_annual, minimum_monthly_health x 12)
-```
-
-No maximum for health.
+- **Annual health insurance calculation** — health_annual = assessment_base x 13.50% health_annual = max(health_annual, minimum_monthly_health x 12)
+- **No maximum for health** — No maximum for health.
 
 ### Step 5.4 -- Monthly advance payments
 
-```
-monthly_social_advance = max(social_annual / 12, minimum_social_advance)
-monthly_health_advance = max(health_annual / 12, minimum_health_advance)
-```
-
----
+- **Monthly advance payments calculation** — monthly_social_advance = max(social_annual / 12, minimum_social_advance) monthly_health_advance = max(health_annual / 12, minimum_health_advance)
 
 ## Section 6 -- Payment schedule and tax deductibility
 
 ### Payment schedule
 
-- Social advances due by the **20th of the following month**
-- Health advances due by the **8th of the following month**
-- Annual reconciliation via Přehled filed with ČSSZ and health insurance company
-- Přehled deadline: within 1 month of income tax filing deadline (typically by 1 May or 1 July if filed by advisor)
+- **Payment schedule rules** — Social advances due by the 20th of the following month; Health advances due by the 8th of the following month; Annual reconciliation via Přehled filed with ČSSZ and health insurance company; Přehled deadline: within 1 month of income tax filing deadline (typically by 1 May or 1 July if filed by advisor)
 
 ### Tax deductibility
 
+**Tax deductibility**
+
 | Question | Answer |
-|---|---|
+| --- | --- |
 | Are social contributions deductible? | NO |
 | Is health insurance deductible? | NO |
 | Are sickness contributions deductible? | NO |
 
-Czech contributions are NOT deductible from the income tax base. They are a separate obligation.
-
----
+- **Non-deductibility rule** — Czech contributions are NOT deductible from the income tax base. They are a separate obligation.
 
 ## Section 7 -- Voluntary sickness and special situations
 
 ### Voluntary sickness insurance
 
-Self-employed can opt in at 2.10% of assessment base (minimum CZK 216/month). Provides sick pay from day 15 of illness.
+- **Voluntary sickness insurance rule** — Self-employed can opt in at 2.10% of assessment base (minimum CZK 216/month). Provides sick pay from day 15 of illness.
 
 ### Switching from vedlejší to hlavní mid-year
 
-From the month classification changes, minimum advances increase to hlavní level. Annual reconciliation applies hlavní minimums pro-rata. Flag for reviewer to confirm exact calculation with ČSSZ.
+- **Mid-year switch rule** — From the month classification changes, minimum advances increase to hlavní level. Annual reconciliation applies hlavní minimums pro-rata. Flag for reviewer to confirm exact calculation with ČSSZ.
 
 ### Paušální daň eligibility lost mid-year
 
-Client exits paušální daň regime for the entire year. Must file regular income tax return and pay social/health on standard basis. All paušální payments credited.
-
----
+- **Eligibility lost mid-year rule** — Client exits paušální daň regime for the entire year. Must file regular income tax return and pay social/health on standard basis. All paušální payments credited.
 
 ## Section 8 -- Edge case registry
 
 ### EC1 -- First year of activity (hlavní)
-**Situation:** Started self-employment in September 2025.
-**Resolution:** Minimum advances from registration month. No prior-year base available.
+
+- **EC1** — Situation: Started self-employment in September 2025. Resolution: Minimum advances from registration month. No prior-year base available.
 
 ### EC2 -- Concurrent employment (vedlejší)
-**Situation:** Employed full-time, side self-employment.
-**Resolution:** Vedlejší. If profit < CZK 105,520, no social insurance (voluntary). Health on actual income.
+
+- **EC2** — Situation: Employed full-time, side self-employment. Resolution: Vedlejší. If profit < CZK 105,520, no social insurance (voluntary). Health on actual income.
 
 ### EC3 -- High income, social cap applies
-**Situation:** Assessment base exceeds CZK 2,234,736.
-**Resolution:** Social capped. Health continues at 13.5% without limit.
+
+- **EC3** — Situation: Assessment base exceeds CZK 2,234,736. Resolution: Social capped. Health continues at 13.5% without limit.
 
 ### EC4 -- Voluntary sickness insurance
-**Situation:** Client wants sickness benefit coverage.
-**Resolution:** Opt in at 2.10%, minimum CZK 216/month. Must opt in actively.
 
----
+- **EC4** — Situation: Client wants sickness benefit coverage. Resolution: Opt in at 2.10%, minimum CZK 216/month. Must opt in actively.
 
 ## Section 9 -- Reviewer escalation protocol
 
@@ -253,35 +213,37 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to qualified daňový poradce. Document gap.
 ```
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Standard hlavní, mid-range
-**Input:** Gross CZK 1,200,000, flat-rate 60%, hlavní, age 35.
-**Expected output:** Expenses CZK 720,000. Profit CZK 480,000. Base CZK 240,000. Social CZK 70,080. Health CZK 32,400. Total CZK 102,480. Monthly: social CZK 5,840, health CZK 2,700.
+
+Input: Gross CZK 1,200,000, flat-rate 60%, hlavní, age 35.
+Expected output: Expenses CZK 720,000. Profit CZK 480,000. Base CZK 240,000. Social CZK 70,080. Health CZK 32,400. Total CZK 102,480. Monthly: social CZK 5,840, health CZK 2,700.
 
 ### Test 2 -- Minimum advances (hlavní, low income)
-**Input:** Gross CZK 300,000, flat-rate 60%, hlavní.
-**Expected output:** Profit CZK 120,000. Base CZK 60,000 (below annual minimum). Social CZK 46,224. Health CZK 35,616. Total CZK 81,840.
+
+Input: Gross CZK 300,000, flat-rate 60%, hlavní.
+Expected output: Profit CZK 120,000. Base CZK 60,000 (below annual minimum). Social CZK 46,224. Health CZK 35,616. Total CZK 81,840.
 
 ### Test 3 -- Vedlejší below threshold
-**Input:** Gross CZK 200,000, flat-rate 60%, vedlejší.
-**Expected output:** Profit CZK 80,000. Below CZK 105,520. Social CZK 0. Health CZK 5,400.
+
+Input: Gross CZK 200,000, flat-rate 60%, vedlejší.
+Expected output: Profit CZK 80,000. Below CZK 105,520. Social CZK 0. Health CZK 5,400.
 
 ### Test 4 -- High income, social cap
-**Input:** Gross CZK 8,000,000, actual expenses CZK 2,000,000, hlavní.
-**Expected output:** Profit CZK 6,000,000. Base CZK 3,000,000. Social capped at CZK 652,543. Health CZK 405,000. Total CZK 1,057,543.
+
+Input: Gross CZK 8,000,000, actual expenses CZK 2,000,000, hlavní.
+Expected output: Profit CZK 6,000,000. Base CZK 3,000,000. Social capped at CZK 652,543. Health CZK 405,000. Total CZK 1,057,543.
 
 ### Test 5 -- Paušální daň Band 1
-**Input:** Turnover CZK 800,000, hlavní, not VAT registered.
-**Expected output:** Band 1. Monthly CZK 7,498. Annual CZK 89,976.
+
+Input: Turnover CZK 800,000, hlavní, not VAT registered.
+Expected output: Band 1. Monthly CZK 7,498. Annual CZK 89,976.
 
 ### Test 6 -- First year with minimum advances
-**Input:** Started October 2025, hlavní.
-**Expected output:** Social CZK 11,556 (3 months). Health CZK 8,904. Total CZK 20,460.
 
----
+Input: Started October 2025, hlavní.
+Expected output: Social CZK 11,556 (3 months). Health CZK 8,904. Total CZK 20,460.
 
 ## Disclaimer
 
@@ -289,6 +251,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/cz-social-health) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cz-social-health` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cz-social-health. If neither is available, confirm every figure against the official source pages cited above before relying on it.

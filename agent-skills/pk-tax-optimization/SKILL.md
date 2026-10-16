@@ -1,15 +1,13 @@
 ---
 name: pk-tax-optimization
-description: "> Use this skill whenever asked about legally reducing tax for a freelancer or small business in Pakistan. Trigger on phrases like \"reduce tax Pakistan\", \"PSEB benefit\", \"filer vs non-filer\", \"tax planning Pakistan freelancer\", \"save tax IT export Pakistan\". Covers the PSEB IT-export concession, the filer/Active-Taxpayer-List lever, export-vs-domestic structuring, and advance-tax planning — legal only. ALWAYS read before Pakistan tax planning."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about legally reducing tax for a freelancer or small business in Pakistan. Trigger on phrases like \"reduce tax Pakistan\", \"PSEB benefit\", \"filer vs non-filer\", \"tax planning Pakistan freelancer\", \"save tax IT export Pakistan\". Covers the PSEB IT-export concession, the filer/Active-Taxpayer-List lever, export-vs-domestic structuring, and advance-tax planning — legal only. ALWAYS read before Pakistan tax planning."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pk-tax-optimization"
-  tax_year: 2026
-  obligation: OPT
+  openaccountants_url: "https://www.openaccountants.com/skills/pk-tax-optimization"
+  jurisdiction: "PK"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Pakistan Tax Optimization (Self-Employed) — Skill v1.0
@@ -48,8 +46,8 @@ IT freelancer, USD 50,000/yr via Upwork: register with **PSEB**, remit through a
 - NEVER state rates without verifying the current Finance Act.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Pakistani tax practitioner. Verify all rates/rules with the FBR and PSEB. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Pakistani tax practitioner. Verify all rates/rules with the FBR and PSEB. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-tax-optimization) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pk-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pk-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.

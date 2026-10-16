@@ -1,24 +1,24 @@
 ---
 name: co-social-contributions
 description: "Use this skill whenever asked about Colombian self-employed social contributions (aportes a seguridad social para independientes). Trigger on phrases like \"seguridad social independientes\", \"salud y pensión independiente\", \"IBC independiente\", \"PILA independiente\", \"ARL independiente\", \"40% IBC rule\", or any question about Colombian social security obligations for self-employed individuals. Covers salud (12.5%), pensión (16%), ARL, Fondo de Solidaridad Pensional, the 40% IBC rule, PILA filing, and edge cases. ALWAYS read this skill before touching any Colombian social contribution work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/co-social-contributions"
-  obligation: SSC
+  openaccountants_url: "https://www.openaccountants.com/skills/co-social-contributions"
+  jurisdiction: "CO"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Colombia Social Contributions (Aportes Seguridad Social) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# CO Social Contributions
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Colombia |
 | Authority | UGPP (enforcement); EPS/AFP/ARL (collection) |
 | Primary legislation | Ley 100 de 1993; Decreto 1273 de 2018 |
@@ -38,62 +38,30 @@ metadata:
 | Validated by | Pending -- requires validation by Colombian contador |
 | Validation date | Pending |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
-### Required inputs
-
-Before computing, you MUST obtain:
-
-1. **Type of independent** -- cuenta propia vs contrato de prestación de servicios
-2. **Monthly gross income** -- determines IBC
-3. **Number of contracts / income sources**
-4. **ARL risk level** -- Level I through V
-5. **Pension regime** -- RPM (Colpensiones) vs RAIS (private AFP)
-6. **EPS affiliation**
-7. **Contract duration** -- post-July 2025 rules for prestación de servicios
-
-**If monthly gross income is unknown, STOP.**
-
-### Refusal catalogue
-
-**R-CO-SOC-1 -- Pension reform.** Trigger: question about Ley 2381 / sistema de pilares. Message: "Pension reform implementing regulations not finalized. Escalate to qualified counsel."
-
-### Prohibitions
-
-- NEVER compute IBC without applying the 40% rule
-- NEVER allow IBC below 1 SMMLV
-- NEVER skip ARL -- mandatory since Decreto 723/2013
-- NEVER ignore Fondo de Solidaridad when IBC > 4 SMMLV
-- NEVER assume pensionado exempt from all contributions -- salud and ARL still apply
-- NEVER file separate PILA for multiple contracts -- combine into one IBC
-- NEVER present IBC without confirming current SMMLV
-- NEVER assume contratante handles contributions without confirming post-July 2025 rules
-
----
+- **Required inputs before computing** — Before computing, you MUST obtain: 1. Type of independent -- cuenta propia vs contrato de prestación de servicios; 2. Monthly gross income -- determines IBC; 3. Number of contracts / income sources; 4. ARL risk level -- Level I through V; 5. Pension regime -- RPM (Colpensiones) vs RAIS (private AFP); 6. EPS affiliation; 7. Contract duration -- post-July 2025 rules for prestación de servicios. If monthly gross income is unknown, STOP.
+- **R-CO-SOC-1 -- Pension reform** — Trigger: question about Ley 2381 / sistema de pilares. Message: "Pension reform implementing regulations not finalized. Escalate to qualified counsel."
+- **Prohibitions** — NEVER compute IBC without applying the 40% rule; NEVER allow IBC below 1 SMMLV; NEVER skip ARL -- mandatory since Decreto 723/2013; NEVER ignore Fondo de Solidaridad when IBC > 4 SMMLV; NEVER assume pensionado exempt from all contributions -- salud and ARL still apply; NEVER file separate PILA for multiple contracts -- combine into one IBC; NEVER present IBC without confirming current SMMLV; NEVER assume contratante handles contributions without confirming post-July 2025 rules  _(Decreto 723/2013)_
 
 ## Section 3 -- IBC calculation
 
-**Legislation:** Ley 100/1993, Decreto 1273/2018
+- **IBC calculation formula** — IBC = monthly_gross_income x 40% IBC = clamp(1_SMMLV, IBC, 25_SMMLV)  _(Ley 100/1993, Decreto 1273/2018)_
 
-```
-IBC = monthly_gross_income x 40%
-IBC = clamp(1_SMMLV, IBC, 25_SMMLV)
-```
+**IBC calculation examples**  _(Ley 100/1993, Decreto 1273/2018)_
 
 | Monthly gross | 40% calc | IBC applied |
-|---|---|---|
+| --- | --- | --- |
 | COP 2,000,000 | COP 800,000 | COP 1,423,500 (minimum) |
 | COP 5,000,000 | COP 2,000,000 | COP 2,000,000 |
 | COP 100,000,000 | COP 40,000,000 | COP 35,587,500 (maximum) |
 
----
-
 ## Section 4 -- Contribution rates
 
+**Contribution rates table**
+
 | Component | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Salud | 12.5% | Independent pays 100% |
 | Pensión | 16% | Independent pays 100% |
 | ARL Level I | 0.522% | Office/consulting/IT |
@@ -104,108 +72,75 @@ IBC = clamp(1_SMMLV, IBC, 25_SMMLV)
 | Fondo Solidaridad | 1% | Only if IBC > 4 SMMLV |
 | Fondo Subsistencia | 0.5-1.5% additional | Only if IBC > 16 SMMLV |
 
----
+### Section 5 -- Computation and PILA filing
 
-## Section 5 -- Computation and PILA filing
+- **Computation (Level I)** — salud = IBC x 12.5% pensión = IBC x 16% ARL = IBC x 0.522% solidarity = IBC x 1% (if IBC > 4 SMMLV) total = salud + pensión + ARL + solidarity
+- **PILA filing steps** — 1. Access PILA operator (SOI, Mi Planilla, Aportes en Línea); 2. Enter IBC for period; 3. System calculates per component; 4. Confirm and pay electronically
 
-### Computation (Level I)
+### Section 6 -- Payment schedule, tax deductibility, and penalties
 
-```
-salud = IBC x 12.5%
-pensión = IBC x 16%
-ARL = IBC x 0.522%
-solidarity = IBC x 1% (if IBC > 4 SMMLV)
-total = salud + pensión + ARL + solidarity
-```
+- **Payment schedule** — Monthly via PILA. Due by last business day of contribution month.
+- **Prestación de servicios -- July 2025 change** — For contracts > 1 month: contratante (hiring entity) must manage and pay contributions through their PILA. Verify compliance. Flag for reviewer.
 
-### PILA filing
-
-1. Access PILA operator (SOI, Mi Planilla, Aportes en Línea)
-2. Enter IBC for period
-3. System calculates per component
-4. Confirm and pay electronically
-
----
-
-## Section 6 -- Payment schedule, tax deductibility, and penalties
-
-### Payment schedule
-
-Monthly via PILA. Due by last business day of contribution month.
-
-### Prestación de servicios -- July 2025 change
-
-For contracts > 1 month: contratante (hiring entity) must manage and pay contributions through their PILA. Verify compliance. Flag for reviewer.
-
-### Tax deductibility
+**Tax deductibility**
 
 | Question | Answer |
-|---|---|
+| --- | --- |
 | Are aportes deductible? | YES -- for impuesto de renta |
 | IBC as expense? | 60% presumed expenses already factored into IBC |
 
-### Penalties
+**Penalties**
 
 | Penalty | Detail |
-|---|---|
+| --- | --- |
 | Late PILA | Interest at tasa de usura |
 | Non-affiliation | UGPP fines up to 5 SMMLV/month |
 | Underreporting | UGPP audit + back-payments + penalties |
 | UGPP enforcement | Cross-references income tax with PILA |
 
----
+### Section 7 -- Registration and special situations
 
-## Section 7 -- Registration and special situations
-
-### Registration
-
-Must affiliate with EPS, AFP/Colpensiones, and ARL before first PILA payment.
-
-### Pensionado working independently
-
-Must still pay salud (12.5%) and ARL. Pensión NOT required.
-
-### Multiple contracts
-
-Sum all contract income. Apply 40% to total. Single PILA filing on combined IBC.
-
-### Income fluctuates monthly
-
-IBC calculated monthly on actual income. Each month's PILA reflects that month's IBC (subject to minimum).
-
----
+- **Registration** — Must affiliate with EPS, AFP/Colpensiones, and ARL before first PILA payment.
+- **Pensionado working independently** — Must still pay salud (12.5%) and ARL. Pensión NOT required.
+- **Multiple contracts** — Sum all contract income. Apply 40% to total. Single PILA filing on combined IBC.
+- **Income fluctuates monthly** — IBC calculated monthly on actual income. Each month's PILA reflects that month's IBC (subject to minimum).
 
 ## Section 8 -- Edge case registry
 
 ### EC1 -- Multiple contracts
-**Situation:** 3 contracts totaling COP 15,000,000/month.
-**Resolution:** IBC = COP 6,000,000. Single PILA.
+
+Situation: 3 contracts totaling COP 15,000,000/month.
+Resolution: IBC = COP 6,000,000. Single PILA.
 
 ### EC2 -- Below minimum
-**Situation:** Income COP 2,000,000, 40% = COP 800,000.
-**Resolution:** IBC = COP 1,423,500 (minimum).
+
+Situation: Income COP 2,000,000, 40% = COP 800,000.
+Resolution: IBC = COP 1,423,500 (minimum).
 
 ### EC3 -- Dual status (employed + independent)
-**Situation:** Employed COP 3,000,000 + independent COP 5,000,000.
-**Resolution:** Independent IBC = COP 2,000,000. Separate PILA.
+
+Situation: Employed COP 3,000,000 + independent COP 5,000,000.
+Resolution: Independent IBC = COP 2,000,000. Separate PILA.
 
 ### EC4 -- Fondo Solidaridad triggered
-**Situation:** IBC exceeds 4 SMMLV.
-**Resolution:** Additional 1% applies. Above 16 SMMLV: graduated additional 0.5-1.5%.
+
+Situation: IBC exceeds 4 SMMLV.
+Resolution: Additional 1% applies. Above 16 SMMLV: graduated additional 0.5-1.5%.
 
 ### EC5 -- ARL risk dispute
-**Situation:** Classified Level I but does field work.
-**Resolution:** Classification should reflect actual risk. Flag for reviewer.
+
+Situation: Classified Level I but does field work.
+Resolution: Classification should reflect actual risk. Flag for reviewer.
 
 ### EC6 -- Prestación de servicios post-July 2025
-**Situation:** 6-month contract starting August 2025.
-**Resolution:** Contratante responsible. Verify compliance. Flag.
+
+Situation: 6-month contract starting August 2025.
+Resolution: Contratante responsible. Verify compliance. Flag.
 
 ### EC7 -- UGPP audit
-**Situation:** IBC reported at 1 SMMLV but income tax shows COP 120M annual.
-**Resolution:** Expected IBC COP 4,000,000/month. Back-payments + penalties. Flag.
 
----
+Situation: IBC reported at 1 SMMLV but income tax shows COP 120M annual.
+Resolution: Expected IBC COP 4,000,000/month. Back-payments + penalties. Flag.
 
 ## Section 9 -- Reviewer escalation protocol
 
@@ -233,39 +168,42 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to qualified contador. Document gap.
 ```
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Standard, Risk Level I
-**Input:** Gross COP 5,000,000. Level I. RPM. 2025.
-**Expected output:** IBC COP 2,000,000. Salud COP 250,000. Pensión COP 320,000. ARL COP 10,440. Total ~COP 580,440.
+
+Input: Gross COP 5,000,000. Level I. RPM. 2025.
+Expected output: IBC COP 2,000,000. Salud COP 250,000. Pensión COP 320,000. ARL COP 10,440. Total ~COP 580,440.
 
 ### Test 2 -- Below minimum
-**Input:** Gross COP 2,000,000. Level I.
-**Expected output:** IBC COP 1,423,500. Total ~COP 413,129.
+
+Input: Gross COP 2,000,000. Level I.
+Expected output: IBC COP 1,423,500. Total ~COP 413,129.
 
 ### Test 3 -- High income, solidarity
-**Input:** Gross COP 20,000,000. Level I.
-**Expected output:** IBC COP 8,000,000. Solidarity 1% = COP 80,000. Total ~COP 2,401,760.
+
+Input: Gross COP 20,000,000. Level I.
+Expected output: IBC COP 8,000,000. Solidarity 1% = COP 80,000. Total ~COP 2,401,760.
 
 ### Test 4 -- Maximum cap
-**Input:** Gross COP 100,000,000. Level I.
-**Expected output:** IBC COP 35,587,500. All rates on capped amount.
+
+Input: Gross COP 100,000,000. Level I.
+Expected output: IBC COP 35,587,500. All rates on capped amount.
 
 ### Test 5 -- Dual status
-**Input:** Employed COP 3,000,000 + independent COP 8,000,000.
-**Expected output:** Independent IBC COP 3,200,000. Separate PILA.
+
+Input: Employed COP 3,000,000 + independent COP 8,000,000.
+Expected output: Independent IBC COP 3,200,000. Separate PILA.
 
 ### Test 6 -- Pensionado
-**Input:** Retiree, independent COP 6,000,000.
-**Expected output:** IBC COP 2,400,000. Salud + ARL only. No pensión.
+
+Input: Retiree, independent COP 6,000,000.
+Expected output: IBC COP 2,400,000. Salud + ARL only. No pensión.
 
 ### Test 7 -- Multiple contracts
-**Input:** COP 3M + 5M + 2M = COP 10M.
-**Expected output:** Combined IBC COP 4,000,000. Single PILA.
 
----
+Input: COP 3M + 5M + 2M = COP 10M.
+Expected output: Combined IBC COP 4,000,000. Single PILA.
 
 ## Disclaimer
 
@@ -273,6 +211,24 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/co-social-contributions) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `co-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/co-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

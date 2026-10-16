@@ -1,15 +1,13 @@
 ---
 name: kz-financial-statements
-description: "> Use this skill whenever asked about financial statements and accounting reporting in Kazakhstan. Trigger on phrases like \"Kazakhstan financial statements\", \"финансовая отчётность Казахстан\", \"do I file accounts as ИП\", \"IFRS Kazakhstan\", \"НСФО\", \"ТОО reporting\". Explains that individual entrepreneurs (ИП) generally do NOT file formal financial statements, what small/medium/large entities (ТОО) must prepare under the National Standard or IFRS, and filing with the Depository of Financial Statements. ALWAYS read this before any Kazakhstan financial-reporting work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about financial statements and accounting reporting in Kazakhstan. Trigger on phrases like \"Kazakhstan financial statements\", \"финансовая отчётность Казахстан\", \"do I file accounts as ИП\", \"IFRS Kazakhstan\", \"НСФО\", \"ТОО reporting\". Explains that individual entrepreneurs (ИП) generally do NOT file formal financial statements, what small/medium/large entities (ТОО) must prepare under the National Standard or IFRS, and filing with the Depository of Financial Statements. ALWAYS read this before any Kazakhstan financial-reporting work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: KZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/kz-financial-statements"
-  tax_year: 2026
-  obligation: FS
+  openaccountants_url: "https://www.openaccountants.com/skills/kz-financial-statements"
+  jurisdiction: "KZ"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Kazakhstan Financial Statements & Reporting — Skill v1.0
@@ -53,8 +51,8 @@ A solo IT freelancer registered as an ИП on the simplified regime: prepares **
 - NEVER state audit/size thresholds without verifying current law.
 
 ## Disclaimer
-Informational only; not advice. Verify entity-size thresholds, standard choice, and audit/filing obligations with the Ministry of Finance / КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify entity-size thresholds, standard choice, and audit/filing obligations with the Ministry of Finance / КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/kz-financial-statements) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `kz-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/kz-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,27 +1,24 @@
 ---
 name: colombia-iva
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Colombia IVA (Impuesto sobre las Ventas) return or advise on Colombian VAT registration, filing, and DIAN compliance. Trigger on phrases like \"prepare IVA return Colombia\", \"Colombian VAT\", \"IVA Colombia\", \"DIAN\", \"NIT\", or any Colombia IVA request. ALWAYS read this skill before touching any Colombia IVA work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CO
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/colombia-iva"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/colombia-iva"
+  jurisdiction: "CO"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Colombia IVA (Impuesto sobre las Ventas) Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Colombia IVA
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Colombia (República de Colombia) |
 | Tax | IVA — Impuesto sobre las Ventas (VAT) |
 | Currency | COP (Colombian Peso — $) |
@@ -29,7 +26,7 @@ metadata:
 | Reduced rates | 5% (medicines, medical devices, agricultural inputs, passenger air transport, accommodation); 0% (basic foods — pan, arroz, leche, huevos, etc.) |
 | Zero rate | 0% (exports of goods, certain services exported to non-residents) |
 | Exempt | Financial services, insurance, education, healthcare, public utilities (residential), land transport, books, newspapers |
-| Registration threshold | Responsable de IVA: annual income ≥ COP 96,000,000 (UVT × 3,500 for 2025) or other conditions; below = No Responsable de IVA (formerly "Régimen Simplificado") |
+| Registration threshold | Responsable de IVA: annual income/covered contracts at or above 3,500 UVT (COP 174,296,500 for 2025; commonly rounded to COP 174,297,000) or other conditions; below = No Responsable de IVA (formerly "Régimen Simplificado") |
 | Tax authority | DIAN (Dirección de Impuestos y Aduanas Nacionales) |
 | Filing portal | DIAN portal — https://www.dian.gov.co (MUISCA system) |
 | Return form | Declaración del Impuesto sobre las Ventas (Formulario 300) |
@@ -43,8 +40,10 @@ metadata:
 
 ### Key Formulario 300 fields
 
+**Key Formulario 300 fields**
+
 | Field | Meaning |
-|---|---|
+| --- | --- |
 | Casilla 27 | Total taxable sales 19% |
 | Casilla 28 | Total taxable sales 5% |
 | Casilla 29 | Total exports |
@@ -57,8 +56,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 19% standard |
 | Unknown whether 5% rate applies | 19% until confirmed |
 | Unknown whether food is zero-rated basic or not | 0% if unprocessed basic; 19% if processed/restaurant |
@@ -70,49 +71,34 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | COP 50,000,000 |
 | HIGH tax delta on single conservative default | COP 9,500,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per return |
 | LOW absolute net IVA position | COP 100,000,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before starting any Colombia IVA work, obtain:
-
-1. NIT (Número de Identificación Tributaria) and RUT (Registro Único Tributario) certificate
-2. Bimonthly bank statements in COP (all business accounts)
-3. Facturas Electrónicas issued (XML from DIAN-authorized software with CUFE — Código Único de Factura Electrónica)
-4. Facturas Electrónicas received from suppliers (with CUFE)
-5. Prior period Formulario 300 (for saldo a favor carried forward)
-6. Import customs declarations (Declaración de Importación) from DIAN Customs
-7. Retención en la fuente de IVA certificates (if subject to withholding)
+- **Required inputs before starting Colombia IVA work** — 1. NIT (Número de Identificación Tributaria) and RUT (Registro Único Tributario) certificate 2. Bimonthly bank statements in COP (all business accounts) 3. Facturas Electrónicas issued (XML from DIAN-authorized software with CUFE — Código Único de Factura Electrónica) 4. Facturas Electrónicas received from suppliers (with CUFE) 5. Prior period Formulario 300 (for saldo a favor carried forward) 6. Import customs declarations (Declaración de Importación) from DIAN Customs 7. Retención en la fuente de IVA certificates (if subject to withholding)  _(Before starting any Colombia IVA work, obtain)_
 
 ### Refusal catalogue
 
-Refuse and escalate to a Contador Público for:
-- Prorrata / proporcionalidad (partial exemption for mixed taxable/exempt businesses)
-- IVA en construcción (complex rules on real estate and construction)
-| IVA retenciones — complex agent cases
-- IVA refund for exporters — DIAN process is complex
-- Free trade zones (Zonas Francas) — special IVA treatment
-- Industria y Comercio (ICA) — separate municipal tax, not IVA
-- Impuesto Nacional al Consumo (INC) — separate consumption tax on restaurants, vehicles
-
----
+- **Refuse and escalate to Contador Público** — Prorrata / proporcionalidad (partial exemption for mixed taxable/exempt businesses); IVA en construcción (complex rules on real estate and construction); IVA retenciones — complex agent cases; IVA refund for exporters — DIAN process is complex; Free trade zones (Zonas Francas) — special IVA treatment; Industria y Comercio (ICA) — separate municipal tax, not IVA; Impuesto Nacional al Consumo (INC) — separate consumption tax on restaurants, vehicles  _(Refusal catalogue)_
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banking and financial services
 
+**Banking and financial services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Bancolombia | Bank fees, transfers | Exempt | No |
 | Davivienda | Account fees, loans | Exempt | No |
 | Banco de Bogotá | Commercial banking | Exempt | No |
@@ -126,8 +112,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.2 Electricity and utilities
 
+**Electricity and utilities suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Grupo EPM (EPM Medellín) | Electricity — Medellín/Antioquia | 0% (residential) / 19% (non-residential commercial) | Yes (business) |
 | Codensa (Enel Colombia) | Electricity — Bogotá | 19% (non-residential) | Yes (business) |
 | Electricaribe / Air-e | Electricity — Caribbean coast | 19% (commercial) | Yes |
@@ -137,8 +125,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.3 Telecommunications
 
+**Telecommunications suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Claro Colombia | Mobile, internet, TV | 19% | Yes (business use) |
 | Movistar Colombia (Telefónica) | Mobile, broadband | 19% | Yes (business use) |
 | Tigo Colombia | Mobile, cable | 19% | Yes (business use) |
@@ -148,8 +138,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.4 Transport and travel
 
+**Transport and travel suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Avianca | Domestic flights | 5% (passenger air) | Yes |
 | Avianca | International flights | 0% (export) | No |
 | LATAM Colombia | Domestic/international | 5% / 0% | Yes (domestic) |
@@ -162,8 +154,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.5 Logistics and courier
 
+**Logistics and courier suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Servientrega | Domestic courier | 19% | Yes |
 | Coordinadora | Domestic courier | 19% | Yes |
 | TCC (Transportes Cargo Colombia) | Domestic freight | 19% | Yes |
@@ -173,8 +167,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.6 Retail and office supplies
 
+**Retail and office supplies suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Éxito (Grupo Éxito) | Supermarket — mixed | 19%/5%/0% mixed | Partial |
 | Jumbo Colombia (Cencosud) | Supermarket | Mixed | Partial |
 | Rappi Colombia | Delivery platform — commission | 19% | Yes |
@@ -184,8 +180,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.7 Software and digital services
 
+**Software and digital services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Siigo Colombia | Cloud accounting (SME leader) | 19% | Yes |
 | World Office | ERP Colombia | 19% | Yes |
 | ContaFácil | Accounting software | 19% | Yes |
@@ -198,8 +196,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.8 Professional services
 
+**Professional services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Contador Público | Accounting, audit, tax | 19% | Yes |
 | Firma de abogados | Legal services | 19% | Yes |
 | Agencia de publicidad | Advertising | 19% | Yes |
@@ -208,8 +208,10 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.9 Insurance
 
+**Insurance suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Suramericana (SURA) | All lines | Exempt | No |
 | Bolívar Seguros | Property, liability | Exempt | No |
 | Colseguros (Allianz) | Business insurance | Exempt | No |
@@ -217,14 +219,14 @@ Refuse and escalate to a Contador Público for:
 
 ### 3.10 Basic food (0% IVA)
 
+**Basic food suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Unilever Colombia (basic foods) | Aceite, margarina | 0% | No (0-rate) |
 | Alpina | Leche, queso, yogur | 0% | No |
 | Nutresa (Colanta, etc.) | Basic dairy products | 0% | No |
-| Arroz / pan / huevos / sal | Unprocessed staples | 0% | No |
-
----
+| Arroz / pan / huevos / sal | Unprocesados staples | 0% | No |
 
 ## Section 4 — Worked examples
 
@@ -247,8 +249,6 @@ Saldo       : $619.000.000
 
 *Note: COP amounts use period as thousands separator: $119.000.000 = COP 119,000,000*
 
----
-
 ### Example 2 — Reduced rate (5%) domestic flight
 
 **Scenario:** Employee flies Bogotá–Medellín on Avianca.
@@ -265,8 +265,6 @@ Valor       : -$472.500
 - Domestic flight ticket: net $450,000 + IVA 5% $22,500 = $472,500
 - Input credit: $22,500 (business travel — documented purpose required)
 - Return entry: Casilla 28 — $450,000; Input IVA 5%: $22,500
-
----
 
 ### Example 3 — Zero-rated basic food
 
@@ -285,8 +283,6 @@ Valor       : -$2.500.000
 - Input credit on 19% portion: $1,300,000 × 19/119 = $207,563
 - Zero-rated items: no IVA credit applicable; not in IVA return
 
----
-
 ### Example 4 — Export of services (0%)
 
 **Scenario:** Colombian IT company exports software development services to US client.
@@ -303,8 +299,6 @@ Valor       : +$380.000.000 (USD 95.000)
 - Export of services consumed outside Colombia — 0% IVA
 - Issue Factura de Exportación Electrónica; file with DIAN
 - Return entry: Casilla 29 — $380,000,000 | IVA: $0
-
----
 
 ### Example 5 — IVA retenida (withholding)
 
@@ -324,57 +318,47 @@ Valor       : +$109.500.000
 - Output IVA: $19,000,000; Less retención received: $9,500,000
 - Casilla 88 (retención a favor): $9,500,000
 
----
-
 ### Example 6 — Bimonthly return summary (Mar–Apr 2025)
 
+**Bimonthly return summary**
+
 | Item | Net (COP) | IVA (COP) |
-|---|---|---|
+| --- | --- | --- |
 | Domestic sales 19% | 800,000,000 | 152,000,000 |
 | Domestic sales 5% | 50,000,000 | 2,500,000 |
 | Export sales (0%) | 100,000,000 | 0 |
 | Total Output | 950,000,000 | 154,500,000 |
 | Input IVA on purchases | 400,000,000 | 76,000,000 |
 | Retención IVA received | — | 15,000,000 |
-| Total Input + Retención | | 91,000,000 |
-| **Net IVA payable** | | **63,500,000** |
-
----
+| Total Input + Retención |  | 91,000,000 |
+| **Net IVA payable** |  | **63,500,000** |
 
 ## Section 5 — Tier 1 rules (compressed)
 
-**Rate assignment:**
-- 19% standard: most goods and services not listed below
-- 5%: domestic passenger air transport, accommodation/lodging, agricultural inputs, some medicines and medical devices
-- 0% (excluido/zero-rated): basic unprocessed foods (arroz, maíz, papa, sal, panela, leche, huevos, carne/pescado sin procesar), books, water supply (residential), agricultural animals
-- Exempt: financial services, insurance, education, healthcare (licensed practitioners), public utilities (residential electricity/gas), land transport, newspapers, public passenger transport
+### Rate assignment
 
-**Input credit:**
-- Credit allowed on 19% and 5% purchases for taxable activities
-- Must have Factura Electrónica with CUFE from Responsable de IVA supplier
-- No credit from No Responsable suppliers (they do not charge IVA)
-- No credit on excluido (0%) purchases or exempt purchases
-- IVA retenida: gran contribuyentes and retención agents withhold 15% or 50% of IVA — offset against payable
+- **Rate assignment rules** — 19% standard: most goods and services not listed below; 5%: domestic passenger air transport, accommodation/lodging, agricultural inputs, some medicines and medical devices; 0% (excluido/zero-rated): basic unprocessed foods (arroz, maíz, papa, sal, panela, leche, huevos, carne/pescado sin procesar), books, water supply (residential), agricultural animals; Exempt: financial services, insurance, education, healthcare (licensed practitioners), public utilities (residential electricity/gas), land transport, newspapers, public passenger transport  _(Rate assignment)_
 
-**Filing mechanics:**
-- File Formulario 300 bimonthly via DIAN MUISCA; deadline varies by NIT last digit
-- All B2B sales require Factura Electrónica with CUFE (DIAN-authorized software)
-- Saldo a favor carries forward; exporters can request refund after filing
+### Input credit
 
----
+- **Input credit rules** — Credit allowed on 19% and 5% purchases for taxable activities; Must have Factura Electrónica with CUFE from Responsable de IVA supplier; No credit from No Responsable suppliers (they do not charge IVA); No credit on excluido (0%) purchases or exempt purchases; IVA retenida: gran contribuyentes and retención agents withhold 15% or 50% of IVA — offset against payable  _(Input credit)_
+
+### Filing mechanics
+
+- **Filing mechanics rules** — File Formulario 300 bimonthly via DIAN MUISCA; deadline varies by NIT last digit; All B2B sales require Factura Electrónica with CUFE (DIAN-authorized software); Saldo a favor carries forward; exporters can request refund after filing  _(Filing mechanics)_
 
 ## Section 6 — Tier 2 catalogue (genuinely data-unknowable items)
 
+**Tier 2 catalogue**
+
 | Item | Why unknowable | What to ask |
-|---|---|---|
+| --- | --- | --- |
 | Utility rate | Residential (0%) vs commercial/industrial (19%) depends on usage classification | "Is the utility account registered for residential or commercial use? Provide contract." |
 | Food product (0% vs 19%) | Processed vs unprocessed distinction; restaurant meals (19%) vs basic food (0%) | "Is this a basic unprocessed food? Or restaurant service / processed packaged product?" |
 | Air transport (5% vs 0%) | Domestic (5%) vs international (0%) | "What is the route? Domestic Colombia or international?" |
 | Supplier regime | Responsable (IVA charged, credit allowed) vs No Responsable | "Confirm supplier's RUT — Responsable de IVA or No Responsable?" |
 | Business-use vehicle | DIAN limits on passenger vehicle IVA | "Vehicle type and business use %" |
 | Export documentation | Zero-rate requires DIAN export declaration | "Provide export invoice and DIAN export authorization." |
-
----
 
 ## Section 7 — Excel working paper
 
@@ -386,11 +370,10 @@ Valor       : +$109.500.000
 3. `F300_Summary` — bimonthly return totals
 4. `Tier2_Items` — awaiting client response
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Bancolombia format
+
 ```
 Fecha       : 15/04/2025
 Tipo        : Abono — Transferencia Electrónica
@@ -400,17 +383,17 @@ Saldo       : $619.000.000
 ```
 
 ### Davivienda format
+
 ```
 15/04/2025  |  Crédito  |  COMPANY NAME  |  +119.000.000  |  Saldo: 619.000.000
 ```
 
 ### Key patterns:
+
 - **COP number format:** Period = thousands; no decimal (whole pesos): $119.000.000 = COP 119,000,000
 - **Abono:** Credit (money in) — match to issued Factura Electrónica
 - **Débito:** Debit (money out) — match to received Factura for input credit
 - **Reintegro Divisas:** Foreign currency conversion — export or foreign service
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -424,12 +407,12 @@ When client cannot provide Facturas Electrónicas for all transactions:
 4. Issue data request for missing invoice references
 5. Warn client: DIAN can disallow input credit without Factura Electrónica with valid CUFE
 
----
-
 ## Section 10 — Reference material
 
+**Reference material**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | DIAN portal (MUISCA system) | https://www.dian.gov.co |
 | Estatuto Tributario (IVA — Artículos 420–512) | DIAN — legislación |
 | Resolución DIAN 000042/2020 — Factura Electrónica | DIAN — resoluciones |
@@ -437,14 +420,30 @@ When client cannot provide Facturas Electrónicas for all transactions:
 | Retención en fuente IVA | DIAN — retención IVA guidance |
 | UVT (Unidad de Valor Tributario) — annual update | DIAN resolution each December |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/colombia-iva) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `colombia-iva` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/colombia-iva. If neither is available, confirm every figure against the official source pages cited above before relying on it.

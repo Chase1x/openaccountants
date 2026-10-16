@@ -1,27 +1,25 @@
 ---
 name: philippines-vat
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Philippines VAT return (BIR Form 2550M/2550Q), classify transactions for Philippine VAT purposes, or advise on VAT registration and filing in the Philippines. Trigger on phrases like \"Philippines VAT\", \"BIR Form 2550\", \"input VAT Philippines\", \"output VAT Philippines\", \"VAT-registered Philippines\", \"percentage tax Philippines\", or any Philippines VAT request. ALWAYS read this skill before touching any Philippines VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PH
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/philippines-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/philippines-vat"
+  jurisdiction: "PH"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Jonathan I. Ruiz, CPA"
+  review_status: "current"
 ---
 
-# Philippines VAT Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Philippines VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference table**  _(RA 10963 s.37; RMC 52-2023; RR 1-2024. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Philippines (Republika ng Pilipinas) |
 | Tax | Value Added Tax (VAT) |
 | Currency | PHP (Philippine Peso / ₱) |
@@ -44,8 +42,10 @@ metadata:
 
 ### Key Form 2550M/Q lines
 
+**Key Form 2550M/Q lines**
+
 | Line | Meaning |
-|---|---|
+| --- | --- |
 | Part I-A | Sales/receipts at 12% (net of VAT) |
 | Part I-B | Zero-rated sales |
 | Part I-C | Exempt sales |
@@ -59,8 +59,10 @@ metadata:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 12% standard |
 | Unknown counterparty country | Domestic Philippines |
 | Unknown export/zero-rate qualification | 12% until evidence confirmed |
@@ -71,15 +73,15 @@ metadata:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | PHP 500,000 |
 | HIGH tax delta on single default | PHP 60,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net VAT position | PHP 200,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -95,17 +97,11 @@ metadata:
 
 ### Refusal catalogue
 
-**R-PH-1 — Non-VAT (percentage tax) taxpayer.** "Businesses below the PHP 3M threshold pay percentage tax (3% of gross receipts) via Form 2551Q, not VAT. They cannot register ORs for VAT and cannot recover input VAT. This skill covers VAT-registered businesses only."
-
-**R-PH-2 — PEZA/BOI zero-rating complex structures.** "PEZA-registered enterprises have specific zero-rating rules for sales within the ecozone. If the client sells to a PEZA entity and claims zero-rating, verify the PEZA certificate — if complex, escalate to a Philippine CPA."
-
-**R-PH-3 — Partial exemption with mixed supplies.** "If the business makes both taxable and exempt supplies and cannot directly attribute input VAT, an allocation is required. Out of scope without the annual ratio — escalate."
-
-**R-PH-4 — Withholding VAT (Final Withholding VAT).** "Certain transactions (e.g., payments by government, non-residents) are subject to final withholding VAT. If significant government contracts exist, track separately — escalate to a CPA."
-
-**R-PH-5 — Digital service providers (non-residents).** "Non-resident digital service providers with Philippine consumption must register for VAT under the Digital Economy Taxation Act. Out of scope for domestic filers."
-
----
+- **R-PH-1 — Non-VAT (percentage tax) taxpayer** — Businesses below the PHP 3M threshold pay percentage tax (3% of gross receipts) via Form 2551Q, not VAT. They cannot register ORs for VAT and cannot recover input VAT. This skill covers VAT-registered businesses only.
+- **R-PH-2 — PEZA/BOI zero-rating complex structures** — PEZA-registered enterprises have specific zero-rating rules for sales within the ecozone. If the client sells to a PEZA entity and claims zero-rating, verify the PEZA certificate — if complex, escalate to a Philippine CPA.
+- **R-PH-3 — Partial exemption with mixed supplies** — If the business makes both taxable and exempt supplies and cannot directly attribute input VAT, an allocation is required. Out of scope without the annual ratio — escalate.
+- **R-PH-4 — Withholding VAT (Final Withholding VAT)** — Certain transactions (e.g., payments by government, non-residents) are subject to final withholding VAT. If significant government contracts exist, track separately — escalate to a CPA.
+- **R-PH-5 — Digital service providers (non-residents)** — Non-resident digital service providers with Philippine consumption must register for VAT under the Digital Economy Taxation Act. Out of scope for domestic filers.
 
 ## Section 3 — Supplier pattern library
 
@@ -113,8 +109,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.1 Philippine banks — fees and charges (exempt / exclude)
 
+**Philippine banks — fees and charges**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BDO UNIBANK, BANCO DE ORO | EXCLUDE (fee lines) | Financial service — VAT exempt |
 | BANK OF THE PHILIPPINE ISLANDS, BPI | EXCLUDE (fee lines) | Same |
 | METROBANK, METROPOLITAN BANK | EXCLUDE (fee lines) | Same |
@@ -131,8 +129,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.2 Philippine government and statutory (exclude)
 
+**Philippine government and statutory**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BUREAU OF INTERNAL REVENUE, BIR | EXCLUDE | Tax payment |
 | BUREAU OF CUSTOMS, BOC | EXCLUDE | Customs duty |
 | SOCIAL SECURITY SYSTEM, SSS | EXCLUDE | Social insurance |
@@ -143,8 +143,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.3 Philippine utilities (taxable at 12%)
 
+**Philippine utilities**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | MERALCO, MANILA ELECTRIC | Input 12% | 12% | Electricity (Metro Manila) — taxable |
 | CEPALCO (Cagayan de Oro electric) | Input 12% | 12% | Electricity — taxable |
 | VECO (Visayas Electric) | Input 12% | 12% | Electricity — taxable |
@@ -158,8 +160,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.4 Transport and logistics
 
+**Transport and logistics**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PHILIPPINE AIRLINES, PAL | Check route | 0%/12% | International 0%; domestic 12% |
 | CEBU PACIFIC | Check route | 0%/12% | International 0%; domestic 12% |
 | AIRASIA PHILIPPINES | Check route | 0%/12% | International 0%; domestic 12% |
@@ -177,8 +181,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.5 Food and retail
 
+**Food and retail**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SM SUPERMARKET, SM MARKETS | Input 12% | 12% | Supermarket — 12% on non-exempt items |
 | ROBINSONS SUPERMARKET | Input 12% | 12% | Supermarket — 12% |
 | PUREGOLD | Input 12% | 12% | Supermarket — 12% |
@@ -193,8 +199,10 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 Under the Digital Economy Taxation Act (R.A. 11976, signed 2024), non-resident digital service providers must register for Philippine VAT. For B2B PKP buyers: input credit claimable if the foreign supplier charges and remits 12% VAT.
 
+**SaaS — international suppliers**
+
 | Pattern | Status | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Workspace, Ads, Cloud) | Should be registered | Input 12% if charged | Check if Google charges PH VAT on invoice |
 | MICROSOFT (365, Azure) | Should be registered | Input 12% if charged | Same |
 | META, FACEBOOK ADS | Should be registered | Input 12% if charged | Same |
@@ -206,8 +214,10 @@ Under the Digital Economy Taxation Act (R.A. 11976, signed 2024), non-resident d
 
 ### 3.7 Payment processors (exempt fees)
 
+**Payment processors**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PAYPAL (transaction fees) | EXCLUDE | Financial service — VAT exempt |
 | STRIPE (transaction fees) | EXCLUDE | Same |
 | GCASH (transaction fees) | EXCLUDE | Same |
@@ -216,8 +226,10 @@ Under the Digital Economy Taxation Act (R.A. 11976, signed 2024), non-resident d
 
 ### 3.8 Professional services (VAT-registered)
 
+**Professional services**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CPA FIRM, ACCOUNTING FIRM | Input 12% | 12% | Professional services — taxable |
 | LAW FIRM, ATTY, ATTORNEY | Input 12% | 12% | Legal services — taxable |
 | NOTARY PUBLIC | Input 12% | 12% | Notarial services — taxable |
@@ -225,16 +237,16 @@ Under the Digital Economy Taxation Act (R.A. 11976, signed 2024), non-resident d
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INTER-ACCOUNT TRANSFER, OWN ACCOUNT | EXCLUDE | Internal movement |
 | LOAN PROCEEDS, LOAN REPAYMENT | EXCLUDE | Loan principal — out of scope |
 | SALARY, PAYROLL | EXCLUDE | Wages — outside VAT scope |
 | DIVIDEND | EXCLUDE | Out of scope |
 | SECURITY DEPOSIT, ADVANCE DEPOSIT | Tier 2 — check | May trigger VAT if applied to taxable supply |
 | ATM WITHDRAWAL, CASH WITHDRAWAL | Tier 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -300,91 +312,72 @@ Client lunch at Jollibee. In the Philippines, there is no absolute block on ente
 
 **Classification:** Input VAT 12% — PHP 120 (if OR held). Net expense: PHP 1,000. Flag: confirm BIR-registered OR from Jollibee.
 
----
-
-## Section 5 — Tier 1 rules (compressed)
-
 ### 5.1 Standard rate 12%
 
-Default rate for all taxable supplies of goods and services. Legislation: National Internal Revenue Code (NIRC) Section 106 (goods) and Section 108 (services).
+- **Standard rate** — 12%
 
 ### 5.2 Zero rate — exports and qualifying supplies
 
-Zero-rated: export of goods; services rendered to non-residents paid in foreign currency (with inward remittance); services to PEZA-registered entities within ecozones; services to BOI-registered enterprises (specific cases); international transport of passengers and cargo. Evidence: export documentation; inward remittance records; PEZA certificate. Legislation: NIRC Sections 106(A)(2) and 108(B).
+- **Zero-rated supplies** — Zero-rated: export of goods; services rendered to non-residents paid in foreign currency (with inward remittance); services to PEZA-registered entities within ecozones; services to BOI-registered enterprises (specific cases); international transport of passengers and cargo. Evidence: export documentation; inward remittance records; PEZA certificate.  _(NIRC Sections 106(A)(2) and 108(B))_
 
 ### 5.3 Exempt supplies
 
-Agricultural products in original state; educational services; medical/hospital services; literary/musical compositions; housing below PHP 3,199,200 (BIR threshold); lease of residential unit below PHP 15,000/month; life insurance premiums; common carriers below threshold; importation of basic necessities. Legislation: NIRC Sections 109.
+- **Exempt supplies** — Agricultural products in original state; educational services; medical/hospital services; literary/musical compositions; housing below PHP 3,600,000 (RR 1-2024 — re-indexed from PHP 3,199,200; next CPI re-index due 2027 per NIRC s.109(P)); lease of residential unit below PHP 15,000/month; life insurance premiums; common carriers below threshold; importation of basic necessities.  _(NIRC Section 109; RR No. 1-2024. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
 
 ### 5.4 Official Receipt (OR) / Sales Invoice requirements
 
-BIR-registered ORs or Sales Invoices are required for input credit. Must contain: TIN of seller and buyer, BIR-registered serial number, date, description, net amount, VAT rate, VAT amount. Electronic invoices allowed via EFPS-registered providers.
+- **OR/Sales Invoice requirements** — BIR-registered ORs or Sales Invoices are required for input credit. Must contain: TIN of seller and buyer, BIR-registered serial number, date, description, net amount, VAT rate, VAT amount. Electronic invoices allowed via EFPS-registered providers.
 
 ### 5.5 Input VAT limitations
 
-Input VAT is not creditable for: entertainment/representation expenses (limited — see Section 6.1); motor vehicles not used exclusively for business; purchases from non-VAT-registered suppliers; purchases without valid ORs.
+- **Input VAT limitations** — Input VAT is not creditable for: entertainment/representation expenses (limited — see Section 6.1); motor vehicles not used exclusively for business; purchases from non-VAT-registered suppliers; purchases without valid ORs.
 
 ### 5.6 Transitional input VAT
 
-Beginning inventory VAT credit available upon VAT registration (2% of inventory value or actual input VAT on goods for sale, whichever is higher).
+- **Transitional input VAT** — Beginning inventory VAT credit available upon VAT registration (2% of inventory value or actual input VAT on goods for sale, whichever is higher).
 
 ### 5.7 Filing deadlines
 
+**Filing deadlines**  _(RA 10963 (TRAIN Law) s.37; RR 13-2018; RMC 52-2023. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
+
 | Return | Period | Due date |
-|---|---|---|
-| Form 2550M (monthly) | Monthly | 20th of following month |
-| Form 2550Q (quarterly) | Quarterly | 25th of month following quarter |
+| --- | --- | --- |
+| Form 2550Q (quarterly) — the ONLY mandatory VAT return | Quarterly | 25 days after quarter-end |
+| Form 2550M (monthly) — OPTIONAL since 1 Jan 2023 | Monthly, at the taxpayer's choice (cash-flow smoothing) | No prescribed deadline (RMC 52-2023) |
 | Payment | Same as filing | Same deadline |
 
 ### 5.8 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | PHP 1,000 per return + 25% surcharge |
 | Late payment | 12% interest per annum on unpaid tax |
 | Failure to issue OR | 50% surcharge on transaction + compromise penalty |
 | Fraud/falsification | 50% surcharge + criminal liability |
 
----
-
 ## Section 6 — Tier 2 catalogue
 
 ### 6.1 Entertainment expense input VAT limit
 
-**What it shows:** Restaurant, hotel, or entertainment expense claimed as business entertainment.
-**What's missing:** Whether BIR-registered OR held and whether expense is within the entertainment deduction limit.
-**Conservative default:** No input credit (treat as personal if OR not confirmed).
-**Question to ask:** "Is there a BIR-registered OR for this entertainment expense? Is this within the 0.5% of net sales / 1% of net revenue entertainment ceiling?"
+- **Entertainment expense input VAT limit** — **What it shows:** Restaurant, hotel, or entertainment expense claimed as business entertainment. **What's missing:** Whether BIR-registered OR held and whether expense is within the entertainment deduction limit. **Conservative default:** No input credit (treat as personal if OR not confirmed). **Question to ask:** "Is there a BIR-registered OR for this entertainment expense? Is this within the 0.5% of net sales / 1% of net revenue entertainment ceiling?"
 
 ### 6.2 Zero-rating for services to non-residents
 
-**What it shows:** Revenue from a foreign client.
-**What's missing:** Whether payment was received in foreign currency with inward remittance through a Philippine bank.
-**Conservative default:** 12% standard rate.
-**Question to ask:** "Was payment received in USD/foreign currency? Was it remitted through a Philippine bank (with bank credit advice)? Is the client a non-resident foreign company?"
+- **Zero-rating for services to non-residents** — **What it shows:** Revenue from a foreign client. **What's missing:** Whether payment was received in foreign currency with inward remittance through a Philippine bank. **Conservative default:** 12% standard rate. **Question to ask:** "Was payment received in USD/foreign currency? Was it remitted through a Philippine bank (with bank credit advice)? Is the client a non-resident foreign company?"
 
 ### 6.3 PEZA zero-rating
 
-**What it shows:** Sale to a company that may be PEZA-registered.
-**What's missing:** PEZA registration certificate and whether the supply is within the ecozone.
-**Conservative default:** 12% — do not zero-rate without certificate.
-**Question to ask:** "Can the buyer provide their PEZA Certificate of Registration and authority to zero-rate?"
+- **PEZA zero-rating** — **What it shows:** Sale to a company that may be PEZA-registered. **What's missing:** PEZA registration certificate and whether the supply is within the ecozone. **Conservative default:** 12% — do not zero-rate without certificate. **Question to ask:** "Can the buyer provide their PEZA Certificate of Registration and authority to zero-rate?"
 
 ### 6.4 Digital services — foreign provider VAT status
 
-**What it shows:** Payment to a foreign tech/SaaS company.
-**What's missing:** Whether the foreign provider has registered for Philippine VAT (post-Digital Economy Act 2024) and whether they are charging 12% VAT on invoices.
-**Conservative default:** No input credit until confirmed.
-**Question to ask:** "Does the invoice from this foreign provider show Philippine VAT (12%) charged? If not, no input credit is available."
+- **Digital services — foreign provider VAT status** — **What it shows:** Payment to a foreign tech/SaaS company. **What's missing:** Whether the foreign provider has registered for Philippine VAT (post-Digital Economy Act 2024) and whether they are charging 12% VAT on invoices. **Conservative default:** No input credit until confirmed. **Question to ask:** "Does the invoice from this foreign provider show Philippine VAT (12%) charged? If not, no input credit is available."
 
 ### 6.5 Motor vehicle expenses
 
-**What it shows:** Vehicle purchase, lease, fuel, or maintenance.
-**What's missing:** Whether vehicle is used exclusively for business.
-**Conservative default:** 0% input credit.
-**Question to ask:** "Is this vehicle registered in the company name and used exclusively for business? Personal-use vehicles and mixed-use vehicles have limited input VAT recovery."
-
----
+- **Motor vehicle expenses** — **What it shows:** Vehicle purchase, lease, fuel, or maintenance. **What's missing:** Whether vehicle is used exclusively for business. **Conservative default:** 0% input credit. **Question to ask:** "Is this vehicle registered in the company name and used exclusively for business? Personal-use vehicles and mixed-use vehicles have limited input VAT recovery."
 
 ## Section 7 — Excel working paper template
 
@@ -421,14 +414,14 @@ REVIEWER FLAGS:
   [ ] Entertainment ceiling calculated?
 ```
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Common Philippine bank statement formats
 
+**Common Philippine bank statement formats**
+
 | Bank | Key columns | Date format | Amount |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BDO | Date, Reference, Description, Debit, Credit, Balance | MM/DD/YYYY | PHP with 2 decimals |
 | BPI | Date, Transaction Reference, Description, Withdrawal, Deposit, Balance | MM/DD/YYYY | PHP |
 | Metrobank | Date, Description, Debit, Credit, Balance | MM/DD/YYYY | PHP |
@@ -437,8 +430,10 @@ REVIEWER FLAGS:
 
 ### Key Philippine banking terms
 
+**Key Philippine banking terms**
+
 | Term | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | CREDIT / DEPOSIT | Incoming funds | Potential revenue |
 | DEBIT / WITHDRAWAL | Outgoing payment | Potential expense |
 | INWARD REMITTANCE | Foreign currency receipt | Potential zero-rated export |
@@ -447,8 +442,6 @@ REVIEWER FLAGS:
 | BALANCE | Running balance | Ignore |
 | ATM WITHDRAWAL | Cash withdrawal | Tier 2 — ask |
 | PAYROLL DEBIT | Salary payment | Out of VAT scope |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -472,14 +465,14 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 8. Prior period excess input VAT credit carried forward?
 ```
 
----
-
 ## Section 10 — Reference material
 
 ### Key legislation
 
+**Key legislation**  _(RA 12023 (VAT on Digital Services Law, Oct 2024). Corrected by Jonathan I. Ruiz (CPA, Philippines))_
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | VAT on goods | NIRC Section 106 |
 | VAT on services | NIRC Section 108 |
 | Zero-rated sales | NIRC Sections 106(A)(2), 108(B) |
@@ -487,7 +480,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 | Input VAT | NIRC Section 110 |
 | Official Receipts | NIRC Section 237 |
 | Registration threshold | NIRC Section 109(BB) (PHP 3M) |
-| Digital economy VAT | R.A. 11976 (Digital Economy Taxation Act, 2024) |
+| VAT on digital services | R.A. 12023 (VAT on Digital Services Law, signed 2 Oct 2024) |
 | Penalties | NIRC Sections 248–249 |
 
 ### Known gaps
@@ -509,12 +502,12 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, Digital Economy Act note, no inline tier tags |
-
----
 
 ## Prohibitions
 
@@ -525,14 +518,30 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 - NEVER apply 12% to exempt supplies (unprocessed agriculture, medical, education, etc.)
 - NEVER present calculations as definitive — direct to a Philippine CPA or BIR-accredited tax practitioner
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional before filing.
 
 The most up-to-date version is maintained at openaccountants.com.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/philippines-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `philippines-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/philippines-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

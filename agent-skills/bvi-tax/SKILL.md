@@ -1,27 +1,24 @@
 ---
 name: bvi-tax
-description: "> Use this skill whenever asked about British Virgin Islands (BVI) taxation, payroll tax, or the absence of income tax and VAT. Trigger on phrases like \"BVI tax\", \"British Virgin Islands tax\", \"BVI VAT\", \"BVI payroll tax\", or any request involving BVI tax compliance. BVI does NOT have income tax, capital gains tax, or VAT. The primary tax is payroll tax. ALWAYS read this skill before handling any BVI tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about British Virgin Islands (BVI) taxation, payroll tax, or the absence of income tax and VAT. Trigger on phrases like \"BVI tax\", \"British Virgin Islands tax\", \"BVI VAT\", \"BVI payroll tax\", or any request involving BVI tax compliance. BVI does NOT have income tax, capital gains tax, or VAT. The primary tax is payroll tax. ALWAYS read this skill before handling any BVI tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: VG
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/bvi-tax"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/bvi-tax"
+  jurisdiction: "VG"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# British Virgin Islands (BVI) Tax Compliance Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Bvi Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | British Virgin Islands (BVI) |
 | Tax | Payroll tax (primary), customs duties, property tax, social security, NHI |
 | Currency | USD |
@@ -37,8 +34,10 @@ metadata:
 
 ### Tax Landscape
 
+**Tax Landscape**
+
 | Tax Type | Status |
-|---|---|
+| --- | --- |
 | Income Tax (personal/corporate) | None |
 | Capital Gains Tax | None |
 | VAT / Sales Tax | None |
@@ -51,21 +50,19 @@ metadata:
 
 ### Payroll Tax Rates
 
-**Class 1** (<=7 employees, payroll <=USD 150,000, revenue <=USD 300,000): Employer 2% + Employee 8% = 10%.
-
-**Class 2** (all others): Employer 6% + Employee 8% = 14%.
-
-Employee exemption: first USD 10,000 annual remuneration exempt.
+- **Class 1 payroll tax rate** — Employer 2% + Employee 8% = 10% (<=7 employees, payroll <=USD 150,000, revenue <=USD 300,000)
+- **Class 2 payroll tax rate** — Employer 6% + Employee 8% = 14% (all others)
+- **Employee exemption** — 10,000 USD (first USD 10,000 annual remuneration exempt)
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown employer class | Class 2 |
 | Unknown duty rate | General merchandise |
 | Unknown economic substance | Assume relevant activity applies |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -79,22 +76,19 @@ Employee exemption: first USD 10,000 annual remuneration exempt.
 
 ### Refusal Catalogue
 
-**R-VG-1 -- Income tax.** "BVI has no income tax."
-
-**R-VG-2 -- VAT/sales tax.** "BVI has no VAT or sales tax."
-
-**R-VG-3 -- Economic substance detail.** "Escalate to specialist."
-
-**R-VG-4 -- CRS/FATCA compliance.** "Escalate to specialist."
-
----
+- **R-VG-1 -- Income tax** — BVI has no income tax.  _(R-VG-1)_
+- **R-VG-2 -- VAT/sales tax** — BVI has no VAT or sales tax.  _(R-VG-2)_
+- **R-VG-3 -- Economic substance detail** — Escalate to specialist.  _(R-VG-3)_
+- **R-VG-4 -- CRS/FATCA compliance** — Escalate to specialist.  _(R-VG-4)_
 
 ## Section 3 -- Compliance Pattern Library
 
 ### 3.1 Employer Payment Patterns
 
+**Employer Payment Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SALARY, WAGES, BONUS, COMMISSION | Payroll tax base | Include in taxable remuneration |
 | BENEFITS IN KIND | Payroll tax base | Include |
 | CONTRACTOR (independent) | Not payroll tax | Verify independence |
@@ -103,8 +97,10 @@ Employee exemption: first USD 10,000 annual remuneration exempt.
 
 ### 3.2 Customs Duty Categories
 
+**Customs Duty Categories**
+
 | Category | Rate |
-|---|---|
+| --- | --- |
 | General merchandise | 5% -- 20% |
 | Food/essential goods | Lower or exempt |
 | Motor vehicles | 20% + environmental levy |
@@ -112,12 +108,12 @@ Employee exemption: first USD 10,000 annual remuneration exempt.
 
 ### 3.3 BVI BC Annual Fees
 
+**BVI BC Annual Fees**
+
 | Authorized Shares | Annual Fee (USD) |
-|---|---|
+| --- | --- |
 | Up to 50,000 (no par) | 450 |
 | 50,001+ | 1,200 |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -139,39 +135,33 @@ Employee exemption: first USD 10,000 annual remuneration exempt.
 
 **Computation:** Duty ~15%: USD 1,500. No VAT. No sales tax.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 No Income Tax / No VAT
 
-No personal/corporate income tax, no capital gains tax, no VAT/sales tax, no withholding tax, no estate tax.
+- **No income tax / no VAT** — No personal/corporate income tax, no capital gains tax, no VAT/sales tax, no withholding tax, no estate tax.
 
 ### 5.2 Payroll Tax Filing
 
-Monthly by 15th. Annual reconciliation March 31. Late filing: USD 50/day. Late payment: 1.5%/month.
+- **Payroll tax filing deadlines and penalties** — Monthly by 15th. Annual reconciliation March 31. Late filing: USD 50/day. Late payment: 1.5%/month.
 
 ### 5.3 Social Security and NHI
 
-SSB: 4.5% employer + 4.5% employee. NHI: 3.75% + 3.75%.
-
----
+- **SSB and NHI rates** — SSB: 4.5% employer + 4.5% employee. NHI: 3.75% + 3.75%.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Payroll Tax Exemptions
 
-Small business concessions may apply. Flag for practitioner.
+- **Payroll tax exemptions** — Small business concessions may apply. Flag for practitioner.
 
 ### 6.2 Economic Substance
 
-Entities conducting relevant activities must demonstrate adequate substance in BVI. Flag for specialist.
+- **Economic substance** — Entities conducting relevant activities must demonstrate adequate substance in BVI. Flag for specialist.
 
 ### 6.3 Stamp Duty
 
-Real estate: 4% buyer + 4% seller. Belonger concessions may apply.
-
----
+- **Stamp duty on real estate** — Real estate: 4% buyer + 4% seller. Belonger concessions may apply.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -197,16 +187,14 @@ REVIEWER FLAGS:
   [ ] Economic substance filing required?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
+**Bank Statement Reading Guide**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | VP Bank, First Caribbean | PDF, CSV | Date, Description, Debit, Credit, Balance |
 | Scotiabank BVI | CSV | Date, Narrative, Amount |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -224,20 +212,18 @@ ONBOARDING QUESTIONS -- BVI TAX
 10. Prior returns available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
+**Reference Material**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Payroll tax | Payroll Taxes Act, 2004 |
 | Customs | Customs Management and Duties Act |
 | BVI BCs | BVI Business Companies Act, 2004 |
 | Economic substance | Economic Substance Act, 2018 |
 | Social security | Social Security Act |
 | Health insurance | National Health Insurance Act |
-
----
 
 ## PROHIBITIONS
 
@@ -250,14 +236,30 @@ ONBOARDING QUESTIONS -- BVI TAX
 - NEVER ignore SSB and NHI contributions
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bvi-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `bvi-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/bvi-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

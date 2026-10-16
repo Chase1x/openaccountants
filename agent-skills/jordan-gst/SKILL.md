@@ -1,24 +1,24 @@
 ---
 name: jordan-gst
 description: "Use this skill whenever asked to prepare, review, or classify transactions for a Jordan General Sales Tax (GST) return for any client. Trigger on phrases like \"Jordan GST\", \"Jordan VAT\", \"ISTD return\", or any request involving Jordanian indirect tax. Jordan imposes GST at 16% under Law No. 6 of 1994, administered by ISTD. Multiple special rates exist (4%, 5%, 8%, 10%). ALWAYS read this skill before handling any Jordan GST work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/jordan-gst"
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/jordan-gst"
+  jurisdiction: "JO"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Jordan GST Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Jordan GST
 
 ## Section 1 -- Quick reference
 
+**Quick reference field/value table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Jordan (Hashemite Kingdom) |
 | Standard rate | 16% |
 | Special rates | 4% (telecoms), 5% (certain services), 8% (certain goods), 10% (certain goods/services) |
@@ -35,38 +35,30 @@ metadata:
 | Validated by | Pending |
 | Last research update | April 2026 |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 16% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Jordan |
 
----
-
-## Section 2 -- Required inputs and refusal catalogue
-
 ### Required inputs
 
-**Minimum viable** -- bank statement for the period. Acceptable from Arab Bank, Housing Bank, Jordan Ahli Bank, Cairo Amman, Bank al Etihad, or any other Jordanian bank.
-
-**Recommended** -- sales invoices (Arabic required), purchase invoices for input claims.
+- **Minimum viable input** — Bank statement for the period. Acceptable from Arab Bank, Housing Bank, Jordan Ahli Bank, Cairo Amman, Bank al Etihad, or any other Jordanian bank.  _(Section 2 -- Required inputs and refusal catalogue)_
+- **Recommended input** — Sales invoices (Arabic required), purchase invoices for input claims.  _(Section 2 -- Required inputs and refusal catalogue)_
 
 ### Refusal catalogue
 
-**R-JO-1 -- Free zone complex.** Trigger: Aqaba Special Economic Zone operations. Message: "ASEZA has specific GST rules. Escalate to licensed practitioner."
-
-**R-JO-2 -- Special Sales Tax.** Trigger: alcohol, tobacco, fuel subject to SST. Message: "SST is separate from GST and computed first. Escalate for combined computation."
-
----
-
-## Section 3 -- Supplier pattern library
+- **R-JO-1 -- Free zone complex** — Trigger: Aqaba Special Economic Zone operations. Message: "ASEZA has specific GST rules. Escalate to licensed practitioner."  _(Section 2 -- Required inputs and refusal catalogue)_
+- **R-JO-2 -- Special Sales Tax** — Trigger: alcohol, tobacco, fuel subject to SST. Message: "SST is separate from GST and computed first. Escalate for combined computation."  _(Section 2 -- Required inputs and refusal catalogue)_
 
 ### 3.1 Jordanian banks (exempt -- exclude)
 
+**Jordanian banks (exempt -- exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ARAB BANK | EXCLUDE | Financial service, exempt |
 | HOUSING BANK, ISKAN BANK | EXCLUDE | Same |
 | JORDAN AHLI, CAIRO AMMAN | EXCLUDE | Same |
@@ -75,30 +67,32 @@ metadata:
 
 ### 3.2 Government
 
+**Government supplier patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ISTD, INCOME AND SALES TAX | EXCLUDE | Tax payment |
 | CUSTOMS, JORDAN CUSTOMS | Check for import GST | Duty exclude; GST recoverable |
 | SSC, SOCIAL SECURITY CORPORATION | EXCLUDE | Social contribution |
 
 ### 3.3 Utilities
 
+**Utility supplier patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | JEPCO, EDCO, IDECO | Domestic 16% | Electricity |
 | MIYAHUNA, WAJ | Domestic 16% | Water |
 | ZAIN JORDAN, ORANGE JORDAN, UMNIAH | Domestic 4% | Telecoms at special rate |
 
 ### 3.4 SaaS
 
+**SaaS supplier patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE | Reverse charge 16% | Non-resident service |
 | AWS, ZOOM, SLACK | Reverse charge 16% | Non-resident |
-
----
-
-## Section 4 -- Worked examples
 
 ### Example 1 -- Reverse charge on US SaaS
 
@@ -112,34 +106,28 @@ US entity. No GST. Reverse charge at 16%. Output and input both reported. Net ze
 
 Telecoms services at special 4% rate, not 16%.
 
----
-
-## Section 5 -- Classification rules
-
 ### 5.1 Standard rate 16%
 
-Default for all taxable supplies unless specifically listed at another rate.
+- **Standard rate default** — Default for all taxable supplies unless specifically listed at another rate.  _(Section 5 -- Classification rules)_
 
 ### 5.2 Special rates
 
-4% telecoms (domestic), 5% certain services, 8% certain goods, 10% certain goods/services. Rate determined by ISTD schedules.
+- **Special rates description** — 4% telecoms (domestic), 5% certain services, 8% certain goods, 10% certain goods/services. Rate determined by ISTD schedules.  _(Section 5 -- Classification rules)_
 
 ### 5.3 Zero-rated (0%, input recoverable)
 
-Exports, international transport, basic foodstuffs (bread, rice, sugar, milk per Cabinet decision), goods to free zones (conditions).
+- **Zero-rated supplies** — Exports, international transport, basic foodstuffs (bread, rice, sugar, milk per Cabinet decision), goods to free zones (conditions).  _(Section 5 -- Classification rules)_
 
 ### 5.4 Exempt (no GST, no recovery)
 
-Financial services, medical, education, residential rental (unfurnished), unprocessed agricultural, government-to-government, charitable (conditions).
-
----
-
-## Section 6 -- GST return form structure
+- **Exempt supplies** — Financial services, medical, education, residential rental (unfurnished), unprocessed agricultural, government-to-government, charitable (conditions).  _(Section 5 -- Classification rules)_
 
 ### Output section
 
+**GST return output section**
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | Output GST at 16% | Standard-rated supplies |
 | Output GST at special rates | 4%, 5%, 8%, 10% separately |
 | Zero-rated | Exports and zero-rated supplies |
@@ -147,59 +135,46 @@ Financial services, medical, education, residential rental (unfurnished), unproc
 
 ### Input section
 
+**GST return input section**
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | Input GST on domestic purchases | Recoverable if taxable |
 | Input GST on imports | Customs GST |
 | Input GST adjustments | Blocked, apportionment |
 
 ### Net
 
-Output GST minus allowable input GST. Credit brought forward from prior period.
-
----
+- **Net GST calculation** — Output GST minus allowable input GST. Credit brought forward from prior period.  _(Section 6 -- GST return form structure)_
 
 ## Section 7 -- Reverse charge and imports
 
-Services from non-resident: self-assess at 16%. Claim input if for taxable supplies. Net zero.
-
-Import of goods: GST on CIF plus customs duties. Collected by Jordan Customs. Recoverable if for taxable supplies.
-
-Legislation: GST Law No. 6/1994, reverse charge provisions.
-
----
+- **Reverse charge on non-resident services** — Services from non-resident: self-assess at 16%. Claim input if for taxable supplies. Net zero.  _(GST Law No. 6/1994, reverse charge provisions)_
+- **Import of goods GST treatment** — Import of goods: GST on CIF plus customs duties. Collected by Jordan Customs. Recoverable if for taxable supplies.  _(GST Law No. 6/1994, reverse charge provisions)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked:
-- Entertainment and hospitality
-- Motor vehicles for personal use
-- Non-business goods/services
-- Purchases related to exempt supplies
-- Gifts/donations (above limits)
-
-Partial exemption: turnover-based apportionment. ISTD approval required.
-
----
+- **Blocked input items** — Blocked: - Entertainment and hospitality - Motor vehicles for personal use - Non-business goods/services - Purchases related to exempt supplies - Gifts/donations (above limits)
+- **Partial exemption** — Partial exemption: turnover-based apportionment. ISTD approval required.
 
 ## Section 9 -- Filing, deadlines, and penalties
 
+**Filing categories and deadlines**
+
 | Category | Period | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Large taxpayers (> JOD 1M) | Monthly | End of following month |
 | Others | Bi-monthly | End of month following bi-monthly period |
 
-Bi-monthly periods: Jan-Feb (due 31 Mar), Mar-Apr (31 May), May-Jun (31 Jul), Jul-Aug (30 Sep), Sep-Oct (30 Nov), Nov-Dec (31 Jan).
+- **Bi-monthly periods and deadlines** — Bi-monthly periods: Jan-Feb (due 31 Mar), Mar-Apr (31 May), May-Jun (31 Jul), Jul-Aug (30 Sep), Sep-Oct (30 Nov), Nov-Dec (31 Jan).
+
+**Violations and penalties**
 
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | JOD 100-500 per return |
 | Late payment | 4% first week; 1% per week after |
 | Tax evasion | Fines and imprisonment |
-
----
-
-## Section 10 -- Edge cases, test suite, and escalation
 
 ### Edge cases
 
@@ -254,14 +229,30 @@ REVIEWER FLAG / ESCALATION REQUIRED
 - NEVER compute numbers -- engine handles arithmetic
 - NEVER file without confirming correct period (monthly vs bi-monthly)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/jordan-gst) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `jordan-gst` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/jordan-gst. If neither is available, confirm every figure against the official source pages cited above before relying on it.

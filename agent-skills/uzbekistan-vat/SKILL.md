@@ -1,27 +1,24 @@
 ---
 name: uzbekistan-vat
-description: "> Use this skill whenever asked to prepare, review, or create an Uzbekistan VAT return or any VAT filing for an Uzbek business. Trigger on phrases like \"prepare VAT return\", \"Uzbekistan VAT\", \"STC filing\", \"soliq.uz\", \"E-faktura\", \"factura.uz\", or any request involving Uzbekistan VAT. Covers the 12% standard rate, E-faktura mandatory invoicing, input credit rules, turnover tax interaction, import VAT, and monthly filing to the State Tax Committee. ALWAYS read this skill before touching any Uzbekistan VAT work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked to prepare, review, or create an Uzbekistan VAT return or any VAT filing for an Uzbek business. Trigger on phrases like \"prepare VAT return\", \"Uzbekistan VAT\", \"STC filing\", \"soliq.uz\", \"E-faktura\", \"factura.uz\", or any request involving Uzbekistan VAT. Covers the 12% standard rate, E-faktura mandatory invoicing, input credit rules, turnover tax interaction, import VAT, and monthly filing to the State Tax Committee. ALWAYS read this skill before touching any Uzbekistan VAT work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: UZ
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/uzbekistan-vat"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/uzbekistan-vat"
+  jurisdiction: "UZ"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Uzbekistan VAT Return -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Uzbekistan VAT
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Republic of Uzbekistan |
 | Tax | VAT (Value Added Tax) at 12% |
 | Currency | UZS only |
@@ -38,16 +35,20 @@ metadata:
 
 ### Rate Table
 
+**Rate Table**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 12% | Standard rate on all taxable supplies |
 | 0% | Exports of goods and services, international transport |
 | Exempt (Article 244) | Financial services, education, medical, public transport, residential rental, agricultural (certain), government services, funeral/cultural/sports |
 
 ### Key Thresholds
 
+**Key Thresholds**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Mandatory VAT registration | Annual turnover > UZS 1 billion (approx. USD 80,000) |
 | Voluntary VAT registration | Below threshold by election |
 | Turnover tax (simplified) | 4% for most activities (below VAT threshold or eligible) |
@@ -56,43 +57,38 @@ metadata:
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Tax regime unknown | STOP -- general (VAT) vs simplified (turnover tax) must be confirmed |
 | E-faktura status unknown | No input credit until confirmed |
 | Expense category unclear | Blocked (no recovery) |
 | CIS vs non-CIS import unknown | Standard import VAT at 12% |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable:** Bank statement for the month, TIN (INN, 9 digits), confirmation of VAT registration and tax regime.
-
-**Recommended:** E-faktura records for the period, import customs declarations, prior period return.
-
-**Ideal:** Complete purchase/sales journals, fixed asset register, E-faktura reconciliation.
+- **Minimum viable inputs** — Bank statement for the month, TIN (INN, 9 digits), confirmation of VAT registration and tax regime.  _(Section 2 -- Required Inputs)_
+- **Recommended inputs** — E-faktura records for the period, import customs declarations, prior period return.  _(Section 2 -- Required Inputs)_
+- **Ideal inputs** — Complete purchase/sales journals, fixed asset register, E-faktura reconciliation.  _(Section 2 -- Required Inputs)_
 
 ### Refusal Catalogue
 
-**R-UZ-1 -- Turnover tax payers.** "Entities on simplified (turnover tax) regime do not charge VAT and cannot claim input VAT. This skill does not prepare turnover tax returns."
-
-**R-UZ-2 -- Free Economic Zone entities.** "FEZ entities may have VAT exemptions under specific decrees. Escalate to review the specific FEZ decree."
-
-**R-UZ-3 -- Transfer pricing / subsoil use.** "Transfer pricing and subsoil use taxation are outside this skill scope. Escalate."
-
-**R-UZ-4 -- Complex holding structures.** "Multi-entity and holding structures require specialist review. Escalate."
-
----
+- **R-UZ-1 -- Turnover tax payers** — Entities on simplified (turnover tax) regime do not charge VAT and cannot claim input VAT. This skill does not prepare turnover tax returns.  _(Refusal Catalogue)_
+- **R-UZ-2 -- Free Economic Zone entities** — FEZ entities may have VAT exemptions under specific decrees. Escalate to review the specific FEZ decree.  _(Refusal Catalogue)_
+- **R-UZ-3 -- Transfer pricing / subsoil use** — Transfer pricing and subsoil use taxation are outside this skill scope. Escalate.  _(Refusal Catalogue)_
+- **R-UZ-4 -- Complex holding structures** — Multi-entity and holding structures require specialist review. Escalate.  _(Refusal Catalogue)_
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Income Patterns (Credits)
 
+**Income Patterns (Credits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PEREVOD OT [client] / TRANSFER FROM | Taxable supply | Output VAT at 12% | Wire transfer from client |
 | KARTA POPLNENIYE / CARD CREDIT | Taxable supply | Revenue | Card receipt |
 | PAYME SETTLEMENT / PAYME CREDIT | Taxable supply | Revenue | Payme payment gateway |
@@ -104,20 +100,20 @@ metadata:
 
 ### 3.2 Expense Patterns (Debits)
 
+**Expense Patterns (Debits)**
+
 | Pattern | Expense Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ARENDA OFISA / OFFICE RENT | Rent | Input VAT at 12% | Business premises |
 | ELEKTR ENERGIYA / ELECTRICITY | Utilities | Input VAT at 12% | Electricity |
 | GAZ / NATURAL GAS | Utilities | Input VAT at 12% | Gas |
 | BEELINE / UCELL / UZMOBILE / MOBIUZ | Communications | Business portion claimable | Mixed use: apportion |
-| YANDEX TAXI / TAXI | Travel | Input VAT if business | |
+| YANDEX TAXI / TAXI | Travel | Input VAT if business |  |
 | AVTOMOBIL / VEHICLE | Vehicle | BLOCKED | Personal use vehicle |
 | PRAZDNIK / BANKET / ENTERTAINMENT | Entertainment | BLOCKED | No input credit |
 | NALOG / TAX PAYMENT / STC | EXCLUDE | Tax payment | Not deductible |
 | ZARPLATA / SALARY | EXCLUDE | Payroll | Not VAT |
 | LICHNIY PEREVOD / PERSONAL | EXCLUDE | Drawings | Not business |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -153,14 +149,14 @@ metadata:
 
 **Classification:** Input VAT UZS 0. BLOCKED.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 VAT Return Structure
 
+**VAT Return Structure**
+
 | Part | Description |
-|---|---|
+| --- | --- |
 | 1 | Taxpayer information (TIN, name, period) |
 | 2 | Taxable turnover at 12% |
 | 3 | Zero-rated turnover (exports) |
@@ -177,24 +173,26 @@ metadata:
 
 ### 5.2 Input Tax Credit Rules (Articles 266-273)
 
-Must be on general regime (VAT payer), purchase for taxable supplies, valid E-faktura held, supplier VAT-registered, goods/services received.
+- **Input Tax Credit Rules** — Must be on general regime (VAT payer), purchase for taxable supplies, valid E-faktura held, supplier VAT-registered, goods/services received.  _(Tax Code Articles 266-273)_
 
 ### 5.3 Blocked Input VAT (Article 268)
 
-No credit: motor vehicles (personal), entertainment, personal consumption, no E-faktura, non-VAT-registered suppliers, exempt supply costs, alcohol/tobacco (unless production), gifts/donations, representation expenses beyond limits.
+- **Blocked Input VAT categories** — No credit: motor vehicles (personal), entertainment, personal consumption, no E-faktura, non-VAT-registered suppliers, exempt supply costs, alcohol/tobacco (unless production), gifts/donations, representation expenses beyond limits.  _(Tax Code Article 268)_
 
 ### 5.4 Import VAT (Article 259)
 
-VAT at 12% on customs value + customs duty + excise. Paid at clearing. Recoverable if for taxable supplies.
+- **Import VAT calculation** — VAT at 12% on customs value + customs duty + excise. Paid at clearing. Recoverable if for taxable supplies.  _(Tax Code Article 259)_
 
 ### 5.5 Excise Interaction (Chapter 40)
 
-Excise calculated BEFORE VAT. VAT at 12% applies on (value + excise).
+- **Excise and VAT order** — Excise calculated BEFORE VAT. VAT at 12% applies on (value + excise).  _(Tax Code Chapter 40)_
 
 ### 5.6 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 1% per day of tax (max 10%) |
 | Late payment | 0.04% per day |
 | Failure to issue E-faktura | Administrative fine |
@@ -202,31 +200,27 @@ Excise calculated BEFORE VAT. VAT at 12% applies on (value + excise).
 | Fraudulent declaration | Up to 200% of understated tax |
 | Tax evasion | Criminal prosecution |
 
----
-
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Input Tax Apportionment
 
-Creditable Input VAT = Total Input VAT x (Taxable Turnover / Total Turnover). Flag for reviewer.
+- **Creditable Input VAT formula** — Creditable Input VAT = Total Input VAT x (Taxable Turnover / Total Turnover). Flag for reviewer.  _(6.1 Input Tax Apportionment)_
 
 ### 6.2 IT Park Regime
 
-IT companies may have incentives under IT Park regime. Software development exports may be zero-rated. Confirm IT Park status. Flag for reviewer.
+- **IT Park Regime** — IT companies may have incentives under IT Park regime. Software development exports may be zero-rated. Confirm IT Park status. Flag for reviewer.  _(6.2 IT Park Regime)_
 
 ### 6.3 Agricultural Producer Exemption
 
-Agricultural enterprises selling unprocessed products may qualify for exemption. If voluntarily VAT registered, standard rules apply. Flag for reviewer.
+- **Agricultural Producer Exemption** — Agricultural enterprises selling unprocessed products may qualify for exemption. If voluntarily VAT registered, standard rules apply. Flag for reviewer.  _(6.3 Agricultural Producer Exemption)_
 
 ### 6.4 Regime Transition (Turnover Tax to VAT)
 
-When entity crosses VAT threshold, must register within 10 days. Inventory on hand at transition: VAT applies on subsequent sale. No input credit on pre-transition purchases. Flag for reviewer.
+- **Regime Transition** — When entity crosses VAT threshold, must register within 10 days. Inventory on hand at transition: VAT applies on subsequent sale. No input credit on pre-transition purchases. Flag for reviewer.  _(6.4 Regime Transition (Turnover Tax to VAT))_
 
 ### 6.5 Free Economic Zone Entities
 
-FEZ entities may have VAT exemptions on certain operations. Rules vary by FEZ. Escalate.
-
----
+- **Free Economic Zone Entities** — FEZ entities may have VAT exemptions on certain operations. Rules vary by FEZ. Escalate.  _(6.5 Free Economic Zone Entities)_
 
 ## Section 7 -- Working Paper Template
 
@@ -261,14 +255,14 @@ REVIEWER FLAGS:
   [ ] E-faktura issued within 10 days of supply?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Uzbek Bank Statement Formats
 
+**Uzbek Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | NBU (National Bank) | PDF | Data, Opisaniye, Debet, Kredit, Ostatok |
 | Kapitalbank | CSV / PDF | Sana, Tavsif, Chiqim, Kirim, Qoldiq |
 | Ipoteka Bank | CSV | Date, Description, Debit, Credit, Balance |
@@ -278,8 +272,10 @@ REVIEWER FLAGS:
 
 ### Key Uzbek Banking Narrations
 
+**Key Uzbek Banking Narrations**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | PEREVOD / TRANSFER | Wire transfer | Income or expense |
 | OPLATA / PAYMENT | Payment | Expense |
 | POSTUPLENIE / RECEIPT | Incoming receipt | Income |
@@ -287,8 +283,6 @@ REVIEWER FLAGS:
 | ZARPLATA / SALARY | Payroll | Exclude |
 | PROTSENTY / INTEREST | Interest | Exempt |
 | KREDIT / LOAN | Loan | Exclude |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -315,14 +309,14 @@ ONBOARDING QUESTIONS -- UZBEKISTAN VAT
 10. Are you registered with IT Park (if IT company)?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | VAT imposition | Tax Code Chapter 35-39 |
 | Rates | Tax Code Article 258 |
 | Exemptions | Tax Code Article 244 |
@@ -344,8 +338,10 @@ ONBOARDING QUESTIONS -- UZBEKISTAN VAT
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Uzbek bank formats; local payment patterns (Payme, Click, UzCard, Humo); worked examples; E-faktura integration |
 | 1.0 | 2025 | Initial version |
 
@@ -358,8 +354,6 @@ ONBOARDING QUESTIONS -- UZBEKISTAN VAT
 - [ ] Excise calculated before VAT where applicable?
 - [ ] Filing by 20th of following month?
 
----
-
 ## PROHIBITIONS
 
 - NEVER allow turnover tax payers to claim input VAT credit or charge VAT
@@ -371,14 +365,30 @@ ONBOARDING QUESTIONS -- UZBEKISTAN VAT
 - NEVER ignore excise when calculating VAT base
 - NEVER present calculations as definitive -- always label as estimated and direct client to a qualified Uzbek accountant
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed auditor or tax consultant practicing in Uzbekistan) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/uzbekistan-vat) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uzbekistan-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uzbekistan-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

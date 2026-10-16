@@ -1,662 +1,697 @@
 ---
 name: portugal-vat-return
-description: "Utilize esta skill sempre que lhe for pedido para preparar, rever ou classificar transações para uma Declaração Periódica de IVA em Portugal, para um trabalhador independente ou pequena empresa. Acione com expressões como \"preparar Declaração Periódica\", \"IVA Portugal\", \"classificar transações para IVA português\", ou qualquer pedido que envolva entrega de IVA em Portugal. Esta skill abrange apenas Portugal Continental (regime normal). As taxas reduzidas da Madeira/Açores, o regime de isenção, a isenção parcial, o regime da margem e os grupos de IVA constam do catálogo de recusas. DEVE ser carregada em conjunto com vat-workflow-base v0.1 ou posterior E com eu-vat-directive v0.1 ou posterior. LEIA SEMPRE esta skill antes de tocar em qualquer trabalho de IVA português. Trigger also on: \"prepare Declaração Periódica\", \"Portuguese VAT return\", \"IVA Portugal\", \"classify transactions for Portuguese VAT\", or any request involving Portugal VAT filing."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked to prepare, review, or classify transactions for a Portuguese VAT return (Declaração Periódica de IVA) for a self-employed individual or small business in Portugal. Trigger on phrases like \"prepare Declaração Periódica\", \"Portuguese VAT return\", \"IVA Portugal\", \"classify transactions for Portuguese VAT\", or any request involving Portugal VAT filing. This skill covers Continental Portugal only (standard regime). Madeira/Azores reduced rates, regime de isenção, partial exemption, margin scheme (regime da margem), and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Portuguese VAT work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: tax
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-vat-return"
-  tax_year: 2025
-  obligation: CT
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-vat-return"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — IVA (Declaração Periódica) — Skill v3.0
+# Portugal VAT Return
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal VAT Return Skill (Declaração Periódica de IVA) v2.0
 
-## Secção 1 — Referência rápida
+## Verified rates & thresholds (accountant-reviewed)
 
-**Leia esta secção na íntegra antes de classificar qualquer transação. O runbook do fluxo de trabalho encontra-se na Secção 1 do `vat-workflow-base` — siga esse runbook, com esta skill a fornecer o conteúdo específico do país e o `eu-vat-directive` a fornecer o conteúdo da diretiva da UE.**
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
-| Campo | Valor |
-|---|---|
-| País | Portugal (República Portuguesa) |
-| Taxa normal | 23% (Continental); 22% (Madeira); 16% (Açores) |
-| Taxas reduzidas | 13% Continental / 12% Madeira / 9% Açores (intermédia: restauração, géneros alimentícios, gasóleo, alguns inputs agrícolas); 6% Continental / 5% Madeira / 4% Açores (reduzida: bens alimentares essenciais, água, livros, medicamentos, transporte de passageiros, alojamento) |
-| Taxa zero | 0% (exportações, transmissões intracomunitárias B2B de bens) |
-| Formulário da declaração | Declaração Periódica de IVA (campos 1–41+) |
-| Portal de submissão | https://www.portaldasfinancas.gov.pt (Portal das Finanças) |
-| Autoridade | Autoridade Tributária e Aduaneira (AT) |
-| Moeda | Apenas EUR |
-| Periodicidades | Mensal (volume de negócios > €650.000 ou Vol. B); Trimestral (volume de negócios ≤ €650.000, Vol. A) |
-| Prazo | Mensal: dia 10 do 2.º mês seguinte ao fim do período; Trimestral: dia 15 do 2.º mês seguinte ao fim do trimestre |
-| Skill companheira (Tier 1, fluxo) | **vat-workflow-base v0.1 ou posterior — DEVE ser carregada** |
-| Skill companheira (Tier 2, diretiva UE) | **eu-vat-directive v0.1 ou posterior — DEVE ser carregada** |
-| Contribuidor | Contribuidores Open Accountants |
-| Data de validação | Abril 2026 |
+### IVA
 
-**Campos principais da Declaração Periódica (os que utilizará com maior frequência):**
+- **Continente — taxa normal** — 23%  _(CIVA)_
+- **Continente — taxa intermédia** — 13%  _(CIVA)_
+- **Continente — taxa reduzida** — 6%  _(CIVA)_
+- **Açores — normal** — 16%  _(CIVA)_
+- **Açores — intermédia** — 9%  _(CIVA)_
+- **Açores — reduzida** — 4%  _(CIVA)_
+- **Madeira — normal** — 22%  _(CIVA)_
+- **Madeira — intermédia** — 12%  _(CIVA)_
+- **Madeira — reduzida** — 4%  _(Decreto Legislativo Regional n.º 6/2024/M, de 29 de julho, artº 21º)_
+- **Isenção Art. 53.º** — ≤ €15.000 (2026)  _(CIVA Art. 53.º, nº 1)_
+- **Declarações mensais** — Volume de negócios => €650.000  _(CIVA, artº 41º, nº 1, a))_
+- **Declarações trimestrais** — Volume de negócios < €650.000  _(CIVA, artº 41º, nº 1, b))_
+- **Mensal deadline** — 20.º dia do 2.º mês seguinte  _(CIVA, artº 41º, nº 1, a))_
+- **Trimestral deadline** — 20.º dia do 2.º mês seguinte ao trimestre  _(CIVA, artº 41º, nº 1, b))_
 
-| Campo | Significado |
-|---|---|
-| 1 | Vendas à taxa normal — base (23%) |
-| 2 | Vendas à taxa normal — IVA |
-| 3 | Vendas à taxa intermédia — base (13%) |
-| 4 | Vendas à taxa intermédia — IVA |
-| 5 | Vendas à taxa reduzida — base (6%) |
-| 6 | Vendas à taxa reduzida — IVA |
-| 7 | Operações isentas com direito a dedução (exportações, intracomunitárias) |
-| 8 | Operações isentas sem direito a dedução |
-| 9 | Aquisições intracomunitárias — base |
-| 10 | Aquisições intracomunitárias — IVA (output, autoliquidado) |
-| 16 | Outras operações com IVA devido pelo adquirente (autoliquidação recebida) |
-| 17 | IVA devido sobre o campo 16 |
-| 20 | Total de IVA liquidado (soma dos campos de output) |
-| 21 | IVA dedutível — imobilizado (bens de investimento) |
-| 22 | IVA dedutível — existências (stock para revenda) |
-| 23 | IVA dedutível — outros bens e serviços |
-| 24 | Total de IVA dedutível |
-| 40 | IVA a pagar (se 20 > 24) |
-| 41 | Crédito de IVA (se 24 > 20) |
+## Section 1 — Quick reference
 
-**Defaults conservadores — específicos de Portugal:**
+**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
 
-| Ambiguidade | Default |
-|---|---|
-| Taxa desconhecida numa venda | 23% |
-| Estatuto de IVA desconhecido numa aquisição | Não dedutível |
-| País da contraparte desconhecido | Doméstico Portugal (Continental) |
-| B2B ou B2C desconhecido para cliente UE | B2C, liquidar 23% |
-| Proporção de utilização empresarial desconhecida | 0% de recuperação |
-| Entidade faturadora de SaaS desconhecida | Autoliquidação a partir de país terceiro |
-| Estatuto de input bloqueado desconhecido | Bloqueado |
-| Não se sabe se a operação está no âmbito | Dentro do âmbito |
+**Quick reference field table**
 
-**Limiares de sinalização (red flags):**
+| Field | Value |
+| --- | --- |
+| Country | Portugal (República Portuguesa) |
+| Standard rate | 23% (Continental); 22% (Madeira); 16% (Azores) |
+| Reduced rates | 13% Continental / 12% Madeira / 9% Azores (intermediate: restaurants, food products, diesel, some agricultural inputs); 6% Continental / 5% Madeira / 4% Azores (reduced: basic foodstuffs, water, books, medicines, passenger transport, hotels) |
+| Zero rate | 0% (exports, intra-EU B2B supplies of goods) |
+| Return form | Declaração Periódica de IVA (campos/fields 1–41+) |
+| Filing portal | https://www.portaldasfinancas.gov.pt (Portal das Finanças) |
+| Authority | Autoridade Tributária e Aduaneira (AT) |
+| Currency | EUR only |
+| Filing frequencies | Monthly (turnover > €650,000 or Vol. B); Quarterly (turnover ≤ €650,000, Vol. A) |
+| Deadline | Monthly: 10th of 2nd month after period end; Quarterly: 15th of 2nd month after quarter end |
+| Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
+| Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |
+| Contributor | Open Accountants contributors |
+| Validation date | April 2026 |
 
-| Limiar | Valor |
-|---|---|
-| HIGH transação individual | €5.000 |
-| HIGH delta fiscal por default conservador | €400 |
-| MEDIUM concentração numa contraparte | >40% |
-| MEDIUM número de defaults conservadores | >4 |
-| LOW posição absoluta de IVA líquido | €10.000 |
+**Key Declaração Periódica campos**
 
----
+| Campo | Meaning |
+| --- | --- |
+| 1 | Sales at standard rate — base (23%) |
+| 2 | Sales at standard rate — IVA |
+| 3 | Sales at intermediate rate — base (13%) |
+| 4 | Sales at intermediate rate — IVA |
+| 5 | Sales at reduced rate — base (6%) |
+| 6 | Sales at reduced rate — IVA |
+| 7 | Exempt sales with deduction right (exports, intra-EU) |
+| 8 | Exempt sales without deduction right |
+| 9 | Intra-EU acquisitions — base |
+| 10 | Intra-EU acquisitions — IVA (output, self-assessed) |
+| 16 | Other operations with IVA due by purchaser (reverse charge received) |
+| 17 | IVA due on campo 16 |
+| 20 | Total IVA due (sum of output fields) |
+| 21 | Deductible IVA — immobilizado (capital goods) |
+| 22 | Deductible IVA — existências (stock for resale) |
+| 23 | Deductible IVA — other goods and services |
+| 24 | Total deductible IVA |
+| 40 | IVA to pay (if 20 > 24) |
+| 41 | IVA credit (if 24 > 20) |
 
-## Secção 2 — Inputs necessários e catálogo de recusas
+**Conservative defaults — Portugal-specific**
 
-### Inputs necessários
+| Ambiguity | Default |
+| --- | --- |
+| Unknown rate on a sale | 23% |
+| Unknown VAT status of a purchase | Not deductible |
+| Unknown counterparty country | Domestic Portugal (Continental) |
+| Unknown B2B vs B2C for EU customer | B2C, charge 23% |
+| Unknown business-use proportion | 0% recovery |
+| Unknown SaaS billing entity | Reverse charge from non-EU |
+| Unknown blocked-input status | Blocked |
+| Unknown whether transaction is in scope | In scope |
 
-**Mínimo viável** — extrato bancário do período. Aceite de: CGD (Caixa Geral de Depósitos), Millennium BCP, Santander Portugal, Novo Banco, BPI, ActivoBank, Banco CTT, Revolut Business, Wise Business, ou qualquer outro.
+**Red flag thresholds**
 
-**Recomendado** — faturas de venda (sobretudo intracomunitárias e em autoliquidação), faturas de aquisição acima de €400, NIF do cliente (9 dígitos, prefixo PT para contexto UE).
+| Threshold | Value |
+| --- | --- |
+| HIGH single-transaction | €5,000 |
+| HIGH tax-delta conservative default | €400 |
+| MEDIUM counterparty concentration | >40% |
+| MEDIUM conservative-default count | >4 |
+| LOW absolute net VAT position | €10,000 |
 
-**Ideal** — ficheiro SAF-T (PT) extraído do software de faturação, Declaração Periódica do período anterior, reconciliação do crédito do campo 41.
+## Section 2 — Required inputs and refusal catalogue
 
-**Política de recusa se faltar o mínimo — SOFT WARN.** Mesmo padrão que a Malta v2.0.
+### Required inputs
 
-### Catálogo de recusas específico de Portugal
+**Minimum viable** — bank statement for the period. Acceptable from: CGD (Caixa Geral de Depósitos), Millennium BCP, Santander Portugal, Novo Banco, BPI, ActivoBank, Banco CTT, Revolut Business, Wise Business, or any other.
 
-**R-PT-1 — Regime de isenção (Art.º 53.º CIVA).** *Acionador:* cliente abrangido pela isenção de pequenas empresas (volume de negócios ≤ €15.000, limiar alterado pelo OE 2024/2025 — verificar valor em vigor). *Mensagem:* "Os clientes em regime de isenção não liquidam IVA e não podem deduzir IVA suportado. Não entregam Declaração Periódica. Esta skill cobre apenas o regime normal."
+**Recommended** — sales invoices (especially intra-EU and reverse charge), purchase invoices above €400, the client's NIF (9 digits, PT prefix for EU context).
 
-**R-PT-2 — Isenção parcial (pro rata / Art.º 23.º CIVA).** *Acionador:* operações simultaneamente tributáveis e isentas, não de minimis. *Mensagem:* "Operações mistas (tributáveis e isentas) exigem aplicação do pro rata nos termos do Art.º 23.º CIVA. Recorra a um contabilista certificado."
+**Ideal** — SAF-T (PT) extract from billing software, prior period Declaração Periódica, reconciliation of campo 41 credit.
 
-**R-PT-3 — Regime da margem (Art.º 50.º-A a 50.º-D CIVA).** *Acionador:* bens em segunda mão, arte, antiguidades. *Mensagem:* "O regime da margem exige cálculo bem a bem. Fora do âmbito."
+**Refusal policy if minimum is missing — SOFT WARN.** Same pattern as Malta v2.0.
 
-**R-PT-4 — Grupo de IVA.** *Acionador:* grupo de IVA. *Mensagem:* "O grupo de IVA exige consolidação. Fora do âmbito."
+### Portugal-specific refusal catalogue
 
-**R-PT-5 — Representante fiscal.** *Acionador:* não residente com representante fiscal. *Mensagem:* "Não residente com representante fiscal — fora do âmbito."
+- **R-PT-1 — Regime de isenção (Art. 53 CIVA)** — Trigger: client under the small business exemption (turnover ≤ €14,500 or ≤ €15,000 depending on current threshold). Message: "Regime de isenção clients do not charge IVA and cannot recover input IVA. They do not file the Declaração Periódica. This skill covers the normal regime only."  _(Art. 53 CIVA)_
+- **R-PT-2 — Partial exemption (pro rata / Art. 23 CIVA)** — Trigger: both taxable and exempt supplies, non-de-minimis. Message: "Mixed taxable and exempt supplies require pro rata under Art. 23 CIVA. Please use a contabilista certificado."  _(Art. 23 CIVA)_
+- **R-PT-3 — Margin scheme (regime da margem / Art. 50-A to 50-D)** — Trigger: second-hand goods, art, antiques. Message: "Regime da margem requires per-item computation. Out of scope."  _(Art. 50-A to 50-D)_
+- **R-PT-4 — VAT group (grupo de IVA)** — Trigger: VAT group. Message: "Grupo de IVA requires consolidation. Out of scope."
+- **R-PT-5 — Fiscal representative** — Trigger: non-resident with fiscal representative. Message: "Non-resident with representante fiscal — out of scope."
+- **R-PT-6 — Madeira / Azores rates** — Trigger: client operates in Madeira or Azores. Message: "Madeira (22%/12%/5%) and Azores (16%/9%/4%) have different rate tables. This skill covers Continental Portugal rates only. Please use a contabilista certificado familiar with regional rates."
+- **R-PT-7 — Real estate (IVA imobiliário)** — Trigger: property transactions. Message: "IVA on real estate is complex. Please use a contabilista certificado."
+- **R-PT-8 — Income tax instead of IVA** — Trigger: user asks about IRS/IRC instead of IVA. Message: "This skill handles Portuguese IVA only."
 
-**R-PT-6 — Taxas Madeira / Açores.** *Acionador:* cliente opera na Madeira ou nos Açores. *Mensagem:* "A Madeira (22%/12%/5%) e os Açores (16%/9%/4%) têm tabelas de taxas diferentes. Esta skill cobre apenas as taxas de Portugal Continental. Recorra a um contabilista certificado familiarizado com as taxas regionais."
+## Section 3 — Supplier pattern library (the lookup table)
 
-**R-PT-7 — Imobiliário (IVA imobiliário).** *Acionador:* operações com imóveis. *Mensagem:* "O IVA sobre operações imobiliárias é complexo. Recorra a um contabilista certificado."
+Match by case-insensitive substring. If none match, fall through to Section 5.
 
-**R-PT-8 — IRS/IRC em vez de IVA.** *Acionador:* o utilizador pergunta sobre IRS/IRC em vez de IVA. *Mensagem:* "Esta skill trata exclusivamente do IVA português."
+### 3.1 Portuguese banks (fees exempt — exclude)
 
-**Nota importante — regime NHR/IFICI:** O regime do Residente Não Habitual (NHR), bem como o regime IFICI que o sucedeu, são regimes de IRS (imposto sobre o rendimento). **O NHR NÃO isenta de IVA.** Quem estiver em NHR/IFICI e exercer atividade económica continua sujeito às regras gerais do CIVA — incluindo registo, liquidação e dedução de IVA, e entrega da Declaração Periódica. Para análise do regime de rendimento, consulte a skill `pt-nhr-ifici`.
+**Portuguese banks table**
 
----
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| CGD, CAIXA GERAL, CAIXA GERAL DE DEPOSITOS | EXCLUDE for bank charges | Financial service, exempt |
+| MILLENNIUM BCP, BCP | EXCLUDE for bank charges | Same |
+| SANTANDER PORTUGAL, SANTANDER PT | EXCLUDE for bank charges | Same |
+| NOVO BANCO | EXCLUDE for bank charges | Same |
+| BPI, BANCO BPI | EXCLUDE for bank charges | Same |
+| ACTIVOBANK | EXCLUDE for bank charges | Same |
+| BANCO CTT | EXCLUDE for bank charges | Same |
+| REVOLUT, WISE, N26 (fee lines) | EXCLUDE | Check for taxable subscriptions |
+| JUROS, JURO | EXCLUDE | Interest, out of scope |
+| EMPRESTIMO, CREDITO HABITACAO | EXCLUDE | Loan principal |
 
-## Secção 3 — Biblioteca de padrões de fornecedores (tabela de consulta)
+### 3.2 Portuguese government and statutory bodies (exclude entirely)
 
-Pesquisa por substring sem distinção entre maiúsculas e minúsculas. Se nada coincidir, recorra à Secção 5.
+**Government bodies table**
 
-### 3.1 Bancos portugueses (comissões isentas — excluir)
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| PORTAL DAS FINANCAS, AT, AUTORIDADE TRIBUTARIA | EXCLUDE | Tax payment (IVA, IRS, IRC) |
+| SEGURANCA SOCIAL | EXCLUDE | Social security contributions |
+| FINANÇAS, DIRECAO GERAL | EXCLUDE | Tax authority |
+| CONSERVATORIA, REGISTO COMERCIAL | EXCLUDE | Commercial registry |
+| CAMARA MUNICIPAL | EXCLUDE | Municipal fees |
+| IRN, INSTITUTO REGISTOS E NOTARIADO | EXCLUDE | Government registry |
+| IAPMEI | EXCLUDE | Government agency |
+| ALFANDEGA, DIREÇÃO-GERAL DAS ALFÂNDEGAS | EXCLUDE | Customs (check for import IVA) |
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| CGD, CAIXA GERAL, CAIXA GERAL DE DEPÓSITOS | EXCLUIR para comissões bancárias | Serviço financeiro, isento |
-| MILLENNIUM BCP, BCP | EXCLUIR para comissões bancárias | Idem |
-| SANTANDER PORTUGAL, SANTANDER PT | EXCLUIR para comissões bancárias | Idem |
-| NOVO BANCO | EXCLUIR para comissões bancárias | Idem |
-| BPI, BANCO BPI | EXCLUIR para comissões bancárias | Idem |
-| ACTIVOBANK | EXCLUIR para comissões bancárias | Idem |
-| BANCO CTT | EXCLUIR para comissões bancárias | Idem |
-| REVOLUT, WISE, N26 (linhas de comissão) | EXCLUIR | Verificar subscrições tributáveis |
-| JUROS, JURO | EXCLUIR | Juros, fora do âmbito |
-| EMPRÉSTIMO, CRÉDITO HABITAÇÃO | EXCLUIR | Capital do empréstimo |
+### 3.3 Portuguese utilities
 
-### 3.2 Estado português e entidades estatutárias (excluir na totalidade)
+**Utilities table**
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| PORTAL DAS FINANÇAS, AT, AUTORIDADE TRIBUTÁRIA | EXCLUIR | Pagamento de imposto (IVA, IRS, IRC) |
-| SEGURANÇA SOCIAL | EXCLUIR | Contribuições para a Segurança Social |
-| FINANÇAS, DIREÇÃO-GERAL | EXCLUIR | Autoridade tributária |
-| CONSERVATÓRIA, REGISTO COMERCIAL | EXCLUIR | Registo comercial |
-| CÂMARA MUNICIPAL | EXCLUIR | Taxas municipais |
-| IRN, INSTITUTO DOS REGISTOS E NOTARIADO | EXCLUIR | Registo do Estado |
-| IAPMEI | EXCLUIR | Organismo público |
-| ALFÂNDEGA, DIREÇÃO-GERAL DAS ALFÂNDEGAS | EXCLUIR | Alfândegas (verificar IVA na importação) |
+| Pattern | Treatment | Campo | Notes |
+| --- | --- | --- | --- |
+| EDP, EDP ENERGIA, EDP COMERCIAL | Domestic 23% | 23 (input) | Electricity — standard rate |
+| GALP, GALP ENERGIA | Domestic 23% | 23 | Energy/fuel |
+| ENDESA PORTUGAL, IBERDROLA | Domestic 23% | 23 | Energy |
+| EPAL, AGUAS DE PORTUGAL | Domestic 6% | 23 | Water at reduced rate |
+| NOS, NOS COMUNICACOES | Domestic 23% | 23 | Telecoms — overhead |
+| MEO, ALTICE PORTUGAL | Domestic 23% | 23 | Telecoms/broadband |
+| VODAFONE PT, VODAFONE PORTUGAL | Domestic 23% | 23 | Telecoms |
+| NOWO | Domestic 23% | 23 | Telecoms |
 
-### 3.3 Serviços públicos portugueses
+### 3.4 Insurance (exempt — exclude)
 
-| Padrão | Tratamento | Campo | Notas |
-|---|---|---|---|
-| EDP, EDP ENERGIA, EDP COMERCIAL | Doméstico 23% | 23 (input) | Eletricidade — taxa normal |
-| GALP, GALP ENERGIA | Doméstico 23% | 23 | Energia/combustível |
-| ENDESA PORTUGAL, IBERDROLA | Doméstico 23% | 23 | Energia |
-| EPAL, ÁGUAS DE PORTUGAL | Doméstico 6% | 23 | Água à taxa reduzida |
-| NOS, NOS COMUNICAÇÕES | Doméstico 23% | 23 | Telecomunicações — overhead |
-| MEO, ALTICE PORTUGAL | Doméstico 23% | 23 | Telecomunicações/banda larga |
-| VODAFONE PT, VODAFONE PORTUGAL | Doméstico 23% | 23 | Telecomunicações |
-| NOWO | Doméstico 23% | 23 | Telecomunicações |
+**Insurance table**
 
-### 3.4 Seguros (isentos — excluir)
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| FIDELIDADE | EXCLUDE | Insurance, exempt |
+| AGEAS PORTUGAL, ALLIANZ PORTUGAL | EXCLUDE | Same |
+| TRANQUILIDADE, GENERALI PT | EXCLUDE | Same |
+| SEGURO, APOLICE | EXCLUDE | All insurance exempt |
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| FIDELIDADE | EXCLUIR | Seguro, isento |
-| AGEAS PORTUGAL, ALLIANZ PORTUGAL | EXCLUIR | Idem |
-| TRANQUILIDADE, GENERALI PT | EXCLUIR | Idem |
-| SEGURO, APÓLICE | EXCLUIR | Todos os seguros isentos |
+### 3.5 Post and logistics
 
-### 3.5 Correios e logística
+**Post and logistics table**
 
-| Padrão | Tratamento | Campo | Notas |
-|---|---|---|---|
-| CTT (correio normal) | EXCLUIR para correio standard | | Serviço postal universal isento |
-| CTT (encomendas, CTT Expresso) | Doméstico 23% | 23 | Serviço não universal tributável |
-| DHL EXPRESS PORTUGAL | Doméstico 23% | 23 | Courier expresso |
-| CHRONOPOST PORTUGAL | Doméstico 23% | 23 | Expresso |
-| FEDEX, UPS PORTUGAL | Doméstico 23% | 23 | Courier |
+| Pattern | Treatment | Campo | Notes |
+| --- | --- | --- | --- |
+| CTT (standard mail) | EXCLUDE for standard postage |  | Universal service exempt |
+| CTT (parcels, CTT Expresso) | Domestic 23% | 23 | Non-universal taxable |
+| DHL EXPRESS PORTUGAL | Domestic 23% | 23 | Express courier |
+| CHRONOPOST PORTUGAL | Domestic 23% | 23 | Express |
+| FEDEX, UPS PORTUGAL | Domestic 23% | 23 | Courier |
 
-### 3.6 Transportes (Portugal, doméstico)
+### 3.6 Transport (Portugal domestic)
 
-| Padrão | Tratamento | Campo | Notas |
-|---|---|---|---|
-| CP, COMBOIOS DE PORTUGAL | Doméstico 6% | 23 (input) | Ferroviário à taxa reduzida |
-| METRO LISBOA, METRO PORTO | Doméstico 6% | 23 | Metropolitano urbano |
-| CARRIS, CARRIS METROPOLITANA | Doméstico 6% | 23 | Autocarros de Lisboa |
-| STCP | Doméstico 6% | 23 | Autocarros do Porto |
-| UBER PT, UBER PORTUGAL | Doméstico 6% (transporte) | 23 | TVDE |
-| BOLT PT | Doméstico 6% | 23 | TVDE |
-| TÁXI | Doméstico 6% | 23 | Táxi local |
-| TAP AIR PORTUGAL (doméstico) | Doméstico 6% | 23 | Voos domésticos à taxa reduzida |
-| TAP, RYANAIR, EASYJET (internacional) | EXCLUIR / 0% | | Voos internacionais isentos |
-| BRISA, VIA VERDE | Doméstico 23% | 23 | Portagens de autoestrada |
+**Transport table**
 
-### 3.7 Retalho alimentar (bloqueado salvo se setor da restauração/hotelaria)
+| Pattern | Treatment | Campo | Notes |
+| --- | --- | --- | --- |
+| CP, COMBOIOS DE PORTUGAL | Domestic 6% | 23 (input) | Rail at reduced rate |
+| METRO LISBOA, METRO PORTO | Domestic 6% | 23 | Urban rail |
+| CARRIS, CARRIS METROPOLITANA | Domestic 6% | 23 | Lisbon bus |
+| STCP | Domestic 6% | 23 | Porto bus |
+| UBER PT, UBER PORTUGAL | Domestic 6% (transport) | 23 | Ride-hailing |
+| BOLT PT | Domestic 6% | 23 | Ride-hailing |
+| TAXI | Domestic 6% | 23 | Local taxi |
+| TAP AIR PORTUGAL (domestic) | Domestic 6% | 23 | Domestic flights reduced |
+| TAP, RYANAIR, EASYJET (international) | EXCLUDE / 0% |  | International flights exempt |
+| BRISA, VIA VERDE | Domestic 23% | 23 | Motorway tolls |
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| CONTINENTE, MODELO | Por defeito, BLOQUEAR IVA dedutível | Aprovisionamento pessoal |
-| PINGO DOCE, JERÓNIMO MARTINS | Por defeito, BLOQUEAR | Idem |
-| LIDL, ALDI, INTERMARCHÉ | Por defeito, BLOQUEAR | Idem |
-| MINIPREÇO, MERCADONA | Por defeito, BLOQUEAR | Idem |
-| RESTAURANTE, PASTELARIA, CAFÉ | Por defeito, BLOQUEAR | Despesas de representação — ver 5.12 |
+### 3.7 Food retail (blocked unless hospitality business)
 
-### 3.8 SaaS — fornecedores UE (autoliquidação)
+**Food retail table**
 
-| Padrão | Entidade faturadora | Campo | Notas |
-|---|---|---|---|
-| GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação: output no 17, input no 23 |
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| CONTINENTE, MODELO | Default BLOCK input VAT | Personal provisioning |
+| PINGO DOCE, JERÓNIMO MARTINS | Default BLOCK | Same |
+| LIDL, ALDI, INTERMARCHE | Default BLOCK | Same |
+| MINIPREÇO, MERCADONA | Default BLOCK | Same |
+| RESTAURANTE, PASTELARIA, CAFÉ | Default BLOCK | Entertainment — see 5.12 |
+
+### 3.8 SaaS — EU suppliers (reverse charge / autoliquidação)
+
+**EU SaaS suppliers table**
+
+| Pattern | Billing entity | Campo | Notes |
+| --- | --- | --- | --- |
+| GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação: output on 17, input on 23 |
 | MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) | 16/17 + 23 | Autoliquidação |
 | ADOBE | Adobe Systems Software Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação |
 | META, FACEBOOK ADS | Meta Platforms Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação |
-| LINKEDIN (paga) | LinkedIn Ireland Unlimited (IE) | 16/17 + 23 | Autoliquidação |
-| SPOTIFY TECHNOLOGY | Spotify AB (SE) | 16/17 + 23 | UE, autoliquidação |
+| LINKEDIN (paid) | LinkedIn Ireland Unlimited (IE) | 16/17 + 23 | Autoliquidação |
+| SPOTIFY TECHNOLOGY | Spotify AB (SE) | 16/17 + 23 | EU, autoliquidação |
 | DROPBOX | Dropbox International Unlimited (IE) | 16/17 + 23 | Autoliquidação |
 | SLACK | Slack Technologies Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação |
-| ATLASSIAN (Jira, Confluence) | Atlassian Network Services BV (NL) | 16/17 + 23 | UE, autoliquidação |
+| ATLASSIAN (Jira, Confluence) | Atlassian Network Services BV (NL) | 16/17 + 23 | EU, autoliquidação |
 | ZOOM | Zoom Video Communications Ireland Ltd (IE) | 16/17 + 23 | Autoliquidação |
-| STRIPE (subscrição) | Stripe Technology Europe Ltd (IE) | 16/17 + 23 | Comissões de transação isentas — ver 3.11 |
+| STRIPE (subscription) | Stripe Technology Europe Ltd (IE) | 16/17 + 23 | Transaction fees exempt — see 3.11 |
 
-### 3.9 SaaS — fornecedores fora da UE (autoliquidação)
+### 3.9 SaaS — non-EU suppliers (reverse charge / autoliquidação)
 
-| Padrão | Entidade faturadora | Campo | Notas |
-|---|---|---|---|
-| AWS (standard) | AWS EMEA SARL (LU) — verificar | 16/17 + 23 | LU → autoliquidação UE |
-| NOTION | Notion Labs Inc (US) | 16/17 + 23 | Autoliquidação país terceiro |
-| ANTHROPIC, CLAUDE | Anthropic PBC (US) | 16/17 + 23 | Autoliquidação país terceiro |
-| OPENAI, CHATGPT | OpenAI Inc (US) | 16/17 + 23 | Autoliquidação país terceiro |
-| GITHUB | GitHub Inc (US) | 16/17 + 23 | Verificar entidade IE |
-| FIGMA | Figma Inc (US) | 16/17 + 23 | País terceiro |
-| CANVA | Canva Pty Ltd (AU) | 16/17 + 23 | País terceiro |
-| HUBSPOT | HubSpot Inc (US) ou IE — verificar | 16/17 + 23 | Depende da entidade faturadora |
-| TWILIO | Twilio Inc (US) | 16/17 + 23 | País terceiro |
+**Non-EU SaaS suppliers table**
 
-### 3.10 SaaS — a exceção
+| Pattern | Billing entity | Campo | Notes |
+| --- | --- | --- | --- |
+| AWS (standard) | AWS EMEA SARL (LU) — check | 16/17 + 23 | LU → EU autoliquidação |
+| NOTION | Notion Labs Inc (US) | 16/17 + 23 | Non-EU autoliquidação |
+| ANTHROPIC, CLAUDE | Anthropic PBC (US) | 16/17 + 23 | Non-EU autoliquidação |
+| OPENAI, CHATGPT | OpenAI Inc (US) | 16/17 + 23 | Non-EU autoliquidação |
+| GITHUB | GitHub Inc (US) | 16/17 + 23 | Check IE entity |
+| FIGMA | Figma Inc (US) | 16/17 + 23 | Non-EU |
+| CANVA | Canva Pty Ltd (AU) | 16/17 + 23 | Non-EU |
+| HUBSPOT | HubSpot Inc (US) or IE — check | 16/17 + 23 | Depends on billing entity |
+| TWILIO | Twilio Inc (US) | 16/17 + 23 | Non-EU |
 
-| Padrão | Tratamento | Porquê |
-|---|---|---|
-| AWS EMEA SARL | Autoliquidação UE campos 16/17 + 23 (entidade LU) | Tratamento UE standard. Se a fatura indicar IVA português, tratar como doméstico 23%. |
+### 3.10 SaaS — the exception
 
-### 3.11 Processadores de pagamento
+**SaaS exception table**
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| STRIPE (comissões de transação) | EXCLUIR (isento) | Serviços financeiros |
-| PAYPAL (comissões de transação) | EXCLUIR (isento) | Idem |
-| STRIPE (subscrição) | Autoliquidação UE 16/17 + 23 | Entidade IE |
-| SUMUP, SQUARE, ZETTLE | Verificar fatura | Se portuguesa: doméstico 23%; se UE: autoliquidação |
-| IFTHENPAY, EUPAGO | Verificar fatura | Processadores portugueses — comissões podem ser isentas |
+| Pattern | Treatment | Why |
+| --- | --- | --- |
+| AWS EMEA SARL | EU autoliquidação campo 16/17 + 23 (LU entity) | Standard EU treatment. If invoice shows Portuguese IVA, treat as domestic 23%. |
 
-### 3.12 Serviços profissionais (Portugal)
+### 3.11 Payment processors
 
-| Padrão | Tratamento | Campo | Notas |
-|---|---|---|---|
-| CONTABILISTA, GABINETE DE CONTABILIDADE | Doméstico 23% | 23 | Sempre dedutível |
-| ADVOGADO, ESCRITÓRIO DE ADVOCACIA | Doméstico 23% | 23 | Assuntos jurídicos da atividade |
-| NOTÁRIO, CARTÓRIO | Doméstico 23% | 23 | Honorários notariais da atividade |
-| SOLICITADOR | Doméstico 23% | 23 | Profissional do foro |
-| REVISOR OFICIAL DE CONTAS, ROC | Doméstico 23% | 23 | Auditor |
+**Payment processors table**
 
-### 3.13 Salários e Segurança Social (excluir na totalidade)
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| STRIPE (transaction fees) | EXCLUDE (exempt) | Financial services |
+| PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
+| STRIPE (subscription) | EU autoliquidação 16/17 + 23 | IE entity |
+| SUMUP, SQUARE, ZETTLE | Check invoice | If Portuguese: domestic 23%; if EU: autoliquidação |
+| IFTHENPAY, EUPAGO | Check invoice | Portuguese payment processors — fees may be exempt |
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| SEGURANÇA SOCIAL | EXCLUIR | Contribuições para a Segurança Social |
-| SALÁRIO, VENCIMENTO, REMUNERAÇÃO | EXCLUIR | Vencimentos |
-| SUBSÍDIO, SUBSÍDIO DE FÉRIAS | EXCLUIR | Subsídios de férias/Natal |
-| FUNDO DE COMPENSAÇÃO, FCT | EXCLUIR | Fundo de compensação do trabalho |
+### 3.12 Professional services (Portugal)
 
-### 3.14 Imóveis e renda
+**Professional services table**
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| RENDA COMERCIAL, ARRENDAMENTO COMERCIAL | Doméstico 23% | Arrendamento comercial com opção por IVA (Art.º 12.º n.º 1 al. e) CIVA) |
-| RENDA, ARRENDAMENTO (habitação) | EXCLUIR | Arrendamento habitacional isento |
-| IMI, IMPOSTO MUNICIPAL | EXCLUIR | Imposto sobre imóveis |
-| AIMI | EXCLUIR | Adicional ao IMI |
+| Pattern | Treatment | Campo | Notes |
+| --- | --- | --- | --- |
+| CONTABILISTA, GABINETE CONTABILIDADE | Domestic 23% | 23 | Always deductible |
+| ADVOGADO, ESCRITORIO ADVOCACIA | Domestic 23% | 23 | Business legal matters |
+| NOTARIO, CARTORIO | Domestic 23% | 23 | Business notarial fees |
+| SOLICITADOR | Domestic 23% | 23 | Legal practitioner |
+| REVISOR OFICIAL DE CONTAS, ROC | Domestic 23% | 23 | Auditor |
 
-### 3.15 Transferências internas e exclusões
+### 3.13 Payroll and social security (exclude entirely)
 
-| Padrão | Tratamento | Notas |
-|---|---|---|
-| TRANSFERÊNCIA INTERNA, MOVIMENTO INTERNO | EXCLUIR | Movimento interno |
-| DIVIDENDO | EXCLUIR | Fora do âmbito |
-| AMORTIZAÇÃO DE EMPRÉSTIMO | EXCLUIR | Reembolso de empréstimo |
-| LEVANTAMENTO, LEVANTAMENTO ATM | TIER 2 — perguntar | Por defeito, excluir |
-| REFORÇO DE CAPITAL, SUPRIMENTO | EXCLUIR | Entrada do sócio / suprimentos |
+**Payroll table**
 
----
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| SEGURANCA SOCIAL | EXCLUDE | Social security contributions |
+| SALARIO, VENCIMENTO, REMUNERACAO | EXCLUDE | Wages |
+| SUBSIDIO, SUBSIDIO FERIAS | EXCLUDE | Holiday/vacation pay |
+| FUNDO COMPENSACAO, FCT | EXCLUDE | Compensation fund |
 
-## Secção 4 — Exemplos resolvidos
+### 3.14 Property and rent
 
-Seis classificações totalmente resolvidas, com base num hipotético consultor de TI trabalhador independente sediado em Portugal (regime normal de IVA).
+**Property and rent table**
 
-### Exemplo 1 — Autoliquidação SaaS fora da UE (Notion)
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| RENDA COMERCIAL, ARRENDAMENTO COMERCIAL | Domestic 23% | Commercial lease with IVA option (Art. 12 n.1 al. e CIVA) |
+| RENDA, ARRENDAMENTO (residential) | EXCLUDE | Residential lease exempt |
+| IMI, IMPOSTO MUNICIPAL | EXCLUDE | Property tax |
+| AIMI | EXCLUDE | Additional property tax |
 
-**Linha de input:**
-`03.04.2026 ; NOTION LABS INC ; DÉBITO ; Subscrição mensal ; USD 16,00 ; EUR 14,68`
+### 3.15 Internal transfers and exclusions
 
-**Raciocínio:**
-Entidade dos EUA. Autoliquidação fora da UE nos termos do Art.º 6.º n.º 6 do CIVA. O cliente autoliquida: IVA output no campo 17, IVA dedutível no campo 23. Resultado líquido zero.
+**Internal transfers table**
 
-**Output:**
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| TRANSFERENCIA INTERNA, MOVIMENTO INTERNO | EXCLUDE | Internal movement |
+| DIVIDENDO | EXCLUDE | Out of scope |
+| AMORTIZACAO EMPRESTIMO | EXCLUDE | Loan repayment |
+| LEVANTAMENTO, LEVANTAMENTO ATM | TIER 2 — ask | Default exclude |
+| REFORÇO DE CAPITAL, SUPRIMENTO | EXCLUDE | Owner injection / shareholder loan |
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo (input) | Campo (output) | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 03.04.2026 | NOTION LABS INC | -14,68 | -14,68 | 3,38 | 23% | 23 | 16/17 | N | — | — |
+## Section 4 — Worked examples
 
-### Exemplo 2 — Serviço UE, autoliquidação (Google Ads)
+Six fully worked classifications from a hypothetical Portugal-based self-employed IT consultant (trabalhador independente, normal IVA regime).
 
-**Linha de input:**
-`10.04.2026 ; GOOGLE IRELAND LIMITED ; DÉBITO ; Google Ads abril 2026 ; -850,00 ; EUR`
+### Example 1 — Non-EU SaaS reverse charge (Notion)
 
-**Raciocínio:**
-Entidade IE — autoliquidação UE. IVA output no campo 17, IVA input no campo 23. Líquido zero.
+`03.04.2026 ; NOTION LABS INC ; DEBIT ; Monthly subscription ; USD 16.00 ; EUR 14.68`
 
-**Output:**
+US entity. Non-EU autoliquidação under Art. 6 n.6 CIVA. Client self-assesses: output IVA on campo 17, input IVA deductible on campo 23. Net zero.
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo (input) | Campo (output) | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 10.04.2026 | GOOGLE IRELAND LIMITED | -850,00 | -850,00 | 195,50 | 23% | 23 | 16/17 | N | — | — |
+**Output table**
 
-### Exemplo 3 — Despesa de representação, tratamento em Portugal
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo (input) | Campo (output) | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 03.04.2026 | NOTION LABS INC | -14.68 | -14.68 | 3.38 | 23% | 23 | 16/17 | N | — | — |
 
-**Linha de input:**
-`15.04.2026 ; RESTAURANTE BELCANTO LISBOA ; DÉBITO ; Jantar de negócios ; -220,00 ; EUR`
+### Example 2 — EU service, autoliquidação (Google Ads)
 
-**Raciocínio:**
-Restaurante. Em Portugal, o IVA suportado em refeições de negócios é, em regra, dedutível ao abrigo do Art.º 21.º n.º 1 al. d) do CIVA, mas apenas 50% se forem consideradas despesas de representação. O limite de 50% aplica-se à própria dedução do IVA (e não somente à base do IRS/IRC). Por defeito: bloquear e sinalizar ao revisor. Se confirmada finalidade empresarial com documentação → 50% do IVA dedutível.
+`10.04.2026 ; GOOGLE IRELAND LIMITED ; DEBIT ; Google Ads April 2026 ; -850.00 ; EUR`
 
-**Output:**
+IE entity — EU autoliquidação. Output IVA on campo 17, input IVA on campo 23. Net zero.
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|
-| 15.04.2026 | RESTAURANTE BELCANTO LISBOA | -220,00 | -220,00 | 0 | — | — | S | Q1 | "Restaurante: IVA 50% dedutível se despesa de representação. Confirmar finalidade empresarial." |
+**Output table**
 
-### Exemplo 4 — Bens de investimento (imobilizado)
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo (input) | Campo (output) | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 10.04.2026 | GOOGLE IRELAND LIMITED | -850.00 | -850.00 | 195.50 | 23% | 23 | 16/17 | N | — | — |
 
-**Linha de input:**
-`18.04.2026 ; WORTEN (SONAE) ; DÉBITO ; Portátil HP ; -1.595,00 ; EUR`
+### Example 3 — Entertainment, treatment in Portugal
 
-**Raciocínio:**
-€1.595 brutos. Em Portugal, os ativos utilizados por mais de um ano e acima de um limiar de minimis são imobilizado (bens de investimento). O IVA suportado vai para o campo 21 (IVA dedutível — imobilizado) em vez do campo 23. Sujeito a regularização ao longo de 5 anos (móveis) ou 20 anos (imóveis) — Art.º 24.º a 26.º do CIVA.
+`15.04.2026 ; RESTAURANTE BELCANTO LISBOA ; DEBIT ; Business dinner ; -220.00 ; EUR`
 
-**Output:**
+Restaurant. In Portugal, IVA on business meals (refeições de negócios) is generally deductible under Art. 21 n.1 al. d) CIVA, but only 50% deductible if they are considered despesas de representação (entertainment/representation expenses). The 50% limit applies to the IVA deduction (not just the income tax base). Default: block, flag for reviewer. If confirmed business with documentation → 50% IVA deductible.
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|
-| 18.04.2026 | WORTEN | -1.595,00 | -1.296,75 | -298,25 | 23% | 21 | N | — | — |
+**Output table**
 
-### Exemplo 5 — Venda de serviço B2B intra-UE
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 15.04.2026 | RESTAURANTE BELCANTO LISBOA | -220.00 | -220.00 | 0 | — | — | Y | Q1 | "Restaurant: IVA 50% deductible if despesas de representação. Confirm business purpose." |
 
-**Linha de input:**
-`22.04.2026 ; STUDIO KREBS GMBH ; CRÉDITO ; Fatura PT-2026-018 consultoria TI ; +3.500,00 ; EUR`
+### Example 4 — Capital goods (imobilizado)
 
-**Raciocínio:**
-Serviços B2B para a Alemanha — o lugar da prestação é o país do adquirente (Art.º 6.º n.º 6 al. a) CIVA / Art.º 44.º da Diretiva). Reportar no campo 7 (operações isentas com direito a dedução). Sem IVA liquidado. Verificar o USt-IdNr alemão no VIES.
+`18.04.2026 ; WORTEN (SONAE) ; DEBIT ; Laptop HP ; -1,595.00 ; EUR`
 
-**Output:**
+€1,595 gross. In Portugal, assets used for >1 year and above a de minimis threshold are imobilizado (bens de investimento). Input IVA goes to campo 21 (IVA dedutível — imobilizado) rather than campo 23. Subject to regularisation over 5 years movable / 20 years immovable (Art. 24–26 CIVA).
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|
-| 22.04.2026 | STUDIO KREBS GMBH | +3.500,00 | +3.500,00 | 0 | 0% | 7 | S | Q2 (HIGH) | "Verificar USt-IdNr alemão no VIES" |
+**Output table**
 
-### Exemplo 6 — Viaturas, regras de dedução
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 18.04.2026 | WORTEN | -1,595.00 | -1,296.75 | -298.25 | 23% | 21 | N | — | — |
 
-**Linha de input:**
-`28.04.2026 ; ALD AUTOMOTIVE PORTUGAL ; DÉBITO ; Renting VW Golf ; -450,00 ; EUR`
+### Example 5 — EU B2B service sale
 
-**Raciocínio:**
-Renting de viatura. Em Portugal, o IVA suportado em viaturas ligeiras de passageiros não é, em regra, dedutível (Art.º 21.º n.º 1 al. a) CIVA). Exceções: táxis, ensino de condução, viaturas afetas a aluguer em empresas de rent-a-car, veículos elétricos (50% dedutíveis desde 2020), híbridos plug-in (50% dedutíveis). Um VW Golf (não elétrico) → bloqueado. Se elétrico/híbrido → 50% dedutível.
+`22.04.2026 ; STUDIO KREBS GMBH ; CREDIT ; Invoice PT-2026-018 IT consultancy ; +3,500.00 ; EUR`
 
-**Output:**
+B2B services to Germany — place of supply is customer's country (Art. 6 n.6 al. a) CIVA / Art. 44 Directive). Report on campo 7 (operações isentas com direito a dedução). No output IVA. Verify German USt-IdNr on VIES.
 
-| Data | Contraparte | Bruto | Líquido | IVA | Taxa | Campo | Default? | Pergunta? | Excluído? |
-|---|---|---|---|---|---|---|---|---|---|
-| 28.04.2026 | ALD AUTOMOTIVE PORTUGAL | -450,00 | -450,00 | 0 | — | — | S | Q3 | "Viatura ligeira de passageiros: IVA bloqueado. Elétrico/híbrido (50% dedutível)?" |
+**Output table**
 
----
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 22.04.2026 | STUDIO KREBS GMBH | +3,500.00 | +3,500.00 | 0 | 0% | 7 | Y | Q2 (HIGH) | "Verify German USt-IdNr on VIES" |
 
-## Secção 5 — Regras de classificação Tier 1 (compactadas)
+### Example 6 — Motor vehicle, deduction rules
 
-### 5.1 Taxa normal 23% (Art.º 18.º n.º 1 al. c) CIVA)
+`28.04.2026 ; ALD AUTOMOTIVE PORTUGAL ; DEBIT ; Lease payment VW Golf ; -450.00 ; EUR`
 
-Taxa por defeito em Portugal Continental. Vendas → campos 1/2. Aquisições → campo 23 (ou 21/22).
+Car lease. In Portugal, IVA on light passenger vehicles (viaturas ligeiras de passageiros) is generally NOT deductible (Art. 21 n.1 al. a) CIVA). Exceptions: taxis, driving schools, rental vehicles used in rental business, electric vehicles (50% deductible since 2020), hybrid plug-in vehicles (50% deductible). A VW Golf (non-electric) → blocked. If electric/hybrid → 50% deductible.
 
-### 5.2 Taxa intermédia 13% (Art.º 18.º n.º 1 al. b), Lista II)
+**Output table**
 
-Restauração (refeições + bebidas não alcoólicas), gasóleo, certos géneros alimentares (conservas, óleos), vinho, inputs agrícolas. Vendas → campos 3/4.
+| Date | Counterparty | Gross | Net | VAT | Rate | Campo | Default? | Question? | Excluded? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 28.04.2026 | ALD AUTOMOTIVE PORTUGAL | -450.00 | -450.00 | 0 | — | — | Y | Q3 | "Viatura ligeira de passageiros: IVA blocked. Electric/hybrid (50% deductible)?" |
 
-### 5.3 Taxa reduzida 6% (Art.º 18.º n.º 1 al. a), Lista I)
+### 5.1 Standard rate 23% (Art. 18 n.1 al. c) CIVA)
 
-Géneros alimentares essenciais (pão, leite, fruta, legumes, peixe, carne), água, livros, medicamentos, transporte de passageiros, alojamento, espetáculos culturais. Vendas → campos 5/6.
+- **Standard rate default** — Default rate for Continental Portugal. Sales → campo 1/2. Purchases → campo 23 (or 21/22).  _(Art. 18 n.1 al. c) CIVA)_
 
-### 5.4 Taxa zero e isenções com direito a dedução
+### 5.2 Intermediate rate 13% (Art. 18 n.1 al. b), Lista II)
 
-Exportações → campo 7. Bens intra-UE → campo 7. Serviços B2B intra-UE → campo 7.
+- **Intermediate rate scope** — Restaurants (food + non-alcoholic drinks), diesel, certain food products (conserves, oils), wine, agricultural inputs. Sales → campo 3/4.  _(Art. 18 n.1 al. b), Lista II)_
 
-### 5.5 Isentas sem direito a dedução (Art.º 9.º CIVA)
+### 5.3 Reduced rate 6% (Art. 18 n.1 al. a), Lista I)
 
-Saúde, ensino, seguros, serviços financeiros, arrendamento habitacional, serviço postal universal. Se significativas → **a R-PT-2 recusa**.
+- **Reduced rate scope** — Basic foodstuffs (bread, milk, fruit, vegetables, fish, meat), water, books, medicines, passenger transport, hotels, cultural events. Sales → campo 5/6.  _(Art. 18 n.1 al. a), Lista I)_
 
-### 5.6 Aquisições locais
+### 5.4 Zero rate and exempt with credit
 
-IVA suportado em fatura conforme. Bens de investimento → campo 21. Existências → campo 22. Restantes → campo 23.
+- **Zero rate/exempt with credit** — Exports → campo 7. Intra-EU goods → campo 7. Intra-EU B2B services → campo 7.
 
-### 5.7 Autoliquidação — serviços intra-UE (Art.º 6.º n.º 6)
+### 5.5 Exempt without credit (Art. 9 CIVA)
 
-Serviço UE: base → campo 16, IVA output → campo 17, input → campo 23. Resultado líquido zero.
+- **Exempt without credit** — Medical, education, insurance, financial services, residential rent, postal universal service. If significant → **R-PT-2 refuses**.  _(Art. 9 CIVA)_
 
-### 5.8 Autoliquidação — bens intra-UE (aquisições intracomunitárias)
+### 5.6 Local purchases
 
-Bens UE: base → campo 9, IVA output → campo 10, input → campo 23/21.
+- **Local purchases treatment** — Input IVA on compliant fatura. Capital goods → campo 21. Stock → campo 22. Other → campo 23.
 
-### 5.9 Autoliquidação — fora da UE
+### 5.7 Autoliquidação — EU services (Art. 6 n.6)
 
-Países terceiros: base → campo 16, IVA output → campo 17, input → campo 23.
+- **EU services autoliquidação** — EU service: base → campo 16, output IVA → campo 17, input → campo 23. Net zero.  _(Art. 6 n.6)_
 
-### 5.10 Autoliquidação interna (Art.º 2.º n.º 1 al. i)-j) CIVA)
+### 5.8 Autoliquidação — EU goods (aquisições intracomunitárias)
 
-Portugal aplica autoliquidação interna em empreitadas de obras (serviços de construção civil), sucatas e licenças de emissão de CO2. O adquirente autoliquida o IVA.
+- **EU goods autoliquidação** — EU goods: base → campo 9, output IVA → campo 10, input → campo 23/21.
 
-### 5.11 Bens de investimento (imobilizado)
+### 5.9 Autoliquidação — non-EU
 
-Ativos utilizados por mais de 1 ano → campo 21 para o IVA suportado. Sujeitos a regularização ao longo de 5 anos (móveis) ou 20 anos (imóveis), Art.º 24.º a 26.º CIVA.
+- **Non-EU autoliquidação** — Non-EU: base → campo 16, output IVA → campo 17, input → campo 23.
 
-### 5.12 IVA dedutível bloqueado/restringido (Art.º 21.º CIVA)
+### 5.10 Domestic reverse charge (Art. 2 n.1 al. i-j CIVA)
 
-- Viaturas ligeiras de passageiros: IVA bloqueado (Art.º 21.º n.º 1 al. a)). Exceções: táxi, ensino de condução, rent-a-car. Veículos elétricos: 50% dedutível. Híbridos plug-in: 50% dedutível.
-- Combustíveis: gasóleo para VP, 50% dedutível; GPL/elétrico, 100% dedutível. Gasolina: NÃO dedutível em VP.
-- Despesas de representação: IVA 50% dedutível (Art.º 21.º n.º 1 al. d)). Inclui refeições de negócios — 50% do IVA, e não dedução total.
-- Deslocações e alojamento: IVA dedutível se relacionado com a atividade e documentado.
-- Tabaco: não dedutível.
-- Uso pessoal: não dedutível.
-- Ofertas: IVA dedutível apenas até 5 por mil do volume de negócios e custo unitário ≤ €50.
+- **Domestic reverse charge** — Portugal has domestic reverse charge for construction services (empreitadas de obras), scrap metal, and CO2 emission allowances. The acquirer self-assesses IVA.  _(Art. 2 n.1 al. i-j CIVA)_
+
+### 5.11 Capital goods (bens de investimento)
+
+- **Capital goods rules** — Assets used >1 year → campo 21 for input IVA. Subject to regularização over 5 years (movable) or 20 years (immovable), Art. 24–26 CIVA.  _(Art. 24–26 CIVA)_
+
+### 5.12 Blocked/restricted input IVA (Art. 21 CIVA)
+
+- **Light passenger vehicles** — Light passenger vehicles (viaturas ligeiras de passageiros): IVA blocked. Exceptions: taxi, driving school, rental. Electric vehicles: 50% deductible. Hybrid plug-in: 50% deductible.  _(Art. 21 n.1 al. a) CIVA)_
+- **Fuel** — Diesel for VP 50% deductible; GPL/electric 100% deductible. Petrol: NOT deductible for VP.  _(Art. 21 CIVA)_
+- **Entertainment (despesas de representação)** — IVA 50% deductible. This includes business meals — 50% of IVA, not full deduction.  _(Art. 21 n.1 al. d) CIVA)_
+- **Travel and accommodation** — IVA deductible if business-related and documented.  _(Art. 21 CIVA)_
+- **Tobacco** — Not deductible.  _(Art. 21 CIVA)_
+- **Personal use** — Not deductible.  _(Art. 21 CIVA)_
+- **Gifts** — IVA deductible only if ≤ 5 per mille of turnover and unit cost ≤ €50.  _(Art. 21 CIVA)_
 
 ### 5.13 SAF-T (PT)
 
-Portugal exige o SAF-T (Standard Audit File for Tax) a todas as empresas que utilizem software de faturação. O ficheiro SAF-T (PT) é submetido mensalmente à AT e constitui a fonte de dados mais fiável para a classificação de IVA. Quando disponível, prefira os dados do SAF-T (PT) ao extrato bancário. As faturas devem conter o código ATCUD (código único de documento) e, quando aplicável, ser comunicadas via e-fatura.
+- **SAF-T requirement** — Portugal requires SAF-T (Standard Audit File for Tax) from all businesses using billing software. The SAF-T file must be submitted monthly to AT. It provides the most reliable data source for IVA classification. If available, prefer SAF-T data over bank statement.
 
-### 5.14 Vendas — domésticas locais
+### 5.14 Sales — local domestic
 
-Liquidar 23%, 13% ou 6%. Mapear para os campos 1/3/5 conforme aplicável.
+- **Local domestic sales** — Charge 23%, 13%, or 6%. Map to campo 1/3/5 as appropriate.
 
-### 5.15 Vendas — B2C transfronteiriças
+### 5.15 Sales — cross-border B2C
 
-Acima de €10.000 → **a R-EU-5 OSS recusa**.
+- **Cross-border B2C threshold** — Above €10,000 → **R-EU-5 OSS refusal fires**.
 
----
+## Section 6 — Tier 2 catalogue (compressed)
 
-## Secção 6 — Catálogo Tier 2 (compactado)
+### 6.1 Fuel and vehicle costs
 
-### 6.1 Combustível e custos de viatura
+- **Fuel and vehicle costs** — Pattern: GALP, REPSOL, BP, CEPSA. Default: blocked (VP default). Question: "Viatura ligeira or comercial? Electric/hybrid (50% IVA deductible)? Diesel for VP is 50% IVA deductible."
 
-*Padrão:* GALP, REPSOL, BP, CEPSA. *Default:* bloqueado (VP por defeito). *Pergunta:* "Viatura ligeira de passageiros ou comercial? Elétrico/híbrido (50% IVA dedutível)? Gasóleo para VP: 50% dedutível."
+### 6.2 Restaurants and entertainment
 
-### 6.2 Restaurantes e despesas de representação
+- **Restaurants and entertainment** — Pattern: restaurante, pastelaria, café. Default: block. Question: "Business meal (despesas de representação)? IVA 50% deductible with documentation."
 
-*Padrão:* restaurante, pastelaria, café. *Default:* bloquear. *Pergunta:* "Refeição de negócios (despesa de representação)? IVA 50% dedutível com documentação."
+### 6.3 Ambiguous SaaS
 
-### 6.3 SaaS ambíguo
+- **Ambiguous SaaS** — Default: non-EU autoliquidação campo 16/17 + 23. Question: "Check invoice for legal entity."
 
-*Default:* autoliquidação país terceiro, campos 16/17 + 23. *Pergunta:* "Verificar entidade legal na fatura."
+### 6.4 Owner transfers
 
-### 6.4 Transferências de sócios/titulares
+- **Owner transfers** — Default: exclude as suprimento/reforço. Question: "Customer payment, own money, or loan?"
 
-*Default:* excluir como suprimento/reforço. *Pergunta:* "Pagamento de cliente, fundos próprios ou empréstimo?"
+### 6.5 Incoming from individuals
 
-### 6.5 Entradas de particulares
+- **Incoming from individuals** — Default: domestic B2C 23%. Question: "Sale? Business or consumer?"
 
-*Default:* B2C doméstico 23%. *Pergunta:* "Venda? A empresa ou consumidor final?"
+### 6.6 Foreign incoming
 
-### 6.6 Entradas estrangeiras
+- **Foreign incoming** — Default: domestic 23%. Question: "B2B with NIF, B2C, goods/services, country?"
 
-*Default:* doméstico 23%. *Pergunta:* "B2B com NIF, B2C, bens/serviços, país?"
+### 6.7 Large purchases
 
-### 6.7 Aquisições de valor elevado
+- **Large purchases** — Default: campo 21 if capital good. Question: "Confirm invoice total."
 
-*Default:* campo 21 se bem de investimento. *Pergunta:* "Confirmar total da fatura."
+### 6.8 Mixed-use phone, internet
 
-### 6.8 Telemóvel e internet de uso misto
+- **Mixed-use phone, internet** — Default: 0%. Question: "Dedicated business or mixed?"
 
-*Default:* 0%. *Pergunta:* "Linha dedicada à atividade ou uso misto?"
+### 6.9 Outgoing to individuals
 
-### 6.9 Saídas para particulares
+- **Outgoing to individuals** — Default: exclude. Question: "Contractor, wages, refund, personal?"
 
-*Default:* excluir. *Pergunta:* "Prestador de serviços, vencimento, reembolso, pessoal?"
+### 6.10 Cash withdrawals
 
-### 6.10 Levantamentos de numerário
+- **Cash withdrawals** — Default: exclude. Question: "What for?"
 
-*Default:* excluir. *Pergunta:* "Para quê?"
+### 6.11 Rent
 
-### 6.11 Renda
+- **Rent** — Default: no IVA (residential). Question: "Commercial with IVA option (Art. 12 n.1 al. e)?"
 
-*Default:* sem IVA (habitação). *Pergunta:* "Comercial com opção pelo IVA (Art.º 12.º n.º 1 al. e))?"
+### 6.12 Foreign hotel
 
-### 6.12 Hotelaria estrangeira
+- **Foreign hotel** — Default: exclude from input IVA. Question: "Business trip?"
 
-*Default:* excluir do IVA dedutível. *Pergunta:* "Deslocação em serviço?"
+### 6.13 Airbnb income
 
-### 6.13 Receitas de Airbnb
+- **Airbnb income** — Default: [T2] flag. Question: "Alojamento Local registration? Duration? 6% reduced rate for accommodation?"
 
-*Default:* sinalizar [T2]. *Pergunta:* "Registo como Alojamento Local? Duração? Taxa reduzida de 6% para alojamento?"
+### 6.14 Construction reverse charge
 
-### 6.14 Autoliquidação na construção
+- **Construction reverse charge** — Pattern: empreiteiro, construção civil. Default: [T2] flag. Question: "Construction subcontractor subject to domestic reverse charge?"
 
-*Padrão:* empreiteiro, construção civil. *Default:* sinalizar [T2]. *Pergunta:* "Subempreiteiro de obras sujeito a autoliquidação interna?"
+### 6.15 Platform sales
 
-### 6.15 Vendas em plataformas
+- **Platform sales** — Default: if EU cross-border above €10,000 → R-EU-5. Otherwise domestic 23%. Question: "Sell outside Portugal?"
 
-*Default:* se UE transfronteiriço acima de €10.000 → R-EU-5. Caso contrário, doméstico 23%. *Pergunta:* "Vende fora de Portugal?"
+## Section 7 — Excel working paper template (Portugal-specific)
 
----
+### Sheet "Transactions"
 
-## Secção 7 — Modelo de papel de trabalho em Excel (específico de Portugal)
+Column H accepts campo codes from Section 1.
 
-### Folha "Transações"
-
-A coluna H aceita códigos de campo conforme a Secção 1.
-
-### Folha "Resumo por Campo"
+### Sheet "Campo Summary"
 
 ```
-| 1  | Vendas 23% base | =SUMIFS(...) |
-| 2  | IVA sobre vendas 23% | =1*0,23 |
-| 3  | Vendas 13% base | =SUMIFS(...) |
-| 4  | IVA sobre vendas 13% | =3*0,13 |
-| 5  | Vendas 6% base | =SUMIFS(...) |
-| 6  | IVA sobre vendas 6% | =5*0,06 |
-| 7  | Isentas com direito a dedução | =SUMIFS(...) |
-| 9  | Aquisições intracomunitárias base | =SUMIFS(...) |
-| 10 | IVA sobre intracomunitárias | =9*0,23 |
-| 16 | Outras operações em autoliquidação base | =SUMIFS(...) |
-| 17 | IVA em autoliquidação | =16*0,23 |
-| 20 | Total IVA liquidado | =2+4+6+10+17 |
-| 21 | IVA dedutível — imobilizado | =SUMIFS(IVA suportado, ..., "21") |
-| 22 | IVA dedutível — existências | =SUMIFS(..., "22") |
-| 23 | IVA dedutível — outros | =SUMIFS(..., "23") |
-| 24 | Total IVA dedutível | =21+22+23 |
-| 40 | IVA a pagar | =MAX(0; 20-24) |
-| 41 | Crédito de IVA | =MAX(0; 24-20) |
+| 1  | Sales 23% base | =SUMIFS(...) |
+| 2  | IVA on sales 23% | =1*0.23 |
+| 3  | Sales 13% base | =SUMIFS(...) |
+| 4  | IVA on sales 13% | =3*0.13 |
+| 5  | Sales 6% base | =SUMIFS(...) |
+| 6  | IVA on sales 6% | =5*0.06 |
+| 7  | Exempt with deduction right | =SUMIFS(...) |
+| 9  | Intra-EU acquisitions base | =SUMIFS(...) |
+| 10 | IVA on intra-EU | =9*0.23 |
+| 16 | Other reverse charge base | =SUMIFS(...) |
+| 17 | IVA on reverse charge | =16*0.23 |
+| 20 | Total IVA due | =2+4+6+10+17 |
+| 21 | Deductible IVA — imobilizado | =SUMIFS(input VAT, ..., "21") |
+| 22 | Deductible IVA — existências | =SUMIFS(..., "22") |
+| 23 | Deductible IVA — other | =SUMIFS(..., "23") |
+| 24 | Total deductible IVA | =21+22+23 |
+| 40 | IVA to pay | =MAX(0, 20-24) |
+| 41 | IVA credit | =MAX(0, 24-20) |
 ```
 
-### Passo obrigatório de recálculo
+### Mandatory recalc step
 
 ```bash
 python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/portugal-vat-<period>-working-paper.xlsx
 ```
 
----
+## Section 8 — Portuguese bank statement reading guide
 
-## Secção 8 — Guia de leitura de extratos bancários portugueses
+**CSV format conventions.** Portuguese banks export CSV with semicolons and DD-MM-YYYY or DD/MM/YYYY dates. Common columns: Data, Descrição/Movimento, Débito, Crédito, Saldo. CGD and Millennium BCP use their own export formats.
 
-**Convenções de formato CSV.** Os bancos portugueses exportam CSV com ponto-e-vírgula e datas no formato DD-MM-AAAA ou DD/MM/AAAA. Colunas comuns: Data, Descrição/Movimento, Débito, Crédito, Saldo. A CGD e o Millennium BCP utilizam formatos próprios de exportação.
+**Portuguese language variants.** Renda (rent), salário/vencimento (salary), juros (interest), transferência (transfer), contribuições (contributions), fatura (invoice), reembolso (refund), depósito (deposit), levantamento (withdrawal).
 
-**Variantes da língua.** Renda (arrendamento), salário/vencimento, juros, transferência, contribuições, fatura, reembolso, depósito, levantamento. Note-se a grafia europeia: "receção" (e não "recepção").
+**Internal transfers.** "Transferência interna", "movimento entre contas". Exclude.
 
-**Transferências internas.** "Transferência interna", "movimento entre contas". Excluir.
+**Portal das Finanças payments.** Tax payments appear as "AT", "FINANÇAS", "PAGAMENTO ESTADO". Always exclude.
 
-**Pagamentos no Portal das Finanças.** Os pagamentos de impostos aparecem como "AT", "FINANÇAS", "PAGAMENTO ESTADO". Excluir sempre.
+**Segurança Social.** Social security contributions appear as monthly direct debits. Always exclude.
 
-**Segurança Social.** As contribuições aparecem como débito direto mensal. Excluir sempre.
+**SAF-T integration.** If SAF-T file is available, it provides structured invoice data including NIF of counterparties, IVA rates, and amounts. Prefer SAF-T data.
 
-**Integração com SAF-T.** Quando disponível, o ficheiro SAF-T (PT) fornece dados estruturados das faturas, incluindo o NIF das contrapartes, as taxas de IVA e os montantes. Preferir os dados do SAF-T (PT).
+**Foreign currency.** Convert to EUR at ECB rate.
 
-**Moeda estrangeira.** Converter em EUR à taxa do BCE.
+**IBAN prefix.** PT = Portugal. ES, IE, FR, DE = EU. US, GB, BR = non-EU.
 
-**Prefixo IBAN.** PT = Portugal. ES, IE, FR, DE = UE. US, GB, BR = fora da UE.
+## Section 9 — Onboarding fallback
 
----
+### 9.1 Entity type
 
-## Secção 9 — Onboarding (fallback)
+Inference: LDA = company; Unipessoal/Sociedade = company; trabalhador independente = freelancer/sole trader. Fallback: "Trabalhador independente, LDA, or SA?"
 
-### 9.1 Tipo de entidade
-*Inferência:* Lda. = sociedade; Unipessoal/Sociedade = sociedade; trabalhador independente = sole trader. *Fallback:* "Trabalhador independente, Lda. ou S.A.?"
+### 9.2 IVA regime
 
-### 9.2 Regime de IVA
-*Fallback:* "Regime normal ou regime de isenção (Art.º 53.º)?"
+Fallback: "Normal regime or regime de isenção (Art. 53)?"
 
 ### 9.3 NIF
-*Fallback:* "Qual o seu NIF? (9 dígitos, prefixo PT para contexto UE)"
 
-### 9.4 Período e periodicidade
-*Fallback:* "Mensal (Vol. B) ou trimestral (Vol. A)?"
+Fallback: "Your NIF? (9 digits, PT prefix for EU)"
 
-### 9.5 Setor de atividade
-*Fallback:* "Qual a atividade da empresa?"
+### 9.4 Filing period and frequency
 
-### 9.6 Trabalhadores
-*Inferência:* débitos para a Segurança Social. *Fallback:* "Tem trabalhadores?"
+Fallback: "Monthly (Vol. B) or quarterly (Vol. A)?"
 
-### 9.7 Operações isentas
-*Fallback:* "Realiza vendas isentas?" *Se sim → R-PT-2.*
+### 9.5 Industry
 
-### 9.8 Crédito transitado
-*Perguntar sempre.* "Crédito de IVA do período anterior? (Campo 41)"
+Fallback: "What does the business do?"
 
-### 9.9 Clientes transfronteiriços
-*Fallback:* "Clientes fora de Portugal? UE/fora da UE? B2B/B2C?"
+### 9.6 Employees
 
-### 9.10 Operações na Madeira/Açores
-*Condicional:* "Tem operações na Madeira ou nos Açores?" *Se sim → R-PT-6 recusa.*
+Inference: Segurança Social outgoing. Fallback: "Employees?"
 
-### 9.11 NHR / IFICI
-*Condicional:* "Beneficia do regime NHR ou do regime IFICI?" *Estes regimes aplicam-se ao IRS e NÃO isentam de IVA — o IVA segue as regras gerais. Para a análise de IRS, consulte a skill `pt-nhr-ifici`.*
+### 9.7 Exempt supplies
 
----
+Fallback: "Any exempt sales?" If yes → R-PT-2.
 
-## Secção 10 — Material de referência
+### 9.8 Credit carried forward
 
-### Fontes
+Always ask. "IVA credit from prior period? (Campo 41)"
+
+### 9.9 Cross-border customers
+
+Fallback: "Customers outside Portugal? EU/non-EU? B2B/B2C?"
+
+### 9.10 Madeira/Azores operations
+
+Conditional: "Do you have operations in Madeira or Azores?" If yes → R-PT-6 refuses.
+
+## Section 10 — Reference material
+
+### Sources
 
 1. Código do IVA (CIVA) — https://info.portaldasfinancas.gov.pt
 2. RITI (Regime do IVA nas Transações Intracomunitárias) — D.L. 290/92
-3. Formulário e instruções da Declaração Periódica — Portal das Finanças
-4. Especificações técnicas do SAF-T (PT) — Portaria 302/2016 (e diplomas posteriores sobre ATCUD e e-fatura)
-5. Diretiva 2006/112/CE do Conselho — através da skill companheira `eu-vat-directive`
+3. Declaração Periódica form and instructions — Portal das Finanças
+4. SAF-T (PT) technical specifications — Portaria 302/2016
+5. Council Directive 2006/112/EC — via eu-vat-directive companion
 6. VIES — https://ec.europa.eu/taxation_customs/vies/
-7. Regime NHR/IFICI — consultar `pt-nhr-ifici` (apenas para efeitos de IRS, sem impacto em IVA)
 
-### Lacunas conhecidas
+### Known gaps
 
-1. Tabelas de taxas da Madeira/Açores não incluídas (R-PT-6 recusa).
-2. Autoliquidação interna na construção apenas sinalizada T2.
-3. Regra dos 50% para veículos elétricos/híbridos requer a classificação atual do veículo.
-4. Limiar do regime de isenção (€15.000, alterado pelo OE 2024/2025) — verificar valor em vigor.
-5. A integração com SAF-T (PT) está sinalizada mas não automatizada.
-6. A dedução a 50% do IVA em despesas de representação (restaurantes) exige documentação de suporte.
-7. A dedução a 50% do IVA no gasóleo para VP é a atual — verificar anualmente.
+1. Madeira/Azores rate tables not included (R-PT-6 refuses).
+2. Construction domestic reverse charge flagged T2 only.
+3. Electric/hybrid vehicle 50% IVA rule requires current vehicle classification.
+4. Regime de isenção threshold (€14,500/€15,000) — verify current.
+5. SAF-T integration is flagged but not automated.
+6. Restaurant 50% IVA deduction for despesas de representação requires documentation.
+7. Diesel 50% IVA deduction for VP is current — verify annually.
 
 ### Change log
 
-- **v3.0 (Maio 2026):** Tradução para português europeu (PT-PT). Reforço da referência ao NHR/IFICI e clarificação de que não isenta de IVA. Atualização do limiar do regime de isenção para €15.000 (OE 2024/2025) e menção explícita de SAF-T (PT), ATCUD e e-fatura.
-- **v2.0 (Abril 2026):** Reescrita completa para a estrutura Malta v2.0.
-- **v1.0/1.1:** Skill inicial.
+- **v2.0 (April 2026):** Full rewrite to Malta v2.0 structure.
+- **v1.0/1.1:** Initial skill.
 
-### Auto-verificação (v3.0)
+### Self-check (v2.0)
 
-1. Referência rápida: sim. 2. Biblioteca de fornecedores (15): sim. 3. Exemplos resolvidos (6): sim. 4. Tier 1 (15): sim. 5. Tier 2 (15): sim. 6. Modelo Excel: sim. 7. Onboarding (11, com NHR/IFICI): sim. 8. 8 recusas: sim. 9. Referência: sim. 10. Bloqueio de viaturas com exceção EV/híbrido a 50%: sim. 11. Dedução de 50% do IVA na restauração: sim. 12. Exigência de SAF-T (PT), ATCUD e e-fatura referida: sim. 13. Continental vs Madeira/Açores: sim. 14. Estrutura de três taxas (23/13/6): sim. 15. Autoliquidação fora da UE nos campos 16/17: sim. 16. Cruzamento com `pt-nhr-ifici` e ressalva de que NHR não isenta de IVA: sim.
+1. Quick reference: yes. 2. Supplier library (15): yes. 3. Worked examples (6): yes. 4. Tier 1 (15): yes. 5. Tier 2 (15): yes. 6. Excel template: yes. 7. Onboarding (10): yes. 8. 8 refusals: yes. 9. Reference: yes. 10. Vehicle block with EV/hybrid 50% exception: yes. 11. Restaurant 50% IVA deduction: yes. 12. SAF-T requirement mentioned: yes. 13. Continental vs Madeira/Azores rates: yes. 14. Three-rate structure (23/13/6): yes. 15. Non-EU autoliquidação campo 16/17: yes.
 
-## Fim da Skill — Portugal IVA (Declaração Periódica) v3.0
+## End of Portugal VAT Return Skill v2.0
 
-Esta skill está incompleta sem AMBOS os ficheiros companheiros: `vat-workflow-base` v0.1+ E `eu-vat-directive` v0.1+.
+This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
+
+## Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a contabilista certificado, revisor oficial de contas, or equivalent licensed practitioner) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Aviso legal
+## Talk to a verified accountant
 
-Esta skill e os seus outputs são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os outputs devem ser revistos e validados por um profissional qualificado (designadamente, contabilista certificado, revisor oficial de contas ou outro profissional legalmente habilitado) antes de qualquer entrega ou tomada de decisão.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação evolui.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
----
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-vat-return) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

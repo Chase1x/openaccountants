@@ -1,533 +1,265 @@
 ---
 name: switzerland-crypto-tax
-description: "> Use this skill whenever asked about Switzerland cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Switzerland\", \"Bitcoin Switzerland\", \"cryptocurrency gains Switzerland\", \"crypto income Switzerland\", \"staking Switzerland\", \"mining income Switzerland\", \"NFT tax Switzerland\", \"wealth tax crypto\", \"Vermögenssteuer crypto\", \"ESTV crypto\", \"Kursliste crypto\", \"Kreisschreiben 36\", \"professional trader crypto Switzerland\", \"gewerbsmässiger Handel\", \"Steuererklärung crypto\", \"Wertschriftenverzeichnis crypto\", \"canton crypto tax\", \"Zug crypto\", \"Swiss crypto valuation\", \"CARF Switzerland\", or any question about the income tax, wealth tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Swiss tax residents. Covers tax-free capital gains for private investors, annual wealth tax, ESTV crypto valuations, Kreisschreiben Nr. 36 safe-haven criteria, professional trader classification, and cantonal variations."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Switzerland cryptocurrency or digital asset taxation. Trigger on phrases like \"crypto tax Switzerland\", \"Bitcoin Switzerland\", \"cryptocurrency gains Switzerland\", \"crypto income Switzerland\", \"staking Switzerland\", \"mining income Switzerland\", \"NFT tax Switzerland\", \"wealth tax crypto\", \"Vermögenssteuer crypto\", \"ESTV crypto\", \"Kursliste crypto\", \"Kreisschreiben 36\", \"professional trader crypto Switzerland\", \"gewerbsmässiger Handel\", \"Steuererklärung crypto\", \"Wertschriftenverzeichnis crypto\", \"canton crypto tax\", \"Zug crypto\", \"Swiss crypto valuation\", \"CARF Switzerland\", or any question about the income tax, wealth tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Swiss tax residents. Covers tax-free capital gains for private investors, annual wealth tax, ESTV crypto valuations, Kreisschreiben Nr. 36 safe-haven criteria, professional trader classification, and cantonal variations. ALWAYS read this skill bef"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: CH
-  category: crypto
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/switzerland-crypto-tax"
-  tax_year: 2025
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/switzerland-crypto-tax"
+  jurisdiction: "CH"
+  tax_year: "2026"
+  last_updated: "2026-09-26"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Switzerland Crypto / Digital Assets Tax Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Switzerland: crypto-asset tax for individuals (tax year 2026, with 2025 returns)
+
+## Scope
 
----
-
-## Section 1 -- Quick Reference
-
-| Field | Value |
-|---|---|
-| Country | Switzerland (Schweizerische Eidgenossenschaft / Confédération suisse) |
-| Tax | Wealth tax (Vermögenssteuer), income tax (Einkommenssteuer) — cantonal + federal |
-| Currency | CHF (all values must be converted to CHF) |
-| Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Bundesgesetz über die direkte Bundessteuer (DBG); cantonal tax laws (StG) |
-| Key guidance | ESTV Arbeitspapier "Kryptowährungen" (last updated Dec 2021); Kreisschreiben Nr. 36 (27 July 2012) |
-| Tax authority | Eidgenössische Steuerverwaltung (ESTV) / Administration fédérale des contributions (AFC) |
-| Filing portal | Cantonal e-filing portals (varies by canton) |
-| Filing deadline | Varies by canton (typically 31 March; extensions common) |
-| Capital gains for private investors | **TAX-FREE** (if not classified as professional trader) |
-| Wealth tax | **YES** — crypto declared at FMV on 31 December; rates ~0.15%–1.0% of net wealth depending on canton |
-| ESTV crypto valuations | Published annually (Kursliste) — reference date 31 December |
-| Professional trader risk | Kreisschreiben Nr. 36 — five cumulative safe-haven criteria |
-| CARF implementation | Switzerland committed to CARF by 2027 |
-| Validated by | Pending — requires sign-off by a Swiss Steuerberater or Treuhänder |
-| Skill version | 1.0 |
-
-### Conservative Defaults
-
-| Ambiguity | Default |
-|---|---|
-| Unknown whether private investor or professional trader | Apply Kreisschreiben 36 safe-haven test; if any criterion fails, flag for review |
-| Unknown cost basis | STOP — needed for professional trader gains; not critical for wealth tax but good practice |
-| Unknown crypto valuation | Use ESTV Kursliste; if not listed, use documented market value from reputable exchange |
-| Unknown canton of residence | STOP — wealth tax rates vary significantly by canton |
-| Mining activity | Treat as self-employment income unless clearly hobby/small-scale |
-| Staking rewards | Treat as taxable income at FMV when received |
-
----
-
-## Section 2 -- Classification Rules
-
-### 2.1 Private Investor vs Professional Trader
-
-The distinction between private investor (private Vermögensverwaltung) and professional trader (gewerbsmässiger Wertschriftenhandel) is the **most critical** classification in Swiss crypto taxation.
-
-| Classification | Capital Gains | Income Tax | Wealth Tax | Social Security |
-|---|---|---|---|---|
-| Private investor | **TAX-FREE** | Only on income events (staking, mining, etc.) | Yes — annual wealth tax | No (on trading gains) |
-| Professional trader (selbständig Erwerbstätig) | **TAXABLE** as business income | Federal + cantonal income tax (up to ~40%) | Yes | Yes (~10% AHV/IV/EO on net earnings) |
+This Guide covers Swiss-resident individuals who hold, trade, stake, mine or receive crypto-assets. It covers tax year 2026 (the calendar year that is running now) and has a short dated section for the 2025 return that people are filing now.
 
-### 2.2 Kreisschreiben Nr. 36 — Safe-Haven Criteria
+It covers:
 
-The ESTV's Kreisschreiben Nr. 36 (27 July 2012, originally for securities, now applied to crypto) defines **five cumulative criteria**. If ALL five are met, the taxpayer is conclusively a private investor:
+- income tax: private wealth management versus professional ("quasi") trading, under the ESTV criteria in Circular No. 36 (Kreisschreiben Nr. 36, KS 36);
+- income from staking, mining, lending, airdrops and tokens paid as salary;
+- the three token classes the ESTV uses: payment tokens, asset tokens and utility tokens;
+- cantonal wealth tax on crypto at its 31 December value, using the ESTV price list (Kursliste / ICTax);
+- VAT (MWST) on mining, staking and validation services;
+- automatic exchange of information (CRS and CARF);
+- record keeping.
 
-| # | Criterion | Threshold for Private Investor |
-|---|---|---|
-| 1 | Holding period (Haltedauer) | Minimum 6 months |
-| 2 | Transaction volume (Transaktionsvolumen) | Less than 5× the portfolio value at start of year |
-| 3 | Capital gains as share of income (Kapitalgewinne als Einkommensanteil) | Realised capital gains < 50% of taxable income |
-| 4 | Debt financing (Fremdfinanzierung) | No leverage/borrowed funds; or investment income > attributable debt interest |
-| 5 | Derivatives (Derivate) | Derivatives used only to hedge existing positions |
+It does not cover companies that issue tokens (ICO/ITO issuers), withholding tax and stamp duty planning for issuers, or cantonal tariffs. Wealth tax rates, allowances, filing deadlines and cantonal practice differ by canton. Where a canton's rule decides the answer, this Guide says so and refers you to the canton.
 
-**Critical rules:**
-- All five criteria must be met **cumulatively** — failure on even one may trigger professional classification
-- If safe-haven criteria are NOT met, it does not automatically mean professional trader status — a holistic assessment follows
-- The holistic assessment emphasises transaction volume/frequency and use of leverage (Federal Supreme Court 2C.868/2008, 23 October 2009)
+The ESTV's position is set out in its working paper on cryptocurrencies and ICOs/ITOs. The current edition replaces the version of 27 August 2019 and reflects the facts put to the ESTV up to the end of December 2020 ([ESTV working paper, "Kryptowährungen – Besteuerung"](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung)). The working paper states federal practice. Cantons apply the harmonised rules, but they may apply them differently in detail.
 
-### 2.3 Indicators of Professional Trading (Holistic Assessment)
+## Ask the client first
 
-If the safe-haven test fails, the following factors are weighted (in order of importance per Federal Supreme Court precedent):
+- **Canton and commune of residence on 31 December.** Wealth tax and the cantonal and communal income tax depend on them. If the canton is unknown, stop.
+- **Every wallet and exchange account held on 31 December**, with the quantity of each token.
+- **All disposals in the year**: date bought, date sold, purchase price and sale proceeds in CHF.
+- **Securities and cash balances at 1 January**, the start of the tax period. KS 36's volume test uses this figure.
+- **Borrowing**: margin, Lombard loans or any loan used to buy crypto, and the interest paid.
+- **Derivatives**: futures, options or perpetual swaps, and whether they only hedged tokens the client owned.
+- **Net income for the year** (Reineinkommen) from all other sources. Also ask whether trading gains pay living costs.
+- **Income events**: staking rewards (pool or own validator?), mining, lending interest, airdrops, and tokens received as salary or fringe benefits. For each, get the date received and the CHF value at that time.
+- **Tokens bought in an ICO/ITO**, with the token terms: repayment, profit share, or only a right to use a service.
+- **Occupation**: whether the client works in finance or crypto, and whether they trade systematically (bots, full-time).
+- **VAT registration**, if the client validates transactions for fees or runs a mining or staking service for others.
+- **Losses, hacks or lost keys** during the year, with the evidence.
 
-| Factor | Weight | Indicates Professional |
-|---|---|---|
-| Transaction volume and short holding periods | **Primary** | High volume, day-trading, swing-trading |
-| Use of substantial borrowed funds | **Primary** | Lombard loans, margin trading, leveraged positions |
-| Systematic, planned approach | Secondary | Dedicated software, algorithmic trading, full-time activity |
-| Specialist knowledge from professional position | Secondary | Working in finance/crypto industry |
-| Income dependency | Secondary | Trading profits fund living expenses |
-| Continuous, recurring losses | Contra-indicator | Suggests hobby, not professional activity |
+## The method, step by step
 
-**Citation:** ESTV Kreisschreiben Nr. 36; BGer 2C.868/2008; BGer 2C.766/2010; BGer 2C.385/2011
+### Step 1: Classify each token
 
-### 2.4 Consequences of Professional Trader Classification
+The ESTV sorts tokens into three basic classes, following FINMA's guidance. In the working paper's words: "Zahlungs-Token (vorher Payment-Token), Anlage-Token (vorher Asset-Token) und Nutzungs-Token (vorher Utility-Token)". Hybrid tokens exist. Treat each feature on its own merits ([ESTV working paper](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung)).
 
-| Aspect | Treatment |
-|---|---|
-| All capital gains | Taxable as self-employment income |
-| All capital losses | Deductible against other income |
-| Transaction costs | Fully deductible as business expenses |
-| AHV/IV/EO social contributions | ~10% of net self-employment income |
-| Income tax rate | Combined federal + cantonal: up to ~40% (varies by canton and income level) |
-| Accounting obligations | Proper bookkeeping required |
+| Class | What it is | Income tax for a private holder | Wealth tax |
+| --- | --- | --- | --- |
+| Payment token (Zahlungs-Token), e.g. BTC | A pure digital means of payment. The issuer owes the holder nothing | Holding it produces no income. Buying and selling are treated like currency trades: gains are tax-free, losses are not deductible | Yes, at market value at the end of the tax period |
+| Asset token, debt type (Fremdkapital-Token) | Repayment of all or most of the investment, and perhaps interest | Treated as a bond: interest (periodic or one-off) is taxable when realised. Trading gains are tax-free in private wealth | Yes, at market value |
+| Asset token, contract-based (Anlage-Token mit vertraglicher Grundlage) | A share of a figure such as EBIT, revenue or licence income. No repayment | Payments are fully taxable as income from movable assets. There is no tax-free repayment of the capital, and a loss is a non-deductible capital loss | Yes, at market value (founders' tokens at least at the pre-sale price) |
+| Asset token with participation rights (Beteiligungsrechte) | Tokenised shares or participation certificates | Taxed like shares. Check the working paper's section on these | Yes |
+| Utility token (Nutzungs-Token) | Only a right to use a digital service | Trading gains in private wealth are tax-free, and losses are not deductible | Yes |
 
----
+For every class the working paper adds that, depending on the "Art, Umfang und Finanzierung der Transaktionen" (the kind, scale and financing of the dealings), the activity may be self-employment rather than private wealth management. That is Step 2.
 
-## Section 3 -- Rate Tables
+### Step 2: Private wealth management or professional trading (KS 36)
 
-### 3.1 Wealth Tax (Vermögenssteuer)
+Capital gains on private wealth are tax-free under Art. 16 para. 3 DBG. Gains on business assets are self-employment income under Art. 18 DBG. The working paper applies the KS 36 criteria for securities dealing to tokens "analog" (by analogy). KS 36 is dated 27 July 2012 and still sits in the ESTV's list of current circulars ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf); [ESTV circulars list](https://www.estv.admin.ch/de/kreisschreiben-direkten-bundessteuer)).
 
-Wealth tax is levied by **cantons and municipalities only** — there is no federal wealth tax on private individuals.
+**2a. Safe harbour (Vorprüfung).** The tax authorities always treat the activity as private wealth management "wenn die nachfolgenden Kriterien kumulativ erfüllt sind", that is, when all five of these are met:
 
-| Canton | Approximate Effective Rate (on net taxable wealth) | Notes |
-|---|---|---|
-| Zug | 0.15%–0.30% | One of the lowest; crypto-friendly reputation |
-| Nidwalden | 0.15%–0.25% | Very low |
-| Schwyz | 0.20%–0.35% | Low |
-| Zurich | 0.30%–0.60% | Moderate |
-| Bern | 0.35%–0.65% | Moderate |
-| Basel-Stadt | 0.40%–0.75% | Higher |
-| Geneva | 0.50%–1.00% | Among the highest |
-| Vaud | 0.50%–0.80% | Higher |
+| # | KS 36 criterion | How to test it |
+| --- | --- | --- |
+| 1 | The tokens sold were held for **at least 6 months** | Check the holding period for each disposal. Six months exactly passes |
+| 2 | Transaction volume in the calendar year is **not more than five times** the securities and balances held at the start of the tax period | Volume = the sum of all purchase prices plus all sale proceeds. Exactly five times passes |
+| 3 | Capital gains are not needed to replace missing or lost income for living costs | KS 36: this "ist regelmässig dann der Fall, wenn die realisierten Kapitalgewinne weniger als 50% des Reineinkommens in der Steuerperiode betragen". Measure the gains against net income. Do not add the tax-free gain to the net income figure |
+| 4 | The investments are not debt-financed, **or** the taxable investment income (interest, dividends and similar) is greater than the share of debt interest | Most tokens pay no income, so any borrowing usually fails this test |
+| 5 | Derivatives (especially options) are bought and sold only to hedge the client's own positions | Speculative futures or perpetuals fail it |
 
-**Key points:**
-- Rates are **progressive** — higher net wealth = higher marginal rate
-- Most cantons grant exemptions of CHF 50,000–100,000 for single taxpayers and CHF 100,000–200,000 for married couples
-- Smaller crypto portfolios often remain below the exemption threshold and pay no wealth tax
-- Wealth tax applies to the **total net wealth** (all assets minus liabilities), not just crypto
+**2b. If any criterion fails**, professional trading is not proven. KS 36: "Sind diese Kriterien nicht kumulativ erfüllt, kann gewerbsmässiger Wertschriftenhandel nicht ausgeschlossen werden." Judge the case on all its facts, weighing the factors as the Federal Supreme Court does (2C_868/2008, 2C_766/2010, 2C_385/2011):
 
-### 3.2 Income Tax Rates (If Professional Trader)
+| Weight | Factor (KS 36, section 4.3.2) |
+| --- | --- |
+| Primary | Transaction volume: frequent trades and short holding periods. "Unter Umständen kann schon eine einzige Transaktion dazu führen" (in some cases a single transaction is enough) |
+| Primary | Use of substantial borrowed money. KS 36 calls debt financing the strongest single indicator |
+| Primary | Derivatives used beyond hedging, with large volume relative to total wealth |
+| Secondary | A systematic, planned approach, including reinvesting gains in similar assets |
+| Secondary | A close link to the client's job and use of specialist knowledge |
 
-| Level | Maximum Marginal Rate |
-|---|---|
-| Federal (direkte Bundessteuer) | 11.5% |
-| Cantonal + municipal | ~15%–35% (varies widely) |
-| Combined maximum | ~35%–42% (depending on canton) |
+The secondary factors "begründen für sich alleine keine selbständige Erwerbstätigkeit" (do not make it self-employment on their own). They only reinforce a primary factor. Trades made by a bank or an adviser under a mandate count as the client's own. The test is applied year by year, usually when there is a disposal. The authorities give binding rulings only in clear cases.
 
-### 3.3 Social Security (If Professional Trader)
+**2c. Consequences.**
 
-| Contribution | Rate |
-|---|---|
-| AHV/IV/EO (self-employed) | ~10% of net self-employment income (maximum; declining scale) |
-| Additional social security | Varies by canton |
+| Point | Private wealth management | Professional (self-employed) trading |
+| --- | --- | --- |
+| Gains on disposal | Tax-free | Taxable self-employment income (Art. 18 para. 2 DBG) |
+| Losses | Not deductible | Deductible if booked. Without formal books, lists of assets, liabilities, income and expenses are required (KS 36, section 4.4) |
+| Transaction costs | Costs of buying, switching or selling are not deductible | Deductible as business costs |
+| Unused losses | None | Deductible in the seven following years, to the extent not already used (Step 7) |
+| Debt interest | Private interest deductible only up to gross investment income plus CHF 50'000 (federal, KS 36 section 5.2) | Business interest deductible without that limit |
+| Social security | None on gains | Self-employment income is also the base for AHV/IV/EO contributions. **Check** the rate and assessment with the cantonal compensation office: AHV sources are not on a host this Guide may cite |
+| Records | Keep them to prove private status | Keep them 10 years (Step 7) |
 
-### 3.4 ESTV Crypto Valuations — Kursliste 2025 (Selected)
+### Step 3: Tax the income events at their value on receipt
 
-The ESTV publishes official CHF valuations for the most common cryptocurrencies as of 31 December each year.
+The ESTV treats income as realised at inflow ("Zufluss"): when the benefit is received, or when a firm legal claim to it arises. Convert it to CHF at that moment ([ESTV working paper](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung)).
 
-| Cryptocurrency | ESTV Value 31.12.2025 (CHF) |
-|---|---|
-| Bitcoin (BTC) | 69,571.99 |
-| Ethereum (ETH) | 2,364.08 |
-| Others | Published on ESTV Kursliste (ictax.admin.ch) |
+| Event | ESTV treatment | Legal basis cited by the ESTV |
+| --- | --- | --- |
+| Staking through a staking pool | "qualifiziert grundsätzlich als Ertrag aus beweglichem Vermögen": taxable income from movable assets at the value on receipt | Art. 20 para. 1 DBG |
+| Staking as your own validator (no pool) | Check whether the validator is self-employed. If so, the rewards are self-employment income | Art. 18 para. 1 DBG |
+| Mining (proof of work) | The reward is taxable income. If the general criteria for self-employment are met, it is self-employment income | Art. 16 para. 1 and Art. 18 para. 1 DBG |
+| Airdrop (free allocation) | Taxable as income from movable assets at market value on the date of allocation | Working paper, section 2.2.2 |
+| Lending or interest on tokens | The working paper does not deal with DeFi lending. Debt-type asset tokens pay interest that is taxed like bond interest. Treat lending interest as taxable investment income, and say that the point is unsettled | Art. 20 para. 1 DBG (by analogy); **check** with the canton |
+| Salary or fringe benefits paid in tokens | Taxable employment income, shown on the salary certificate (section 1 or 3) at the value on receipt | Art. 17 para. 1 DBG |
+| Holding payment tokens | "generiert in aller Regel keine Einkünfte" (normally produces no income) | Art. 16 para. 1 DBG, e contrario |
 
-**If a token is not on the Kursliste:** Use the documented market value from a reputable exchange (e.g. Coinbase, Kraken, Binance) as of 31 December 2025. Retain evidence.
+Costs directly linked to earning investment income and needed to manage the assets are deductible (Art. 32 para. 1 DBG). Transaction costs of buying, switching or selling are not.
 
-**Citation:** ESTV Kursliste 2025; ictax.admin.ch
+### Step 4: Wealth tax at the 31 December value
 
----
+The Confederation does not tax the wealth of individuals. Every canton and commune does. The base is total net wealth, and ESTV guidance names crypto expressly among the assets: "Der Vermögenssteuer unterliegen alle der steuerpflichtigen Person zustehenden unbeweglichen und beweglichen Vermögenswerte (inklusive Kryptowährungen)". Tariffs, rates and tax-free allowances are "Sache der Kantone" (a matter for the cantons) ([ESTV guide for new taxpayers](https://www.estv.admin.ch/dam/de/sd-web/5-fLbzigwEtn/estv-leitfaden-neue-steuerpflichtige-de.pdf)). Wealth is measured on the reference date, normally the end of the tax period or of tax liability.
 
-## Section 4 -- Cost Basis Methods
+Value each token in this order ([ESTV working paper](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung); [ESTV Kurslisten](https://www.estv.admin.ch/de/kurslisten-ictax)):
 
-### 4.1 Private Investors — Limited Relevance
+1. **ESTV price list (Kursliste / ICTax).** The ESTV publishes tax values for the most widely held cryptocurrencies. The ESTV says of its price-list rates: "Diese Kurse gelten als Steuerwert am 31. Dezember (Art. 14 und 17 Abs. 1 StHG)". Look up the value for the year in ICTax. **Check:** the ICTax database is on a host this Guide may not cite, so it quotes no token values.
+2. **Not on the list:** use the market value on one of the leading trading platforms at the end of the tax period. Keep a screenshot or export.
+3. **No current price can be found:** declare the token at its original purchase price converted into CHF.
 
-For private investors, cost basis tracking is not strictly required for tax purposes since capital gains are tax-free. However, it is **strongly recommended** to:
-- Prove private investor status if challenged
-- Document acquisition costs for tokens that generate income (staking/mining)
-- Prepare for potential future tax law changes
+Staked or locked tokens, and tokens on an exchange, are still the client's wealth. List every token in the securities schedule (Wertschriften- und Guthabenverzeichnis) with the quantity, the CHF value per unit and the total. A client who moved canton during the year, or who has property in another canton, faces intercantonal allocation. Refer that case to the cantons concerned.
 
-### 4.2 Professional Traders — Full Tracking Required
+### Step 5: VAT (MWST)
 
-| Method | Status |
-|---|---|
-| FIFO (First In, First Out) | Accepted; commonly used |
-| Average cost | Accepted |
-| Specific identification | Accepted if documented |
-| LIFO | Not standard practice |
+Most private holders are not VAT-registered, and nothing here changes that. It matters when a person runs validation, mining or staking as a service. ESTV practice is in VAT Info 04, section 2.7.3.5 ([MWST-Info 04, 2.7.3.5](https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/displayDocs/cipherPrinterFriendly.xhtml?componentId=1479334&publicationId=1003047&cipherKeyDate=&language=de)):
 
-### 4.3 Cost Basis Components
+| Activity | VAT treatment |
+| --- | --- |
+| Validation (mining or staking) paid **only** with a block reward | There is no supply ("kein Leistungsverhältnis"). The block reward is a non-consideration under Art. 18 para. 2 MWSTG. The activity is not entrepreneurial, which limits input tax recovery |
+| Validation paid with a **transaction fee** from the sender | A taxable supply. For a recipient in Switzerland it is an electronic service taxed at the standard rate |
+| A miner working in a mining pool | Supplies between the miner and the pool are relevant for VAT. The place of supply follows Art. 8 para. 1 MWSTG |
+| A holder staking through a staking pool | Supplies between the pool and the participant are relevant for VAT. The place of supply follows Art. 8 para. 1 MWSTG |
+| Running nodes (e.g. masternodes, cloud mining) for a third party | In principle a taxable service |
+| Buying, selling or exchanging payment tokens | **Check.** No page on a host this Guide may cite confirms the exemption for exchanging payment tokens. Confirm the treatment with the ESTV before advising |
 
-For professional traders, the acquisition cost includes:
-- Purchase price in CHF at date of acquisition
-- Exchange fees and commissions
-- Network/gas fees
-- Any costs directly attributable to the acquisition
+### Step 6: Automatic exchange of information
 
----
+Switzerland exchanges financial account data under the Common Reporting Standard (CRS). The legal basis came into force on 1 January 2017, and the first exchange took place in 2018. Swiss financial institutions report to the ESTV within six months after the end of the calendar year ([ESTV, AIA](https://www.estv.admin.ch/de/automatischer-informationsaustausch-aia)). The ESTV says the revised CRS "in der Schweiz seit dem 1. Januar 2026 in Kraft ist" (has been in force in Switzerland since 1 January 2026) ([ESTV notice, 4 September 2026](https://www.estv.admin.ch/de/newnsb/b2F6VQ9fb0D6)).
 
-## Section 5 -- DeFi, Staking, Mining, and Airdrop Treatment
+**CARF (the Crypto-Asset Reporting Framework): check.** This Guide gives no Swiss start date for CARF reporting by crypto service providers. The enacted date is published by the State Secretariat for International Finance (SIF) and in the official compilation of federal law, and neither is on a host this Guide may cite. Do not tell a client a date until you have read it in the enacted text. What is certain: foreign tax authorities already receive CRS data, and crypto holdings must be declared whether or not anyone reports them.
 
-### 5.1 Mining
+### Step 7: Records and losses
 
-| Scale | Classification | Tax Treatment |
-|---|---|---|
-| Small-scale / hobby | May be treated as occasional income | Taxable as "übrige Einkünfte" (other income); amount = FMV at receipt |
-| Commercial / regular | Self-employment (selbständige Erwerbstätigkeit) | Full income tax + social security; deduct equipment, electricity, and operating costs |
+- **Self-employed traders and miners.** The federal return guide for tax period 2026 says: "Die mit der selbstständigen Erwerbstätigkeit zusammenhängenden Urkunden und sonstigen Belege sind während 10 Jahren aufzubewahren." (Documents linked to self-employment must be kept for 10 years.) Attach the annual accounts (balance sheet and profit and loss account). If there are no formal books, attach at least lists of assets and liabilities, income and expenses, and private withdrawals and contributions ([Wegleitung 2026](https://www.estv.admin.ch/dam/it/sd-web/oQ0wWcDmCJTS/2a-2026-de.pdf)).
+- **Loss carry-forward.** For tax period 2026, self-employed persons may deduct losses from the seven preceding business years (2019–2025), to the extent the losses were not already used in earlier years (same source).
+- **Private investors.** Keep, for each year, the exchange statements, wallet addresses, the 31 December valuations with their source, the income events with their date and CHF value, and the full trade history. The trade history is the only evidence for the KS 36 holding period and volume tests. Without it, private status cannot be shown if the canton challenges it.
 
-**Note:** The Canton of Thurgau's Steuerpraxis explicitly states: "Mining of Bitcoin through provision of computing power and receipt of income in Bitcoin constitutes taxable income from self-employment in all cases." Other cantons are generally aligned.
+## Figures, with their years
 
-**Citation:** StP 20 Nr. 2 (Canton TG); ESTV Arbeitspapier Kryptowährungen
+| Figure | Value | Year | Source |
+| --- | --- | --- | --- |
+| KS 36 criterion 3 marker: realised gains below this share of net income | 50% | Applies each tax period, KS 36 of 27 July 2012 | [KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf) |
+| KS 36 criterion 1: minimum holding period | 6 months | Same | Same |
+| KS 36 criterion 2: maximum volume | 5 times the securities and balances at the start of the period | Same | Same |
+| Federal cap on deductible private debt interest | Gross investment income plus CHF 50'000 | Current federal rule quoted in KS 36 | Same |
+| Federal income tax on higher taxable incomes | A flat 11.5% of the whole taxable income | Tax period 2026 tariff | [Wegleitung 2026](https://www.estv.admin.ch/dam/it/sd-web/oQ0wWcDmCJTS/2a-2026-de.pdf) |
+| Loss carry-forward for the self-employed | 7 preceding years (2019–2025 for 2026) | Tax period 2026 | Same |
+| Retention of self-employment records | 10 years | Tax period 2026 | Same |
+| Cantonal and communal income tax, wealth tax rates and allowances | Set by each canton | Each year | Refer to the canton |
+| Kursliste values at 31 December | Published by the ESTV in ICTax | Each year | **Check** in ICTax |
 
-### 5.2 Staking
+## Boundaries and exceptions
 
-| Aspect | Treatment |
-|---|---|
-| Classification | Income (Einkommen) at FMV when rewards are received |
-| Tax rate | Ordinary income tax rates (federal + cantonal) |
-| Tax point | When rewards are accessible to the taxpayer |
-| Wealth tax | Staked tokens remain in the wealth tax base (declared at 31 Dec FMV) |
-| Cost basis for future sale | FMV at receipt date (relevant only for professional traders) |
+| Situation | Rule | Source |
+| --- | --- | --- |
+| Holding period exactly 6 months | Passes criterion 1 ("mindestens 6 Monate") | KS 36 |
+| Volume exactly five times the opening balance | Passes criterion 2 ("nicht mehr als das Fünffache") | KS 36 |
+| Gains exactly equal to half of net income | Criterion 3 asks whether the gains are needed to cover living costs. The marker is "weniger als 50%", so exactly half does not meet the marker. Assess the need test on the facts, or treat the safe harbour as failed | KS 36 |
+| Any loan in the portfolio | Criterion 4 fails unless taxable investment income exceeds the share of debt interest. Borrowing is the strongest indicator of trading | KS 36 |
+| Safe harbour failed | No automatic reclassification. Weigh the primary and secondary factors | KS 36, section 4.3 |
+| A single large trade | Can be enough for self-employment in some cases | KS 36, section 4.3.2 |
+| Client waives the debt interest deduction | That alone does not make leveraged holdings private wealth | KS 36, section 4.3.2 |
+| Inherited tokens | The deceased's classification (private or business) carries over to the heirs | KS 36, section 5.3 |
+| Token with no current price | Declare at the original purchase price in CHF | ESTV working paper |
+| Contract-based asset token that fails | A non-deductible capital loss. There is no tax-free repayment | ESTV working paper |
+| Contract-based asset tokens given free to an employee | The difference to market value is a taxable fringe benefit. They are not employee participations under Art. 17a or 17b DBG | ESTV working paper |
+| DeFi lending, liquidity pools, wrapped tokens, hard forks, NFTs, lost keys | No ESTV guidance on a host this Guide may cite. The general rules apply: private gains are tax-free, income on receipt is taxable, and wealth is measured at the year-end value. Refer anything beyond that | Refer |
 
-### 5.3 DeFi Lending
+## Worked cases
 
-| Activity | Treatment |
-|---|---|
-| Interest/yield received | Taxable as income at FMV when received |
-| Principal returned | Not an income event (return of capital) |
-| Principal lost (protocol failure) | Potential deductible loss for professional traders; limited relief for private investors |
+**Case 1: private investor, safe harbour met (tax year 2026).** The client lives in Zurich. On 1 January 2026 the securities and balances are CHF 200,000. During 2026 the client buys crypto for CHF 150,000 and sells for CHF 350,000. Every token sold was held for more than 6 months. There is no borrowing and there are no derivatives. The realised gain is CHF 48,000 and net income from other sources is CHF 120,000. ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf))
+- Volume: CHF 150,000 + CHF 350,000 = CHF 500,000. The limit is five times CHF 200,000 = CHF 1,000,000. Pass. ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf))
+- Gains ratio: CHF 48,000 / CHF 120,000 = 40%, below 50%. Pass. ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf))
+- All five criteria are met, so the activity is private wealth management and the CHF 48,000 gain is tax-free. Holdings at 31 December go into the securities schedule for wealth tax. ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf))
 
-**Warning:** ESTV has not published comprehensive DeFi lending guidance. Conservative approach: treat all yield as taxable income.
+**Case 2: wealth tax valuation.** The client holds 3 BTC on 31 December 2026. **Suppose** the ICTax tax value is CHF 70,000 per BTC (a hypothetical figure; look up the real one). The wealth tax value is 3 × CHF 70,000 = CHF 210,000. It is added to the client's other net wealth and taxed at the canton's tariff after the canton's allowance. ([ESTV Kurslisten](https://www.estv.admin.ch/de/kurslisten-ictax))
 
-### 5.4 Liquidity Providing
+**Case 3: pool staking and an airdrop.** In 2026 the client receives staking rewards from a staking pool worth CHF 1,200 in total at the moments of receipt, and an airdrop worth CHF 500 on the day of allocation. Both are taxable income from movable assets: CHF 1,200 + CHF 500 = CHF 1,700 of taxable income. The reward tokens and airdropped tokens held at 31 December are also wealth. A later private sale of them is a tax-free capital gain. ([ESTV working paper](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung))
 
-| Activity | Treatment |
-|---|---|
-| Adding to LP | Uncertain — may or may not be a disposal for professional traders |
-| Fees/rewards earned | Taxable as income at FMV |
-| Impermanent loss | Not addressed by ESTV |
+**Case 4: exactly at the volume limit.** Securities and balances at 1 January 2026 are CHF 100,000, and volume in 2026 is CHF 500,000. That is exactly five times, which is "not more than" five times, so criterion 2 passes. The other four criteria must still be checked. ([KS 36](https://www.estv.admin.ch/dam/de/sd-web/oOz28af293pZ/dbst-ks-2012-1-036-d-de.pdf))
 
-**Flag for specialist review:** LP positions in DeFi are an evolving area.
+**Case 5: leveraged day trader.** The client trades daily on margin, and positions last days. Criteria 1, 2 and 4 fail. Borrowing and volume are both primary factors, so the activity is very likely professional trading. Result: the gains are self-employment income, booked losses are deductible, unused losses carry forward seven years, and AHV/IV/EO contributions apply (**check** the rate with the compensation office). Federal tax on higher incomes is a flat 11.5%. Cantonal and communal tax come on top. ([Wegleitung 2026](https://www.estv.admin.ch/dam/it/sd-web/oQ0wWcDmCJTS/2a-2026-de.pdf))
 
-### 5.5 Airdrops
+**Case 6: solo miner and VAT.** A client mines alone and is paid only in block rewards. For VAT there is no supply, so no VAT is due on the rewards. The ESTV treats the activity as not entrepreneurial, and input tax on the equipment follows its VAT Info on input tax deduction for non-entrepreneurial activity. For income tax, the rewards are taxable income on receipt, and self-employment income if the general criteria are met.
 
-| Type | Treatment |
-|---|---|
-| Gratuitous airdrop (no action required) | Add to wealth tax portfolio at FMV; acquisition cost = CHF 0 |
-| Airdrop for services | Taxable as income at FMV when received |
+## When to refuse or refer
 
-### 5.6 Hard Forks
+- **Canton unknown**: stop. Wealth tax and most of the income tax depend on the canton.
+- **Safe harbour failed and the facts point both ways**: say that professional trading cannot be excluded. Set out the primary factors and refer to a Swiss tax adviser, or suggest the client ask the canton for a ruling. The authorities give binding rulings only in clear cases.
+- **Anything needing a cantonal figure or practice**: rates, allowances, deadlines, the canton's view on mining scale, DeFi, NFTs, or valuing illiquid tokens. Refer to the canton's tax administration.
+- **CARF start date, AHV rates, Kursliste values and the VAT exemption for exchanging payment tokens**: this Guide cannot cite them. Say "check" and name the official place to look (SIF and the federal law compilation, the compensation office, ICTax, the ESTV VAT division).
+- **Issuers of tokens (ICO/ITO), foundations and companies**: out of scope.
+- **Undeclared crypto from earlier years**: whether a voluntary disclosure (Selbstanzeige) meets the legal conditions is decided by the cantonal tax administration ([ESTV, AIA](https://www.estv.admin.ch/de/automatischer-informationsaustausch-aia)). Refer the client to a Swiss tax adviser before anything is filed.
+- **Moving into or out of Switzerland during the year, or tax in two cantons**: refer.
 
-| Aspect | Treatment |
-|---|---|
-| Original coin | Cost basis unchanged; continue to declare for wealth tax |
-| New forked coin | Acquisition cost = CHF 0; add to wealth tax portfolio at FMV on 31 Dec |
-| Private investor sale | Tax-free capital gain |
-| Professional trader sale | Fully taxable |
+## Filing and payment
 
-### 5.7 ICO/Token Participation
+- **Who files**: every taxpayer files one return each year. With present-year assessment (Gegenwartsbemessung) the income of the calendar year is taxed. The return must be completed truthfully and in full and filed on time. The return is filed with the canton of residence ([ESTV guide for new taxpayers](https://www.estv.admin.ch/dam/de/sd-web/5-fLbzigwEtn/estv-leitfaden-neue-steuerpflichtige-de.pdf)).
+- **Deadline**: set by the canton and printed on the form. Where the ESTV guide describes the procedure, it says the period is "in der Regel 30 Tage". An extension can be requested before the deadline expires. A taxpayer who is reminded and still does not file, or files incomplete returns repeatedly, is assessed at discretion and fined (same source). Look up the canton's actual date and extension practice.
+- **Where crypto goes on the return**: holdings in the securities schedule at the 31 December value; income from staking, airdrops and lending as investment income; mining or trading income as self-employment income with the accounts attached; token salary as employment income from the salary certificate.
+- **Payment**: the canton sets the instalment and interest rules. Refer to the canton.
 
-| Aspect | Treatment |
-|---|---|
-| Investment in ICO/ITO | Acquisition cost = amount invested in CHF |
-| Token received | Declare for wealth tax at FMV (or cost if no market price available) |
-| Subsequent sale (private) | Tax-free capital gain |
-| Subsequent sale (professional) | Taxable income |
+### The 2025 return being filed now (dated section)
 
-**Citation:** ESTV Arbeitspapier "Kryptowährungen und Initial Coin/Token Offerings (ICOs/ITOs)"
+- The rules above apply to tax period 2025 in the same way: the working paper, KS 36 and the valuation order were the same in 2025.
+- Value holdings at 31 December 2025 with the ICTax values for 2025 (**check** them in ICTax; this Guide does not quote them).
+- Test KS 36 against the balances at 1 January 2025, the 2025 trades and 2025 net income.
+- For the self-employed, the seven-year loss carry-forward covers the seven business years before 2025. The 2026 federal return guide lists 2019–2025 for tax period 2026. Use the 2025 return guide for the 2025 range.
+- The revised CRS has been in force in Switzerland since 1 January 2026. CARF: **check**, as in Step 6.
+
+## Completion checklist
+
+- [ ] Canton and commune at 31 December confirmed
+- [ ] Every token classified: payment, asset (debt, contract-based, participation) or utility
+- [ ] All five KS 36 criteria tested with the numbers: holding period, volume against the opening balance, gains against net income, borrowing, derivatives
+- [ ] If the safe harbour fails, primary and secondary factors weighed and written down
+- [ ] Income events listed with their date, CHF value on receipt and legal characterisation (pool staking, own validator, mining, airdrop, lending, salary)
+- [ ] Every 31 December holding valued: ICTax first, then a leading platform, then the original cost in CHF
+- [ ] Securities schedule completed with quantity, unit value and total
+- [ ] Professional case: accounts or lists attached, losses booked, carry-forward tracked, AHV flagged "check"
+- [ ] VAT considered for validation, pool or node services
+- [ ] Items marked "check" (CARF date, AHV rate, ICTax values, VAT exemption on exchanges) either confirmed from the official source or left open in the advice
+- [ ] Records kept: 10 years for the self-employed, and the full trade history for private investors
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 6 -- NFT Treatment
+## Talk to a verified accountant
 
-### 6.1 General Classification
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-NFTs are treated similarly to other crypto-assets under Swiss tax law:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-| Aspect | Private Investor | Professional Trader |
-|---|---|---|
-| Purchase | Acquisition cost recorded | Business expense |
-| Holding | Wealth tax at 31 Dec FMV (may be difficult to value) | Wealth tax + balance sheet item |
-| Sale gain | Tax-free | Taxable as business income |
-| Sale loss | Not deductible | Deductible business loss |
-| Creation and sale | If occasional, tax-free; if regular, self-employment income | Business income |
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-### 6.2 Valuation Challenges
+## Today's figures and who stands behind this skill
 
-NFTs are generally NOT on the ESTV Kursliste. Valuation for wealth tax:
-- Use last sale price on a recognised marketplace (OpenSea, etc.)
-- If no recent sale, use acquisition cost or a reasonable estimate
-- If the NFT has no market value, declare at CHF 0 with a note
-
-### 6.3 NFT Royalties
-
-Secondary sale royalties received by NFT creators are treated as income (self-employment if regular, other income if occasional).
-
----
-
-## Section 7 -- Reporting Requirements
-
-### 7.1 Tax Return Filing
-
-| Element | Where to Report |
-|---|---|
-| Crypto holdings (wealth tax) | Wertschriftenverzeichnis (securities schedule) / État des titres — list each crypto with quantity and CHF value at 31 Dec |
-| Staking/mining income | Einkommen / Revenu — declare as other income |
-| Professional trading income | Einkommen aus selbständiger Erwerbstätigkeit — with profit & loss statement |
-| Capital gains (private) | No reporting required (tax-free) |
-
-### 7.2 Wertschriftenverzeichnis — How to Declare Crypto
-
-For each cryptocurrency held on 31 December:
-
-| Field | What to Enter |
-|---|---|
-| Description | Name of cryptocurrency (e.g. "Bitcoin (BTC)") |
-| Quantity | Number of units held |
-| Valuation | ESTV Kursliste value per unit in CHF; or documented market value |
-| Total value | Quantity × per-unit value |
-| Location/custodian | Exchange name or "private wallet" |
-
-### 7.3 Filing Deadlines (Vary by Canton)
-
-| Canton | Standard Deadline | Extension Available |
-|---|---|---|
-| Zurich | 31 March | Yes (up to 30 September) |
-| Bern | 15 March | Yes |
-| Zug | 30 April | Yes |
-| Geneva | 31 March | Yes |
-| Others | Typically 31 March | Varies |
-
-### 7.4 ESTV Kursliste Access
-
-- Available at: [ictax.admin.ch](https://ictax.admin.ch)
-- Published annually after year-end
-- Covers major cryptocurrencies (BTC, ETH, and many others)
-- Updated annually; check for the relevant tax year
-
-### 7.5 Record-Keeping
-
-| Requirement | Detail |
-|---|---|
-| Retention period | 10 years (Obligationenrecht Art. 958f) for professional traders; recommended 10 years for private investors |
-| Records to maintain | Transaction logs, wallet addresses, exchange statements, ESTV Kursliste screenshots, staking/mining logs |
-| Format | Electronic acceptable; exchanges' CSV exports plus on-chain evidence |
-
-### 7.6 CARF (Crypto-Asset Reporting Framework)
-
-Switzerland has committed to implementing CARF by 2027. This will require Swiss crypto service providers to report user transaction data to the ESTV for automatic exchange with other jurisdictions.
-
----
-
-## Section 8 -- Loss Offset and Carry-Forward
-
-### 8.1 Private Investors
-
-| Scenario | Treatment |
-|---|---|
-| Capital loss on crypto sale | **NOT deductible** — capital gains are tax-free, so capital losses are tax-irrelevant |
-| Wealth tax on depreciating assets | Wealth tax still applies on 31 Dec FMV (but lower value = lower wealth tax) |
-
-### 8.2 Professional Traders
-
-| Scenario | Treatment |
-|---|---|
-| Trading losses | Deductible against all other income (employment, self-employment, etc.) |
-| Net operating loss | Can be carried forward for 7 years (DBG Art. 211; cantonal laws vary) |
-| Transaction costs | Fully deductible |
-| Social security impact | Losses reduce the base for AHV/IV/EO contributions |
-
-### 8.3 Stolen/Lost Crypto
-
-| Scenario | Private Investor | Professional Trader |
-|---|---|---|
-| Hacked exchange | Remove from wealth tax (no longer held on 31 Dec) | Deductible loss |
-| Lost private keys | May argue removal from wealth tax if permanently inaccessible | Deductible if documented |
-| Exchange bankruptcy | Remove from wealth tax once definitively lost | Deductible loss |
-
----
-
-## Section 9 -- Anti-Avoidance Rules
-
-### 9.1 Professional Trader Reclassification
-
-The primary anti-avoidance mechanism is the ESTV's power to reclassify a private investor as a professional trader, thereby subjecting all gains to income tax. This is the most significant risk for active Swiss crypto investors.
-
-### 9.2 Economic Substance
-
-Swiss tax authorities apply substance-over-form principles. Structures lacking economic substance (e.g. crypto held through shell companies in low-tax cantons purely for wealth tax reduction) may be challenged.
-
-### 9.3 Cantonal Tax Competition
-
-While cantonal tax competition is legal and encouraged in Switzerland, moving cantonal domicile purely for wealth tax reduction is legitimate. However, the move must be genuine — a sham relocation may be challenged.
-
-### 9.4 Intercantonal Double Taxation
-
-If a taxpayer has tax obligations in multiple cantons (e.g. property in one, domicile in another), allocation rules apply. Crypto is generally allocated to the canton of domicile.
-
-### 9.5 International Exchange of Information
-
-Switzerland participates in:
-- AEOI (Automatic Exchange of Information) — operational since 2018
-- CARF (Crypto-Asset Reporting Framework) — by 2027
-- Bilateral tax treaties with 100+ countries
-
----
-
-## Section 10 -- Worked Examples
-
-### Example 1 -- Private Investor, Tax-Free Gains + Wealth Tax
-
-**Input:** Swiss resident in Canton of Zurich. Holds 5 BTC purchased in 2022 at CHF 25,000 each. Sold 2 BTC in June 2025 at CHF 65,000 each. Still holds 3 BTC on 31 December 2025. No leverage, no derivatives, holds > 6 months, no other trading. Total other taxable income: CHF 120,000.
-
-**Safe-haven test (Kreisschreiben Nr. 36):**
-```
-1. Holding period ≥ 6 months:          YES (held since 2022)
-2. Transaction volume < 5× start value: YES (2 sales vs portfolio of 5 BTC)
-3. Capital gains < 50% of income:       CHF 80,000 gain vs CHF 120,000 income
-                                         → 80,000 / (120,000 + 80,000) = 40% → YES
-4. No leverage/borrowed funds:           YES
-5. Derivatives for hedging only:         No derivatives used → YES
-
-All 5 criteria met → PRIVATE INVESTOR
-```
-
-**Tax computation:**
-```
-Capital gains: 2 × (CHF 65,000 - CHF 25,000) = CHF 80,000
-Capital gains tax: CHF 0 (tax-free for private investors)
-
-Wealth tax:
-  3 BTC held on 31.12.2025
-  ESTV Kursliste value: CHF 69,571.99 per BTC
-  Crypto wealth: 3 × CHF 69,571.99 = CHF 208,715.97
-  (Added to other wealth for total net wealth calculation)
-  Zurich wealth tax on CHF 208,716 portion: ~CHF 600–1,200 (depends on total net wealth and municipality)
-```
-
-### Example 2 -- Professional Trader Classification
-
-**Input:** Swiss resident in Canton of Zug. Made 500+ trades in 2025. Average holding period 2 weeks. Uses margin trading. Crypto gains = CHF 200,000. Other income: CHF 50,000 (part-time employment).
-
-**Safe-haven test:**
-```
-1. Holding period ≥ 6 months:          NO (average 2 weeks)
-2. Transaction volume < 5× start:      Likely NO (500+ trades)
-3. Capital gains < 50% of income:       200,000 / 250,000 = 80% → NO
-4. No leverage:                         NO (margin trading)
-5. Derivatives for hedging only:         N/A
-
-Multiple criteria FAILED → Safe haven NOT available
-```
-
-**Holistic assessment strongly indicates professional trader:**
-```
-- High volume (500+ trades): YES
-- Short holding periods: YES
-- Substantial leverage: YES
-→ Classification: Professional trader (gewerbsmässiger Händler)
-
-Tax computation:
-  Taxable self-employment income: CHF 200,000
-  Federal income tax: ~CHF 20,000 (11.5% marginal)
-  Cantonal/municipal tax (Zug): ~CHF 16,000 (low-tax canton)
-  AHV/IV/EO: ~CHF 20,000 (10%)
-  Total tax burden: ~CHF 56,000 (~28%)
-
-  Note: Can deduct all trading fees, exchange costs, and losses.
-  Wealth tax also applies on remaining holdings at 31 Dec.
-```
-
-### Example 3 -- Staking Income + Wealth Tax Only
-
-**Input:** Swiss resident in Canton of Geneva. Holds 100 ETH, staked via Lido. Received 5 ETH in staking rewards during 2025 (FMV at receipt dates totalling CHF 12,500). No sales. Private investor (safe-haven met).
-
-**Tax computation:**
-```
-Capital gains: None (no sales)
-Capital gains tax: CHF 0
-
-Staking income:
-  5 ETH received, total FMV: CHF 12,500
-  Taxable as ordinary income
-  Combined federal + cantonal tax (Geneva, ~35%): ~CHF 4,375
-
-Wealth tax:
-  105 ETH held on 31.12.2025
-  ESTV value: CHF 2,364.08 per ETH
-  Crypto wealth: 105 × CHF 2,364.08 = CHF 248,228.40
-  Geneva wealth tax (higher bracket canton): ~CHF 1,500–2,500
-
-Total tax: ~CHF 5,875–6,875
-```
-
----
-
-## Self-Checks
-
-Before finalising any Switzerland crypto computation, verify:
-
-- [ ] Kreisschreiben Nr. 36 safe-haven analysis completed (all 5 criteria)
-- [ ] If safe-haven fails, holistic assessment documented
-- [ ] ESTV Kursliste values used for 31 Dec wealth tax (check ictax.admin.ch)
-- [ ] Tokens not on Kursliste valued from documented exchange rates
-- [ ] Canton of residence identified (critical for wealth tax rates)
-- [ ] Mining/staking income declared as ordinary income at FMV
-- [ ] Wealth tax calculated on total crypto holdings at 31 Dec
-- [ ] All values in CHF at applicable exchange rates
-- [ ] Wertschriftenverzeichnis (securities schedule) completed with all crypto positions
-- [ ] Professional trader consequences assessed (income tax + social security)
-- [ ] Record retention of 10 years for professional; recommended same for private
-- [ ] CARF reporting awareness (2027 implementation)
-
----
-
-## PROHIBITIONS
-
-- NEVER assume all Swiss crypto is completely tax-free — wealth tax applies and income events (staking, mining) are taxable
-- NEVER ignore the Kreisschreiben Nr. 36 safe-haven test — failure triggers professional trader risk
-- NEVER use outdated ESTV Kursliste values — verify for the correct tax year
-- NEVER ignore cantonal differences — wealth tax rates vary by 5–7× between cantons
-- NEVER classify staking/mining income as tax-free capital gains — these are income events
-- NEVER forget AHV/IV/EO social security contributions for professional traders (~10%)
-- NEVER assume professional trader status is always disadvantageous — losses and costs become deductible
-- NEVER omit crypto from the Wertschriftenverzeichnis — all holdings must be declared for wealth tax
-- NEVER treat wallet-to-wallet transfers as disposals
-- NEVER compute professional trader gains without tracking cost basis
-- NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a dipl. Steuerexperte, Treuhänder, or equivalent licensed practitioner in Switzerland) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/switzerland-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `switzerland-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/switzerland-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

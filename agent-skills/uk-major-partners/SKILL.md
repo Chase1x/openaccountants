@@ -1,36 +1,36 @@
 ---
 name: uk-major-partners
-description: "OpenAccountants tax and accounting reference for INTL: uk major partners. Use for cross-border questions in INTL (tax year )."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use when asked about UK Major Partners. Quick Reference"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: INTL
-  category: cross-border
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/uk-major-partners"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/uk-major-partners"
+  jurisdiction: "GLOBAL"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# UK Major Treaty Partners — Withholding Tax Rates
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# UK Major Partners
 
 ## Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | United Kingdom (source/residence) |
 | Countries Covered | US, Germany, France, Ireland, Netherlands, Spain, Italy, Australia, Canada, India, Singapore, Japan, UAE, Switzerland |
 | Number of Treaties | 14 |
 | Last Verified | May 2026 |
 | Key Note | UK does NOT impose domestic WHT on dividends. UK domestic WHT on interest/royalties is 20% (reducible by treaty). |
 
----
-
 ## UK → US
 
+**UK → US treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2)(b) | US domestic rate 30% reduced |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2)(a) | Direct corporate investment |
 | Dividends — parent (≥80% direct, 12+ months) | 0% | Art 10(3) | Qualifying parent-subsidiary |
@@ -42,12 +42,12 @@ metadata:
 **Special provisions:** Comprehensive LOB clause (Art 23). Saving clause preserves US taxing power over US citizens. Zero-rate parent-subsidiary dividends was a first in US treaty practice.
 **Last verified:** May 2026
 
----
-
 ## UK → Germany
 
+**UK → Germany treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Note: pension schemes 10% |
 | Dividends — substantial (≥10% capital) | 5% | Art 10 | Direct investment |
 | Interest | 0% | Art 11 | Taxable only in residence state |
@@ -58,12 +58,12 @@ metadata:
 **Special provisions:** Post-Brexit, EU Parent-Subsidiary Directive no longer applies — bilateral treaty is now the only framework. Profit-participating debt (stiller Gesellschafter) may be reclassified as dividends.
 **Last verified:** May 2026
 
----
-
 ## UK → France
 
+**UK → France treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 11 | Note 1 below |
 | Dividends — substantial (≥10% capital) | 0% | Art 11 | Company liable to corp tax |
 | Dividends — REIT (≥10% capital) | Domestic rate | Art 11(5) | Special REIT provision |
@@ -75,12 +75,12 @@ metadata:
 **Special provisions:** Modified by MLI. 0% direct investment dividend threshold requires only 10% capital (indirect holdings count). Post-Brexit, EU directives no longer apply.
 **Last verified:** May 2026
 
----
-
 ## UK → Ireland
 
+**UK → Ireland treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 11 | Standard rate |
 | Dividends — substantial (≥10% voting) | 5% | Art 11 | Direct investment |
 | Interest | 0% | Art 12 | Taxable only in residence state |
@@ -91,12 +91,12 @@ metadata:
 **Special provisions:** Post-Brexit, CTA (common travel area) provisions continue but EU directives ceased. Ireland revenue confirms 0/5/15 split on dividends. Treaty modified by MLI — PPT applies.
 **Last verified:** May 2026
 
----
-
 ## UK → Netherlands
 
+**UK → Netherlands treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% capital) | 10% | Art 10 | See note below |
 | Interest | 0% | Art 11 | Taxable only in residence state |
@@ -107,12 +107,12 @@ metadata:
 **Special provisions:** Netherlands conditional WHT (25.8% for 2026) applies to payments to low-tax jurisdictions — UK is NOT on the Dutch low-tax list. The 2008 treaty uses ≥10% capital threshold (not voting power). Modified by MLI.
 **Last verified:** May 2026
 
----
-
 ## UK → Spain
 
+**UK → Spain treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 10% | Art 10 | Lower than many UK treaties |
 | Dividends — substantial (≥10% capital) | 0% | Art 10 | Full exemption |
 | Dividends — REIT/property (≥10% capital) | 15% | Art 10 | Property income dividends |
@@ -124,12 +124,12 @@ metadata:
 **Special provisions:** Pension scheme dividends exempt from Spanish tax. One of the most favourable UK treaties for portfolio dividends (10% vs typical 15%). Modified by MLI.
 **Last verified:** May 2026
 
----
-
 ## UK → Italy
 
+**UK → Italy treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% voting) | 5% | Art 10 | Direct investment |
 | Interest | 10% | Art 11 | NOT zero — higher than most UK treaties |
@@ -140,12 +140,12 @@ metadata:
 **Special provisions:** Post-Brexit, EU Interest & Royalties Directive no longer applies — the 10%/8% treaty rates now bite. Government-to-government interest exempt. This treaty lacks an arbitration clause. Italy domestic WHT: dividends 26%, interest 26%, royalties 30%.
 **Last verified:** May 2026
 
----
-
 ## UK → Australia
 
+**UK → Australia treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2)(b) | Standard rate |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2)(a) | Direct investment |
 | Dividends — parent (≥80% voting, 12+ months) | 0% | Art 10(3) | Full exemption |
@@ -157,12 +157,12 @@ metadata:
 **Special provisions:** Royalty definition does not follow standard OECD model — check exact wording. Parent-subsidiary 0% requires 80% voting for 12 months. Financial institution interest exemption requires unrelated parties dealing at arm's length.
 **Last verified:** May 2026
 
----
-
 ## UK → Canada
 
+**UK → Canada treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Standard rate |
 | Dividends — substantial (≥10% voting) | 5% | Art 10 | Direct investment |
 | Interest | 10% | Art 11(2) | Government interest exempt |
@@ -174,12 +174,12 @@ metadata:
 **Special provisions:** Split royalty rates — copyright/patent/software royalties at 0%, other royalties at 10%. MLI PPT now applies. Canada domestic WHT is 25% on dividends/interest/royalties.
 **Last verified:** May 2026
 
----
-
 ## UK → India
 
+**UK → India treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — general | 10% | Art 11(2)(b) | Standard rate |
 | Dividends — property investment vehicle | 15% | Art 11(2)(a) | Immovable property income |
 | Interest — general | 15% | Art 12(2) | Higher than most UK treaties |
@@ -194,12 +194,12 @@ metadata:
 **Special provisions:** India has a separate FTS article (Art 13) — unusual in UK treaties. Export credit guaranteed loans exempt. India requires Form 10F (now Form 41 under IT Act 2025) + TRC. MLI PPT applies. India domestic WHT: dividends 20%, interest 20%, royalties/FTS 10%.
 **Last verified:** May 2026
 
----
-
 ## UK → Singapore
 
+**UK → Singapore treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 0% | Art 10 | Full exemption |
 | Dividends — substantial | 0% | Art 10 | Full exemption |
 | Dividends — UK REIT | 15% | Art 10 | Property income exception |
@@ -211,12 +211,12 @@ metadata:
 **Special provisions:** Singapore does not levy WHT on dividends domestically. The 0% treaty dividend rate is bilateral. Bank/FI interest exempt. Singapore domestic WHT: interest 15%, royalties 10%. Modified by MLI.
 **Last verified:** May 2026
 
----
-
 ## UK → Japan
 
+**UK → Japan treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 10% | Art 10(2) | Standard rate |
 | Dividends — substantial (≥10% voting, 6 months) | 0% | Art 10(3) | Full exemption |
 | Interest | 0% | Art 11 | 10% if return is contingent on profits |
@@ -227,12 +227,12 @@ metadata:
 **Special provisions:** Anti-conduit rules for interest (Art 11(6)) and royalties (Art 12(5)). 6-month holding period for reduced dividend rate. Arbitration clause (Art 25). Japan domestic WHT: dividends 15-20%, interest 15-20%, royalties 20%.
 **Last verified:** May 2026
 
----
-
 ## UK → UAE
 
+**UK → UAE treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends | 0% | Art 10 | UAE has no income tax on dividends |
 | Interest | 0% | Art 11 | UAE has no income tax on interest |
 | Royalties | 0% | Art 12 | Taxable only in residence state |
@@ -242,12 +242,12 @@ metadata:
 **Special provisions:** UAE introduced 9% corporate tax in June 2023 but with extensive exemptions. Treaty is effectively 0% across the board. UAE does not currently levy WHT on any payment type. The treaty primarily benefits UK-resident recipients of UAE-source income (preventing any future UAE WHT from exceeding treaty rates).
 **Last verified:** May 2026
 
----
-
 ## UK → Switzerland
 
+**UK → Switzerland treaty rates**
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10 | Swiss domestic WHT is 35% |
 | Dividends — substantial (≥10% capital) | 0% | Art 10 | Full exemption |
 | Dividends — pension scheme | 0% | Art 10 | Pension scheme exemption |
@@ -259,14 +259,14 @@ metadata:
 **Special provisions:** Swiss domestic WHT on dividends is 35% — treaty relief critical. 0% for ≥10% capital holdings and pension schemes. Swiss refund procedure (Verrechnungssteuer) required to reclaim excess. Arbitration available.
 **Last verified:** May 2026
 
----
-
 ## PE Threshold Notes
 
 Standard PE thresholds under UK treaties are generally 12 months for construction/installation projects. Notable deviations:
 
+**PE Threshold Notes**
+
 | Treaty Partner | Construction PE Threshold | Service PE Threshold | Notes |
-|---------------|--------------------------|---------------------|-------|
+| --- | --- | --- | --- |
 | US | 12 months | None specified | Art 5(3) |
 | Germany | 12 months | None specified | Art 5(3) |
 | France | 12 months | None specified | Art 5(3) |
@@ -279,12 +279,12 @@ Standard PE thresholds under UK treaties are generally 12 months for constructio
 
 **India's 90-day PE threshold** is significantly shorter than most UK treaties and requires careful monitoring for on-site projects.
 
----
-
 ## Key Procedural Requirements
 
+**Key Procedural Requirements**
+
 | Country | Form Required | Filing Deadline | Notes |
-|---------|--------------|-----------------|-------|
+| --- | --- | --- | --- |
 | US | W-8BEN / W-8BEN-E | Before payment | Must certify LOB eligibility |
 | Germany | Freistellungsantrag | Before payment preferred | Application for exemption |
 | France | None standard for services | — | CoR sufficient |
@@ -294,12 +294,12 @@ Standard PE thresholds under UK treaties are generally 12 months for constructio
 | Australia | CoR from UK | Before payment | No standard form |
 | Switzerland | Form 82/83 (refund) | Within 3 years | Swiss refund procedure |
 
----
-
 ## Summary: Zero-WHT Corridors (All Three Categories)
 
+**Summary: Zero-WHT Corridors (All Three Categories)**
+
 | Corridor | Dividends (substantial) | Interest | Royalties |
-|----------|------------------------|----------|-----------|
+| --- | --- | --- | --- |
 | UK ↔ US | 5% (0% at 80%) | 0% | 0% |
 | UK ↔ Germany | 5% | 0% | 0% |
 | UK ↔ France | 0% (≥10%) | 0% | 0% |
@@ -308,12 +308,28 @@ Standard PE thresholds under UK treaties are generally 12 months for constructio
 | UK ↔ UAE | 0% | 0% | 0% |
 | UK ↔ Switzerland | 0% (≥10%) | 0% | 0% |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Treaty rates are subject to change through protocol amendments and renegotiations. Always verify current treaty text before relying on any rate. All outputs must be reviewed by a qualified professional before filing or acting upon.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/uk-major-partners) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-major-partners` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-major-partners. If neither is available, confirm every figure against the official source pages cited above before relying on it.

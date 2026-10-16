@@ -1,15 +1,13 @@
 ---
 name: pk-bookkeeping
-description: "> Use this skill whenever asked about record-keeping and bookkeeping for self-employed people and small businesses in Pakistan. Trigger on phrases like \"Pakistan bookkeeping\", \"records for FBR\", \"invoice requirements Pakistan\", \"freelancer records Pakistan\", \"what records to keep FBR\". Covers the records a business individual must keep, foreign-remittance evidence for IT exporters, invoicing, and retention. ALWAYS read before any Pakistan bookkeeping work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about record-keeping and bookkeeping for self-employed people and small businesses in Pakistan. Trigger on phrases like \"Pakistan bookkeeping\", \"records for FBR\", \"invoice requirements Pakistan\", \"freelancer records Pakistan\", \"what records to keep FBR\". Covers the records a business individual must keep, foreign-remittance evidence for IT exporters, invoicing, and retention. ALWAYS read before any Pakistan bookkeeping work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pk-bookkeeping"
-  tax_year: 2026
-  obligation: BT
+  openaccountants_url: "https://www.openaccountants.com/skills/pk-bookkeeping"
+  jurisdiction: "PK"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Pakistan Bookkeeping & Records — Skill v1.0
@@ -47,8 +45,8 @@ A freelancer keeps: monthly Upwork statements, the bank's PRC for each USD remit
 - NEVER state the retention period without verifying s.174 of the Income Tax Ordinance.
 
 ## Disclaimer
-Informational only; not advice. Verify record/retention rules with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify record/retention rules with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-bookkeeping) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pk-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pk-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.

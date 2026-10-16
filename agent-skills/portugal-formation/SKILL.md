@@ -1,27 +1,51 @@
 ---
 name: portugal-formation
-description: "> Utilize esta skill sempre que lhe perguntarem sobre constituição, incorporação ou registo de uma empresa em Portugal. Acione perante expressões como \"constituir empresa em Portugal\", \"constituição de Lda\", \"sociedade por quotas\", \"Empresa na Hora\", \"constituição de empresa portuguesa\", \"registar negócio em Portugal\", \"sociedade unipessoal\", \"NIF Portugal\", \"Registo Comercial\", ou qualquer questão sobre o início de uma entidade empresarial em Portugal. Abrange tipos de entidade (Lda, SA, ENI), processo de registo, requisitos de capital, custos, cumprimento pós-constituição e abertura de conta bancária. LEIA SEMPRE esta skill antes de aconselhar sobre a constituição de empresas em Portugal. Trigger also on: \"set up a company in Portugal\", \"Lda formation\", \"sociedade por quotas\", \"Empresa na Hora\", \"Portuguese company formation\", \"register a business Portugal\", \"sociedade unipessoal\", \"NIF Portugal\", \"Registo Comercial\"."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Utilize esta skill sempre que lhe perguntarem sobre constituição, incorporação ou registo de uma empresa em Portugal. Acione perante expressões como \"constituir empresa em Portugal\", \"constituição de Lda\", \"sociedade por quotas\", \"Empresa na Hora\", \"constituição de empresa portuguesa\", \"registar negócio em Portugal\", \"sociedade unipessoal\", \"NIF Portugal\", \"Registo Comercial\", ou qualquer questão sobre o início de uma entidade empresarial em Portugal. Abrange tipos de entidade (Lda, SA, ENI), processo de registo, requisitos de capital, custos, cumprimento pós-constituição e abertura de conta bancária. LEIA SEMPRE esta skill antes de aconselhar sobre a constituição de empresas em Portugal. Trigger also on: \"set up a company in Portugal\", \"Lda formation\", \"sociedade por quotas\", \"Empresa na Hora\", \"Portuguese company formation\", \"register a business Portugal\", \"sociedade unipessoal\", \"NIF Portugal\", \"Registo Comercial\"."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: formation
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-formation"
-  tax_year: 2025
-  obligation: FORM
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-formation"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — Constituição de Empresa e Selecção de Entidade — Skill v1.1
+# Portugal Formation
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal — Constituição de Empresa e Selecção de Entidade — Skill v1.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Constituição de Empresa
+
+- **Lda — capital mínimo** — €1 por quota (mín. €2 total)  _(CSC)_
+- **Unipessoal Lda — capital** — €1  _(CSC)_
+- **SA — capital mínimo** — €50.000 (30% à constituição)  _(CSC)_
+- **ENI** — Sem personalidade jurídica, responsabilidade ilimitada
+- **Empresa na Hora (padrão)** — €360  _(DL 111/2005)_
+- **Empresa Online (pacto pré-aprovado)** — €220  _(gov.pt)_
+- **Empresa Online (pacto customizado)** — €360  _(gov.pt)_
+- **Certificado de admissibilidade** — €75 (online) / €150 (urgente)  _(RNPC)_
+- **IES** — Até 15 julho do ano seguinte  _(AT)_
+- **IRC (Modelo 22)** — Até 31 maio do ano seguinte  _(AT)_
+- **RCBE (beneficiário efetivo)** — Na constituição + confirmação anual  _(IRN)_
+- **Declaração início atividade** — 15 dias  _(AT)_
+- **Contabilista Certificado** — Obrigatório (responsabilidade legal)  _(DL 158/2009)_
+- **Taxa normal** — 2025: 21% ; 2026: 19%  _(Código IRC)_
+- **PME — primeiros €50.000** — 2025: 16% ; 2026: 15%  _(Código IRC)_
 
 ## Secção 1 -- Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Moeda | EUR |
 | Registo comercial | Instituto dos Registos e do Notariado (IRN) / Conservatória do Registo Comercial |
@@ -30,12 +54,12 @@ metadata:
 | Taxa de IRC | 21% (taxa geral); 17% sobre os primeiros €50.000 para PME em regiões do interior |
 | Versão da skill | 1.1 |
 
----
-
 ## Secção 2 -- Comparação de Tipos de Entidade
 
+**Comparação de Tipos de Entidade**
+
 | Característica | Empresário em Nome Individual (ENI) | Sociedade por Quotas (Lda) | Sociedade Unipessoal por Quotas (Unipessoal Lda) | Sociedade Anónima (SA) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Personalidade jurídica | Não | Sim | Sim | Sim |
 | Responsabilidade | Ilimitada | Limitada à entrada de capital | Limitada | Limitada |
 | Sócios mínimos | 1 | 2 | 1 | 5 (ou 1 se detida por outra sociedade) |
@@ -45,8 +69,6 @@ metadata:
 | Auditoria obrigatória | Não | Apenas se ultrapassados os limites | Apenas se ultrapassados os limites | Sim (ROC obrigatório acima dos limites) |
 
 **Predefinição recomendada:** Sociedade por Quotas (Lda) ou Sociedade Unipessoal por Quotas para a maioria dos fins comerciais.
-
----
 
 ## Secção 3 -- Processo de Registo
 
@@ -82,27 +104,28 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 6. Demora 1--3 semanas; mais dispendioso devido aos emolumentos notariais
 
 ### Passos Pós-Registo (Todas as Opções)
+
 - Inscrição em IRC junto da Autoridade Tributária e Aduaneira
 - Inscrição em IVA se aplicável
 - Inscrição na Segurança Social como entidade empregadora (em caso de contratação)
 - Apresentar a Declaração de Início de Atividade no prazo de 15 dias
 
----
-
 ## Secção 4 -- Requisitos de Capital
 
+**Requisitos de Capital**
+
 | Tipo de Entidade | Capital Social Mín. | Realização Mín. | Prazo de Realização | Entradas em Espécie |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Lda (vários sócios) | €2 (mín. €1 por quota) | Sem mínimo na constituição | Depósito em 5 dias úteis ou entrega em caixa até ao fim do 1.º exercício | Permitidas (avaliação por ROC obrigatória acima de €5.000) |
 | Unipessoal Lda | €1 | Igual à Lda | Igual à Lda | Permitidas |
 | SA | €50.000 | 30% na constituição | Restante conforme estatutos | Permitidas (relatório de ROC obrigatório) |
 
----
-
 ## Secção 5 -- Repartição de Custos
 
+**Repartição de Custos**
+
 | Componente de Custo | Valor (EUR) | Notas |
-|---|---|---|
+| --- | --- | --- |
 | Empresa na Hora (normal) | €360 | Tudo incluído: registo, NIF, NISS |
 | Empresa na Hora (com marca, 1 classe) | €360 + €200 | Inclui registo de marca |
 | Empresa Online (estatutos pré-aprovados) | €220 | Processo digital |
@@ -114,19 +137,21 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 
 ### Manutenção Anual
 
+**Manutenção Anual**
+
 | Item | Custo (EUR) |
-|---|---|
+| --- | --- |
 | Contabilista Certificado | €1.200--€3.600/ano |
 | Entrega de IES/IRC | Incluído nos honorários do contabilista |
 | Certidão permanente (acesso ao registo online) | €25/ano |
 | Publicações obrigatórias | Incluído na entrega da IES |
 
----
-
 ## Secção 6 -- Cumprimento Pós-Constituição
 
+**Cumprimento Pós-Constituição**
+
 | Obrigação | Prazo | Autoridade |
-|---|---|---|
+| --- | --- | --- |
 | IES (Informação Empresarial Simplificada) | Até 15 de Julho do ano seguinte | Autoridade Tributária |
 | Declaração de IRC (Modelo 22) | Até 31 de Maio do ano seguinte | Autoridade Tributária |
 | Declarações de IVA | Mensal ou trimestral | Autoridade Tributária |
@@ -134,11 +159,10 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 | Registo Central do Beneficiário Efetivo (RCBE) | Na constituição + confirmação anual | IRN |
 | Contribuições para a Segurança Social | Mensal | Instituto da Segurança Social |
 
----
-
 ## Secção 7 -- Abertura de Conta Bancária
 
 ### Documentos Habitualmente Exigidos
+
 - Certidão permanente (certidão online da empresa)
 - Pacto social
 - NIF da empresa e de todos os gerentes/sócios
@@ -147,19 +171,21 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 - Declaração de início de atividade
 
 ### Prazos Típicos
+
 - 1--5 dias (os bancos portugueses são relativamente rápidos para residentes)
 - 1--3 semanas para sócios fundadores não residentes
 
 ### Bancos Comuns
+
 - Caixa Geral de Depósitos, Millennium BCP, Novo Banco, BPI (tradicionais)
 - Revolut Business, Wise Business (digitais)
 
----
-
 ## Secção 8 -- Considerações para Sócios Fundadores Estrangeiros
 
+**Considerações para Sócios Fundadores Estrangeiros**
+
 | Questão | Resposta |
-|---|---|
+| --- | --- |
 | Gerentes não residentes permitidos? | Sim -- NIF obrigatório (obtido através de representante fiscal) |
 | Representante fiscal exigido? | Sim, para residentes fora da UE/EEE (representante nomeado em Portugal para efeitos fiscais) |
 | Presença física exigida? | Sim para a Empresa na Hora; aceite procuração para a via tradicional/online |
@@ -168,26 +194,20 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 | Restrições à propriedade estrangeira | Nenhumas para a Lda comum; sectores regulados podem exigir autorizações específicas |
 | Golden Visa | Autorização de residência por investimento (€500.000+ em investimento em fundos, conforme reforma de 2023) |
 
----
-
 ## Secção 9 -- Erros Comuns e Recusas
 
-**R-PT-F1 -- Dispensar o Contabilista Certificado.** "Toda a empresa portuguesa tem de ter um Contabilista Certificado (CC) nomeado. Trata-se de uma exigência legal, não opcional. O CC é pessoalmente responsável pela exactidão das declarações fiscais."
-
-**R-PT-F2 -- Não depositar o capital a tempo.** "O capital tem de ser depositado no prazo de 5 dias úteis após a constituição via Empresa na Hora, ou entregue em caixa social até ao final do primeiro exercício. O incumprimento pode gerar responsabilidade pessoal dos gerentes."
-
-**R-PT-F3 -- Não residente sem representante fiscal.** "Os residentes fora da UE/EEE têm de nomear um representante fiscal em Portugal antes de obter um NIF. Sem NIF não é possível constituir a sociedade."
-
-**R-PT-F4 -- Sociedade veículo para Golden Visa.** "A mera constituição da empresa não confere direito ao Golden Visa. O investimento tem de cumprir critérios específicos (investimento em fundos, criação de postos de trabalho, etc.), nos termos da reforma de 2023. Não aconselhe a constituição como via para obtenção de visto sem aconselhamento especializado em imigração."
-
-**R-PT-F5 -- Incumprimento do RCBE.** "A falta de entrega e confirmação anual do Registo Central do Beneficiário Efetivo (RCBE) impede a sociedade de celebrar contratos, receber fundos ou distribuir lucros."
-
----
+- **R-PT-F1** — Dispensar o Contabilista Certificado. "Toda a empresa portuguesa tem de ter um Contabilista Certificado (CC) nomeado. Trata-se de uma exigência legal, não opcional. O CC é pessoalmente responsável pela exactidão das declarações fiscais."
+- **R-PT-F2** — Não depositar o capital a tempo. "O capital tem de ser depositado no prazo de 5 dias úteis após a constituição via Empresa na Hora, ou entregue em caixa social até ao final do primeiro exercício. O incumprimento pode gerar responsabilidade pessoal dos gerentes."
+- **R-PT-F3** — Não residente sem representante fiscal. "Os residentes fora da UE/EEE têm de nomear um representante fiscal em Portugal antes de obter um NIF. Sem NIF não é possível constituir a sociedade."
+- **R-PT-F4** — Sociedade veículo para Golden Visa. "A mera constituição da empresa não confere direito ao Golden Visa. O investimento tem de cumprir critérios específicos (investimento em fundos, criação de postos de trabalho, etc.), nos termos da reforma de 2023. Não aconselhe a constituição como via para obtenção de visto sem aconselhamento especializado em imigração."
+- **R-PT-F5** — Incumprimento do RCBE. "A falta de entrega e confirmação anual do Registo Central do Beneficiário Efetivo (RCBE) impede a sociedade de celebrar contratos, receber fundos ou distribuir lucros."
 
 ## Secção 10 -- Cronograma
 
+**Cronograma**
+
 | Etapa | Duração | Acumulado |
-|---|---|---|
+| --- | --- | --- |
 | Obter NIF (se sócio estrangeiro) | 1--10 dias | Dia 1--10 |
 | Marcação Empresa na Hora | 1 dia (no próprio dia) | Dia 2--11 |
 | Empresa legalmente constituída | Imediato | Dia 2--11 |
@@ -195,11 +215,9 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 | Declaração de início de atividade | No prazo de 15 dias | Dia 3--26 |
 | Conta bancária totalmente operacional | 1--5 dias | Dia 4--21 |
 | Entrega do RCBE | No prazo de 30 dias | Dia 4--41 |
-| **Pronta para operar** | | **Em apenas 1--2 dias (residentes via Empresa na Hora)** |
+| **Pronta para operar** |  | **Em apenas 1--2 dias (residentes via Empresa na Hora)** |
 
 A Empresa na Hora é um dos processos de constituição de empresas mais rápidos do mundo.
-
----
 
 ## Aviso Legal
 
@@ -207,6 +225,24 @@ Esta skill e os seus resultados são fornecidos apenas para fins informativos e 
 
 A versão mais actualizada e verificada desta skill encontra-se em [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-formation) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

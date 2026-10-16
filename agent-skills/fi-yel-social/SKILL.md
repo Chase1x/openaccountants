@@ -1,299 +1,192 @@
 ---
 name: fi-yel-social
-description: "> Use this skill whenever asked about Finland YEL pension insurance or social security for self-employed persons. Trigger on phrases like \"YEL\", \"YEL insurance\", \"yrittäjän eläkelaki\", \"self-employed pension Finland\", \"Finnish pension insurance\", \"entrepreneur pension\", \"YEL income\", \"YEL contribution\", \"sickness allowance Finland\", \"disability pension self-employed Finland\", \"new entrepreneur discount\", or any question about mandatory social insurance obligations for Finnish self-employed. Covers YEL contribution rates, income thresholds, provider selection, tax deductibility, and social security benefits. ALWAYS read this skill before advising on Finnish self-employed social insurance."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Finland YEL pension insurance or social security for self-employed persons. Trigger on phrases like \"YEL\", \"YEL insurance\", \"yrittäjän eläkelaki\", \"self-employed pension Finland\", \"Finnish pension insurance\", \"entrepreneur pension\", \"YEL income\", \"YEL contribution\", \"sickness allowance Finland\", \"disability pension self-employed Finland\", \"new entrepreneur discount\", or any question about mandatory social insurance obligations for Finnish self-employed. Covers YEL contribution rates, income thresholds, provider selection, tax deductibility, and social security benefits. ALWAYS read this skill before advising on Finnish self-employed social insurance."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: FI
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/fi-yel-social"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/fi-yel-social"
+  jurisdiction: "FI"
+  tax_year: "2026"
+  last_updated: "2026-09-25"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# Finland YEL Self-Employed Pension Insurance Skill v1.0
+# Finland YEL and self-employed social insurance — 2026 editorial draft
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+**Status:** **Source-cited draft** by the OpenAccountants team. It is not accountant-authored, accountant-verified or an attestation.
 
----
+**Scope:** Use this method for ordinary Finnish self-employment to screen YEL eligibility, set proposed confirmed income, arrange the policy, calculate the 2026 contribution and route the tax deduction. It also flags the 2026 health insurance contributions and unemployment-fund conditions that depend on confirmed income. It does not decide international social-security coordination, disputed worker status, MYEL, benefit entitlement or a provider's individual decision.
 
-## Section 1 -- Quick Reference
+## Rates and decision figures
 
-| Field | Value |
-|---|---|
-| Country | Finland (Republic of Finland / Suomen tasavalta) |
-| System | YEL -- Self-Employed Persons' Pensions Act (Yrittäjän eläkelaki 1272/2006) |
-| Currency | EUR only |
-| Insurance year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Self-Employed Persons' Pensions Act (YEL, 1272/2006) |
-| Supervising authority | Financial Supervisory Authority (Finanssivalvonta / FIN-FSA) |
-| Key bodies | Pension insurance companies: Varma, Ilmarinen, Elo, Veritas |
-| Validated by | Pending |
-| Validation date | Pending |
-| Skill version | 1.0 |
+| Item | 2026 figure or worked amount | Source / qualification |
+| --- | --- | --- |
+| Source | Figures in this table | [ETK YEL FAQs](https://www.etk.fi/en/finnish-pension-system/pensions/pension-coverage-and-insurance/faqs-on-yel-insurance/); [Työeläke YEL income](https://www.tyoelake.fi/en/pensions-for-the-self-employed/what-is-yel-income/) |
+| Annual lower / upper confirmed income | €9,423.09 / €214,000 | Eligibility limits. |
+| Contribution / new-entrepreneur reduction | 24.40% / 22% | Initial reduction has the stated historical conditions. |
+| Senior Oy shareholder test | more than 30% alone / more than 50% with family | Shares or voting rights. |
+| Contribution flexibility | 10–100% increase / 10–20% reduction | Provider route and terms apply. |
+| Review cap / pension accrual / unemployment-security income | €4,000 / 1.5% / €15,481 | Review and benefit rules have separate conditions. |
+| Health insurance (Vero, 2026): self-employed daily allowance contribution | 1.11% where annual income is €17,255 or more; 0.23% where it is less | Age 16 to 67; Vero uses the YEL confirmed income. Separate health care contribution 1.10% on wage and work income as taxed. |
+| Ordinary illustrative contribution | €30,000 × 24.40% = €7,320; €7,320 ÷ 12 = €610 | A mathematical example, not an invoice schedule. |
+| Eligible illustrative reduction | €7,320 × 78% = €5,709.60 | Apply only after confirming history. |
 
-### YEL Contribution Rates (2025)
+## Ask the client first
 
-| Age Group | Contribution Rate |
-|---|---|
-| 18 -- 52 years | 24.10% |
-| 53 -- 62 years | 25.60% |
-| 63 -- 69 years | 24.10% |
+- When did the self-employment begin, and has it lasted (or will it last) at least four months without interruption after age 18?
+- Is the person drawing an old-age, early old-age, partial old-age, disability or unemployment pension?
+- Does the person also have a job (employment or service relationship)? It does not remove the YEL obligation.
+- Does a spouse or other family member work in the business, are they paid, and does the spouse have split earnings in taxation?
+- Has the person taken out voluntary pension insurance? It does not replace YEL.
+- What work does the person actually perform, for how many hours, and what would an equally qualified outsider be paid?
+- What are the entity, contract, ownership, voting-right and senior-position facts?
+- Which countries are involved, and is there an A1 or applicable-country decision?
+- Which pension provider, prior YEL periods, payer and provider quote apply?
 
-### New Entrepreneur Discount (2025)
+## 1. Collect the record
 
-| Item | Value |
-|---|---|
-| Discount | 22% off the standard contribution rate |
-| Duration | First 48 months (4 years) of YEL insurance |
-| Effective rate (ages 18-52, 63-69) | 18.798% |
-| Effective rate (ages 53-62) | 19.968% |
-| Eligibility | First-time YEL insurance; not previously insured under YEL for more than 18 months |
+Retain date of birth; any pension being drawn; work start, duration, hours, role, skills and responsibility; entity and contract facts; shares, votes, position and relevant family ownership; country/A1 facts; pension history; provider quote; payer; outsider-wage evidence; and the field, turnover, work-scope and professional-skill data used for the provider calculation service. Do not set YEL income from revenue, profit, dividends or a preferred benefit level. The one exception is a light entrepreneur using an invoicing service: there the size of the invoicing indicates the value of the work input.
 
-### YEL Income Thresholds (2025)
+## 2. Eligibility
 
-| Threshold | Amount (EUR/year) |
-|---|---|
-| Minimum YEL income (mandatory insurance threshold) | €9,208.43 |
-| Maximum YEL income | €209,125.00 |
-| Unemployment benefit eligibility threshold | €15,128.00 |
+YEL is required only if all of these hold: the person works in the activity (simply owning a company is not enough); is self-employed, not in an employment or service relationship; is at least 18 and below the age end for their birth year; the self-employment has lasted at least four months without interruption after they turned 18; they live in Finland, or live in another EU country while working as self-employed in Finland (the EU Regulation or a social security agreement can displace this); and 2026 annual confirmed income is at least €9,423.09. Self-employment carried on alongside a job, or seasonally, is covered if it meets these conditions: the employment does not remove the YEL obligation, and TyEL for the job and YEL for the business run side by side. Voluntary pension insurance does not replace YEL. The obligation ends at 68 for people born in 1957 or earlier, 69 for 1958–1961, and 70 for 1962 or later, and it ends at the end of the calendar month in which the person reaches that age.
 
-### 2026 Comparison
+The 2026 upper confirmed-income limit is €214,000. A kiosk operated for three months each year can still require YEL where the seasonal activity continues year to year and the other conditions are met: the YEL policy is continuous and valid year round.
 
-| Item | 2025 | 2026 |
-|---|---|---|
-| Contribution rate (all ages) | 24.10% / 25.60% | 24.40% (uniform) |
-| Minimum YEL income | €9,208.43 | €9,423.09 |
-| Maximum YEL income | €209,125.00 | €214,000.00 |
+Pensioners: a person drawing an old-age or early old-age pension does not have to take out YEL; they may take it out voluntarily. A person drawing a partial old-age pension must keep valid YEL if the self-employment continues. Drawing a disability or unemployment pension does not remove the obligation.
 
----
+By business form:
 
-## Section 2 -- Who Must Have YEL Insurance
+- Sole trader (with or without a business name): YEL if the conditions are met. Where both spouses work in the business and it is registered in one spouse's name, both spouses are insured under YEL. For a spouse who is not paid, ETK states the test: the spouse works in the company, has split earnings in taxation, and meets the other YEL conditions. Another unpaid family member working in the business is also self-employed under YEL; a paid family member other than the spouse is insured under TyEL.
+- General partnership: each partner who works in the company needs YEL. Limited partnership: the active (responsible) partner who works in it needs YEL; a silent partner is not YEL-insured (TyEL if paid).
+- Oy: a shareholder in a senior position needs YEL only where they hold more than 30% alone or more than 50% with family members, of the shares or the votes, directly or through an intermediary company. A shareholder who does not work in the company is not insured. The same more than 30% / more than 50% test applies to a cooperative member in a leadership position.
 
-### 2.1 Mandatory
+A light entrepreneur using an invoicing service is, as a rule, self-employed and needs YEL if the work is not totally random and the work input reaches the 2026 limit. The worker can still be in an employment relationship with the ordering party; an employee belongs in TyEL. Refer multi-country, MYEL, grant, disputed family-work and disputed-status facts; in unclear cases the Finnish Centre for Pensions decides.
 
-YEL insurance is mandatory if ALL of the following apply:
+## 3. Confirmed income and review controls
 
-| Condition | Requirement |
-|---|---|
-| Age | 18 -- 69 years |
-| Self-employment | Working as a sole trader (toiminimi), freelancer, or partner in a general/limited partnership with >30% ownership |
-| Duration | Self-employment has continued or is expected to continue for at least 4 months |
-| YEL income | Estimated work input value ≥€9,208.43/year (2025) |
-| Residence | Working in Finland |
+Confirmed income is the annual value of the work performed, broadly the wage for an equally qualified outsider. Set the value at an annual level even where the business begins part-way through the year; do not prorate the confirmed-income assessment for a midyear start. The provider uses the common calculation service. It considers field median wage, turnover, the value and amount of work, business scope and professional skills. The resulting recommendation has ±30% leeway. Turnover is an input to the recommendation; it is not the determinant of confirmed income.
 
-### 2.2 Not Required
+Record the recommendation, its inputs and the work evidence. Explain any departure with substantiated part-time, hours, staffing, unusual-work, pay or other work-input facts. Do not mechanically choose either leeway boundary. Aggregate work input across companies; one policy can cover it. The provider makes the appealable confirmed-income decision.
 
-| Situation | Reason |
-|---|---|
-| Annual work input value <€9,208.43 | Below mandatory threshold |
-| Self-employment <4 months | Too short |
-| Under 18 or over 69 | Outside age range |
-| Light entrepreneurship (laskutuspalvelu) | May be considered employment -- depends on status |
+The 2023 reform: providers review YEL income every three years. In the first two reviews, a provider can increase confirmed income by no more than €4,000 at each review. From the beginning of 2026, that cap also applies at the first review for insurance begun in 2023–2025. In 2026 reviews are carried out for YEL insurance that began in 2023 and for incomes not reviewed in the past three years. The cap is not an annual cap or an automatic increase. Retain the notice, current evidence and decision.
 
-### 2.3 Must Arrange Within
+At the beginning of each year, the provider raises confirmed income using the wage coefficient. Contact the provider when business operations change or when considering a rise in confirmed income. Keep the change facts and new decision: confirmed income cannot be amended retrospectively. This differs from late policy arrangement, which can cover the current and three preceding years.
 
-YEL insurance must be taken out within **6 months** of starting self-employment. Insurance is retroactive to the start date. Failure to arrange YEL results in Eläketurvakeskus (Finnish Centre for Pensions) arranging it compulsorily + a penalty surcharge.
+## The method, step by step
 
----
+1. Collect the eligibility, ownership, work-input, country, history and payer evidence.
+2. Test the ordinary eligibility conditions, the business-form test and any pension being drawn; refer an international or disputed-status case.
+3. Obtain and evidence the provider calculation-service recommendation, then retain the confirmed-income decision.
+4. Choose a provider, arrange the policy, calculate the stated contribution and preserve its terms.
+5. Route the deduction by payer (once only), flag the health insurance contributions and the unemployment-fund conditions, preserve paid-contribution evidence and retain review/late-arrangement records.
 
-## Section 3 -- YEL Income (Työtulo)
+## 4. Arrange and calculate
 
-### 3.1 Definition
+Choose an earnings-related pension insurance company, or where eligible an industry pension fund. Obtain its current quote and preserve the provider, policy effective date, payment-frequency choice and terms. Do not use a universal instalment date, late-interest rate or payment plan.
 
-YEL income (vahvistettu työtulo) is the estimated monetary value of the self-employed person's annual work input -- equivalent to what you would pay a similarly skilled employee to do the same work.
+Arrange YEL within six months of starting self-employment. Coverage begins at the start. A person can arrange insurance retroactively for the current and three previous years only. Uninsured work further back is lost: no YEL pension accrues for it. If ETK has urged correction and the person does not act, ETK can arrange YEL on that person's behalf and at that person's expense. Two further consequences are set by the Self-Employed Persons' Pensions Act (YEL, 1272/2006), which this Guide cannot yet cite from an allowed official page, so confirm them with the provider or ETK before advising: a neglect fee (laiminlyöntimaksu, section 122) of up to the contribution for the neglected period, imposed by the State Treasury (Valtiokonttori) on the provider's application where YEL is not taken out within six months of the obligation starting, and also payable after ETK compulsory insurance (section 143); and no start-up reduction where ETK has insured the person compulsorily (section 115). Do not calculate a fee amount. This draft does not establish provider invoice terms.
 
-YEL income is NOT:
-- Actual business revenue
-- Net profit
-- Taxable income
+For 2026:
 
-### 3.2 Setting YEL Income
+    annual standard contribution = confirmed income × 24.40%
+    monthly equivalent = annual standard contribution ÷ 12
 
-| Factor | Consideration |
-|---|---|
-| Industry | Average salary for the sector |
-| Hours | Full-time vs part-time |
-| Skill level | Professional qualifications |
-| Turnover | Indicative but not determinative |
+A newly self-employed person whose self-employment began on or after 1 January 2013 receives a 22% reduction for the initial 48 months, whatever their age. If the first self-employment period is shorter than 48 months, the unused months can be used in a second period; ask the provider to apply them. All self-employment periods beginning in 2001 or later count in calculating the period. Confirm the history with the provider before applying it. Exception flagged above: no reduction where ETK has insured the person compulsorily.
 
-Since 2023, pension providers use a standardised YEL income calculation service based on field of business and turnover, providing a recommended level (±30% range).
+Planned change: ETK reports that the government intends a YEL reform from the start of 2028 under which the start-up reduction would be dropped. It is not the law for 2026; recheck before relying on the reduction for periods from 2028.
 
-### 3.3 YEL Income Reviews
+Contribution flexibility is temporary: an increase of 10–100% or reduction of 10–20% can apply under the provider’s current route. The person must notify the provider, the change is valid for one year at a time, and the restrictions on reducing are stricter than on increasing. It does not change confirmed income and does not change Kela benefits. Retain the provider confirmation and terms. Pensionable earnings follow contributions actually paid where flexibility, partial payment, non-payment or expiry applies; if a whole year's contributions are left unpaid, that year's earnings count as zero.
 
-Under the 2023 YEL reform:
+## 5. Tax and pension routing
 
-- Pension providers review YEL income every 3 years
-- Maximum increase per review: €4,000
-- From 2026, this cap applies to all insured (including those who started in 2023-2025)
-- Self-employed can proactively adjust YEL income at any time via their pension provider
+YEL contributions are fully deductible. If the company pays, deduct them as a company expense. A sole trader who pays personally chooses one route for the tax year: the business tax return (Form 5) as a business expense, their own pre-completed personal return, or their spouse's pre-completed return (Other deductions, YEL or MYEL contributions line). If the contributions are booked as expenses in the business accounts but claimed on a personal or spouse's return, add them back on Form 5 under Other non-deductible expenses so the deduction is not claimed twice. Preserve payer and payment evidence before preparing the return.
 
----
+For 2026, pension accrues at 1.5% of annual confirmed income for every age group. Ordinarily:
 
-## Section 4 -- Contribution Calculation
+    annual pension accrual = annual confirmed income × 1.5%
 
-### 4.1 Formula
+The provider record controls actual accrual where flexibility or unpaid contributions applies.
 
-```
-Annual YEL contribution = Confirmed YEL income × Contribution rate
-```
+## 5a. Health insurance and unemployment security
 
-### 4.2 Examples (2025)
+**Health insurance contributions (2026).** Vero applies the YEL confirmed income, as endorsed by the pension provider, when determining a self-employed person's health insurance contribution. For 2026 Vero lists, for 16- to 67-year-olds, a daily allowance contribution of 1.11% for self-employed individuals whose annual income is €17,255 or more and 0.23% where it is less, plus a health care contribution of 1.10% on wage and work income. The daily allowance contribution is the one tied to YEL income; the health care contribution is listed separately, on wage and work income as taxed. These are collected through income taxation, not by the pension provider. Check the person's tax card or assessment for the amount actually levied.
 
-| Scenario | YEL Income | Age | Rate | Annual Contribution | Monthly Equivalent |
-|---|---|---|---|---|---|
-| Minimum, standard | €9,208.43 | 35 | 24.10% | €2,219.23 | €184.94 |
-| Minimum, new entrepreneur | €9,208.43 | 35 | 18.798% | €1,731.03 | €144.25 |
-| Median | €28,000 | 40 | 24.10% | €6,748.00 | €562.33 |
-| Median, new entrepreneur | €28,000 | 40 | 18.798% | €5,263.44 | €438.62 |
-| Unemployment threshold | €15,128 | 30 | 24.10% | €3,645.85 | €303.82 |
-| Higher income | €60,000 | 55 | 25.60% | €15,360.00 | €1,280.00 |
+**Kela benefits.** Kela's sickness allowance and daily allowances for parents use the YEL confirmed income for the 12-month reference period before the calendar month preceding the start of the allowance, averaged if it changed. Wage income from the person's own company and business income are not included. If the person is both self-employed and in paid employment outside their own business, both income sources are used. Contribution flexibility does not change these benefits. Refer the exact benefit amount to Kela.
 
-### 4.3 Flexible Contributions
+**Unemployment security.** The earnings-related daily allowance for the self-employed requires all of: self-employment for at least 15 months within the 48 months before unemployment; membership of the Entrepreneur Fund (the unemployment fund for entrepreneurs) over the same time; and YEL confirmed income higher than the annually set limit, €15,481 in 2026 (Työeläke.fi's YEL income page and the ETK booklet word this as at least €15,481; treat income exactly at the limit as a point to confirm with the Entrepreneur Fund). As a rule the business must end first. A person who is not a fund member can get only the general benefit paid by Kela. Meeting the €15,481 figure alone does not establish entitlement.
 
-Self-employed can temporarily adjust contributions:
+## 6. Worked checks
 
-| Direction | Range | Effect |
-|---|---|---|
-| Increase | Up to +100% of standard contribution | Increases pension accrual for that year |
-| Decrease | Down to -20% of standard contribution | Reduces pension accrual; stricter conditions |
-| Duration | One year at a time | Must notify pension provider |
-| Effect on YEL income | None -- confirmed income stays the same | Only affects actual contribution paid |
+**Below threshold:** documented annual work input below €9,423.09 means ordinary mandatory YEL does not arise on these facts. Recheck if scope or hours change.
 
----
+**Ordinary contribution:** confirmed income of €30,000 gives €30,000 × 24.40% = €7,320 annual standard contribution and €7,320 ÷ 12 = €610 monthly equivalent. The monthly amount is mathematical, not an invoice schedule.
 
-## Section 5 -- Tax Treatment
+**New entrepreneur:** if the €30,000 case is eligible for the 22% reduction, €7,320 × 78% = €5,709.60. Confirm history before relying on the result.
 
-### 5.1 Deductibility
+**Review cap:** insurance began in 2023, so its first three-year review falls in 2026. That start year is within the 2023–2025 extension, so the €4,000 increase cap applies at this first review. Insurance begun in 2024 reaches its first three-year review later. Retain the review notice and evidence; no increase is automatic.
 
-| Item | Treatment |
-|---|---|
-| YEL contributions paid by self-employed person | Fully deductible from personal income taxation |
-| Deduction location | Personal tax return (not business income deduction) |
-| Can be allocated to spouse | Yes, if both agree -- can be deducted from either spouse's income |
-| Effect on business income | Reduces total taxable income; does NOT reduce business net profit |
+**Late arrangement:** check actual work dates. The person may arrange insurance for the current and three prior years; after unheeded ETK admonition, ETK can arrange it at the person's expense. Late insurance can also bring a neglect fee set by the State Treasury, and compulsory insurance by ETK removes the start-up reduction (YEL sections 115, 122 and 143; confirm with the provider). Obtain actual provider terms rather than calculating a fee.
 
-### 5.2 Important Distinction
+**Recurring seasonal kiosk:** a kiosk operates for three months each year. Because the activity continues year to year, test the other YEL gates and, if they are met, arrange continuous year-round YEL rather than treating each season as an isolated three-month activity.
 
-YEL contributions are deducted from the self-employed person's personal taxes, not from business profits. They appear on the personal tax return, not the income statement (tuloslaskelma) of the business.
+**Retired sole trader:** a person born in 1960 draws an old-age pension and keeps trading with work input above €9,423.09. YEL is not mandatory; it may be taken out voluntarily. If the pension were a partial old-age pension instead, YEL would be mandatory while the self-employment continues.
+
+**Unpaid spouse:** a sole trader's spouse works in the business without pay and has split earnings in taxation. If the other YEL conditions are met on the spouse's own work input, the spouse needs YEL; do not treat them as uninsured. A paid spouse working in the business is also insured under YEL, not TyEL.
+
+**Side business:** an employee with a full-time job also runs a sole-trader business whose work input is above €9,423.09 for more than four uninterrupted months. The job's TyEL cover does not remove the obligation: YEL is needed for the business.
+
+**Deduction route:** a sole trader books 2026 YEL contributions as a business expense but wants the deduction on the spouse's return. Claim them on the spouse's return and add them back on Form 5 as Other non-deductible expenses; never claim both.
+
+**Midyear start:** a qualifying business begins in July. Estimate confirmed income as the annual value of the work using the outsider-wage/work-input method; do not halve that assessment solely because the start date is midyear. The provider’s decision and actual policy-period terms control.
+
+**Changed business:** the provider has indexed confirmed income at the start of the year, then the business operations materially change. Give the change facts to the provider and obtain its new decision; do not seek a retrospective amendment to confirmed income. A late-policy arrangement is a different rule.
+
+## When to refuse or refer
+
+- Multi-country work, A1 and applicable-country decisions.
+- Disputed employment, MYEL, grant and public-sector coverage.
+- Retirement, disability or unemployment-pension facts.
+- Provider invoice, payment-plan and late-charge terms.
+- Exact benefit amount and Entrepreneur Fund eligibility decisions.
+- The amount of any neglect fee: the State Treasury decides it on the provider's application; do not calculate it.
+
+## Sources
+
+- [Finnish Centre for Pensions: FAQs on YEL insurance](https://www.etk.fi/en/finnish-pension-system/pensions/pension-coverage-and-insurance/faqs-on-yel-insurance/)
+- [Finnish Centre for Pensions: self-employed](https://www.etk.fi/en/finnish-pension-system/pensions/pension-coverage-and-insurance/self-employed/)
+- [Finnish Centre for Pensions: pension insurance of the self-employed, 2026 booklet (PDF)](https://www.etk.fi/wp-content/uploads/2026/02/pension-insurance-of-the-self-employed.pdf)
+- [Finnish Centre for Pensions: 2026 pension changes](https://www.etk.fi/en/topical-issues/how-earnings-related-pensions-will-change-in-2026/)
+- [Työeläke.fi: what is YEL income?](https://www.tyoelake.fi/en/pensions-for-the-self-employed/what-is-yel-income/)
+- [Työeläke.fi: insure your self-employment](https://www.tyoelake.fi/en/pensions-for-the-self-employed/insure-your-self-employment/)
+- [Työeläke.fi: when do I need insurance?](https://www.tyoelake.fi/en/pensions-for-the-self-employed/when-do-i-need-insurance/)
+- [Työeläke.fi: pension amount and contributions](https://www.tyoelake.fi/en/pensions-for-the-self-employed/pension-amount-and-contributions/)
+- [Työeläke.fi: social security of the self-employed](https://www.tyoelake.fi/en/pensions-for-the-self-employed/social-security-of-the-self-employed-based-on-confirmed-income/)
+- [Työeläke.fi: the Finnish Centre for Pensions supervises](https://www.tyoelake.fi/en/pensions-for-the-self-employed/the-finnish-centre-for-pensions-supervises/)
+- [Vero: pension premiums (YEL)](https://www.vero.fi/en/businesses-and-corporations/taxes-and-charges/taxation-of-self-employed-individuals/deductions/pension-premiums-yel/)
+- [Vero: tax bases for 2026](https://www.vero.fi/en/individuals/tax-cards-and-tax-returns/tax_card/tax-rate-and-income-ceiling/tax-bases/)
+- [Vero: health insurance contribution (Incomes Register)](https://www.vero.fi/en/incomes-register/companies-and-organisations/employers/earnings-payment-data/employers-are-obliged-to-insure-their-employees/health-insurance-contribution/)
+
+<!-- openaccountants-cta-block -->
 
 ---
 
-## Section 6 -- Benefits Linked to YEL Income
+## Talk to a verified accountant
 
-YEL income determines the basis for multiple social security benefits:
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-| Benefit | Link to YEL Income |
-|---|---|
-| Old-age pension (vanhuuseläke) | Pension accrues at 1.5% of YEL income per year |
-| Disability pension (työkyvyttömyyseläke) | Based on YEL income history |
-| Sickness daily allowance (sairauspäiväraha) | Kela calculates from YEL income |
-| Parental allowance (vanhempainpäiväraha) | Kela calculates from YEL income |
-| Unemployment allowance | Requires YEL income ≥€15,128/year (2025) + membership in Entrepreneur Fund |
-| Workers' compensation (if voluntary) | Must be at least YEL income level |
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-### 6.1 Pension Accrual
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
 
-| Item | Value |
-|---|---|
-| Accrual rate | 1.5% of confirmed YEL income per year (all ages, from 2017) |
-| Retirement age | Graduated by birth year; approximately 65-66 for those born in the 1970s-1980s |
+## Today's figures and who stands behind this skill
 
-### 6.2 Sickness Allowance
-
-- Waiting period: onset day + 9 following working days (self-employed)
-- Amount: calculated from YEL income
-- Low YEL income = low sickness allowance
-- Minimum daily allowance from Kela if no YEL or very low YEL
-
----
-
-## Section 7 -- Provider Selection
-
-### 7.1 Choosing a Pension Company
-
-Self-employed persons choose their own YEL provider from authorised pension insurance companies:
-
-| Provider | Website |
-|---|---|
-| Varma | varma.fi |
-| Ilmarinen | ilmarinen.fi |
-| Elo | elo.fi |
-| Veritas | veritas.fi |
-
-### 7.2 Key Facts
-
-- Contribution rates are identical across all providers (set by law)
-- YEL income confirmation uses the same calculation service
-- Providers differ in customer service, digital tools, and investment returns
-- Self-employed can transfer YEL insurance between providers (with notice period)
-- No cost to switch providers
-
----
-
-## Section 8 -- Payment
-
-### 8.1 Payment Schedule
-
-| Option | Detail |
-|---|---|
-| Monthly | Due on a date chosen by the insured |
-| Every 2 months | Alternative schedule |
-| Every 3 months | Alternative schedule |
-| Every 6 months | Alternative schedule |
-| Annually | Lump sum |
-
-### 8.2 Late Payment
-
-| Situation | Consequence |
-|---|---|
-| Late payment | Interest at prescribed rate (2.65% in 2025) |
-| Persistent non-payment | Pension company may terminate insurance; Eläketurvakeskus arranges compulsory insurance |
-| Compulsory insurance | Penalty surcharge applies (up to 50% increase) |
-
----
-
-## Section 9 -- Compulsory Arrangement by Eläketurvakeskus
-
-If a self-employed person fails to arrange mandatory YEL insurance:
-
-1. Eläketurvakeskus (ETK) sends a notice requiring insurance
-2. If not arranged within the given time, ETK takes out insurance on behalf of the person
-3. Compulsory insurance is retroactive to the start of self-employment
-4. A **negligence increase** of up to 50% is added to the contribution
-5. No new entrepreneur discount is available for compulsory insurance
-
----
-
-## Section 10 -- Interaction with Other Systems
-
-| System | Interaction |
-|---|---|
-| TyEL (employees' pension) | If self-employed person also has employment, TyEL and YEL run in parallel; both accrue pension |
-| Kela benefits | YEL income is the basis for sickness, parental, and rehabilitation allowances |
-| Income tax | YEL contributions are deductible; see **fi-income-tax** skill |
-| Unemployment | YEL income ≥€15,128 + Entrepreneur Fund membership required for earnings-related unemployment allowance |
-
----
-
-## Prohibitions
-
-- NEVER advise setting YEL income at minimum to "save money" without explaining the consequences for pension, sickness allowance, and unemployment benefits
-- NEVER treat YEL contributions as a business expense -- they are a personal tax deduction
-- NEVER ignore the 6-month deadline for arranging YEL insurance
-- NEVER assume light entrepreneurs (laskutuspalvelu users) are exempt -- status depends on actual work arrangement
-- NEVER present YEL income as equivalent to business revenue or profit
-- NEVER advise on TyEL (employee pension) matters -- different system
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-_Source: [OpenAccountants](https://openaccountants.com/skills/fi-yel-social) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `fi-yel-social` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/fi-yel-social. If neither is available, confirm every figure against the official source pages cited above before relying on it.

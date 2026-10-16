@@ -1,15 +1,13 @@
 ---
 name: pk-crypto-tax
-description: "> Use this skill whenever asked about taxation and legal status of cryptocurrency in Pakistan. Trigger on phrases like \"Pakistan crypto tax\", \"is crypto legal Pakistan\", \"Bitcoin tax Pakistan\", \"PVARA\", \"crypto gains Pakistan FBR\". Covers the evolving legal/regulatory status, how gains could be taxed, and the strong uncertainty. ALWAYS read before any Pakistan crypto work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about taxation and legal status of cryptocurrency in Pakistan. Trigger on phrases like \"Pakistan crypto tax\", \"is crypto legal Pakistan\", \"Bitcoin tax Pakistan\", \"PVARA\", \"crypto gains Pakistan FBR\". Covers the evolving legal/regulatory status, how gains could be taxed, and the strong uncertainty. ALWAYS read before any Pakistan crypto work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pk-crypto-tax"
-  tax_year: 2026
-  obligation: CRYPTO
+  openaccountants_url: "https://www.openaccountants.com/skills/pk-crypto-tax"
+  jurisdiction: "PK"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Pakistan Cryptocurrency Tax — Skill v1.0
@@ -48,8 +46,8 @@ metadata:
 - NEVER state a crypto tax rate without verifying the current law.
 
 ## Disclaimer
-Informational only; not advice. Pakistan's crypto law is in flux — verify with the FBR, PVARA, and SBP. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Pakistan's crypto law is in flux — verify with the FBR, PVARA, and SBP. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-crypto-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pk-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pk-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

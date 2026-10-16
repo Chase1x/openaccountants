@@ -1,24 +1,46 @@
 ---
 name: uk-payments-on-account
-description: "> Use this skill whenever asked about UK Payments on Account (POA) for Self Assessment taxpayers. Trigger on phrases like \"payments on account\", \"POA\", \"POA 2026\", \"January payment\", \"July payment\", \"balancing payment\", \"SA303\", \"claim to reduce\", \"reduce payments on account\", \"do I need to make payments on account\", \"POA threshold\", \"tax underpayment\", \"MTD ITSA payments on account\", or any question about advance income tax payments under UK Self Assessment. Covers the two-payment schedule (31 January / 31 July), the GBP 1,000 threshold, the 80% PAYE test, balancing payment mechanics, SA303 claim to reduce, excluded items (Class 2 NIC, student loan, CGT), interest on late payments, the interaction with MTD ITSA quarterly updates from 6 April 2026, and interaction with tax codes. ALWAYS read this skill before touching any UK POA work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about UK Payments on Account (POA) for Self Assessment taxpayers. Trigger on phrases like \"payments on account\", \"POA\", \"POA 2026\", \"January payment\", \"July payment\", \"balancing payment\", \"SA303\", \"claim to reduce\", \"reduce payments on account\", \"do I need to make payments on account\", \"POA threshold\", \"tax underpayment\", \"MTD ITSA payments on account\", or any question about advance income tax payments under UK Self Assessment. Covers the two-payment schedule (31 January / 31 July), the GBP 1,000 threshold, the 80% PAYE test, balancing payment mechanics, SA303 claim to reduce, excluded items (Class 2 NIC, student loan, CGT), interest on late payments, the interaction with MTD ITSA quarterly updates from 6 April 2026, and interaction with tax codes. ALWAYS read this skill before touching any UK POA work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: GB
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/uk-payments-on-account"
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/uk-payments-on-account"
+  jurisdiction: "GB"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "James Power"
+  review_status: "current"
 ---
 
-# UK Payments on Account (POA) -- Self Assessment Skill v3.0
+# UK Payments On Account
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## UK Payments on Account (POA) -- Self Assessment Skill v3.0
+
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Payments on Account
+
+- **De minimis** — SA balance < £1,000 → no POA  _(TMA 1970 s.59A)_
+- **PAYE dominance** — >80% of total tax via PAYE → no POA  _(TMA 1970 s.59A)_
+- **1st POA** — 31 January in tax year (50% of prior year SA balance)  _(TMA 1970)_
+- **2nd POA** — 31 July after tax year (50%)  _(TMA 1970)_
+- **Balancing payment** — 31 January following tax year  _(TMA 1970)_
+- **Items** — Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance  _(TMA 1970)_
+- **Rate** — BoE base rate + 2.5%  _(TMA 1970 s.86)_
+- **Type** — Simple interest (not compound)  _(TMA 1970)_
 
 ## Section 1 -- Quick reference
 
+**Section 1 Quick reference table**
+
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United Kingdom |
 | Tax | Income tax advance payments (Payments on Account / POA) |
 | Primary legislation | Taxes Management Act 1970 (TMA 1970), Section 59A |
@@ -30,15 +52,17 @@ metadata:
 | Threshold | SA balance >= GBP 1,000 AND tax deducted at source < 80% of total tax |
 | Excluded items | Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- requires sign-off by UK-qualified accountant (ACA/ACCA/CTA) |
-| Validation date | Pending |
+| Validated by | Verified by James Power on 2026-06-03 |
+| Validation date | Verified by James Power on 2026-06-03 |
 
 ### 1.1 Three-year comparison: variable elements
 
 The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment schedule, SA303 mechanism, excluded items) are UNCHANGED across all three years. Only the late payment interest rate and the surrounding reporting workflow shift.
 
+**Three-year comparison table**
+
 | Element | 2024-25 | 2025-26 | 2026-27 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Threshold (de minimis) | Prior year SA balance >= GBP 1,000 | Prior year SA balance >= GBP 1,000 | Prior year SA balance >= GBP 1,000 |
 | Threshold (PAYE/deduction test) | < 80% of tax deducted at source | < 80% of tax deducted at source | < 80% of tax deducted at source |
 | POA calculation | 50% of prior year SA balance, each instalment | 50% of prior year SA balance, each instalment | 50% of prior year SA balance, each instalment |
@@ -52,26 +76,24 @@ The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment s
 
 **Note on the 4 pp surcharge.** Finance (No. 2) Act 2024 increased the late payment interest add-on from 2.5 pp to 4 pp from 31 January late onwards (operative for sums overdue from the standard 2024-25 cycle and forward). All worked examples in this version use Bank Rate + 4 pp.
 
-**Payment schedule summary (illustrative for 2025-26 tax year):**
+**Payment schedule summary (illustrative for 2025-26 tax year)**
 
 | Payment | Due date | Amount |
-|---|---|---|
+| --- | --- | --- |
 | 1st POA | 31 January 2026 | 50% of 2024-25 SA balance |
 | 2nd POA | 31 July 2026 | 50% of 2024-25 SA balance |
 | Balancing payment | 31 January 2027 | Actual 2025-26 liability minus POAs paid |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | SA balance uncertain | Pay full POA -- do not reduce without SA303 |
 | Prior year return not yet filed | Use last known SA balance; flag for reviewer |
 | CGT included in SA balance | Exclude CGT before computing POA |
 | Student loan included | Exclude before computing POA |
 | HMRC coding out unclear | Verify coded amount removed from SA balance |
 | MTD ITSA from April 2026 | Confirm scope and software; POA cycle still applies in parallel |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -83,19 +105,14 @@ The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment s
 
 **Ideal** -- the full SA302 tax calculation from HMRC, prior year payment history, any coding adjustment letters, and (from April 2026) the MTD ITSA quarterly update submissions to date.
 
-**Refusal policy if minimum is missing -- SOFT WARN.** If the prior year SA balance is unknown, flag that POA computation is unreliable and direct the client to obtain their SA302 from HMRC.
+- **Refusal policy if minimum is missing** — SOFT WARN. If the prior year SA balance is unknown, flag that POA computation is unreliable and direct the client to obtain their SA302 from HMRC.
 
 ### Refusal catalogue
 
-**R-UK-POA-1 -- Partnerships with complex profit-sharing.** Trigger: client is in a partnership with non-standard profit-sharing ratios. Message: "Partnership POA allocation requires partner-level analysis. Please escalate to a qualified accountant."
-
-**R-UK-POA-2 -- Non-resident POA obligations.** Trigger: client is non-UK resident. Message: "Non-resident Self Assessment has different POA rules. Please escalate to a qualified accountant."
-
-**R-UK-POA-3 -- Trust POA.** Trigger: client asks about trust payments on account. Message: "Trust estimated tax is outside the scope of this skill."
-
-**R-UK-POA-4 -- MTD ITSA software selection / quarterly update preparation.** Trigger: client asks which MTD ITSA software to use, or how to file a quarterly update. Message: "MTD ITSA software selection and quarterly update mechanics are outside the scope of this POA skill. Please use the dedicated MTD ITSA skill or escalate to a qualified accountant."
-
----
+- **R-UK-POA-1 -- Partnerships with complex profit-sharing** — Trigger: client is in a partnership with non-standard profit-sharing ratios. Message: "Partnership POA allocation requires partner-level analysis. Please escalate to a qualified accountant."
+- **R-UK-POA-2 -- Non-resident POA obligations** — Trigger: client is non-UK resident. Message: "Non-resident Self Assessment has different POA rules. Please escalate to a qualified accountant."
+- **R-UK-POA-3 -- Trust POA** — Trigger: client asks about trust payments on account. Message: "Trust estimated tax is outside the scope of this skill."
+- **R-UK-POA-4 -- MTD ITSA software selection / quarterly update preparation** — Trigger: client asks which MTD ITSA software to use, or how to file a quarterly update. Message: "MTD ITSA software selection and quarterly update mechanics are outside the scope of this POA skill. Please use the dedicated MTD ITSA skill or escalate to a qualified accountant."
 
 ## Section 3 -- Payment pattern library
 
@@ -103,8 +120,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.1 HMRC Self Assessment debits
 
+**HMRC Self Assessment debits table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC, HM REVENUE, HMRC SELF ASSESSMENT | POA payment | Match with January/July timing |
 | HMRC CUMBERNAULD, HMRC SHIPLEY | POA payment | HMRC processing centres |
 | SELF ASSESSMENT, SA PAYMENT | POA payment | Explicit description |
@@ -112,16 +131,20 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.2 Timing-based identification
 
+**Timing-based identification table**
+
 | Debit date range | Likely payment | Confidence |
-|---|---|---|
+| --- | --- | --- |
 | 15 January -- 5 February | 1st POA + prior year balancing payment | High if payee is HMRC |
 | 15 July -- 5 August | 2nd POA | High if payee is HMRC |
 | Any other date to HMRC SA | Late payment, voluntary payment, or balancing | Flag for reviewer |
 
 ### 3.3 Related but NOT POA payments
 
+**Related but NOT POA payments table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC VAT | EXCLUDE from POA | VAT payment |
 | HMRC PAYE, HMRC RTI | EXCLUDE from POA | Employer PAYE payment |
 | HMRC NIC, CLASS 2 | EXCLUDE from POA | NIC direct collection |
@@ -137,8 +160,6 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 If the total debit is substantially larger than one POA instalment, it is likely the combined payment. Flag for reviewer to split.
 
----
-
 ## Section 4 -- Worked examples
 
 ### Example 1 -- Standard POA computation
@@ -147,8 +168,10 @@ If the total debit is substantially larger than one POA instalment, it is likely
 
 **Computation:** Each POA = GBP 6,000 / 2 = GBP 3,000.
 
+**Example 1 payment table**
+
 | Payment | Due date | Amount |
-|---|---|---|
+| --- | --- | --- |
 | 1st POA | 31 January 2025 | GBP 3,000 |
 | 2nd POA | 31 July 2025 | GBP 3,000 |
 
@@ -195,8 +218,10 @@ Payments due on the 31 January 2026 deadline:
 - 1st POA for 2025-26: GBP 6,000 (= 50% of GBP 12,000)
 - Total cash due on 31 January 2026: **GBP 18,000**
 
+**Step A payment table**
+
 | Payment | Due date | Amount |
-|---|---|---|
+| --- | --- | --- |
 | 2024-25 balancing payment | 31 January 2026 | GBP 12,000 |
 | 1st POA for 2025-26 | 31 January 2026 | GBP 6,000 |
 | 2nd POA for 2025-26 | 31 July 2026 | GBP 6,000 |
@@ -230,8 +255,10 @@ Three scenarios on the actual 2025-26 liability:
 
 Assume Scenario B1 (POAs of GBP 6,000 each for 2026-27). The client is in MTD ITSA from 6 April 2026 and submits quarterly updates through compatible software, but the POA cash flow is unchanged:
 
+**Step C event table**
+
 | Date | Event | Cash impact |
-|---|---|---|
+| --- | --- | --- |
 | 31 January 2027 | 1st POA 2026-27 + (any) 2025-26 balancing | GBP 6,000 (B1) |
 | 5 August 2026 | Q1 MTD ITSA quarterly update due | No tax payment -- reporting only |
 | 5 November 2026 | Q2 MTD ITSA quarterly update due | No tax payment -- reporting only |
@@ -244,7 +271,7 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 ### 4.1 From April 2026 -- MTD ITSA interaction
 
-**Headline rule.** Making Tax Digital for Income Tax Self Assessment (MTD ITSA) becomes mandatory from 6 April 2026 for sole traders and landlords with qualifying income above the relevant threshold (GBP 50,000 from April 2026; GBP 30,000 from April 2027; further phasing thereafter -- confirm current threshold for the client at the time of advice).
+- **Headline rule** — Making Tax Digital for Income Tax Self Assessment (MTD ITSA) becomes mandatory from 6 April 2026 for sole traders and landlords with qualifying income above the relevant threshold (GBP 50,000 from April 2026; GBP 30,000 from April 2027; further phasing thereafter -- confirm current threshold for the client at the time of advice).
 
 **MTD ITSA does NOT replace or alter the POA regime.** Specifically:
 
@@ -258,54 +285,39 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 **Common client misconception to correct.** Clients in MTD ITSA from April 2026 often assume the quarterly updates settle their tax. They do not. The 31 January / 31 July POA pattern continues, and the Final Declaration is still required.
 
----
-
 ## Section 5 -- Computation rules
 
 ### 5.1 Threshold tests
 
-POAs are NOT required if EITHER condition is met:
-- **Test 1 (de minimis):** Prior year SA balance < GBP 1,000
-- **Test 2 (deduction dominance):** More than 80% of prior year total tax was collected via PAYE/deduction at source
+- **Threshold tests** — POAs are NOT required if EITHER condition is met: - **Test 1 (de minimis):** Prior year SA balance < GBP 1,000 - **Test 2 (deduction dominance):** More than 80% of prior year total tax was collected via PAYE/deduction at source
 
 ### 5.2 SA balance definition
 
-```
-SA_balance = total_tax_and_class4_NIC - tax_deducted_at_source
-```
-
-EXCLUDE from SA balance: Class 2 NIC, student loan repayments, postgraduate loan repayments, capital gains tax, marriage allowance adjustments.
+- **SA balance formula** — SA_balance = total_tax_and_class4_NIC - tax_deducted_at_source
+- **Exclusions** — EXCLUDE from SA balance: Class 2 NIC, student loan repayments, postgraduate loan repayments, capital gains tax, marriage allowance adjustments.
 
 ### 5.3 POA computation
 
-```
-each_POA = SA_balance / 2
-```
+- **POA computation formula** — each_POA = SA_balance / 2
 
 ### 5.4 Balancing payment
 
-```
-balancing_payment = actual_tax_liability - POA_1 - POA_2
-```
-
-The balancing payment includes all excluded items (Class 2 NIC, student loan, postgraduate loan, CGT) -- these are payable in full with the balancing payment.
+- **Balancing payment formula** — balancing_payment = actual_tax_liability - POA_1 - POA_2
+- **Excluded items in balancing payment** — The balancing payment includes all excluded items (Class 2 NIC, student loan, postgraduate loan, CGT) -- these are payable in full with the balancing payment.
 
 ### 5.5 SA303 claim to reduce
 
-A taxpayer expecting lower current year income may file SA303 to reduce POAs to any amount including GBP 0. Risk: if the reduction is too aggressive, HMRC charges interest on the shortfall from the ORIGINAL due dates.
-
-```
-reduced_POA_each = estimated_current_year_SA_balance / 2
-```
-
----
+- **SA303 claim to reduce** — A taxpayer expecting lower current year income may file SA303 to reduce POAs to any amount including GBP 0. Risk: if the reduction is too aggressive, HMRC charges interest on the shortfall from the ORIGINAL due dates.
+- **Reduced POA formula** — reduced_POA_each = estimated_current_year_SA_balance / 2
 
 ## Section 6 -- Penalties and interest
 
 ### 6.1 Late payment interest
 
+**Late payment interest table**
+
 | Element | Rule |
-|---|---|
+| --- | --- |
 | Rate | HMRC Bank Rate + 4 percentage points (per Finance (No. 2) Act 2024 from 31 January late onwards). Approx. 7.75% as at late 2025 -- confirm current Bank Rate. |
 | Runs from | Due date of the POA (31 Jan or 31 Jul) |
 | Runs until | Date of payment |
@@ -314,25 +326,17 @@ reduced_POA_each = estimated_current_year_SA_balance / 2
 
 ### 6.2 Interest computation
 
-```
-interest = overdue_amount x (Bank_Rate + 4%) / 365 x days_overdue
-```
+- **Interest computation formula** — interest = overdue_amount x (Bank_Rate + 4%) / 365 x days_overdue
 
 There is no separate penalty for late POA payment -- only interest. A surcharge may apply if the balancing payment is more than 30 days late under the wider late payment penalty regime.
 
 ### 6.3 Time-to-Pay arrangements
 
-A taxpayer who cannot meet a POA on time may apply for a Time-to-Pay (TTP) arrangement with HMRC (online for liabilities under GBP 30,000, by phone above). The arrangement does NOT stop interest accruing, but it does stop further collection action and any late payment surcharge on the balancing payment provided the TTP is agreed before the surcharge trigger date. Process unchanged across 2024-25, 2025-26, 2026-27.
-
----
+- **Time-to-Pay (TTP) arrangements** — A taxpayer who cannot meet a POA on time may apply for a Time-to-Pay (TTP) arrangement with HMRC (online for liabilities under GBP 30,000, by phone above). The arrangement does NOT stop interest accruing, but it does stop further collection action and any late payment surcharge on the balancing payment provided the TTP is agreed before the surcharge trigger date. Process unchanged across 2024-25, 2025-26, 2026-27.
 
 ## Section 7 -- Interaction with tax codes and PAYE
 
-When HMRC collects SA underpayments via a PAYE tax code (coding out), this reduces the SA balance and therefore reduces POAs for the following year. Maximum coding out is GBP 3,000 for employed taxpayers.
-
-If HMRC is coding out underpayments, verify whether the coded amount has been correctly removed from the SA balance before computing POAs.
-
----
+- **coding out** — When HMRC collects SA underpayments via a PAYE tax code (coding out), this reduces the SA balance and therefore reduces POAs for the following year. Maximum coding out is GBP 3,000 for employed taxpayers. If HMRC is coding out underpayments, verify whether the coded amount has been correctly removed from the SA balance before computing POAs.
 
 ## Section 8 -- Edge cases
 
@@ -358,8 +362,6 @@ If HMRC is coding out underpayments, verify whether the coded amount has been co
 
 **EC11 -- Client enters MTD ITSA from 6 April 2026 mid-POA-cycle.** Existing 2025-26 POAs (due 31 Jan 2026 and 31 July 2026) are unchanged. From 6 April 2026 the client begins quarterly updates for the 2026-27 tax year. The 31 January 2027 cash event still combines the 2025-26 balancing payment (computed via Final Declaration or SA100 depending on scope) with the 1st POA for 2026-27.
 
----
-
 ## Section 9 -- Self-checks
 
 Before delivering output, verify:
@@ -377,39 +379,45 @@ Before delivering output, verify:
 - [ ] If the year is 2026-27 or later, MTD ITSA scope confirmed and client reminded that POAs continue alongside quarterly updates
 - [ ] Output labelled as estimated until prior year return is filed and processed
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Standard POA computation
+
 **Input:** Prior year SA balance = GBP 6,000.
 **Expected:** Each POA = GBP 3,000. 1st due 31 Jan, 2nd due 31 Jul.
 
 ### Test 2 -- Below GBP 1,000 threshold
+
 **Input:** Prior year SA balance = GBP 850.
 **Expected:** No POA. Full GBP 850 due as balancing payment.
 
 ### Test 3 -- 80% deduction test met
+
 **Input:** Total tax = GBP 20,000. PAYE = GBP 17,000. SA balance = GBP 3,000.
 **Expected:** PAYE% = 85% > 80%. No POA required.
 
 ### Test 4 -- Excluded items removed
+
 **Input:** Income tax via SA = GBP 4,000, CGT = GBP 3,000, Class 2 = GBP 179.40, student loan = GBP 1,200.
 **Expected:** POA basis = GBP 4,000. Each POA = GBP 2,000.
 
 ### Test 5 -- SA303 reduction
+
 **Input:** Standard POA = GBP 5,000 each. Estimated current year = GBP 3,000. SA303 filed.
 **Expected:** Reduced POA = GBP 1,500 each. Interest risk flagged.
 
 ### Test 6 -- Balancing payment with overpayment
+
 **Input:** POAs paid GBP 4,000 + GBP 4,000. Actual SA balance = GBP 6,500.
 **Expected:** Overpayment = GBP 1,500. HMRC refunds or sets off.
 
 ### Test 7 -- Late payment interest (Bank Rate + 4 pp)
+
 **Input:** POA GBP 3,000 due 31 Jan 2026. Paid 15 Apr 2026 (74 days). Bank Rate 3.75%.
 **Expected:** Rate = 7.75%. Interest = GBP 3,000 x 7.75% / 365 x 74 = GBP 47.12.
 
 ### Test 8 -- Full 3-year cycle, B1 scenario
+
 **Input:** 2024-25 SA balance = GBP 12,000; 2025-26 actual = GBP 12,000; 2026-27 actual = GBP 12,000. No prior POAs entering 2024-25.
 **Expected:**
 - 31 Jan 2026 cash: GBP 18,000 (12,000 balancing + 6,000 1st POA).
@@ -419,10 +427,9 @@ Before delivering output, verify:
 - 31 Jan 2028 cash: GBP 6,000 (1st POA 2027-28; 2026-27 balancing = 0).
 
 ### Test 9 -- MTD ITSA does not change POA cash flow
+
 **Input:** Client in MTD ITSA from 6 April 2026 with prior year SA balance = GBP 10,000.
 **Expected:** 1st POA for 2026-27 = GBP 5,000 due 31 Jan 2027; 2nd POA = GBP 5,000 due 31 Jul 2027; quarterly updates do not generate tax payments.
-
----
 
 ## Prohibitions
 
@@ -438,14 +445,30 @@ Before delivering output, verify:
 - NEVER tell a client that MTD ITSA quarterly updates replace POAs -- they do not
 - NEVER advise on penalty disputes without escalating to a qualified accountant
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/uk-payments-on-account) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-payments-on-account` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-payments-on-account. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -1,27 +1,24 @@
 ---
 name: portugal-bookkeeping
-description: "> Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como \"contabilidade Portugal\", \"SNC\", \"código de contas\", \"Sistema de Normalização Contabilística\", \"plano de contas\", \"microentidade\", \"pequena entidade\", \"NCRF\", \"NCRF-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"IES\", \"contabilista certificado\", \"regime simplificado\", \"contabilidade organizada\", \"SAF-T(PT)\", \"CAE\", \"Categoria B\", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: \"Portuguese bookkeeping\", \"Portugal accounting\", \"SNC chart of accounts\", \"Portuguese GAAP\", \"simplified regime Portugal\", \"organized accounting Portugal\", \"self-employed Portugal Cat B\", \"SAF-T Portugal\", \"CAE coefficients\", \"Portuguese certified accountant\"."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como \"contabilidade Portugal\", \"SNC\", \"código de contas\", \"Sistema de Normalização Contabilística\", \"plano de contas\", \"microentidade\", \"pequena entidade\", \"NCRF\", \"NCRF-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"IES\", \"contabilista certificado\", \"regime simplificado\", \"contabilidade organizada\", \"SAF-T(PT)\", \"CAE\", \"Categoria B\", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: \"Portuguese bookkeeping\", \"Portugal accounting\", \"SNC chart of accounts\", \"Portuguese GAAP\", \"simplified regime Portugal\", \"organized accounting Portugal\", \"self-employed Portugal Cat B\", \"SAF-T Portugal\", \"CAE coefficients\", \"Portuguese certified accountant\"."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: bookkeeping
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-bookkeeping"
-  tax_year: 2025
-  obligation: BT
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-bookkeeping"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Portugal — Contabilidade (Regime Simplificado vs Organizada) — Skill v1.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Portugal Bookkeeping
 
 ## Secção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Moeda | EUR |
 | Ano económico | Ano civil (1 de Janeiro a 31 de Dezembro) obrigatório para a generalidade das entidades |
@@ -37,16 +34,16 @@ metadata:
 | Contabilista certificado obrigatório | Sim — todas as entidades sujeitas ao SNC devem ter um Contabilista Certificado (membro da OCC) |
 | Período de conservação de documentos | 10 anos (artigo 123.º do CIRC e artigo 52.º do CIVA) |
 
----
-
 ## Secção 2 — Plano de Contas Padrão (Código de Contas SNC)
 
 O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empresas devem utilizar a estrutura de contas prescrita.
 
 ### Classe 1 — Meios Financeiros Líquidos
 
+**Classe 1 — Meios Financeiros Líquidos**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 11 | Caixa | Caixa (numerário) |
 | 12 | Depósitos à ordem | Contas bancárias à ordem |
 | 13 | Outros depósitos bancários | Outros depósitos bancários (a prazo) |
@@ -54,8 +51,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 2 — Contas a Receber e a Pagar
 
+**Classe 2 — Contas a Receber e a Pagar**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 21 | Clientes | Clientes (contas a receber comerciais) |
 | 211 | Clientes c/c | Clientes — conta corrente |
 | 2111 | Clientes gerais | Clientes gerais |
@@ -89,8 +88,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 3 — Inventários e Activos Biológicos
 
+**Classe 3 — Inventários e Activos Biológicos**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 31 | Compras | Compras |
 | 311 | Mercadorias | Mercadorias para revenda |
 | 312 | Matérias-primas | Matérias-primas |
@@ -104,8 +105,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 4 — Investimentos (Activos Fixos)
 
+**Classe 4 — Investimentos (Activos Fixos)**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 41 | Investimentos financeiros | Investimentos financeiros |
 | 42 | Propriedades de investimento | Propriedades de investimento |
 | 43 | Activos fixos tangíveis | Activos fixos tangíveis |
@@ -129,8 +132,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 5 — Capital, Reservas e Resultados Transitados
 
+**Classe 5 — Capital, Reservas e Resultados Transitados**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 51 | Capital | Capital social |
 | 52 | Acções (quotas) próprias | Acções (quotas) próprias |
 | 53 | Outros instrumentos de capital próprio | Outros instrumentos de capital próprio |
@@ -145,8 +150,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 6 — Gastos
 
+**Classe 6 — Gastos**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 61 | CMVMC | Custo das mercadorias vendidas e das matérias consumidas |
 | 62 | Fornecimentos e serviços externos (FSE) | Fornecimentos e serviços externos |
 | 6211 | Subcontratos | Subcontratos |
@@ -188,8 +195,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 7 — Rendimentos
 
+**Classe 7 — Rendimentos**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 71 | Vendas | Vendas de mercadorias |
 | 72 | Prestações de serviços | Prestações de serviços |
 | 73 | Variações nos inventários da produção | Variações nos inventários da produção |
@@ -204,51 +213,53 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Classe 8 — Resultados
 
+**Classe 8 — Resultados**
+
 | Código | Conta | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | 81 | Resultado líquido do período | Resultado líquido do período |
 | 811 | Resultado antes de impostos | Resultado antes de impostos |
 | 812 | Imposto sobre o rendimento | Imposto sobre o rendimento |
 | 818 | Resultado líquido | Resultado líquido |
 
----
-
 ## Secção 3 — Reconhecimento do Rédito
 
 ### Base de Caixa vs Base de Acréscimo
 
+**Base de Caixa vs Base de Acréscimo**
+
 | Tipo de entidade | Base | Notas |
-|---|---|---|
+| --- | --- | --- |
 | Entidades sujeitas ao SNC | Acréscimo (obrigatória) | O SNC/NCRF exige a base de acréscimo (regime do acréscimo) |
 | Microentidades (NC-ME) | Acréscimo | Regras de reconhecimento simplificadas, mas ainda em base de acréscimo |
 | Trabalhadores independentes (Categoria B do IRS) | Caixa ou Acréscimo | Regime simplificado utiliza valores facturados; contabilidade organizada utiliza o regime do acréscimo |
 
 ### Regras-Chave
 
-- Rédito da venda de bens: reconhecido quando os riscos e benefícios são transferidos para o comprador (NCRF 20)
-- Rédito de prestação de serviços: método da percentagem de acabamento se o desfecho puder ser estimado com fiabilidade; caso contrário, apenas até ao limite dos custos recuperáveis
-- NC-ME (microentidades): rédito reconhecido na facturação para bens; ao longo do tempo para serviços
-- IVA: a obrigação nasce na data da factura (factura obrigatória no prazo de 5 dias úteis após a entrega)
+- **Rédito da venda de bens** — Reconhecido quando os riscos e benefícios são transferidos para o comprador (NCRF 20)  _(NCRF 20)_
+- **Rédito de prestação de serviços** — Método da percentagem de acabamento se o desfecho puder ser estimado com fiabilidade; caso contrário, apenas até ao limite dos custos recuperáveis
+- **NC-ME (microentidades)** — Rédito reconhecido na facturação para bens; ao longo do tempo para serviços
+- **IVA — obrigação de facturação** — A obrigação nasce na data da factura (factura obrigatória no prazo de 5 dias úteis após a entrega)
 
 ### Regime Simplificado para Trabalhadores Independentes (Categoria B do IRS)
 
-- Disponível para rendimentos anuais inferiores a 200.000 EUR (limiar de volume de negócios)
-- O rendimento tributável é calculado mediante a aplicação de coeficientes ao rendimento bruto, em função do CAE (artigo 31.º do CIRS) e da tabela do artigo 151.º do CIRS:
-  - **0,75** — serviços previstos na tabela do artigo 151.º do CIRS (actividades profissionais, incluindo desenvolvimento de software, consultoria, design, etc.)
-  - **0,15** — vendas de mercadorias e produtos e prestações de serviços de actividades hoteleiras e de restauração e bebidas
-  - **0,10** — outras prestações de serviços não previstas nas alíneas anteriores
-- No regime simplificado não existe obrigação de contabilidade organizada — apenas o registo dos rendimentos auferidos (modelo de registo de facturas)
-- A **contabilidade organizada** é obrigatória acima de 200.000 EUR de volume de negócios para a Categoria B, ou por opção do sujeito passivo (mantida por um período mínimo de três anos)
-- Para titulares do regime de Residente Não Habitual (RNH) ou do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill **pt-nhr-ifici** para o tratamento específico desses regimes
+- **Limiar de volume de negócios para regime simplificado** — 200.000 EUR EUR  _(artigo 31.º do CIRS)_
+- **Coeficiente 0,75 — serviços tabela art.151.º CIRS** — 0,75 (serviços previstos na tabela do artigo 151.º do CIRS (actividades profissionais, incluindo desenvolvimento de software, consultoria, design, etc.))  _(artigo 31.º do CIRS; artigo 151.º do CIRS)_
+- **Coeficiente 0,15 — vendas de mercadorias e hotelaria/restauração** — 0,15 (vendas de mercadorias e produtos e prestações de serviços de actividades hoteleiras e de restauração e bebidas)  _(artigo 31.º do CIRS)_
+- **Coeficiente 0,10 — outras prestações de serviços** — 0,10 (outras prestações de serviços não previstas nas alíneas anteriores)  _(artigo 31.º do CIRS)_
+- **Registo no regime simplificado** — No regime simplificado não existe obrigação de contabilidade organizada — apenas o registo dos rendimentos auferidos (modelo de registo de facturas)
+- **Contabilidade organizada obrigatória** — A contabilidade organizada é obrigatória acima de 200.000 EUR de volume de negócios para a Categoria B, ou por opção do sujeito passivo (mantida por um período mínimo de três anos)
 
----
+Para titulares do regime de Residente Não Habitual (RNH) ou do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill pt-nhr-ifici para o tratamento específico desses regimes
 
 ## Secção 4 — Classificação de Gastos
 
 ### Gastos Dedutíveis (IRC)
 
+**Gastos Dedutíveis (IRC)**
+
 | Categoria | Código SNC | Dedutibilidade |
-|---|---|---|
+| --- | --- | --- |
 | Renda (instalações da empresa) | 6221 | 100% dedutível |
 | Energia e utilidades | 6228 | 100% dedutível |
 | Honorários (contabilista, advogado) | 6212/6215 | 100% dedutível |
@@ -264,8 +275,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Gastos Parcial ou Totalmente Não Dedutíveis
 
+**Gastos Parcial ou Totalmente Não Dedutíveis**
+
 | Categoria | Limitação |
-|---|---|
+| --- | --- |
 | Despesas com viaturas (ligeiros de passageiros) | Limitadas por tributação autónoma |
 | Despesas de representação | Sujeitas a tributação autónoma a 10% |
 | Despesas não documentadas | Não dedutíveis + 50% de tributação autónoma |
@@ -276,10 +289,10 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Tributação Autónoma
 
-Tributação adicional incidente sobre determinados gastos, ainda que a empresa apresente lucro:
+**Tributação Autónoma**
 
 | Gasto | Taxa |
-|---|---|
+| --- | --- |
 | Despesas de representação | 10% |
 | Encargos com viaturas (aquisição ≤ 27.500 EUR) | 10% |
 | Encargos com viaturas (27.500–35.000 EUR) | 27,5% |
@@ -288,22 +301,28 @@ Tributação adicional incidente sobre determinados gastos, ainda que a empresa 
 | Ajudas de custo não facturadas | 5% |
 | Encargos com viaturas eléctricas (≤ 62.500 EUR) | 0% |
 
----
+### Tributação Autónoma
+
+Tributação adicional incidente sobre determinados gastos, ainda que a empresa apresente lucro:
 
 ## Secção 5 — Limiares Activo vs Gasto
 
 ### Regras de Capitalização
 
+**Regras de Capitalização**
+
 | Regra | Detalhe |
-|---|---|
+| --- | --- |
 | Capitalização obrigatória | Todos os elementos com vida útil superior a 1 ano e custo mensurável com fiabilidade |
 | Limiar de baixo valor | Não existe de minimis legal; a prática admite reconhecimento como gasto de bens < 1.000 EUR em alguns casos |
 | Dispêndio subsequente | Capitalizado se prolongar a vida útil ou aumentar a capacidade; caso contrário, reconhecido como gasto |
 
 ### Taxas de Depreciação (Decreto Regulamentar n.º 25/2009 — Tabela Genérica II)
 
+**Taxas de Depreciação (Decreto Regulamentar n.º 25/2009 — Tabela Genérica II)**  _(Decreto Regulamentar n.º 25/2009 — Tabela Genérica II)_
+
 | Tipo de activo | Método | Taxa máxima anual | Vida útil típica |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Edifícios industriais | Quotas constantes | 5% | 20 anos |
 | Edifícios comerciais | Quotas constantes | 2% | 50 anos |
 | Construções ligeiras | Quotas constantes | 10% | 10 anos |
@@ -319,19 +338,19 @@ Tributação adicional incidente sobre determinados gastos, ainda que a empresa 
 
 ### Regras-Chave
 
-- O método das quotas constantes é o regime regra; o método das quotas decrescentes é admitido para activos fixos tangíveis novos (excepto edifícios, viaturas e mobiliário de escritório)
-- Depreciação anual mínima = 50% da taxa máxima (quotas mínimas)
-- Se for praticada depreciação inferior à mínima, é exigida comunicação escrita à AT
-- A depreciação inicia-se a partir do mês de entrada em funcionamento (pro rata)
-- Os terrenos não são depreciáveis
-
----
+- **Método de depreciação regime regra** — O método das quotas constantes é o regime regra; o método das quotas decrescentes é admitido para activos fixos tangíveis novos (excepto edifícios, viaturas e mobiliário de escritório)
+- **Depreciação anual mínima** — Depreciação anual mínima = 50% da taxa máxima (quotas mínimas)
+- **Comunicação à AT se depreciação inferior à mínima** — Se for praticada depreciação inferior à mínima, é exigida comunicação escrita à AT
+- **Início da depreciação** — A depreciação inicia-se a partir do mês de entrada em funcionamento (pro rata)
+- **Terrenos não depreciáveis** — Os terrenos não são depreciáveis
 
 ## Secção 6 — Modelo da Demonstração de Resultados (por Naturezas)
 
 Portugal utiliza o modelo por naturezas como demonstração de resultados padrão. O modelo por funções é facultativo.
 
 ### Por Naturezas (modelo padrão para todas as entidades sujeitas ao SNC)
+
+**Modelo Demonstração de Resultados por Naturezas**
 
 ```
 Vendas e serviços prestados (Rédito)                           xxx
@@ -364,13 +383,13 @@ Imposto sobre o rendimento do período (IRC)                   (xxx)
 Resultado líquido do período                                   xxx
 ```
 
----
-
 ## Secção 7 — Modelo do Balanço
 
 Portugal utiliza o formato vertical com classificação corrente/não corrente.
 
 ### Modelo
+
+**Modelo do Balanço**
 
 ```
 ACTIVO
@@ -429,14 +448,14 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
                                                            =======
 ```
 
----
-
 ## Secção 8 — Padrões de Reconciliação Bancária
 
 ### Formatos de Extracto Bancário em Portugal
 
+**Formatos de Extracto Bancário em Portugal**
+
 | Banco | Formato | Campos-chave |
-|---|---|---|
+| --- | --- | --- |
 | Millennium BCP | CSV, OFX | Data, Descrição, Montante, Saldo, Contraparte |
 | Caixa Geral de Depósitos (CGD) | CSV, OFX | Data, Descrição, Valor, Saldo |
 | Novo Banco | CSV | Data, Descrição, Débito, Crédito, Saldo |
@@ -446,8 +465,10 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
 
 ### Descrições Habituais de Movimentos
 
+**Descrições Habituais de Movimentos**
+
 | Padrão | Classificação |
-|---|---|
+| --- | --- |
 | TRF, TRANSFERENCIA | Transferência (verificar sentido) |
 | DD, DEBITO DIRETO | Débito directo (gasto recorrente) |
 | MB, MULTIBANCO | Pagamento ATM/cartão |
@@ -459,92 +480,115 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
 | COMISSAO, DESPESA | Despesas bancárias |
 | IMPOSTO SELO | Imposto do selo (sobre operações bancárias) |
 
----
-
 ## Secção 9 — Simplificações para Microentidades e Pequenos Negócios
 
 ### Categorias de Dimensão (até 2025; limiares aumentados a partir de 2026)
 
+**Categorias de Dimensão (até 2025; limiares aumentados a partir de 2026)**
+
 | Categoria | Total do balanço | Volume de negócios líquido | Trabalhadores |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Microentidade | ≤ 350.000 EUR (450.000 EUR a partir de 2026) | ≤ 700.000 EUR (900.000 EUR a partir de 2026) | ≤ 10 |
 | Pequena entidade | ≤ 4.000.000 EUR (5.000.000 EUR a partir de 2026) | ≤ 8.000.000 EUR (10.000.000 EUR a partir de 2026) | ≤ 50 |
 | Média entidade | ≤ 20.000.000 EUR (25.000.000 EUR a partir de 2026) | ≤ 40.000.000 EUR (50.000.000 EUR a partir de 2026) | ≤ 250 |
 
-A entidade não pode exceder 2 dos 3 critérios no período imediatamente anterior.
+- **Regra dos 2 de 3 critérios** — A entidade não pode exceder 2 dos 3 critérios no período imediatamente anterior.
 
 ### Normas Aplicáveis
 
+**Normas Aplicáveis**
+
 | Categoria | Norma | Principais simplificações |
-|---|---|---|
+| --- | --- | --- |
 | Microentidade | NC-ME | Sem impostos diferidos, sem revalorizações, sem justo valor; demonstrações financeiras simplificadas (2 páginas) |
 | Pequena entidade | NCRF-PE | Divulgações reduzidas; demonstração dos fluxos de caixa não exigida |
 | Média/Grande | NCRF completas (28 normas) | Divulgações completas; demonstração dos fluxos de caixa; demonstração das alterações no capital próprio |
 
 ### Simplificações NC-ME (Microentidades)
 
-- Apenas Balanço + Demonstração de Resultados + Anexo limitado (sem fluxos de caixa, sem demonstração das alterações no capital próprio)
-- Todos os activos mensurados ao custo deduzido de depreciações/amortizações (sem justo valor, sem revalorização)
-- Não exige apuramento de impostos diferidos
-- Anexo simplificado com um máximo de 15 rubricas
-- Locações: sem distinção entre financeira e operacional; todas as locações reconhecidas como gasto
+- **Demonstrações financeiras** — Apenas Balanço + Demonstração de Resultados + Anexo limitado (sem fluxos de caixa, sem demonstração das alterações no capital próprio)
+- **Mensuração de activos** — Todos os activos mensurados ao custo deduzido de depreciações/amortizações (sem justo valor, sem revalorização)
+- **Impostos diferidos** — Não exige apuramento de impostos diferidos
+- **Anexo simplificado** — Anexo simplificado com um máximo de 15 rubricas
+- **Locações** — Sem distinção entre financeira e operacional; todas as locações reconhecidas como gasto
 
 ### Empresário em Nome Individual (Trabalhador Independente)
 
-- Regime simplificado disponível se o volume de negócios for inferior a 200.000 EUR (Categoria B do IRS)
-- Sem obrigação de contabilidade organizada no regime simplificado — tributação por aplicação de coeficientes em função do CAE
-- A contabilidade organizada é facultativa abaixo do limiar e obrigatória acima
-- Contabilista certificado (membro da OCC) obrigatório se for adoptada a contabilidade organizada
-- Para o tratamento do regime de Residente Não Habitual (RNH) e do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill **pt-nhr-ifici**
+- **Limiar regime simplificado** — 200.000 EUR EUR (Categoria B do IRS)
+- **Sem obrigação de contabilidade organizada no regime simplificado** — Sem obrigação de contabilidade organizada no regime simplificado — tributação por aplicação de coeficientes em função do CAE
+- **Contabilidade organizada facultativa/obrigatória** — A contabilidade organizada é facultativa abaixo do limiar e obrigatória acima
+- **Contabilista certificado obrigatório se contabilidade organizada** — Contabilista certificado (membro da OCC) obrigatório se for adoptada a contabilidade organizada
 
----
+Para o tratamento do regime de Residente Não Habitual (RNH) e do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill pt-nhr-ifici
 
 ## Secção 10 — Articulação com Skills Fiscais
 
 ### Imposto sobre o Rendimento das Pessoas Colectivas (IRC)
 
-- A submissão da IES integra os dados contabilísticos e fiscais num único relato anual
-- O resultado fiscal parte do resultado contabilístico (conta 81) com correcções fiscais no Quadro 07 da Modelo 22
-- Principais correcções: tributação autónoma, gastos não dedutíveis, benefícios fiscais (SIFIDE, RFAI, DLRR)
-- Taxa de IRC: 21% (taxa geral); 17% sobre os primeiros 50.000 EUR para PME; derrama estadual sobre lucros superiores a 1.500.000 EUR
-- Utilize a skill **pt-income-tax** para o apuramento detalhado
+- **IES integra dados contabilísticos e fiscais** — A submissão da IES integra os dados contabilísticos e fiscais num único relato anual
+- **Resultado fiscal e Quadro 07** — O resultado fiscal parte do resultado contabilístico (conta 81) com correcções fiscais no Quadro 07 da Modelo 22
+- **Principais correcções fiscais** — Principais correcções: tributação autónoma, gastos não dedutíveis, benefícios fiscais (SIFIDE, RFAI, DLRR)
+- **Taxa de IRC geral** — 21% (taxa geral)
+- **Taxa reduzida PME primeiros 50.000 EUR** — 17% (sobre os primeiros 50.000 EUR para PME; derrama estadual sobre lucros superiores a 1.500.000 EUR)
+
+Utilize a skill pt-income-tax para o apuramento detalhado
 
 ### IVA
 
-- Contas do IVA: classe 243x do plano SNC
-- Periodicidade mensal se o volume de negócios for superior a 650.000 EUR; caso contrário, trimestral
-- Taxa normal: 23% (continente); 16% (Açores); 22% (Madeira)
-- Taxas reduzidas: 6% e 13%
-- Utilize a skill **portugal-vat-return** para detalhes da submissão
+- **Contas do IVA** — Contas do IVA: classe 243x do plano SNC
+- **Periodicidade mensal vs trimestral** — 650.000 EUR EUR (Periodicidade mensal se o volume de negócios for superior a 650.000 EUR; caso contrário, trimestral)
+- **Taxa normal IVA continente** — 23% (continente)
+- **Taxa normal IVA Açores** — 16% (Açores)
+- **Taxa normal IVA Madeira** — 22% (Madeira)
+- **Taxas reduzidas IVA** — 6% e 13%
+
+Utilize a skill portugal-vat-return para detalhes da submissão
 
 ### SAF-T(PT)
 
-- O ficheiro SAF-T(PT) (Standard Audit File for Tax — versão portuguesa) é obrigatório
-- Submissão mensal à AT até ao dia 5 do segundo mês seguinte ao da emissão das facturas (SAF-T de facturação)
-- SAF-T de contabilidade submetido anualmente em articulação com a IES
-- Software de facturação certificado pela AT é obrigatório acima de determinados limiares de volume de negócios
-- Todas as facturas devem ser emitidas por programa certificado e comunicadas à AT
+- **Obrigatoriedade SAF-T(PT)** — O ficheiro SAF-T(PT) (Standard Audit File for Tax — versão portuguesa) é obrigatório
+- **Prazo de submissão mensal** — Submissão mensal à AT até ao dia 5 do segundo mês seguinte ao da emissão das facturas (SAF-T de facturação)
+- **SAF-T de contabilidade** — SAF-T de contabilidade submetido anualmente em articulação com a IES
+- **Software certificado** — Software de facturação certificado pela AT é obrigatório acima de determinados limiares de volume de negócios
+- **Comunicação de facturas** — Todas as facturas devem ser emitidas por programa certificado e comunicadas à AT
 
 ### Segurança Social
 
-- Contribuição da entidade patronal: 23,75% da remuneração ilíquida
-- Contribuição do trabalhador: 11% da remuneração ilíquida
-- Trabalhador independente: 21,4% do rendimento relevante (25,2% no primeiro ano)
-- Registado na conta 245 até ao pagamento
-- Utilize a skill **pt-social-contributions** para detalhes
+- **Contribuição da entidade patronal** — 23,75% (da remuneração ilíquida)
+- **Contribuição do trabalhador** — 11% (da remuneração ilíquida)
+- **Trabalhador independente** — 21,4% (do rendimento relevante (25,2% no primeiro ano))
+- **Registo contabilístico** — Registado na conta 245 até ao pagamento
+
+Utilize a skill pt-social-contributions para detalhes
 
 ### Conservação de Documentos
 
-- Período de conservação obrigatório: **10 anos** (artigo 123.º do CIRC e artigo 52.º do CIVA)
-- Aplicável a livros, registos contabilísticos, facturas, documentos de suporte e ficheiros SAF-T(PT)
-- A conservação em formato electrónico é admitida desde que seja garantida a autenticidade, integridade e legibilidade
-
----
+- **Período de conservação obrigatório** — 10 anos anos  _(artigo 123.º do CIRC e artigo 52.º do CIVA)_
+- **Âmbito de aplicação** — Aplicável a livros, registos contabilísticos, facturas, documentos de suporte e ficheiros SAF-T(PT)
+- **Conservação electrónica** — A conservação em formato electrónico é admitida desde que seja garantida a autenticidade, integridade e legibilidade
 
 ## Aviso Legal
 
 Esta skill e os respectivos resultados são disponibilizados apenas para fins informativos e de apoio ao cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus colaboradores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado (Contabilista Certificado membro da OCC) antes da submissão ou de qualquer actuação com base nos mesmos.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-bookkeeping) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.

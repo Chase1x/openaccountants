@@ -1,15 +1,13 @@
 ---
 name: pk-payroll
-description: "> Use this skill whenever asked about Pakistan payroll and salary-tax withholding for employers. Trigger on phrases like \"Pakistan payroll\", \"salary tax withholding Pakistan\", \"deduct tax from salary FBR\", \"EOBI deduction\", \"payroll Pakistan freelancer hiring staff\". Covers salary income-tax withholding under the salaried slabs, EOBI/provincial social security, and monthly withholding statements. ALWAYS read before any Pakistan payroll work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Pakistan payroll and salary-tax withholding for employers. Trigger on phrases like \"Pakistan payroll\", \"salary tax withholding Pakistan\", \"deduct tax from salary FBR\", \"EOBI deduction\", \"payroll Pakistan freelancer hiring staff\". Covers salary income-tax withholding under the salaried slabs, EOBI/provincial social security, and monthly withholding statements. ALWAYS read before any Pakistan payroll work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PK
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/pk-payroll"
-  tax_year: 2026
-  obligation: PAY
+  openaccountants_url: "https://www.openaccountants.com/skills/pk-payroll"
+  jurisdiction: "PK"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Pakistan Payroll & Salary Withholding — Skill v1.0
@@ -41,8 +39,8 @@ A small studio pays an employee PKR 1,200,000/year: compute tax on the salaried 
 - NEVER state slab/EOBI figures without verifying the current Finance Act.
 
 ## Disclaimer
-Informational only; not advice. Verify withholding slabs and EOBI/ESSI rules with the FBR and the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify withholding slabs and EOBI/ESSI rules with the FBR and the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/pk-payroll) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pk-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pk-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

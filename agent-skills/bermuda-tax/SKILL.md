@@ -1,27 +1,24 @@
 ---
 name: bermuda-tax
-description: "> Use this skill whenever asked about Bermuda taxation, payroll tax, customs duties, or the absence of income tax and VAT in Bermuda. Trigger on phrases like \"Bermuda tax\", \"Bermuda VAT\", \"Bermuda payroll tax\", \"Bermuda customs\", or any request involving Bermuda tax compliance. Bermuda does NOT have income tax, capital gains tax, or VAT. Revenue is raised through payroll tax, customs duties, and various fees. ALWAYS read this skill before handling any Bermuda tax work."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about Bermuda taxation, payroll tax, customs duties, or the absence of income tax and VAT in Bermuda. Trigger on phrases like \"Bermuda tax\", \"Bermuda VAT\", \"Bermuda payroll tax\", \"Bermuda customs\", or any request involving Bermuda tax compliance. Bermuda does NOT have income tax, capital gains tax, or VAT. Revenue is raised through payroll tax, customs duties, and various fees. ALWAYS read this skill before handling any Bermuda tax work."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: BM
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/bermuda-tax"
-  tax_year: 2025
-  obligation: OTHER
+  openaccountants_url: "https://www.openaccountants.com/skills/bermuda-tax"
+  jurisdiction: "BM"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  review_status: "pending_review"
 ---
 
-# Bermuda Tax Compliance Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Bermuda Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Bermuda |
 | Tax | Payroll tax (primary), customs duties, land tax, stamp duty, social insurance |
 | Currency | BMD (1:1 with USD) |
@@ -37,8 +34,10 @@ metadata:
 
 ### Tax Landscape Overview
 
+**Tax Landscape Overview**
+
 | Tax Type | Status |
-|---|---|
+| --- | --- |
 | Income Tax (personal) | None |
 | Income Tax (corporate) | None |
 | Capital Gains Tax | None |
@@ -51,66 +50,65 @@ metadata:
 | Stamp Duty | Yes -- on real estate transfers |
 | Social Insurance | Yes -- contributory pension scheme |
 
-Bermuda has a legislative guarantee (Tax Assurance Certificate) that no income, capital gains, or withholding taxes will be introduced before 2035.
+- **Tax Assurance Certificate guarantee** — Bermuda has a legislative guarantee (Tax Assurance Certificate) that no income, capital gains, or withholding taxes will be introduced before 2035.  _(Tax Assurance Act)_
 
 ### Payroll Tax Rates (Current)
 
+**Employer Rate Tier**
+
 | Employer Rate Tier | Employer Rate |
-|---|---|
+| --- | --- |
 | Up to BMD 200,000 annual payroll | Reduced rate (concession) |
 | BMD 200,001 -- 350,000 | Intermediate rate |
 | BMD 350,001 -- 500,000 | Standard rate |
 | Above BMD 500,000 | Standard rate (10.25%) |
 
+**Employee Income Tier**
+
 | Employee Income Tier | Employee Rate |
-|---|---|
+| --- | --- |
 | Up to BMD 48,000 | 0.50% |
 | BMD 48,001 -- 96,000 | 9.25% |
 | BMD 96,001 -- 200,000 | 10.00% |
 | BMD 200,001 -- 500,000 | 11.50% |
 | BMD 500,001 -- 1,000,000 | 12.50% |
 
-Payroll tax is capped at BMD 1,000,000 per person per year.
+- **Payroll tax cap** — BMD 1,000,000 BMD (per person per year)  _(Payroll Tax Act 1995)_
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown employer classification | Standard rate |
 | Unknown employee income tier | Highest applicable rate |
 | Unknown customs duty category | General merchandise rate (22.25%) |
 | Unknown land tax ARV band | Higher rate band |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- employer payroll records for the quarter, number of employees, and total remuneration paid.
-
-**Recommended** -- breakdown of remuneration by employee, employer classification (exempted undertaking vs local), prior quarter returns.
-
-**Ideal** -- complete payroll system export, benefits-in-kind valuations, employer registration documents, prior annual reconciliation.
+- **Minimum viable inputs** — Minimum viable -- employer payroll records for the quarter, number of employees, and total remuneration paid.
+- **Recommended inputs** — Recommended -- breakdown of remuneration by employee, employer classification (exempted undertaking vs local), prior quarter returns.
+- **Ideal inputs** — Ideal -- complete payroll system export, benefits-in-kind valuations, employer registration documents, prior annual reconciliation.
 
 ### Refusal Catalogue
 
-**R-BM-1 -- Income tax computation.** "Bermuda does not have income tax. If the question relates to income tax in another jurisdiction, use the appropriate country skill."
-
-**R-BM-2 -- VAT/sales tax computation.** "Bermuda does not have VAT or sales tax. No indirect tax return exists."
-
-**R-BM-3 -- Economic substance detailed compliance.** "Economic substance requirements are too fact-sensitive. Escalate to a licensed Bermuda practitioner."
-
-**R-BM-4 -- Insurance sector-specific rules.** "Insurance companies have specialised regulatory and tax requirements. Escalate."
-
----
+- **R-BM-1** — Bermuda does not have income tax. If the question relates to income tax in another jurisdiction, use the appropriate country skill. (Income tax computation)  _(R-BM-1)_
+- **R-BM-2** — Bermuda does not have VAT or sales tax. No indirect tax return exists. (VAT/sales tax computation)  _(R-BM-2)_
+- **R-BM-3** — Economic substance requirements are too fact-sensitive. Escalate to a licensed Bermuda practitioner. (Economic substance detailed compliance)  _(R-BM-3)_
+- **R-BM-4** — Insurance companies have specialised regulatory and tax requirements. Escalate. (Insurance sector-specific rules)  _(R-BM-4)_
 
 ## Section 3 -- Compliance Pattern Library
 
 ### 3.1 Employer Payment Patterns
 
+**Employer Payment Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SALARY, WAGES, BONUS, COMMISSION | Payroll tax base | Include in taxable remuneration |
 | BENEFITS IN KIND, HOUSING ALLOWANCE | Payroll tax base | Include -- benefits are taxable remuneration |
 | PENSION CONTRIBUTION (employer) | Check | May be excluded from payroll tax base |
@@ -120,26 +118,28 @@ Payroll tax is capped at BMD 1,000,000 per person per year.
 
 ### 3.2 Customs Duty Categories
 
+**Customs Duty Categories**
+
 | Category | Duty Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | General merchandise | 22.25% -- 25% | Most goods |
 | Food items | 0% -- 10% | Many essentials at lower rates |
-| Clothing and footwear | 6.5% | |
+| Clothing and footwear | 6.5% |  |
 | Motor vehicles | 33.5% | Standard |
 | Prescription medications | 0% | Exempt |
-| Electronics/household goods | 25% | |
-| Alcohol | High specific rates | |
-| Tobacco | High specific rates | |
+| Electronics/household goods | 25% |  |
+| Alcohol | High specific rates |  |
+| Tobacco | High specific rates |  |
 
 ### 3.3 Social Insurance Contributions
 
+**Social Insurance Contributions**
+
 | Component | Rate/Amount |
-|---|---|
+| --- | --- |
 | Employer contribution | BMD 35.69 per week per employee |
 | Employee contribution | BMD 35.69 per week per employee |
 | Self-employed | BMD 63.10 per week |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -182,43 +182,37 @@ Payroll tax is capped at BMD 1,000,000 per person per year.
 - Above BMD 1,000,000: 8% = BMD 80,000
 - Total stamp duty: BMD 128,000
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 No Income Tax / No VAT Confirmation
 
-Bermuda has no personal income tax, no corporate income tax, no capital gains tax, no VAT, no sales tax, no withholding tax. Tax Assurance Certificate guarantees this until 2035.
+- **No income tax/VAT confirmation** — Bermuda has no personal income tax, no corporate income tax, no capital gains tax, no VAT, no sales tax, no withholding tax. Tax Assurance Certificate guarantees this until 2035.  _(Tax Assurance Act)_
 
 ### 5.2 Payroll Tax Filing
 
-Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic via tax.gov.bm.
+- **Payroll tax filing schedule** — Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic via tax.gov.bm.
 
 ### 5.3 Land Tax
 
-Assessed annually on the annual rental value (ARV) of land and buildings. Progressive rates by ARV band. Payable in instalments (quarterly or semi-annually).
+- **Land tax assessment** — Assessed annually on the annual rental value (ARV) of land and buildings. Progressive rates by ARV band. Payable in instalments (quarterly or semi-annually).  _(Land Tax Act 1967)_
 
 ### 5.4 Stamp Duty on Real Estate
 
-Progressive rates: 2% on first BMD 100,000; 4% on 100,001--500,000; 6% on 500,001--1,000,000; 8% above 1,000,000.
-
----
+- **Stamp duty progressive rates** — Progressive rates: 2% on first BMD 100,000; 4% on 100,001--500,000; 6% on 500,001--1,000,000; 8% above 1,000,000.  _(Stamp Duties Act 1976)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Payroll Tax Exemptions and Concessions
 
-Certain entities may receive payroll tax concessions or exemptions: hotels/tourism sector, new businesses, charitable organizations. Flag for practitioner -- concession eligibility must be confirmed with Tax Commissioner.
+- **Payroll tax exemptions and concessions** — Certain entities may receive payroll tax concessions or exemptions: hotels/tourism sector, new businesses, charitable organizations. Flag for practitioner -- concession eligibility must be confirmed with Tax Commissioner.
 
 ### 6.2 Exempt Company Payroll
 
-Exempted company status relates to Companies Act provisions, NOT tax exemptions on payroll tax. Payroll tax applies to all employers including exempt companies. Verify if any concession rates apply.
+- **Exempt company payroll treatment** — Exempted company status relates to Companies Act provisions, NOT tax exemptions on payroll tax. Payroll tax applies to all employers including exempt companies. Verify if any concession rates apply.  _(Companies Act 1981)_
 
 ### 6.3 Economic Substance
 
-Entities carrying on "relevant activities" must demonstrate adequate economic substance in Bermuda. Relevant activities include: banking, insurance, fund management, financing and leasing, headquarters, shipping, distribution and service centre, intellectual property, holding entity. Flag for practitioner.
-
----
+- **Economic substance requirement** — Entities carrying on "relevant activities" must demonstrate adequate economic substance in Bermuda. Relevant activities include: banking, insurance, fund management, financing and leasing, headquarters, shipping, distribution and service centre, intellectual property, holding entity. Flag for practitioner.  _(Economic Substance Act 2018)_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -250,28 +244,28 @@ REVIEWER FLAGS:
   [ ] Economic substance filing required?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Bermuda Bank Statement Formats
 
+**Bermuda Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Butterfield, HSBC Bermuda | PDF, CSV | Date, Description, Debit, Credit, Balance |
 | Clarien | CSV, PDF | Date, Narrative, Amount |
 
 ### Key Bermuda Banking Terms
 
+**Key Bermuda Banking Terms**
+
 | Term | Classification Hint |
-|---|---|
+| --- | --- |
 | PAYROLL, SALARY | Remuneration -- payroll tax applies |
 | CUSTOMS, DUTY | Import duty payment |
 | LAND TAX | Property tax payment |
 | PENSION, CONTRIBUTORY | Social insurance contribution |
 | INSURANCE PREMIUM | May be exempt financial service |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -289,14 +283,14 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 10. Prior quarter payroll tax returns available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Payroll tax rates | Payroll Tax Act 1995 (as amended); annual Budget |
 | Payroll tax cap | Payroll Tax Act 1995 |
 | Customs duties | Customs Tariff Act 1970 |
@@ -310,8 +304,6 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 
 Bermuda has a specific arrangement with the US regarding insurance. No general double taxation treaties.
 
----
-
 ## PROHIBITIONS
 
 - NEVER state that Bermuda has income tax -- it does not
@@ -323,14 +315,30 @@ Bermuda has a specific arrangement with the US regarding insurance. No general d
 - NEVER guess economic substance requirements -- escalate to practitioner
 - NEVER present calculations as definitive -- always label as estimated
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bermuda-tax) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `bermuda-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/bermuda-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

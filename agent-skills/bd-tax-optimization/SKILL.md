@@ -1,15 +1,13 @@
 ---
 name: bd-tax-optimization
-description: "> Use this skill whenever asked about legally reducing tax for a freelancer or small business in Bangladesh. Trigger on phrases like \"reduce tax Bangladesh\", \"investment rebate Bangladesh\", \"tax planning Bangladesh freelancer\", \"save tax NBR\", \"IT export incentive Bangladesh\". Covers the investment tax rebate, return-filing/withholding management, the post-2024 IT-income position, and the ICT export cash incentive — legal planning only. ALWAYS read before Bangladesh tax planning."
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Use this skill whenever asked about legally reducing tax for a freelancer or small business in Bangladesh. Trigger on phrases like \"reduce tax Bangladesh\", \"investment rebate Bangladesh\", \"tax planning Bangladesh freelancer\", \"save tax NBR\", \"IT export incentive Bangladesh\". Covers the investment tax rebate, return-filing/withholding management, the post-2024 IT-income position, and the ICT export cash incentive — legal planning only. ALWAYS read before Bangladesh tax planning."
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: BD
-  category: international
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/bd-tax-optimization"
-  tax_year: 2026
-  obligation: OPT
+  openaccountants_url: "https://www.openaccountants.com/skills/bd-tax-optimization"
+  jurisdiction: "BD"
+  tax_year: "2026"
+  last_updated: "2026-06-12"
 ---
 
 # Bangladesh Tax Optimization (Self-Employed) — Skill v1.0
@@ -47,8 +45,8 @@ IT freelancer, ৳3,000,000 export income: post-June-2024 this is taxable (verif
 - NEVER state rebate/incentive rates without verifying the current Finance Act / Bangladesh Bank circular.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Bangladeshi tax practitioner. Verify all rates with the NBR and Bangladesh Bank. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Bangladeshi tax practitioner. Verify all rates with the NBR and Bangladesh Bank. Maintained at [openaccountants.com](https://www.openaccountants.com).
 
----
+## Today's figures and who stands behind this skill
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/bd-tax-optimization) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-06-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `bd-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/bd-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.

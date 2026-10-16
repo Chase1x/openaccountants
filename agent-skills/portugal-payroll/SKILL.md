@@ -1,27 +1,62 @@
 ---
 name: portugal-payroll
-description: "> Utilize esta skill sempre que for solicitado sobre processamento de salários em Portugal, cálculo de vencimentos, retenção na fonte de IRS, contribuições para a Segurança Social (TSU), cálculo do custo total para a entidade patronal, conversões de líquido para bruto ou bruto para líquido, estrutura do recibo de vencimento português, Declaração Mensal de Remunerações (DMR), ou qualquer questão relativa ao cálculo de vencimentos, descontos ou obrigações da entidade patronal em Portugal. Acione perante expressões como \"processamento de salários\", \"retenção na fonte IRS\", \"Segurança Social\", \"TSU\", \"salário líquido\", \"custo entidade patronal\", \"subsídio de férias\", \"subsídio de Natal\", \"salário mínimo\", \"DMR\", \"recibo de vencimento\", \"13.º mês\" ou \"14.º mês\". Trigger also on: \"Portuguese payroll\", \"IRS withholding\", \"retenção na fonte\", \"Segurança Social\", \"TSU\", \"salário líquido\", \"employer cost Portugal\", \"subsídio de férias\", \"subsídio de Natal\", \"13th month Portugal\", \"14th month Portugal\", \"minimum wage…"
-license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+description: "Utilize esta skill sempre que for solicitado sobre processamento de salários em Portugal, cálculo de vencimentos, retenção na fonte de IRS, contribuições para a Segurança Social (TSU), cálculo do custo total para a entidade patronal, conversões de líquido para bruto ou bruto para líquido, estrutura do recibo de vencimento português, Declaração Mensal de Remunerações (DMR), ou qualquer questão relativa ao cálculo de vencimentos, descontos ou obrigações da entidade patronal em Portugal. Acione perante expressões como \"processamento de salários\", \"retenção na fonte IRS\", \"Segurança Social\", \"TSU\", \"salário líquido\", \"custo entidade patronal\", \"subsídio de férias\", \"subsídio de Natal\", \"salário mínimo\", \"DMR\", \"recibo de vencimento\", \"13.º mês\" ou \"14.º mês\". Trigger also on: \"Portuguese payroll\", \"IRS withholding\", \"retenção na fonte\", \"Segurança Social\", \"TSU\", \"salário líquido\", \"employer cost Portugal\", \"subsídio de férias\", \"subsídio de Natal\", \"13th month Portugal\", \"14th month Portu"
+license: "AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)"
 metadata:
   source: openaccountants
-  jurisdiction: PT
-  category: payroll
-  quality: source-cited draft
-  openaccountants_url: "https://openaccountants.com/skills/portugal-payroll"
-  tax_year: 2025
-  obligation: PAY
+  openaccountants_url: "https://www.openaccountants.com/skills/portugal-payroll"
+  jurisdiction: "PT"
+  tax_year: "2025"
+  last_updated: "2026-07-13"
+  reviewed_by: "Mário Jorge da costa Vale"
+  review_status: "current"
 ---
 
-# Portugal — Processamento de Salários — Skill v1.1
+# Portugal Payroll
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Portugal — Processamento de Salários — Skill v1.1
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Folha de Pagamento
+
+- **Continente 2026** — €920/mês  _(DL 139/2025)_
+- **Continente 2025** — €870/mês  _(DL anterior)_
+- **Açores 2026** — €966/mês  _(DL regional)_
+- **Madeira 2026** — €980,00  _(Decreto Legislativo Regional n.º 1/2026/M, de 3 de fevereiro de 2026)_
+- **Empregado** — 11% do bruto  _(Código Contributivo)_
+- **Empregador** — 23,75% do bruto  _(Código Contributivo)_
+- **Total** — 34,75%
+- **Teto** — Sem teto — aplica-se ao salário total  _(Código Contributivo)_
+- **FCT (Fundo de Compensação)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
+- **FGCT (Fundo de Garantia)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
+- **Total (FCT/FGCT)** — Suspenso de Maio de 2023
+- **Empregador (gerente sem proteção desemprego)** — 20,30%  _(Código Contributivo)_
+- **Empregado (gerente)** — 9,30%  _(Código Contributivo)_
+- **Em dinheiro** — €6,15/dia (2026)  _(Portaria n.º 51-B/2026/1)_
+- **Cartão refeição** — €10,46/dia (2026)  _(Portaria n.º 51-B/2026/1 (OE anual))_
+- **1.ª hora (dia útil)** — 25%  _(Código do Trabalho)_
+- **Horas seguintes (dia útil)** — 37,5%  _(Código do Trabalho)_
+- **Descanso/feriados** — 50%  _(Código do Trabalho)_
+- **Trabalho noturno (22h-7h)** — 25% mínimo  _(Código do Trabalho)_
+- **Subsídio de férias** — 1 mês de salário (antes do início das férias)  _(Código do Trabalho)_
+- **Subsídio de Natal** — 1 mês de salário (até 15 de dezembro)  _(Código do Trabalho)_
+- **Férias anuais** — 22 dias úteis mínimo  _(Código do Trabalho)_
+- **Licença paternidade** — 28 dias consecutivos obrigatórios (SS)  _(Código do Trabalho)_
+- **DMR (Declaração Mensal)** — Até dia 10 do mês seguinte  _(AT)_
+- **Pagamento SS/IRS** — Até dia 20 do mês seguinte  _(AT/ISS)_
+- **Relatório Único** — Até 15 de abril  _(GEP/MTSSS)_
 
 ## Secção 1 — Referência Rápida
 
+**Secção 1 — Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Moeda | EUR |
 | Periodicidade do processamento | Mensal (14 pagamentos/ano: 12 + subsídio de férias + subsídio de Natal) |
@@ -38,14 +73,14 @@ metadata:
 | Pagamento da Segurança Social / IRS | Mensal, até ao dia 20 do mês seguinte |
 | Versão da skill | 1.1 |
 
----
-
 ## Secção 2 — Retenção na Fonte de IRS
 
 ### Escalões de IRS (2026 — Rendimento Coletável Anual)
 
+**Escalões de IRS (2026 — Rendimento Coletável Anual)**
+
 | Escalão | Rendimento Coletável Anual (EUR) | Taxa Marginal |
-|---|---|---|
+| --- | --- | --- |
 | 1.º | Até 7 703 | 13,25% |
 | 2.º | 7 703 — 11 623 | 16,50% |
 | 3.º | 11 623 — 17 838 | 22,00% |
@@ -58,10 +93,12 @@ metadata:
 
 ### Mecanismo de Retenção na Fonte
 
-A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente por Despacho (tabelas do Anexo III), nos termos do art.º 99.º do CIRS. Desde 2023, Portugal aplica uma fórmula progressiva marginal na retenção (e não uma taxa fixa por escalão).
+- **Mecanismo de retenção** — A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente por Despacho (tabelas do Anexo III), nos termos do art.º 99.º do CIRS. Desde 2023, Portugal aplica uma fórmula progressiva marginal na retenção (e não uma taxa fixa por escalão).  _(CIRS art.º 99.º)_
+
+**Tabelas de Retenção**
 
 | Tabela | Aplicável a |
-|---|---|
+| --- | --- |
 | Tabela I | Casado, único titular |
 | Tabela II | Casado, dois titulares |
 | Tabela III | Não casado |
@@ -70,8 +107,10 @@ A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente po
 
 ### Regras-Chave de Retenção (2026)
 
+**Regras-Chave de Retenção (2026)**
+
 | Regra | Detalhe |
-|---|---|
+| --- | --- |
 | Limiar de não retenção | Até 920 EUR/mês (salário mínimo) = 0% de IRS |
 | Mínimo de existência | 12 880 EUR anuais (14 × 920) — totalmente isento |
 | Dedução por dependente | 42,86 EUR/mês (casado único titular); 21,43 EUR (dois titulares); 34,29 EUR (não casado) |
@@ -80,16 +119,16 @@ A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente po
 
 ### Retenção sobre Subsídio de Férias / Subsídio de Natal
 
-Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS à MESMA taxa do vencimento mensal normal, calculada de forma autónoma. A contribuição para a Segurança Social também se aplica à taxa normal de 11%.
+- **Retenção sobre subsídios** — Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS à MESMA taxa do vencimento mensal normal, calculada de forma autónoma. A contribuição para a Segurança Social também se aplica à taxa normal de 11%.
 
 > **Nota — Regime IFICI / antigo RNH:** trabalhadores qualificados ao abrigo do regime de Incentivo Fiscal à Investigação Científica e Inovação (IFICI) ou ainda abrangidos por direitos adquiridos do antigo Regime dos Residentes Não Habituais (RNH) estão sujeitos a uma taxa especial de retenção de 20% sobre rendimentos do trabalho dependente elegíveis (Categoria A). Para o mecanismo detalhado de retenção e elegibilidade, consultar a skill **pt-nhr-ifici**.
 
----
-
 ## Secção 3 — Segurança Social: Descontos do Trabalhador
 
+**Secção 3 — Segurança Social: Descontos do Trabalhador**
+
 | Contribuição | Taxa | Base | Limite máximo |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Segurança Social (trabalhador) — TSC | 11% | Remuneração bruta | Sem limite (aplica-se ao vencimento total) |
 
 ### O Que Está Sujeito a Contribuições para a Segurança Social
@@ -115,19 +154,21 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 - Não existe limite máximo — aplica-se à totalidade do vencimento
 - As contribuições para a Segurança Social são dedutíveis para efeitos de IRS (consideradas na dedução específica)
 
----
-
 ## Secção 4 — Segurança Social: Contribuições da Entidade Patronal
 
+**Secção 4 — Segurança Social: Contribuições da Entidade Patronal**
+
 | Contribuição | Taxa | Base |
-|---|---|---|
+| --- | --- | --- |
 | Segurança Social (entidade patronal) | 23,75% | Remuneração bruta |
 | **Taxa total combinada (TSU)** | **34,75%** | Trabalhador 11% + Entidade patronal 23,75% |
 
 ### Taxas Especiais para a Entidade Patronal
 
+**Taxas Especiais para a Entidade Patronal**
+
 | Situação | Taxa |
-|---|---|
+| --- | --- |
 | Membros de órgãos estatutários (gerentes/administradores) com proteção no desemprego | 23,75% (trabalhador 11%) |
 | Membros de órgãos estatutários sem proteção no desemprego | 20,30% (trabalhador 9,30%) |
 | Trabalhadores do serviço doméstico | 18,90% (trabalhador 9,40%) |
@@ -136,8 +177,10 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 
 ### Fundo de Compensação do Trabalho (FCT)
 
+**Fundo de Compensação do Trabalho (FCT)**
+
 | Fundo | Taxa | Finalidade |
-|---|---|---|
+| --- | --- | --- |
 | FCT (Fundo de Compensação do Trabalho) | 0,925% | Garantia de compensação por cessação do contrato |
 | FGCT (Fundo de Garantia de Compensação do Trabalho) | 0,075% | Fundo de garantia mútua |
 | **Total** | **1,00%** | Pago pela entidade patronal sobre a remuneração bruta |
@@ -146,14 +189,14 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 - Pago mensalmente, até ao dia 20 do mês seguinte
 - Isentos: trabalhadores do serviço doméstico, setor público
 
----
-
 ## Secção 5 — Salário Mínimo e Trabalho Suplementar
 
 ### Retribuição Mínima Mensal Garantida (RMMG)
 
+**Retribuição Mínima Mensal Garantida (RMMG)**
+
 | Região | 2026 — Mensal (EUR) |
-|---|---|
+| --- | --- |
 | Continente | 920,00 |
 | Açores | 966,00 |
 | Madeira | 968,00 |
@@ -166,8 +209,10 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 
 ### Período Normal de Trabalho e Trabalho Suplementar
 
+**Período Normal de Trabalho e Trabalho Suplementar**
+
 | Parâmetro | Padrão |
-|---|---|
+| --- | --- |
 | Período normal de trabalho semanal | 40 horas |
 | Limite diário | 8 horas (extensível a 10 por instrumento de regulamentação coletiva) |
 | Limite anual de trabalho suplementar | 150 horas/ano (200 por convenção coletiva) |
@@ -176,12 +221,12 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 | Acréscimo em dia de descanso/feriado | 50% |
 | Subsídio de trabalho noturno (22h-7h) | Mínimo de 25% |
 
----
-
 ## Secção 6 — Benefícios Obrigatórios
 
+**Secção 6 — Benefícios Obrigatórios**
+
 | Benefício | Detalhe |
-|---|---|
+| --- | --- |
 | Férias anuais | 22 dias úteis (mínimo) |
 | Subsídio de férias | Equivalente a um mês de vencimento (pago antes do início das férias ou em junho) |
 | Subsídio de Natal | Equivalente a um mês de vencimento (pago até 15 de dezembro) |
@@ -195,21 +240,23 @@ Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS
 
 ### 13.º e 14.º Meses (Subsídios)
 
+**13.º e 14.º Meses (Subsídios)**
+
 | Subsídio | Valor | Prazo | Segurança Social / IRS |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Subsídio de Natal | 1 mês de vencimento | Até 15 de dezembro (ou em duodécimos ao longo dos 12 meses) | Sujeito a 11% Segurança Social + IRS |
 | Subsídio de férias | 1 mês de vencimento | Antes do início das férias ou até 30 de junho | Sujeito a 11% Segurança Social + IRS |
 
 O trabalhador pode optar (ou a entidade patronal pode determinar) pelo pagamento em duodécimos (1/12 por mês). Ambos os subsídios são proporcionais ao tempo de trabalho efetivo se o trabalhador iniciar ou cessar funções a meio do ano.
 
----
-
 ## Secção 7 — Requisitos do Recibo de Vencimento
 
-A entidade patronal portuguesa DEVE emitir um recibo de vencimento por cada pagamento de salário. Elementos obrigatórios:
+- **Obrigação de emissão** — A entidade patronal portuguesa DEVE emitir um recibo de vencimento por cada pagamento de salário.
+
+**Elementos obrigatórios do recibo de vencimento**
 
 | Elemento | Obrigatório |
-|---|---|
+| --- | --- |
 | Identificação da entidade patronal (nome, NIPC, n.º Segurança Social) | Sim |
 | Identificação do trabalhador (nome, NIF, NISS) | Sim |
 | Período a que respeita (mês/ano) | Sim |
@@ -228,14 +275,14 @@ A entidade patronal portuguesa DEVE emitir um recibo de vencimento por cada paga
 
 ### Conservação de Registos
 
-A entidade patronal deve conservar os registos de processamento de salários por um período mínimo de 5 anos (legislação laboral geral) e 10 anos para efeitos fiscais.
-
----
+- **Prazo de conservação** — A entidade patronal deve conservar os registos de processamento de salários por um período mínimo de 5 anos (legislação laboral geral) e 10 anos para efeitos fiscais.
 
 ## Secção 8 — Obrigações Declarativas
 
+**Secção 8 — Obrigações Declarativas**
+
 | Obrigação | Periodicidade | Prazo | Entidade |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Declaração Mensal de Remunerações (DMR) | Mensal | Até ao dia 10 do mês seguinte | AT + Segurança Social |
 | Pagamento das contribuições para a Segurança Social | Mensal | Entre os dias 10 e 20 do mês seguinte | Segurança Social (DGSS) |
 | Pagamento da retenção na fonte de IRS | Mensal | Até ao dia 20 do mês seguinte | AT |
@@ -246,8 +293,10 @@ A entidade patronal deve conservar os registos de processamento de salários por
 
 ### DMR — Detalhes
 
+**DMR — Detalhes**
+
 | Parâmetro | Detalhe |
-|---|---|
+| --- | --- |
 | Conteúdo | Por trabalhador: vencimento bruto, contribuições para a Segurança Social, retenção na fonte de IRS |
 | Submissão | Eletrónica através do Portal das Finanças |
 | Validação | Tem de ser validada pelo sistema da Segurança Social para se considerar entregue |
@@ -255,8 +304,10 @@ A entidade patronal deve conservar os registos de processamento de salários por
 
 ### Calendário Anual
 
+**Calendário Anual**
+
 | Mês | Obrigação |
-|---|---|
+| --- | --- |
 | Janeiro | DMR de dezembro; pagamento Segurança Social / IRS de dezembro |
 | Fevereiro | Prazo do Modelo 10 (não residentes) |
 | Março | Acerto anual da Segurança Social |
@@ -264,8 +315,6 @@ A entidade patronal deve conservar os registos de processamento de salários por
 | Junho | Pagamento do subsídio de férias; abertura da entrega de IRS |
 | Novembro | Primeira tranche do subsídio de Natal (se em duodécimos) |
 | Dezembro | Subsídio de Natal até dia 15; fecho anual do processamento de salários |
-
----
 
 ## Secção 9 — Padrões Comuns de Processamento
 
@@ -314,8 +363,10 @@ Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de 
 
 ### Padrão 4: Acerto de Contas na Cessação do Contrato
 
+**Padrão 4: Acerto de Contas na Cessação do Contrato**
+
 | Componente | Cálculo |
-|---|---|
+| --- | --- |
 | Vencimento em dívida | Dias trabalhados no mês final / 30 × vencimento |
 | Subsídio de férias proporcional | Meses trabalhados / 12 × vencimento mensal |
 | Subsídio de Natal proporcional | Meses trabalhados / 12 × vencimento mensal |
@@ -323,12 +374,12 @@ Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de 
 | Férias não gozadas (transitadas) | Dias completos × valor diário |
 | Compensação por cessação (se aplicável) | Nos termos do Código do Trabalho |
 
----
-
 ## Secção 10 — Interação com Outras Skills
 
+**Secção 10 — Interação com Outras Skills**
+
 | Skill | Interação |
-|---|---|
+| --- | --- |
 | portugal-bookkeeping | Lançamentos contabilísticos do processamento (conta 63x); provisões para subsídios de férias e de Natal |
 | portugal-einvoice | Sem interação direta (faturação eletrónica é B2B; recibos de vencimento são autónomos) |
 | pt-nhr-ifici | Mecânica de retenção na fonte à taxa especial de 20% para trabalhadores qualificados no regime IFICI / direitos adquiridos do antigo RNH |
@@ -344,14 +395,30 @@ Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de 
 - **Trabalho suplementar**: Sujeito a contribuições para a Segurança Social e a retenção na fonte de IRS à taxa normal.
 - **Regime IFICI / RNH**: Para trabalhadores abrangidos, a retenção na fonte de IRS é efetuada à taxa especial de 20% — consultar a skill **pt-nhr-ifici**.
 
----
-
 ## Aviso Legal
 
 Esta skill e os respetivos resultados são disponibilizados apenas para fins informativos e de cálculo, não constituindo aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por profissional qualificado antes da entrega ou de qualquer atuação com base nos mesmos.
 
 A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
 
+<!-- openaccountants-cta-block -->
+
 ---
 
-_Source: [OpenAccountants](https://openaccountants.com/skills/portugal-payroll) — open AI skills (tax rules your AI follows), reviewed by named CPAs/CAs/EAs. Quality: **source-cited draft**. For always-current figures and named-accountant backing, connect the OpenAccountants MCP server (`openaccountants-mcp`)._
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+
+## Today's figures and who stands behind this skill
+
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `portugal-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/portugal-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
