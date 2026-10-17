@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Irish income tax for self-emplo
 version: 2.0
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,11 +19,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide is for a self-employed individual in the Republic of Ireland (sole trader, profession, or partner reporting a share of partnership profit), or an adviser preparing their Income Tax Return and self-assessment on Form 11. It covers who must file, adjusted Case I / Case II profit, capital allowances, income tax bands and credits, Universal Social Charge (USC), PRSI Class S, preliminary tax (the 90% / 100% / 105% tests, see [Revenue: preliminary tax](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/preliminary-tax.aspx)), the Pay and File deadline and the Revenue Online Service (ROS) extension, the late filing surcharge and interest.
+This skill is for a self-employed individual in the Republic of Ireland (sole trader, profession, or partner reporting a share of partnership profit), or an adviser preparing their Income Tax Return and self-assessment on Form 11. It covers who must file, adjusted Case I / Case II profit, capital allowances, income tax bands and credits, Universal Social Charge (USC), PRSI Class S, preliminary tax (the 90% / 100% / 105% tests, see [Revenue: preliminary tax](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/preliminary-tax.aspx)), the Pay and File deadline and the Revenue Online Service (ROS) extension, the late filing surcharge and interest.
 
 Year labels: figures are for tax year 2026 (the calendar year 1 January to 31 December 2026) unless marked 2025. A dated section near the end covers the **2025 Form 11 being filed now**, due by 31 October 2026, or 18 November 2026 if paid and filed on ROS ([Revenue: filing your tax return](https://www.revenue.ie/en/self-assessment-and-self-employment/filing-your-tax-return/index.aspx)).
 
-Related Guides:
+Related Skills:
 - Forming the business, registering for tax (TR1, eRegistration) and choosing sole trader or company: **ie-formation**.
 - Companies (CT1, Corporation Tax rates, company preliminary tax, close company surcharges): **ie-corporation-tax**.
 - VAT registration thresholds, rates and VAT returns: **ireland-vat-return**.
@@ -250,7 +250,7 @@ Same facts, but Siobhán files the 2025 return on 10 December 2026 (the ROS exte
 ## When to refuse or refer
 
 - **A company** (LTD, DAC, PLC): the company files a CT1, not Form 11. Use ie-corporation-tax. A proprietary director still files their own Form 11 for their salary and other income.
-- **Partnership accounts:** the partnership computes profits on Form 1 (Firms); each partner then reports their share on Form 11. This Guide covers only the partner's own return.
+- **Partnership accounts:** the partnership computes profits on Form 1 (Firms); each partner then reports their share on Form 11. This skill covers only the partner's own return.
 - **Non-resident, newly arrived or departing individuals, split-year or dual residence, foreign income with foreign tax credits:** refer.
 - **Capital Gains Tax** computations for the CGT panel, share options and employee share schemes: refer or use a CGT Guide. CGT has different payment dates.
 - **High Income Earner Restriction:** may apply where income is €125,000 or more (less with ring-fenced income), specified reliefs exceed €80,000 and exceed 20% of adjusted income; it needs Form RR1 through ROS ([Revenue: HIER](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/hier.aspx)). Refer.

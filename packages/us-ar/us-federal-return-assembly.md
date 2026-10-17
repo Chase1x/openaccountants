@@ -4,7 +4,7 @@ description: Tier 2 orchestrator skill that assembles the complete federal incom
 version: 0.2
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-Figures are for tax year 2026, with a dated section for 2025 returns (due April 15, 2026, or October 15, 2026 on extension). This Guide sets the **order** for putting together a federal Form 1040 package for a US freelancer: a sole proprietor, or a single-member LLC that is disregarded for federal tax and reports on Schedule C. It covers how amounts flow between Schedule C, Schedule SE, Schedule 1, Schedule 1-A, Form 7206, Form 8995 or 8995-A, Schedules 2 and 3, and Form 2210. It also covers the ties to check before anyone signs.
+Figures are for tax year 2026, with a dated section for 2025 returns (due April 15, 2026, or October 15, 2026 on extension). This skill sets the **order** for putting together a federal Form 1040 package for a US freelancer: a sole proprietor, or a single-member LLC that is disregarded for federal tax and reports on Schedule C. It covers how amounts flow between Schedule C, Schedule SE, Schedule 1, Schedule 1-A, Form 7206, Form 8995 or 8995-A, Schedules 2 and 3, and Form 2210. It also covers the ties to check before anyone signs.
 
-It is an assembly method, not a substitute for the detailed rules. These related Guides go deeper and are optional to consult: `us-sole-prop-bookkeeping`, `us-schedule-c-and-se-computation`, `us-self-employed-retirement`, `us-self-employed-health-insurance`, `us-qbi-deduction`, `us-quarterly-estimated-tax`, `us-1099-k-and-payment-processors`, `us-capital-gains` and `us-form-1040-individual-return`. Federal only. For a California resident, see `ca-540-individual-return` for the state return.
+It is an assembly method, not a substitute for the detailed rules. These related skills go deeper and are optional to consult: `us-sole-prop-bookkeeping`, `us-schedule-c-and-se-computation`, `us-self-employed-retirement`, `us-self-employed-health-insurance`, `us-qbi-deduction`, `us-quarterly-estimated-tax`, `us-1099-k-and-payment-processors`, `us-capital-gains` and `us-form-1040-individual-return`. Federal only. For a California resident, see `ca-540-individual-return` for the state return.
 
 Form line numbers below are from the **2025** forms. The 2026 forms may renumber lines, so check the 2026 form before relying on a line number.
 
@@ -32,7 +32,7 @@ Form line numbers below are from the **2025** forms. The 2026 forms may renumber
 - Health coverage by month: who was covered, who paid, whether it was Marketplace coverage with advance premium tax credit (Form 1095-A), and any month when anyone was **eligible** for a subsidized plan through the taxpayer's employer, the spouse's employer, or the employer of a dependent or of a child under 27 at year-end, even if nobody took it.
 - The retirement plan type (SEP, solo 401(k), SIMPLE, IRA), the date it was set up, and the amounts and dates contributed.
 - Estimated payments made for the year (dates and amounts), any overpayment applied from the prior year, and the prior year's total tax and AGI (needed for the safe harbour).
-- Capital gains, qualified dividends, rental income, K-1s, foreign income or accounts, and digital-asset activity. Each may take the return outside this Guide; see "When to refuse or refer".
+- Capital gains, qualified dividends, rental income, K-1s, foreign income or accounts, and digital-asset activity. Each may take the return outside this skill; see "When to refuse or refer".
 - State residency for the year, for the state handoff.
 
 ## The method, step by step

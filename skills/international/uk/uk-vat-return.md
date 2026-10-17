@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -97,7 +97,7 @@ Figures are for tax year 2026/27, as the rules stand on 25 September 2026. VAT t
 | Rule | 2026/27 |
 | --- | --- |
 | Join | VAT registered and expect VAT taxable turnover of £150,000 or less (excluding VAT) in the next 12 months |
-| Cannot join | Left the scheme or committed a VAT offence in the last 12 months; VAT group or division in the last 24 months; closely associated with another business; margin or capital goods scheme |
+| Cannot join | Left the scheme or committed a VAT offence in the last 12 months; joined (or were eligible to join) a VAT group, or registered for VAT as a business division, in the last 24 months; closely associated with another business; margin or capital goods scheme |
 | Must leave | On the anniversary of joining, income in the last 12 months was more than £230,000 including VAT, or you expect it to be in the next 12 months; or you expect income in the next 30 days alone to be more than £230,000 |
 | Stay despite a one-off | You may stay only with HMRC's agreement: apply in writing and show that VAT-inclusive turnover in the coming year will not exceed £191,500 and that the increase came from unexpected business activity which has not occurred before and is not expected to recur |
 | How VAT is worked out | Flat rate percentage x VAT-inclusive turnover, including zero-rated and exempt income. Charge normal VAT on your invoices |

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/de-formation"
   jurisdiction: "US-DE"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,11 +17,11 @@ metadata:
 
 Figures are for tax year 2026. Delaware fees are those on the Division of Corporations schedule revised 1 August 2026, and the annual taxes are those in force for calendar year 2026. A short section at the end covers what differs for 2025 payments. Research was done in September 2026. Delaware changes fees by statute and by schedule, so confirm the figure on the official page on the day you file.
 
-This Guide covers forming a Delaware limited liability company (LLC) or a Delaware corporation (including a public benefit corporation). It covers the recurring Delaware charges and the federal items that must happen at or just after formation: the EIN, the entity classification, the §83(b) election for founder restricted stock, Form 5472 for a foreign-owned single-member LLC, and beneficial ownership (BOI) reporting. It is for founders and the accountants who advise them.
+This skill covers forming a Delaware limited liability company (LLC) or a Delaware corporation (including a public benefit corporation). It covers the recurring Delaware charges and the federal items that must happen at or just after formation: the EIN, the entity classification, the §83(b) election for founder restricted stock, Form 5472 for a foreign-owned single-member LLC, and beneficial ownership (BOI) reporting. It is for founders and the accountants who advise them.
 
 It does not cover:
 
-- the full franchise-tax computation for larger corporations. See the `de-franchise-tax-and-llc` Guide.
+- the full franchise-tax computation for larger corporations. See the `de-franchise-tax-and-llc` skill.
 - income tax, franchise tax or registration in the state where the business actually operates.
 - securities law, drafting of the LLC agreement or bylaws, or conversions of an existing entity.
 
@@ -242,4 +242,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

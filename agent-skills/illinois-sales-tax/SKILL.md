@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/illinois-sales-tax"
   jurisdiction: "US-IL"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -61,7 +61,7 @@ Figures are for tax year 2026, as they stand on 25 September 2026. They come fro
 | Service Occupation Tax (SOT) | Servicepersons, only on TPP they transfer as part of a sale of service | 35 ILCS 115 in IDOR's publications. The service element is not taxed |
 | Service Use Tax (SUT) | Buyers, for using in Illinois TPP received as part of a service | 35 ILCS 110 in IDOR's publications |
 
-The Service Occupation Tax Act is 35 ILCS 115 and the Service Use Tax Act is 35 ILCS 110. The earlier version of this Guide had these two reversed.
+The Service Occupation Tax Act is 35 ILCS 115 and the Service Use Tax Act is 35 ILCS 110. The earlier version of this skill had these two reversed.
 
 From 1 January 2025, a lease of TPP (other than most titled or registered items) is a sale at retail, so lessors owe ROT on lease receipts ([ROT page](https://tax.illinois.gov/research/taxinformation/sales/rot.html)).
 
@@ -99,7 +99,7 @@ From 1 January 2025, a lease of TPP (other than most titled or registered items)
 
 - The combined rate is the State rate plus local taxes that IDOR collects: home rule and non-home rule municipal taxes, RTA (NITA) and MED taxes, county public safety, facilities and transportation taxes, county school facility taxes, park district and business district taxes.
 - Home rule, non-home rule, county school facility, county public safety and similar taxes, and Metro-East park and recreation taxes, do not apply to drugs, groceries, medical appliances, or titled or registered items.
-- This Guide gives no local rates because they vary by address and change twice a year. Use the MyTax Illinois Tax Rate Finder, or the machine-readable address files for destination sales.
+- This skill gives no local rates because they vary by address and change twice a year. Use the MyTax Illinois Tax Rate Finder, or the machine-readable address files for destination sales.
 - Local governments may also impose taxes that IDOR does not collect (for example, taxes a city administers itself). Contact the city or county for those.
 
 ### Sourcing: origin or destination ([Publication 113](https://tax.illinois.gov/research/publications/pubs/retailers-overview-of-sales-and-use-tax/requirements-for-retailers-who-file-form-st-1.html); [IDOR bulletin FY 2025-10](https://tax.illinois.gov/research/publications/bulletins/fy-2025-10.html))
@@ -208,7 +208,7 @@ Examples use the State rate only unless a combined rate is given. In practice, a
 
 ## When to refuse or refer
 
-- **Software other than canned software, SaaS, streaming and digital downloads.** IDOR's pages reviewed here class prewritten software as general merchandise but do not settle SaaS or custom software. The earlier version of this Guide said pure SaaS is not taxable, citing an IDOR letter; that was not confirmed on the sources reviewed. Check 86 Ill. Adm. Code 130.1935 and IDOR letter rulings, or refer.
+- **Software other than canned software, SaaS, streaming and digital downloads.** IDOR's pages reviewed here class prewritten software as general merchandise but do not settle SaaS or custom software. The earlier version of this skill said pure SaaS is not taxable, citing an IDOR letter; that was not confirmed on the sources reviewed. Check 86 Ill. Adm. Code 130.1935 and IDOR letter rulings, or refer.
 - **Taxes IDOR does not collect**, such as a city's own amusement, restaurant or soft drink taxes (except the Chicago soft drink ROT, which IDOR does collect). Refer to the city or county.
 - **Vehicles, watercraft, aircraft, trailers and mobile homes** (Forms ST-556, RUT-25, RUT-50, RUT-75), and motor fuel prepaid sales tax.
 - **Audits, the 15% undetermined-location rate, and appeals** to the Illinois Independent Tax Tribunal or circuit court ([IDOR bulletin FY 2026-12](https://tax.illinois.gov/research/publications/bulletins/fy-2026-12.html)).
@@ -309,4 +309,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `illinois-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/illinois-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `illinois-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/illinois-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

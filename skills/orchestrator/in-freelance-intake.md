@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their Ind
 version: 0.1
 jurisdiction: IN
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,15 +16,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Income Tax Department: objective and scope of the new Act](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/objective-and-scope-new-act-faq))
 
-- This Guide is the intake step for a resident individual in India who earns freelance, consulting, contract or professional income as a sole proprietor. It collects the facts and documents, screens out cases it cannot handle, and fixes the decisions that change the whole computation: the year, residence, regime, presumptive or actual profit, and the ITR form. It does not compute tax.
-- For the tax computation itself (slabs, rebate, surcharge, deductions, interest), use the **in-income-tax** Guide. For residence and RNOR tests, use the **in-tax-residency** Guide. This Guide does not repeat them.
+- This skill is the intake step for a resident individual in India who earns freelance, consulting, contract or professional income as a sole proprietor. It collects the facts and documents, screens out cases it cannot handle, and fixes the decisions that change the whole computation: the year, residence, regime, presumptive or actual profit, and the ITR form. It does not compute tax.
+- For the tax computation itself (slabs, rebate, surcharge, deductions, interest), use the **in-income-tax** skill. For residence and RNOR tests, use the **in-tax-residency** skill. This skill does not repeat them.
 - **Two years are live on 25 September 2026. Always ask which one.**
   - **Tax Year 2026-27** (1 April 2026 to 31 March 2027) is the current year. It is governed by the Income-tax Act, 2025. The portal says: "The 1961 Act stands repealed on the 01.04.2026." Income "earned during FY 2026 -27 onwards ... will be referred to as Tax Year 2026-27 under the Income Tax Act ,2025." Intake for this year is about advance tax, TDS on current receipts and records.
   - **AY 2026-27** (income of FY 2025-26, 1 April 2025 to 31 March 2026) is the return being filed or chased now. It stays under the Income-tax Act, 1961 and the old ITR forms. See "AY 2026-27 returns (FY 2025-26), dated 25 September 2026" below.
 - **Regime default.** The new tax regime is the default for individuals ("new tax regime the default tax regime", [Business / Profession page](https://www.incometax.gov.in/iec/foportal/help/individual-business-profession)). Under the 2025 Act "the new tax regime is provided under section 202" ([objective and scope FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/objective-and-scope-new-act-faq)). A client with business or professional income leaves the default only by filing Form 10-IEA on time (see "Regime" below).
 - Out of scope, refer: non-residents and RNORs; HUFs, firms, LLPs and companies; tax audit cases; clients with capital gains beyond the ITR-4 limit, foreign income or assets; GST computations (see the GST note below).
 - Currency is Indian rupees in Indian grouping (₹12,00,000 is twelve lakh).
-- **GST note.** The GST authorities' sites are not among the official sources this Guide can cite. This Guide therefore asks the GST questions but states no GST threshold, rate or deadline. Confirm every GST point on the GST portal before advising (check).
+- **GST note.** The GST authorities' sites are not among the official sources this skill can cite. This skill therefore asks the GST questions but states no GST threshold, rate or deadline. Confirm every GST point on the GST portal before advising (check).
 
 ## Ask the client first
 
@@ -35,7 +35,7 @@ Ask these in one or two batches. Anything already visible in the documents is co
 **Blocking questions (ask first; a "no" ends the intake):**
 
 1. **Which year?** Tax Year 2026-27 (current, 2025 Act), AY 2026-27 (FY 2025-26 income, 1961 Act), or both.
-2. **Residence for that year.** Days in India in the year, days in the four and seven preceding years, citizenship or Indian origin. If the client may be non-resident, RNOR or deemed resident, stop and use the in-tax-residency Guide. ITR-4 "cannot be filed by" a person who "is a Resident but Not Ordinarily Resident (RNOR), or Non-Resident Indian".
+2. **Residence for that year.** Days in India in the year, days in the four and seven preceding years, citizenship or Indian origin. If the client may be non-resident, RNOR or deemed resident, stop and use the in-tax-residency skill. ITR-4 "cannot be filed by" a person who "is a Resident but Not Ordinarily Resident (RNOR), or Non-Resident Indian".
 3. **Structure.** Does the client invoice in their own name under their own PAN (sole proprietor)? HUF, partnership firm, LLP or company: stop and refer.
 4. **PAN and Aadhaar.** No PAN: stop; the client must get one first. PAN not linked to Aadhaar: continue with a flag. The portal says an unlinked PAN "will become inoperative" ([Link Aadhaar](https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar)), and that the ITR can still be filed "but you will have limited access on the portal" ([ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/itr%204-faqs)). Tell the client to link before filing. The TDS consequences of an inoperative PAN are not stated on the pages cited here (check).
 
@@ -54,7 +54,7 @@ Ask these in one or two batches. Anything already visible in the documents is co
 
 - Bank statements for every account used for the work, for the whole year.
 - Sales invoices issued, and purchase invoices or receipts for expenses (needed only if actual profit is being considered).
-- If actual profit is being considered: equipment and other assets bought in the year (invoices and dates; potential capital items), and last year's depreciation schedule with the written-down value of each asset block. This Guide states no depreciation rate; the reviewer applies it.
+- If actual profit is being considered: equipment and other assets bought in the year (invoices and dates; potential capital items), and last year's depreciation schedule with the written-down value of each asset block. This skill states no depreciation rate; the reviewer applies it.
 - Form 26AS and AIS, downloaded from the e-Filing portal after login.
 - Form 16A from each client that deducted TDS ("a Tax Deducted at Source (TDS) Certificate issued quarterly", [Business / Profession page](https://www.incometax.gov.in/iec/foportal/help/individual-business-profession)), and Form 16 if there was also salary.
 - Challans for advance tax and self-assessment tax.
@@ -76,10 +76,10 @@ Sources: [ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/
 5. **Read AIS for what the client did not mention.** AIS shows TDS and TCS, SFT information, tax payments, demand and refund, and "Other information (like Pending/Completed proceedings, GST Information, Information received from foreign government etc.)" ([Business / Profession page](https://www.incometax.gov.in/iec/foportal/help/individual-business-profession)). Anything in AIS that the client has not explained becomes a question.
 6. **Classify the work** as a specified profession (44ADA) or a business (44AD), using the client's own description and the invoices. If the service is not clearly on the specified list, do not assume 44ADA; flag it (see the boundary table). If the client has both professional and business income, record each stream separately (receipts, cash part, section) and flag it for the reviewer.
 7. **Test presumptive eligibility.** Compare gross receipts to the limit, using the cash share to pick the limit. Check the ITR-4 bars. If eligible, the client chooses presumptive (ITR-4) or actual profit from books (ITR-3). Record the choice and the prior-year choice.
-8. **Fix the regime.** New regime unless the client has filed, or will file on time, Form 10-IEA to opt out. Check whether the one-time switch back has been used. The comparison itself is done with the in-income-tax Guide.
+8. **Fix the regime.** New regime unless the client has filed, or will file on time, Form 10-IEA to opt out. Check whether the one-time switch back has been used. The comparison itself is done with the in-income-tax skill.
 9. **Check advance tax paid** against the rule for the client's case (presumptive: all by 15 March; others: four instalments). Note dates and amounts from challans and Form 26AS.
 10. **Fill the gaps** that the documents cannot answer: private use of phone and internet, home office, other income, old-regime deductions, anything unclear in AIS.
-11. **Show one summary** of everything found and decided, with open flags, and ask the client to correct it. Then hand over to the computation (in-income-tax Guide) and, if registered, the GST review.
+11. **Show one summary** of everything found and decided, with open flags, and ask the client to correct it. Then hand over to the computation (in-income-tax skill) and, if registered, the GST review.
 12. **Say that a qualified professional must review** the output before anything is filed.
 
 ## Figures by year
@@ -116,7 +116,7 @@ Sources: [ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/
 | 60 or more but below 80 | Up to ₹3,00,000 | Up to ₹4,00,000 |
 | 80 or more | Up to ₹5,00,000 | Up to ₹4,00,000 |
 
-- These bands are before the rebate. The full slabs, the rebate (₹60,000 new regime where taxable income does not exceed ₹12,00,000; ₹12,500 old regime where it does not exceed ₹5,00,000) and surcharge are in the in-income-tax Guide.
+- These bands are before the rebate. The full slabs, the rebate (₹60,000 new regime where taxable income does not exceed ₹12,00,000; ₹12,500 old regime where it does not exceed ₹5,00,000) and surcharge are in the in-income-tax skill.
 - A super senior citizen (80 or more) may file ITR-1 or ITR-4 on paper: "have the option to submit their ITR using Form 1 or 4 in offline / paper mode. The e-Filing option also remains available to them" ([Senior Citizens page](https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-2)).
 - A resident senior citizen with no business or professional income is not liable to advance tax. A senior freelancer has business or professional income, so the relief does not apply.
 
@@ -129,7 +129,7 @@ Sources: [ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/
 
 - Presumptive: "liable to pay 100% of Advance Tax on or before 15 th March of the previous year" ([ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/itr%204-faqs)). Tax Year 2026-27: "single instalment on or before 15 March ... in accordance with Section 408(2)".
 - Instalment percentages: [ITR-1 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/ITR1-FAQ).
-- Advance tax applies where the tax for the year, after TDS, is ₹10,000 or more (the in-income-tax Guide covers the wording and interest).
+- Advance tax applies where the tax for the year, after TDS, is ₹10,000 or more (the in-income-tax skill covers the wording and interest).
 - Interest for late or short advance tax is under 234B and 234C for AY 2026-27, and s.424 and s.425 of the 2025 Act for Tax Year 2026-27: 1% per month or part of a month under s.424.
 - For Tax Year 2026-27, 15 September 2026 has passed. A presumptive client still has until 15 March 2027 for the single instalment. An ITR-3 client who missed June or September should pay now and expect interest.
 
@@ -188,7 +188,7 @@ These returns are governed by the Income-tax Act, 1961, use the old forms, and s
 
 All clients are resident, not RNOR, sole proprietors with a PAN linked to Aadhaar, unless stated. The figures are the AY 2026-27 figures; for Tax Year 2026-27 confirm them in s.58 (check).
 
-1. **Technical consultant, Tax Year 2026-27.** Expected receipts ₹40,00,000, all by bank transfer. Technical consultancy is a specified profession. Cash is nil, so the ₹75 lakh limit applies and the client is inside it. If 44ADA is chosen, deemed profit is at least 50%: ₹20,00,000. No expenses are deducted on top. Advance tax: the whole year's tax, net of TDS shown in Form 26AS, by 15 March 2027. Hand the ₹20,00,000 to the in-income-tax Guide for the tax.
+1. **Technical consultant, Tax Year 2026-27.** Expected receipts ₹40,00,000, all by bank transfer. Technical consultancy is a specified profession. Cash is nil, so the ₹75 lakh limit applies and the client is inside it. If 44ADA is chosen, deemed profit is at least 50%: ₹20,00,000. No expenses are deducted on top. Advance tax: the whole year's tax, net of TDS shown in Form 26AS, by 15 March 2027. Hand the ₹20,00,000 to the in-income-tax skill for the tax.
 2. **Cash above 5%, AY 2026-27.** Architect, gross receipts ₹60,00,000, of which ₹4,00,000 in cash. 5% of ₹60,00,000 is ₹3,00,000; cash is more than that, so the limit is ₹50 lakh, and receipts exceed it. 44ADA is not available. Actual profit from books (ITR-3) applies. Refer for books and audit.
 3. **Freelancer whose work is not on the list.** Content writer, receipts ₹18,00,000 by bank transfer. Writing is not one of the listed professions on the pages cited here. Do not put the client in 44ADA. Flag it: either a CBDT notification covers the work (check), or it is a business and the reviewer decides between 44AD and actual profit. Record the flag; do not compute.
 4. **Wants the old regime, too late.** Consultant under 44ADA, receipts ₹16,00,000, deemed profit ₹8,00,000, has never filed Form 10-IEA, and comes to file AY 2026-27 on 10 October 2026. The ITR-4 due date of 31 August 2026 has passed, so Form 10-IEA can no longer be filed in time. The return is belated (by 31 December 2026), on the new regime, and the late fee is ₹5,000 because total income exceeds ₹5,00,000.
@@ -201,7 +201,7 @@ Sources: [Non Resident FAQs](https://www.incometax.gov.in/iec/foportal/help/all-
 
 Refuse and refer (stop the intake, one sentence of reason, name the kind of professional):
 
-- Non-resident, RNOR or deemed resident for the year, or a day count close to the thresholds. The basic test is "182 days or more in the relevant tax year, or for 60 days or more in that year coupled w[ith]" days in earlier years; use the in-tax-residency Guide and refer if uncertain.
+- Non-resident, RNOR or deemed resident for the year, or a day count close to the thresholds. The basic test is "182 days or more in the relevant tax year, or for 60 days or more in that year coupled w[ith]" days in earlier years; use the in-tax-residency skill and refer if uncertain.
 - HUF, partnership firm, LLP or company: separate return, separate rules.
 - No PAN.
 - Tax audit case, or receipts above the presumptive limits with books to be written up: refer to a Chartered Accountant.
@@ -226,7 +226,7 @@ Refusal wording (keep it to this): "Stop: you [reason]. This intake covers resid
 - Returns are filed on the e-Filing portal and then verified. Super senior citizens may file ITR-1 or ITR-4 on paper.
 - ITR-4 for AY 2026-27 was due 31 August 2026; belated returns run to 31 December 2026 with the s.234F fee.
 - The Tax Year 2026-27 return is not due until 2027; the dates for it are not stated on the pages cited here (check the e-Filing calendar).
-- GST returns and payments are outside the pages this Guide can cite; confirm the client's GST filing frequency and dates on the GST portal (check).
+- GST returns and payments are outside the pages this skill can cite; confirm the client's GST filing frequency and dates on the GST portal (check).
 
 ## Summary to show the client before handover
 
@@ -248,7 +248,7 @@ Keep the conversation short: one batch of blocking questions, one document reque
 ## Completion checklist ([ITR-4 FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/itr%204-faqs))
 
 - [ ] Year and Act fixed and written on every figure: Tax Year 2026-27 (2025 Act) or AY 2026-27 (1961 Act).
-- [ ] Resident and not RNOR confirmed (in-tax-residency Guide if in doubt).
+- [ ] Resident and not RNOR confirmed (in-tax-residency skill if in doubt).
 - [ ] Sole proprietor with a PAN; PAN-Aadhaar link checked.
 - [ ] Work classified: specified profession (44ADA) or business (44AD); unlisted work flagged.
 - [ ] Receipts totalled, grossed up for TDS, with cash and bank parts; refunds, loans and transfers excluded.

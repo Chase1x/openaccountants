@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/uk-national-insurance"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -19,7 +19,7 @@ Figures are for the 2026/27 tax year, which runs from 6 April 2026 to 5 April 20
 
 ## Scope and who this is for
 
-Use this Guide to work out, explain or check UK National Insurance contributions (NIC) for:
+Use this skill to work out, explain or check UK National Insurance contributions (NIC) for:
 
 - employees and employers (Class 1), including thresholds, category letters and company directors;
 - employers' Class 1A (benefits and termination awards) and Class 1B (PAYE Settlement Agreements);
@@ -381,4 +381,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-national-insurance` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-national-insurance. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-national-insurance` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-national-insurance. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: "Utilizar este skill sempre que questões envolvam o regime do Resi
 version: 1.0
 jurisdiction: PT
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and status in 2026 ([EBF art. 58-A](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf58a.aspx); [NHR FAQ](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/questoes_frequentes/Pages/faqs-00309.aspx))
 
-This Guide covers two Portuguese personal income tax (IRS) regimes for people who move to Portugal:
+This skill covers two Portuguese personal income tax (IRS) regimes for people who move to Portugal:
 
 - **NHR (residente não habitual, "RNH")**, created by Decree-Law 249/2009 and set out in the old wording of CIRS art. 16(8) to (12), 72(10) and (12) and 81(4) to (8). It was **revoked from 1 January 2024** by the 2024 Budget Law (Lei 82/2023). It still runs for people already registered and for a closed transitional group (art. 236 Lei 82/2023).
 - **IFICI (incentivo fiscal à investigação científica e inovação, often described as the successor to NHR)**, in art. 58-A of the Tax Benefits Statute (EBF), added by Lei 82/2023. It applies to people who become tax resident **from 1 January 2024**. The procedure and the lists of professions and business codes are in **Portaria 352/2024/1 of 23 December 2024**.
@@ -228,8 +228,8 @@ Amounts are hypothetical; personal deductions, social security and treaty credit
 - **Refuse** to apply the IFICI flat rate before checking the activity against a specific letter of art. 58-A(1), the entity conditions and the qualifications. Where the reviewing entity (FCT, AICEP, IAPMEI, ANI, Startup Portugal) has not yet confirmed, label the result provisional.
 - **Refuse** to treat a foreign pension as exempt under IFICI, or under NHR for a person who became resident after 31 March 2020 and did not keep the pre-2020 rules.
 - **Refuse** to claim the NHR "may be taxed" exemption for a gain or royalty without reading the treaty article that applies.
-- **Refer** when the case involves: disputed residence or dual residence under a treaty; a refused or pending registration (administrative objection and appeal deadlines are outside this Guide); trusts, foundations or blacklisted-jurisdiction structures; stock options; Regressar or IRS Jovem interaction; Azores or Madeira regional rules; US citizens (US tax applies on citizenship); penalties for late or wrong returns (not covered here, **check** the penalty rules separately).
-- **Check** points this Guide could not confirm from an AT page: the full text of Portaria 352/2024/1 annexes as later amended, and whether any 2026 Budget change touched EBF art. 58-A. The AT's art. 58-A page shows no amendment since Lei 82/2023 as of 25 September 2026.
+- **Refer** when the case involves: disputed residence or dual residence under a treaty; a refused or pending registration (administrative objection and appeal deadlines are outside this skill); trusts, foundations or blacklisted-jurisdiction structures; stock options; Regressar or IRS Jovem interaction; Azores or Madeira regional rules; US citizens (US tax applies on citizenship); penalties for late or wrong returns (not covered here, **check** the penalty rules separately).
+- **Check** points this skill could not confirm from an AT page: the full text of Portaria 352/2024/1 annexes as later amended, and whether any 2026 Budget change touched EBF art. 58-A. The AT's art. 58-A page shows no amendment since Lei 82/2023 as of 25 September 2026.
 
 ## Filing and payment ([CIRS art. 60](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs60.aspx); [NHR leaflet](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/IRS_RNH_PT.pdf))
 

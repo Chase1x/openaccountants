@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch tax deductions and specia
 version: 1.0
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Figures are for tax year 2026 unless the 2025 column or section says otherwise. Missing evidence stays unresolved; do not assume zero deductions or a completed return. 
 
-This Guide covers the main deductions a Dutch resident individual claims in the income tax return
+This skill covers the main deductions a Dutch resident individual claims in the income tax return
 (aangifte inkomstenbelasting). The primary year is **2026** (calendar year 1 January to 31 December 2026).
 There is a short dated section for **2025**, the returns being filed now.
 
@@ -40,7 +40,7 @@ Covered:
 Not covered here:
 
 - **Entrepreneur deductions** (zelfstandigenaftrek, startersaftrek, mkb-winstvrijstelling, the
-  hours test): use the **nl-zzp-deductions** Guide. The investment deductions (KIA, EIA, MIA,
+  hours test): use the **nl-zzp-deductions** skill. The investment deductions (KIA, EIA, MIA,
   Vamil) and R&D relief are business matters: route ordinary deductions to that method and refer specialist schemes. Qualifying self-employed S&O relief can be an income-tax deduction; WBSO is not solely a payroll measure. [Income-tax R&D relief](https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek)
 - **Company tax** for a BV: use **nl-corporate-tax**.
 - Non-residents, except the pointer in "When to refuse or refer".
@@ -469,7 +469,7 @@ whole home €1,200 (Belastingdienst example, [alimony chapter](https://www.bela
 
 **Case 6: a course in 2026.** The client pays for a professional course in 2026 and has no
 pre-2015 prestatiebeurs. No study-cost deduction. If the client is self-employed and the course
-is for the business, that is a business-cost question for nl-zzp-deductions, not this Guide.
+is for the business, that is a business-cost question for nl-zzp-deductions, not this skill.
 
 ## When to refuse or refer
 

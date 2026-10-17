@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Norwegian income tax for self-e
 version: 2.0
 jurisdiction: "NO"
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Norway income tax: 2026 sole-proprietor calculation and return
 
-Figures are for tax year 2026. For income earned in **2026**, normally reported in **2027**. A return submitted during **2026** for **2025** income needs that earlier year's rates. This Guide covers ordinary Norwegian sole proprietors (*enkeltpersonforetak*, ENK), including owners with wages. Amounts are NOK. Figures and procedures were researched in September 2026; the business shielding rate is established after year-end.
+Figures are for tax year 2026. For income earned in **2026**, normally reported in **2027**. A return submitted during **2026** for **2025** income needs that earlier year's rates. This skill covers ordinary Norwegian sole proprietors (*enkeltpersonforetak*, ENK), including owners with wages. Amounts are NOK. Figures and procedures were researched in September 2026; the business shielding rate is established after year-end.
 
 ## Ask the client first
 

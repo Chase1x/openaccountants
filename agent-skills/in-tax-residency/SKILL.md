@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/in-tax-residency"
   jurisdiction: "IN"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([Non Resident FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/non%20resident%20-faq))
 
-- This Guide decides the residential status of an **individual** for Indian income tax: Resident and Ordinarily Resident (ROR), Resident but Not Ordinarily Resident (RNOR, the Act says "not ordinarily resident") or Non-Resident (NR). It then says what each status is taxed on, what it changes in the return, and how treaty relief is claimed.
+- This skill decides the residential status of an **individual** for Indian income tax: Resident and Ordinarily Resident (ROR), Resident but Not Ordinarily Resident (RNOR, the Act says "not ordinarily resident") or Non-Resident (NR). It then says what each status is taxed on, what it changes in the return, and how treaty relief is claimed.
 - **Primary year: Tax Year 2026-27** (1 April 2026 to 31 March 2027). Residence for it is decided under section 6 of the Income-tax Act, 2025. The portal says: "Residential status under section 6 of the Income Tax Act, 2025 will apply only for tax years beginning on or after 1 April 2026."
 - **Previous year: FY 2025-26** (returns for AY 2026-27, filed in 2026). Residence for it is decided under section 6 of the Income-tax Act, 1961, using days up to 31 March 2026. See the dated section "FY 2025-26 (AY 2026-27): the 1961 Act rules" below.
 - The portal confirms the tests did not change between the two Acts: "No change has been made in the basic conditions for determining individual residency."
@@ -102,7 +102,7 @@ The Form 41 and Form 42 sections come from the portal's form manuals and mapping
 
 - **ROR is taxed on worldwide income.** The portal: Schedule FSI "applies to taxpayers who are residents of India. In this schedule, taxpayers must report all income that accrues or arises from sources outside India."
 - **NR is not taxed on foreign income** that is neither received nor accruing in India. The ITR-2 validation rules: "Schedule FSI is not applicable if residential status is non resident" ([ITR-2 validation rules, AY 2026-27](https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-05/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202026-27_V1.0.pdf)).
-- **RNOR sits between.** The RNOR rule in the table (foreign income taxed only if received in India or from an India-controlled business or India-set-up profession) is the scope-of-income section of the Act (section 5 of the 1961 Act). The portal pages found do not quote that section or name its 2025 Act number, and the Act text is on a host this Guide may not cite. Confirm against the Act before advising on a large foreign receipt (check).
+- **RNOR sits between.** The RNOR rule in the table (foreign income taxed only if received in India or from an India-controlled business or India-set-up profession) is the scope-of-income section of the Act (section 5 of the 1961 Act). The portal pages found do not quote that section or name its 2025 Act number, and the Act text is on a host this skill may not cite. Confirm against the Act before advising on a large foreign receipt (check).
 - **Credit for foreign tax** (sections 90, 90A or 91) is claimed in Schedule FSI and Schedule TR with Form 67, and only by a resident. ITR-2: Schedule TR is "available only in case of resident".
 
 ### What the status changes in the return ([ITR-2 validation rules, AY 2026-27](https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-05/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202026-27_V1.0.pdf))
@@ -245,4 +245,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.

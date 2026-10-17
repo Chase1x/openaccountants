@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK payroll, PAYE, National Insu
 version: 1.0
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -33,15 +33,15 @@ Figures are for the 2026/27 tax year, which runs from 6 April 2026 to 5 April 20
   - paying HMRC (monthly or quarterly), year-end (P60, P11D, P11D(b), Class 1A) and penalties;
   - the payrolling of benefits in kind that HMRC has announced from April 2027.
 - **Does not cover:**
-  - the employee's own Self Assessment return (see the Guide **uk-income-tax-sa100**);
-  - payroll bookkeeping entries (see the Guide **uk-bookkeeping**);
-  - National Insurance beyond employer payroll (see the Guide **uk-national-insurance**);
-  - VAT, including any VAT effect of benefits provided to staff (see the Guide **uk-vat-return**);
+  - the employee's own Self Assessment return (see the skill **uk-income-tax-sa100**);
+  - payroll bookkeeping entries (see the skill **uk-bookkeeping**);
+  - National Insurance beyond employer payroll (see the skill **uk-national-insurance**);
+  - VAT, including any VAT effect of benefits provided to staff (see the skill **uk-vat-return**);
   - employment status (employee or self-employed), IR35 and off-payroll working;
   - the Construction Industry Scheme, PAYE Settlement Agreements in detail, and termination payments beyond the Class 1A threshold;
   - Freeport and Investment Zone eligibility (only the category letters are shown);
   - employment law beyond the payroll minimums listed here (contracts, dismissal, family leave rights).
-- **Payroll software does the arithmetic.** HMRC expects employers to use payroll software, which works out tax and NIC from the code and category letter ([rates and thresholds](https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027)). This Guide explains what the software should be doing, so that you can check it and spot the cases where it cannot know the answer.
+- **Payroll software does the arithmetic.** HMRC expects employers to use payroll software, which works out tax and NIC from the code and category letter ([rates and thresholds](https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027)). This skill explains what the software should be doing, so that you can check it and spot the cases where it cannot know the answer.
 
 ## Ask the client first
 
@@ -335,7 +335,7 @@ These are straight-line checks of what the software should produce. Real softwar
 
 - **Employment status.** Refer if the question is whether a worker is an employee, self-employed, or inside IR35. Getting it wrong brings extra tax, NIC, interest and a penalty ([new employee](https://www.gov.uk/new-employee/print)).
 - **Foreign and cross-border cases.** Refer employees seconded from abroad, UK employees working overseas, and cases where the employer pays foreign tax for the employee. These need specialist treatment of PAYE and NIC.
-- **Freeport and Investment Zone relief.** Refer the question of whether the site and employee conditions are met. This Guide shows only the rates.
+- **Freeport and Investment Zone relief.** Refer the question of whether the site and employee conditions are met. This skill shows only the rates.
 - **Complex non-cash pay.** Refer share options, and PAYE Settlement Agreements beyond the basic Class 1B rate. HMRC tells employers to contact it for complex situations such as exercising share options ([FPS after payday](https://www.gov.uk/running-payroll/fps-after-payday)).
 - **Unsettled benefits payrolling detail.** Do not state the final phase 1 rules for April 2027 as settled law until the secondary legislation at Budget 2026 and HMRC's final guidance are published.
 - **Old or contested SSP and SMP disputes, and employee appeals.** An employee who disputes an SSP decision can appeal to HMRC. Refer rather than decide.

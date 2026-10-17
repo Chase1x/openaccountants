@@ -3,7 +3,7 @@ name: ie-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Irish VAT return (VAT3 form) for a self-employed individual or small business in Ireland. Trigger on phrases like "prepare VAT return", "do the VAT", "Irish VAT", "VAT3", "ROS return", "Revenue Online", or any request involving Ireland VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Ireland only and only standard VAT-registered businesses. VAT groups, Capital Goods Scheme adjustments, and complex property transactions are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Irish VAT work.
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers preparing and checking Irish VAT3 returns and the annual VAT Return of Trading Details (RTD) for a VAT-registered sole trader, partnership or company established in Ireland. Figures are for tax year 2026 (calendar 2026, the VAT year most Irish businesses are filing now). A dated section near the end covers 2025 periods, for late or amended returns.
+This skill covers preparing and checking Irish VAT3 returns and the annual VAT Return of Trading Details (RTD) for a VAT-registered sole trader, partnership or company established in Ireland. Figures are for tax year 2026 (calendar 2026, the VAT year most Irish businesses are filing now). A dated section near the end covers 2025 periods, for late or amended returns.
 
 It does not cover: VAT groups, the Capital Goods Scheme, supplies or lettings of property, partial exemption beyond spotting it, margin schemes, the flat-rate farmer scheme, One-Stop Shop returns, or customs. Those are in "When to refuse or refer".
 

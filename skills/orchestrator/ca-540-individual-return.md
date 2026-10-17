@@ -3,7 +3,7 @@ name: ca-540-individual-return
 description: Tier 2 content skill for preparing California Form 540 (Resident Income Tax Return) for US sole proprietors and single-member LLCs who are California residents. Covers tax year 2025 California personal income tax including the Schedule CA (540) decoupling adjustments from federal AGI, California's non-conformity with OBBBA bonus depreciation and section 174 R&E expensing, the nine-bracket rate structure (1% through 12.3% plus the 1% Mental Health Services Tax surcharge above $1M), standard and itemized deductions, California tax credits (renter's credit, CalEITC, young child tax credit), SDI/VPDI deduction, and California's own AMT. Defers estimated tax to ca-estimated-tax-540es, SMLLC franchise tax to ca-smllc-form-568, and health coverage mandate to ca-form-3853-coverage. MUST be loaded alongside us-tax-workflow-base v0.1 or later and us-federal-return-assembly. California full-year residents only.
 jurisdiction: US-CA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,11 +13,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # California Form 540: resident sole proprietors and single-member LLC owners
 
-This Guide is written for tax year 2026, with a dated section for 2025 returns that are still being filed on extension. It covers the California resident income tax return (Form 540) of a full-year California resident who reports a business on federal Schedule C, directly or through a single-member LLC that is disregarded for federal tax. It starts from a finished federal return and turns it into California taxable income, tax, credits and payments.
+This skill is written for tax year 2026, with a dated section for 2025 returns that are still being filed on extension. It covers the California resident income tax return (Form 540) of a full-year California resident who reports a business on federal Schedule C, directly or through a single-member LLC that is disregarded for federal tax. It starts from a finished federal return and turns it into California taxable income, tax, credits and payments.
 
 **Status of the figures (checked 25 September 2026).** California indexes its brackets, standard deduction, exemption credits and credit income limits every year. The Franchise Tax Board (FTB) has **not yet published the 2026 indexed amounts**. Its own 2026 estimated-tax instructions tell taxpayers to use the 2025 standard deduction and the 2025 tax table for now. Every indexed amount below is therefore a **2025** amount and is labelled 2025. Use it for 2025 returns and for 2026 estimates; replace it with the 2026 amount once the FTB publishes the 2026 Form 540 booklet. Rates set in statute (the 1% Behavioral Health Services Tax and the 7% AMT rate) do not change. [2026 Form 540-ES instructions](https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.html)
 
-**Scope limits.** This Guide does not cover part-year residents or nonresidents (Form 540NR), Form 568 for the LLC itself, or multi-state apportionment. It also leaves the health coverage penalty (form 3853) and registered domestic partner (RDP) recalculations to their own FTB instructions.
+**Scope limits.** This skill does not cover part-year residents or nonresidents (Form 540NR), Form 568 for the LLC itself, or multi-state apportionment. It also leaves the health coverage penalty (form 3853) and registered domestic partner (RDP) recalculations to their own FTB instructions.
 
 ## Ask the client first
 
@@ -171,7 +171,7 @@ A 2025 return was due **15 April 2026**. The automatic extension to file runs to
 - Late filing (after 15 October 2026): the maximum total penalty is **25%** of the unpaid tax. For a return more than 60 days late, the minimum is the smaller of **$135** or the balance due. [Form 540 instructions, interest and penalties](https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html)
 - Interest compounds daily and cannot be waived. A one-time abatement of a timeliness penalty is available.
 
-Use the 2025 figures in this Guide. The 2025 SDI rate was 1.2%. [EDD rates](https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)
+Use the 2025 figures in this skill. The 2025 SDI rate was 1.2%. [EDD rates](https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)
 
 ## Completion checklist
 

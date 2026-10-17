@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ca-tax-residency"
   jurisdiction: "CA"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([CRA Income Tax Folio S5-F1-C1](https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-5-international-residency/folio-1-residency/income-tax-folio-s5-f1-c1-determining-individual-s-residence-status.html))
 
-This Guide explains how to decide whether an individual is resident in Canada for federal income tax purposes, and what follows from the answer. It is written for **tax year 2026** (the calendar year 2026, returns filed in 2027), with a dated section for **2025 returns** that are being filed and assessed now. The residence rules come from the Income Tax Act (ITA) and CRA's Folio S5-F1-C1; they are not indexed and did not change for 2026. CRA's web pages were still written for the 2025 return when this Guide was prepared (25 September 2026), so where a date is quoted for 2025 the 2026 equivalent is shown next to it and worked out from the statutory rule.
+This skill explains how to decide whether an individual is resident in Canada for federal income tax purposes, and what follows from the answer. It is written for **tax year 2026** (the calendar year 2026, returns filed in 2027), with a dated section for **2025 returns** that are being filed and assessed now. The residence rules come from the Income Tax Act (ITA) and CRA's Folio S5-F1-C1; they are not indexed and did not change for 2026. CRA's web pages were still written for the 2025 return when this skill was prepared (25 September 2026), so where a date is quoted for 2025 the 2026 equivalent is shown next to it and worked out from the statutory rule.
 
 It covers:
 
@@ -29,7 +29,7 @@ It covers:
 - how non-residents are taxed: Part XIII withholding at 25%, treaty reductions, and the section 216 and section 217 elections;
 - Forms NR73 and NR74.
 
-It does **not** cover residence of corporations or trusts, Quebec provincial rules (Revenu Québec runs its own), foreign tax law in the other country, or detailed computation of capital gains. Residence is a question of fact decided on all the circumstances; this Guide gives the method and the CRA's stated positions, not a ruling. See "When to refuse or refer".
+It does **not** cover residence of corporations or trusts, Quebec provincial rules (Revenu Québec runs its own), foreign tax law in the other country, or detailed computation of capital gains. Residence is a question of fact decided on all the circumstances; this skill gives the method and the CRA's stated positions, not a ruling. See "When to refuse or refer".
 
 **Why residence matters.** "An individual who is resident in Canada during a tax year is subject to Canadian income tax on his or her worldwide income from all sources." A non-resident "is only subject to Canadian income tax on income from sources inside Canada" (Folio ¶1.1). A person who is resident for only part of the year is taxed on worldwide income for the resident part and as a non-resident for the rest (Folio ¶1.1; [ITA s.114](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-114.html)).
 
@@ -140,7 +140,7 @@ An emigrant may **elect** under s.128.1(4)(b)(v) and CRA Form **T2061A** to incl
 
 **Returning to Canada ("unwinding").** If you left after October 1, 1996 and become resident again while still owning property that was deemed disposed of, you can elect in writing, by your filing due date for the year you return, to adjust the departure deemed disposition (ITA s.128.1(6)). For taxable Canadian property, you reduce the gain reported in the emigration year by an amount you choose, up to that gain. For other property, you reduce the proceeds reported in the emigration year by the least of: the gain reported that year; the FMV of the property on the date you returned; and any other amount you choose, up to the lesser of those two. Include a list of the properties and the FMV of each. Security you gave may then be returned. If you had deferred departure tax, you may have to pay it when you come back (CRA: Dispositions of property).
 
-**Selling taxable Canadian property later.** After emigrating, disposing of taxable Canadian property (for example Canadian real property or unlisted shares of Canadian corporations) may bring "additional reporting requirements" under section 116; see Information Circular IC72-17R6. This Guide does not cover section 116.
+**Selling taxable Canadian property later.** After emigrating, disposing of taxable Canadian property (for example Canadian real property or unlisted shares of Canadian corporations) may bring "additional reporting requirements" under section 116; see Information Circular IC72-17R6. This skill does not cover section 116.
 
 ## Entering Canada: the arrival year ([CRA: Newcomers, completing your return](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants/completing-return-newcomers.html))
 
@@ -217,7 +217,7 @@ A non-resident (or deemed non-resident) pays Canadian tax only on Canadian-sourc
 
 ## Filing and payment ([CRA: Leaving Canada (emigrants)](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/leaving-canada-emigrants.html))
 
-**2026 (the year this Guide targets).** Dates are worked out from the statutory rules and CRA's 2025 pattern.
+**2026 (the year this skill targets).** Dates are worked out from the statutory rules and CRA's 2025 pattern.
 
 - Departure-year or arrival-year T1 return: due April 30, 2027 (June 15, 2027 for a self-employed person and their cohabiting spouse, with payment still due April 30, 2027). Forms T1243, T1161 and T2061A go with it; T1161 is due by the filing due date even without a return.
 - T1244 deferral election and any security: April 30, 2027.
@@ -263,4 +263,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.

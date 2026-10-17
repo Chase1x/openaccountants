@@ -3,7 +3,7 @@ name: nj-payroll
 description: Tier 2 New Jersey content skill for employer payroll compliance covering tax year 2025. Includes the 10.75% Gross Income Tax top rate, supplemental wage rate 11.8%, NJ-927 single quarterly combined return for withholding/UI/TDI/FLI/WD, TDI rates split between employee (0.23%) and employer (0.93%), FLI 0.06% employee-only (post-2024 reduction), SUI wage base $43,300, ABC test contractor classification under NJ Wage and Hour Law, Earned Sick Leave Law 40-hour minimum, and the BAIT estimated payment schedule for PTE-electing pass-throughs.
 jurisdiction: US-NJ
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # New Jersey employer payroll: withholding, NJ-927, UI, TDI, FLI, workforce funds, NJ-W-3 and minimum wage (2026, with 2025 notes)
 
-Figures are for 2026 unless a line says 2025. Worker contribution rates and wage bases run by calendar year. Employer unemployment rates run by fiscal rate year, July 1 to June 30 ([NJDOL rate information](https://www.nj.gov/labor/ea/employer-services/rate-info/)). Income tax withholding uses the rate tables in the Division of Taxation's NJ-WT booklet (September 2025 revision) and on Form NJ-W4 ([NJ-WT](https://www.nj.gov/treasury/taxation/pdf/current/njwt.pdf)). This Guide points to those tables and does not reproduce them. A dated section near the end covers 2025 payrolls.
+Figures are for 2026 unless a line says 2025. Worker contribution rates and wage bases run by calendar year. Employer unemployment rates run by fiscal rate year, July 1 to June 30 ([NJDOL rate information](https://www.nj.gov/labor/ea/employer-services/rate-info/)). Income tax withholding uses the rate tables in the Division of Taxation's NJ-WT booklet (September 2025 revision) and on Form NJ-W4 ([NJ-WT](https://www.nj.gov/treasury/taxation/pdf/current/njwt.pdf)). This skill points to those tables and does not reproduce them. A dated section near the end covers 2025 payrolls.
 
 ## Scope and who this is for
 
@@ -34,7 +34,7 @@ Figures are for 2026 unless a line says 2025. Worker contribution rates and wage
   - public employers, reimbursable nonprofits, agricultural employers, and household (domestic) employers beyond one boundary row;
   - private TDI or FLI plan design;
   - UI coverage of workers who work in more than one state.
-- **Cross-border workers.** Where an employee lives or works outside New Jersey, residency, day allocation and the convenience rule are covered in the Guide **us-multi-state-residency-and-allocation**. Use it for any employee who is not a New Jersey resident working only in New Jersey.
+- **Cross-border workers.** Where an employee lives or works outside New Jersey, residency, day allocation and the convenience rule are covered in the skill **us-multi-state-residency-and-allocation**. Use it for any employee who is not a New Jersey resident working only in New Jersey.
 
 ## Ask the client first
 
@@ -183,7 +183,7 @@ A worker who is paid for services is an employee under the Unemployment Compensa
 - **B:** the work is outside the usual course of the business, or it is done outside all of the business's places of business; and
 - **C:** the worker is customarily engaged in an independently established trade, occupation, profession or business.
 
-Failing any one prong makes the worker an employee. The law is remedial and read liberally, so a worker can be an employee even where the common-law test would say otherwise. For prong C, the business must be one that will survive the end of this relationship. NJDOL auditors use the Worker Classification Questionnaire. This Guide gives a summary only: refer any real classification decision. Refer also where the question is worker status for wage-and-hour or wage payment purposes (including the minimum wage), or construction work, which has its own Construction Industry Independent Contractor Act.
+Failing any one prong makes the worker an employee. The law is remedial and read liberally, so a worker can be an employee even where the common-law test would say otherwise. For prong C, the business must be one that will survive the end of this relationship. NJDOL auditors use the Worker Classification Questionnaire. This skill gives a summary only: refer any real classification decision. Refer also where the question is worker status for wage-and-hour or wage payment purposes (including the minimum wage), or construction work, which has its own Construction Industry Independent Contractor Act.
 
 ## Worked cases
 
@@ -239,7 +239,7 @@ The dollar amounts in these cases are made up for illustration. The rates and ba
 - **New Jersey resident working only in Manhattan**, subject to New York withholding.
   - New Jersey withholding is not needed only if New York withholding is at least equal to New Jersey's.
   - If the employee also works some days in New Jersey, withhold New Jersey tax as well, reduced by the New York tax withheld.
-- Use the Guide us-multi-state-residency-and-allocation for day counts and credits.
+- Use the skill us-multi-state-residency-and-allocation for day counts and credits.
 
 ### Case 6: minimum wage by employer size ([MW-571 (1/26)](https://www.nj.gov/labor/wageandhour/assets/PDFs/MW-571%20%281-26%29%20MinWageFlier.pdf))
 
@@ -259,9 +259,9 @@ The dollar amounts in these cases are made up for illustration. The rates and ba
 
 ## When to refuse or refer
 
-- **Refer** any employee who lives or works outside New Jersey, works from home in another state, or moved during the year. Use the Guide us-multi-state-residency-and-allocation. Do not guess an allocation percentage.
+- **Refer** any employee who lives or works outside New Jersey, works from home in another state, or moved during the year. Use the skill us-multi-state-residency-and-allocation. Do not guess an allocation percentage.
 - **Refer** which state's UI covers a worker who works in more than one state. The WR-30 includes only pay for services in New Jersey, and wages for services elsewhere go to those states.
-- **Refer** every real worker classification question, including construction. Refer any NJDOL audit to an employment or tax lawyer. This Guide gives the ABC test in summary only.
+- **Refer** every real worker classification question, including construction. Refer any NJDOL audit to an employment or tax lawyer. This skill gives the ABC test in summary only.
 - **Refer** private TDI or FLI plan approval, successor employer transfers, rate disputes and penalty abatement to NJDOL.
 - **Refuse** to compute New Jersey withholding from return rate schedules or a federal W-4. Use NJ-WT and the NJ-W4.
 - **Say so** when a figure is not yet set: the 2027 worker contribution rates, and the 2027 minimum wage chart.
@@ -307,7 +307,7 @@ The dollar amounts in these cases are made up for illustration. The rates and ba
 - Registered as an employer. New hires reported within 20 days, or by the two monthly electronic transmissions ([42 U.S.C. 653a](https://www.law.cornell.edu/uscode/text/42/653a)).
 - Every employee has an NJ-W4. Any "EXEMPT" claims are for the current year and within the income limits ([Form NJ-W4](https://www.nj.gov/treasury/taxation/pdf/current/njw4.pdf)).
 - Pennsylvania residents have a signed NJ-165 on file, or New Jersey tax is withheld.
-- Out-of-state and remote employees were checked against the Guide us-multi-state-residency-and-allocation.
+- Out-of-state and remote employees were checked against the skill us-multi-state-residency-and-allocation.
 - Worker deductions used the 2026 rates: UI 0.3825%, WF/SWF 0.0425%, TDI 0.19% and FLI 0.23%, stopping at $44,800 and $171,100 ([NJDOL rate information](https://www.nj.gov/labor/ea/employer-services/rate-info/)).
 - Employer UI, WF/SWF and TDI used the rate for each fiscal rate year, stopping at $44,800 for 2026 ([NJDOL rate information](https://www.nj.gov/labor/ea/employer-services/rate-info/)).
 - NJ-500 and weekly payments follow the $500 and $10,000 rules. NJ-927 and WR-30 are filed by the 30th after each quarter ([NJ-WT](https://www.nj.gov/treasury/taxation/pdf/current/njwt.pdf)).

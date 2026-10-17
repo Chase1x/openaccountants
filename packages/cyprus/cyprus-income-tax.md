@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cyprus personal income tax for 
 version: 0.1
 jurisdiction: CY
 tax_year: 2026
-last_updated: 2026-10-02
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus Income Tax for Individuals and the Self-Employed
 
-This Guide covers Cyprus personal income tax for resident individuals: employees, the self-employed, landlords and pensioners. Figures are for tax year 2026. The 2026 tax reform (Law 244(I)/2025 and the amending laws passed with it) applies from tax year 2026 and changes the bands, the filing duty, the personal deductions, the Special Defence Contribution (SDC) on rent and dividends, and the accounts and deadline rules for the self-employed. For tax year 2025 and earlier, use the official 2025 return guide, not this Guide.
+This skill covers Cyprus personal income tax for resident individuals: employees, the self-employed, landlords and pensioners. Figures are for tax year 2026. The 2026 tax reform (Law 244(I)/2025 and the amending laws passed with it) applies from tax year 2026 and changes the bands, the filing duty, the personal deductions, the Special Defence Contribution (SDC) on rent and dividends, and the accounts and deadline rules for the self-employed. For tax year 2025 and earlier, use the official 2025 return guide, not this skill.
 
 ## Section 1: Quick Reference
 
@@ -71,7 +71,7 @@ Above the top of the 30% band, tax is the cumulative figure for the 30% band plu
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown tax year | Ask. Use this Guide only for tax year 2026 income; send tax year 2025 work to the 2025 return guide |
+| Unknown tax year | Ask. Use this skill only for tax year 2026 income; send tax year 2025 work to the 2025 return guide |
 | Unknown residency | Treat as resident only if the 183-day rule or the 60-day rule is met (Section 5.2); otherwise STOP and confirm |
 | Unknown domicile status | Treat as Cyprus-domiciled (SDC applies). Non-dom status is a fact that needs evidence (Section 5.8) |
 | Unknown business-use share (vehicle, phone, home) | No deduction |
@@ -95,13 +95,13 @@ Refusal if minimum is missing: SOFT WARN. No bank statement at all = hard stop. 
 
 ### Refusal Catalogue
 
-- **R-CY-1**: Residency unknown. "Cyprus tax residents are taxed on worldwide income; non-residents only on Cyprus-source income. This Guide cannot proceed without confirming residency under the 183-day rule or the 60-day rule. Please confirm before proceeding."
-- **R-CY-2**: Companies and partnerships. "This Guide covers individuals and sole-trader self-employed only. Companies (corporate income tax, whose rate changed from tax year 2026) and partnerships file separate returns. Escalate to a Cyprus-licensed accountant."
+- **R-CY-1**: Residency unknown. "Cyprus tax residents are taxed on worldwide income; non-residents only on Cyprus-source income. This skill cannot proceed without confirming residency under the 183-day rule or the 60-day rule. Please confirm before proceeding."
+- **R-CY-2**: Companies and partnerships. "This skill covers individuals and sole-trader self-employed only. Companies (corporate income tax, whose rate changed from tax year 2026) and partnerships file separate returns. Escalate to a Cyprus-licensed accountant."
 - **R-CY-3**: Non-resident and dual-resident income. "Non-resident and dual-resident taxation, and double-tax-treaty relief, have different rules. Out of scope. Escalate to a Cyprus-licensed accountant."
 - **R-CY-4**: Capital gains and property disposals. "Cyprus Capital Gains Tax on disposals of immovable property situated in Cyprus (and related shares) is a separate tax. Out of scope. Escalate to a Cyprus-licensed accountant."
 - **R-CY-5**: Arrears and enforcement. "Client has outstanding tax or Social Insurance arrears or is subject to Tax Department or Social Insurance Services enforcement. From 2026 the Tax Department may also seal business premises for repeated non-filing or large debts. Do not advise. Escalate to a Cyprus-licensed accountant immediately."
-- **R-CY-6**: VAT return requested. "This Guide covers personal income tax only. For Cyprus VAT, use the `cyprus-vat-return` Guide."
-- **R-CY-7**: Non-dom and SDC structuring. "Non-domicile status and Special Defence Contribution planning require confirmation of the 17-of-20-year deemed-domicile test and the individual's domicile of origin. Use the `cy-non-dom` Guide and flag for a Cyprus-licensed accountant; do not assert non-dom status without evidence."
+- **R-CY-6**: VAT return requested. "This skill covers personal income tax only. For Cyprus VAT, use the `cyprus-vat-return` skill."
+- **R-CY-7**: Non-dom and SDC structuring. "Non-domicile status and Special Defence Contribution planning require confirmation of the 17-of-20-year deemed-domicile test and the individual's domicile of origin. Use the `cy-non-dom` skill and flag for a Cyprus-licensed accountant; do not assert non-dom status without evidence."
 - **R-CY-8**: Crypto-asset disposals, approved share option plans, AIF carried interest. "These are taxed at special rates under their own rules (Section 5.3). Flag for a Cyprus-licensed accountant."
 
 ## Section 3: Transaction Pattern Library
@@ -363,8 +363,8 @@ GHS (General Healthcare System) contributions:
 | GHS rate on self-employed income (2025 return guide; no 2026 page found) | 4% | "for all income and periods throughout the year except for self- employed taxpayers" |
 
 - **GHS on other income**: the 2025 return guide charges GHS on all income at the employee rate in the TD59A table except self-employed income, and only on income up to the annual cap in that table, with incomes added together in a set order. No 2026 page restates this; confirm with the reviewer.
-- **Self-employed Social Insurance basis**: contributions are paid on insurable income. The minimum insurable income per occupational category is set by Social Insurance Services and was not found on any readable allowed page. Do not assert a self-employed Social Insurance amount; use the `cyprus-social-contributions` Guide and refer.
-- **Employer GHS share and the Central Holiday Fund**: no readable allowed page prints the 2026 rates. See the `cyprus-payroll` Guide and refer.
+- **Self-employed Social Insurance basis**: contributions are paid on insurable income. The minimum insurable income per occupational category is set by Social Insurance Services and was not found on any readable allowed page. Do not assert a self-employed Social Insurance amount; use the `cyprus-social-contributions` skill and refer.
+- **Employer GHS share and the Central Holiday Fund**: no readable allowed page prints the 2026 rates. See the `cyprus-payroll` skill and refer.
 
 ### 5.6 Deductions (TD59A, the one-fifth cap and the new 2026 personal deductions)
 
@@ -447,7 +447,7 @@ Rules for these deductions, all from the FAQs above:
 | Reduced SDC on interest from government savings certificates and development bonds, and listed corporate or public-body bonds | 3% | "σε ποσοστό τρία τοις εκατό (3%)" |
 
 - **Who pays**: only individuals who are Cyprus tax resident AND domiciled in Cyprus. A non-domiciled resident, or a non-resident, pays no SDC on dividends, interest or rent. Source: https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/
-- **Deemed domicile**: whatever the domicile of origin, a person resident in Cyprus for at least 17 out of the last 20 years immediately before the tax year is treated as domiciled for SDC. A person with a Cypriot domicile of origin can be non-domiciled only under the narrow exceptions on the same page. Use the `cy-non-dom` Guide.
+- **Deemed domicile**: whatever the domicile of origin, a person resident in Cyprus for at least 17 out of the last 20 years immediately before the tax year is treated as domiciled for SDC. A person with a Cypriot domicile of origin can be non-domiciled only under the narrow exceptions on the same page. Use the `cy-non-dom` skill.
 - **Rent**: SDC on rental income was charged up to and including tax year 2025 and is abolished from 1 January 2026. Do not charge SDC on 2026 rents.
 - **Which dividend rate**: the rate follows the year of the PROFITS the dividend is paid from, not the year it is received. A 2027 dividend out of 2025 profits bears the older rate in the table above.
 - **Deposit interest refund (2025 rule; confirm for 2026)**: the 2025 return guide refunds SDC withheld on deposit interest where total income including the interest does not exceed the amount in the table below. The guide does not print the refund formula, and no 2026 page restates the rule. Refer before relying on it.
@@ -560,7 +560,7 @@ Trap: the official calendar labels the July and December 2026 provisional tax ro
 ### 6.4 Non-Dom Status and SDC
 
 - Non-dom status removes SDC on dividends and interest (and, up to tax year 2025, on rent), but requires confirmation of domicile of origin and the 17-of-20-year deemed-domicile test.
-- **Flag for reviewer:** do NOT assert non-dom status without evidence; the conservative default treats the individual as domiciled (SDC applies). For the optional lump-sum extension for deemed-domiciled people, use the `cy-non-dom` Guide.
+- **Flag for reviewer:** do NOT assert non-dom status without evidence; the conservative default treats the individual as domiciled (SDC applies). For the optional lump-sum extension for deemed-domiciled people, use the `cy-non-dom` skill.
 
 ### 6.5 Exemption Eligibility
 
@@ -780,7 +780,7 @@ The child, housing and green deductions (with income criteria), the home insuran
 
 ### Cited Sources
 
-All sources are listed under "Sources" at the end of this Guide. Every source is an official Cyprus government page.
+All sources are listed under "Sources" at the end of this skill. Every source is an official Cyprus government page.
 
 ### Test Suite
 
@@ -867,9 +867,9 @@ Amounts in these tests are hypothetical unless stated.
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained on the OpenAccountants site. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained on the OpenAccountants site. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-feie-ftc"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # US Foreign Earned Income Exclusion vs Foreign Tax Credit for Americans abroad
 
-This Guide is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 2555 instructions were not yet published when this was written (25 September 2026). Where this Guide describes form lines, it uses the 2025 instructions, so check the line numbers against the 2026 instructions before filing.
+This skill is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 2555 instructions were not yet published when this was written (25 September 2026). Where this skill describes form lines, it uses the 2025 instructions, so check the line numbers against the 2026 instructions before filing.
 
 ## Scope and who this is for
 
@@ -26,7 +26,7 @@ It covers a US citizen, or a resident alien (for example a green-card holder), w
 - decide between the FEIE, the foreign tax credit on Form 1116, or the FEIE with the credit on the wages above the limit
 - avoid the traps: the lost additional child tax credit and earned income credit, the revocation bar, and self-employment tax, which the FEIE never removes
 
-The mechanics of Form 1116 itself (categories, the limitation formula, carryovers, currency) are in the separate Guide `us-foreign-tax-credit-1116`. This Guide does not cover nonresident aliens, US territories (Puerto Rico, Guam and so on), state returns, or the information returns (FBAR, Form 8938), which are in `us-fbar-fatca-reporting`.
+The mechanics of Form 1116 itself (categories, the limitation formula, carryovers, currency) are in the separate skill `us-foreign-tax-credit-1116`. This skill does not cover nonresident aliens, US territories (Puerto Rico, Guam and so on), state returns, or the information returns (FBAR, Form 8938), which are in `us-fbar-fatca-reporting`.
 
 ## Ask the client first
 
@@ -311,4 +311,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-feie-ftc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-feie-ftc. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-feie-ftc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-feie-ftc. If neither is available, confirm every figure against the official source pages cited above before relying on it.

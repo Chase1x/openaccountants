@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Virginia individual income tax,
 version: "0.1"
 jurisdiction: US-VA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,13 +16,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 Form 760 instructions](https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-760-instructions.pdf))
 
-This Guide covers the Virginia resident individual income tax return, **Form 760**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (still being filed on extension until November 2026). It is written for full-year Virginia residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax, whose business profit reaches Virginia through federal adjusted gross income.
+This skill covers the Virginia resident individual income tax return, **Form 760**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (still being filed on extension until November 2026). It is written for full-year Virginia residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax, whose business profit reaches Virginia through federal adjusted gross income.
 
 It does **not** cover part-year residents (Form 760PY), nonresidents (Form 763), fiduciaries, corporations, the pass-through entity's own return, or local business licence taxes. See "When to refuse or refer".
 
 **Who is a resident.** A resident is "every person domiciled in Virginia at any time during the taxable year and every other person who, for an aggregate of more than 183 days of the taxable year, maintained his place of abode within Virginia, whether domiciled in Virginia or not" (Va. Code § 58.1-302). The statute is the rule. Both tests matter: a person domiciled elsewhere who keeps a Virginia home for more than 183 days is an "actual resident" and files as a resident. Such a person may have to file as a resident in both Virginia and the domicile state; the 2025 instructions say to claim the credit for tax paid to Virginia on the domicile state's return.
 
-**The instructions word the day test more widely.** The 2025 Form 760 instructions say you are an actual resident if "You maintained an abode in Virginia or were physically present in Virginia for more than 183 total days during the taxable year, even if you are a domiciliary resident of another state or country." The statute looks only at the abode. **Refer** anyone who was physically present in Virginia for more than 183 days but had no Virginia abode: do not decide their residency from this Guide.
+**The instructions word the day test more widely.** The 2025 Form 760 instructions say you are an actual resident if "You maintained an abode in Virginia or were physically present in Virginia for more than 183 total days during the taxable year, even if you are a domiciliary resident of another state or country." The statute looks only at the abode. **Refer** anyone who was physically present in Virginia for more than 183 days but had no Virginia abode: do not decide their residency from this skill.
 
 **Members of Congress.** The term "resident" does not include a member of the United States Congress who is domiciled in another state. The exception does not cover the member's spouse, dependents or staff, who test their own residency. A member with Virginia-source income other than congressional pay may still need to file Form 763 (2025 instructions).
 

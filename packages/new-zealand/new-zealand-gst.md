@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: NZ
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -236,7 +236,7 @@ File a GST101A if not liable for provisional tax, and a form in the GST103 serie
 | Sale of a registered person's private assets | Generally not taxable; not in the return | Unless the asset was used in the taxable activity |
 | Penalty interest on overdue accounts | Exempt | Statutory fines and parking penalties are outside GST |
 | Donated goods sold by a non-profit | Exempt | Refer |
-| Secondhand goods from an unregistered seller | Credit may be claimed | Must pay before claiming, on any basis. Keep the secondhand goods TSI record. Not secondhand goods: new goods, unused primary produce, leased or rented goods, livestock, fine metal. Purchases from associated persons: refer. Box: the previous version of this Guide claimed it with purchases in Box 11; IRD's pages read for this Guide do not name the box (check) |
+| Secondhand goods from an unregistered seller | Credit may be claimed | Must pay before claiming, on any basis. Keep the secondhand goods TSI record. Not secondhand goods: new goods, unused primary produce, leased or rented goods, livestock, fine metal. Purchases from associated persons: refer. Box: the previous version of this skill claimed it with purchases in Box 11; IRD's pages read for this skill do not name the box (check) |
 | Exporting secondhand goods on which a credit was claimed | Debit adjustment of 3/23 of the full purchase price | Zero-rating also needs the goods entered for export, export within 28 days and a no-reimport declaration |
 | GST paid to Customs on imported goods | Credit adjustment (Box 13), not Box 11 | Claimable in full if the goods are used solely to make taxable supplies ([Claiming GST](https://www.ird.govt.nz/gst/claiming-gst)); apportion otherwise. Invoice basis: earlier of invoice or payment. Payments or hybrid basis: when paid |
 | Imported services, taxable use under 95% | Reverse charge: return 15% GST on the price | Applies where intended or actual taxable use is less than 95%. Can also push turnover past $60,000 |
@@ -345,7 +345,7 @@ Periods ending on or before 31 March 2026 use the same rate (15%), the same $60,
 - Zero-rating of services where the non-resident's staff or goods were in New Zealand.
 - A non-resident's NZ registration.
 - A default assessment, audit, dispute, or an error too large to correct in a later return.
-- The income tax side of any item (entertainment limits, vehicle logbooks, provisional tax): send to the matching income tax Guide.
+- The income tax side of any item (entertainment limits, vehicle logbooks, provisional tax): send to the matching income tax skill.
 
 ## Filing and payment ([Filing GST](https://www.ird.govt.nz/gst/filing-and-paying-gst-and-refunds/filing-gst); [Paying GST](https://www.ird.govt.nz/gst/filing-and-paying-gst-and-refunds/paying-gst); [IR375](https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir300---ir399/ir375/ir375.pdf))
 

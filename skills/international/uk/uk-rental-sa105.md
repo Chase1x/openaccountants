@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK property income or rental in
 version: 1.1
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team

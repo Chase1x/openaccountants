@@ -3,7 +3,7 @@ name: ie-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish tax return AND mentions freelancing, self-employment, sole trader, LTD, contractor, or PSC in Ireland. Trigger on phrases like "Ireland tax return", "Form 11 Ireland", "Form 12 Ireland", "Irish sole trader", "Irish LTD CT1", "ROS Revenue Online Service", "self-assessment Ireland", "preliminary tax Ireland", "PRSI Class S", "USC Ireland", "Irish VAT registration", "Pillar Two QDMTT Ireland", or any similar phrasing where the user is an Irish tax resident self-employed individual, sole trader, partner, or small LTD director-shareholder. This is the REQUIRED entry point for the Irish freelance / SME workflow — every downstream skill in the stack (ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation, ie-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Irish tax residents only (full-year residents under Section 819 TCA 1997, plus the 280-day combined test). ALWAYS read this skill first when starting an Irish freelance / SME tax workflow.
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-10-02
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,15 +13,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ireland freelance and small business tax intake
 
-This Guide is the first step for an Irish-resident self-employed person, sole trader, partner, or director-shareholder of a small private company limited by shares (LTD), including a one-person service company. It asks the questions that decide which Irish return applies and which other Guides to load, then hands a structured intake package to `ie-return-assembly`. Figures are for tax year 2026. The Irish tax year is the calendar year, 1 January to 31 December. In October and November 2026 most self-employed clients are doing two things at once: filing the 2025 Form 11 and paying 2026 preliminary tax. Ask which year the client means. This Guide holds only the few figures that decide routing. Rates, bands and credits live in the sibling Guides named below, so they are not repeated here.
+This skill is the first step for an Irish-resident self-employed person, sole trader, partner, or director-shareholder of a small private company limited by shares (LTD), including a one-person service company. It asks the questions that decide which Irish return applies and which other skills to load, then hands a structured intake package to `ie-return-assembly`. Figures are for tax year 2026. The Irish tax year is the calendar year, 1 January to 31 December. In October and November 2026 most self-employed clients are doing two things at once: filing the 2025 Form 11 and paying 2026 preliminary tax. Ask which year the client means. This skill holds only the few figures that decide routing. Rates, bands and credits live in the sibling skills named below, so they are not repeated here.
 
 ## What this file is
 
-The intake orchestrator for Irish-resident self-employed individuals, sole traders, partners, and small LTD director-shareholders, including personal service companies. Every downstream Irish Guide depends on this Guide producing a structured intake package first.
+The intake orchestrator for Irish-resident self-employed individuals, sole traders, partners, and small LTD director-shareholders, including personal service companies. Every downstream Irish Guide depends on this skill producing a structured intake package first.
 
-Job: (1) confirm the taxpayer is Irish tax resident, (2) capture domicile, which decides whether the remittance basis is possible, and ordinary residence, which `ie-non-dom` needs for other rules, (3) classify the regime (sole trader or partnership: Form 11 income tax, PRSI Class S and USC; LTD: Corporation Tax for the company plus the director's own return), (4) list the downstream Guides to run, (5) hand off to `ie-return-assembly`. Outputs are addressed to a qualified Irish tax professional (for example a Chartered Tax Adviser of the Irish Tax Institute, an ACA, ACCA or CPA, or an AITI-qualified agent registered on ROS). That professional signs off. This Guide is not the preparer of record.
+Job: (1) confirm the taxpayer is Irish tax resident, (2) capture domicile, which decides whether the remittance basis is possible, and ordinary residence, which `ie-non-dom` needs for other rules, (3) classify the regime (sole trader or partnership: Form 11 income tax, PRSI Class S and USC; LTD: Corporation Tax for the company plus the director's own return), (4) list the downstream skills to run, (5) hand off to `ie-return-assembly`. Outputs are addressed to a qualified Irish tax professional (for example a Chartered Tax Adviser of the Irish Tax Institute, an ACA, ACCA or CPA, or an AITI-qualified agent registered on ROS). That professional signs off. This skill is not the preparer of record.
 
-Live sibling Guides this Guide routes to (all confirmed live in the catalog on 2 October 2026): `ie-income-tax-form11`, `ie-usc`, `ie-prsi-class-s`, `ie-preliminary-tax`, `ie-vat-return`, `ie-corporation-tax`, `ie-payroll`, `ie-cgt`, `ie-cat`, `ie-non-dom`, `ie-formation`, `ie-return-assembly`.
+Live sibling skills this skill routes to (all confirmed live in the catalog on 2 October 2026): `ie-income-tax-form11`, `ie-usc`, `ie-prsi-class-s`, `ie-preliminary-tax`, `ie-vat-return`, `ie-corporation-tax`, `ie-payroll`, `ie-cgt`, `ie-cat`, `ie-non-dom`, `ie-formation`, `ie-return-assembly`.
 
 ## Section 1: Quick reference, the routing figures
 
@@ -55,7 +55,7 @@ How to read the VAT table:
 - Registration is obligatory when annual turnover "exceeds" the threshold. Below it, the person "may elect to register for VAT" ([Revenue, VAT thresholds](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/vat-thresholds.aspx)).
 - Turnover is the total value, excluding VAT, of the listed supplies "in a calendar year". It is not a rolling 12 months. Occasional disposals of business assets such as buildings, vehicles or machines are excluded from the count ([Revenue, VAT thresholds](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/vat-thresholds.aspx)).
 - A mixed business uses the goods threshold only if goods are 90% or more of turnover (the share in the table above). Otherwise the services threshold applies.
-- A person not established in Ireland who supplies taxable goods or services to taxable customers in Ireland must register "irrespective of the level of turnover, unless they avail of the VAT SME Scheme" ([Revenue, VAT thresholds](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/vat-thresholds.aspx)). This Guide refuses non-residents anyway (Section 8).
+- A person not established in Ireland who supplies taxable goods or services to taxable customers in Ireland must register "irrespective of the level of turnover, unless they avail of the VAT SME Scheme" ([Revenue, VAT thresholds](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/vat-thresholds.aspx)). This skill refuses non-residents anyway (Section 8).
 - A new business that has not yet made taxable supplies must register to reclaim VAT on its start-up costs ([Revenue, Who should register for VAT?](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/index.aspx)).
 - A person carrying out only exempt or non-taxable activities may not register, except in certain situations such as acquiring goods from other Member States or receiving services from abroad ([Revenue, Who should register for VAT?](https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/index.aspx)).
 
@@ -174,7 +174,7 @@ Strict order. Do not narrate steps.
 3. **Document dump.** Ask the user to upload everything at once: bank statements, sales invoices, purchase invoices, prior Form 11 or CT1, ROS notices of assessment, payroll registers, VAT3 returns, RCT records if construction, forestry or meat processing. Do not insist on bank statements alone.
 4. **Inference pass.** Parse every document; extract turnover, expenses, PAYE withheld, prior preliminary tax, VAT collected and reclaimed.
 5. **Regime classification.** Apply the Section 4 decision tree using inferred turnover and the sweep answers.
-6. **Confirmation.** Show the inferred summary, the proposed regime and the downstream Guide list; invite corrections.
+6. **Confirmation.** Show the inferred summary, the proposed regime and the downstream skill list; invite corrections.
 7. **Gap filling.** `ask_user_input_v0` only for items documents cannot answer (domicile, ordinary residence, PPSN or tax reference number, marital status and assessment basis, ROS access).
 8. **Handoff.** Produce the Section 6 summary and invoke `ie-return-assembly`.
 
@@ -218,7 +218,7 @@ Some are inferred from documents; the rest are gap-filled. All are needed before
 ### 4.2 Domicile and ordinary residence gate
 
 - **Domicile.** Domicile "broadly means living in a country with the intention of living there permanently". Everyone has a domicile of origin at birth and keeps it unless they gain a new one, which needs clear evidence of intending to live permanently in the new country and not to return ([Revenue, domicile and the domicile levy](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/domicile-domicile-levy.aspx)).
-- **Remittance basis.** Revenue's page describes a person who is 'Irish tax resident, but non-ordinarily resident and not domiciled in Ireland for a tax year' and pays Irish tax on Irish source income and on foreign income 'to the extent that it is remitted into Ireland' ([Revenue, domicile](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/domicile-domicile-levy.aspx)). The rule itself is in Tax and Duty Manual Part 05-01-21: the remittance basis applies to 'persons who are not domiciled in the State', and ordinary residence has not been a condition since tax year 2010 ([Revenue, TDM Part 05-01-21](https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-05/05-01-21.pdf)). This Guide does not decide it: route `ie-non-dom`.
+- **Remittance basis.** Revenue's page describes a person who is 'Irish tax resident, but non-ordinarily resident and not domiciled in Ireland for a tax year' and pays Irish tax on Irish source income and on foreign income 'to the extent that it is remitted into Ireland' ([Revenue, domicile](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/domicile-domicile-levy.aspx)). The rule itself is in Tax and Duty Manual Part 05-01-21: the remittance basis applies to 'persons who are not domiciled in the State', and ordinary residence has not been a condition since tax year 2010 ([Revenue, TDM Part 05-01-21](https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-05/05-01-21.pdf)). This skill does not decide it: route `ie-non-dom`.
 - **Ordinary residence.** Three consecutive tax years of residence make a person ordinarily resident from the start of the fourth; it continues for three consecutive tax years after leaving ([Revenue, ordinarily resident](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/ordinarily-resident-tax-purposes.aspx)).
 - If domicile is foreign or unclear: flag `remittance_basis_review`, route `ie-non-dom`. Do not assume.
 
@@ -229,7 +229,7 @@ Some are inferred from documents; the rest are gap-filled. All are needed before
 - **Company (LTD, DAC, CLG).** Revenue issues the company a Tax Reference Number. The company must give Revenue a Statement of Particulars within 30 days of trading, on Form 11F CRO ([Revenue, registering your business](https://www.revenue.ie/en/starting-a-business/starting-a-business/registering.aspx)). Route the company to `ie-corporation-tax`. Route the director's own return to `ie-income-tax-form11` where the director controls more than the share in the TDM table; a director at or below it is a non-proprietary director, for whom Revenue lists Form 12; flag for the reviewer; Form 12 is listed for "non-proprietary directors" ([Revenue, pay and file CGT, forms list](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/when-and-how-do-you-pay-and-file-cgt.aspx)).
 - **Employee or self-employed?** Where a one-person company or contractor works mainly for one client, the question is whether the relationship is really employment. Revenue applies the Supreme Court's Karshan judgment, which sets five questions: Is there an exchange of a wage or other remuneration for work? Has the worker agreed to provide their services personally, with very limited or no option to delegate? Does the business control what, how, when and where the work is done? What do the facts and circumstances say about the true nature of the relationship? Is there any legislation that would change the answers? ([Revenue, RCT for principal contractors](https://www.revenue.ie/en/self-assessment-and-self-employment/rct/rct-principal-contractors.aspx)). Flag `employment_status_review` for the reviewer; do not decide it here.
 - **Entity unclear or not yet formed:** route `ie-formation`.
-- **Out of scope at this gate:** LTDs with more than 50 employees; groups with an Irish parent and overseas subsidiaries; large multinational groups in scope of the Pillar Two minimum tax rules. Refuse and refer (Section 8). These are scope limits of this Guide, not legal thresholds.
+- **Out of scope at this gate:** LTDs with more than 50 employees; groups with an Irish parent and overseas subsidiaries; large multinational groups in scope of the Pillar Two minimum tax rules. Refuse and refer (Section 8). These are scope limits of this skill, not legal thresholds.
 
 ### 4.4 VAT registration gate
 
@@ -237,7 +237,7 @@ Use the VAT table in Section 1. Registration is obligatory once calendar-year tu
 
 ### 4.5 PRSI Class S gate
 
-Use the SW14 table (income test) and the PRSI and Family Employment table (director shareholding) in Section 1. Self-employed sole traders and partners with income at or above the Class S amount pay Class S; proprietary directors at or above the shareholding pay Class S. The rate changed during 2026; take it from `ie-prsi-class-s`, never from this Guide. The 50% PRSI test and the 15% income tax test are different rules with different directions ('50% or more' and 'more than 15%'); a director between them files Form 11 and is referred to `ie-prsi-class-s` for class.
+Use the SW14 table (income test) and the PRSI and Family Employment table (director shareholding) in Section 1. Self-employed sole traders and partners with income at or above the Class S amount pay Class S; proprietary directors at or above the shareholding pay Class S. The rate changed during 2026; take it from `ie-prsi-class-s`, never from this skill. The 50% PRSI test and the 15% income tax test are different rules with different directions ('50% or more' and 'more than 15%'); a director between them files Form 11 and is referred to `ie-prsi-class-s` for class.
 
 ### 4.6 USC gate
 
@@ -527,7 +527,7 @@ Sample: "Stop. You arrived in Ireland during the year, so this is your year of a
 
 ## Section 8: Refusal handling
 
-Refusals fire from the refusal sweep or during the inference pass. The list in "When to refuse or refer" above is the in-scope refusal list. These are scope limits of this Guide. Where a refusal rests on a rule of law (residence, split-year treatment, remittance basis), the rule and its source are in Section 4.
+Refusals fire from the refusal sweep or during the inference pass. The list in "When to refuse or refer" above is the in-scope refusal list. These are scope limits of this skill. Where a refusal rests on a rule of law (residence, split-year treatment, remittance basis), the rule and its source are in Section 4.
 
 ### Reviewer escalation templates
 
@@ -570,7 +570,7 @@ Run all 14 before invoking `ie-return-assembly`. Any failure → fix, do not han
 
 ## Section 10: Final handoff to ie-return-assembly
 
-Once gap-filling and self-checks pass, output a short handoff message naming (a) taxpayer, entity and ROS status, (b) the regime selected, (c) downstream Guides in run order, (d) Guides not running and why, (e) a reviewer reminder (qualified Irish tax professional sign-off before ROS submission). Then invoke `ie-return-assembly` with the Section 6.2 package.
+Once gap-filling and self-checks pass, output a short handoff message naming (a) taxpayer, entity and ROS status, (b) the regime selected, (c) downstream skills in run order, (d) Guides not running and why, (e) a reviewer reminder (qualified Irish tax professional sign-off before ROS submission). Then invoke `ie-return-assembly` with the Section 6.2 package.
 
 Example (hypothetical: sole trader, services only, single, no employees):
 
@@ -580,7 +580,7 @@ Example (hypothetical: sole trader, services only, single, no employees):
 
 **Inputs:** user documents and answers. **Output:** the Section 6.2 package consumed by `ie-return-assembly`.
 
-Downstream Guides (through `ie-return-assembly`):
+Downstream Skills (through `ie-return-assembly`):
 
 - `ie-income-tax-form11`: Form 11 self-assessment, income tax bands and credits, surcharges, the director's return.
 - `ie-preliminary-tax`: the three preliminary tax options, first-year rules, interest on late payment.
@@ -597,7 +597,7 @@ Downstream Guides (through `ie-return-assembly`):
 
 ## Section 12: Legislation named in the legacy Guide
 
-The legacy Guide cited sections of the 1997 Taxes Consolidation Act, the Value-Added Tax Consolidation Act 2010, the Capital Acquisitions Tax Consolidation Act 2003, the Social Welfare Consolidation Act 2005 and the Companies Act 2014. Revenue's own pages, cited throughout, are the authority this Guide relies on. Revenue's residence pages point to the Tax and Duty Manual for Part 34 of the 1997 Taxes Consolidation Act (residence of individuals) ([Revenue, resident for tax purposes](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/resident-for-tax-purposes.aspx)). For the employment status test, Revenue points to Tax and Duty Manual Part 05-01-30 ([Revenue, RCT for principal contractors](https://www.revenue.ie/en/self-assessment-and-self-employment/rct/rct-principal-contractors.aspx)).
+The legacy Guide cited sections of the 1997 Taxes Consolidation Act, the Value-Added Tax Consolidation Act 2010, the Capital Acquisitions Tax Consolidation Act 2003, the Social Welfare Consolidation Act 2005 and the Companies Act 2014. Revenue's own pages, cited throughout, are the authority this skill relies on. Revenue's residence pages point to the Tax and Duty Manual for Part 34 of the 1997 Taxes Consolidation Act (residence of individuals) ([Revenue, resident for tax purposes](https://www.revenue.ie/en/jobs-and-pensions/tax-residence/resident-for-tax-purposes.aspx)). For the employment status test, Revenue points to Tax and Duty Manual Part 05-01-30 ([Revenue, RCT for principal contractors](https://www.revenue.ie/en/self-assessment-and-self-employment/rct/rct-principal-contractors.aspx)).
 
 ## Sources
 
@@ -624,9 +624,9 @@ The legacy Guide cited sections of the 1997 Taxes Consolidation Act, the Value-A
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified Irish tax professional (a Chartered Tax Adviser of the Irish Tax Institute, an ACA, ACCA or CPA, or an AITI-qualified agent registered on ROS) before filing with Revenue via ROS or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Irish tax professional (a Chartered Tax Adviser of the Irish Tax Institute, an ACA, ACCA or CPA, or an AITI-qualified agent registered on ROS) before filing with Revenue via ROS or acting upon.
 
-The most up-to-date version of this Guide is maintained on the OpenAccountants website.
+The most up-to-date version of this skill is maintained on the OpenAccountants website.
 
 <!-- openaccountants-cta-block -->
 

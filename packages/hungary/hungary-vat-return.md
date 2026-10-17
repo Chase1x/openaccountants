@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: HU
 tax_year: 2026
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Hungary VAT return (ÁFA, form 2665): classifying a period and filling in the return
 
-This Guide prepares and reviews a periodic Hungarian VAT (általános forgalmi adó, ÁFA) return on form 2665 for a business registered under the general rules. Figures are for tax year 2026. Every rate and threshold sits in a table that links the NAV page it comes from. Use it with the `vat-workflow-base` Guide (workflow) and the `eu-vat-directive` Guide (EU rules). Online invoice reporting in depth is in `hungary-einvoice`.
+This skill prepares and reviews a periodic Hungarian VAT (általános forgalmi adó, ÁFA) return on form 2665 for a business registered under the general rules. Figures are for tax year 2026. Every rate and threshold sits in a table that links the NAV page it comes from. Use it with the `vat-workflow-base` skill (workflow) and the `eu-vat-directive` skill (EU rules). Online invoice reporting in depth is in `hungary-einvoice`.
 
 ## The method, step by step
 
@@ -73,8 +73,8 @@ Read this whole section before classifying anything. The workflow runbook is in 
 | Filing frequencies | Monthly, quarterly or annual, set for 2026 from 2024 data (method step 2) |
 | Deadline | 20th of the month after the month or quarter; 25 February for annual filers |
 | Online invoice reporting | Every invoice issued to which the VAT Act applies (method step 12) |
-| Companion Guide (workflow) | `vat-workflow-base`, must be loaded |
-| Companion Guide (EU directive) | `eu-vat-directive`, must be loaded |
+| Companion Skill (workflow) | `vat-workflow-base`, must be loaded |
+| Companion Skill (EU directive) | `eu-vat-directive`, must be loaded |
 
 **Rates, frequency, deadlines, refunds and invoice reporting (NAV booklet 14, published 22 January 2026)**
 
@@ -190,7 +190,7 @@ Flag large single transactions, any single conservative default with a large tax
 
 ### Hungary-specific refusal catalogue
 
-- **R-HU-1: Alanyi mentes (subjective exemption).** Trigger: the client chose the exemption under the limit in the exemption table. Message: "Exempt small businesses do not charge VAT and cannot deduct input VAT. This Guide does not cover their occasional filing."
+- **R-HU-1: Alanyi mentes (subjective exemption).** Trigger: the client chose the exemption under the limit in the exemption table. Message: "Exempt small businesses do not charge VAT and cannot deduct input VAT. This skill does not cover their occasional filing."
 - **R-HU-2: KATA subject.** Trigger: the client is a KATA taxpayer. Message: "Settle VAT status first. Specialist review required."
 - **R-HU-3: Partial exemption.** Message: "Mixed supplies require arányosítás. Use an adótanácsadó."
 - **R-HU-4: VAT group.** Message: "Group registration out of scope."
@@ -501,7 +501,7 @@ Per `vat-workflow-base` Section 3. Column H accepts form 2665 row codes (for exa
 
 ## Section 10: Reference material
 
-Statute: Act CXXVII of 2007 on VAT (Áfa tv.), cited by section. Every figure in this Guide is proven on a NAV page.
+Statute: Act CXXVII of 2007 on VAT (Áfa tv.), cited by section. Every figure in this skill is proven on a NAV page.
 
 ### Change log
 
@@ -517,13 +517,13 @@ Statute: Act CXXVII of 2007 on VAT (Áfa tv.), cited by section. Every figure in
 - NAV, Emelkedik az alanyi adómentesség értékhatára (11 December 2025): https://nav.gov.hu/ado/afa/Emelkedik_az_alanyi_adomentesseg_ertekhatara
 - NAV, form 2665 completion guide: https://nav.gov.hu/pfile/file?path=%2Fnyomtatvanyok%2Fletoltesek%2Fnyomtatvanykitolto_programok%2Fnyomtatvanykitolto_programok_nav%2F2665%2F2665-kitoltesi-utmutato
 
-This Guide is incomplete without both companion Guides: `vat-workflow-base` and `eu-vat-directive`.
+This skill is incomplete without both companion skills: `vat-workflow-base` and `eu-vat-directive`.
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained by OpenAccountants.
+The most up-to-date version of this skill is maintained by OpenAccountants.
 
 <!-- openaccountants-cta-block -->
 

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-capital-gains"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -20,8 +20,8 @@ Figures are for tax year 2026 unless a line says 2025. The 2026 amounts come fro
 ## Scope and who this is for
 
 - **Covers:** US citizens and resident aliens who file Form 1040 and sell capital assets. That includes shares, funds, bonds, digital assets held as investments, collectibles, a main home and investment real estate. It covers the federal rate on the gain, the net investment income tax (NIIT), the loss limit, wash sales, the home-sale exclusion, like-kind exchanges and installment sales.
-- **Does not cover:** nonresident aliens (see the `us-nonresident-cgt` Guide), estates and trusts, dealers and traders who elected mark-to-market, corporations, and the details of qualified small business stock (see the `us-section-1202-qsbs` Guide).
-- **State tax is separate.** Most states have their own rules on capital gains. This Guide gives the federal answer only. Check the state's own rules before giving a combined figure.
+- **Does not cover:** nonresident aliens (see the `us-nonresident-cgt` skill), estates and trusts, dealers and traders who elected mark-to-market, corporations, and the details of qualified small business stock (see the `us-section-1202-qsbs` skill).
+- **State tax is separate.** Most states have their own rules on capital gains. This skill gives the federal answer only. Check the state's own rules before giving a combined figure.
 
 ## Ask the client first
 
@@ -172,8 +172,8 @@ Use the 2025 amounts from [Rev. Proc. 2024-40 §2.03](https://www.irs.gov/pub/ir
 
 ## When to refuse or refer
 
-- **Refer** qualified small business stock (§1202), including the tiered exclusion for stock issued after July 4, 2025, to the `us-section-1202-qsbs` Guide. Check the issuance date and holding period there before you promise any exclusion.
-- **Refer** nonresident aliens and dual-status years to the `us-nonresident-cgt` Guide. The NIIT and the rates here assume US residence for the year.
+- **Refer** qualified small business stock (§1202), including the tiered exclusion for stock issued after July 4, 2025, to the `us-section-1202-qsbs` skill. Check the issuance date and holding period there before you promise any exclusion.
+- **Refer** nonresident aliens and dual-status years to the `us-nonresident-cgt` skill. The NIIT and the rates here assume US residence for the year.
 - **Refer** anything involving depreciation recapture on business property, partnership interests (including carried interests), or §1231 netting across several business assets. Use Pub. 544 and Form 4797, and review with an accountant.
 - **Refer** like-kind exchanges with boot, related parties, reverse or build-to-suit structures, or a missed 45-day or 180-day deadline. These need a qualified intermediary and professional review.
 - **Refuse to state as settled:** the collectible status of an NFT, whether §1091 applies to a particular digital asset, and any state's tax on the gain. Say what is uncertain and name the official source to check.
@@ -220,4 +220,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.

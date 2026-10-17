@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK National Insurance Contribut
 version: 3.0
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -21,7 +21,7 @@ Figures are for the 2026/27 tax year, which runs from 6 April 2026 to 5 April 20
 
 ## Scope and who this is for
 
-Use this Guide to work out, explain or check UK National Insurance contributions (NIC) for:
+Use this skill to work out, explain or check UK National Insurance contributions (NIC) for:
 
 - employees and employers (Class 1), including thresholds, category letters and company directors;
 - employers' Class 1A (benefits and termination awards) and Class 1B (PAYE Settlement Agreements);

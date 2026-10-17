@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/malta-ssc"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,18 +17,18 @@ metadata:
 
 ## Scope ([Social Security Act, Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
-This Guide covers Malta social security contributions under the Social Security Act (Cap. 318):
+This skill covers Malta social security contributions under the Social Security Act (Cap. 318):
 
 - **Class 2**, paid by self-occupied and self-employed people. This is the main subject.
-- **Class 1**, paid by employees and their employers, and the employer-only **Maternity Leave Fund** contribution. These are summarised only. For payroll mechanics (basic weekly wage, FSS, FS5/FS3/FS7), use the malta-payroll Guide.
+- **Class 1**, paid by employees and their employers, and the employer-only **Maternity Leave Fund** contribution. These are summarised only. For payroll mechanics (basic weekly wage, FSS, FS5/FS3/FS7), use the malta-payroll skill.
 
-**Year.** This Guide is for tax year 2026 (contribution year 2026). Contributions run by *contribution year*, which "means the period starting from the first Monday in January and ending on the last Sunday before the first Monday in January of the following year" (article 2). The primary year here is contribution year 2026: Monday 5 January 2026 to Sunday 3 January 2027, which is 52 weeks. A Class 2 category is fixed on net earnings or income of "the calendar year immediately preceding the contribution year" (Tenth Schedule). So 2026 Class 2 turns on 2025 earnings.
+**Year.** This skill is for tax year 2026 (contribution year 2026). Contributions run by *contribution year*, which "means the period starting from the first Monday in January and ending on the last Sunday before the first Monday in January of the following year" (article 2). The primary year here is contribution year 2026: Monday 5 January 2026 to Sunday 3 January 2027, which is 52 weeks. A Class 2 category is fixed on net earnings or income of "the calendar year immediately preceding the contribution year" (Tenth Schedule). So 2026 Class 2 turns on 2025 earnings.
 
 **Sources.** Everything here comes from the Laws of Malta (legislation.mt). The MTCA website (mtca.gov.mt), which now administers contribution collection, refused our automated source checks on 25 September 2026. Anything that exists only there is marked **check**, with no figure.
 
 **The figures problem.** The rate table in the law (the Tenth Schedule) on legislation.mt is the one substituted by [L.N. 10 of 2025](https://legislation.mt/getpdf/67a08f18b52f3e3cf8949c52), which "shall be deemed to have come into force on 1st January 2024". Its notes refer to pensionable income that "with effect from January 2024 is guaranteed at the amount of €27,679.09". These are **2024 figures**. We found no legal notice updating the table for 2025 or 2026, and [Act III of 2026](https://legislation.mt/getpdf/69d8ed326fe5fd3994d17430) does not amend it. The weekly amounts rise each year in practice, so the **2025 and 2026 weekly minimum, maximum and band limits are check**: take them from MTCA's published Class 2 and Class 1 tables. The 15% and 10% rates, the categories and the rules below are current law.
 
-**Not covered:** income tax, including whether and where contributions go on the tax return (see the malta-income-tax Guide); payroll withholding and FS forms (see malta-payroll); entitlement to benefits and pensions; cross-border cases under EU coordination rules or bilateral agreements (A1 certificates).
+**Not covered:** income tax, including whether and where contributions go on the tax return (see the malta-income-tax skill); payroll withholding and FS forms (see malta-payroll); entitlement to benefits and pensions; cross-border cases under EU coordination rules or bilateral agreements (A1 certificates).
 
 ## Ask the client first
 
@@ -89,13 +89,13 @@ Reduced SA options in Part III:
 
 **Annual cost.** The Act sets weekly amounts. An annual figure is the weekly amount times the contribution weeks in the year. 2026 has 52 weeks; some years have 53 (2024 ran from Monday 1 January 2024 to Sunday 5 January 2025). Do not reuse an old annual total.
 
-**Old figures you may see.** Earlier versions of this Guide quoted "2025" weekly amounts and annual totals. We could not find them in the law, so we have removed them. If a client quotes a figure, check it against MTCA's table for that year.
+**Old figures you may see.** Earlier versions of this skill quoted "2025" weekly amounts and annual totals. We could not find them in the law, so we have removed them. If a client quotes a figure, check it against MTCA's table for that year.
 
 ## Class 1 and the Maternity Leave Fund, in summary ([Cap. 318, article 7 and Tenth Schedule](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
 - **Who and how much.** For every person in insurable employment "three contributions per week shall be payable ... one by the employed person, one by his employer, and one out of the Consolidated Fund" (article 7(1)). Employee and employer each pay 10% "calculated to the nearest cent" of the **basic weekly wage**, between a flat low-wage amount and a weekly maximum. The State adds "50% of the combined weekly contributions" (article 7(2)(b)).
 - **Base.** The basic weekly wage excludes "overtime, any form of bonus, any extra allowances, any remuneration in kind and commissions" (article 2). With two insurable jobs, the person is treated as employed in the one "which carries the higher or highest basic wage or salary" (article 7(1)).
-- **2024 table (Part I), not 2026.** Category A (under 18, basic weekly wage not over €213.54) €6.62 each side. Category B (18 and over, not over €213.54) €21.35 each side, or 10% if part-time and electing. Category C is 10%. Category D, the maximum, is €42.31 each side (born 1961 or before) and €53.23 (born 1962 or after). Categories E and F (students on work-study schemes) cap at €4.38 and €7.94. Part I prints the Category C and D boundary inconsistently ("€423.07", "€523.28", "€532.29", "€515.99"). **2026 weekly figures: check** on MTCA's Class 1 table. The malta-payroll Guide carries the detail.
+- **2024 table (Part I), not 2026.** Category A (under 18, basic weekly wage not over €213.54) €6.62 each side. Category B (18 and over, not over €213.54) €21.35 each side, or 10% if part-time and electing. Category C is 10%. Category D, the maximum, is €42.31 each side (born 1961 or before) and €53.23 (born 1962 or after). Categories E and F (students on work-study schemes) cap at €4.38 and €7.94. Part I prints the Category C and D boundary inconsistently ("€423.07", "€523.28", "€532.29", "€515.99"). **2026 weekly figures: check** on MTCA's Class 1 table. The malta-payroll skill carries the detail.
 - **Low earners.** An employee whose basic weekly earnings are below the national minimum wage for age 18 and over may elect 10% of actual pay instead of Category B. Since 1 January 2018 this applies "only ... to part-time employees whose weekly basic earnings from such part-time employment do not exceed the National Minimum Wage". A person with more than one part-time job and no full-time job may, from 1 January 2022, elect to pay on all part-time jobs up to "forty (40) hours" a week (article 7(2)(a)).
 - **Employer's share stays with the employer.** An employer who deducts its own share from pay "shall be guilty of an offence" (article 8(2)).
 - **Maternity Leave Fund (Part IV), employer only.** The employer pays 0.3% "calculated to the nearest cent" of the basic weekly wage. The 2024 table sets €0.20 (Category A), €0.64 (Category B), and a cap of €1.27 (born 1961 or before) or €1.60 (born 1962 or after); E and F cap at €0.13 and €0.24. 2026 amounts: check. Nothing is deducted from the employee, and it never applies to Class 2.
@@ -139,18 +139,18 @@ These use the 2024 table because it is the only one in the law we could read. Fo
 ## When to refuse or refer
 
 - **Refuse to compute without the date of birth.** The maximum and the top of the SB band depend on it.
-- **Refuse to give a 2025 or 2026 weekly amount, band limit or annual total from this Guide.** Those figures must come from MTCA's current Class 2 and Class 1 tables. The 2024 table is shown for method only.
+- **Refuse to give a 2025 or 2026 weekly amount, band limit or annual total from this skill.** Those figures must come from MTCA's current Class 2 and Class 1 tables. The 2024 table is shown for method only.
 - **Refer arrears and late charges.** Do not quantify unpaid contributions, interest or older-period additions without an official statement of what is due. Under article 116(4), "a notice by the Director ... showing the number and the amount of contributions" unpaid is "sufficient evidence ... unless the contrary is proved". For article 116 the "Director" is the Director General (Social Security), not the Commissioner for Tax and Customs (article 2), even though MTCA collects the payments. Which office issues the statement in practice is check.
 - **Refer** disability, invalidity and carer situations, students and pensioners claiming an exclusion, religious-order and Libya-employment arrears provisions, court-ordered transfers of contributions (articles 8(6), 10(5)), and anyone past pension age.
 - **Refer** cross-border cases: A1 certificates, EU coordination, bilateral agreements, and non-residents.
 - **Flag for a Maltese warranted accountant**: an employee who is also a director drawing fees; a returner restarting self-occupation after years out; a mid-year switch between employment and self-occupation; a first year of self-occupation (see below); two part-time self-occupations with no employment.
-- **Route** income tax questions, including how contributions are treated on the return, to the malta-income-tax Guide, and payroll mechanics to malta-payroll.
+- **Route** income tax questions, including how contributions are treated on the return, to the malta-income-tax skill, and payroll mechanics to malta-payroll.
 
 ## Filing and payment ([Cap. 318, articles 11 and 116](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
 **Who collects.** Class 2 is paid "at the Malta Tax and Customs Administration in such form and manner as may from time to time be determined by the Director" (article 11, as amended by [Act III of 2026](https://legislation.mt/getpdf/69d8ed326fe5fd3994d17430), article 22). For articles 3 to 11 the "Director" is the Commissioner for Tax and Customs. Older bank statements may show payments to the Department of Social Security or Inland Revenue; newer ones should show MTCA.
 
-**When.** "in arrears at intervals of four months ending on the last day of April, August and December of each year" (article 11), unless the Director has approved other arrangements. So there are three payment periods a year: January to April, May to August, and September to December. The exact due date and amount are on MTCA's bill (check). The rates for each period are those in the Tenth Schedule "for the four months ending on the last day of April, August and December" (article 10(3)). Earlier versions of this Guide said quarterly: that was wrong.
+**When.** "in arrears at intervals of four months ending on the last day of April, August and December of each year" (article 11), unless the Director has approved other arrangements. So there are three payment periods a year: January to April, May to August, and September to December. The exact due date and amount are on MTCA's bill (check). The rates for each period are those in the Tenth Schedule "for the four months ending on the last day of April, August and December" (article 10(3)). Earlier versions of this skill said quarterly: that was wrong.
 
 **First year.** The category depends on the previous year's earnings, which a new self-occupied person does not have. How MTCA bills the first year, and how it adjusts once the first income tax return is in, is check. Do not promise the SA minimum as a final figure.
 
@@ -160,7 +160,7 @@ These use the 2024 table because it is the only one in the law we could read. Fo
 
 **Time limits.** The Director's claim for unpaid Class 2, or for a difference in rate, category or class, "shall be barred by the lapse of thirty years" (article 116(5)(i)). The person's own request to pay missed contributions, or to get a refund after an adjustment, is "null and void if submitted after attainment of pension age or after the lapse of five years from the time when the proper rate of contribution was due, whichever is the earlier" (article 116(5)(ii)). The old statement that the Department "can recover up to 5 years" was wrong.
 
-**Reading bank statements.** Class 2 payments are statutory personal contributions: keep them out of VAT and out of business supplies. Payments go out; a credit from the Department (for example a pension or benefit) is income received, not a contribution. MTCA also collects income tax, provisional tax and FSS remittances, so a debit to MTCA (or to the Commissioner, Inland Revenue or CFR on older statements) is Class 2 only if its payment reference or the MTCA statement says so. A provisional tax payment is income tax, not a contribution: route it to the malta-income-tax Guide. Keep Class 1 paid by an employer (through the FSS remittance) separate from the client's own Class 2. An irregular lump sum marked as arrears may mix contributions and interest: get the MTCA breakdown before recording it.
+**Reading bank statements.** Class 2 payments are statutory personal contributions: keep them out of VAT and out of business supplies. Payments go out; a credit from the Department (for example a pension or benefit) is income received, not a contribution. MTCA also collects income tax, provisional tax and FSS remittances, so a debit to MTCA (or to the Commissioner, Inland Revenue or CFR on older statements) is Class 2 only if its payment reference or the MTCA statement says so. A provisional tax payment is income tax, not a contribution: route it to the malta-income-tax skill. Keep Class 1 paid by an employer (through the FSS remittance) separate from the client's own Class 2. An irregular lump sum marked as arrears may mix contributions and interest: get the MTCA breakdown before recording it.
 
 ## 2025 contribution year (settling now) ([Cap. 318](https://legislation.mt/getpdf/69d6033d6fe5fd3994d1710c))
 
@@ -199,4 +199,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malta-ssc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malta-ssc. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malta-ssc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malta-ssc. If neither is available, confirm every figure against the official source pages cited above before relying on it.

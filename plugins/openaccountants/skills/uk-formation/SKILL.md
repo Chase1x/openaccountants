@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/uk-formation"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,11 +15,11 @@ metadata:
 
 # Starting a business in the UK: structure, registration, Companies House identity rules and first filings
 
-This Guide is written for the UK tax year 2026/27 (6 April 2026 to 5 April 2027) and for the Companies House rules in force on 25 September 2026. Fees are as published by Companies House on 25 September 2026.
+This skill is written for the UK tax year 2026/27 (6 April 2026 to 5 April 2027) and for the Companies House rules in force on 25 September 2026. Fees are as published by Companies House on 25 September 2026.
 
 ## Scope
 
-This Guide covers:
+This skill covers:
 
 - choosing between working as a sole trader, forming a private company limited by shares, and setting up an ordinary partnership or a limited liability partnership (LLP), described at method level
 - registering each of them: Self Assessment for sole traders and partners, incorporation at Companies House for companies and LLPs
@@ -28,7 +28,7 @@ This Guide covers:
 
 It applies across England, Wales, Scotland and Northern Ireland. The LLP sections cite the Limited Liability Partnerships Act 2000, which covers Great Britain. Northern Ireland LLPs fall under the Limited Liability Partnerships Act (Northern Ireland) 2002, which has equivalent rules. It does not cover charities, community interest companies, companies limited by guarantee in any detail, limited partnerships, overseas companies registering a UK establishment, or regulated activities that need separate authorisation.
 
-Related Guides: company accounts (uk-financial-statements), payroll (uk-payroll) and VAT returns (uk-vat-return). Where this Guide touches their subjects it gives only the registration step and points to them.
+Related Skills: company accounts (uk-financial-statements), payroll (uk-payroll) and VAT returns (uk-vat-return). Where this skill touches their subjects it gives only the registration step and points to them.
 
 ## Ask the client first
 
@@ -271,7 +271,7 @@ A one-person company will pay its director a salary from 30 November 2026.
   - activities regulated by the FCA or needing a licence
   - a person who is disqualified or bankrupt and wants to be a director. They need permission from the court
   - failed identity verification, or a question on the Post Office or ACSP route that the published guidance does not answer
-- **Point to a related Guide:** accounts preparation and exemptions (uk-financial-statements), payroll (uk-payroll), VAT returns and schemes (uk-vat-return).
+- **Point to a related skill:** accounts preparation and exemptions (uk-financial-statements), payroll (uk-payroll), VAT returns and schemes (uk-vat-return).
 
 ## Filing and payment
 
@@ -319,4 +319,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

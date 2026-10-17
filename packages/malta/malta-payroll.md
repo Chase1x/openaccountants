@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malta payroll processing for em
 version: 1.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,14 +19,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope ([FSS Rules, S.L. 372.14](https://legislation.mt/getpdf/6a6c4d3b52fe3f25d8b039d3))
 
-This Guide covers what a Maltese employer (a "payer") must do for employees (the "payees"): register, withhold income tax under the Final Settlement System (FSS), pay Class 1 social security and the Maternity Leave Fund contribution, pay the statutory bonuses and the minimum wage, and file the FS5, FS3 and FS7.
+This skill covers what a Maltese employer (a "payer") must do for employees (the "payees"): register, withhold income tax under the Final Settlement System (FSS), pay Class 1 social security and the Maternity Leave Fund contribution, pay the statutory bonuses and the minimum wage, and file the FS5, FS3 and FS7.
 
 - **Primary year: emoluments paid in calendar 2026.** Malta taxes a calendar basis year. 2026 income is charged for **year of assessment 2027**, so the FSS rate tables for 2026 pay are the ones in article 56(1) of the Income Tax Act as replaced by Act III of 2026.
 - **Returns being filed now:** the 2025 FS3 and FS7 were due in January and February 2026. See "2025 year-end (already due)".
 
 **Sources.** Everything here comes from the Laws of Malta (legislation.mt). The MTCA website (mtca.gov.mt) refused our automated source checks on 25 September 2026. Anything that exists only there is marked **check**, with no figure. That covers the FSS Main Tax Deduction Tables, the FS-form layouts and e-filing rules, the 2026 Class 1 weekly caps, and the statutory bonus amounts.
 
-**Not covered:** the employee's own tax return, part-time final tax and personal reliefs (see the malta-income-tax Guide), self-employed Class 2 contributions, fringe-benefit valuation, the special expatriate regimes (highly qualified persons and similar), and sector Regulation Orders beyond what is named here.
+**Not covered:** the employee's own tax return, part-time final tax and personal reliefs (see the malta-income-tax skill), self-employed Class 2 contributions, fringe-benefit valuation, the special expatriate regimes (highly qualified persons and similar), and sector Regulation Orders beyond what is named here.
 
 ## Ask the client first
 
@@ -48,7 +48,7 @@ This Guide covers what a Maltese employer (a "payer") must do for employees (the
 3. **No FS4? Deduct at the top rate** ([rule 3](https://legislation.mt/getpdf/6a6c4d3b52fe3f25d8b039d3)). Emoluments of a payee who has not complied are "subject to tax deduction at a rate equal to the maximum rate of tax provided under article 56(1)" (rule 3(2)), which is 35%. The payer must still complete and file the form to the best of its knowledge (rule 3(4)).
 4. **Pick the deduction method** for each payment (rule 6(1)):
    - **FSS Main** for the one source the FS4 names as main, and for local pensions (rule 7);
-   - **FSS Part-Time** for part-time work that qualifies under article 90A (rule 8; rates in the malta-income-tax Guide);
+   - **FSS Part-Time** for part-time work that qualifies under article 90A (rule 8; rates in the malta-income-tax skill);
    - **FSS Overtime** for qualifying overtime income, at 15 cents per euro (rule 7A);
    - **FSS Other Emoluments** for anything else, at 20% ([rule 9](https://legislation.mt/getpdf/6a6c4d3b52fe3f25d8b039d3)).
 5. **Compute FSS Main tax** with the cumulative formula (Schedule B Part I) using the 2026 rate table for the FS4 status. A payer with fewer than ten full-time payees may instead use the Main Tax Deduction Tables, but never both in the same year (rule 7(4)).
@@ -99,7 +99,7 @@ Tax = chargeable income × rate − subtraction. Act III of 2026, article 19, re
 - **Married tables** (a): a married couple resident in Malta, taxed jointly. If either spouse elected a separate return (article 49A) or a separate computation (article 50), each uses the (b) tables. An EU/EEA national whose spouse is not resident in Malta can still use the married tables (a)(i) to (iii) if the other conditions are met and "at least ninety per cent (90%) of the couple’s world-wide income is derived from Malta".
 - **Parent** (b)(ii): a parent who kept a child in custody, or paid maintenance under article 12(1)(t), for a child "not over eighteen (18) years of age, or not over twenty-three (23) years of age if receiving full-time education".
 - **Qualifying-child tables** (a)(ii), (a)(iii), (b)(iv), (b)(v) need **all** of: custody (for (b)(iv) and (b)(v), custody of the individual's own child, a spouse's child, or a child of a cohabitant certified under the Cohabitation Act, or maintenance under article 12(1)(t)); the same age test; and at least one of the individual or spouse being an EU/EEA national or a long-term resident. If neither is an EU/EEA national, each child must also have been "born in Malta and was resident in Malta". If any condition fails, fall back to (a)(i) or (b)(ii).
-- **Single parent with sole custody** (b)(iii) is taxed on the married table (a)(i), unless (b)(iv) or (b)(v) is better. The conditions (sole custody, child income not over €3,400, sole beneficiary of children's allowance, no maintenance from and not living with the other parent) are set out in the malta-income-tax Guide.
+- **Single parent with sole custody** (b)(iii) is taxed on the married table (a)(i), unless (b)(iv) or (b)(v) is better. The conditions (sole custody, child income not over €3,400, sole beneficiary of children's allowance, no maintenance from and not living with the other parent) are set out in the malta-income-tax skill.
 
 **2026 timing.** Act III of 2026 was assented on 10 March 2026. The cumulative formula recalculates tax to date each period, so any January–February under- or over-deduction unwinds through L = D − X. How MTCA told payers to handle those months is **check**.
 
@@ -137,7 +137,7 @@ Tax = chargeable income × rate − subtraction. Act III of 2026, article 19, re
 
 **Maternity Leave Fund (employer only).** The employer also pays "0.3% calculated to the nearest cent of their basic weekly wage", with flat amounts at the bottom and a cap at Category D (Tenth Schedule, Part IV). The 2024-dated table caps it at "€1.60" (born 1962 or later) and "€1.27" (born 1961 or before). The 2026 caps are **check**. Nothing is deducted from the employee for this.
 
-**Late Class 1.** From 1 January 2026, the extra contribution for Class 1 paid late or at the wrong rate under article 116(1)(c) and (d) is replaced by interest at the article 44(2A) Income Tax Management Act rate (Act III of 2026, article 27). See the malta-income-tax Guide for that rate.
+**Late Class 1.** From 1 January 2026, the extra contribution for Class 1 paid late or at the wrong rate under article 116(1)(c) and (d) is replaced by interest at the article 44(2A) Income Tax Management Act rate (Act III of 2026, article 27). See the malta-income-tax skill for that rate.
 
 ## Minimum wage, cost-of-living increase and statutory bonuses
 
@@ -161,7 +161,7 @@ From 1 January 2026, "The wages of whole-time employees shall be increased by fo
 - **Income supplements** are a separate obligation. The employer "shall also pay, or cause to be paid, to each of his whole-time employees any income supplements in the amount and at the times as may be established by legal notice" (article 23(1), second proviso). Do not fold them into the bonus or into wages.
 - An employee who has worked for the employer for less than a year gets a proportionate amount of "the bonus or income supplement", "made on the basis of the annual hours worked". Whole-time employees with reduced hours get a pro rata share (article 24). Part-time entitlement follows the part-time employment regulations and the sector Order (check).
 - **2026 amounts: check.** The bonus amounts come from the Government's General Estimates, and the supplement amounts from legal notice. We found neither with a figure on legislation.mt. Use the amounts announced for 2026 and confirm them with MTCA or the Department for Industrial and Employment Relations before the June and December payroll runs.
-- **About the old "COLA" figure.** An earlier version of this Guide listed a tax-exempt quarterly "COLA" paid as a yearly total. That total was really the two half-yearly statutory bonuses plus the two income supplements added together, under the wrong label. The bonuses and supplements are real, separate payments. The 2026 cost-of-living increase is the weekly €4.66 above.
+- **About the old "COLA" figure.** An earlier version of this skill listed a tax-exempt quarterly "COLA" paid as a yearly total. That total was really the two half-yearly statutory bonuses plus the two income supplements added together, under the wrong label. The bonuses and supplements are real, separate payments. The 2026 cost-of-living increase is the weekly €4.66 above.
 - For tax, bonuses and income supplements are paid by the employer and go through FSS. Whether any exemption applies is **check** with MTCA. For Class 1, bonuses and extra allowances are excluded from the basic weekly wage.
 - **Payslips.** Cap. 452 and its regulations set rules on itemised pay statements (payslips), including what they must show and when they are due. We have not verified them here, so treat them as **check**. The FSS pay statement under rule 19 (gross pay by category and the tax deducted) is covered above.
 
@@ -211,8 +211,8 @@ From 1 January 2026, "The wages of whole-time employees shall be increased by fo
 ## When to refuse or refer
 
 - **Refer** questions about the employee's own return, part-time final tax, personal reliefs, or whether the child conditions are met in a disputed case. Use malta-income-tax or a warranted accountant.
-- **Refer** expatriate regimes (highly qualified persons, key employee schemes), cross-border workers, social security for posted workers (A1 certificates), and directors' fees. They are outside this Guide.
-- **Refuse to give a 2026 Class 1 weekly cap, bonus amount or Main Tax Deduction Table figure** from this Guide. Those figures must come from MTCA's current publications.
+- **Refer** expatriate regimes (highly qualified persons, key employee schemes), cross-border workers, social security for posted workers (A1 certificates), and directors' fees. They are outside this skill.
+- **Refuse to give a 2026 Class 1 weekly cap, bonus amount or Main Tax Deduction Table figure** from this skill. Those figures must come from MTCA's current publications.
 - **Refuse** to set up any arrangement not to deduct FSS tax. It is void under rule 36.
 - **Refer** sector pay-rate, overtime-premium and leave questions to the applicable (Conditions of Work) Regulation Order and the Department for Industrial and Employment Relations.
 
@@ -246,7 +246,7 @@ The Commissioner serves a default notice. The payer must rectify and pay "within
 
 ## 2025 year-end (already due) ([FSS Rules](https://legislation.mt/getpdf/6a6c4d3b52fe3f25d8b039d3))
 
-- 2025 emoluments are year of assessment 2026. FSS for 2025 used the article 56 tables as set by Act IX of 2025. The four qualifying-child tables did **not** apply to 2025 pay. See the malta-income-tax Guide for those tables.
+- 2025 emoluments are year of assessment 2026. FSS for 2025 used the article 56 tables as set by Act IX of 2025. The four qualifying-child tables did **not** apply to 2025 pay. See the malta-income-tax skill for those tables.
 - The 2025 FS3s were due to payees by **31 January 2026**. The 2025 FS7, with the FS3 originals, was due by **15 February 2026**. If either is still outstanding, file now. Schedule C additional tax (€200 for the FS7) can be doubled on each further default notice, up to €1,000.
 - Employees need their FS3 to file their own returns. The employee's 2025 return date is covered in malta-income-tax.
 

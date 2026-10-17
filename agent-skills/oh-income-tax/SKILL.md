@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/oh-income-tax"
   jurisdiction: "US-OH"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([2025 IT 1040 instructions](https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/forms/ohio_individual/individual/2025/it1040-booklet.pdf); [OBM Monthly Financial Report, December 2025](https://archives.obm.ohio.gov/Files//Budget_and_Planning/Monthly_Financial_Report/2025-12-mfr.pdf))
 
-This Guide covers the Ohio individual income tax return, **Ohio IT 1040**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on extension). It is for full-year residents, part-year residents and nonresidents with Ohio income, including sole proprietors and owners of pass-through entities whose business income reaches Ohio through federal adjusted gross income (AGI).
+This skill covers the Ohio individual income tax return, **Ohio IT 1040**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on extension). It is for full-year residents, part-year residents and nonresidents with Ohio income, including sole proprietors and owners of pass-through entities whose business income reaches Ohio through federal adjusted gross income (AGI).
 
 Figures are for tax year 2025 unless labelled 2026. The reason: the Department of Taxation had not published the 2026 IT 1040 instructions or a 2026 rate schedule on 25 September 2026. What is known for 2026 is stated as such in "Figures by year", with its source.
 
@@ -96,7 +96,7 @@ Line numbers are from the 2025 forms ([2025 IT 1040 and schedules](https://dam.a
 | Rate on taxable business income above the deduction | 3% |
 
 - The deduction applies only to business income included in federal AGI, and is capped at federal AGI (Schedule of Business Income line 11).
-- For 2026: the official pages checked for this Guide report no change to the deduction amounts or the 3% business rate. Confirm both in the 2026 instructions before filing a 2026 return.
+- For 2026: the official pages checked for this skill report no change to the deduction amounts or the 3% business rate. Confirm both in the 2026 instructions before filing a 2026 return.
 
 ### Personal and dependent exemptions ([2025 IT 1040 instructions, line 4](https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/forms/ohio_individual/individual/2025/it1040-booklet.pdf); [2026 IT 1040ES worksheet](https://dam.assets.ohio.gov/image/upload/v1735926006/tax.ohio.gov/forms/ohio_individual/individual/2026/ites-instructions-fi.pdf))
 
@@ -324,4 +324,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `oh-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/oh-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `oh-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/oh-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cyprus-vat-return"
   jurisdiction: "CY"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Cyprus VAT return: classifying a quarter and filling in the return
 
-This Guide prepares and reviews the periodic Cyprus VAT return (Δήλωση Φ.Π.Α.) for a business on the normal VAT scheme: which rate applies, which box each transaction goes in, who must register, when the return is due, and how to correct it. Figures are for tax year 2026. Every figure comes from a Cyprus Tax Department page or document, linked in the table that holds it. Most of those pages are in Greek only, so the Note column quotes the Greek text. Use it with the `vat-workflow-base` Guide (workflow) and the `eu-vat-directive` Guide (EU rules).
+This skill prepares and reviews the periodic Cyprus VAT return (Δήλωση Φ.Π.Α.) for a business on the normal VAT scheme: which rate applies, which box each transaction goes in, who must register, when the return is due, and how to correct it. Figures are for tax year 2026. Every figure comes from a Cyprus Tax Department page or document, linked in the table that holds it. Most of those pages are in Greek only, so the Note column quotes the Greek text. Use it with the `vat-workflow-base` skill (workflow) and the `eu-vat-directive` skill (EU rules).
 
 ## Section 1: Quick reference
 
@@ -28,12 +28,12 @@ Read this whole section before classifying anything. The workflow runbook is in 
 | Country | Cyprus (Republic of Cyprus) |
 | Authority | Tax Department (Τμήμα Φορολογίας), Ministry of Finance |
 | Law | VAT Law N.95(I)/2000 as amended, and the VAT (General) Regulations Κ.Δ.Π. 314/2001 |
-| Return | The VAT return (Δήλωση Φ.Π.Α.), 13 boxes numbered 1 to 11B. Earlier versions of this Guide called it "VAT4"; no Tax Department page read for this rewrite uses that name |
+| Return | The VAT return (Δήλωση Φ.Π.Α.), 13 boxes numbered 1 to 11B. Earlier versions of this skill called it "VAT4"; no Tax Department page read for this rewrite uses that name |
 | Filing | Electronic only, through Tax For All (TFA) |
 | Period | Usually quarterly, set at registration by the business's NACE code; the Commissioner may set monthly or annual periods (Section 2) |
 | Deadline | Return and payment by the 10th day after the end of the month that follows the end of the period (Section 2) |
 | Currency | EUR only |
-| Companion Guides | `vat-workflow-base` and `eu-vat-directive`, both must be loaded |
+| Companion Skills | `vat-workflow-base` and `eu-vat-directive`, both must be loaded |
 
 **2026 VAT rates.** The Tax Department rates page lists the goods and services in each reduced band. Anything not listed on the rates page or in the Sixth Schedule table below takes the standard rate.
 
@@ -107,7 +107,7 @@ The 5% rate on a main residence is a separate scheme with its own approval, limi
 - The obligation exists whether or not the business applied. The Commissioner may register it back to the date it became liable, and it owes the VAT on its supplies from that date.
 - No threshold: a person who supplies services to taxable persons in another EU member state, where the customer pays the VAT there, must register from the first such supply, whatever its value, and file the VIES recapitulative statement.
 - No threshold: a business NOT established in Cyprus that makes taxable supplies in Cyprus (where the reverse charge does not apply) must register as soon as it intends to make them.
-- Distance sales: the page sends distance sellers to Information Leaflet 3A. No allowed page read for this rewrite prints the EU distance-sales threshold, so this Guide does not state one. Refer.
+- Distance sales: the page sends distance sellers to Information Leaflet 3A. No allowed page read for this rewrite prints the EU distance-sales threshold, so this skill does not state one. Refer.
 - Voluntary registration is open to a business below the thresholds and to an intending trader.
 
 **Return periods.** From the Tax Department page on submitting VAT returns. VAT returns "usually cover quarterly tax periods" ("Οι Δηλώσεις ΦΠΑ αφορούν συνήθως τριμηνιαίες φορολογικές περιόδους"), set at registration from the business's NACE activity code. Under conditions the Commissioner may set monthly or annual returns. The quarters are not always calendar quarters: the official calendar shows quarters such as June to August. Source: https://www.gov.cy/mof-tax/documents/ypovoli-tropopoiisi-diloseon-f-p-a/
@@ -143,7 +143,7 @@ The 5% rate on a main residence is a separate scheme with its own approval, limi
 | Administrative charge for failing to issue a legal receipt to consumers: up to this share of the transaction value | 20% | "διοικητικής χρηματικής επιβάρυνσης ίσης με ποσοστό έως και 20% της αξίας της συναλλαγής" |
 
 - A business must notify the end of its taxable activity within 60 days.
-- The same page lists the special schemes a business may join where conditions are met, including the special scheme for small businesses (SME-SS) under Law 104(I)/2025, the one-stop shop (OSS / IOSS), the cash accounting scheme (article 42Ε), the margin schemes, the farmers' scheme and the urban taxi scheme. All are outside this Guide (refusal catalogue).
+- The same page lists the special schemes a business may join where conditions are met, including the special scheme for small businesses (SME-SS) under Law 104(I)/2025, the one-stop shop (OSS / IOSS), the cash accounting scheme (article 42Ε), the margin schemes, the farmers' scheme and the urban taxi scheme. All are outside this skill (refusal catalogue).
 
 ## Section 3: Required inputs and refusal catalogue
 
@@ -372,7 +372,7 @@ The return guide says do not include VAT on:
 
 To claim any input VAT, the business must hold a tax invoice dated in the period. Credit notes received reduce Box 4.
 
-Client entertainment and motor vehicles. The Tax Department's General VAT Guide (Information Leaflet 10, dated November 2001, still published on gov.cy) lists among the VAT that may not be deducted: the purchase, hire or import of a motor car, other than taxis, hire cars and driving-school cars, where "car" means an ordinary passenger car and excludes single-seaters, vehicles with more than ten seats, commercial and van-type vehicles, caravans, ambulances and vehicles over three tonnes; and business entertainment expenses, without limiting them to employees or managers. The guide predates the current law, so this Guide keeps the conservative default (block, ask, refer) and does not restate the rule as current law. Source: https://www.gov.cy/media/sites/167/2026/01/%CE%93%CE%B5%CE%BD%CE%B9%CE%BA%CF%8C%CF%82-%CE%9F%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-%CE%A6.%CE%A0.%CE%91.-%CE%95%CE%BD%CE%B7%CE%BC%CE%B5%CF%81%CF%89%CF%84%CE%B9%CE%BA%CF%8C-%CE%88%CE%BD%CF%84%CF%85%CF%80%CE%BF-10.pdf
+Client entertainment and motor vehicles. The Tax Department's General VAT Guide (Information Leaflet 10, dated November 2001, still published on gov.cy) lists among the VAT that may not be deducted: the purchase, hire or import of a motor car, other than taxis, hire cars and driving-school cars, where "car" means an ordinary passenger car and excludes single-seaters, vehicles with more than ten seats, commercial and van-type vehicles, caravans, ambulances and vehicles over three tonnes; and business entertainment expenses, without limiting them to employees or managers. The guide predates the current law, so this skill keeps the conservative default (block, ask, refer) and does not restate the rule as current law. Source: https://www.gov.cy/media/sites/167/2026/01/%CE%93%CE%B5%CE%BD%CE%B9%CE%BA%CF%8C%CF%82-%CE%9F%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-%CE%A6.%CE%A0.%CE%91.-%CE%95%CE%BD%CE%B7%CE%BC%CE%B5%CF%81%CF%89%CF%84%CE%B9%CE%BA%CF%8C-%CE%88%CE%BD%CF%84%CF%85%CF%80%CE%BF-10.pdf
 
 ### 5.12 Output VAT that is easy to miss
 
@@ -609,7 +609,7 @@ Fallback: "Customers outside Cyprus? Businesses or consumers?"
 9. Tax Department, circular 11/2023 on the 5% residence rate: https://www.gov.cy/media/sites/167/2026/01/%CE%95%CE%95-11_2023.pdf
 10. Tax Department, deadline calendar: https://www.gov.cy/mof-tax/prothesmies/
 11. VAT Law N.95(I)/2000 as amended, and Κ.Δ.Π. 314/2001 (cited by section in words).
-12. EU VAT Directive 2006/112/EC: via the `eu-vat-directive` Guide.
+12. EU VAT Directive 2006/112/EC: via the `eu-vat-directive` skill.
 13. Consolidated VAT Law (Κ.Δ.Π. 221/2026): https://www.gov.cy/media/sites/167/2026/01/Consolidated-VAT-Law-%CE%9A%CE%94%CE%A0-221_2026.pdf
 14. Tax Department, General VAT Guide (Information Leaflet 10, November 2001): https://www.gov.cy/media/sites/167/2026/01/%CE%93%CE%B5%CE%BD%CE%B9%CE%BA%CF%8C%CF%82-%CE%9F%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-%CE%A6.%CE%A0.%CE%91.-%CE%95%CE%BD%CE%B7%CE%BC%CE%B5%CF%81%CF%89%CF%84%CE%B9%CE%BA%CF%8C-%CE%88%CE%BD%CF%84%CF%85%CF%80%CE%BF-10.pdf
 
@@ -621,9 +621,9 @@ Fallback: "Customers outside Cyprus? Businesses or consumers?"
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com.
+The most up-to-date version of this skill is maintained at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 
@@ -645,4 +645,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

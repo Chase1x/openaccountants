@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/at-income-tax"
   jurisdiction: "AT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,16 +15,16 @@ metadata:
 
 # Austrian income tax for individuals (Einkommensteuer): the E 1 return, the employee assessment (L 1) and prepayments
 
-This Guide explains how Austria taxes one individual's income. It covers the seven income types, the 2026 tariff, profit rules for the self-employed (the profit allowance, the investment allowance and the flat expense rate), Werbungskosten for employees, special expenses, the tax credits including the Familienbonus Plus, the choice between the employee assessment (Arbeitnehmerveranlagung, form L 1) and the full income tax return (form E 1), deadlines, prepayments and surcharges. Figures are for tax year 2026, the calendar year, which is assessed in 2027. Each figure names its year. A short dated section covers the 2025 returns that are being filed and assessed now.
+This skill explains how Austria taxes one individual's income. It covers the seven income types, the 2026 tariff, profit rules for the self-employed (the profit allowance, the investment allowance and the flat expense rate), Werbungskosten for employees, special expenses, the tax credits including the Familienbonus Plus, the choice between the employee assessment (Arbeitnehmerveranlagung, form L 1) and the full income tax return (form E 1), deadlines, prepayments and surcharges. Figures are for tax year 2026, the calendar year, which is assessed in 2027. Each figure names its year. A short dated section covers the 2025 returns that are being filed and assessed now.
 
-Sources are the Finance Ministry (BMF) and its business portal (USP), pages mostly updated 1 January 2026, and the BMF Steuerbuch 2026 (November 2025, explaining the 2025 assessment; its figures are labelled). The statute is the Einkommensteuergesetz 1988 (EStG). The legal database ris.bka.gv.at did not answer when this Guide was checked, so section numbers come from BMF and USP pages: check the statute before relying on one in a dispute.
+Sources are the Finance Ministry (BMF) and its business portal (USP), pages mostly updated 1 January 2026, and the BMF Steuerbuch 2026 (November 2025, explaining the 2025 assessment; its figures are labelled). The statute is the Einkommensteuergesetz 1988 (EStG). The legal database ris.bka.gv.at did not answer when this skill was checked, so section numbers come from BMF and USP pages: check the statute before relying on one in a dispute.
 
 ## Scope
 
 - **Who:** individuals who are fully taxable in Austria, meaning they have a home (Wohnsitz) or their habitual abode (gewöhnlicher Aufenthalt) there and are taxed on worldwide income. This includes employees, pensioners, sole traders, freelancers, freie Dienstnehmer, and landlords letting property privately.
 - **What:** the income tax assessment for 2026, the tariff, credits, Werbungskosten, Sonderausgaben, extraordinary expenses, the self-employed profit rules, the L 1 and E 1 returns, prepayments, and surcharges for late payment and late filing.
 - **Periods:** calendar 2026 (the current year and the prepayments being paid now), plus a dated section for 2025 returns.
-- **Companion Guides:** VAT (Umsatzsteuer, the small business exemption, the U 30 and U 1 returns) belongs in `at-vat-return`. Social insurance contributions (SVS) belong in `at-svs-contributions`. Companies belong in `at-corporate-income-tax`. The map of all Austrian taxes is `at-tax-overview`.
+- **Companion Skills:** VAT (Umsatzsteuer, the small business exemption, the U 30 and U 1 returns) belongs in `at-vat-return`. Social insurance contributions (SVS) belong in `at-svs-contributions`. Companies belong in `at-corporate-income-tax`. The map of all Austrian taxes is `at-tax-overview`.
 - **Out of scope, refer:** non-residents (limited tax liability), partnerships' own returns (E 6), group taxation, farming flat rates, sector flat rates, the Kleinunternehmerpauschalierung, business sales and closures, private sales of real estate beyond the basic rate, treaty and move-abroad cases, audits and appeals, and payroll (monthly Lohnsteuer) calculations.
 
 ## Ask the client first
@@ -373,4 +373,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `at-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/at-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `at-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/at-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

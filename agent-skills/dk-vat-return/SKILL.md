@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/dk-vat-return"
   jurisdiction: "DK"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -33,7 +33,7 @@ This method prepares an ordinary Danish VAT return for a registered business for
 | Box A goods / A services; B goods / B services; C | International-trade value records: EU purchases; EU sales; exports and other untaxed supplies. | [VAT accounts](https://skat.dk/en-us/businesses/vat/vat-what-to-do/how-to-do-your-business-vat-accounts) |
 | 4 pm filing-day cut-off | Select the official before/after 4 pm correction branch for the filing day; use the prior-period correction route for later changes. | [Correct a VAT return](https://skat.dk/en-us/businesses/vat/vat-what-to-do/how-to-change-your-vat-return-or-vat-payment) |
 
-Amounts in the cases are hypothetical arithmetic, not authority figures. Prepare the return in DKK. Where an invoice is in another currency, retain the documented conversion basis and confirm the applicable exchange-rate treatment with SKAT's guidance before entering it; this Guide does not state a conversion rule. Do not use a bank debit as the VAT base.
+Amounts in the cases are hypothetical arithmetic, not authority figures. Prepare the return in DKK. Where an invoice is in another currency, retain the documented conversion basis and confirm the applicable exchange-rate treatment with SKAT's guidance before entering it; this skill does not state a conversion rule. Do not use a bank debit as the VAT base.
 
 ## Ask the client first
 
@@ -114,4 +114,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dk-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dk-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dk-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dk-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

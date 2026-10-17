@@ -3,7 +3,7 @@ name: washington-sales-tax
 description: Use this skill whenever asked about Washington State sales and use tax, WA DOR filings, B&O tax overview, Washington digital goods tax, Washington exemptions, Washington nexus, or any request involving Washington state sales and use tax compliance. Trigger on phrases like "Washington sales tax", "WA sales tax", "Washington DOR", "B&O tax", "Washington use tax", "Washington digital goods", "Washington resale certificate", or any request involving Washington sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Washington sales tax work.
 jurisdiction: US-WA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -269,7 +269,7 @@ Interest also runs on unpaid tax, at a rate that changes every year ([DOR late f
 - Refer sales in Indian country or to tribes and tribal members: DOR is still consulting tribes on ESSB 5814 and tells vendors with tribal customers to request a ruling.
 - Refer any ESSB 5814 case that is not clearly inside or outside DOR's lists (for example bundled professional and digital services, or mixed advertising packages). DOR's guidance is interim; questions go to DOR's rulings team. Do not advise a client to stop collecting because of the pending litigation.
 - Refer voluntary disclosure for unregistered sellers with past exposure, and any audit, assessment or appeal.
-- Refer Washington capital gains tax and other taxes outside this Guide.
+- Refer Washington capital gains tax and other taxes outside this skill.
 
 ## Completion checklist
 

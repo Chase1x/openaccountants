@@ -3,7 +3,7 @@ name: ga-corporate-and-ptet
 description: "Source-cited tax guide for US-GA: ga corporate and ptet. Unverified draft, pending local-accountant review."
 jurisdiction: US-GA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,10 +15,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 IT-611 booklet](https://dor.georgia.gov/document/document/2025-it611-corporate-income-tax-instruction-booklet/download); [DOR corporate income and net worth tax](https://dor.georgia.gov/corporate-income-and-net-worth-tax))
 
-This Guide covers Georgia tax for **tax year 2026**, with a dated section for **2025 returns**. It covers:
+This skill covers Georgia tax for **tax year 2026**, with a dated section for **2025 returns**. It covers:
 - the corporate income tax on Form 600;
 - the corporate net worth tax, which C corporations report on Form 600 and S corporations on Form 600S;
-- the election by an S corporation (Form 600S) or a partnership (Form 700) to pay Georgia income tax at the entity level. This Guide calls it the pass-through entity tax (PTET) election. DOR calls it the "election to pay tax at the entity level";
+- the election by an S corporation (Form 600S) or a partnership (Form 700) to pay Georgia income tax at the entity level. This skill calls it the pass-through entity tax (PTET) election. DOR calls it the "election to pay tax at the entity level";
 - corporate and electing-entity estimated tax, penalties and filing.
 
 Figures are for tax year 2026 unless labelled 2025. The 2026 IT-611, IT-611S and IT-711 booklets were not published on 25 September 2026, so rules found only in the 2025 booklets are labelled 2025.

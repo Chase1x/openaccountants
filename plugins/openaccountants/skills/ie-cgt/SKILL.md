@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-cgt"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Ireland Capital Gains Tax (CGT) for individuals
 
-This Guide is a source-cited draft by the OpenAccountants team. No accountant has reviewed it. It sets out how to compute, pay and report Irish Capital Gains Tax on a disposal by an individual: the chargeable gain, the personal exemption, the rates, the main reliefs, losses, share identification, the CG50A clearance and the payment and return dates. Figures are for tax year 2026. The Irish tax year is the calendar year. Every figure below sits in a table that names the Revenue page it comes from. Check the Revenue pages for any change announced after 2 October 2026.
+This skill is a source-cited draft by the OpenAccountants team. No accountant has reviewed it. It sets out how to compute, pay and report Irish Capital Gains Tax on a disposal by an individual: the chargeable gain, the personal exemption, the rates, the main reliefs, losses, share identification, the CG50A clearance and the payment and return dates. Figures are for tax year 2026. The Irish tax year is the calendar year. Every figure below sits in a table that names the Revenue page it comes from. Check the Revenue pages for any change announced after 2 October 2026.
 
 ## Section 1: Quick reference
 
@@ -108,8 +108,8 @@ This Guide is a source-cited draft by the OpenAccountants team. No accountant ha
 | --- | --- | --- |
 | Most chargeable gains (land, buildings, shares, crypto-assets, goodwill and other intangibles) | 33% | Rate since 6 December 2012. Revenue's crypto-asset manual lists crypto-assets among the assets on which CGT arises ([Tax and Duty Manual Part 02-01-03](https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-02/02-01-03.pdf)) |
 | Qualifying gains under Revised Entrepreneur Relief | 10% | Up to the lifetime limit for the period the gain arises in (see the Entrepreneur Relief table). Gains above the limit go at 33% |
-| Foreign life policies and foreign investment products | 40% | Out of scope of this Guide. Refer |
-| Venture capital funds | 15% (individuals and partnerships) or 12.5% (companies) | Out of scope of this Guide. Refer |
+| Foreign life policies and foreign investment products | 40% | Out of scope of this skill. Refer |
+| Venture capital funds | 15% (individuals and partnerships) or 12.5% (companies) | Out of scope of this skill. Refer |
 | Principal Private Residence, owned and fully occupied as the main home throughout ownership | Exempt | Restricted where not fully occupied, partly used for business, or sold with development value (Section 4.1) |
 | Specified asset sold for more than EUR 500,000 (EUR 1,000,000 for a house or apartment) with no CG50A | Purchaser deducts 15% | The vendor reclaims it using Form CG50B (Section 4.7) |
 | Non-resident disposing of Irish land, buildings, minerals, continental shelf rights, certain unquoted shares, or assets of a trade carried on in Ireland | 33% | Section 3.1 |
@@ -162,7 +162,7 @@ This Guide is a source-cited draft by the OpenAccountants team. No accountant ha
 | --- | --- |
 | Acquisition cost unknown or undocumented | Cannot compute the chargeable gain. Do not estimate |
 | Asset acquired by gift or inheritance with no market value evidence | Base cost is market value; obtain a valuation first ([how to calculate](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx)) |
-| Resident but not domiciled in Ireland, with gains on foreign assets | The remittance rules are not covered by this Guide. Refer |
+| Resident but not domiciled in Ireland, with gains on foreign assets | The remittance rules are not covered by this skill. Refer |
 | Disposal of a partnership interest | Not covered. Refer |
 | Trust or estate disposals (Form 1) | Not covered. Refer |
 | Foreign life policies, foreign investment products, venture capital funds | Different rates and regimes. Refer |
@@ -319,7 +319,7 @@ Facts (hypothetical). Ms de Paor founded an Irish trading company in 2018 and ha
 | CGT at 33% on the excess | **164,580.90** |
 | **Total CGT** | **314,580.90** |
 
-The Revenue page does not say which part of the gain the personal exemption reduces. This Guide's choice, not Revenue's: this example sets it against the part taxed at 33%. Confirm with the adopting accountant.
+The Revenue page does not say which part of the gain the personal exemption reduces. This skill's choice, not Revenue's: this example sets it against the part taxed at 33%. Confirm with the adopting accountant.
 
 ### Example D: Retirement Relief, sale outside the family with marginal relief
 
@@ -361,7 +361,7 @@ Facts (hypothetical). Mr Ó Sé, aged 60, has owned and run his business for mor
 
 ### 6.5 Records
 
-- **Record keeping.** Keep the purchase and sale contracts, valuations, broker notes, cost invoices, CG50A or CG50B documents, and for a PPR claim the evidence of the dates of occupation for the whole period of ownership. This Guide does not state a retention period; confirm it with the adopting accountant.
+- **Record keeping.** Keep the purchase and sale contracts, valuations, broker notes, cost invoices, CG50A or CG50B documents, and for a PPR claim the evidence of the dates of occupation for the whole period of ownership. This skill does not state a retention period; confirm it with the adopting accountant.
 
 ## Section 7: Conservative defaults
 
@@ -441,4 +441,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-cgt` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-cgt. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-cgt` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-cgt. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: "Use this skill for any German capital gains tax question. Trigger 
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -152,7 +152,7 @@ A sale of shares in a company, German or foreign, is taxed as business income, n
 - **Owner-occupation exception.** A property is outside § 23 if the owner lived in it exclusively between purchase and sale, or in the year of sale and the two years before. Renting it out in the period breaks the first test; the second test only looks at the three calendar years ending with the sale.
 - **Everyday objects** (Gegenstände des täglichen Gebrauchs) are outside § 23.
 - **Gain** = sale price less purchase or building cost and costs of sale; for a rented property the cost is reduced by depreciation already claimed (§ 23(3) EStG).
-- **Yearly limit (Freigrenze).** Gains are tax-free only if the client's total gain from all private sales in the calendar year is less than EUR 1,000 (§ 23(3) EStG: "weniger als 1 000 Euro"). It is a cliff, not an allowance: at EUR 1,000 or more the whole gain is taxed. Reportedly the EUR 1,000 limit applies from 2024 and a lower limit applied to 2023 and earlier years; neither the start year nor the earlier limit could be confirmed on an official page for this Guide: **check** before relying on the limit for any year before 2025. ([source](https://www.gesetze-im-internet.de/estg/__23.html))
+- **Yearly limit (Freigrenze).** Gains are tax-free only if the client's total gain from all private sales in the calendar year is less than EUR 1,000 (§ 23(3) EStG: "weniger als 1 000 Euro"). It is a cliff, not an allowance: at EUR 1,000 or more the whole gain is taxed. Reportedly the EUR 1,000 limit applies from 2024 and a lower limit applied to 2023 and earlier years; neither the start year nor the earlier limit could be confirmed on an official page for this skill: **check** before relying on the limit for any year before 2025. ([source](https://www.gesetze-im-internet.de/estg/__23.html))
 - **Losses** from private sales can only offset private-sales gains of the same year, then of the previous year or of later years. They never offset other income (§ 23(3) EStG).
 - **Crypto.** The [BMF ruling on crypto assets of 6 March 2025](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Einkommensteuer/2025-03-06-einzelfragen-kryptowerte-bmf-schreiben.pdf?__blob=publicationFile&v=2) says: a swap of one coin for another is a sale of the coin given up, valued at the market price of the coin received, and a new purchase, so a new one-year period starts; and the one-year period is not extended to ten years for currency tokens even if they were lent or staked. Staking, lending and mining income are referred out.
 - **Which crypto lot was sold** (same ruling, paragraphs 61 and 62): identify each lot individually where possible. Where that is not possible, treat the first-bought units of that coin as sold first for the holding period, and value the sale with the average-cost method; as a simplification, first in, first out may also be used for the value. The method applies per wallet and per coin, and must be kept for that coin in that wallet until all of it has been sold.
@@ -258,7 +258,7 @@ The rules and figures for 2025 are the same as for 2026 above, except:
 - AStG [§ 6](https://www.gesetze-im-internet.de/astg/__6.html) and [§ 21](https://www.gesetze-im-internet.de/astg/__21.html); AO [§ 108](https://www.gesetze-im-internet.de/ao_1977/__108.html) and [§ 149](https://www.gesetze-im-internet.de/ao_1977/__149.html)
 - BMF letters on the Basiszins of 10 January 2025 and 13 January 2026 (linked in the fund section); BMF ruling on crypto assets of 6 March 2025 (linked in the private-sales section); BMF ruling on the flat tax (Einzelfragen zur Abgeltungsteuer) of 14 May 2025, for bank withholding questions.
 
-This Guide is a working aid, not advice. Exit tax, business holdings and treaty cases need a German Steuerberater.
+This skill is a working aid, not advice. Exit tax, business holdings and treaty cases need a German Steuerberater.
 
 <!-- openaccountants-cta-block -->
 

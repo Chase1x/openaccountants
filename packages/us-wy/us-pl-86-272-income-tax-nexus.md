@@ -3,7 +3,7 @@ name: us-pl-86-272-income-tax-nexus
 description: Tier 2 US federal content skill for Public Law 86-272 (15 USC §§381-384) — the federal statute that prevents states from imposing income tax on out-of-state sellers whose only activity is solicitation of tangible personal property orders shipped from out of state. Covers the 2021/2024 MTC revised statement that erodes P.L. 86-272 protection for nearly all internet-era activities (customer accounts, live chat, online reviews, post-sale service), California's FTB Legal Rulings 2022-01/02, New York's 2023 adoption, the Wisconsin v. Wrigley solicitation safe harbor, the factor-presence economic nexus model ($50k payroll, $500k receipts), and voluntary disclosure agreement processes. Tax year 2025.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide covers the federal limit on state net income taxes in Public Law 86-272, codified at [15 U.S.C. § 381](https://www.law.cornell.edu/uscode/text/15/381), and how it interacts with state economic nexus rules for income and franchise taxes. It is for accountants deciding whether an out-of-state business must file a state income or franchise tax return.
+This skill covers the federal limit on state net income taxes in Public Law 86-272, codified at [15 U.S.C. § 381](https://www.law.cornell.edu/uscode/text/15/381), and how it interacts with state economic nexus rules for income and franchise taxes. It is for accountants deciding whether an out-of-state business must file a state income or franchise tax return.
 
 It covers:
 
@@ -83,7 +83,7 @@ Not covered: sales and use tax nexus, payroll withholding, property tax, city an
 
 ### Step 6: test the internet activity in each state ([FTB Pub. 1050](https://www.ftb.ca.gov/forms/misc/1050.pdf); [20 NYCRR 1-2.10](https://www.tax.ny.gov/pdf/rulemaking/dec1123/corpreform/text.pdf); [NJ TB-108(R)](https://www.nj.gov/treasury/taxation/pdf/pubs/tb/tb108.pdf))
 
-17. **The MTC statement.** The Multistate Tax Commission (MTC) publishes a model statement on P.L. 86-272 that includes internet activity. It is model guidance only. The MTC is not a federal or state authority and its site is not on this Guide's list of sources. **Check the statement's current text and date on the MTC's own site.** Treat it as binding in a state only if that state has adopted it by statute, regulation or published guidance, and only for the years that state says.
+17. **The MTC statement.** The Multistate Tax Commission (MTC) publishes a model statement on P.L. 86-272 that includes internet activity. It is model guidance only. The MTC is not a federal or state authority and its site is not on this skill's list of sources. **Check the statement's current text and date on the MTC's own site.** Treat it as binding in a state only if that state has adopted it by statute, regulation or published guidance, and only for the years that state says.
 18. The state texts below all follow the same pattern: interacting with customers through a website or app counts as activity in the customer's state, while static content does not.
    - **New York** (20 NYCRR 1-2.10(f), adopted text published December 2023): solicitation does not include activities the corporation would engage in anyway "including interacting with customers or potential customers through the corporation's website or computer application. However, a corporation will not be made taxable solely by presenting static text or images on its website." **Check which tax years the Department applies these internet examples to.**
    - **California** (FTB Pub. 1050, rev. 05-2022, Section C): "when a business interacts with a customer via the business's website or app, the business engages in a business activity within the customer's state".
@@ -104,8 +104,8 @@ Not covered: sales and use tax nexus, payroll withholding, property tax, city an
 21. **California status: check.** The FTB's litigation roster records that in *American Catalog Mailers Association v. Franchise Tax Board* (San Francisco Superior Court, No. CGC-22-601363) the court filed an "Order Granting Plaintiff's Motion for Summary Adjudication" on count two of the complaint on 13 December 2023, and entered judgment on 18 December 2023. It denied the FTB's motion to vacate and modify the judgment on 13 February 2024. The roster lists three issues: whether Technical Advice Memorandum (the TAM) 2022-01 and Pub. 1050 contradict P.L. 86-272; whether they are underground regulations; and whether applying them retroactively breaches due process. It does not say which issue count two is, or what relief the judgment gave ([FTB litigation roster](https://www.ftb.ca.gov/tax-pros/law/litigation-roster.html)).
    - On 25 September 2026 the TAM could not be retrieved from the FTB site, while Pub. 1050 (rev. 05-2022) still could.
    - **Before relying on Pub. 1050's internet examples in California, read the judgment and check the FTB's current position.**
-   - No official source found for this Guide ties a "Kimberly-Clark" case to the TAM. The 2019 OTA decision in *Kimberly-Clark Worldwide, Inc.* is about the large corporate understatement penalty, not P.L. 86-272 ([OTA opinion](https://ota.ca.gov/wp-content/uploads/sites/54/2019/07/18042575_Kimberly-Clark-Worldwide-Inc_Decision_OTA_051019SDNP.pdf)).
-22. **Other states: check.** This Guide has not verified any other state's adoption of the MTC statement. Search each state's revenue department for P.L. 86-272 guidance, and note the tax years each state applies it to.
+   - No official source found for this skill ties a "Kimberly-Clark" case to the TAM. The 2019 OTA decision in *Kimberly-Clark Worldwide, Inc.* is about the large corporate understatement penalty, not P.L. 86-272 ([OTA opinion](https://ota.ca.gov/wp-content/uploads/sites/54/2019/07/18042575_Kimberly-Clark-Worldwide-Inc_Decision_OTA_051019SDNP.pdf)).
+22. **Other states: check.** This skill has not verified any other state's adoption of the MTC statement. Search each state's revenue department for P.L. 86-272 guidance, and note the tax years each state applies it to.
 
 ### Step 7: if P.L. 86-272 does not protect, apply the state's own nexus rules ([FTB doing business](https://www.ftb.ca.gov/file/business/doing-business-in-california.html); [NY deriving receipts](https://www.tax.ny.gov/bus/ct/article9a_deriving_receipts.htm); [NJ TB-108(R)](https://www.nj.gov/treasury/taxation/pdf/pubs/tb/tb108.pdf))
 
@@ -122,7 +122,7 @@ Not covered: sales and use tax nexus, payroll withholding, property tax, city an
    - So P.L. 86-272 protection in the purchaser's state does not by itself mean throwback. If that state still charges the seller a franchise tax for the privilege of doing business (for example, a minimum tax on a protected corporation that is registered there), the seller is taxable there and the sale is not thrown back. **Check each destination state's taxes on the seller.**
    - For a combined group, for taxable years beginning on or after 1 January 2011, a sale is not thrown back to California if any member of the combined reporting group is taxable in the purchaser's state (§ 25135(b)). Pub. 1050 says a sale is thrown back "only when no member of the seller's unitary group is taxable within the destination state".
    - California applies the destination state's definition of "tangible personal property" when deciding throwback (Pub. 1050, Article VI).
-26. **Throwout.** Some states remove such "nowhere" sales from the sales factor denominator instead of throwing them back. This Guide has not verified any state's current throwout rule. **Check each state's apportionment statute.**
+26. **Throwout.** Some states remove such "nowhere" sales from the sales factor denominator instead of throwing them back. This skill has not verified any state's current throwout rule. **Check each state's apportionment statute.**
 27. **Finnigan.** California includes in the sales factor numerator all combined-group sales assigned to California, whether or not the member making the sale is taxable there (§ 25135(b), taxable years beginning on or after 1 January 2011). New Jersey requires all combined groups to use the Finnigan method for privilege periods ending on and after 31 July 2023. It also says a combined group "cannot claim P.L. 86-272 protection if one of the members either has activities that are not protected by P.L. 86-272 or that exceed the protections of P.L. 86-272".
 28. **New York.** A corporation exempt under P.L. 86-272 may still be included in a combined report (other than a corporation that cannot be included under § 210-C(2)(c)). Its receipts count when deciding whether the unitary group is deriving receipts from New York. If every member of the group is exempt under P.L. 86-272, the group need not file a combined report (20 NYCRR 1-2.10(h)).
 
@@ -227,7 +227,7 @@ These cases use hypothetical amounts. Each is for tax year 2026 unless it says o
 - A client wants to rely on P.L. 86-272 in California for internet activity that Pub. 1050 lists as unprotected. Refer to a California SALT specialist who has read the ACMA judgment.
 - A state not covered here, or a year before a state's published guidance, where the state's position on internet activity is unknown.
 - Any mix of goods with services, SaaS, licences, warranties or financial products where the split decides the outcome.
-- Local income or business taxes (for example New York City or Philadelphia): outside this Guide. P.L. 86-272 can still apply to a local tax that is a net income tax, so refer rather than assume it does not.
+- Local income or business taxes (for example New York City or Philadelphia): outside this skill. P.L. 86-272 can still apply to a local tax that is a net income tax, so refer rather than assume it does not.
 - Voluntary disclosure, amnesty, or a response to a nexus questionnaire already received: refer, and do not file first-time returns until the approach is agreed.
 - Foreign-commerce sellers, treaty positions, banks and other financial businesses: refer.
 - Do not state any de minimis dollar figure, any retroactivity date, or any court holding that is not in an official source.

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Colorado individual income tax 
 version: "0.1"
 jurisdiction: US-CO
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Colorado Individual Income Tax Guide](https://tax.colorado.gov/individual-income-tax-guide))
 
-This Guide covers the Colorado individual income tax return, **Form DR 0104**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for full-year residents, part-year residents and nonresidents with Colorado-source income, including sole proprietors and single-member LLC owners whose business profit reaches Colorado through federal taxable income.
+This skill covers the Colorado individual income tax return, **Form DR 0104**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for full-year residents, part-year residents and nonresidents with Colorado-source income, including sole proprietors and single-member LLC owners whose business profit reaches Colorado through federal taxable income.
 
 Figures are for tax year 2026 unless labelled 2025. On 25 September 2026 the Department of Revenue (DOR) had not published a 2026 filing booklet. Line numbers and rules found only in the 2025 booklet are labelled 2025.
 

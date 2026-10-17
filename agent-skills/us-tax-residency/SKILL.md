@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-tax-residency"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # US tax residency for non-citizens: green card test, substantial presence test, elections and dual-status years
 
-Figures are for tax year 2026, with a dated section for 2025 returns (extended 2025 returns are due October 15, 2026). This Guide decides whether a non-US-citizen ("alien") is a **resident alien** or a **nonresident alien** for federal income tax, from what date, and what must be filed to make that position stick. The residency tests are statutory (IRC §7701(b)) and work the same way in 2026 as in 2025; only the years in the count shift. The core IRS source is [Publication 519, U.S. Tax Guide for Aliens](https://www.irs.gov/publications/p519) (2025 edition, for 2025 returns; use the 2026 edition for 2026 returns once it is published).
+Figures are for tax year 2026, with a dated section for 2025 returns (extended 2025 returns are due October 15, 2026). This skill decides whether a non-US-citizen ("alien") is a **resident alien** or a **nonresident alien** for federal income tax, from what date, and what must be filed to make that position stick. The residency tests are statutory (IRC §7701(b)) and work the same way in 2026 as in 2025; only the years in the count shift. The core IRS source is [Publication 519, U.S. Tax Guide for Aliens](https://www.irs.gov/publications/p519) (2025 edition, for 2025 returns; use the 2026 edition for 2026 returns once it is published).
 
 ## Scope and who it is for
 
@@ -40,7 +40,7 @@ Figures are for tax year 2026, with a dated section for 2025 returns (extended 2
 
 ## The method, step by step
 
-1. **Confirm the person is an alien.** Citizens are outside this Guide. Dual citizens who hold US citizenship are citizens.
+1. **Confirm the person is an alien.** Citizens are outside this skill. Dual citizens who hold US citizenship are citizens.
 2. **Green card test.** If the client was a lawful permanent resident (LPR) at any time in the calendar year, they are a resident for that year, subject to the residency starting date, a treaty tie-breaker and the expatriation rules below. Do this first; a green card holder never needs the day count to become resident.
 3. **Count days of presence.** Count every day the client was physically in the US at any time of day for the current year and the two previous years, then remove excluded days (exempt individual, transit, crew, commuters, medical, NATO). Record each excluded day and why.
 4. **Substantial presence test (SPT).** Resident if at least 31 days in the current year **and** current days + 1/3 of first-previous-year days + 1/6 of second-previous-year days is at least 183.
@@ -271,4 +271,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-tax-residency` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-tax-residency. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Egyptian record-keeping, bookke
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -75,7 +75,7 @@ Reply to the user in their own language (English or Arabic).
 - **Timing.** The rule is real-time transmission. The ETA FAQ says the system currently accepts receipts up to 24 hours after issue, that the taxpayer bears the consequences of late sending, and that later receipts go through a late-submission request on the portal. The window is set administratively and can change. Confirm it in the current ETA e-receipt guidance before promising a client a window. The legacy "72 hours" figure has no ETA source.
 - **Big-ticket sales.** Under the FAQ, a consumer receipt whose value exceeds EGP 150 thousand must carry the buyer's national ID number ("currently", so check for changes) ([ETA e-receipt FAQ](https://eta.gov.eg/sites/default/files/2024-02/ERECEIPT-FAQ-V24-31-1-2024.pdf)).
 - **POS devices.** Buy POS devices only from ETA-approved suppliers (list on the [e-receipt services page](https://www.eta.gov.eg/ar/content/e-receipt-services)). An ERP can be registered as a virtual POS where the taxpayer has a single branch or outlet.
-- **Phases.** The mandate has been extended group by group by ETA decisions. Earlier versions of this Guide quoted specific 2025 decision numbers, dates and a lowered turnover threshold. None of these could be confirmed from a readable ETA document, so they are not repeated here (check). The only reliable test is whether the taxpayer is named on the [e-receipt inquiry](https://www.eta.gov.eg/ar/ereceipt-inquiry) list, or holds a decision addressed to them.
+- **Phases.** The mandate has been extended group by group by ETA decisions. Earlier versions of this skill quoted specific 2025 decision numbers, dates and a lowered turnover threshold. None of these could be confirmed from a readable ETA document, so they are not repeated here (check). The only reliable test is whether the taxpayer is named on the [e-receipt inquiry](https://www.eta.gov.eg/ar/ereceipt-inquiry) list, or holds a decision addressed to them.
 
 ### Which system applies
 
@@ -218,7 +218,7 @@ Hand off to a qualified Egyptian accountant (محاسب قانوني) or tax adv
 
 ## Filing and payment
 
-- **Normal regime, individuals.** The annual income tax return for the calendar year is filed 1 January to 31 March of the next year ([ETA Services Guide](https://eta.gov.eg/sites/default/files/2025-08/guide.of_.the_.egyptian.tax_.authority.services.second%20edition.pdf)). The 2026 return is due by 31 March 2027. VAT-registered taxpayers outside Law 6 file VAT returns on the normal (monthly) timetable. The VAT computation is outside this Guide.
+- **Normal regime, individuals.** The annual income tax return for the calendar year is filed 1 January to 31 March of the next year ([ETA Services Guide](https://eta.gov.eg/sites/default/files/2025-08/guide.of_.the_.egyptian.tax_.authority.services.second%20edition.pdf)). The 2026 return is due by 31 March 2027. VAT-registered taxpayers outside Law 6 file VAT returns on the normal (monthly) timetable. The VAT computation is outside this skill.
 - **Law 6 regime.** The annual return on form 20 is due on the same dates. The VAT return is quarterly, within the month after the quarter, with payment. Payroll obligations are limited to the annual settlement return. There are no advance payments.
 - **E-documents.** E-invoices are submitted and validated as issued. E-receipts are transmitted in real time (currently accepted up to 24 hours).
 - **Returns filed now for 2025.** The 2025 individual returns were due by 31 March 2026. The Law 6 rates above also applied for 2025, from 1 March 2025. Article 38's old turnover condition for regular books still governs the books for 2025 and for 2026 up to 28 July 2026.
@@ -232,7 +232,7 @@ Hand off to a qualified Egyptian accountant (محاسب قانوني) or tax adv
 - [ ] Stated the VAT rule that purchases need an e-invoice, and flagged income tax cost documentation as a conservative default.
 - [ ] Stated five-year retention from the tax period whose return was filed. Electronic documents are kept electronically.
 - [ ] For Law 6: checked the turnover band, the 90% consultancy exclusion, the five-year lock, and the one-time 20% overshoot.
-- [ ] Flagged every point marked "check" in this Guide as unconfirmed.
+- [ ] Flagged every point marked "check" in this skill as unconfirmed.
 - [ ] Replied in the user's language.
 
 ## Prohibitions

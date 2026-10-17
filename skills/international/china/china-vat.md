@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: CN
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,13 +19,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and the law in force ([VAT Law of the PRC](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [VAT Law Implementation Regulations](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202601/t478908.html); [MOF/STA announcement 2026 No. 10 on VAT reliefs](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202602/t479283.html))
 
-This Guide covers mainland China value added tax for **tax year 2026** (calendar year). It is for companies, sole traders (个体工商户) and advisers who classify transactions, prepare or review VAT returns, or answer VAT questions for general taxpayers (一般纳税人) and small-scale taxpayers (小规模纳税人).
+This skill covers mainland China value added tax for **tax year 2026** (calendar year). It is for companies, sole traders (个体工商户) and advisers who classify transactions, prepare or review VAT returns, or answer VAT questions for general taxpayers (一般纳税人) and small-scale taxpayers (小规模纳税人).
 
 **The law changed on 1 January 2026.** The VAT Law of the People's Republic of China (中华人民共和国增值税法) applies from that date, and the old Provisional Regulations were repealed the same day: "本法自2026年1月1日起施行。《中华人民共和国增值税暂行条例》同时废止" (Law Art. 38). The State Council's Implementation Regulations (增值税法实施条例) apply from the same date. Domestic VAT reliefs set by documents issued before 31 December 2025 stopped on 1 January 2026 unless an announcement keeps them: "在2025年12月31日前制发文件规定的国内环节增值税优惠政策同时停止执行" (No. 10). Do not rely on an old circular such as 财税〔2016〕36号 unless a 2026 source carries it forward. MOF means the Ministry of Finance and STA the State Taxation Administration.
 
 Every rule below is stated under the law in force from 1 January 2026; 2025 periods have their own section near the end. Amounts are in renminbi (Law Art. 18).
 
-**Not covered here:** Hong Kong, Macao and Taiwan; consumption tax; customs duty; the surcharges filed on the same return (附加税费) beyond a mention; export refund procedure beyond the basics; financial institutions, real estate developers and cross-period construction. Companion Guides: corporate income tax is in **cn-corporate-tax**, individual income tax (including tax on employees and freelancers) is in **cn-iit**, and the fuller VAT treatment of export refunds, restructurings and non-taxable receipts is in **cn-vat**.
+**Not covered here:** Hong Kong, Macao and Taiwan; consumption tax; customs duty; the surcharges filed on the same return (附加税费) beyond a mention; export refund procedure beyond the basics; financial institutions, real estate developers and cross-period construction. Companion Skills: corporate income tax is in **cn-corporate-tax**, individual income tax (including tax on employees and freelancers) is in **cn-iit**, and the fuller VAT treatment of export refunds, restructurings and non-taxable receipts is in **cn-vat**.
 
 ## Ask the client first
 
@@ -285,7 +285,7 @@ Refuse to:
 
 ## Returns for 2025 periods ([VAT Law Art. 38](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [STA announcement 2026 No. 2](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202601/t478913.html))
 
-Periods up to 31 December 2025 stay under the Provisional Regulations and the policies in force then. Do not apply the new law's deemed-sale, blocked-input or tax-point rules to 2025 transactions. If the 2025 Q4 or December small-scale return shows the threshold exceeded, general taxpayer status starts on 1 January 2026, not earlier; later adjustments to 2025 sales cannot make it start before that date. For a 2025 period, check the rule in force at the time before using this Guide.
+Periods up to 31 December 2025 stay under the Provisional Regulations and the policies in force then. Do not apply the new law's deemed-sale, blocked-input or tax-point rules to 2025 transactions. If the 2025 Q4 or December small-scale return shows the threshold exceeded, general taxpayer status starts on 1 January 2026, not earlier; later adjustments to 2025 sales cannot make it start before that date. For a 2025 period, check the rule in force at the time before using this skill.
 
 ## Completion checklist ([VAT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [MOF/STA announcement 2026 No. 10](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202602/t479283.html))
 

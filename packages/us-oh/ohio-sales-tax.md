@@ -3,7 +3,7 @@ name: ohio-sales-tax
 description: Use this skill whenever asked about Ohio sales and use tax, ODT filings, Ohio CAT, Ohio exemptions, Ohio nexus, or any request involving Ohio state sales and use tax compliance. Trigger on phrases like "Ohio sales tax", "OH sales tax", "ODT", "UST-1", "Ohio exemption certificate", "Streamlined Sales Tax Ohio", or any request involving Ohio sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Ohio sales tax work.
 jurisdiction: US-OH
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ohio sales and use tax: 2026 rates, sourcing, nexus, taxable services, exemptions and filing
 
-Figures are for tax year 2026, as they stand on 25 September 2026. They come from the Ohio Department of Taxation at tax.ohio.gov. The Revised Code site (codes.ohio.gov) could not be reached when this Guide was checked, so statute points below are taken from the Department's own pages and information releases, which quote or cite the Revised Code (Chapter 5739 for sales tax, Chapter 5741 for use tax). A short section near the end covers 2025 periods.
+Figures are for tax year 2026, as they stand on 25 September 2026. They come from the Ohio Department of Taxation at tax.ohio.gov. The Revised Code site (codes.ohio.gov) could not be reached when this skill was checked, so statute points below are taken from the Department's own pages and information releases, which quote or cite the Revised Code (Chapter 5739 for sales tax, Chapter 5741 for use tax). A short section near the end covers 2025 periods.
 
 ## Scope and who this is for
 
@@ -21,7 +21,7 @@ Figures are for tax year 2026, as they stand on 25 September 2026. They come fro
 - Out-of-state sellers and marketplace facilitators deciding whether they need an Ohio seller's use tax license.
 - Businesses and individuals that owe use tax because no Ohio tax was charged on a purchase.
 - Sellers accepting, and buyers giving, exemption certificates (STEC B, STEC U and the rest).
-- Out of scope: the Ohio commercial activity tax (CAT), which is a separate tax on the seller's gross receipts; see the oh-cat Guide. Also out of scope: motor vehicle, watercraft and outboard motor sales titled through the clerk of courts, the resort area gross receipts tax, the Next Generation 9-1-1 access fee, lodging taxes, and audit defense.
+- Out of scope: the Ohio commercial activity tax (CAT), which is a separate tax on the seller's gross receipts; see the oh-cat skill. Also out of scope: motor vehicle, watercraft and outboard motor sales titled through the clerk of courts, the resort area gross receipts tax, the Next Generation 9-1-1 access fee, lodging taxes, and audit defense.
 
 ## Ask the client first
 
@@ -191,8 +191,8 @@ Only services listed in Ohio law are taxable. Common ones, and the conditions th
 
 ## When to refuse or refer
 
-- **Commercial activity tax.** The CAT is a separate tax on the seller's taxable gross receipts, with its own registration and quarterly returns. Use the oh-cat Guide.
-- **Penalty amounts.** The Revised Code (sections 5739.12 and 5739.133) sets late filing, late payment and assessment penalties. This Guide could not verify the current amounts against codes.ohio.gov, so confirm them there or with the Department before quoting a penalty figure.
+- **Commercial activity tax.** The CAT is a separate tax on the seller's taxable gross receipts, with its own registration and quarterly returns. Use the oh-cat skill.
+- **Penalty amounts.** The Revised Code (sections 5739.12 and 5739.133) sets late filing, late payment and assessment penalties. This skill could not verify the current amounts against codes.ohio.gov, so confirm them there or with the Department before quoting a penalty figure.
 - **Audits, assessments, appeals and petitions for reassessment.** Refer to an Ohio CPA, EA or tax attorney.
 - **Past non-compliance.** A business that should have registered but did not may qualify for the Voluntary Disclosure Program, but only if it applies before the Department contacts it (see Filing and payment). Refer for the application.
 - **Complex bundled transactions, leases, and true object disputes** over computer and information services. The Ohio Supreme Court's decision in Cincinnati Fed. S. & L. Co. v. McClain (2022) changed how the Department reads the personal or professional services exception; refer if the answer turns on it ([ST 1999-04](https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/sales_and_use/information_releases/ST1999-04_Online_Services_and_Internet_Access-rev9.22.pdf)).
@@ -253,7 +253,7 @@ Only services listed in Ohio law are taxable. Common ones, and the conditions th
 - Returns required to be filed before 1 January 2026 took the full 0.75% discount with no cap. The December 2025 monthly return and the July to December 2025 semi-annual return were due on 23 January 2026, so they are capped ([ST 2025-02](https://tax.ohio.gov/wps/portal/gov/tax/business/ohio-business-taxes/sales-and-use/information-releases/st2025-02_vendor_timely_filing_discount_dec_2025)).
 - Interest on tax overdue during 2025 runs at 8.0%.
 - A new vendor's license cost $25 until 9 April 2025 and $50 from then on.
-- This Guide did not check the 2025 sales tax holiday limits; do not apply the 2026 limits to a 2025 sale without checking.
+- This skill did not check the 2025 sales tax holiday limits; do not apply the 2026 limits to a 2025 sale without checking.
 
 ## Completion checklist ([sales and use tax page](https://tax.ohio.gov/business/sales-and-use-tax))
 
@@ -267,7 +267,7 @@ Only services listed in Ohio law are taxable. Common ones, and the conditions th
 - [ ] UST-1 filed by the 23rd (moved for weekends and holidays), with exempt sales on line 2.
 - [ ] Discount taken only if on time, and capped at $750 per license per month.
 - [ ] Electronic and accelerated payments made if tax was $75,000 or more in a calendar year.
-- [ ] CAT considered separately (oh-cat Guide).
+- [ ] CAT considered separately (oh-cat skill).
 - [ ] Any late period: interest at 7.0% (2026) computed, penalties confirmed against the Revised Code, and VDA eligibility considered before any Department contact.
 
 <!-- openaccountants-cta-block -->

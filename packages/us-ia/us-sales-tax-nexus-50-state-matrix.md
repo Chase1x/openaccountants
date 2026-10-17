@@ -3,7 +3,7 @@ name: us-sales-tax-nexus-50-state-matrix
 description: Tier 2 US federal-level reference skill providing the post-Wayfair economic-nexus threshold table for every US state plus DC and Puerto Rico. Covers sales/transaction thresholds, effective dates, lookback periods, marketplace facilitator laws, the SaaS-taxability list (HI/MA/NY/OH/PA/RI/SC/TN/TX/UT/WA/WV), the no-sales-tax NOMAD states (NH/OR/MT/AK/DE), Amazon FBA physical-presence nexus through inventory in 3PL warehouses, the difference between sales-tax and income-tax nexus, voluntary disclosure agreement (VDA) lookback limits, and home-rule states (CO/AL/LA/AK) requiring separate local registrations. Tax year 2025.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ Figures are for tax year 2026: the thresholds below are the ones the states' own
 
 ## Scope
 
-This Guide answers one question for a seller with no physical presence in a state: has it crossed that state's economic nexus threshold, so that it must register, collect and file sales tax (or Hawaii general excise tax, or New Mexico gross receipts tax)?
+This skill answers one question for a seller with no physical presence in a state: has it crossed that state's economic nexus threshold, so that it must register, collect and file sales tax (or Hawaii general excise tax, or New Mexico gross receipts tax)?
 
 It covers the 45 states with a statewide sales tax and the District of Columbia (threshold, transaction test, "more than" or "at least", period, which sales count, marketplace facilitator start date), the five states with no general sales tax, and how physical presence overrides the thresholds.
 
@@ -106,7 +106,7 @@ Read "Sales test" literally: "more than" means exactly the threshold does **not*
 ### Notes on individual rows
 
 - **California.** The test adds the sales of "all persons related to the retailer", defined by reference to 26 U.S.C. 267(b) ([CDTFA](https://www.cdtfa.ca.gov/industry/wayfair.htm)). The $500,000 is based on total sales of tangible personal property, "which may include nontaxable sales, such as sales for resale" ([CDTFA Wayfair FAQ](https://www.cdtfa.ca.gov/industry/wayfair/frequently-asked-questions.htm)). A seller must also include sales "facilitated through" a marketplace. It need not register if all of its California sales are facilitated by a registered marketplace facilitator, but must register once it makes any direct sale while over the threshold ([CDTFA Marketplace Facilitator Act guide](https://www.cdtfa.ca.gov/industry/MPFAct.htm)). The test is "exceed", so exactly $500,000 does not trigger it.
-- **Colorado.** A retailer is exempt only if its sales are "less than $100,000" in **both** the current and previous years, and must collect once current-year sales "exceed $100,000" ([CDOR](https://tax.colorado.gov/out-of-state-businesses)). Sales of exactly $100,000 fall between the two sentences: check. Colorado home-rule cities run their own sales taxes; this Guide does not cover them.
+- **Colorado.** A retailer is exempt only if its sales are "less than $100,000" in **both** the current and previous years, and must collect once current-year sales "exceed $100,000" ([CDOR](https://tax.colorado.gov/out-of-state-businesses)). Sales of exactly $100,000 fall between the two sentences: check. Colorado home-rule cities run their own sales taxes; this skill does not cover them.
 - **Georgia.** The remote seller bulletin is from 2019 and the marketplace bulletin from 2020 ([SUT-2019-02](https://dor.georgia.gov/media/35301/download)). They are still listed on the Department's bulletin page, but check for later law changes before relying on the 200-sale test.
 - **Maine.** Instructional Bulletin 43 states the test as sales that "exceed $100,000" with no transaction count. The older Maine remote-sellers web page still quotes a 200-transaction test ([MRS page](https://www.maine.gov/revenue/taxes/sales-use-service-provider-tax/guidance-documents/remote-sellers)). Follow the bulletin, which is the later text, and confirm with Maine Revenue Services if a seller is relying on it.
 - **Missouri.** The DOR FAQ uses "exceed $100,000" and, in different answers, both "taxable sales" and "all sales of tangible personal property" ([DOR FAQ](https://dor.mo.gov/faq/taxation/business/remote-seller-and-marketplace-facilitator.html)). Check the statute before advising a seller close to $100,000.
@@ -154,7 +154,7 @@ These are illustrations with invented numbers. Each assumes no physical presence
 
 ## When to refuse or refer
 
-- The client has, or may have, physical presence (staff, contractors, stock in a fulfilment centre) in states where it has never registered: refer for a back-exposure and voluntary disclosure review. This Guide does not cover look-back periods, penalties or disclosure programmes.
+- The client has, or may have, physical presence (staff, contractors, stock in a fulfilment centre) in states where it has never registered: refer for a back-exposure and voluntary disclosure review. This skill does not cover look-back periods, penalties or disclosure programmes.
 - The state is marked **check** and the client needs an answer now: do not fill the gap from a vendor chart. Confirm on the state's own site or with the state.
 - Sales sit within a few thousand dollars of a threshold in a state whose wording conflicts (Colorado, Iowa, Missouri, Pennsylvania, Tennessee, Texas, and the transaction counts in Arkansas and Nevada): get written confirmation from the state.
 - The question is about taxability, rates, local home-rule registration (Colorado, Alabama, Louisiana, Alaska local jurisdictions) or income tax nexus: refer to the relevant state Guide or a state-tax specialist.

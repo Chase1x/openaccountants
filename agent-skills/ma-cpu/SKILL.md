@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ma-cpu"
   jurisdiction: "MA"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -269,7 +269,7 @@ Cases 1, 2 and 5 use invented client figures with the 2026 rates. Cases 3, 4, 6 
 - The trade could sit in two rows of the coefficient table with different coefficients: do not pick one. Check the category on the pre-filled SIMPL return or with the tax office.
 - Turnover is over a ceiling in the current or previous year, or the client is moving between regimes: refer. The two-year exit, the three-year re-entry and VAT registration interact.
 - The client is not an AMO member, or has AMO arrears: refer to the tax office and the AMO body before filing. The option condition and the droit may both be affected.
-- Sale of the business, of goodwill or of land and buildings, or a claim to the 2026 retirement relief: refer to a Moroccan expert-comptable. Asset valuation (Art. 220 and 221) and the real-estate gains rules are outside this Guide.
+- Sale of the business, of goodwill or of land and buildings, or a claim to the 2026 retirement relief: refer to a Moroccan expert-comptable. Asset valuation (Art. 220 and 221) and the real-estate gains rules are outside this skill.
 - Late returns, penalties already charged, a DGI letter under Art. 221 bis, or an audit: refer.
 - A company (SARL, SA) or an auto-entrepreneur: not CPU. Use the right Guide.
 
@@ -340,4 +340,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ma-cpu` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ma-cpu. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ma-cpu` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ma-cpu. If neither is available, confirm every figure against the official source pages cited above before relying on it.

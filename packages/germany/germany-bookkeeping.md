@@ -4,7 +4,7 @@ description: Use this skill whenever asked about bookkeeping, chart of accounts,
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-19
+last_updated: 2026-10-16
 review_status: pending_review
 drafted_by: OpenAccountants
 approved_by: pending
@@ -46,6 +46,7 @@ How a German business keeps its books: who must keep double-entry books and who 
 
 - **Books and vouchers no longer share one period.** Older material gives one period for "books and records". The current text splits them: books and statements in the first row, vouchers in the second.
 - **Which documents the shorter voucher period covers.** It applies to every document whose old period had not yet run out on 31 December 2024. See Art. 97 § 19a(2) EGAO at https://www.gesetze-im-internet.de/aoeg_1977/art_97__19a.html
+- **Banks, insurers and securities institutions keep the ten-year voucher period for tax purposes.** For institutions under § 1(1b) of the Banking Act (KWG), including branches under § 53 KWG, businesses supervised under § 1(1) of the Insurance Supervision Act (VAG), and securities institutions under § 2(1) of the Securities Institutions Act (WpIG), § 147(3) sentence 1 AO applies in the version in force on 31 December 2024: "ist § 147 Absatz 3 Satz 1 der Abgabenordnung in der am 31. Dezember 2024 geltenden Fassung abweichend von Absatz 2 anzuwenden". See Art. 97 § 19a(3) EGAO at https://www.gesetze-im-internet.de/aoeg_1977/art_97__19a.html
 - **Start of the period.** The end of the calendar year in which the last entry was made, the statements were drawn up, the letter was received or sent, or the voucher came into being (§ 147(4) AO).
 - **The period can run longer.** It does not end while the documents still matter for a tax whose assessment period is still open (§ 147(3) AO).
 - **Delivery notes** that are not vouchers need to be kept only until the invoice is received (incoming) or sent (outgoing) (§ 147(3) AO).

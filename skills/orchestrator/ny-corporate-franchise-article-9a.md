@@ -3,7 +3,7 @@ name: ny-corporate-franchise-article-9a
 description: Tier 2 content skill for New York State Corporate Franchise Tax under Tax Law Article 9-A. Covers C-corporations and S-corporations electing federal status (NY GBC), the three alternative tax bases (business income, capital, fixed dollar minimum), the 6.5% standard rate and the 7.25% rate on business income over $5M, single-sales-factor apportionment with market-based sourcing, MTA surcharge for MCTD activity, mandatory first installment (MFI) rules, and CT-3 / CT-3-A combined filing. Tax year 2025.
 jurisdiction: US-NY
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,13 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide covers the New York State franchise tax on general business corporations under Tax Law Article 9-A. That means C corporations, and federal S corporations that have not elected (and are not mandated) to be New York S corporations. It covers nexus (including P.L. 86-272), the three tax bases and rates, apportionment, NOLs and the PNOLC subtraction, combined reporting, the MTA surcharge, and payments, extensions and penalties.
+This skill covers the New York State franchise tax on general business corporations under Tax Law Article 9-A. That means C corporations, and federal S corporations that have not elected (and are not mandated) to be New York S corporations. It covers nexus (including P.L. 86-272), the three tax bases and rates, apportionment, NOLs and the PNOLC subtraction, combined reporting, the MTA surcharge, and payments, extensions and penalties.
 
 Figures are for **tax year 2026** where published; the latest instructions are for 2025 ([CT-3-I (2025)](https://www.tax.ny.gov/pdf/current_forms/ct/ct3i.pdf)), so each figure carries its year. A dated section covers **2025 returns** (due 15 October 2026 on extension).
 
 Banking corporations have been taxed under Article 9-A since the 2015 merger of the bank tax ([corporate tax reform](https://www.tax.ny.gov/bus/ct/corp_tax_reform.htm)). Not covered: New York S corporations (Form CT-3-S), insurance corporations (Article 33), Article 9 corporations, REITs and RICs, tax credits, and the pass-through entity tax.
 
-- **New York City** business corporation tax is a separate tax and return, outside this Guide; an NYC corporation usually owes the state tax, the MTA surcharge and the city tax.
+- **New York City** business corporation tax is a separate tax and return, outside this skill; an NYC corporation usually owes the state tax, the MTA surcharge and the city tax.
 
 ## Ask the client first
 

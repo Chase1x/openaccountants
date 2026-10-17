@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Switzerland cryptocurrency or d
 version: 1.0
 jurisdiction: CH
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers Swiss-resident individuals who hold, trade, stake, mine or receive crypto-assets. It covers tax year 2026 (the calendar year that is running now) and has a short dated section for the 2025 return that people are filing now.
+This skill covers Swiss-resident individuals who hold, trade, stake, mine or receive crypto-assets. It covers tax year 2026 (the calendar year that is running now) and has a short dated section for the 2025 return that people are filing now.
 
 It covers:
 
@@ -31,7 +31,7 @@ It covers:
 - automatic exchange of information (CRS and CARF);
 - record keeping.
 
-It does not cover companies that issue tokens (ICO/ITO issuers), withholding tax and stamp duty planning for issuers, or cantonal tariffs. Wealth tax rates, allowances, filing deadlines and cantonal practice differ by canton. Where a canton's rule decides the answer, this Guide says so and refers you to the canton.
+It does not cover companies that issue tokens (ICO/ITO issuers), withholding tax and stamp duty planning for issuers, or cantonal tariffs. Wealth tax rates, allowances, filing deadlines and cantonal practice differ by canton. Where a canton's rule decides the answer, this skill says so and refers you to the canton.
 
 The ESTV's position is set out in its working paper on cryptocurrencies and ICOs/ITOs. The current edition replaces the version of 27 August 2019 and reflects the facts put to the ESTV up to the end of December 2020 ([ESTV working paper, "Kryptowährungen – Besteuerung"](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung)). The working paper states federal practice. Cantons apply the harmonised rules, but they may apply them differently in detail.
 
@@ -101,7 +101,7 @@ The secondary factors "begründen für sich alleine keine selbständige Erwerbst
 | Transaction costs | Costs of buying, switching or selling are not deductible | Deductible as business costs |
 | Unused losses | None | Deductible in the seven following years, to the extent not already used (Step 7) |
 | Debt interest | Private interest deductible only up to gross investment income plus CHF 50'000 (federal, KS 36 section 5.2) | Business interest deductible without that limit |
-| Social security | None on gains | Self-employment income is also the base for AHV/IV/EO contributions. **Check** the rate and assessment with the cantonal compensation office: AHV sources are not on a host this Guide may cite |
+| Social security | None on gains | Self-employment income is also the base for AHV/IV/EO contributions. **Check** the rate and assessment with the cantonal compensation office: AHV sources are not on a host this skill may cite |
 | Records | Keep them to prove private status | Keep them 10 years (Step 7) |
 
 ### Step 3: Tax the income events at their value on receipt
@@ -126,7 +126,7 @@ The Confederation does not tax the wealth of individuals. Every canton and commu
 
 Value each token in this order ([ESTV working paper](https://www.estv.admin.ch/de/kryptowaehrungen-besteuerung); [ESTV Kurslisten](https://www.estv.admin.ch/de/kurslisten-ictax)):
 
-1. **ESTV price list (Kursliste / ICTax).** The ESTV publishes tax values for the most widely held cryptocurrencies. The ESTV says of its price-list rates: "Diese Kurse gelten als Steuerwert am 31. Dezember (Art. 14 und 17 Abs. 1 StHG)". Look up the value for the year in ICTax. **Check:** the ICTax database is on a host this Guide may not cite, so it quotes no token values.
+1. **ESTV price list (Kursliste / ICTax).** The ESTV publishes tax values for the most widely held cryptocurrencies. The ESTV says of its price-list rates: "Diese Kurse gelten als Steuerwert am 31. Dezember (Art. 14 und 17 Abs. 1 StHG)". Look up the value for the year in ICTax. **Check:** the ICTax database is on a host this skill may not cite, so it quotes no token values.
 2. **Not on the list:** use the market value on one of the leading trading platforms at the end of the tax period. Keep a screenshot or export.
 3. **No current price can be found:** declare the token at its original purchase price converted into CHF.
 
@@ -143,13 +143,13 @@ Most private holders are not VAT-registered, and nothing here changes that. It m
 | A miner working in a mining pool | Supplies between the miner and the pool are relevant for VAT. The place of supply follows Art. 8 para. 1 MWSTG |
 | A holder staking through a staking pool | Supplies between the pool and the participant are relevant for VAT. The place of supply follows Art. 8 para. 1 MWSTG |
 | Running nodes (e.g. masternodes, cloud mining) for a third party | In principle a taxable service |
-| Buying, selling or exchanging payment tokens | **Check.** No page on a host this Guide may cite confirms the exemption for exchanging payment tokens. Confirm the treatment with the ESTV before advising |
+| Buying, selling or exchanging payment tokens | **Check.** No page on a host this skill may cite confirms the exemption for exchanging payment tokens. Confirm the treatment with the ESTV before advising |
 
 ### Step 6: Automatic exchange of information
 
 Switzerland exchanges financial account data under the Common Reporting Standard (CRS). The legal basis came into force on 1 January 2017, and the first exchange took place in 2018. Swiss financial institutions report to the ESTV within six months after the end of the calendar year ([ESTV, AIA](https://www.estv.admin.ch/de/automatischer-informationsaustausch-aia)). The ESTV says the revised CRS "in der Schweiz seit dem 1. Januar 2026 in Kraft ist" (has been in force in Switzerland since 1 January 2026) ([ESTV notice, 4 September 2026](https://www.estv.admin.ch/de/newnsb/b2F6VQ9fb0D6)).
 
-**CARF (the Crypto-Asset Reporting Framework): check.** This Guide gives no Swiss start date for CARF reporting by crypto service providers. The enacted date is published by the State Secretariat for International Finance (SIF) and in the official compilation of federal law, and neither is on a host this Guide may cite. Do not tell a client a date until you have read it in the enacted text. What is certain: foreign tax authorities already receive CRS data, and crypto holdings must be declared whether or not anyone reports them.
+**CARF (the Crypto-Asset Reporting Framework): check.** This skill gives no Swiss start date for CARF reporting by crypto service providers. The enacted date is published by the State Secretariat for International Finance (SIF) and in the official compilation of federal law, and neither is on a host this skill may cite. Do not tell a client a date until you have read it in the enacted text. What is certain: foreign tax authorities already receive CRS data, and crypto holdings must be declared whether or not anyone reports them.
 
 ### Step 7: Records and losses
 
@@ -186,7 +186,7 @@ Switzerland exchanges financial account data under the Common Reporting Standard
 | Token with no current price | Declare at the original purchase price in CHF | ESTV working paper |
 | Contract-based asset token that fails | A non-deductible capital loss. There is no tax-free repayment | ESTV working paper |
 | Contract-based asset tokens given free to an employee | The difference to market value is a taxable fringe benefit. They are not employee participations under Art. 17a or 17b DBG | ESTV working paper |
-| DeFi lending, liquidity pools, wrapped tokens, hard forks, NFTs, lost keys | No ESTV guidance on a host this Guide may cite. The general rules apply: private gains are tax-free, income on receipt is taxable, and wealth is measured at the year-end value. Refer anything beyond that | Refer |
+| DeFi lending, liquidity pools, wrapped tokens, hard forks, NFTs, lost keys | No ESTV guidance on a host this skill may cite. The general rules apply: private gains are tax-free, income on receipt is taxable, and wealth is measured at the year-end value. Refer anything beyond that | Refer |
 
 ## Worked cases
 
@@ -210,7 +210,7 @@ Switzerland exchanges financial account data under the Common Reporting Standard
 - **Canton unknown**: stop. Wealth tax and most of the income tax depend on the canton.
 - **Safe harbour failed and the facts point both ways**: say that professional trading cannot be excluded. Set out the primary factors and refer to a Swiss tax adviser, or suggest the client ask the canton for a ruling. The authorities give binding rulings only in clear cases.
 - **Anything needing a cantonal figure or practice**: rates, allowances, deadlines, the canton's view on mining scale, DeFi, NFTs, or valuing illiquid tokens. Refer to the canton's tax administration.
-- **CARF start date, AHV rates, Kursliste values and the VAT exemption for exchanging payment tokens**: this Guide cannot cite them. Say "check" and name the official place to look (SIF and the federal law compilation, the compensation office, ICTax, the ESTV VAT division).
+- **CARF start date, AHV rates, Kursliste values and the VAT exemption for exchanging payment tokens**: this skill cannot cite them. Say "check" and name the official place to look (SIF and the federal law compilation, the compensation office, ICTax, the ESTV VAT division).
 - **Issuers of tokens (ICO/ITO), foundations and companies**: out of scope.
 - **Undeclared crypto from earlier years**: whether a voluntary disclosure (Selbstanzeige) meets the legal conditions is decided by the cantonal tax administration ([ESTV, AIA](https://www.estv.admin.ch/de/automatischer-informationsaustausch-aia)). Refer the client to a Swiss tax adviser before anything is filed.
 - **Moving into or out of Switzerland during the year, or tax in two cantons**: refer.
@@ -225,7 +225,7 @@ Switzerland exchanges financial account data under the Common Reporting Standard
 ### The 2025 return being filed now (dated section)
 
 - The rules above apply to tax period 2025 in the same way: the working paper, KS 36 and the valuation order were the same in 2025.
-- Value holdings at 31 December 2025 with the ICTax values for 2025 (**check** them in ICTax; this Guide does not quote them).
+- Value holdings at 31 December 2025 with the ICTax values for 2025 (**check** them in ICTax; this skill does not quote them).
 - Test KS 36 against the balances at 1 January 2025, the 2025 trades and 2025 net income.
 - For the self-employed, the seven-year loss carry-forward covers the seven business years before 2025. The 2026 federal return guide lists 2019–2025 for tax period 2026. Use the 2025 return guide for the 2025 range.
 - The revised CRS has been in force in Switzerland since 1 January 2026. CARF: **check**, as in Step 6.

@@ -3,7 +3,7 @@ name: texas-sales-tax
 description: Use this skill whenever asked about Texas sales and use tax, Comptroller filings, Texas tax permits, Texas exemptions, Texas nexus, or any request involving Texas state sales and use tax compliance. Trigger on phrases like "Texas sales tax", "TX sales tax", "Comptroller", "Texas use tax", "Texas sales tax return", "Texas exemption certificate", or any request involving Texas sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Texas sales tax work.
 jurisdiction: US-TX
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Texas sales and use tax: 2026 rates, sourcing, nexus, exemptions and filing
 
-Figures are for tax year 2026, as they stand on 25 September 2026. They come from the Texas Comptroller of Public Accounts at comptroller.texas.gov. Texas has no state personal income tax, but it does have sales and use tax (this Guide) and a franchise tax on businesses (not covered here). A short section at the end covers 2025 periods.
+Figures are for tax year 2026, as they stand on 25 September 2026. They come from the Texas Comptroller of Public Accounts at comptroller.texas.gov. Texas has no state personal income tax, but it does have sales and use tax (this skill) and a franchise tax on businesses (not covered here). A short section at the end covers 2025 periods.
 
 ## Scope and who this is for
 
@@ -207,7 +207,7 @@ The amounts are illustrations. The local rates in case 1 are the ones given in P
 - **Local sourcing disputes** involving orders not received by sales personnel (the rule under temporary injunction), combined areas, or multiple places of business.
 - **Contracts on real property**: new construction, lump-sum versus separated contracts, and homebuilder certifications.
 - **Manufacturing exemptions** in detail (predominant use studies for electricity, cleanrooms, production companies), and agricultural and timber exemptions.
-- **Software licensing and custom software**, other than SaaS as a data processing service; this Guide does not cover it.
+- **Software licensing and custom software**, other than SaaS as a data processing service; this skill does not cover it.
 - **Unfiled past periods** or a client without a permit that should have had one. Ask about penalty waivers before filing.
 - **Motor vehicle, hotel occupancy, mixed beverage, 9-1-1 and oil and gas taxes.**
 

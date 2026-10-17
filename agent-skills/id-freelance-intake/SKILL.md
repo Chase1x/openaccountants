@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/id-freelance-intake"
   jurisdiction: "ID"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -19,7 +19,7 @@ Tax year 2026 (calendar year), with a short section on the tax year 2025 return 
 
 ## Scope
 
-This Guide is the first step for an Indonesian tax resident individual who earns money outside a job: a freelancer or professional (pekerjaan bebas), a trader or service business run in their own name (including a trade name, Usaha Dagang), an online seller, or the founder of a single-founder company (PT Perorangan). It decides:
+This skill is the first step for an Indonesian tax resident individual who earns money outside a job: a freelancer or professional (pekerjaan bebas), a trader or service business run in their own name (including a trade name, Usaha Dagang), an online seller, or the founder of a single-founder company (PT Perorangan). It decides:
 
 - whether the person is in scope at all (residency, entity);
 - which income tax method applies for 2026: the 0.5% final tax on turnover, the deemed-profit norm (NPPN) with simple records, or full bookkeeping with general rates;
@@ -30,7 +30,7 @@ This Guide is the first step for an Indonesian tax resident individual who earns
 
 Out of scope: non-residents and part-year residents, corporate groups, and anything needing audited accounts. Those are referred (see "When to refuse or refer").
 
-Key law behind this Guide: the Income Tax Law (UU PPh) as amended by UU 7/2021 (HPP); PP 55/2022 on income tax adjustments, as amended by PP 20/2026 (in force 22 April 2026); PMK 164/2023 on the 0.5% regime and PKP reporting; PMK 168/2023 on PPh 21; PER-17/PJ/2015 on NPPN; PMK 81/2024 on Coretax; PMK 131/2024 on VAT from 2025 ([DJP on PMK 164/2023](https://www.pajak.go.id/en/node/104146); [DJP juklak PMK 168/2023](https://pajak.go.id/index.php/en/node/104821); [DJP on PMK 81/2024](https://www.pajak.go.id/en/node/112032); [DJP on PMK 131/2024](https://www.pajak.go.id/en/node/113455)).
+Key law behind this skill: the Income Tax Law (UU PPh) as amended by UU 7/2021 (HPP); PP 55/2022 on income tax adjustments, as amended by PP 20/2026 (in force 22 April 2026); PMK 164/2023 on the 0.5% regime and PKP reporting; PMK 168/2023 on PPh 21; PER-17/PJ/2015 on NPPN; PMK 81/2024 on Coretax; PMK 131/2024 on VAT from 2025 ([DJP on PMK 164/2023](https://www.pajak.go.id/en/node/104146); [DJP juklak PMK 168/2023](https://pajak.go.id/index.php/en/node/104821); [DJP on PMK 81/2024](https://www.pajak.go.id/en/node/112032); [DJP on PMK 131/2024](https://www.pajak.go.id/en/node/113455)).
 
 ## What changed in 2026 (read this first)
 
@@ -239,7 +239,7 @@ Open points, refusals and conservative defaults: [list]
 
 Related topics in this library: `id-pph-final-umkm` (0.5% final tax), `id-income-tax` (general rates and NPPN), `id-corporate-tax`, `id-withholding`, `id-payroll-pph21`, `indonesia-vat`, `id-einvoice-coretax`, `id-bookkeeping`, `id-formation`, `id-tax-optimization`, `id-return-assembly`.
 
-This Guide is information, not tax advice. Rules change; check the current DJP text before filing, and have a qualified Indonesian tax professional (Konsultan Pajak) check the return before it is submitted on Coretax.
+This skill is information, not tax advice. Rules change; check the current DJP text before filing, and have a qualified Indonesian tax professional (Konsultan Pajak) check the return before it is submitted on Coretax.
 
 <!-- openaccountants-cta-block -->
 
@@ -261,4 +261,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `id-freelance-intake` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/id-freelance-intake. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `id-freelance-intake` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/id-freelance-intake. If neither is available, confirm every figure against the official source pages cited above before relying on it.

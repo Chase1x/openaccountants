@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indiana individual income tax. 
 version: "0.1"
 jurisdiction: IN
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Income Tax Department: objective and scope of the new Act](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/objective-and-scope-new-act-faq))
 
-- This Guide covers resident individuals (not RNOR) with salary, interest, one or two house properties, and business or professional income, including presumptive income. It covers both regimes, the rebate, surcharge and cess, advance tax, TDS credits and the return deadlines.
+- This skill covers resident individuals (not RNOR) with salary, interest, one or two house properties, and business or professional income, including presumptive income. It covers both regimes, the rebate, surcharge and cess, advance tax, TDS credits and the return deadlines.
 - **Primary year: Tax Year 2026-27** (1 April 2026 to 31 March 2027). The Income-tax Act, 2025 governs it. The portal says: "The 1961 Act stands repealed on the 01.04.2026." The new Act uses "tax year" in place of "previous year" and drops "assessment year".
 - **Returns being filed now: AY 2026-27** (income of FY 2025-26). These are filed and assessed entirely under the Income-tax Act, 1961, with the old ITR forms. See the dated section "AY 2026-27 returns (FY 2025-26), filed in 2026" below.
 - Out of scope, refer: non-residents and RNORs, capital gains beyond the ITR-1/ITR-4 limits, foreign income or assets, firms, LLPs and companies, tax audit cases, virtual digital assets.
@@ -87,7 +87,7 @@ Sources: [Tax Payments FAQs](https://www.incometax.gov.in/iec/foportal/help/all-
 
 - The rebate is "up to 100% of income tax subject to a maximum limit", so at ₹12,00,000 the new-regime tax of ₹60,000 is fully rebated and tax is nil. With the ₹75,000 standard deduction, a salaried resident with no other income pays nil up to a gross salary of ₹12,75,000.
 - **Marginal relief just above ₹12,00,000 (new regime).** The portal's ITR validation rules for AY 2026-27 refuse the rebate where total income excluding LTCG is "more than Rs.12,70,590" ([ITR-1 validation rules](https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-05/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202026-27.pdf)). Between ₹12,00,000 and that point, tax payable is limited to the income above ₹12,00,000 (see worked case 3).
-- The rebate is for residents only. If the client has capital gains taxed at special rates, refer: this Guide does not cover how the rebate interacts with them.
+- The rebate is for residents only. If the client has capital gains taxed at special rates, refer: this skill does not cover how the rebate interacts with them.
 
 ### Surcharge, cess and marginal relief ([source](https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1))
 
@@ -181,7 +181,7 @@ Old regime only ([Salaried Individuals page, deductions](https://www.incometax.g
 - Download AIS and Form 26AS before filing and match every TDS, TCS and challan. If TDS is missing, the deductor must file a revised TDS return. If a challan is missing, check the challan number and PAN; after filing, correct by revised return (before the s.143(1) intimation) or rectification (after it).
 - AIS shows more than TDS: SFT information, tax payments, demand and refund, and other information. Give feedback in AIS where a figure is wrong ([AIS FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/ais%20-%20annual%20information%20statement-faqs)). AIS may not hold everything; the client must still report all income.
 - **Tax Year 2026-27:** TDS on salary is under s.392 and other TDS under s.393 (TCS s.394). Payments or credits on or after 1 April 2026 follow the 2025 Act; earlier ones the 1961 Act. AIS continues to AY 2026-27 and is replaced by Form No. 168 from Tax Year 2026-27.
-- A client who deducts TDS: deposit by the 7th of the following month (March deductions: 30 April for non-government deductors). Interest: 1% per month or part for failure to deduct, 1.5% per month or part for failure to deposit (s.398(3)(a)). TDS rates and thresholds are in the s.393 tables; this Guide does not restate them (check the table item before advising).
+- A client who deducts TDS: deposit by the 7th of the following month (March deductions: 30 April for non-government deductors). Interest: 1% per month or part for failure to deduct, 1.5% per month or part for failure to deposit (s.398(3)(a)). TDS rates and thresholds are in the s.393 tables; this skill does not restate them (check the table item before advising).
 
 ### Which ITR form (AY 2026-27) ([Salaried Individuals for AY 2026-27: returns and forms](https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1))
 
@@ -279,7 +279,7 @@ Sources: [Non Resident FAQs](https://www.incometax.gov.in/iec/foportal/help/all-
 - [ ] TDS and TCS claimed only as shown in Form 26AS/AIS; mismatches raised with the deductor.
 - [ ] Advance tax and interest (234B/234C or 424/425) computed; presumptive clients paid by 15 March.
 - [ ] Correct ITR form; due date and any late fee checked; return e-verified.
-- [ ] Every "check" item in this Guide confirmed against the Act before filing.
+- [ ] Every "check" item in this skill confirmed against the Act before filing.
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: do-tax-overview
 description: "Source-cited draft: tax overview for Dominican Republic (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: DO
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([DGII: Impuesto sobre la Renta](https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx); [DGII Aviso 10-26](https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf))
 
-This Guide is a map of the main national taxes in the Dominican Republic as they stand on 25 September 2026. It covers:
+This skill is a map of the main national taxes in the Dominican Republic as they stand on 25 September 2026. It covers:
 
 - income tax (Impuesto sobre la Renta, ISR) for individuals and companies, including the 2026 personal scale and the new scale that starts in fiscal year 2027;
 - the corporate rate of 27%, and the temporary 30% rate for very large taxpayers;
@@ -25,7 +25,7 @@ This Guide is a map of the main national taxes in the Dominican Republic as they
 - the simplified regime for small taxpayers (Régimen Simplificado de Tributación, RST);
 - surcharges, interest and the main filing dates.
 
-All taxes here are administered by the Dirección General de Impuestos Internos (DGII). The legal base is the Tax Code, Law 11-92, as amended, most recently by **Law 30-26 of 18 June 2026** ("Ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional"). Law 30-26 changes many rules on different dates. DGII published a start-date table for it (Aviso 10-26), and this Guide follows that table.
+All taxes here are administered by the Dirección General de Impuestos Internos (DGII). The legal base is the Tax Code, Law 11-92, as amended, most recently by **Law 30-26 of 18 June 2026** ("Ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional"). Law 30-26 changes many rules on different dates. DGII published a start-date table for it (Aviso 10-26), and this skill follows that table.
 
 Amounts are in Dominican pesos (RD$). The official texts are in Spanish; Spanish terms are kept in brackets so you can match them to DGII forms.
 

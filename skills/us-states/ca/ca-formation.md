@@ -3,7 +3,7 @@ name: ca-formation
 description: Tier 2 California content skill for entity formation covering tax year 2025. Includes the CA LLC Form LLC-1 $70 filing fee, $800 annual minimum franchise tax under R&TC §17941 (first-year exemption AB 85/SB 818 expired 2024), tiered LLC fee on gross receipts under §17942 (Form 3536), 15-day rule for short first year, Statement of Information LLC-12, the "doing business in CA" threshold of $711,538 receipts / $71,154 payroll / $71,154 property triggering registration obligations for out-of-state entities, foreign qualification mechanics, and the C-corp formation overlay with $800 + 8.84% income tax.
 jurisdiction: US-CA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who it is for
 
-This Guide covers the California state layer of forming a business entity, or registering an out-of-state entity, for **tax year 2026**. It is for founders, freelancers and small-business owners who either form a California LLC or corporation, or run an entity formed in another state that has California customers, staff, property or management.
+This skill covers the California state layer of forming a business entity, or registering an out-of-state entity, for **tax year 2026**. It is for founders, freelancers and small-business owners who either form a California LLC or corporation, or run an entity formed in another state that has California customers, staff, property or management.
 
 It covers:
 
@@ -245,7 +245,7 @@ An entity is doing business in California for a taxable year if **any** of these
 ## When to refuse or refer
 
 - **Professional services** by an LLC: refer to counsel. A professional corporation is usually needed.
-- **Voluntary disclosure or back years.** An out-of-state entity that has been doing business unregistered for past years needs a specialist to handle voluntary disclosure, back returns, penalties and revivor. This Guide does not set the look-back or waiver terms.
+- **Voluntary disclosure or back years.** An out-of-state entity that has been doing business unregistered for past years needs a specialist to handle voluntary disclosure, back returns, penalties and revivor. This skill does not set the look-back or waiver terms.
 - **Public Law 86-272**, unitary or combined reporting, and apportionment beyond the single-year tests above.
 - **Federal classification elections**, S corporation eligibility, and personal nonresident returns.
 - **BOI for a foreign-country entity:** confirm the exemptions on FinCEN's site before filing.
@@ -268,7 +268,7 @@ An entity is doing business in California for a taxable year if **any** of these
 
 ### 2025 returns, extended returns due in autumn 2026 ([FTB doing business page](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))
 
-The 2025 rules were the same as 2026 on every point in this Guide except these:
+The 2025 rules were the same as 2026 on every point in this skill except these:
 
 - The indexed "doing business" amounts: for 2025 use $757,070 / $75,707 / $75,707 from the FTB page.
 - The BOI rule: domestic companies were already exempt under the March 2025 interim rule.

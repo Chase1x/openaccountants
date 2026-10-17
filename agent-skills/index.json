@@ -7209,10 +7209,10 @@
    "name": "in-advance-tax",
    "jurisdiction": "IN",
    "path": "skills/international/india/in-advance-tax.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "in-cross-border-india-dual-resident-treaty",
@@ -7254,19 +7254,19 @@
    "name": "in-pf-esi-employer",
    "jurisdiction": "IN",
    "path": "skills/international/india/in-pf-esi-employer.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "in-professional-tax",
    "jurisdiction": "IN",
    "path": "skills/international/india/in-professional-tax.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "in-sales-tax",
@@ -7308,64 +7308,64 @@
    "name": "india-crypto-tax",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-crypto-tax.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-einvoice",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-einvoice.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-financial-statements",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-financial-statements.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-formation",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-formation.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-gst",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-gst.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-payroll",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-payroll.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-tax-optimization",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-tax-optimization.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "india-to-uae-singapore-nri-tax",
@@ -7380,10 +7380,10 @@
    "name": "india-transfer-pricing",
    "jurisdiction": "IN",
    "path": "skills/international/india/india-transfer-pricing.md",
-   "trust_label": null,
-   "authored_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": 2025
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
+   "reviewed_by": null,
+   "tax_year": 2026
   },
   {
    "name": "indiana-sales-tax",

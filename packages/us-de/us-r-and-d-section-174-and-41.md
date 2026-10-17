@@ -3,7 +3,7 @@ name: us-r-and-d-section-174-and-41
 description: Tier 2 US federal content skill for the §174 mandatory R&E capitalization regime (TCJA, eff. 1/1/2022, 5-year domestic / 15-year foreign amortization, half-year convention) and the §41 R&D Credit (Regular Credit 20% / Alternative Simplified Credit 14%, four-part test, contract research at 65%, IUS software hurdle), including the §41(h) payroll tax credit election for Qualified Small Businesses (< $5M gross, no prior receipts beyond Immediate expensing unless §174A(c) amortization election is made) — increased to $500k by IRA 2022 — applied against Form 941 via Form 8974. Tax year 2025 (§174 capitalization remains law absent year-end extender). Federal only.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US research costs: §174A expensing, §174 foreign amortization and the §41 research credit
 
-Figures are for tax year 2026, with a dated section for 2025 returns still being filed on extension. This Guide covers federal income tax treatment of research or experimental (R&E) costs after the One Big Beautiful Bill Act (P.L. 119-21), and the §41 credit for increasing research activities, including the payroll-tax election for qualified small businesses. It is for sole proprietors, partnerships, S corporations and C corporations that develop products, processes or software. Federal law only; states decide their own conformity.
+Figures are for tax year 2026, with a dated section for 2025 returns still being filed on extension. This skill covers federal income tax treatment of research or experimental (R&E) costs after the One Big Beautiful Bill Act (P.L. 119-21), and the §41 credit for increasing research activities, including the payroll-tax election for qualified small businesses. It is for sole proprietors, partnerships, S corporations and C corporations that develop products, processes or software. Federal law only; states decide their own conformity.
 
 Law in one paragraph: domestic R&E paid or incurred in tax years beginning after 31 December 2024 is deductible when paid or incurred under §174A(a), unless the taxpayer elects to amortize it under §174A(c). Foreign R&E stays capitalized and amortized over 15 years under §174. Domestic R&E that was capitalized for 2022-2024 under the old TCJA rule has its own transition choices. The §41 credit is a separate computation on a narrower set of costs, and §280C links the two. [§174A](https://www.law.cornell.edu/uscode/text/26/174A); [§174](https://www.law.cornell.edu/uscode/text/26/174); [Rev. Proc. 2025-28](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf)
 

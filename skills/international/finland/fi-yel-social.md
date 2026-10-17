@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Finland YEL pension insurance o
 version: 1.0
 jurisdiction: FI
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -89,7 +89,7 @@ At the beginning of each year, the provider raises confirmed income using the wa
 
 Choose an earnings-related pension insurance company, or where eligible an industry pension fund. Obtain its current quote and preserve the provider, policy effective date, payment-frequency choice and terms. Do not use a universal instalment date, late-interest rate or payment plan.
 
-Arrange YEL within six months of starting self-employment. Coverage begins at the start. A person can arrange insurance retroactively for the current and three previous years only. Uninsured work further back is lost: no YEL pension accrues for it. If ETK has urged correction and the person does not act, ETK can arrange YEL on that person's behalf and at that person's expense. Two further consequences are set by the Self-Employed Persons' Pensions Act (YEL, 1272/2006), which this Guide cannot yet cite from an allowed official page, so confirm them with the provider or ETK before advising: a neglect fee (laiminlyöntimaksu, section 122) of up to the contribution for the neglected period, imposed by the State Treasury (Valtiokonttori) on the provider's application where YEL is not taken out within six months of the obligation starting, and also payable after ETK compulsory insurance (section 143); and no start-up reduction where ETK has insured the person compulsorily (section 115). Do not calculate a fee amount. This draft does not establish provider invoice terms.
+Arrange YEL within six months of starting self-employment. Coverage begins at the start. A person can arrange insurance retroactively for the current and three previous years only. Uninsured work further back is lost: no YEL pension accrues for it. If ETK has urged correction and the person does not act, ETK can arrange YEL on that person's behalf and at that person's expense. Two further consequences are set by the Self-Employed Persons' Pensions Act (YEL, 1272/2006), which this skill cannot yet cite from an allowed official page, so confirm them with the provider or ETK before advising: a neglect fee (laiminlyöntimaksu, section 122) of up to the contribution for the neglected period, imposed by the State Treasury (Valtiokonttori) on the provider's application where YEL is not taken out within six months of the obligation starting, and also payable after ETK compulsory insurance (section 143); and no start-up reduction where ETK has insured the person compulsorily (section 115). Do not calculate a fee amount. This draft does not establish provider invoice terms.
 
 For 2026:
 

@@ -4,7 +4,7 @@ description: "Use this skill for any Malta-resident individual who is not domici
 version: 1.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope ([Income Tax Act, Cap. 123](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c))
 
-This Guide covers individuals who live in Malta but are **not domiciled** in Malta, or are **not ordinarily resident** here. It explains when foreign income and foreign capital gains are taxed, the €5,000 minimum tax for non-doms, who cannot use the remittance basis, how to evidence what was brought into Malta, the special residence programmes, double tax relief and the filing duties.
+This skill covers individuals who live in Malta but are **not domiciled** in Malta, or are **not ordinarily resident** here. It explains when foreign income and foreign capital gains are taxed, the €5,000 minimum tax for non-doms, who cannot use the remittance basis, how to evidence what was brought into Malta, the special residence programmes, double tax relief and the filing duties.
 
 - **Basis year 2026 = year of assessment 2027.** This is the primary year. Malta taxes a calendar basis year and charges the tax in the following year of assessment. The return for 2026 income is due by 30 June 2027.
 - **Basis year 2025 = year of assessment 2026.** See the dated section "2025 income (year of assessment 2026)" for returns being filed now.

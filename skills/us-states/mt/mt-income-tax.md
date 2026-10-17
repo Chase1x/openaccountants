@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Montana individual income tax f
 version: "0.1"
 jurisdiction: US-MT
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 Form 2 instructions](https://revenue.mt.gov/files/forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf))
 
-This Guide covers the Montana individual income tax return, **Form 2**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for residents, part-year residents and nonresidents, including sole proprietors and single-member LLC owners.
+This skill covers the Montana individual income tax return, **Form 2**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for residents, part-year residents and nonresidents, including sole proprietors and single-member LLC owners.
 
 Figures are for tax year 2026 unless labelled 2025. The 2026 rates and brackets come from **HB 337** (2025). The 2026 Form 2 and its instructions were not out on 25 September 2026, so rules found only in the 2025 instructions are labelled 2025.
 

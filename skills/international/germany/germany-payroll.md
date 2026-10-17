@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German payroll processing for e
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-For employers, payroll clerks and employees checking a German payslip for pay periods in 2026. This is the full-cycle payroll Guide: besides the rules shared with `de-payroll`, it covers the payslip, the minimum wage duties, tax-free night, Sunday and holiday surcharges, sick pay and the maternity top-up paid through payroll, and the accident insurance annual report. Covered: wage tax (Lohnsteuer) by tax class and ELStAM through the finance ministry's program flow (PAP), solidarity surcharge and church tax, the new exemption for employees past the standard retirement age; the four social insurance branches (RV, KV, PV, AV) with shares and ceilings; Minijobs and the transition band; the wage tax return, contribution and DEÜV deadlines, year-end and late surcharges; and a short section for 2025 pay still being corrected.
+For employers, payroll clerks and employees checking a German payslip for pay periods in 2026. This is the full-cycle payroll skill: besides the rules shared with `de-payroll`, it covers the payslip, the minimum wage duties, tax-free night, Sunday and holiday surcharges, sick pay and the maternity top-up paid through payroll, and the accident insurance annual report. Covered: wage tax (Lohnsteuer) by tax class and ELStAM through the finance ministry's program flow (PAP), solidarity surcharge and church tax, the new exemption for employees past the standard retirement age; the four social insurance branches (RV, KV, PV, AV) with shares and ceilings; Minijobs and the transition band; the wage tax return, contribution and DEÜV deadlines, year-end and late surcharges; and a short section for 2025 pay still being corrected.
 
 The year: the 2026 PAP covers pay periods "die nach dem 31. Dezember 2025, aber vor dem 1. Januar 2027 enden" and one-time payments received in 2026 ([PAP 2026, Anlage 1](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Steuerarten/Lohnsteuer/Programmablaufplan/2025-11-12-PAP-2026-anlage-1.pdf?__blob=publicationFile&v=2)). Social insurance values apply from 1 January 2026.
 
@@ -216,7 +216,7 @@ If the employee has not handed in the certificates of earlier employers this yea
 | Reduction per child from the second to the fifth, while under 25, employee share only | 0.25 points | Same |
 | Care, employee share in Saxony, with one child | 2.3% | PAP 2026; [§ 58(3) SGB XI](https://www.gesetze-im-internet.de/sgb_11/__58.html): employees bear "1 vom Hundert allein" |
 
-The official notice of the average additional rate is published in the Federal Gazette, which is not an allowed source for this Guide; the figure above is the finance ministry's reading of the estimate. Confirm it before using it for the § 242(3) groups.
+The official notice of the average additional rate is published in the Federal Gazette, which is not an allowed source for this skill; the figure above is the finance ministry's reading of the estimate. Confirm it before using it for the § 242(3) groups.
 
 **Employee care share by children (derived from the rows above)**
 
@@ -447,7 +447,7 @@ Second job (assumed: main job elsewhere, EUR 20,000 a year here): the table row 
 - **Employer pensions** (Versorgungsbezüge) and the old-age relief; company pension schemes.
 - **Benefits in kind**, company cars, flat-rate wage tax under § 37b and § 40 EStG, tax-free allowances other than the Aktivrente and the § 3b surcharges.
 - **Short-time pay, Krankengeld, Mutterschaftsgeld and parental leave**, beyond the employer's own sick pay, maternity top-up and reporting duties.
-- **Midijob amounts.** This Guide gives the band and the factor, not the formulas.
+- **Midijob amounts.** This skill gives the band and the factor, not the formulas.
 - **Miners' pension scheme, civil servants,** and employees exempt from a branch.
 - **Exact church tax** (state caps, mixed-faith couples).
 - **Private household Minijobs** beyond the rates in the table (the household cheque procedure).
@@ -525,7 +525,7 @@ The 2025 annual report was due by 15 February 2026 and the 2025 wage tax certifi
 - Finance ministry, PAP 2026 overview: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Steuerarten/Lohnsteuer/Programmablaufplan/2025-11-12-PAP-2026.html
 - Finance ministry, Aktivrente FAQ: https://www.bundesfinanzministerium.de/Content/DE/FAQ/FAQ-zur-Aktivrente.html
 
-This Guide is general information for 2026 and not tax, legal or payroll advice.
+This skill is general information for 2026 and not tax, legal or payroll advice.
 
 <!-- openaccountants-cta-block -->
 

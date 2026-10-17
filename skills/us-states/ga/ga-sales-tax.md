@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Georgia sales and use tax. Trig
 version: 2.0
 jurisdiction: US-GA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -23,7 +23,7 @@ Figures are for tax year 2026, as they stand on 25 September 2026. They come fro
 - Businesses and individuals who owe use tax because no Georgia tax was charged on a purchase.
 - Sellers accepting, and buyers giving, Form ST-5 resale and exemption certificates.
 - Georgia is a full member of the Streamlined Sales and Use Tax Agreement, from 1 July 2011 ([Streamlined Sales Tax](https://dor.georgia.gov/taxes/tax-rules-and-policies/streamlined-sales-tax)).
-- **Out of scope:** Georgia income tax. For individuals see the Guide `ga-income-tax`; for corporations, partnerships and the pass-through entity tax election see `ga-corporate-and-ptet`. Also out of scope: motor vehicles (most pay title ad valorem tax, TAVT, instead of sales tax), motor fuel and prepaid local tax, lodging charges beyond the marketplace rules, alcohol and tobacco excise, and the detail of agricultural (GATE) and industry-specific exemptions.
+- **Out of scope:** Georgia income tax. For individuals see the skill `ga-income-tax`; for corporations, partnerships and the pass-through entity tax election see `ga-corporate-and-ptet`. Also out of scope: motor vehicles (most pay title ad valorem tax, TAVT, instead of sales tax), motor fuel and prepaid local tax, lodging charges beyond the marketplace rules, alcohol and tobacco excise, and the detail of agricultural (GATE) and industry-specific exemptions.
 
 ## Ask the client first
 
@@ -60,7 +60,7 @@ Figures are for tax year 2026, as they stand on 25 September 2026. They come fro
 
 Rates change on the first day of a quarter. Richmond County, for example, was 8.5% on the chart for July to September 2026 ([chart from 1 July 2026](https://dor.georgia.gov/document/document/general-rate-chart-effective-july-1-2026-through-september-30-2026pdf/download)) and is 9% from 1 October 2026. The Department's rate charts "are updated each quarter" ([rate FAQ](https://dor.georgia.gov/taxes/business-taxes/sales-use-tax/tax-rates)).
 
-**Which local taxes make up the rate.** The chart's key names each local tax a county levies. This Guide does not list local rates; read the chart.
+**Which local taxes make up the rate.** The chart's key names each local tax a county levies. This skill does not list local rates; read the chart.
 
 | Chart code | Local tax |
 | --- | --- |

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/de-trade-tax"
   jurisdiction: "DE"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,12 +17,12 @@ metadata:
 
 ## Scope
 
-This Guide covers German trade tax (Gewerbesteuer, GewSt) for a sole proprietor or a partnership that runs a commercial business (Gewerbebetrieb): who is liable, how trade income (Gewerbeertrag) is worked out, the add-backs (Hinzurechnungen) and reductions (Kürzungen), the allowance, the base rate (Steuermesszahl), the municipal multiplier (Hebesatz), the credit against income tax under § 35 EStG, prepayments and the return. Companies such as a GmbH are covered only for two questions: do they pay, and do they get the allowance.
+This skill covers German trade tax (Gewerbesteuer, GewSt) for a sole proprietor or a partnership that runs a commercial business (Gewerbebetrieb): who is liable, how trade income (Gewerbeertrag) is worked out, the add-backs (Hinzurechnungen) and reductions (Kürzungen), the allowance, the base rate (Steuermesszahl), the municipal multiplier (Hebesatz), the credit against income tax under § 35 EStG, prepayments and the return. Companies such as a GmbH are covered only for two questions: do they pay, and do they get the allowance.
 
 - **Tax year.** Figures are for collection period (tax year) 2026, the law in force on 25 September 2026. A short section below covers the 2025 returns being filed now.
 - **Where the figures come from.** The federal statutes, except the 2026 multiplier floor and the church tax range, which come from the finance ministry booklet "Steuern von A bis Z" (Stand Januar 2025).
 - **Two authorities.** The tax office sets the base amount (Gewerbesteuermessbescheid), which also decides whether the business is liable at all ([§ 184(1) AO](https://www.gesetze-im-internet.de/ao_1977/__184.html)). The municipality applies its multiplier, sets the tax (Gewerbesteuerbescheid) and collects it.
-- **Related Guide.** Whether a self-employed person is a Freiberufler or a Gewerbetreibender in the first place is triaged in `de-freelance-intake`.
+- **Related Skill.** Whether a self-employed person is a Freiberufler or a Gewerbetreibender in the first place is triaged in `de-freelance-intake`.
 
 ## Ask the client first
 
@@ -68,7 +68,7 @@ This Guide covers German trade tax (Gewerbesteuer, GewSt) for a sole proprietor 
 - **Who owes the tax.** The entrepreneur for whose account the business is run. If a partnership runs it, the partnership owes the tax, not the partners ([§ 5 GewStG](https://www.gesetze-im-internet.de/gewstg/__5.html)).
 - **Liability follows the activity, not the registration.** Trade tax attaches to running a standing commercial business ([§ 2(1) GewStG](https://www.gesetze-im-internet.de/gewstg/__2.html)), not to the Gewerbeanmeldung. Opening a business is notified to the municipality, which tells the tax office; a free profession is notified to the tax office directly. The further tax information (Fragebogen zur steuerlichen Erfassung) goes to the tax office electronically within one month ([§ 138(1), (1b), (4) AO](https://www.gesetze-im-internet.de/ao_1977/__138.html)).
 - **IT consultants and software developers** are not named in § 18 EStG; the facts decide, and selling or reselling software or hardware points to a commercial business. Flag it.
-- **Abfärbung is a partnership rule.** § 15(3) no. 1 EStG names partnerships only. Case law may set a de minimis limit, but no page read for this Guide prints it, so never call a small commercial part harmless or fatal without a Steuerberater.
+- **Abfärbung is a partnership rule.** § 15(3) no. 1 EStG names partnerships only. Case law may set a de minimis limit, but no page read for this skill prints it, so never call a small commercial part harmless or fatal without a Steuerberater.
 
 ## Trade income: the starting point
 
@@ -143,7 +143,7 @@ Source for every row: [§ 9 GewStG](https://www.gesetze-im-internet.de/gewstg/__
 - **Allowance.** Round down to full EUR 100, then subtract the allowance, "höchstens jedoch in Höhe des abgerundeten Gewerbeertrags", so never below zero ([§ 11(1) GewStG](https://www.gesetze-im-internet.de/gewstg/__11.html)). It is given per period per business; § 11 does not cut it for a short period. The base rate is not the tax rate; home workers get a reduced one under § 11(3): refer.
 - **Multiplier.** Trade tax = base amount times the multiplier of the municipality with the permanent establishment ([§ 16(1) GewStG](https://www.gesetze-im-internet.de/gewstg/__16.html), [§ 4 GewStG](https://www.gesetze-im-internet.de/gewstg/__4.html)). It is the same for all businesses in the municipality. A decision for a year is taken by 30 June with effect from 1 January; later it can only be set at or below the last level ([§ 16(3), (4) GewStG](https://www.gesetze-im-internet.de/gewstg/__16.html)).
 - **Floor, with its year.** 200% for 2026 ([BMF booklet](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/steuern-von-a-z.pdf?__blob=publicationFile&v=9)). The statute page already shows 280%, inserted by the law of 29 June 2026 (BGBl. 2026 I Nr. 197) and applied "erstmals für den Erhebungszeitraum 2027" ([§ 36(5b) GewStG](https://www.gesetze-im-internet.de/gewstg/__36.html)). Never quote 280% for 2026.
-- **No city multipliers here.** They appear on no federal page this Guide may cite. Read the rate from the client's own notice or the municipality's decision for the year, never from memory.
+- **No city multipliers here.** They appear on no federal page this skill may cite. Read the rate from the client's own notice or the municipality's decision for the year, never from memory.
 - **Several municipalities or a move.** The base amount is apportioned, also where a permanent establishment moved during the period ([§ 28(1) GewStG](https://www.gesetze-im-internet.de/gewstg/__28.html)), by wages ([§ 29 GewStG](https://www.gesetze-im-internet.de/gewstg/__29.html)); for a business not run by a legal person EUR 25,000 a year in total counts as wages for the working owners ([§ 31(5) GewStG](https://www.gesetze-im-internet.de/gewstg/__31.html): "insgesamt 25.000 Euro jährlich anzusetzen"). Refer the apportionment.
 
 ## The income tax credit (§ 35 EStG)
@@ -158,7 +158,7 @@ A sole proprietor, a partner in a commercial partnership, and a KGaA general par
 - **Partners.** The share follows the general profit-sharing key, without advance profit shares; the base amount, the trade tax payable and each share are determined separately and uniformly (§ 35(2) EStG).
 - **Base notices.** The base amount notice and the trade tax notice are Grundlagenbescheide for the credit (§ 35(3) EStG): if the tax office or municipality changes them, the income tax follows.
 - **Church tax.** The credit does not reduce church tax: "§ 35 ist bei der Ermittlung der festzusetzenden Einkommensteuer nach Satz 1 nicht anzuwenden" ([§ 51a(2) EStG](https://www.gesetze-im-internet.de/estg/__51a.html)). Church tax is 8% or 9% of income tax depending on the state ([BMF booklet](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/steuern-von-a-z.pdf?__blob=publicationFile&v=9): "je nach Bundesland 8 oder 9 Prozent").
-- **Solidarity surcharge: check.** [§ 3(2) SolzG](https://www.gesetze-im-internet.de/solzg_1995/__3.html) has no sentence switching § 35 off, which points to the surcharge being computed after the credit. Older material says the opposite. This Guide does not settle it: check with a Steuerberater.
+- **Solidarity surcharge: check.** [§ 3(2) SolzG](https://www.gesetze-im-internet.de/solzg_1995/__3.html) has no sentence switching § 35 off, which points to the surcharge being computed after the credit. Older material says the opposite. This skill does not settle it: check with a Steuerberater.
 - **Companies.** A GmbH pays corporation tax and gets no § 35 credit.
 
 ## Boundaries and exceptions
@@ -259,7 +259,7 @@ Every rule above links to its section of the consolidated statute on gesetze-im-
 
 ## Disclaimer
 
-This Guide is information, not tax, legal or financial advice. Have a qualified professional (Steuerberater or Wirtschaftsprüfer) review any figure before filing or acting on it.
+This skill is information, not tax, legal or financial advice. Have a qualified professional (Steuerberater or Wirtschaftsprüfer) review any figure before filing or acting on it.
 
 <!-- openaccountants-cta-block -->
 
@@ -281,4 +281,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-trade-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-trade-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-trade-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-trade-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

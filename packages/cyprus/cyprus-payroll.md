@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cyprus payroll processing for e
 version: 0.1
 jurisdiction: CY
 tax_year: 2026
-last_updated: 2026-10-02
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus payroll: PAYE withholding, contributions and employer filings
 
-This Guide covers running payroll for employees in Cyprus: income tax withheld under PAYE, the employee and employer contributions an employer deducts or pays, the new-resident income tax exemptions as they affect withholding, the minimum wage, and the employer's returns and deadlines. Figures are for tax year 2026. The Cyprus tax year is the calendar year. It is a source-cited draft: every figure below sits in a table that links the official page it comes from. Full contribution rules (self-employed, voluntary contributors, late-payment charges, the Central Holiday Fund) are in the Guide `cyprus-social-contributions`. The employee's own return and personal deductions are in `cyprus-income-tax`.
+This skill covers running payroll for employees in Cyprus: income tax withheld under PAYE, the employee and employer contributions an employer deducts or pays, the new-resident income tax exemptions as they affect withholding, the minimum wage, and the employer's returns and deadlines. Figures are for tax year 2026. The Cyprus tax year is the calendar year. It is a source-cited draft: every figure below sits in a table that links the official page it comes from. Full contribution rules (self-employed, voluntary contributors, late-payment charges, the Central Holiday Fund) are in the skill `cyprus-social-contributions`. The employee's own return and personal deductions are in `cyprus-income-tax`.
 
 ## Section 1: Quick reference
 
@@ -72,7 +72,7 @@ How the form turns the declaration into monthly withholding:
 
 - The employer fills in the second column of the form, applies the limits in the notes, and computes chargeable income (A8 less total allowances B15) and the tax on it (C1).
 - The employer withholds only the share of that tax that relates to the salary it pays (and, if the employee authorises it, a Social Insurance pension). The form's formula is C1 multiplied by (A1 + A2 + A3) and divided by A6. The employer must NOT withhold tax on income from other sources, such as rent. The employee pays that tax separately through a temporary (provisional) declaration.
-- Monthly withholding is the year's tax (C2) divided by 13 or by 12, "accordingly". Divide by 13 where the employee is paid a thirteenth salary (the form says only "÷13 or ÷12 accordingly"; this reading is the Guide's). Weekly withholding is C2 divided by 52.
+- Monthly withholding is the year's tax (C2) divided by 13 or by 12, "accordingly". Divide by 13 where the employee is paid a thirteenth salary (the form says only "÷13 or ÷12 accordingly"; this reading is the skill's). Weekly withholding is C2 divided by 52.
 - Tax on bonuses, "as well as other income not paid on an ad hoc basis" (the form's own words), is withheld in the month the amount is paid (note 16).
 - The new 2026 personal deductions (children, housing, energy upgrade) are declared on the T.D.59 as a final amount per category. The employee does not state income criteria or the number of children on it. These deductions are NOT counted inside the one-fifth cap (Tax Department FAQ, questions 10 and 11, linked in Sources).
 - Where a person works for two or more employers, each employer withholds on its own pay, using the employee's total income as declared on the T.D.59 given to that employer (PAYE FAQ, linked in Sources).
@@ -104,7 +104,7 @@ The ceiling on insurable earnings for 2026:
 | Maximum insurable earnings, monthly-paid employees, from 1 January 2026 | EUR 5,742 | "€5.742 από 1/1/2026" |
 | Maximum insurable earnings, weekly-paid employees, from 5 January 2026 | EUR 1,325 | "€1.325 από 5/1/2026" |
 
-The ceiling applies to contributions to the Social Insurance Fund, the Annual Paid Leave (Central Holiday) Fund, the Redundancy Fund and the Human Resource Development levy. Those are the four funds the Social Insurance Services notice names. The Social Cohesion Fund is not among them: the Social Insurance Services page on contributions says that for the Social Cohesion Fund "the total earnings are taken into consideration without a maximum amount" (https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/EA4F396F80C4BAA8C22586A10042659F?OpenDocument) (page last updated 23 March 2021). The notice states a monthly and a weekly ceiling only; it prints no annual ceiling, and this Guide does not compute one.
+The ceiling applies to contributions to the Social Insurance Fund, the Annual Paid Leave (Central Holiday) Fund, the Redundancy Fund and the Human Resource Development levy. Those are the four funds the Social Insurance Services notice names. The Social Cohesion Fund is not among them: the Social Insurance Services page on contributions says that for the Social Cohesion Fund "the total earnings are taken into consideration without a maximum amount" (https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/EA4F396F80C4BAA8C22586A10042659F?OpenDocument) (page last updated 23 March 2021). The notice states a monthly and a weekly ceiling only; it prints no annual ceiling, and this skill does not compute one.
 
 GHS is withheld at the rate in the T.D.59A table in Section 2, on the employee's income from this employer, until the year's income on lines A1, A2, A9 and A10 passes the GHS limit in that table. From the following month the employer stops withholding GHS on lines A2, A9a and A10a (form note 22). The GHS limit applies to all of a person's income added together; the employee may also have GHS withheld elsewhere.
 
@@ -195,7 +195,7 @@ Under the Law N.51(I)/2023 limb, a person is treated as starting first employmen
 
 The person must meet ALL of these conditions: (a) not Cyprus tax resident during the seven years before the year employment or business started (the page shows "(2019-2025)" as the example); AND (b) Cyprus tax resident in some year before those seven years; AND (c) remuneration or profits in Cyprus above the earnings threshold in the table during the first 12 months; AND (d) took up the employment or business between 1 January 2025 and 31 December 2030; AND (e) at the start, EITHER holds a recognised university degree and worked full-time abroad for a foreign employer for at least 36 of the previous 84 months, OR worked full-time abroad for a foreign employer for at least 84 months. It runs for seven consecutive tax years from the start year, but only in years when earnings exceed the threshold (a cliff for that year, not a taper) and, apart from the start year, only in years the person is Cyprus tax resident.
 
-The T.D.59A for 2026 does not list this exemption at line B2: note 7 names only the 20% and the two 50% options. The Tax Department pages read for this Guide do not say whether an employer may apply the 25% exemption through PAYE. Do not apply it in payroll without an accountant's confirmation; the employee can claim it on the annual return.
+The T.D.59A for 2026 does not list this exemption at line B2: note 7 names only the 20% and the two 50% options. The Tax Department pages read for this skill do not say whether an employer may apply the 25% exemption through PAYE. Do not apply it in payroll without an accountant's confirmation; the employee can claim it on the annual return.
 
 ## Section 7: Conservative defaults
 
@@ -206,7 +206,7 @@ When inputs are missing or unclear, apply these and flag them:
 3. Deduct the employee's social insurance and GHS before computing tax, within the one-fifth cap.
 4. No exemption unless documented. Never apply the 25% article 8(21B) exemption through payroll without an accountant's confirmation.
 5. Employer cost: social insurance, Redundancy and Human Resources Development on insurable earnings up to the ceiling; Social Cohesion on total earnings; GHS employer share on salary. Treat the Central Holiday Fund as unknown until the employer confirms whether it holds an exemption, and say so.
-6. A thirteenth salary: divide the year's tax by 13 (the form says only "÷13 or ÷12 accordingly"; this reading is the Guide's), and report the thirteenth salary in the month it is paid.
+6. A thirteenth salary: divide the year's tax by 13 (the form says only "÷13 or ÷12 accordingly"; this reading is the skill's), and report the thirteenth salary in the month it is paid.
 
 ## Section 8: Required inputs and refusal catalogue
 
@@ -403,11 +403,11 @@ The surcharge is charged on the 1st of the month after the last payment date and
 | Social insurance and fund contributions | Paid to Social Insurance Services | End of the calendar month after the month they are for |
 | Employee's own income tax return | See `cyprus-income-tax` | Not an employer filing |
 
-## Section 17: Interaction with other Guides
+## Section 17: Interaction with other skills
 
 | Scenario | Guide |
 | --- | --- |
-| Employee payroll (PAYE, social insurance, GHS, employer funds) | This Guide (`cyprus-payroll`) |
+| Employee payroll (PAYE, social insurance, GHS, employer funds) | This skill (`cyprus-payroll`) |
 | Contribution detail: self-employed, voluntary, Central Holiday Fund, late charges | `cyprus-social-contributions` |
 | Employee's own return, personal deductions and income criteria, residence | `cyprus-income-tax` |
 | Cyprus VAT returns | `cyprus-vat-return` |
@@ -470,9 +470,9 @@ Handoff points:
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a warranted accountant in Cyprus) before implementation.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a warranted accountant in Cyprus) before implementation.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

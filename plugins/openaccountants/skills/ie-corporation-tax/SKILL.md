@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-corporation-tax"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers Corporation Tax (CT) for an Irish-resident company, or an Irish branch of a non-resident company, that files a Form CT1. Figures are for tax year 2026, meaning accounting periods in 2026: for a calendar-year company, the 12 months to 31 December 2026. A dated section near the end covers the 2025 CT1, which most calendar-year companies had to file by 23 September 2026.
+This skill covers Corporation Tax (CT) for an Irish-resident company, or an Irish branch of a non-resident company, that files a Form CT1. Figures are for tax year 2026, meaning accounting periods in 2026: for a calendar-year company, the 12 months to 31 December 2026. A dated section near the end covers the 2025 CT1, which most calendar-year companies had to file by 23 September 2026.
 
 It covers the 12.5% and 25% rates, chargeable gains in CT, the Pillar Two minimum tax (scope only), close-company surcharges, preliminary tax, CT1 filing on ROS, losses and group relief, start-up relief, the R&D corporation tax credit, the Knowledge Development Box, capital allowances, interest limitation, and late filing surcharges and interest.
 
@@ -100,7 +100,7 @@ Ireland has three top-up taxes:
 - Every in-scope entity must file a Top-up Tax Information Return (TIR) no later than 15 months after the end of each fiscal year, or 18 months for the first fiscal year in scope. The first TIR and the first pay and file date were 30 June 2026.
 - Revenue has announced relief from local filing for some centrally filed returns, and the OECD's January 2026 "Side-by-Side" package changes some rules. Check Revenue's key dates page before advising.
 
-This Guide only screens for scope. The top-up computation needs the full GloBE rules, deferred tax adjustments and safe-harbour tests: refer it.
+This skill only screens for scope. The top-up computation needs the full GloBE rules, deferred tax adjustments and safe-harbour tests: refer it.
 
 ## Close companies and the surcharges ([Revenue: surcharge on undistributed income](https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/close-companies/surcharge.aspx))
 
@@ -430,4 +430,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-corporation-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-corporation-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-corporation-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-corporation-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

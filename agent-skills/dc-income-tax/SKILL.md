@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/dc-income-tax"
   jurisdiction: "US-DC"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,12 +17,12 @@ metadata:
 
 ## Scope and who this is for ([2025 D-40 booklet](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40_Book_082026_v1.pdf))
 
-This Guide covers the District of Columbia (DC) individual income tax return, **Form D-40**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns**. It is for DC residents and part-year residents, including sole proprietors and single-member LLC owners whose business profit reaches DC through federal adjusted gross income (AGI).
+This skill covers the District of Columbia (DC) individual income tax return, **Form D-40**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns**. It is for DC residents and part-year residents, including sole proprietors and single-member LLC owners whose business profit reaches DC through federal adjusted gross income (AGI).
 
-**Read this first: the 2026 law is not settled.** In December 2025, emergency and temporary acts changed DC's rules for 2025. They decoupled DC from several federal changes made by P.L. 119-21 ("OBBBA"). The temporary act expires on **25 September 2026**. In July 2026 the Council passed the Fiscal Year 2027 Budget Support Act (BSA) on its second vote, and also as an emergency act ([Council, 10 July 2026](https://dccouncil.gov/council-wraps-up-budget-season-with-second-vote-on-the-budget-support-act/)). When this Guide was written, no official DC page showed that act's enacted tax text. It may differ from the April 2026 draft described below. So:
+**Read this first: the 2026 law is not settled.** In December 2025, emergency and temporary acts changed DC's rules for 2025. They decoupled DC from several federal changes made by P.L. 119-21 ("OBBBA"). The temporary act expires on **25 September 2026**. In July 2026 the Council passed the Fiscal Year 2027 Budget Support Act (BSA) on its second vote, and also as an emergency act ([Council, 10 July 2026](https://dccouncil.gov/council-wraps-up-budget-season-with-second-vote-on-the-budget-support-act/)). When this skill was written, no official DC page showed that act's enacted tax text. It may differ from the April 2026 draft described below. So:
 - **2025 figures are firm.** They come from the 2025 D-40 booklet and the temporary act.
 - **2026 rates are firm.** They have not changed since 2022.
-- **Several 2026 amounts are not settled:** the standard deduction, the EITC match, the child tax credit, and the federal deductions for tips, overtime, car loan interest and seniors. This Guide gives the official amounts that exist and says what to check. See "Federal conformity (OBBBA)".
+- **Several 2026 amounts are not settled:** the standard deduction, the EITC match, the child tax credit, and the federal deductions for tips, overtime, car loan interest and seniors. This skill gives the official amounts that exist and says what to check. See "Federal conformity (OBBBA)".
 
 It does **not** cover the unincorporated business franchise tax return (Form D-30) beyond a pointer, the corporate franchise tax (D-20), fiduciary returns (D-41), withholding, real property tax, or estate tax. See "When to refuse or refer".
 
@@ -116,7 +116,7 @@ D-40 line numbers are from the 2025 return ([2025 D-40 booklet](https://otr.cfo.
 - **Businesses outside the D-30.** Some businesses are excluded altogether ([D.C. Code § 47-1808.01](https://code.dccouncil.gov/us/dc/council/code/sections/47-1808.01)). The main exclusion for sole proprietors has two conditions, and both must be met:
   - **more than 80%** of gross income comes from personal services actually rendered by the owners ([§ 47-1808.01](https://code.dccouncil.gov/us/dc/council/code/sections/47-1808.01), paragraph 3); and
   - capital is not a material income-producing factor.
-- **Out of scope.** Whether a D-30 is due, and the tax on it, are outside this Guide.
+- **Out of scope.** Whether a D-30 is due, and the tax on it, are outside this skill.
 
 ## Figures by year
 
@@ -162,7 +162,7 @@ Spouses or domestic partners who live together and file separately are each trea
 - **The April 2026 draft of the FY 2027 BSA.** In April 2026 the Chief Financial Officer issued a fiscal impact statement on a draft of the Fiscal Year 2027 Budget Support Act ([FY 2027 BSA fiscal impact statement](https://app.cfo.dc.gov/services/fiscal_impact/pdf/spring09/FIS%20FY%202027%20Budget%20Support%20Act%20of%202026_EOM.pdf)).
   - The draft has a subtitle that "extends the District's decoupling from OBBBA's standard deduction provisions through tax year 2026".
   - That subtitle would re-align DC with the federal amount from 2027.
-  - The Council passed the BSA, including an emergency version, in July 2026 ([Council, 10 July 2026](https://dccouncil.gov/council-wraps-up-budget-season-with-second-vote-on-the-budget-support-act/)). This Guide could not confirm its enacted tax text, which may differ from the April draft.
+  - The Council passed the BSA, including an emergency version, in July 2026 ([Council, 10 July 2026](https://dccouncil.gov/council-wraps-up-budget-season-with-second-vote-on-the-budget-support-act/)). This skill could not confirm its enacted tax text, which may differ from the April draft.
 - **What to do.**
   - For 2026 estimates, use the D-40ES amounts, which are OTR's own published figures.
   - For the 2026 return, use the 2026 D-40 booklet when OTR publishes it. Check its "New for 2026" page first.
@@ -332,7 +332,7 @@ Client facts: a single renter aged 40, not anyone's dependent, who rented the sa
 - **Other credits:** credit for tax paid to another state, the DC Low-Income Housing Tax Credit, and other Schedule U credits.
 - **Military members and spouses** (combat zone extensions, Military Spouse Residency Relief Act).
 - **Health care shared responsibility (Schedule HSR)** where coverage was not full-year.
-- **Outside this Guide:** fiduciary returns (D-41), corporate franchise tax (D-20), the ballpark fee (a business-level fee), estate tax and real property tax.
+- **Outside this skill:** fiduciary returns (D-41), corporate franchise tax (D-20), the ballpark fee (a business-level fee), estate tax and real property tax.
 
 ## Filing and payment ([2025 D-40 booklet](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40_Book_082026_v1.pdf); [2025 FR-127](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_FR-127_021226.pdf); [2026 D-40ES](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2026_D40ES_Book_wLinks04012026.pdf); [2025 D-2210](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D-2210_021226.pdf); [2025 D-40B](https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40B_Form_012026.pdf))
 
@@ -398,4 +398,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dc-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dc-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dc-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dc-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

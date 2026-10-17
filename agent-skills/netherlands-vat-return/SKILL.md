@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/netherlands-vat-return"
   jurisdiction: "NL"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([Belastingdienst: notes to the 2026 VAT return](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf))
 
-This Guide covers preparing and filing the Dutch VAT return (btw-aangifte, also called aangifte omzetbelasting) for a business **established in the Netherlands**. It covers a sole trader (eenmanszaak), a partnership (vof, maatschap) or a company (bv, nv) that is registered for VAT and uses the normal rules. The primary year is **2026** (calendar year). There is a dated section for the **2025** returns and corrections that are being dealt with now.
+This skill covers preparing and filing the Dutch VAT return (btw-aangifte, also called aangifte omzetbelasting) for a business **established in the Netherlands**. It covers a sole trader (eenmanszaak), a partnership (vof, maatschap) or a company (bv, nv) that is registered for VAT and uses the normal rules. The primary year is **2026** (calendar year). There is a dated section for the **2025** returns and corrections that are being dealt with now.
 
 It covers:
 - which periods apply (month, quarter, year) and the deadlines;
@@ -30,9 +30,9 @@ It covers:
 
 The practical rules come from the Belastingdienst's own pages and its notes to the 2026 return ("Toelichting bij de btw-aangifte (omzetbelasting) 2026"). Statute points cite the Wet op de omzetbelasting 1968 ("Wet OB 1968") as in force from 1 January 2026 ([wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002629/2026-01-01)).
 
-This Guide does **not** cover businesses established outside the Netherlands (they use separate notes and later deadlines), fiscal unities, the margin scheme, the travel agency scheme, real estate transactions, OSS returns, or the Caribbean Netherlands (Bonaire, Sint Eustatius and Saba). See "When to refuse or refer".
+This skill does **not** cover businesses established outside the Netherlands (they use separate notes and later deadlines), fiscal unities, the margin scheme, the travel agency scheme, real estate transactions, OSS returns, or the Caribbean Netherlands (Bonaire, Sint Eustatius and Saba). See "When to refuse or refer".
 
-Figures in this Guide were checked against the Belastingdienst sources on 27 September 2026. Penalty amounts and the tax interest rate can change from year to year, so check the linked page before relying on them for a later period.
+Figures in this skill were checked against the Belastingdienst sources on 27 September 2026. Penalty amounts and the tax interest rate can change from year to year, so check the linked page before relying on them for a later period.
 
 ## Ask the client first
 
@@ -200,7 +200,7 @@ At first use, reassess any earlier deduction using the use at that time; reconci
 - **Who**: businesses established in the Netherlands, including sole traders, partnerships and legal entities such as foundations, associations and bv's, whose counted turnover is not more than €20,000 in the calendar year of joining and in the previous calendar year ([KOR conditions](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kor-voorwaarden)).
 - **Counted turnover**: supplies at 21%, 9% and 0% (including exports and intra-EU supplies), supplies where VAT is shifted to another Dutch business, and some exempt real estate, financial and insurance turnover. **Not counted**: VAT on private use, sales of the business's own investment goods, supplies taxed in another country, and intra-EU acquisitions. Before joining, count turnover excluding VAT. All sub-numbers of one business count together, and the choice applies to all of them.
 - **Effect**: no VAT is charged or shown on invoices, no normal returns are filed, and no input VAT can be deducted (including VAT paid in other EU states). An earlier deduction may have to be revised. Some supplies stay outside the exemption: real estate used in the business, and new means of transport sent to another EU state. An occasional return may still be needed, for example for some EU purchases ([what the KOR means](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/wat-betekent-meedoen-met-de-kleineondernemersregeling)). Joining ends an article 23 licence and rules out taxed letting of real estate.
-- **Joining**: only after VAT registration, online. It takes effect at the earliest from the next quarter or return period, allowing 4 weeks' processing time. To join from 1 January 2027, the application must arrive by 4 December 2026. Keep filing returns until the letter with the final start date arrives, usually within 8 weeks ([joining the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/aanmelden-kor)).
+- **Joining**: only after VAT registration, online. It takes effect at the earliest from the next quarter or return period, allowing 4 weeks' processing time. To join from 1 January 2027, the application must arrive by 3 December 2026. Keep filing returns until the letter with the final start date arrives, usually within 8 weeks ([joining the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/aanmelden-kor)).
 - **Leaving** ([leaving the KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/afmelden-kor)): if turnover goes above €20,000 in a calendar year, the exemption ends immediately. The supply that takes turnover over the limit is itself taxed in full, and the business must deregister at once. A voluntary exit takes effect only from the first day of a return period; apply at least 4 weeks ahead. After leaving, the business cannot rejoin for the rest of that calendar year and the next year.
 - **EU-KOR (since 1 January 2025)**: a Dutch-established business can choose exemption in one or more other EU states if its EU-wide turnover (including the Netherlands) is not more than €100,000 in this year and last year, it stays under each chosen state's national threshold, and it does not use the import scheme (Invoerregeling). It then files a quarterly turnover report (opgaaf kwartaalomzet) with the Belastingdienst. Above €100,000 it must deregister at once ([EU-KOR](https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/kleineondernemersregeling-in-de-europese-unie-eu-kor)). Each state's national threshold and tolerance differ, so check that state's rules.
 
@@ -297,7 +297,7 @@ A submitted correction changes reported turnover but produces neither VAT payabl
 - **Suspected VAT fraud** in the supply chain (for example carousel fraud): if the client knew or should have known, deduction can be refused. Refer at once ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
 - **Caribbean Netherlands (Bonaire, Sint Eustatius, Saba)**: outside the Dutch VAT return. Refer.
 - **Penalty decisions, a vergrijpboete, objections or a dispute with the Belastingdienst**: refer to a Dutch belastingadviseur.
-- **Income tax or corporate income tax questions**: use the Guides for those taxes.
+- **Income tax or corporate income tax questions**: use the skills for those taxes.
 - **No invoices at all**: do not claim input VAT from a bank statement alone. Ask for the invoices.
 
 ## Filing and payment
@@ -358,7 +358,7 @@ The listing must be received within 1 month after the chosen period: quarterly b
 - [ ] KOR: turnover tested against €20,000 for this year and last year; EU-KOR against €100,000.
 - [ ] Anything in "When to refuse or refer" flagged for a Dutch belastingadviseur.
 
-This Guide is not tax advice. Check the linked Belastingdienst pages for the period you are filing.
+This skill is not tax advice. Check the linked Belastingdienst pages for the period you are filing.
 
 <!-- openaccountants-cta-block -->
 
@@ -380,4 +380,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

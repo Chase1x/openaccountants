@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/no-social-contributions"
   jurisdiction: "NO"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -45,7 +45,7 @@ Do not calculate a Norwegian contribution where the income type or National Insu
 
 ### Boundary for business personal income
 
-This Guide **consumes** the calculated business `personinntekt` from the taxpayer's provisional or final tax-return business information. It does not derive that number from bookkeeping. Skatteetaten starts the statutory calculation with net business income, then requires adjustments, including relevant capital income/costs, interest and tax-account items, risk-free return allowance and carried-forward negative personal income; its guidance also addresses spouse coordination. Therefore turnover, cash receipts and net business profit alone are not a safe contribution base. Obtain the official calculated figure or prepare that separate statutory calculation first. [Skatteetaten: personal income in a sole proprietorship](https://www.skatteetaten.no/en/business-and-organisation/tax-for-businesses/tax-return/deductions/income-in-business/personinntekt-i-enkeltpersonforetak/)
+This skill **consumes** the calculated business `personinntekt` from the taxpayer's provisional or final tax-return business information. It does not derive that number from bookkeeping. Skatteetaten starts the statutory calculation with net business income, then requires adjustments, including relevant capital income/costs, interest and tax-account items, risk-free return allowance and carried-forward negative personal income; its guidance also addresses spouse coordination. Therefore turnover, cash receipts and net business profit alone are not a safe contribution base. Obtain the official calculated figure or prepare that separate statutory calculation first. [Skatteetaten: personal income in a sole proprietorship](https://www.skatteetaten.no/en/business-and-organisation/tax-for-businesses/tax-return/deductions/income-in-business/personinntekt-i-enkeltpersonforetak/)
 
 ## 2. Determine the 2026 national-insurance rate
 
@@ -115,7 +115,7 @@ total contribution = 0 if total personal income is at or below NOK 99,650;
 
 For this aggregate working paper, first obtain the **officially coordinated and carry-forward-adjusted business result**. Then floor that final business contribution entry at zero before adding it to a salary or pension base. A remaining negative calculated business `personinntekt` therefore creates no negative contribution base and does not reduce the salary or pension entry. Do not floor an individual activity before the statutory business/spouse coordination is complete. Where that official coordinated result is unavailable, stop and resolve it before calculating. [Skatteetaten: personal income in a sole proprietorship](https://www.skatteetaten.no/en/business-and-organisation/tax-for-businesses/tax-return/deductions/income-in-business/personinntekt-i-enkeltpersonforetak/) and [Skatte-ABC: coordination of negative calculated business personal income](https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/e-5-enkeltpersonforetak--beregnet-personinntekt-foretaksmodellen/E-5.096/E-5.097/)
 
-This produces the total liability without allocating a capped amount back to salary, business or pension components. Component allocation is unnecessary for this Guide's contribution total; use the official tax calculation if a filing system requires an allocation. [Skatte-ABC: personal income and national-insurance contributions](https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/p-15-personinntekt--trygdeavgiftpensjonspoengpensjonsbeholdning/P-15.027/P-15.035/)
+This produces the total liability without allocating a capped amount back to salary, business or pension components. Component allocation is unnecessary for this skill's contribution total; use the official tax calculation if a filing system requires an allocation. [Skatte-ABC: personal income and national-insurance contributions](https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/p-15-personinntekt--trygdeavgiftpensjonspoengpensjonsbeholdning/P-15.027/P-15.035/)
 
 **Binding mixed-rate case:** salary NOK 60,000 plus ordinary business `personinntekt` NOK 60,000, age 40. Ordinary amounts are NOK 4,560 (`60,000 × 7.6%`) and NOK 6,480 (`60,000 × 10.8%`), total NOK 11,040. Total personal income is NOK 120,000 and the aggregate ceiling is `(120,000 − 99,650) × 25% = NOK 5,087.50`. The expected **total** contribution is therefore **NOK 5,087.50**. [Skatteetaten rates](https://www.skatteetaten.no/en/rates/national-insurance-contributions/) and [Skatte-ABC](https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/p-15-personinntekt--trygdeavgiftpensjonspoengpensjonsbeholdning/P-15.027/P-15.035/)
 
@@ -221,4 +221,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `no-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/no-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `no-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/no-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

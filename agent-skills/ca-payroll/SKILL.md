@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ca-payroll"
   jurisdiction: "US-CA"
   tax_year: "2026"
-  last_updated: "2026-10-03"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,11 +15,11 @@ metadata:
 
 # California payroll for employers: PIT withholding, SDI, UI, ETT, filings and final pay
 
-Figures are for tax year 2026. This Guide covers the four California payroll taxes an employer handles through the Employment Development Department (EDD): California Personal Income Tax (PIT) withholding, State Disability Insurance (SDI), Unemployment Insurance (UI) and the Employment Training Tax (ETT). It also covers the quarterly and annual filings, deposits, new hire and contractor reports, and the final pay rules enforced by the Labor Commissioner. Every rate below comes from an EDD or Department of Industrial Relations page. California income tax brackets for the annual return are set by the Franchise Tax Board; confirm them on ftb.ca.gov, because this Guide does not reproduce them.
+Figures are for tax year 2026. This skill covers the four California payroll taxes an employer handles through the Employment Development Department (EDD): California Personal Income Tax (PIT) withholding, State Disability Insurance (SDI), Unemployment Insurance (UI) and the Employment Training Tax (ETT). It also covers the quarterly and annual filings, deposits, new hire and contractor reports, and the final pay rules enforced by the Labor Commissioner. Every rate below comes from an EDD or Department of Industrial Relations page. California income tax brackets for the annual return are set by the Franchise Tax Board; confirm them on ftb.ca.gov, because this skill does not reproduce them.
 
 ## 1. Scope
 
-This Guide covers California employer payroll for 2026:
+This skill covers California employer payroll for 2026:
 
 - PIT withholding from wages, using the 2026 EDD withholding schedules (Method A and Method B) and the flat rates for supplemental wages.
 - SDI, withheld from the employee. Paid Family Leave (PFL) is part of SDI, not a separate deduction.
@@ -43,7 +43,7 @@ This Guide covers California employer payroll for 2026:
 - Stock option and restricted stock planning, section 83(b) elections and section 409A deferred compensation. Use `us-equity-compensation-restricted-stock-units-and` for the federal side.
 - San Francisco, Los Angeles and other city business taxes (see section 14).
 
-**Prerequisites:** Load this Guide with `us-tax-workflow-base`. A credentialed reviewer (Enrolled Agent, CPA or attorney) or an experienced California payroll practitioner reviews every output before it reaches the employer or EDD.
+**Prerequisites:** Load this skill with `us-tax-workflow-base`. A credentialed reviewer (Enrolled Agent, CPA or attorney) or an experienced California payroll practitioner reviews every output before it reaches the employer or EDD.
 
 ## 2. The Four California Employer Payroll Taxes (Quick Map)
 
@@ -87,7 +87,7 @@ The maximum per employee, per calendar year, printed in DE 44:
 | Wages paid in a calendar quarter above which a commercial employer registers (DE 1) within 15 calendar days | USD 100 | "Within 15 calendar days after paying more than $100" (DE 1 row of 2026 Forms and Due Dates; the PDF columns interleave) |
 | Paper payroll tax deposit (DE 88) penalty | 15% | "Payroll Tax Deposit: 15% of amount due" |
 
-Federal taxes run alongside these. Federal income tax withholding, social security, Medicare, Form 941 and Form 940 belong to `us-form-941-940-payroll`. This Guide states no federal rates.
+Federal taxes run alongside these. Federal income tax withholding, social security, Medicare, Form 941 and Form 940 belong to `us-form-941-940-payroll`. This skill states no federal rates.
 
 What employers get wrong most often:
 
@@ -134,7 +134,7 @@ Other payroll periods (weekly, biweekly, semi-monthly, quarterly, annual, daily)
 ### 3.3 Form DE 4: Employee's Withholding Allowance Certificate
 
 - **Both forms are needed.** A new hire, and an existing employee who changes withholding, must complete and sign both the federal Form W-4 and the DE 4. Since 2020 the federal W-4 has no allowances, so it cannot drive California withholding. [EDD rates and withholding](https://edd.ca.gov/en/Payroll_Taxes/Rates_and_Withholding)
-- **No DE 4 on file.** If an employee does not give the employer a properly completed DE 4, the employer must withhold "as if the employee were single and claiming zero withholding allowances". The live version of this Guide said to fall back to the federal W-4; that is wrong for anyone hired or changing withholding since 2020. [EDD rates and withholding](https://edd.ca.gov/en/Payroll_Taxes/Rates_and_Withholding)
+- **No DE 4 on file.** If an employee does not give the employer a properly completed DE 4, the employer must withhold "as if the employee were single and claiming zero withholding allowances". The live version of this skill said to fall back to the federal W-4; that is wrong for anyone hired or changing withholding since 2020. [EDD rates and withholding](https://edd.ca.gov/en/Payroll_Taxes/Rates_and_Withholding)
 - **Old W-4s.** An employee who gave a Form W-4 before 2020 and has no change does not have to submit a new form; keep using the earlier form. [EDD rates and withholding](https://edd.ca.gov/en/Payroll_Taxes/Rates_and_Withholding)
 - **Copies to the Franchise Tax Board.** Any rule on sending a DE 4 with many allowances to the Franchise Tax Board is a Franchise Tax Board rule; confirm it on ftb.ca.gov.
 
@@ -162,7 +162,7 @@ The flat bonus rate is a withholding rate, not the employee's tax. EDD's own ann
 
 - **Box 16 usually matches Box 1, but not always.** DE 44 says the California PIT wages on Form W-2 Box 16 are generally the same as federal Box 1 wages, but may differ because of federal and California differences in the definition of employee and of wages. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 - **HSA contributions.** EDD's Types of Payments table treats contributions to a Health Savings Account (HSA) as "Subject" to UI and ETT, SDI and PIT withholding, and "Reportable" as PIT wages, whether or not they are made under a section 125 cafeteria plan. California payroll that excludes HSA contributions the way federal payroll does understates California wages. The information sheet is revision 1 of June 2016; it is the current version on EDD's forms page. [DE 231TP](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de231tp.pdf)
-- **Other differences.** For any other payment type (fringe benefits, lodging, life insurance, tuition programs), look up the row in DE 231TP before setting up the pay code. The live version of this Guide stated a rule for registered domestic partner health benefits; no allowed page confirms it, so it is removed.
+- **Other differences.** For any other payment type (fringe benefits, lodging, life insurance, tuition programs), look up the row in DE 231TP before setting up the pay code. The live version of this skill stated a rule for registered domestic partner health benefits; no allowed page confirms it, so it is removed.
 
 ## 4. State Disability Insurance (SDI)
 
@@ -184,7 +184,7 @@ The flat bonus rate is a withholding rate, not the employee's tax. EDD's own ann
 ### 4.2 PFL: Part of SDI
 
 - **One deduction.** "Paid Family Leave (PFL) is a component of the SDI program." There is no separate PFL withholding. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
-- **Benefits.** PFL and disability benefit amounts are claim-side rules administered by EDD and are not covered here. The live version of this Guide stated a weekly benefit maximum and replacement percentages for 2025; those are removed because no 2026 page was read for them.
+- **Benefits.** PFL and disability benefit amounts are claim-side rules administered by EDD and are not covered here. The live version of this skill stated a weekly benefit maximum and replacement percentages for 2025; those are removed because no 2026 page was read for them.
 
 ### 4.3 AUDIT FLASH POINT: SDI Cap Still Switched On in Payroll Software
 
@@ -203,7 +203,7 @@ Payroll systems that were not reconfigured when the cap was removed keep stoppin
 
 ### 4.4 Voluntary Plan Alternative
 
-- **Voluntary Plan (VP).** An employer may apply to EDD for approval of a Voluntary Plan that pays DI and PFL benefits in place of SDI. A VP "must provide all the benefits of SDI, at least one benefit that is better than SDI, and it cannot cost employees more than SDI". The employer must post a security deposit with EDD. Once approved, the employer stops sending SDI withholdings to EDD for the covered employees. The live version of this Guide said a VP needs a majority employee vote; DE 44 does not say so, and that statement is removed. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
+- **Voluntary Plan (VP).** An employer may apply to EDD for approval of a Voluntary Plan that pays DI and PFL benefits in place of SDI. A VP "must provide all the benefits of SDI, at least one benefit that is better than SDI, and it cannot cost employees more than SDI". The employer must post a security deposit with EDD. Once approved, the employer stops sending SDI withholdings to EDD for the covered employees. The live version of this skill said a VP needs a majority employee vote; DE 44 does not say so, and that statement is removed. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 
 ## 5. Unemployment Insurance (UI)
 
@@ -233,7 +233,7 @@ The 2026 reduction is fixed by the federal government after the year ends; EDD's
 
 ### 5.3 Voluntary UI Contribution
 
-The live version of this Guide described a voluntary contribution to buy down the UI rate, with a March deadline. No page read for this rewrite states the deadline or the conditions, so the rule is not repeated here. Ask EDD or check DE 231Z before advising on it. [DE 231Z](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de231z.pdf)
+The live version of this skill described a voluntary contribution to buy down the UI rate, with a March deadline. No page read for this rewrite states the deadline or the conditions, so the rule is not repeated here. Ask EDD or check DE 231Z before advising on it. [DE 231Z](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de231z.pdf)
 
 ## 6. Employment Training Tax (ETT)
 
@@ -262,7 +262,7 @@ The DE 9 and DE 9C have a due date and a later delinquency date. A return is lat
 | 3rd (July, August, September) | October 1, 2026 | November 2, 2026 |
 | 4th (October, November, December) | January 1, 2027 | February 1, 2027 |
 
-Source: [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf), table "Report Quarter Due Delinquent if Not Filed By". The live version of this Guide gave the third quarter as October 31 and the fourth quarter as January 31; for 2026 those dates fall on weekends, and EDD prints November 2, 2026 and February 1, 2027.
+Source: [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf), table "Report Quarter Due Delinquent if Not Filed By". The live version of this skill gave the third quarter as October 31 and the fourth quarter as January 31; for 2026 those dates fall on weekends, and EDD prints November 2, 2026 and February 1, 2027.
 
 - **Weekend and holiday rule.** "If the Delinquent if Not Filed By date falls on a Saturday, Sunday, or legal holiday, the Delinquent if Not Filed By date is extended to the next business day." [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 
@@ -293,7 +293,7 @@ SDI and PIT deposits follow the employer's federal deposit schedule and the amou
 | Quarterly or annually | Less than USD 350 | Quarterly |
 | Quarterly or annually | USD 350 or more | 15th of the following month |
 
-Source: [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf), table "California Deposit Requirements". The live version of this Guide used a higher quarterly threshold that EDD does not print; the DE 44 thresholds are USD 350 and USD 400.
+Source: [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf), table "California Deposit Requirements". The live version of this skill used a higher quarterly threshold that EDD does not print; the DE 44 thresholds are USD 350 and USD 400.
 
 - **Notes to the table.** If a due date falls on a Saturday, Sunday or legal holiday it moves to the next business day. Electronic deposits must settle in the state's bank account on or before the third business day after the payroll date. An employer not on any federal schedule still deposits SDI and PIT quarterly or more often under this table. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 - **UI and ETT.** These are paid by quarter; for 2026 a quarter's UI and ETT payment is delinquent if not paid by April 30, July 31, November 2 (2026) and February 1 (2027). [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
@@ -302,17 +302,17 @@ Source: [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf), table
 
 - **Late payment.** A penalty of 15% plus interest is charged on late payroll tax payments (rate in the DE 44 table in section 2). The interest rate is reset every six months. For electronic payments, timeliness is judged by the settlement date. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 - **Failure to withhold and send.** Failing to withhold payroll taxes and send them to EDD, "even by mistake, can result in a misdemeanor charge", with a fine and jail term on conviction (fine in the DE 44 table in section 2). [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
-- **Removed.** The live version of this Guide cited Revenue and Taxation Code percentage penalties for negligence and fraud and a Franchise Tax Board interest range. Those are not on any EDD page read for this rewrite; confirm any Franchise Tax Board penalty on ftb.ca.gov.
+- **Removed.** The live version of this skill cited Revenue and Taxation Code percentage penalties for negligence and fraud and a Franchise Tax Board interest range. Those are not on any EDD page read for this rewrite; confirm any Franchise Tax Board penalty on ftb.ca.gov.
 
 ## 9. CalSavers
 
 ### 9.1 Statutory Authority
 
-CalSavers is the state retirement savings program for employers that do not offer a retirement plan. Its official pages (on treasurer.ca.gov) refused our reader with a 403 response for this rewrite, so this Guide states no CalSavers deadline, employee threshold, contribution rate or penalty.
+CalSavers is the state retirement savings program for employers that do not offer a retirement plan. Its official pages (on treasurer.ca.gov) refused our reader with a 403 response for this rewrite, so this skill states no CalSavers deadline, employee threshold, contribution rate or penalty.
 
 ### 9.2 Mandate: Employee Threshold
 
-Not covered (see 9.1). The live version of this Guide stated an employee threshold, a deadline and phase dates; they are removed until an official page can be read.
+Not covered (see 9.1). The live version of this skill stated an employee threshold, a deadline and phase dates; they are removed until an official page can be read.
 
 ### 9.3 Employer Obligations
 
@@ -320,7 +320,7 @@ Not covered (see 9.1). Confirm registration, exemption and payroll deduction dut
 
 ### 9.4 AUDIT FLASH POINT: CalSavers Mandate Enforcement
 
-Not covered (see 9.1). The live version of this Guide stated penalties per employee; they are removed. Ask the employer whether it offers a qualified retirement plan, and if not, refer the CalSavers question.
+Not covered (see 9.1). The live version of this skill stated penalties per employee; they are removed. Ask the employer whether it offers a qualified retirement plan, and if not, refer the CalSavers question.
 
 ## 10. Worker Classification (ABC Test)
 
@@ -334,13 +334,13 @@ Not covered (see 9.1). The live version of this Guide stated penalties per emplo
 
 ### 10.3 Statutory Exemptions
 
-- **Borello instead of ABC.** In specific situations the Borello multi-factor test is used instead of the ABC test. EDD points to Information Sheet DE 231 and the state Employment Status Portal for the exceptions. The live version of this Guide listed occupations and a business-to-business test with a count of criteria; no page read for this rewrite prints that list, so it is removed. Test each exception against DE 231 before relying on it. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
+- **Borello instead of ABC.** In specific situations the Borello multi-factor test is used instead of the ABC test. EDD points to Information Sheet DE 231 and the state Employment Status Portal for the exceptions. The live version of this skill listed occupations and a business-to-business test with a count of criteria; no page read for this rewrite prints that list, so it is removed. Test each exception against DE 231 before relying on it. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 
 ### 10.4 AUDIT FLASH POINT: Misclassification
 
 - **Exposure.** An employer that classified employees as independent contractors "could be liable for back taxes, penalties, and interest". [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
 - **No federal safe harbor.** "California does not provide relief under the Safe Harbor provisions of the Internal Revenue Code." A worker treated as a contractor under federal section 530 relief can still be an employee for California payroll. [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
-- **Wage-and-hour claims.** Unpaid wage, overtime, wage statement and Private Attorneys General Act claims follow a misclassification. The live version of this Guide stated penalty amounts and limitation periods for them; those are removed. Refer to employment counsel.
+- **Wage-and-hour claims.** Unpaid wage, overtime, wage statement and Private Attorneys General Act claims follow a misclassification. The live version of this skill stated penalty amounts and limitation periods for them; those are removed. Refer to employment counsel.
 - **Protocol.** Document the ABC analysis in writing before engaging a contractor. If any prong is doubtful, treat the worker as an employee.
 
 ## 11. DE 542: Independent Contractor Reporting
@@ -377,7 +377,7 @@ Not covered (see 9.1). The live version of this Guide stated penalties per emplo
 
 ### 12.1 Section 226(e) Penalties
 
-The live version of this Guide stated per-pay-period penalty amounts and an aggregate cap under Section 226(e), and Private Attorneys General Act amounts. The statute site (leginfo.legislature.ca.gov) did not answer for this rewrite and no Labor Commissioner page read prints those amounts, so they are removed. Refer wage statement penalty questions to employment counsel.
+The live version of this skill stated per-pay-period penalty amounts and an aggregate cap under Section 226(e), and Private Attorneys General Act amounts. The statute site (leginfo.legislature.ca.gov) did not answer for this rewrite and no Labor Commissioner page read prints those amounts, so they are removed. Refer wage statement penalty questions to employment counsel.
 
 ## 13. Final Pay
 
@@ -392,14 +392,14 @@ The live version of this Guide stated per-pay-period penalty amounts and an aggr
 ### 13.2 PTO and Vacation Payout
 
 - **Vacation is wages.** Vacation pay accrues as it is earned and cannot be forfeited, even on termination, whatever the reason (Suastez v. Plastic Dress Up). An employer may place a reasonable cap that stops further accrual (Boothby v. Atlas Mechanical). Unless a collective bargaining agreement provides otherwise, all earned and unused vacation is paid at termination at the employee's final rate of pay (Labor Code Section 227.3). [DIR vacation FAQ](https://www.dir.ca.gov/dlse/FAQ_Vacation.htm)
-- **Sick leave.** The live version of this Guide stated a rule on paying out sick leave and combined PTO banks; no page read for this rewrite covers it, so it is removed. Check the Labor Commissioner's paid sick leave FAQ before advising.
+- **Sick leave.** The live version of this skill stated a rule on paying out sick leave and combined PTO banks; no page read for this rewrite covers it, so it is removed. Check the Labor Commissioner's paid sick leave FAQ before advising.
 
 ### 13.3 AUDIT FLASH POINT: Waiting Time Penalty Under Section 203
 
 - **When it applies.** The penalty applies when an employer willfully fails to pay any wages due under Sections 201, 201.5, 202 or 202.5 to an employee who quits or is discharged. Willful does not require intent or blame; it means the employer knows what it is doing. A good faith dispute that any wages are due prevents the penalty. [DIR waiting time FAQ](https://www.dir.ca.gov/dlse/FAQ_WaitingTimePenalty.htm)
 - **How much.** The penalty is the employee's daily rate of pay times the number of days the wages are unpaid, up to a maximum of 30 days. The 30 days are calendar days, including weekends and holidays. [DIR waiting time FAQ](https://www.dir.ca.gov/dlse/FAQ_WaitingTimePenalty.htm)
-- **What counts as wages.** Unpaid accrued vacation counts. Business expense reimbursements are not wages, so paying them late does not trigger the waiting time penalty. The live version of this Guide told employers to include expense reimbursements to avoid the penalty; that is wrong for Section 203, though reimbursements are still owed. [DIR waiting time FAQ](https://www.dir.ca.gov/dlse/FAQ_WaitingTimePenalty.htm)
-- **Removed.** The live version of this Guide said the penalty is reported on Form 1099-MISC and stated a limitation period; no page read for this rewrite supports either, so both are removed.
+- **What counts as wages.** Unpaid accrued vacation counts. Business expense reimbursements are not wages, so paying them late does not trigger the waiting time penalty. The live version of this skill told employers to include expense reimbursements to avoid the penalty; that is wrong for Section 203, though reimbursements are still owed. [DIR waiting time FAQ](https://www.dir.ca.gov/dlse/FAQ_WaitingTimePenalty.htm)
+- **Removed.** The live version of this skill said the penalty is reported on Form 1099-MISC and stated a limitation period; no page read for this rewrite supports either, so both are removed.
 - **Mitigation.** Prepare the final check, including accrued vacation, before the termination meeting.
 
 ### 13.4 Tips and the Minimum Wage
@@ -419,19 +419,19 @@ A higher minimum wage applies to fast food and health care workers and in many c
 ### 14.1 Workers' Compensation: Mandatory
 
 - **Required by law.** "If you have any employees, you are required by law to have workers' compensation insurance. Failure to do so is a crime and may result in penalties and closure of your business." [DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf)
-- The live version of this Guide stated criminal and per-employee penalty amounts and class code premium rates; they are removed because no page read for this rewrite prints them. Refer premium questions to the insurer and the Division of Workers' Compensation.
+- The live version of this skill stated criminal and per-employee penalty amounts and class code premium rates; they are removed because no page read for this rewrite prints them. Refer premium questions to the insurer and the Division of Workers' Compensation.
 
 ### 14.2 Local Taxes: San Francisco
 
-San Francisco business taxes are administered by the city, outside EDD. No allowed host covers them, so this Guide states no rates or thresholds. Refer to the San Francisco Office of the Treasurer and Tax Collector.
+San Francisco business taxes are administered by the city, outside EDD. No allowed host covers them, so this skill states no rates or thresholds. Refer to the San Francisco Office of the Treasurer and Tax Collector.
 
 ### 14.3 Local Taxes: Los Angeles
 
-The Los Angeles City business tax is administered by the city's Office of Finance. No allowed host covers it, so this Guide states no rates or exemptions. Refer out.
+The Los Angeles City business tax is administered by the city's Office of Finance. No allowed host covers it, so this skill states no rates or exemptions. Refer out.
 
 ### 14.4 Other Local Payroll Surcharges
 
-Some cities (for example San Jose, Oakland, Berkeley, San Diego) levy business taxes or license taxes. Confirm the employer's city and read the city ordinance; this Guide does not cover them.
+Some cities (for example San Jose, Oakland, Berkeley, San Diego) levy business taxes or license taxes. Confirm the employer's city and read the city ordinance; this skill does not cover them.
 
 ## 15. Worked Examples
 
@@ -489,7 +489,7 @@ For restricted stock units and other equity paid through payroll, the federal si
 
 ## 16. Cross-Guide Coordination
 
-- `us-form-941-940-payroll`: federal Forms 941 and 940, federal income tax withholding, social security and Medicare deposits (a named accountant maintains it; this Guide links to it and stops).
+- `us-form-941-940-payroll`: federal Forms 941 and 940, federal income tax withholding, social security and Medicare deposits (a named accountant maintains it; this skill links to it and stops).
 - `us-state-payroll-matrix`: other states' payroll taxes (link only).
 - `us-state-new-hire-reporting-matrix`: new hire reporting in other states.
 - `ca-540-individual-return`: the employee's California return, where Form W-2 Box 17 withholding is claimed.
@@ -547,10 +547,10 @@ When facts are ambiguous, apply the conservative default and disclose it.
 - Multistate employees, reciprocal coverage elections and nonresident withholding: refer to a payroll professional; see `us-state-payroll-matrix`.
 - Federal payroll returns and federal income tax withholding: `us-form-941-940-payroll`.
 - Misclassification disputes, Private Attorneys General Act claims, wage statement penalties and waiting time claims already filed: refer to employment counsel.
-- CalSavers questions: refer (no official page could be read for this Guide).
+- CalSavers questions: refer (no official page could be read for this skill).
 - City business taxes (San Francisco, Los Angeles and others): refer to the city or a local practitioner.
 - Voluntary Plan applications, reserve account transfers and section 977(c) cases: refer to EDD or a payroll specialist.
-- Annual California income tax brackets and Franchise Tax Board penalties: confirm on ftb.ca.gov; this Guide does not state them.
+- Annual California income tax brackets and Franchise Tax Board penalties: confirm on ftb.ca.gov; this skill does not state them.
 
 ## Sources
 
@@ -575,7 +575,7 @@ Rates, wage limits, schedules, due dates and penalties above are taken from the 
 
 ## 19. Circular 230 Disclosure and Reviewer Responsibility
 
-This Guide is a content reference for credentialed payroll and tax professionals. It is NOT tax advice to the taxpayer. Under Treasury Department Circular 230 §10.33 and §10.37, any written advice based on this Guide's output must be reviewed by a credentialed reviewer (Enrolled Agent, CPA, or attorney), or for purely state-payroll matters an experienced payroll practitioner with California-specific competence, before delivery to the client or filing with EDD, the Franchise Tax Board, or any other authority.
+This skill is a content reference for credentialed payroll and tax professionals. It is NOT tax advice to the taxpayer. Under Treasury Department Circular 230 §10.33 and §10.37, any written advice based on this skill's output must be reviewed by a credentialed reviewer (Enrolled Agent, CPA, or attorney), or for purely state-payroll matters an experienced payroll practitioner with California-specific competence, before delivery to the client or filing with EDD, the Franchise Tax Board, or any other authority.
 
 Misapplication risk is high in three areas:
 
@@ -583,7 +583,7 @@ Misapplication risk is high in three areas:
 2. **SDI with no wage ceiling.** Payroll configuration drift continues to produce errors in prior-period reviews.
 3. **Supplemental wages.** The flat rate applies only to separate payments and does not match the employee's tax.
 
-A taxpayer or employer relying on this Guide without credentialed review proceeds at their own risk.
+A taxpayer or employer relying on this skill without credentialed review proceeds at their own risk.
 
 <!-- openaccountants-cta-block -->
 
@@ -605,4 +605,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-03. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

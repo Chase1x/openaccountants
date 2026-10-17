@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/at-vat-return"
   jurisdiction: "AT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 How to turn a business's bank statement and invoices into the Austrian VAT advance return (Umsatzsteuervoranmeldung, UVA, form U 30) and the annual VAT return (Umsatzsteuererklärung, form U 1) on the normal scheme (Regelbesteuerung). Figures are for tax year 2026, and each figure below names its year. Austria's VAT year is the calendar year. Every Kennzahl (KZ, box code) comes from the Finance Ministry's [2026 U 30 form, version of 13 March 2026](https://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfs/2026/U30.pdf?open=download), which already carries the boxes for the new food rate. The ministry's [2026 filling instructions (U 30a)](https://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfd/2026/U30a.pdf) are dated 20 August 2025, before that rate existed, so they do not mention its boxes.
 
-The statute is the Umsatzsteuergesetz 1994 (UStG). The federal legal database (ris.bka.gv.at) did not answer when this Guide was checked, so section numbers come from the Finance Ministry (BMF) and business service portal (USP) pages that cite them: check the statute before relying on one in a dispute.
+The statute is the Umsatzsteuergesetz 1994 (UStG). The federal legal database (ris.bka.gv.at) did not answer when this skill was checked, so section numbers come from the Finance Ministry (BMF) and business service portal (USP) pages that cite them: check the statute before relying on one in a dispute.
 
 ## Scope
 
@@ -115,7 +115,7 @@ Conditions and effects:
 - **ZM:** by the end of the calendar month after the reporting period, through FinanzOnline. The ZM period follows the UVA period: a quarterly UVA filer files quarterly ZMs, a monthly UVA filer (including a quarterly filer who opted for monthly UVAs) files monthly ZMs, and periods cannot be combined ([U 13a](https://formulare.bmf.gv.at/service/formulare/inter-steuern/pdfd/9999/u13a.pdf)).
 - **Annual U 1:** 30 June of the next year through FinanzOnline, or 30 April on paper. Paper filing is allowed without internet access, or for a self-filer whose prior-year turnover does not exceed EUR 55,000 ([USP, Einreichen von Steuererklärungen](https://www.usp.gv.at/themen/steuern-finanzen/steuerliche-rechte-und-pflichten/weitere-informationen-zu-steuerlichen-rechten-und-pflichten-als-unternehmen/einreichen-von-steuererklaerungen.html)); the [BMF deadlines page](https://www.bmf.gv.at/themen/steuern/fristen-verfahren/fristen-faelligkeiten.html) still states EUR 35,000, so confirm with the tax office before relying on paper filing. A represented business usually has longer. Any balance set by the assessment is due within one month of its delivery.
 
-### Other limits used in this Guide
+### Other limits used in this skill
 
 | What | Value | Year and note |
 | --- | --- | --- |
@@ -288,7 +288,7 @@ Statement amounts are in euro; the client is an IT consultant on the normal sche
 - Construction, scrap, metals, gold or electronics reverse charge (KZ 048, KZ 032) where the deciding facts are not on the statement.
 - A change-of-use correction (KZ 063), VAT shown wrongly on an invoice (KZ 056), or an error in an earlier period that may need a self-disclosure.
 - A material line whose counterparty cannot be identified and whose invoice the client cannot produce.
-- Income tax questions: use the Austrian income tax Guide.
+- Income tax questions: use the Austrian income tax skill.
 
 ## Filing and payment
 
@@ -335,7 +335,7 @@ Statement amounts are in euro; the client is an IT consultant on the normal sche
 
 Every source is linked where it is used. All are official pages of the Federal Ministry of Finance (bmf.gv.at, formulare.bmf.gv.at) or the business service portal (usp.gv.at), read on 25 to 27 September 2026.
 
-This Guide is general information, not tax advice. Have a qualified adviser (Steuerberater) check a return before it is filed.
+This skill is general information, not tax advice. Have a qualified adviser (Steuerberater) check a return before it is filed.
 
 <!-- openaccountants-cta-block -->
 
@@ -357,4 +357,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `at-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/at-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `at-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/at-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

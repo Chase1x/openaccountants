@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/pa-income-tax"
   jurisdiction: "US-PA"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,13 +17,13 @@ metadata:
 
 ## Scope and who this is for ([2025 PA-40 instructions](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/pit/documents/2025/2025_pa-40in.pdf))
 
-This Guide covers the Pennsylvania personal income tax return for individuals, **Form PA-40**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on a six-month extension). It is written for full-year Pennsylvania residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax (they file PA Schedule C). Part-year residents and nonresidents use the same PA-40; the points where their rules differ are flagged.
+This skill covers the Pennsylvania personal income tax return for individuals, **Form PA-40**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on a six-month extension). It is written for full-year Pennsylvania residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax (they file PA Schedule C). Part-year residents and nonresidents use the same PA-40; the points where their rules differ are flagged.
 
-The tax rate is a flat **3.07%** for both years. The 2025 instructions say "The state income tax rate for 2025 is 3.07 percent (0.0307)", and the 2026 estimated tax worksheet says "Multiply Line 1 by 3.07 percent (0.0307)" ([2026 REV-413 (I)](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/pit/documents/2026/2026_rev-413i.pdf)). The 2026 PA-40 instructions and the 2026 Schedule SP had not been published when this Guide was written (25 September 2026). Where a 2026 point comes only from 2025 material, it is labelled 2025.
+The tax rate is a flat **3.07%** for both years. The 2025 instructions say "The state income tax rate for 2025 is 3.07 percent (0.0307)", and the 2026 estimated tax worksheet says "Multiply Line 1 by 3.07 percent (0.0307)" ([2026 REV-413 (I)](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/pit/documents/2026/2026_rev-413i.pdf)). The 2026 PA-40 instructions and the 2026 Schedule SP had not been published when this skill was written (25 September 2026). Where a 2026 point comes only from 2025 material, it is labelled 2025.
 
 Pennsylvania does **not** start from federal adjusted gross income or federal taxable income. It taxes eight separate classes of income under its own rules. "PA law does not allow standard deductions, deductions for personal exemptions, itemized deductions, or deductions for personal expenses", and only the deductions listed for Line 10 are allowed against income. So federal deductions taken after AGI (such as the qualified business income deduction and the new federal Schedule 1-A deductions) have no Pennsylvania equivalent. Tips and overtime stay in PA compensation: "PA-taxable compensation includes, but is not limited to: salaries; wages; tips; gratuities" ([2025 PA-40 instructions, Line 1a](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/pit/documents/2025/2025_pa-40in.pdf)).
 
-This Guide does **not** cover local earned income tax, Philadelphia wage or net profits tax, or school district income tax. Those are separate local returns: see the **pa-local-eit** Guide. It also does not cover the PA-41 fiduciary return or the PA-20S/PA-65 entity return.
+This skill does **not** cover local earned income tax, Philadelphia wage or net profits tax, or school district income tax. Those are separate local returns: see the **pa-local-eit** skill. It also does not cover the PA-41 fiduciary return or the PA-20S/PA-65 entity return.
 
 **Who must file (2025)** ([2025 PA-40 instructions, page 3](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/pit/documents/2025/2025_pa-40in.pdf)). A resident, nonresident or part-year resident must file if they "received total PA gross taxable income in excess of $33 during 2025, even if no tax is due", or "incurred a loss from any transaction as an individual, sole proprietor, partner in a partnership or PA S corporation shareholder". The test is gross taxable income, and it applies to minors claimed as dependents. A person must file even if they qualify for tax forgiveness, because the credit is claimed on the return ([PA PIT Guide, Brief Overview](https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/papersonalincometaxguide/documents/pitguide_overviewrequirements.pdf)).
 
@@ -201,7 +201,7 @@ Illustrations with assumed facts.
 - Retirement distributions where it is unclear whether the employer plan is eligible under PA rules, nonqualified deferred compensation, or ESOP and KSOP distributions.
 - Restricted credits on PA Schedule OC, and intangible drilling cost elections.
 - Working Pennsylvanians Tax Credit questions for part-year residents or nonresidents, until the department publishes the rule.
-- Local earned income tax, Philadelphia wage or net profits tax, and school district income tax: use the **pa-local-eit** Guide.
+- Local earned income tax, Philadelphia wage or net profits tax, and school district income tax: use the **pa-local-eit** skill.
 - Department notices, assessments, penalty abatement petitions and Board of Appeals matters.
 - Any request to hide income, invent expenses or take an aggressive position.
 
@@ -228,7 +228,7 @@ Illustrations with assumed facts.
 - [ ] W-2s, 1099-Rs and other required schedules included; Line 25 use tax entered (0 if none).
 - [ ] Line 27 penalties with the right code; REV-1630 if an estimated-tax exception applies.
 - [ ] 2026 estimated payments set up if the $14,000 income and $430 tax tests are met.
-- [ ] Local earned income tax handled separately (pa-local-eit Guide).
+- [ ] Local earned income tax handled separately (pa-local-eit skill).
 
 <!-- openaccountants-cta-block -->
 
@@ -250,4 +250,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pa-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pa-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pa-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pa-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: "US capital gains tax for non-resident aliens: FIRPTA withholding o
 version: 1.0
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,16 +15,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US capital gains of nonresident alien individuals: 2026 method (FIRPTA, 183-day rule, ECI)
 
-This Guide is written for tax year 2026, with a short section for 2025 returns still being filed on extension. It covers one question: when does the United States tax a nonresident alien individual's gain on selling property, and how is the tax collected and reported?
+This skill is written for tax year 2026, with a short section for 2025 returns still being filed on extension. It covers one question: when does the United States tax a nonresident alien individual's gain on selling property, and how is the tax collected and reported?
 
 Core sources: [Publication 519, U.S. Tax Guide for Aliens](https://www.irs.gov/publications/p519) (2025 edition, the latest published) and [Publication 515, Withholding of Tax on Nonresident Aliens and Foreign Entities](https://www.irs.gov/publications/p515) (2026 edition). The statutes are [26 U.S.C. 871](https://www.law.cornell.edu/uscode/text/26/871), [26 U.S.C. 897](https://www.law.cornell.edu/uscode/text/26/897) and [26 U.S.C. 1445](https://www.law.cornell.edu/uscode/text/26/1445).
 
 ## Scope and who it is for
 
 - **In scope:** individuals who are nonresident aliens for US income tax purposes for the whole year. That includes people treated as nonresidents under a treaty tie-breaker rule (where that claim is not itself in doubt) and "exempt individuals" such as F, J, M or Q students and A or G visa holders. They sell US real property, shares in US companies, other securities or personal property.
-- **Out of scope:** US citizens and resident aliens, including green-card holders and anyone who meets the substantial presence test. Use a resident capital-gains Guide for them.
+- **Out of scope:** US citizens and resident aliens, including green-card holders and anyone who meets the substantial presence test. Use a resident capital-gains skill for them.
 - **Also out of scope:** foreign corporations, partnerships, trusts and estates as sellers; US estate and gift tax; and expatriation tax for former citizens and long-term residents ([Pub 519, ch. 4, Expatriation Tax](https://www.irs.gov/publications/p519)).
-- **Dual-status years:** a year that is part resident and part nonresident follows the dual-status rules in [Pub 519, ch. 6](https://www.irs.gov/publications/p519). This Guide applies only to the nonresident part, so refer the year as a whole.
+- **Dual-status years:** a year that is part resident and part nonresident follows the dual-status rules in [Pub 519, ch. 6](https://www.irs.gov/publications/p519). This skill applies only to the nonresident part, so refer the year as a whole.
 
 ## Ask the client first
 
@@ -186,7 +186,7 @@ These amounts are illustrations, not client data.
 - Installment sales, like-kind exchanges or other nonrecognition claims, or a withholding certificate based on a security agreement.
 - A treaty claim that US real property gain is exempt or reduced.
 - Former US citizens or long-term residents (expatriation rules), and any estate or gift tax question.
-- Any state tax question. State rules are outside this Guide.
+- Any state tax question. State rules are outside this skill.
 
 ## Filing and payment steps with deadlines
 
@@ -199,11 +199,11 @@ These amounts are illustrations, not client data.
 
 ### 2025 returns still open (filed in 2026)
 
-For the 2025 calendar year, a Form 1040-NR was due June 15, 2026 if the client had no wages subject to withholding, or April 15, 2026 with such wages. A timely Form 4868 extends these to December 15, 2026 or October 15, 2026 respectively ([Pub 519, When To File](https://www.irs.gov/publications/p519); [Form 1040-NR instructions](https://www.irs.gov/instructions/i1040nr)). The rules in this Guide (the 183-day rule, FIRPTA rates and thresholds, and Form 8833) are the same for 2025 and 2026. The FIRPTA dollar thresholds are fixed in the statute, not indexed.
+For the 2025 calendar year, a Form 1040-NR was due June 15, 2026 if the client had no wages subject to withholding, or April 15, 2026 with such wages. A timely Form 4868 extends these to December 15, 2026 or October 15, 2026 respectively ([Pub 519, When To File](https://www.irs.gov/publications/p519); [Form 1040-NR instructions](https://www.irs.gov/instructions/i1040nr)). The rules in this skill (the 183-day rule, FIRPTA rates and thresholds, and Form 8833) are the same for 2025 and 2026. The FIRPTA dollar thresholds are fixed in the statute, not indexed.
 
 ## State tax note
 
-State income tax is separate from federal tax. A state can treat a gain differently from the federal rules and can have its own withholding or filing requirements when property is sold. This Guide makes no statement about any state's rules. Check with the revenue department of the state where the real property is located, and of any state where the client lived or worked during the year, before closing and before filing.
+State income tax is separate from federal tax. A state can treat a gain differently from the federal rules and can have its own withholding or filing requirements when property is sold. This skill makes no statement about any state's rules. Check with the revenue department of the state where the real property is located, and of any state where the client lived or worked during the year, before closing and before filing.
 
 ## Completion checklist
 

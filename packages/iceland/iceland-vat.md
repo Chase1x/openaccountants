@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: IS
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland VAT (VSK): 2026 registration, return and payment method
 
-**Status:** **Source-cited draft** by the OpenAccountants team. It is not accountant-authored, accountant-verified or an attestation. Current administrative guidance was retrieved from Iceland Revenue and Customs (Skatturinn) on 24 September 2026, and the consolidated VAT Act No. 50/1988 (Alþingi text in force from 1 September 2026) was read on 25 September 2026. Where Skatturinn's English page is older than the Act, this Guide follows the Act and says so. This operational replacement retains the public `iceland-vat` Guide's Iceland VSK scope for registration, rate/exemption classification, ordinary foreign-service liability, input VAT, return preparation, correction and payment.
+**Status:** **Source-cited draft** by the OpenAccountants team. It is not accountant-authored, accountant-verified or an attestation. Current administrative guidance was retrieved from Iceland Revenue and Customs (Skatturinn) on 24 September 2026, and the consolidated VAT Act No. 50/1988 (Alþingi text in force from 1 September 2026) was read on 25 September 2026. Where Skatturinn's English page is older than the Act, this skill follows the Act and says so. This operational replacement retains the public `iceland-vat` skill's Iceland VSK scope for registration, rate/exemption classification, ordinary foreign-service liability, input VAT, return preparation, correction and payment.
 
-Figures are for tax year 2026. Alþingi lists bills to amend the VAT Act that were tabled in September 2026; before relying on a rate, threshold or deadline for a period after this Guide was written, check the current consolidated Act.
+Figures are for tax year 2026. Alþingi lists bills to amend the VAT Act that were tabled in September 2026; before relying on a rate, threshold or deadline for a period after this skill was written, check the current consolidated Act.
 
 ## Source figures
 

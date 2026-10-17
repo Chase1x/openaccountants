@@ -3,7 +3,7 @@ name: new-jersey-sales-tax
 description: Use this skill whenever asked about New Jersey sales and use tax. Trigger on phrases like "New Jersey sales tax", "NJ sales tax", "NJ Division of Taxation", "UEZ", "NJ clothing exemption". ALWAYS load us-sales-tax first.
 jurisdiction: US-NJ
 tax_year: 2026
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # New Jersey Sales and Use Tax
 
-This Guide covers New Jersey Sales and Use Tax for sellers and buyers: the rate, the Urban Enterprise Zone and Salem County reduced rates, what is taxable, the main exemptions, registration, remote sellers and marketplaces, returns and due dates, Use Tax and exemption certificates. Figures are for tax year 2026. Read `us-sales-tax` first for the multi-state framework. Every figure below sits in a table that links the New Jersey Division of Taxation page that prints it.
+This skill covers New Jersey Sales and Use Tax for sellers and buyers: the rate, the Urban Enterprise Zone and Salem County reduced rates, what is taxable, the main exemptions, registration, remote sellers and marketplaces, returns and due dates, Use Tax and exemption certificates. Figures are for tax year 2026. Read `us-sales-tax` first for the multi-state framework. Every figure below sits in a table that links the New Jersey Division of Taxation page that prints it.
 
 ## Section 1 -- Quick reference
 
@@ -163,7 +163,7 @@ Interest runs for every month or part month the tax is unpaid at the prime rate 
 - Salem County reduced rate claims: refer until a current Division page confirms the programme.
 - UEZ certification, recertification, purchase limitations or energy exemptions for UEZ manufacturers: refer to the Department of Community Affairs and the UEZ notices.
 - Audits, assessments, voluntary disclosure or penalty abatement requests: refer to a New Jersey practitioner.
-- Hotel occupancy, motor vehicle, alcohol and cigarette taxes and fees: outside this Guide.
+- Hotel occupancy, motor vehicle, alcohol and cigarette taxes and fees: outside this skill.
 
 ## Section 10 -- Prohibitions
 
@@ -185,7 +185,7 @@ Interest runs for every month or part month the tax is unpaid at the prime rate 
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 <!-- openaccountants-cta-block -->
 

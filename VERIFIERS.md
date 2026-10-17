@@ -3,10 +3,9 @@
 Licensed professionals with **current, approved reviews** on the record. Generated
 nightly from the platform — the site is the source of truth; edits here are overwritten.
 
-| Accountant | Credential | Jurisdictions | Guides reviewed |
+| Accountant | Credential | Jurisdictions | Skills reviewed |
 |---|---|---|---|
 | Miguel Lantigua | — | DO | 14 |
-| Mayur Deokar | — | IN | 13 |
 | Lal kumarasiri | — | LK | 10 |
 | Christopher Aryee | — | US | 9 |
 | Ko win Khaing (Mr Moe Lwin Tun) | CPA-123456 | ID, MA, MM, SN | 8 |
@@ -16,12 +15,12 @@ nightly from the platform — the site is the source of truth; edits here are ov
 | Mário Jorge da costa Vale | — | PT | 8 |
 | Jonathan I. Ruiz | CPA | PH | 7 |
 | Mehran Habib | — | AE, BH, SA | 7 |
-| Michael Cutajar | CPA Warrant, Malta · ACCA | CA, GB, IN | 6 |
 | James Power | — | GB | 6 |
 | Jose Padilla | — | VE | 5 |
 | Baraka Cassian | — | TZ | 5 |
 | Ashish Bista | — | NP | 5 |
 | Rob Hoffman | — | US-FL | 5 |
+| Michael Cutajar | CPA Warrant, Malta · ACCA | CA, GB | 4 |
 | Maria Clemencia Valverde Rios | — | PE | 4 |
 | James Wallach | — | US | 4 |
 | Gvantsa Amiridze | ACCA | GE | 3 |
@@ -32,7 +31,8 @@ nightly from the platform — the site is the source of truth; edits here are ov
 | Khushboo Talreja | CPA | CA | 1 |
 | Madhav Dhirubhai Bhayani | 609431 | IN | 1 |
 | Justin Reslan | CPA - AC50847 | US-FL | 1 |
+| Mayur Deokar | — | IN | 1 |
 | MUHAMMAD HANIS MAT HUSSIN | CA-53636 | MY | 1 |
 | firas masmoudi | — | TN | 1 |
 
-<sub>Updated 2026-10-16. Become one: https://www.openaccountants.com/for-accountants</sub>
+<sub>Updated 2026-10-17. Become one: https://www.openaccountants.com/for-accountants</sub>

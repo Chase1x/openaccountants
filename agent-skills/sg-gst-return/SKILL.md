@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/sg-gst-return"
   jurisdiction: "SG"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -22,7 +22,7 @@ Tax year 2026. The rules below are those published by the Inland Revenue Authori
 - Businesses that are, or may have to become, GST-registered in Singapore and file the quarterly GST F5 return, and the people preparing that return for them.
 - Covers: the GST rate; compulsory and voluntary registration; standard-rated, zero-rated and exempt supplies; the GST F5 box by box; input tax conditions and blocked items; reverse charge on imported services and low-value goods; the overseas vendor registration (OVR) regime; the GST InvoiceNow Requirement; correcting errors; filing, payment and penalties.
 - Does not cover in depth: GST group registration, the Major Exporter Scheme (MES) and other import GST suspension schemes, the Import GST Deferment Scheme, customer accounting for prescribed goods, the gross margin scheme, partial exemption apportionment beyond the de minimis test, the Tourist Refund Scheme and the final GST F8 return. These are listed under "When to refuse or refer".
-- This Guide explains how IRAS says the return works. It does not replace IRAS's e-Tax Guides where a case turns on detail.
+- This skill explains how IRAS says the return works. It does not replace IRAS's e-Tax Guides where a case turns on detail.
 
 ## Ask the client first
 
@@ -330,7 +330,7 @@ A return stays outstanding for 3 completed months after its due date.
 
 ## When to refuse or refer
 
-- GST group or divisional registration: intra-group supplies and consolidation are outside this Guide.
+- GST group or divisional registration: intra-group supplies and consolidation are outside this skill.
 - Major Exporter Scheme, Approved Third Party Logistics scheme, licensed or zero GST warehouses, or the Import GST Deferment Scheme (Boxes 9 and 18 to 21).
 - Customer accounting for prescribed goods, the gross margin scheme or the discounted sale price scheme for used vehicles.
 - The de minimis rule is not met, or the longer-period adjustment is due: apportionment of residual input tax needs the IRAS formula and the e-Tax Guide "GST: Partial Exemption and Input Tax Recovery".
@@ -417,4 +417,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `sg-gst-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/sg-gst-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `sg-gst-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/sg-gst-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

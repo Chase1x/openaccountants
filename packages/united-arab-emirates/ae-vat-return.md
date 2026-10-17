@@ -3,7 +3,7 @@ name: ae-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a UAE VAT return (VAT201 form) for any client. Trigger on phrases like "prepare VAT return", "do the VAT", "fill in VAT201", "create the return", "UAE VAT filing", "FTA return", or any request involving UAE VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers the UAE only and only standard VAT-registered persons filing VAT201. VAT groups, profit margin schemes, partial exemption with non-trivial exempt supplies, and Designated Zone goods movement classifications are all in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any UAE VAT work.
 jurisdiction: AE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ Tax year 2026. UAE VAT is filed by tax period (usually a quarter), not by annual
 
 ## Scope and who this is for ([VAT Law, consolidated to Decree-Law No. 16 of 2025](https://tax.gov.ae/Datafolder/Files/Legislation/2025/Federal%20Decree-Law%20No.%208%20of%202017%20and%20amendments%20-%20publishing%2028%2011%202025.pdf); [Executive Regulation, consolidated 09-2026](https://tax.gov.ae/Datafolder/Files/Legislation/2026/Law-No-8-of-2017-and-its-amendments--09-2026.pdf))
 
-This Guide covers federal Value Added Tax under Federal Decree-Law No. 8 of 2017 ("VAT Law") and its Executive Regulation (Cabinet Decision No. 52 of 2017), for:
+This skill covers federal Value Added Tax under Federal Decree-Law No. 8 of 2017 ("VAT Law") and its Executive Regulation (Cabinet Decision No. 52 of 2017), for:
 
 - businesses deciding whether they must or may register;
 - a single VAT-registered business (not a Tax Group) preparing or reviewing its VAT201 return;

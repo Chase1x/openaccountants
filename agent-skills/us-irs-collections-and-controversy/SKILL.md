@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-irs-collections-and-controversy"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # IRS notices, audits, collections and appeals (US federal)
 
-Figures are for tax year 2026. Dollar amounts, fees and rates below are the ones the IRS publishes for 2026 or shows on its pages as of September 2026. A short section covers 2025 returns, which are still being filed on extension until 15 October 2026. This Guide is procedure: how to read an IRS notice, which deadline it starts, and which route (response, payment plan, offer, hearing, appeal or court) fits the client. It covers individuals and small businesses on federal income tax. It does not decide the underlying tax.
+Figures are for tax year 2026. Dollar amounts, fees and rates below are the ones the IRS publishes for 2026 or shows on its pages as of September 2026. A short section covers 2025 returns, which are still being filed on extension until 15 October 2026. This skill is procedure: how to read an IRS notice, which deadline it starts, and which route (response, payment plan, offer, hearing, appeal or court) fits the client. It covers individuals and small businesses on federal income tax. It does not decide the underlying tax.
 
 To talk to the IRS for a client, a practitioner needs Form 2848, which authorises a person eligible to practise before the IRS to represent the client ([About Form 2848](https://www.irs.gov/forms-pubs/about-form-2848)), or Form 8821, which only lets the named person inspect or receive the client's information ([About Form 8821](https://www.irs.gov/forms-pubs/about-form-8821)).
 
@@ -238,7 +238,7 @@ Both spouses on a joint return are liable for the whole tax, even after divorce,
 - Bankruptcy, filed or planned: refer to bankruptcy counsel (it suspends the collection clock and changes which taxes survive).
 - Trust fund recovery penalty (IRC 6672) defence, employment-tax liability disputes and whistleblower claims: refer to a specialist.
 - International information-return penalties, FBAR and FATCA penalties: refer to an international tax specialist.
-- State tax collection: outside this Guide; follow the state's own procedures.
+- State tax collection: outside this skill; follow the state's own procedures.
 - Tax Court litigation beyond filing a timely petition, and refund suits: refer to a practitioner admitted to the relevant court.
 - The client wants to leave assets or income off a collection information statement: refuse. The statements are signed under penalty of perjury.
 
@@ -297,4 +297,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-irs-collections-and-controversy` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-irs-collections-and-controversy. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-irs-collections-and-controversy` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-irs-collections-and-controversy. If neither is available, confirm every figure against the official source pages cited above before relying on it.

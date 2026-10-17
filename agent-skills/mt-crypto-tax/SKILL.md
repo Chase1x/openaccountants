@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/mt-crypto-tax"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,16 +17,16 @@ metadata:
 
 ## Scope ([Income Tax Act, Cap. 123](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c))
 
-This Guide covers how Malta taxes coins, tokens and other crypto-assets (the Commissioner calls them "DLT assets") held or dealt in by **individuals** and **companies**: income tax on trading profits and other crypto receipts, capital gains on tokens that count as securities, the remittance basis for non-domiciled residents, VAT, duty on documents, and the new crypto reporting by exchanges.
+This skill covers how Malta taxes coins, tokens and other crypto-assets (the Commissioner calls them "DLT assets") held or dealt in by **individuals** and **companies**: income tax on trading profits and other crypto receipts, capital gains on tokens that count as securities, the remittance basis for non-domiciled residents, VAT, duty on documents, and the new crypto reporting by exchanges.
 
 - **Primary year: basis year 2026 = year of assessment 2027.** An individual's return for 2026 income is due by 30 June 2027.
 - **Returns being filed now:** 2025 income (year of assessment 2026). See "Filing and payment".
 
 **How the law is built.** The Income Tax Act has no crypto-specific rule. Crypto is taxed through the general rules: trading income under article 4(1)(a), other income under article 4(1), and capital gains only on the assets listed in article 5. The Commissioner has published guidelines on the income tax, VAT and duty treatment of DLT assets. Under article 96(2), published guidelines "shall have the same effect as the rules" as long as they do not conflict with the Act.
 
-**What we could not check.** The guidelines sit on mtca.gov.mt, which refused our automated source checks on 25 September 2026. So this Guide sources every figure from the Laws of Malta (legislation.mt). Anything that rests only on the guidelines (the exact coin/utility/financial token definitions, the guideline dates, and the VAT and duty positions on specific crypto transactions) is marked **"check on mtca.gov.mt"**. Do not quote guideline wording from memory.
+**What we could not check.** The guidelines sit on mtca.gov.mt, which refused our automated source checks on 25 September 2026. So this skill sources every figure from the Laws of Malta (legislation.mt). Anything that rests only on the guidelines (the exact coin/utility/financial token definitions, the guideline dates, and the VAT and duty positions on specific crypto transactions) is marked **"check on mtca.gov.mt"**. Do not quote guideline wording from memory.
 
-**Companion Guides.** For rate tables in full, residence rules, provisional tax, interest and penalties, use the Malta income tax Guide (malta-income-tax). For registration, returns and input tax, use the Malta VAT return Guide (malta-vat-return).
+**Companion Skills.** For rate tables in full, residence rules, provisional tax, interest and penalties, use the Malta income tax Guide (malta-income-tax). For registration, returns and input tax, use the Malta VAT return Guide (malta-vat-return).
 
 **Not covered:** licensing under the Virtual Financial Assets Act or MiCA; issuing tokens (ICOs, IEOs, STOs); funds; the special residence programmes; double tax relief; and full company refund computations. These are referred (see "When to refuse or refer").
 
@@ -182,7 +182,7 @@ Whatever is taxed on receipt becomes the cost of that crypto for any later dispo
 - **Same classification.** A company's crypto profit is trading income if it trades or bought to resell. A gain on a coin or utility token held as a genuine investment is outside article 5, as for individuals. A gain on a token that meets the "securities" definition is an article 5 gain. Companies set up to deal in crypto will usually be trading. Check the guideline treatment for company investment holdings.
 - **Accounting period.** Accounts are made up to 31 December ("the day immediately preceding the next following year of assessment", article 11(1)) unless the Commissioner permits another date (article 11(2)).
 - **Return date.** "The last day of the ninth month following that to which the accounts for the relative financial period are made or the thirty-first of March of the relative year of assessment, whichever is the later" ([S.L. 372.16 rule 2(c)(i)](https://legislation.mt/getpdf/6022595cbc8272018c0f2ad2)). Tax is due on the same date (rule 5(b)).
-- **Shareholder refunds** on distributed profits, provisional tax and the rest of the company computation are outside this Guide. Refer them.
+- **Shareholder refunds** on distributed profits, provisional tax and the rest of the company computation are outside this skill. Refer them.
 - **Regulation.** A company offering crypto services may need a licence (MiCA and the [Virtual Financial Assets Act, Cap. 590](https://legislation.mt/getpdf/6a6c60bcab8952298c312cae)). A licence does not change the tax classification. Do not advise on licensing.
 
 ## VAT on crypto transactions ([VAT Act, Cap. 406](https://legislation.mt/getpdf/6a7d667d73ff6d305c833d20))
@@ -369,4 +369,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

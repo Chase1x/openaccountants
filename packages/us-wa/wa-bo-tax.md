@@ -3,7 +3,7 @@ name: wa-bo-tax
 description: Tier 2 content skill for Washington State Business & Occupation tax under RCW Title 82.04.
 jurisdiction: US-WA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-Washington has no personal income tax on business profit. Instead it imposes the business and occupation (B&O) tax, a tax on gross receipts, on almost every person engaging in business in the state ([RCW 82.04.220](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.220)). This Guide covers the **state** B&O tax for sole proprietors, freelancers and small companies, for **2026** reporting periods, with a short section for 2025 periods still being filed or amended. Figures are for 2026 reporting periods unless a line says otherwise.
+Washington has no personal income tax on business profit. Instead it imposes the business and occupation (B&O) tax, a tax on gross receipts, on almost every person engaging in business in the state ([RCW 82.04.220](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.220)). This skill covers the **state** B&O tax for sole proprietors, freelancers and small companies, for **2026** reporting periods, with a short section for 2025 periods still being filed or amended. Figures are for 2026 reporting periods unless a line says otherwise.
 
 **Covered:**
 - who must register, who must file and who has nexus;
@@ -27,7 +27,7 @@ Washington has no personal income tax on business profit. Instead it imposes the
 - filing frequency, due dates and late-payment penalties.
 
 **Not covered (refer or use another Guide):**
-- retail sales tax and use tax, including which services became retail sales on 1 Oct 2025: use the **wa-sales-tax** Guide. This Guide only covers the B&O side of those sales.
+- retail sales tax and use tax, including which services became retail sales on 1 Oct 2025: use the **wa-sales-tax** skill. This skill only covers the B&O side of those sales.
 - city B&O taxes (administered by each city, not the Department of Revenue (DOR));
 - public utility tax, insurance premiums tax, real estate excise tax, capital gains tax;
 - specialized B&O classifications other than the four main ones (DOR lists more than 50);
@@ -36,7 +36,7 @@ Washington has no personal income tax on business profit. Instead it imposes the
 ## Ask the client first
 
 - What does the business do, activity by activity? (Sells goods to end users, sells goods for resale, makes goods, provides services, licenses intangibles.)
-- Since 1 Oct 2025, does any service fall into the new retail-sale list (IT services, custom software, website development, advertising, temporary staffing, security, live presentations)? If yes, that income moves to Retailing B&O and sales tax applies. The list is narrower than it looks. One-on-one instruction such as tutoring, consulting or music lessons is not a live presentation ([DOR live presentations](https://dor.wa.gov/taxes-rates/live-presentations)). From 1 July 2026 ESSB 6346 also excludes music lessons whatever the number of participants, presentations by 501(c) nonprofits, before- and after-school care provided on site by elementary schools, and instruction incidental to an excluded performance ([DOR special notice](https://dor.wa.gov/forms-publications/publications-subject/special-notices/live-presentations-new-exclusions-retail-sales)). From the same date, staffing is not temporary staffing if it is used by hospital-based clinical providers to supplement their fulfillment of hospital contracts for professional services **and** is used for limited periods of time to supplement hospital staffing; both conditions must hold ([DOR special notice](https://dor.wa.gov/forms-publications/publications-subject/special-notices/temporary-staffing-services-modification-exclusion-retail-sales-staff-provided-hospitals)). Excluded services stay in Service and Other Activities (before- and after-school care: the Child Care classification; a nonprofit presentation that is an exempt fundraising activity is not taxed at all). The wa-sales-tax Guide has the full lists.
+- Since 1 Oct 2025, does any service fall into the new retail-sale list (IT services, custom software, website development, advertising, temporary staffing, security, live presentations)? If yes, that income moves to Retailing B&O and sales tax applies. The list is narrower than it looks. One-on-one instruction such as tutoring, consulting or music lessons is not a live presentation ([DOR live presentations](https://dor.wa.gov/taxes-rates/live-presentations)). From 1 July 2026 ESSB 6346 also excludes music lessons whatever the number of participants, presentations by 501(c) nonprofits, before- and after-school care provided on site by elementary schools, and instruction incidental to an excluded performance ([DOR special notice](https://dor.wa.gov/forms-publications/publications-subject/special-notices/live-presentations-new-exclusions-retail-sales)). From the same date, staffing is not temporary staffing if it is used by hospital-based clinical providers to supplement their fulfillment of hospital contracts for professional services **and** is used for limited periods of time to supplement hospital staffing; both conditions must hold ([DOR special notice](https://dor.wa.gov/forms-publications/publications-subject/special-notices/temporary-staffing-services-modification-exclusion-retail-sales-staff-provided-hospitals)). Excluded services stay in Service and Other Activities (before- and after-school care: the Child Care classification; a nonprofit presentation that is an exempt fundraising activity is not taxed at all). The wa-sales-tax skill has the full lists.
 - Is the business based in Washington? If not, what were its Washington-sourced gross receipts and any physical presence (property, employees, agents) in the current and the previous calendar year? If it first passed the test this year, on what date?
 - What was the Service and Other Activities gross income in the **previous calendar year**, for the business and for every affiliate under common control?
 - What filing frequency did DOR assign (monthly, quarterly, annual, or active non-reporting)?
@@ -156,7 +156,7 @@ The credit is claimed on the return's MATC schedule. Anything beyond a simple "m
 | Receipts over $100,000 in the prior year but not this year | Nexus continues through the current year | [RCW 82.04.067](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.067)(1) |
 | Out-of-state business first passes $100,000 partway through this year, not met last year | Taxable only on activity on and after the date nexus arose; earlier activity this year is not taxed; next year fully taxable | [RCW 82.04.220](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.220)(2); [WAC 458-20-19401](https://app.leg.wa.gov/WAC/default.aspx?cite=458-20-19401)(3)(c) |
 | Out-of-state business passed the test last year | Whole current year taxable, from 1 January | [RCW 82.04.220](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.220)(2)(b) |
-| Custom software, IT support or website development for a Washington customer from 1 Oct 2025 | Retailing B&O plus retail sales tax, not Service and Other (contracts signed before 1 Oct 2025: see the transition rule in the wa-sales-tax Guide) | DOR special notice, July 2025 (ESSB 5814) |
+| Custom software, IT support or website development for a Washington customer from 1 Oct 2025 | Retailing B&O plus retail sales tax, not Service and Other (contracts signed before 1 Oct 2025: see the transition rule in the wa-sales-tax skill) | DOR special notice, July 2025 (ESSB 5814) |
 | Goods shipped to and received by the buyer outside Washington | Not a Washington sale | [WAC 458-20-193](https://app.leg.wa.gov/WAC/default.aspx?cite=458-20-193) |
 | Gross income under $125,000, but owes any other tax or fee to DOR (for example retail sales tax or use tax) | Not eligible for active non-reporting; must file | [RCW 82.32.045](https://app.leg.wa.gov/RCW/default.aspx?cite=82.32.045)(5)(c); DOR |
 | Gross income under $125,000 and no other DOR tax | DOR may relieve the business of filing on request; until then it files as assigned | [RCW 82.32.045](https://app.leg.wa.gov/RCW/default.aspx?cite=82.32.045)(5); DOR active non-reporting page |
@@ -181,7 +181,7 @@ Refer to a Washington tax professional, or ask DOR for a ruling, when:
 - the business was unregistered for past periods;
 - the question is about city B&O tax: send the client to the city, or to the Municipal Research and Services Center list that [DOR links to](https://dor.wa.gov/forms-publications/publications-subject/tax-topics/city-bo-tax).
 
-Do not state a 2026 rate for a service moved to Retailing on 1 Oct 2025 without also sending the client to the **wa-sales-tax** Guide for the sales tax side.
+Do not state a 2026 rate for a service moved to Retailing on 1 Oct 2025 without also sending the client to the **wa-sales-tax** skill for the sales tax side.
 
 ## [Filing and payment](https://dor.wa.gov/file-pay-taxes/filing-frequencies-due-dates)
 
@@ -229,7 +229,7 @@ DOR can waive late-return penalties only in qualifying circumstances, on request
 - Frequency: the retail sales tax she collects counts toward the frequency test. At the state rate alone (six and five-tenths percent, [RCW 82.08.020](https://app.leg.wa.gov/RCW/default.aspx?cite=82.08.020)(1)) that is more than $4,800 a year, so DOR would normally assign her a monthly frequency.
 - Retailing B&O for January 2026: $10,000 × 0.471% = $47.10.
 - SBC: none of her taxable amount is Service and Other, so the maximum is $55 for a monthly period. Tax is below the maximum, so the credit is $47.10 and B&O is zero. The B&O result would be the same on a quarterly return.
-- She must still register, collect and remit retail sales tax (wa-sales-tax Guide) and file every month. Collecting sales tax rules out active non-reporting.
+- She must still register, collect and remit retail sales tax (wa-sales-tax skill) and file every month. Collecting sales tax rules out active non-reporting.
 
 **Case D: out-of-state consultant with prior-year nexus.** An Oregon-based consultant with no Washington property, staff or agents had $110,000 of Washington-sourced receipts in 2025 and has $120,000 in 2026, out of $400,000 total, all Service and Other. It is taxable in Oregon.
 - Nexus: more than $100,000 of Washington receipts in 2025, so all of 2026 is taxable from 1 January ([RCW 82.04.220](https://app.leg.wa.gov/RCW/default.aspx?cite=82.04.220)(2)(b)). 2026 receipts also pass the test, so 2027 is covered too. It must register and file.
@@ -250,7 +250,7 @@ DOR can waive late-return penalties only in qualifying circumstances, on request
 ## [2025 periods (late or amended returns)](https://dor.wa.gov/forms-publications/publications-subject/special-notices/service-and-other-activities-rate-changes)
 
 - **Service and Other Activities:** through 30 Sep 2025 there were two tiers: 1.5% (prior-year income under $1,000,000) and 1.75% ($1,000,000 or more). From 1 Oct 2025 the three tiers in the rates section apply, with 2.1% at $5,000,000 or more.
-- **Services made retail sales by ESSB 5814:** Service and Other Activities until 30 Sep 2025; Retailing (and retail sales tax) from 1 Oct 2025. A 2025 annual or quarterly return may need both. Contracts signed before 1 Oct 2025 had a DOR transition rule, so billings under them may stay on the old treatment for a time: check the existing-contracts section of the wa-sales-tax Guide before reclassifying.
+- **Services made retail sales by ESSB 5814:** Service and Other Activities until 30 Sep 2025; Retailing (and retail sales tax) from 1 Oct 2025. A 2025 annual or quarterly return may need both. Contracts signed before 1 Oct 2025 had a DOR transition rule, so billings under them may stay on the old treatment for a time: check the existing-contracts section of the wa-sales-tax skill before reclassifying.
 - Retailing 0.471%, Wholesaling and Manufacturing 0.484%, and SBC maximums of $55 and $160 per month applied throughout 2025.
 - The 2025 annual return was due 15 April 2026. Late payment brings the penalties in "Filing and payment".
 

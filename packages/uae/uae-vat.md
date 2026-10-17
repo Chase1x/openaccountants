@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: AE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -18,7 +18,7 @@ Tax year 2026. UAE VAT is filed by tax period (usually a quarter), not by annual
 
 ## Scope and who this is for ([VAT Law, consolidated to Decree-Law No. 16 of 2025](https://tax.gov.ae/Datafolder/Files/Legislation/2025/Federal%20Decree-Law%20No.%208%20of%202017%20and%20amendments%20-%20publishing%2028%2011%202025.pdf); [Executive Regulation, consolidated 09-2026](https://tax.gov.ae/Datafolder/Files/Legislation/2026/Law-No-8-of-2017-and-its-amendments--09-2026.pdf))
 
-This Guide covers federal Value Added Tax under Federal Decree-Law No. 8 of 2017 ("VAT Law") and its Executive Regulation (Cabinet Decision No. 52 of 2017), for:
+This skill covers federal Value Added Tax under Federal Decree-Law No. 8 of 2017 ("VAT Law") and its Executive Regulation (Cabinet Decision No. 52 of 2017), for:
 
 - businesses deciding whether they must or may register;
 - a single VAT-registered business (not a Tax Group) preparing or reviewing its VAT201 return;

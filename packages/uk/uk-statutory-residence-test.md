@@ -4,7 +4,7 @@ description: "Use this skill for any question about UK tax residency. Trigger on
 version: 1.0
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # The UK statutory residence test (SRT), tax year 2026/27
 
-Whether an individual is resident in the UK for a tax year under the statutory residence test (SRT). The primary year is **2026/27**, meaning 6 April 2026 to 5 April 2027, which HMRC writes as "2026 to 2027". The test holds almost no money amounts. Its thresholds are counts of days, hours and ties, and the law words them precisely as "less than", "at least" or "more than". This Guide keeps that wording exactly. The law is Finance Act 2013, Schedule 45 as shown on legislation.gov.uk on 25 September 2026 ([FA 2013 Sch 45](https://www.legislation.gov.uk/ukpga/2013/29/schedule/45)). HMRC's summary is guidance note RDR3, updated 11 June 2026 ([RDR3](https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt/guidance-note-for-statutory-residence-test-srt-rdr3)). Where RDR3 simplifies, the statute governs.
+Whether an individual is resident in the UK for a tax year under the statutory residence test (SRT). The primary year is **2026/27**, meaning 6 April 2026 to 5 April 2027, which HMRC writes as "2026 to 2027". The test holds almost no money amounts. Its thresholds are counts of days, hours and ties, and the law words them precisely as "less than", "at least" or "more than". This skill keeps that wording exactly. The law is Finance Act 2013, Schedule 45 as shown on legislation.gov.uk on 25 September 2026 ([FA 2013 Sch 45](https://www.legislation.gov.uk/ukpga/2013/29/schedule/45)). HMRC's summary is guidance note RDR3, updated 11 June 2026 ([RDR3](https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt/guidance-note-for-statutory-residence-test-srt-rdr3)). Where RDR3 simplifies, the statute governs.
 
 ## Scope
 
@@ -24,7 +24,7 @@ Whether an individual is resident in the UK for a tax year under the statutory r
 - **Whole-year result.** A person resident "for" a tax year is treated as resident "at all times in that tax year" (para 2(3)). The only exception is a split year, which changes how income is charged, not the person's status (para 40).
 - **In force from** 6 April 2013. Each tax year is tested separately.
 - **Why the history matters.** From 6 April 2025 the remittance basis was replaced by the 4-year foreign income and gains (FIG) regime. It is open only in the first 4 years of UK residence after 10 consecutive tax years of non-residence under the SRT, counted back from the first qualifying year (see below).
-- **Related Guides.** How foreign income is then taxed: `uk-non-dom`. The return: `uk-income-tax-sa100`, `uk-capital-gains-sa108` and `uk-return-assembly`. A planned move: `uk-to-uae-relocation-tax` or `uk-to-italy-flat-tax-relocation`.
+- **Related Skills.** How foreign income is then taxed: `uk-non-dom`. The return: `uk-income-tax-sa100`, `uk-capital-gains-sa108` and `uk-return-assembly`. A planned move: `uk-to-uae-relocation-tax` or `uk-to-italy-flat-tax-relocation`.
 
 ## Ask the client first
 
@@ -224,7 +224,7 @@ From the 2025/26 tax year, the remittance basis for non-domiciled people was rep
   - Where 2026/27 is itself the first qualifying year (the person arrives in 2026/27), the look-back is 2016/17 to 2025/26.
   - Where 2026/27 is one of the "next three tax years" after a qualifying year of 2023/24, 2024/25 or 2025/26 (s845B(2)), the look-back runs from that earlier year. For example, someone who became resident in 2024/25 after 10 non-resident years needs non-residence for 2014/15 to 2023/24. 2024/25 counts as a qualifying year under s845B(3)(c), and 2026/27 is one of the next three years after it, provided the person is UK resident in 2026/27.
   - This Schedule has applied since 6 April 2013. Years 2019/20 and 2020/21 are tested with the coronavirus modifications in [Finance Act 2020 s109](https://www.legislation.gov.uk/ukpga/2020/14/section/109).
-  - A look-back that reaches 2012/13 or earlier is decided under the rules before the SRT, which this Guide does not cover. Refer those cases.
+  - A look-back that reaches 2012/13 or earlier is decided under the rules before the SRT, which this skill does not cover. Refer those cases.
   - A single resident year in the 10 breaks the chain.
 
 ## Worked cases
@@ -308,7 +308,7 @@ All cases are for 2026/27 and are worked from [FA 2013 Sch 45](https://www.legis
 - Finance Act 2020 s109 (coronavirus modifications): [legislation.gov.uk](https://www.legislation.gov.uk/ukpga/2020/14/section/109)
 - SA109 and Self Assessment deadlines: [SA109](https://www.gov.uk/government/publications/self-assessment-residence-remittance-basis-etc-sa109) and [deadlines](https://www.gov.uk/self-assessment-tax-returns/deadlines)
 
-> **Working paper.** This Guide states the test. It does not apply it to anyone. The SRT turns on a day-by-day and hour-by-hour record, and a single day can reverse the answer. Where the facts are close to a line, have a UK accountant settle the position before the return is filed.
+> **Working paper.** This skill states the test. It does not apply it to anyone. The SRT turns on a day-by-day and hour-by-hour record, and a single day can reverse the answer. Where the facts are close to a line, have a UK accountant settle the position before the return is filed.
 
 <!-- openaccountants-cta-block -->
 

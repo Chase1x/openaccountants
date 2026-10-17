@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their UK 
 version: 0.1
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This is the first Guide to run when someone in the UK says they freelance, work for themselves, contract, sell on the side or have "a bit of self-employed income". It does not compute tax. It asks the questions that decide which rules apply, records the answers, and sends each answer to the specialist Guide that holds the detail:
+This is the first Guide to run when someone in the UK says they freelance, work for themselves, contract, sell on the side or have "a bit of self-employed income". It does not compute tax. It asks the questions that decide which rules apply, records the answers, and sends each answer to the specialist skill that holds the detail:
 
 - **uk-income-tax-sa100**: whether a return is needed, Income Tax, payments on account, deadlines and penalties.
 - **uk-national-insurance**: Class 2 and Class 4 for the self-employed, and voluntary contributions.
@@ -32,7 +32,7 @@ This is the first Guide to run when someone in the UK says they freelance, work 
 
 **Who this is for.** Individuals who work for themselves as sole traders, or who contract through an umbrella company or their own limited company, and who want to know what they must do about tax. The intake records residence, employment status and whether an activity is a trade. It does not decide any of them. Those are questions of fact that HMRC, and in the end a tribunal, can decide differently.
 
-**What the figures here are for.** The few amounts in this Guide are the switches that decide a route: the £1,000 trading allowance and return trigger, the 5 October registration date, the £90,000 VAT threshold, the MTD thresholds, the Class 2 and Class 4 limits, and the payments on account tests. Each one is stated as the specialist Guide states it, from the same gov.uk page. For anything beyond the switch, go to the specialist Guide. ([who must send a return](https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return))
+**What the figures here are for.** The few amounts in this skill are the switches that decide a route: the £1,000 trading allowance and return trigger, the 5 October registration date, the £90,000 VAT threshold, the MTD thresholds, the Class 2 and Class 4 limits, and the payments on account tests. Each one is stated as the specialist skill states it, from the same gov.uk page. For anything beyond the switch, go to the specialist skill. ([who must send a return](https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return))
 
 ## Ask the client first
 
@@ -84,7 +84,7 @@ Work through the steps in order. Each step ends with a route. Record every answe
 
 - Whole year in the UK, no foreign income: continue.
 - Arrived, left, or long periods abroad: route to **uk-statutory-residence-test** before anything else. A split year and non-resident returns need an adviser.
-- Foreign income or gains, or moved to the UK recently: route to **uk-non-dom**. Residents normally pay UK tax on all their income, whether it is from the UK or abroad ([residence](https://www.gov.uk/tax-foreign-income/residence)); the 4-year FIG regime for qualifying new residents, and what happened to the remittance basis, are in that Guide.
+- Foreign income or gains, or moved to the UK recently: route to **uk-non-dom**. Residents normally pay UK tax on all their income, whether it is from the UK or abroad ([residence](https://www.gov.uk/tax-foreign-income/residence)); the 4-year FIG regime for qualifying new residents, and what happened to the remittance basis, are in that skill.
 - Lives in Scotland: note it for **uk-income-tax-sa100**, which refers Scottish rates.
 
 3. **How the work is set up.** This decides which tax system the income sits in.
@@ -196,7 +196,7 @@ Work through the steps in order. Each step ends with a route. Record every answe
 
 ## Figures that decide a route, with years
 
-Every figure below is 2026/27 unless the row says otherwise. The specialist Guide named in the last column holds the detail.
+Every figure below is 2026/27 unless the row says otherwise. The specialist skill named in the last column holds the detail.
 
 | Switch | Figure | Year | Source | Detail in |
 | --- | --- | --- | --- | --- |
@@ -285,7 +285,7 @@ Stop and refer to a qualified adviser, saying why in one sentence, when:
 - **Over the VAT threshold and not registered**: route to uk-vat-return at once; registration is compulsory and late registration is costly.
 - **In MTD without digital records**, or records that will not support a return: route to uk-bookkeeping first.
 - **Trade or hobby in doubt** with material sums: record the badges both ways and refer.
-- **Past years never reported**: refer. Disclosure of earlier years is outside this Guide.
+- **Past years never reported**: refer. Disclosure of earlier years is outside this skill.
 
 Refuse to: file anything for the person; tell them their employment status or residence as a settled fact; or suggest a way to avoid registering for VAT, MTD or Self Assessment.
 
@@ -315,14 +315,14 @@ Refuse to: file anything for the person; tell them their employment status or re
 - [ ] Employment status and trade-or-hobby recorded with the facts both ways, and flagged if unsettled.
 - [ ] For each contracting engagement: client, sector, size confirmed or not, SDS held or not.
 - [ ] Gross takings recorded; return trigger (more than £1,000) and 5 October registration checked. ([who must send a return](https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return))
-- [ ] Trading allowance or actual expenses left open for the specialist Guide, with both figures recorded.
+- [ ] Trading allowance or actual expenses left open for the specialist skill, with both figures recorded.
 - [ ] Rolling 12-month taxable turnover checked against £90,000; the next 30 days checked. ([register for VAT](https://www.gov.uk/register-for-vat))
 - [ ] MTD status set from the earlier year's gross self-employment and property income.
 - [ ] Profit recorded for Class 2 and Class 4.
 - [ ] Last year's tax and tax paid at source recorded for the payments on account tests.
 - [ ] Records adequate, or routed to uk-bookkeeping.
 - [ ] Rental, gains, payroll, dividends, student loan and Child Benefit each routed.
-- [ ] Every open flag listed, with the Guide or adviser that closes it, and the filing dates given.
+- [ ] Every open flag listed, with the skill or adviser that closes it, and the filing dates given.
 
 <!-- openaccountants-cta-block -->
 

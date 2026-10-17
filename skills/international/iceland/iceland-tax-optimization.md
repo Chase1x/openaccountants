@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Iceland, tax pl
 version: 0.1
 jurisdiction: IS
 tax_year: 2026
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland tax optimisation for owners of an ehf. and the self-employed
 
-This Guide sets out the legal choices an owner-manager in Iceland can make about how income is paid and taxed, and the conditions attached to each choice. Figures are for tax year 2026. It covers the choice between working in your own name and through a private limited company (einkahlutafélag, ehf.), the owner's calculated remuneration (reiknað endurgjald), dividends, pension deductions, the personal tax credit and rental income. It does not cover aggressive schemes. Every choice here is a choice the law offers openly, with its conditions.
+This skill sets out the legal choices an owner-manager in Iceland can make about how income is paid and taxed, and the conditions attached to each choice. Figures are for tax year 2026. It covers the choice between working in your own name and through a private limited company (einkahlutafélag, ehf.), the owner's calculated remuneration (reiknað endurgjald), dividends, pension deductions, the personal tax credit and rental income. It does not cover aggressive schemes. Every choice here is a choice the law offers openly, with its conditions.
 
-Withholding rates in this Guide include the weighted average municipal tax (útsvar). Each municipality sets its own útsvar, so a person's final rate is settled at assessment. Figures printed on the "Álagningarseðill og forsendur 2026" pages describe the 2026 assessment of 2025 income and are not used here as 2026 figures.
+Withholding rates in this skill include the weighted average municipal tax (útsvar). Each municipality sets its own útsvar, so a person's final rate is settled at assessment. Figures printed on the "Álagningarseðill og forsendur 2026" pages describe the 2026 assessment of 2025 income and are not used here as 2026 figures.
 
 ## The method, step by step
 
@@ -77,7 +77,7 @@ From tax year 2026 spouses and cohabitants lose the right to share the second an
 | Business in own name (eigin kennitala) | The owner computes calculated remuneration, taxed as wages. The rest of the business profit is also the owner's income. |
 | ehf. (private limited company) | The controlling owner computes calculated remuneration, taxed as wages. The company pays company income tax on its profit. A lawful dividend is capital income of the shareholder. |
 
-The reason owners use an ehf. is that profit above a fair salary can be taxed at the company rate and, when paid out, at the capital income rate, both in the quick reference table, instead of at the wage withholding rates. The calculated remuneration rule limits this: an active controlling owner must first take the remuneration the rules require, and that part is taxed as wages. Whether the combined company and dividend burden is lower than wage tax depends on the facts. No allowed page prints a combined rate, and this Guide does not compute one.
+The reason owners use an ehf. is that profit above a fair salary can be taxed at the company rate and, when paid out, at the capital income rate, both in the quick reference table, instead of at the wage withholding rates. The calculated remuneration rule limits this: an active controlling owner must first take the remuneration the rules require, and that part is taxed as wages. Whether the combined company and dividend burden is lower than wage tax depends on the facts. No allowed page prints a combined rate, and this skill does not compute one.
 
 A distribution that is not a lawful dividend is not taxed as a dividend. The [Arður](https://www.skatturinn.is/einstaklingar/fjarmagnstekjur/ardur/) page reads "Ef um er að ræða óheimila úthlutun arðs fer með þær tekjur annað hvort sem laun eða sem gjöf" (an unlawful distribution of dividends is treated either as wages or as a gift), taxed at the ordinary income tax rates and útsvar.
 
@@ -88,7 +88,7 @@ A distribution that is not a lawful dividend is not taxed as a dividend. The [Ar
 
 A dividend counts as income in the year the decision to distribute is made, not necessarily when it is paid. The paying company withholds the capital income tax. If the dividend is not paid in the year of the decision, the withholding is due at the latest with the return for October to December of the decision year (same page).
 
-A special rule taxing excess dividends of controlling working shareholders as wages ("Arður talinn sem laun") applied only at the assessment years 2011 to 2014, per the same page. It is not current law and is not used in this Guide.
+A special rule taxing excess dividends of controlling working shareholders as wages ("Arður talinn sem laun") applied only at the assessment years 2011 to 2014, per the same page. It is not current law and is not used in this skill.
 
 ## Section 3: Calculated remuneration (reiknað endurgjald), the key constraint
 
@@ -164,7 +164,7 @@ The general scheme for using séreign tax-free on a home for own use ended at th
 | Share of residential rent taxed as capital income, from 2026 | 75% | "færast því einungis til skattskyldra tekna 75% af fenginni leigu" |
 | Share exempt before 2026 (old rule) | 50% | "Frítekjumarkið var áður 50%" |
 
-The relief applies to letting residential property for the tenant to live in. Letting counts as capital income only where it falls under the Rent Act (húsaleigulög) and no more than two separate dwellings are let; the page reads "ef um er að ræða útleigu sem fellur undir húsaleigulög og hinar útleigðu sérgreindu íbúðir ekki fleiri en tvær" (where the letting falls under the Rent Act and the separate dwellings let are not more than two). Letting of more dwellings, or letting property to a business, is business income. From 2026 a quarter of that rent is exempt and the rest is capital income; the page says "Þetta gildir frá og með árinu 2026" (this applies from 2026). Short-term letting (heimagisting, for example Airbnb) is taxed either as business income or as capital income and is not covered by this Guide.
+The relief applies to letting residential property for the tenant to live in. Letting counts as capital income only where it falls under the Rent Act (húsaleigulög) and no more than two separate dwellings are let; the page reads "ef um er að ræða útleigu sem fellur undir húsaleigulög og hinar útleigðu sérgreindu íbúðir ekki fleiri en tvær" (where the letting falls under the Rent Act and the separate dwellings let are not more than two). Letting of more dwellings, or letting property to a business, is business income. From 2026 a quarter of that rent is exempt and the rest is capital income; the page says "Þetta gildir frá og með árinu 2026" (this applies from 2026). Short-term letting (heimagisting, for example Airbnb) is taxed either as business income or as capital income and is not covered by this skill.
 
 ### Business expenses
 
@@ -182,7 +182,7 @@ Genuine costs of the business are deductible against business income, whether in
 - **Prohibition 1.** NEVER advise a controlling owner to take remuneration below the benchmark to maximise dividends.
 - **Prohibition 2.** NEVER present the ehf. route as avoiding wage tax entirely; the calculated remuneration is taxed as wages.
 - **Prohibition 3.** NEVER state the ISK 300,000 capital income allowance as covering dividends from an unlisted ehf.
-- **Prohibition 4.** NEVER present this Guide as definitive advice; route to a licensed Icelandic tax adviser.
+- **Prohibition 4.** NEVER present this skill as definitive advice; route to a licensed Icelandic tax adviser.
 
 ## Ask the client first
 
@@ -197,7 +197,7 @@ Genuine costs of the business are deductible against business income, whether in
 
 - Refer any plan that sets remuneration below the benchmark; the documents and reasons must come from an adviser who knows the business.
 - Refer cross-border cases (non-resident owners, foreign companies, double tax treaties).
-- Refer holding structures and dividends between companies; this Guide does not cover them.
+- Refer holding structures and dividends between companies; this skill does not cover them.
 - Refer short-term letting (heimagisting) and rental of more than ordinary residential letting.
 - Refuse any scheme that hides private spending in the company or pays disguised dividends.
 - For the full 2026 wage withholding, pension and capital income computation use `iceland-income-tax`; for running the remuneration through payroll use `iceland-payroll`.
@@ -218,9 +218,9 @@ Genuine costs of the business are deductible against business income, whether in
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a licensed tax adviser in Iceland) before acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed tax adviser in Iceland) before acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

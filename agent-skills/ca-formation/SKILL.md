@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ca-formation"
   jurisdiction: "US-CA"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who it is for
 
-This Guide covers the California state layer of forming a business entity, or registering an out-of-state entity, for **tax year 2026**. It is for founders, freelancers and small-business owners who either form a California LLC or corporation, or run an entity formed in another state that has California customers, staff, property or management.
+This skill covers the California state layer of forming a business entity, or registering an out-of-state entity, for **tax year 2026**. It is for founders, freelancers and small-business owners who either form a California LLC or corporation, or run an entity formed in another state that has California customers, staff, property or management.
 
 It covers:
 
@@ -247,7 +247,7 @@ An entity is doing business in California for a taxable year if **any** of these
 ## When to refuse or refer
 
 - **Professional services** by an LLC: refer to counsel. A professional corporation is usually needed.
-- **Voluntary disclosure or back years.** An out-of-state entity that has been doing business unregistered for past years needs a specialist to handle voluntary disclosure, back returns, penalties and revivor. This Guide does not set the look-back or waiver terms.
+- **Voluntary disclosure or back years.** An out-of-state entity that has been doing business unregistered for past years needs a specialist to handle voluntary disclosure, back returns, penalties and revivor. This skill does not set the look-back or waiver terms.
 - **Public Law 86-272**, unitary or combined reporting, and apportionment beyond the single-year tests above.
 - **Federal classification elections**, S corporation eligibility, and personal nonresident returns.
 - **BOI for a foreign-country entity:** confirm the exemptions on FinCEN's site before filing.
@@ -270,7 +270,7 @@ An entity is doing business in California for a taxable year if **any** of these
 
 ### 2025 returns, extended returns due in autumn 2026 ([FTB doing business page](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))
 
-The 2025 rules were the same as 2026 on every point in this Guide except these:
+The 2025 rules were the same as 2026 on every point in this skill except these:
 
 - The indexed "doing business" amounts: for 2025 use $757,070 / $75,707 / $75,707 from the FTB page.
 - The BOI rule: domestic companies were already exempt under the March 2025 interim rule.
@@ -310,4 +310,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ca-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ca-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

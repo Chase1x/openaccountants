@@ -4,7 +4,7 @@ description: Use this skill whenever asked about New Jersey individual income ta
 version: "0.1"
 jurisdiction: US-NJ
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 NJ-1040 instructions](https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf))
 
-This Guide covers the New Jersey gross income tax for individuals: the resident return, **Form NJ-1040**, and the nonresident return, **Form NJ-1040NR**. The primary year is **tax year 2026** (returns filed in 2027). A dated section covers **2025 returns** (due 15 April 2026, or 15 October 2026 on a valid extension). It is written for employees, retirees, sole proprietors and owners of a single-member LLC disregarded for federal tax.
+This skill covers the New Jersey gross income tax for individuals: the resident return, **Form NJ-1040**, and the nonresident return, **Form NJ-1040NR**. The primary year is **tax year 2026** (returns filed in 2027). A dated section covers **2025 returns** (due 15 April 2026, or 15 October 2026 on a valid extension). It is written for employees, retirees, sole proprietors and owners of a single-member LLC disregarded for federal tax.
 
-The 2026 Form NJ-1040 instructions were not published when this Guide was written (25 September 2026). The Division of Taxation's 2026 Form NJ-1040-ES ([2026 NJ-1040-ES instructions](https://www.nj.gov/treasury/taxation/pdf/current/1040esi.pdf)) prints the same rate schedules and exemption amounts as 2025, and says the retirement exclusions "only apply for taxpayers with income up to $150,000". Where a figure comes only from the 2025 instructions, it is labelled 2025.
+The 2026 Form NJ-1040 instructions were not published when this skill was written (25 September 2026). The Division of Taxation's 2026 Form NJ-1040-ES ([2026 NJ-1040-ES instructions](https://www.nj.gov/treasury/taxation/pdf/current/1040esi.pdf)) prints the same rate schedules and exemption amounts as 2025, and says the retirement exclusions "only apply for taxpayers with income up to $150,000". Where a figure comes only from the 2025 instructions, it is labelled 2025.
 
 **Who is a resident** ([GIT-6, Part-Year Residents and Nonresidents](https://www.nj.gov/treasury/taxation/pdf/pubs/tgi-ee/git6.pdf)):
 
@@ -29,7 +29,7 @@ The 2026 Form NJ-1040 instructions were not published when this Guide was writte
 
 **Who must file** ([2025 NJ-1040 instructions](https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf)). A return is required if gross income from everywhere, for the entire year, was **more than** $10,000 (single, or married/civil union partner filing separately) or $20,000 (married/civil union couple filing jointly, head of household, qualifying widow(er)/surviving civil union partner). File anyway to get a refund of New Jersey withholding or estimated tax, or to claim the New Jersey Earned Income Tax Credit or another credit that gives a refund.
 
-**Not covered** (see "When to refuse or refer"): trusts and estates (Form NJ-1041), amended returns (Form NJ-1040X), the entity side of the Pass-Through Business Alternative Income Tax (BAIT) and the Corporation Business Tax, which are in the separate Guide **nj-cbt-and-bait**, and New Jersey inheritance tax.
+**Not covered** (see "When to refuse or refer"): trusts and estates (Form NJ-1041), amended returns (Form NJ-1040X), the entity side of the Pass-Through Business Alternative Income Tax (BAIT) and the Corporation Business Tax, which are in the separate skill **nj-cbt-and-bait**, and New Jersey inheritance tax.
 
 ## Ask the client first
 
@@ -226,7 +226,7 @@ Assumed facts, computed with the rate schedules. Below $100,000 of line 42 the r
 - Residency in doubt: a disputed domicile, two permanent homes, a count near 183 days, a move during the year (Forms NJ-1040 and NJ-1040NR together), or military personnel and spouses (GIT-7).
 - New York "convenience of the employer" wages for days worked at home in New Jersey, other dual-resident situations, or a Schedule NJ-COJ with several jurisdictions or city and state layers.
 - Any federal bonus depreciation other than the 30% allowance ([Worksheet GIT-DEP](https://www.nj.gov/treasury/taxation/pdf/current/gitdep.pdf)), assets under older bonus regimes, sales of assets with a New Jersey basis different from federal, or partnership and S corporation basis differences (GIT-9P, GIT-9S).
-- BAIT: the entity election and computation are in the **nj-cbt-and-bait** Guide. Here, only enter the member's share on Schedule NJ-BUS-1 and line 63.
+- BAIT: the entity election and computation are in the **nj-cbt-and-bait** skill. Here, only enter the member's share on Schedule NJ-BUS-1 and line 63.
 - The Alternative Business Calculation Adjustment (Schedule NJ-BUS-2) beyond a simple case, the Health Enterprise Zone deduction, cannabis licensee adjustments, and the Senior Freeze interaction with the property tax benefit.
 - Trusts, estates, grantor trusts, inheritance tax, amended returns, Division notices, audits, penalty waivers and appeals.
 - Any request to hide income, invent expenses or claim a residency that the facts do not support.

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ky-income-tax"
   jurisdiction: "US-KY"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for
 
-This Guide covers the Kentucky individual income tax return for **full-year Kentucky residents** (Form 740), including sole proprietors and owners of single-member LLCs that are disregarded for federal purposes. It is written for **tax year 2026** (returns due in 2027), with a dated section for **2025 returns**, which are still being filed on extension until 15 October 2026.
+This skill covers the Kentucky individual income tax return for **full-year Kentucky residents** (Form 740), including sole proprietors and owners of single-member LLCs that are disregarded for federal purposes. It is written for **tax year 2026** (returns due in 2027), with a dated section for **2025 returns**, which are still being filed on extension until 15 October 2026.
 
 Out of scope, refer instead:
 
@@ -66,7 +66,7 @@ Official sources used throughout: the Kentucky Department of Revenue (DOR) 2025 
 | Personal tax credits | $40 each for age 65+ and for blindness; $20 Kentucky National Guard | Same credits shown on the 2026 Form 740-ES worksheet | DOR individual income tax page; 2026 Form 740-ES |
 | Family size tax credit ceiling on MGI (family of four or more) | $42,760 | 2026 table not yet published; DOR prints the 2025 table in the 2026 Form 740-ES | 2026 Form 740-ES instructions |
 
-**2026 rate.** DOR applies 3.5% for 2026 in the Form 740-ES worksheet ("Multiply line 7 by 3.5%"), the 2026 withholding formula and its payroll page ("The Kentucky Withholding Tax rate will be 3.5% for tax year 2026"). Kentucky's rate cuts are made by acts of the General Assembly. This Guide could not reach the Legislative Research Commission site on 25 September 2026 to confirm the text of the act that set 3.5%, or whether any cut applies for 2027. Before using a 2027 rate, check the 2027 Form 740-ES and the 2027 withholding formula when DOR publishes them.
+**2026 rate.** DOR applies 3.5% for 2026 in the Form 740-ES worksheet ("Multiply line 7 by 3.5%"), the 2026 withholding formula and its payroll page ("The Kentucky Withholding Tax rate will be 3.5% for tax year 2026"). Kentucky's rate cuts are made by acts of the General Assembly. This skill could not reach the Legislative Research Commission site on 25 September 2026 to confirm the text of the act that set 3.5%, or whether any cut applies for 2027. Before using a 2027 rate, check the 2027 Form 740-ES and the 2027 withholding formula when DOR publishes them.
 
 **2027 standard deduction.** DOR announced on 11 September 2026 that the 2027 standard deduction is $3,470. Use it only for 2027 planning.
 
@@ -237,4 +237,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ky-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ky-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ky-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ky-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: "Georgia Individual Income Tax Return (Form 500) for sole proprieto
 version: "0.1"
 jurisdiction: US-GA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,11 +16,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 IT-511 booklet](https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download))
 
-This Guide covers the Georgia individual income tax return, **Form 500**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for residents, part-year residents and nonresidents with Georgia income, including sole proprietors and single-member LLC owners whose business profit reaches Georgia through federal adjusted gross income (AGI).
+This skill covers the Georgia individual income tax return, **Form 500**, for **tax year 2026** (returns filed in 2027). It has a dated section for **2025 returns**. It is for residents, part-year residents and nonresidents with Georgia income, including sole proprietors and single-member LLC owners whose business profit reaches Georgia through federal adjusted gross income (AGI).
 
 Figures are for tax year 2026 unless labelled 2025. The 2026 rate, standard deduction and dependent exemption come from **HB 463** (2026), which applies to taxable years beginning on or after 1 January 2026. The 2026 IT-511 booklet was not out on 25 September 2026, so rules found only in the 2025 booklet are labelled 2025.
 
-It does **not** cover the pass-through entity's own return or the pass-through entity (PTE) tax election (see the Guide `ga-corporate-and-ptet`), corporate income or net worth tax, fiduciary returns (Form 501), employer withholding, or tax credits beyond those named here. See "When to refuse or refer".
+It does **not** cover the pass-through entity's own return or the pass-through entity (PTE) tax election (see the skill `ga-corporate-and-ptet`), corporate income or net worth tax, fiduciary returns (Form 501), employer withholding, or tax credits beyond those named here. See "When to refuse or refer".
 
 **Who must file (2025 rules, [DOR residency filing requirements](https://dor.georgia.gov/residency-filing-requirements)).**
 - **Full-year resident.** Must file if any of these is true:

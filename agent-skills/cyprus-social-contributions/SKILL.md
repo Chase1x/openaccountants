@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cyprus-social-contributions"
   jurisdiction: "CY"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Cyprus social insurance and GHS (GESY) contributions
 
-This Guide covers Cyprus social insurance and General Healthcare System (GHS, in Greek GESY) contributions for employees, employers, self-employed people and voluntary contributors. It also covers the employer-only funds (Redundancy, Human Resources Development, Social Cohesion and the Central Holiday Fund), the 2026 maximum insurable earnings, the GHS annual maximum, payment deadlines, registration and late-payment charges, and how contribution payments show on a bank statement. Figures are for tax year 2026. The Cyprus tax year is the calendar year. Every figure below comes from an official page linked in the table that holds it.
+This skill covers Cyprus social insurance and General Healthcare System (GHS, in Greek GESY) contributions for employees, employers, self-employed people and voluntary contributors. It also covers the employer-only funds (Redundancy, Human Resources Development, Social Cohesion and the Central Holiday Fund), the 2026 maximum insurable earnings, the GHS annual maximum, payment deadlines, registration and late-payment charges, and how contribution payments show on a bank statement. Figures are for tax year 2026. The Cyprus tax year is the calendar year. Every figure below comes from an official page linked in the table that holds it.
 
 ## Section 1: Quick reference
 
@@ -61,7 +61,7 @@ This Guide covers Cyprus social insurance and General Healthcare System (GHS, in
 | Human Resources Development Fund, employer only | 0.5% | "0.5% to the Human Resources Development Fund" |
 | Social Cohesion Fund, employer only | 2% | "2% to the Social Cohesion Fund for their employees" |
 
-Never tell an employer that social insurance costs it the total in the first row. The employer pays its own share in table A, plus the employer-only funds, plus employer GHS. The Business in Cyprus page carries no publication date. Its text describes rules in force "from January 1, 2024" and its footer reads "©2026". No Social Insurance Services page dated 2026 prints these rates; the Social Insurance Services pages read for this Guide still print 2020 rates (table E).
+Never tell an employer that social insurance costs it the total in the first row. The employer pays its own share in table A, plus the employer-only funds, plus employer GHS. The Business in Cyprus page carries no publication date. Its text describes rules in force "from January 1, 2024" and its footer reads "©2026". No Social Insurance Services page dated 2026 prints these rates; the Social Insurance Services pages read for this skill still print 2020 rates (table E).
 
 **Table B. 2026 maximum insurable earnings (Social Insurance Services notice to employers, December 2025)**
 
@@ -71,7 +71,7 @@ Never tell an employer that social insurance costs it the total in the first row
 | Maximum for monthly-paid employees, from 1 January 2026 | EUR 5,742 | "€5.742 από 1/1/2026" |
 | Maximum for weekly-paid employees, from 5 January 2026 | EUR 1,325 | "€1.325 από 5/1/2026" |
 
-The notice applies these limits to "the Social Insurance Fund, the Annual Paid Leave Fund, the Redundancy Fund, and the Human Resource Authority Development Levy". It names no other fund. The notice is addressed to employers about employees' earnings; it sets no ceiling for self-employed income. No allowed page prints an annual 2026 figure, so this Guide gives none.
+The notice applies these limits to "the Social Insurance Fund, the Annual Paid Leave Fund, the Redundancy Fund, and the Human Resource Authority Development Levy". It names no other fund. The notice is addressed to employers about employees' earnings; it sets no ceiling for self-employed income. No allowed page prints an annual 2026 figure, so this skill gives none.
 
 **Table C. GHS contribution rates by category (Health Insurance Organisation)**
 
@@ -139,7 +139,7 @@ The charge is "a percentage of the contributions due" and is paid "to the Social
 | Central Holiday Fund | Ask whether the employer holds an exemption. If it does not, it pays at least the table E rate, and the contribution is added to earnings before the other contributions are worked out |
 | Unknown GHS scope on investment income | Apply the table C income-earner rate to rent, interest and dividends of a Cyprus tax resident, within the table D annual maximum. For a non-resident, no GHS on dividends and interest (table C note) |
 | Unknown whether a Social Insurance Services debit is a contribution or a late charge | Classify as a contribution and flag it for review |
-| Unknown tax year | Ask. This Guide is for 2026. The 2025 ceiling was lower |
+| Unknown tax year | Ask. This skill is for 2026. The 2025 ceiling was lower |
 
 ## Section 2: Required inputs and refusal catalogue
 
@@ -151,12 +151,12 @@ The charge is "a percentage of the contributions due" and is paid "to the Social
 
 ### Refusal catalogue
 
-- **R-CY-SC-1: Self-employed insurable income unknown.** Trigger: self-employed contribution requested without the income base. Message: "Self-employed social insurance is charged on estimated earnings by occupational category (our wording; the page says the estimate is 'based on each individual's experience and field of work'). Business in Cyprus says 'The estimated earnings are calculated by the Tax Department based on each individual's experience and field of work' and 'You can file a request to be taxed based on actual earnings instead'. The category amounts are not printed on any page this Guide could read. Confirm the client's category amount or actual-earnings election with the Social Insurance Services before computing."
+- **R-CY-SC-1: Self-employed insurable income unknown.** Trigger: self-employed contribution requested without the income base. Message: "Self-employed social insurance is charged on estimated earnings by occupational category (our wording; the page says the estimate is 'based on each individual's experience and field of work'). Business in Cyprus says 'The estimated earnings are calculated by the Tax Department based on each individual's experience and field of work' and 'You can file a request to be taxed based on actual earnings instead'. The category amounts are not printed on any page this skill could read. Confirm the client's category amount or actual-earnings election with the Social Insurance Services before computing."
 - **R-CY-SC-2: Contribution arrears and late charges.** Trigger: unpaid employer contributions from earlier months. Message: "Late employer contributions carry an additional charge that starts at the first-month rate in table F and rises by 3 points a month to the maximum in table F. Do not quantify arrears without a Social Insurance Services statement. Refer to a Cyprus-qualified accountant."
-- **R-CY-SC-3: Special Defence Contribution and domicile.** Trigger: questions about tax on dividends, interest or rent, or non-domiciled status. Message: "Special Defence Contribution is a tax, not a social contribution, and is outside this Guide. Use `cy-non-dom` or `cyprus-income-tax`. What this Guide does cover: GHS on rent, interest and dividends at the table C income-earner rate for Cyprus tax residents, with no GHS on dividends and interest for non-residents."
-- **R-CY-SC-4: Income tax penalties and interest.** Trigger: late-filing or late-payment income tax penalties. Message: "Outside this Guide. Use `cyprus-income-tax`."
-- **R-CY-SC-5: Tax year other than 2026.** Trigger: tax year not stated, or a computation spanning 2025 and 2026. Message: "This Guide holds 2026 figures. The 2026 maximum insurable earnings in table B apply from 1 January 2026 (monthly) and 5 January 2026 (weekly). Confirm the year and get the earlier ceiling from the Social Insurance Services before computing an earlier period."
-- **R-CY-SC-6: Cross-border cases.** Trigger: an employee insured in another EU or EEA state or Switzerland, a posted worker, or an employer with its registered office abroad. Message: "Which country's social insurance and healthcare contributions apply to a cross-border worker is a coordination question that the pages this Guide relies on do not settle. Refer."
+- **R-CY-SC-3: Special Defence Contribution and domicile.** Trigger: questions about tax on dividends, interest or rent, or non-domiciled status. Message: "Special Defence Contribution is a tax, not a social contribution, and is outside this skill. Use `cy-non-dom` or `cyprus-income-tax`. What this skill does cover: GHS on rent, interest and dividends at the table C income-earner rate for Cyprus tax residents, with no GHS on dividends and interest for non-residents."
+- **R-CY-SC-4: Income tax penalties and interest.** Trigger: late-filing or late-payment income tax penalties. Message: "Outside this skill. Use `cyprus-income-tax`."
+- **R-CY-SC-5: Tax year other than 2026.** Trigger: tax year not stated, or a computation spanning 2025 and 2026. Message: "This skill holds 2026 figures. The 2026 maximum insurable earnings in table B apply from 1 January 2026 (monthly) and 5 January 2026 (weekly). Confirm the year and get the earlier ceiling from the Social Insurance Services before computing an earlier period."
+- **R-CY-SC-6: Cross-border cases.** Trigger: an employee insured in another EU or EEA state or Switzerland, a posted worker, or an employer with its registered office abroad. Message: "Which country's social insurance and healthcare contributions apply to a cross-border worker is a coordination question that the pages this skill relies on do not settle. Refer."
 
 ## Section 3: Payment pattern library
 
@@ -272,7 +272,7 @@ The employer is exempt from the Central Holiday Fund.
 **Input line:**
 `30.04.2026 ; DEPARTMENT OF SOCIAL INSURANCE ; DEBIT ; Q1 2026 SELF EMPLOYED ; -1,200.00 ; EUR`
 
-**Reasoning:** Matches "DEPARTMENT OF SOCIAL INSURANCE" (pattern 3.1). The self-employed pay every three months, at the table A self-employed share, on estimated earnings for their occupational category (or actual earnings if they asked for that). Business in Cyprus adds that self-employed "Social insurance contributions now include a contribution to the National Health System". Do not back out an income figure from the payment: the category amount is not printed on any page this Guide could read.
+**Reasoning:** Matches "DEPARTMENT OF SOCIAL INSURANCE" (pattern 3.1). The self-employed pay every three months, at the table A self-employed share, on estimated earnings for their occupational category (or actual earnings if they asked for that). Business in Cyprus adds that self-employed "Social insurance contributions now include a contribution to the National Health System". Do not back out an income figure from the payment: the category amount is not printed on any page this skill could read.
 
 **Classification:** EXCLUDE: self-employed social insurance. Flag the category amount for confirmation.
 
@@ -318,7 +318,7 @@ These rules apply when the payroll or bank data is clear and all required inputs
 ### Rule 2: Self-employed social insurance
 
 - **Rate**: the self-employed share in table A, on insurable income. The state pays the rest of the table A self-employed total.
-- **Base**: estimated earnings by occupational category (our wording; the page says the estimate is "based on each individual's experience and field of work"), or actual earnings if the person files a request (Business in Cyprus). The category amounts are not printed on any page this Guide could read: see R-CY-SC-1.
+- **Base**: estimated earnings by occupational category (our wording; the page says the estimate is "based on each individual's experience and field of work"), or actual earnings if the person files a request (Business in Cyprus). The category amounts are not printed on any page this skill could read: see R-CY-SC-1.
 - **Ceiling**: the table B notice is for employees. No page read here sets a ceiling for self-employed income. Refer if it matters.
 - **Payment**: every three months.
 
@@ -353,7 +353,7 @@ These rules apply when the payroll or bank data is clear and all required inputs
 
 ### Rule 7: Personal income tax scale (tax year 2026, for context only)
 
-Income tax is outside this Guide (use `cyprus-income-tax`). The 2026 scale is here only because payroll questions often mix the two.
+Income tax is outside this skill (use `cyprus-income-tax`). The 2026 scale is here only because payroll questions often mix the two.
 
 | Item | Value | Note |
 | --- | --- | --- |
@@ -639,9 +639,9 @@ If the client provides only a bank statement and no other information:
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -663,4 +663,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-social-contributions` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-social-contributions. If neither is available, confirm every figure against the official source pages cited above before relying on it.

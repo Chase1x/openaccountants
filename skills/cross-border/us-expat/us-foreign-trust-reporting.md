@@ -4,7 +4,7 @@ description: "US taxation and reporting of foreign trusts for US persons: the co
 version: 0.1
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide covers US federal rules for tax year 2026, with a dated section for 2025 returns. It is for a preparer or a US person who:
+This skill covers US federal rules for tax year 2026, with a dated section for 2025 returns. It is for a preparer or a US person who:
 
 - created, funded, or lent to a foreign trust;
 - is treated as the owner of any part of a foreign trust under the grantor trust rules (sections 671 to 679);
@@ -30,7 +30,7 @@ It covers four things: whether the trust is foreign, who (if anyone) is the owne
 
 It does not cover the foreign country's own treatment of the trust, FBAR (FinCEN Form 114) or Form 8938 in detail, estate and gift tax planning, or the section 2801 tax on gifts from covered expatriates. Those are flagged for referral below.
 
-The Form 3520 instructions in force are the 12/2025 revision, which applies "for tax year 2025 and subsequent years until a superseding revision is issued" ([Instructions for Form 3520](https://www.irs.gov/instructions/i3520)). The only figure in this Guide that changes by year is the foreign corporation and partnership gift threshold.
+The Form 3520 instructions in force are the 12/2025 revision, which applies "for tax year 2025 and subsequent years until a superseding revision is issued" ([Instructions for Form 3520](https://www.irs.gov/instructions/i3520)). The only figure in this skill that changes by year is the foreign corporation and partnership gift threshold.
 
 ## Ask the client first
 

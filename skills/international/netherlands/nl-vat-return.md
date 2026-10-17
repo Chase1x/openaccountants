@@ -3,7 +3,7 @@ name: nl-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Netherlands VAT return (OB aangifte / btw-aangifte) for a self-employed individual or small business in the Netherlands. Trigger on phrases like "prepare OB aangifte", "Dutch VAT return", "BTW aangifte", "classify transactions for Dutch VAT", or any request involving Netherlands VAT filing. This skill covers the Netherlands only, standard BTW regime. Kleineondernemersregeling (KOR), partial exemption, margin scheme (margeregeling), and VAT groups (fiscale eenheid) are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Dutch VAT work.
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Belastingdienst: notes to the 2026 VAT return](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf))
 
-This Guide covers preparing and filing the Dutch VAT return (btw-aangifte, also called aangifte omzetbelasting) for a business **established in the Netherlands**. It covers a sole trader (eenmanszaak), a partnership (vof, maatschap) or a company (bv, nv) that is registered for VAT and uses the normal rules. The primary year is **2026** (calendar year). There is a dated section for the **2025** returns and corrections that are being dealt with now.
+This skill covers preparing and filing the Dutch VAT return (btw-aangifte, also called aangifte omzetbelasting) for a business **established in the Netherlands**. It covers a sole trader (eenmanszaak), a partnership (vof, maatschap) or a company (bv, nv) that is registered for VAT and uses the normal rules. The primary year is **2026** (calendar year). There is a dated section for the **2025** returns and corrections that are being dealt with now.
 
 It covers:
 - which periods apply (month, quarter, year) and the deadlines;
@@ -28,9 +28,9 @@ It covers:
 
 The practical rules come from the Belastingdienst's own pages and its notes to the 2026 return ("Toelichting bij de btw-aangifte (omzetbelasting) 2026"). Statute points cite the Wet op de omzetbelasting 1968 ("Wet OB 1968") as in force from 1 January 2026 ([wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002629/2026-01-01)).
 
-This Guide does **not** cover businesses established outside the Netherlands (they use separate notes and later deadlines), fiscal unities, the margin scheme, the travel agency scheme, real estate transactions, OSS returns, or the Caribbean Netherlands (Bonaire, Sint Eustatius and Saba). See "When to refuse or refer".
+This skill does **not** cover businesses established outside the Netherlands (they use separate notes and later deadlines), fiscal unities, the margin scheme, the travel agency scheme, real estate transactions, OSS returns, or the Caribbean Netherlands (Bonaire, Sint Eustatius and Saba). See "When to refuse or refer".
 
-Figures in this Guide were checked against the Belastingdienst sources on 27 September 2026. Penalty amounts and the tax interest rate can change from year to year, so check the linked page before relying on them for a later period.
+Figures in this skill were checked against the Belastingdienst sources on 27 September 2026. Penalty amounts and the tax interest rate can change from year to year, so check the linked page before relying on them for a later period.
 
 ## Ask the client first
 
@@ -295,7 +295,7 @@ A submitted correction changes reported turnover but produces neither VAT payabl
 - **Suspected VAT fraud** in the supply chain (for example carousel fraud): if the client knew or should have known, deduction can be refused. Refer at once ([notes 2026](https://download.belastingdienst.nl/belastingdienst/docs/toelichting_bij_btw_aangifte_ob0731t62fd.pdf)).
 - **Caribbean Netherlands (Bonaire, Sint Eustatius, Saba)**: outside the Dutch VAT return. Refer.
 - **Penalty decisions, a vergrijpboete, objections or a dispute with the Belastingdienst**: refer to a Dutch belastingadviseur.
-- **Income tax or corporate income tax questions**: use the Guides for those taxes.
+- **Income tax or corporate income tax questions**: use the skills for those taxes.
 - **No invoices at all**: do not claim input VAT from a bank statement alone. Ask for the invoices.
 
 ## Filing and payment
@@ -356,7 +356,7 @@ The listing must be received within 1 month after the chosen period: quarterly b
 - [ ] KOR: turnover tested against €20,000 for this year and last year; EU-KOR against €100,000.
 - [ ] Anything in "When to refuse or refer" flagged for a Dutch belastingadviseur.
 
-This Guide is not tax advice. Check the linked Belastingdienst pages for the period you are filing.
+This skill is not tax advice. Check the linked Belastingdienst pages for the period you are filing.
 
 <!-- openaccountants-cta-block -->
 

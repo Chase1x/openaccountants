@@ -4,7 +4,7 @@ description: Tier 2 California content skill for preparing California Form 568 (
 version: 0.2
 jurisdiction: US-CA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -18,7 +18,7 @@ Figures are for tax year 2026 unless a line says otherwise. A dated section near
 
 ## Scope and who it is for ([2025 Form 568 booklet](https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html))
 
-This Guide covers the California return of a **single-member LLC (SMLLC) that is disregarded for federal tax**. Federal law disregards an eligible entity with a single owner as "an entity separate from its owner" unless it elects to be a corporation ([26 CFR 301.7701-3](https://www.law.cornell.edu/cfr/text/26/301.7701-3)). California follows the federal classification. The FTB says: "If an eligible entity is disregarded for federal tax purposes, it is also disregarded for state tax purposes, except that an SMLLC must still pay a tax and fee, file a return, and limit tax credits."
+This skill covers the California return of a **single-member LLC (SMLLC) that is disregarded for federal tax**. Federal law disregards an eligible entity with a single owner as "an entity separate from its owner" unless it elects to be a corporation ([26 CFR 301.7701-3](https://www.law.cornell.edu/cfr/text/26/301.7701-3)). California follows the federal classification. The FTB says: "If an eligible entity is disregarded for federal tax purposes, it is also disregarded for state tax purposes, except that an SMLLC must still pay a tax and fee, file a return, and limit tax credits."
 
 So the SMLLC's income is reported on the **owner's** return, but the SMLLC itself:
 
@@ -26,7 +26,7 @@ So the SMLLC's income is reported on the **owner's** return, but the SMLLC itsel
 - pays the **annual LLC tax** (form FTB 3522); and
 - pays the **LLC fee** if its California total income reaches the first band (estimated on form FTB 3536).
 
-The annual tax and fee rules, fee bands and the full doing-business tests are set out in the companion Guide **ca-llc-fee-and-tax**. This Guide applies them to a single owner and adds what is special to an SMLLC: the owner's consent, Schedule IW, the owner-based due dates, nonresident and corporate owners, and cancellation.
+The annual tax and fee rules, fee bands and the full doing-business tests are set out in the companion skill **ca-llc-fee-and-tax**. This skill applies them to a single owner and adds what is special to an SMLLC: the owner's consent, Schedule IW, the owner-based due dates, nonresident and corporate owners, and cancellation.
 
 It does **not** cover multi-member LLCs, LLCs taxed as corporations (they file Form 100 or 100S), the owner's own income tax computation (for a California resident individual, see **ca-540-individual-return**), estimated personal tax, nonresident withholding, or the pass-through entity elective tax.
 
@@ -178,7 +178,7 @@ The FTB tells an owner: "If you are a single member limited liability company, t
 - **Estimated fee.** 10% of the underpayment, with the prior-year safe harbor above.
 - **Per-member penalty.** The Form 568 booklet describes a penalty for filing late (including extensions) or filing an incomplete return: $18 times the number of members, for each month or part of a month, up to 12 months. For one member, the most is $216. The statute it cites, R&TC §19172, is written for a "partnership" ([R&TC §19172](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=19172.)). Whether the FTB charges it to a disregarded SMLLC is not clear from these texts. Warn the client it may be charged, and ask for abatement for reasonable cause if it is.
 - **Unregistered foreign or suspended SMLLC** (R&TC §19135). If it is doing business in California and does not file within 60 days after an FTB notice and demand, it is charged $2,000 per taxable year, unless it has reasonable cause ([R&TC §19135](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=19135.)).
-- **Interest** runs on unpaid amounts from the original due date. Use the FTB's current rate. This Guide does not quote one.
+- **Interest** runs on unpaid amounts from the original due date. Use the FTB's current rate. This skill does not quote one.
 
 ## Boundary and exception table ([R&TC §17946](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=17946.))
 

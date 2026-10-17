@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/nj-cbt-and-bait"
   jurisdiction: "US-NJ"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,14 +17,14 @@ metadata:
 
 ## Scope and who this is for
 
-This Guide covers two New Jersey taxes that are often planned together:
+This skill covers two New Jersey taxes that are often planned together:
 
 - the **Corporation Business Tax (CBT)** on C corporations and combined groups (Forms CBT-100 and CBT-100U), including the rates, the minimum tax, the Corporate Transit Fee, mandatory unitary combined reporting, single sales factor apportionment, economic nexus, the NOL and PNOL rules, estimated tax, extensions and penalties;
 - the elective **Pass-Through Business Alternative Income Tax (BAIT, also called PTE)** paid by partnerships, New Jersey S corporations and LLCs taxed as either (Form PTE-100), and the owner's refundable credit.
 
 Figures are for **tax year 2026** where published. The latest CBT instructions are the 2025 set, used for accounting periods ending 31 July 2025 through 30 June 2026. The 2026 CBT-150 estimated tax instructions and the 2026 PTE-100 instructions are published. Each figure carries its year. A dated section covers **2025 returns**.
 
-Not covered: the individual NJ-1040 and NJ-1040NR themselves (see the **nj-income-tax** Guide, which shows where the BAIT credit goes on the return), banking and financial corporations' special rules, insurance premiums tax, public utility taxes, tax credit programs, and New Jersey sales tax.
+Not covered: the individual NJ-1040 and NJ-1040NR themselves (see the **nj-income-tax** skill, which shows where the BAIT credit goes on the return), banking and financial corporations' special rules, insurance premiums tax, public utility taxes, tax credit programs, and New Jersey sales tax.
 
 ## Ask the client first
 
@@ -114,7 +114,7 @@ Not covered: the individual NJ-1040 and NJ-1040NR themselves (see the **nj-incom
 - **S corporation members:** refundable credit against regular and minimum tax. **Exempt corporations** (N.J.S.A. 54:10A-3) claim a refund on Form A-3730.
 - **Tiered entities:** an upper-tier partnership or S corporation can claim the credit on its own return, pass it to its individual, estate or trust owners, or use it on its own PTE-100. The Division's BAIT page allows a partnership to pass it through only if its partners are all individuals, estates or trusts. Tax remitted for it by a lower tier that did **not** elect BAIT cannot be credited against its BAIT.
 - **Resident credit for another state's PTET:** a resident may take the Schedule NJ-COJ credit for a pass-through entity tax paid by a partnership or New Jersey S corporation to another state, D.C. or a political subdivision, if it is **substantially similar** to BAIT and is on income derived there that New Jersey also taxes. The credit cannot exceed what would have been allowed had the income been taxed to the individual. The Division's list includes New York's (Tax Law §862) and New York City's. Keep the entity's statement of the owner's share of income and tax.
-- **Federal effect:** a state income tax imposed on and paid by the partnership or S corporation is deducted at entity level, outside the owner's SALT cap ([IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf)). The **us-pte-state-matrix** Guide has the cap figures.
+- **Federal effect:** a state income tax imposed on and paid by the partnership or S corporation is deducted at entity level, outside the owner's SALT cap ([IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf)). The **us-pte-state-matrix** skill has the cap figures.
 
 ## Figures with years
 
@@ -277,7 +277,7 @@ All amounts are hypothetical. Rates and thresholds come from the tables above.
 ### BAIT ([2026 PTE-100 instructions](https://www.nj.gov/treasury/taxation/pdf/current/pte-bait/pte100instr.pdf); [Division BAIT page](https://www.nj.gov/treasury/taxation/baitpte/index.shtml))
 
 - **Election:** electronic, annual, by the original due date of the PTE-100 and before any payment. Revocation by the same date.
-- **Estimated payments (PTE-150):** required if the entity expects to owe more than **$400**. Four payments of **25%** on the 15th day of the 4th, 6th and 9th months of the year and the 1st month of the next year (calendar year: 15 April, 15 June, 15 September, 15 January). Underpaid if estimates are less than **80%** of the current year's tax or less than **100%** of the prior year's; interest on Form PTE-160 ([2025 PTE-150 instructions](https://www.nj.gov/treasury/taxation/pdf/other_forms/pte/2025/pte150instr.pdf)). That is the PTE-150 wording ("or"). The CBT test uses "and", and the BAIT FAQ points to the safe harbor in N.J.S.A. 54A:9-6, which the **nj-income-tax** Guide describes as the lesser of the two amounts. Until the Division confirms which applies, pay at least the larger of **80%** of this year's BAIT and **100%** of last year's ([BAIT FAQ](https://www.nj.gov/treasury/taxation/baitpte/baitpte-faq.shtml)). BAIT estimates cannot be moved to another tax account.
+- **Estimated payments (PTE-150):** required if the entity expects to owe more than **$400**. Four payments of **25%** on the 15th day of the 4th, 6th and 9th months of the year and the 1st month of the next year (calendar year: 15 April, 15 June, 15 September, 15 January). Underpaid if estimates are less than **80%** of the current year's tax or less than **100%** of the prior year's; interest on Form PTE-160 ([2025 PTE-150 instructions](https://www.nj.gov/treasury/taxation/pdf/other_forms/pte/2025/pte150instr.pdf)). That is the PTE-150 wording ("or"). The CBT test uses "and", and the BAIT FAQ points to the safe harbor in N.J.S.A. 54A:9-6, which the **nj-income-tax** skill describes as the lesser of the two amounts. Until the Division confirms which applies, pay at least the larger of **80%** of this year's BAIT and **100%** of last year's ([BAIT FAQ](https://www.nj.gov/treasury/taxation/baitpte/baitpte-faq.shtml)). BAIT estimates cannot be moved to another tax account.
 - **Return:** Form PTE-100 with Schedule PTE-K-1 for every member, due the 15th day of the 3rd month after year end (calendar 2026: 15 March 2027). All filings and payments are electronic; paper is not accepted.
 - **Extension (PTE-200-T):** six months to file, if filed by the original due date and at least **80%** of the tax is paid by then. No extension to pay.
 - **Penalties:** late filing **5%** a month up to **25%**, and a penalty of **$100** for each month or part month may be imposed; late payment **5%**; interest **3%** above prime, compounded annually. The Division has three years from the later of filing and the original due date to assess, with no limit if no return or a fraudulent one was filed.
@@ -315,4 +315,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nj-cbt-and-bait` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nj-cbt-and-bait. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nj-cbt-and-bait` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nj-cbt-and-bait. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-payroll"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,9 +15,9 @@ metadata:
 
 # Ireland payroll: gross to net for employees
 
-This Guide runs an ordinary Irish weekly, fortnightly or monthly payroll for employees: the order of deductions, Income Tax under the Revenue Payroll Notification (RPN), USC, PRSI Class A, benefit in kind, the payroll submission to Revenue on or before pay day, the monthly statement and payment, and the year end. Figures are for tax year 2026. PRSI changed during 2026: one set of rates applies up to 30 September 2026 and another from 1 October 2026, and every PRSI rate below names its period. This is a source-cited draft. No accountant has reviewed it yet.
+This skill runs an ordinary Irish weekly, fortnightly or monthly payroll for employees: the order of deductions, Income Tax under the Revenue Payroll Notification (RPN), USC, PRSI Class A, benefit in kind, the payroll submission to Revenue on or before pay day, the monthly statement and payment, and the year end. Figures are for tax year 2026. PRSI changed during 2026: one set of rates applies up to 30 September 2026 and another from 1 October 2026, and every PRSI rate below names its period. This is a source-cited draft. No accountant has reviewed it yet.
 
-Companion Guides: `ie-usc` (USC in depth), `ie-prsi-class-s` (PRSI for the self-employed), `ie-income-tax-form11` (proprietary directors and others who file Form 11).
+Companion Skills: `ie-usc` (USC in depth), `ie-prsi-class-s` (PRSI for the self-employed), `ie-income-tax-form11` (proprietary directors and others who file Form 11).
 
 ## Section 1: Quick reference, the order of payroll components
 
@@ -34,8 +34,8 @@ Companion Guides: `ie-usc` (USC in depth), `ie-prsi-class-s` (PRSI for the self-
 | 9 | Payroll submission to Revenue on or before the pay date | Every pay run | [Payroll submissions](https://www.revenue.ie/en/employing-people/becoming-an-employer-and-ongoing-obligations/employer-obligations-from-01-01-2019/payroll-submissions.aspx) |
 
 - **The base differs by deduction.** Revenue says of employee pension contributions: "You should not deduct these contributions from your employee's gross pay when you are calculating the following: Universal Social Charge (USC) and Pay Related Social Insurance (PRSI)." So pension relief at source reduces the Income Tax base only. The USC page also says "There is no relief from USC for employee pension contributions." ([Employee's pension contributions](https://www.revenue.ie/en/employing-people/what-constitutes-pay/employees-pension-payments/index.aspx), [USC overview](https://www.revenue.ie/en/jobs-and-pensions/usc/index.aspx))
-- **For private sector employees, PRSI is charged on pension contributions.** SW14 says "PRSI is fully chargeable on payments by private sector employees in respect of" superannuation contributions and PRSA contributions. Public sector pension deductions are outside this Guide. ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf))
-- **Salary sacrifice.** Revenue lists a salary sacrifice arrangement among the deductions that reduce taxable pay for Income Tax. The pages read for this Guide do not say how salary sacrifice affects USC or PRSI; do not assume it reduces them. ([What are gross pay and taxable pay](https://www.revenue.ie/en/employing-people/what-constitutes-pay/what-are-gross-and-taxable-pay/index.aspx))
+- **For private sector employees, PRSI is charged on pension contributions.** SW14 says "PRSI is fully chargeable on payments by private sector employees in respect of" superannuation contributions and PRSA contributions. Public sector pension deductions are outside this skill. ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf))
+- **Salary sacrifice.** Revenue lists a salary sacrifice arrangement among the deductions that reduce taxable pay for Income Tax. The pages read for this skill do not say how salary sacrifice affects USC or PRSI; do not assume it reduces them. ([What are gross pay and taxable pay](https://www.revenue.ie/en/employing-people/what-constitutes-pay/what-are-gross-and-taxable-pay/index.aspx))
 - **Conservative default, uncertain pension deductibility.** If you cannot confirm a contribution is to a Revenue approved scheme, or it exceeds the limits below, do not deduct it for Income Tax. Over-deduction of tax can be refunded to the employee through Revenue; late payment by the employer costs interest at the rate in the payment table in Section 5.
 
 ### Income Tax rates, bands and credits for 2026
@@ -190,7 +190,7 @@ The page address says 2025 but the page prints the 1 January 2026 rates. Check g
 | LPT | RPN | Deduct only where it is shown on the RPN |
 | Attachment orders and other deductions | Court or employee | Apply as the order or authority says |
 
-### 2.2 Refusal catalogue: out of scope for this Guide
+### 2.2 Refusal catalogue: out of scope for this skill
 
 | Scenario | Action |
 | --- | --- |
@@ -213,7 +213,7 @@ The page address says 2025 but the page prints the 1 January 2026 rates. Check g
 | Added for each full year of service | EUR 765 | Same quote |
 | Lifetime limit where the basic exemption is used more than once (payments from different, unconnected employers) | EUR 200,000 | "you do not exceed a life-time limit of €200,000" |
 
-A termination payment is tax free if it does not exceed the basic exemption; above it the increased exemption or SCSB may apply, which this Guide does not compute (refer). A career break does not count towards a full year's work.
+A termination payment is tax free if it does not exceed the basic exemption; above it the increased exemption or SCSB may apply, which this skill does not compute (refer). A career break does not count towards a full year's work.
 
 ## The method, step by step
 
@@ -246,7 +246,7 @@ A termination payment is tax free if it does not exceed the basic exemption; abo
 - A pay period straddles 1 October 2026 and the software does not show how it split the PRSI rates: refer before paying.
 - The employer has paid the monthly liability late, or wants to correct a prior year: refer, since interest and correction rules apply.
 - Termination payments, share awards, pension lump sums and any payment where you cannot tell whether it is pay: refer.
-- Everything in this Guide is a source-cited draft. A qualified Irish payroll professional should review a payroll before any payslip, submission or payment.
+- Everything in this skill is a source-cited draft. A qualified Irish payroll professional should review a payroll before any payslip, submission or payment.
 
 ## Section 3: Worked example (hypothetical)
 
@@ -269,7 +269,7 @@ A hypothetical monthly-paid employee: single, age 32, private sector Class A, cu
 | Employer PRSI, a month paid in the period from 1 October 2026 | EUR 570.00 | 11.40% of EUR 5,000.00 |
 | Net pay, a month paid in the period from 1 October 2026 | EUR 3,588.10 | Gross less pension, Income Tax, USC and employee PRSI |
 
-The live version of this Guide reduced the USC base by the pension contribution; that is wrong, and it understates USC. Real payroll software rounds at each step; small differences of a cent are expected.
+The live version of this skill reduced the USC base by the pension contribution; that is wrong, and it understates USC. Real payroll software rounds at each step; small differences of a cent are expected.
 
 ## Section 4: Payslip components
 
@@ -352,7 +352,7 @@ If the statement is wrong, amend the payroll submission. Before the return due d
 
 ### 5.6 Late payment and late reporting
 
-Late payment of the monthly liability costs interest at the daily rate in the table in 5.4. The pages read for this Guide print no fixed penalty for a late payroll submission; refer any penalty question.
+Late payment of the monthly liability costs interest at the daily rate in the table in 5.4. The pages read for this skill print no fixed penalty for a late payroll submission; refer any penalty question.
 
 ## Section 6: Year-end activities
 
@@ -447,4 +447,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

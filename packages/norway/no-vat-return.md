@@ -3,7 +3,7 @@ name: no-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Norway MVA return (MVA-melding) for any client. Trigger on phrases like "prepare MVA return", "Norwegian VAT", "MVA-melding", "merverdiavgift", or any request involving Norway VAT filing. Norway is NOT an EU member but IS in the EEA. There are NO intra-community supplies. All goods from EU are imports. ALWAYS read this skill before touching any Norway MVA work.
 jurisdiction: "NO"
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Norway VAT return: registration to reconciliation
 
-Figures are for tax year 2026 and guidance was retrieved on 24 September 2026. This Guide is for an ordinary business registered in Norway’s VAT Register. It covers registration, classification control, input-VAT deduction limits, return preparation, payment and evidence. It does not decide a transaction’s place of supply, a zero-rate/exemption provision, partial deduction, joint registration, VAT compensation, VOEC, customs duty or a foreign-business refund.
+Figures are for tax year 2026 and guidance was retrieved on 24 September 2026. This skill is for an ordinary business registered in Norway’s VAT Register. It covers registration, classification control, input-VAT deduction limits, return preparation, payment and evidence. It does not decide a transaction’s place of supply, a zero-rate/exemption provision, partial deduction, joint registration, VAT compensation, VOEC, customs duty or a foreign-business refund.
 
 ## Rates, threshold and annual-period figures
 

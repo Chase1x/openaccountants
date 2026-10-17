@@ -4,7 +4,7 @@ description: "Netherlands 30% ruling (tax-free allowance for inbound expats): 30
 version: 1.0
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-10-01
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers the Dutch 30% ruling for employees who come to work in the Netherlands. Since 2025 the Belastingdienst calls it the **expatregeling** (Expat Scheme); before that it was the 30%-regeling. It covers: ([Handboek 2026 §19.4](https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf))
+This skill covers the Dutch 30% ruling for employees who come to work in the Netherlands. Since 2025 the Belastingdienst calls it the **expatregeling** (Expat Scheme); before that it was the 30%-regeling. It covers: ([Handboek 2026 §19.4](https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf))
 
 - who qualifies: recruited or seconded from abroad, the 150-kilometre rule, and specific expertise shown through the salary norm;
 - the salary norms for 2026, with the 2025 and 2024 figures and the higher norms announced for 2027;
@@ -217,8 +217,8 @@ An employee aged 35 has tested annual taxable wage excluding the allowance of ex
 - **Change of employer outside the group**, gaps close to 3 months, or intra-group secondments where the employee stays on a foreign payroll: refer (the Handboek points to the BelastingTelefoon on these).
 - **Agreements that might keep the ruling alive after a salary-norm failure** (KG:204:2023:21): refer.
 - **Partial non-resident status** for large foreign portfolios or substantial shareholdings, and planning for its end after 2026: refer; the box 2 and box 3 effects depend on the assets and on treaties.
-- **Employees who live abroad** and commute, work in several countries, or need an A1 certificate: refer. This Guide assumes the employee lives in the Netherlands.
-- **Employees sent abroad from the Netherlands** (the outbound version of the scheme): outside this Guide.
+- **Employees who live abroad** and commute, work in several countries, or need an A1 certificate: refer. This skill assumes the employee lives in the Netherlands.
+- **Employees sent abroad from the Netherlands** (the outbound version of the scheme): outside this skill.
 - **Refuse** to present the 2024 phasing (30/20/10) as current law, to promise the 2027 salary norms before the final figures are published, or to treat a wage exactly equal to the norm as passing.
 
 ## Filing and payment

@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their Ger
 version: 0.1
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This is the intake and triage Guide for a self-employed individual who lives in Germany: a Freiberufler (§ 18 EStG) or a Gewerbetreibender (§ 15 EStG) running a sole business. It tells an assistant which questions to ask, which documents to collect, which answers change the route, and which specialist Guide takes over. It computes no tax.
+This is the intake and triage skill for a self-employed individual who lives in Germany: a Freiberufler (§ 18 EStG) or a Gewerbetreibender (§ 15 EStG) running a sole business. It tells an assistant which questions to ask, which documents to collect, which answers change the route, and which specialist skill takes over. It computes no tax.
 
 - **Primary year:** calendar year 2026, the tax year in force on 25 September 2026. The returns for 2025 are being filed now; see "Filing and payment".
 - **Covered:** full-year residents (a home or habitual abode in Germany, § 1(1) EStG: "Wohnsitz oder ihren gewöhnlichen Aufenthalt"), sole proprietors, cash-basis profit (EÜR), up to a small team.
@@ -26,7 +26,7 @@ This is the intake and triage Guide for a self-employed individual who lives in 
 
 ### Where each question goes next
 
-| Topic | Specialist Guide |
+| Topic | Specialist Skill |
 | --- | --- |
 | Income tax return, Anlage EÜR, Anlage S or G, deductions | `de-einkommensteuer-freelancer` |
 | VAT advance returns, annual VAT return, Kleinunternehmer, reverse charge | `germany-vat-return` |
@@ -58,7 +58,7 @@ Ask in batches of two or three. Skip anything the documents already answer.
 ## The method, step by step
 
 1. **Fix the year and test residency.** Full-year residents only ([§ 1 EStG](https://www.gesetze-im-internet.de/estg/__1.html)). Anyone else is referred.
-2. **Screen out what this Guide cannot handle** (partnership as the business, corporation, balance sheet, more than five employees). Stop there; see "When to refuse or refer".
+2. **Screen out what this skill cannot handle** (partnership as the business, corporation, balance sheet, more than five employees). Stop there; see "When to refuse or refer".
 3. **Classify the work: Freiberufler or Gewerbe.** Compare what the client does with the list in [§ 18(1) no. 1 EStG](https://www.gesetze-im-internet.de/estg/__18.html) and the definition of a trade in [§ 15(2) EStG](https://www.gesetze-im-internet.de/estg/__15.html). See "Freiberufler or Gewerbe" below.
 4. **Check the registration of a new business**: reports and questionnaire within one month ([§ 138 AO](https://www.gesetze-im-internet.de/ao_1977/__138.html)); see below.
 5. **Settle the VAT status before reading any invoice**, because it decides whether every amount is recorded net or gross. Test both Kleinunternehmer limits of [§ 19 UStG](https://www.gesetze-im-internet.de/ustg_1980/__19.html). For a client in the normal scheme, set the return period from last year's VAT under [§ 18 UStG](https://www.gesetze-im-internet.de/ustg_1980/__18.html). Then hand VAT to `germany-vat-return`.
@@ -128,7 +128,7 @@ This is the first fork of every German intake.
 
 - **EÜR.** Anyone not obliged by law to keep books, and not keeping them by choice, may work out profit as receipts less expenses ([§ 4(3) EStG](https://www.gesetze-im-internet.de/estg/__4.html): "nicht auf Grund gesetzlicher Vorschriften verpflichtet sind, Bücher zu führen"). A Freiberufler not entered as a merchant can use the EÜR at any size. The Anlage EÜR goes to the tax office electronically ([§ 60(4) EStDV](https://www.gesetze-im-internet.de/estdv_1955/__60.html)).
 - **Gewerbetreibende: § 141 AO.** The tax-law duty to keep books can start for a commercial business with total turnover above EUR 800,000 in the calendar year, or trade profit above EUR 80,000 in the business year ([§ 141(1) AO](https://www.gesetze-im-internet.de/ao_1977/__141.html)). Either test is enough. The duty does not start by itself: it begins with the business year after the tax office's notice (§ 141(2) AO). Freiberufler are not named in § 141.
-- **Merchants.** A merchant entered in the Handelsregister, or one who files a balance sheet for any reason, is outside this Guide: refer, and use `germany-bookkeeping` for the § 238 and § 241a HGB tests.
+- **Merchants.** A merchant entered in the Handelsregister, or one who files a balance sheet for any reason, is outside this skill: refer, and use `germany-bookkeeping` for the § 238 and § 241a HGB tests.
 
 ### Income tax prepayments
 
@@ -210,7 +210,7 @@ Stop, say why, and name the adviser needed.
 - **Partnership as the business** (GbR, PartG, OHG, KG). It files a separate declaration of profit shares. A client who is a partner alongside their own sole business stays in scope with a flag: the share arrives in a separate determination notice.
 - **GmbH, UG or other corporation.** Corporate tax and trade tax rules differ. Refer.
 - **Balance-sheet filers**, including merchants in the Handelsregister and a Gewerbetreibender whose § 141 AO duty has already started. A notice received during the year being prepared takes effect only from the next business year, so that year stays in scope with a flag.
-- **More than five employees.** This is this Guide's own scope line, not a legal threshold. Payroll at any size goes to `de-payroll`.
+- **More than five employees.** This is this skill's own scope line, not a legal threshold. Payroll at any size goes to `de-payroll`.
 - **An unsettled classification that matters**: work not named in § 18, freelance and commercial work that cannot be separated, or staff doing work the client does not lead. Record, flag, and tell the client the tax office decides and that a Steuerberater or binding ruling can settle it.
 - **VAT beyond the basics**: a Kleinunternehmer crossing a limit mid-year, reverse-charge purchases, goods sold across borders, distance sales and the one-stop shop. Route to `germany-vat-return`.
 - **Social insurance.** Any possible pension duty, KSK membership or health insurance question: refer to `de-social-contributions` and to the Deutsche Rentenversicherung or the Künstlersozialkasse.

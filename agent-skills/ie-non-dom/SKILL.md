@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-non-dom"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Ireland: tax for people who are not domiciled in Ireland
 
-This Guide covers how Ireland taxes an individual who is resident or ordinarily resident in Ireland but not domiciled here. It sets out the residence and ordinary residence tests, the remittance basis for foreign income and foreign gains, what the remittance basis does not cover, and the domicile levy (which applies only to people who ARE Irish domiciled). Figures are for tax year 2026. The Irish tax year is the calendar year, 1 January to 31 December.
+This skill covers how Ireland taxes an individual who is resident or ordinarily resident in Ireland but not domiciled here. It sets out the residence and ordinary residence tests, the remittance basis for foreign income and foreign gains, what the remittance basis does not cover, and the domicile levy (which applies only to people who ARE Irish domiciled). Figures are for tax year 2026. The Irish tax year is the calendar year, 1 January to 31 December.
 
 ## Quick reference
 
@@ -175,7 +175,7 @@ Entrepreneur Relief has ownership and working-time conditions. Use `ie-cgt` for 
 - Possible domicile levy cases (Irish domiciled, high income, Irish property above the threshold). Valuation and the trading-company share exclusion need professional work. Refer.
 - Double taxation agreement relief, split-year employment claims and foreign employment income partly performed in Ireland. Route the computation to `ie-income-tax-form11` and refer treaty positions.
 - Gift and inheritance questions for non-domiciled individuals: route to `ie-cat`.
-- Questions about the UK regime: this Guide covers Ireland only. Do not compare figures with the UK from this Guide.
+- Questions about the UK regime: this skill covers Ireland only. Do not compare figures with the UK from this skill.
 
 ## Sources
 
@@ -213,4 +213,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.

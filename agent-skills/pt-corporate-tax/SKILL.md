@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/pt-corporate-tax"
   jurisdiction: "PT"
   tax_year: "2026"
-  last_updated: "2026-10-12"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Portugal corporate income tax (IRC) for resident companies
 
-Figures are for tax year 2026. This Guide covers Portuguese corporate income tax (Imposto sobre o Rendimento das Pessoas Coletivas, IRC) for companies resident in mainland Portugal that carry on a commercial, industrial or agricultural activity as their main activity. It covers the IRC rates, the state and municipal surcharges (derrama estadual and derrama municipal), autonomous taxation (tributação autónoma), losses, payments on account, the Modelo 22 return and the IES, the participation exemption, the interest limit, CFC rules, withholding by the company, and the SIFIDE II and RFAI tax credits. Every rate and amount below comes from the consolidated codes on the Portal das Finanças, which print each article with its transitional notes, or from AT's Modelo 22 instructions. The IRC rate changes every year from 2026 to 2028, and the rate depends on the year in which the company's tax period STARTS, so read the first table with care.
+Figures are for tax year 2026. This skill covers Portuguese corporate income tax (Imposto sobre o Rendimento das Pessoas Coletivas, IRC) for companies resident in mainland Portugal that carry on a commercial, industrial or agricultural activity as their main activity. It covers the IRC rates, the state and municipal surcharges (derrama estadual and derrama municipal), autonomous taxation (tributação autónoma), losses, payments on account, the Modelo 22 return and the IES, the participation exemption, the interest limit, CFC rules, withholding by the company, and the SIFIDE II and RFAI tax credits. Every rate and amount below comes from the consolidated codes on the Portal das Finanças, which print each article with its transitional notes, or from AT's Modelo 22 instructions. The IRC rate changes every year from 2026 to 2028, and the rate depends on the year in which the company's tax period STARTS, so read the first table with care.
 
 ## Section 1: Quick reference
 
@@ -71,17 +71,17 @@ Figures are for tax year 2026. This Guide covers Portuguese corporate income tax
 - **R-PT-IRC-3: collective investment undertakings and funds.** Own tax regime. Out of scope.
 - **R-PT-IRC-4: non-profit entities and entities whose main activity is not commercial, industrial or agricultural.** Taxed on global income under art. 53 and art. 87(5) CIRC. Out of scope.
 - **R-PT-IRC-5: non-residents.** A non-resident with no permanent establishment is taxed at the rates in Section 3.1 on Portuguese income, mostly by final withholding. A permanent establishment needs its own attribution analysis. Refer.
-- **R-PT-IRC-6: RETGS (group taxation, arts. 69 to 71 CIRC).** The conditions are in Section 12.4. Group computations are not produced in this Guide.
+- **R-PT-IRC-6: RETGS (group taxation, arts. 69 to 71 CIRC).** The conditions are in Section 12.4. Group computations are not produced in this skill.
 - **R-PT-IRC-7: inspections and disputes.** An open tax inspection, enforcement proceeding, administrative claim, court challenge or mutual agreement procedure: refer. Do not produce figures that could prejudice the position.
 - **R-PT-IRC-8: reorganisations (mergers, divisions, asset contributions, share exchanges, arts. 73 and following CIRC).** Out of scope.
 - **R-PT-IRC-9: payments to listed preferential tax regimes.** The autonomous tax in Section 5.2 applies unless the company proves the operations are real and normal. Partner review required.
-- **R-PT-IRC-10: other Guides.** VAT: `portugal-vat-return`. Shareholders' personal income tax: `pt-income-tax`. Payroll and employee withholding: `portugal-payroll`. Bookkeeping and SAF-T: `portugal-bookkeeping`. Annual accounts and IES content: `portugal-financial-statements`. Company formation: `portugal-formation`. Treaty relief on foreign income: `pt-foreign-source-treaties`. Final filing package: `pt-return-assembly`.
+- **R-PT-IRC-10: other skills.** VAT: `portugal-vat-return`. Shareholders' personal income tax: `pt-income-tax`. Payroll and employee withholding: `portugal-payroll`. Bookkeeping and SAF-T: `portugal-bookkeeping`. Annual accounts and IES content: `portugal-financial-statements`. Company formation: `portugal-formation`. Treaty relief on foreign income: `pt-foreign-source-treaties`. Final filing package: `pt-return-assembly`.
 
 ## Section 3: IRC rates
 
 ### 3.1 General rate: 19% for periods starting in 2026
 
-Article 87(1) CIRC now prints a rate that applies only from 2028. The transitional rule printed under the article (art. 3 of Law 64/2025) sets a different rate for tax periods that start in 2026 and in 2027. For a calendar-year company, the 2026 tax year uses the 2026 row. A company whose tax period started in 2025 (for example, 1 July 2025 to 30 June 2026) uses the rate for 2025, which this Guide does not state.
+Article 87(1) CIRC now prints a rate that applies only from 2028. The transitional rule printed under the article (art. 3 of Law 64/2025) sets a different rate for tax periods that start in 2026 and in 2027. For a calendar-year company, the 2026 tax year uses the 2026 row. A company whose tax period started in 2025 (for example, 1 July 2025 to 30 June 2026) uses the rate for 2025, which this skill does not state.
 
 | Item | Rate | Note (verbatim) |
 | --- | --- | --- |
@@ -111,7 +111,7 @@ A transitional rule printed under art. 87 (art. 229 of Law 24-D/2022) keeps the 
 
 ### 3.3 Azores, Madeira and the Madeira International Business Centre
 
-The Azores and Madeira set their own regional IRC rates by regional law, and the Madeira International Business Centre (CINM, often called the Madeira IBC) has its own licensing, job and ceiling rules. No allowed page used for this Guide prints the 2026 regional rates or the CINM rate and ceilings, so this Guide states none. The live Guide's regional rates and CINM table were removed because no allowed page prints them. For a company with its head office, a permanent establishment or a CINM licence in either region: refer to a local accountant and the regional tax authority. For derrama municipal, Modelo 22 Annex A has a separate subtable for the Madeira Free Zone (art. 36-A(12) of the EBF). [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
+The Azores and Madeira set their own regional IRC rates by regional law, and the Madeira International Business Centre (CINM, often called the Madeira IBC) has its own licensing, job and ceiling rules. No allowed page used for this skill prints the 2026 regional rates or the CINM rate and ceilings, so this skill states none. The live Guide's regional rates and CINM table were removed because no allowed page prints them. For a company with its head office, a permanent establishment or a CINM licence in either region: refer to a local accountant and the regional tax authority. For derrama municipal, Modelo 22 Annex A has a separate subtable for the Madeira Free Zone (art. 36-A(12) of the EBF). [Modelo 22 Annex A instructions](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/irc/Documents/M22ANA.PDF)
 
 ## Section 4: Derrama estadual and derrama municipal
 
@@ -314,7 +314,7 @@ RFAI applies to IRC taxpayers in the sectors listed in art. 2(2) CFI, except act
 
 Rules:
 
-- Which regions fall under art. 107(3)(a) or (c) is set by the regional aid map table in art. 43 CFI, which this Guide does not reproduce. The live Guide's list of regions (Norte, Centro, Alentejo, Madeira, Azores; Algarve; Lisbon) was not on an allowed page and was removed.
+- Which regions fall under art. 107(3)(a) or (c) is set by the regional aid map table in art. 43 CFI, which this skill does not reproduce. The live Guide's list of regions (Norte, Centro, Alentejo, Madeira, Azores; Algarve; Lisbon) was not on an allowed page and was removed.
 - Investments in the start-up period and the next two periods (unless the company results from a division) can use the credit up to the full IRC of each period; otherwise up to the cap in the table (art. 23(2)).
 - Unused credit carries forward to the next 10 tax periods, under the same caps (art. 23(3)).
 - The total aid must stay within the regional aid ceiling for the region, counting all State aid to the investment (art. 23(5) and (6)).
@@ -340,7 +340,7 @@ Profits and reserves distributed to an IRC taxpayer with its head office or effe
 
 The exemption does not apply to distributions that are deductible for the payer (art. 51(10)(a)) or under a non-genuine arrangement whose main purpose is a tax advantage (art. 51(13) and (14)). Where the conditions fail, a foreign tax credit under arts. 91 and 91-A may still apply (art. 51(9)).
 
-For a tax period that starts in 2026, the transitional rule printed under art. 87 says that the rate in art. 87(1) "é de 19 %" (Section 3.1). Read literally, the rate that art. 51(1)(d) refers to is therefore the 2026 row in Section 3.1, not the rate printed in the article. No AT page read for this Guide confirms that reading. A payer whose statutory rate is at least the share in the table of the 2026 rate passes on either reading. A payer that passes only when measured against the printed art. 87(1) rate is unsettled: refer. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
+For a tax period that starts in 2026, the transitional rule printed under art. 87 says that the rate in art. 87(1) "é de 19 %" (Section 3.1). Read literally, the rate that art. 51(1)(d) refers to is therefore the 2026 row in Section 3.1, not the rate printed in the article. No AT page read for this skill confirms that reading. A payer whose statutory rate is at least the share in the table of the 2026 rate passes on either reading. A payer that passes only when measured against the printed art. 87(1) rate is unsettled: refer. [art. 87 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)
 
 ### 12.2 Capital gains on shares (art. 51-C CIRC)
 
@@ -374,7 +374,7 @@ The option also requires, among others, that all group companies have their head
 
 ## Section 13: Global minimum tax (Pillar Two)
 
-Portugal's global minimum tax regime (Regime do Imposto Mínimo Global, RIMG) was approved by Law 41/2024 of 8 November, which transposes Directive (EU) 2022/2523. The live Guide named "Lei 27/2024" and that is not the law AT lists. AT publishes the Modelo 62 registration return (Ordinance 290/2025/1 of 2 September) and the Modelo 63 GloBE information return. This Guide does not state the scope threshold, the minimum rate or the filing deadlines, because the saved AT pages do not print them. A group that may be in scope: refer to a specialist. [AT Pillar Two legislation page](https://info.portaldasfinancas.gov.pt/pt/Grandes_Contribuintes/Pilar_2/Legislacao_e_regulamentacao_nacional/Paginas/Regime_imposto_minimo_global.aspx)
+Portugal's global minimum tax regime (Regime do Imposto Mínimo Global, RIMG) was approved by Law 41/2024 of 8 November, which transposes Directive (EU) 2022/2523. The live Guide named "Lei 27/2024" and that is not the law AT lists. AT publishes the Modelo 62 registration return (Ordinance 290/2025/1 of 2 September) and the Modelo 63 GloBE information return. This skill does not state the scope threshold, the minimum rate or the filing deadlines, because the saved AT pages do not print them. A group that may be in scope: refer to a specialist. [AT Pillar Two legislation page](https://info.portaldasfinancas.gov.pt/pt/Grandes_Contribuintes/Pilar_2/Legislacao_e_regulamentacao_nacional/Paginas/Regime_imposto_minimo_global.aspx)
 
 ## Section 14: Transfer pricing (art. 63 CIRC)
 
@@ -516,7 +516,7 @@ Facts (hypothetical): calendar 2026, taxable profit EUR 10,000,000, single compa
 - Groups that may be in scope of the global minimum tax (Section 13).
 - Transfer pricing documentation, CFC attribution with foreign tax credit, and payments to listed preferential regimes, unless a partner reviews the work.
 - Open inspections, claims, court cases or mutual agreement procedures (R-PT-IRC-7).
-- A tax period that started before 1 January 2026: this Guide does not state the 2025 rates.
+- A tax period that started before 1 January 2026: this skill does not state the 2025 rates.
 - A prior-year turnover exactly at the derrama municipal reduced-rate boundary (Section 4.2).
 - Never present figures as final: every output is an estimate for review by a certified accountant (Contabilista Certificado) before filing.
 
@@ -545,7 +545,7 @@ Facts (hypothetical): calendar 2026, taxable profit EUR 10,000,000, single compa
 
 ## Disclaimer
 
-This Guide and its outputs are for information and computation only and are not tax, legal or financial advice. Every output must be reviewed and confirmed by a certified accountant registered with the Ordem dos Contabilistas Certificados, or by a statutory auditor registered with the Ordem dos Revisores Oficiais de Contas, before anything is filed with the Autoridade Tributária e Aduaneira or acted on. The current version of this Guide is kept at openaccountants.com.
+This skill and its outputs are for information and computation only and are not tax, legal or financial advice. Every output must be reviewed and confirmed by a certified accountant registered with the Ordem dos Contabilistas Certificados, or by a statutory auditor registered with the Ordem dos Revisores Oficiais de Contas, before anything is filed with the Autoridade Tributária e Aduaneira or acted on. The current version of this skill is kept at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 
@@ -567,4 +567,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pt-corporate-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pt-corporate-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pt-corporate-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pt-corporate-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

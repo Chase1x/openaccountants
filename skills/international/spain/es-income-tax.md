@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish personal income tax (IR
 version: 2.0
 jurisdiction: ES
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -28,9 +28,9 @@ Primary year: **2026** (calendar year, income earned 1 January to 31 December 20
 - **Which community.** Article 72: the community where the person spent more days of the year; failing that, where the main centre of interests is; failing that, the last declared residence. The community decides the regional half of the scale.
 - **Who must file.** Everyone who was registered in RETA (the self-employed Social Security scheme) **at any time** in the year must file, whatever their income. Article 96.2 says they are "en cualquier caso obligadas a declarar".
 - **Out of scope** (see "When to refuse or refer"): non-residents, who pay non-resident tax and do not file modelo 100 ([Real Decreto Legislativo 5/2004](https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527)); the foral territories; companies; módulos computations.
-- **Related Guides.** Social Security contributions (RETA bases, rates and the yearly regularisation): **es-social-contributions**. The box-by-box modelo 130 computation: **es-estimated-tax**.
+- **Related Skills.** Social Security contributions (RETA bases, rates and the yearly regularisation): **es-social-contributions**. The box-by-box modelo 130 computation: **es-estimated-tax**.
 
-There is **no single Spanish income tax rate**. The general base is taxed twice: once on the state scale (article 63) and once on the scale of the taxpayer's community (article 74). This Guide gives the state half only. Doubling it is not any community's tax.
+There is **no single Spanish income tax rate**. The general base is taxed twice: once on the state scale (article 63) and once on the scale of the taxpayer's community (article 74). This skill gives the state half only. Doubling it is not any community's tax.
 
 ## Ask the client first
 
@@ -166,12 +166,12 @@ The general rule: an expense is deductible if it is linked to the activity, back
 
 - **Which years.** The law sets 5%, "sin que la cuantía resultante pueda superar 2.000 euros anuales". The only year-specific change in Ley 35/2006 was for 2023 ("durante el período impositivo 2023, del 7 por ciento"). Nothing changes it for 2024, **2025** or **2026**. So both the 2025 return and 2026 use 5% capped at EUR 2,000.
 - **The ceiling covers provisions too.** The EUR 2,000 caps deductible provisions and hard-to-justify expenses together.
-- **Not with the article 32.2 reduction.** It does not apply where the taxpayer opts for the reduction in article 32.2 of the Ley (for economically dependent self-employed people and others meeting its conditions), which article 26.1 of the regulation governs. That reduction is outside this Guide: refer.
+- **Not with the article 32.2 reduction.** It does not apply where the taxpayer opts for the reduction in article 32.2 of the Ley (for economically dependent self-employed people and others meeting its conditions), which article 26.1 of the regulation governs. That reduction is outside this skill: refer.
 - **Ceuta, 2026 only.** For activities in Ceuta whose income qualifies for the article 68.4 deduction, the rate is **10%** for 2026 (Ley 35/2006, sixty-fourth additional provision, added by Real Decreto-ley 22/2026 of 1 September 2026, in force 3 September 2026). It counts for 2026 instalments whose filing period starts one month after that date. The EUR 2,000 ceiling is not changed by that provision. A decree-law must be validated by Congress: check that it has been.
 
 ### Módulos (estimación objetiva) limits: routing only
 
-Módulos is outside this Guide. The limits matter because exceeding them forces the taxpayer into estimación directa for the following year.
+Módulos is outside this skill. The limits matter because exceeding them forces the taxpayer into estimación directa for the following year.
 
 | Limit, measured on the previous year | Permanent text (article 31 [Ley 35/2006](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764)) | Figures applied 2016 to 2024 |
 | --- | --- | --- |
@@ -346,7 +346,7 @@ Amounts are sample data. Rates come from the tables above. Every case is an esti
 ### 2026 income (return filed in 2027)
 
 - **Form:** modelo 100, filed online through the Agencia Tributaria electronic office (Renta WEB), by phone, or in person where the office allows.
-- **When:** the campaign window is set each year by ministerial order. The window for the 2026 return had not been published when this Guide was written. Do not assume the 2025 dates.
+- **When:** the campaign window is set each year by ministerial order. The window for the 2026 return had not been published when this skill was written. Do not assume the 2025 dates.
 - **Instalments during 2026:** modelo 130 by 20 April, 20 July and 20 October 2026, and 30 January 2027 (see above). 30 January 2027 is a Saturday, so under the non-working-day rule that period runs to the next working day.
 
 ### 2025 income (return filed in 2026) ([Agencia Tributaria, Renta 2025 manual](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c01-campana-declaracion-renta/confirmacion-borrador-presentacion-declaraciones/plazo-forma-presentacion.html))
@@ -377,7 +377,7 @@ Amounts are sample data. Rates come from the tables above. Every case is an esti
 
 ## Disclaimer
 
-This Guide is for information and computation only and is not tax, legal or financial advice. Outputs must be reviewed by a qualified professional (such as an asesor fiscal) before filing or acting on them.
+This skill is for information and computation only and is not tax, legal or financial advice. Outputs must be reviewed by a qualified professional (such as an asesor fiscal) before filing or acting on them.
 
 <!-- openaccountants-cta-block -->
 

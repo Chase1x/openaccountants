@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/pa-payroll"
   jurisdiction: "US-PA"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -27,7 +27,7 @@ Figures are for tax year 2026 unless a line says 2025. Pennsylvania's withholdin
   - UC employer contributions and the employee contribution;
   - the state minimum wage and new hire reporting.
 - **Summarised only, then referred:**
-  - Philadelphia wage tax. Act 32 does not apply to Philadelphia; the employer withholds the City's own resident or nonresident rate and pays the City ([DCED FAQ](https://dced.pa.gov/local-government/local-income-tax-information/local-withholding-tax-faqs/)). This Guide does not state Philadelphia's rates. Get them from the City of Philadelphia Department of Revenue.
+  - Philadelphia wage tax. Act 32 does not apply to Philadelphia; the employer withholds the City's own resident or nonresident rate and pays the City ([DCED FAQ](https://dced.pa.gov/local-government/local-income-tax-information/local-withholding-tax-faqs/)). This skill does not state Philadelphia's rates. Get them from the City of Philadelphia Department of Revenue.
   - Employer-side city taxes, such as Pittsburgh's payroll expense tax and Philadelphia's business taxes.
 - **Does not cover:** federal payroll taxes; the employee's own PA-40 or local return; withholding on 1099 payments; worker classification (including the Construction Workplace Misclassification Act); final pay; overtime exemptions; workers' compensation.
 - **Local rates change.** Municipalities and school districts set EIT and LST rates; the Department of Community and Economic Development (DCED) publishes them. Look up the current rate by address ([Local income tax information](https://dced.pa.gov/local-government/local-income-tax-information/)).
@@ -263,8 +263,8 @@ The dollar amounts and all local EIT rates in these cases are made up for illust
 
 ## When to refuse or refer
 
-- **Refer** Philadelphia wage tax rates, filing and credits to the City of Philadelphia Department of Revenue. This Guide does not state them.
-- **Refuse** to use a local EIT or LST rate from memory, from this Guide's examples or from last year. Look it up by address with DCED for the current year.
+- **Refer** Philadelphia wage tax rates, filing and credits to the City of Philadelphia Department of Revenue. This skill does not state them.
+- **Refuse** to use a local EIT or LST rate from memory, from this skill's examples or from last year. Look it up by address with DCED for the current year.
 - **Refer** multistate allocation beyond the working-day formula, remote-work residency questions, and the employee's own credits for tax paid to other states or cities, to the employee's tax adviser.
 - **Refer** worker classification, final pay, overtime exemptions and wage disputes to an employment lawyer or the Department of Labor & Industry, and UC rate appeals, voluntary contributions, successor transfers and experience rating to the Office of UC Tax Services.
 - **Refuse** to stop PA withholding for a reciprocal-state resident unless a REV-419 is on file and you are set up to withhold that state's tax. Refuse it in every case for wages an S corporation pays to an Ohio resident who holds 20% or more of its shares.
@@ -328,4 +328,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pa-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pa-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `pa-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/pa-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

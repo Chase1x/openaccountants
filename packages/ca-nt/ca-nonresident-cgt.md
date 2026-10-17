@@ -4,7 +4,7 @@ description: "Canada non-resident capital gains: Section 116 clearance certifica
 version: 1.0
 jurisdiction: CA
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([ITA s.116](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-116.html))
 
-This Guide covers a **non-resident of Canada** (individual, corporation or trust) who sells, gives away or otherwise disposes of **taxable Canadian property (TCP)**, and the **purchaser** who buys it. Primary year: **2026** (Canada's tax year for individuals is the calendar year). The same rules applied to 2025 dispositions unless a line says otherwise.
+This skill covers a **non-resident of Canada** (individual, corporation or trust) who sells, gives away or otherwise disposes of **taxable Canadian property (TCP)**, and the **purchaser** who buys it. Primary year: **2026** (Canada's tax year for individuals is the calendar year). The same rules applied to 2025 dispositions unless a line says otherwise.
 
 It covers:
 
@@ -28,17 +28,17 @@ It covers:
 - reporting the gain on a Canadian T1 return, the 1/2 inclusion rate and the non-resident surtax;
 - the principal residence exemption for someone who is now non-resident.
 
-**Not covered here**, see the **ca-tax-residency** Guide: whether a person is resident or non-resident, departure tax on emigration (Forms T1243, T1161, T1244), Part XIII withholding on dividends, rent, pensions and interest, and the section 216 and 217 elections. In short, dividends and other listed amounts paid to a non-resident bear a 25% Part XIII tax withheld at source ([ITA s.212(1)](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-212.html)), which a treaty may reduce; that is separate from the capital gains rules here.
+**Not covered here**, see the **ca-tax-residency** skill: whether a person is resident or non-resident, departure tax on emigration (Forms T1243, T1161, T1244), Part XIII withholding on dividends, rent, pensions and interest, and the section 216 and 217 elections. In short, dividends and other listed amounts paid to a non-resident bear a 25% Part XIII tax withheld at source ([ITA s.212(1)](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-212.html)), which a treaty may reduce; that is separate from the capital gains rules here.
 
 **Who is taxed.** A person not resident in Canada who "disposed of a taxable Canadian property, at any time in the year or a previous year" pays Canadian income tax on taxable income earned in Canada ([ITA s.2(3)](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-2.html)). That taxable income includes "taxable capital gains from dispositions" of TCP ([ITA s.115(1)](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-115.html)). A gain on property that is not TCP (for example most listed shares held as a small holding) is not taxed in Canada.
 
 **Section 116 applies because of the vendor's status, not the buyer's.** It applies when the vendor is non-resident or deemed non-resident when the disposition happens, including a vendor who was resident when they agreed to sell but is non-resident at closing. "The purchaser's domicile or country of residence is not relevant" ([IC72-17R6, para 5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ic72-17/ic72-17r6-procedures-concerning-disposition-taxable-canadian-property-non-residents-canada-section-116.html)).
 
-**Sources used.** The Income Tax Act on Justice Laws (current to 2026-09-03); CRA Information Circular IC72-17R6 (dated 2011, page updated 2025); the CRA page [Disposing of or acquiring certain Canadian property](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/disposing-acquiring-certain-canadian-property.html); CRA Guide T4058 (2025 edition); CRA Guide T4037 (2025); Income Tax Folio S1-F3-C2. Where IC72-17R6 and the newer CRA page differ on procedure (for example online submission), this Guide follows the newer page.
+**Sources used.** The Income Tax Act on Justice Laws (current to 2026-09-03); CRA Information Circular IC72-17R6 (dated 2011, page updated 2025); the CRA page [Disposing of or acquiring certain Canadian property](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/disposing-acquiring-certain-canadian-property.html); CRA Guide T4058 (2025 edition); CRA Guide T4037 (2025); Income Tax Folio S1-F3-C2. Where IC72-17R6 and the newer CRA page differ on procedure (for example online submission), this skill follows the newer page.
 
 ## Ask the client first
 
-- **Residence at the date of disposition.** Was the vendor non-resident (or deemed non-resident by a treaty) on the closing date? If residence is unclear, work it out first with the ca-tax-residency Guide.
+- **Residence at the date of disposition.** Was the vendor non-resident (or deemed non-resident by a treaty) on the closing date? If residence is unclear, work it out first with the ca-tax-residency skill.
 - **What exactly is being sold?** Canadian land or buildings, a rental property, a cottage, a former home, unlisted shares, listed shares, a partnership or trust interest, business assets, resource or timber property, a life insurance policy.
 - **For shares or interests:** is the company listed on a designated stock exchange? At **any time in the 60 months** before the sale, did more than 50% of the share's value come from Canadian real property, resource property or timber property? For listed shares: did the vendor and non-arm's-length persons own **25% or more** of any class at any time in those 60 months?
 - **Dates and amounts:** proposed or actual closing date, proceeds (or fair market value if a gift or non-arm's-length sale), adjusted cost base in Canadian dollars, selling costs.
@@ -51,7 +51,7 @@ It covers:
 
 ## The method, step by step
 
-1. **Confirm non-residence** at the disposition date. If the vendor is resident, section 116 does not apply (and the ca-tax-residency Guide covers any departure tax).
+1. **Confirm non-residence** at the disposition date. If the vendor is resident, section 116 does not apply (and the ca-tax-residency skill covers any departure tax).
 2. **Classify the property** as TCP or not, using the table in "What counts as taxable Canadian property" below. If it is not TCP, there is no section 116 notice, no purchaser liability and no Canadian tax on the gain.
 3. **Check whether it is excluded property** under s.116(6) (for example shares listed on a recognized stock exchange, units of a mutual fund trust, bonds and mortgages, or treaty-exempt property). Excluded property needs no section 116 notice and carries no purchaser liability, but a gain can still be taxable in Canada and reportable on a return (IC72-17R6, para 3).
 4. **Check treaty protection.** If the treaty fully exempts the gain, the property is treaty-protected. If vendor and purchaser are related, it only becomes treaty-exempt (and excluded) if the purchaser files a notice within 30 days. See "Treaty-protected property".
@@ -184,7 +184,7 @@ Points that are easy to get wrong:
 - Attach **Copy 2** of the certificate of compliance (T2064 or T2068).
 - Claim the section 116 payment (and any purchaser remittance) as tax paid.
 
-**Tax rate.** Only 1/2 of the gain is taxable (s.38(a)). If the non-resident has no income earned in a province (for example only TCP gains), "Other" is entered as the jurisdiction and they pay federal tax "plus the surtax for non-residents and deemed residents of Canada" (T4058), which is **48%** of the federal tax on that income (s.120(1)), instead of provincial tax. Federal brackets and credits for 2026 are in the 2026 return package; this Guide does not reproduce them. Where the person also has employment income or a business with a permanent establishment in a province, Form T2203 splits the tax.
+**Tax rate.** Only 1/2 of the gain is taxable (s.38(a)). If the non-resident has no income earned in a province (for example only TCP gains), "Other" is entered as the jurisdiction and they pay federal tax "plus the surtax for non-residents and deemed residents of Canada" (T4058), which is **48%** of the federal tax on that income (s.120(1)), instead of provincial tax. Federal brackets and credits for 2026 are in the 2026 return package; this skill does not reproduce them. Where the person also has employment income or a business with a permanent establishment in a province, Form T2203 splits the tax.
 
 **Excess payment.** After assessment, "any excess payment is refunded or provision is made for the release of security" (IC72-17R6 para 60). A return filed before the end of the tax year is processed only after the year ends.
 
@@ -267,12 +267,12 @@ Refer to a Canadian cross-border tax adviser, or decline, when:
 - the vendor is a corporation, trust, estate (including the death of a non-resident owner) or partnership;
 - the vendor claims a treaty exemption on shares or business property and the treaty article, protocol or anti-abuse rules need analysis;
 - the transaction involves a section 85 rollover, a corporate reorganization, resource or timber property, inventory land, or a life insurance policy;
-- the property is in Quebec: this Guide covers only the federal rules, so check Revenu Québec's own requirements for dispositions by non-residents;
+- the property is in Quebec: this skill covers only the federal rules, so check Revenu Québec's own requirements for dispositions by non-residents;
 - the CRA disputes the ACB, the valuation or the treaty claim, or a purchaser liability assessment has been raised;
 - Underused Housing Tax returns or tax for 2022 to 2024 may be outstanding;
 - the client wants to close without a certificate or without a holdback.
 
-This Guide explains the federal rules; it does not replace a review of the documents by a Canadian professional.
+This skill explains the federal rules; it does not replace a review of the documents by a Canadian professional.
 
 ## Filing and payment ([CRA: Disposing of or acquiring certain Canadian property](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/disposing-acquiring-certain-canadian-property.html))
 
@@ -304,7 +304,7 @@ This Guide explains the federal rules; it does not replace a review of the docum
 - [ ] Purchaser's holdback set at 25% or 50% of price minus any certificate limit; remittance date diarised if no certificate.
 - [ ] Principal residence formula applied with only years of Canadian residence in B; T2091(IND) (or signed letter) sent with the section 116 notice to reduce the payment, and T2091(IND) filed with the return.
 - [ ] Return for the year of disposition filed on time (or s.150(5) exception documented), with Schedule 3, line 12700 at the 1/2 inclusion rate, any recapture, Copy 2 of the certificate, and the section 116 and purchaser payments claimed.
-- [ ] Cross-checked with the ca-tax-residency Guide for departure tax and Part XIII items.
+- [ ] Cross-checked with the ca-tax-residency skill for departure tax and Part XIII items.
 
 <!-- openaccountants-cta-block -->
 

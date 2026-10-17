@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/my-epf-socso"
   jurisdiction: "MY"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 Figures are for 2026 contribution months (calendar year 2026) unless a line says otherwise. SOCSO and EIS amounts come from PERKESO's schedules. The ceiling for both is RM6,000 a month, from 1 October 2024 ([PERKESO contribution rate](https://www.perkeso.gov.my/en/rate-of-contribution.html)). From 1 June 2026 there is a new employee-funded SOCSO scheme, LINDUNG 24 Jam. Since 8 July 2026 it is voluntary for local employees and mandatory for foreign workers ([PERKESO LINDUNG 24 Jam](https://www.perkeso.gov.my/en/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html)).
 
-**EPF figures are not reproduced in this edition.** The EPF (KWSP) website blocked automated access when this Guide was prepared, so we could not check the EPF rate table against an official page. This Guide explains how to apply EPF and tells you where to read the rate. It does not state a rate we could not verify. Before quoting an EPF percentage, read it from the Third Schedule to the EPF Act 1991 or the contribution calculator on the KWSP website (kwsp.gov.my).
+**EPF figures are not reproduced in this edition.** The EPF (KWSP) website blocked automated access when this skill was prepared, so we could not check the EPF rate table against an official page. This skill explains how to apply EPF and tells you where to read the rate. It does not state a rate we could not verify. Before quoting an EPF percentage, read it from the Third Schedule to the EPF Act 1991 or the contribution calculator on the KWSP website (kwsp.gov.my).
 
 ## Scope and who this is for
 
@@ -246,12 +246,12 @@ In these cases, "employee total" means the SOCSO and EIS deducted from pay; EPF 
 - **October 2024 to May 2026:** the RM6,000 ceiling applied, and there was no LINDUNG 24 Jam column. Use the employer and Invalidity columns only ([PERKESO contribution rate](https://www.perkeso.gov.my/en/rate-of-contribution.html)).
 - **Before October 2024:** the ceiling was RM5,000.
 - **June 2026:** LINDUNG 24 Jam was mandatory for every employee under the Employees' Social Security (Amendment) Act 2026. June contributions cannot be refunded. If they were not deducted, the employer must deduct the arrears ([LINDUNG 24 Jam FAQ](https://www.perkeso.gov.my/images/lindung/lindung-24-jam/faq-2.1.pdf)).
-- **Returns being filed now:** the 2025 employer return (Form E) and employees' EA statements are handled under the income tax rules and are outside this Guide.
+- **Returns being filed now:** the 2025 employer return (Form E) and employees' EA statements are handled under the income tax rules and are outside this skill.
 
 ## When to refuse or refer
 
 - **EPF rates, EPF late-payment charges, EPF registration timing, i-Saraan:** refer to KWSP or to a Malaysian payroll professional who can read the KWSP Third Schedule. Do not quote EPF percentages from memory.
-- **HRD Corp levy:** whether an employer must register and pay the levy depends on its industry and headcount under the Pembangunan Sumber Manusia Berhad Act 2001. This Guide does not state the rates. Refer to HRD Corp.
+- **HRD Corp levy:** whether an employer must register and pay the levy depends on its industry and headcount under the Pembangunan Sumber Manusia Berhad Act 2001. This skill does not state the rates. Refer to HRD Corp.
 - **Foreign workers and EIS:** refer to PERKESO where it is unclear whether EIS is due.
 - **Domestic workers, public-sector staff, and employees with several employers:** refer to PERKESO.
 - **Prosecution or compound notices, and disputes over arrears:** refer to a lawyer or a PERKESO/KWSP office.
@@ -300,4 +300,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `my-epf-socso` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/my-epf-socso. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `my-epf-socso` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/my-epf-socso. If neither is available, confirm every figure against the official source pages cited above before relying on it.

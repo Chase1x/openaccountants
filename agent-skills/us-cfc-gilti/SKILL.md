@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-cfc-gilti"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for
 
-This Guide covers a **US person** who owns stock in a **foreign corporation**. A US person here means a citizen, green-card holder, resident alien, domestic partnership, domestic corporation, or domestic estate or trust. The Guide sets out:
+This skill covers a **US person** who owns stock in a **foreign corporation**. A US person here means a citizen, green-card holder, resident alien, domestic partnership, domestic corporation, or domestic estate or trust. The skill sets out:
 
 - when the owner is a **United States shareholder** and when the company is a **controlled foreign corporation (CFC)**
 - the two current-year inclusions: **Subpart F income** (§951(a)(1)(A)) and **net CFC tested income** (§951A, called GILTI before 2026)
@@ -34,9 +34,9 @@ It does not cover:
 - foreign partnerships (Form 8865)
 - the Form 1118 credit computation, line by line
 
-The Form 1116 side of foreign tax credits is covered in the `us-foreign-tax-credit-1116` Guide.
+The Form 1116 side of foreign tax credits is covered in the `us-foreign-tax-credit-1116` skill.
 
-A foreign entity is only in scope if it is classified as a **corporation** for US tax purposes. If it is a partnership or a disregarded entity (for example after a Form 8832 check-the-box election), the CFC rules do not apply to it and this Guide stops.
+A foreign entity is only in scope if it is classified as a **corporation** for US tax purposes. If it is a partnership or a disregarded entity (for example after a Form 8832 check-the-box election), the CFC rules do not apply to it and this skill stops.
 
 ## Ask the client first
 
@@ -211,7 +211,7 @@ These rules apply for tax years beginning after 31 December 2025.
   - the §250 deduction (and taxes on the income deducted under §164(a)(3))
   - deductions **directly allocable** to it
 - **No interest expense or research and experimental expenditure** is allocated to it.
-- Excess credits in this category cannot be carried back or forward. This matches the `us-foreign-tax-credit-1116` Guide.
+- Excess credits in this category cannot be carried back or forward. This matches the `us-foreign-tax-credit-1116` skill.
 
 **Subpart F inclusions:** §960(a) deems a domestic corporation to have paid the foreign income taxes properly attributable to the Subpart F item, with no haircut.
 
@@ -375,7 +375,7 @@ Use these rules for a 2025 return, including one on extension. The Form 5471 goe
 Refer to a credentialed US international tax preparer when:
 
 - the ownership chain involves a foreign parent, trusts, partnerships or several tiers (§951B, §958 attribution, §958(a) chains)
-- a foreign trust holds the CFC stock: coordinate with the `us-foreign-trust-reporting` Guide (Forms 3520 and 3520-A), because the same earnings can trigger both regimes
+- a foreign trust holds the CFC stock: coordinate with the `us-foreign-trust-reporting` skill (Forms 3520 and 3520-A), because the same earnings can trigger both regimes
 - a fiscal-year CFC's tax year straddles 1 January 2026. Some changes apply to "taxable years beginning after" that date (QBAI repeal and the new §250 and §960(d) rates). Others apply to "taxable years of foreign corporations beginning after" it (the any-day owner rule, §958(b)(4) and §951B). The two can fall in different years.
 - there are mid-year stock transfers, redemptions or new issues (the pro rata share and year-closing rules)
 - there is Subpart F income beyond simple passive income, or there is insurance income or a §956 investment in US property
@@ -429,4 +429,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-cfc-gilti` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-cfc-gilti. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-cfc-gilti` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-cfc-gilti. If neither is available, confirm every figure against the official source pages cited above before relying on it.

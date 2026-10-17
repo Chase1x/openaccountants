@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-multi-state-residency-and-allocation"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide is a method for US individuals who live, move or work in more than one US state. It covers:
+This skill is a method for US individuals who live, move or work in more than one US state. It covers:
 
 - domicile and statutory residency (the "permanent place of abode plus days" tests);
 - part-year returns in a move year;
@@ -28,7 +28,7 @@ This Guide is a method for US individuals who live, move or work in more than on
 
 **Tax year.** The primary year is **tax year 2026** (returns filed in 2027). The latest state forms and instructions published at writing are for 2025, so the state rules below are taken from those 2025 documents and from current statutes. Check each state's 2026 instructions when they are published. A dated section at the end covers **2025 returns**.
 
-**How to read the state detail.** Residency, sourcing and credits are state law, and every state differs. The key-state table gives each rule with its official source. A state marked **check** was not verified from an official source for this Guide: confirm it on that state's own site before relying on it. Where the Tax Library has a state Guide (New York IT-201, New Jersey, Pennsylvania, Connecticut, Delaware, Georgia, Maryland, California 540, Kentucky, Arkansas, Virginia), this Guide follows the same rule.
+**How to read the state detail.** Residency, sourcing and credits are state law, and every state differs. The key-state table gives each rule with its official source. A state marked **check** was not verified from an official source for this skill: confirm it on that state's own site before relying on it. Where the Skill Library has a state Guide (New York IT-201, New Jersey, Pennsylvania, Connecticut, Delaware, Georgia, Maryland, California 540, Kentucky, Arkansas, Virginia), this skill follows the same rule.
 
 **Not covered:** business apportionment, pass-through entity taxes, trusts and estates, foreign residency and treaties, US territories, athletes and entertainers, and local taxes. Each state's return computation is in its own Guide.
 
@@ -49,7 +49,7 @@ This Guide is a method for US individuals who live, move or work in more than on
 1. **Fix the resident state or states for each part of the year.** Start with domicile: a person has only one domicile, and it does not change until they leave the old one and set up a new one. New York requires "clear and convincing evidence" of the change; a certificate of domicile or a new voter registration alone is not enough ([NY residency FAQ](https://www.tax.ny.gov/pit/file/nonresident-faqs.htm)). A domiciliary can still be a nonresident in some states under a narrow exception (see the boundary table).
 2. **Test statutory residency in every other state where the client kept a home.** Most such tests need **both** a home (an abode) **and** a day count. Read each state's own wording: "more than 183 days" and "184 days or more" mean the same thing, but "183 days or more" (Maryland) does not, and Virginia's statute looks at the abode for "more than 183 days" rather than at days present. See the key-state table. A person can be a resident of two states at once: the domicile state and a statutory-residence state. Both then tax all income, and relief comes only through the resident credit (step 7).
 3. **Split the year if the client moved.** For each state, the part-year return taxes all income received while a resident, plus that state's source income for the nonresident part. Many states compute the tax as if the person were a full-year resident and then apply an income ratio. New York does this, and adds "special accrual" rules for items accrued around a move ([IT-203-I](https://www.tax.ny.gov/pdf/current_forms/it/it203i.pdf)). New Jersey has no single part-year return: file NJ-1040 for the resident period and NJ-1040NR for any New Jersey income as a nonresident ([GIT-6](https://www.nj.gov/treasury/taxation/pdf/pubs/tgi-ee/git6.pdf)).
-4. **Source each nonresident item.** Wages: by where the work is physically done, measured in workdays, unless a convenience rule, a reciprocity agreement or a small-presence rule applies (steps 5 and 6). Real property and tangible property: the state where it is. Interest, dividends and gains on securities: generally taxed only by the state of residence, unless the property is used in a business in the source state ([Conn. Gen. Stat. § 12-711](https://www.cga.ct.gov/current/pub/chap_229.htm) is an example). Business and partnership income: by the state's allocation or apportionment rules (outside this Guide).
+4. **Source each nonresident item.** Wages: by where the work is physically done, measured in workdays, unless a convenience rule, a reciprocity agreement or a small-presence rule applies (steps 5 and 6). Real property and tangible property: the state where it is. Interest, dividends and gains on securities: generally taxed only by the state of residence, unless the property is used in a business in the source state ([Conn. Gen. Stat. § 12-711](https://www.cga.ct.gov/current/pub/chap_229.htm) is an example). Business and partnership income: by the state's allocation or apportionment rules (outside this skill).
 5. **Apply the convenience-of-the-employer rule where it exists.** In New York, a nonresident whose primary office is in New York has telecommuting days counted as New York workdays unless the employer has established a bona fide employer office at the home ([NY residency FAQ](https://www.tax.ny.gov/pit/file/nonresident-faqs.htm)). Pennsylvania and Delaware apply the same idea in their own words; New Jersey and Connecticut apply it only to residents of states that apply it themselves; Nebraska has a statutory version; Arkansas repealed its rule. See the convenience-rule table.
 6. **Check wage reciprocity.** Under a reciprocity agreement the work state does not tax the wages of a resident of the partner state; the home state taxes them. Agreements cover **employee wages only** (not self-employment income, rents or K-1 income), and several have extra conditions. See the reciprocity table.
 7. **Claim the resident credit in the resident state.** The resident state taxes all income and gives a credit for tax paid to another state on income that the **other state properly taxed as source income**. The credit is usually capped at the lower of the other state's tax on that income and the resident state's tax on it, and it needs a copy of the other state's return. Where the other state taxed wages only because of a convenience rule, the resident state may refuse the credit on those wages (California does: see the credit section).
@@ -239,4 +239,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-multi-state-residency-and-allocation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-multi-state-residency-and-allocation. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-multi-state-residency-and-allocation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-multi-state-residency-and-allocation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

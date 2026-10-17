@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/uk-non-dom"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers how the UK taxes the foreign income and gains (FIG) of people who used to rely on the remittance basis, and of people who have recently arrived in the UK. The primary year is the UK tax year 2026/27 (6 April 2026 to 5 April 2027), which HMRC writes as "2026 to 2027" or "2026-27". A short dated section covers the 2025/26 returns being filed now, and a separate dated section covers people with remittance basis history before 6 April 2025.
+This skill covers how the UK taxes the foreign income and gains (FIG) of people who used to rely on the remittance basis, and of people who have recently arrived in the UK. The primary year is the UK tax year 2026/27 (6 April 2026 to 5 April 2027), which HMRC writes as "2026 to 2027" or "2026-27". A short dated section covers the 2025/26 returns being filed now, and a separate dated section covers people with remittance basis history before 6 April 2025.
 
 - **What ended.** "On 6 April 2025 the 4-year foreign income and gains regime replaced the remittance basis." Domicile is no longer the connecting factor for income tax and capital gains tax. From that date "all UK residents are taxed on the arising basis of assessment on their worldwide income and gains", and "the 2024 to 2025 tax year was the last year for which the remittance basis could be claimed, or could apply automatically" ([HS264](https://www.gov.uk/government/publications/remittance-basis-hs264-self-assessment-helpsheet/hs264-remittance-of-pre-6-april-2025-foreign-income-and-gains-and-the-temporary-repatriation-facility-trf), updated 6 April 2026).
 - **What replaced it (Finance Act 2025 and Finance Act 2026 amendments):**
@@ -26,7 +26,7 @@ This Guide covers how the UK taxes the foreign income and gains (FIG) of people 
   3. rebasing to 5 April 2017 for certain former remittance basis users ([Finance Act 2025 Schedule 11](https://www.legislation.gov.uk/ukpga/2025/8/schedule/11));
   4. a new Overseas Workday Relief (OWR) tied to the FIG regime;
   5. residence-based inheritance tax: the long-term UK resident test ([IHTA 1984 s6A](https://www.legislation.gov.uk/ukpga/1984/51/section/6A)).
-- **Who this Guide is for.** Individuals who are UK resident under the statutory residence test (SRT) in 2026/27, or who were resident in earlier years and used the remittance basis. It covers income tax and capital gains tax in full and inheritance tax in outline only.
+- **Who this skill is for.** Individuals who are UK resident under the statutory residence test (SRT) in 2026/27, or who were resident in earlier years and used the remittance basis. It covers income tax and capital gains tax in full and inheritance tax in outline only.
 - **What it does not cover.** Working out residence itself (see `uk-statutory-residence-test`, which carries the same FIG look-back rules), non-UK trusts, the settlements and transfer of assets abroad rules, mixed fund identification, treaty relief, and the IHT charge itself. These are refer cases below.
 - **Every step depends on residence.** HMRC: "UK residence is determined by the statutory residence test (SRT) for tax years 2013-14 onwards" ([RFIG44000](https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig44000)). Settle residence for every year in the look-back before anything else.
 
@@ -64,7 +64,7 @@ This Guide covers how the UK taxes the foreign income and gains (FIG) of people 
 **Who qualifies** ([s845B](https://www.legislation.gov.uk/ukpga/2005/5/section/845B); [RFIG44000](https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig44000); [HMRC guidance](https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime)):
 
 - **First year (s845B(1)).** All of: UK resident for the year; not disqualified (not a member of the House of Commons or House of Lords for any part of the year); "for each of the 10 tax years before that tax year, the individual was not UK resident"; and "at least 10 years old at the commencement of that tax year". The age condition was inserted by Finance Act 2026 on 18 March 2026; check commencement if a young child's 2025/26 position matters.
-- **Next three years (s845B(2)).** UK resident, not disqualified, and the year "is one of the next three tax years after a qualifying tax year". The 10 non-resident years are counted back from the first qualifying year, not from the year of claim. This matches the `uk-statutory-residence-test` Guide.
+- **Next three years (s845B(2)).** UK resident, not disqualified, and the year "is one of the next three tax years after a qualifying tax year". The 10 non-resident years are counted back from the first qualifying year, not from the year of claim. This matches the `uk-statutory-residence-test` skill.
 - **Arrivals before the reform (s845B(3)(c)).** 2022/23, 2023/24 or 2024/25 is a qualifying tax year if the test would have been met in it. No claim can be made for those years themselves. HMRC: "you'll only have one year of eligibility — the tax year 2025 to 2026" for someone whose residence began in 2022/23.
 - **Look-back for 2026/27, by first qualifying year:** arrival in 2026/27 needs non-residence 2016/17 to 2025/26; arrival in 2025/26 needs 2015/16 to 2024/25; arrival in 2024/25 needs 2014/15 to 2023/24; arrival in 2023/24 needs 2013/14 to 2022/23. An arrival in 2022/23 has no FIG year left in 2026/27 (its window ended with 2025/26).
 - **Nationality and domicile do not matter.** A returning UK national with a UK domicile of origin qualifies if the 10-year test is met ([RFIG44000](https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig44000), Example 2).
@@ -292,7 +292,7 @@ This section is dated. It applies to tax years up to and including 2024/25 and t
 
 ## Sources and currency
 
-This Guide states the rules as the official pages print them on 25 September 2026. HMRC manuals are updated often; check the "Updated" date on each page before relying on it.
+This skill states the rules as the official pages print them on 25 September 2026. HMRC manuals are updated often; check the "Updated" date on each page before relying on it.
 
 <!-- openaccountants-cta-block -->
 
@@ -314,4 +314,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.

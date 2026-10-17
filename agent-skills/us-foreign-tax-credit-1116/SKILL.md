@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-foreign-tax-credit-1116"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # US Foreign Tax Credit (Form 1116) for individuals
 
-This Guide is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 1116 and its instructions were not yet published when this was written (25 September 2026). Where this Guide describes form lines, it uses the 2025 form, so check the line numbers against the 2026 instructions before filing.
+This skill is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 1116 and its instructions were not yet published when this was written (25 September 2026). Where this skill describes form lines, it uses the 2025 form, so check the line numbers against the 2026 instructions before filing.
 
 ## Scope and who this is for
 
@@ -246,7 +246,7 @@ The 2026 thresholds will be in the 2026 instructions.
   - the §960(d) deemed-paid credit is **90%** of the inclusion percentage × tested foreign income taxes
 - **Previously taxed earnings:** §960(d)(4) disallows the credit for **10%** of foreign taxes on a distribution that is excluded under §959(a) because of an earlier §951A inclusion. The 2025 Form 1116 instructions say it applies to such amounts "after June 28, 2025"; check the exact scope for the client's facts.
   - Withholding tax on such a distribution otherwise goes on Form 1116, whether or not you made a §962 election.
-- This Guide only flags these items. See "When to refuse or refer".
+- This skill only flags these items. See "When to refuse or refer".
 
 ## Boundaries and exceptions
 
@@ -304,7 +304,7 @@ All amounts are in dollars and are illustrations, not real clients.
 
 ## When to refuse or refer
 
-- Corporations, estates and trusts, and nonresident aliens. This Guide covers individual US citizens and residents only.
+- Corporations, estates and trusts, and nonresident aliens. This skill covers individual US citizens and residents only.
 - §962 elections, Form 1118, CFC look-through income, previously taxed earnings accounts, and preparing Forms 5471, 8865, 8858 or 8621.
 - Treaty re-sourcing (box f), treaty-based credits needing Form 8833, and the additional credit for US citizens resident in treaty countries.
 - §901(m) covered asset acquisitions, foreign tax credit splitting events, and foreign oil and gas income.
@@ -375,4 +375,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-foreign-tax-credit-1116` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-foreign-tax-credit-1116. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-foreign-tax-credit-1116` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-foreign-tax-credit-1116. If neither is available, confirm every figure against the official source pages cited above before relying on it.

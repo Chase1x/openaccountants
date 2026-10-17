@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/uk-bookkeeping"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -172,7 +172,7 @@ Required for a sole trader or landlord registered for Self Assessment with self-
 | Main pool writing down allowance | 14% from 1 April 2026 (corporation tax) and 6 April 2026 (income tax); 18% before; hybrid rate for a spanning period | Reducing balance | https://www.gov.uk/work-out-capital-allowances/rates-and-pools |
 | Special rate pool | 6% | Integral features, long-life assets, higher-emission cars | same page |
 | Small pools allowance | Balance of £1,000 or less written off | Main or special pool, not single asset pools | https://www.gov.uk/work-out-capital-allowances/work-out-what-you-can-claim |
-| Car bought from April 2021, new and unused, 0g/km or electric | 100% first-year allowance | | https://www.gov.uk/capital-allowances/business-cars |
+| Car bought from April 2021 and before April 2027, new and unused, 0g/km or electric | 100% first-year allowance | "If you buy it before April 2027, you can claim 100% first year allowances on: electric cars and cars with zero CO2 emissions" (https://www.gov.uk/capital-allowances/first-year-allowances) | https://www.gov.uk/capital-allowances/business-cars |
 | Car bought from April 2021: second-hand electric, or new or second-hand with CO2 of 50g/km or less | Main rate: 14% (18% before April 2026) | Main pool | same page |
 | Car bought from April 2021, new or second-hand, CO2 over 50g/km | Special rate: 6% | Special rate pool | same page |
 
@@ -188,7 +188,7 @@ At least two of three conditions; after the first year a change counts only if i
 | Balance sheet total | £500,000 | £7.5 million | same sections |
 | Average employees | 10 | 50 | same sections |
 
-Public companies and others in section 9.2 of https://www.gov.uk/government/publications/life-of-a-company-annual-requirements/life-of-a-company-part-1-accounts cannot use micro-entity accounts. A micro-entity claims audit exemption as a small company (https://www.legislation.gov.uk/ukpga/2006/46/section/477), subject to the exclusions on that Companies House page. For now, small companies and micro-entities can file their accounts at Companies House omitting the profit and loss account (same page). From 1 April 2028 a micro-entity must deliver its profit and loss account to Companies House but may opt out of publishing it.
+Public companies and others in section 9.2 of https://www.gov.uk/government/publications/life-of-a-company-annual-requirements/life-of-a-company-part-1-accounts cannot use micro-entity accounts. A micro-entity claims audit exemption as a small company (https://www.legislation.gov.uk/ukpga/2006/46/section/477), subject to the exclusions on that Companies House page. For now, small companies and micro-entities can file their accounts at Companies House omitting the profit and loss account (same page). From 1 April 2028 micro-entities and small companies must deliver their profit and loss account to Companies House but may opt out of publishing it: "From 1 April 2028, it will be mandatory for small companies to deliver a copy of the profit and loss account to Companies House. Small companies will be able to opt out of publishing this on the register." Abridged accounts end on the same date: "From 1 April 2028, new legislation means companies will no longer be able to file abridged accounts." (same page)
 
 ## Boundary and exception table
 
@@ -292,7 +292,7 @@ Our own working convention, not an official list: HMRC and Companies House presc
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants accepts no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a chartered accountant, ACCA member, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants accepts no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a chartered accountant, ACCA member, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 <!-- openaccountants-cta-block -->
 
@@ -314,4 +314,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `uk-bookkeeping` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/uk-bookkeeping. If neither is available, confirm every figure against the official source pages cited above before relying on it.

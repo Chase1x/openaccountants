@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-16T08:19:07+00:00",
+ "generated_at": "2026-10-17T07:58:52+00:00",
  "counts": {
   "guides": 2050,
   "jurisdictions": 245,
-  "accountant_reviewed": 156
+  "accountant_reviewed": 144
  },
  "guides": [
   {
@@ -400,7 +400,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-05"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cross-border-tax-workflow-base",
@@ -412,7 +412,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-05"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cross-border-vat-gst",
@@ -892,7 +892,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-expatriation-exit-tax",
@@ -904,7 +904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-fbar-fatca-reporting",
@@ -916,7 +916,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-feie-ftc",
@@ -928,7 +928,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-foreign-trust-reporting",
@@ -940,7 +940,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "vat-place-of-supply-master",
@@ -1012,7 +1012,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-1099-nec-issuance",
@@ -1036,7 +1036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-03"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-2026-federal-tax-changes",
@@ -1168,7 +1168,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-03"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-estate-gift-706-709",
@@ -1204,7 +1204,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-federal-income-tax-return-1040",
@@ -1252,7 +1252,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-form-1040-individual-income-tax-return",
@@ -1384,7 +1384,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-multi-state-residency-and-allocation",
@@ -1396,7 +1396,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-nft-tax",
@@ -1432,7 +1432,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-pte-state-matrix",
@@ -1444,7 +1444,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-qbi-deduction",
@@ -1480,7 +1480,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-real-estate-professional-and-short-term-rentals",
@@ -1516,7 +1516,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-sales-tax",
@@ -1552,7 +1552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-section-1202-qsbs",
@@ -1564,7 +1564,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-section-179-and-bonus-depreciation",
@@ -1588,7 +1588,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-self-employed-health-insurance",
@@ -1636,7 +1636,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-state-estimated-tax-safe-harbors-matrix",
@@ -1648,7 +1648,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-state-formation-matrix",
@@ -1972,7 +1972,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "vat-workflow-base",
@@ -3448,7 +3448,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "at-svs-contributions",
@@ -3484,7 +3484,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "austria-vat-return",
@@ -5656,7 +5656,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-crypto-tax",
@@ -5740,7 +5740,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-tax-residency",
@@ -5752,7 +5752,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "canada-bookkeeping",
@@ -6436,7 +6436,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cn-corporate-tax",
@@ -6448,7 +6448,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cn-fapiao-einvoice",
@@ -6496,7 +6496,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cn-return-assembly",
@@ -6532,7 +6532,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cn-vat",
@@ -6544,7 +6544,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cn-withholding",
@@ -6688,7 +6688,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "costa-rica-payroll",
@@ -6940,7 +6940,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cw-tax-overview",
@@ -6976,7 +6976,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cyprus-income-tax",
@@ -6988,7 +6988,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cyprus-payroll",
@@ -7000,7 +7000,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cyprus-social-contributions",
@@ -7012,7 +7012,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cyprus-tax-optimization",
@@ -7024,7 +7024,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cyprus-vat-return",
@@ -7036,7 +7036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cz-company-formation",
@@ -7144,7 +7144,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "dk-capital-gains",
@@ -7156,7 +7156,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "dk-income-tax",
@@ -7180,7 +7180,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "references",
@@ -7420,7 +7420,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "do-tax-registration",
@@ -7708,7 +7708,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "eg-corporate-tax",
@@ -8128,7 +8128,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "estonia-payroll",
@@ -8176,7 +8176,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "sz-company-formation",
@@ -8512,7 +8512,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "finland-vat-return",
@@ -8524,7 +8524,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fr-business-accounting",
@@ -8992,7 +8992,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-crypto-tax",
@@ -9004,7 +9004,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-einkommensteuer-freelancer",
@@ -9016,7 +9016,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-estimated-tax",
@@ -9052,7 +9052,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-rental-income",
@@ -9064,7 +9064,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-social-contributions",
@@ -9076,7 +9076,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-trade-tax",
@@ -9088,7 +9088,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-uk-employer-first-hire",
@@ -9112,7 +9112,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-19"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "germany-einvoice",
@@ -9160,7 +9160,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "germany-tax-optimization",
@@ -9208,7 +9208,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-20"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "leaving-germany-exit-tax",
@@ -9940,7 +9940,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "iceland-income-tax",
@@ -9964,7 +9964,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "iceland-social-contributions",
@@ -9988,7 +9988,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "iceland-vat",
@@ -10000,7 +10000,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "is-company-formation",
@@ -10116,11 +10116,11 @@
    "name": "in-advance-tax",
    "jurisdiction": "IN",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "in-cross-border-india-dual-resident-treaty",
@@ -10164,11 +10164,11 @@
    "name": "in-pf-esi-employer",
    "jurisdiction": "IN",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "in-professional-tax",
@@ -10176,11 +10176,11 @@
    "name": "in-professional-tax",
    "jurisdiction": "IN",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "in-tax-residency",
@@ -10192,7 +10192,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "in-tds-freelance",
@@ -10212,11 +10212,11 @@
    "name": "india-crypto-tax",
    "jurisdiction": "IN",
    "category": "crypto",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-einvoice",
@@ -10224,11 +10224,11 @@
    "name": "india-einvoice",
    "jurisdiction": "IN",
    "category": "invoicing",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-financial-statements",
@@ -10236,11 +10236,11 @@
    "name": "india-financial-statements",
    "jurisdiction": "IN",
    "category": "financial-statements",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-formation",
@@ -10248,11 +10248,11 @@
    "name": "india-formation",
    "jurisdiction": "IN",
    "category": "formation",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-gst",
@@ -10260,11 +10260,11 @@
    "name": "india-gst",
    "jurisdiction": "IN",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-payroll",
@@ -10272,11 +10272,11 @@
    "name": "india-payroll",
    "jurisdiction": "IN",
    "category": "payroll",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-tax-optimization",
@@ -10284,11 +10284,11 @@
    "name": "india-tax-optimization",
    "jurisdiction": "IN",
    "category": "tax-optimization",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-to-uae-singapore-nri-tax",
@@ -10308,11 +10308,11 @@
    "name": "india-transfer-pricing",
    "jurisdiction": "IN",
    "category": "transfer-pricing",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "references",
@@ -10384,7 +10384,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "id-payroll-pph21",
@@ -10648,7 +10648,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-corporation-tax",
@@ -10660,7 +10660,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-formation",
@@ -10672,7 +10672,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-freelance-intake",
@@ -10684,7 +10684,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-income-tax-form11",
@@ -10696,7 +10696,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-non-dom",
@@ -10708,7 +10708,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-payroll",
@@ -10720,7 +10720,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-preliminary-tax",
@@ -10732,7 +10732,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-prsi-class-s",
@@ -10744,7 +10744,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-return-assembly",
@@ -10768,7 +10768,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-02"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ie-vat-return",
@@ -10780,7 +10780,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ireland-vat-return",
@@ -10792,7 +10792,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "isle-of-man-vat",
@@ -12976,7 +12976,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "my-income-tax",
@@ -13204,7 +13204,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "malta-formation",
@@ -13228,7 +13228,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "malta-payroll",
@@ -13240,7 +13240,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "malta-ssc",
@@ -13252,7 +13252,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "malta-tax-optimization",
@@ -13288,7 +13288,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "moving-to-malta-tax-residence",
@@ -13312,7 +13312,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "mt-company-residence-and-substance",
@@ -13336,7 +13336,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "mt-estimated-tax",
@@ -13408,7 +13408,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "mt-property-transfer-tax-the-sale-immovable",
@@ -13468,7 +13468,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "mt-vat3-quarterly-return-malta",
@@ -13480,7 +13480,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "selling-a-company-in-malta",
@@ -14128,7 +14128,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ma-crypto-tax",
@@ -14608,7 +14608,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-01"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "netherlands-bookkeeping",
@@ -14656,7 +14656,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-01"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "netherlands-owner-occupied-home-tax-scheme",
@@ -14716,7 +14716,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-30-percent-ruling",
@@ -14728,7 +14728,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-01"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-corporate-tax",
@@ -14740,7 +14740,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-deductions",
@@ -14752,7 +14752,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-income-tax",
@@ -14788,7 +14788,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-vat-return",
@@ -14800,7 +14800,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-zzp-deductions",
@@ -14848,7 +14848,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-acc-levies",
@@ -14860,7 +14860,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-capital-gains",
@@ -14884,7 +14884,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-income-tax-ir3",
@@ -14896,7 +14896,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-motor-vehicle-expenses-logbook-business-use",
@@ -14908,7 +14908,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-provisional-tax",
@@ -14920,7 +14920,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nz-tax-residency",
@@ -14944,7 +14944,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "references",
@@ -15412,7 +15412,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "no-social-contributions",
@@ -15424,7 +15424,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "no-tax-overview",
@@ -15448,7 +15448,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "norway-mva",
@@ -15460,7 +15460,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "norway-to-switzerland-wealth-tax-exit",
@@ -15760,7 +15760,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "panama-itbms",
@@ -16276,7 +16276,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "pt-foreign-source-treaties",
@@ -16312,7 +16312,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "pt-return-assembly",
@@ -17536,7 +17536,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "sg-income-tax",
@@ -17548,7 +17548,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "sg-tax-residency",
@@ -17608,7 +17608,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "singapore-tax-optimization",
@@ -18352,7 +18352,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "es-irpf-deductions",
@@ -18412,7 +18412,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "es-vat-return",
@@ -18868,7 +18868,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "sweden-bookkeeping",
@@ -18904,7 +18904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "sweden-vat-return",
@@ -18916,7 +18916,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ch-ahv-iv",
@@ -19036,7 +19036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "switzerland-vat",
@@ -19900,7 +19900,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ae-income-tax",
@@ -19912,7 +19912,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ae-payroll-social",
@@ -19924,7 +19924,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ae-tax-overview",
@@ -19936,7 +19936,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ae-tax-residency",
@@ -19972,7 +19972,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ug-company-formation",
@@ -20092,7 +20092,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "property-management-2",
@@ -20140,7 +20140,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-capital-gains-sa108",
@@ -20152,7 +20152,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-crypto-tax",
@@ -20164,7 +20164,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-dividends",
@@ -20200,7 +20200,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-income-tax-sa100",
@@ -20224,7 +20224,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-non-dom",
@@ -20236,7 +20236,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-payments-on-account",
@@ -20260,7 +20260,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-rental-sa105",
@@ -20272,7 +20272,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-self-employment-sa103",
@@ -20296,7 +20296,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-student-loan-repayment",
@@ -20368,7 +20368,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "vat-returns-for-small-businesses-in-the-uk",
@@ -20392,7 +20392,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ua-bookkeeping",
@@ -20560,7 +20560,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ae-vat-return",
@@ -20572,7 +20572,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-26"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uruguay-income-tax",
@@ -20668,7 +20668,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-nonresident-cgt",
@@ -20680,7 +20680,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-tax-residency",
@@ -20692,7 +20692,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uz-company-formation",
@@ -21232,7 +21232,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-estimated-tax-540es",
@@ -21268,7 +21268,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-pte-elective-tax",
@@ -21316,7 +21316,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-return-assembly",
@@ -21424,7 +21424,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "in-return-assembly",
@@ -21432,11 +21432,11 @@
    "name": "in-return-assembly",
    "jurisdiction": "IN",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "jp-freelance-intake",
@@ -21568,7 +21568,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nl-return-assembly",
@@ -21580,7 +21580,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ny-corporate-franchise-article-9a",
@@ -21592,7 +21592,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ny-it-201-resident-return",
@@ -21628,7 +21628,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ny-pte-tax-ptet",
@@ -21640,7 +21640,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-03"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "pk-freelance-intake",
@@ -21700,7 +21700,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "tx-margin-tax",
@@ -21748,7 +21748,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "uk-return-assembly",
@@ -21760,7 +21760,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-ca-freelance-intake",
@@ -21772,7 +21772,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-ca-return-assembly",
@@ -21796,7 +21796,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "us-ny-freelance-intake",
@@ -21880,7 +21880,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "global-marketplaces-banking-fees",
@@ -22216,7 +22216,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-income-tax",
@@ -22240,7 +22240,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-03"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ca-residency-leaving-california",
@@ -22276,7 +22276,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "co-income-tax",
@@ -22288,7 +22288,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "co-payroll",
@@ -22360,7 +22360,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ct-payroll",
@@ -22396,7 +22396,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "dc-sales-tax",
@@ -22420,7 +22420,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-franchise-tax-and-llc",
@@ -22432,7 +22432,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "de-gross-receipts-tax",
@@ -22456,7 +22456,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fl-annual-report",
@@ -22552,7 +22552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ga-estimated-tax-depth",
@@ -22588,7 +22588,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ga-net-worth-tax",
@@ -22624,7 +22624,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "georgia-corporate-income-tax-returns-form-600",
@@ -22816,7 +22816,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "in-income-tax",
@@ -22828,7 +22828,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-27"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "in-payroll",
@@ -22900,7 +22900,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ky-payroll",
@@ -23032,7 +23032,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "md-payroll",
@@ -23344,7 +23344,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nc-bailey-settlement-retirement",
@@ -23560,7 +23560,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nj-cbt-and-bait",
@@ -23572,7 +23572,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nj-income-tax",
@@ -23584,7 +23584,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nj-payroll",
@@ -23596,7 +23596,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "nj-sales-tax",
@@ -23728,7 +23728,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ny-estimated-tax",
@@ -23836,7 +23836,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "oh-cat",
@@ -23848,7 +23848,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "oh-income-tax",
@@ -23860,7 +23860,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "oh-payroll",
@@ -23896,7 +23896,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "ok-income-tax",
@@ -23980,7 +23980,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "pa-local-eit",
@@ -24004,7 +24004,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "pa-sales-tax",
@@ -24220,7 +24220,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "va-payroll",
@@ -24292,7 +24292,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "wa-business-occupation-tax",
@@ -24304,7 +24304,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "wa-sales-tax",
@@ -24316,7 +24316,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "washington-sales-tax",
@@ -24328,7 +24328,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-25"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "wi-income-tax",
@@ -24376,7 +24376,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-10-05"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "wv-income-tax",

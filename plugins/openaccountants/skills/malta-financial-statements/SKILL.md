@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/malta-financial-statements"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope ([Companies Act, Cap. 386](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
 
-This Guide covers the annual accounts that a company registered in Malta under the Companies Act must prepare, have audited (or not), lay before its members and deliver to the Registrar of Companies at the Malta Business Registry (MBR). It covers:
+This skill covers the annual accounts that a company registered in Malta under the Companies Act must prepare, have audited (or not), lay before its members and deliver to the Registrar of Companies at the Malta Business Registry (MBR). It covers:
 
 - which accounting framework applies: IFRS as adopted by the EU, or GAPSME (the General Accounting Principles for Small and Medium-Sized Entities);
 - the size tests in article 185 of the Companies Act (small company, the micro "at least two of three" audit exemption, small group) and in the GAPSME Regulations;
@@ -26,9 +26,9 @@ This Guide covers the annual accounts that a company registered in Malta under t
 
 **Year.** Malta companies may use any accounting reference date. Figures are for accounting periods reported in tax year 2026 (calendar 2026), using the law as consolidated on legislation.mt at 28 April 2026. Most companies with a 31 December year-end are now finishing their **2025** accounts: see Case 1 and "When the higher limits started".
 
-**Not covered.** Corporate income tax computations, tax rates, refunds and the company tax return: see the **malta-income-tax** Guide. VAT: see the **malta-vat-return** Guide. Banks, financial institutions and insurers follow their own sector rules for the form and content of their accounts (article 168); insurance-related entities may have their own principles ([S.L. 281.07](https://legislation.mt/getpdf/695d0bd4d2130a2e4cdb89d2)). Investment companies with variable share capital (SICAVs) use the Fifth Schedule format (article 169). Partnerships are not covered. Corporate sustainability reporting (CSRD) is flagged only: large undertakings and listed entities must take specialist advice.
+**Not covered.** Corporate income tax computations, tax rates, refunds and the company tax return: see the **malta-income-tax** skill. VAT: see the **malta-vat-return** skill. Banks, financial institutions and insurers follow their own sector rules for the form and content of their accounts (article 168); insurance-related entities may have their own principles ([S.L. 281.07](https://legislation.mt/getpdf/695d0bd4d2130a2e4cdb89d2)). Investment companies with variable share capital (SICAVs) use the Fifth Schedule format (article 169). Partnerships are not covered. Corporate sustainability reporting (CSRD) is flagged only: large undertakings and listed entities must take specialist advice.
 
-**Sources.** Everything below is from the Laws of Malta. The Malta Tax and Customs Administration (MTCA) website and the MBR website could not be read for this Guide. Anything that depends on them (review-report guidelines, portal steps, current MBR fees in practice) is marked **check**.
+**Sources.** Everything below is from the Laws of Malta. The Malta Tax and Customs Administration (MTCA) website and the MBR website could not be read for this skill. Anything that depends on them (review-report guidelines, portal steps, current MBR fees in practice) is marked **check**.
 
 ## Ask the client first
 
@@ -55,7 +55,7 @@ This Guide covers the annual accounts that a company registered in Malta under t
 8. **Audit (if required),** then send copies to members and debenture holders at least fourteen days before the general meeting. ([Cap. 386 art. 179 and 180](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
 9. **Lay the accounts** before the general meeting for approval: within ten months of the year-end for a private company, seven months for a public company. ([Cap. 386 art. 181 and 182](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
 10. **Deliver to the Registrar** within forty-two days from the end of that laying period, with any exemption declaration. File the annual return on its own cycle. ([Cap. 386 art. 183 and 184](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
-11. **Hand over to tax.** The audited (or reviewed, or exempt) accounts support the company tax return. See the **malta-income-tax** Guide.
+11. **Hand over to tax.** The audited (or reviewed, or exempt) accounts support the company tax return. See the **malta-income-tax** skill.
 
 Order matters. If you choose the framework before testing size, a company may be put on IFRS or GAPSME wrongly. If you drop the audit because of the tax rules, you may breach the Companies Act, which has its own, different test.
 
@@ -152,7 +152,7 @@ The micro limits in article 185(2) (€46,600, €93,000, 2 employees) did not c
   - **Rule 3 (start-up waiver):** no auditor's report for the first two accounting periods of a newly registered company whose sole shareholders are individuals with an MQF level 3 (or higher) qualification who set up the company within three years of qualifying, and whose turnover does not exceed €80,000 (pro rata for a period that is not twelve months). ([L.N. 139 of 2025](https://legislation.mt/getpdf/688b3e0cbed0ef08a863ffa1))
   - **Rule 4:** if such a company has an audit anyway, it may deduct 120% of the audit cost, up to €700 for each accounting period. ([L.N. 139 of 2025](https://legislation.mt/getpdf/688b3e0cbed0ef08a863ffa1))
   - **Rule 5:** both reliefs end at once if a shareholder change means the shareholders are no longer all qualifying individuals.
-- **Review report.** The Rules give "review report" the meaning in guidelines published on the Commissioner for Tax and Customs' website. That site could not be read for this Guide: **check** the current MTCA guidelines for who may sign the review report and what it must contain.
+- **Review report.** The Rules give "review report" the meaning in guidelines published on the Commissioner for Tax and Customs' website. That site could not be read for this skill: **check** the current MTCA guidelines for who may sign the review report and what it must contain.
 - **Watch the mismatch.** The start-up waiver in rule 3 is a tax rule only. Unless the company also meets the article 185(2) test, the Companies Act still requires an audit.
 
 ## Year-end adjustments checklist ([GAPSME Schedule](https://legislation.mt/getpdf/6641e0860419230b5c3872a1))
@@ -219,13 +219,13 @@ All amounts are illustrations. Each company is private, not a PIE, not a parent,
 
 - **PIEs, listed issuers and ESEF filers:** refer to a statutory auditor with PIE experience. Extra audit-report content (art. 179B) and electronic filing rules apply.
 - **Banks, financial institutions, insurers and SICAVs:** sector rules override the Act (art. 168 and 169). Refer.
-- **Sustainability reporting (CSRD):** large undertakings and PIEs may have sustainability reporting and assurance duties under S.L. 386.31. This Guide does not cover them. Refer.
+- **Sustainability reporting (CSRD):** large undertakings and PIEs may have sustainability reporting and assurance duties under S.L. 386.31. This skill does not cover them. Refer.
 - **Merchant Shipping Act companies:** the tax audit waiver follows rule 7 of L.N. 139 of 2025 and S.L. 234.42. Refer.
 - **Groups with overseas parents or subsidiaries** claiming the article 174 exemption: the conditions are strict (equivalence, audit of the larger group's accounts, filing them in Malta). Refer unless you have checked every condition.
 - **Pre-20 March 2026 balance sheet dates:** if small-company status turns on old versus new article 185 limits, say that the law is unclear and recommend preparing the directors' report, or refer. ([L.N. 61 of 2026](https://legislation.mt/getpdf/69dce8d06fe5fd3994d17860))
 - **Review-report content** for tax: the MTCA guidelines could not be read. Do not describe the standard as settled; tell the client to check the current guidelines.
 - **Refuse** to present accounts as exempt from audit, or to sign or date documents for directors, where the size test is not met or the records do not support it. Directors who approve non-compliant accounts face a penalty (art. 176(4)). Failing to keep proper records is a criminal offence with a fine of up to €11,646 (art. 163(6)). ([Cap. 386](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
-- **Tax questions** (chargeable income, rates, refunds, the tax return deadline): route to the **malta-income-tax** Guide. **VAT**: route to the **malta-vat-return** Guide.
+- **Tax questions** (chargeable income, rates, refunds, the tax return deadline): route to the **malta-income-tax** skill. **VAT**: route to the **malta-vat-return** skill.
 
 ## Filing and payment ([Companies Act art. 180 to 184](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
 
@@ -242,7 +242,7 @@ All amounts are illustrations. Each company is private, not a PIE, not a parent,
 | Registering annual accounts | The Fees Regulations list no separate fee; **check** the MBR for current practice | [S.L. 386.03](https://legislation.mt/getpdf/6022592ebc8272018c0ede95) |
 | Keep accounting records | Ten years (Companies Act); nine years for tax records | [Cap. 386 art. 163(5)](https://legislation.mt/getpdf/6a1836349844fb1e280ec744); [ITMA art. 19(5)](https://legislation.mt/getpdf/69c65a5c7da36921dcc4f04b) |
 
-- **How to file.** Electronic copies must be authenticated under article 82. The MBR portal steps could not be checked for this Guide: **check** the MBR's current online filing instructions.
+- **How to file.** Electronic copies must be authenticated under article 82. The MBR portal steps could not be checked for this skill: **check** the MBR's current online filing instructions.
 - **Pending wording change.** Act XVIII of 2025 rewrites article 183(2) so that the second relief refers to a private company "in terms of the provisions of article 211" rather than an "exempt company". That article (25(b)) is not yet in force: the only part of article 25 brought into force is 25(a), by [L.N. 110 of 2026](https://legislation.mt/getpdf/6a183871becdc821c019727f), and the consolidated Act at 28 April 2026 still shows the "exempt company" wording. Apply the consolidated text until a further commencement notice. ([Act XVIII of 2025](https://legislation.mt/getpdf/6a1837c7becdc821c0197266))
 
 ### Penalties (maximum administrative penalties, [Cap. 386 Eleventh Schedule](https://legislation.mt/getpdf/6a1836349844fb1e280ec744))
@@ -292,4 +292,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malta-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malta-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `malta-financial-statements` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/malta-financial-statements. If neither is available, confirm every figure against the official source pages cited above before relying on it.

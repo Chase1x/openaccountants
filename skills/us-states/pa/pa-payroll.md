@@ -3,7 +3,7 @@ name: pa-payroll
 description: Tier 2 Pennsylvania content skill for employer payroll compliance covering tax year 2025. Includes the 3.07% flat PIT, Local Earned Income Tax under Act 32 with employer withholding by employee-residence PSD code (rates 0.5-3.9%), Local Services Tax (typically $52/year), reciprocal agreements with NJ/OH/IN/MD/VA/WV that exempt non-resident employees from state withholding, Philadelphia and Pittsburgh wage taxes (separate from state PIT under Sterling Act), SUC wage base $10,000 with rates 1.4-9.1%, REV-419 state withholding form, the Construction Workplace Misclassification Act, and quarterly PA-501/UC-2 combined filings.
 jurisdiction: US-PA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -25,7 +25,7 @@ Figures are for tax year 2026 unless a line says 2025. Pennsylvania's withholdin
   - UC employer contributions and the employee contribution;
   - the state minimum wage and new hire reporting.
 - **Summarised only, then referred:**
-  - Philadelphia wage tax. Act 32 does not apply to Philadelphia; the employer withholds the City's own resident or nonresident rate and pays the City ([DCED FAQ](https://dced.pa.gov/local-government/local-income-tax-information/local-withholding-tax-faqs/)). This Guide does not state Philadelphia's rates. Get them from the City of Philadelphia Department of Revenue.
+  - Philadelphia wage tax. Act 32 does not apply to Philadelphia; the employer withholds the City's own resident or nonresident rate and pays the City ([DCED FAQ](https://dced.pa.gov/local-government/local-income-tax-information/local-withholding-tax-faqs/)). This skill does not state Philadelphia's rates. Get them from the City of Philadelphia Department of Revenue.
   - Employer-side city taxes, such as Pittsburgh's payroll expense tax and Philadelphia's business taxes.
 - **Does not cover:** federal payroll taxes; the employee's own PA-40 or local return; withholding on 1099 payments; worker classification (including the Construction Workplace Misclassification Act); final pay; overtime exemptions; workers' compensation.
 - **Local rates change.** Municipalities and school districts set EIT and LST rates; the Department of Community and Economic Development (DCED) publishes them. Look up the current rate by address ([Local income tax information](https://dced.pa.gov/local-government/local-income-tax-information/)).
@@ -261,8 +261,8 @@ The dollar amounts and all local EIT rates in these cases are made up for illust
 
 ## When to refuse or refer
 
-- **Refer** Philadelphia wage tax rates, filing and credits to the City of Philadelphia Department of Revenue. This Guide does not state them.
-- **Refuse** to use a local EIT or LST rate from memory, from this Guide's examples or from last year. Look it up by address with DCED for the current year.
+- **Refer** Philadelphia wage tax rates, filing and credits to the City of Philadelphia Department of Revenue. This skill does not state them.
+- **Refuse** to use a local EIT or LST rate from memory, from this skill's examples or from last year. Look it up by address with DCED for the current year.
 - **Refer** multistate allocation beyond the working-day formula, remote-work residency questions, and the employee's own credits for tax paid to other states or cities, to the employee's tax adviser.
 - **Refer** worker classification, final pay, overtime exemptions and wage disputes to an employment lawyer or the Department of Labor & Industry, and UC rate appeals, voluntary contributions, successor transfers and experience rating to the Office of UC Tax Services.
 - **Refuse** to stop PA withholding for a reciprocal-state resident unless a REV-419 is on file and you are set up to withhold that state's tax. Refuse it in every case for wages an S corporation pays to an Ohio resident who holds 20% or more of its shares.

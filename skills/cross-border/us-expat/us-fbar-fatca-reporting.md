@@ -4,7 +4,7 @@ description: "US foreign-account and foreign-asset reporting for US persons: the
 version: 0.1
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide decides whether a US person must file an FBAR, a Form 8938, both, or neither, for **calendar/tax year 2026** (filed in 2027), with a dated section for **2025** reports that are still inside their extended deadline on 15 October 2026. It covers individuals first; domestic entities are covered only at threshold level.
+This skill decides whether a US person must file an FBAR, a Form 8938, both, or neither, for **calendar/tax year 2026** (filed in 2027), with a dated section for **2025** reports that are still inside their extended deadline on 15 October 2026. It covers individuals first; domestic entities are covered only at threshold level.
 
 Two separate regimes. Filing one never satisfies the other.
 
@@ -32,7 +32,7 @@ Two separate regimes. Filing one never satisfies the other.
 
 Sources: IRS FBAR page https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar ; IRS comparison chart https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements ; Form 8938 instructions https://www.irs.gov/instructions/i8938 .
 
-This Guide produces a working paper. It is not a filed FBAR or return, and it never decides whether conduct was willful.
+This skill produces a working paper. It is not a filed FBAR or return, and it never decides whether conduct was willful.
 
 ## Ask the client first
 

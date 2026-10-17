@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-section-1031-like-kind-exchange"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,13 +15,13 @@ metadata:
 
 # US federal like-kind exchanges of real property (§1031): 2026 method, with 2025 return notes
 
-This Guide covers federal law for tax year 2026. A separate, dated section covers 2025 returns, which are due by October 15, 2026 if the taxpayer got an extension. We found no change to §1031 itself in P.L. 119-21 (the One Big Beautiful Bill Act). The P.L. 119-21 items in the 2025 Form 8824 instructions are a new §1062 farmland election and changes to Opportunity Zones ([Instructions for Form 8824 (2025)](https://www.irs.gov/instructions/i8824)). The 2026 Form 8824 instructions are not yet published. Confirm this point against them when they are.
+This skill covers federal law for tax year 2026. A separate, dated section covers 2025 returns, which are due by October 15, 2026 if the taxpayer got an extension. We found no change to §1031 itself in P.L. 119-21 (the One Big Beautiful Bill Act). The P.L. 119-21 items in the 2025 Form 8824 instructions are a new §1062 farmland election and changes to Opportunity Zones ([Instructions for Form 8824 (2025)](https://www.irs.gov/instructions/i8824)). The 2026 Form 8824 instructions are not yet published. Confirm this point against them when they are.
 
 ## Scope and who this is for
 
 - **Covers:** any taxpayer that files a federal return (individuals, C and S corporations, partnerships, trusts and estates) and exchanges US real property held for use in a trade or business or for investment for other like-kind real property. It covers the rule itself, deferred exchanges through a qualified intermediary (QI), the identification rules, reverse and build-to-suit exchanges, boot and basis, related parties, depreciation of the replacement property, and Form 8824 ([26 U.S.C. §1031](https://www.law.cornell.edu/uscode/text/26/1031); [Pub. 544](https://www.irs.gov/publications/p544)).
 - **Real property only.** For exchanges completed after December 31, 2017, §1031 applies only to real property. A transition rule keeps the old rules for an exchange in which the taxpayer gave up the old property, or received the replacement, on or before December 31, 2017 ([26 U.S.C. §1031, 2017 amendment note](https://www.law.cornell.edu/uscode/text/26/1031); [IRS real estate tax tips](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips)). Machinery, equipment, vehicles, artwork, collectibles, patents and other intangibles generally no longer qualify.
-- **Does not cover:** state tax. Some states have their own rules for exchanges. These include annual information returns, or taxing the deferred gain later, when the replacement property is outside the state. This Guide gives the federal answer only. Check the rules of the state where the relinquished property is, the state where the replacement is, and the taxpayer's state of residence, each on that state's own tax agency site.
+- **Does not cover:** state tax. Some states have their own rules for exchanges. These include annual information returns, or taxing the deferred gain later, when the replacement property is outside the state. This skill gives the federal answer only. Check the rules of the state where the relinquished property is, the state where the replacement is, and the taxpayer's state of residence, each on that state's own tax agency site.
 - **Does not cover in depth:** the other deferral regimes, such as §1033 involuntary conversions, Opportunity Zone funds and §1043 sales. See "When to refuse or refer".
 
 ## Ask the client first
@@ -189,7 +189,7 @@ Cases 2, 3 and 4 use the IRS's own example figures, from the page linked in each
 
 ## 2025 returns: tax year 2025, extended deadline October 15, 2026 ([Instructions for Form 8824 (2025)](https://www.irs.gov/instructions/i8824))
 
-- Use the 2025 Form 8824 and its instructions. The §1031 rules and every limit in this Guide are the same for 2025 and 2026.
+- Use the 2025 Form 8824 and its instructions. The §1031 rules and every limit in this skill are the same for 2025 and 2026.
 - **New in the 2025 instructions:** e-filed Forms 8824 now have space on line 19 for "Section 121 exclusion". There is new guidance for lines 19 and 20. Line 25b includes §1252, 1254 and 1255 property. Lines 12a, 15a and 25a-25c are on the e-filed form, so no separate attachment is needed after 2023.
 - For a transfer in late 2025, check whether the 2025 return was extended. If it was not, the exchange period ended on April 15, 2026, and replacement property received after that date is not like-kind property (Case 1).
 
@@ -226,4 +226,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-section-1031-like-kind-exchange` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-section-1031-like-kind-exchange. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-section-1031-like-kind-exchange` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-section-1031-like-kind-exchange. If neither is available, confirm every figure against the official source pages cited above before relying on it.

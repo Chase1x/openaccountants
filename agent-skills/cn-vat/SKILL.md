@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cn-vat"
   jurisdiction: "CN"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([VAT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [Implementation Regulations](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202601/t478908.html))
 
-This Guide covers mainland China value added tax for tax year 2026. It is for businesses, sole traders (个体工商户) and their advisers who prepare, review or classify VAT returns.
+This skill covers mainland China value added tax for tax year 2026. It is for businesses, sole traders (个体工商户) and their advisers who prepare, review or classify VAT returns.
 
 The big change for 2026 is that the **VAT Law of the People's Republic of China (中华人民共和国增值税法)** took effect on 1 January 2026. The NPC Standing Committee adopted it on 25 December 2024. Article 38 says the law applies from 2026-01-01 and that the Provisional Regulations (增值税暂行条例) are repealed on the same day (《中华人民共和国增值税暂行条例》"同时废止"). The State Council's **Implementation Regulations (增值税法实施条例, Decree No. 826)** also apply from 1 January 2026. The Ministry of Finance (MOF) and the State Taxation Administration (STA) have since issued announcements that carry over most earlier reliefs and practice. These are cited below.
 
@@ -302,7 +302,7 @@ The tax office sets each taxpayer's period according to the amount of tax. Check
 
 ## Returns for 2025 periods being filed or corrected now ([VAT Law Art. 38](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [general taxpayer registration](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202601/t478913.html))
 
-Periods up to 31 December 2025 remain under the Provisional Regulations and the policies in force at the time. The law repeals the Provisional Regulations from 2026-01-01 (Art. 38). Liabilities that arose before that date were incurred under the old rules. Do not apply the new law's deemed-sale, non-deductible-input or liability-date rules to 2025 transactions. For status: if the 2025 Q4 or December small-scale return shows sales above the threshold, general taxpayer status takes effect on 2026-01-01, not earlier. Adjustments to 2025 sales cannot make general taxpayer status start before 2026-01-01. For a 2025 period, check the rule in force at that date before using this Guide.
+Periods up to 31 December 2025 remain under the Provisional Regulations and the policies in force at the time. The law repeals the Provisional Regulations from 2026-01-01 (Art. 38). Liabilities that arose before that date were incurred under the old rules. Do not apply the new law's deemed-sale, non-deductible-input or liability-date rules to 2025 transactions. For status: if the 2025 Q4 or December small-scale return shows sales above the threshold, general taxpayer status takes effect on 2026-01-01, not earlier. Adjustments to 2025 sales cannot make general taxpayer status start before 2026-01-01. For a 2025 period, check the rule in force at that date before using this skill.
 
 ## Completion checklist ([VAT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html); [Implementation Regulations](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202601/t478908.html))
 
@@ -341,4 +341,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-vat` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-vat. If neither is available, confirm every figure against the official source pages cited above before relying on it.

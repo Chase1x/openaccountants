@@ -4,7 +4,7 @@ description: "Delaware Individual Income Tax Return (Form PIT-RES) for sole prop
 version: "0.1"
 jurisdiction: US-DE
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide covers the Delaware personal income tax on individuals under Title 30, Chapter 11 of the Delaware Code:
+This skill covers the Delaware personal income tax on individuals under Title 30, Chapter 11 of the Delaware Code:
 
 - **Full-year residents** file Form PIT-RES.
 - **Nonresidents** with Delaware-source income file Form PIT-NON.
@@ -41,7 +41,7 @@ Official sources used throughout:
 - 2025 PIT-NON instructions: https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-NON_Instructions_2025-01.pdf
 - 2026 estimated tax (PIT-EST) instructions: https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-EST_Instructions_2026-01.pdf
 
-The Division of Revenue had not published 2026 return instructions when this Guide was written (25 September 2026). Where a 2026 figure comes from the statute rather than a 2026 form, this Guide says so.
+The Division of Revenue had not published 2026 return instructions when this skill was written (25 September 2026). Where a 2026 figure comes from the statute rather than a 2026 form, this skill says so.
 
 ## Ask the client first
 

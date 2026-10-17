@@ -3,7 +3,7 @@ name: nz-timing-deductions-when-expense-incurred
 description: How to work out the income year in which business expenditure is treated as incurred and deducted in New Zealand, including the unexpired portion (prepayment) add-back, for tax agents and accountants advising business clients.
 jurisdiction: NZ
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide answers one question for a New Zealand business: an amount is deductible, but **which income year does the deduction fall in?** It covers:
+This skill answers one question for a New Zealand business: an amount is deductible, but **which income year does the deduction fall in?** It covers:
 
 - the general "incurred" test;
 - prepayments: the unexpired portion rule in section EA 3 of the Income Tax Act 2007 and the Commissioner's Determination E12, which excuses small or short prepayments;
@@ -182,7 +182,7 @@ The write-off must happen before the end of the income year and cannot be backda
 - The real question is whether the amount is deductible at all (capital or private character, apportionment, a specific denial rule).
 - A prepayment does not clearly fit one E12 row, or a row's condition (such as the $12,000 insurance or $23,000 maintenance contract limit in [E12](https://www.taxpolicy.ird.govt.nz/-/media/project/ir/tp/publications/2009/2009-other-determination-e12/2009-other-determination-e12-pdf.pdf)) is not met and the client wants to rely on another row.
 - Shareholder-employee remuneration paid long after year end: confirm the current EA 4 time limit in the Act before advising.
-- The answer turns on the exact wording of a section of the Act (for example whether an asset costing exactly $1,000 qualifies under [IRD's low-value asset table](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/depreciation/claiming-depreciation)): the legislation website could not be read for this Guide.
+- The answer turns on the exact wording of a section of the Act (for example whether an asset costing exactly $1,000 qualifies under [IRD's low-value asset table](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/depreciation/claiming-depreciation)): the legislation website could not be read for this skill.
 - Trading stock valuation choices (cost, discounted selling price, replacement price, market selling value), livestock, or disposals below market value.
 - Financial arrangements beyond the cash basis test: spreading methods, base price adjustments, foreign currency movements.
 - Depreciation beyond the low-value write-off, including pooling and Investment Boost.
@@ -198,7 +198,7 @@ Timing adjustments are made in the income tax return for the year; there is no s
 | 2025-26 (31 March 2026 balance date) | 7 July 2026 | up to 31 March 2027 |
 | 2026-27 (31 March 2027 balance date) | 7 July 2027 | up to 31 March 2028 |
 
-IRD: "You need to send us your completed return by 7 July unless you have a tax agent or an extension of time" ([IRD IR3](https://www.ird.govt.nz/income-tax/income-tax-for-individuals/what-happens-at-the-end-of-the-tax-year/individual-income-tax-return---ir3)); "The Commissioner can give tax agents clients an extension of time to file up to 31 March the following year" ([IRD extension of time](https://www.ird.govt.nz/topics/intermediaries/extension-of-time-arrangements)). For terminal tax, provisional tax and penalties, see the New Zealand IR3 Guide. For balance dates other than 31 March, check the dates with IRD ([IRD balance dates](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/balance-dates)).
+IRD: "You need to send us your completed return by 7 July unless you have a tax agent or an extension of time" ([IRD IR3](https://www.ird.govt.nz/income-tax/income-tax-for-individuals/what-happens-at-the-end-of-the-tax-year/individual-income-tax-return---ir3)); "The Commissioner can give tax agents clients an extension of time to file up to 31 March the following year" ([IRD extension of time](https://www.ird.govt.nz/topics/intermediaries/extension-of-time-arrangements)). For terminal tax, provisional tax and penalties, see the New Zealand IR3 Skill. For balance dates other than 31 March, check the dates with IRD ([IRD balance dates](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/balance-dates)).
 
 ## Completion checklist
 

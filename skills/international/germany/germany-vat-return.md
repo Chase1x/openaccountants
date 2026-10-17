@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-20
+last_updated: 2026-10-16
 review_status: pending_review
 drafted_by: OpenAccountants
 approved_by: pending
@@ -933,8 +933,8 @@ One EU-wide total, not one per country, and not a limit on German domestic sales
 | --- | --- | --- |
 | Source | all figures below | https://www.gesetze-im-internet.de/ustg_1980/__18a.html |
 | Quarterly filing allowed while intra-Community supplies of goods stay at or below this in the current and each of the four previous quarters | EUR 50,000 | "der vier vorangegangenen Kalendervierteljahre jeweils mehr als 50 000 Euro beträgt" |
-| Yearly filing, condition 1 of 3: all supplies of the previous year | EUR 200,000 | § 18a(9) UStG, only for a business released from advance returns |
-| Yearly filing, condition 2 of 3: those supplies and § 3a(2) services taxed in the other state, previous year | EUR 15,000 | § 18a(9) UStG. Condition 3: no new vehicles supplied |
+| Yearly filing, condition 1 of 3: all supplies, not above this in the previous year and not expected to exceed it in the current year | EUR 200,000 | § 18a(9) UStG: "nicht überstiegen hat und im laufenden Kalenderjahr voraussichtlich nicht übersteigen wird"; only for a business released from advance returns |
+| Yearly filing, condition 2 of 3: those supplies and § 3a(2) services taxed in the other state, not above this in the previous year and not expected to exceed it in the current year | EUR 15,000 | § 18a(9) UStG: "nicht überstiegen hat und im laufenden Kalenderjahr voraussichtlich nicht übersteigen wird". Condition 3: no new vehicles supplied |
 
 Monthly is the default for intra-Community supplies of goods, by the twenty-fifth day after the
 month. Services under § 3a(2) UStG are reported quarterly in any case (§ 18a(2)).

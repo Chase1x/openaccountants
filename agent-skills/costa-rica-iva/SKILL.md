@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/costa-rica-iva"
   jurisdiction: "CR"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,11 +17,11 @@ metadata:
 
 ## Scope
 
-This Guide covers Costa Rica's value added tax (IVA) for the 2026 calendar year: who must register, which rate applies, how input credit (crédito fiscal) works, the monthly return, electronic invoicing, the special regimes, and the administrative penalties. The legal base is Ley N.º 6826, Ley del Impuesto sobre el Valor Agregado, as rewritten in full by Title I of Ley N.º 9635 (Fortalecimiento de las Finanzas Públicas), with its Reglamento (Decreto 41779-H). Title I took effect on 1 July 2019. The penalties come from the Código de Normas y Procedimientos Tributarios (Ley 4755).
+This skill covers Costa Rica's value added tax (IVA) for the 2026 calendar year: who must register, which rate applies, how input credit (crédito fiscal) works, the monthly return, electronic invoicing, the special regimes, and the administrative penalties. The legal base is Ley N.º 6826, Ley del Impuesto sobre el Valor Agregado, as rewritten in full by Title I of Ley N.º 9635 (Fortalecimiento de las Finanzas Públicas), with its Reglamento (Decreto 41779-H). Title I took effect on 1 July 2019. The penalties come from the Código de Normas y Procedimientos Tributarios (Ley 4755).
 
 Out of scope: customs valuation on imports, selective consumption tax, the single fuel tax (fuel sales are outside IVA; see below), income tax, and free zone (zona franca) incentive contracts.
 
-**Source note.** The Procuraduría's SCIJ full-text pages for the current consolidated law are served through a script-driven viewer that could not be read for this Guide. The law quotes below come from the text of Ley 9635 as published (a SCIJ copy marked as a superseded version, because later laws have amended some articles). They are cross-checked against Hacienda guidance published since, including 2025-2026 TRIBU-CR material. Where a point rests only on older guidance, the Guide says so. Before relying on a rate for an unusual item, check the current article on SCIJ or ask the Dirección General de Tributación (DGT).
+**Source note.** The Procuraduría's SCIJ full-text pages for the current consolidated law are served through a script-driven viewer that could not be read for this skill. The law quotes below come from the text of Ley 9635 as published (a SCIJ copy marked as a superseded version, because later laws have amended some articles). They are cross-checked against Hacienda guidance published since, including 2025-2026 TRIBU-CR material. Where a point rests only on older guidance, the skill says so. Before relying on a rate for an unusual item, check the current article on SCIJ or ask the Dirección General de Tributación (DGT).
 
 Law as published: [Ley 9635, Título I (SCIJ)](https://www.pgrweb.go.cr/DOCS/NORMAS/1/NOVIGEN/L/2010-2019/2015-2019/2018/156A8/127E2C.HTML).
 
@@ -60,7 +60,7 @@ Law as published: [Ley 9635, Título I (SCIJ)](https://www.pgrweb.go.cr/DOCS/NOR
 | Purchases and sales by state higher-education institutions, their foundations, CONARE and SINAES, when needed for their purposes | 2% | Law as published | [art. 11(2)(d)](https://www.pgrweb.go.cr/DOCS/NORMAS/1/NOVIGEN/L/2010-2019/2015-2019/2018/156A8/127E2C.HTML) |
 | Goods in the Canasta Básica Tributaria, plus the machinery, equipment, services and inputs needed to produce them | 1% | The list is set by executive decree. The Hacienda-hosted list is Decreto 43790-H-MEIC-S (La Gaceta, 11 November 2022), made under Ley 9914. Check that no newer decree applies | [art. 11(3)](https://www.pgrweb.go.cr/DOCS/NORMAS/1/NOVIGEN/L/2010-2019/2015-2019/2018/156A8/127E2C.HTML); [Decreto 43790-H-MEIC-S](https://www.hacienda.go.cr/docs/CanastaBasica2023Ley-decreto-43790.pdf) |
 | Farm and livestock goods in the basket, including live animals, and the inputs across the production chain | 1% | Law as published. The 2021 DGT deck adds veterinary products and farm and non-sport fishing inputs, for producers registered with MAG and/or INCOPESCA | [art. 11(3)(a)](https://www.pgrweb.go.cr/DOCS/NORMAS/1/NOVIGEN/L/2010-2019/2015-2019/2018/156A8/127E2C.HTML) |
-| Other reduced-rate columns on the monthly return | 0.5% and 3% | The 2025 draft IVA form resolution shows columns for these rates. This Guide has not sourced which items they cover: check before using them | [Draft Hacienda form resolution, 2025](https://www.hacienda.go.cr/docs/ProyResUsoformularios_IVAyREA.pdf) |
+| Other reduced-rate columns on the monthly return | 0.5% and 3% | The 2025 draft IVA form resolution shows columns for these rates. This skill has not sourced which items they cover: check before using them | [Draft Hacienda form resolution, 2025](https://www.hacienda.go.cr/docs/ProyResUsoformularios_IVAyREA.pdf) |
 | Salario base (salary unit used for rent and fines) | CRC 462,200 | Applies 1 January to 31 December 2026 (Circular 246-2025) | [Hacienda salario base table](https://www.hacienda.go.cr/docs/SalariosBaseActualEHistorico.pdf) |
 | Exempt housing rent ceiling (1.5 salarios base) | CRC 693,300 per month | 2026, derived: 1.5 × CRC 462,200 | [art. 8(9)](https://www.pgrweb.go.cr/DOCS/NORMAS/1/NOVIGEN/L/2010-2019/2015-2019/2018/156A8/127E2C.HTML); [salario base table](https://www.hacienda.go.cr/docs/SalariosBaseActualEHistorico.pdf) |
 
@@ -123,7 +123,7 @@ All amounts are hypothetical and are in colones before tax unless stated otherwi
 
 ## When to refuse or refer
 
-Refer to a Costa Rican Contador Público Autorizado or tax lawyer, rather than answering from this Guide, when:
+Refer to a Costa Rican Contador Público Autorizado or tax lawyer, rather than answering from this skill, when:
 - the business makes both credit-bearing and non-credit-bearing operations and the prorrata has to be computed or adjusted;
 - the question involves free zone status, EXONET exonerations, or exempt institutions buying under special laws;
 - real estate transfers, construction projects or tourism services registered with ICT are involved in a period before the phase-in ended;
@@ -141,7 +141,7 @@ Refuse to guess a rate. If the classification of an item is not clear from the s
 - **Deadline.** Art. 27: taxpayers "deben liquidar el impuesto a más tardar el decimoquinto día natural de cada mes, mediante declaración jurada de las ventas de bienes o prestación de servicios correspondientes al mes anterior". The tax is paid when the return is filed.
 - **Nil and credit returns.** "La obligación de presentar la declaración subsiste aun cuando no se pague el impuesto o cuando la diferencia entre el débito fiscal y el crédito fiscal represente un saldo en favor del contribuyente" (art. 27). The duty continues until the taxpayer deregisters.
 - **Quarterly and other returns.** Simplified regime: quarterly, within the first fifteen calendar days of October, January, April and July. REA: every four months or annually. Used goods and digital-service collectors: monthly (see the special regimes section).
-- **Electronic receipts.** Every sale needs a Hacienda-authorised electronic receipt, issued and delivered at the time of sale. Failing to issue or deliver one is fined two salarios base, CRC 924,400 in 2026, with no reduction (Código art. 85). A repeat offence after a final ruling can close the business for five calendar days (art. 86). Refusing card or other electronic payment is fined one salario base, CRC 462,200 (art. 85 bis). This Guide has not sourced the current technical version of the electronic receipt: take it from Hacienda's comprobantes electrónicos pages. Working note (check, not sourced here): each electronic receipt carries a numeric key (clave numérica), which the earlier version of this Guide gave as fifty digits. Match it to the purchase before claiming a credit. Receipts issued in US dollars still have to be reported in colones on the return, at the exchange rate the rules require. ([Hacienda penalties table](https://www.hacienda.go.cr/docs/InfraccionesYSancionesAdministrativasMasRelevantes.pdf))
+- **Electronic receipts.** Every sale needs a Hacienda-authorised electronic receipt, issued and delivered at the time of sale. Failing to issue or deliver one is fined two salarios base, CRC 924,400 in 2026, with no reduction (Código art. 85). A repeat offence after a final ruling can close the business for five calendar days (art. 86). Refusing card or other electronic payment is fined one salario base, CRC 462,200 (art. 85 bis). This skill has not sourced the current technical version of the electronic receipt: take it from Hacienda's comprobantes electrónicos pages. Working note (check, not sourced here): each electronic receipt carries a numeric key (clave numérica), which the earlier version of this skill gave as fifty digits. Match it to the purchase before claiming a credit. Receipts issued in US dollars still have to be reported in colones on the return, at the exchange rate the rules require. ([Hacienda penalties table](https://www.hacienda.go.cr/docs/InfraccionesYSancionesAdministrativasMasRelevantes.pdf))
 
 ### Penalties (Código de Normas y Procedimientos Tributarios; amounts for 2026)
 
@@ -190,4 +190,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `costa-rica-iva` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/costa-rica-iva. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `costa-rica-iva` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/costa-rica-iva. If neither is available, confirm every figure against the official source pages cited above before relying on it.

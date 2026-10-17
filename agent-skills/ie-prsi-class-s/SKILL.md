@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-prsi-class-s"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Ireland PRSI Class S for the self-employed
 
-This Guide covers Pay Related Social Insurance (PRSI) at Class S in Ireland: who pays it, on what income, at which rate, and how it is paid through self-assessment or payroll. Figures are for tax year 2026. The Irish tax year is the calendar year. The Class S rate changed on 1 October 2026, so the rate you use depends on HOW the person pays (self-assessment or payroll) and WHICH year's income you are working on. The tables below say which rate applies to whom.
+This skill covers Pay Related Social Insurance (PRSI) at Class S in Ireland: who pays it, on what income, at which rate, and how it is paid through self-assessment or payroll. Figures are for tax year 2026. The Irish tax year is the calendar year. The Class S rate changed on 1 October 2026, so the rate you use depends on HOW the person pays (self-assessment or payroll) and WHICH year's income you are working on. The tables below say which rate applies to whom.
 
 ## Section 1: Quick reference
 
@@ -97,7 +97,7 @@ This leaflet is dated January 2025 and prints 2025 rates. Use it only for WHO pa
 ## The method, step by step
 
 1. **Fix the income year and the payment route.** Ask whether you are working on 2026 income or 2025 income, and whether PRSI is returned through Form 11 self-assessment or deducted under PAYE as a self-employed director. This decides the rate (see "Which rate applies to whom" in Section 1, [DSP Class S Rates](https://www.gov.ie/en/department-of-social-protection/publications/prsi-class-s-rates/)).
-2. **Check the class.** Confirm the person is self-employed, or a proprietary director at or above the shareholding in the family employment table, or has only investment, rent or maintenance income. If the person is an employee whose only other income is unearned, or a modified-rate public servant, stop: that is Class K, not this Guide ([DSP leaflet](https://assets.gov.ie/38671/0aa2cf3d831a4076b1b6208e1287d9f9.pdf)).
+2. **Check the class.** Confirm the person is self-employed, or a proprietary director at or above the shareholding in the family employment table, or has only investment, rent or maintenance income. If the person is an employee whose only other income is unearned, or a modified-rate public servant, stop: that is Class K, not this skill ([DSP leaflet](https://assets.gov.ie/38671/0aa2cf3d831a4076b1b6208e1287d9f9.pdf)).
 3. **Check age.** Under 16: no Class S. 66 to 70: Class S still applies if born on or after 1 January 1958 and not awarded the State Pension (Contributory) ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf); [Revenue PRSI page](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/prsi-need-pay.aspx)).
 4. **Work out reckonable income.** Gross income after capital allowances, including the income types listed in Section 3 and leaving out the excluded items ([Revenue PRSI page](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/prsi-need-pay.aspx); [DSP leaflet](https://assets.gov.ie/38671/0aa2cf3d831a4076b1b6208e1287d9f9.pdf)).
 5. **Apply the annual test.** If annual income is below the SW14 threshold, no Class S is due (consider a voluntary contribution, Section 6). If it is at or above the threshold, Class S is due on ALL of it, not on the excess ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf)).
@@ -169,12 +169,12 @@ A part payment earns no contributions for the year: DSP awards the 52 Class S co
 
 - **Voluntary contributions.** A person no longer covered by compulsory PRSI (for example they stopped self-employment, or income fell below the threshold), who is under pension age, or aged 66 to 70 without an award of the State Pension (Contributory), may opt to pay voluntary contributions if they meet the conditions. For a person who last paid at Class S it is the flat amount in the SW14 table above. Apply within 60 months from the end of the contribution year in which a contribution was last paid or credited ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf)). Voluntary contributions cover only the pensions the person was covered for when last paying compulsory PRSI ([DSP leaflet](https://assets.gov.ie/38671/0aa2cf3d831a4076b1b6208e1287d9f9.pdf)). Confirm the contribution record with DSP before advising.
 - **Benefits Class S covers** ([DSP Class S Rates](https://www.gov.ie/en/department-of-social-protection/publications/prsi-class-s-rates/)): Adoptive Benefit, Benefit Payment for 65 Year Olds, Carer's Benefit, Guardian's Payment (Contributory), Invalidity Pension, Jobseeker's Benefit for the Self-Employed, Maternity Benefit, Parent's Benefit, Partial Capacity Benefit, Paternity Benefit, State Pension (Contributory), Treatment Benefit, and Bereaved Partner's (Contributory) Pension. The leaflet adds: "Class S PRSI does not provide cover for any other schemes or benefits" ([DSP leaflet](https://assets.gov.ie/38671/0aa2cf3d831a4076b1b6208e1287d9f9.pdf)).
-- **Share fishermen and fisherwomen** classed as self-employed may pay an optional Class P contribution on top of Class S ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf)). This Guide does not compute Class P.
+- **Share fishermen and fisherwomen** classed as self-employed may pay an optional Class P contribution on top of Class S ([SW14](https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf)). This skill does not compute Class P.
 
 ## Section 7: Interaction with USC and income tax
 
 - PRSI, USC and income tax are three separate charges. Revenue collects all three together through preliminary tax and the Form 11 balance ([Revenue preliminary tax](https://www.revenue.ie/en/self-assessment-and-self-employment/guide-to-self-assessment/preliminary-tax.aspx)).
-- The pages read for this Guide do not say whether Class S is deductible in computing taxable income, or whether income tax credits reduce PRSI. Do not state either as fact; ask the accountant.
+- The pages read for this skill do not say whether Class S is deductible in computing taxable income, or whether income tax credits reduce PRSI. Do not state either as fact; ask the accountant.
 
 ## Section 8: Edge case registry
 
@@ -211,7 +211,7 @@ Situation: client asks which rate applies. Resolution: 2025 Form 11 uses the 202
 
 ## When to refuse or refer
 
-- **Cross-border.** The client works or lives in another EU or EEA state, or in a country with a social security agreement with Ireland. Which state collects social insurance is outside this Guide: refer.
+- **Cross-border.** The client works or lives in another EU or EEA state, or in a country with a social security agreement with Ireland. Which state collects social insurance is outside this skill: refer.
 - **Director below the Class S shareholding.** Classification is case by case: refer to DSP Scope Section or the accountant.
 - **Class K cases.** Employees whose only other income is unearned, occupational pensioners under pension age with only unearned other income, modified-rate public servants, public office holders: refer.
 - **Aged 66 to 70 with a pension award during the year**, or any doubt about State Pension (Contributory) status: refer.
@@ -256,9 +256,9 @@ Action Required: Do not advise. Refer to qualified practitioner. Document gap.
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CTA, AITI, or equivalent licensed practitioner in Ireland) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CTA, AITI, or equivalent licensed practitioner in Ireland) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained on the OpenAccountants website. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained on the OpenAccountants website. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -280,4 +280,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-prsi-class-s` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-prsi-class-s. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-prsi-class-s` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-prsi-class-s. If neither is available, confirm every figure against the official source pages cited above before relying on it.

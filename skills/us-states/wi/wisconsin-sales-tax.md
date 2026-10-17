@@ -3,7 +3,7 @@ name: wisconsin-sales-tax
 description: Use this skill whenever asked about Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin exemption certificates, taxability of goods or services in Wisconsin, or any request involving Wisconsin state-level consumption taxes. Trigger on phrases like "Wisconsin sales tax", "WI sales tax", "Wisconsin use tax", "Wisconsin nexus", "Wis. Stat. 77.51", "Wisconsin DOR sales tax", or any request involving Wisconsin sales and use tax filing, classification, or compliance. ALWAYS read the parent us-sales-tax skill first for federal context.
 jurisdiction: US-WI
 tax_year: 2026
-last_updated: 2026-10-05
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,9 +13,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Wisconsin sales and use tax: rates, taxable sales, permits, remote sellers and returns
 
-Figures are for tax year 2026. This Guide covers Wisconsin state, county and city sales and use tax for sellers and buyers: the rates, what is taxable, the main exemptions, the seller's permit, the remote seller and marketplace rules, filing frequency, due dates, the retailer's discount, use tax and exemption certificates. Every figure comes from a Wisconsin Department of Revenue (DOR) page, retrieved 5 October 2026. Rates can change when a county adopts the tax; check the DOR rate chart before relying on a county rate. This is a working paper for review by an accountant, not a filed return. The twin Guide `wi-sales-tax` covers the same topic. For economic nexus thresholds in other states, see `us-sales-tax-nexus-50-state-matrix`; for the federal and multistate context, see `us-sales-tax`.
+Figures are for tax year 2026. This skill covers Wisconsin state, county and city sales and use tax for sellers and buyers: the rates, what is taxable, the main exemptions, the seller's permit, the remote seller and marketplace rules, filing frequency, due dates, the retailer's discount, use tax and exemption certificates. Every figure comes from a Wisconsin Department of Revenue (DOR) page, retrieved 5 October 2026. Rates can change when a county adopts the tax; check the DOR rate chart before relying on a county rate. This is a working paper for review by an accountant, not a filed return. The twin Guide `wi-sales-tax` covers the same topic. For economic nexus thresholds in other states, see `us-sales-tax-nexus-50-state-matrix`; for the federal and multistate context, see `us-sales-tax`.
 
-## Guide metadata
+## Skill metadata
 
 | Field | Value |
 | --- | --- |
@@ -25,7 +25,7 @@ Figures are for tax year 2026. This Guide covers Wisconsin state, county and cit
 | Administered by | Wisconsin Department of Revenue |
 | Filing system | My Tax Account (online) or TeleFile (telephone) |
 | Rates and thresholds | In the sourced tables below |
-| Written by | The OpenAccountants team. No accountant has reviewed this Guide yet. |
+| Written by | The OpenAccountants team. No accountant has reviewed this skill yet. |
 
 ## Confidence tier definitions
 
@@ -71,7 +71,7 @@ Retailers that hold or must hold a Wisconsin seller's permit collect county tax 
 
 ### 1.2 Other local taxes a seller may meet
 
-The county page lists the possible rates, including taxes outside the county and city sales tax. The premier resort area tax applies only in a premier resort area and only to sellers in certain Standard Industrial Classification codes. The same page lists local exposition taxes (basic room tax, additional room tax in the city of Milwaukee only, food and beverage tax, rental car tax). These are separate from the county and city tax and are not covered further in this Guide. [T2]
+The county page lists the possible rates, including taxes outside the county and city sales tax. The premier resort area tax applies only in a premier resort area and only to sellers in certain Standard Industrial Classification codes. The same page lists local exposition taxes (basic room tax, additional room tax in the city of Milwaukee only, food and beverage tax, rental car tax). These are separate from the county and city tax and are not covered further in this skill. [T2]
 
 | Item | Value | Note (verbatim from the page) |
 | --- | --- | --- |
@@ -84,7 +84,7 @@ The county page also lists the start dates: "Beginning April 1, 2025, Racine Cou
 
 ### 1.3 Published bracket rates
 
-DOR publishes Form 213 bracket tables for four rates. These are the rate totals DOR prints for retailers; this Guide does not compute any other total. [T1]
+DOR publishes Form 213 bracket tables for four rates. These are the rate totals DOR prints for retailers; this skill does not compute any other total. [T1]
 
 | Item | Value | Note (verbatim from the page) |
 | --- | --- | --- |
@@ -211,7 +211,7 @@ DOR sets each filer's frequency: early monthly, monthly, quarterly or annual. Th
 | Interest during an extension period | 1% per month | "subject to 1% interest per month during the extension period and 1.5% interest per month thereafter" |
 | Interest after the extension period | 1.5% per month | "1.5% interest per month thereafter" |
 
-A return not filed by the due date carries interest on the tax due from the due date of the return to the date the tax is paid. A return filed after the due date also carries a late filing fee and a negligence penalty for each month or fraction of a month it is late, up to the maximum in the table below. DOR may waive the fee and penalty on the death of the person required to file, or where a reasonable explanation exists for the late filing. Other penalties are not printed on the pages read for this Guide; see "When to refuse or refer". [T1]
+A return not filed by the due date carries interest on the tax due from the due date of the return to the date the tax is paid. A return filed after the due date also carries a late filing fee and a negligence penalty for each month or fraction of a month it is late, up to the maximum in the table below. DOR may waive the fee and penalty on the death of the person required to file, or where a reasonable explanation exists for the late filing. Other penalties are not printed on the pages read for this skill; see "When to refuse or refer". [T1]
 
 | Item | Value | Note (verbatim from the page) |
 | --- | --- | --- |
@@ -324,9 +324,9 @@ When a marketplace provider collects for a marketplace seller, the provider may 
 
 ## When to refuse or refer
 
-- Refer audits, assessments, penalties, penalty abatement and voluntary disclosure to a licensed professional. This Guide states only the late filing fee, negligence penalty and interest printed in the Form ST-12 instructions. [T3]
+- Refer audits, assessments, penalties, penalty abatement and voluntary disclosure to a licensed professional. This skill states only the late filing fee, negligence penalty and interest printed in the Form ST-12 instructions. [T3]
 - Refer premier resort area tax, local exposition taxes and the state rental vehicle fee questions. [T3]
-- Refer questions on sales before the dates in this Guide (for example remote sales before February 20, 2021, or Milwaukee sales before January 1, 2024) for a period-specific review. [T2]
+- Refer questions on sales before the dates in this skill (for example remote sales before February 20, 2021, or Milwaukee sales before January 1, 2024) for a period-specific review. [T2]
 - Refer mixed software and service bundles, and remotely accessed software where control is unclear. [T2]
 - Refer multistate sourcing disputes involving three or more states. [T3]
 
@@ -341,8 +341,8 @@ When a marketplace provider collects for a marketplace seller, the provider may 
 
 ## Contribution notes
 
-- To update this Guide, cite the DOR page or statute section and the date the change takes effect.
-- An accountant who adopts this Guide should settle the open questions in the change notes before signing.
+- To update this skill, cite the DOR page or statute section and the date the change takes effect.
+- An accountant who adopts this skill should settle the open questions in the change notes before signing.
 
 ## Sources
 
@@ -366,9 +366,9 @@ When a marketplace provider collects for a marketplace seller, the provider may 
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained on the OpenAccountants website. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained on the OpenAccountants website. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

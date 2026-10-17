@@ -4,7 +4,7 @@ description: Tier 1 workflow base for US federal income tax skills serving sole 
 version: 0.2
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,20 +16,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Figures are for tax year 2026 unless a line says 2025. The 2026 amounts come from Rev. Proc. 2025-32 and from IRS pages updated for the One Big Beautiful Bill Act (P.L. 119-21). A dated section covers 2025 returns, which are due by October 15, 2026 if the taxpayer got an extension.
 
-This Guide is the front door for a US federal Form 1040 with self-employment income. It sets the order of work, the facts to collect, how to sort income and expenses, the records that must exist, and when to stop and refer.
+This skill is the front door for a US federal Form 1040 with self-employment income. It sets the order of work, the facts to collect, how to sort income and expenses, the records that must exist, and when to stop and refer.
 
 ## Scope and who this is for
 
 - **Covers:** US citizens and resident aliens who file Form 1040 and run a business as a sole proprietor, or through a single-member LLC that is disregarded for federal income tax. It also covers a married couple running a business as a qualified joint venture. The business is reported on Schedule C.
 - **Does not cover:** partnerships and multi-member LLCs, S and C corporations, estates and trusts, nonresident aliens, and employer payroll. State and local tax is also out of scope. Each state has its own rules, so check that state's own revenue department before giving a combined answer.
-- **Companion Guides (use them instead of repeating their rules here):**
+- **Companion Skills (use them instead of repeating their rules here):**
   - `us-federal-return-assembly`: the order of Schedule SE, retirement, self-employed health insurance, QBI, Schedules 1, 1-A and 2, and the Form 2210 penalty.
   - `us-1099-k-and-payment-processors`: Form 1099-K, payment apps, and reconciling Box 1a to Schedule C.
   - `us-capital-gains`: sales of shares, funds, digital assets held as investments, and a home.
   - `us-secure-2-and-retirement-updates`: plan limits and SEP, SIMPLE and solo 401(k) rules.
   - `us-tax-residency`: whether the person is a resident alien at all.
   - `us-irs-collections-and-controversy`: notices, audits, unpaid balances and penalties.
-- **Who reads the output.** Where a preparer uses this Guide, a person who can sign the return reviews every position before filing. Where a taxpayer uses it directly, it explains the method and says clearly what needs a professional.
+- **Who reads the output.** Where a preparer uses this skill, a person who can sign the return reviews every position before filing. Where a taxpayer uses it directly, it explains the method and says clearly what needs a professional.
 
 ## Ask the client first
 
@@ -45,12 +45,12 @@ This Guide is the front door for a US federal Form 1040 with self-employment inc
 - Equipment bought during the year: cost per invoice or item, date placed in service, and whether the business has audited financial statements.
 - People paid for services: names, amounts paid in the year, how they were paid, and whether a Form W-9 was collected.
 - Wages from any job, estimated tax payments already made, and the prior year's tax and adjusted gross income (AGI).
-- Anything that may take the return outside this Guide: employees, foreign accounts or income, digital assets, rental property, K-1s, open IRS notices, unfiled years.
+- Anything that may take the return outside this skill: employees, foreign accounts or income, digital assets, rental property, K-1s, open IRS notices, unfiled years.
 
 ## The method, step by step
 
 1. **Fix the year and the filing status first.** Use marital status on the last day of the year. If a spouse died during the year, the taxpayer is considered married for the whole year. If more than one filing status applies, the taxpayer may choose the one with the lowest tax ([Pub. 501](https://www.irs.gov/publications/p501)). Never assume a status. A married person cannot file as single, so a default of "single" can produce an invalid return. If the status is unknown, ask.
-2. **Confirm residence.** This Guide assumes a US citizen or resident alien for the full year. For a first or last year in the US, or a dual-status year, use `us-tax-residency` before anything else.
+2. **Confirm residence.** This skill assumes a US citizen or resident alien for the full year. For a first or last year in the US, or a dual-status year, use `us-tax-residency` before anything else.
 3. **Classify the entity** ([IRS: single-member LLCs](https://www.irs.gov/businesses/small-businesses-self-employed/single-member-limited-liability-companies)). A single-member LLC is disregarded for income tax unless it files Form 8832 and elects to be a corporation. Its activity then goes on the owner's Schedule C. It is still a separate entity for employment tax and certain excise taxes. An LLC with at least two members is a partnership unless it elects corporate status. Stop and refer if the business is a partnership or a corporation.
 4. **Test spouse-owned businesses** ([IRS: qualified joint venture](https://www.irs.gov/businesses/small-businesses-self-employed/election-for-married-couples-unincorporated-businesses)). A business co-owned by a married couple is generally a partnership. It can instead be a qualified joint venture, with each spouse filing a Schedule C, only if **all** of these hold: the only members are the married couple, they file a joint return, **both** spouses materially participate, and **both** elect. A business held through an LLC does not qualify. For a married couple's LLC in a community property state, check Rev. Proc. 2002-69 before choosing the treatment.
 5. **Decide business or hobby.** An activity is a business if its primary purpose is income or profit and the owner is involved with continuity and regularity. A sporadic activity or a hobby is not a business ([Schedule C instructions](https://www.irs.gov/instructions/i1040sc)). There is a presumption of profit motive if gross income exceeds deductions in 3 or more of the 5 consecutive years ending with the current year. For horse breeding, training, showing or racing it is 2 of 7 years ([26 U.S.C. 183](https://www.law.cornell.edu/uscode/text/26/183)). Hobby income is still taxable. Hobby expenses give no deduction, because miscellaneous itemized deductions are disallowed for every tax year beginning after December 31, 2017. P.L. 119-21 removed the old end date ([26 U.S.C. 67(h)](https://www.law.cornell.edu/uscode/text/26/67)).
@@ -99,10 +99,10 @@ The QBI thresholds, the Additional Medicare Tax and the net investment income ta
 | Home office | Only the part of the home used **exclusively** and **regularly** as (a) the principal place of business, or (b) a place where the taxpayer meets or deals with patients, clients or customers in the normal course of business; or (c) a separate structure not attached to the home, used in connection with the business. Storage of inventory or product samples, and daycare, have their own rules ([Pub. 587](https://www.irs.gov/publications/p587)). The method is chosen on the timely filed original return and cannot be changed for that year. The deduction cannot exceed the gross income from the business use of the home, less business expenses. Under the simplified method any excess is lost, and there is no depreciation and no later recapture. The method can be changed from year to year. An employee working from home gets no home office deduction. | [IRS simplified option](https://www.irs.gov/businesses/small-businesses-self-employed/simplified-option-for-home-office-deduction) |
 | De minimis safe harbor | The amounts must also be expensed on the books under a consistent accounting procedure in place at the start of the tax year. With an applicable financial statement (AFS) the procedure must be written; without one it need not be. Attach a statement titled "Section 1.263(a)-1(f) de minimis safe harbor election" to the timely filed **original** return, including extensions, for each year it applies. An item costing more than the limit is not covered by the safe harbor, but may still be deductible under other rules. | [IRS tangible property regulations](https://www.irs.gov/businesses/small-businesses-self-employed/tangible-property-final-regulations) |
 | Entertainment and meals | Entertainment is not deductible. Food and drink bought separately from entertainment, or shown separately on the invoice, is a meal subject to the 50% limit. | [Pub. 463](https://www.irs.gov/publications/p463) |
-| Worker or contractor | The test is the right to control what is done and how it is done, looking at behavioral control, financial control and the type of relationship. If it is still unclear, Form SS-8 can be filed. A worker who is an employee takes the business outside this Guide. | [IRS: employee or contractor](https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee) |
+| Worker or contractor | The test is the right to control what is done and how it is done, looking at behavioral control, financial control and the type of relationship. If it is still unclear, Form SS-8 can be filed. A worker who is an employee takes the business outside this skill. | [IRS: employee or contractor](https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee) |
 | Form 1099-NEC due date | January 31 after the payment year, on paper or electronically. A due date on a weekend or legal holiday moves to the next business day. January 31, 2027 is a Sunday, so 2026 forms are due February 1, 2027. | [Form 1099-MISC and 1099-NEC instructions](https://www.irs.gov/instructions/i1099mec) |
 | E-filing information returns | Required if the business files 10 or more information returns in total (all types counted together), for returns due on or after January 1, 2024. | [Form 1099-MISC and 1099-NEC instructions](https://www.irs.gov/instructions/i1099mec) |
-| Single-member LLC with employees | Disregarded for income tax, but a separate entity for employment tax. Payroll is outside this Guide. | [IRS: single-member LLCs](https://www.irs.gov/businesses/small-businesses-self-employed/single-member-limited-liability-companies) |
+| Single-member LLC with employees | Disregarded for income tax, but a separate entity for employment tax. Payroll is outside this skill. | [IRS: single-member LLCs](https://www.irs.gov/businesses/small-businesses-self-employed/single-member-limited-liability-companies) |
 | Hobby presumption | Needs gross income above deductions in 3 or more of the 5 years ending with this year (2 of 7 for horses). Failing it is not proof of a hobby. It only removes the presumption. | [26 U.S.C. 183(d)](https://www.law.cornell.edu/uscode/text/26/183) |
 | Records: how long | Generally 3 years after filing. For a refund claim filed later, 3 years from filing the original return or 2 years from paying the tax, whichever is later. 6 years if unreported income is more than 25% of the gross income shown. 7 years for a claim for a loss from worthless securities or a bad debt deduction. Indefinitely if no return or a fraudulent return was filed. Employment tax records: at least 4 years after the tax becomes due or is paid, whichever is later. | [IRS: how long to keep records](https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records) |
 
@@ -193,7 +193,7 @@ The amounts in these cases are made up for illustration. The rates, limits and t
 ## When to refuse or refer
 
 - **Refer** partnerships, multi-member LLCs, S corporations and C corporations. Also refer a married couple's business that fails any qualified joint venture condition and is not covered by Rev. Proc. 2002-69.
-- **Refer** a business with employees. Payroll (Forms 941, 940, W-2) is outside this Guide, even when the business is a single-member LLC.
+- **Refer** a business with employees. Payroll (Forms 941, 940, W-2) is outside this skill, even when the business is a single-member LLC.
 - **Refer** nonresident aliens and dual-status years to `us-tax-residency`.
 - **Refer** foreign accounts or income. A US person must file an FBAR when foreign accounts total more than $10,000 at any time in the year ([FinCEN](https://www.fincen.gov/report-foreign-bank-and-financial-accounts)). Form 8938 may also be needed where the specified foreign financial asset thresholds are met; see `us-fbar-fatca-reporting`. Foreign income brings in the foreign tax credit and treaty rules.
 - **Refer** digital asset activity. Every Form 1040 asks the digital asset question ([IRS: digital assets](https://www.irs.gov/filing/digital-assets)). Use `us-capital-gains` for sales held as investments, and a professional for mining, staking or payment in digital assets.

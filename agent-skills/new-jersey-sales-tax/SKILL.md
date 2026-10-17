@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/new-jersey-sales-tax"
   jurisdiction: "US-NJ"
   tax_year: "2026"
-  last_updated: "2026-10-12"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # New Jersey Sales and Use Tax
 
-This Guide covers New Jersey Sales and Use Tax for sellers and buyers: the rate, the Urban Enterprise Zone and Salem County reduced rates, what is taxable, the main exemptions, registration, remote sellers and marketplaces, returns and due dates, Use Tax and exemption certificates. Figures are for tax year 2026. Read `us-sales-tax` first for the multi-state framework. Every figure below sits in a table that links the New Jersey Division of Taxation page that prints it.
+This skill covers New Jersey Sales and Use Tax for sellers and buyers: the rate, the Urban Enterprise Zone and Salem County reduced rates, what is taxable, the main exemptions, registration, remote sellers and marketplaces, returns and due dates, Use Tax and exemption certificates. Figures are for tax year 2026. Read `us-sales-tax` first for the multi-state framework. Every figure below sits in a table that links the New Jersey Division of Taxation page that prints it.
 
 ## Section 1 -- Quick reference
 
@@ -165,7 +165,7 @@ Interest runs for every month or part month the tax is unpaid at the prime rate 
 - Salem County reduced rate claims: refer until a current Division page confirms the programme.
 - UEZ certification, recertification, purchase limitations or energy exemptions for UEZ manufacturers: refer to the Department of Community Affairs and the UEZ notices.
 - Audits, assessments, voluntary disclosure or penalty abatement requests: refer to a New Jersey practitioner.
-- Hotel occupancy, motor vehicle, alcohol and cigarette taxes and fees: outside this Guide.
+- Hotel occupancy, motor vehicle, alcohol and cigarette taxes and fees: outside this skill.
 
 ## Section 10 -- Prohibitions
 
@@ -187,7 +187,7 @@ Interest runs for every month or part month the tax is unpaid at the prime rate 
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 <!-- openaccountants-cta-block -->
 
@@ -209,4 +209,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-12. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `new-jersey-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/new-jersey-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `new-jersey-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/new-jersey-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

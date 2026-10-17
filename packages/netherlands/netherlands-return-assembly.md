@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete Netherlands fi
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Use this method to assemble a reviewable Dutch annual filing package for a full-year Netherlands-resident individual with a sole proprietorship. The annual income-tax calculation is for **2025**, filed in the following year; any **2026** forecast is a separate calculation. VAT returns retain their own periods. Research checked on 28 September 2026.
 
-This Guide connects bookkeeping, business deductions, personal income tax, Zvw and VAT. It does not authorize submission or payment, establish a person's entrepreneur status, or turn an incomplete calculation into a filing-ready return. Part-year residence, foreign social insurance, treaty relief, a deceased taxpayer, substantial-interest transactions, business transfers and disputed employment status need the relevant specialist calculation before the affected part is signed off. Preserve the rest of the work while that issue is resolved. Benefits and allowances (toeslagen) are outside this package; do not present them as calculated or applied for.
+This skill connects bookkeeping, business deductions, personal income tax, Zvw and VAT. It does not authorize submission or payment, establish a person's entrepreneur status, or turn an incomplete calculation into a filing-ready return. Part-year residence, foreign social insurance, treaty relief, a deceased taxpayer, substantial-interest transactions, business transfers and disputed employment status need the relevant specialist calculation before the affected part is signed off. Preserve the rest of the work while that issue is resolved. Benefits and allowances (toeslagen) are outside this package; do not present them as calculated or applied for.
 
 ## Ask the client first
 

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-1120-corporation-return-schedule-ordinary-business"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-10-03"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,9 +15,9 @@ metadata:
 
 # S corporation ordinary business loss on Schedule K-1 (Form 1120-S)
 
-This Guide is for an S corporation shareholder who receives a Schedule K-1 (Form 1120-S) with a loss in box 1, and for the preparer of that shareholder's federal return. It sets out the four loss limits in the order the IRS applies them: stock and debt basis, then at-risk, then passive activity, then the excess business loss limit. It ends with a full worked example and the carryforwards each limit leaves behind. Figures are for tax year 2026. Federal rules only; state treatment is not covered.
+This skill is for an S corporation shareholder who receives a Schedule K-1 (Form 1120-S) with a loss in box 1, and for the preparer of that shareholder's federal return. It sets out the four loss limits in the order the IRS applies them: stock and debt basis, then at-risk, then passive activity, then the excess business loss limit. It ends with a full worked example and the carryforwards each limit leaves behind. Figures are for tax year 2026. Federal rules only; state treatment is not covered.
 
-The IRS editions read for this Guide on 3 October 2026 were: Instructions for Form 7203 (revised 12/2022), Shareholder's Instructions for Schedule K-1 (Form 1120-S) (2025), Instructions for Form 6198 (11/2025), Instructions for Form 8582 (2025) and Instructions for Form 461 (2025). Check irs.gov for a 2026 edition before filing.
+The IRS editions read for this skill on 3 October 2026 were: Instructions for Form 7203 (revised 12/2022), Shareholder's Instructions for Schedule K-1 (Form 1120-S) (2025), Instructions for Form 6198 (11/2025), Instructions for Form 8582 (2025) and Instructions for Form 461 (2025). Check irs.gov for a 2026 edition before filing.
 
 Out of scope here: how much salary the owner must take (reasonable compensation) is covered in `us-s-corp-election-decision`. The qualified business income deduction is covered in `us-qbi-deduction`. Partnership K-1 losses are covered in `us-form-1065-partnership`.
 
@@ -252,10 +252,10 @@ Repayment trap, the next year (hypothetical): if in 2027 the corporation repays 
 - Payments made under a guarantee, debt restructurings, or shareholder debt forgiven by or to the corporation: refer.
 - Inherited stock (income in respect of a decedent rules under section 1367(b)(4)), stock acquired in a section 351 transfer with liabilities over basis, or several blocks of stock with different bases bought or sold during the year: refer.
 - A terminated S election and losses in the post-termination transition period: refer.
-- A grouping of activities for the passive rules, rental activities inside the corporation (K-1 boxes 2 and 3), or real estate professional claims: outside this Guide.
+- A grouping of activities for the passive rules, rental activities inside the corporation (K-1 boxes 2 and 3), or real estate professional claims: outside this skill.
 - Partnership K-1 losses: use `us-form-1065-partnership`. Reasonable compensation: use `us-s-corp-election-decision`. QBI deduction: use `us-qbi-deduction`.
-- The corporation's own Form 1120-S return (due date, extensions, Schedule K-1 penalties) and whether the S election on Form 2553 is valid or has ended: outside this Guide, which covers only the shareholder's loss. No live Guide covers the Form 1120-S return itself; refer.
-- State conformity, state basis and state net operating losses: outside this Guide, which is federal only.
+- The corporation's own Form 1120-S return (due date, extensions, Schedule K-1 penalties) and whether the S election on Form 2553 is valid or has ended: outside this skill, which covers only the shareholder's loss. No live Guide covers the Form 1120-S return itself; refer.
+- State conformity, state basis and state net operating losses: outside this skill, which is federal only.
 
 ## Sources
 
@@ -297,4 +297,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-03. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-1120-corporation-return-schedule-ordinary-business` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-1120-corporation-return-schedule-ordinary-business. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-1120-corporation-return-schedule-ordinary-business` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-1120-corporation-return-schedule-ordinary-business. If neither is available, confirm every figure against the official source pages cited above before relying on it.

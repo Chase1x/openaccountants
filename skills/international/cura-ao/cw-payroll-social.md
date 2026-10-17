@@ -3,7 +3,7 @@ name: cw-payroll-social
 description: "Source-cited draft: payroll & social contributions for Curacao (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CW
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Curaçao payroll: wage tax (loonbelasting), AOV/AWW, AVBZ and BVZ premiums, ZV, OV and cessantia, filing dates and year-end statements (2026, with 2025 notes)
 
-Figures are for tax year 2026 where the Belastingdienst Curaçao has published them; otherwise the latest figure is given with its year. Premium rates and ceilings come from the Sociale Verzekeringsbank (SVB) table for 2023, which the Belastingdienst still links ([Belastingdienst, Belastingtarieven](https://belastingdienst.cw/particulier/themas/belastingtarieven/)). The SVB website could not be read for this Guide, so **check every premium rate and ceiling against the SVB's current sheet before you run payroll**.
+Figures are for tax year 2026 where the Belastingdienst Curaçao has published them; otherwise the latest figure is given with its year. Premium rates and ceilings come from the Sociale Verzekeringsbank (SVB) table for 2023, which the Belastingdienst still links ([Belastingdienst, Belastingtarieven](https://belastingdienst.cw/particulier/themas/belastingtarieven/)). The SVB website could not be read for this skill, so **check every premium rate and ceiling against the SVB's current sheet before you run payroll**.
 
 Currency: older documents print Antillean guilders (NAf, shown as ANG); documents from 2025 print Caribbean guilders (XCG or Cg). Amounts are quoted in the currency the source prints ([Belastingdienst, Lei di Bion](https://belastingdienst.cw/vrijstelling-van-loonbelasting-en-sociale-lasten-mogelijk-dankzij-lei-di-bion/); [Toelichting overwerkregistratie 2026](https://belastingdienst.cw/wp-content/uploads/2026/01/Toelichting-overwerkregistratie-2026.pdf)).
 
@@ -58,7 +58,7 @@ Currency: older documents print Antillean guilders (NAf, shown as ANG); document
    - sole trader: the Chamber of Commerce extract and a valid ID;
    - V.O.F. or maatschap: the extract, the partnership agreement and a valid ID.
 
-   With employees, also give the headcount, the first start date and the gross payroll. Staff are also registered with the SVB ([Belastingdienst handbook, 2026](https://belastingdienst.cw/wp-content/uploads/2026/08/FIN_Succesvol_Ondernemen_versie2-1.pdf)). The SVB steps could not be read for this Guide, so check them with the SVB.
+   With employees, also give the headcount, the first start date and the gross payroll. Staff are also registered with the SVB ([Belastingdienst handbook, 2026](https://belastingdienst.cw/wp-content/uploads/2026/08/FIN_Succesvol_Ondernemen_versie2-1.pdf)). The SVB steps could not be read for this skill, so check them with the SVB.
 2. **Decide who is an employee.** Withhold, and keep a payroll record, if all three are true ([Belastingdienst, Startende ondernemers](https://belastingdienst.cw/ondernemer/themas/startende-ondernemers/)):
    - the person has committed to work for some time;
    - they are paid for it;
@@ -103,7 +103,7 @@ Currency: older documents print Antillean guilders (NAf, shown as ANG); document
 
 ## Social premium rates and ceilings (SVB table for 2023, the latest published on belastingdienst.cw)
 
-The percentages are of income. The ceilings are printed in NAf (ANG). These are 2023 figures: **check the SVB's current sheet for 2026**, because the SVB can change rates and index ceilings each year and this Guide could not read the SVB website ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
+The percentages are of income. The ceilings are printed in NAf (ANG). These are 2023 figures: **check the SVB's current sheet for 2026**, because the SVB can change rates and index ceilings each year and this skill could not read the SVB website ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
 
 | Premium | Total | Employer | Employee | Ceiling (2023) |
 |---|---|---|---|---|
@@ -118,7 +118,7 @@ The percentages are of income. The ceilings are printed in NAf (ANG). These are 
 | Cessantia (severance fund) | ANG 40 per employee per year | all | none | none |
 
 - **ZV and OV wage ceiling (loongrens), which is also the OV premium-wage ceiling, for 2023:** ANG 256.60 a day (6-day week) or ANG 307.92 a day (5-day week); ANG 1,539.60 a week; ANG 6,671.60 a month; ANG 80,059.20 a year ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
-- **How the table reads.** The 1% "premie AOV boven grens (voor werknemer)" is an employee AOV rate on premium income above the ANG 100,000 ceiling. How and when it is collected (through payroll or the income tax assessment) is not stated on any page readable for this Guide. Check with the SVB ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
+- **How the table reads.** The 1% "premie AOV boven grens (voor werknemer)" is an employee AOV rate on premium income above the ANG 100,000 ceiling. How and when it is collected (through payroll or the income tax assessment) is not stated on any page readable for this skill. Check with the SVB ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
 
 ## Wage tax rates, credits and supplements
 
@@ -135,7 +135,7 @@ The percentages are of income. The ceilings are printed in NAf (ANG). These are 
 | 145,372 | no limit | 36,663 | 46,5% |
 
 - **Credits for 2026, as printed in the employer's calculation box on the 2026 declaration**: basic credit (basiskorting) ANG 2,915 a year; sole-earner supplement (alleenverdienertoeslag) ANG 1,779; elderly supplement (ouderentoeslag) ANG 1,342; transferred elderly supplement ANG 673 ([Loonbelastingverklaring 2026](https://belastingdienst.cw/wp-content/uploads/2026/01/Loonbelastingverklaring-2026.pdf)).
-- **Source conflict (check).** The 2026 explanatory notes print "NAf 1.739" (sole earner), "NAf 1.312" (elderly) and "658" (transferable) in their text, but the form's amounts in their table headed "Overzicht van de toeslagen 2024" ([Toelichting Loonbelastingverklaring 2026](https://belastingdienst.cw/wp-content/uploads/2026/01/Loonbelastingverklaring-2026-toelichting.docx-1.pdf)). This Guide uses the 2026 form; confirm with the Belastingdienst.
+- **Source conflict (check).** The 2026 explanatory notes print "NAf 1.739" (sole earner), "NAf 1.312" (elderly) and "658" (transferable) in their text, but the form's amounts in their table headed "Overzicht van de toeslagen 2024" ([Toelichting Loonbelastingverklaring 2026](https://belastingdienst.cw/wp-content/uploads/2026/01/Loonbelastingverklaring-2026-toelichting.docx-1.pdf)). This skill uses the 2026 form; confirm with the Belastingdienst.
 - **Who gets the supplements** ([Toelichting Loonbelastingverklaring 2026](https://belastingdienst.cw/wp-content/uploads/2026/01/Loonbelastingverklaring-2026-toelichting.docx-1.pdf)):
   - The sole-earner supplement needs all three conditions:
     - married for the whole calendar year;
@@ -222,7 +222,7 @@ Premium amounts use the SVB table for 2023; re-run them at the SVB's current rat
   - AOV (annual view): 6% applies up to the ANG 100,000 ceiling, giving ANG 6,000. The table's 1% above the ceiling gives 1% of ANG 20,000 = ANG 200; whether that is withheld in payroll or charged on the assessment is a check item ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
   - BVZ: income is below the ANG 150,000 ceiling, so 4,3% of ANG 120,000 = ANG 5,160 (employee) and 9,3% = ANG 11,160 (employer) ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
   - ZV each month: 1,9% of the ANG 6,671.60 ceiling = ANG 126.76, not 1,9% of ANG 10,000 ([SVB Tabel 2023](https://belastingdienst.cw/wp-content/uploads/2023/02/Tabel-2023.pdf)).
-  - How an annual ceiling is spread over monthly payrolls is not stated on any page read for this Guide. Ask the SVB.
+  - How an annual ceiling is spread over monthly payrolls is not stated on any page read for this skill. Ask the SVB.
 - **Case 4: penalties for late payment** ([Belastingdienst, Loonbelasting](https://belastingdienst.cw/ondernemer/themas/loonbelasting/)):
 
 | Default | Additional assessment (ANG) | Percentage result (ANG) | Penalty (ANG) |
@@ -247,11 +247,11 @@ Premium amounts use the SVB table for 2023; re-run them at the SVB's current rat
 ## When to refuse or refer
 
 - **Current premium rates are needed and the SVB sheet is unavailable.** Do not present the 2023 table as current; send the client to the SVB, which the Belastingdienst names for all percentages ([Belastingdienst, Loonbelasting](https://belastingdienst.cw/ondernemer/themas/loonbelasting/)).
-- **ZV, OV, cessantia registration, risk class or payment mechanics.** Refer to the SVB. They are not on the Belastingdienst return and their procedures could not be read for this Guide.
+- **ZV, OV, cessantia registration, risk class or payment mechanics.** Refer to the SVB. They are not on the Belastingdienst return and their procedures could not be read for this skill.
 - **An exact 2026 wage-tax amount per pay period.** Do not reconstruct the tables from the 2023 brackets. Get the Belastingdienst's current tables or use payroll software that carries them.
 - **Treaty or Kingdom-arrangement relief.** Withhold until the employee produces the Inspector's statement ([Belastingdienst, Loonbelasting](https://belastingdienst.cw/ondernemer/themas/loonbelasting/)). Refer the treaty analysis itself.
 - **Ex-patriate applications, Lei di Bion disputes, and any recovery for fraud or wrong data.** Refer to a Curaçao tax adviser. These depend on facts the Belastingdienst tests case by case ([Lei di Bion](https://belastingdienst.cw/vrijstelling-van-loonbelasting-en-sociale-lasten-mogelijk-dankzij-lei-di-bion/)).
-- **Severance, dismissal, minimum wage or labour disputes.** These are outside this Guide. Refer to a labour lawyer or to the ministry the Belastingdienst handbook names as "Ministerie van Sociale Arbeid & Welzijn (SOAW)" ([Belastingdienst handbook, 2026](https://belastingdienst.cw/wp-content/uploads/2026/08/FIN_Succesvol_Ondernemen_versie2-1.pdf)).
+- **Severance, dismissal, minimum wage or labour disputes.** These are outside this skill. Refer to a labour lawyer or to the ministry the Belastingdienst handbook names as "Ministerie van Sociale Arbeid & Welzijn (SOAW)" ([Belastingdienst handbook, 2026](https://belastingdienst.cw/wp-content/uploads/2026/08/FIN_Succesvol_Ondernemen_versie2-1.pdf)).
 - **Currency conversion.** For converting an ANG amount to XCG, check the official rate: the Belastingdienst notice ([Invoering Caribische Gulden](https://belastingdienst.cw/invoering-caribische-gulden-xcg/)) is an image and could not be read.
 
 ## 2025 returns and statements still being filed or corrected

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Singapore income tax for self-e
 version: 2.0
 jurisdiction: SG
 tax_year: 2026
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,14 +17,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Singapore income tax for self-employed individuals (Form B)
 
-Figures are for tax year 2026. In Singapore this means Year of Assessment (YA) 2026, which taxes income earned in calendar year 2025 (1 Jan 2025 to 31 Dec 2025), filed between 1 Mar and 18 Apr 2026. Every relief condition below is tested in 2025: the taxpayer's age at 31 Dec 2025, a dependant's 2025 income, contributions paid in 2025. Income earned in 2026 belongs to YA 2027 and is not covered here. This Guide covers a resident sole proprietor or freelancer filing Form B. Official sources were read on 5 Oct 2026. It is a working method for review, not a filed return.
+Figures are for tax year 2026. In Singapore this means Year of Assessment (YA) 2026, which taxes income earned in calendar year 2025 (1 Jan 2025 to 31 Dec 2025), filed between 1 Mar and 18 Apr 2026. Every relief condition below is tested in 2025: the taxpayer's age at 31 Dec 2025, a dependant's 2025 income, contributions paid in 2025. Income earned in 2026 belongs to YA 2027 and is not covered here. This skill covers a resident sole proprietor or freelancer filing Form B. Official sources were read on 5 Oct 2026. It is a working method for review, not a filed return.
 
 ## The method, step by step
 
 1. Confirm the year and the person. YA 2026 taxes 2025 income ([IRAS tax residency page](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency)). Confirm the person is self-employed: a sole proprietor or partner registered with ACRA is generally self-employed and reports business income, not salary ([IRAS basic guide for self-employed persons](https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/basic-guide-for-self-employed-persons)).
 2. Confirm tax residence for YA 2026 using the tests in Section 1. A non-resident is out of scope (refusal R-SG-1). See the [IRAS tax residency page](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency).
 3. Confirm the accounting period. Most businesses end on 31 Dec, so the 2025 accounts feed YA 2026; a different year end feeds the YA after the year in which it ends ([IRAS basic guide for self-employed persons](https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/basic-guide-for-self-employed-persons)).
-4. Build revenue from the bank statement and invoices (Sections 3 and 8). Strip GST out of receipts if the person is GST-registered; see the [GST Act section 16](https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-) and the `sg-gst-return` Guide.
+4. Build revenue from the bank statement and invoices (Sections 3 and 8). Strip GST out of receipts if the person is GST-registered; see the [GST Act section 16](https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-) and the `sg-gst-return` skill.
 5. Deduct allowable business expenses and remove disallowable ones, using the IRAS lists summarised in Section 5.3 ([IRAS business expenses and deductions](https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/business-expenses-and-deductions)). Qualifying commission agents, private hire car and taxi drivers and delivery workers may instead claim a deemed expense under the Fixed Expense Deduction Ratio ([IRAS FEDR page](https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/business-expenses-and-deductions/fixed-expense-deduction-ratio-for-self-employed-persons-and-platform-workers)).
 6. Claim capital allowances on qualifying plant and machinery under Section 19 or 19A of the Income Tax Act 1947 (Section 5.2; [IRAS capital allowances page](https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-allowances/capital-allowances)). Never on an S-plated private car.
 7. Report revenue and adjusted profit on Form B as a 2-line or 4-line statement, depending on revenue (Section 5.5; [IRAS basic guide for self-employed persons](https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/basic-guide-for-self-employed-persons)).
@@ -115,7 +115,7 @@ A stay under 183 days with none of the other tests met means non-resident.
 ### Refusal Catalogue
 
 - **R-SG-1. Non-residents.** Non-resident income is taxed differently and non-residents get no personal reliefs. Out of scope. Route residence questions to `sg-tax-residency`.
-- **R-SG-2. Companies (Pte Ltd, Ltd).** Corporate income tax and Form C-S or Form C are out of scope. This Guide covers individuals only.
+- **R-SG-2. Companies (Pte Ltd, Ltd).** Corporate income tax and Form C-S or Form C are out of scope. This skill covers individuals only.
 - **R-SG-3. Partnerships.** Allocating partnership income (Form P) is out of scope. Escalate.
 - **R-SG-4. Capital gains and property disposals.** Whether a gain is trading income needs specialist review. See `sg-zero-cgt`.
 - **R-SG-5. GST computation.** GST registration, returns and input tax are out of scope. See `sg-gst-return`.
@@ -679,7 +679,7 @@ IRAS: "The NOR scheme has ceased. The last NOR status granted will run / be vali
 
 ## Ask the client first
 
-- Where were you resident in 2025: citizen, PR, or a foreigner with how many days in Singapore (and in the years either side)? This decides whether any of this Guide applies.
+- Where were you resident in 2025: citizen, PR, or a foreigner with how many days in Singapore (and in the years either side)? This decides whether any of this skill applies.
 - When does your accounting year end? A non-December year end changes which accounts feed YA 2026.
 - Are you GST-registered, and from what date? This changes revenue on every receipt.
 - Are you a commission agent, private hire car or taxi driver, or delivery worker? FEDR may replace actual expenses.
@@ -689,7 +689,7 @@ IRAS: "The NOR scheme has ceased. The last NOR status granted will run / be vali
 ## When to refuse or refer
 
 - Non-resident for YA 2026, or residence unclear: refuse the computation; refer to `sg-tax-residency` and an accountant.
-- A company, LLP or partnership: refuse; this Guide is for individuals.
+- A company, LLP or partnership: refuse; this skill is for individuals.
 - Disposals of property, shares or crypto where the gain may be trading income: refer.
 - Prior years with unfiled returns, an estimated assessment, a composition offer or a summons: refer to an accountant now.
 - Any suspected wilful omission of income: refer; do not prepare a return around it.
@@ -746,9 +746,9 @@ IRAS: "The NOR scheme has ceased. The last NOR status granted will run / be vali
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as an Accredited Tax Adviser, Chartered Accountant, or equivalent licensed practitioner in Singapore) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an Accredited Tax Adviser, Chartered Accountant, or equivalent licensed practitioner in Singapore) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

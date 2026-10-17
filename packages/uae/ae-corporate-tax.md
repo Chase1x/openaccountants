@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about UAE Corporate Tax for freelanc
 version: 2.0
 jurisdiction: AE
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -18,7 +18,7 @@ Tax year 2026. In the UAE the tax period is the business's financial year, so "2
 
 ## Scope and who this is for ([Corporate Tax Law, consolidated](https://mof.gov.ae/wp-content/uploads/2026/01/Federal-Decree-Law-No.-47-of-2022-and-its-amendments-en-v13.1.26.pdf); [Cabinet Decision No. 49 of 2023](https://tax.gov.ae/DataFolder/Files/Legislation/05-06-2023/3/Cabinet%20Decision%20No.%2049%20of%202023%20-%20for%20publishing.pdf))
 
-This Guide covers federal Corporate Tax under Federal Decree-Law No. 47 of 2022 for:
+This skill covers federal Corporate Tax under Federal Decree-Law No. 47 of 2022 for:
 
 - UAE companies and other juridical persons, including free zone companies, and foreign companies effectively managed and controlled in the UAE. These are taxable from the first dirham of taxable income. There is no turnover threshold for a juridical person (Corporate Tax Law, Article 11(3)).
 - Individuals (natural persons) running a business in the UAE: sole establishments, freelancers and other self-employed people. They are taxable only when their total business turnover is more than AED 1,000,000 in a calendar year (Cabinet Decision No. 49 of 2023, Article 2).
@@ -27,7 +27,7 @@ This Guide covers federal Corporate Tax under Federal Decree-Law No. 47 of 2022 
 
 There is no UAE tax on an individual's wages. Wages, personal investment income and real estate investment income are not business income for an individual, whatever the amount, and do not count towards the AED 1,000,000 test (Cabinet Decision No. 49 of 2023, Article 2(2)).
 
-The Guide does not cover VAT, excise tax, Emirate-level taxes, tax groups, business restructuring relief, or the detailed top-up tax computation.
+The skill does not cover VAT, excise tax, Emirate-level taxes, tax groups, business restructuring relief, or the detailed top-up tax computation.
 
 ## Ask the client first
 
@@ -255,7 +255,7 @@ The amounts are illustrations. Each case uses a calendar-year tax period unless 
 - **Exempt persons**: government-controlled entities, public benefit entities, investment funds, pension funds, extractive businesses.
 - **Voluntary disclosures, tax assessments, reconsideration requests**, or unfiled past periods.
 - **Unincorporated partnerships and family foundations.**
-- **Research and development incentives or tax credits**, which fall outside this Guide.
+- **Research and development incentives or tax credits**, which fall outside this skill.
 
 ## Filing and payment
 

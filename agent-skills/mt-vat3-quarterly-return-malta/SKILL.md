@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/mt-vat3-quarterly-return-malta"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,11 +17,11 @@ metadata:
 
 ## Scope
 
-This Guide covers preparing and checking Maltese VAT filings for a business established in Malta: the Article 10 periodic return, the Article 11 small-enterprise declaration and the Article 12 obligations. It covers registration type, rates, input VAT, cross-border reverse charge, recapitulative statements, the One Stop Shop (OSS), penalties, interest and records.
+This skill covers preparing and checking Maltese VAT filings for a business established in Malta: the Article 10 periodic return, the Article 11 small-enterprise declaration and the Article 12 obligations. It covers registration type, rates, input VAT, cross-border reverse charge, recapitulative statements, the One Stop Shop (OSS), penalties, interest and records.
 
 Figures are for tax year 2026. The law is the VAT Act, Chapter 406 of the Laws of Malta, as consolidated on 27 March 2026 (amendments up to Act III of 2026 and Legal Notice 75 of 2026), plus its subsidiary legislation. VAT in Malta is charged per transaction and per tax period, so "tax year 2026" means periods falling in calendar 2026. A short section near the end covers 2025 periods still being filed.
 
-The authority is the Malta Tax and Customs Administration (MTCA); the Act calls the office-holder the Commissioner for Tax and Customs. Returns, registrations and statements go through MTCA's online services. This Guide does not reproduce the box numbers of the return form. Take them from the live form on the MTCA site, and check MTCA's published filing calendar against the statutory dates below.
+The authority is the Malta Tax and Customs Administration (MTCA); the Act calls the office-holder the Commissioner for Tax and Customs. Returns, registrations and statements go through MTCA's online services. This skill does not reproduce the box numbers of the return form. Take them from the live form on the MTCA site, and check MTCA's published filing calendar against the statutory dates below.
 
 Clients and older software sometimes call the periodic return "VAT3", but no official page used here uses that name: the Act calls it the tax return (art. 27). If a client says "VAT3", confirm from the registration certificate and the MTCA account that they mean the Article 10 periodic return for their own tax period, not an Article 11 declaration or an Article 12 filing.
 
@@ -202,7 +202,7 @@ Hypothetical figures, for tax year 2026 periods.
 - Immovable property transfers or developments, investment gold, new means of transport, excise goods, call-off stock.
 - An assessment, provisional assessment, investigation or appeal to the Administrative Review Tribunal (thirty days from service to appeal).
 - Anything the client cannot evidence with invoices.
-- A request about Maltese income tax: this Guide covers VAT only.
+- A request about Maltese income tax: this skill covers VAT only.
 
 ## Filing and payment
 
@@ -278,4 +278,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-vat3-quarterly-return-malta` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-vat3-quarterly-return-malta. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-vat3-quarterly-return-malta` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-vat3-quarterly-return-malta. If neither is available, confirm every figure against the official source pages cited above before relying on it.

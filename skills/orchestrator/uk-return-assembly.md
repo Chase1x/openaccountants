@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete UK filing pack
 version: 0.1
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Self Assessment return assembly: putting the SA100 and its pages together
 
-This Guide is the last step for a UK individual's Self Assessment return. It picks the SA100 pages, runs the part Guides in order, builds the computation in the statutory order, reconciles the pieces, checks the result against HMRC's own calculation, and sets the filing and payment calendar. Detail stays in each part Guide.
+This skill is the last step for a UK individual's Self Assessment return. It picks the SA100 pages, runs the part Guides in order, builds the computation in the statutory order, reconciles the pieces, checks the result against HMRC's own calculation, and sets the filing and payment calendar. Detail stays in each part Guide.
 
 Two tax years matter on 25 September 2026:
 
@@ -61,7 +61,7 @@ The SA100 is the main return. HMRC lists the supplementary pages that go with it
 | SA100 main return | Always: interest, dividends, UK pensions and benefits, pension contributions, Gift Aid, Child Benefit charge, Marriage Allowance | `uk-income-tax-sa100` |
 | SA101 Additional information | Less common income, deductions and reliefs, and the pension annual allowance charge | Refer if material |
 | SA102 Employment | An employee or company director | P60, P11D; pay in box 1, UK tax taken off in box 2 |
-| SA103S or SA103F Self-employment | A sole trader | This Guide, Stage 2 below, then `uk-bookkeeping` |
+| SA103S or SA103F Self-employment | A sole trader | This skill, Stage 2 below, then `uk-bookkeeping` |
 | SA104S or SA104F Partnership | A partner | Refer |
 | SA105 UK property | Rental income | `uk-rental-sa105` |
 | SA106 Foreign | Foreign income or gains | Refer; `uk-non-dom` |

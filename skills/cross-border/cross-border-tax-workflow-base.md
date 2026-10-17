@@ -4,7 +4,7 @@ description: Foundation workflow base for cross-border / international personal-
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2026
-last_updated: 2026-10-05
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,15 +15,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cross-border tax workflow: the shared method for any case that touches more than one country
 
-Figures are for tax year 2026. This Guide carries no rates, thresholds or amounts, and it does not expire with a tax year. It is the shared method every cross-border case follows: the residence of each person in each country, the source of each item of income, the treaty tie-breaker where two countries both claim a person as resident, relief by credit or by exemption, and the forms that claim the relief and report the facts. The country and topic Guides hold the rules and figures. `cross-border-tax-router` decides which of them to load; this Guide decides how they are put together.
+Figures are for tax year 2026. This skill carries no rates, thresholds or amounts, and it does not expire with a tax year. It is the shared method every cross-border case follows: the residence of each person in each country, the source of each item of income, the treaty tie-breaker where two countries both claim a person as resident, relief by credit or by exemption, and the forms that claim the relief and report the facts. The country and topic skills hold the rules and figures. `cross-border-tax-router` decides which of them to load; this skill decides how they are put together.
 
 ## What this file is
 
-The shared method that every cross-border country and topic Guide loads on top of. It carries no country rule and no topic rule of its own. Those live in the topic Guides (for example `us-feie-ftc`, `us-foreign-tax-credit-1116`, `us-fbar-fatca-reporting`, `us-cfc-gilti`, `us-foreign-trust-reporting`, `us-expatriation-exit-tax`) and in each country's own Guides (for example `us-tax-residency`, `uk-statutory-residence-test`, `uk-non-dom`, `mt-non-dom`, `ie-non-dom`, `cy-non-dom`, `ca-tax-residency`, `leaving-australia-tax-residency-cgt`).
+The shared method that every cross-border country and topic skill loads on top of. It carries no country rule and no topic rule of its own. Those live in the topic skills (for example `us-feie-ftc`, `us-foreign-tax-credit-1116`, `us-fbar-fatca-reporting`, `us-cfc-gilti`, `us-foreign-trust-reporting`, `us-expatriation-exit-tax`) and in each country's own Guides (for example `us-tax-residency`, `uk-statutory-residence-test`, `uk-non-dom`, `mt-non-dom`, `ie-non-dom`, `cy-non-dom`, `ca-tax-residency`, `leaving-australia-tax-residency-cgt`).
 
-A topic Guide needs this method, and this method computes nothing without the topic and country Guides. Load all three, in the order `cross-border-tax-router` fixed.
+A topic skill needs this method, and this method computes nothing without the topic and country Guides. Load all three, in the order `cross-border-tax-router` fixed.
 
-Currency. Each country and topic Guide states its own tax year. This method does not depend on a year.
+Currency. Each country and topic skill states its own tax year. This method does not depend on a year.
 
 The output is a working paper for a licensed accountant, never a filed return. Cross-border information returns carry heavy penalties, and many cross-border events cannot be undone once done. The work ends by handing the working paper to a licensed accountant in the lead country before the person acts.
 
@@ -34,7 +34,7 @@ The output is a working paper for a licensed accountant, never a filed return. C
 3. **Source of each item of income or gain.** For each item, record which country it arises in and whether that country taxes non-residents on it. A UK resident "may be taxed on your foreign income by the UK and by the country where your income is from" ([GOV.UK: if you're taxed twice](https://www.gov.uk/tax-foreign-income/taxed-twice)). For a UK resident's capital gain, GOV.UK says the person usually pays tax in the country of residence and is exempt in the country where the gain is made, with no claim needed. For a gain on an asset that cannot be taken out of the country, such as land or a house, or that the person is using for business in that country, the person will need to pay tax in both countries and get relief from the UK (same page). The country Guide holds each source rule.
 4. **Who has the primary right, and how the other country gives relief.** For each item taxed by more than one country, name the mechanism. By credit: the US lets a person subject to US tax on foreign-taxed income take either a credit or an itemised deduction for qualifying foreign income taxes ([IRS: foreign tax credit](https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit)); route to `us-foreign-tax-credit-1116`. By exclusion or exemption: if a US person elects to exclude foreign earned income or housing costs, no credit is allowed for taxes on the excluded income (same IRS page), and if the person takes the credit, one or both exclusion elections may be considered revoked (same IRS page); route the choice to `us-feie-ftc`. By treaty: the UK and US convention requires the US to allow its residents and citizens a credit for UK income tax, subject to the limits of US law (Article 24 of the convention linked in step 2). In the UK, Foreign Tax Credit Relief is usually claimed on the tax return, and the relief can be less than the foreign tax paid. Foreign Tax Credit Relief cannot be claimed where the double taxation agreement requires the tax to be claimed back from the source country. Without an agreement, relief is usually still given unless the foreign tax does not correspond to UK Income Tax or Capital Gains Tax ([GOV.UK: if you're taxed twice](https://www.gov.uk/tax-foreign-income/taxed-twice)).
 5. **Check the saving clause before any treaty benefit for a US citizen or resident.** Most US treaties contain a saving clause that preserves the right of the United States to tax its citizens and residents as if the treaty had not come into effect, although many treaties have exceptions ([IRS Publication 519](https://www.irs.gov/publications/p519)). In the UK and US convention this is Article 1, paragraph 4, with the exceptions in paragraph 5 (convention linked in step 2).
-6. **The forms that claim relief and report the facts, in each country.** A relief not claimed on the right form is not relief. A dual-resident taxpayer who claims treaty benefits files Form 1040-NR with Form 8833 attached and computes tax as a non-resident alien ([IRS Publication 519](https://www.irs.gov/publications/p519)). Americans abroad get the exclusion and the credit only by filing a US return, and US taxpayers with foreign financial accounts over the reporting threshold must report them on FinCEN Form 114 even when the accounts produce no taxable income ([IRS: US citizens and resident aliens abroad](https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad)). For a UK resident, where income is exempt from foreign tax but taxed in the UK, or where the treaty requires it, relief must be applied for in the source country, with HMRC confirming residence ([GOV.UK: if you're taxed twice](https://www.gov.uk/tax-foreign-income/taxed-twice)). List every information return the facts trigger, not only the income forms; the thresholds and deadlines are in the topic Guides.
+6. **The forms that claim relief and report the facts, in each country.** A relief not claimed on the right form is not relief. A dual-resident taxpayer who claims treaty benefits files Form 1040-NR with Form 8833 attached and computes tax as a non-resident alien ([IRS Publication 519](https://www.irs.gov/publications/p519)). Americans abroad get the exclusion and the credit only by filing a US return, and US taxpayers with foreign financial accounts over the reporting threshold must report them on FinCEN Form 114 even when the accounts produce no taxable income ([IRS: US citizens and resident aliens abroad](https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad)). For a UK resident, where income is exempt from foreign tax but taxed in the UK, or where the treaty requires it, relief must be applied for in the source country, with HMRC confirming residence ([GOV.UK: if you're taxed twice](https://www.gov.uk/tax-foreign-income/taxed-twice)). List every information return the facts trigger, not only the income forms; the thresholds and deadlines are in the topic skills.
 7. **Order the steps and say why.** Test residence changes before sales, characterise entities before distributions, and test expatriation before later sales (see Section 1, Layer B). A treaty tie-breaker that treats a green card holder as a non-resident alien can in certain instances trigger the section 877A expatriation tax ([IRS Publication 519](https://www.irs.gov/publications/p519)), so test both together. A country may treat a departing resident as having sold certain types of property at their fair market value on departure, even if they were not sold: Canada calls this a deemed disposition ([CRA: leaving Canada](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/leaving-canada-emigrants.html)).
 8. **Hand off** the working paper as in Section 8.
 
@@ -49,7 +49,7 @@ The output is a working paper for a licensed accountant, never a filed return. C
 
 ## Section 1: The sequenced-plan output contract
 
-A cross-border answer is not a stack of single-country answers. It is an ordered plan. Every cross-border topic Guide produces both layers below.
+A cross-border answer is not a stack of single-country answers. It is an ordered plan. Every cross-border topic skill produces both layers below.
 
 ### Layer A: Reference layer (the rules)
 
@@ -62,7 +62,7 @@ A step-by-step procedure that takes the person's facts and the order of events f
 1. What happens (the event, and when).
 2. Which country taxes it, and on what basis (citizenship, residence, domicile or source), citing the Layer A rule.
 3. How double tax is relieved at that step (credit, exemption or exclusion, treaty relief article, re-sourcing, tie-breaker), citing the article or section.
-4. Which forms the step triggers in each country, with the deadlines from the topic Guides.
+4. Which forms the step triggers in each country, with the deadlines from the topic skills.
 5. Why the step sits where it does, and what breaks if it moves.
 
 Rule: every Layer B step references the Layer A rule it carries out. No position without a cited source, and no treaty benefit asserted without the article and the form that claims it.
@@ -113,7 +113,7 @@ obligation applies] (Section 4) and flags it for your accountant.
 
 ## Section 6: Universal self-checks
 
-Before delivering output, check (each topic Guide adds its own checks):
+Before delivering output, check (each topic skill adds its own checks):
 
 - [ ] Both layers produced, with a cited rule for every step
 - [ ] Residence tested in each country under its own law, and a tie-breaker run where two countries claim the person
@@ -122,8 +122,8 @@ Before delivering output, check (each topic Guide adds its own checks):
 - [ ] The order of events stated and justified (what breaks if a step moves)
 - [ ] For every item taxed by more than one country, the relief mechanism and the form that claims it stated
 - [ ] Saving clause checked before any treaty benefit for a US citizen or resident
-- [ ] Every information return the facts trigger listed, not only the income forms. For a US person, take the forms and their tests from the topic Guides: FinCEN Form 114 and Form 8938 from `us-fbar-fatca-reporting`, Forms 3520 and 3520-A from `us-foreign-trust-reporting`, and Form 5471 from `us-cfc-gilti`. Interests in foreign partnerships and foreign funds have no topic Guide here, so flag them as open items for the licensed accountant.
-- [ ] Every figure traced to a country or topic Guide and its official source; none stated from memory
+- [ ] Every information return the facts trigger listed, not only the income forms. For a US person, take the forms and their tests from the topic skills: FinCEN Form 114 and Form 8938 from `us-fbar-fatca-reporting`, Forms 3520 and 3520-A from `us-foreign-trust-reporting`, and Form 5471 from `us-cfc-gilti`. Interests in foreign partnerships and foreign funds have no topic skill here, so flag them as open items for the licensed accountant.
+- [ ] Every figure traced to a country or topic skill and its official source; none stated from memory
 - [ ] Every triggered AUDIT FLASH POINT listed in the reviewer brief
 - [ ] Conservative default applied and flagged wherever facts were missing
 - [ ] Any uncovered country rule, named treaty article, foreign fund or estate item flagged as an open item, not improvised
@@ -137,7 +137,7 @@ Deliver, in this order:
 2. The sequenced plan: the ordered Layer B steps (event, who taxes, relief, forms, why it sits there).
 3. Reference trace: the rule, form or treaty article behind each step.
 4. Double-tax bridge summary: per item, the primary right, the relief mechanism, the claiming form, and what is left over.
-5. Information-return checklist: every information return triggered, with the deadlines and penalties taken from the topic Guides.
+5. Information-return checklist: every information return triggered, with the deadlines and penalties taken from the topic skills.
 6. Reviewer brief: the judgements taken, every AUDIT FLASH POINT, the conservative defaults applied, and the open items the licensed accountant must clear.
 7. Hand-off, as in Section 8.
 
@@ -150,7 +150,7 @@ The work must end by handing the working paper to a person. Before the person ta
 ## When to refuse or refer
 
 - Refuse to assert a treaty benefit without the article, the saving clause check for a US person, and the form that claims it.
-- Refuse to state a rate, threshold or deadline from memory. Take it from the country or topic Guide, or flag it.
+- Refuse to state a rate, threshold or deadline from memory. Take it from the country or topic skill, or flag it.
 - Refer any position that depends on the full text of a named treaty article, or on a mutual agreement between tax authorities.
 - Refer before the person takes any step that cannot be undone.
 - Refer foreign funds held by a US person, cross-border estate, gift or inheritance questions, and any country with no Guide.
@@ -158,7 +158,7 @@ The work must end by handing the working paper to a person. Before the person ta
 
 ## Section 9: Disclaimer
 
-These Guides give computational and interpretive guidance on cross-border personal tax. They are not tax or legal advice, not an engagement, and not a filed return. Cross-border outcomes turn on entity, residence and treaty facts and significant judgement, and the order of events often changes the result. Have every output reviewed and signed by a qualified, licensed accountant in each relevant country before acting on it. Penalties on cross-border information returns can be severe; when in doubt, file and ask.
+These skills give computational and interpretive guidance on cross-border personal tax. They are not tax or legal advice, not an engagement, and not a filed return. Cross-border outcomes turn on entity, residence and treaty facts and significant judgement, and the order of events often changes the result. Have every output reviewed and signed by a qualified, licensed accountant in each relevant country before acting on it. Penalties on cross-border information returns can be severe; when in doubt, file and ask.
 
 ## Sources
 

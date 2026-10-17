@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/fi-yel-social"
   jurisdiction: "FI"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -87,7 +87,7 @@ At the beginning of each year, the provider raises confirmed income using the wa
 
 Choose an earnings-related pension insurance company, or where eligible an industry pension fund. Obtain its current quote and preserve the provider, policy effective date, payment-frequency choice and terms. Do not use a universal instalment date, late-interest rate or payment plan.
 
-Arrange YEL within six months of starting self-employment. Coverage begins at the start. A person can arrange insurance retroactively for the current and three previous years only. Uninsured work further back is lost: no YEL pension accrues for it. If ETK has urged correction and the person does not act, ETK can arrange YEL on that person's behalf and at that person's expense. Two further consequences are set by the Self-Employed Persons' Pensions Act (YEL, 1272/2006), which this Guide cannot yet cite from an allowed official page, so confirm them with the provider or ETK before advising: a neglect fee (laiminlyöntimaksu, section 122) of up to the contribution for the neglected period, imposed by the State Treasury (Valtiokonttori) on the provider's application where YEL is not taken out within six months of the obligation starting, and also payable after ETK compulsory insurance (section 143); and no start-up reduction where ETK has insured the person compulsorily (section 115). Do not calculate a fee amount. This draft does not establish provider invoice terms.
+Arrange YEL within six months of starting self-employment. Coverage begins at the start. A person can arrange insurance retroactively for the current and three previous years only. Uninsured work further back is lost: no YEL pension accrues for it. If ETK has urged correction and the person does not act, ETK can arrange YEL on that person's behalf and at that person's expense. Two further consequences are set by the Self-Employed Persons' Pensions Act (YEL, 1272/2006), which this skill cannot yet cite from an allowed official page, so confirm them with the provider or ETK before advising: a neglect fee (laiminlyöntimaksu, section 122) of up to the contribution for the neglected period, imposed by the State Treasury (Valtiokonttori) on the provider's application where YEL is not taken out within six months of the obligation starting, and also payable after ETK compulsory insurance (section 143); and no start-up reduction where ETK has insured the person compulsorily (section 115). Do not calculate a fee amount. This draft does not establish provider invoice terms.
 
 For 2026:
 
@@ -189,4 +189,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `fi-yel-social` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/fi-yel-social. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `fi-yel-social` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/fi-yel-social. If neither is available, confirm every figure against the official source pages cited above before relying on it.

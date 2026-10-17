@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/xero-uk-vat-close"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -19,7 +19,7 @@ metadata:
 
 This is a working method for closing one UK VAT return period from a Xero ledger (or any ledger that can export a trial balance, account transactions and a VAT report), for VAT periods ending in the 2026/27 tax year. It covers the close: cut-off, reconciliation, the nine boxes, adjustments, Making Tax Digital (MTD) filing, the deadline and penalties.
 
-It does not restate the full box-by-box law, rates, registration thresholds or scheme eligibility. Those live in the companion Guide **uk-vat-return**. Load it before you compute anything, and take rates and thresholds from it, not from memory.
+It does not restate the full box-by-box law, rates, registration thresholds or scheme eligibility. Those live in the companion skill **uk-vat-return**. Load it before you compute anything, and take rates and thresholds from it, not from memory.
 
 The output is a draft working paper for review. A person files the return and is responsible for it.
 
@@ -44,12 +44,12 @@ Two kinds of statement appear below:
 
 ## The method, step by step
 
-1. **Load the law.** Read the uk-vat-return Guide from OpenAccountants for rates, box definitions, scheme rules and blocked input tax. If a figure you need is not there, say so; do not use a remembered number.
+1. **Load the law.** Read the uk-vat-return skill from OpenAccountants for rates, box definitions, scheme rules and blocked input tax. If a figure you need is not there, say so; do not use a remembered number.
 2. **Confirm the period and scheme in Xero (working step).** Check the VAT registration number, the scheme and the return period set up in Xero's VAT settings against the client's answers and HMRC's online account. A wrong period end or scheme setting makes every figure wrong.
 3. **Pull the data (working step).** From a Xero connection or by CSV export: the trial balance at period end, the VAT control account transactions for the period, the VAT return report for the period (or sales and purchases by tax rate), aged receivables and payables at period end, and bank reconciliation status. If a report is missing, name the export you need; never estimate ledger data.
 4. **Finish the bookkeeping for the period (working step).** All bank accounts reconciled to the period end; no unreconciled statement lines dated in the period; sales invoices and supplier bills dated in the period approved, not left in draft or awaiting approval; nothing coded to a no-VAT rate by mistake.
 5. **Test cut-off by tax point.** Output VAT belongs in the period of the tax point. Check sales invoices dated in the first 14 days after the period end, and supplies completed just before it (see the tax point rows in the boundary table). Under cash accounting, test payment dates instead.
-6. **Review each tax rate code.** Scan the VAT report by rate: standard, reduced, zero, exempt, no VAT, reverse charge, postponed import VAT. Look for sales with no VAT that should carry it, input VAT claimed on blocked items (business entertainment, cars, private use), and purchases without a valid VAT invoice. The uk-vat-return Guide carries the input tax rules.
+6. **Review each tax rate code.** Scan the VAT report by rate: standard, reduced, zero, exempt, no VAT, reverse charge, postponed import VAT. Look for sales with no VAT that should carry it, input VAT claimed on blocked items (business entertainment, cars, private use), and purchases without a valid VAT invoice. The uk-vat-return skill carries the input tax rules.
 7. **Bring in off-ledger figures.** Postponed import VAT from the monthly statements for the months in the period; fuel scale charges; partial exemption adjustments; corrections of earlier errors; bad debt relief. Enter each as a total per type of adjustment, with a description. The calculation may be done outside the software, but the total must be recorded in the MTD software.
 8. **Compute the nine boxes** in a table with two references for each figure: where it came from in the ledger (report, account, period) and which rule defines it.
 9. **Reconcile.** Box 5 should agree to the movement on the VAT control account for the period, after allowing for the previous return's payment or repayment. List every reconciling item (late-posted bills, manual journals, rounding, adjustments). Do not absorb a difference silently.
@@ -62,7 +62,7 @@ Two kinds of statement appear below:
 
 ## Figures and rules for 2026/27 closes
 
-Rates, registration thresholds, scheme limits and the full content of each box are in the uk-vat-return Guide. The rules below are the ones a close most often gets wrong.
+Rates, registration thresholds, scheme limits and the full content of each box are in the uk-vat-return skill. The rules below are the ones a close most often gets wrong.
 
 ### The nine boxes: what the close must get right ([VAT Notice 700/12](https://www.gov.uk/guidance/how-to-fill-in-and-submit-your-vat-return-vat-notice-70012))
 
@@ -180,7 +180,7 @@ Sense check: 20% of £49,000 is £9,800. Box 1 is £1,000 higher, and the differ
 - Partial exemption (any exempt income beyond incidental amounts), special methods and annual adjustments.
 - Margin schemes (second-hand goods, Tour Operators' Margin Scheme) and retail schemes.
 - Fuel scale charges where the charge or the private use is disputed.
-- Capital goods scheme items (large land and building or civil engineering expenditure): the uk-vat-return Guide carries the current thresholds and the July 2026 change.
+- Capital goods scheme items (large land and building or civil engineering expenditure): the uk-vat-return skill carries the current thresholds and the July 2026 change.
 - Northern Ireland businesses moving goods to or from the EU (boxes 2, 8 and 9).
 - Construction reverse charge cases where end-user status, zero-rated new-build work or mixed supplies are unclear.
 - Postponed import VAT statements that do not agree to the client's import records, missing statements, or imports declared under another company's EORI number.
@@ -194,7 +194,7 @@ Sense check: 20% of £49,000 is £9,800. Box 1 is £1,000 higher, and the differ
 
 - A return is usually due every 3 months, and must be sent even if there is nothing to pay or reclaim.
 - The online deadline is usually one calendar month and 7 days after the end of the period. That is also the payment deadline: payment must reach HMRC's account by then, even if the date falls on a weekend or bank holiday. Check the client's VAT online account for the exact dates.
-- Annual accounting has different deadlines; see the uk-vat-return Guide.
+- Annual accounting has different deadlines; see the uk-vat-return skill.
 
 ### Late submission penalty points ([penalty points](https://www.gov.uk/guidance/penalty-points-and-penalties-if-you-submit-your-vat-return-late); [removing points](https://www.gov.uk/guidance/remove-penalty-points-youve-received-after-submitting-your-vat-return-late))
 
@@ -222,7 +222,7 @@ Sense check: 20% of £49,000 is £9,800. Box 1 is £1,000 higher, and the differ
 
 ## Completion checklist ([VAT Notice 700/12](https://www.gov.uk/guidance/how-to-fill-in-and-submit-your-vat-return-vat-notice-70012); [VAT Notice 700/22](https://www.gov.uk/government/publications/vat-notice-70022-making-tax-digital-for-vat/vat-notice-70022-making-tax-digital-for-vat))
 
-- The uk-vat-return Guide was loaded in this session and every rate used appears in it.
+- The uk-vat-return skill was loaded in this session and every rate used appears in it.
 - Period dates, return frequency, scheme and VAT number agree between Xero, HMRC's online account and the client.
 - Bank accounts reconciled to period end; nothing dated in the period left in draft or awaiting approval.
 - Tax point cut-off tested, including invoices in the first 14 days after period end (or payment dates under cash accounting).
@@ -263,4 +263,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `xero-uk-vat-close` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/xero-uk-vat-close. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `xero-uk-vat-close` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/xero-uk-vat-close. If neither is available, confirm every figure against the official source pages cited above before relying on it.

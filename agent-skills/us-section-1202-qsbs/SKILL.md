@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-section-1202-qsbs"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -19,7 +19,7 @@ Written for **tax year 2026** (returns filed in 2027), with a dated section for 
 
 The rules now split on dates. **Acquisition date** decides the exclusion percentage, holding period and per-issuer dollar limit. **Issue date** decides the gross-assets limit. The "applicable date" in the statute is July 4, 2025. [26 USC 1202](https://www.law.cornell.edu/uscode/text/26/1202)
 
-This Guide covers federal tax only. States set their own rules, and some do not follow §1202. This Guide does not state any state's position, so check the law of each state where the seller was resident.
+This skill covers federal tax only. States set their own rules, and some do not follow §1202. This skill does not state any state's position, so check the law of each state where the seller was resident.
 
 ## Ask the client first
 
@@ -173,7 +173,7 @@ These are hypothetical. Each one assumes every QSBS test passes except where sta
 3. For installment sales of unlisted QSBS, report the gain from Form 6252 on Schedule D, line 11, and the prorated exclusion with code Q. [Schedule D instructions](https://www.irs.gov/instructions/i1040sd)
 4. Complete the 28% Rate Gain Worksheet (line 2) for 50%, 60% and 75% stock, and Form 6251, line 2h, for pre-September 28, 2010 stock. [Schedule D instructions](https://www.irs.gov/instructions/i1040sd); [Form 6251 instructions](https://www.irs.gov/instructions/i6251)
 5. The 2026 return is due in April 2027. An extension moves the filing date, but not the payment date, to October 15. The §1045 election must be on a return filed by the extended due date. [Extensions](https://www.irs.gov/filing/get-an-extension-to-file-your-tax-return)
-6. The 2026 versions of Form 8949, Schedule D and Form 6251 instructions were not published when this Guide was written. Check them for any change in codes or line numbers.
+6. The 2026 versions of Form 8949, Schedule D and Form 6251 instructions were not published when this skill was written. Check them for any change in codes or line numbers.
 
 ## Completion checklist
 
@@ -209,4 +209,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-section-1202-qsbs` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-section-1202-qsbs. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-section-1202-qsbs` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-section-1202-qsbs. If neither is available, confirm every figure against the official source pages cited above before relying on it.

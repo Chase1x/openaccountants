@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-state-estimated-tax-safe-harbors-matrix"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,13 +15,13 @@ metadata:
 
 # State estimated tax safe harbors for individuals: 50-state matrix
 
-Figures are for tax year 2026 (estimates paid April 2026 to January 2027) unless a line says 2025. Where a state had not published 2026 material when this Guide was checked (25 September 2026), the row says which year its source covers. A short section at the end covers 2025 returns, which are still being filed on extension until 15 October 2026.
+Figures are for tax year 2026 (estimates paid April 2026 to January 2027) unless a line says 2025. Where a state had not published 2026 material when this skill was checked (25 September 2026), the row says which year its source covers. A short section at the end covers 2025 returns, which are still being filed on extension until 15 October 2026.
 
 ## Scope
 
 - **Covers:** state estimated income tax for **individuals** (residents, and nonresidents with state-source income where the state says so): when estimates are required, the current-year and prior-year safe harbors, installment dates and shares, farmer and fisher rules, and how the underpayment penalty or interest is charged.
 - **Does not cover:** corporate estimates, pass-through entity (PTE) elective tax estimates, city or county income taxes (for example New York City and Yonkers tax is covered inside the New York State rule, but Ohio school district and municipal taxes are not), and withholding deposits. For PTE estimates use `us-pte-state-matrix`; for the New York corporate Mandatory First Installment use `ny-corporate-franchise-article-9a`.
-- **Status labels:** a cell that says **check** could not be confirmed on an official page when this Guide was written. Confirm it on the state's current estimated tax form before relying on it.
+- **Status labels:** a cell that says **check** could not be confirmed on an official page when this skill was written. Confirm it on the state's current estimated tax form before relying on it.
 - Each state's rules are separate from the federal rules and from each other. Meeting the federal safe harbor does not meet any state safe harbor, and a state safe harbor is measured on **that state's** tax.
 
 ## Ask the client first
@@ -200,4 +200,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-state-estimated-tax-safe-harbors-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-state-estimated-tax-safe-harbors-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-state-estimated-tax-safe-harbors-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-state-estimated-tax-safe-harbors-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

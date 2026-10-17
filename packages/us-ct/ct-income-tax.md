@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Connecticut individual income t
 version: "0.1"
 jurisdiction: US-CT
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([2025 Form CT-1040 instructions](https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf))
 
-This Guide covers the Connecticut resident individual income tax return, **Form CT-1040**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on extension). It is written for full-year Connecticut residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax, whose business profit reaches Connecticut through federal adjusted gross income (AGI).
+This skill covers the Connecticut resident individual income tax return, **Form CT-1040**, for **tax year 2026** (returns filed in 2027), with a dated section for **2025 returns** (due 15 April 2026, or 15 October 2026 on extension). It is written for full-year Connecticut residents, including sole proprietors and owners of a single-member LLC that is disregarded for federal tax, whose business profit reaches Connecticut through federal adjusted gross income (AGI).
 
-The Connecticut tax tables (Tables A to E) for 2026 are the same as for 2025: the 2026 Form CT-1040ES prints "Table A - Personal Exemptions for 2026 Taxable Year", "Table B - Initial Tax Calculation for 2026 Taxable Year" and "Table E - Personal Tax Credits for 2026 Taxable Year" with the same amounts as the 2025 instructions. The 2026 Form CT-1040 instructions were not published when this Guide was written (25 September 2026); where a 2026 figure comes only from the 2025 instructions, it is labelled 2025.
+The Connecticut tax tables (Tables A to E) for 2026 are the same as for 2025: the 2026 Form CT-1040ES prints "Table A - Personal Exemptions for 2026 Taxable Year", "Table B - Initial Tax Calculation for 2026 Taxable Year" and "Table E - Personal Tax Credits for 2026 Taxable Year" with the same amounts as the 2025 instructions. The 2026 Form CT-1040 instructions were not published when this skill was written (25 September 2026); where a 2026 figure comes only from the 2025 instructions, it is labelled 2025.
 
 It does **not** cover part-year residents or nonresidents (Form CT-1040NR/PY), trusts and estates (Form CT-1041), the pass-through entity's own return (Form CT-PET), or the Connecticut alternative minimum tax computation (Form CT-6251). See "When to refuse or refer".
 

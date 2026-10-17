@@ -3,7 +3,7 @@ name: de-einkommensteuer-freelancer
 description: Computes Einkommensteuer for Freiberufler including Betriebsausgaben, Sonderausgaben, and progressive tax brackets.
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -18,7 +18,7 @@ How Germany taxes the profit of one self-employed person: Freiberufler or trade,
 ## Scope
 
 - **Covers.** One individual resident in Germany with income from self-employed work (§ 18 EStG) or a trade (§ 15 EStG), assessed alone or jointly with a spouse. Tax office: the local Finanzamt; returns go through ELSTER.
-- **Other German Guides.** Start-up checks: `de-freelance-intake`. Trade tax: `de-trade-tax`. Letting: `de-rental-income`. Legal form: `germany-formation`. VAT returns: `germany-vat-return`. Records: `germany-bookkeeping`. Social contributions: `de-social-contributions`. Prepayment planning: `de-estimated-tax`. Investments: `de-capital-gains`. Crypto: `de-crypto-tax`. Staff: `de-payroll`.
+- **Other German Skills.** Start-up checks: `de-freelance-intake`. Trade tax: `de-trade-tax`. Letting: `de-rental-income`. Legal form: `germany-formation`. VAT returns: `germany-vat-return`. Records: `germany-bookkeeping`. Social contributions: `de-social-contributions`. Prepayment planning: `de-estimated-tax`. Investments: `de-capital-gains`. Crypto: `de-crypto-tax`. Staff: `de-payroll`.
 - **Not covered.** Partnerships, companies, employees with no business, and the cases under "When to refuse or refer".
 
 ## Ask the client first
@@ -116,7 +116,7 @@ The order is set by [§ 2 EStG](https://www.gesetze-im-internet.de/estg/__2.html
 
 - **x** is taxable income rounded down to a full euro; **y** is one ten-thousandth of x above the basic allowance; **z** is one ten-thousandth of x above EUR 17,799 (§ 32a(1) sentence 4). Round the tax down to a full euro. The statute prints a decimal comma and a space between thousands.
 - **Splitting.** Spouses assessed together pay twice the tax on half their joint taxable income (§ 32a(5)), if both are fully liable to German tax and do not live apart for good ([§ 26 EStG](https://www.gesetze-im-internet.de/estg/__26.html)); registered partners count as spouses (§ 2(8)). § 32a(6) extends it to a widowed person for the year after the death, and to some years in which a marriage ended.
-- **Outside this Guide:** § 32b (progression clause), § 32d (investment income), § 34 (extraordinary income such as selling the business), § 34a (retained profits).
+- **Outside this skill:** § 32b (progression clause), § 32d (investment income), § 34 (extraordinary income such as selling the business), § 34a (retained profits).
 
 | Marginal rates (a rate on the next euro, not on the whole income) | Value | Source: [ministry tax booklet, 2025 edition](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/steuern-von-a-z.pdf?__blob=publicationFile&v=9) |
 | --- | --- | --- |
@@ -312,7 +312,7 @@ The 2025 formulas are those of § 32a in its 2025 wording, which the consolidate
 
 ## Disclaimer
 
-This Guide and its outputs are for information and computation only and are not tax, legal or financial advice. Open Accountants accepts no liability for errors, omissions or outcomes from its use. A qualified professional (such as a Steuerberater) must review all outputs before anything is filed or acted on.
+This skill and its outputs are for information and computation only and are not tax, legal or financial advice. Open Accountants accepts no liability for errors, omissions or outcomes from its use. A qualified professional (such as a Steuerberater) must review all outputs before anything is filed or acted on.
 
 <!-- openaccountants-cta-block -->
 

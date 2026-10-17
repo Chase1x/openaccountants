@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/netherlands-30-percent-ruling"
   jurisdiction: "NL"
   tax_year: "2026"
-  last_updated: "2026-10-01"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers the Dutch 30% ruling for employees who come to work in the Netherlands. Since 2025 the Belastingdienst calls it the **expatregeling** (Expat Scheme); before that it was the 30%-regeling. It covers: ([Handboek 2026 §19.4](https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf))
+This skill covers the Dutch 30% ruling for employees who come to work in the Netherlands. Since 2025 the Belastingdienst calls it the **expatregeling** (Expat Scheme); before that it was the 30%-regeling. It covers: ([Handboek 2026 §19.4](https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf))
 
 - who qualifies: recruited or seconded from abroad, the 150-kilometre rule, and specific expertise shown through the salary norm;
 - the salary norms for 2026, with the 2025 and 2024 figures and the higher norms announced for 2027;
@@ -29,7 +29,7 @@ This Guide covers the Dutch 30% ruling for employees who come to work in the Net
 
 Tax year: 2026 (calendar year). Figures are for 2026 unless labelled with another year. There is a short section for the 2025 income tax return being filed now.
 
-It does not cover employees sent abroad from the Netherlands (a separate version of the scheme with its own day-count test), the general payroll process (see the Netherlands payroll Guide) or treaty questions for people who live abroad.
+It does not cover employees sent abroad from the Netherlands (a separate version of the scheme with its own day-count test), the general payroll process (see the Netherlands payroll skill) or treaty questions for people who live abroad.
 
 Main sources: the [Handboek Loonheffingen 2026, section 19.4](https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf) (the Belastingdienst's employer manual, March 2026 version) and the Belastingdienst page [Can I apply for the Expat Scheme (30% facility)?](https://www.belastingdienst.nl/wps/wcm/connect/en/individuals/content/coming-to-work-in-the-netherlands-30-percent-facility). The employer must designate the qualifying allowance as a targeted exemption in payroll and retain the joint decision and eligibility evidence.
 
@@ -217,8 +217,8 @@ An employee aged 35 has tested annual taxable wage excluding the allowance of ex
 - **Change of employer outside the group**, gaps close to 3 months, or intra-group secondments where the employee stays on a foreign payroll: refer (the Handboek points to the BelastingTelefoon on these).
 - **Agreements that might keep the ruling alive after a salary-norm failure** (KG:204:2023:21): refer.
 - **Partial non-resident status** for large foreign portfolios or substantial shareholdings, and planning for its end after 2026: refer; the box 2 and box 3 effects depend on the assets and on treaties.
-- **Employees who live abroad** and commute, work in several countries, or need an A1 certificate: refer. This Guide assumes the employee lives in the Netherlands.
-- **Employees sent abroad from the Netherlands** (the outbound version of the scheme): outside this Guide.
+- **Employees who live abroad** and commute, work in several countries, or need an A1 certificate: refer. This skill assumes the employee lives in the Netherlands.
+- **Employees sent abroad from the Netherlands** (the outbound version of the scheme): outside this skill.
 - **Refuse** to present the 2024 phasing (30/20/10) as current law, to promise the 2027 salary norms before the final figures are published, or to treat a wage exactly equal to the norm as passing.
 
 ## Filing and payment
@@ -228,7 +228,7 @@ Sources: [Handboek Loonheffingen 2026 §19.4](https://download.belastingdienst.n
 - **Application:** form "Verzoek Loonheffingen expatregeling" (the version for the year), completed by employer and employee together, **within 4 months** of the first working day for effect from that day. The Belastingdienst aims to decide within 8 weeks. A new employer outside the group must also apply within 4 months of the employee starting there.
 - **Payroll:** the tax-free allowance is reported in the normal payroll tax return (aangifte loonheffingen), with the same administrative obligations as for other employees. The employer must record other reimbursements paid alongside the ruling, because actual extraterritorial costs cannot also be paid tax-free.
 - **Annual choice:** made for the first pay period of each calendar year in which extraterritorial costs are reimbursed (ruling or actual costs) and holds for the year.
-- **Corrections:** if the salary norm is failed, correct the earlier returns for that year. For the payroll correction process and deadlines see the Netherlands payroll Guide.
+- **Corrections:** if the salary norm is failed, correct the earlier returns for that year. For the payroll correction process and deadlines see the Netherlands payroll skill.
 - **Income tax return:** the employee reports the wage on the annual statement. Partial non-resident status, where still available, is chosen in the return (2025 and 2026 returns only, and only under the transitional rule).
 
 ## Completion checklist
@@ -266,4 +266,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-01. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-30-percent-ruling` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-30-percent-ruling. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `netherlands-30-percent-ruling` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/netherlands-30-percent-ruling. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/de-payroll"
   jurisdiction: "DE"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -210,7 +210,7 @@ If the employee has not handed in the certificates of earlier employers this yea
 | Reduction per child from the second to the fifth, while under 25, employee share only | 0.25 points | Same |
 | Care, employee share in Saxony, with one child | 2.3% | PAP 2026; [§ 58(3) SGB XI](https://www.gesetze-im-internet.de/sgb_11/__58.html): employees bear "1 vom Hundert allein" |
 
-The official notice of the average additional rate is published in the Federal Gazette, which is not an allowed source for this Guide; the figure above is the finance ministry's reading of the estimate. Confirm it before using it for the § 242(3) groups.
+The official notice of the average additional rate is published in the Federal Gazette, which is not an allowed source for this skill; the figure above is the finance ministry's reading of the estimate. Confirm it before using it for the § 242(3) groups.
 
 **Employee care share by children (derived from the rows above)**
 
@@ -404,7 +404,7 @@ Second job (assumed: main job elsewhere, EUR 20,000 a year here): the table row 
 - **Employer pensions** (Versorgungsbezüge) and the old-age relief; company pension schemes.
 - **Benefits in kind**, company cars, flat-rate wage tax under § 37b and § 40 EStG, tax-free allowances other than the Aktivrente.
 - **Short-time pay, maternity pay top-ups, sick pay periods** and parental leave, beyond the reporting duty.
-- **Midijob amounts.** This Guide gives the band and the factor, not the formulas.
+- **Midijob amounts.** This skill gives the band and the factor, not the formulas.
 - **Miners' pension scheme, civil servants,** and employees exempt from a branch.
 - **Exact church tax** (state caps, mixed-faith couples).
 - **Private household Minijobs** beyond the rates in the table (the household cheque procedure).
@@ -477,7 +477,7 @@ The 2025 annual report was due by 15 February 2026 and the 2025 wage tax certifi
 - Finance ministry, PAP 2026 overview: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Steuerarten/Lohnsteuer/Programmablaufplan/2025-11-12-PAP-2026.html
 - Finance ministry, Aktivrente FAQ: https://www.bundesfinanzministerium.de/Content/DE/FAQ/FAQ-zur-Aktivrente.html
 
-This Guide is general information for 2026 and not tax, legal or payroll advice.
+This skill is general information for 2026 and not tax, legal or payroll advice.
 
 <!-- openaccountants-cta-block -->
 
@@ -499,4 +499,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

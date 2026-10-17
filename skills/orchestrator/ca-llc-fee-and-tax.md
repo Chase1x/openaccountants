@@ -3,7 +3,7 @@ name: ca-llc-fee-and-tax
 description: Tier 2 California content skill for Form 568 — the $800 annual minimum tax (R&TC § 17941) plus the tiered LLC fee on gross receipts (§ 17942). Covers every LLC classified as a partnership or disregarded entity that is organized, registered, or doing business in California, the four fee brackets at $250k / $500k / $1M / $5M of total income from all sources reportable to California, the Form 3522 ($800 minimum tax voucher) due April 15 and the Form 3536 (estimated LLC fee voucher) due June 15, disregarded SMLLC treatment, multi-member partnership filings, the corporation election carve-out, and economic / doing-business nexus under the § 23101 factor presence test. Tax year 2025.
 jurisdiction: US-CA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ Figures are for tax year 2026 unless a line says otherwise. A short section near
 
 ## Scope and who it is for ([FTB: Limited liability company](https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html))
 
-This Guide covers the two entity-level charges that California imposes on an LLC classified as a **partnership** or as a **disregarded entity**:
+This skill covers the two entity-level charges that California imposes on an LLC classified as a **partnership** or as a **disregarded entity**:
 
 - the **annual LLC tax** under R&TC §17941 (**$800**, paid with form FTB 3522); and
 - the **LLC fee** under R&TC §17942 (tiered by California total income, estimated with form FTB 3536).
@@ -144,7 +144,7 @@ SB 180 (Stats. 2026, ch. 85) was approved on 13 July 2026 and took effect immedi
 - **Late filing** (§19131). This is 5% of the unpaid tax, which includes the LLC fee, for each month or part of a month, up to 25%. If the return is filed after the extended date, the penalty runs from the original due date. Late-filing and late-payment penalties together may not exceed 25% of the unpaid tax.
 - **Per-member penalty** (§19172). This applies to an LLC classified as a partnership that files late or files an incomplete return: **$18** times the number of members, for each month or part of a month, up to 12 months. It is charged on top of the other penalties, unless the failure is due to reasonable cause ([R&TC §19172](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=19172.)).
 - **Unregistered foreign LLC or suspended domestic LLC** (§19135). **$2,000** per taxable year is charged when a foreign LLC that has not registered (or whose powers, rights and privileges are forfeited), or a domestic LLC that has been suspended, is doing business in California and fails to file a return within 60 days after the FTB sends a notice and demand, unless it has reasonable cause ([R&TC §19135](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=19135.)). It is charged in addition to other penalties.
-- Interest runs on unpaid amounts. Use the FTB's current rate. This Guide does not quote one.
+- Interest runs on unpaid amounts. Use the FTB's current rate. This skill does not quote one.
 
 ## Boundary and exception table ([R&TC §17946](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=17946.))
 

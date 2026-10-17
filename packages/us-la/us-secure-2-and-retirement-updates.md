@@ -3,7 +3,7 @@ name: us-secure-2-and-retirement-updates
 description: Tier 2 US federal content skill for SECURE Act 2.0 (Division T of CAA 2023) retirement plan changes plus IRS guidance through 2025. Covers the RMD age 73 (born 1951-1959) / 75 (born 1960+) transition, the $11,250 super catch-up for ages 60-63 effective 2025, the 2026 Roth-mandatory catch-up for $145k+ wage earners (delayed from 2024), the inherited-IRA annual RMDs during the 10-year rule effective 2025 per the July 2024 final regs, Saver's Match replacing Saver's Credit in 2027, Solo 401(k) ability to establish + fund by extended return due date, emergency-savings within plans, $1,000 emergency distribution, $10k domestic-abuse withdrawal, 529-to-Roth $35k lifetime rollover, the $108,000 QCD limit for 2025, Roth SEP and Roth SIMPLE, and the backdoor / mega-backdoor Roth mechanics with §408(d)(2) pro-rata.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for
 
-This Guide covers the federal retirement rules that SECURE 2.0 (Division T of the Consolidated Appropriations Act, 2023, P.L. 117-328) and the later IRS guidance changed, as they apply in **tax year 2026**:
+This skill covers the federal retirement rules that SECURE 2.0 (Division T of the Consolidated Appropriations Act, 2023, P.L. 117-328) and the later IRS guidance changed, as they apply in **tax year 2026**:
 
 - contribution and catch-up limits for 401(k), 403(b), governmental 457(b), SIMPLE plans and IRAs, including the higher catch-up for ages 60 to 63;
 - the rule that makes catch-up contributions Roth-only for higher-paid employees, which starts in 2026;
@@ -342,7 +342,7 @@ Refer rather than answer when the question involves:
 - trusts named as beneficiaries (see-through trust analysis), or several beneficiaries with different classifications;
 - nonresident or cross-border pensions, or state tax on distributions;
 - the born-1959 applicable age, or a 529 beneficiary change, if the answer turns on it (both unsettled).
-- SECURE 2.0 items this Guide does not cover in detail, which must be checked against the statute and IRS guidance before answering:
+- SECURE 2.0 items this skill does not cover in detail, which must be checked against the statute and IRS guidance before answering:
   - Roth SEP and Roth SIMPLE contributions (§601);
   - Roth employer matching and nonelective contributions (§604);
   - the surviving spouse's election to be treated as the deceased employee (§327);

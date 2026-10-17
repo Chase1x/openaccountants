@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-vat-return"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers preparing and checking Irish VAT3 returns and the annual VAT Return of Trading Details (RTD) for a VAT-registered sole trader, partnership or company established in Ireland. Figures are for tax year 2026 (calendar 2026, the VAT year most Irish businesses are filing now). A dated section near the end covers 2025 periods, for late or amended returns.
+This skill covers preparing and checking Irish VAT3 returns and the annual VAT Return of Trading Details (RTD) for a VAT-registered sole trader, partnership or company established in Ireland. Figures are for tax year 2026 (calendar 2026, the VAT year most Irish businesses are filing now). A dated section near the end covers 2025 periods, for late or amended returns.
 
 It does not cover: VAT groups, the Capital Goods Scheme, supplies or lettings of property, partial exemption beyond spotting it, margin schemes, the flat-rate farmer scheme, One-Stop Shop returns, or customs. Those are in "When to refuse or refer".
 
@@ -265,4 +265,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK cryptocurrency or digital as
 version: 2.0
 jurisdiction: GB
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK tax on cryptoassets for individuals
 
-Tax year 2026/27 (6 April 2026 to 5 April 2027) is the year in force. Returns being filed now are for tax year 2025/26 (online deadline 31 January 2027), on the SA108 form HMRC labels "2026". Where a rule differs between those years, both are shown. This Guide sits alongside the UK Capital Gains Tax and SA108 Guide (uk-capital-gains-sa108), which holds the full rate, allowance, loss and SA108 rules; the crypto points here follow it.
+Tax year 2026/27 (6 April 2026 to 5 April 2027) is the year in force. Returns being filed now are for tax year 2025/26 (online deadline 31 January 2027), on the SA108 form HMRC labels "2026". Where a rule differs between those years, both are shown. This skill sits alongside the UK Capital Gains Tax and SA108 Guide (uk-capital-gains-sa108), which holds the full rate, allowance, loss and SA108 rules; the crypto points here follow it.
 
 ## Scope and who this is for
 

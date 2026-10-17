@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cn-iit"
   jurisdiction: "CN"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([IIT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/201809/t441789.html); [rate tables](https://guangdong.chinatax.gov.cn/gdsw/fssw_nsrxt_kjxz/2025-10/09/content_b02be06c906e46bca00673beb9e7783a.shtml))
 
-This Guide covers mainland China individual income tax (IIT) for **tax year 2026** (calendar year 1 January to 31 December 2026). It also has a dated section on the **2025 annual reconciliation**, which ran from 1 March to 30 June 2026. It is for individuals, employers that withhold, and advisers who prepare or review IIT.
+This skill covers mainland China individual income tax (IIT) for **tax year 2026** (calendar year 1 January to 31 December 2026). It also has a dated section on the **2025 annual reconciliation**, which ran from 1 March to 30 June 2026. It is for individuals, employers that withhold, and advisers who prepare or review IIT.
 
 The legal base is the Individual Income Tax Law of the People's Republic of China (中华人民共和国个人所得税法, seventh amendment of 31 August 2018) and the Ministry of Finance (MOF) and State Taxation Administration (STA) announcements cited below. The law has not been amended since. The rates, the basic deduction and the special additional deduction amounts for 2026 are the same as for 2025.
 
@@ -120,7 +120,7 @@ This is only a prepayment. At the reconciliation, labour remuneration goes into 
 | Over CNY 300,000 to CNY 500,000 | 30% |
 | Over CNY 500,000 | 35% |
 
-Business income means income of individual industrial and commercial households; income that investors in sole proprietorships and individual partners in partnerships registered in China derive from the business; income from licensed education, medical, consulting and other paid services; and income from contracting or leasing an enterprise ([Implementing Regulations Art. 6](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/201812/t443213.html)). Taxable income is annual receipts minus costs, expenses and losses; an owner with no comprehensive income also deducts sixty thousand yuan and the personal deductions (Art. 15). The statute prints bands only; this Guide computes band by band rather than quoting unsourced quick deductions. From 1 January 2023 to 31 December 2027, an individual industrial and commercial household (个体工商户) pays **half** the IIT on the part of annual taxable income not over two million yuan (200万元), on top of other reliefs.
+Business income means income of individual industrial and commercial households; income that investors in sole proprietorships and individual partners in partnerships registered in China derive from the business; income from licensed education, medical, consulting and other paid services; and income from contracting or leasing an enterprise ([Implementing Regulations Art. 6](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/201812/t443213.html)). Taxable income is annual receipts minus costs, expenses and losses; an owner with no comprehensive income also deducts sixty thousand yuan and the personal deductions (Art. 15). The statute prints bands only; this skill computes band by band rather than quoting unsourced quick deductions. From 1 January 2023 to 31 December 2027, an individual industrial and commercial household (个体工商户) pays **half** the IIT on the part of annual taxable income not over two million yuan (200万元), on top of other reliefs.
 
 ### Other categories ([IIT Law Art. 3](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/201809/t441789.html))
 
@@ -261,7 +261,7 @@ The balance due is not over 400 yuan and tax was properly withheld, so the emplo
 - The window for 2025 income was **1 March to 30 June 2026**. Taxpayers who wanted to file between 1 and 20 March could book through the app from 25 February; from 21 March no booking was needed.
 - The 2025 rules are the same as 2026: the annual table, CNY 60,000 basic deduction, the special additional deduction amounts above, and the exemptions for small balances.
 - The STA's reconciliation measures (Order No. 57, in force from 26 February 2025) set the standing procedure used for the 2025 year.
-- If the window was missed and tax is due, file and pay now: the daily late-payment surcharge runs from the day the tax became overdue (see penalties). For a missed refund, ask the local tax office how to claim it; this Guide does not set out that procedure.
+- If the window was missed and tax is due, file and pay now: the daily late-payment surcharge runs from the day the tax became overdue (see penalties). For a missed refund, ask the local tax office how to claim it; this skill does not set out that procedure.
 
 ### Penalties ([Tax Collection Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/swzsgl/200609/t284229.html))
 
@@ -306,4 +306,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-iit` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-iit. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-iit` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-iit. If neither is available, confirm every figure against the official source pages cited above before relying on it.

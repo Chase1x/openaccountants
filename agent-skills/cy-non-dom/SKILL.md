@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cy-non-dom"
   jurisdiction: "CY"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Cyprus non-domicile status and Special Defence Contribution
 
-This Guide covers Cyprus non-domicile ("non-dom") status for individuals: the tax residence tests, the domicile tests, the Special Defence Contribution (SDC) exemption that non-dom status gives, the 2026 changes to SDC, and the optional lump-sum extension for long-stay residents. Figures are for tax year 2026. Cyprus taxes on a calendar year. Income tax itself, the new-resident income tax exemptions in detail, and wider planning are in the sibling Guides `cyprus-income-tax` and `cyprus-tax-optimization`.
+This skill covers Cyprus non-domicile ("non-dom") status for individuals: the tax residence tests, the domicile tests, the Special Defence Contribution (SDC) exemption that non-dom status gives, the 2026 changes to SDC, and the optional lump-sum extension for long-stay residents. Figures are for tax year 2026. Cyprus taxes on a calendar year. Income tax itself, the new-resident income tax exemptions in detail, and wider planning are in the sibling skills `cyprus-income-tax` and `cyprus-tax-optimization`.
 
 ## Section 1: Quick Reference
 
@@ -104,7 +104,7 @@ An individual who does NOT have a Cypriot domicile of origin, but is deemed domi
 | No refund | Not refunded for any reason | "δεν επιστρέφεται για οποιονδήποτε λόγο" |
 | No offset, no foreign tax credit | Not set against other tax or credit balances, and not reduced by foreign tax | "δεν μειώνεται με έκπτωση αναφορικά με αλλοδαπό φόρο" |
 
-The lump sum is a fixed charge. Whether it beats paying SDC at the domiciled rates in the table above depends on the client's expected dividends and interest over the five years. Compare the two on the client's own figures before the 30 June deadline; the Guide does not supply a break-even.
+The lump sum is a fixed charge. Whether it beats paying SDC at the domiciled rates in the table above depends on the client's expected dividends and interest over the five years. Compare the two on the client's own figures before the 30 June deadline; the skill does not supply a break-even.
 
 ## Section 4: Capital Gains
 
@@ -119,7 +119,7 @@ Non-dom status is an SDC concept. The residency page lists no Capital Gains Tax 
 | Shares listed on a non-regulated market of a recognised stock exchange | Exempt only while total disposals in the year do not exceed EUR 50,000; the disposal that crosses it brings CGT on all disposals made in the year up to and including that disposal | "δεν υπερβαίνει σωρευτικά τις €50.000" |
 | Shares held at 31 December 2025 that were then listed on a non-regulated market | Exemption continues for those shares whatever the year's total disposals | "η εξαίρεση αναφορικά με την πώληση μετοχών εισηγμένων σε μη ρυθμιζόμενη αγορά συνεχίζει να εφαρμόζεται σε μέτοχο για μετοχές που κατείχε κατά την 31/12/2025, οι οποίες κατά την εν λόγω ημερομηνία ήταν εισηγμένες σε μη ρυθμιζόμενη αγορά" |
 
-The Tax Department's CGT page prints the rate and the lifetime exemptions. Indexation, the agricultural-land and main-residence exemptions and their conditions are outside this Guide; refer those computations.
+The Tax Department's CGT page prints the rate and the lifetime exemptions. Indexation, the agricultural-land and main-residence exemptions and their conditions are outside this skill; refer those computations.
 
 | Source | all figures below | https://www.gov.cy/mof-tax/documents/kefalaioychika-kerdi/ |
 | --- | --- | --- |
@@ -232,7 +232,7 @@ The 8(21B) exemption is for returning former residents: condition (b) means a pe
 - Refer dividends from foreign companies paid out of pre-2026 profits to a domiciled resident. The 2026 presentation states the 17% transitional rate for dividends from Cyprus-resident companies; it does not settle foreign-company dividends.
 - Do not compute General Healthcare System (GHS/GESY) contributions here. They are a separate charge; see `cyprus-social-contributions`.
 - Refer CGT computations (indexation, the agricultural-land and main-residence exemptions). The rate and the general exemption are in the Section 4 table.
-- Refer treaty residence ties (a person resident in two countries). This Guide applies Cyprus domestic rules only.
+- Refer treaty residence ties (a person resident in two countries). This skill applies Cyprus domestic rules only.
 
 ## Sources
 
@@ -267,4 +267,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cy-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cy-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cy-non-dom` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cy-non-dom. If neither is available, confirm every figure against the official source pages cited above before relying on it.

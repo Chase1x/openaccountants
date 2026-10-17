@@ -3,7 +3,7 @@ name: us-irs-collections-and-controversy
 description: Tier 2 US federal content skill for IRS notices, audits, collections, and controversy procedures. Covers common notices (CP2000, CP14, CP504, LT11/CP90), the 30-day Collection Due Process window under §6330 (Form 12153), the 10-year Collection Statute Expiration Date under §6502, collection alternatives (installment agreement, currently-not-collectible, offer in compromise, partial-pay IA), audit types and the §7430 attorney fees rule, Tax Court / District Court / Claims Court forum choice, §6662 accuracy and §6663 fraud penalties, First-Time Abatement (Notice 2014-2), and §6015 innocent spouse relief. Tax year 2025.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IRS notices, audits, collections and appeals (US federal)
 
-Figures are for tax year 2026. Dollar amounts, fees and rates below are the ones the IRS publishes for 2026 or shows on its pages as of September 2026. A short section covers 2025 returns, which are still being filed on extension until 15 October 2026. This Guide is procedure: how to read an IRS notice, which deadline it starts, and which route (response, payment plan, offer, hearing, appeal or court) fits the client. It covers individuals and small businesses on federal income tax. It does not decide the underlying tax.
+Figures are for tax year 2026. Dollar amounts, fees and rates below are the ones the IRS publishes for 2026 or shows on its pages as of September 2026. A short section covers 2025 returns, which are still being filed on extension until 15 October 2026. This skill is procedure: how to read an IRS notice, which deadline it starts, and which route (response, payment plan, offer, hearing, appeal or court) fits the client. It covers individuals and small businesses on federal income tax. It does not decide the underlying tax.
 
 To talk to the IRS for a client, a practitioner needs Form 2848, which authorises a person eligible to practise before the IRS to represent the client ([About Form 2848](https://www.irs.gov/forms-pubs/about-form-2848)), or Form 8821, which only lets the named person inspect or receive the client's information ([About Form 8821](https://www.irs.gov/forms-pubs/about-form-8821)).
 
@@ -236,7 +236,7 @@ Both spouses on a joint return are liable for the whole tax, even after divorce,
 - Bankruptcy, filed or planned: refer to bankruptcy counsel (it suspends the collection clock and changes which taxes survive).
 - Trust fund recovery penalty (IRC 6672) defence, employment-tax liability disputes and whistleblower claims: refer to a specialist.
 - International information-return penalties, FBAR and FATCA penalties: refer to an international tax specialist.
-- State tax collection: outside this Guide; follow the state's own procedures.
+- State tax collection: outside this skill; follow the state's own procedures.
 - Tax Court litigation beyond filing a timely petition, and refund suits: refer to a practitioner admitted to the relevant court.
 - The client wants to leave assets or income off a collection information statement: refuse. The statements are signed under penalty of perjury.
 

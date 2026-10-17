@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/panama-income-tax"
   jurisdiction: "PA"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,11 +17,11 @@ metadata:
 
 Tax year 2026. Panama's tax year is the calendar year, so "2026" means income earned from 1 January to 31 December 2026, reported on the return due by 15 March 2027 (individuals) or 31 March 2027 (companies). The rules below are as published by the Dirección General de Ingresos (DGI) on dgi.mef.gob.pa, read on 25 September 2026. The DGI tax table has not changed since 2010, so the 2026 figures are the same as 2025. A short dated section covers the 2025 returns filed in 2026.
 
-Amounts are in balboas (B/.), which trade at par with the US dollar; this Guide writes them as USD.
+Amounts are in balboas (B/.), which trade at par with the US dollar; this skill writes them as USD.
 
 ## Scope and who this is for ([DGI, rates](https://dgi.mef.gob.pa/DInforme/Tarifa.php); [DGI, income tax FAQ](https://dgi.mef.gob.pa/Preguntas/Rent.php))
 
-This Guide covers Panama's income tax (Impuesto sobre la Renta, ISR) for:
+This skill covers Panama's income tax (Impuesto sobre la Renta, ISR) for:
 
 - Individuals (personas naturales): employees, independent professionals and traders (comerciantes), resident or not, on Panama-source income.
 - Employers withholding ISR from salaries.
@@ -33,7 +33,7 @@ It does not cover ITBMS (the goods and services tax), capital gains on real esta
 
 Foreign-source income is still reported on the return, on its own line, "de acuerdo al parágrafo 2 del Artículo 694 del Código Fiscal" ([DGI return instructions, line 19](https://dgi.mef.gob.pa/DInforme/pdf/RENTA%20-%20NATURAL.pdf)). It is left out of taxable income, and the costs and expenses of earning it are not deductible ([DGI, general rules](https://dgi.mef.gob.pa/DInforme/GD-ISR.php)).
 
-**The offshore services rules: check.** Article 694 parágrafo 2 of the Código Fiscal is generally described as treating three activities run from an office in Panama as not Panama-source: invoicing from Panama for sales of goods or services where the transaction is completed abroad; directing from Panama transactions that are completed and have effect abroad; and distributing dividends out of income that is itself foreign-source. DGI does not publish the text of that paragraph, and the Gaceta Oficial that carries it is not an allowed source for this Guide. Read article 694 in the official Código Fiscal before relying on any of the three cases, and treat mixed contracts (part of the work done in Panama) as a referral.
+**The offshore services rules: check.** Article 694 parágrafo 2 of the Código Fiscal is generally described as treating three activities run from an office in Panama as not Panama-source: invoicing from Panama for sales of goods or services where the transaction is completed abroad; directing from Panama transactions that are completed and have effect abroad; and distributing dividends out of income that is itself foreign-source. DGI does not publish the text of that paragraph, and the Gaceta Oficial that carries it is not an allowed source for this skill. Read article 694 in the official Código Fiscal before relying on any of the three cases, and treat mixed contracts (part of the work done in Panama) as a referral.
 
 ## Ask the client first
 
@@ -98,7 +98,7 @@ DGI's list of personal deduction lines has no per-dependant deduction. Do not cl
 ### Educational insurance and CSS for the self-employed ([DGI return instructions, lines 118-123](https://dgi.mef.gob.pa/DInforme/pdf/RENTA%20-%20NATURAL.pdf); [DGI, individual returns](https://dgi.mef.gob.pa/DInforme/DJRRPNAPI-Comerciante.php))
 
 - **Educational insurance (seguro educativo)** on non-salary income is computed on the ISR return at 2.75% of a base equal to total income, less salary with withholding, income in kind, representation allowances, directors' fees, exempt income and foreign-source income, less deductible costs and expenses, plus capital gains on real estate and securities. Embassy employees apply 1.25%. It is paid with the estimated tax, in one sum or three equal instalments ([DGI filing instructions](https://dgi.mef.gob.pa/DInforme/pdf/INSTRUCTIVO%20DE%20LLENADO.pdf)).
-- **CSS contributions: check.** Law 462 of 2025 changed Caja de Seguro Social contributions for employees, employers and independent workers. DGI's return instructions still describe the old independent-worker formula, and the CSS and Gaceta Oficial sites are not allowed sources for this Guide. Do not quote a CSS rate from this Guide; take current rates from the CSS or the law itself. The ISR return does carry a CSS line for independents, and that amount is due with the annual balance by 31 March.
+- **CSS contributions: check.** Law 462 of 2025 changed Caja de Seguro Social contributions for employees, employers and independent workers. DGI's return instructions still describe the old independent-worker formula, and the CSS and Gaceta Oficial sites are not allowed sources for this skill. Do not quote a CSS rate from this skill; take current rates from the CSS or the law itself. The ISR return does carry a CSS line for independents, and that amount is due with the annual balance by 31 March.
 
 ### Companies, summary only ([DGI, rates](https://dgi.mef.gob.pa/DInforme/Tarifa.php); [DGI, general rules](https://dgi.mef.gob.pa/DInforme/GD-ISR.php))
 
@@ -186,7 +186,7 @@ All cases are for tax year 2026 and assume Panama-source income unless stated.
 
 ## When to refuse or refer
 
-- **Source unclear.** Work done partly in Panama and partly abroad, or a client relying on the offshore services rules in article 694 parágrafo 2. The split drives the whole computation, and this Guide cannot quote the article's text.
+- **Source unclear.** Work done partly in Panama and partly abroad, or a client relying on the offshore services rules in article 694 parágrafo 2. The split drives the whole computation, and this skill cannot quote the article's text.
 - **Non-residents beyond simple withholding**, treaty claims (Forms 433, 929, 931), tax residence certificates.
 - **Companies beyond the summary**: CAIR non-application requests, special fiscal periods, groups, transfer pricing (Form 930), free zones, SEM, City of Knowledge, Panamá Pacífico, tourism and other incentive regimes, AMPYME micro-business exemptions.
 - **Capital gains** on real estate (Forms 106 and 107) or on shares and securities (Form 108).
@@ -283,4 +283,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `panama-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/panama-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `panama-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/panama-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

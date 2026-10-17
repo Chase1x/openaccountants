@@ -3,7 +3,7 @@ name: id-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing a 2025 Indonesian tax return AND mentions freelancing, self-employment, online seller, kontraktor, pekerjaan bebas, sole proprietor (Usaha Dagang), or a PT Perorangan in Indonesia. Trigger on phrases like "siapkan SPT Tahunan", "lapor pajak freelance Indonesia", "PPh Final UMKM 0,5%", "PP 55/2022", "PT Perorangan tax return", "online seller Indonesia tax", "kontraktor pajak", "pekerjaan bebas", "Usaha Dagang", "Coretax SPT", "NPWP 16 digit", or any similar phrasing where the user is an Indonesia-resident self-employed individual, sole proprietor, or micro-PT founder. This is the REQUIRED entry point for the Indonesian freelance/SME workflow — every downstream skill in the stack (id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Indonesian residents only (full-year tax residents and foreigners with > 183 days permanent presence). ALWAYS read this skill first when starting an Indonesian freelance/SME tax workflow.
 jurisdiction: ID
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,7 +17,7 @@ Tax year 2026 (calendar year), with a short section on the tax year 2025 return 
 
 ## Scope
 
-This Guide is the first step for an Indonesian tax resident individual who earns money outside a job: a freelancer or professional (pekerjaan bebas), a trader or service business run in their own name (including a trade name, Usaha Dagang), an online seller, or the founder of a single-founder company (PT Perorangan). It decides:
+This skill is the first step for an Indonesian tax resident individual who earns money outside a job: a freelancer or professional (pekerjaan bebas), a trader or service business run in their own name (including a trade name, Usaha Dagang), an online seller, or the founder of a single-founder company (PT Perorangan). It decides:
 
 - whether the person is in scope at all (residency, entity);
 - which income tax method applies for 2026: the 0.5% final tax on turnover, the deemed-profit norm (NPPN) with simple records, or full bookkeeping with general rates;
@@ -28,7 +28,7 @@ This Guide is the first step for an Indonesian tax resident individual who earns
 
 Out of scope: non-residents and part-year residents, corporate groups, and anything needing audited accounts. Those are referred (see "When to refuse or refer").
 
-Key law behind this Guide: the Income Tax Law (UU PPh) as amended by UU 7/2021 (HPP); PP 55/2022 on income tax adjustments, as amended by PP 20/2026 (in force 22 April 2026); PMK 164/2023 on the 0.5% regime and PKP reporting; PMK 168/2023 on PPh 21; PER-17/PJ/2015 on NPPN; PMK 81/2024 on Coretax; PMK 131/2024 on VAT from 2025 ([DJP on PMK 164/2023](https://www.pajak.go.id/en/node/104146); [DJP juklak PMK 168/2023](https://pajak.go.id/index.php/en/node/104821); [DJP on PMK 81/2024](https://www.pajak.go.id/en/node/112032); [DJP on PMK 131/2024](https://www.pajak.go.id/en/node/113455)).
+Key law behind this skill: the Income Tax Law (UU PPh) as amended by UU 7/2021 (HPP); PP 55/2022 on income tax adjustments, as amended by PP 20/2026 (in force 22 April 2026); PMK 164/2023 on the 0.5% regime and PKP reporting; PMK 168/2023 on PPh 21; PER-17/PJ/2015 on NPPN; PMK 81/2024 on Coretax; PMK 131/2024 on VAT from 2025 ([DJP on PMK 164/2023](https://www.pajak.go.id/en/node/104146); [DJP juklak PMK 168/2023](https://pajak.go.id/index.php/en/node/104821); [DJP on PMK 81/2024](https://www.pajak.go.id/en/node/112032); [DJP on PMK 131/2024](https://www.pajak.go.id/en/node/113455)).
 
 ## What changed in 2026 (read this first)
 
@@ -237,7 +237,7 @@ Open points, refusals and conservative defaults: [list]
 
 Related topics in this library: `id-pph-final-umkm` (0.5% final tax), `id-income-tax` (general rates and NPPN), `id-corporate-tax`, `id-withholding`, `id-payroll-pph21`, `indonesia-vat`, `id-einvoice-coretax`, `id-bookkeeping`, `id-formation`, `id-tax-optimization`, `id-return-assembly`.
 
-This Guide is information, not tax advice. Rules change; check the current DJP text before filing, and have a qualified Indonesian tax professional (Konsultan Pajak) check the return before it is submitted on Coretax.
+This skill is information, not tax advice. Rules change; check the current DJP text before filing, and have a qualified Indonesian tax professional (Konsultan Pajak) check the return before it is submitted on Coretax.
 
 <!-- openaccountants-cta-block -->
 

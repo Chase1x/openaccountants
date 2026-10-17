@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Estonia personal income tax for
 version: 0.1
 jurisdiction: EE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers Estonian personal income tax for a **resident natural person** for tax year 2026 (the calendar year), with a dated section for the tax year 2025 return that was due by 30 April 2026. It covers:
+This skill covers Estonian personal income tax for a **resident natural person** for tax year 2026 (the calendar year), with a dated section for the tax year 2025 return that was due by 30 April 2026. It covers:
 
 - the flat income tax rate and the basic exemption, including the end of the 2025 "tax hump";
 - income of employees (withholding through the employer), and other income declared on the annual return (form A);
@@ -44,7 +44,7 @@ The law is the Income Tax Act (tulumaksuseadus), the Social Tax Act (sotsiaalmak
 
 ## The method, step by step
 
-1. **Fix residency and the year.** Resident: all worldwide income is taxable in Estonia. Non-resident: only Estonian-source income, and this Guide does not apply.
+1. **Fix residency and the year.** Resident: all worldwide income is taxable in Estonia. Non-resident: only Estonian-source income, and this skill does not apply.
 2. **Pick the rate.** Income tax is a flat **22%** for 2026 and for 2025 (it was 20% for 2024). There are no brackets and no local income tax.
 3. **Pick the basic exemption for the year** (see the figures table). For 2026: 700 euros a month or 8,400 euros a year for everyone below pensionable age, whatever their income. At pensionable age: 776 euros a month or 9,312 euros a year. For 2025, use the tax hump formula in the dated section.
 4. **Employment income.** The employer withholds 22% monthly on the wage minus the employee's unemployment insurance premium (1.6%), minus the II-pillar contribution withheld, minus the monthly basic exemption if the employee gave that employer a written application. With no application, tax is withheld from the first euro. The employer pays social tax (33%) and its own unemployment premium (0.8%) on top and declares everything on form TSD by the 10th of the next month.

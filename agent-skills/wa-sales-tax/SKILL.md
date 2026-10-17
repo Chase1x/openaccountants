@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/wa-sales-tax"
   jurisdiction: "US-WA"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -271,7 +271,7 @@ Interest also runs on unpaid tax, at a rate that changes every year ([DOR late f
 - Refer sales in Indian country or to tribes and tribal members: DOR is still consulting tribes on ESSB 5814 and tells vendors with tribal customers to request a ruling.
 - Refer any ESSB 5814 case that is not clearly inside or outside DOR's lists (for example bundled professional and digital services, or mixed advertising packages). DOR's guidance is interim; questions go to DOR's rulings team. Do not advise a client to stop collecting because of the pending litigation.
 - Refer voluntary disclosure for unregistered sellers with past exposure, and any audit, assessment or appeal.
-- Refer Washington capital gains tax and other taxes outside this Guide.
+- Refer Washington capital gains tax and other taxes outside this skill.
 
 ## Completion checklist
 
@@ -305,4 +305,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `wa-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/wa-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `wa-sales-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/wa-sales-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

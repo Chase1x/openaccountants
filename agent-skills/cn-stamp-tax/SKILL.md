@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cn-stamp-tax"
   jurisdiction: "CN"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([Stamp Tax Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/yhs/202106/t458595.html); [MOF/STA announcement 2022 No. 22](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/yhs/202206/t463167.html))
 
-This Guide covers mainland China stamp tax (印花税) for tax year 2026, the calendar year 1 January to 31 December 2026. It is for companies, individuals and advisers who need to decide whether a document is taxable, compute the tax, and file it.
+This skill covers mainland China stamp tax (印花税) for tax year 2026, the calendar year 1 January to 31 December 2026. It is for companies, individuals and advisers who need to decide whether a document is taxable, compute the tax, and file it.
 
 The legal base is the **Stamp Tax Law of the PRC (中华人民共和国印花税法)**, adopted on 10 June 2021 and in force since 1 July 2022. It replaced the 1988 Provisional Regulations (印花税暂行条例), which were repealed on the same day (Law Art. 20). The law has no annual figures. What changes year to year are the reliefs, several of which end on 31 December 2027.
 
@@ -28,7 +28,7 @@ Who pays (Law Art. 1):
 
 The tax is a **positive list**. Only documents in the rate table attached to the law are taxable: certain written contracts, property-transfer documents, business account books, plus securities trading (Law Art. 2-3). A document that is not on the list is not taxed, whatever it is called.
 
-Out of scope: Hong Kong, Macao and Taiwan; deed tax (契税) and land appreciation tax on property; VAT and surcharges; stamp tax audits and disputes. Related Guides: **cn-vat** and **china-vat** (VAT, which is excluded from the stamp tax base when stated separately), **cn-corporate-tax** (the small low-profit enterprise test used by the halving relief), and **cn-iit** (individual income tax on share and property sales).
+Out of scope: Hong Kong, Macao and Taiwan; deed tax (契税) and land appreciation tax on property; VAT and surcharges; stamp tax audits and disputes. Related Skills: **cn-vat** and **china-vat** (VAT, which is excluded from the stamp tax base when stated separately), **cn-corporate-tax** (the small low-profit enterprise test used by the halving relief), and **cn-iit** (individual income tax on share and property sales).
 
 ## What is current for 2026 ([MOF/STA announcement 2023 No. 39](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/yhs/202308/t468451.html); [MOF/STA announcement 2023 No. 12](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/202308/t468162.html); [MOF/STA announcement 2023 No. 13](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202308/t468161.html); [MOF/STA announcement 2024 No. 14](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/yhs/202409/t473303.html); [Caishui 2025 No. 10](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/yhs/202503/t475883.html))
 
@@ -134,7 +134,7 @@ Tianjin Tax Bureau answers confirm individual lines, for example the account-boo
 
 - **What is covered.** Transfers of shares, and depositary receipts based on shares, traded on a lawfully established stock exchange or another national securities trading venue approved by the State Council (Law Art. 3). Bonds and fund units are not in the definition.
 - **Who pays.** The **seller** only. The buyer pays nothing (Law Art. 3).
-- **Rate.** The statutory rate is one per thousand of the trade value. Since **28 August 2023** it has been charged at half, that is five per ten thousand (MOF/STA announcement 2023 No. 39). The announcement has no end date. It was still in force when this Guide was written.
+- **Rate.** The statutory rate is one per thousand of the trade value. Since **28 August 2023** it has been charged at half, that is five per ten thousand (MOF/STA announcement 2023 No. 39). The announcement has no end date. It was still in force when this skill was written.
 - **Base.** The trade value. If there is no transfer price, use the closing price on the trading day before the transfer is registered. If there is no closing price, use par value (Law Art. 7).
 - **Collection.** The securities depository and clearing body withholds the tax. It pays it over weekly, within five days after each week ends, with the bank interest (Law Art. 14, 16). The investor does not file.
 - **Not halved again.** The small-business halving excludes securities stamp tax (MOF/STA announcement 2023 No. 12 Art. 2).
@@ -234,7 +234,7 @@ All amounts are in yuan and relate to tax year 2026. The filing dates assume a S
 
 - The document does not clearly fit one item in the rate table and the choice changes the rate, for example a technology service contract that is really processing or repair work. Refer, with the contract, to the local bureau or a Chinese tax adviser.
 - The client wants to rely on a targeted exemption that is not listed above. Get the announcement and check its end date and conditions first.
-- An individual sells shares in a private company and wants the small-business halving. The Shanghai bureau said yes in December 2022 under the earlier relief (Caishui 2019 No. 13). This Guide found no later official statement under MOF/STA announcement 2023 No. 12, so check with the local bureau before claiming it.
+- An individual sells shares in a private company and wants the small-business halving. The Shanghai bureau said yes in December 2022 under the earlier relief (Caishui 2019 No. 13). This skill found no later official statement under MOF/STA announcement 2023 No. 12, so check with the local bureau before claiming it.
 - A restructuring relief depends on the tests under "Restructuring" above: the three permitted conversion forms, with continuing investors holding more than three quarters and the successor taking over rights and obligations; a merger with continuing investors; a division into companies with the same investors; or a State Council-approved debt-for-equity project. Refer for a full review of the deal.
 - A trade on a venue whose status as a State Council-approved national securities venue is unclear. Confirm with the broker or clearing body whether securities stamp tax was withheld.
 - The contract amount will not be known for a long time, or the parties dispute it. Report the signing now, and get advice on when the amount counts as settled.
@@ -303,4 +303,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-stamp-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-stamp-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-stamp-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-stamp-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

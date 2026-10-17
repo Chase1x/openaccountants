@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/mt-reverse-charge-vat-services-received-from"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers one situation: a person established in Malta buys a service from a supplier that is not established in Malta, and the supplier does not charge Maltese VAT. Maltese law then makes the customer, not the supplier, liable for the Maltese VAT. This is the "reverse charge". It applies to suppliers in other EU Member States and to suppliers outside the EU alike.
+This skill covers one situation: a person established in Malta buys a service from a supplier that is not established in Malta, and the supplier does not charge Maltese VAT. Maltese law then makes the customer, not the supplier, liable for the Maltese VAT. This is the "reverse charge". It applies to suppliers in other EU Member States and to suppliers outside the EU alike.
 
 It covers:
 
@@ -30,9 +30,9 @@ It covers:
 
 Figures are for tax year 2026. VAT is charged per transaction and per tax period, so "tax year 2026" means services whose VAT becomes chargeable in calendar 2026. The law is the VAT Act, Chapter 406 of the Laws of Malta, as consolidated on 27 March 2026 (in force on 25 September 2026): [VAT Act, Cap. 406](https://legislation.mt/getpdf/6a7d667d73ff6d305c833d20). Interest is set by [S.L. 406.19](https://legislation.mt/getpdf/632835ddda6f862638d03ac1). A short section near the end covers 2025 periods still being filed.
 
-The authority is the Malta Tax and Customs Administration (MTCA). This Guide does not give box numbers for the Article 10 return or the Article 12 notice of payment: they appear only on MTCA's forms. Take them from the live form (check).
+The authority is the Malta Tax and Customs Administration (MTCA). This skill does not give box numbers for the Article 10 return or the Article 12 notice of payment: they appear only on MTCA's forms. Take them from the live form (check).
 
-Companion Guides: general return preparation (rates on sales, blocked input tax in full, capital goods, recapitulative statements, OSS, late-return penalties) is in the Malta VAT returns Guide (malta-vat-return) and the quarterly return Guide (mt-vat3-quarterly-return-malta). This Guide follows the same reading of the Act and stays on the reverse charge.
+Companion Skills: general return preparation (rates on sales, blocked input tax in full, capital goods, recapitulative statements, OSS, late-return penalties) is in the Malta VAT returns Guide (malta-vat-return) and the quarterly return Guide (mt-vat3-quarterly-return-malta). This skill follows the same reading of the Act and stays on the reverse charge.
 
 Not covered: goods (intra-EU acquisitions, imports, distance sales), services a Malta business supplies to customers abroad, and purchases by private individuals.
 
@@ -70,7 +70,7 @@ The supplier must not be established in Malta and must not be registered under A
 | Article 12 registrant (not Article 10) | Liable | Liable | Under art. 21(3), with a notice of payment (art. 30A) | No |
 | Taxable person not registered at all (for example a business making only exempt-without-credit supplies) | Liable, and must register under Article 12 by the date it receives the service (art. 12(3)) | Refer | Under art. 21(3) once registered | No |
 | Non-taxable legal person identified for VAT (for example a body registered under Article 12 for acquisitions) | Liable: it is treated as a taxable person for place of supply (Third Schedule Part Two item 1(b)) | Liable | Under art. 21(3), with a notice of payment (art. 30A) | No |
-| Non-taxable legal person not identified for VAT, or a private individual | Not liable: the service is supplied where the supplier is established (item 2(b)) | Refer | Nothing in Malta under this Guide | No |
+| Non-taxable legal person not identified for VAT, or a private individual | Not liable: the service is supplied where the supplier is established (item 2(b)) | Refer | Nothing in Malta under this skill | No |
 
 Two definitions widen the net ([Act, Third Schedule Part Two item 1](https://legislation.mt/getpdf/6a7d667d73ff6d305c833d20)):
 
@@ -98,7 +98,7 @@ The customer charges itself the Maltese VAT that would apply if the same service
 | 5% | Eighth Schedule | "The supply of electricity"; listed minor repairs |
 | No VAT | Fifth Schedule (exempt with credit or exempt without credit) | No reverse charge: an exempt supply is not a "taxable supply" (art. 2) |
 
-Most services bought from abroad by a business fall under the 18% rate. Check the Eighth Schedule item before using a reduced rate; the Guide on Malta VAT returns has the fuller rate table.
+Most services bought from abroad by a business fall under the 18% rate. Check the Eighth Schedule item before using a reduced rate; the skill on Malta VAT returns has the fuller rate table.
 
 **Taxable value.** The value is "the total value of the consideration paid or payable to the supplier ... but excluding the value added tax chargeable under this Act" ([Act, Seventh Schedule item 1](https://legislation.mt/getpdf/6a7d667d73ff6d305c833d20)). It includes other taxes and incidental expenses such as commissions charged by the supplier (item 2) and excludes early-payment discounts and rebates allowed at the time the tax becomes chargeable (item 3). Because the invoice carries no Maltese VAT, the invoiced net amount is normally the value. Foreign VAT wrongly charged is not part of the Maltese value and is not Maltese input tax: ask the supplier for a corrected invoice.
 
@@ -254,4 +254,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-reverse-charge-vat-services-received-from` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-reverse-charge-vat-services-received-from. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-reverse-charge-vat-services-received-from` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-reverse-charge-vat-services-received-from. If neither is available, confirm every figure against the official source pages cited above before relying on it.

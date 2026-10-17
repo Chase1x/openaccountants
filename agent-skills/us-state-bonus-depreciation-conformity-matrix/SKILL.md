@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-state-bonus-depreciation-conformity-matrix"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -116,7 +116,7 @@ Read the row for the year you are preparing. "Follows" means no state adjustment
 
 ### No personal income tax on wages or business income
 
-Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington and Wyoming have no broad personal income tax on wages or business income, so a resident sole proprietor or pass-through owner has no individual add-back there. New Hampshire does not tax wages; its business profits tax can reach some sole proprietors (**check**). Entity-level taxes are outside this Guide; check each one separately:
+Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington and Wyoming have no broad personal income tax on wages or business income, so a resident sole proprietor or pass-through owner has no individual add-back there. New Hampshire does not tax wages; its business profits tax can reach some sole proprietors (**check**). Entity-level taxes are outside this skill; check each one separately:
 
 - Florida corporate income tax: add back §168(k) for property placed in service before January 1, 2027, and subtract one seventh of the addition each year over seven years ([F-1120 instructions](https://floridarevenue.com/Forms_library/current/f1120n.pdf)).
 - Texas franchise tax, Tennessee franchise and excise tax, Washington B&O tax and the New Hampshire business profits tax: **check**.
@@ -181,7 +181,7 @@ Property costing $225,000 is expensed in full under federal §179. Indiana allow
 
 ### Case 8: federal acquisition date, 2025 ([Pub. 946](https://www.irs.gov/publications/p946))
 
-Equipment was bought under a written binding contract signed on January 10, 2025 and placed in service in March 2025. It counts as acquired before January 20, 2025, so federal bonus is 40%, not 100%. Every state add-back in this Guide starts from that 40% figure.
+Equipment was bought under a written binding contract signed on January 10, 2025 and placed in service in March 2025. It counts as acquired before January 20, 2025, so federal bonus is 40%, not 100%. Every state add-back in this skill starts from that 40% figure.
 
 ## 2025 returns (tax year 2025; extended federal deadline October 15, 2026)
 
@@ -242,4 +242,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-state-bonus-depreciation-conformity-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-state-bonus-depreciation-conformity-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-state-bonus-depreciation-conformity-matrix` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-state-bonus-depreciation-conformity-matrix. If neither is available, confirm every figure against the official source pages cited above before relying on it.

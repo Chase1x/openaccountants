@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Malta income tax for self-empl
 version: 2.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,9 +19,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope ([Income Tax Act, Cap. 123](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c))
 
-This Guide covers Malta income tax for **individuals**: employees, the self-employed, part-time workers, landlords and people selling Maltese property. Malta taxes a calendar **basis year**, and the tax is charged for the following **year of assessment**.
+This skill covers Malta income tax for **individuals**: employees, the self-employed, part-time workers, landlords and people selling Maltese property. Malta taxes a calendar **basis year**, and the tax is charged for the following **year of assessment**.
 
-- **Basis year 2026 = year of assessment 2027.** This is the primary year of this Guide. Its return is due by 30 June 2027.
+- **Basis year 2026 = year of assessment 2027.** This is the primary year of this skill. Its return is due by 30 June 2027.
 - **Basis year 2025 = year of assessment 2026.** The dated section "2025 income (year of assessment 2026)" covers the returns being filed now. Their statutory date was 30 June 2026, so a return not filed yet is late (see "Filing and payment").
 
 Marital and family status is tested "in the year immediately preceding the year of assessment", which means the basis year itself.

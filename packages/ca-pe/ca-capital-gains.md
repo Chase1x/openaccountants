@@ -4,7 +4,7 @@ description: "Canada capital gains tax: inclusion rate (50% / 2/3 above $250k fr
 version: 1.0
 jurisdiction: CA
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -17,9 +17,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([CRA Guide T4037, Capital Gains](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4037/capital-gains.html))
 
-This Guide covers **federal** income tax on capital gains and capital losses of an **individual resident in Canada** who sells, or is considered to have sold, capital property: shares and fund units, real estate, a home or cottage, personal-use property and qualifying small business or farm and fishing property.
+This skill covers **federal** income tax on capital gains and capital losses of an **individual resident in Canada** who sells, or is considered to have sold, capital property: shares and fund units, real estate, a home or cottage, personal-use property and qualifying small business or farm and fishing property.
 
-Primary year: **tax year 2026** (calendar year, 1 January to 31 December 2026). A short section near the end covers the **2025** returns that were due in 2026. Where a rule is unchanged between 2025 and 2026 the Guide says so.
+Primary year: **tax year 2026** (calendar year, 1 January to 31 December 2026). A short section near the end covers the **2025** returns that were due in 2026. Where a rule is unchanged between 2025 and 2026 the skill says so.
 
 It covers:
 
@@ -32,7 +32,7 @@ It covers:
 - the capital gains reserve;
 - reporting on Schedule 3, line 12700, line 25300 and line 25400, and the filing dates.
 
-**Not covered here:** non-residents selling Canadian property (see the **ca-nonresident-cgt** Guide), departure tax on leaving Canada and residency questions (see **ca-tax-residency**), corporations and trusts, provincial and territorial tax rates, Quebec's separate provincial return, and whether a sale is business income rather than a capital gain outside the flipping rule. Provincial and territorial tax also applies to the same taxable capital gain, but the rates are outside this Guide.
+**Not covered here:** non-residents selling Canadian property (see the **ca-nonresident-cgt** skill), departure tax on leaving Canada and residency questions (see **ca-tax-residency**), corporations and trusts, provincial and territorial tax rates, Quebec's separate provincial return, and whether a sale is business income rather than a capital gain outside the flipping rule. Provincial and territorial tax also applies to the same taxable capital gain, but the rates are outside this skill.
 
 Law: the *Income Tax Act* (ITA), mainly [s.38](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-38.html) (taxable capital gain), [s.40](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-40.html) (gains, losses, reserve, principal residence formula), [s.54](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-54.html) (definitions), [s.110.6](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-110.6.html) (capital gains deduction) and [s.111](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-111.html) (loss carryovers). The Justice Laws copies used were current to 3 September 2026.
 
@@ -53,7 +53,7 @@ Law: the *Income Tax Act* (ITA), mainly [s.38](https://laws-lois.justice.gc.ca/e
 
 ## The method, step by step
 
-1. **Confirm it is a capital disposition.** A sale, a gift, or a deemed sale all count. Check the flipping rule first for any Canadian housing unit held for less than 365 days; if it applies, the gain is business income and this Guide stops for that property.
+1. **Confirm it is a capital disposition.** A sale, a gift, or a deemed sale all count. Check the flipping rule first for any Canadian housing unit held for less than 365 days; if it applies, the gain is business income and this skill stops for that property.
 2. **Find the year.** Report the disposition in the calendar year you sold or were considered to have sold the property, even if your business has a different fiscal year end.
 3. **Work out proceeds, ACB and outlays in Canadian dollars.** Capital gain or loss = proceeds − (ACB + outlays and expenses).
 4. **Apply special rules to the gain or loss:** principal residence exemption, personal-use property floor, listed personal property, superficial loss, and the reserve if you are paid over time.
@@ -116,7 +116,7 @@ Law: the *Income Tax Act* (ITA), mainly [s.38](https://laws-lois.justice.gc.ca/e
 
 - The **"plus 1"** lets you treat both the old and the new home as sheltered in the year you sell one and buy the other, even though only one can be designated for that year.
 - The "plus 1" is **only available if you were resident in Canada in the year you acquired the home.** If you were non-resident throughout that year, you do not get the extra year.
-- The exemption is also limited to years you were **resident in Canada**. If the client was non-resident for any part of the ownership, refer or see the ca-nonresident-cgt Guide.
+- The exemption is also limited to years you were **resident in Canada**. If the client was non-resident for any part of the ownership, refer or see the ca-nonresident-cgt skill.
 
 **You must report the sale.** For 2016 and later years, CRA only allows the principal residence exemption if you **report the disposition and the designation** on your return.
 
@@ -145,7 +145,7 @@ Law: the *Income Tax Act* (ITA), mainly [s.38](https://laws-lois.justice.gc.ca/e
   - involuntary termination of employment of the taxpayer or spouse or common-law partner;
   - insolvency of the taxpayer;
   - destruction or expropriation of the property.
-- If the home is **not** a flipped property, it can still be business income on general principles (for example, a pattern of buying to resell). If treated as business income, report on Form T2125; if a capital gain, on Schedule 3. That judgment is outside this Guide: refer when facts point to trading.
+- If the home is **not** a flipped property, it can still be business income on general principles (for example, a pattern of buying to resell). If treated as business income, report on Form T2125; if a capital gain, on Schedule 3. That judgment is outside this skill: refer when facts point to trading.
 
 ## Lifetime capital gains exemption and the capital gains deduction ([CRA line 25400](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25400-capital-gains-deduction.html); [ITA s.110.6](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-110.6.html))
 
@@ -303,7 +303,7 @@ Refer to a Canadian tax professional (CPA) when:
 - **trusts, estates, partnerships** or corporations are the seller, or a sale or rollover to a related or controlled corporation;
 - **crypto-assets**, options, short sales or frequent trading where the income may be business income;
 - a **late principal residence designation** or amended return is needed and the penalty may apply;
-- a sale by a **non-resident** of Canadian property: use the ca-nonresident-cgt Guide.
+- a sale by a **non-resident** of Canadian property: use the ca-nonresident-cgt skill.
 
 Refuse to give a figure when the purchase cost, dates or ownership history cannot be established; ask for the records instead of estimating.
 

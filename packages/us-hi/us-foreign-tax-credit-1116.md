@@ -3,7 +3,7 @@ name: us-foreign-tax-credit-1116
 description: Tier 2 US federal content skill for §901 Foreign Tax Credit (Form 1116) covering tax year 2025. Includes the basket separation under §904 (passive, general, GILTI, foreign branch, §901(j) sanctioned countries), the §904(a) limitation formula, the $300/$600 de minimis no-Form-1116 election, §904(j) high-tax kick-out for passive income, the 2022 T.D. 9959 attribution/nexus/cost-recovery requirements with Notice 2023-55/2024-44 (and successor) relief, the FEIE-vs-FTC strategic choice for US expats, 1-year back / 10-year forward credit carries, and the AMT FTC computation. Schedule A itemized deduction alternative when credit isn't useful.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US Foreign Tax Credit (Form 1116) for individuals
 
-This Guide is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 1116 and its instructions were not yet published when this was written (25 September 2026). Where this Guide describes form lines, it uses the 2025 form, so check the line numbers against the 2026 instructions before filing.
+This skill is written for **tax year 2026** (returns filed in 2027). A short dated section near the end covers **2025 returns**, which are still being filed on extension until 15 October 2026. The 2026 Form 1116 and its instructions were not yet published when this was written (25 September 2026). Where this skill describes form lines, it uses the 2025 form, so check the line numbers against the 2026 instructions before filing.
 
 ## Scope and who this is for
 
@@ -244,7 +244,7 @@ The 2026 thresholds will be in the 2026 instructions.
   - the §960(d) deemed-paid credit is **90%** of the inclusion percentage × tested foreign income taxes
 - **Previously taxed earnings:** §960(d)(4) disallows the credit for **10%** of foreign taxes on a distribution that is excluded under §959(a) because of an earlier §951A inclusion. The 2025 Form 1116 instructions say it applies to such amounts "after June 28, 2025"; check the exact scope for the client's facts.
   - Withholding tax on such a distribution otherwise goes on Form 1116, whether or not you made a §962 election.
-- This Guide only flags these items. See "When to refuse or refer".
+- This skill only flags these items. See "When to refuse or refer".
 
 ## Boundaries and exceptions
 
@@ -302,7 +302,7 @@ All amounts are in dollars and are illustrations, not real clients.
 
 ## When to refuse or refer
 
-- Corporations, estates and trusts, and nonresident aliens. This Guide covers individual US citizens and residents only.
+- Corporations, estates and trusts, and nonresident aliens. This skill covers individual US citizens and residents only.
 - §962 elections, Form 1118, CFC look-through income, previously taxed earnings accounts, and preparing Forms 5471, 8865, 8858 or 8621.
 - Treaty re-sourcing (box f), treaty-based credits needing Form 8833, and the additional credit for US citizens resident in treaty countries.
 - §901(m) covered asset acquisitions, foreign tax credit splitting events, and foreign oil and gas income.

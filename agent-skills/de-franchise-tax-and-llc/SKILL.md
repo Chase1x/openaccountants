@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/de-franchise-tax-and-llc"
   jurisdiction: "US-DE"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -22,7 +22,7 @@ Figures are for tax year 2026: the corporate franchise tax and annual report for
 - **Domestic Delaware corporations** (formed under Title 8, Chapter 1): the annual franchise tax, the annual franchise tax report and its filing fee, estimated payments, penalties and loss of status. [8 Del. C. ch. 5](https://delcode.delaware.gov/title8/c005/index.html)
 - **Delaware LLCs, LPs and GPs**, and foreign LLCs and LPs registered in Delaware: the flat annual tax, due dates, penalties, cancellation and revival. [LLC Act §18-1107](https://delcode.delaware.gov/title6/c018/sc11/index.html)
 - These are taxes for **existing on the Delaware register**. They are owed whether or not the entity has income, customers or activity in Delaware, and whatever its federal tax classification.
-- **Not covered** (refer or use a separate Guide): Delaware corporate income tax and gross receipts tax (administered by the Division of Revenue, not the Division of Corporations); foreign corporations' annual report; banks, captive insurers and other bodies with their own regimes; statutory trusts; limited liability partnerships.
+- **Not covered** (refer or use a separate skill): Delaware corporate income tax and gross receipts tax (administered by the Division of Revenue, not the Division of Corporations); foreign corporations' annual report; banks, captive insurers and other bodies with their own regimes; statutory trusts; limited liability partnerships.
 
 ## Ask the client first
 
@@ -230,12 +230,12 @@ The company is listed, with consolidated revenues of $900,000,000 and consolidat
 
 ## When to refuse or refer
 
-- Refer mixed par and no-par capital structures, and assumed no-par capital under §503(a)(2), to the Division's calculator and a Delaware practitioner. This Guide does not work that schedule.
+- Refer mixed par and no-par capital structures, and assumed no-par capital under §503(a)(2), to the Division's calculator and a Delaware practitioner. This skill does not work that schedule.
 - Refer if the corporation does not file Form 1120. The statute points to Form 1120 Schedule L and does not name the equivalent for other filers, so confirm with the Division's Franchise Tax section.
 - Refer revival of a charter void for more than 5 years, disputes before the Court of Chancery, and Large Corporate Filer designation or delisting disputes.
 - Refer foreign corporations, banks, captive insurers, statutory trusts and LLPs; they follow other rules.
 - Refer Delaware corporate income tax, personal income tax and gross receipts tax questions to the Division of Revenue rules. Forming in Delaware does not by itself decide those taxes.
-- Refuse to state a payoff amount for a long-delinquent entity from this Guide alone. Get the Division's statement.
+- Refuse to state a payoff amount for a long-delinquent entity from this skill alone. Get the Division's statement.
 - Treat any bill that did not come from the State or the entity's registered agent as a possible scam. The Division warns about these.
 
 ## Completion checklist
@@ -270,4 +270,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-franchise-tax-and-llc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-franchise-tax-and-llc. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `de-franchise-tax-and-llc` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/de-franchise-tax-and-llc. If neither is available, confirm every figure against the official source pages cited above before relying on it.

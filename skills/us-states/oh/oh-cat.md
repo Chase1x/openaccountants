@@ -3,7 +3,7 @@ name: oh-cat
 description: Ohio Commercial Activity Tax (CAT) — ORC Chapter 5751
 jurisdiction: US-OH
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Ohio Department of Taxation, CAT](https://tax.ohio.gov/business/commercial-activity-tax); [Information Release CAT 2023-01](https://tax.ohio.gov/business/ohio-business-taxes/commercial-activities/information-releases/cat2023-01-iss-aug-2023))
 
-This Guide covers the Ohio **commercial activity tax (CAT)**, Ohio Revised Code (R.C.) Chapter 5751, for **tax year 2026**, with a dated section for **2025** and a short history for earlier years. The CAT is "an annual tax imposed on the privilege of doing business in Ohio". It is measured by Ohio **taxable gross receipts (TGR)**, not by profit. It is **not an income tax**.
+This skill covers the Ohio **commercial activity tax (CAT)**, Ohio Revised Code (R.C.) Chapter 5751, for **tax year 2026**, with a dated section for **2025** and a short history for earlier years. The CAT is "an annual tax imposed on the privilege of doing business in Ohio". It is measured by Ohio **taxable gross receipts (TGR)**, not by profit. It is **not an income tax**.
 
 Figures are for tax year 2026. The Department states the $6 million exclusion for "tax years 2025 and forward", so the 2025 figures also apply to 2026. No change for 2026 had been published on 25 September 2026.
 
@@ -267,7 +267,7 @@ These use hypothetical amounts. Each is for calendar year 2026 unless it says ot
 - **Excluded-person status in doubt:** a nonprofit with commercial activity, a utility or a financial-institution affiliate.
 - **Unfiled years, notices or assessments.** Consider the voluntary disclosure program: a three-year lookback, penalties waived, tax and interest still due ([Department TGR page](https://tax.ohio.gov/business/commercial-activity-tax/commercial-activity-tax-taxable-gross-receipts)).
 - **Credits**, including the jobs, research and historic preservation credits. The film and theater capital improvement credit was repealed by H.B. 96 effective 30 September 2025, but credits issued earlier can still be claimed.
-- **Any statutory point you need to cite in a dispute.** The Ohio Revised Code site could not be reached for this Guide; confirm the section text there.
+- **Any statutory point you need to cite in a dispute.** The Ohio Revised Code site could not be reached for this skill; confirm the section text there.
 
 ## Filing and payment ([Department CAT page](https://tax.ohio.gov/business/commercial-activity-tax); [CAT 2023-01](https://tax.ohio.gov/business/ohio-business-taxes/commercial-activities/information-releases/cat2023-01-iss-aug-2023); [CAT 1 instructions](https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/forms/cat/generic/cat_cat1_ins.pdf); [CAT 2005-13](https://tax.ohio.gov/static/commercial_activities/information_releases/CAT_2005-13_EstimatedPaymentsforCalendarQuarterTaxpayers-UpdatedMay2020.pdf); [Department interest rates](https://tax.ohio.gov/individual/resources/interest-rates); [CAT filing reminder](https://tax.ohio.gov/static/ohiotaxalert/archivedalerts/cat-filingreminder-11124.pdf))
 

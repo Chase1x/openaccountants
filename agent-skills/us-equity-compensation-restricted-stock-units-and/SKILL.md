@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-equity-compensation-restricted-stock-units-and"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-10-03"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,9 +15,9 @@ metadata:
 
 # Equity compensation: RSUs, stock options, supplemental wage withholding and the section 83(i) deferral election in United States
 
-This Guide covers the federal tax on equity pay for employees and founders, and the payroll side for the employer: restricted stock and the section 83(b) election, restricted stock units (RSUs), nonstatutory stock options (NSOs), incentive stock options (ISOs) and the alternative minimum tax (AMT), the flat-rate withholding on supplemental wages, the cost basis trap on Form 1099-B, and the section 83(i) deferral election for private companies. Figures are for tax year 2026. Federal rules only; state tax is not covered. The 2026 figures come from Publication 15 (2026), Publication 15-B (2026) and Rev. Proc. 2025-32. The statute is read on the LII mirror of the U.S. Code (law.cornell.edu) as amended by Public Law 119-21 (the One Big Beautiful Bill Act, 4 July 2025). Some IRS method pages read on 3 October 2026 were still the 2025 editions (Publication 525, Instructions for Form 6251 and Form 8949); this Guide says so where it relies on them, and their rules, not their line numbers, are what it uses. Worked examples use hypothetical amounts and are labelled as such.
+This skill covers the federal tax on equity pay for employees and founders, and the payroll side for the employer: restricted stock and the section 83(b) election, restricted stock units (RSUs), nonstatutory stock options (NSOs), incentive stock options (ISOs) and the alternative minimum tax (AMT), the flat-rate withholding on supplemental wages, the cost basis trap on Form 1099-B, and the section 83(i) deferral election for private companies. Figures are for tax year 2026. Federal rules only; state tax is not covered. The 2026 figures come from Publication 15 (2026), Publication 15-B (2026) and Rev. Proc. 2025-32. The statute is read on the LII mirror of the U.S. Code (law.cornell.edu) as amended by Public Law 119-21 (the One Big Beautiful Bill Act, 4 July 2025). Some IRS method pages read on 3 October 2026 were still the 2025 editions (Publication 525, Instructions for Form 6251 and Form 8949); this skill says so where it relies on them, and their rules, not their line numbers, are what it uses. Worked examples use hypothetical amounts and are labelled as such.
 
-Related Guides: sale of the shares and the capital gain rates are in `us-capital-gains`; the section 1202 exclusion for founders' stock is in `us-section-1202-qsbs`; the employer's Form 941 and Form 940 filings are in `us-form-941-940-payroll`; the wider 2026 changes are in `us-2026-federal-tax-changes`.
+Related Skills: sale of the shares and the capital gain rates are in `us-capital-gains`; the section 1202 exclusion for founders' stock is in `us-section-1202-qsbs`; the employer's Form 941 and Form 940 filings are in `us-form-941-940-payroll`; the wider 2026 changes are in `us-2026-federal-tax-changes`.
 
 ## Who this is for
 
@@ -132,7 +132,7 @@ Section 70107 also removed the end date of the higher exemption amounts, and cha
 
 - An RSU is a promise to deliver shares (or cash) later. For section 83 the term property excludes "an unfunded and unsecured promise to pay money or property in the future" (26 CFR 1.83-3(e), https://www.ecfr.gov/current/title-26/section-1.83-3). So nothing is transferred at grant, and there is no section 83(b) election for an RSU. This is our reading of the regulation; the accountant should confirm it for any RSU that is funded or secured.
 - When the RSU settles in shares, Notice 2018-97 describes the income "that would otherwise be included under section 83(a) upon the transfer of stock pursuant to the exercise of a stock option or the settlement of a restricted stock unit (RSU)" (Notice 2018-97, https://www.irs.gov/pub/irs-drop/n-18-97.pdf). The value of the shares at settlement is wages and is not regular wages (our reading of the regulation's general definition), so the employer withholds under the supplemental wage rules in the first table.
-- Social security and Medicare tax apply to the same wages, subject to the wage base in the first table. This Guide does not cover the social security and Medicare timing of RSUs that settle after vesting (see When to refuse or refer).
+- Social security and Medicare tax apply to the same wages, subject to the wage base in the first table. This skill does not cover the social security and Medicare timing of RSUs that settle after vesting (see When to refuse or refer).
 
 ### Nonstatutory stock options (NSOs)
 
@@ -172,7 +172,7 @@ Section 70107 also removed the end date of the higher exemption amounts, and cha
 12. Section 83(i), private companies only: test the corporation (no stock readily tradable on an established securities market during any preceding calendar year; written plan covering not less than 80 percent of U.S. employees with the same rights and privileges; the redemption limit) and the employee (not an excluded employee under any of the four tests in the section 83 table) (https://www.law.cornell.edu/uscode/text/26/83). Qualified stock comes only from an option exercise or RSU settlement, never from a restricted stock award, and not where the employee may take cash instead (https://www.irs.gov/publications/p525).
 13. Section 83(i): the corporation gives the section 83(i)(6) notice (https://www.irs.gov/pub/irs-drop/n-18-97.pdf). The employee elects within 30 days, under Notice 2018-97, not on Form 15620 (https://www.irs.gov/publications/p525). No election is possible if the employee made a section 83(b) election for the same stock, or if any stock of the corporation is readily tradable at any time before the election is made (section 83(i)(4)(B)). An 83(i) election on an option exercise means the option is no longer treated as an ISO (https://www.irs.gov/publications/p15b).
 14. Section 83(i) payroll: the election defers income tax only. It "has no effect on the application of social security, Medicare, and FUTA taxes" (https://www.irs.gov/publications/p15b). When the deferral ends, include the amount in wages, withhold income tax at the rate in the Publication 15-B table, and report it in Form W-2 box 12 with code GG; report the total deferred at year end with code HH. Recover withholding paid from the employer's own funds before the date in the Notice 2018-97 table (https://www.irs.gov/pub/irs-drop/n-18-97.pdf).
-15. Where the official pages are silent, say so rather than fill the gap: none of the pages read here gives a valuation method for private company stock, and this Guide states none.
+15. Where the official pages are silent, say so rather than fill the gap: none of the pages read here gives a valuation method for private company stock, and this skill states none.
 
 ## Worked examples (hypothetical amounts)
 
@@ -240,9 +240,9 @@ The employee should pay the shortfall through estimated tax or a higher Form W-4
 
 - State and local income tax on equity pay, including sourcing for employees who moved or worked in more than one state.
 - Social security and Medicare tax timing for RSUs or deferred stock units that settle after vesting (section 3121(v)(2)), and section 409A treatment of deferred units and discounted options.
-- ISOs granted to a holder of more than 10 percent of the voting power, ISO modifications, and ESPP offerings under section 423 beyond the reporting step in this Guide.
+- ISOs granted to a holder of more than 10 percent of the voting power, ISO modifications, and ESPP offerings under section 423 beyond the reporting step in this skill.
 - AMT where the taxpayer also has other preference items, foreign tax credit, or a minimum tax credit already carried forward: run the full Form 6251 and Form 8801.
-- The due dates, penalties and electronic filing rules for Forms 3921, 3922 and W-2, none of which are stated in this Guide.
+- The due dates, penalties and electronic filing rules for Forms 3921, 3922 and W-2, none of which are stated in this skill.
 - Equity granted to non-employees, partners, or by a partnership or LLC, and equity granted by a non-US parent.
 - Securities law questions, including section 16(b) exposure, beyond the effect section 83(c)(3) gives it.
 - Valuation of private company stock, and any case where the fair market value at the taxable event is in dispute.
@@ -291,4 +291,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-03. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-equity-compensation-restricted-stock-units-and` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-equity-compensation-restricted-stock-units-and. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-equity-compensation-restricted-stock-units-and` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-equity-compensation-restricted-stock-units-and. If neither is available, confirm every figure against the official source pages cited above before relying on it.

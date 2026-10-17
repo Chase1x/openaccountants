@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/gb-vat-eu-goods-sellers"
   jurisdiction: "GB"
   tax_year: "2026"
-  last_updated: "2026-10-04"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 If your business sells goods from the EU to customers in Great Britain, who accounts for UK VAT depends on where the goods are when sold, who buys them and whether a marketplace handles the sale. The table below helps you identify your route before you set prices, configure checkout or prepare your VAT return. [HMRC direct sales](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-directly-to-customers-in-the-uk), [HMRC marketplace sales](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-to-customers-in-the-uk-using-online-marketplaces).
 
-For tax year 2026, this Guide covers calendar-year sales by EU businesses not established in the UK to customers in England, Scotland and Wales. Northern Ireland, services, excise goods, gifts and special import arrangements need separate guidance. Your dispatch country's export treatment also needs its own assessment. A UK VAT number or warehouse address alone does not establish where your business is based for VAT. [HMRC scope](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-directly-to-customers-in-the-uk)
+For tax year 2026, this skill covers calendar-year sales by EU businesses not established in the UK to customers in England, Scotland and Wales. Northern Ireland, services, excise goods, gifts and special import arrangements need separate guidance. Your dispatch country's export treatment also needs its own assessment. A UK VAT number or warehouse address alone does not establish where your business is based for VAT. [HMRC scope](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-directly-to-customers-in-the-uk)
 
 Sources checked on 4 October 2026. Check again if the rules or your sales arrangements change.
 
@@ -75,7 +75,7 @@ Classify the product before selecting the rate. The standard rate is 20%, but re
 
 Keep sales where you account for VAT separate from marketplace-accounted sales, deemed supplies, qualifying B2B reverse-charge sales and ordinary imports. This makes the return easier to reconcile. Compare gross orders with tax reports, refunds, fees, payments and stock movements: a platform's net payout is not your taxable sales total.
 
-Assign the correct return period using the applicable tax-point rules. Prepare a return mapping only after the transaction classification is complete; use the UK VAT-return Guide and current return instructions for actual boxes and deadlines. Retain the decision, source version and evidence beside the transaction. For direct overseas sales, HMRC requires full VAT records for six years. [HMRC tax points and accounting](https://www.gov.uk/guidance/vat-guide-notice-700), [direct-sale record retention](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-directly-to-customers-in-the-uk)
+Assign the correct return period using the applicable tax-point rules. Prepare a return mapping only after the transaction classification is complete; use the UK VAT-return Skill and current return instructions for actual boxes and deadlines. Retain the decision, source version and evidence beside the transaction. For direct overseas sales, HMRC requires full VAT records for six years. [HMRC tax points and accounting](https://www.gov.uk/guidance/vat-guide-notice-700), [direct-sale record retention](https://www.gov.uk/guidance/vat-and-overseas-goods-sold-directly-to-customers-in-the-uk)
 
 ## Linked figures
 
@@ -139,4 +139,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-04. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `gb-vat-eu-goods-sellers` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/gb-vat-eu-goods-sellers. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `gb-vat-eu-goods-sellers` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/gb-vat-eu-goods-sellers. If neither is available, confirm every figure against the official source pages cited above before relying on it.

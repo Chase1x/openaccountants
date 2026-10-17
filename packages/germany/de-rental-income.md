@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German rental income taxation (
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -21,11 +21,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 An individual's income from letting land, buildings and flats held as **private assets** ([§ 21 EStG](https://www.gesetze-im-internet.de/estg/__21.html)): income, deductible costs (Werbungskosten), building depreciation (AfA, including the 3% and declining-balance rules for new builds and § 7b), maintenance versus acquisition cost (the 15% rule), cheap lets (the 66% rule), holiday and short-term lets, losses, a sale within ten years, and Anlage V.
 
-- **Who.** Private landlords resident in Germany and their preparers. Letting income that belongs to another kind of income, such as property held in a business or by a trading partnership, is taxed there (§ 21(3) EStG) and is outside this Guide.
+- **Who.** Private landlords resident in Germany and their preparers. Letting income that belongs to another kind of income, such as property held in a business or by a trading partnership, is taxed there (§ 21(3) EStG) and is outside this skill.
 - **Which year.** Tax year 2026, the calendar year. The consolidated EStG as read applies from 2026 ([§ 52(1) EStG](https://www.gesetze-im-internet.de/estg/__52.html): "erstmals für den Veranlagungszeitraum 2026 anzuwenden"). For the 2025 returns being filed now, see "Returns being filed now: tax year 2025".
 - **Forms.** The 2026 instructions were not on ELSTER on 27 September 2026. Form names, line numbers, the cheap-let forecast test and the official example come from the [ELSTER instructions for the 2025 return](https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2025) ("2025 instructions"). Check the 2026 form when published.
 - **Measure.** Receipts less Werbungskosten ([§ 2(2) EStG](https://www.gesetze-im-internet.de/estg/__2.html)), cash basis. The result joins the client's other income at the normal tariff, plus solidarity surcharge and church tax (tariff: `de-einkommensteuer-freelancer`).
-- **Related Guides.** `de-capital-gains` (sales), `germany-vat-return` (VAT), `de-trade-tax` (a letting activity that is a trade), `de-freelance-intake` (intake and routing).
+- **Related Skills.** `de-capital-gains` (sales), `germany-vat-return` (VAT), `de-trade-tax` (a letting activity that is a trade), `de-freelance-intake` (intake and routing).
 
 ## Ask the client first
 
@@ -92,7 +92,7 @@ All apply to tax year 2026 and were the same in 2025 unless marked.
 
 ### Building depreciation (AfA, [§ 7 EStG](https://www.gesetze-im-internet.de/estg/__7.html))
 
-- **Completion date decides the rate**, not the purchase date. The rates apply to every privately held building, housing or not, including condominiums and separate parts of a building (§ 7(5b)). The separate 3% rate for **business-asset** buildings not used for housing (§ 7(4) sentence 1 no. 1) is outside this Guide; never use it for a private shop or office completed before 2023.
+- **Completion date decides the rate**, not the purchase date. The rates apply to every privately held building, housing or not, including condominiums and separate parts of a building (§ 7(5b)). The separate 3% rate for **business-asset** buildings not used for housing (§ 7(4) sentence 1 no. 1) is outside this skill; never use it for a private shop or office completed before 2023.
 - **Shorter actual life.** If the actual useful life is under 33 years (built after 2022), 50 years (1925 to 2022) or 40 years (before 1925), that life may be used (§ 7(4) sentence 2). The 2025 instructions call this an exceptional case needing proof and cite the BMF letter of 22 February 2023. Refer.
 - **Older staged rates.** A building built or bought in its completion year under an application or contract before 1 January 2006 (housing; earlier dates otherwise) may be on the staged rates of § 7(5). Ask what past returns used; refer any change of method.
 - **Acquired for free**: continue the previous owner's rate (2025 instructions).
@@ -300,7 +300,7 @@ From the 2025 instructions; check the 2026 form. Bank-text keywords in brackets.
 | 80 to 83 | Other costs (travel, adviser, tenant broker, low-value items, input VAT); 83 total |
 | 85 to 89 | Result and sharing 85-86; cheap-let cut 87-88; acquisition grants 89 |
 
-The instructions name the content of lines 46 to 51 and 55 to 72, the Hausgeld settlement (73 to 75) and, in the official example, account fees (76 to 78); other keyword placements are this Guide's reading of the headings and do not change the total in line 83. **Exclude**: principal (TILGUNG), own transfers, deposit refunds, reserve payments until spent, personal taxes. Transfer tax (GRUNDERWERBSTEUER) goes into acquisition cost.
+The instructions name the content of lines 46 to 51 and 55 to 72, the Hausgeld settlement (73 to 75) and, in the official example, account fees (76 to 78); other keyword placements are this skill's reading of the headings and do not change the total in line 83. **Exclude**: principal (TILGUNG), own transfers, deposit refunds, reserve payments until spent, personal taxes. Transfer tax (GRUNDERWERBSTEUER) goes into acquisition cost.
 
 ## Completion checklist
 

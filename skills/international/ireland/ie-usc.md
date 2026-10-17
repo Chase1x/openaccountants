@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Ireland's Universal Social Char
 version: 2.0
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-10-02
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ireland Universal Social Charge (USC)
 
-This Guide works out the Universal Social Charge (USC) for an individual in Ireland: the exemption test, the standard rate bands, the reduced rates for people aged 70 or over and full medical card holders, the surcharge on non-PAYE income, and how USC is paid. Figures are for tax year 2026. The Irish tax year is the calendar year. Every figure below comes from a Revenue page or the Revenue Tax and Duty Manual on USC, linked in the table that holds it.
+This skill works out the Universal Social Charge (USC) for an individual in Ireland: the exemption test, the standard rate bands, the reduced rates for people aged 70 or over and full medical card holders, the surcharge on non-PAYE income, and how USC is paid. Figures are for tax year 2026. The Irish tax year is the calendar year. Every figure below comes from a Revenue page or the Revenue Tax and Duty Manual on USC, linked in the table that holds it.
 
 ## Section 1: Quick reference
 
@@ -60,7 +60,7 @@ Before computing any USC figure, get these facts. If the tax year is unknown, st
 
 ### Refusal catalogue
 
-- **R-IE-USC-1: Cross-border USC treatment.** Trigger: a non-resident, a frontier worker, a person with foreign employment income under Transborder Workers Relief, or a person covered by another EU state's social security scheme who claims a medical card under EU rules. Message: "Cross-border USC treatment depends on facts this Guide does not cover. Refer to a qualified practitioner." The Tax and Duty Manual (Section 3 table) treats these cases in its own chapters.
+- **R-IE-USC-1: Cross-border USC treatment.** Trigger: a non-resident, a frontier worker, a person with foreign employment income under Transborder Workers Relief, or a person covered by another EU state's social security scheme who claims a medical card under EU rules. Message: "Cross-border USC treatment depends on facts this skill does not cover. Refer to a qualified practitioner." The Tax and Duty Manual (Section 3 table) treats these cases in its own chapters.
 - **R-IE-USC-2: Property relief surcharge.** Trigger: income sheltered by property or area-based incentive reliefs, especially with the High Earners Restriction. Message: "The property relief surcharge needs the relief ordering rules in the Tax and Duty Manual. Refer."
 - **R-IE-USC-3: Bank bonuses.** Trigger: a bonus from a State-supported bank. Refer.
 
@@ -174,7 +174,7 @@ End date. For full medical card holders aged under 70, the reduced rate "shall c
 
 | Question | Answer |
 | --- | --- |
-| Is USC part of PRSI? | No. PRSI is a separate charge, not covered by this Guide |
+| Is USC part of PRSI? | No. PRSI is a separate charge, not covered by this skill |
 | Do income tax credits reduce USC? | No. The Manual: a person with no income tax liability because of tax credits, losses or capital allowances "may still have a liability to USC" |
 | Are pension contributions deducted before USC? | No for employee contributions. Employer PRSA and PEPP contributions are exempt from USC (Manual, Section 11) |
 | Are capital allowances deducted before USC? | Yes, for a person actively carrying on the trade; not for lessors and passive investors (Manual, Section 7) |
@@ -195,7 +195,7 @@ End date. For full medical card holders aged under 70, the reduced rate "shall c
 
 ## Section 7: Total marginal burden context
 
-The live version of this Guide showed combined income tax, PRSI and USC rates. Those combined rates are not printed on any Revenue page and the PRSI rate it used was out of date, so they are removed. Work out income tax, PRSI and USC separately and add the euro amounts, never the rates. The only combined rate Revenue prints for USC is the rate on non-PAYE income above the surcharge threshold, in the Section 4 table.
+The live version of this skill showed combined income tax, PRSI and USC rates. Those combined rates are not printed on any Revenue page and the PRSI rate it used was out of date, so they are removed. Work out income tax, PRSI and USC separately and add the euro amounts, never the rates. The only combined rate Revenue prints for USC is the rate on non-PAYE income above the surcharge threshold, in the Section 4 table.
 
 ## Section 8: Edge case registry
 
@@ -262,14 +262,14 @@ Recommended: [most likely correct treatment and why]
 Action Required: Qualified practitioner must confirm before advising client.
 ~~~
 
-When a situation is outside the scope of this Guide:
+When a situation is outside the scope of this skill:
 
 ~~~
 ESCALATION REQUIRED
 Tier: T3
 Client: [name]
 Situation: [description]
-Issue: [outside the scope of this Guide]
+Issue: [outside the scope of this skill]
 Action Required: Do not advise. Refer to qualified practitioner. Document gap.
 ~~~
 
@@ -315,7 +315,7 @@ Use the Revenue examples in Section 8 and Section 4 as the tests. Each must repr
 - A Week 53 pay day where the result depends on the band increase (EC7).
 - A result that turns on whether DSP payments count toward the exemption test (Section 3).
 - A tax year other than 2026. Budget 2027 is due in October 2026 and will change figures for 2027 only.
-- Ex-gratia redundancy payments (limits are outside this Guide).
+- Ex-gratia redundancy payments (limits are outside this skill).
 
 ## Sources
 
@@ -333,9 +333,9 @@ Use the Revenue examples in Section 8 and Section 4 as the tests. Each must repr
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CTA, AITI, or equivalent licensed practitioner in Ireland) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CTA, AITI, or equivalent licensed practitioner in Ireland) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

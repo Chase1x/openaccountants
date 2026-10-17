@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-10-01
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers starting a business in the Netherlands in tax year 2026 (calendar year):
+This skill covers starting a business in the Netherlands in tax year 2026 (calendar year):
 
 - choosing between an **eenmanszaak** (sole trader), a **VOF** (general partnership) and a **BV**
   (private limited company), with the NV only as a comparison point;
@@ -124,7 +124,7 @@ rule of thumb.
   an enterprise for the Handelsregister, or a foreign legal form with no establishment in the
   Netherlands), register with the Belastingdienst on the form "Opgaaf startende onderneming (niet
   ingeschreven in het Handelsregister)".
-- **KVK fee and online steps: check at KVK.** This Guide does not state a fee.
+- **KVK fee and online steps: check at KVK.** This skill does not state a fee.
 
 Sources: [Handelsregisterwet 2007](https://wetten.overheid.nl/BWBR0021777/2025-07-16);
 [Belastingdienst: schrijf uw onderneming in](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/ondernemen/onderneming_starten/schrijf-uw-onderneming-in/schrijf-uw-onderneming-in).

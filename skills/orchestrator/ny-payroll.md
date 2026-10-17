@@ -3,7 +3,7 @@ name: ny-payroll
 description: Tier 2 New York content skill for employer payroll compliance covering tax year 2025. Includes the 10.9% PIT top rate, supplemental wage rate 11.7% (one of highest in US), the NYS-45 single quarterly combined return for withholding/UI/wage reporting, NYC resident withholding 3.078-3.876%, Yonkers resident +1.6135%, PFL 0.388% (max ~$354/year), DBL mandatory private insurance, MCTMT employer payroll tax in the 12-county MCTD (Zone 1 up to 0.60%, Zone 2 up to 0.34%), the convenience-of-the-employer rule preserving NY source for remote workers, and Wage Theft Prevention Act notice requirements.
 jurisdiction: US-NY
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # New York employer payroll: withholding, NYS-45, unemployment insurance, PFL, disability, MCTMT and wage notices (2026, with 2025 notes)
 
-Figures are for 2026 unless a line says 2025. Withholding amounts come from the Tax Department's 2026 tables, which apply to payrolls made on or after January 1, 2026 ([NYS-50-T-NYS (1/26)](https://www.tax.ny.gov/pdf/publications/withholding/nys50_t_nys.pdf)). This Guide points to those tables and does not reproduce them. A dated section near the end covers 2025 payrolls.
+Figures are for 2026 unless a line says 2025. Withholding amounts come from the Tax Department's 2026 tables, which apply to payrolls made on or after January 1, 2026 ([NYS-50-T-NYS (1/26)](https://www.tax.ny.gov/pdf/publications/withholding/nys50_t_nys.pdf)). This skill points to those tables and does not reproduce them. A dated section near the end covers 2025 payrolls.
 
 ## Scope and who this is for
 
@@ -32,7 +32,7 @@ Figures are for 2026 unless a line says 2025. Withholding amounts come from the 
   - final pay timing, pay frequency and wage deductions under Labor Law §§191 to 193 (check with the Department of Labor);
   - overtime rules and industry minimum wages (fast food, home care, tipped, farm);
   - public employers.
-- **Remote and cross-border workers.** Where a nonresident works partly outside New York, the employer allocates wages by days worked. The convenience-of-the-employer rule can treat days worked at home outside New York as New York days. That rule, and residency tests, are covered in the Guide **us-multi-state-residency-and-allocation**. Use it for any employee who lives or works outside New York.
+- **Remote and cross-border workers.** Where a nonresident works partly outside New York, the employer allocates wages by days worked. The convenience-of-the-employer rule can treat days worked at home outside New York as New York days. That rule, and residency tests, are covered in the skill **us-multi-state-residency-and-allocation**. Use it for any employee who lives or works outside New York.
 
 ## Ask the client first
 
@@ -194,7 +194,7 @@ Tax is then computed zone by zone. For each zone, the rate for that zone's payro
 | PFL contribution | 0.432% of gross wages each period, stopping at $411.91 for 2026 | [2026 deduction notice](https://www.wcb.ny.gov/content/main/forms/PFLDocs/pfl-pay-deduction-notice-2026.pdf) |
 | Late UI contributions | Contributions received **more than 60 days** after the quarterly due date are not credited for experience rating | [NYS-45-I (1/26)](https://www.tax.ny.gov/pdf/current_forms/wt/nys45i.pdf) |
 | WTPA notice update | Give a new notice within 7 days of a change, unless the next pay statement shows it. A pay cut needs written notice before it takes effect. Hospitality employers give a new notice for every rate change | [WTPA FAQ](https://dol.ny.gov/wage-theft-prevention-act-frequently-asked-questions) |
-| Remote nonresident employee | Days worked at home outside New York may still count as New York days under the convenience rule. Use the Guide us-multi-state-residency-and-allocation | [NYS-50](https://www.tax.ny.gov/forms/publications/wt/nys50.htm) |
+| Remote nonresident employee | Days worked at home outside New York may still count as New York days under the convenience rule. Use the skill us-multi-state-residency-and-allocation | [NYS-50](https://www.tax.ny.gov/forms/publications/wt/nys50.htm) |
 
 ## Worked cases
 
@@ -271,12 +271,12 @@ The dollar amounts in these cases are made up for illustration. The rates and th
 
 ## When to refuse or refer
 
-- **Refer** any employee who lives or works outside New York, is a remote worker, or moved during the year. Use the Guide us-multi-state-residency-and-allocation for residency, day allocation and the convenience rule. Do not guess an allocation percentage.
+- **Refer** any employee who lives or works outside New York, is a remote worker, or moved during the year. Use the skill us-multi-state-residency-and-allocation for residency, day allocation and the convenience rule. Do not guess an allocation percentage.
 - **Refer** multistate UI questions, meaning which state's UI covers a worker who works in more than one state. Refer MCTMT allocation of employees who work partly inside the MCTD. Both follow localization tests that need the facts.
 - **Refuse** to compute New York withholding from the tax return rate schedules. Use NYS-50-T tables or the exact calculation method for the right year.
 - **Refer** worker classification, overtime exemptions, industry minimum wages, and WTPA litigation to an employment lawyer.
 - **Refer** PrompTax enrolment, successor employer UI transfers, voluntary UI contributions, and any UI rate dispute to the Department of Labor.
-- **Say so** when a figure is not yet confirmed. The 2025 new employer UI rate is open in this Guide. The 2027 minimum wage is not yet set.
+- **Say so** when a figure is not yet confirmed. The 2025 new employer UI rate is open in this skill. The 2027 minimum wage is not yet set.
 
 ## Filing and payment
 
@@ -311,7 +311,7 @@ The dollar amounts in these cases are made up for illustration. The rates and th
 - MCTMT was tested each quarter against $312,500. MTA-305 was filed with the right table for the quarter's start date ([MCTMT for employers](https://www.tax.ny.gov/bus/mctmt/emp.htm)).
 - Pay rates are at or above the regional minimum wage for 2026.
 - WTPA notices are signed and kept, and pay statements show all required items.
-- Remote or out-of-state employees were checked against the Guide us-multi-state-residency-and-allocation.
+- Remote or out-of-state employees were checked against the skill us-multi-state-residency-and-allocation.
 
 <!-- openaccountants-cta-block -->
 

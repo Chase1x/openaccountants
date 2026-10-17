@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Swedish payroll processing, emp
 version: 1.0
 jurisdiction: SE
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -217,7 +217,7 @@ Assumptions: regular monthly employee, column 1, independently established annua
 
 Retain the signed payroll calculation, tax-table/decision evidence, benefit valuations, coverage certificates, payee statements, bank-payment control, submitted PAYE receipt and tax-account reconciliation. Close the payroll only when the cash, tax and contribution records agree.
 
-A payroll input involving collective-agreement wages, disputed holiday entitlement, a pension plan, equity/options, severance, a work permit, specialised contribution relief or a country-specific social-security convention needs the applicable contract, decision and official specialist method before computation. Record the missing input and responsible reviewer. This Guide supplies the ordinary PAYE workflow; it does not supply a universal pension premium, benefit valuation or employment entitlement. Employer pension costs also carry special payroll tax on pension costs at 24.26% of the cost; it is declared in the employer's income tax return, not in the PAYE return. [Official source](https://data.riksdagen.se/dokument/sfs-1991-687.text) [Official source](https://data.riksdagen.se/dokument/sfs-2011-1244.text)
+A payroll input involving collective-agreement wages, disputed holiday entitlement, a pension plan, equity/options, severance, a work permit, specialised contribution relief or a country-specific social-security convention needs the applicable contract, decision and official specialist method before computation. Record the missing input and responsible reviewer. This skill supplies the ordinary PAYE workflow; it does not supply a universal pension premium, benefit valuation or employment entitlement. Employer pension costs also carry special payroll tax on pension costs at 24.26% of the cost; it is declared in the employer's income tax return, not in the PAYE return. [Official source](https://data.riksdagen.se/dokument/sfs-1991-687.text) [Official source](https://data.riksdagen.se/dokument/sfs-2011-1244.text)
 
 <!-- openaccountants-cta-block -->
 

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/estonia-vat-return"
   jurisdiction: "EE"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers the monthly Estonian VAT return, form KMD, and its annex, form KMD INF, for a person registered as liable to VAT in Estonia (a company such as an OÜ or AS, or a sole proprietor, FIE). It covers the rates in force for 2026 periods, the registration threshold, the monthly deadline and payment, domestic and cross-border reverse charge, the report on intra-Community supply (form VD), the OSS and IOSS special schemes at a summary level, corrections, bad-debt relief, and interest on late payment.
+This skill covers the monthly Estonian VAT return, form KMD, and its annex, form KMD INF, for a person registered as liable to VAT in Estonia (a company such as an OÜ or AS, or a sole proprietor, FIE). It covers the rates in force for 2026 periods, the registration threshold, the monthly deadline and payment, domestic and cross-border reverse charge, the report on intra-Community supply (form VD), the OSS and IOSS special schemes at a summary level, corrections, bad-debt relief, and interest on late payment.
 
 The primary year is 2026. Estonia's taxable period is one calendar month, so every 2026 month is filed under the rules below. A short dated section near the end covers 2025 periods, which straddle the 1 July 2025 rate change.
 
@@ -250,7 +250,7 @@ A company invoices EUR 3,500 of consulting to a German business with a valid Ger
 - **VAT groups**: joint return, separate annexes, joint liability.
 - **Import VAT on the KMD (line 4¹)**: only with an ETCB authorisation.
 - **Bad-debt relief where the claim includes more than EUR 30,000 of VAT**: needs a court judgment in force.
-- **OSS or IOSS returns**: this Guide covers only when they apply and their deadlines.
+- **OSS or IOSS returns**: this skill covers only when they apply and their deadlines.
 - **Any period before 2025** other than the credit-note lines: check the form version valid for that period.
 
 ## Filing and payment
@@ -272,7 +272,7 @@ A company invoices EUR 3,500 of consulting to a German business with a valid Ger
 
 **Bad-debt relief (§ 29¹).** A seller can reduce output VAT on an unpaid invoice if all conditions are met: a compliant invoice was issued and its VAT declared in the right period; the claim was not assigned; at least 12 months and no more than three years have passed since the payment due date (the ETCB notes an exception, "except in case described in clause 6"; check § 29¹ of the Act if it may apply); the claim is written off in the accounts after all feasible collection efforts (or collection would cost more than the claim); a court judgment in force if the claim includes more than EUR 30,000 of VAT; the buyer is not an associated person; and the buyer is told in writing in the month of write-off. The reduction goes in the line for the original invoice's rate, which reduces line 4: line 1 for 24%, 1² for 22%, 1¹ for 20%, 2 for 9%, 2² for 13%, 2¹ for 5%. Relief needs 12 months to pass, so most 2026 claims concern invoices from before July 2025 at 22% and go in line 1²; the buyer reduces its input VAT in line 5; both show the invoice again with minus figures in KMD INF. If the debt is later paid, VAT is declared again.
 
-**Penalties.** The KMD carries a declaration that incorrect or inaccurate information is punishable under the Taxation Act. Late payment always attracts interest. The ETCB's English pages checked for this Guide do not give a fine schedule for late filing; check the Taxation Act before quoting a figure.
+**Penalties.** The KMD carries a declaration that incorrect or inaccurate information is punishable under the Taxation Act. Late payment always attracts interest. The ETCB's English pages checked for this skill do not give a fine schedule for late filing; check the Taxation Act before quoting a figure.
 
 **From 2027.** The ETCB announced that businesses will be able to submit the source data for the VAT calculation in a standardised xbrl_GL format over X-tee instead of the form-based return; other methods remain.
 
@@ -321,4 +321,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `estonia-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/estonia-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `estonia-vat-return` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/estonia-vat-return. If neither is available, confirm every figure against the official source pages cited above before relying on it.

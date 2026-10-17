@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch tax objection procedures 
 version: 1.0
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Use this method for Dutch national tax objections handled by the Belastingdienst. Establish the tax, year, taxpayer, document and procedural stage before drafting. A tax assessment, payment on a return, provisional assessment, objection decision and complaint about service require different responses. Collect the complete notice and its remedy instructions, envelope or electronic delivery record, return, payment evidence, earlier correspondence, disputed items and supporting documents. Record the actual taxpayer and any representative's authority; do not invent missing facts.
 
-Identify administrative penalties separately from the tax calculation. A criminal tax penalty or investigation needs specialist criminal advice, rather than the ordinary objection template. Local WOZ/property tax, customs and benefits (toeslagen) require their own authority and procedure; this Guide does not supply their substantive rules. The [official objection directory](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/) links the national tax routes. A [service complaint](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/programmas_en_formulieren/klachtenformulier) cannot substitute for an objection or appeal.
+Identify administrative penalties separately from the tax calculation. A criminal tax penalty or investigation needs specialist criminal advice, rather than the ordinary objection template. Local WOZ/property tax, customs and benefits (toeslagen) require their own authority and procedure; this skill does not supply their substantive rules. The [official objection directory](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/) links the national tax routes. A [service complaint](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/programmas_en_formulieren/klachtenformulier) cannot substitute for an objection or appeal.
 
 ## The method, step by step
 
@@ -57,7 +57,7 @@ The ordinary objection period is **6 weeks**. Under the national tax rule, it st
 
 File so the authority receives the objection before the period ends. For postal submission there is a limited rule: posting before the deadline is sufficient only if receipt occurs no later than **1 week** after that deadline. It is not another week to post. Preserve the full submitted document and proof of posting or portal receipt. When the statutory endpoint falls on a weekend or recognised holiday, apply the General Time Limits Act; check the actual calendar and legally recognised equivalent days rather than assuming ordinary business opening hours determine the deadline.
 
-If grounds are unfinished, file an identifiable, signed protective objection on time and ask to provide reasons later. Track the actual supplementation deadline; there is no universal extra period promised by this Guide. Missing grounds or other formal requirements can lead to inadmissibility after the opportunity to cure. Missing the ordinary time limit is not automatically the end of every remedy: excusable lateness is a fact-sensitive legal question. Record what prevented timely filing, when it ended and what happened next; submit promptly and seek advice, without promising acceptance.
+If grounds are unfinished, file an identifiable, signed protective objection on time and ask to provide reasons later. Track the actual supplementation deadline; there is no universal extra period promised by this skill. Missing grounds or other formal requirements can lead to inadmissibility after the opportunity to cure. Missing the ordinary time limit is not automatically the end of every remedy: excusable lateness is a fact-sensitive legal question. Record what prevented timely filing, when it ended and what happened next; submit promptly and seek advice, without promising acceptance.
 
 Sources: [AWR, deadline and appeal-start provisions](https://wetten.overheid.nl/BWBR0002320), [Awb, submission, cure and excusable lateness](https://wetten.overheid.nl/BWBR0005537), [General Time Limits Act](https://wetten.overheid.nl/BWBR0002448/2010-10-10), [authority deadline explanation](https://www.belastingdienst.nl/wps/wcm/connect/nl/bezwaar-en-beroep/content/wanneer-bericht-over-bezwaar).
 

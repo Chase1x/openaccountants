@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ga-corporate-and-ptet"
   jurisdiction: "US-GA"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,10 +17,10 @@ metadata:
 
 ## Scope and who this is for ([2025 IT-611 booklet](https://dor.georgia.gov/document/document/2025-it611-corporate-income-tax-instruction-booklet/download); [DOR corporate income and net worth tax](https://dor.georgia.gov/corporate-income-and-net-worth-tax))
 
-This Guide covers Georgia tax for **tax year 2026**, with a dated section for **2025 returns**. It covers:
+This skill covers Georgia tax for **tax year 2026**, with a dated section for **2025 returns**. It covers:
 - the corporate income tax on Form 600;
 - the corporate net worth tax, which C corporations report on Form 600 and S corporations on Form 600S;
-- the election by an S corporation (Form 600S) or a partnership (Form 700) to pay Georgia income tax at the entity level. This Guide calls it the pass-through entity tax (PTET) election. DOR calls it the "election to pay tax at the entity level";
+- the election by an S corporation (Form 600S) or a partnership (Form 700) to pay Georgia income tax at the entity level. This skill calls it the pass-through entity tax (PTET) election. DOR calls it the "election to pay tax at the entity level";
 - corporate and electing-entity estimated tax, penalties and filing.
 
 Figures are for tax year 2026 unless labelled 2025. The 2026 IT-611, IT-611S and IT-711 booklets were not published on 25 September 2026, so rules found only in the 2025 booklets are labelled 2025.
@@ -385,4 +385,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ga-corporate-and-ptet` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ga-corporate-and-ptet. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ga-corporate-and-ptet` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ga-corporate-and-ptet. If neither is available, confirm every figure against the official source pages cited above before relying on it.

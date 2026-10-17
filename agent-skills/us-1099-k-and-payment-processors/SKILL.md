@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-1099-k-and-payment-processors"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # US Form 1099-K: payment cards, payment apps and marketplaces (tax year 2026)
 
-Figures are for tax year 2026 (Forms 1099-K for calendar 2026, furnished in early 2027). A short dated section below covers **2025 returns**, which are still being filed on extension until 15 October 2026. This Guide is written from the payee's side: an individual, sole proprietor or single-member LLC who received a Form 1099-K and must reconcile it to Form 1040. It does not cover an issuer's own filing duties, entity returns (Forms 1065, 1120, 1120-S), or which Schedule C deductions are allowed.
+Figures are for tax year 2026 (Forms 1099-K for calendar 2026, furnished in early 2027). A short dated section below covers **2025 returns**, which are still being filed on extension until 15 October 2026. This skill is written from the payee's side: an individual, sole proprietor or single-member LLC who received a Form 1099-K and must reconcile it to Form 1040. It does not cover an issuer's own filing duties, entity returns (Forms 1065, 1120, 1120-S), or which Schedule C deductions are allowed.
 
 ## Scope and who it's for
 
@@ -166,7 +166,7 @@ Attach a short statement giving this bridge. [Schedule C line 1 statement](https
 
 - **Forms to the payee:** the filer must furnish Form 1099-K by 31 January of the following year: 31 January 2027 for 2026 activity. [26 U.S.C. §6050W(f)](https://www.law.cornell.edu/uscode/text/26/6050W)
 - **Wrong form:** contact the filer shown at the top left of the form, or the payment settlement entity shown at the bottom left. The IRS cannot correct a Form 1099-K. Do not delay filing waiting for a correction. [What to do with Form 1099-K](https://www.irs.gov/businesses/what-to-do-with-form-1099-k)
-- **2026 return:** file Form 1040 with Schedule C, Schedule 1, Form 8949 and Schedule D as needed. The 2026 Form 1040 and Schedule 1 instructions were not yet published when this Guide was written (September 2026). Confirm that the top-of-Schedule-1 entry space is unchanged and confirm the April 2027 due date when they appear. [Form 1040 instructions](https://www.irs.gov/instructions/i1040gi)
+- **2026 return:** file Form 1040 with Schedule C, Schedule 1, Form 8949 and Schedule D as needed. The 2026 Form 1040 and Schedule 1 instructions were not yet published when this skill was written (September 2026). Confirm that the top-of-Schedule-1 entry space is unchanged and confirm the April 2027 due date when they appear. [Form 1040 instructions](https://www.irs.gov/instructions/i1040gi)
 - **Extension:** Form 4868 gives an automatic 6-month extension to file. It does not extend the time to pay, and interest runs on unpaid tax from the original due date. [Form 1040 instructions (2025)](https://www.irs.gov/instructions/i1040gi)
 - **CP2000:** reply by the date printed on the notice, by upload, fax or mail as the notice says. [Understanding your CP2000](https://www.irs.gov/individuals/understanding-your-cp2000-series-notice)
 
@@ -211,4 +211,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-1099-k-and-payment-processors` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-1099-k-and-payment-processors. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-1099-k-and-payment-processors` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-1099-k-and-payment-processors. If neither is available, confirm every figure against the official source pages cited above before relying on it.

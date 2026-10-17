@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their US 
 version: 0.2
 jurisdiction: US-CA
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who it is for
 
-This Guide is the intake step for a **full-year California resident** who works for themselves as a sole proprietor, or through a **single-member LLC that is disregarded** for federal tax. It is written for tax year 2026, with a dated section for 2025 returns that are still being finished on extension.
+This skill is the intake step for a **full-year California resident** who works for themselves as a sole proprietor, or through a **single-member LLC that is disregarded** for federal tax. It is written for tax year 2026, with a dated section for 2025 returns that are still being finished on extension.
 
 Intake does not compute the return. It decides three things:
 
@@ -24,7 +24,7 @@ Intake does not compute the return. It decides three things:
 - which documents are needed;
 - which later work each answer routes to.
 
-The computation lives in two other Guides:
+The computation lives in two other skills:
 
 - `us-federal-return-assembly` covers Schedule C, Schedule SE, the self-employed deductions, QBI and Form 2210;
 - `ca-540-individual-return` covers Form 540, Schedule CA (540) and California estimated tax.

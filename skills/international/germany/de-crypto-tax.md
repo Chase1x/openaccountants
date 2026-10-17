@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German cryptocurrency taxation.
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -38,7 +38,7 @@ How Germany taxes an individual who is fully liable to German income tax and hol
 
 ## The method, step by step
 
-1. **Sort each asset** by function (Rn 2 to 4). Security tokens, NFTs and anything held in a business leave this Guide.
+1. **Sort each asset** by function (Rn 2 to 4). Security tokens, NFTs and anything held in a business leave this skill.
 2. **Sort each event.** Sale, swap or paying with crypto: private sale, § 23 EStG (Rn 54). Passive staking and lending: § 22 Nr. 3 EStG (Rn 48, 65). Mining or forging: test [§ 15(2) EStG](https://www.gesetze-im-internet.de/estg/__15.html) first (Rn 35 to 39). Moving coins between own wallets: no sale (Rn 54).
 3. **Fix the dates.** Central platform: the times it recorded. Direct trades, for example on a decentralised platform: as a rule the wallet times. A client who wants the contract date to count must prove it (Rn 55).
 4. **Pick the units sold** under Rn 61 and 62 (below), per wallet and per coin, and write the method down.
@@ -63,7 +63,7 @@ How Germany taxes an individual who is fully liable to German income tax and hol
 | Late-filing surcharge per started month (tax less prepayments and withholding) | 0.25%, at least EUR 25 | same | [§ 152(5) AO](https://www.gesetze-im-internet.de/ao_1977/__152.html) |
 | Flat tax on investment income, for contrast only: it does NOT apply to currency-token gains | 25% | 25% | [§ 32d(1) EStG](https://www.gesetze-im-internet.de/estg/__32d.html) |
 
-The two Freigrenzen are separate tests. They are never added together, and using one does not use up the other. Taxable crypto gains and income are added to the client's other income and taxed at the personal progressive rate, plus solidarity surcharge and, for members, church tax. The tariff is in [§ 32a EStG](https://www.gesetze-im-internet.de/estg/__32a.html) and in the German income tax Guide, `de-einkommensteuer-freelancer`; this Guide does not compute a rate.
+The two Freigrenzen are separate tests. They are never added together, and using one does not use up the other. Taxable crypto gains and income are added to the client's other income and taxed at the personal progressive rate, plus solidarity surcharge and, for members, church tax. The tariff is in [§ 32a EStG](https://www.gesetze-im-internet.de/estg/__32a.html) and in the German income tax skill, `de-einkommensteuer-freelancer`; this skill does not compute a rate.
 
 ## Private sales: selling, swapping and paying with crypto (§ 23 EStG)
 
@@ -111,7 +111,7 @@ This matches de-capital-gains.
 
 - **Mining and forging are purchases**: block reward and transaction fees are both received in exchange for a service (Rn 33, 34, 42).
 - **Business or not.** Block creation is a business under [§ 15(2) EStG](https://www.gesetze-im-internet.de/estg/__15.html) when independent, lasting (set up to be repeated, Rn 36), able to make a profit over time (Rn 37) and taking part in general trade, which offering computing power to the network already is (Rn 38). It is not private asset management (Rn 39). A mining pool can be a partnership depending on the contract; a staking pool is as a rule not one (Rn 40).
-- **As a business:** coins received are valued at market price when received (Rn 43). With a cash-basis profit statement the receipt is business income, and the coins' cost is deducted only when they are sold or withdrawn (Rn 44). Trade tax and bookkeeping follow; refer to a business Guide.
+- **As a business:** coins received are valued at market price when received (Rn 43). With a cash-basis profit statement the receipt is business income, and the coins' cost is deducted only when they are sold or withdrawn (Rn 44). Trade tax and bookkeeping follow; refer to a business skill.
 - **Not a business**, for example because it is not lasting: § 22 Nr. 3 income ([Rn 45](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Einkommensteuer/2025-03-06-einzelfragen-kryptowerte-bmf-schreiben.pdf?__blob=publicationFile&v=2)), valued at market price when received. Hardware and software (by depreciation where needed) and electricity are deductible costs (Rn 47). The EUR 256 limit above applies together with all other income from services (Rn 45).
 
 ### Airdrops (Rn 70 to 75)
@@ -132,7 +132,7 @@ This matches de-capital-gains.
 
 - **Utility tokens.** Redeeming a token for the product or service it stands for is not a sale (Rn 79). Selling a purchased utility token can be a private sale, also where it is used as a means of exchange (Rn 80).
 - **Security tokens** can be securities or other financial instruments; current income and gains can then be investment income under § 20 EStG at the flat rate, depending on the token's terms (Rn 81 to 86). Refer; see de-capital-gains.
-- **ICO.** Tokens bought in an ICO for euro or other coins are purchased (Rn 54); cost is what was given (Rn 59). The issuer's side is outside this Guide (Rn 76).
+- **ICO.** Tokens bought in an ICO for euro or other coins are purchased (Rn 54); cost is what was given (Rn 59). The issuer's side is outside this skill (Rn 76).
 
 ### NFTs
 
@@ -185,7 +185,7 @@ The enacted Kryptowerte-Steuertransparenz-Gesetz (KStTG) implements DAC8 and the
 | Airdrop with no market price at receipt | Value zero accepted | Rn 73 |
 | Unclaimed staking rewards at 31 December | Count at the latest at year end | Rn 48a |
 | Redeeming a utility token for its product | Not a sale | Rn 79 |
-| Spouses assessed jointly | Each spouse's own sales and services are tested against the limits; the allowed official sources for this Guide do not print that sentence. "Check" | § 23(3) s. 5; § 22 Nr. 3 EStG |
+| Spouses assessed jointly | Each spouse's own sales and services are tested against the limits; the allowed official sources for this skill do not print that sentence. "Check" | § 23(3) s. 5; § 22 Nr. 3 EStG |
 
 ## Worked cases (rules: [BMF letter](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Einkommensteuer/2025-03-06-einzelfragen-kryptowerte-bmf-schreiben.pdf?__blob=publicationFile&v=2), [§ 23 EStG](https://www.gesetze-im-internet.de/estg/__23.html))
 
@@ -259,7 +259,7 @@ The office can ask for an adviser-prepared return earlier (§ 149(4) AO). Late f
 
 - BMF letter of 6 March 2025 on crypto assets ([PDF](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Einkommensteuer/2025-03-06-einzelfragen-kryptowerte-bmf-schreiben.pdf?__blob=publicationFile&v=2)).- EStG, EStDV, AO and KStTG sections on gesetze-im-internet.de, each linked where it is used above.
 
-This Guide is general information, not tax advice. Have a Steuerberater check a return before it is filed.
+This skill is general information, not tax advice. Have a Steuerberater check a return before it is filed.
 
 <!-- openaccountants-cta-block -->
 

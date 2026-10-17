@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-fbar-fatca-reporting"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for
 
-This Guide decides whether a US person must file an FBAR, a Form 8938, both, or neither, for **calendar/tax year 2026** (filed in 2027), with a dated section for **2025** reports that are still inside their extended deadline on 15 October 2026. It covers individuals first; domestic entities are covered only at threshold level.
+This skill decides whether a US person must file an FBAR, a Form 8938, both, or neither, for **calendar/tax year 2026** (filed in 2027), with a dated section for **2025** reports that are still inside their extended deadline on 15 October 2026. It covers individuals first; domestic entities are covered only at threshold level.
 
 Two separate regimes. Filing one never satisfies the other.
 
@@ -30,7 +30,7 @@ Two separate regimes. Filing one never satisfies the other.
 
 Sources: IRS FBAR page https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar ; IRS comparison chart https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements ; Form 8938 instructions https://www.irs.gov/instructions/i8938 .
 
-This Guide produces a working paper. It is not a filed FBAR or return, and it never decides whether conduct was willful.
+This skill produces a working paper. It is not a filed FBAR or return, and it never decides whether conduct was willful.
 
 ## Ask the client first
 
@@ -227,4 +227,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-fbar-fatca-reporting` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-fbar-fatca-reporting. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-fbar-fatca-reporting` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-fbar-fatca-reporting. If neither is available, confirm every figure against the official source pages cited above before relying on it.

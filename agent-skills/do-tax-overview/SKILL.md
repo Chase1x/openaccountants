@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/do-tax-overview"
   jurisdiction: "DO"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([DGII: Impuesto sobre la Renta](https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx); [DGII Aviso 10-26](https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf))
 
-This Guide is a map of the main national taxes in the Dominican Republic as they stand on 25 September 2026. It covers:
+This skill is a map of the main national taxes in the Dominican Republic as they stand on 25 September 2026. It covers:
 
 - income tax (Impuesto sobre la Renta, ISR) for individuals and companies, including the 2026 personal scale and the new scale that starts in fiscal year 2027;
 - the corporate rate of 27%, and the temporary 30% rate for very large taxpayers;
@@ -27,7 +27,7 @@ This Guide is a map of the main national taxes in the Dominican Republic as they
 - the simplified regime for small taxpayers (Régimen Simplificado de Tributación, RST);
 - surcharges, interest and the main filing dates.
 
-All taxes here are administered by the Dirección General de Impuestos Internos (DGII). The legal base is the Tax Code, Law 11-92, as amended, most recently by **Law 30-26 of 18 June 2026** ("Ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional"). Law 30-26 changes many rules on different dates. DGII published a start-date table for it (Aviso 10-26), and this Guide follows that table.
+All taxes here are administered by the Dirección General de Impuestos Internos (DGII). The legal base is the Tax Code, Law 11-92, as amended, most recently by **Law 30-26 of 18 June 2026** ("Ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional"). Law 30-26 changes many rules on different dates. DGII published a start-date table for it (Aviso 10-26), and this skill follows that table.
 
 Amounts are in Dominican pesos (RD$). The official texts are in Spanish; Spanish terms are kept in brackets so you can match them to DGII forms.
 
@@ -325,4 +325,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `do-tax-overview` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/do-tax-overview. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `do-tax-overview` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/do-tax-overview. If neither is available, confirm every figure against the official source pages cited above before relying on it.

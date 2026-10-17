@@ -4,7 +4,7 @@ description: Home office expense patterns and deduction rules across the top 10 
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2026
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Home office and working from home deductions: one method, worked for the US, UK and Canada
 
-This Guide gives a shared method for claiming home office costs and works it through for the United States, the United Kingdom and Canada. Figures are for tax year 2026. For any other country, it routes to that country's own Guide and does not state that country's rates. Written by the OpenAccountants team. Check each figure against the linked official page before relying on it.
+This skill gives a shared method for claiming home office costs and works it through for the United States, the United Kingdom and Canada. Figures are for tax year 2026. For any other country, it routes to that country's own Guide and does not state that country's rates. Written by the OpenAccountants team. Check each figure against the linked official page before relying on it.
 
-## What this Guide covers
+## What this skill covers
 
 - Who can claim: the employee versus the self-employed person, which is the first fork in all three worked countries.
 - The use tests: exclusive use, regular use, principal place of business, and the meeting-clients alternative.
@@ -42,7 +42,7 @@ It does not cover capital gains on the sale of a home with a business part, rent
 
 ### Who can claim
 
-Employees cannot deduct a home office on their federal return. The IRS page states that "taxpayers can no longer claim a deduction for use of a home office as an employee, as miscellaneous itemized deductions for employee business expenses were eliminated for tax years beginning after 2017, even if the simplified method is used" ([IRS simplified option page](https://www.irs.gov/businesses/small-businesses-self-employed/simplified-option-for-home-office-deduction)). The old suspension ran for 2018 through 2025. Public Law 119-21 of 4 July 2025 substituted "beginning after 2017" for "2018 through 2025" in the heading of § 67(h) and struck out ", and before January 1, 2026" from its text, for taxable years beginning after 31 December 2025, so it now reads: "no miscellaneous itemized deduction shall be allowed for any taxable year beginning after December 31, 2017" ([26 U.S. Code § 67](https://www.law.cornell.edu/uscode/text/26/67)). The suspension therefore continues for 2026 with no end date. This Guide does not cover state returns, some of which may differ.
+Employees cannot deduct a home office on their federal return. The IRS page states that "taxpayers can no longer claim a deduction for use of a home office as an employee, as miscellaneous itemized deductions for employee business expenses were eliminated for tax years beginning after 2017, even if the simplified method is used" ([IRS simplified option page](https://www.irs.gov/businesses/small-businesses-self-employed/simplified-option-for-home-office-deduction)). The old suspension ran for 2018 through 2025. Public Law 119-21 of 4 July 2025 substituted "beginning after 2017" for "2018 through 2025" in the heading of § 67(h) and struck out ", and before January 1, 2026" from its text, for taxable years beginning after 31 December 2025, so it now reads: "no miscellaneous itemized deduction shall be allowed for any taxable year beginning after December 31, 2017" ([26 U.S. Code § 67](https://www.law.cornell.edu/uscode/text/26/67)). The suspension therefore continues for 2026 with no end date. This skill does not cover state returns, some of which may differ.
 
 The deduction is open to a self-employed person (Schedule C) whose space meets one of the use tests. Per [IRS Publication 587](https://www.irs.gov/publications/p587), you must use part of your home:
 - exclusively and regularly as your principal place of business; or
@@ -160,7 +160,7 @@ Per the [CRA business-use-of-home page](https://www.canada.ca/en/revenue-agency/
 
 ## Other countries: use the country Guide
 
-This Guide does not state rates for other countries. Use the country Guide:
+This skill does not state rates for other countries. Use the country Guide:
 
 | Country | Guide |
 | --- | --- |
@@ -205,11 +205,11 @@ If no country Guide covers home office costs, say so and refer the client to a l
 
 ## When to refuse or refer
 
-- Any country other than the US, UK or Canada: route to the country Guide above and do not quote rates from this Guide.
+- Any country other than the US, UK or Canada: route to the country Guide above and do not quote rates from this skill.
 - US state returns, or a sale of a home on which home office depreciation or CCA was claimed: refer to an accountant.
 - A UK room used exclusively for business where the client asks about Capital Gains Tax on the sale: refer.
 - Mixed employee and self-employed use of the same space, or more than one business in the home: refer, as the apportionment is fact-specific.
-- Australia: route to `au-sole-trader-schedule` only. This Guide gives no Australian figures.
+- Australia: route to `au-sole-trader-schedule` only. This skill gives no Australian figures.
 
 ## Sources
 
@@ -229,9 +229,9 @@ If no country Guide covers home office costs, say so and refer the client to a l
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com.
+The most up-to-date version of this skill is maintained at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 

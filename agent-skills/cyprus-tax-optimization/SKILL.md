@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cyprus-tax-optimization"
   jurisdiction: "CY"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Cyprus tax planning: the legal levers after the 2026 reform
 
-This Guide sets out the lawful ways a person or a company in Cyprus can lower tax, and the condition that each one depends on. Figures are for tax year 2026. The 2026 tax reform (Law 244(I)/2025 for income tax, in force from 1 January 2026, and the amended Special Defence Contribution law) changed most of the old planning figures, so do not reuse pre-2026 numbers. Every lever below rests on a rule printed by the Tax Department. Where a lever needs a judgement (domicile, substance, management and control, the IP box), the Guide describes the rule and refers the work to a Cyprus tax adviser. For the full income tax computation use `cyprus-income-tax`; for domicile and Special Defence Contribution (SDC) detail use `cy-non-dom`; for VAT use `cyprus-vat-return`.
+This skill sets out the lawful ways a person or a company in Cyprus can lower tax, and the condition that each one depends on. Figures are for tax year 2026. The 2026 tax reform (Law 244(I)/2025 for income tax, in force from 1 January 2026, and the amended Special Defence Contribution law) changed most of the old planning figures, so do not reuse pre-2026 numbers. Every lever below rests on a rule printed by the Tax Department. Where a lever needs a judgement (domicile, substance, management and control, the IP box), the skill describes the rule and refers the work to a Cyprus tax adviser. For the full income tax computation use `cyprus-income-tax`; for domicile and Special Defence Contribution (SDC) detail use `cy-non-dom`; for VAT use `cyprus-vat-return`.
 
 ## Section 1: Quick reference
 
@@ -155,7 +155,7 @@ A self-employed individual is taxed on profits on the personal scale in Section 
 
 ## Section 4: IP box
 
-Cyprus has an IP box under article 9, paragraph (k), of the Income Tax Law, which the Tax Department labels "IP Box regime" with the word "nexus". No allowed government page that we could read prints the deduction percentage, the nexus calculation or the qualifying-asset list, so this Guide states no percentage, no effective rate and no qualifying conditions for it. One interaction is printed: the additional R&D deduction in the Section 3 table is NOT granted for an intangible asset if the IP box provisions were claimed for that same asset in any tax year. Refer every IP box question to a Cyprus tax adviser.
+Cyprus has an IP box under article 9, paragraph (k), of the Income Tax Law, which the Tax Department labels "IP Box regime" with the word "nexus". No allowed government page that we could read prints the deduction percentage, the nexus calculation or the qualifying-asset list, so this skill states no percentage, no effective rate and no qualifying conditions for it. One interaction is printed: the additional R&D deduction in the Section 3 table is NOT granted for an intangible asset if the IP box provisions were claimed for that same asset in any tax year. Refer every IP box question to a Cyprus tax adviser.
 
 ## Section 5: Personal reliefs and new-resident exemptions
 
@@ -221,7 +221,7 @@ The personal deductions (children, rent or housing-loan interest, green spending
 - Refer domicile disputes (domicile of choice, the 20-year exceptions) and any Form T.D.38 or TD 631 application.
 - Refer treaty residence of a company or individual, and any case where Cyprus and another country both claim residence.
 - Refer dividends out of profits from before 2018 or received after 31/12/2031 from pre-2026 profits: the rate row above does not settle them.
-- Refer any plan that depends on a combined or effective tax rate: this Guide does not compute one.
+- Refer any plan that depends on a combined or effective tax rate: this skill does not compute one.
 
 ## Sources
 
@@ -239,9 +239,9 @@ The personal deductions (children, rent or housing-loan interest, green spending
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a licensed tax adviser in Cyprus) before acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed tax adviser in Cyprus) before acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -263,4 +263,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cyprus-tax-optimization` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cyprus-tax-optimization. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about New Zealand provisional tax for
 version: 2.0
 jurisdiction: NZ
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-Provisional tax is income tax paid in instalments during the year instead of one lump sum after it ([IRD provisional tax](https://www.ird.govt.nz/income-tax/provisional-tax)). It is not a separate tax. This Guide covers who must pay, the four options (standard, estimation, ratio and the accounting income method, AIM), instalment dates, use-of-money interest (UOMI) and penalties, for individuals, sole traders, contractors, landlords, partners, companies and trusts.
+Provisional tax is income tax paid in instalments during the year instead of one lump sum after it ([IRD provisional tax](https://www.ird.govt.nz/income-tax/provisional-tax)). It is not a separate tax. This skill covers who must pay, the four options (standard, estimation, ratio and the accounting income method, AIM), instalment dates, use-of-money interest (UOMI) and penalties, for individuals, sole traders, contractors, landlords, partners, companies and trusts.
 
 - **Primary year:** the 2026-27 income year, 1 April 2026 to 31 March 2027 (Inland Revenue calls it the 2027 income year), for a 31 March balance date.
 - **Also covered:** the 2025-26 year (1 April 2025 to 31 March 2026), whose returns are being filed and whose end-of-year tax is due in 2027 (see "Filing and payment").
@@ -273,9 +273,9 @@ Amounts from IRD's examples are as IRD prints them. C1, C8 and C10 are illustrat
 ## When to refuse or refer
 
 - **Balance date other than 31 March, a change of balance date or a transitional year:** dates and amounts differ, and IRD must approve the change. Get the dates from myIR or IRD; do not guess.
-- **Tax pooling:** its own rules; outside this Guide.
+- **Tax pooling:** its own rules; outside this skill.
 - **Multi-entity groups, associated companies on mixed options, or any interest avoidance arrangement:** the standard-option interest rules may not apply. Refer.
-- **Non-residents:** outside this Guide.
+- **Non-residents:** outside this skill.
 - **Shortfall penalty exposure** (an estimate far below actual RIT), remission requests or disputes: refer to a New Zealand chartered accountant or tax agent.
 - **A client who cannot pay:** tell them to contact IRD before the due date about an instalment arrangement.
 - **Anything that turns on the wording of the Income Tax Act 2007 or the Tax Administration Act 1994** (the "less than" vs "or less" and "at least" vs "more than" points above): **check** the Act.

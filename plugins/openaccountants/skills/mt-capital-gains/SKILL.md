@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/mt-capital-gains"
   jurisdiction: "MT"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope ([Income Tax Act, Cap. 123](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c))
 
-This Guide covers how Malta taxes gains when an **individual** or a **company** sells or otherwise transfers a capital asset: immovable property, shares and other securities, a business or goodwill, intellectual property, an interest in a partnership, and a beneficial interest in a trust. It covers the final tax on transfers of Malta property (article 5A of the Income Tax Act), the main exemptions (including the own-residence exemption), non-residents and non-domiciled residents, and how the tax is paid and reported.
+This skill covers how Malta taxes gains when an **individual** or a **company** sells or otherwise transfers a capital asset: immovable property, shares and other securities, a business or goodwill, intellectual property, an interest in a partnership, and a beneficial interest in a trust. It covers the final tax on transfers of Malta property (article 5A of the Income Tax Act), the main exemptions (including the own-residence exemption), non-residents and non-domiciled residents, and how the tax is paid and reported.
 
 - **Primary year: basis year 2026 = year of assessment 2027.** Malta taxes the income of a calendar year (the basis year) in the following year of assessment.
 - **Returns being filed now:** gains made in 2025 (year of assessment 2026). See "Filing and payment".
@@ -26,7 +26,7 @@ This Guide covers how Malta taxes gains when an **individual** or a **company** 
 
 **What we could not check.** The Malta Tax and Customs Administration (MTCA) site, mtca.gov.mt, refused our automated source checks on 25 September 2026. Everything below is sourced from the Laws of Malta (legislation.mt). Points that depend on MTCA forms, guidance or subsidiary rules we could not read are marked **"check"**.
 
-**Related Guides.** Rate tables for individuals: malta-income-tax. Crypto-assets: mt-crypto-tax. Non-domiciled residents: mt-non-dom.
+**Related Skills.** Rate tables for individuals: malta-income-tax. Crypto-assets: mt-crypto-tax. Non-domiciled residents: mt-non-dom.
 
 ## Ask the client first
 
@@ -196,7 +196,7 @@ A company managed in Malta but incorporated abroad (resident, not domiciled) is 
 
 ## Companies ([Income Tax Act art. 5, 12(1)(u) and 56(6)](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c))
 
-- **Rate.** A company's article 5 gains form part of its chargeable income, taxed at 35% ([ITA art. 56(6)](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c)). Shareholder refunds on distributions are outside this Guide.
+- **Rate.** A company's article 5 gains form part of its chargeable income, taxed at 35% ([ITA art. 56(6)](https://legislation.mt/getpdf/69d8a9187da37f0580d5140c)). Shareholder refunds on distributions are outside this skill.
 - **Malta property.** A company selling Malta property pays article 5A tax like anyone else. It must allocate the distributable profits from that transfer to its final tax account (article 5A(10)(d)).
 - **Participation exemption (article 12(1)(u)).** Gains of a company registered in Malta "from a participating holding or from the transfer of such holding" are exempt where the company does not show them as chargeable income. A participating holding includes a direct holding of "at least five percent of the equity shares" carrying at least five percent of any two of votes, profits and assets on a winding up, and other tests in article 2(1). The anti-abuse conditions in 12(1)(u) apply to dividends; gains on holdings in property companies raise extra questions. Refer.
 - **Group relief, reorganisations and incorporations** (article 5(9), (14), (15)): no gain, no loss on conditions; base cost and acquisition date carry over. Refer.
@@ -346,4 +346,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `mt-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/mt-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -6,468 +6,468 @@ metadata:
   source: openaccountants
   openaccountants_url: "https://www.openaccountants.com/skills/india-crypto-tax"
   jurisdiction: "IN"
-  tax_year: "2025"
-  last_updated: "2026-07-13"
-  reviewed_by: "Mayur Deokar"
-  review_status: "current"
+  tax_year: "2026"
+  last_updated: "2026-10-17"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# India Crypto Tax
+# India Crypto and Virtual Digital Asset Tax
 
-## India Crypto / Virtual Digital Assets Tax Skill v1.0
+This Guide covers Indian income tax and tax deducted at source (TDS) on crypto, tokens, NFTs and other virtual digital assets (VDAs) for individuals, Hindu undivided families (HUFs) and companies. Figures are for tax year 2026. This means the tax year from 1 April 2026 to 31 March 2027 under the Income-tax Act, 2025, which replaced the Income-tax Act, 1961 from 1 April 2026. Section numbers changed with the new Act: the 1961 Act sections that older material quotes for crypto do not apply to tax year 2026-27, and this Guide names only the 2025 Act sections. Income earned up to 31 March 2026 (assessment year 2026-27) is still taxed and returned under the 1961 Act; this Guide does not cover it.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Crypto (VDA)
-
-- **Health & Education Cess** — 4% on tax  _(Finance Act)_
-- **Rate (ITA 2025 replacement)** — New section as per new Income Tax Act 2025 applicable from financial year fy 2026-27 is Section 393(1). Rate remains same.  _(ITA s 194S)_
-- **Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
-- **Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
-- **Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
-- **Deductible** — Purchase price only  _(ITA s 115BBH(2))_
-- **Mined/staked/airdrop tokens** — Cost = ₹0  _(ITA s 115BBH)_
-- **ITR form** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
-- **Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
-- **Flat rate on VDA gains** — 30% (s 115BBH)  _(ITA s 115BBH)_
-- **Effective rate (before surcharge)** — 31.20%  _(Calculated)_
-- **Loss offset** — NOT permitted — crypto losses cannot offset ANY income  _(ITA s 115BBH(2))_
-- **Loss carry-forward** — NOT permitted  _(ITA s 115BBH)_
-- **TDS on VDA Transfer (s 194S) — Rate** — 1% of consideration (rate unchanged); citation updated to Section 393(1) of the new Income Tax Act 2025, applicable from FY 2026-27  _(ITA s 194S; new Income Tax Act 2025 s 393(1))_
-- **TDS Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
-- **TDS Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
-- **Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
-- **Cost of Acquisition — Deductible** — Purchase price only  _(ITA s 115BBH(2))_
-- **Cost of improvement** — NOT deductible  _(ITA s 115BBH(2)(a))_
-- **Transfer expenses (fees, gas)** — NOT deductible  _(ITA s 115BBH)_
-- **Mined/staked/airdrop tokens cost basis** — Cost = ₹0  _(ITA s 115BBH)_
-- **ITR form** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
-- **Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
-
-## Section 1 — Quick Reference
-
-**Quick Reference table**
+## Section 1: Quick Reference
 
 | Field | Value |
 | --- | --- |
-| Country | India (Republic of India) |
-| Tax | Income Tax on Virtual Digital Assets (VDA) |
-| Currency | INR (Indian Rupee) — all values in INR |
-| Tax year (Assessment Year) | Financial Year 1 April – 31 March (FY 2025-26 = 1 Apr 2025 – 31 Mar 2026; AY 2026-27) |
-| Primary legislation | Income Tax Act, 1961: Section 2(47A) (VDA definition), Section 115BBH (flat 30% tax), Section 194S (1% TDS); Finance Act, 2022 (amendments effective 1 April 2022 / 1 July 2022) |
-| Replacement under ITA 2025 | Income-tax Act, 2025: Section 393(1) Sl. No. 8(vi) replaces Section 194S for TDS |
-| Tax authority | Central Board of Direct Taxes (CBDT); Income Tax Department |
-| Filing portal | incometax.gov.in (e-filing portal) |
-| Tax rate on VDA gains | Flat 30% (plus 4% health & education cess = effective 31.2%) |
-| Surcharge | Applicable based on total income slab (10%–37%) on the 30% |
-| TDS rate | 1% on consideration for transfer of VDA (Section 194S) |
-| TDS threshold | ₹10,000 (general) / ₹50,000 (specified persons — individuals/HUF with turnover ≤ ₹1 crore or profession receipts ≤ ₹50 lakh) |
-| Loss offset | NOT PERMITTED — crypto losses cannot be set off against ANY income |
-| Loss carry-forward | NOT PERMITTED |
-| Reporting form | ITR-2 or ITR-3 with Schedule VDA |
-| Filing deadline | 31 July of the assessment year (31 July 2026 for FY 2025-26); 31 October for audit cases |
-| Validated by | Pending — requires sign-off by an Indian Chartered Accountant |
-| Skill version | 1.0 |
+| Country | India |
+| Tax | Income-tax on income from the transfer of a virtual digital asset, and TDS on the price paid for one |
+| Currency | INR |
+| Tax year | 1 April to 31 March. Tax year 2026-27 runs from 1 April 2026 to 31 March 2027 |
+| Primary law | Income-tax Act, 2025 (30 of 2025): section 2(111) (definition), section 194(1) Table serial 4 (rate and loss rule), section 393(1) Table serial 8(vi) and section 393(4) Table serial 12 (TDS) |
+| Rates law for the year | Finance Act, 2026 (4 of 2026), section 3 (surcharge and cess for tax year 2026-27) |
+| Procedure | Income-tax Rules, 2026: rule 218 (paying TDS, Form No. 141), rule 219 (exchange statements, Form No. 142), rule 164 (which return form) |
+| Tax authority | Income Tax Department, Central Board of Direct Taxes |
+| Rate, TDS and thresholds | In the tables in Sections 3 and 7 |
 
-### VDA Definition (Section 2(47A) / Income-tax Act, 2025 S. 2(57))
+### VDA definition (section 2(111) of the 2025 Act)
 
-**VDA Definition table**
-
-| Category | Included |
+| Clause | What it covers |
 | --- | --- |
-| (a) Cryptographic tokens | Any information, code, number, or token generated through cryptographic means providing a digital representation of value — includes BTC, ETH, SOL, etc. |
-| (b) NFTs | Non-fungible tokens or any token of similar nature |
-| (c) Central Government notified | Any other digital asset the Central Government may notify |
-| Excluded | Indian currency, foreign currency, CBDCs (Digital Rupee) |
+| (a) | Any information, code, number or token, not being Indian currency or foreign currency, generated through cryptographic means or otherwise, that gives a digital representation of value, exchanged with or without consideration, with the promise or representation of having inherent value, or that functions as a store of value or a unit of account, and can be transferred, stored or traded electronically |
+| (b) | A non-fungible token or any other token of similar nature, by whatever name called |
+| (c) | Any other digital asset the Central Government notifies |
+| (d) | Any crypto-asset that relies on a cryptographically secured distributed ledger or similar technology, whether or not it falls in (a), (b) or (c). This clause is new in the 2025 Act text |
+| Exclusions | Indian currency and foreign currency are outside clause (a). The Central Government may exclude any digital asset by notification |
 
-### Conservative Defaults
+The definition is in the Act at https://egazette.gov.in/WriteReadData/2025/265620.pdf and the Act text prints "(not being Indian currency or foreign currency)" and "the Central Government may, by notification, exclude any digital asset from this definition". It does not itself name the Digital Rupee: check for an exclusion notification before treating any central bank digital currency as outside the regime.
 
-**Conservative Defaults table**
+### Conservative defaults
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown cost of acquisition | Zero (maximises gain) — STOP if material |
-| Unknown whether business or investment | Treat as transfer of VDA under 115BBH (30% flat) |
-| Unknown whether mining income or business income | Treat as "income from other sources" (still taxable) |
-| Unknown FMV at receipt | Use exchange price at time of transaction |
-| Gift of VDA — unknown value | Obtain FMV; if ≥ ₹50,000, taxable in hands of recipient |
+| Unknown cost of acquisition | Treat cost as nil until the client proves a cost. Stop and ask if the amount is material |
+| Unknown whether a trader or an investor | The section 194 rate applies to any income from the transfer of a VDA either way. Classify the head of income separately and refer if it matters |
+| Unknown how a receipt from mining, staking or an airdrop is taxed | Do not apply the section 194 rate to the receipt itself. Refer (Section 5) |
+| Unknown fair market value at receipt | Use a documented exchange price at the time of the receipt and record the source |
+| VDA received free from a non-relative | Test the aggregate fair market value against the section 92(2)(m) threshold in Section 7.4 |
 
-## Section 2 — Classification Rules
+## Section 2: Classification Rules
 
-### The 115BBH Regime — No Capital vs Income Distinction
+### One rate for every transfer, no capital versus income split
 
-- **115BBH flat rate scope** — Unlike most jurisdictions, India does not distinguish between capital gains and income for crypto taxation. Section 115BBH applies a flat 30% tax on any income arising from the transfer of a VDA, regardless of: Holding period (no short-term vs long-term distinction); Frequency of trading; Whether taxpayer is an investor or trader; Whether gain is revenue or capital in nature
+Section 194(1) of the 2025 Act, Table serial 4, taxes any income from the transfer of any virtual digital asset, for any person, at the rate in the Section 3 table. The rule does not depend on how long the asset was held, how often the person trades, or whether the gain is capital or revenue. The section works in two parts: tax on the VDA income at the section 194 rate, plus the tax the person would pay if total income were reduced by that VDA income (section 194(1)(a) and (b)). So the VDA income is taxed at the flat rate from the first rupee, and the slab rates and the nil band apply only to the rest of the income.
 
-**Classification Question table**
-
-| Classification Question | Answer |
+| Question | Answer under the 2025 Act |
 | --- | --- |
-| Is crypto a capital asset in India? | The government treats income from VDA transfer under a special regime (S.115BBH) separate from the regular capital gains provisions |
-| Does holding period matter? | NO — flat 30% regardless of holding period |
-| Does trader vs investor distinction matter? | NO — flat 30% in either case |
-| Can crypto be treated as business income? | Only mining/staking/providing services may be classified as business income or income from other sources; the transfer gain is always 30% under 115BBH |
+| Does holding period matter? | No. Section 194 Table serial 4 has one rate for any person and any VDA transfer |
+| Does trader versus investor matter? | Not for the rate. It can matter for the return form (Section 7.1) and the due date (Section 7.5) |
+| Is a VDA a capital asset? | Section 194(2)(n) applies the section 2(109) meaning of "transfer" to any VDA "whether capital asset or not", so the rate applies either way |
+| Does the new-regime rebate cut the tax on VDA income? | No. Section 156(3) caps the section 156(2) rebate at the tax payable at the section 202(1) rates, and VDA income is taxed at the section 194 rate instead |
 
-### What constitutes a "transfer" under 115BBH
+Source for this table: https://egazette.gov.in/WriteReadData/2025/265620.pdf
 
-- **transfer definition** — Sale of VDA for fiat (INR or foreign currency); Exchange of one VDA for another VDA (crypto-to-crypto swap); Use of VDA as payment for goods or services; Gift of VDA (except to specified relatives under Section 56); Any disposal or alienation of VDA
+### What counts as a transfer
 
-## Section 3 — Rate Table
+Section 2(109) of the 2025 Act says a transfer includes "(a) the sale, exchange or relinquishment of the asset", the extinguishment of any rights in it, and the other events listed there. Section 194(2)(n) applies that meaning to every VDA. So:
 
-### Tax on Transfer of VDA (Section 115BBH)
+- Selling a VDA for rupees or foreign currency is a sale.
+- Swapping one VDA for another is an exchange, which is a transfer of the VDA given up.
+- Paying for goods or services with a VDA is an exchange of the VDA.
+- Giving a VDA away, and moving a VDA between two wallets the same person owns, are not named in section 2(109). Do not treat either as settled: see Section 9 and the refer list.
 
-**Tax on Transfer of VDA table**
+## Section 3: Rate Table
 
-| Component | Rate | Source |
+### Tax on income from the transfer of a VDA (section 194(1), Table serial 4)
+
+| Item | Value | Note |
 | --- | --- | --- |
-| Base tax on VDA transfer income | 30% | S. 115BBH(1)(a) |
-| Health & Education Cess | 4% on tax | S. 136C |
-| Effective rate (before surcharge) | 31.20% | — |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate on income from the transfer of any VDA, any person | 30% | "4. Any Any income from 30% (a) No deduction person. the transfer of any" |
+| Deductions allowed | Cost of acquisition only | "expenditure (other than cost of acquisition, if any) or allowance or set off of any loss" |
+| Loss on a VDA transfer | Not set off against any income and not carried forward | "no set off of loss from transfer of the virtual digital asset computed herein shall be allowed against income computed under any provision of this Act to the assessee and such loss shall not be allowed to be carried forward to succeeding tax years" |
 
-### Surcharge (based on total income including VDA)
+### Surcharge and cess, tax year 2026-27 (Finance Act, 2026, section 3)
 
-**Surcharge table**
+Cess is charged on income-tax plus surcharge. Surcharge depends on total income, including the VDA income. Serial 1, which lists tax under section 194, applies only to a person "not having any income chargeable to tax under section 202", that is, a person who has left the new regime. Serial 10 lists only section 202. This Guide reads serial 10 as covering a new-regime person's whole tax, because section 202(1) makes the new-regime computation "subject to Parts A, B, E" of the Chapter; the Finance Act does not say so in terms. Confirm with an accountant before relying on the 25% cap for VDA tax.
 
-| Total Income | Surcharge Rate | Effective VDA Tax Rate |
+| Item | Value | Note |
 | --- | --- | --- |
-| Up to ₹50 lakh | Nil | 31.20% |
-| ₹50 lakh – ₹1 crore | 10% | 34.32% |
-| ₹1 crore – ₹2 crore | 15% | 35.88% |
-| ₹2 crore – ₹5 crore | 25% | 39.00% |
-| Above ₹5 crore | 37% | 42.74% |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2026/271439.pdf |
+| Health and Education Cess, on income-tax plus surcharge | 4% | "calculated at the rate of 4% of such income-tax and surcharge" |
+| Surcharge starts where total income exceeds | INR 5,000,000 | "exceeds ₹ 5000000 but does" |
+| Surcharge rate, total income above INR 5,000,000 up to INR 10,000,000 (both regimes) | 10% | "rate of 10%;" |
+| Next threshold | INR 10,000,000 | "exceeds ₹ 10000000 but does not exceed ₹ 20000000, at the" |
+| Surcharge rate, above INR 10,000,000 up to INR 20,000,000 (both regimes) | 15% | "rate of 15%;" |
+| Next threshold | INR 20,000,000 | "198 of the said Act) exceeds ₹ 20000000, at the rate of 25%; (iv) where the total income (including dividend income" |
+| New regime (serial 10): top surcharge rate, above INR 20,000,000 | 25% | "198 of the said Act) exceeds ₹ 20000000, at the rate of 25%; (iv) where the total income (including dividend income" |
+| Old regime (serial 1): rate above INR 20,000,000 up to INR 50,000,000 | 25% | "rate of 25%;" |
+| Old regime (serial 1): top threshold | INR 50,000,000 | "(iv) where the total income exceeds ₹ 50000000" |
+| Old regime (serial 1): top surcharge rate | 37% | "rate of 37%." |
 
-Note: Marginal relief applies at surcharge thresholds.
+Companies, firms and co-operative societies use other serials of the same Table (for example serials 6, 7 and 9 for companies). Refer.
 
-### TDS on Transfer of VDA (Section 194S)
+Marginal relief applies where income only just crosses a surcharge threshold. The formula is in section 3(5) of the Finance Act, 2026 and the First Schedule Part I-B; apply it from the Act, not from a rule of thumb.
 
-**TDS on Transfer of VDA table**
+Do not quote a single effective rate for VDA income. The rate in the first table, the surcharge band and the cess combine differently for each client; compute each case.
 
-| Element | Detail |
-| --- | --- |
-| Rate | 1% of consideration |
-| Threshold (general) | ₹10,000 aggregate in a financial year |
-| Threshold (specified persons) | ₹50,000 aggregate (individual/HUF with business turnover ≤ ₹1 crore or profession receipts ≤ ₹50 lakh in preceding year) |
-| Who deducts | Buyer of VDA / exchange platform |
-| When | At time of credit or payment, whichever is earlier |
-| TDS on crypto-to-crypto | Both parties may be liable (buyer of each VDA in the swap) |
-| Form | Form 26QE (now Form 141 under ITA 2025) |
-| Deposit deadline | Within 30 days from end of month of deduction |
+## Section 4: Cost Basis
 
-## Section 4 — Cost Basis
+### What may be deducted
 
-### Permitted Deductions
-
-**Permitted Deductions table**
-
-| Deductible | Permitted? | Detail |
+| Item | Allowed? | Basis |
 | --- | --- | --- |
-| Cost of acquisition | YES | Purchase price of the VDA only |
-| Cost of improvement | NO | Explicitly disallowed under S.115BBH(2)(a) |
-| Transfer expenses | NO | Exchange fees, gas fees — NOT deductible |
-| Any other deduction | NO | No deduction under any section of the Act |
-| Depreciation | NO | Not applicable |
+| Cost of acquisition | Yes | Section 194 Table serial 4, column E(a): "other than cost of acquisition, if any" |
+| Cost of improvement | No | Column E(a) allows no expenditure other than cost of acquisition |
+| Exchange fees, gas fees, commissions on sale | No | Same: no other expenditure or allowance |
+| Any loss, from a VDA or any other source | No | Column E(a) and (b) |
+| Depreciation | No | No allowance is permitted |
 
-**This is the harshest cost basis regime globally.** Only the original purchase price can be deducted — no fees, no commissions, no gas costs.
+Source for this table: https://egazette.gov.in/WriteReadData/2025/265620.pdf
 
-### Cost Basis Methods
+Whether a purchase fee forms part of the "cost of acquisition" is not settled by the Act text. Treat it as not deductible unless an accountant decides otherwise.
 
-India does not prescribe FIFO/LIFO/average cost for individuals. The Act simply refers to "cost of acquisition." In practice:
+### Cost basis methods
 
-**Cost Basis Methods table**
+The Act says "cost of acquisition, if any" and names no method for matching sales to purchases. Pick one method (first in, first out, or specific identification with records), document it, and apply it consistently across years. An accountant should confirm the method for a large or mixed portfolio.
 
-| Method | Status |
-| --- | --- |
-| FIFO | Commonly used by exchanges and software |
-| Average cost | Acceptable in practice |
-| Specific identification | Acceptable if documented |
-| LIFO | Not standard; no prohibition |
+### Nil-cost cases
 
-The key constraint is that **only cost of acquisition** matters — method of identifying which lot was sold is secondary.
+Where nothing was paid for a VDA (mining, staking rewards, airdrops, tokens from a fork), there may be no cost of acquisition: the Act's words are "if any". If the receipt was taxed as income when received, an accountant decides whether that taxed value can be the cost on a later sale; the Act does not say so for VDAs (see Section 5 and Section 7.4).
 
-### Zero-Cost Scenarios
+## Section 5: DeFi, Staking, Mining and Airdrops
 
-**Zero-Cost Scenarios table**
+The 2025 Act has no section written for mining, staking, lending, liquidity pools or airdrops. Only two points are settled by the Act text:
 
-| Scenario | Cost of Acquisition |
-| --- | --- |
-| Mined tokens | ₹0 (no cost of acquisition; full value is gain) |
-| Staking rewards received | ₹0 (if not purchased) |
-| Airdrop tokens | ₹0 |
-| Hard fork tokens | ₹0 |
-| Gifted VDA (below ₹50,000) | Cost to the previous owner (for computing S.115BBH gain on subsequent transfer) |
+1. A later sale, swap or other transfer of the tokens is a VDA transfer taxed under section 194 (Sections 2 and 3).
+2. A VDA received without consideration, or for less than its fair market value, is "property" for section 92(2)(m) when the recipient holds it as a capital asset, so the gift rule in Section 7.4 can apply to it.
 
-## Section 5 — DeFi, Staking, Mining, and Airdrops
+Everything else below is a classification question for an accountant. Do not state it as law.
 
 ### 5.1 Mining
 
-**Mining table**
-
-| Aspect | Treatment |
+| Point | Status |
 | --- | --- |
-| Receipt of mined tokens | Taxable as "income from other sources" or "business income" at applicable slab rates |
-| Cost basis of mined tokens | FMV at time of mining (if taxed as income on receipt) becomes the cost of acquisition for future transfer |
-| Subsequent transfer | 30% flat tax under S.115BBH on (proceeds – cost of acquisition) |
-
-**Note:** There is ambiguity on whether mining income is taxed at slab rates (as other income) AND THEN the transfer gain is separately taxed at 30%. Conservative approach: tax as income on receipt, then 30% on disposal gain from that FMV cost basis.
+| Tax on the tokens when mined | Not settled by the Act. It may be business income or income from other sources at slab rates. Refer |
+| Cost of mined tokens on a later sale | "cost of acquisition, if any": possibly nil. Refer if the receipt was taxed |
+| Later sale or swap | Section 194 transfer |
 
 ### 5.2 Staking
 
-**Staking table**
-
-| Aspect | Treatment |
+| Point | Status |
 | --- | --- |
-| Staking rewards received | Income from other sources at FMV on receipt — taxed at slab rates |
-| Cost basis of staking rewards | FMV at receipt date |
-| Subsequent transfer of staked tokens | 30% under S.115BBH |
+| Tax on rewards when received | Not settled by the Act. Refer |
+| Later sale or swap of reward tokens | Section 194 transfer |
 
 ### 5.3 Airdrops
 
-**Airdrops table**
-
-| Scenario | Treatment |
+| Point | Status |
 | --- | --- |
-| Airdrop requiring action | Income at FMV on receipt; slab rates |
-| Unsolicited airdrop | Potentially taxable as income under Section 56(2)(x) if value > ₹50,000 |
-| Transfer of airdropped tokens | 30% under S.115BBH; cost of acquisition = ₹0 or FMV if already taxed as income |
+| Airdrop received for nothing from a non-relative | Section 92(2)(m) can tax it if the aggregate value of such property received in the year passes the threshold in Section 7.4 |
+| Airdrop received for doing something (a task, a service) | Not settled by the Act. Refer |
+| Later sale of airdropped tokens | Section 194 transfer |
 
-### 5.4 DeFi Lending/Yield
+### 5.4 DeFi lending, yield and liquidity pools
 
-**DeFi Lending/Yield table**
-
-| Activity | Treatment |
+| Activity | Status |
 | --- | --- |
-| Interest/yield from DeFi protocols | Income from other sources; taxed at slab rates |
-| LP token receipt (deposit into pool) | May constitute transfer of VDA — 30% on any gain |
-| LP token withdrawal | Transfer — 30% on gain |
-| Impermanent loss | No explicit relief; loss on VDA transfer cannot offset anything |
+| Interest or yield paid in tokens | Not settled by the Act. Refer |
+| Depositing tokens into a pool for LP tokens | Likely an exchange of one VDA for another, so a section 194 transfer. Confirm the facts |
+| Withdrawing from the pool | Same |
+| Impermanent loss | A loss on a VDA transfer: no set-off and no carry forward (Section 8) |
 
-### 5.5 Hard Forks
+### 5.5 Forks
 
-**Hard Forks table**
-
-| Scenario | Treatment |
+| Point | Status |
 | --- | --- |
-| New tokens from hard fork | Cost of acquisition = ₹0 |
-| Transfer of forked tokens | 30% on full proceeds (zero cost basis) |
-| Original tokens | Cost basis unchanged |
+| New tokens from a fork | No price was paid. Cost "if any": refer before using nil |
+| Sale of forked tokens | Section 194 transfer |
+| Original tokens | Cost unchanged |
 
-## Section 6 — NFT Treatment
+## Section 6: NFT Treatment
 
-NFTs are explicitly included in the VDA definition under Section 2(47A)(b).
-
-**NFT Treatment table**
+An NFT is a VDA under section 2(111)(b). Clause (i) of the section says "non-fungible token" means "such digital asset as the Central Government may, by notification, specify". Check whether a notification covers the token before relying on clause (b) alone; clause (d) may still catch it if it runs on a distributed ledger.
 
 | Event | Treatment |
 | --- | --- |
-| Purchase of NFT | Acquisition — record cost |
-| Sale of NFT | Transfer of VDA — 30% flat tax on gain under S.115BBH |
-| Creation and sale (artist) | If business income: slab rates; if transfer of VDA: 30% |
-| Royalty on secondary sale | Income from other sources; slab rates |
-| NFT-for-NFT swap | Transfer of VDA on both sides — 30% on each gain |
-| Gift of NFT (value > ₹50,000) | Taxable in hands of recipient under S.56(2)(x) |
-| NFT becomes worthless | Loss — cannot be offset or carried forward |
+| Buying an NFT for rupees | Acquisition. Record the cost |
+| Selling an NFT | Section 194 transfer, taxed at the Section 3 rate on proceeds less cost |
+| Swapping NFT for NFT, or NFT for a token | Exchange: a section 194 transfer of what is given up |
+| An artist minting and selling their own NFT | Section 194 transfer of the NFT. Whether the creator also has business income is not settled. Refer |
+| Royalty on a resale paid to the creator | Not settled by the Act. Refer |
+| NFT received free from a non-relative | Section 92(2)(m) gift rule (Section 7.4) |
+| NFT becomes worthless | Any loss is not set off and not carried forward |
 
-## Section 7 — Reporting Requirements
+## Section 7: Reporting Requirements
 
-### 7.1 ITR Forms
+### 7.1 Which return form (rule 164, Income-tax Rules, 2026)
 
-**ITR Forms table**
+Rule 164 covers returns for the tax year starting 1 April 2026. A person with income taxed under Part A of Chapter XIII of the 2025 Act (which includes section 194) cannot use ITR-1 (rule 164(3)(n)) or ITR-4 (rule 164(6)(o)).
 
-| Taxpayer Type | Applicable ITR | Schedule |
-| --- | --- | --- |
-| Individual with salary + VDA income | ITR-2 | Schedule VDA |
-| Individual/HUF with business income + VDA | ITR-3 | Schedule VDA |
-| Company | ITR-6 | Schedule VDA |
-
-### 7.2 Schedule VDA (Virtual Digital Asset)
-
-Schedule VDA requires the following for each VDA transaction:
-
-**Schedule VDA fields table**
-
-| Field | Detail |
+| Taxpayer | Form |
 | --- | --- |
-| Type of VDA | Cryptocurrency, NFT, other |
-| Date of transfer | DD/MM/YYYY |
-| Date of acquisition | DD/MM/YYYY |
-| Head of income | Income from transfer of VDA |
-| Cost of acquisition | In INR |
-| Consideration received | In INR |
-| Income from transfer | Gain (consideration – cost) |
+| Individual or HUF with VDA income and no business or profession income | ITR-2 (rule 164(4)) |
+| Individual or HUF with business or profession income | ITR-3 (rule 164(7)) |
+| Company (other than one filing ITR-7) | ITR-6 (rule 164(9)) |
 
-### 7.3 TDS Reporting
+Source: https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
 
-**TDS Reporting table**
+The return forms for tax year 2026-27 are filed in 2027. Check the VDA schedule in the form when it is released; the schedule layout is not on a page this Guide could read.
 
-| Form | Purpose | Deadline |
+### 7.2 What to record for each VDA transfer
+
+Keep, for every transfer: the type of VDA, the date acquired, the date transferred, the cost of acquisition in rupees, the consideration received in rupees, and the TDS deducted. These are the facts the section 194 computation needs. Keep the exchange statements and wallet records that prove them.
+
+### 7.3 TDS on the transfer of a VDA (section 393)
+
+Section 393(1) Table serial 8(vi) applies to "Any person" paying a resident consideration for the transfer of a VDA. Tax is deducted at the time of credit or payment, whichever is earlier. Section 393(4) Table serial 12 switches TDS off where the year's consideration from that payer stays within the limits below.
+
+| Item | Value | Note |
 | --- | --- | --- |
-| Form 26QE / Form 141 | TDS on VDA transfer | Within 30 days from end of month |
-| Form 26AS / AIS | Annual Information Statement — reflects TDS deducted | Available on e-filing portal |
-| Form 67 | For claiming foreign tax credit (if VDA traded on foreign exchange and tax paid abroad) | Before filing ITR |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| TDS rate on consideration for the transfer of a VDA | 1% | "Rate: 1% of consideration for" |
+| No TDS if the year's consideration does not exceed, for a payer who is an individual or HUF with business turnover up to one crore rupees or professional receipts up to fifty lakh rupees in the preceding tax year, or with no business or profession income | INR 50,000 | "(a) ₹ 50000, when payable by an individual" |
+| No TDS if the year's consideration does not exceed, for any other payer | INR 10,000 | "(b) ₹ 10000, when payable by any person other than the person referred to in clause (a)" |
+| Higher TDS where the seller gives no valid PAN | 20% | "at the rate of 5% where tax is required to be deducted under section 393(1) [Table: Sl. No. 8(ii) or 8(v)]; or 20% in any other case" |
 
-### 7.4 Key Deadlines
+Points the Act settles:
 
-**Key Deadlines table**
+- The limits are on consideration "during the tax year", and the turnover test looks at "the tax year immediately preceding the tax year in which such virtual digital asset is transferred". Above the limit, tax is deducted on the entire amount (section 393(1)(a)).
+- Where the price is paid wholly in kind, or in another VDA with no cash, or the cash part is too small to cover the tax, the payer "shall ensure that the tax required to be deducted has been paid, before releasing such consideration" (Note 6 to the section 393(1) Table). In a VDA-for-VDA swap, settle on the facts who is the payer on each leg; Note 6 then applies to that payer.
+- A payer who is an individual or HUF within serial 12(a) does not need a tax deduction account number (section 397(1)(c)). The Finance Act, 2026 substitutes clause (c) with effect from 1 October 2026; the VDA exemption is kept.
+- TDS deducted counts as tax paid on behalf of the seller (section 390(5)) and is credited against the seller's tax for the year.
+- Section 393(1) covers payments to residents. For a non-resident seller, refer.
 
-| Deadline | Date (FY 2025-26 / AY 2026-27) |
-| --- | --- |
-| Advance tax — 1st instalment | 15 June 2025 (15% of total estimated tax) |
-| Advance tax — 2nd instalment | 15 September 2025 (45% cumulative) |
-| Advance tax — 3rd instalment | 15 December 2025 (75% cumulative) |
-| Advance tax — 4th instalment | 15 March 2026 (100%) |
-| ITR filing deadline (non-audit) | 31 July 2026 |
-| ITR filing deadline (audit cases) | 31 October 2026 |
-| Belated return | 31 December 2026 |
+### 7.4 Gifts and free receipts of a VDA (section 92(2)(m))
 
-## Section 8 — Loss Offset and Carry-Forward Rules
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Property received without consideration: taxable as income from other sources where the aggregate fair market value in the tax year exceeds | INR 50,000 | "(A) without consideration, the aggregate fair market value of which exceeds ₹ 50000, the whole of the aggregate fair market value of such property" |
+| Property received for less than fair market value: taxable where the shortfall exceeds | INR 50,000 | "(B) for a consideration which is less than the aggregate fair market value of the property by an amount exceeding ₹ 50000" |
 
-### The absolute prohibition on loss utilisation
+- "Property" means a "capital asset of the assessee" in the section 92(5)(f) list, which ends "(x) virtual digital asset;". A VDA the recipient holds as stock-in-trade of a business is not "property" for this rule: refer.
+- It is a cliff. Once the aggregate passes the threshold, the whole aggregate value is taxed, not just the excess. At or below the threshold, nothing is taxed under this rule.
+- The test is the aggregate for the year, from "any person or persons", not each gift separately.
+- Section 92(3) excludes receipts "(a) from any relative; or (b) on the occasion of marriage of the individual; or (c) under a will or by way of inheritance", and the other cases listed there. "Relative" is defined in section 92(5)(g) (spouse, siblings, siblings of the spouse or parents, lineal ascendants and descendants, and others listed).
 
-**Loss prohibition table**
+### 7.5 Payment and filing deadlines
+
+TDS paid by the payer (Income-tax Rules, 2026, rule 218): within thirty days from the end of the month in which the deduction is made, with a challan-cum-statement in Form No. 141. Form No. 141 has a Schedule D for TDS paid by an individual or HUF on the transfer of a VDA. Where an exchange pays the tax instead of the buyer under guidelines issued under section 400(2), the exchange files a quarterly statement in Form No. 142 (rule 219(2)). Source: https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
+
+Advance tax (sections 404 and 408 of the 2025 Act). VDA income counts towards advance tax like any other income.
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Advance tax is payable when the year's tax is | INR 10,000 | "is ₹10000 or more" |
+| By 15 June 2026, at least | 15% | "1. On or before Not less than 15% of such advance tax. the 15th June." |
+| By 15 September 2026, at least (cumulative) | 45% | "2. On or Not less than 45% of such advance tax" |
+| By 15 December 2026, at least (cumulative) | 75% | "3. On or Not less than 75% of such advance tax" |
+| By 15 March 2027 | The whole amount | "4. On or before The whole amount of such advance tax, as the 15th March." |
+| Interest for default (section 424), per month or part, from 1 April after the tax year | 1% | "simple interest at the rate of 1% for every month or part of a month, for the period, beginning from the 1st April following such tax year" |
+| Default applies where advance tax paid is less than this share of assessed tax | 90% | "is less than 90% of the assessed tax" |
+| Interest for deferment (section 425), June, September and December shortfalls | 3% | "15% of the tax Shortfall till 15th day of 3% of June." |
+| Interest for deferment, March shortfall | 1% | "100% of the Shortfall till 15th day of 1% of March." |
+
+Section 403(3) exempts a resident aged sixty or more with no business or profession income from advance tax. A gain on a single large sale late in the year still needs the remaining instalments; check section 425 for how a shortfall is measured. Section 425(4) charges no interest under section 425(1) or (3) on a shortfall caused by "underestimation of, or failure to estimate" "capital gains", where the assessee "has paid in full, the tax payable on the said income" "in any of the remaining instalments of advance tax, if any, or by the 31st day of March of the tax year". Whether this covers a VDA gain is not settled: refer.
+
+Return due dates (section 263(1)(c) of the 2025 Act as substituted by the Finance Act, 2026). For tax year 2026-27 these dates fall in 2027.
+
+| Taxpayer | Due date | Note |
+| --- | --- | --- |
+| Source | all dates below | https://egazette.gov.in/WriteReadData/2026/271439.pdf |
+| No business or profession income (most investors) | 31 July | "4. Any other assessee. 31st July." |
+| Business or profession income, accounts not required to be audited (for example a trader not under audit) | 31 August | "3. (i) Assessee having income Where the 31st August." |
+| Company, or a person whose accounts must be audited (no transfer pricing report) | 31 October | "2. (i) Company; Where the 31st October." |
+| Revised return | Within twelve months from the end of the tax year, or before assessment is completed, whichever is earlier | "furnish a revised return at any time within twelve months from the end of the relevant tax year" |
+
+A return not filed by the due date may be filed "within nine months from the end of the relevant tax year, or before the completion of the assessment, whichever is earlier" (section 263(4) of the 2025 Act), with a fee under section 428. An updated return may be filed within forty-eight months from the end of the financial year after the tax year (section 263(6)(a)), subject to the conditions there. Source: https://egazette.gov.in/WriteReadData/2025/265620.pdf
+
+## Section 8: Loss Offset and Carry Forward
 
 | Rule | Detail | Authority |
 | --- | --- | --- |
-| Loss offset against other income | **NOT PERMITTED** | S. 115BBH(2)(b) |
-| Loss offset against other VDA gains | **NOT PERMITTED** — loss from one VDA cannot offset gain from another VDA | S. 115BBH(2)(b) |
-| Loss carry-forward | **NOT PERMITTED** | S. 115BBH(2)(b) |
-| Loss from other heads against VDA income | **NOT PERMITTED** — losses from any other head cannot reduce VDA income | S. 115BBH(1)(a) read with S.115BBH(2) |
-| Infrastructure/business expenses | **NOT DEDUCTIBLE** against VDA transfer income | S. 115BBH(2)(a) |
+| VDA loss against other income | Not allowed | Section 194 Table serial 4, column E(b) |
+| VDA loss against a gain on another VDA | Not allowed. Column E(a) bars "set off of any loss" in computing the VDA income, and E(b) bars setting off a VDA loss against income computed under any provision | Section 194 Table serial 4, column E(a) and (b) |
+| Carry forward of a VDA loss | Not allowed | Column E(b) |
+| Loss from any other head against VDA income | Not allowed | Column E(a) |
+| Expenses against VDA income | Not allowed, except cost of acquisition | Column E(a) |
 
-**This is the most restrictive loss regime in any major jurisdiction.** If you lose ₹5 lakh on BTC and gain ₹5 lakh on ETH in the same year, you pay 30% on ₹5 lakh (the ETH gain) with no offset for the BTC loss.
+Source for this table: https://egazette.gov.in/WriteReadData/2025/265620.pdf
 
-### Example of the no-offset rule
+So each profitable transfer is taxed on its own. A loss on one coin does nothing for a gain on another coin in the same year, or in any later year.
 
-```
-BTC: Bought ₹10,00,000, Sold ₹5,00,000 → Loss: (₹5,00,000) — CANNOT USE
-ETH: Bought ₹3,00,000, Sold ₹8,00,000 → Gain: ₹5,00,000
+### Example of the no-offset rule (hypothetical amounts, in rupees)
 
-Tax = 30% × ₹5,00,000 = ₹1,50,000 + 4% cess = ₹1,56,000
-The ₹5,00,000 BTC loss is permanently lost.
-```
+~~~
+BTC: bought for 1,000,000, sold for 500,000   -> loss 500,000 (cannot be used)
+ETH: bought for 300,000,  sold for 800,000    -> gain 500,000
 
-## Section 9 — Anti-Avoidance Rules
+Tax on VDA income = 30% x 500,000 = 150,000
+Cess (no surcharge assumed) = 4% x 150,000 = 6,000
+Total = 156,000. The BTC loss is lost for good.
+~~~
 
-### 9.1 No Wash Sale Rule (but irrelevant)
+## Section 9: Anti-Avoidance Rules
 
-- **wash sale irrelevance** — India has no specific wash sale rule for crypto. However, this is irrelevant because: Losses cannot be offset against anything anyway (S.115BBH(2)(b)); There is no benefit to crystallising a loss since it cannot be used  _(S.115BBH(2)(b))_
+### 9.1 No wash-sale rule needed
 
-### 9.2 Anti-Avoidance Provisions
+The 2025 Act has no wash-sale rule for VDAs. Selling at a loss gives no tax benefit anyway, because a VDA loss cannot be set off or carried forward (Section 8).
 
-**Anti-Avoidance Provisions table**
+### 9.2 Provisions that reach VDAs
 
 | Provision | Effect |
 | --- | --- |
-| General Anti-Avoidance Rule (GAAR) — Chapter X-A | Applies to impermissible avoidance arrangements; can recharacterise VDA transactions |
-| Section 56(2)(x) — Gift taxation | VDA received without consideration or for inadequate consideration (>₹50,000) is taxable as income of the recipient |
-| Benami Transactions | Holding VDA in another person's name is covered under the Benami Transactions (Prohibition) Act |
-| Transfer pricing | Applicable to international VDA transactions between related parties |
+| General Anti-Avoidance Rule, Chapter XI of the 2025 Act (section 178 onwards) | An arrangement may be declared an impermissible avoidance arrangement and its tax consequence determined under that Chapter |
+| Section 92(2)(m) | VDA received free or cheaply from non-relatives above the threshold in Section 7.4 is income |
+| Section 104 (unexplained asset) | "asset" includes a VDA. An unrecorded VDA with no satisfactory explanation of its source is deemed income of the year it is found |
+| Section 195 | Income deemed under sections 102 to 106 is taxed at the rate in the table below, with no deduction and no loss set-off |
+| Search, seizure and block assessment (sections 261, 295 and 301) | The definitions of "asset" and "undisclosed income" used there include VDAs |
 
-### 9.3 TDS as Anti-Avoidance
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate on income deemed under sections 102 to 106, including an unexplained VDA (section 195(1)) | 60% | "at the rate of 60%" |
 
-- **TDS dual purpose** — The 1% TDS under Section 194S serves a dual purpose: Revenue collection at source; Creating an audit trail — every VDA transfer is tracked via Form 26AS/AIS
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2026/271439.pdf |
+| Surcharge on tax under section 195(1)(i), any assessee, tax year 2026-27 | 25% | "8. 195(1)(i). Any assessee. 25%." |
 
-## Section 10 — Worked Examples
+### 9.3 TDS as a tracking tool
 
-### Example 1 — Simple BTC Sale
+TDS under section 393(1) Table serial 8(vi) records each VDA sale against the seller's PAN. Crypto-asset service providers also report transactions under section 509 of the 2025 Act, and the Finance Act, 2026 substituted section 446 to penalise a provider that fails to report or reports wrongly. Expect the department to hold transaction data before the return is filed.
 
-**Input:** Indian resident individual. Bought 1 BTC at ₹20,00,000 in January 2025. Sold 1 BTC at ₹50,00,000 in September 2025. Exchange fee: ₹5,000 (NOT deductible). Total other income: ₹8,00,000.
+## Section 10: Worked Examples
 
-**Computation:**
-```
-Consideration:            ₹50,00,000
-Cost of acquisition:      ₹20,00,000
-Income from VDA transfer: ₹30,00,000
+All amounts in these examples are hypothetical and in rupees. Rates are the ones in the Section 3 tables.
 
-Tax on VDA: 30% × ₹30,00,000 = ₹9,00,000
-Cess: 4% × ₹9,00,000       = ₹36,000
-Total VDA tax:                ₹9,36,000
+### Example 1: simple BTC sale, new regime
 
-Surcharge: Total income = ₹8,00,000 + ₹30,00,000 = ₹38,00,000
-  Below ₹50 lakh → Nil surcharge
+Resident individual, new regime. Bought 1 BTC for 2,000,000 in May 2026. Sold it for 5,000,000 in September 2026 on an Indian exchange. Exchange fee on sale: 5,000 (not deductible). Other income: salary taxed at slab rates, total income below the first surcharge threshold.
 
-TDS already deducted by exchange: 1% × ₹50,00,000 = ₹50,000
-  (creditable against total tax liability)
+~~~
+Consideration                 5,000,000
+Cost of acquisition          -2,000,000
+Income from VDA transfer      3,000,000
 
-Net VDA tax payable: ₹9,36,000 – ₹50,000 = ₹8,86,000
-Exchange fee of ₹5,000 is NOT deductible.
-```
+Tax at 30% x 3,000,000          900,000
+Cess at 4% x 900,000             36,000
+Tax on the VDA income           936,000
 
-### Example 2 — Multiple VDAs, No Loss Offset
+TDS deducted at 1% x 5,000,000   50,000  (credit against the year's tax)
+The 5,000 fee is not deducted.
+~~~
 
-**Input:** Indian resident. FY 2025-26 transactions:
-- Sold SOL: Cost ₹2,00,000, Proceeds ₹5,00,000, Gain ₹3,00,000
-- Sold DOGE: Cost ₹4,00,000, Proceeds ₹1,00,000, Loss (₹3,00,000)
-- Received 0.1 ETH staking reward: FMV ₹25,000
+The salary is taxed separately at the section 202 slab rates. The rebate under section 156(2) cannot reduce the 900,000.
 
-**Computation:**
-```
-SOL gain: ₹3,00,000 → Tax: 30% = ₹90,000
-DOGE loss: (₹3,00,000) → CANNOT offset against SOL gain
-Staking income: ₹25,000 → Taxed at applicable slab rate (not 30%)
+### Example 2: two coins and a staking reward
 
-VDA transfer tax: ₹90,000 + 4% cess = ₹93,600
-Staking income tax: at slab rate on ₹25,000
+Resident individual in tax year 2026-27. Sold SOL: cost 200,000, proceeds 500,000, gain 300,000. Sold DOGE: cost 400,000, proceeds 100,000, loss 300,000. Received staking rewards worth 25,000 at receipt.
 
-Total: ₹93,600 + slab tax on ₹25,000
-The DOGE loss of ₹3,00,000 is permanently lost.
-```
+~~~
+SOL gain                        300,000 -> tax 30% x 300,000 = 90,000
+DOGE loss                       cannot reduce the SOL gain
+Cess at 4% x 90,000             3,600
+Tax on VDA income               93,600
 
-### Example 3 — Gift of VDA
+Staking reward 25,000           treatment not settled by the Act: refer
+~~~
 
-**Input:** A receives 0.5 BTC as gift from a friend (non-relative). FMV at time of gift: ₹15,00,000. A later sells for ₹20,00,000.
+### Example 3: a VDA gift from a friend
 
-**Computation:**
-```
-Gift taxation (S. 56(2)(x)):
-  FMV of gift: ₹15,00,000 (exceeds ₹50,000)
-  Taxable as income from other sources: ₹15,00,000
-  Tax: at applicable slab rate
+A receives 0.5 BTC from a friend (not a relative) with a fair market value of 1,500,000 at receipt. A receives no other gifts in the year. A later sells the BTC for 2,000,000.
 
-On subsequent transfer (S. 115BBH):
-  Proceeds: ₹20,00,000
-  Cost of acquisition: ₹0 (cost to previous owner for gifts from
-    non-relatives — or FMV if S.49 applies)
-  Gain: ₹20,00,000
-  Tax: 30% × ₹20,00,000 = ₹6,00,000 + cess
+~~~
+Gift: aggregate value 1,500,000 is above the section 92(2)(m) threshold
+      -> whole 1,500,000 is income from other sources, taxed at slab rates
 
-Note: There is potential double taxation on the FMV amount.
-Escalate gift of VDA cases to a Chartered Accountant.
-```
+Later sale: proceeds 2,000,000, section 194 transfer
+      cost of acquisition: not settled for a VDA (see below)
+~~~
+
+Section 73 Table serial 17 of the 2025 Act makes the value taxed under section 92(2)(m) the cost of a "capital asset" when "the capital gain arises" on its transfer. A VDA held as an investment is a capital asset (section 2(22)), and section 194 only sets the rate on income from its transfer; but section 194 allows only "cost of acquisition, if any", and no page links that phrase to section 73. Whether the cost on the sale is 1,500,000 or nil is a question for an accountant. Refer before filing. Using nil overstates the gain by 1,500,000; using 1,500,000 without support risks an addition.
+
+## The method, step by step
+
+1. Confirm the tax year. For transfers from 1 April 2026 to 31 March 2027 use the 2025 Act; for earlier transfers use the 1961 Act and not this Guide. Income-tax Act, 2025, section 1(3): https://egazette.gov.in/WriteReadData/2025/265620.pdf
+2. Confirm each asset is a VDA under section 2(111) of the 2025 Act, including clause (d) for crypto-assets on a distributed ledger, and check for any exclusion notification. https://egazette.gov.in/WriteReadData/2025/265620.pdf
+3. List every transfer in the year (sales, swaps, payments in VDA) under the section 2(109) meaning of transfer applied by section 194(2)(n). Separate receipts (mining, staking, airdrops, gifts) for Section 5 and Section 7.4. https://egazette.gov.in/WriteReadData/2025/265620.pdf
+4. For each transfer, compute consideration less cost of acquisition only, under section 194(1) Table serial 4. Ignore any losses and fees. Add up only the gains. https://egazette.gov.in/WriteReadData/2025/265620.pdf
+5. Tax the total VDA gains at the section 194 rate, then add surcharge for the person's regime and total income and cess under section 3 of the Finance Act, 2026. https://egazette.gov.in/WriteReadData/2026/271439.pdf
+6. Tax the rest of the income at the normal rates (section 194(1)(b)); do not let the new-regime rebate reduce VDA tax (section 156(3)). https://egazette.gov.in/WriteReadData/2025/265620.pdf
+7. Test gifts and free receipts against section 92(2)(m) and the relative and other exclusions in section 92(3). https://egazette.gov.in/WriteReadData/2025/265620.pdf
+8. Collect the TDS deducted under section 393(1) Table serial 8(vi) and check it against the exchange statements; credit it under section 390(5). If the client bought VDAs from other people (peer to peer), check whether the client had to deduct TDS, pay it within thirty days of the month end with Form No. 141 (rule 218), and whether the section 393(4) serial 12 limits applied. https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
+9. Check advance tax paid against sections 404 and 408, and compute interest under sections 424 and 425 if short. https://egazette.gov.in/WriteReadData/2025/265620.pdf
+10. File the return in the form rule 164 requires (ITR-2 or ITR-3 for individuals and HUFs, never ITR-1 or ITR-4) by the section 263(1)(c) due date. https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf and https://egazette.gov.in/WriteReadData/2026/271439.pdf
+
+## Ask the client first
+
+- When did each transfer happen: before 1 April 2026 (1961 Act) or from 1 April 2026 (2025 Act)?
+- Are you staying in the new tax regime, or have you opted out? This changes the surcharge table and the rebate.
+- Do you have business or profession income (including trading as a business), and are your accounts audited? This changes the return form and the due date.
+- Did you receive any VDA for free or below value (gifts, airdrops, rewards), and from whom: a relative, or someone else?
+- Did you buy any VDA directly from another person rather than through an exchange? You may have had to deduct and pay TDS.
+- Are you resident in India for the tax year, and did you trade on a foreign exchange or pay tax on VDAs abroad? See `in-tax-residency`.
+
+## When to refuse or refer
+
+Refer to an accountant when:
+
+- Income from mining, staking, lending, yield, liquidity pools, a paid airdrop, or an NFT royalty needs a head of income: the Act does not settle it.
+- The cost of a gifted or free VDA on a later sale matters (Example 3), or a fork or airdrop needs a cost.
+- The client gave a VDA away, or moved VDAs between wallets and the department may see the move as a transfer.
+- The seller is a non-resident, or the client is a non-resident or not ordinarily resident.
+- The client is a company, a firm or a trust, or VDAs are held as stock-in-trade of a business.
+- There are cross-border transactions between related parties (see `india-transfer-pricing`).
+- There is a notice about an unexplained asset under section 104, a search, or a block assessment.
+- The client's question is about income earned before 1 April 2026.
+
+Refuse to:
+
+- Set a VDA loss against any income, or carry it forward.
+- Deduct fees, gas, commissions or any expense other than cost of acquisition.
+- Apply a capital gains exemption or a holding-period rate to VDA income.
+- Present any crypto computation as final without an accountant's review.
+
+For the general income-tax computation (slabs, regimes, rebate) see `in-income-tax`. For instalments see `in-advance-tax`.
 
 ## Self-Checks
 
-- [ ] Has the 30% flat rate (plus cess and surcharge) been applied to ALL VDA transfer income?
-- [ ] Have losses been correctly excluded from any offset (no inter-VDA, no inter-head offset)?
-- [ ] Is only the cost of acquisition deducted — no fees, commissions, or improvement costs?
-- [ ] Has 1% TDS been accounted for (either by exchange or buyer in P2P)?
-- [ ] Is Schedule VDA completed for every VDA transaction?
-- [ ] Has staking/mining income been separately classified under "income from other sources"?
-- [ ] Have advance tax obligations been considered (15 June, 15 Sep, 15 Dec, 15 Mar)?
-- [ ] Is the correct ITR form used (ITR-2 or ITR-3)?
-- [ ] Have gifts of VDA been checked against the ₹50,000 threshold under S.56(2)(x)?
-- [ ] Has TDS credit been verified in Form 26AS / AIS?
+- [ ] Every transfer from 1 April 2026 taxed at the section 194 rate, with surcharge for the right regime and cess on tax plus surcharge?
+- [ ] No VDA loss used anywhere, in the year or later?
+- [ ] Only cost of acquisition deducted?
+- [ ] New-regime rebate kept away from the VDA tax?
+- [ ] TDS deducted by exchanges matched and credited; TDS owed on peer-to-peer purchases checked?
+- [ ] Gifts and free receipts tested on the aggregate for the year, with relatives excluded?
+- [ ] Advance tax instalments checked, including for a large sale late in the year?
+- [ ] Return form ITR-2 or ITR-3 (not ITR-1 or ITR-4) and the right due date?
+- [ ] Every unsettled classification (Section 5) referred, not guessed?
 
-## PROHIBITIONS
+## Prohibitions
 
-- NEVER offset crypto losses against any income — it is explicitly prohibited under S.115BBH(2)(b)
-- NEVER deduct exchange fees, gas fees, or any cost other than cost of acquisition
-- NEVER apply capital gains exemptions (like S.54, S.54F) to VDA income
-- NEVER treat VDA differently based on holding period — there is no LTCG/STCG distinction for VDA
-- NEVER ignore the 1% TDS obligation on VDA transfers
-- NEVER assume mining/staking income falls under the 30% regime — it is typically "income from other sources" at slab rates
-- NEVER apply loss carry-forward for VDA — it does not exist
-- NEVER ignore advance tax obligations for VDA income
-- NEVER treat transfers between own wallets as taxable transfers
-- NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
+- Never set off a VDA loss against any income, including a gain on another VDA. Section 194 Table serial 4, column E.
+- Never deduct exchange fees, gas fees or any cost other than cost of acquisition.
+- Never apply a holding-period distinction or a capital gains exemption to VDA income.
+- Never carry a VDA loss forward.
+- Never apply the section 194 rate to a mining, staking or airdrop receipt as if the Act settled it.
+- Never use the 1961 Act section numbers for tax year 2026-27.
+- Never ignore TDS on a VDA purchase from another person.
+- Never present a crypto tax position as definitive; label it as an estimate for professional review.
+
+## Sources
+
+- Income-tax Act, 2025 (30 of 2025), Gazette of India, 21 August 2025: https://egazette.gov.in/WriteReadData/2025/265620.pdf
+- Finance Act, 2026 (4 of 2026), Gazette of India, 30 March 2026: https://egazette.gov.in/WriteReadData/2026/271439.pdf
+- Income-tax Rules, 2026, notified 20 March 2026: https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this Guide is maintained on the OpenAccountants site. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -489,4 +489,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `india-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/india-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-17. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `india-crypto-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/india-crypto-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

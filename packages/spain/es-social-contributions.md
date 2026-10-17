@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish self-employed social co
 version: 2.0
 jurisdiction: ES
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,12 +19,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers Spanish social security contributions for tax year 2026. It deals with two groups:
+This skill covers Spanish social security contributions for tax year 2026. It deals with two groups:
 
 - **Self-employed people (autónomos) in RETA**, the special regime for self-employed workers. It covers the income bands that set the monthly base, the rates, the reduced starting fee (tarifa plana), the yearly regularisation against actual net income, family collaborators, company members and pluriactividad.
 - **Employers and employees in the Régimen General.** It covers the employer and employee rates, the minimum and maximum bases, the intergenerational equity contribution (MEI) and the solidarity contribution on pay above the maximum base.
 
-The figures for 2026 come from [Orden PJC/297/2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296), the yearly contribution order. It was published in the BOE on 31 March 2026, and its bases and rates apply "desde el 1 de enero de 2026". No 2026 State Budget Law has been approved. The 2023 budget has been rolled over, and the order says so: "se ha producido automáticamente la prórroga presupuestaria". Two things in this Guide have no 2026 figure set in law, and each is marked where it is used:
+The figures for 2026 come from [Orden PJC/297/2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296), the yearly contribution order. It was published in the BOE on 31 March 2026, and its bases and rates apply "desde el 1 de enero de 2026". No 2026 State Budget Law has been approved. The 2023 budget has been rolled over, and the order says so: "se ha producido automáticamente la prórroga presupuestaria". Two things in this skill have no 2026 figure set in law, and each is marked where it is used:
 
 - the amount of the reduced starting fee;
 - the sick-pay percentages, which come from the Social Security page on temporary incapacity, not from the order.
@@ -38,7 +38,7 @@ A short dated section gives the 2025 figures, because 2025 is being regularised 
 - VAT: es-vat-return;
 - the whole picture of self-employment in Spain: es-autonomous-worker.
 
-This Guide does not cover the foral territories' own tax administrations. It also does not cover EU coordination for posted or cross-border workers. For both, see "When to refuse or refer".
+This skill does not cover the foral territories' own tax administrations. It also does not cover EU coordination for posted or cross-border workers. For both, see "When to refuse or refer".
 
 ## Ask the client first
 
@@ -152,7 +152,7 @@ There is no employer share in RETA. The self-employed person pays all of each ra
 | MEI (intergenerational equity) | 0.90% |
 | Extra charge where occupational cover is not taken | 0.10% |
 
-No official page prints a combined RETA percentage, so this Guide gives none. Read the total from the TGSS receipt. Where temporary incapacity is covered in another regime and the person does not opt in here, the order applies a reduction coefficient to the common-contingencies cuota.
+No official page prints a combined RETA percentage, so this skill gives none. Read the total from the TGSS receipt. Where temporary incapacity is covered in another regime and the person does not opt in here, the order applies a reduction coefficient to the common-contingencies cuota.
 
 ### RETA: reduced starting fee (tarifa plana) ([Real Decreto-ley 13/2022](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482))
 
@@ -348,8 +348,8 @@ These cases use made-up client figures to show the method. The rates and bases a
 - **A particular mutual insurer's (mutua) benefits, cover or claim.** Refer to that mutua.
 - **The employer's accident premium for a given activity.** This is the tariff in LGSS additional provision 61. It needs the activity code (CNAE) and the occupation.
 - **The foral territories** (Álava, Bizkaia, Gipuzkoa, Navarra) for the income tax side. Social security itself is state-wide, but the IRPF figures used for regularisation come from those administrations.
-- **Ceuta.** The extraordinary cessation benefit and other support measures in Real Decreto-ley 22/2026 are outside this Guide.
-- **Whether a late-payment surcharge is deductible in IRPF.** No official page read for this Guide answers it. Keep surcharges and interest out of the deductible expense until an accountant rules on it.
+- **Ceuta.** The extraordinary cessation benefit and other support measures in Real Decreto-ley 22/2026 are outside this skill.
+- **Whether a late-payment surcharge is deductible in IRPF.** No official page read for this skill answers it. Keep surcharges and interest out of the deductible expense until an accountant rules on it.
 - **Any request for a combined RETA percentage, an "effective rate", or a cuota without a named base.** Refuse the shortcut and ask for the base.
 - **Pluriactividad planning, special regimes (sea workers, agrarian, domestic employees, artists) and bonus schemes for hiring.** Refer to a reviewer.
 
@@ -388,7 +388,7 @@ These cases use made-up client figures to show the method. The rates and bases a
 - **Common illness or non-work accident:**
   - The subsidy is paid at 60% of the regulatory base from day 4 to day 20, then 75% from day 21.
   - The self-employed person must be registered and up to date with cuotas.
-  - For common illness, the general regime requires 180 days of contributions in the five years before the leave ([LGSS article 172](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724)). Confirm with the mutua how this applies to the self-employed person; this Guide does not restate the RETA provision.
+  - For common illness, the general regime requires 180 days of contributions in the five years before the leave ([LGSS article 172](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724)). Confirm with the mutua how this applies to the self-employed person; this skill does not restate the RETA provision.
   - Article 321 of the LGSS confirms the self-employed subsidy starts on the fourth day of leave, unless the leave comes from a work accident or occupational disease.
 - **Accident at work or occupational disease:** 75% from the day after the sick note, with no minimum contribution period.
 - **Regulatory base:** the common-contingencies base of the month before the leave. A higher base gives a higher benefit.
@@ -432,7 +432,7 @@ Do not read the band off the debit: a reduced fee, a bonus or a mid-month regist
 - [ ] Late payments separated into principal, surcharge and interest.
 - [ ] IRPF boxes 0196, 0197 and 0178 used for a regularisation settled in the year.
 
-This Guide is general information on Spanish social security contributions. It is not advice for a particular person. Before a figure is filed or paid, a qualified professional (asesor fiscal, graduado social or gestor administrativo) should check it against the client's TGSS documents.
+This skill is general information on Spanish social security contributions. It is not advice for a particular person. Before a figure is filed or paid, a qualified professional (asesor fiscal, graduado social or gestor administrativo) should check it against the client's TGSS documents.
 
 <!-- openaccountants-cta-block -->
 

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/iceland-payroll"
   jurisdiction: "IS"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -19,7 +19,7 @@ Figures are for tax year 2026. [Dated official rates](https://www.skatturinn.is/
 
 ## Ask the client first
 
-- Use this method for ordinary Icelandic employed-person payroll in 2026. Establish employer and employee identity, residence and work location, pay date and period, contract and collective agreement, cash wages, benefits, pension arrangements, other deductions, and the employee's tax-credit and bracket instruction. Keep source documents and pay-run approval. Unknown tax residence, posted-worker coverage, contractor status, director fees, equity, benefit valuation or sector-specific charges require the applicable separate rule before calculation. Pay rates, including minimum pay, come from the applicable collective agreement and employment contract; this Guide does not set them.
+- Use this method for ordinary Icelandic employed-person payroll in 2026. Establish employer and employee identity, residence and work location, pay date and period, contract and collective agreement, cash wages, benefits, pension arrangements, other deductions, and the employee's tax-credit and bracket instruction. Keep source documents and pay-run approval. Unknown tax residence, posted-worker coverage, contractor status, director fees, equity, benefit valuation or sector-specific charges require the applicable separate rule before calculation. Pay rates, including minimum pay, come from the applicable collective agreement and employment contract; this skill does not set them.
 
 The employer must be on the withholding register (launagreiðendaskrá) and have the required electronic identity or withholding web key. Notify the register at least 8 days before the activity starts; an employer that stops paying wages during the year must notify Skatturinn within eight days. [Employer register](https://www.skatturinn.is/atvinnurekstur/ad-hefja-rekstur/launagreidendaskra/) [Act 45/1987, art. 19](https://www.althingi.is/lagas/nuna/1987045.html) The electronic service supports returns, detailed wage information, bank payment claims, corrections and statements. [Skatturinn electronic filing](https://www.skatturinn.is/atvinnurekstur/rafraen-skil/stadgreidsla/)
 
@@ -202,4 +202,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `iceland-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/iceland-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `iceland-payroll` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/iceland-payroll. If neither is available, confirm every figure against the official source pages cited above before relying on it.

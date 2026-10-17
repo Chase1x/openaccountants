@@ -3,7 +3,7 @@ name: ny-pte-tax-ptet
 description: NY Pass-Through Entity Tax (PTET) — Article 24-A
 jurisdiction: US-NY
 tax_year: 2026
-last_updated: 2026-10-03
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # New York pass-through entity tax (PTET) and New York City PTET
 
-This Guide covers the New York State pass-through entity tax under Tax Law Article 24-A and the New York City pass-through entity tax under Article 24-B. It is for the preparer of a partnership or New York S corporation deciding whether to elect, and for the preparer of an owner's New York return. Figures are for tax year 2026. The rate table and payment rules below are the ones the Department of Taxation and Finance prints today; its pages carry no end year for them. The federal side (the SALT cap after the One Big Beautiful Bill Act) is covered in `us-2026-federal-tax-changes`. Other states' elective entity taxes are covered in `us-pte-state-matrix`; this Guide does not repeat that table.
+This skill covers the New York State pass-through entity tax under Tax Law Article 24-A and the New York City pass-through entity tax under Article 24-B. It is for the preparer of a partnership or New York S corporation deciding whether to elect, and for the preparer of an owner's New York return. Figures are for tax year 2026. The rate table and payment rules below are the ones the Department of Taxation and Finance prints today; its pages carry no end year for them. The federal side (the SALT cap after the One Big Beautiful Bill Act) is covered in `us-2026-federal-tax-changes`. Other states' elective entity taxes are covered in `us-pte-state-matrix`; this skill does not repeat that table.
 
 Official pages were read on 3 October 2026. The main ones: the Department's [PTET page](https://www.tax.ny.gov/bus/ptet/) (updated April 3, 2026), its [calculation page](https://www.tax.ny.gov/e-services/ptet/calculations.htm) (updated June 18, 2025), the [PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm) (updated October 3, 2025) and the [NYC PTET page](https://www.tax.ny.gov/bus/ptet/city.htm) (updated April 3, 2026).
 
@@ -37,13 +37,13 @@ Official pages were read on 3 October 2026. The main ones: the Department's [PTE
 - For an S corporation: are all shareholders New York residents now, so it can certify as a resident S corporation when it elects? Are all of them city taxpayers?
 - Does the entity expect positive New York income this year, and can it fund the quarterly estimates in cash? A loss year means a refund by check, not a transfer to owners.
 - Do any nonresident owners file through a group return (IT-203-GR or IT-203-S)? They cannot claim the credit there.
-- Is the owner's federal state and local tax deduction actually limited by the 2026 cap? The answer decides whether the election saves federal tax; this Guide does not compute it. Check this with `us-2026-federal-tax-changes`.
+- Is the owner's federal state and local tax deduction actually limited by the 2026 cap? The answer decides whether the election saves federal tax; this skill does not compute it. Check this with `us-2026-federal-tax-changes`.
 
 ## Scope
 
-This Guide covers eligibility, the election, the resident and standard S corporation versions, PTE taxable income, the rate table, estimated payments, the annual return, the owner credit and add-back, the resident credit for other states' entity taxes, and the NYC PTET.
+This skill covers eligibility, the election, the resident and standard S corporation versions, PTE taxable income, the rate table, estimated payments, the annual return, the owner credit and add-back, the resident credit for other states' entity taxes, and the NYC PTET.
 
-Not covered here, with the Guide to use instead:
+Not covered here, with the skill to use instead:
 - New York individual rates and the resident return: `ny-it-201-resident-return`.
 - New York corporate franchise tax under Article 9-A: `ny-corporate-franchise-article-9a`.
 - Federal SALT cap amounts and phase-down: `us-2026-federal-tax-changes`.
@@ -61,7 +61,7 @@ Eligible (both from the [Department PTET page](https://www.tax.ny.gov/bus/ptet/)
 
 Not eligible: "single-member LLCs (unless they elect to be treated as an S corporation for New York purposes)", sole proprietorships, trusts, non-profit corporations, and "corporations that are not New York S corporations" ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)). A single-member LLC that is disregarded cannot elect; one that elects S corporation treatment for New York purposes can ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). So a single-shareholder New York S corporation can elect.
 
-Owners who are not taxable under Article 22. A partnership that elects must include all partners taxable under Article 22, resident and nonresident. It cannot pick which partners take part ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). Income flowing to a corporate partner, a partnership partner, an S corporation partner or any other owner not taxable under Article 22 is left out of PTE taxable income, and that owner gets no credit. A partnership owned only by a partnership and a corporation may elect, but "will not have any PTE taxable income or PTET credits to distribute" ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). The live version of this Guide suggested carving tax-exempt partners out through the partnership agreement; the Department's pages give no such route, and none is needed, because owners not taxable under Article 22 are already outside the base.
+Owners who are not taxable under Article 22. A partnership that elects must include all partners taxable under Article 22, resident and nonresident. It cannot pick which partners take part ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). Income flowing to a corporate partner, a partnership partner, an S corporation partner or any other owner not taxable under Article 22 is left out of PTE taxable income, and that owner gets no credit. A partnership owned only by a partnership and a corporation may elect, but "will not have any PTE taxable income or PTET credits to distribute" ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). The live version of this skill suggested carving tax-exempt partners out through the partnership agreement; the Department's pages give no such route, and none is needed, because owners not taxable under Article 22 are already outside the base.
 
 ## Election mechanics
 
@@ -85,7 +85,7 @@ Two kinds of electing S corporation ([Department PTET page](https://www.tax.ny.g
 - Electing resident S corporation: one that "certifies at the time it elects to opt in to PTET that all of its shareholders are residents of New York State under Article 22."
 - Electing standard S corporation: any other electing S corporation.
 
-The live version of this Guide said all shareholders must be residents "for the entire tax year". The Department's test is a certification at the time of election that all shareholders are residents for Article 22 purposes. If shareholders may change residence during the year, refer the point (see the last section).
+The live version of this skill said all shareholders must be residents "for the entire tax year". The Department's test is a certification at the time of election that all shareholders are residents for Article 22 purposes. If shareholders may change residence during the year, refer the point (see the last section).
 
 Why it matters. On the [calculation page](https://www.tax.ny.gov/e-services/ptet/calculations.htm), the standard S corporation worksheet computes the New York share of each item "Using the apportionment rules of Article 9-A". The resident S corporation worksheet takes the full Schedule K-1 amounts. So a resident S corporation can bring all of its owners' share of income into the base, while a standard S corporation brings in only the apportioned New York share, even for shareholders who live in New York. Only a resident S corporation can also elect the NYC PTET.
 
@@ -128,7 +128,7 @@ The tax is computed on total PTE taxable income (line 18 of the worksheet). The 
 
 How to read it. Each fixed amount applies once income passes the ceiling below it, and the higher rate applies only to the excess over that ceiling. Income of exactly a ceiling stays in the lower row ("less than or equal to"). There is no minimum tax: with zero or negative PTE taxable income the PTET is zero, but the entity must still file the annual return ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 
-The live version of this Guide compared these rates to the individual brackets. That comparison is not on the PTET pages and is removed; individual rates are in `ny-it-201-resident-return`.
+The live version of this skill compared these rates to the individual brackets. That comparison is not on the PTET pages and is removed; individual rates are in `ny-it-201-resident-return`.
 
 ## Estimated payments
 
@@ -143,13 +143,13 @@ Due dates. Payments "are due on or before March 15, June 15, September 15, and D
 
 Required annual payment. It is the lesser of the two tests in the table. "If the entity did not opt in to the PTET for the preceding year, the required annual payment is 90% of the tax reported on the PTET return for the taxable year." ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) If the current year's PTE taxable income and PTET are zero or less, the lesser of the two tests is zero and no estimated payments are due. If the entity elected for the preceding year and that year's PTET was zero, the lesser of the two tests is also zero, and "no estimated PTET payments are due". Any unpaid PTET must be paid by 15 March following the close of the calendar year in which the tax year ends ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 
-Penalties. Late or short payments bear penalty and interest "based on the rules in Article 22". Taxpayers "may not apply the annualized installment method under Tax Law § 685(c)(4)" to reduce the penalty. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) The live version of this Guide stated a penalty rate; no PTET page prints one, so it is removed.
+Penalties. Late or short payments bear penalty and interest "based on the rules in Article 22". Taxpayers "may not apply the annualized installment method under Tax Law § 685(c)(4)" to reduce the penalty. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) The live version of this skill stated a penalty rate; no PTET page prints one, so it is removed.
 
 How to pay. Authorized persons and tax professionals may both pay. Payments go through Web File "and pay by ACH debit". Entities "cannot pay by check or other methods." Up to 12 payments a year may be made; they can be scheduled ahead until 15 December, and payments from 16 to 31 December are allowed but cannot be scheduled ahead. "An electing entity cannot make estimated tax payments after filing a return." ([Department PTET page](https://www.tax.ny.gov/bus/ptet/))
 
 No transfers. PTET payments apply only to New York State PTET or NYC PTET. They cannot be moved to other taxes, to related entities, or to the owners' own estimated tax accounts, even in a loss year. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) State and city PTET payments are applied together on the annual return, and any net overpayment is refunded ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 
-Overpayments. "Overpayments cannot be carried forward to future years and will automatically be reviewed and processed as a refund." The refund is a physical check to the entity's address of record. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) The live version of this Guide said an overpayment could be applied to next year's first installment; that is wrong.
+Overpayments. "Overpayments cannot be carried forward to future years and will automatically be reviewed and processed as a refund." The refund is a physical check to the entity's address of record. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)) The live version of this skill said an overpayment could be applied to next year's first installment; that is wrong.
 
 Owners' own estimates. Owners may take the expected PTET credit into account when computing their own IT-2105 estimates ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). An electing partnership must still make MCTMT estimated payments for nonresident partners on Form IT-2658-MTA ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 
@@ -169,7 +169,7 @@ Informing owners. Partnerships report each partner's resident or nonresident cla
 
 Who claims. Only direct owners taxable under Article 22 (individuals, trusts, estates). A non-grantor trust claims the credit on its own IT-205 and "is not permitted to distribute any PTET credit it receives to its beneficiaries." A grantor trust is disregarded; the grantor claims. A partner that is itself a partnership, or any corporate owner, cannot claim or pass the credit on. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/); [PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm))
 
-Amount. The credit equals the owner's direct share of the PTET reported on the entity's annual return; credits from several entities are added together ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)). For an S corporation, each owner's credit is total PTET multiplied by that owner's ownership percentage. For a partnership, total PTET is split between the resident and nonresident pools in proportion to each pool's PTE taxable income, then within each pool by profit and loss ownership percentage, adjusted for special allocations such as guaranteed payments. If one pool is zero or less, its partners get nothing and the whole PTET goes to the other pool. ([calculation page](https://www.tax.ny.gov/e-services/ptet/calculations.htm); [TSB-M-21(1)C, (1)I](https://www.tax.ny.gov/pdf/memos/ptet/m21-1c-1i.pdf)) The live version of this Guide said S corporation credits follow distributive share of PTE taxable income rather than ownership percentage; for S corporations the Department's rule is ownership percentage.
+Amount. The credit equals the owner's direct share of the PTET reported on the entity's annual return; credits from several entities are added together ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)). For an S corporation, each owner's credit is total PTET multiplied by that owner's ownership percentage. For a partnership, total PTET is split between the resident and nonresident pools in proportion to each pool's PTE taxable income, then within each pool by profit and loss ownership percentage, adjusted for special allocations such as guaranteed payments. If one pool is zero or less, its partners get nothing and the whole PTET goes to the other pool. ([calculation page](https://www.tax.ny.gov/e-services/ptet/calculations.htm); [TSB-M-21(1)C, (1)I](https://www.tax.ny.gov/pdf/memos/ptet/m21-1c-1i.pdf)) The live version of this skill said S corporation credits follow distributive share of PTE taxable income rather than ownership percentage; for S corporations the Department's rule is ownership percentage.
 
 Refundable. The credit offsets all tax on Forms IT-201, IT-203 and IT-205. Any excess "is treated as an overpayment, to be credited or refunded without interest" under Tax Law § 606(kkk). ([Department PTET page](https://www.tax.ny.gov/bus/ptet/); [PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm))
 
@@ -177,7 +177,7 @@ Which year. The owner claims the credit on the return for the same tax year as t
 
 How. Attach Form IT-653 to an individual return. Nonresident owners must file an individual IT-203. The credit cannot be claimed on the group returns, Form IT-203-GR or Form IT-203-S. ([Department PTET page](https://www.tax.ny.gov/bus/ptet/))
 
-Add-back. The owner adds back the PTET credit claimed, once, at the individual level, with addition modification A-219 on Form IT-225 ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). The live version of this Guide called this "EA-219" or "S-219"; the Department's code is A-219. IT-203 filers allocate the A-219 amount using the IT-225 method for items of income ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). Where the entity's federal deduction for PTET in a year differs from the credits claimed for that year (for example after a refund of an overpayment), the entity adds back the difference under § 612(b)(3); the FAQ works three examples ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
+Add-back. The owner adds back the PTET credit claimed, once, at the individual level, with addition modification A-219 on Form IT-225 ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). The live version of this skill called this "EA-219" or "S-219"; the Department's code is A-219. IT-203 filers allocate the A-219 amount using the IT-225 method for items of income ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)). Where the entity's federal deduction for PTET in a year differs from the credits claimed for that year (for example after a refund of an overpayment), the entity adds back the difference under § 612(b)(3); the FAQ works three examples ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 
 Order of credits. "The resident tax credit is non-refundable and must be applied before the PTET credit, which is fully refundable." ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm))
 
@@ -192,12 +192,12 @@ Nonresident owners and their home state. Whether a nonresident's home state give
 | Source | all figures below | https://www.tax.ny.gov/e-services/ptet/calculations-city.htm |
 | NYC PTET rate on NYC PTE taxable income | 3.876% | "Multiply the NYC PTE taxable income by 3.876% (0.03876)." |
 
-The same rate is in [TSB-M-22(1)C, (1)I](https://www.tax.ny.gov/pdf/memos/ptet/m22-1c-1i.pdf), which applies it to tax years beginning on or after 1 January 2022. The live version of this Guide said "for tax years 2023 and later"; the memo says from 2022.
+The same rate is in [TSB-M-22(1)C, (1)I](https://www.tax.ny.gov/pdf/memos/ptet/m22-1c-1i.pdf), which applies it to tax years beginning on or after 1 January 2022. The live version of this skill said "for tax years 2023 and later"; the memo says from 2022.
 
 Who can elect ([NYC PTET page](https://www.tax.ny.gov/bus/ptet/city.htm)). Only an entity that opts in to the State PTET for the same year, at the same time, in the same online application, and:
 - a partnership: it "has at least one partner or member that is a city taxpayer"; or
 - an S corporation: it is a resident S corporation for PTET purposes "and all shareholders are city taxpayers".
-A standard S corporation cannot elect. The live version of this Guide said one New York City resident owner was enough for any entity; that holds for partnerships only.
+A standard S corporation cannot elect. The live version of this skill said one New York City resident owner was enough for any entity; that holds for partnerships only.
 
 A city taxpayer is a city resident individual, trust or estate under Tax Law § 1305. Owners cannot be part-year city residents; an owner resident in the city "for at least half of the year" is a city resident, and all others are nonresidents with no NYC credit. ([calculation page, city](https://www.tax.ny.gov/e-services/ptet/calculations-city.htm); [TSB-M-22(1)C, (1)I](https://www.tax.ny.gov/pdf/memos/ptet/m22-1c-1i.pdf))
 
@@ -223,15 +223,15 @@ Timing follows the payment. Estimates paid during 2026 are deducted for 2026. A 
 | Yearly increase for 2027 to 2029 | 101 percent | "after calendar year 2026 and before 2030, 101 percent of the dollar amount" |
 | Cap for taxable years beginning after 2029 | USD 10,000 | "in the case of any taxable year beginning after calendar year 2029, $10,000" |
 
-Section 70120 of the Act changes the cap amounts in § 164(b)(6) and adds § 164(b)(7) with the phase-down. Its text does not address payments made by a partnership or S corporation, so Notice 2020-75 is still the IRS statement on entity-level taxes. The live version of this Guide described a USD 10,000 cap only; that cap applies again only for taxable years beginning after 2029, and as a floor before then.
+Section 70120 of the Act changes the cap amounts in § 164(b)(6) and adds § 164(b)(7) with the phase-down. Its text does not address payments made by a partnership or S corporation, so Notice 2020-75 is still the IRS statement on entity-level taxes. The live version of this skill described a USD 10,000 cap only; that cap applies again only for taxable years beginning after 2029, and as a floor before then.
 
-What this means for the decision. Whether the entity-level deduction saves federal tax for a given owner depends on that owner's federal return, including the 2026 cap and the MAGI phase-down in the table above. No page cited here computes it. The arithmetic belongs in `us-2026-federal-tax-changes`; this Guide does not compute federal savings.
+What this means for the decision. Whether the entity-level deduction saves federal tax for a given owner depends on that owner's federal return, including the 2026 cap and the MAGI phase-down in the table above. No page cited here computes it. The arithmetic belongs in `us-2026-federal-tax-changes`; this skill does not compute federal savings.
 
-The live version of this Guide also stated effects on the qualified business income deduction and on self-employment tax. No allowed page proves those effects for PTET, so they are removed; refer them.
+The live version of this skill also stated effects on the qualified business income deduction and on self-employment tax. No allowed page proves those effects for PTET, so they are removed; refer them.
 
 ## When electing does NOT help
 
-The first eight come from the Department's pages cited. The last two are federal and home-state questions that this Guide routes out.
+The first eight come from the Department's pages cited. The last two are federal and home-state questions that this skill routes out.
 - No owner taxable under Article 22. Income to corporations, partnerships and S corporations is outside the base; they get no credit ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 - Tiered structures. A partner that is itself a partnership gets no credit and "cannot pass the PTET credit through to its partners" ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)). An electing upper-tier partnership includes in its own PTE taxable income the amounts flowing to its direct partners taxable under Article 22, "including any income received from a lower-tier partnership" ([PTET FAQ](https://www.tax.ny.gov/bus/ptet/faq.htm)).
 - Trust owners whose beneficiaries bear the tax. A non-grantor trust keeps the credit; it cannot pass it to beneficiaries ([Department PTET page](https://www.tax.ny.gov/bus/ptet/)).
@@ -299,7 +299,7 @@ Step 7, owners. A files IT-201 with IT-653, claiming 109,750 (State) and 58,140 
 - [IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf).
 - [Public Law 119-21 (One Big Beautiful Bill Act), section 70120](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm).
 
-This Guide must be reviewed by a New York-licensed CPA, Enrolled Agent, or attorney admitted in New York before it is used for client deliverables. Practitioners must check current-year rates, deadlines, form numbers and modification codes against the Department's website before relying on it.
+This skill must be reviewed by a New York-licensed CPA, Enrolled Agent, or attorney admitted in New York before it is used for client deliverables. Practitioners must check current-year rates, deadlines, form numbers and modification codes against the Department's website before relying on it.
 
 <!-- openaccountants-cta-block -->
 

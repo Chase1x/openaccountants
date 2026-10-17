@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -16,11 +16,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers preparing and checking Maltese VAT filings for a business established in Malta: the Article 10 periodic return, the Article 11 small-enterprise declaration and the Article 12 obligations. It covers registration type, rates, input VAT, cross-border reverse charge, recapitulative statements, the One Stop Shop (OSS), penalties, interest and records.
+This skill covers preparing and checking Maltese VAT filings for a business established in Malta: the Article 10 periodic return, the Article 11 small-enterprise declaration and the Article 12 obligations. It covers registration type, rates, input VAT, cross-border reverse charge, recapitulative statements, the One Stop Shop (OSS), penalties, interest and records.
 
 Figures are for tax year 2026. The law is the VAT Act, Chapter 406 of the Laws of Malta, as consolidated on 27 March 2026 (amendments up to Act III of 2026 and Legal Notice 75 of 2026), plus its subsidiary legislation. VAT in Malta is charged per transaction and per tax period, so "tax year 2026" means periods falling in calendar 2026. A short section near the end covers 2025 periods still being filed.
 
-The authority is the Malta Tax and Customs Administration (MTCA); the Act calls the office-holder the Commissioner for Tax and Customs. Returns, registrations and statements go through MTCA's online services. This Guide does not reproduce the box numbers of the return form. Take them from the live form on the MTCA site, and check MTCA's published filing calendar against the statutory dates below.
+The authority is the Malta Tax and Customs Administration (MTCA); the Act calls the office-holder the Commissioner for Tax and Customs. Returns, registrations and statements go through MTCA's online services. This skill does not reproduce the box numbers of the return form. Take them from the live form on the MTCA site, and check MTCA's published filing calendar against the statutory dates below.
 
 Main sources, all on legislation.mt:
 
@@ -199,7 +199,7 @@ Hypothetical figures, for tax year 2026 periods.
 - An assessment, provisional assessment, investigation or appeal to the Administrative Review Tribunal (thirty days from service to appeal).
 - VAT refund claims under the Eighth and Thirteenth Directives (refunds of VAT to businesses established in another EU country or outside the EU), and VAT refunds to travellers from outside the EU.
 - Anything the client cannot evidence with invoices.
-- A request about Maltese income tax: this Guide covers VAT only.
+- A request about Maltese income tax: this skill covers VAT only.
 
 ## Filing and payment
 

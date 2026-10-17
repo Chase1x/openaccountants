@@ -3,7 +3,7 @@ name: ie-corporation-tax
 description: "Use this skill whenever asked about Irish Corporation Tax for a resident Irish company or branch of a non-resident company carrying on a trade in Ireland. Trigger on phrases like \"Ireland CT\", \"Ireland corporation tax\", \"12.5% Ireland\", \"Irish trading rate\", \"Pillar Two Ireland\", \"Irish CT1 return\", \"Revenue Online Service CT\", \"ROS CT1\", \"Section 21 TCA\", \"Section 21A passive income\", \"Knowledge Development Box\", \"KDB\", \"R&D tax credit Ireland\", \"Section 766\", \"Section 110 SPV\", \"group relief Ireland\", \"preliminary CT\", \"iXBRL accounts\", \"QDMTT Ireland\", \"IIR Ireland\", or \"UTPR Ireland\". Covers the 12.5% trading rate (Section 21 TCA 1997), the 25% non-trading rate (Section 21A) on passive income, the Pillar Two 15% effective minimum tax for in-scope MNEs implemented via Finance (No. 2) Act 2023 (IIR, QDMTT, UTPR), the R&D tax credit at 30% under Section 766 TCA (as raised by FA 2024) refundable in three instalments, the Knowledge Development Box at 6.25% effective rate, Section 110 securitisation SPV rules, group relief at the 75% threshold, trading loss relief (one-year carry-back, indefinite carry-forward), preliminary tax (90% current year or 100% prior year), and final CT1 filing within 9 months of year-end (by the 23rd of that month for ROS users) with iXBRL-tagged financial statements via Revenue Online Service. Out of scope: personal income tax (use ie-income-tax-form11), USC (use ie-usc), PRSI Class S (use ie-prsi-class-s), VAT (use ireland-vat-return), preliminary income tax (use ie-preliminary-tax), partnerships and unincorporated businesses, foreign branch trading profits taxed under Section 25 attribution rules, banking and insurance sector specific regimes, life assurance Case I/IV computations, REIT (Section 705A) and IREF (Section 739K) specific returns, petroleum and mineral extraction profits, and Irish Collective Asset-management Vehicles (ICAVs). ALWAYS read this skill before touching any Irish Corporation Tax work."
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide covers Corporation Tax (CT) for an Irish-resident company, or an Irish branch of a non-resident company, that files a Form CT1. Figures are for tax year 2026, meaning accounting periods in 2026: for a calendar-year company, the 12 months to 31 December 2026. A dated section near the end covers the 2025 CT1, which most calendar-year companies had to file by 23 September 2026.
+This skill covers Corporation Tax (CT) for an Irish-resident company, or an Irish branch of a non-resident company, that files a Form CT1. Figures are for tax year 2026, meaning accounting periods in 2026: for a calendar-year company, the 12 months to 31 December 2026. A dated section near the end covers the 2025 CT1, which most calendar-year companies had to file by 23 September 2026.
 
 It covers the 12.5% and 25% rates, chargeable gains in CT, the Pillar Two minimum tax (scope only), close-company surcharges, preliminary tax, CT1 filing on ROS, losses and group relief, start-up relief, the R&D corporation tax credit, the Knowledge Development Box, capital allowances, interest limitation, and late filing surcharges and interest.
 
@@ -98,7 +98,7 @@ Ireland has three top-up taxes:
 - Every in-scope entity must file a Top-up Tax Information Return (TIR) no later than 15 months after the end of each fiscal year, or 18 months for the first fiscal year in scope. The first TIR and the first pay and file date were 30 June 2026.
 - Revenue has announced relief from local filing for some centrally filed returns, and the OECD's January 2026 "Side-by-Side" package changes some rules. Check Revenue's key dates page before advising.
 
-This Guide only screens for scope. The top-up computation needs the full GloBE rules, deferred tax adjustments and safe-harbour tests: refer it.
+This skill only screens for scope. The top-up computation needs the full GloBE rules, deferred tax adjustments and safe-harbour tests: refer it.
 
 ## Close companies and the surcharges ([Revenue: surcharge on undistributed income](https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/close-companies/surcharge.aspx))
 

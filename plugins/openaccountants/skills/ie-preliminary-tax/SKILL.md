@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ie-preliminary-tax"
   jurisdiction: "IE"
   tax_year: "2026"
-  last_updated: "2026-10-02"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,7 +15,7 @@ metadata:
 
 # Ireland preliminary tax for self-assessed individuals
 
-This Guide covers preliminary tax for individuals in Irish Income Tax self-assessment (self-employed people, and people with rental or other non-PAYE income who file Form 11). Figures are for tax year 2026. Preliminary tax for 2026 is paid in 2026, on the same date as the 2025 Form 11 return and the 2025 balance. It does not cover companies, trusts or Capital Gains Tax (CGT) computation. Amounts in the worked examples are hypothetical arithmetic, not authority figures.
+This skill covers preliminary tax for individuals in Irish Income Tax self-assessment (self-employed people, and people with rental or other non-PAYE income who file Form 11). Figures are for tax year 2026. Preliminary tax for 2026 is paid in 2026, on the same date as the 2025 Form 11 return and the 2025 balance. It does not cover companies, trusts or Capital Gains Tax (CGT) computation. Amounts in the worked examples are hypothetical arithmetic, not authority figures.
 
 ## Section 1. Quick reference
 
@@ -64,9 +64,9 @@ The extension in the table above applies only to a customer who BOTH files the 2
 
 ### Refusal catalogue
 
-- **R-IE-PT-1 Trust or corporate preliminary tax**: Trigger: client asks about corporation tax or trust preliminary tax. Message: "This Guide covers individuals in Income Tax self-assessment only."
-- **R-IE-PT-2 CGT computation**: Trigger: client asks how to compute CGT. Message: "CGT has its own payment dates and is NOT part of the preliminary tax payment. CGT computation is outside this Guide."
-- **R-IE-PT-3 Non-resident self-assessment**: Trigger: non-resident client. Message: "Non-resident self-assessment is outside this Guide."
+- **R-IE-PT-1 Trust or corporate preliminary tax**: Trigger: client asks about corporation tax or trust preliminary tax. Message: "This skill covers individuals in Income Tax self-assessment only."
+- **R-IE-PT-2 CGT computation**: Trigger: client asks how to compute CGT. Message: "CGT has its own payment dates and is NOT part of the preliminary tax payment. CGT computation is outside this skill."
+- **R-IE-PT-3 Non-resident self-assessment**: Trigger: non-resident client. Message: "Non-resident self-assessment is outside this skill."
 
 ## Section 3. Payment pattern library
 
@@ -222,7 +222,7 @@ If preliminary tax is not paid by 31 October, the direct debit arrangement is no
 | Source | all figures below | https://www.revenue.ie/en/tax-professionals/tdm/collection/debt-management/guidelines-for-charging-interest-on-late-payment.pdf |
 | Daily interest rate, Income Tax, from 1 July 2009 | 0.0219% | "IT 0.0273% 0.0219% CT 0.0273% 0.0219%" (the second column is "Daily Rates from 1/7/2009") |
 
-The manual prints the rate per day only. This Guide gives no annual equivalent, because no allowed page prints one.
+The manual prints the rate per day only. This skill gives no annual equivalent, because no allowed page prints one.
 
 ### 6.2 Surcharge for a late return
 
@@ -345,7 +345,7 @@ Before delivering output, check:
 ## When to refuse or refer
 
 - Corporation tax, trusts, or non-resident self-assessment: refuse (Section 2).
-- CGT computation: refer. This Guide only keeps CGT out of the preliminary tax payment.
+- CGT computation: refer. This skill only keeps CGT out of the preliminary tax payment.
 - The client cannot give a final 2025 figure and has no reasoned 2026 estimate: stop.
 - Disputes about interest charged, or requests to waive interest: refer to an Irish chartered accountant or chartered tax adviser.
 - Questions about which PRSI class applies: refer to the Department of Social Protection, which decides the class.
@@ -378,9 +378,9 @@ Before delivering output, check:
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -402,4 +402,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-02. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-preliminary-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-preliminary-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `ie-preliminary-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/ie-preliminary-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: DK
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -32,7 +32,7 @@ This method prepares an ordinary Danish VAT return for a registered business for
 | Box A goods / A services; B goods / B services; C | International-trade value records: EU purchases; EU sales; exports and other untaxed supplies. | [VAT accounts](https://skat.dk/en-us/businesses/vat/vat-what-to-do/how-to-do-your-business-vat-accounts) |
 | 4 pm filing-day cut-off | Select the official before/after 4 pm correction branch for the filing day; use the prior-period correction route for later changes. | [Correct a VAT return](https://skat.dk/en-us/businesses/vat/vat-what-to-do/how-to-change-your-vat-return-or-vat-payment) |
 
-Amounts in the cases are hypothetical arithmetic, not authority figures. Prepare the return in DKK. Where an invoice is in another currency, retain the documented conversion basis and confirm the applicable exchange-rate treatment with SKAT's guidance before entering it; this Guide does not state a conversion rule. Do not use a bank debit as the VAT base.
+Amounts in the cases are hypothetical arithmetic, not authority figures. Prepare the return in DKK. Where an invoice is in another currency, retain the documented conversion basis and confirm the applicable exchange-rate treatment with SKAT's guidance before entering it; this skill does not state a conversion rule. Do not use a bank debit as the VAT base.
 
 ## Ask the client first
 

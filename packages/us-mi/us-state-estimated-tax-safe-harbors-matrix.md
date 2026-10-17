@@ -3,7 +3,7 @@ name: us-state-estimated-tax-safe-harbors-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state matrix of estimated tax safe-harbor rules for individuals and corporations. Covers tax year 2025 including California's unique 30/40/0/30 installment schedule under R&TC §19136 (which differs from the federal 25/25/25/25 equal-installment rule), New York's corporate Mandatory First Installment (MFI) of 25% or 40% based on prior-year liability, state-by-state safe-harbor percentages (most mirror federal 100%/110% but some require 90% current-year only), underpayment penalty rates, annualized income method availability under §6654(d)(2)-equivalent state rules, and PTE election estimated payment schedules separate from corporate estimates.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -13,13 +13,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # State estimated tax safe harbors for individuals: 50-state matrix
 
-Figures are for tax year 2026 (estimates paid April 2026 to January 2027) unless a line says 2025. Where a state had not published 2026 material when this Guide was checked (25 September 2026), the row says which year its source covers. A short section at the end covers 2025 returns, which are still being filed on extension until 15 October 2026.
+Figures are for tax year 2026 (estimates paid April 2026 to January 2027) unless a line says 2025. Where a state had not published 2026 material when this skill was checked (25 September 2026), the row says which year its source covers. A short section at the end covers 2025 returns, which are still being filed on extension until 15 October 2026.
 
 ## Scope
 
 - **Covers:** state estimated income tax for **individuals** (residents, and nonresidents with state-source income where the state says so): when estimates are required, the current-year and prior-year safe harbors, installment dates and shares, farmer and fisher rules, and how the underpayment penalty or interest is charged.
 - **Does not cover:** corporate estimates, pass-through entity (PTE) elective tax estimates, city or county income taxes (for example New York City and Yonkers tax is covered inside the New York State rule, but Ohio school district and municipal taxes are not), and withholding deposits. For PTE estimates use `us-pte-state-matrix`; for the New York corporate Mandatory First Installment use `ny-corporate-franchise-article-9a`.
-- **Status labels:** a cell that says **check** could not be confirmed on an official page when this Guide was written. Confirm it on the state's current estimated tax form before relying on it.
+- **Status labels:** a cell that says **check** could not be confirmed on an official page when this skill was written. Confirm it on the state's current estimated tax form before relying on it.
 - Each state's rules are separate from the federal rules and from each other. Meeting the federal safe harbor does not meet any state safe harbor, and a state safe harbor is measured on **that state's** tax.
 
 ## Ask the client first

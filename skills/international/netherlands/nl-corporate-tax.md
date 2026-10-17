@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch corporate income tax (ven
 version: 1.0
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,17 +19,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and who this is for ([Belastingdienst: tax liability and return](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/vennootschapsbelasting/belastingplicht_en_aangifte))
 
-This Guide covers Dutch corporate income tax (vennootschapsbelasting, "Vpb") for a Dutch-resident **bv** (private limited company) or **nv** (public limited company). The primary year is **tax year 2026** (financial years that are the calendar year 2026). There is a dated section for the **2025 returns** being filed now.
+This skill covers Dutch corporate income tax (vennootschapsbelasting, "Vpb") for a Dutch-resident **bv** (private limited company) or **nv** (public limited company). The primary year is **tax year 2026** (financial years that are the calendar year 2026). There is a dated section for the **2025 returns** being filed now.
 
-- A bv and an nv must always file a Vpb return. Foundations (stichtingen), associations (verenigingen) and similar bodies file only in certain situations, and those are outside this Guide.
+- A bv and an nv must always file a Vpb return. Foundations (stichtingen), associations (verenigingen) and similar bodies file only in certain situations, and those are outside this skill.
 - A body set up under Dutch law is treated as established in the Netherlands. Otherwise residence depends on where management sits, where the head office is and where shareholder meetings are held.
-- From 1 January 2025 the rules changed for the tax liability of limited partnerships (cv), mutual funds (fgr), fiscal investment institutions (fbi), exempt investment institutions (vbi) and foreign legal forms. These are outside this Guide.
+- From 1 January 2025 the rules changed for the tax liability of limited partnerships (cv), mutual funds (fgr), fiscal investment institutions (fbi), exempt investment institutions (vbi) and foreign legal forms. These are outside this skill.
 
 Tax is charged on the **taxable amount** (belastbaar bedrag) of a financial year: the profit minus losses that can still be offset ([Belastingdienst: taxable amount and financial year](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/vennootschapsbelasting/belastbaar_bedrag)). The financial year is usually the calendar year, but a broken year (for example May to April) is allowed. It must match the financial year in the articles of association. The first and last years may be longer or shorter. Changing the financial year only to get a one-off tax advantage is not allowed.
 
 Practical rules come from the Belastingdienst's Dutch pages. Statute points cite the Wet op de vennootschapsbelasting 1969 ("Wet Vpb 1969") as in force from 1 January 2026 ([wetten.overheid.nl](https://wetten.overheid.nl/BWBR0002672/2026-01-01)).
 
-This Guide does not cover banks and insurers (special interest rules), fiscal investment institutions, cross-border groups beyond the summary of the minimum tax, transfer pricing, mergers and demergers, or the liquidation loss rule. See "When to refuse or refer".
+This skill does not cover banks and insurers (special interest rules), fiscal investment institutions, cross-border groups beyond the summary of the minimum tax, transfer pricing, mergers and demergers, or the liquidation loss rule. See "When to refuse or refer".
 
 ## Ask the client first
 
@@ -352,7 +352,7 @@ No penalty is imposed for a missing or late return if the company is not at all 
 - [ ] Prior-year group revenues, year lengths and restructuring history checked for the €750 million minimum tax scope test; specialist referral where potentially in scope.
 - [ ] Items in "When to refuse or refer" flagged for a Dutch belastingadviseur.
 
-This Guide was first adapted from material by John in 't Hout (MIT licence) and has since been rewritten from official sources. It is not tax advice.
+This skill was first adapted from material by John in 't Hout (MIT licence) and has since been rewritten from official sources. It is not tax advice.
 
 <!-- openaccountants-cta-block -->
 

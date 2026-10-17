@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/dk-capital-gains"
   jurisdiction: "DK"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -39,12 +39,12 @@ Use this method for a Danish-resident individual’s ordinary shares held outsid
 
 1. Route the asset and confirm the applicable tax year before calculation.
 2. Reconcile all holdings, transaction evidence and cost pools; calculate each disposal or annual taxable movement using its own regime.
-3. Apply the correct loss restrictions, combine relevant income and compute a provisional tax result where this Guide supplies the applicable rates.
+3. Apply the correct loss restrictions, combine relevant income and compute a provisional tax result where this skill supplies the applicable rates.
 4. Reconcile the return with SKAT’s records, enter missing figures in the correct fields and retain the approved calculation and submission receipt.
 
 ## Classify shares and funds
 
-For this Guide, “admitted to trading” includes regulated markets and multilateral trading facilities. The multilateral-trading-facility part applies from 1 January 2024; before that date, shares traded only on a multilateral trading facility were not treated as admitted, so check the rule for the year in which a historic gain or loss arose. Check the instrument’s actual status, rather than the broker’s informal “listed” label. A holding not admitted now may still have been admitted earlier during ownership, affecting loss treatment. [Trading status](https://skat.dk/borger/aktier-og-andre-vaerdipapirer/aktier-optaget-til-handel)
+For this skill, “admitted to trading” includes regulated markets and multilateral trading facilities. The multilateral-trading-facility part applies from 1 January 2024; before that date, shares traded only on a multilateral trading facility were not treated as admitted, so check the rule for the year in which a historic gain or loss arose. Check the instrument’s actual status, rather than the broker’s informal “listed” label. A holding not admitted now may still have been admitted earlier during ownership, affecting loss treatment. [Trading status](https://skat.dk/borger/aktier-og-andre-vaerdipapirer/aktier-optaget-til-handel)
 
 Ordinary share disposals use realization treatment. Funds need a separate classification: an investment company uses annual mark-to-market treatment, including unrealized movements; an investment institution with minimum taxation, and an accumulating investment association that is not an investment company, are taxed on disposal (average method), with share-based units in field 66 as share income. Establish share-based versus bond-based status and the income-year classification from the issuer/custodian. Investment-company gains can be share income or capital income; distributing versus accumulating alone is insufficient. An investment company is share-based only if it has notified SKAT and appears on SKAT’s published list of share-based investment companies for that year; if it is not share-based it is treated as bond-based, so its annual gain or loss is capital income (field 38 Danish, 422 foreign), not share income. Check the list for the actual year before choosing field 345 or 375. [Share-based investment companies](https://info.skat.dk/data.aspx?oid=2292808); [SKAT list page](https://skat.dk/erhverv/ekapital/vaerdipapirer/beviser-og-aktier-i-investeringsforeninger-og-selskaber-ifpa). Use SKAT’s fund-specific fields and guidance rather than the ordinary-share table below. With an unclassified ETF, stop the calculation and obtain its Danish classification. [Fund rules](https://skat.dk/borger/aktier-og-andre-vaerdipapirer/skat-af-investeringsbeviser-udstedt-af-investeringsforeninger-og-investeringsselskaber)
 
@@ -163,4 +163,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dk-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dk-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `dk-capital-gains` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/dk-capital-gains. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/md-income-tax"
   jurisdiction: "US-MD"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -15,9 +15,9 @@ metadata:
 
 # Maryland individual income tax: resident Form 502 for tax year 2026
 
-Figures are for tax year 2026 (returns filed in 2027) unless a line says 2025. The Comptroller of Maryland had not yet published the 2026 resident instructions when this Guide was written (September 2026). The 2026 figures below come from the statute and from the Comptroller's 2026 estimated-tax worksheet (Form PV worksheet). Where a 2026 amount is not yet final, the Guide says so. A separate section covers 2025 returns, which are still being filed on extension until 15 October 2026.
+Figures are for tax year 2026 (returns filed in 2027) unless a line says 2025. The Comptroller of Maryland had not yet published the 2026 resident instructions when this skill was written (September 2026). The 2026 figures below come from the statute and from the Comptroller's 2026 estimated-tax worksheet (Form PV worksheet). Where a 2026 amount is not yet final, the skill says so. A separate section covers 2025 returns, which are still being filed on extension until 15 October 2026.
 
-This Guide covers full-year Maryland residents filing Form 502, including sole proprietors, single-member LLC owners, employees and investors. It covers the State income tax, the county or Baltimore City local income tax, and the 2% additional tax on net capital gain. It does not compute nonresident (Form 505) or part-year returns, fiduciary returns, or the pass-through entity tax (Form 510/511). Those are listed under "When to refuse or refer". [Technical Bulletin 58](https://www.marylandtaxes.gov/content/dam/mdcomp/tax/legal-publications/technical-bulletins/tb-58.pdf)
+This skill covers full-year Maryland residents filing Form 502, including sole proprietors, single-member LLC owners, employees and investors. It covers the State income tax, the county or Baltimore City local income tax, and the 2% additional tax on net capital gain. It does not compute nonresident (Form 505) or part-year returns, fiduciary returns, or the pass-through entity tax (Form 510/511). Those are listed under "When to refuse or refer". [Technical Bulletin 58](https://www.marylandtaxes.gov/content/dam/mdcomp/tax/legal-publications/technical-bulletins/tb-58.pdf)
 
 ## Ask the client first
 
@@ -272,4 +272,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `md-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/md-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `md-income-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/md-income-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

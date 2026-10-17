@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/nz-motor-vehicle-expenses-logbook-business-use"
   jurisdiction: "NZ"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers how a New Zealand business claims the cost of a motor vehicle that is used for both business and private travel. It is written for the 2026-27 tax year (1 April 2026 to 31 March 2027), with a dated section for 2025-26 returns, which are the ones being filed now.
+This skill covers how a New Zealand business claims the cost of a motor vehicle that is used for both business and private travel. It is written for the 2026-27 tax year (1 April 2026 to 31 March 2027), with a dated section for 2025-26 returns, which are the ones being filed now.
 
 It covers sole traders, partners and companies (including close companies with shareholder-employees): actual costs with a logbook versus Inland Revenue's (IRD's) kilometre rates, the no-logbook limit, depreciation, GST, and how fringe benefit tax (FBT) applies to company vehicles.
 
@@ -30,7 +30,7 @@ It does not cover: working out the FBT payable (the FBT rates and the return its
 ## Ask the client first
 
 - Who owns the vehicle: the individual, the partnership, a company or a trust? Whose name is it registered in? Is it owned outright, on hire purchase or leased?
-- Is it used only for business? If so, IRD allows the full running costs ([IRD: vehicle expenses](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/claiming-vehicle-expenses)) and most of this Guide is not needed.
+- Is it used only for business? If so, IRD allows the full running costs ([IRD: vehicle expenses](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/claiming-vehicle-expenses)) and most of this skill is not needed.
 - What does it run on: petrol, diesel, hybrid, electric, or something else? Anything else must use actual costs.
 - Which method has been used for this vehicle in earlier years (kilometre rates or actual costs)? IRD requires one method for as long as the vehicle is owned.
 - Has a logbook been kept? For how many consecutive days, when did the test period end, and has business use changed since by more than 20% ([IRD: use a logbook](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/claiming-vehicle-expenses/use-a-logbook))?
@@ -200,7 +200,7 @@ If Ben believes his business use is higher, he needs a logbook of at least 90 co
 | --- | --- | --- |
 | Formula | (private use days x cost price ÷ 365) x percentage | [IRD: calculating taxable value](https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/fringe-benefit-tax/types/motor-vehicles/calculating-taxable-value) |
 | Taxable value | (365 x $57,500 ÷ 365) x 20% = $11,500 | same page |
-| FBT payable | apply the FBT rate to the taxable value: outside this Guide, refer | |
+| FBT payable | apply the FBT rate to the taxable value: outside this skill, refer | |
 
 Had Kōwhai Ltd opted out in time, it would instead claim only the business share of the car's costs and GST, using a logbook (method steps 2 to 7).
 
@@ -217,12 +217,12 @@ Had Kōwhai Ltd opted out in time, it would instead claim only the business shar
 - Employer reimbursement of an employee's own vehicle (IRD's OS 19/04B), and any vehicle held as trading stock or pooled.
 - Charities, and businesses outside charitable purposes run by a charity.
 - Disputes over whether a vehicle meets the work-related vehicle test, and vehicles over 3,500 kg gross laden weight, which IRD treats as unclassified benefits ([IRD: FBT exemptions](https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/fringe-benefit-tax/types/motor-vehicles/exemptions)).
-- A leased vehicle (operating or finance lease) or one bought on hire purchase: how the lease payments or instalments are deducted, and who depreciates the vehicle, is outside this Guide. A lessee under an operating lease does not own the vehicle and cannot use the depreciation steps here; refer.
+- A leased vehicle (operating or finance lease) or one bought on hire purchase: how the lease payments or instalments are deducted, and who depreciates the vehicle, is outside this skill. A lessee under an operating lease does not own the vehicle and cannot use the depreciation steps here; refer.
 - Any IRD review, audit or dispute about the business-use percentage.
 
 ## Filing and payment
 
-- **Sole traders and partners:** the vehicle claim goes into the income tax return for the year (for individuals, the IR3; see the separate OpenAccountants Guide on the IR3 for due dates). GST adjustments go into the GST return for the period.
+- **Sole traders and partners:** the vehicle claim goes into the income tax return for the year (for individuals, the IR3; see the separate OpenAccountants skill on the IR3 for due dates). GST adjustments go into the GST return for the period.
 - **Companies under FBT:** file FBT returns at the chosen frequency. For a close company on income-year returns, the return period matches its income tax return period and "the due date for filing and paying FBT is the same as your company's end of year income tax payment due date"; a weekend or public holiday moves it to the next working day ([IRD: close companies and FBT](https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/fringe-benefit-tax/close-companies)).
 - **Elections:** income-year FBT election in myIR (or in writing) by the last day of the first FBT quarter; opt-out by myIR message or a note with a paper return, by the income tax return due date for the year the vehicle is acquired or first used for business (same page).
 - **Records:** keep the logbook and vehicle cost records. IRD requires depreciation records (purchase value, depreciation each year, adjusted tax value and depreciation recovered on sale) for at least 7 years ([IRD: managing depreciation](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/depreciation/managing-depreciation)).
@@ -262,4 +262,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nz-motor-vehicle-expenses-logbook-business-use` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nz-motor-vehicle-expenses-logbook-business-use. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nz-motor-vehicle-expenses-logbook-business-use` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nz-motor-vehicle-expenses-logbook-business-use. If neither is available, confirm every figure against the official source pages cited above before relying on it.

@@ -3,47 +3,20 @@ name: india-gst
 description: Use this skill whenever asked to prepare, review, classify, or advise on India's Goods and Services Tax (GST) for a self-employed individual, freelancer, or small business. Trigger on phrases like "GST return", "GSTR-1", "GSTR-3B", "GSTR-9", "file GST", "GST classification", "HSN code", "SAC code", "input tax credit", "ITC", "reverse charge", "e-invoicing", "e-way bill", "CGST", "SGST", "IGST", "inter-state supply", "intra-state supply", "place of supply", or any request involving Indian indirect tax compliance. This skill covers regular (non-composition) GST-registered taxpayers with a single state GSTIN only. Composition scheme, multi-state, SEZ, e-commerce operator, and ISD registrations are in the refusal catalogue. ALWAYS read this skill before touching any India GST work.
 version: 2.0
 jurisdiction: IN
-tax_year: 2025
-last_updated: 2026-07-13
-reviewed_by: Mayur Deokar
-review_status: current
-tier: 1
+tax_year: 2026
+last_updated: 2026-10-17
+authored_by: Michael Cutajar and the OpenAccountants team
+review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# India GST
+# India GST: Monthly and Quarterly Returns, Annual Return and Input Tax Credit for a Single-GSTIN Business
 
-## India GST Return Skill (GSTR-3B / GSTR-1) v2.0
+This Guide covers India's Goods and Services Tax (GST) for a regular (non-composition) registered business with one GSTIN in one State: classifying purchases and sales, preparing GSTR-1 and GSTR-3B, reconciling input tax credit (ITC) with GSTR-2B, and filing the annual return GSTR-9. Figures are for tax year 2026. GST is not year-based: this Guide states the rules in force on 17 October 2026, with the date each rule started. Returns run by tax period (a month, or a quarter under QRMP); the annual return runs by financial year (1 April to 31 March). The recommendations of the 57th GST Council meeting of 8 October 2026 are not law yet; see Section 5.16.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### GST
-
-- **Standard rate** — 18% (CGST 9% + SGST 9% / IGST 18%)  _(https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf)_
-- **Lower rate** — 5% (CGST 2.5% + SGST 2.5% / IGST 5%)  _(Notification 1/2017-CT(Rate))_
-- **12% rate** — 12% (CGST 6% + SGST 6% / IGST 12%)  _(Notification 1/2017-CT(Rate))_
-- **Demerit rate** — 28% (CGST 14% + SGST 14% / IGST 28%)  _(CGST Act)_
-- **Nil/exempt** — 0% — fresh food, healthcare, education  _(Notification 12/2017-CT(Rate))_
-- **Zero-rated** — 0% — exports, SEZ (with ITC refund)  _(IGST Act s 16)_
-- **Key rule** — IGST rate = CGST rate + SGST rate, always  _(IGST Act)_
-- **Goods (general states)** — INR 40 lakh aggregate turnover  _(CGST Act s 22)_
-- **Goods (special category states)** — INR 20 lakh  _(CGST Act s 22)_
-- **Services (all states)** — INR 20 lakh (INR 10 lakh special states)  _(CGST Act s 22)_
-- **E-invoicing threshold** — INR 5 crore AATO (any FY from 2017-18)  _(Notification 10/2023-CT)_
-- **E-way bill threshold** — INR 50,000 applies for interstate; for intrastate transport of goods, the limit is state-wise (varies by state) as per CGST Rules 2017  _(CGST Rules 2017)_
-- **GSTR-3B (monthly)** — 20th of following month  _(CGST Rules)_
-- **GSTR-3B (quarterly QRMP)** — 22nd-24th of month after quarter (by state)  _(CGST Rules)_
-- **GSTR-1 (monthly)** — 11th of following month  _(CGST Rules)_
-- **GSTR-1 (quarterly)** — 13th of month after quarter  _(CGST Rules)_
-- **Monthly vs quarterly** — Monthly if turnover > INR 5 crore; however, taxpayers with turnover ≤ INR 5 crore also have the option to choose monthly filing instead of QRMP  _(CGST Act 2017)_
-- **GSTIN Format – Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
-- **GSTIN Format – Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
-
-## Section 1 -- Quick reference
+## Section 1: Quick reference
 
 Read this whole section before classifying anything.
 
@@ -52,133 +25,177 @@ Read this whole section before classifying anything.
 | Field | Value |
 | --- | --- |
 | Country | India (Republic of India) |
-| Tax structure | Dual GST: CGST + SGST/UTGST (intra-state) or IGST (inter-state) |
-| Standard rate | 18% (CGST 9% + SGST 9% / IGST 18%) |
-| Lower rate | 5% (CGST 2.5% + SGST 2.5% / IGST 5%) |
-| Demerit rate | 40% (CGST 20% + SGST 20% / IGST 40%) -- luxury/sin goods only |
-| Nil/exempt | 0% -- fresh food, healthcare, education |
-| Zero-rated | 0% -- exports, SEZ supplies (with ITC refund) |
-| Key rule | IGST rate = CGST rate + SGST rate, always |
-| Primary return forms | GSTR-3B (summary + tax payment); GSTR-1 (outward supply details) |
-| Filing portal | https://gst.gov.in (GST Common Portal) |
-| Authority | Central Board of Indirect Taxes and Customs (CBIC) |
+| Tax structure | Intra-State supply: central tax (CGST) plus State tax (SGST) or Union territory tax (UTGST). Inter-State supply and imports: integrated tax (IGST) |
+| Rate structure | Two main rates (standard and merit) plus a special de-merit rate, from 22 September 2025; figures in the rate table below |
+| Primary returns | GSTR-1 (details of outward supplies); GSTR-3B (summary return and payment); GSTR-9 (annual return) |
+| ITC statement | GSTR-2B, an auto-generated monthly statement of the ITC available to the recipient |
+| Law | Central Goods and Services Tax Act 2017 (CGST Act), Integrated Goods and Services Tax Act 2017 (IGST Act), CGST Rules 2017, each State's SGST Act |
+| Authority | Central Board of Indirect Taxes and Customs (CBIC) and the State tax departments; returns are filed on the GST common portal |
 | Currency | INR only |
-| Filing frequencies | Monthly (turnover > INR 5 crore); Quarterly under QRMP (turnover <= INR 5 crore) |
-| GSTR-3B deadline | 20th of following month (monthly); 22nd-24th of month after quarter (quarterly, by state) |
-| GSTR-1 deadline | 11th of following month (monthly); 13th of month after quarter (quarterly) |
-| Registration threshold (goods, general) | INR 40 lakh aggregate turnover |
-| Registration threshold (goods, special states) | INR 20 lakh |
-| Registration threshold (services, all) | INR 20 lakh (INR 10 lakh special states) |
-| E-invoicing threshold | INR 5 crore aggregate turnover (any FY from 2017-18) |
-| E-way bill threshold | INR 50,000 consignment value |
-| GSTIN format | 15-digit: 2 state code + 10 PAN + entity code + Z + checksum |
-| Contributor | Open Accounting Skills Project |
-| Validated by | Deep research verification, April 2026 |
-| Validation date | April 2026 |
+| Filing frequency | Monthly, or quarterly under the QRMP scheme (Section 5.15) |
+| Due dates and late fees | Section 5.10 |
+
+### GST rates from 22 September 2025
+
+The 56th GST Council meeting (3 September 2025) replaced the old four-slab structure with two main rates and a special de-merit rate ("Rationalisation of the current 4-tiered tax rate structure"). The old middle and top general slabs no longer exist; items moved to the rates in the table below. The legal rate schedule is Notification 9/2025-Central Tax (Rate), which the official repository serves only in a form this Guide could not read; the Council's release and FAQ below are the sources used. All rates in this table are the total GST on the supply (CGST plus SGST, or IGST), not the central share.
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf |
+| Standard rate | 18% | "a 2 rate structure with a Standard Rate of 18% and a Merit Rate of 5%" |
+| Merit (lower) rate | 5% | "a 2 rate structure with a Standard Rate of 18% and a Merit Rate of 5%" |
+| Special de-merit rate (a select few goods and services) | 40% | "a special de-merit rate of 40% for a select few goods and services" |
+| Start date, services | 22 September 2025 | "The changes in GST rates on services will be implemented with effect from 22nd September 2025" |
+| Start date, goods | 22 September 2025, except pan masala, gutkha, cigarettes, chewing tobacco, unmanufactured tobacco and bidi | "The changes in GST rates of all goods except pan masala, gutkha, cigarettes, chewing tobacco products like zarda, unmanufactured tobacco and bidi" |
+| Individual life insurance (term, ULIP, endowment) and its reinsurance | Exempt from 22 September 2025 | "Exemption of GST on all individual life insurance policies whether term life, ULIP or endowment policies and reinsurance thereof" |
+| Individual health insurance (including family floater and senior citizen policies) and its reinsurance | Exempt from 22 September 2025 | "Exemption of GST on all individual health insurance policies (including family floater policies and policies for senior citizens)" |
+| Hotel accommodation: value per unit per day at or below | INR 7,500 | "services having value less than or equal to Rs. 7,500 per unit per day or equivalent" |
+| Hotel accommodation at or below that value | 5% | "Reduction of GST from 12% to 5% on “Hotel Accommodation” services having value less than or equal to Rs. 7,500"; the Annexure row reads "12% with ITC 5% without ITC" |
+| Gyms, salons, barbers, yoga centres and similar well-being services | 5% | "Reduction of GST from 18% to 5% on beauty and physical well-being services used by common man including services of gyms, salons, barbers, yoga centres" |
+| Cement | 18% | "Reduction of GST from 28% to 18% on Cement" |
+| Air transport of passengers in other than economy class | 18% | Annexure IV: "Supply of Air transport of 12% with ITC 18% with ITC passengers in other than economy class" |
+| Passenger transport by any motor vehicle where the fuel cost is included | 5% with ITC of input services in the same line of business, or 18% with ITC | Annexure IV row: "Supply of Passenger transport by 5% with ITC of 5% with ITC of any motor vehicle where fuel input services (in input services (in" ... "12% with ITC 18% with ITC" |
+| Transport of goods by a goods transport agency (GTA) | 5% without ITC (reverse or forward charge), or 18% with ITC | Annexure row: "Supply of Transport of 5% without 5% without ITC goods by GTA ITC (RCM/FCM) (RCM/FCM) 12% with ITC 18% with ITC" |
+| Local delivery services through an e-commerce operator (section 9(5)), supplier not liable to register | 18% | "The applicable rate on such services to be 18%" |
+| Stand-alone restaurants | Cannot declare themselves "specified premises", so cannot opt for 18% with ITC | "a stand-alone restaurant cannot declare itself as a ‘specified premises’ and consequently cannot avail the option of paying GST at the rate of 18% with ITC" |
+| Optional simplified registration (rule 14A): output tax on supplies to registered persons per month not above | INR 2.5 lakh | "will not exceed Rs. 2.5 lakh per month (inclusive of CGST, SGST/UTGST and IGST)"; operational "from 1st November, 2025" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf |
+| Air travel, economy class | 5% | "if travel is by economy class then rate of GST is 5% otherwise the GST rate will be 18%" |
+| Air travel, any other class | 18% | "if travel is by economy class then rate of GST is 5% otherwise the GST rate will be 18%" |
+| Small cars (petrol/LPG/CNG up to 1200 cc and up to 4000 mm; diesel up to 1500 cc and up to 4000 mm) | 18% | "The GST rate on all small cars has been reduced from 28% to 18%" |
+| Mid-size and large cars (over 1500 cc or over 4000 mm) | 40% | "The GST rate on all mid-size and large cars i.e vehicles exceeding 1500 cc or length exceeding 4000mm is 40%" |
+| Compensation cess on most goods | Ended; merged into the GST rate | "Since it has been decided to end the Compensation Cess levy, the Compensation Cess rate is being merged with GST" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2026-01/monthly_newsletter_december_2025_1_0.pdf |
+| Start date for pan masala, tobacco, cigarettes and bidi | 1 February 2026 | "A revised rate structure has been notified with effect from February 1st, 2026, whereby bidi has been brought under the 18% GST rate" |
+| Pan masala, tobacco (other than bidi), cigarettes, nicotine-based inhalation products | 40% | "cigarettes and nicotine-based inhalation products have been placed under the 40% GST rate" |
+| Bidi | 18% | "bidi has been brought under the 18% GST rate" |
+| Compensation cess on specified pan masala and tobacco products | Withdrawn | "the levy of compensation cess on specified pan masala and tobacco products has been withdrawn" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/download_5.pdf |
+| Electrical energy (tariff heading 2716 00 00) | Exempt in the 2017 text of Notification 2/2017-Central Tax (Rate), serial 104 | "104. 2716 00 00 Electrical energy" (2017 print; the current Nil-rate list for goods is Notification 10/2025-Central Tax (Rate), not read) |
+
+The GST Council's 57th meeting FAQ refers to "notification No. 10/2025-Central Tax (Rate), dated 17.09.2025, which prescribes Nil rate of GST" (https://gstcouncil.gov.in/sites/default/files/2026-10/faqs_on_recommendations_made_in_57th_gst_council_meeting.pdf). Confirm the electrical energy entry there.
+
+Rates for items not in these tables (telecom, software, professional services, rail travel, restaurants, hotels above the hotel value in the table above) are not printed on any page this Guide could read. For a purchase, take the tax the supplier charged on its tax invoice. For a sale, find the item's rate in the rate notification before invoicing; do not guess (Section 10, PROHIBITIONS).
 
 **Key GSTR-3B tables**
 
+The ITC rows follow the GSTR-2B instructions in Notification 12/2024-Central Tax (https://gstcouncil.gov.in/sites/default/files/2024-09/central-tax-12-2024-11072024.pdf). Rows 3.1(a) to 3.1(c), 3.1(e), 3.2, 5.1 and 6.1 are legacy reference text kept from the earlier Guide; check them against the form on the portal.
+
 | Table | Meaning |
 | --- | --- |
-| 3.1(a) | Outward taxable supplies (other than zero-rated, nil-rated, exempted) -- all taxable sales + tax collected |
-| 3.1(b) | Outward taxable supplies (zero-rated) -- exports + SEZ supplies |
+| 3.1(a) | Outward taxable supplies (other than zero-rated, nil-rated, exempted) |
+| 3.1(b) | Outward taxable supplies (zero-rated): exports and supplies to SEZ units or developers |
 | 3.1(c) | Other outward supplies (nil-rated, exempted) |
-| 3.1(d) | Inward supplies (liable to reverse charge) -- RCM purchases |
-| 3.1(e) | Non-GST outward supplies -- petroleum, alcohol, etc. |
-| 3.2 | Inter-state supplies to unregistered persons, composition taxpayers, UIN holders |
-| 4(A) | ITC Available -- imports, RCM, ISD, other ITC |
-| 4(B) | ITC Reversed -- Rule 42/43 reversals, others |
-| 4(C) | Net ITC Available -- 4(A) minus 4(B) |
-| 4(D) | Ineligible ITC -- as per Sec 17(5) |
+| 3.1(d) | Inward supplies liable to reverse charge: the tax on them is declared here for payment |
+| 3.1(e) | Non-GST outward supplies |
+| 3.2 | Inter-State supplies to unregistered persons, composition taxpayers, UIN holders |
+| 4(A)(1) | ITC on import of goods |
+| 4(A)(2) | ITC on import of services (reverse charge); this credit is not in GSTR-2B and is entered by the taxpayer |
+| 4(A)(3) | ITC on inward supplies liable to reverse charge (other than imports), taken after the tax is paid |
+| 4(A)(4) | ITC from an Input Service Distributor |
+| 4(A)(5) | All other ITC (supplies from registered persons other than reverse charge) |
+| 4(B)(2) | ITC reversed, including the rule 37A reversal (Section 5.6) |
+| 4(D)(2) | ITC not available under the GSTR-2B "ITC not available" part |
 | 5.1 | Interest and late fee payable |
-| 6.1 | Tax payment -- IGST, CGST, SGST -- cash + ITC utilization |
+| 6.1 | Payment of tax: cash and ITC, by tax head |
 
 **Key GSTR-1 tables**
 
+Table numbers follow the GSTR-1A instructions in Notification 12/2024-Central Tax (link above), which use the GSTR-1 table numbers.
+
 | Table | Meaning |
 | --- | --- |
-| 4A/4B/6B/6C | B2B supplies (invoices, debit notes, credit notes) |
-| 5A/5B | B2C inter-state (invoice value > INR 2.5 lakh) |
-| 7 | B2C other (intra-state and inter-state below INR 2.5 lakh, rate-wise) |
-| 6A | Exports (with payment / without payment of tax) |
-| 8A/8B/8C/8D | Nil-rated, exempted, and non-GST supplies |
-| 9B | Credit notes / debit notes (unregistered) |
-| 11A/11B | Amendments to prior period B2B / export invoices |
+| 4A / 4B | Supplies to registered persons (B2B): 4A other than reverse charge; 4B supplies attracting reverse charge |
+| 5 | Inter-State supplies to unregistered persons with invoice value above the B2C large limit (Section 5.10) |
+| 6 | Exports and supplies to SEZ units or developers, deemed exports |
+| 7 | Supplies to unregistered persons below that limit, rate-wise (B2C small) |
+| 8 | Nil-rated, exempted and non-GST supplies (legacy reference) |
+| 9A / 9C | Amendments of earlier B2B, B2C large, export, and credit or debit note details |
+| 9B | Credit and debit notes |
 | 12 | HSN-wise summary of outward supplies |
+| 14 / 14A / 15 | Supplies through e-commerce operators |
 
-**Conservative defaults -- India-specific**
+**Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 18% |
-| Unknown VAT status of a purchase | Not deductible (no ITC) |
-| Unknown counterparty state | Same state as client (intra-state, CGST+SGST) |
-| Unknown B2B vs B2C status for buyer | B2C (no GSTIN, no ITC for buyer) |
-| Unknown business-use proportion (vehicle, phone, home office) | 0% recovery |
-| Unknown SaaS billing entity | Reverse charge from non-resident (IGST) |
-| Unknown blocked-input status (entertainment, personal use) | Blocked under Sec 17(5) |
+| Unknown rate on a sale | Standard rate (18%) until the rate notification is checked |
+| Unknown GST status of a purchase | No ITC |
+| Unknown counterparty State | Same State as the client (intra-State, CGST plus SGST) |
+| Unknown B2B vs B2C status for buyer | B2C (no GSTIN, no ITC for the buyer) |
+| Unknown business-use share (vehicle, phone, home office) | No ITC |
+| Unknown SaaS billing entity | Foreign supplier: reverse charge on import of services (IGST) |
+| Unknown blocked-credit status (food, club, personal use) | Blocked under section 17(5) |
 | Unknown whether transaction is in scope | In scope |
-| Unknown inter-state vs intra-state | Intra-state (CGST+SGST) |
+| Unknown inter-State vs intra-State | Intra-State (CGST plus SGST) |
 
-**Red flag thresholds -- country slot values for reviewer brief**
+**Red flags for the reviewer brief**
 
-| Threshold | Value |
-| --- | --- |
-| HIGH single-transaction size | INR 5,00,000 |
-| HIGH tax-delta on a single conservative default | INR 25,000 |
-| MEDIUM counterparty concentration | >40% of output OR input |
-| MEDIUM conservative-default count | >4 across the return |
-| LOW absolute net GST position | INR 10,00,000 |
+The earlier Guide gave fixed rupee and percentage trigger levels. They were internal settings, not law, and no official page prints them. The reviewing accountant sets the levels. Flag at least: any single transaction that is large for this client; any conservative default that moves a material amount of tax; one counterparty that dominates outputs or inputs; many conservative defaults in one return; a large net GST position.
 
-## Section 2 -- Required inputs and refusal catalogue
+## Section 2: Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- bank statement for the month/quarter in CSV, PDF, Excel, or pasted text. Must cover the full filing period. Acceptable from any Indian bank: SBI, HDFC, ICICI, Axis, Kotak, PNB, Bank of Baroda, IndusInd, Yes Bank, IDFC First, or any other scheduled bank. Also acceptable: Razorpay, Paytm, or other payment processor settlement reports.
+**Minimum viable**: bank statement for the month or quarter in CSV, PDF, Excel, or pasted text, covering the full filing period. Acceptable from any Indian bank (SBI, HDFC, ICICI, Axis, Kotak, PNB, Bank of Baroda, IndusInd, Yes Bank, IDFC First, or any other scheduled bank). Also acceptable: Razorpay, Paytm or other payment processor settlement reports.
 
-**Recommended** -- purchase and sales invoices for the period (especially for inter-state B2B, exports, and reverse charge), prior period GSTR-3B and GSTR-1 filed copies, GSTR-2B (auto-drafted ITC statement) from the GST portal, Form 26AS / AIS (for cross-verification of TDS and high-value transactions).
+**Recommended**: purchase and sales invoices for the period (especially for inter-State B2B, exports and reverse charge), prior period GSTR-3B and GSTR-1 filed copies, GSTR-2B for each month of the period, and Form 26AS / AIS for cross-checking.
 
-**Ideal** -- Tally ERP / Zoho Books / ClearTax / Busy Accounting export (trial balance + GST-ready transaction register), complete invoice register with HSN/SAC codes, GSTR-9 from prior year, e-invoicing JSON exports if applicable.
+**Ideal**: Tally / Zoho Books / Busy or similar export (trial balance and GST transaction register), complete invoice register with HSN/SAC codes, last year's GSTR-9, e-invoice JSON exports where e-invoicing applies.
 
-**Refusal policy if minimum is missing -- SOFT WARN.** If no bank statement or transaction data is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This GSTR-3B was produced from bank statement alone. The reviewer must verify, before approval, that ITC claims are supported by tax invoices appearing in GSTR-2B, that all inter-state vs intra-state classifications are correct, and that reverse-charge self-assessments match the supplier's invoice."
+**Refusal policy if minimum is missing: SOFT WARN.** If no bank statement or transaction data is available at all, hard stop. If bank statement only, without invoices, proceed but record in the reviewer brief: "This GSTR-3B was produced from the bank statement alone. Before approval the reviewer must check that every ITC claim is backed by a tax invoice that appears in GSTR-2B, that every inter-State and intra-State classification is right, and that each reverse-charge self-assessment matches the supplier's document."
 
 ### India-specific refusal catalogue
 
-If any trigger fires, stop, output the refusal message verbatim, end the conversation. Refusal is a safety mechanism.
+If any trigger fires, stop and give the refusal message. Refusal is a safety mechanism.
 
-- **R-IN-1 -- Composition scheme taxpayer** — Trigger: client is registered under composition scheme (Sec 10), or mentions CMP-08, GSTR-4, or turnover below INR 1.5 crore with simplified filing. Message: "Composition scheme taxpayers file GSTR-4 (annual) and CMP-08 (quarterly challan), not GSTR-3B/GSTR-1. They cannot claim ITC, cannot make inter-state supplies, and pay tax at flat rates (1% for traders/manufacturers, 5% for restaurants, 6% for service providers). This skill covers regular taxpayers only. Please use a qualified GST practitioner for composition scheme returns."
-- **R-IN-2 -- Multi-state registration** — Trigger: client has GSTINs in more than one state and asks to consolidate or cross-credit. Message: "Each state GSTIN is a separate taxpayer under GST law. Cross-state ITC utilization is not permitted. This skill handles a single GSTIN filing only. If you need to file for multiple GSTINs, process each separately. For ISD (Input Service Distributor) cross-charge scenarios, please use a qualified CA/GST practitioner."
-- **R-IN-3 -- SEZ supplies (as supplier to SEZ)** — Trigger: client makes supplies to SEZ units or developers and asks about zero-rating, LUT filing, or refund of accumulated ITC specific to SEZ. Message: "SEZ supply documentation (endorsed invoices, SEZ authority endorsement, LUT/bond filing) requires fact-specific verification beyond this skill. Please use a qualified GST practitioner for SEZ supply compliance."
-- **R-IN-4 -- E-commerce operator (TCS obligations)** — Trigger: client operates an e-commerce platform and must collect TCS under Sec 52, or is a supplier through e-commerce with specific compliance obligations. Message: "E-commerce operators have TCS collection, GSTR-8 filing, and platform-level compliance obligations that are outside the scope of this skill. Please use a qualified GST practitioner."
-- **R-IN-5 -- Input Service Distributor (ISD)** — Trigger: client is registered as an ISD or needs to distribute common input services across multiple GSTINs. Message: "ISD distribution requires proportional credit allocation across GSTINs under CGST Rules. This skill covers single-GSTIN regular taxpayers only. Please use a qualified CA/GST practitioner for ISD compliance."
+- **R-IN-1: Composition scheme taxpayer.** Trigger: the client pays tax under section 10 (composition), or mentions CMP-08 or GSTR-4. Message: "Composition taxpayers pay tax quarterly with statement CMP-08 and file one annual return, GSTR-4, not GSTR-1 and GSTR-3B. They pay tax at a flat rate on turnover and cannot claim input tax credit. This Guide covers regular taxpayers only. Please use a qualified GST practitioner." The composition limits, rates and dates are in the table below, for the referral note only.
+- **R-IN-2: Multi-State registration.** Trigger: the client has GSTINs in more than one State and asks to consolidate or cross-use credit. Message: "Each State GSTIN is a separate registration, with its own returns and its own credit ledger. This Guide handles one GSTIN. File each GSTIN separately; for Input Service Distributor or cross-charge questions, use a qualified CA or GST practitioner."
+- **R-IN-3: Supplies to SEZ units or developers.** Trigger: the client supplies to SEZ units or developers and asks about zero-rating, LUT or refund of accumulated ITC for those supplies. Message: "SEZ supply documentation needs fact-specific checks beyond this Guide. Please use a qualified GST practitioner."
+- **R-IN-4: E-commerce operator.** Trigger: the client runs an e-commerce platform that must collect tax at source under section 52 or pay tax under section 9(5). Message: "E-commerce operators have TCS, GSTR-8 and platform-level duties outside this Guide. Please use a qualified GST practitioner."
+- **R-IN-5: Input Service Distributor (ISD).** Trigger: the client is registered as an ISD or needs to distribute common input services across GSTINs. Message: "ISD distribution is outside this Guide, which covers single-GSTIN regular taxpayers. Please use a qualified CA or GST practitioner."
+- **R-IN-6: Return outside the three-year window.** Trigger: GSTR-1, GSTR-3B or GSTR-9 for a period whose due date passed more than three years ago. Message: "The CGST Act bars filing these returns after three years from their due date unless the Government notifies otherwise (sections 37(5), 39(11), 44(2)). Please use a qualified GST practitioner."
 
-## Section 3 -- Supplier pattern library (the lookup table)
+Composition figures (for the R-IN-1 referral note):
 
-This is the deterministic pre-classifier. When a transaction's counterparty matches a pattern in this table, apply the treatment from the table directly. Do not second-guess. Do not consult Tier 1 rules -- the table is authoritative for patterns it covers.
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://cbic-gst.gov.in/pdf/01062019-GST-An-Update.pdf |
+| Composition turnover limit (preceding financial year), normal States | INR 1.5 crore | "Composition threshold limit increased to be Rs. 1.5 Crore" |
+| Composition limit in Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Uttarakhand | INR 75 lakh | "have the said limit as Rs. 75 lakh" |
+| Rate, manufacturers (total) | 1% | "Manufacturers 1%" |
+| Rate, traders (total, on taxable supplies) | 1% | "specified Traders 1%" |
+| Rate, restaurants (total) | 5% | "Restaurants 5%" |
+| Services composition option (section 10(2A)), total rate | 6% | "with a tax rate of 6% (3% CGST +3% SGST)" |
+| Services composition option, preceding-year turnover up to | INR 50 lakh | "having an Annual Turnover in the preceding Financial Year up to Rs. 50 lakhs" |
+| Annual return (GSTR-4) for the previous financial year | 30th April | "furnish a return till 30th April for the previous financial year" |
+| Quarterly payment (CMP-08) | 18th of the month after the quarter | "quarterly basis till 18th of the month succeeding such quarter" |
 
-**How to read this table.** Match by case-insensitive substring on the counterparty name/description as it appears in the bank statement. If multiple patterns match, use the most specific. If none match, fall through to Tier 1 rules in Section 5.
+## Section 3: Supplier pattern library (the lookup table)
 
-### 3.1 Indian banks (fees exempt -- exclude)
+This is the pre-classifier. When a transaction's counterparty matches a pattern in this table, apply the treatment from the table. If none match, fall through to the rules in Section 5.
 
-**Indian banks fee exclusions**
+**How to read this table.** Match by case-insensitive substring on the counterparty name or description as it appears in the bank statement. If several patterns match, use the most specific. "ITC per invoice" means: take the tax the supplier charged on its tax invoice, and claim it only if the invoice is in GSTR-2B and section 17(5) does not block it (Section 5.6 and 5.7). The bank line alone never proves the rate.
+
+### 3.1 Indian banks
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SBI, STATE BANK OF INDIA | EXCLUDE for bank charges/fees | Financial service, exempt under Notification 12/2017-CT(Rate) |
-| HDFC BANK, HDFC BK | EXCLUDE for bank charges/fees | Same |
-| ICICI BANK, ICICI BK | EXCLUDE for bank charges/fees | Same |
-| AXIS BANK | EXCLUDE for bank charges/fees | Same |
-| KOTAK MAHINDRA, KOTAK BK | EXCLUDE for bank charges/fees | Same |
-| PNB, PUNJAB NATIONAL BANK | EXCLUDE for bank charges/fees | Same |
-| BOB, BANK OF BARODA | EXCLUDE for bank charges/fees | Same |
-| INDUSIND, YES BANK, IDFC FIRST | EXCLUDE for bank charges/fees | Same |
-| INTEREST, BYAJ, INT PAID, INT RECD | EXCLUDE | Interest income/expense, exempt financial service |
-| LOAN, EMI, PERSONAL LOAN, HOME LOAN | EXCLUDE | Loan principal/EMI movement, not a supply |
-| FD, FIXED DEPOSIT, RD | EXCLUDE | Investment movement, not a supply |
+| SBI, STATE BANK OF INDIA, HDFC BANK, ICICI BANK, AXIS BANK, KOTAK MAHINDRA, PNB, BANK OF BARODA, INDUSIND, YES BANK, IDFC FIRST | Bank charges: ITC per invoice | Check the bank's invoice or statement for the GST charged; claim only what it shows |
+| INTEREST, BYAJ, INT PAID, INT RECD | EXCLUDE | Interest movement, no GST invoice |
+| LOAN, EMI, PERSONAL LOAN, HOME LOAN | EXCLUDE | Loan principal or EMI movement, not a purchase |
+| FD, FIXED DEPOSIT, RD | EXCLUDE | Investment movement |
 
-### 3.2 Government (exclude entirely -- not a supply)
-
-**Government exclusions**
+### 3.2 Government (exclude entirely)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
@@ -187,473 +204,614 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | MCA, ROC FEE, COMPANY AFFAIRS | EXCLUDE | Regulatory fee |
 | EPFO, PF, ESI, ESIC, PROVIDENT FUND | EXCLUDE | Statutory social security contribution |
 | PROFESSIONAL TAX, PT PAYMENT | EXCLUDE | State professional tax |
-| STAMP DUTY, REGISTRATION FEE (govt) | EXCLUDE | Government fee, not a supply |
+| STAMP DUTY, REGISTRATION FEE (government) | EXCLUDE | Government fee |
 | MUNICIPAL, NAGAR NIGAM, PROPERTY TAX | EXCLUDE | Local body tax |
 
-### 3.3 Telecom and utilities (18%)
+### 3.3 Telecom and utilities
 
-**Telecom and utilities**
-
-| Pattern | Treatment | GSTR-3B Table | Notes |
+| Pattern | Treatment | GSTR-3B table | Notes |
 | --- | --- | --- | --- |
-| JIO, RELIANCE JIO | 18% input, CGST+SGST or IGST | 4(A) | Telecom service |
-| AIRTEL, BHARTI AIRTEL | 18% input | 4(A) | Telecom service |
-| VI, VODAFONE IDEA | 18% input | 4(A) | Telecom service |
-| BSNL, MTNL | 18% input | 4(A) | Government telecom, still taxable |
-| TATA POWER, ADANI ELECTRICITY, BSES, BESCOM, MSEDCL | 18% input | 4(A) | Electricity distribution (post-GST 2.0: electricity brought under GST at 18% for commercial/industrial consumers) |
-| MAHANAGAR GAS, IGL, ADANI GAS | 5% input | 4(A) | Piped natural gas for domestic/CNG at 5% |
-| WATER SUPPLY, JALABOARD | EXCLUDE |  | Municipal water, exempt |
+| JIO, RELIANCE JIO, AIRTEL, BHARTI AIRTEL, VI, VODAFONE IDEA, BSNL, MTNL | ITC per invoice | 4(A)(5) | Telecom service. Mixed personal use: apportion under section 17(1) |
+| TATA POWER, ADANI ELECTRICITY, BSES, BESCOM, MSEDCL | EXCLUDE | | Electrical energy is exempt (rate table above). No GST to claim. The earlier Guide said electricity was taxed at the standard rate: wrong |
+| MAHANAGAR GAS, IGL, ADANI GAS | ITC per invoice | 4(A)(5) | Rate not proven on a readable page; use the invoice |
+| WATER SUPPLY, JAL BOARD | EXCLUDE | | Municipal water |
 
 ### 3.4 Insurance
 
-**Insurance**
-
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| LIC, LIFE INSURANCE CORP | EXCLUDE | Life insurance premium -- exempt (pure life, term). Endowment/ULIP policies may have GST but ITC blocked under Sec 17(5)(d) |
-| HDFC ERGO, ICICI LOMBARD, BAJAJ ALLIANZ | 18% -- but check Sec 17(5)(d) | General insurance at 18%. ITC blocked unless: (i) government-mandated employee coverage, or (ii) used for making taxable supply of same category |
-| STAR HEALTH, NIVA BUPA, CARE HEALTH | 18% -- but check Sec 17(5)(d) | Health insurance at 18%. ITC blocked unless government-mandated employee coverage |
-| NEW INDIA ASSURANCE, UNITED INDIA | 18% -- but check Sec 17(5)(d) | Same treatment as HDFC Ergo |
+| LIC, LIFE INSURANCE CORP (individual policy) | EXCLUDE | Individual life insurance is exempt from 22 September 2025 (rate table above). Group policies are not covered by that exemption; ITC on life insurance is blocked anyway by section 17(5)(b)(i) unless the employer must provide it by law or it is used for an outward supply of the same category |
+| STAR HEALTH, NIVA BUPA, CARE HEALTH (individual policy) | EXCLUDE | Individual health insurance is exempt from 22 September 2025. Health insurance ITC is blocked by section 17(5)(b)(i) with the same two exceptions |
+| HDFC ERGO, ICICI LOMBARD, BAJAJ ALLIANZ, NEW INDIA ASSURANCE, UNITED INDIA (general insurance) | ITC per invoice, then check section 17(5)(ab) | General insurance of a car blocked under section 17(5)(a) is itself blocked by section 17(5)(ab) |
 
-### 3.5 SaaS and cloud -- Indian entities (18%)
-
-**SaaS Indian entities**
+### 3.5 SaaS and cloud billed by Indian entities
 
 | Pattern | Billing entity | Treatment | Notes |
 | --- | --- | --- | --- |
-| AWS INDIA, AMAZON INTERNET SERVICES | Amazon Internet Services Pvt Ltd (IN) | 18% IGST (if inter-state) or CGST+SGST (if same state) | Check supplier GSTIN state code vs client state |
-| GOOGLE INDIA, GOOGLE CLOUD INDIA | Google India Pvt Ltd / Google Cloud India Pvt Ltd (IN) | 18% | Check invoice for GSTIN |
-| ZOHO, ZOHO CORP | Zoho Corporation Pvt Ltd (IN, Chennai) | 18% IGST or CGST+SGST | Check state code |
-| FRESHWORKS | Freshworks Technologies Pvt Ltd (IN, Chennai) | 18% | Same treatment |
-| MICROSOFT INDIA | Microsoft Corporation India Pvt Ltd (IN) | 18% | Check invoice for Indian GSTIN |
-| CLEARTAX, CLEAR | Clear (formerly ClearTax) (IN) | 18% | Accounting/compliance SaaS |
+| AWS INDIA, AMAZON INTERNET SERVICES | Amazon Internet Services Pvt Ltd (IN) | ITC per invoice: IGST if the supplier's State differs, CGST plus SGST if the same | Check the supplier GSTIN and the place of supply |
+| GOOGLE INDIA, GOOGLE CLOUD INDIA | Google India Pvt Ltd / Google Cloud India Pvt Ltd (IN) | ITC per invoice | Check the invoice carries an Indian GSTIN |
+| ZOHO, ZOHO CORP | Zoho Corporation Pvt Ltd (IN) | ITC per invoice | Check State |
+| FRESHWORKS | Freshworks Technologies Pvt Ltd (IN) | ITC per invoice | |
+| MICROSOFT INDIA | Microsoft Corporation India Pvt Ltd (IN) | ITC per invoice | Check the invoice carries an Indian GSTIN |
+| CLEARTAX, CLEAR | Clear (IN) | ITC per invoice | Accounting or compliance software |
 
-### 3.6 Non-resident SaaS (reverse charge under IGST Act Sec 5(3))
+### 3.6 Foreign SaaS (reverse charge on import of services)
 
-**Non-resident SaaS reverse charge**
+For a registered business, a service bought from a supplier outside India is an import of services. The business pays IGST itself under reverse charge (IGST Act section 5(3)), declares it in GSTR-3B table 3.1(d), and takes the credit in table 4(A)(2) after paying, because this credit is not in GSTR-2B (Notification 12/2024-Central Tax instructions). Rate: the rate notified for the service; the standard rate is the default until checked.
 
-| Pattern | Billing entity | Treatment | Notes |
-| --- | --- | --- | --- |
-| NOTION, NOTION LABS | Notion Labs Inc (US) | RCM -- self-assess IGST 18% via cash ledger | Report in GSTR-3B Table 3.1(d). ITC claimable in 4(A)(3) |
-| OPENAI, CHATGPT | OpenAI Inc (US) | RCM -- IGST 18% | Same |
-| GITHUB (US entity) | GitHub Inc (US) | RCM -- IGST 18% | Check if billed by Indian or US entity |
-| ANTHROPIC, CLAUDE | Anthropic PBC (US) | RCM -- IGST 18% | Same |
-| FIGMA | Figma Inc (US) | RCM -- IGST 18% | Same |
-| CANVA | Canva Pty Ltd (AU) | RCM -- IGST 18% | Non-resident, reverse charge |
-| SLACK (US) | Slack Technologies LLC (US) | RCM -- IGST 18% | If billed by US entity. Salesforce Ireland = check |
-| HUBSPOT (US) | HubSpot Inc (US) | RCM -- IGST 18% | Check billing entity |
-| TWILIO | Twilio Inc (US) | RCM -- IGST 18% | Same |
+| Pattern | Billing entity | Treatment |
+| --- | --- | --- |
+| NOTION, NOTION LABS | Notion Labs Inc (US) | Reverse charge, IGST |
+| OPENAI, CHATGPT | OpenAI (US) | Reverse charge, IGST |
+| GITHUB | GitHub Inc (US) | Reverse charge if billed by the US entity; check the invoice |
+| ANTHROPIC, CLAUDE | Anthropic PBC (US) | Reverse charge, IGST |
+| FIGMA | Figma Inc (US) | Reverse charge, IGST |
+| CANVA | Canva Pty Ltd (AU) | Reverse charge, IGST |
+| SLACK | Slack Technologies (US) or a Salesforce entity | Check the billing entity |
+| HUBSPOT | HubSpot Inc (US) | Check the billing entity |
+| TWILIO | Twilio Inc (US) | Reverse charge, IGST |
 
-### 3.7 Payment processors (18%)
-
-**Payment processors**
+### 3.7 Payment processors
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| RAZORPAY | 18% input (IGST or CGST+SGST) | Payment gateway fees -- check GSTIN state code |
-| PAYTM, ONE97 COMMUNICATIONS | 18% input | Same |
-| STRIPE INDIA, STRIPE PAYMENTS INDIA | 18% input | Indian entity -- check invoice |
-| STRIPE (US/IE entity) | RCM -- IGST 18% | Non-resident -- reverse charge if no Indian GSTIN |
-| CASHFREE, INSTAMOJO, PHONEPE BUSINESS | 18% input | Payment processing service |
-| PAYPAL (transaction fees from foreign entity) | RCM -- IGST 18% | PayPal Pte Ltd (SG) -- non-resident reverse charge |
-| CCAVENUE, BILLDESK | 18% input | Indian payment processors |
+| RAZORPAY, PAYTM, ONE97 COMMUNICATIONS, CASHFREE, INSTAMOJO, PHONEPE BUSINESS, CCAVENUE, BILLDESK | ITC per invoice | Gateway fees; check the supplier GSTIN State |
+| STRIPE INDIA, STRIPE PAYMENTS INDIA | ITC per invoice | Indian entity |
+| STRIPE (US or Irish entity), PAYPAL (foreign entity fees) | Reverse charge, IGST | Foreign supplier with no Indian GSTIN on the document |
 
-### 3.8 Travel (5% / 18%)
-
-**Travel**
+### 3.8 Travel
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| INDIGO, INTERGLOBE AVIATION | 5% (economy class) | Domestic air travel economy = 5%. Business class = 18%. Check ticket class |
-| AIR INDIA | 5% (economy) / 18% (business) | Same split. International flights = zero-rated |
-| SPICEJET, AKASA AIR, AIR ASIA INDIA | 5% (economy) / 18% (business) | Same treatment |
-| VISTARA, TATA SIA | 5% (economy) / 18% (business) | Same |
-| OLA, ANI TECHNOLOGIES | 5% | Ride-hailing at 5% (non-AC auto/e-rickshaw may be exempt) |
-| UBER INDIA | 5% | Same as Ola |
-| IRCTC, INDIAN RAILWAYS | 5% | Rail transport of passengers. Sleeper/AC chair at 5%. Local suburban exempt |
-| MAKEMYTRIP, GOIBIBO, YATRA | 18% on service fee; underlying transport at transport rate | Platform commission at 18%. Underlying ticket at 5%/18% per class |
-| HOTELS, OYO, TAJ, ITC HOTELS, LEMON TREE | 18% (tariff > INR 7,500/night) or 5% (tariff <= INR 7,500, without ITC option) | Check declared tariff |
+| INDIGO, INTERGLOBE AVIATION, AIR INDIA, SPICEJET, AKASA AIR, AIR INDIA EXPRESS | Economy 5%; any other class 18% | Rates from the GST Council FAQ in Section 1. ITC per invoice if business travel; travel benefits to employees on vacation are blocked (section 17(5)(b)(iii)) |
+| OLA, ANI TECHNOLOGIES, UBER INDIA | ITC per invoice | Passenger transport by motor vehicle: 5% with limited ITC, or 18% with ITC, by the supplier's rate (Section 1). Renting or hiring a passenger car is blocked unless used for the purposes in section 17(5)(a) (section 17(5)(b)(i)) |
+| IRCTC, INDIAN RAILWAYS | ITC per invoice | Rate not printed on a readable page |
+| MAKEMYTRIP, GOIBIBO, YATRA | ITC per invoice | The platform fee and the underlying ticket or room are separate lines |
+| HOTELS, OYO, TAJ, ITC HOTELS, LEMON TREE | ITC per invoice | Room value per unit per day at or below INR 7,500: 5% without ITC to the hotel. Above it: rate not printed on a readable page; use the invoice |
 
-### 3.9 Restaurants (5% no ITC vs 18%)
-
-**Restaurants**
+### 3.9 Restaurants and food delivery
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SWIGGY | 5% (collected by platform) | Restaurant service via e-commerce -- 5% with no ITC. Platform is liable to collect and remit GST |
-| ZOMATO | 5% (collected by platform) | Same as Swiggy |
-| Restaurant (direct, non-hotel, non-AC) | 5% output (no ITC) | Restaurant choosing 5% rate foregoes ITC |
-| Restaurant (in hotel, tariff > INR 7,500) | 18% (with ITC) | Hotel restaurant where declared room tariff > INR 7,500 |
-| DOMINOS, PIZZA HUT, MCDONALDS, KFC, BURGER KING | 5% (dine-in/takeaway) | QSR chains at 5% without ITC |
-| CLOUD KITCHEN, REBEL FOODS | 5% via platform | Same treatment as Swiggy/Zomato delivery |
+| SWIGGY, BUNDL TECHNOLOGIES, ZOMATO | No ITC | Food and beverages: ITC blocked by section 17(5)(b)(i) unless used for an outward supply of the same category |
+| Restaurant (direct), DOMINOS, PIZZA HUT, MCDONALDS, KFC, BURGER KING, REBEL FOODS | No ITC | Same block |
 
-### 3.10 Professional services (18%)
-
-**Professional services**
+### 3.10 Professional services
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| CA, CHARTERED ACCOUNTANT, [name] & ASSOCIATES | 18% input (CGST+SGST or IGST) | Professional services. ITC available if used for taxable outward supply |
-| CS, COMPANY SECRETARY | 18% input | Same |
-| ADVOCATE, ADV, LAWYER, LAW FIRM | 18% -- RCM applies | Legal services by individual advocate/firm = reverse charge. Recipient pays GST |
-| CONSULTANT, CONSULTANCY | 18% input | Check if RCM applies (non-resident consultant = RCM) |
-| ARCHITECT, INTERIOR DESIGNER | 18% input | Forward charge from registered supplier |
+| CA, CHARTERED ACCOUNTANT, [name] & ASSOCIATES, CS, COMPANY SECRETARY, ARCHITECT, INTERIOR DESIGNER | ITC per invoice | Forward charge from a registered supplier |
+| ADVOCATE, ADV, LAWYER, LAW FIRM | Reverse charge | Legal services by an individual advocate or a firm of advocates to a business entity: the business pays the tax (Section 5.4) |
+| CONSULTANT, CONSULTANCY | ITC per invoice | Foreign consultant: reverse charge on import of services |
+| DIRECTOR FEE, SITTING FEE | Reverse charge | Services by a director to the company (Section 5.4); salary under an employment contract is excluded instead |
 
 ### 3.11 Rent
 
-**Rent**
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| RENT (commercial property, registered landlord) | ITC per invoice | Forward charge |
+| RENT (commercial property, unregistered landlord, registered tenant) | Reverse charge | From 10 October 2024 (serial 5AB); a tenant paying tax under composition is excluded (Section 5.4) |
+| RENT (residential dwelling, registered tenant) | Reverse charge | From 18 July 2022 (serial 5AA). Exempt from 1 January 2023 where a proprietor rents the home in a personal capacity as his own residence, on his own account (Section 5.4) |
+| RENT (residential, unregistered tenant) | EXCLUDE | |
+| COWORKING, WEWORK, AWFIS, COWRKS, 91SPRINGBOARD | ITC per invoice | Workspace service |
+
+### 3.12 Salaries and wages (exclude entirely)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| RENT (commercial property) | 18% input (CGST+SGST or IGST) | Commercial property rent at 18%. ITC available |
-| RENT (residential, to registered person for business) | 18% RCM | From 18 Jul 2022, residential property rented to registered person = RCM on tenant. Tenant self-assesses 18% |
-| RENT (residential, to unregistered person) | EXCLUDE | Exempt. Not a taxable supply when tenant is unregistered |
-| COWORKING, WEWORK, AWFIS, COWRKS, 91SPRINGBOARD | 18% input | Commercial workspace service at 18% |
+| SALARY, WAGES, STIPEND, PAYROLL, BONUS, GRATUITY, LEAVE ENCASHMENT | EXCLUDE | Employee pay; no supplier invoice and no GST |
+| CONTRACTOR (individual, no GSTIN) | EXCLUDE from ITC; flag for TDS | No tax invoice from an unregistered supplier. For TDS on contractor payments see `in-tds-freelance` |
 
-### 3.12 Salaries and wages (exclude entirely -- not a supply)
+## Section 4: Worked examples
 
-**Salaries and wages**
+Six classifications from a hypothetical HDFC Bank statement of a Mumbai-based self-employed software consultant registered in Maharashtra. Amounts in the bank lines are hypothetical. The tax columns are left for the working paper (Section 7), which computes them from the invoice; this Guide does not compute tax.
 
-| Pattern | Treatment | Notes |
-| --- | --- | --- |
-| SALARY, WAGES, STIPEND, PAYROLL | EXCLUDE | Employer-employee relationship. Schedule III -- not a supply |
-| BONUS, GRATUITY, LEAVE ENCASHMENT | EXCLUDE | Same |
-| CONTRACTOR (individual, no GSTIN) | EXCLUDE from GST; flag for TDS | Not a GST supply if unregistered. May need 194C TDS |
+### Example 1: Foreign SaaS under reverse charge (Notion)
 
-## Section 4 -- Worked examples
+**Input line:** `05.01.2026 ; NOTION LABS INC DEBIT CARD ; DR ; 10.00 ; USD ; 840.00 ; INR`
 
-These are six fully worked classifications drawn from a hypothetical HDFC Bank statement of a Mumbai-based self-employed software consultant (GSTIN: 27XXXXX1234X1Z5, Maharashtra). They illustrate the trickiest cases. Pattern-match against these when you encounter similar lines in any real statement.
+**Reasoning:** Notion Labs Inc is a US entity (Section 3.6). No GST on the charge. This is an import of services: the client self-assesses IGST under reverse charge (IGST Act section 5(3)), pays it in cash (Section 5.8), declares it in table 3.1(d), and takes the credit in table 4(A)(2) once paid, if section 16 conditions are met.
 
-### Example 1 -- Non-resident SaaS reverse charge (Notion)
+| Date | Counterparty | Gross | GSTR-3B (output) | GSTR-3B (input) | Default? | Question? |
+| --- | --- | --- | --- | --- | --- | --- |
+| 05.01.2026 | NOTION LABS INC | -840 | 3.1(d) | 4(A)(2) | Y (rate) | "Confirm the rate notified for this service" |
 
-**Input line:**
-`05.01.2026 ; NOTION LABS INC DEBIT CARD ; DR ; USD 10.00 ; INR 840.00`
+### Example 2: Indian SaaS, inter-State (AWS India)
 
-**Reasoning:**
-Notion Labs Inc is a US entity (Section 3.6). No GST on the charge. This is an import of services -- the client must self-assess IGST at 18% under reverse charge (IGST Act Sec 5(3)). RCM liability paid via electronic cash ledger only. ITC claimable in the same period if conditions under Sec 16 are met. Net effect = zero (cash-neutral for fully taxable person).
+**Input line:** `10.01.2026 ; AMAZON INTERNET SERVICES PVT LTD NEFT ; DR ; 23,600.00 ; INR`
 
-**Output table**
+**Reasoning:** the supplier's invoice shows a GSTIN in another State, so the supply is inter-State and the invoice charges IGST. Take the IGST on the invoice as ITC in table 4(A)(5) if the invoice is in GSTR-2B.
 
-| Date | Counterparty | Gross (INR) | Net | GST self-assessed | Rate | GSTR-3B Table (output) | GSTR-3B Table (input) | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 05.01.2026 | NOTION LABS INC | -840 | -840 | IGST 151 | 18% | 3.1(d) | 4(A)(3) | N | -- |
+| Date | Counterparty | Gross | GSTR-3B | Default? | Question? |
+| --- | --- | --- | --- | --- | --- |
+| 10.01.2026 | AMAZON INTERNET SERVICES | -23,600 | 4(A)(5) | N | "Invoice in GSTR-2B?" |
 
-### Example 2 -- Indian SaaS, inter-state (AWS India)
+### Example 3: Food delivery, blocked ITC (Swiggy)
 
-**Input line:**
-`10.01.2026 ; AMAZON INTERNET SERVICES PVT LTD NEFT ; DR ; INR 23,600.00`
+**Input line:** `15.01.2026 ; BUNDL TECHNOLOGIES SWIGGY ; DR ; 450.00 ; INR`
 
-**Reasoning:**
-Amazon Internet Services Pvt Ltd is registered in Telangana (GSTIN: 36XXXXXX). Client is in Maharashtra (27). Different states = inter-state = IGST at 18%. Invoice amount INR 23,600 is gross (INR 20,000 net + INR 3,600 IGST). ITC of INR 3,600 IGST claimable if reflected in GSTR-2B.
+**Reasoning:** food and beverages are blocked by section 17(5)(b)(i) whatever the business purpose, unless used for an outward supply of the same category. No ITC. The expense may still count for income tax if business-related.
 
-**Output table**
+| Date | Counterparty | Gross | ITC? | Default? | Question? |
+| --- | --- | --- | --- | --- | --- |
+| 15.01.2026 | SWIGGY | -450 | BLOCKED, section 17(5)(b)(i) | N | "Business meal? (for income tax records only)" |
 
-| Date | Counterparty | Gross (INR) | Net | GST paid | Rate | GSTR-3B Table | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10.01.2026 | AMAZON INTERNET SERVICES | -23,600 | -20,000 | IGST 3,600 | 18% | 4(A)(5) | N | -- |
+### Example 4: Legal services under reverse charge (advocate)
 
-### Example 3 -- Domestic restaurant, blocked ITC (Swiggy)
+**Input line:** `20.01.2026 ; ADV RAJESH SHARMA NEFT ; DR ; 50,000.00 ; INR`
 
-**Input line:**
-`15.01.2026 ; BUNDL TECHNOLOGIES SWIGGY ; DR ; INR 450.00`
+**Reasoning:** legal services by an individual advocate to a business entity are under reverse charge (Notification 13/2017-Central Tax (Rate), serial 2). The client pays the tax in cash, declares it in table 3.1(d), and takes credit in table 4(A)(3) after paying. Advocate and client are both in Maharashtra, so the tax is CGST plus SGST.
 
-**Reasoning:**
-Swiggy (Bundl Technologies) is a restaurant aggregator platform. Restaurant food at 5% -- but ITC on food and beverages is blocked under Sec 17(5)(b). The 5% GST is collected and remitted by the e-commerce platform. For the recipient (our client), no ITC is available regardless of business purpose. Exclude from ITC claim. The expense may still be deductible for income tax purposes if business-related.
+| Date | Counterparty | Gross | GSTR-3B (output) | GSTR-3B (input) | Default? | Question? |
+| --- | --- | --- | --- | --- | --- | --- |
+| 20.01.2026 | ADV RAJESH SHARMA | -50,000 | 3.1(d) | 4(A)(3) | Y | "Is the advocate in the same State? Is the service for the business?" |
 
-**Output table**
+### Example 5: Domestic air travel
 
-| Date | Counterparty | Gross (INR) | Net | GST | Rate | ITC? | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 15.01.2026 | SWIGGY | -450 | -429 | 21 (5%) | 5% | BLOCKED -- Sec 17(5)(b) | Y | "Was this a business meal or personal?" |
+**Input line:** `22.01.2026 ; INTERGLOBE AVIATION INDIGO PNR AB1CDE ; DR ; 5,250.00 ; INR`
 
-### Example 4 -- Legal services under reverse charge (Advocate)
+**Reasoning:** domestic flight. Economy class is charged at 5%; any other class at 18% (Section 1). Take the tax on the airline's invoice as ITC in table 4(A)(5) if the trip was business travel and the invoice is in GSTR-2B. A proprietor's own business trip is not a travel benefit to an employee on vacation (section 17(5)(b)(iii)).
 
-**Input line:**
-`20.01.2026 ; ADV RAJESH SHARMA NEFT ; DR ; INR 50,000.00`
+| Date | Counterparty | Gross | GSTR-3B | Default? | Question? |
+| --- | --- | --- | --- | --- | --- |
+| 22.01.2026 | INTERGLOBE AVIATION | -5,250 | 4(A)(5) | Y | "Economy or other class? Business purpose? Invoice in GSTR-2B?" |
 
-**Reasoning:**
-Payment to an advocate for legal services. Under Notification 13/2017-CT(Rate) Sl. No. 2, legal services by an individual advocate or firm of advocates to any business entity attract reverse charge. The client (business entity) must self-assess GST at 18%. Since both advocate and client are in Maharashtra, this is intra-state: CGST 9% + SGST 9% on INR 50,000 = INR 9,000 total. Paid via cash ledger. ITC of INR 9,000 claimable if the legal service was for business purposes.
+### Example 6: Passenger car, blocked
 
-**Output table**
+**Input line:** `28.01.2026 ; MARUTI SUZUKI INDIA LTD NEFT ; DR ; 8,50,000.00 ; INR`
 
-| Date | Counterparty | Gross (INR) | Net | GST self-assessed | Rate | GSTR-3B Table (output) | GSTR-3B Table (input) | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 20.01.2026 | ADV RAJESH SHARMA | -50,000 | -50,000 | CGST 4,500 + SGST 4,500 | 18% | 3.1(d) | 4(A)(3) | Y | "Confirm advocate is in same state (intra-state) and not an employee" |
+**Reasoning:** a car with seating for not more than thirteen persons including the driver is blocked by section 17(5)(a), except when used for further supply of such vehicles, transport of passengers, or driving training. A software consultant meets none of these. No ITC. The rate on the invoice depends on the car (small cars 18%, mid-size and large cars 40%; Section 1).
 
-### Example 5 -- Domestic air travel, economy class
+| Date | Counterparty | Gross | ITC? | Default? | Question? |
+| --- | --- | --- | --- | --- | --- |
+| 28.01.2026 | MARUTI SUZUKI | -8,50,000 | BLOCKED, section 17(5)(a) | Y | "Is the vehicle used to carry passengers for a fare, resold, or used for driving training?" |
 
-**Input line:**
-`22.01.2026 ; INTERGLOBE AVIATION INDIGO 6E-1234 ; DR ; INR 5,250.00`
+## Section 5: Rules
 
-**Reasoning:**
-IndiGo domestic flight. Economy class domestic air travel attracts 5% GST (CGST 2.5% + SGST 2.5% or IGST 5%). Net = INR 5,000, GST = INR 250. ITC of INR 250 is available if the travel was for business purposes and not blocked under Sec 17(5)(e) (travel benefits to employees on vacation are blocked, but business travel by the proprietor is not LTC). Check: business class would be 18%.
+Each rule names its legal source. Apply silently when the data is unambiguous.
 
-**Output table**
+### 5.1 Rates
 
-| Date | Counterparty | Gross (INR) | Net | GST | Rate | GSTR-3B Table | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 22.01.2026 | INTERGLOBE AVIATION | -5,250 | -5,000 | 250 | 5% | 4(A)(5) | Y | "Economy or business class? Business purpose?" |
+Use the rate tables in Section 1. The 56th GST Council rates apply from 22 September 2025 for services and for goods other than pan masala, tobacco, cigarettes and bidi, which moved on 1 February 2026. An invoice dated before the start date keeps the old rate; for supplies that straddle a start date, refer (Section 10, Known gaps).
 
-### Example 6 -- Motor vehicle (personal car), hard block
+### 5.2 CGST plus SGST, or IGST
 
-**Input line:**
-`28.01.2026 ; MARUTI SUZUKI INDIA LTD NEFT ; DR ; INR 8,50,000.00`
-
-**Reasoning:**
-Car purchase payment. ITC on motor vehicles is hard-blocked under Sec 17(5)(a) unless the vehicle is used for: (i) further supply of vehicles, (ii) transportation of passengers, (iii) driving training, or (iv) transportation of goods. A software consultant does not qualify for any exception. Full ITC block regardless of business use. The GST paid (18% or 40% depending on vehicle type) is a cost to the business. Do not claim any ITC.
-
-**Output table**
-
-| Date | Counterparty | Gross (INR) | Net | GST | Rate | ITC? | Default? | Question? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 28.01.2026 | MARUTI SUZUKI | -8,50,000 | -- | -- | 18%/40% | BLOCKED -- Sec 17(5)(a) | Y | "Motor vehicle: blocked. Is this for transport of goods/passengers as primary business?" |
-
-## Section 5 -- Tier 1 classification rules (compressed)
-
-Each rule states the legal source and the GSTR-3B table mapping. Apply silently if the data is unambiguous.
-
-### 5.1 GST rate slabs (post-GST 2.0, effective 22 Sep 2025)
-
-- **Legislation** — CGST Act Sec 9; 56th GST Council; Notification 01/2017-CT(Rate) as amended.  _(CGST Act Sec 9; 56th GST Council; Notification 01/2017-CT(Rate))_
-- **5% slab** — packaged food, medicines, economy transport, insurance, EVs, restaurants (without ITC option), small hotels  _(56th GST Council, 22 Sep 2025)_
-- **18% slab** — most goods and services -- IT, telecom, financial services, professional services, branded garments, consumer durables, cement, non-luxury automobiles, commercial rent  _(56th GST Council, 22 Sep 2025)_
-- **40% slab** — demerit/luxury only -- aerated drinks, energy drinks, premium motor vehicles (SUVs >4m, >1500cc), online gaming/casinos/betting  _(56th GST Council, 22 Sep 2025)_
-- **0% (nil/exempt)** — fresh food (milk, cereals, vegetables, fruits), healthcare, education  _(56th GST Council, 22 Sep 2025)_
-- **0% (zero-rated)** — exports, SEZ supplies  _(56th GST Council, 22 Sep 2025)_
-- **Former slabs abolished** — Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively.  _(56th GST Council, 22 Sep 2025)_
-
-### 5.2 CGST+SGST vs IGST determination
-
-- **Legislation** — CGST Act Sec 9; IGST Act Sec 5; IGST Act Chapter V (Place of Supply).  _(CGST Act Sec 9; IGST Act Sec 5; IGST Act Chapter V)_
-
-**Scenario table**
+Central tax (CGST Act section 9(1)) and State tax are levied on intra-State supplies; integrated tax is levied on inter-State supplies (IGST Act section 5(1), at a rate "not exceeding forty per cent"). The place of supply decides which, under Chapter V of the IGST Act (sections 10 to 14).
 
 | Scenario | Tax type |
 | --- | --- |
-| Supplier state = Buyer state (intra-state) | CGST + SGST (half rate each) |
-| Supplier state = Buyer UT (intra-UT) | CGST + UTGST |
-| Supplier state != Buyer state (inter-state) | IGST (full rate) |
-| Import of goods | IGST (via Customs) + BCD (no ITC on BCD) |
-| Import of services | IGST under reverse charge |
-| Export | Zero-rated (IGST or under LUT) |
+| Supplier's location and place of supply in the same State | CGST plus SGST |
+| Same Union territory (without legislature) | CGST plus UTGST |
+| Different States | IGST |
+| Import of goods | IGST through customs |
+| Import of services by a business | IGST under reverse charge |
+| Export, or supply to an SEZ unit or developer for authorised operations | Zero-rated (Section 5.11) |
 
-- **Key determination** — Compare first two digits of supplier GSTIN vs buyer GSTIN. If same state code = intra-state. If different = inter-state. If buyer has no GSTIN (B2C), use buyer's billing address to determine state.  _(IGST Act Chapter V)_
+Working check, not the legal test (the test is the supplier's location and the place of supply, IGST Act Chapter V): compare the State code at the start of the supplier's GSTIN with the client's. For a buyer with no GSTIN, use the place of supply rules, not the billing address alone. Online information and database access services from abroad to a person who is not registered (a "non-taxable online recipient") are taxed on the foreign supplier, not the customer (IGST Act section 14).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_IGST_Act/active/chapteriii/section5_v1.00.html |
+| IGST rate ceiling | not exceeding forty per cent | "at such rates, not exceeding forty per cent., as may be notified" |
+| Reverse charge power | categories notified by the Government | "specify categories of supply of goods or services or both, the tax on which shall be paid on reverse charge basis by the recipient" |
 
 ### 5.3 Reverse charge on import of services
 
-- **Legislation** — IGST Act Sec 5(3); Sec 5(4).  _(IGST Act Sec 5(3); Sec 5(4))_
-- **RCM on import of services** — ANY import of services where supplier is outside India and recipient is in India -- IGST must be self-assessed and paid by recipient under reverse charge. No threshold. Paid via electronic cash ledger only (ITC cannot be used to discharge RCM liability). ITC on the RCM payment is available in the same period if Sec 16 conditions are met. Net effect = zero for a fully taxable recipient.  _(IGST Act Sec 5(3); Sec 5(4))_
-- **Reporting** — Report: GSTR-3B Table 3.1(d) for output; Table 4(A)(3) for ITC.  _(IGST Act Sec 5(3); Sec 5(4))_
+A registered business that buys a service from a supplier outside India pays IGST on it under reverse charge (IGST Act section 5(3)). Pay it through the electronic cash ledger (Section 5.8). Declare it in GSTR-3B table 3.1(d). Take the credit in table 4(A)(2), once paid, if the service is for the business and section 17(5) does not block it. GSTR-2B does not show this credit: "reverse charge credit on import of services is not part of this statement and will be continued to be entered by taxpayers in Table 4(A)(2) of FORM GSTR-3B" (Notification 12/2024-Central Tax, https://gstcouncil.gov.in/sites/default/files/2024-09/central-tax-12-2024-11072024.pdf). The notification that lists import of services under reverse charge (10/2017-Integrated Tax (Rate)) could not be read on an allowed host.
 
-### 5.4 Domestic reverse charge (specified services)
+### 5.4 Domestic reverse charge
 
-- **Legislation** — CGST Act Sec 9(3); Notification 13/2017-CT(Rate).  _(CGST Act Sec 9(3); Notification 13/2017-CT(Rate))_
-- **Key RCM categories** — Legal services by individual advocate/firm of advocates; Services by director (not as employee) to company; Services by Goods Transport Agency (GTA) -- if GTA has not opted for forward charge; Sponsorship services to body corporate/partnership; Services by government/local authority to business entity; Security services from unincorporated supplier to registered person  _(CGST Act Sec 9(3); Notification 13/2017-CT(Rate))_
-- **Mechanics** — self-assess at applicable rate, pay via cash ledger, report in 3.1(d), claim ITC in 4(A)(3).  _(CGST Act Sec 9(3); Notification 13/2017-CT(Rate))_
+The recipient pays the tax on these supplies (CGST Act section 9(3) and Notification 13/2017-Central Tax (Rate), as amended). Self-assess at the rate for the service, pay in cash, declare in table 3.1(d), and take credit in table 4(A)(3) after paying.
 
-### 5.5 E-invoicing (INR 5 crore threshold)
-
-- **Legislation** — CGST Rule 48(4); Notification 13/2020-CT and amendments.  _(CGST Rule 48(4); Notification 13/2020-CT)_
-- **E-invoicing rules** — If aggregate turnover in any FY from 2017-18 onwards exceeds INR 5 crore: Mandatory e-invoice for all B2B supplies; Upload JSON to Invoice Registration Portal (IRP) at einvoice1.gst.gov.in; Receive IRN (Invoice Reference Number) + QR code; IRN + QR must appear on invoice; E-invoice auto-populates GSTR-1 and e-way bill Part A; 30-day reporting rule: taxpayers with AATO >= INR 10 crore must report within 30 days of invoice date (from 1 Apr 2025); MFA mandatory for all GST portal access from 1 Apr 2025  _(CGST Rule 48(4); Notification 13/2020-CT)_
-
-### 5.6 ITC conditions (all four must be met)
-
-- **Legislation** — CGST Act Sec 16(2).  _(CGST Act Sec 16(2))_
-- **Four conditions** — 1. Possession of tax invoice or debit note. 2. Receipt of goods or services. 3. Tax actually paid to government by supplier (reflected in GSTR-2B). 4. Recipient has filed GSTR-3B.  _(CGST Act Sec 16(2))_
-- **ITC cap** — ITC cannot exceed amount in GSTR-2B. If supplier has not uploaded invoice, recipient CANNOT claim ITC.  _(CGST Act Sec 16(2))_
-- **Time limit** — Earlier of 30 Nov of year following the FY, or date of filing GSTR-9 for that FY.  _(CGST Act Sec 16(2))_
-- **Non-payment reversal** — If recipient does not pay supplier within 180 days of invoice date, ITC must be reversed. Re-claim upon payment.  _(CGST Act Sec 16(2))_
-
-### 5.7 Blocked credits -- Sec 17(5) (absolute blocks)
-
-**Blocked credits table**  _(CGST Act Sec 17(5))_
-
-| Category | Blocked? | Exception |
+| Item | Value | Note |
 | --- | --- | --- |
-| Motor vehicles and conveyances | YES | Only if used for: further supply of vehicles, transport of passengers, driving training, transport of goods |
-| Food, beverages, outdoor catering, beauty, health, cosmetic surgery | YES | Only if used for making outward taxable supply of same category, or as element of taxable composite/mixed supply |
-| Club membership, health and fitness centre | YES | None |
-| Rent-a-cab, life insurance, health insurance | YES | Government-mandated employee provision; or used for making taxable supply of same category |
-| Travel benefits to employees on vacation (LTC/LTA) | YES | None |
-| Works contract for immovable property (not plant & machinery) | YES | Input service for further supply of works contract |
-| Construction of immovable property on own account (not plant & machinery) | YES | None |
-| Personal consumption | YES | None |
-| Goods lost, stolen, destroyed, written off, gifts, free samples | YES | None -- ITC must be reversed |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/download_8_0.pdf |
+| Goods transport agency (GTA) services to factories, societies, co-operatives, registered persons, body corporates, partnership firms, casual taxable persons (serial 1) | Reverse charge, unless the GTA opted for forward charge | "Supply of Services by a goods Goods (a) Any factory registered under or transport agency (GTA)" |
+| Legal services by an individual advocate or a firm of advocates to a business entity (serial 2) | Reverse charge | "Services supplied by an individual An Any business entity located in the advocate including a senior" |
+| Sponsorship services to a body corporate or partnership firm (serial 4) | Reverse charge | "Services provided by way of Any Any body corporate or partnership sponsorship" |
+| Services by the Central or State Government, Union territory or local authority to a business entity (serial 5, as amended) | Reverse charge, with exclusions added since 2017 | "d by the Central Central Any business entity located in the Government" |
+| Services by a director to the company or body corporate (serial 6) | Reverse charge | "Services supplied by a director of a A director The company or a body corporate" |
 
-### 5.8 ITC utilization order
+The GTA forward-charge option is in Notification 05/2022-Central Tax (Rate): the entry does not apply where the GTA has registered, opted to pay tax under forward charge, and declared so on its invoice.
 
-- **Legislation** — CGST Act Sec 49(5); Circular 98/17/2019-GST.  _(CGST Act Sec 49(5); Circular 98/17/2019-GST)_
-- **Utilization order** — IGST Credit --> First against IGST liability --> Then against CGST liability --> Then against SGST/UTGST liability CGST Credit --> First against CGST liability --> Then against IGST liability --> CANNOT be used against SGST/UTGST SGST Credit --> First against SGST liability --> Then against IGST liability --> CANNOT be used against CGST  _(CGST Act Sec 49(5); Circular 98/17/2019-GST)_
-- **IGST exhaustion rule** — IGST credit must be fully exhausted before CGST or SGST credit is used against IGST liability.  _(CGST Act Sec 49(5); Circular 98/17/2019-GST)_
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/05_2022-ctr-eng_1.pdf |
+| Renting of a residential dwelling to a registered person (serial 5AA) | Reverse charge on the registered tenant | "5AA Service by way of renting of Any Any registered person.”; residential dwelling to a person registered person." |
+| Start date | 18 July 2022 | "This notification shall come into force with effect from the 18th July, 2022" |
 
-### 5.9 ITC reversal -- Rule 42/43
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/15_2022-ctr-eng.pdf |
+| Residential dwelling rented to a registered proprietor as his own residence, in a personal capacity and on his own account | Exempt (Notification 12/2017-Central Tax (Rate), serial 12, Explanation) | "the registered person is proprietor of a proprietorship concern and rents the residential dwelling in his personal capacity for use as his own residence" |
+| Start date | 1 January 2023 | "come into force with effect from the 01 st day of January, 2023" |
 
-- **Legislation** — CGST Rules, Rule 42 (inputs/input services), Rule 43 (capital goods).  _(CGST Rules, Rule 42, Rule 43)_
-- **Reversal formula** — ITC to reverse = (Exempt turnover / Total turnover) x Common Credit  _(CGST Rules, Rule 42)_
-- **Capital goods reversal** — Capital goods: 5-year useful life. Monthly reversal = Total ITC / 60 x (exempt / total turnover).  _(CGST Rules, Rule 43)_
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-09-2024.pdf |
+| Renting of any property other than a residential dwelling by an unregistered person to a registered person (serial 5AB) | Reverse charge on the registered tenant | "Service by way of renting of any Any unregistered Any registered property other than residential" |
+| Start date | 10 October 2024 | "This notification shall come into force with effect from the 10th day of October, 2024" |
 
-### 5.10 Filing deadlines and late fees
+Notification 07/2025-Central Tax (Rate) takes a tenant who pays tax under composition out of serial 5AB: "the words “other than a person who has opted to pay tax under composition levy” shall be inserted" (https://gstcouncil.gov.in/sites/default/files/2025-01/ctr07-2025.pdf).
 
-**Filing deadlines and late fees table**
+Security services and other entries added after 2017 are not covered here: the amending notifications were not read. Check the current consolidated Notification 13/2017-Central Tax (Rate) for any service not in the tables above.
 
-| Return | Deadline | Late fee (with tax liability) | Late fee (nil) |
-| --- | --- | --- | --- |
-| GSTR-3B (monthly) | 20th of following month | INR 50/day (max INR 10,000) | INR 20/day (max INR 500) |
-| GSTR-1 (monthly) | 11th of following month | INR 50/day (max INR 10,000) | INR 50/day (max INR 10,000) |
-| GSTR-9 | 31st December following FY | INR 200/day (max 0.5% of turnover) | Same |
+### 5.5 E-invoicing, invoices and HSN codes
 
-- **Interest on late payment** — 18% per annum on net cash liability. Excess ITC claimed and utilized: 24% per annum.
+A registered person in the class notified under rule 48(4) of the CGST Rules must report each B2B invoice to the Invoice Registration Portal, get an Invoice Reference Number (IRN), and print the QR code carrying the IRN on the invoice (rule 46(r)). The class is set by Notification 13/2020-Central Tax as amended; its turnover test is in the table below. The rules on which years count, the exempt categories, and any time limit for reporting are in that notification and in GSTN advisories, which could not be read on an allowed host. For e-invoicing detail use `india-einvoice`.
 
-### 5.11 Exports -- two options
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf |
+| E-invoice aggregate turnover threshold (amending Notification 13/2020-Central Tax) | five crore rupees | "for the words “ten crore rupees”, the words “five crore rupees” shall be substituted" |
+| Start date | 1 August 2023 | "with effect from the 1 st day of August, 2023" |
 
-- **Legislation** — IGST Act Sec 16(3); CGST Rules, Rule 96/96A.  _(IGST Act Sec 16(3); CGST Rules, Rule 96/96A)_
+HSN code digits on tax invoices, from 1 April 2021 (Notification 78/2020-Central Tax under rule 46):
 
-**Export options table**
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-78-central-tax-english-2020.pdf |
+| Aggregate turnover in the preceding financial year up to five crore rupees | 4 digits (may be omitted on invoices to unregistered persons) | "1. Up to rupees five crores 4"; "may not mention the number of digits of HSN Code ... in respect of supplies made to unregistered persons" |
+| More than five crore rupees | 6 digits | "2. more than rupees five crores 6" |
+
+HSN covers goods; services use the SAC codes of the services classification (chapter 99).
+
+### 5.6 ITC: conditions, GSTR-2B reconciliation and time limit
+
+**Conditions (CGST Act section 16(2)), all of them:**
+1. The business holds a tax invoice or debit note from a registered supplier (or another prescribed document, rule 36(1)).
+2. The supplier has reported the invoice in GSTR-1 (or IFF, or GSTR-1A) and it has been communicated to the business (section 16(2)(aa)); rule 36(4) adds that the ITC must be communicated in GSTR-2B.
+3. The goods or services have been received.
+4. The ITC communicated in GSTR-2B has not been restricted (section 16(2)(ba)).
+5. The tax has been actually paid to the Government by the supplier, in cash or through its own ITC.
+6. The business has filed its own GSTR-3B (section 39 return).
+
+**Reconciliation, every period:**
+1. Download GSTR-2B for the month. It is auto-generated, monthly (rule 60(7)); the form instructions show a January statement "made available on 14 th Feb 2023". Match every purchase invoice in the books to GSTR-2B.
+2. Claim in GSTR-3B only ITC that is in GSTR-2B (rule 36(4)), except the import-of-services credit in table 4(A)(2), which GSTR-2B never shows.
+3. Invoice in the books but not in GSTR-2B: do not claim. Ask the supplier to report it; claim it in the month it appears, within the time limit below.
+4. Invoice in GSTR-2B but not in the books: check whether it is a real purchase before claiming.
+5. Credit shown in GSTR-2B under "ITC not available": do not claim (table 4(D)(2)).
+6. If ITC claimed in GSTR-3B exceeds GSTR-2B beyond the limit the Council sets, the portal sends Form DRC-01C; within seven days pay the excess with interest through DRC-03 or explain the difference (rule 88D).
+7. If tax payable per GSTR-1 exceeds tax paid per GSTR-3B beyond the set limit, the portal sends Form DRC-01B; pay or explain within seven days (rule 88C).
+
+**Reversals:**
+- **Supplier not paid within one hundred and eighty days of the invoice date** (section 16(2), second proviso; rule 37): reverse the ITC, in proportion to the amount not paid, with interest, in the GSTR-3B for the period after the one hundred and eighty days end. Re-claim when you pay; the time limit below does not apply to the re-claim (rule 37(4)). Supplies under reverse charge are outside this rule.
+- **Supplier filed GSTR-1 but not its GSTR-3B by 30 September following the end of the financial year** in which the business took the credit (rule 37A): reverse the credit in a GSTR-3B filed on or before 30 November of that year, reported in table 4(B)(2). If not reversed by then, pay it with interest. Re-claim once the supplier files.
+- **Common credit for taxable and exempt supplies**: reverse the exempt share under section 17(2) and rule 42 (inputs and input services) or rule 43 (capital goods). Rule 43 treats the useful life of capital goods as five years from the invoice date and spreads the credit monthly as "T m = T c / 60".
+- **Depreciation on the tax**: if income tax depreciation is claimed on the tax component, no ITC on that tax (section 16(3)).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter5/section16_v1.00.html |
+| Last date to take ITC for an invoice or debit note | 30 November following the end of the financial year, or the date the annual return is filed, whichever is earlier | "after the 6 [thirtieth day of November] following the end of financial year to which such invoice or" ... "or furnishing of the relevant annual return, whichever is earlier" |
+| Payment to supplier due within | one hundred and eighty days from the invoice date | "within a period of one hundred and eighty days from the date of issue of invoice by the supplier" |
+
+For invoices of financial year 2025-26, the last date is 30 November 2026, or the earlier date GSTR-9 for 2025-26 is filed.
+
+### 5.7 Blocked credits: section 17(5)
+
+No ITC on the items below, even if used for business (CGST Act section 17(5), text in force on 17 October 2026: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter5/section17_v1.00.html). Separately, section 17(1) limits ITC to the business share of a mixed-use purchase, and section 17(2) to the share used for taxable (including zero-rated) supplies.
+
+| Clause | Blocked | Exception (ITC allowed only then) |
+| --- | --- | --- |
+| (a) | Motor vehicles for transporting persons with approved seating of not more than thirteen persons (including the driver) | Used for further supply of such vehicles, transport of passengers, or training on driving them. Goods vehicles are not in this clause |
+| (aa) | Vessels and aircraft | Further supply, passenger transport, navigation or flying training, or transport of goods |
+| (ab) | General insurance, servicing, repair and maintenance of the vehicles, vessels and aircraft in (a) and (aa) | Where the vehicle, vessel or aircraft is used for the excepted purposes, or the buyer manufactures them or insures them |
+| (b)(i) | Food and beverages, outdoor catering, beauty treatment, health services, cosmetic and plastic surgery, leasing, renting or hiring of the vehicles, vessels or aircraft in (a) or (aa) (except for the excepted purposes), life insurance and health insurance | Used for an outward taxable supply of the same category, or as an element of a taxable composite or mixed supply; or the employer must provide it to employees by law |
+| (b)(ii) | Membership of a club, health and fitness centre | Employer must provide it by law |
+| (b)(iii) | Travel benefits to employees on vacation, such as leave or home travel concession | Employer must provide it by law |
+| (c) | Works contract services for construction of immovable property (other than plant and machinery) | Input service for a further supply of works contract service |
+| (d) | Goods or services for construction of immovable property (other than plant and machinery) on own account, even if used in business | None. "Construction" includes renovation and repairs to the extent capitalised |
+| (e) | Goods or services on which tax was paid under composition (section 10) | None |
+| (f) | Goods or services received by a non-resident taxable person | Goods he imports |
+| (fa) | Goods or services used for corporate social responsibility obligations under section 135 of the Companies Act 2013 | None (from 1 October 2023) |
+| (g) | Goods or services for personal consumption | None |
+| (h) | Goods lost, stolen, destroyed, written off, or disposed of as gifts or free samples | None |
+| (i) | Tax paid under section 74 for periods up to financial year 2023-24 | None |
+
+The earlier Guide listed "transport of goods" as an exception for motor vehicles. Since 1 February 2019, clause (a) covers only passenger vehicles of up to thirteen seats; the goods exception is in clause (aa) for vessels and aircraft.
+
+### 5.8 Paying the liability: cash and credit order
+
+- Reverse-charge tax is paid in cash (electronic cash ledger). Credit in the electronic credit ledger may be used only "towards output tax" (section 49(4)), and "output tax" "excludes tax payable by him on reverse charge basis" (section 2(82)). The GSTR-3B instructions allow the matching credit only "on payment of tax".
+- Order of use of credit (section 49(5) and rule 88A, https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter9/rule88a_v1.00.html):
+  1. IGST credit is used first against IGST. Any balance may then be used against CGST and SGST/UTGST "in any order" (rule 88A).
+  2. CGST and SGST credit may be used only after the IGST credit "has first been utilised fully".
+  3. CGST credit: against CGST, then IGST. Never against SGST/UTGST (section 49(5)(e)).
+  4. SGST/UTGST credit: against SGST/UTGST, then IGST, but against IGST only where no CGST credit is left for it (section 49(5)(c) proviso). Never against CGST (section 49(5)(f)).
+
+The earlier Guide said IGST credit must go to CGST before SGST. Rule 88A, in force since 29 March 2019, lets the balance go to either "in any order".
+
+### 5.9 ITC reversal for exempt supplies (rules 42 and 43)
+
+Common credit (inputs and input services used for both taxable and exempt supplies) is split under rule 42; capital goods under rule 43. In outline: credit used only for exempt supplies or non-business use is not taken; credit used only for taxable supplies is taken in full; the exempt share of common credit is reversed in proportion to exempt turnover over total turnover in the State. The value of exempt supply includes reverse-charge supplies, securities, land and some building sales (section 17(3)). The monthly working is recalculated for the whole financial year before the due date of the return for September following the year end, and any excess reversal is paid with interest (rule 42(2)); refer the annual true-up to the accountant.
+
+### 5.10 Return due dates and late fees: GSTR-1, GSTR-3B, GSTR-9
+
+**Due dates.** The statute prints GSTR-1 "on or before the tenth day of the month succeeding the said tax period" (section 37(1)); Notification 83/2020-Central Tax extends it. GSTR-3B due dates are in rule 61; GSTR-9 in rule 80. A return is due even for a period with no supplies (section 39(8)). GSTR-1 cannot be filed while an earlier GSTR-1 is missing, and GSTR-3B cannot be filed while an earlier GSTR-3B or the same period's GSTR-1 is missing (sections 37(4), 39(10)). GSTR-1 (and IFF) also cannot be filed while the GSTR-3B for the preceding month, or for QRMP filers the preceding tax period, is unfiled (rule 59(6): "shall not be allowed to furnish ... FORM GSTR-1, if he has not furnished the return in FORM GSTR-3B for the preceding month"). After filing GSTR-1 and before filing GSTR-3B for the same period, the business may amend or add outward supplies in GSTR-1A (rule 59(1), proviso).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-83-central-tax-english-2020.pdf |
+| GSTR-1, monthly filers | eleventh day of the following month | "till the eleventh day of the month succeeding such tax period" |
+| GSTR-1, quarterly (QRMP) filers | thirteenth day of the month after the quarter | "shall be extended till the thirteenth day of the month succeeding such tax period" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule61_v1.00.html |
+| GSTR-3B, monthly filers | twentieth day of the following month | "for each month, or part thereof, on or before the twentieth day of the month succeeding such month" |
+| GSTR-3B, QRMP, principal place of business in Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Karnataka, Goa, Kerala, Tamil Nadu, Telangana, Andhra Pradesh, Daman and Diu and Dadra and Nagar Haveli, Puducherry, Andaman and Nicobar Islands, Lakshadweep | twenty-second day of the month after the quarter | "Lakshadweep. twenty-second day of the month succeeding such quarter" |
+| GSTR-3B, QRMP, principal place of business in Himachal Pradesh, Punjab, Uttarakhand, Haryana, Rajasthan, Uttar Pradesh, Bihar, Sikkim, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Assam, West Bengal, Jharkhand, Odisha, Jammu and Kashmir, Ladakh, Chandigarh, Delhi | twenty-fourth day of the month after the quarter | "Ladakh, Chandigarh or Delhi. twenty-fourth day of the month succeeding such quarter" |
+| QRMP monthly payment (PMT-06) for months 1 and 2 of the quarter | twenty fifth day of the following month | "by depositing the said amount in FORM GST PMT-06 , by the twenty fifth day of the month succeeding such month" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule80_v1.00.html |
+| GSTR-9 (annual return), due | 31 December after the end of the financial year | "electronically in FORM GSTR-9 on or before the thirty-first day of December following the end of such financial year" |
+| GSTR-9C (self-certified reconciliation statement), required when aggregate turnover in the financial year exceeds | five crore rupees | "whose aggregate turnover during a financial year exceeds five crore rupees, shall also furnish a self-certified reconciliation statement" |
+
+GSTR-9 for financial year 2025-26 is due on 31 December 2026. Composition taxpayers are outside this Guide (R-IN-1): rule 80(1) still prints "FORM GSTR-9A" for them, while the CBIC 2019 update describes an annual GSTR-4; refer. The Commissioner may exempt a class of persons from the annual return (section 44(1), proviso); this has been notified year by year. The only year proven on a readable page is financial year 2022-23:
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/gst-ct-32-2023.pdf |
+| GSTR-9 optional for financial year 2022-23 where aggregate turnover is up to | two crore rupees | "whose aggregate turnover in the financial year 2022-23 is up to two crore rupees, from filing annual return" |
+
+For later years, check whether a new exemption notification was issued before treating GSTR-9 as optional.
+
+**GSTR-1 table limit (B2C large).** Inter-State supplies to unregistered persons are reported invoice by invoice above the limit below, and State-wise in consolidated form up to it (rule 59). The earlier Guide said two and a half lakh: Notification 12/2024-Central Tax substituted "one lakh rupees" (from 1 August 2024).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule59_v1.00.html |
+| B2C large: inter-State invoice value to unregistered persons more than | one lakh rupees | "(ii) inter-State supplies with invoice value more than 10 [one lakh rupees] made to the unregistered persons" |
+| Invoice Furnishing Facility (IFF), months 1 and 2 of a quarter: upload window | 1st day to the 13th day of the following month | "from the 1st day of the month succeeding such month till the 13th day of the said month" |
+| IFF cap per month | fifty lakh rupees | "up to a cumulative value of fifty lakh rupees in each of the months" |
+
+**Late fees.** Section 47 sets the late fee under the CGST Act; the State or UT Act charges the same again. Waiver notifications cut it. Every amount in the tables below is central tax only. Do not add the State share to a figure yourself; say "the same amount again under the SGST Act".
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter9/section47_v1.00.html |
+| Statutory late fee, GSTR-1 and GSTR-3B (central tax) | one hundred rupees for every day | "shall pay a late fee of one hundred rupees for every day during which such failure continues subject to a maximum amount of five thousand rupees" |
+| Statutory maximum per return (central tax) | five thousand rupees | "subject to a maximum amount of five thousand rupees" |
+| Statutory late fee, GSTR-9: maximum | a quarter per cent. of his turnover (in the State or UT) | "subject to a maximum of an amount calculated at a quarter per cent. of his turnover in the State or Union territory" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-76-central-tax-english-2018.pdf |
+| GSTR-3B late fee per day after waiver (central tax) | twenty-five rupees for every day | "which is in excess of an amount of twenty-five rupees for every day during which such failure continues" |
+| GSTR-3B, central tax payable nil | ten rupees for every day | "shall stand waived to the extent which is in excess of an amount of ten rupees for every day" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notification-4-2018-central_tax-english.pdf |
+| GSTR-1 late fee per day after waiver (central tax) | twenty-five rupees for every day | "which is in excess of an amount of twenty-five rupees for every day during which such failure continues: Provided that where there are no outward supplies" |
+| GSTR-1, no outward supplies in the period | ten rupees for every day | "shall stand waived to the extent which is in excess of an amount of ten rupees for every day" |
+
+Maximum late fee per return, by aggregate turnover in the preceding financial year, for tax periods from June 2021 (central tax). The PDFs print the table in two interleaved columns; the quotes are literal.
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-19-central-tax-english-2021.pdf |
+| GSTR-3B maximum, central tax payable nil | two hundred and fifty rupees | "Registered persons whose total amount of central tax Two hundred and payable in the said return is nil fifty rupees" |
+| GSTR-3B maximum, aggregate turnover up to INR 1.5 crore | one thousand rupees | "2. Registered persons having an aggregate turnover of One thousand up to rupees 1.5 crores" |
+| GSTR-3B maximum, aggregate turnover more than INR 1.5 crore and up to INR 5 crore | two thousand five hundred rupees | "Taxpayers having an aggregate turnover of more than Two thousand and rupees 1.5 crores and up to rupees 5 crores in the five hundred" |
+| Turnover band boundary | INR 1.5 crore | "Registered persons having an aggregate turnover of One thousand up to rupees 1.5 crores" |
+| Upper band boundary; above it the statutory maximum applies | INR 5 crore | "rupees 1.5 crores and up to rupees 5 crores" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-20-central-tax-english-2021.pdf |
+| GSTR-1 maximum, nil outward supplies | two hundred and fifty rupees | "Registered persons who have nil outward supplies in Two hundred and the tax period fifty rupees" |
+| GSTR-1 maximum, aggregate turnover up to INR 1.5 crore | one thousand rupees | "Registered persons having an aggregate turnover of One thousand up to rupees 1.5 crores" |
+| GSTR-1 maximum, more than INR 1.5 crore and up to INR 5 crore | two thousand five hundred rupees | "Registered persons having an aggregate turnover of Two thousand and more than rupees 1.5 crores and up to rupees 5 crores five hundred rupees" |
+
+GSTR-9 late fee, financial year 2022-23 onwards (Notification 07/2023-Central Tax), by aggregate turnover in the relevant financial year (central tax):
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-05/07_eng.pdf |
+| Turnover up to five crore rupees: per day | twenty-five rupees per day | "Twenty-five rupees per day, subject to a of up to five crore rupees in the relevant financial" |
+| Turnover up to five crore rupees: maximum | 0.02% of turnover in the State or UT | "maximum of an amount calculated at 0.02 per year. cent. of turnover in the State or Union territory" |
+| Turnover more than five crore and up to twenty crore rupees: per day | fifty rupees per day | "Fifty rupees per day, subject to a maximum of an of more than five crores rupees and up to twenty amount calculated at 0.02 per cent." |
+| Upper limit of the reduced fee | twenty crore rupees | "of more than five crores rupees and up to twenty amount calculated at 0.02 per cent. of turnover crore rupees" |
+
+The maximum for the five-to-twenty-crore band is not settled: this print shows the same "0.02 per cent." as the band below, and other sources report a higher cap. Check the gazette copy before stating it. Above twenty crore rupees the statute applies (one hundred rupees per day, maximum a quarter per cent. of State turnover).
+
+**Interest.** Interest runs from the day after tax was due (section 50(2)). On a GSTR-3B filed late, interest falls only on the tax paid through the cash ledger, unless proceedings under section 73, 74 or 74A have started (section 50(1), proviso). Wrongly availed ITC that was also utilised carries interest under section 50(3).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://gstcouncil.gov.in/sites/default/files/2024-04/notfctn-13-central-tax-english.pdf |
+| Interest on late tax, section 50(1), per year | 18% | "Sub-section (1) of section 50 18" |
+| Rate fixed in 2017 for section 50(3) | 24% | "sub-section (3) of section 50 24" (original 2017 text; section 50(3) was substituted in 2022 and later amendments to this rate were not checked: confirm the current rate) |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section50_v1.00.html |
+| Statutory ceiling, section 50(1) | eighteen per cent. | "pay, on his own, interest at such rate, not exceeding eighteen per cent." |
+| Statutory ceiling, section 50(3) | twenty-four per cent. | "at such rate not exceeding twenty-four per cent. as may be notified" |
+
+**Three-year bar.** GSTR-1, GSTR-3B and GSTR-9 cannot be filed after three years from their due date, unless the Government notifies otherwise (sections 37(5), 39(11) and 44(2), in force from 1 October 2023). Refer (R-IN-6).
+
+**Corrections.** An error in GSTR-1 or GSTR-3B is corrected in a later period's return, with interest on any short payment, but not after 30 November following the end of the financial year or the date the annual return is filed, whichever is earlier (sections 37(3) and 39(9)).
+
+### 5.11 Exports and supplies to SEZ
+
+Export of goods or services, and supply to an SEZ unit or developer for authorised operations, are zero-rated supplies (IGST Act section 16(1)). ITC may be taken for them even if the supply is exempt (section 16(2)).
 
 | Option | Mechanism | Refund |
 | --- | --- | --- |
-| Export with payment of IGST | Charge IGST on invoice | Automatic refund via shipping bill (Rule 96) |
-| Export under LUT (without tax) | File Letter of Undertaking annually (RFD-11), invoice at 0% | Claim refund of accumulated ITC (Rule 89, RFD-01) |
+| Under bond or Letter of Undertaking, without paying IGST (section 16(3)) | File the LUT in Form GST RFD-11 before export (rule 96A) | Refund of unutilised ITC (section 54) |
+| On payment of IGST (section 16(4)) | Only for a class of persons, or of goods or services, notified by the Government (substituted section, in force from 1 October 2023) | Refund of IGST paid |
 
-- **Reporting** — Report in GSTR-3B Table 3.1(b). GSTR-1 Table 6A.  _(IGST Act Sec 16(3); CGST Rules, Rule 96/96A)_
+Under an LUT, the exporter binds itself to pay the tax with interest within fifteen days after three months from the export invoice if the goods are not exported (or a longer period the Commissioner allows), and, for services, within fifteen days after one year or the FEMA period, whichever is later, if payment is not received in convertible foreign exchange, or in Indian rupees where the Reserve Bank of India permits (rule 96A(1)). Report exports in GSTR-3B table 3.1(b) and GSTR-1 table 6. Before using the IGST-payment route, confirm the client falls in a notified class; the earlier Guide presented it as open to every exporter.
 
 ### 5.12 E-way bill
 
-- **E-way bill requirement** — Required for movement of goods where consignment value > INR 50,000. Validity: 1 day per 200 km. Generated on ewaybillgst.gov.in. Not applicable to services.  _(CGST Rules, Rule 138)_
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html |
+| E-way bill needed before moving goods of consignment value exceeding | fifty thousand rupees | "Every registered person who causes movement of goods of consignment value exceeding fifty thousand rupees" |
+| Validity | One day up to 200 km, and one more day for every further 200 km (other than over-dimensional cargo) | "Validity period (1) (2) (3) 1. Up to 3 [200 km.] One day in cases other than Over Dimensional Cargo" |
 
-### 5.13 HSN/SAC on invoices
+E-way bills cover goods only. Rule 138 lists exceptions (for example some short movements within a State to a transporter or weighbridge).
 
-**HSN/SAC requirements table**
+### 5.13 Registration thresholds
 
-| Turnover | HSN digits required |
-| --- | --- |
-| Up to INR 5 crore | 4-digit HSN on B2B invoices |
-| Above INR 5 crore | 6-digit HSN on all invoices |
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section22_v1.00.html |
+| Register when aggregate turnover in a financial year exceeds (normal States) | twenty lakh rupees | "if his aggregate turnover in a financial year exceeds twenty lakh rupees" |
+| Special category States | ten lakh rupees | "he shall be liable to be registered if his aggregate turnover in a financial year exceeds ten lakh rupees" |
+| Ceiling a State may set for suppliers of goods only | forty lakh rupees | "enhance the aggregate turnover from twenty lakh rupees to such amount not exceeding forty lakh rupees in case of supplier who is engaged exclusively in the supply of goods" |
 
-- **HSN vs SAC** — HSN = goods (based on WCO classification). SAC = services (starts with 99xxxx).
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://cbic-gst.gov.in/pdf/01062019-GST-An-Update.pdf |
+| Services (and mixed) suppliers | INR 20 lakh | "for suppliers of services would be Rs. 20 lakhs and Rs. 10 lakhs (for States of Manipur, Mizoram, Nagaland and Tripura)" |
+| Services suppliers in Manipur, Mizoram, Nagaland, Tripura | INR 10 lakh | "Rs. 20 lakhs and Rs. 10 lakhs (for States of Manipur, Mizoram, Nagaland and Tripura)" |
+| Goods-only suppliers, States that opted in | INR 40 lakh | "for the suppliers of goods would be Rs. 40 lakhs and Rs. 20 lakhs" |
+| Goods-only suppliers in Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Puducherry, Sikkim, Telangana, Tripura, Uttarakhand | INR 20 lakh | "Rs. 40 lakhs and Rs. 20 lakhs (in the States of Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Puducherry, Sikkim, Telangana, Tripura and U" |
 
-### 5.14 Compensation cess -- abolished
+The 2019 update lists the States as they stood in June 2019. Check the client's State has not changed its option since.
 
-- **Cess abolition** — Abolished for non-tobacco items from 22 Sep 2025. Abolished for tobacco/pan masala from 1 Feb 2026 (replaced by Health Security and National Security Cess on production capacity). Do NOT apply compensation cess to any invoice dated on or after these dates.
+### 5.14 Compensation cess
 
-### 5.15 QRMP scheme
+Ended for most goods from 22 September 2025, with the cess folded into the GST rate (GST Council FAQ, Section 1). Withdrawn for specified pan masala and tobacco products from 1 February 2026 (December 2025 newsletter, Section 1). Do not add compensation cess to an invoice dated on or after the date that applies to the goods. The earlier Guide named a replacement cess on production capacity; no allowed page was found for it, so it is not stated here.
 
-- **Legislation** — CGST Rule 61A; Notification 84/2020-CT.  _(CGST Rule 61A; Notification 84/2020-CT)_
-- **QRMP eligibility and mechanics** — Eligible if aggregate turnover <= INR 5 crore in preceding FY. GSTR-1 and GSTR-3B filed quarterly. Tax paid monthly via PMT-06 by 25th of following month. Invoice Furnishing Facility (IFF) available for optional B2B invoice upload in months 1 and 2 of quarter (max INR 50 lakh/month).  _(CGST Rule 61A; Notification 84/2020-CT)_
+### 5.15 QRMP scheme (quarterly returns, monthly payment)
 
-## Section 6 -- Tier 2 catalogue (compressed)
+A registered person may opt to file GSTR-1 and GSTR-3B quarterly (section 39(1), proviso). The option is exercised on the portal from the first day of the second month of the preceding quarter to the last day of the first month of the quarter (rule 61A(1)); it cannot be exercised while the last due return is unfiled. Once aggregate turnover in the current financial year exceeds the limit below, the person must move to monthly returns from the next quarter (rule 61A(2)). QRMP filers pay tax for months 1 and 2 by the PMT-06 date in Section 5.10 and may upload B2B invoices through IFF (Section 5.10).
 
-For each ambiguity type: pattern, why the bank statement is insufficient, conservative default, question for the structured form.
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule61a_v1.00.html |
+| Turnover above which the person must move to monthly filing | INR 5 crore | "whose aggregate turnover exceeds 5 crore rupees during the current financial year, shall opt for furnishing of return on a monthly basis" |
 
-### 6.1 Vehicle costs (petrol/diesel)
+The entry test for QRMP (aggregate turnover in the preceding financial year) is in Notification 84/2020-Central Tax, which was not read on an allowed host.
 
-Pattern: HPCL, BPCL, IOCL, SHELL, petrol pump, fuel station, toll charges (FASTag/NHAI). Why insufficient: vehicle type and business-use proportion unknown. If vehicle is a car -> ITC on the car itself is blocked under Sec 17(5)(a), and fuel for a blocked vehicle is also typically blocked. If commercial vehicle (delivery van, truck) -> ITC available. Default: 0% recovery. Question: "Is this fuel for a car (ITC blocked) or a commercial vehicle used for business? What percentage is business use?"
+### 5.16 Pending: 57th GST Council recommendations (8 October 2026)
 
-### 6.2 Restaurants via platforms (Swiggy/Zomato)
+The 57th GST Council meeting recommended, among other things, a late fee waiver for small taxpayers who file within the due month, changes to penalties and prosecution limits, and extending e-invoicing to reverse-charge purchases from unregistered persons and to imports of services ("Extending relief for small taxpayers on late fees: The GST Council recommended waiver of late fee on delayed filing of return under section 39(1)", https://gstcouncil.gov.in/sites/default/files/2026-10/press_release_0.pdf). These are recommendations. None is law until the CGST Act or Rules are amended and the change is notified. Apply the rules in Sections 5.1 to 5.15 until then.
 
-Pattern: SWIGGY, ZOMATO, BUNDL TECHNOLOGIES, ZOMATO LTD, food delivery charges. Why insufficient: personal vs business meal unknown. GST at 5% is collected by the platform (e-commerce operator liable from 1 Jan 2022). ITC on food is blocked under Sec 17(5)(b) regardless. Default: no ITC claim. Expense may still be income tax deductible if business purpose established. Question: "Was this a business meal (e.g., client meeting) or personal? (Note: ITC is blocked either way -- this is for income tax records.)"
+## Section 6: Tier 2 catalogue
 
-### 6.3 Home office (rent/utilities)
+For each ambiguity: the pattern, why the bank statement is not enough, the conservative default, and the question for the client.
 
-Pattern: rent payment, electricity bill, internet bill from residential address. Why insufficient: proportion of business use unknown. Residential rent to registered person triggers RCM at 18% from 18 Jul 2022 -- but the ITC on residential rent for personal use is blocked under Sec 17(5)(g). Mixed use requires apportionment but lacks clear methodology. Default: 0% ITC recovery on residential expenses. Question: "Do you work from home? What percentage of the property is used exclusively for business? Is the rent in your personal name or business name?"
+### 6.1 Vehicle costs (fuel, tolls)
+
+Pattern: HPCL, BPCL, IOCL, SHELL, petrol pump, FASTag, NHAI. Why not enough: the vehicle type and business use are unknown. A passenger car of up to thirteen seats is blocked by section 17(5)(a) unless used for the excepted purposes; its insurance, servicing and repair are blocked by section 17(5)(ab). A goods vehicle is not blocked by clause (a). GST on petrol and high speed diesel applies only from a date the Government notifies (IGST Act section 5(2)); if the fuel bill shows no GST, there is no credit to claim. Default: no ITC. Question: "Is this for a passenger car or a goods vehicle used in the business?"
+
+### 6.2 Food delivery and restaurants
+
+Pattern: SWIGGY, ZOMATO, BUNDL TECHNOLOGIES, restaurant names. Why not enough: business or personal is unknown, but it does not change the GST answer: food and beverages are blocked by section 17(5)(b)(i). Default: no ITC. Question (income tax records only): "Was this a client meeting?"
+
+### 6.3 Home office (rent and utilities)
+
+Pattern: rent to a landlord, electricity, internet at a home address. Why not enough: the business share and the tenant's capacity are unknown. A registered tenant of a residential dwelling pays tax under reverse charge (serial 5AA, from 18 July 2022), except a proprietor renting in a personal capacity as his own residence (exempt from 1 January 2023). Credit for personal consumption is blocked (section 17(5)(g)); mixed use is limited to the business share (section 17(1)). Electricity is exempt, so there is nothing to claim on it. Default: no ITC. Question: "Is the lease in your personal name or the business name? Do you live there? What share of the property is used only for business?"
 
 ### 6.4 Cash withdrawals
 
-Pattern: ATM, CASH WDL, CASH WITHDRAWAL. Why insufficient: unknown what cash was spent on. Cash expenses need invoices for ITC. Default: exclude as owner drawing. Question: "What was the cash used for? Do you have invoices for any cash purchases?"
+Pattern: ATM, CASH WDL, CASH WITHDRAWAL. Why not enough: what the cash bought is unknown, and ITC needs a tax invoice. Default: exclude as owner drawing. Question: "What was the cash used for? Do you have tax invoices for any cash purchases?"
 
-### 6.5 Mixed B2B/B2C sales (GSTIN determination)
+### 6.5 Mixed B2B and B2C sales
 
-Pattern: incoming payments from individuals or entities where GSTIN is unknown. Why insufficient: B2B (with GSTIN) requires per-invoice reporting in GSTR-1 Table 4A. B2C inter-state above INR 2.5 lakh requires Table 5A. B2C below threshold goes to Table 7 (rate-wise summary). Without knowing if buyer has GSTIN, cannot determine correct GSTR-1 table. Default: B2C (no GSTIN). Question: "For each sale: does the buyer have a GSTIN? If yes, what is it?"
+Pattern: receipts from individuals or entities with no GSTIN visible. Why not enough: B2B sales go invoice by invoice in GSTR-1 table 4A; inter-State B2C sales above the B2C large limit go in table 5; other B2C sales go rate-wise in table 7. Default: B2C. Question: "For each sale, does the buyer have a GSTIN? If yes, what is it?"
 
-### 6.6 Inter-state vs intra-state (counterparty location)
+### 6.6 Inter-State or intra-State
 
-Pattern: payments to/from entities where state is unclear from bank statement description. Why insufficient: CGST+SGST vs IGST determination depends on comparing supplier and buyer state codes. Wrong determination = wrong tax heads = demand notice risk. Default: intra-state (same state as client) = CGST+SGST. Question: "Where is [counterparty] located? Same state as you, or a different state? If B2B, what is their GSTIN?"
+Pattern: counterparty State unclear. Why not enough: CGST plus SGST or IGST depends on the supplier's location and the place of supply; the wrong tax head means paying again under the right head and claiming a refund. Default: intra-State. Question: "Where is the counterparty? If registered, what is its GSTIN?"
 
-### 6.7 Digital services from abroad (reverse charge -- is it really B2B?)
+### 6.7 Digital services from abroad: business or personal?
 
-Pattern: foreign SaaS, cloud services, streaming subscriptions where business vs personal use is ambiguous. Why insufficient: RCM on import of services applies only when the service is received "in relation to business or commerce." Personal subscriptions (Netflix, Spotify personal) are not subject to RCM -- the foreign OIDAR supplier registers and pays under Simplified Registration (IGST Sec 14). Default: if the subscription appears on a business bank statement, treat as business use -> RCM applies. Question: "Is [service] used for business or personal purposes? If personal, it should not be on the business bank statement."
+Pattern: foreign SaaS, streaming, cloud. Why not enough: if the client takes the service as a registered business, it pays IGST under reverse charge (Section 5.3). Online information and database access services to a person who is not registered are taxed on the foreign supplier (IGST Act section 14). Default: if it is on the business account, treat as business: reverse charge. Question: "Is this used for the business? If personal, it should not be on the business account."
 
-## Section 7 -- Excel working paper template (India-specific)
+## Section 7: Excel working paper template
 
 ### Sheet "Transactions"
 
 Columns:
 - A: Date
-- B: Counterparty / Description
-- C: Debit/Credit indicator
+- B: Counterparty / description
+- C: Debit / credit
 - D: Gross amount (INR)
-- E: Net amount (INR)
-- F: GST amount (INR)
-- G: GST rate (0%, 5%, 18%, 40%, RCM, Exempt, Excluded)
-- H: Tax type (CGST+SGST / IGST / RCM-IGST / RCM-CGST+SGST / Nil / Excluded)
-- I: GSTR-3B table reference (3.1(a), 3.1(b), 3.1(c), 3.1(d), 4(A), 4(D), Excluded)
-- J: GSTR-1 table reference (4A, 5A, 7, 6A, 8A, Excluded)
-- K: Default? (Y/N)
-- L: Question / Notes
+- E: Taxable value (INR), from the invoice
+- F: GST amount (INR), from the invoice, or computed for reverse charge
+- G: GST rate (merit, standard, de-merit, exempt, nil, reverse charge, excluded)
+- H: Tax type (CGST plus SGST / IGST / RCM-IGST / RCM-CGST plus SGST / nil / excluded)
+- I: GSTR-3B table (3.1(a), 3.1(b), 3.1(c), 3.1(d), 4(A)(1) to 4(A)(5), 4(B)(2), 4(D)(2), excluded)
+- J: GSTR-1 table (4A, 4B, 5, 6, 7, 8, 9B, excluded)
+- K: In GSTR-2B? (Y / N / not applicable)
+- L: Default? (Y / N)
+- M: Question / notes
 
-Use blank for excluded transactions in columns G-J.
+Leave G to K blank for excluded rows.
 
-### Sheet "GSTR-3B Summary"
+### Sheet "GSTR-2B reconciliation"
 
-One row per table. Column A = table number, Column B = description, Column C = taxable value, Column D = IGST, Column E = CGST, Column F = SGST.
+One row per purchase invoice: supplier GSTIN, invoice number, date, taxable value, IGST, CGST, SGST per books; the same per GSTR-2B; status (matched, books only, GSTR-2B only, ITC not available); action (claim, hold, ask supplier, reverse). Totals of "matched" plus import-of-services credit feed table 4(A).
 
-```
-| 3.1(a) | Outward taxable (other) | =SUMIFS(...) | ... |
-| 3.1(b) | Outward taxable (zero-rated) | =SUMIFS(...) | ... |
-| 3.1(c) | Other outward (nil/exempt) | =SUMIFS(...) | ... |
-| 3.1(d) | Inward (reverse charge) | =SUMIFS(...) | ... |
-| 4(A)   | ITC Available | =SUMIFS(...) | ... |
-| 4(B)   | ITC Reversed | =SUMIFS(...) | ... |
-| 4(C)   | Net ITC | =4(A)-4(B) | ... |
-| 4(D)   | Ineligible ITC (Sec 17(5)) | =SUMIFS(...) | ... |
-```
+### Sheet "GSTR-3B summary"
 
-### Sheet "Tax Computation"
+One row per table. Column A = table number, B = description, C = taxable value, D = IGST, E = CGST, F = SGST.
 
-```
-Output tax liability:
-  IGST payable on outward supplies = [from 3.1(a) IGST column]
-  CGST payable = [from 3.1(a) CGST column]
-  SGST payable = [from 3.1(a) SGST column]
-  Add: RCM liability (IGST/CGST/SGST) = [from 3.1(d)]
+~~~
+| 3.1(a) | Outward taxable (other)       | =SUMIFS(...) | ... |
+| 3.1(b) | Outward taxable (zero-rated)  | =SUMIFS(...) | ... |
+| 3.1(c) | Other outward (nil/exempt)    | =SUMIFS(...) | ... |
+| 3.1(d) | Inward (reverse charge)       | =SUMIFS(...) | ... |
+| 4(A)   | ITC available, rows (1)-(5)   | =SUMIFS(...) | ... |
+| 4(B)   | ITC reversed                  | =SUMIFS(...) | ... |
+| 4(C)   | Net ITC                       | =4(A)-4(B)   | ... |
+| 4(D)   | ITC not available             | =SUMIFS(...) | ... |
+~~~
 
-Less: ITC utilized (per utilization order in Section 5.8):
-  IGST credit applied -> IGST -> CGST -> SGST
-  CGST credit applied -> CGST -> IGST
-  SGST credit applied -> SGST -> IGST
+### Sheet "Tax computation"
 
-Net payable via cash = Output - ITC utilized
-```
+~~~
+Output tax on outward supplies, by head = from 3.1(a) and 3.1(b) (if IGST paid)
+Reverse-charge tax, by head             = from 3.1(d), paid in CASH only
 
-### Color and formatting conventions
+Use of credit (Section 5.8):
+  IGST credit -> IGST first; balance -> CGST and SGST in any order
+  CGST credit -> CGST, then IGST (only after IGST credit is used up); never SGST
+  SGST credit -> SGST, then IGST (only if no CGST credit is left for it); never CGST
 
-Blue for hardcoded values from bank statement (columns A-D). Black for formulas. Green for cross-sheet references. Yellow background for any row where Default? = "Y". Red text for any blocked ITC row (Sec 17(5)).
+Cash payable by head = output tax not covered by credit + reverse-charge tax
+~~~
+
+### Colour and formatting conventions
+
+Blue for values typed from the bank statement or invoice. Black for formulas. Green for cross-sheet references. Yellow background for any row where Default? = "Y". Red text for any blocked-ITC row (section 17(5)).
 
 ### Mandatory recalc step
 
 After building the workbook, run:
 
-```bash
-python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/india-gst-<period>-working-paper.xlsx
-```
+~~~bash
+python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/india-gst-PERIOD-working-paper.xlsx
+~~~
 
-Check the JSON output. If `status` is `errors_found`, fix the formulas and re-run.
+Check the JSON output. If `status` is `errors_found`, fix the formulas and run it again.
 
-## Section 8 -- Indian bank statement reading guide
+## Section 8: Indian bank statement reading guide
 
 Follow the universal exclusion rules, plus these India-specific patterns.
 
 ### HDFC Bank statement format
 
-Typical CSV columns: Date, Narration, Chq/Ref No, Value Dt, Withdrawal Amt, Deposit Amt, Closing Balance. Date format: DD/MM/YY or DD/MM/YYYY. Narration field contains the counterparty info -- often cryptic: "NEFT/RTGS/IMPS-[IFSC]-[Sender name]", "UPI-[UPI ID]-[Name]", "POS [Merchant]-[Terminal ID]", "ATM-SELF", "BIL/ONL/[Biller name]".
+Typical CSV columns: Date, Narration, Chq/Ref No, Value Dt, Withdrawal Amt, Deposit Amt, Closing Balance. Date format DD/MM/YY or DD/MM/YYYY. The narration carries the counterparty, often in short form: "NEFT/RTGS/IMPS-[IFSC]-[Sender name]", "UPI-[UPI ID]-[Name]", "POS [Merchant]-[Terminal ID]", "ATM-SELF", "BIL/ONL/[Biller name]".
 
 **HDFC narration parsing rules:**
-- `NEFT-UTIB0000XXX-JOHN DOE` -> payment to/from John Doe via Axis Bank
-- `UPI-rajesh@okhdfcbank-RAJESH KUMAR` -> UPI payment to/from Rajesh Kumar
-- `POS 123456789012 AMAZON` -> card purchase at Amazon
-- `BIL/ONL/AIRTEL` -> online bill payment to Airtel
-- `INT.PD` -> interest paid (exclude)
-- `CHG-GST` or `SERVICE CHARGES` -> bank charges (exclude, exempt)
+- `NEFT-UTIB0000XXX-JOHN DOE`: payment to or from John Doe via Axis Bank
+- `UPI-rajesh@okhdfcbank-RAJESH KUMAR`: UPI payment to or from Rajesh Kumar
+- `POS [terminal ID] AMAZON`: card purchase at Amazon
+- `BIL/ONL/AIRTEL`: online bill payment to Airtel
+- `INT.PD`: interest paid (exclude)
+- `CHG-GST` or `SERVICE CHARGES`: bank charges; ITC only per the bank's GST invoice
 
 ### SBI statement format
 
@@ -663,163 +821,162 @@ Typical columns: Txn Date, Value Date, Description, Ref No/Cheque No, Debit, Cre
 
 Typical columns: S No, Value Date, Transaction Date, Cheque Number, Transaction Remarks, Withdrawal Amount (INR), Deposit Amount (INR), Balance (INR). Remarks format: "NEFT-[IFSC]-[Name]", "UPI/[Ref]/[Name]", "MMT/IMPS/[Ref]/[Name]", "POS/[Merchant]/[Location]".
 
-### Common patterns across all Indian bank statements
+### Common patterns across Indian bank statements
 
-**UPI payments:** Most common. Format varies but always contains "UPI" and a UPI ID or reference. The counterparty name is usually extractable. UPI to individuals without GSTIN -> likely personal or unregistered supplier -> Tier 2 question needed.
+**UPI payments:** the most common. Always contains "UPI" and a UPI ID or reference; the name is usually extractable. UPI to an individual without a GSTIN: likely personal or an unregistered supplier; Tier 2 question needed.
 
-**NEFT/RTGS/IMPS:** Business payments. IFSC code in the narration can identify the counterparty bank branch. Large RTGS payments (> INR 2 lakh) are likely business transactions.
+**NEFT/RTGS/IMPS:** business payments. The IFSC code identifies the counterparty's bank branch. Large RTGS payments are likely business transactions.
 
-**Card transactions (POS/online):** Merchant name is embedded but often truncated. "AMAZON", "FLIPKART", "SWIGGY" are recognizable. "POS 4XXXXX" with no name -> ask client.
+**Card transactions (POS/online):** merchant name embedded but often cut short. "POS" plus a card or terminal number with no name: ask the client.
 
-**Standing instructions (SI/ECS/NACH):** Recurring debits for EMI, insurance, subscriptions. Pattern: "ECS/NACH-[Mandate]-[Payee]". Common: LIC (insurance), HDFC HOME LOAN (EMI), SIP (mutual fund).
+**Standing instructions (SI/ECS/NACH):** recurring debits for EMI, insurance, subscriptions. Pattern: "ECS/NACH-[Mandate]-[Payee]".
 
 **Internal transfers and exclusions:**
-- Own-account transfers between savings/current accounts: "TRF-OWN", "SELF TRANSFER", "FD CREATION"
-- Mutual fund SIPs: "BSE-MF-[Fund name]" -> investment, exclude
-- FD maturity/creation: "FD-[number]" -> exclude
-- ATM self-withdrawal: "ATM-SELF", "ATM WDL" -> exclude as drawing
+- Own-account transfers: "TRF-OWN", "SELF TRANSFER", "FD CREATION"
+- Mutual fund SIPs: "BSE-MF-[Fund name]": investment, exclude
+- FD maturity or creation: "FD-[number]": exclude
+- ATM self-withdrawal: "ATM-SELF", "ATM WDL": exclude as drawing
 
-**Refunds and reversals:** "REVERSAL", "REFUND", "RETURN-NEFT". Book as negative in the same classification as the original transaction. Correct in the period booked, not by amending the original period.
+**Refunds and reversals:** "REVERSAL", "REFUND", "RETURN-NEFT". For GST, a refund from a supplier needs the supplier's credit note; reduce ITC in the period the credit note is reported, not by changing the original period.
 
-**Salary credits (if client has employees):** "PAYROLL", "SALARY-[month]", outgoing to multiple individuals on same date. Exclude -- not a supply (Schedule III).
+**Salary payments:** "PAYROLL", "SALARY-[month]", many outgoing payments to individuals on one date. Exclude.
 
-**Loan disbursement/repayment:** "LOAN DISB", "EMI-[Account]". Exclude -- not a supply.
+**Loan disbursement or repayment:** "LOAN DISB", "EMI-[Account]". Exclude.
 
-**Foreign currency transactions:** Some banks show forex in narration: "FCY-USD-[amount]". Convert to INR at the transaction date rate shown on the statement. Note the rate in column L.
+**Foreign currency:** some banks show "FCY-USD-[amount]" in the narration. The taxable value of an import of services for reverse charge is the value of the supply; record the rupee amount and rate shown on the statement in column M and let the reviewer confirm the conversion rule.
 
-## Section 9 -- Onboarding fallback (only when inference fails)
+## Section 9: Onboarding fallback (only when inference fails)
 
-The workflow mandates inferring the client profile from the data first and only confirming with the client when inference fails. The questionnaire below is a fallback.
+Infer the client profile from the data first. Ask only when inference fails.
 
 ### 9.1 Legal name and GSTIN
 
-Inference rule: GSTIN sometimes appears in payment descriptions, especially in NEFT narrations. Extract and validate the 15-digit format (2 state code + 10 PAN + entity code + Z + checksum). Fallback question: "What is your GSTIN? (15-digit alphanumeric, e.g. 27AAPFU0939F1Z5)"
+Inference: the GSTIN sometimes appears in NEFT narrations or on invoices. Fallback question: "What is your GSTIN?"
 
 ### 9.2 Registration type
 
-Inference rule: if client is asking for GSTR-3B/GSTR-1, they are regular (non-composition). If they mention CMP-08 or GSTR-4 -> R-IN-1 refuses. Fallback question: "Are you a regular GST taxpayer or under the composition scheme?"
+Inference: a request for GSTR-3B or GSTR-1 means a regular taxpayer. CMP-08 or GSTR-4 means composition: R-IN-1 refuses. Fallback question: "Are you a regular GST taxpayer or under the composition scheme?"
 
 ### 9.3 State of registration
 
-Inference rule: first two digits of GSTIN. Also inferable from the bank branch location in IFSC codes. Fallback question: "Which state is your GST registration in?"
+Inference: the State code at the start of the GSTIN; the IFSC branch location. Fallback question: "Which State is your GST registration in?" (This also sets the QRMP GSTR-3B date group in Section 5.10.)
 
 ### 9.4 Filing period and frequency
 
-Inference rule: first and last transaction dates on the bank statement. Monthly filers: single month. QRMP filers: full quarter. Fallback question: "Which period does this cover? Are you a monthly filer or quarterly (QRMP)?"
+Inference: first and last transaction dates. Monthly filers: one month. QRMP filers: a full quarter. Fallback question: "Which period does this cover? Monthly or quarterly (QRMP)?"
 
 ### 9.5 Business activity
 
-Inference rule: counterparty mix, sales descriptions, HSN/SAC on invoices. IT/software, consulting, trading, manufacturing are recognizable from transaction patterns. Fallback question: "In one sentence, what does the business do?"
+Inference: counterparty mix, sales descriptions, HSN/SAC on invoices. Fallback question: "In one sentence, what does the business do?"
 
-### 9.6 Inter-state supplies
+### 9.6 Inter-State supplies
 
-Inference rule: if outward payments or receipts involve GSTINs from different states or IGST appears on invoices. Fallback question: "Do you make sales to buyers in other states? If so, which states?"
+Inference: buyers' or suppliers' GSTINs from other States, IGST on invoices. Fallback question: "Do you sell to buyers in other States? Which ones?"
 
 ### 9.7 Exports
 
-Inference rule: foreign currency receipts, forex conversion entries, "FIRC" or "EXPORT" in narration. Fallback question: "Do you export goods or services? If so, do you have a Letter of Undertaking (LUT) filed for this financial year?"
+Inference: foreign currency receipts, "FIRC" or "EXPORT" in narrations. Fallback question: "Do you export goods or services? Is a Letter of Undertaking (RFD-11) filed for this financial year?"
 
 ### 9.8 Reverse charge purchases
 
-Inference rule: payments to advocates, GTA, foreign services, directors. Fallback question: "Do you receive any services from advocates, goods transport agencies, or foreign suppliers? Do you have non-employee directors?"
+Inference: payments to advocates, transporters, foreign suppliers, directors, unregistered landlords. Fallback question: "Do you buy from advocates, goods transport agencies, foreign suppliers or unregistered landlords? Do you pay sitting fees to directors?"
 
-### 9.9 E-invoicing applicability
+### 9.9 E-invoicing
 
-Inference rule: aggregate turnover from prior year GSTR-9 or from client's stated turnover. Fallback question: "Has your aggregate turnover exceeded INR 5 crore in any financial year since 2017-18?"
+Inference: prior-year GSTR-9 or stated turnover. Fallback question: "Has your aggregate turnover crossed the e-invoicing threshold (Section 5.5) in any year?"
 
 ### 9.10 ITC brought forward
 
-Inference rule: not inferable from a single period statement. Always ask. Question: "Do you have any ITC balance carried forward from the previous period? (IGST, CGST, SGST amounts separately)"
+Not inferable from one period. Always ask: "What are your electronic credit ledger balances (IGST, CGST, SGST separately) at the start of the period?"
 
-## Section 10 -- Reference material
+## The method, step by step
+
+1. **Confirm scope.** Regular taxpayer, one GSTIN, no composition, ISD, e-commerce operator or SEZ supplies (Section 2, refusals). Check the period is within three years of its due date (CGST Act sections 37(5), 39(11), 44(2): https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter9/section39_v1.00.html).
+2. **Fix the frequency and the due dates.** Monthly or QRMP (rule 61A: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule61a_v1.00.html); GSTR-1 date from Notification 83/2020-Central Tax and GSTR-3B date from rule 61 (Section 5.10).
+3. **Classify every bank line.** Use the pattern library (Section 3), then the rules (Section 5), then Tier 2 (Section 6). Record rate, tax head, GSTR-3B and GSTR-1 table per line (Section 7).
+4. **Build outward supplies for GSTR-1.** B2B invoice by invoice (table 4A/4B); inter-State B2C above the B2C large limit invoice by invoice (table 5); other B2C rate-wise (table 7); exports (table 6); credit and debit notes (table 9B); HSN summary (table 12) with the digits required by turnover (rule 59: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule59_v1.00.html , Notification 78/2020-Central Tax). File by the GSTR-1 date. Correct any omission in GSTR-1A before filing GSTR-3B.
+5. **Reconcile ITC with GSTR-2B.** Follow Section 5.6: claim only what GSTR-2B shows (rule 36(4): https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter5/rule36_v1.00.html), plus import-of-services credit in 4(A)(2); drop blocked credits (section 17(5)); reverse for unpaid suppliers (rule 37) and for suppliers who never filed GSTR-3B (rule 37A, https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter5/rule37a_v1.00.html); reverse the exempt share (rules 42 and 43).
+6. **Self-assess reverse charge.** Import of services and domestic reverse-charge services (Sections 5.3 and 5.4; Notification 13/2017-Central Tax (Rate): https://gstcouncil.gov.in/sites/default/files/2024-05/download_8_0.pdf). Declare in 3.1(d); pay in cash; take credit in 4(A)(2) or 4(A)(3).
+7. **Compute the liability and the use of credit.** Apply section 49(5) and rule 88A (Section 5.8: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section49_v1.00.html). Check GSTR-3B output tax against GSTR-1 so that no DRC-01B difference arises (rule 88C).
+8. **File GSTR-3B and pay** by the GSTR-3B date (rule 61: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule61_v1.00.html). QRMP filers pay months 1 and 2 by PMT-06. If late: add the late fee (Section 5.10, central tax plus the same under the SGST Act) and interest on the cash part of the tax (section 50: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section50_v1.00.html).
+9. **Year end.** By 30 November after the year end: take any missed ITC for that year, correct GSTR-1 and GSTR-3B errors, complete rule 37A reversals (section 16(4): https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter5/section16_v1.00.html). Before the September return: the rule 42 and 43 annual true-up. By 31 December: GSTR-9, and GSTR-9C if aggregate turnover exceeds the limit (rule 80: https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule80_v1.00.html). Check whether an optional-filing notification exists for the year before skipping GSTR-9.
+10. **Write the reviewer brief.** List every default, every Tier 2 question, every blocked credit, every GSTR-2B mismatch held back, and any 57th Council change the client asks about (pending, Section 5.16).
+
+## Ask the client first
+
+- Are you registered as a regular taxpayer or under composition, and do you hold more than one GSTIN? (Composition or several GSTINs changes the returns entirely.)
+- In which State is your principal place of business, and do you file monthly or quarterly (QRMP)? (Sets the GSTR-3B due date group and the PMT-06 payments.)
+- What was your aggregate turnover last financial year, and so far this year? (Sets QRMP eligibility, late fee caps, HSN digits, e-invoicing and GSTR-9C.)
+- Do you buy anything from abroad, from advocates, transporters or unregistered landlords, or pay directors? (Reverse charge.)
+- Do you export, and is an LUT filed for this financial year? (Zero-rating without tax, or not.)
+- Have all suppliers been paid within one hundred and eighty days of their invoices, and do you have GSTR-2B for each month? (ITC reversals and what may be claimed.)
+
+## When to refuse or refer
+
+- Any refusal trigger R-IN-1 to R-IN-6 in Section 2.
+- A sale whose rate cannot be found in the rate notification, or a supply that straddles 22 September 2025 or 1 February 2026.
+- A notice in DRC-01B, DRC-01C or any section 73, 74 or 74A notice: refer; the seven-day reply window in rules 88C and 88D is short.
+- Export on payment of IGST, or any refund claim (RFD-01).
+- Place of supply disputes for services (IGST Act sections 12 and 13), especially cross-border.
+- The annual rule 42/43 true-up, GSTR-9 and GSTR-9C: prepare the working, but the accountant signs off.
+- A client asking to apply a 57th Council recommendation now: refuse until it is notified (Section 5.16).
+
+## Section 10: Reference material
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 three-tier architecture (Quick reference, Supplier pattern library, Worked examples, Tier 1/Tier 2 split). It supersedes v1.0 (standalone monolithic skill). The India-specific content (rate structure, GSTR-3B/GSTR-1 table mappings, blocked credits, reverse charge, e-invoicing, e-way bill) has been compiled from the CGST Act 2017, IGST Act 2017, CGST Rules 2017, and CBIC notifications/circulars. Post-GST 2.0 rate rationalization (56th GST Council, 22 Sep 2025) is reflected.
-
-### Sources
-
-**Primary legislation:**
-1. Central Goods and Services Tax Act, 2017 (CGST Act) -- https://cbic-gst.gov.in
-2. Integrated Goods and Services Tax Act, 2017 (IGST Act) -- https://cbic-gst.gov.in
-3. CGST Rules, 2017 -- https://cbic-gst.gov.in
-4. State Goods and Services Tax Acts (each state)
-5. Goods and Services Tax (Compensation to States) Act, 2017 (abolished 2025/2026)
-
-**Key notifications:**
-6. Notification 01/2017-CT(Rate) -- GST rate schedule for goods (as amended by GST 2.0)
-7. Notification 11/2017-CT(Rate) -- GST rate schedule for services (as amended)
-8. Notification 12/2017-CT(Rate) -- Exempt services list
-9. Notification 13/2017-CT(Rate) -- Reverse charge on specified services
-10. Notification 13/2020-CT -- E-invoicing applicability
-11. Notification 84/2020-CT -- QRMP scheme
-12. Notification 02/2025 -- Compensation cess abolition (non-tobacco)
-
-**Key circulars:**
-13. Circular 98/17/2019-GST -- ITC utilization order
-14. Circular 140/10/2020-GST -- Director services RCM clarification
-15. Circular 164/20/2021-GST -- Restaurant composite/mixed supply
-
-**Portals:**
-16. GST Common Portal -- https://gst.gov.in
-17. E-Invoice Portal -- https://einvoice1.gst.gov.in
-18. E-Way Bill Portal -- https://ewaybillgst.gov.in
+Team rewrite of October 2026. Every figure was re-proven on a CBIC or GST Council page saved on 16 and 17 October 2026, and every rule sentence names its section or rule. Rates follow the 56th GST Council structure (in force 22 September 2025; tobacco 1 February 2026). Notifications served only as unreadable files by CBIC (including the rate schedules 9/2025, 19/2025 and 01/2026-Central Tax (Rate)) were not read; where a rule depends on one, the Guide says so.
 
 ### Known gaps
 
-1. The supplier pattern library covers common Indian vendors but does not cover every regional vendor or local supplier. Add patterns as they emerge.
-2. Worked examples are drawn from a hypothetical Mumbai-based IT consultant. They do not cover manufacturing, trading, or hospitality specifically. A v2.1 should add sector-specific examples.
-3. HSN/SAC classification requires looking up the master schedule -- this skill does not contain the full HSN/SAC master. Flag unknown classifications as [T2].
-4. Place of supply for services is frequently disputed (IGST Act Sec 12/13). Complex scenarios involving multiple states or cross-border elements should be flagged [T2].
-5. The GST 2.0 rate rationalization (56th GST Council, 22 Sep 2025) abolished the 12% and 28% slabs. Some transitional edge cases may exist for invoices straddling the effective date.
-6. Health Security and National Security Cess (replacing compensation cess on tobacco/pan masala from 1 Feb 2026) is not detailed in this skill. Flag as [T3] if encountered.
-7. The e-invoicing threshold (INR 5 crore) and 30-day reporting rule (INR 10 crore AATO) are as of April 2026. Verify for future periods.
-8. ITC reversal calculations under Rule 42/43 require annual reconciliation in GSTR-9. This skill covers the monthly computation but not the annual true-up.
+1. The pattern library covers common Indian and foreign vendors only. Add patterns as they emerge.
+2. The worked examples use one hypothetical Mumbai IT consultant. Manufacturing, trading and hospitality are not covered.
+3. HSN/SAC classification needs the rate notifications; this Guide does not hold the HSN/SAC master. Flag unknown classifications as Tier 2.
+4. Place of supply for services (IGST Act sections 12 and 13) is often disputed. Flag cross-border or multi-State cases as Tier 2.
+5. Supplies that straddle the 22 September 2025 or 1 February 2026 start dates need the time-of-supply rules; refer.
+6. The current rate notifications (9/2025, 19/2025, 01/2026 and 10/2025-Central Tax (Rate)) could not be read; 01/2026 of 30 April 2026 amends 9/2025 and may have moved individual rate entries.
+7. E-invoicing detail (the years that count, exemptions, reporting time limits) is left to `india-einvoice`.
+8. The GSTR-9 optional-filing limit is notified year by year; only financial year 2022-23 is proven here.
 
-### PROHIBITIONS [T1]
+### PROHIBITIONS
 
-- NEVER allow ITC on blocked credits under Sec 17(5) -- absolute blocks regardless of business use.
-- NEVER apply intra-state rates (CGST+SGST) to inter-state supplies, or vice versa.
-- NEVER let AI guess HSN/SAC codes -- classification must be verified against the HSN/SAC master.
-- NEVER allow ITC claims that do not appear in GSTR-2B.
-- NEVER discharge RCM liability using ITC -- must be paid via electronic cash ledger only.
-- NEVER allow ITC beyond the time limit (30 Nov of following FY).
-- NEVER classify a mixed supply as composite to achieve a lower rate.
-- NEVER ignore the ITC utilization order (IGST must be exhausted first).
-- NEVER allow e-invoicing-applicable businesses to issue invoices without IRN/QR code.
-- NEVER assume export status without LUT filing or IGST payment proof.
-- NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
+- NEVER allow ITC on blocked credits under section 17(5), whatever the business use, unless the clause's own exception applies.
+- NEVER apply CGST plus SGST to an inter-State supply, or IGST to an intra-State supply.
+- NEVER guess an HSN/SAC code or a rate. Classification is checked against the rate notification.
+- NEVER claim ITC that is not in GSTR-2B, except import-of-services credit in table 4(A)(2).
+- NEVER pay reverse-charge tax with ITC. It is paid in cash.
+- NEVER claim ITC after 30 November following the end of the financial year (or after GSTR-9 is filed, if earlier). A re-claim of credit reversed earlier (rule 37) is outside this limit (rule 37(4)).
+- NEVER classify a mixed supply as composite to reach a lower rate.
+- NEVER ignore the order of credit use (IGST credit first, in full).
+- NEVER issue a B2B invoice without IRN and QR code where e-invoicing applies.
+- NEVER treat an export as zero-rated without an LUT or bond, or proof of IGST paid under a notified class.
+- NEVER present a 57th GST Council recommendation as law.
+- NEVER compute a figure from two others: no combined central-plus-State late fee, no effective rate. Arithmetic in the working paper is done by the spreadsheet engine.
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to Malta v2.0 architecture. Quick reference with GSTR-3B/GSTR-1 table structure moved to top (Section 1). Supplier pattern library added with 12 sub-tables covering Indian banks, government, telecom, insurance, SaaS, non-resident SaaS, payment processors, travel, restaurants, professional services, rent, salaries (Section 3). Six worked examples from hypothetical HDFC Bank statement (Section 4). Tier 1 rules compressed with post-GST 2.0 rates (Section 5). Tier 2 catalogue with 7 ambiguity types (Section 6). Excel working paper template (Section 7). Indian bank statement reading guide covering HDFC, SBI, ICICI formats (Section 8). Onboarding moved to fallback with inference rules (Section 9). Five India-specific refusals: R-IN-1 (composition), R-IN-2 (multi-state), R-IN-3 (SEZ), R-IN-4 (e-commerce operator), R-IN-5 (ISD).
-- **v1.0 (April 2026):** Initial skill. Standalone monolithic document covering CGST/IGST Acts, rate classification, return forms, ITC rules, blocked credits, reverse charge, e-invoicing, e-way bill, composition scheme, edge cases, and test suite. Compiled from deep research verification.
+- **October 2026 (team rewrite):** rates moved to the 56th Council structure with start dates; electricity and individual life and health insurance corrected to exempt; GSTR-1 B2C large limit corrected; late fees rewritten as central tax with the turnover-band caps and the GSTR-9 bands; ITC conditions expanded (GSTR-2B, rules 36(4), 37, 37A, 88C, 88D); section 17(5) rewritten from the current text; credit use order corrected under rule 88A; import-of-services credit moved to table 4(A)(2); export on payment of IGST limited to notified classes; QRMP, IFF, GSTR-1A and the three-year bar added; residential and commercial rent reverse charge added; 57th Council recommendations marked pending.
+- **v2.0 (April 2026):** Rewrite to the three-tier structure (quick reference, supplier pattern library, worked examples, Tier 1 and Tier 2 rules, working paper, bank statement guide, onboarding fallback, five refusals).
+- **v1.0 (April 2026):** Initial version.
 
-### Self-check (v2.0 of this document)
+## Sources
 
-1. Quick reference at top with GSTR-3B table and conservative defaults: yes (Section 1).
-2. Supplier library as literal lookup tables: yes (Section 3, 12 sub-tables).
-3. Worked examples drawn from hypothetical HDFC Bank statement: yes (Section 4, 6 examples).
-4. Tier 1 rules compressed with post-GST 2.0 rates (5%/18%/40%): yes (Section 5, 15 rules).
-5. Tier 2 catalogue compressed with inference rules: yes (Section 6, 7 items).
-6. Excel template specification with mandatory recalc: yes (Section 7).
-7. Onboarding as fallback only, inference rules first: yes (Section 9, 10 items).
-8. All 5 India-specific refusals present: yes (Section 2, R-IN-1 through R-IN-5).
-9. Reference material at bottom: yes (Section 10).
-10. Blocked credits (Sec 17(5)) hard-block explicit: yes (Section 5.7 + Examples 3, 6).
-11. Motor vehicle hard-block explicit: yes (Section 5.7 + Example 6).
-12. RCM on import of services explicit: yes (Section 5.3 + Example 1).
-13. RCM on domestic specified services (advocate) explicit: yes (Section 5.4 + Example 4).
-14. CGST+SGST vs IGST determination explicit: yes (Section 5.2 + Example 2).
-15. Restaurant/food ITC block explicit: yes (Section 5.7 + Example 3).
+Every URL below was read on 16 or 17 October 2026.
 
-## End of India GST Return Skill v2.0
+1. CGST Act 2017, consolidated sections (CBIC tax repository): section 9 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter3/section9_v1.00.html ; section 16 (link in Section 5.6); section 17 (link in Section 5.7); section 22 (link in Section 5.13); section 37 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter9/section37_v1.00.html ; section 39 (link in the method); section 44 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter9/section44_v1.00.html ; section 47 (link in Section 5.10); section 49 and section 50 (links in the method); section 2 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter1/section2_v1.00.html
+2. IGST Act 2017: section 5 (link in Section 5.2); section 14 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_IGST_Act/active/chapterv/section14_v1.00.html ; section 16 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_IGST_Act/active/chaptervii/section16_v1.00.html
+3. CGST Rules 2017: rules 36, 37A, 59, 61, 61A, 80, 88A, 138 (links above); rule 37 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter5/rule37_v1.00.html ; rule 42 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter5/rule42_v1.00.html ; rule 43 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter5/rule43_v1.00.html ; rule 46 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter6/rule46_v1.00.html ; rule 60 https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule60_v1.00.html ; rule 88C https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter9/rule88c_v1.00.html ; rule 88D https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter9/rule88d_v1.00.html ; rule 96A https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter10/rule96a_v1.00.html
+4. GST Council: 56th meeting press release and FAQ; December 2025 newsletter; 57th meeting press release (links in Sections 1 and 5.16).
+5. Notifications (GST Council copies): 2/2017, 13/2017, 05/2022, 15/2022, 09/2024 and 07/2025-Central Tax (Rate); 13/2017, 4/2018, 76/2018, 78/2020, 83/2020, 19/2021, 20/2021, 07/2023, 10/2023, 32/2023 and 12/2024-Central Tax (links in the tables above).
+6. CBIC, "GST: An Update" (1 June 2019): https://cbic-gst.gov.in/pdf/01062019-GST-An-Update.pdf
+
+Related Guides: `india-einvoice` (e-invoicing), `in-tds-freelance` (TDS on contractor and professional payments), `in-income-tax` (income tax), `in-return-assembly` (full filing package).
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this Guide is maintained on the OpenAccountants site. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: se-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Swedish VAT return (momsdeklaration) for a self-employed individual or small business in Sweden. Trigger on phrases like "prepare VAT return", "do the Swedish VAT", "momsdeklaration", "moms", "skattedeklaration", or any request involving Swedish VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Sweden only and only standard-registered businesses. VAT groups, fiscal representatives, and flat-rate schemes are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Swedish VAT work.
 jurisdiction: SE
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Status:** **Source-cited draft** by the OpenAccountants team. It is not accountant-authored, accountant-verified or an attestation.
 
-Figures are for tax year 2026. This Guide is an operational method for an ordinary business registered for Swedish VAT. It prepares a supported VAT return; it does not decide a transaction-specific exemption, place of supply, partial-deduction calculation, VAT group, margin scheme, property option, IOSS/OSS election or deemed-supplier analysis.
+Figures are for tax year 2026. This skill is an operational method for an ordinary business registered for Swedish VAT. It prepares a supported VAT return; it does not decide a transaction-specific exemption, place of supply, partial-deduction calculation, VAT group, margin scheme, property option, IOSS/OSS election or deemed-supplier analysis.
 
 ## Key figures and return fields
 
@@ -68,7 +68,7 @@ Amounts in the worked cases are labelled assumptions unless the case says it is 
    - **Whole tax year, sole traders and estates with no EU trade that file an income tax return:** 12 May of the year after the tax year (26 June with an agent extension, but interest on VAT due runs from the day after 12 May). **With EU trade:** 26 February of the year after the tax year.
    - **Whole tax year, companies and economic associations with no EU trade that file an income tax return:** tied to the financial-year end and paper or digital filing, as in Skatteverket's table; for a year ending September to December, 12 July on paper or 17 August digitally. **With EU trade, or not filing an income tax return:** the 26th of the second month after the period (27th in December). **Partnerships, limited partnerships and VAT groups:** the 26th of the second month after the period.
 
-   Use the dates in the e-service or Skatteverket's key-dates list for the actual period. A late return can bring a late-filing fee of SEK 625. When there is no VAT to report, use the e-service zero-return route or field 49 = 0 on paper, without inventing values elsewhere; a zero return is not allowed when there are amounts to report. Apply for a filing extension instead: it needs special reasons, must reach Skatteverket by the filing day, and does not extend payment. Correct a filed return by filing a complete new return for the affected period (in the e-service, the accounting software or on paper) or by a letter to Skatteverket stating which figures change; this Guide prepares the complete replacement return. Retain the original return, reason, changed records and calculation. [When to file](https://www.skatteverket.se/foretag/moms/deklareramoms/narskajagdeklareramoms.4.6d02084411db6e252fe80008988.html), [return fields](https://www.skatteverket.se/foretag/moms/deklareramoms/fyllaimomsdeklarationen.4.3a2a542410ab40a421c80004214.html), and [corrections](https://www.skatteverket.se/foretag/moms/deklareramoms/rattaenmomsdeklaration.4.3684199413c956649b552c4.html)
+   Use the dates in the e-service or Skatteverket's key-dates list for the actual period. A late return can bring a late-filing fee of SEK 625. When there is no VAT to report, use the e-service zero-return route or field 49 = 0 on paper, without inventing values elsewhere; a zero return is not allowed when there are amounts to report. Apply for a filing extension instead: it needs special reasons, must reach Skatteverket by the filing day, and does not extend payment. Correct a filed return by filing a complete new return for the affected period (in the e-service, the accounting software or on paper) or by a letter to Skatteverket stating which figures change; this skill prepares the complete replacement return. Retain the original return, reason, changed records and calculation. [When to file](https://www.skatteverket.se/foretag/moms/deklareramoms/narskajagdeklareramoms.4.6d02084411db6e252fe80008988.html), [return fields](https://www.skatteverket.se/foretag/moms/deklareramoms/fyllaimomsdeklarationen.4.3a2a542410ab40a421c80004214.html), and [corrections](https://www.skatteverket.se/foretag/moms/deklareramoms/rattaenmomsdeklaration.4.3684199413c956649b552c4.html)
 
 ## Ask the client first
 

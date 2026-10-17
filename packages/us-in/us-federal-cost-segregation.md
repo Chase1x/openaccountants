@@ -3,7 +3,7 @@ name: us-federal-cost-segregation
 description: "Cost segregation studies for US real property: reclassifiable basis, bonus rate, Form 3115 look-back, passive-loss usability."
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-25
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -19,8 +19,8 @@ Figures are for tax year 2026 unless a line says 2025. The bonus depreciation ru
 
 - **Covers:** individuals, partnerships, S corporations and C corporations that own a building used in a business or held for rent: new construction, purchases, improvements, and "look-back" studies on buildings already in service.
 - **What cost segregation does:** it splits the cost of a building project into components with shorter recovery periods (5-, 7- and 15-year property) and the building itself (27.5 or 39 years). It changes the *timing* of depreciation, not the total. Most of the early deduction usually comes from then taking bonus depreciation on the short-life components.
-- **Does not cover:** personal residences, dealer property, property used mainly abroad, housing and rehabilitation credits, and like-kind exchange mechanics (see the `us-section-1031-like-kind-exchange` Guide).
-- **State tax is separate.** Many states do not follow federal bonus depreciation, or follow it only in part. This Guide gives the federal answer only. For each state, use the `us-state-bonus-depreciation-conformity-matrix` Guide and then check the state's own rules.
+- **Does not cover:** personal residences, dealer property, property used mainly abroad, housing and rehabilitation credits, and like-kind exchange mechanics (see the `us-section-1031-like-kind-exchange` skill).
+- **State tax is separate.** Many states do not follow federal bonus depreciation, or follow it only in part. This skill gives the federal answer only. For each state, use the `us-state-bonus-depreciation-conformity-matrix` skill and then check the state's own rules.
 
 ## Ask the client first
 
@@ -142,7 +142,7 @@ Figures are for tax year 2026 unless a line says 2025. The bonus depreciation ru
 | Replacement property from a like-kind exchange | Bonus on carryover basis and excess basis if the property is new. If it is used, bonus on the excess basis only | [Pub. 946](https://www.irs.gov/publications/p946) |
 | Look-back study where the owner elected out of bonus for that class | DCN 7 catch-up gives regular MACRS on the shorter lives only. Bonus cannot be added without IRS consent | [Rev. Proc. 2025-23](https://www.irs.gov/pub/irs-drop/rp-25-23.pdf) |
 | Rule-of-thumb percentage with no cost support | Not automatically rejected, but examined on its own merits. The documentation is typically weak | [Pub. 5653](https://www.irs.gov/pub/irs-pdf/p5653.pdf) |
-| State return | May add back bonus or §179 | Use the `us-state-bonus-depreciation-conformity-matrix` Guide |
+| State return | May add back bonus or §179 | Use the `us-state-bonus-depreciation-conformity-matrix` skill |
 
 ## Worked cases
 
@@ -205,7 +205,7 @@ Amounts marked "assumed" are illustrations, not official figures.
 - **Refer** qualified production property (§168(n)), long production period property, the component election for projects begun before January 20, 2025, consolidated groups, and public utility property.
 - **Refer** a Form 3115 filed while the taxpayer is under IRS examination. Audit protection and eligibility depend on the timing windows in Rev. Proc. 2015-13 ([Rev. Proc. 2015-13](https://www.irs.gov/pub/irs-drop/rp-15-13.pdf)).
 - **Refer** sales inside a like-kind exchange where §1245 property is given up and only §1250 property is received, because recapture can arise even without boot ([Pub. 544](https://www.irs.gov/publications/p544)).
-- **Do not state** any state's treatment. Point to the `us-state-bonus-depreciation-conformity-matrix` Guide and the state's own rules.
+- **Do not state** any state's treatment. Point to the `us-state-bonus-depreciation-conformity-matrix` skill and the state's own rules.
 
 ## Filing and payment
 

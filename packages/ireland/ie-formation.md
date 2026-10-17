@@ -3,7 +3,7 @@ name: ie-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Ireland. Trigger on phrases like \"Ireland company formation\", \"CRO registration\", \"LTD Ireland\", \"DAC Ireland\", \"sole trader Ireland\", \"Form A1 Ireland\", \"PPS number business\", \"incorporate Ireland\", \"CORE portal\", \"register business Ireland\", \"RBO Ireland\", \"TR1 Ireland\", \"TR2 Ireland\", \"Companies Act 2014\", \"CLG Ireland\", \"PLC Ireland\", or any question about choosing or registering an Irish entity. Covers entity comparison (Sole Trader, Partnership, LP, LLP, LTD / CLS, DAC, CLG, PLC), CRO online portal (CORE) registration steps, Revenue TR1 / TR2 tax registration, sector-specific licensing (Central Bank, CCPC, DPC), RBO beneficial ownership filing, PPS number requirements for directors and shareholders, and tax treatment by entity type including the 12.5% trading CT rate and PRSI Class S. Out of scope: immigration / employment permits for non-EEA founders, bank account opening procedures (high-level only), full corporate governance and shareholders' agreement drafting, deep sector-specific regulatory licensing beyond signposting, listing on Euronext Dublin / ISEQ, and Irish Collective Asset-management Vehicles (ICAV). ALWAYS read this skill before advising on Irish entity formation."
 jurisdiction: IE
 tax_year: 2026
-last_updated: 2026-09-27
+last_updated: 2026-10-16
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -15,20 +15,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope
 
-This Guide is for someone starting a business in the Republic of Ireland, or an adviser helping them. It covers choosing the vehicle (sole trader, partnership, limited partnership, LTD, DAC, CLG, PLC, unlimited company), forming a company under the Companies Act 2014, directors and secretary, the EEA-resident director rule, the constitution, beneficial ownership (RBO) filing, registering with Revenue (Form TR1 / TR2, eRegistration on ROS), and the first compliance dates.
+This skill is for someone starting a business in the Republic of Ireland, or an adviser helping them. It covers choosing the vehicle (sole trader, partnership, limited partnership, LTD, DAC, CLG, PLC, unlimited company), forming a company under the Companies Act 2014, directors and secretary, the EEA-resident director rule, the constitution, beneficial ownership (RBO) filing, registering with Revenue (Form TR1 / TR2, eRegistration on ROS), and the first compliance dates.
 
 Figures are for tax year 2026 (calendar year 2026 for income tax, USC and VAT thresholds; accounting periods in 2026 for Corporation Tax). A short dated section near the end covers returns being filed now for 2025.
 
-What this Guide does not cover, with where to go instead:
+What this skill does not cover, with where to go instead:
 
-- VAT returns, rates and reverse charge: the Guide **ireland-vat-return**.
-- Corporation Tax computations, preliminary tax, close-company surcharges in detail, start-up relief (s.486C), R&D credit, Knowledge Development Box, Pillar Two: the Guide **ie-corporation-tax**.
+- VAT returns, rates and reverse charge: the skill **ireland-vat-return**.
+- Corporation Tax computations, preliminary tax, close-company surcharges in detail, start-up relief (s.486C), R&D credit, Knowledge Development Box, Pillar Two: the skill **ie-corporation-tax**.
 - PRSI rates (they change each October), payroll operation, benefit in kind.
 - Immigration permissions for non-EEA founders, bank account opening, shareholders' agreements, funds (ICAV, ILP), listing on Euronext Dublin, and sector licensing beyond signposting.
 
 **Sources.** The law is the Companies Act 2014 (section links below), the Taxes Consolidation Act 1997, the VAT Consolidation Act 2010, the [Registration of Business Names Act 1963](https://www.irishstatutebook.ie/eli/1963/act/30/enacted/en/print) and the [beneficial ownership regulations (S.I. No. 110 of 2019)](https://www.irishstatutebook.ie/eli/2019/si/110/made/en/print). Statute links are to the enacted text on the Irish Statute Book; later amendments must be checked in the Law Reform Commission's Revised Acts. Revenue's guidance is on [revenue.ie](https://www.revenue.ie/en/starting-a-business/index.aspx).
 
-**What to check on the CRO and RBO sites.** The Companies Registration Office (CRO, portal "CORE") and the RBO portal are not sources this Guide could verify. CRO and RBO filing fees, processing times, the CORE screens, name-approval practice, and the identity rules for directors without a PPS number (the PPSN / VIN process) are marked **check**: confirm them on the CRO and RBO websites before quoting them to a client.
+**What to check on the CRO and RBO sites.** The Companies Registration Office (CRO, portal "CORE") and the RBO portal are not sources this skill could verify. CRO and RBO filing fees, processing times, the CORE screens, name-approval practice, and the identity rules for directors without a PPS number (the PPSN / VIN process) are marked **check**: confirm them on the CRO and RBO websites before quoting them to a client.
 
 ## Ask the client first
 
@@ -46,7 +46,7 @@ What this Guide does not cover, with where to go instead:
 
 ## The method, step by step
 
-1. **Check whether the plan is one this Guide can handle.** Regulated activity, a charity, a fund, or a founder who needs an immigration permission all need a specialist in addition (see "When to refuse or refer").
+1. **Check whether the plan is one this skill can handle.** Regulated activity, a charity, a fund, or a founder who needs an immigration permission all need a specialist in addition (see "When to refuse or refer").
 2. **Choose the vehicle.** Use the decision rules below. For most owner-managed businesses the choice is sole trader or LTD; the deciding facts are liability risk, how much profit will be left in the business, and whether investors are coming.
 3. **If a sole trader or partnership:** register a business name with the CRO within one month of adopting any name other than the owner's true name(s), then register with Revenue (TR1 or eRegistration) for Income Tax, and for VAT, employer PAYE and RCT if they apply.
 4. **If a company:** pick the company type; confirm at least one EEA-resident director or arrange a section 137 bond or a section 140 certificate; appoint a secretary (not the sole director); draft the constitution; file the incorporation with the CRO (Form A1 on CORE; fees and screens: **check**).
@@ -130,7 +130,7 @@ A Tax Reference Number is not issued automatically on incorporation. You must re
 - **Not eligible for eRegistration** ([Revenue: eRegistration](https://www.revenue.ie/en/starting-a-business/registering-for-tax/eregistration.aspx)) include companies that have no Irish-resident directors and unincorporated bodies and non-profits not represented by an agent. They use the paper TR forms.
 - **After registration:** companies, sole traders and partnerships must file returns and pay through ROS.
 - **Employer PAYE** ([Revenue: registration of employers](https://www.revenue.ie/en/employing-people/becoming-an-employer-and-ongoing-obligations/registration-of-employers-for-paye-purposes/index.aspx)): register before paying any employee, and report pay and deductions on or before each payday. A company must register as an employer and operate PAYE on its directors' pay even if it has no other employees; a director of an Irish-incorporated company pays PAYE on director's pay wherever resident.
-- **VAT:** see the thresholds below and the Guide ireland-vat-return.
+- **VAT:** see the thresholds below and the skill ireland-vat-return.
 - **RCT:** register if the business is a principal contractor in construction, forestry or meat processing (see Revenue's RCT pages).
 - **Tax residence of the company** ([Revenue: company residency rules](https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/corporation-tax/company-residency-rules.aspx)): a company incorporated in Ireland on or after 1 January 2015 is tax resident here unless a tax treaty makes it resident in another country. A foreign-incorporated company is resident here if centrally managed and controlled here.
 
@@ -271,7 +271,7 @@ A new consultancy expects services turnover of €40,000 in 2026. Registration i
 - **Immigration.** Non-EEA founders who will live or work in Ireland need an immigration permission: refer to an immigration adviser.
 - **Funds and investment vehicles:** ICAVs, investment limited partnerships, section 110 companies: refer.
 - **Transferring an existing business into a company:** capital gains tax, stamp duty, VAT on the transfer and the treatment of goodwill need specialist advice: refer.
-- **Data protection.** Any business handling personal data must comply with the GDPR and the Data Protection Act 2018; this Guide only flags it.
+- **Data protection.** Any business handling personal data must comply with the GDPR and the Data Protection Act 2018; this skill only flags it.
 - **Bank accounts.** Banks apply their own anti-money-laundering checks; no outcome can be promised.
 
 ## Filing and payment
@@ -308,7 +308,7 @@ A new consultancy expects services turnover of €40,000 in 2026. Registration i
 - [ ] Revenue registration made by the right route (ROS through an agent, eRegistration, or TR1 / TR2); taxes chosen: Income Tax or Corporation Tax, VAT, employer PAYE (compulsory if directors are paid), RCT.
 - [ ] VAT threshold tested on the correct category; non-established rule considered.
 - [ ] First annual return date, CT1 date, preliminary tax, payroll and VAT dates in the diary.
-- [ ] Companion Guides consulted where needed: ie-corporation-tax and ireland-vat-return.
+- [ ] Companion Skills consulted where needed: ie-corporation-tax and ireland-vat-return.
 
 <!-- openaccountants-cta-block -->
 

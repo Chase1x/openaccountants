@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/nz-income-tax-ir3"
   jurisdiction: "NZ"
   tax_year: "2026"
-  last_updated: "2026-09-26"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope
 
-This Guide covers one New Zealand tax resident individual who files an Individual income tax return (IR3): self-employed people, sole traders, contractors paid schedular payments, landlords and anyone else with income that was not taxed before they got it.
+This skill covers one New Zealand tax resident individual who files an Individual income tax return (IR3): self-employed people, sole traders, contractors paid schedular payments, landlords and anyone else with income that was not taxed before they got it.
 
 - **Primary year:** the 2026-27 tax year, 1 April 2026 to 31 March 2027 (Inland Revenue calls it the 2027 income year). Its IR3 is filed after 31 March 2027.
 - **Also covered:** the 2025-26 return being filed now (see "The 2025-26 return being filed now") and the 2024-25 composite rates, which still apply to 2024-25 returns and amendments.
@@ -241,7 +241,7 @@ No IETC: income is over $70,000 ([IRD IETC](https://www.ird.govt.nz/income-tax/i
 
 ## When to refuse or refer
 
-- The income belongs to a company, trust, partnership or look-through company; this Guide covers one individual's IR3.
+- The income belongs to a company, trust, partnership or look-through company; this skill covers one individual's IR3.
 - The person is not a New Zealand tax resident, changed residence in the year, or may be a transitional resident.
 - Working for Families entitlement or abatement, or a part-year IETC with excluded months.
 - Foreign income in a foreign currency, foreign tax credits, foreign investment funds, or cryptoassets: no conversion method is stated here.
@@ -357,4 +357,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-26. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nz-income-tax-ir3` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nz-income-tax-ir3. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `nz-income-tax-ir3` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/nz-income-tax-ir3. If neither is available, confirm every figure against the official source pages cited above before relying on it.

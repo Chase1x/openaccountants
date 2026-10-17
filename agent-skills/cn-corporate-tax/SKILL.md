@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cn-corporate-tax"
   jurisdiction: "CN"
   tax_year: "2026"
-  last_updated: "2026-09-27"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for ([CIT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/200801/t286573.html); [Implementation Regulations](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/200801/t286574.html))
 
-This Guide covers mainland China Enterprise Income Tax (CIT, 企业所得税) for tax year 2026, which is the calendar year 1 January to 31 December 2026. It is for companies and other enterprises, and for their advisers, who prepare or review quarterly prepayments, the annual settlement (汇算清缴) or withholding on payments to non-residents.
+This skill covers mainland China Enterprise Income Tax (CIT, 企业所得税) for tax year 2026, which is the calendar year 1 January to 31 December 2026. It is for companies and other enterprises, and for their advisers, who prepare or review quarterly prepayments, the annual settlement (汇算清缴) or withholding on payments to non-residents.
 
 The legal base is the **Enterprise Income Tax Law (中华人民共和国企业所得税法)**, as last amended on 29 December 2018, and its **Implementation Regulations (企业所得税法实施条例, State Council Decree No. 512)**. Most of the reliefs that matter in practice sit in announcements from the Ministry of Finance (MOF) and the State Taxation Administration (STA). Several of them expire on 31 December 2027, so check the end date of every relief you apply.
 
@@ -46,7 +46,7 @@ Out of scope: Hong Kong, Macao and Taiwan; individual income tax; VAT and surcha
 
 ## Ask the client first
 
-- **Residence and structure.** Is the entity a resident enterprise? Is it a legal person, or a branch? Branches without legal personality are combined with head office for every test in this Guide ([STA announcement 2023 No. 6 Art. 1](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/202303/t466615.html)).
+- **Residence and structure.** Is the entity a resident enterprise? Is it a legal person, or a branch? Branches without legal personality are combined with head office for every test in this skill ([STA announcement 2023 No. 6 Art. 1](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/202303/t466615.html)).
 - **Industry.** Is the business in a restricted or prohibited industry (small low-profit test)? Is it in an R&D negative-list industry, such as tobacco, hotels and catering, wholesale and retail, real estate, leasing and business services, or entertainment ([Caishui 2015 No. 119](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/201511/t419949.html))?
 - **Size, measured as quarterly averages for the year.** What are the headcount (employees plus labour-dispatch workers) and total assets? What is the expected taxable income for 2026?
 - **Certificates and lists.** Does it hold an HNTE certificate, and what is the issue date on it? Is it a registered technology-based SME? Is it on the IC or machine-tool enterprise list?
@@ -140,7 +140,7 @@ An HNTE pays 15% instead of 25%. The status comes from a certificate that the pr
 
 If the head office is in Hainan, only the income of the Hainan head office and Hainan branches gets 15%. If the head office is outside Hainan, only a qualifying Hainan branch's income gets 15%. New outbound direct investment made from 2020-01-01 to 2027-12-31 by Hainan tourism, modern services and high-tech enterprises can be exempt, subject to conditions that include a holding of **20% or more** in a foreign subsidiary. Refer these cases.
 
-**Other zones.** Hengqin (Guangdong-Macao), Qianhai (Shenzhen-Hong Kong) and the Lingang New Area (Shanghai) have their own 15% regimes, each with its own catalogue and end date. This Guide does not apply them: refer.
+**Other zones.** Hengqin (Guangdong-Macao), Qianhai (Shenzhen-Hong Kong) and the Lingang New Area (Shanghai) have their own 15% regimes, each with its own catalogue and end date. This skill does not apply them: refer.
 
 **Conservative default.** Until location, substantive operations and the 60% revenue test are documented, use 25%.
 
@@ -284,7 +284,7 @@ Refer to a Chinese certified tax agent or CPA, and do not finalise, when:
 The annual settlement for tax year 2025 was due by 31 May 2026. Every resident enterprise that operated in 2025 had to settle, including those that made a loss or were in a tax holiday. On 25 September 2026 that deadline has passed, so any 2025 work is either a correction of a filed return or a late filing:
 - a missing 2025 settlement is late, so file at once and expect the daily surcharge and a possible penalty;
 - if a 2025 return is wrong, file a correction. Underpaid tax carries the daily surcharge;
-- the 2025 rules are the same as those in this Guide for the small low-profit relief, the R&D super-deduction, the western and Hainan 15% rates, HNTE and losses. The advertising rule is different: for 2025 the earlier announcement (MOF/STA announcement 2020 No. 43) applied, and MOF/STA announcement 2025 No. 16 replaced it only from 1 January 2026.
+- the 2025 rules are the same as those in this skill for the small low-profit relief, the R&D super-deduction, the western and Hainan 15% rates, HNTE and losses. The advertising rule is different: for 2025 the earlier announcement (MOF/STA announcement 2020 No. 43) applied, and MOF/STA announcement 2025 No. 16 replaced it only from 1 January 2026.
 
 ## Completion checklist ([CIT Law](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/200801/t286573.html); [MOF/STA announcement 2023 No. 12](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/202308/t468162.html); [MOF/STA announcement 2023 No. 7](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/202304/t466643.html); [Implementation Regulations](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/qysds/200801/t286574.html))
 
@@ -321,4 +321,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-27. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-corporate-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-corporate-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `cn-corporate-tax` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/cn-corporate-tax. If neither is available, confirm every figure against the official source pages cited above before relying on it.

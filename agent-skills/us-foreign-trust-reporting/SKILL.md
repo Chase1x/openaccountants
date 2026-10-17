@@ -7,7 +7,7 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/us-foreign-trust-reporting"
   jurisdiction: "US"
   tax_year: "2026"
-  last_updated: "2026-09-25"
+  last_updated: "2026-10-16"
   authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
@@ -17,7 +17,7 @@ metadata:
 
 ## Scope and who this is for
 
-This Guide covers US federal rules for tax year 2026, with a dated section for 2025 returns. It is for a preparer or a US person who:
+This skill covers US federal rules for tax year 2026, with a dated section for 2025 returns. It is for a preparer or a US person who:
 
 - created, funded, or lent to a foreign trust;
 - is treated as the owner of any part of a foreign trust under the grantor trust rules (sections 671 to 679);
@@ -28,7 +28,7 @@ It covers four things: whether the trust is foreign, who (if anyone) is the owne
 
 It does not cover the foreign country's own treatment of the trust, FBAR (FinCEN Form 114) or Form 8938 in detail, estate and gift tax planning, or the section 2801 tax on gifts from covered expatriates. Those are flagged for referral below.
 
-The Form 3520 instructions in force are the 12/2025 revision, which applies "for tax year 2025 and subsequent years until a superseding revision is issued" ([Instructions for Form 3520](https://www.irs.gov/instructions/i3520)). The only figure in this Guide that changes by year is the foreign corporation and partnership gift threshold.
+The Form 3520 instructions in force are the 12/2025 revision, which applies "for tax year 2025 and subsequent years until a superseding revision is issued" ([Instructions for Form 3520](https://www.irs.gov/instructions/i3520)). The only figure in this skill that changes by year is the foreign corporation and partnership gift threshold.
 
 ## Ask the client first
 
@@ -223,4 +223,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-25. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-foreign-trust-reporting` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-foreign-trust-reporting. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-16. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `us-foreign-trust-reporting` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/us-foreign-trust-reporting. If neither is available, confirm every figure against the official source pages cited above before relying on it.
