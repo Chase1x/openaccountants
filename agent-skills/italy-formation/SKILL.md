@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "IT"
   tax_year: "2026"
   last_updated: "2026-09-22"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -116,7 +117,6 @@ The steps below are for an S.r.l. A ditta individuale skips Steps 2 to 5: it reg
 | Capital limit | EUR 516,456.90 | "516.456,90 euro" |
 | Yearly tax if capital is above the limit | EUR 516.46 | "516,46 euro, se il capitale sociale o il fondo di dotazione supera tale importo" |
 
-
 ## Section 4: Capital Requirements
 
 The standard S.r.l. minimum is printed in words in art. 2463 ("diecimila euro") and in digits in art. 2463-bis, which is why the table uses that article.
@@ -136,7 +136,6 @@ The standard S.r.l. minimum is printed in words in art. 2463 ("diecimila euro") 
 | S.p.A. | cinquantamila euro (art. 2327) | A quarter of cash contributions into a bank; the whole amount for a single founder (art. 2342) | At the deed | Permitted; those shares are paid in full at subscription; services cannot be contributed (art. 2342) |
 
 A reduced-capital S.r.l. must set aside at least one fifth of each year's net profit as a legal reserve until reserve and capital together reach diecimila euro (art. 2463). If an S.r.l. or S.p.A. comes to have a single member, amounts still unpaid must be paid within ninety days (arts. 2464 and 2342).
-
 
 ## Section 5: Costs Breakdown
 
@@ -167,7 +166,6 @@ No allowed page prints notary fees, Camera di Commercio registration fees, stamp
 | Titolare effettivo (beneficial owner register) | Legacy: within 30 days of any change. Not checked on an allowed page | Camera di Commercio |
 | Libro soci updates | On any share transfer | Internal (notarised) |
 | Concession tax on books | 16 March each year (Section 3, Step 8) | Agenzia delle Entrate |
-
 
 ## Section 7: Bank Account Opening
 

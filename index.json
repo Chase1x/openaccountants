@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-17T07:58:52+00:00",
+ "generated_at": "2026-10-18T08:27:54+00:00",
  "counts": {
   "guides": 2050,
   "jurisdictions": 245,
-  "accountant_reviewed": 144
+  "accountant_reviewed": 143
  },
  "guides": [
   {
@@ -10200,11 +10200,11 @@
    "name": "in-tds-freelance",
    "jurisdiction": "IN",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Mayur Deokar",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "india-crypto-tax",
@@ -20955,8 +20955,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "vn-company-formation",

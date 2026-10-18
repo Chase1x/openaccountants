@@ -8,6 +8,8 @@ metadata:
   jurisdiction: "AU"
   tax_year: "2026"
   last_updated: "2026-09-27"
+  authored_by: "Ryan Duguid"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
@@ -71,7 +73,7 @@ tables and report a second income type from then.
 
 ## Section 3 - Withholding and tax rates for 2026-27
 
-**Working holiday maker income tax rates and Schedule 15 coefficients**  _(ATO, Schedule 15)_
+**Working holiday maker income tax rates and Schedule 15 coefficients**
 
 | Taxable income | Tax on this income | Withholding coefficient (a) |
 | --- | --- | --- |
@@ -225,8 +227,6 @@ amount above the tax-free threshold plus the Medicare levy, less the low income 
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before relying on it for withholding, registration or a return. Residency and the non-discrimination article position depend on the worker's facts.
-
-> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

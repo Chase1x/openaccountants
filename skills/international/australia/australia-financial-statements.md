@@ -6,6 +6,7 @@ jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-27
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 depends_on:
   - financial-statements-workflow-base
 category: financial-statements
@@ -15,11 +16,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Financial Statements
 
-## Australia Financial Statements
-
 ## Australia Financial Statements Skill v1.2
 
 ## Section 1 -- Quick Reference
+
+**Quick Reference**
 
 **Quick Reference**
 
@@ -252,8 +253,8 @@ Total equity
 ### Small proprietary companies — exceptions requiring lodgement
 
 - **Foreign-controlled** — Foreign-controlled (s.292(2)(b))  _(s.292(2)(b))_
-- **ASIC direction** — ASIC direction (s.294)  _(s.294; s.294))_
-- **Shareholder direction** — Shareholder direction (≥5% vote, s.293)  _(s.293; s.293))_
+- **ASIC direction** — ASIC direction (s.294)  _(s.294)_
+- **Shareholder direction** — Shareholder direction (≥5% vote, s.293)  _(s.293)_
 - **CSF shareholders** — CSF shareholders (s.292(2)(c))  _(s.292(2)(c))_
 - **CSF audit threshold** — A proprietary company with CSF shareholders prepares annual financial and directors' reports; the audit requirement applies once it has raised $3 million or more through CSF offers, and a review is not a general substitute for that audit.  _([ASIC, Crowd-sourced funding](https://www.asic.gov.au/crowd-sourced-funding))_
 - **Companies limited by guarantee and charities** — Public companies limited by guarantee and ACNC-registered charities follow their own reporting rules, and foreign-controlled company relief has conditions and procedural requirements. Retain the legal basis and evidence for any exemption relied on.  _([ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
@@ -279,7 +280,7 @@ Total equity
 
 ### Auditor qualification
 
-- **Registered company auditor** — Registered company auditor under Part 9.2 of the Corporations Act (registered with ASIC). For audit of disclosing entities, the auditor must meet additional independence requirements under Part 2M.4 Division 3.  _(Part 9.2 Corporations Act; Part 2M.4 Division 3 Corporations Act; s.292))_
+- **Registered company auditor** — Registered company auditor under Part 9.2 of the Corporations Act (registered with ASIC). For audit of disclosing entities, the auditor must meet additional independence requirements under Part 2M.4 Division 3.  _(Part 9.2 Corporations Act; Part 2M.4 Division 3 Corporations Act)_
 - **Appointment and sign-off sequence** — Confirm the auditor's appointment and engagement early, resolve audit adjustments before the directors approve the report, and retain the signed report, directors' approval, audit report, member delivery evidence and lodgement receipt. Do not describe an unaudited draft as audited, and confirm that the lodged document is the approved version.
 
 ## Disclaimer

@@ -6,6 +6,7 @@ jurisdiction: FR
 tax_year: 2026
 last_updated: 2026-09-23
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 drafted_by: OpenAccountants
 approved_by: pending
 depends_on:
@@ -73,7 +74,6 @@ Transaction e-reporting covers sales to persons who are not taxable (private ind
 | Réel normal trimestriel, open to businesses paying less than EUR 4,000 of VAT a year | Monthly, before the 10th of the next month | Monthly, before the 10th of the next month |
 | Régime simplifié | Monthly, between the 25th and the 30th of the next month | Same |
 | Franchise en base | Every two calendar months, between the 25th and the 30th of the month after the period | Same |
-
 
 ### Timeline Summary
 

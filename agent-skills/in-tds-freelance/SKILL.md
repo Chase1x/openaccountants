@@ -6,423 +6,381 @@ metadata:
   source: openaccountants
   openaccountants_url: "https://www.openaccountants.com/skills/in-tds-freelance"
   jurisdiction: "IN"
-  tax_year: "2025"
-  last_updated: "2026-07-13"
-  reviewed_by: "Mayur Deokar"
-  review_status: "current"
+  tax_year: "2026"
+  last_updated: "2026-10-17"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
-# IN Tds Freelance
+# India: TDS on Payments to Freelancers, Professionals and Contractors
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### TDS on Freelancers
-
-- **Threshold** — Threshold increase to Rs 50,000 from financial Year 2025-26 (ITA 194J)  _(ITA s 194J)_
-- **Individual/HUF rate** — 1%  _(ITA s 194C)_
-- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
-- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
-- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
-- **Rate** — Rate is 0.1%.New Section 393 applicable as per Income tax act 2025 from FY 2026-27  _(ITA s 194O)_
-- **Threshold (individual/HUF)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
-- **Who deducts** — E-commerce operator (platform)  _(ITA s 194O)_
-- **Rate without PAN** — 5% in case of section 194O and 194Q.(Section 206AA as per ITA 1961 and section 393 as per new ITA 2025)  _(ITA s 206AA)_
-- **Professional services rate** — 10%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(a))_
-- **Technical services rate** — 2%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(b))_
-- **Threshold (s 194J)** — INR 50,000 per annum per payee  _(ITA s 194J)_
-- **Individual/HUF rate** — 1%  _(ITA s 194C)_
-- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
-- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
-- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
-- **Rate (s 194O — E-commerce)** — 0.1%  _(ITA s 194O; New Income Tax Act 2025 s 393)_
-- **Threshold — individual/HUF (s 194O)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
-- **Who deducts (s 194O)** — E-commerce operator (platform)  _(ITA s 194O)_
-- **Rate without PAN (s 206AA)** — 5% in case of s 194O and s 194Q; otherwise higher of section rate, rate in force, or 20%  _(ITA s 206AA (ITA 1961); New Income Tax Act 2025 s 393)_
-- **194J professional without PAN** — 20% (vs normal 10%)  _(ITA s 206AA)_
-- **194C individual without PAN** — 20% (vs normal 1%)  _(ITA s 206AA)_
-
-## Skill Metadata
-
-- **Jurisdiction** — India
-- **Jurisdiction Code** — IN
-- **Primary Legislation** — Income Tax Act, 1961 -- Sections 194C, 194J, 194O, 197, 206AA
-- **Supporting Legislation** — Finance Act 2025; Income-tax Rules, 1962; CBDT Circulars and Notifications
-- **Tax Authority** — Central Board of Direct Taxes (CBDT) / Income Tax Department
-- **Filing Portal** — https://www.incometax.gov.in (TRACES for TDS: https://www.tdscpc.gov.in)
-- **Contributor** — Open Accountants Community
-- **Validated By** — Pending -- requires sign-off by a Chartered Accountant (India)
-- **Validation Date** — Verified by Mayur Deokar (615638) on 2026-06-06
-- **Skill Version** — 1.0
-- **Tax Year** — FY 2025-26 (AY 2026-27)
-- **Confidence Coverage** — Tier 1: TDS rates per section, threshold amounts, Form 26Q due dates, Form 16A timelines, 206AA rates, PAN requirements. Tier 2: classification of payment as 194J vs 194C, mixed contracts, lower deduction certificate process. Tier 3: NRI payments (Section 195), transfer pricing, international services, DTAA treaty benefits.
+This Guide covers tax deducted at source (TDS) when a business pays a resident freelancer, professional or contractor in India, and what the freelancer does with the credit. Figures are for tax year 2026. This means the tax year from 1 April 2026 to 31 March 2027 under the Income-tax Act 2025, which replaced the Income-tax Act 1961 from 1 April 2026. The TDS rules now sit in Chapter XIX-B of the 2025 Act, mainly the Table in section 393(1), with the PAN rule, deposit and statements in section 397 and the consequences of default in section 398. The section numbers changed: this Guide cites the 2025 Act numbers and the Income-tax Rules 2026 form numbers. Amounts credited or paid before 1 April 2026 fall under the 1961 Act, which section 536 of the 2025 Act repeals while saving its previous operation; this Guide does not cover them.
 
 ## Confidence Tier Definitions
 
-**[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
-**[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags and presents options. Chartered Accountant must confirm.
-**[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate and document.
+**[T1] Tier 1: Deterministic.** Apply exactly as written. No reviewer judgement required.
+**[T2] Tier 2: Reviewer Judgement Required.** The assistant flags and presents options. A Chartered Accountant must confirm.
+**[T3] Tier 3: Out of Scope / Escalate.** Do not guess. Escalate and document.
+
+## Guide Metadata
+
+- **Jurisdiction**: India (IN)
+- **Primary legislation**: Income-tax Act 2025 (30 of 2025), Chapter XIX-B, sections 393, 395, 396, 397, 398 and 402; fees and penalties in sections 427 and 461
+- **Amending law**: Finance Act 2026 (4 of 2026), sections 2 to 129 in force from 1 April 2026 unless the Act says otherwise
+- **Rules**: Income-tax Rules 2026 (G.S.R. 198(E), 20 March 2026), rules 203, 213, 215, 218, 219 and 245
+- **Tax authority**: Central Board of Direct Taxes (CBDT) / Income Tax Department
+- **Tax year covered**: 1 April 2026 to 31 March 2027 (tax year 2026-27)
+- **Out of scope**: payments to non-residents (section 393(2)), salary (section 392; see `india-payroll`), virtual digital assets (see `india-crypto-tax`), rent and property purchase TDS
 
 ## Step 0: Client Onboarding Questions
 
 Before computing any TDS figure, you MUST know:
 
-1. **Is the client the PAYER (deductor) or PAYEE (deductee)?** [T1] -- determines obligations (deduct & remit vs claim credit)
-2. **Nature of payment** [T1] -- professional/technical service (194J), contract work (194C), or e-commerce (194O)
-3. **PAN of the payee** [T1] -- if not provided, Section 206AA higher rate applies
-4. **Legal status of payee** [T1] -- individual/HUF vs company/firm/AOP (affects 194C rate)
-5. **Amount of payment** [T1] -- single payment and aggregate for the year (for threshold tests)
-6. **Does the payee hold a lower deduction certificate (Section 197)?** [T2] -- reduces or eliminates TDS
-7. **Is the payee a resident or non-resident?** [T1] -- non-resident payments fall under Section 195 (T3, out of scope)
-8. **TAN (Tax Deduction Account Number) of the deductor** [T1] -- mandatory for TDS compliance
+1. **Is the client the PAYER (deductor) or the PAYEE (deductee)?** [T1] This decides the obligation: deduct, deposit and report, or check and claim the credit.
+2. **Nature of the payment** [T1]: contract work (serial 6(i)), professional fees or fees for technical services (serial 6(iii)), a benefit or perquisite (serial 8(iv)), or a sale or service through an e-commerce platform (serial 8(v)).
+3. **Who the payer is** [T1]: a company, firm or other entity, or an individual or HUF. An individual or HUF deducts under serial 6(i) or 6(iii) only if its business or professional turnover in the previous tax year passed the tests in Step 1; otherwise serial 6(ii) may apply.
+4. **PAN of the payee** [T1]: without a valid PAN, section 397(2)(b) applies (Step 4).
+5. **Legal status of the payee** [T1]: individual or HUF versus any other person (decides the contract-work rate).
+6. **Amounts**: each single sum and the total for the tax year, per payee, and per serial 6(iii) category where there is more than one [T2] (threshold tests).
+7. **Does the payee hold a section 395 certificate for a lower rate or no deduction?** [T2]
+8. **Is the payee resident in India?** [T1] Payments to non-residents fall under section 393(2), not under this Guide. Escalate to [T3].
+9. **Tax deduction and collection account number (TAN) of the payer** [T1]: section 397(1) requires one, except for the cases listed there (Step 6).
 
-**If the payee is a non-resident, STOP. Section 195 applies, not 194C/194J. Escalate to [T3].**
+**If the payee is a non-resident, STOP. Section 393(2) applies, not serial 6. Escalate to [T3].**
 
-## Step 1: Section 194J -- Professional / Technical Services [T1]
+## Step 1: Professional and Technical Fees (section 393(1), Table serial 6(iii)) [T1]
 
-- **Legislation** — Income Tax Act, 1961, Section 194J
+Serial 6(iii) covers fees for professional services, fees for technical services, remuneration or commission to a company director (other than salary), royalty, and sums referred to in section 26(2)(h). The payer in column C is a "specified person". Section 402(37) defines that as any person that is not an individual or HUF, or an individual or HUF whose business turnover or professional gross receipts in the tax year before the year of payment exceeded the limits in the table below.
 
-**Section 194J details**  _(Income Tax Act, 1961, Section 194J)_
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate (a): fees for technical services (not professional services), royalty for sale, distribution or exhibition of films, and any sum paid to a payee engaged only in running a call centre | 2% | "Rate: (a) 2% of such of–– person. sum in case of— (a) fees for (i) fees for technical professional services" |
+| Rate (b): professional fees, director remuneration or commission, other royalty, section 26(2)(h) sums, and every other serial 6(iii) case | 10% | "(b) 10% of such sum in cases other than (a)." |
+| Threshold for professional fees (a), technical fees (b), royalty (d) and section 26(2)(h) sums (e): tax year amount or aggregate [T2: whether the four are tested separately or together] | INR 50,000 | "(i) for (a), (b), (d) and (e) of Col. B: ₹ 50,000." |
+| Threshold for director remuneration or commission | Nil | "(ii) for (c) of Col. B: Nil." |
+| "Specified person" test for an individual or HUF payer: business turnover in the previous tax year exceeded | one crore rupees | "turnover from the business or profession carried on by him exceed one crore rupees in case of business" |
+| "Specified person" test for an individual or HUF payer: professional gross receipts in the previous tax year exceeded | fifty lakh rupees | "fifty lakh rupees in case of profession during the tax year immediately preceding" |
 
-| Item | Detail |
+**How the threshold works.** Section 393(1)(a) requires tax "on the entire amount of such income or sum, where the amount or aggregate of amounts exceeds the threshold limit". So the test is "more than", not "at least". A tax year total equal to the threshold in the table above needs no deduction. Once the total goes above it, tax is due on the whole amount, including the part below the threshold, not only on the excess. It is a cliff, not an allowance.
+
+The Table gives one threshold line "for (a), (b), (d) and (e)". It does not say whether professional fees and technical fees paid to the same payee are added together. [T2] where one payee receives fees in more than one of these categories.
+
+**When to deduct.** Section 393(1)(c): at the time the sum is credited to the payee's account or at the time it is paid (in cash, by cheque, draft or any other mode), whichever is earlier.
+
+**Personal payments.** Section 393(4), Table serial 9: no deduction under serial 6(iii) where an individual or HUF pays the fees exclusively for personal purposes.
+
+**Tax borne by the payer.** Section 393(10): the income is increased so that after deduction it equals the net amount payable.
+
+**Suspense account.** Section 393(11): a credit to a "suspense account" or any other account counts as credit to the payee.
+
+### What constitutes "professional services"
+
+Section 402(28): services rendered in the course of carrying on a legal, medical, engineering or architectural profession, the profession of accountancy, technical consultancy, interior decoration or advertising, or any other profession the Board notifies.
+
+| Included (section 402(28)) | Excluded |
 | --- | --- |
-| Applies to | Fees for professional services OR fees for technical services |
-| TDS rate | 10% |
-| Reduced rate | 2% for fees for technical services (NOT professional services) paid to a resident |
-| Threshold | INR 30,000 per annum per payee |
-| When to deduct | At the time of credit to payee's account OR at the time of payment, whichever is earlier |
+| Legal services | Salary (section 392; see `india-payroll`) |
+| Medical services | Purchase of goods |
+| Engineering services | Amounts payable to the Government or the Reserve Bank of India (section 393(5)) |
+| Architectural services | Payments by an individual or HUF exclusively for personal purposes (section 393(4), Table serial 9) |
+| Accountancy services | |
+| Technical consultancy | |
+| Interior decoration | |
+| Advertising (the profession; advertising is also "work" under section 402(47), so see Step 2) | |
+| Other professions notified by the Board (the notifications were not read for this Guide) | |
 
-### What Constitutes "Professional Services"
+### What constitutes "fees for technical services" (rate (a))
 
-**Included vs Excluded**
+Section 402(15) points to section 9(7)(b): any consideration for managerial, technical or consultancy services, including the services of technical or other personnel. It does NOT include consideration for a construction, assembly, mining or like project undertaken by the recipient, or consideration that is salary income of the recipient.
+
+- **Key distinction** [T2]: professional services in the section 402(28) list take rate (b) in the table above. Fees for technical services that are not professional services take rate (a). Rate (a) covers only fees for technical services "not being a professional services", so a fee for professional services (the section 402(28) list includes technical consultancy) takes rate (b) even if it is also a technical service. [T2] whether a given service, such as software development, is a profession in that list or only a technical service.
+
+## Step 2: Contract Work (section 393(1), Table serial 6(i)) [T1]
+
+Serial 6(i) covers any sum paid to a resident contractor for carrying out any work (including supply of labour for carrying out any work) under a contract between the contractor and a "designated person". Section 402(11) lists designated persons: governments, local authorities, statutory corporations, companies, co-operative societies, housing and planning authorities, registered societies, trusts, universities, foreign governments and enterprises, firms, and any individual, HUF, association of persons or body of individuals whose business turnover or professional gross receipts in the previous tax year exceeded the same limits as in Step 1.
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate where the contractor is an individual or HUF | 1% | "Rate: (a) 1%, if carrying out any work designated contractor is individual" |
+| Rate where the contractor is any other person (company, firm, LLP, association) | 2% | "(b) 2%, if contractor of a contract between the is a person other than the" |
+| Threshold: any single sum | INR 30,000 | "(a) ₹ 30000; for any such sum; and (b) ₹ 100000 in case of aggregate of such sums." |
+| Threshold: aggregate of such sums in the tax year | INR 100,000 | "(a) ₹ 30000; for any such sum; and (b) ₹ 100000 in case of aggregate of such sums." |
+
+**Threshold rule (OR, not AND).** Deduct where a single sum exceeds the single-sum threshold OR where the tax year aggregate to that contractor exceeds the aggregate threshold, both in the table above. Section 393(1)(a) then applies the rate to the entire amount, not only the excess.
+
+**Material in the invoice.** Note to serial 6: for manufacturing or supplying a product to the customer's specification using material bought from the customer or its associate (section 402(47)(e)), tax is deducted on the invoice value excluding the material if the invoice shows the material separately, and on the whole invoice value if it does not.
+
+**Exclusions (section 393(4), Table serial 8).** No deduction under serial 6(i):
+- for a contractor in the business of plying, hiring or leasing goods carriages who owns ten or fewer goods carriages at any time in the tax year AND gives the payer a declaration with PAN, AND the payer reports the particulars to the prescribed authority; or
+- where an individual or HUF pays exclusively for personal purposes.
+
+### What constitutes "work"
+
+Section 402(47) says "work" includes advertising; broadcasting and telecasting including programme production; carriage of goods or passengers by any mode other than railways; catering; and manufacturing or supplying a product to a customer's specification using material bought from that customer or its associate (but not using material bought from anyone other than that customer or its associate). It does not include any sum covered by serial 6(iii), so professional and technical fees are never contract work. From 1 April 2026 the Finance Act 2026 added clause (f): supply of manpower to a person to work under that person's supervision, control or direction.
 
 | Included | Excluded |
 | --- | --- |
-| Legal services | Salary payments (covered by Section 192) |
-| Medical services | Goods purchases |
-| Engineering services | Reimbursement of expenses (if separately billed and identifiable) |
-| Architectural services | Payments to government bodies |
-| Accountancy services |  |
-| Technical consultancy |  |
-| Interior decoration |  |
-| Advertising (certain) |  |
-| Sports commentary |  |
+| Manufacturing or supply of a product to the buyer's specification, using material bought from the buyer or its associate | Manufacturing to specification using material bought from someone other than the customer or its associate (section 402(47)) |
+| Catering | Any sum under serial 6(iii), such as professional or technical fees (section 402(47)) |
+| Carriage of goods or passengers, other than by railways | Payments to employees (salary) |
+| Advertising, broadcasting and telecasting (fees for advertising as a profession fall under serial 6(iii), which section 402(47)(B) excludes from work) | Purchase of goods from the seller's stock, which is not a contract for work [T2: ordinary meaning, confirm] |
+| Supply of manpower working under the customer's supervision, control or direction (from 1 April 2026) | |
+| Construction, printing, housekeeping and security contracts, software written under a contract for work [T2: the Act's list is "includes", so these sit on the ordinary meaning of "work"; confirm] | |
 
-### What Constitutes "Technical Services" (2% rate)
+### Serial 6(i) or serial 6(iii): decision matrix [T2]
 
-**Included**
-
-| Included |
-| --- |
-| Managerial services |
-| Technical services |
-| Consultancy services |
-| Any service requiring technical expertise (call centre, data processing, etc.) |
-
-- **Key distinction** — Professional services (listed in Explanation to 194J) = 10%. Technical/managerial services (not in that list) = 2%. [T2] flag for CA if the classification is ambiguous.
-
-### Threshold Rule
-
-- **194J threshold rule** — if aggregate_payment_to_payee_in_FY <= INR 30,000: no TDS if aggregate_payment_to_payee_in_FY > INR 30,000: TDS on entire amount (not just excess)
-- **WARNING** — Once the INR 30,000 threshold is crossed, TDS applies to the FULL amount (including the first INR 30,000), not just the excess.
-
-## Step 2: Section 194C -- Contractor Payments [T1]
-
-- **Legislation** — Income Tax Act, 1961, Section 194C
-
-**Section 194C details**  _(Income Tax Act, 1961, Section 194C)_
-
-| Item | Detail |
-| --- | --- |
-| Applies to | Payments to contractors/sub-contractors for carrying out any work (including supply of labour) |
-| TDS rate (individual/HUF) | 1% |
-| TDS rate (others: company, firm, AOP, etc.) | 2% |
-| Single payment threshold | INR 30,000 |
-| Aggregate annual threshold | INR 1,00,000 |
-| When to deduct | At the time of credit or payment, whichever is earlier |
-
-### What Constitutes "Work" Under 194C
-
-**Included vs Excluded**
-
-| Included | Excluded |
-| --- | --- |
-| Contract for manufacturing/supply of a product per buyer's specification | Purchase of goods from a seller's stock (not a contract) |
-| Catering | Professional services (covered by 194J) |
-| Transport/freight | Payments to employees |
-| Printing | Personal purchases |
-| Construction |  |
-| Software development (if contract for work, not professional service) |  |
-| Housekeeping, security services |  |
-
-### Threshold Rules
-
-- **194C threshold rules** — if single_payment <= INR 30,000 AND aggregate_in_FY <= INR 1,00,000: no TDS if single_payment > INR 30,000: TDS on that payment if aggregate_in_FY > INR 1,00,000: TDS on all payments from the date threshold is crossed
-
-### 194C vs 194J -- Decision Matrix [T2]
-
-**Decision matrix**
-
-| Nature of Service | Section | Rate |
+| Nature of service | Serial | Rate |
 | --- | --- | --- |
-| Freelance software developer writing custom code | 194J (professional/technical) | 10% or 2% |
-| IT company providing manpower on contract | 194C | 1% / 2% |
-| Architect designing a building | 194J (professional) | 10% |
-| Construction contractor building the design | 194C | 1% / 2% |
-| Chartered Accountant preparing accounts | 194J (professional) | 10% |
-| Data entry operator on contract | 194C | 1% / 2% |
+| Freelance software developer writing custom code | 6(iii) if fees for technical services or professional services; 6(i) if a contract for work | [T2] confirm which; rates in the tables above |
+| Licence or subscription for the right to use computer software (including SaaS) | 6(iii)(d) royalty: section 402(30) takes the meaning in section 9(6)(b), which by section 9(6)(c)(i) includes "right to use a computer software (including granting of a licence)" | Rate (b) [T2: whether a given SaaS fee is for a right to use software or for a service] |
+| IT company supplying manpower that works under the client's supervision | 6(i) (section 402(47)(f), from 1 April 2026) | Contract-work rate for the contractor's status |
+| Architect designing a building | 6(iii), professional services | Rate (b) |
+| Construction contractor building the design | 6(i) | Contract-work rate for the contractor's status |
+| Chartered Accountant preparing accounts | 6(iii), professional services (accountancy) | Rate (b) |
+| Data entry operator on contract | 6(i) [T2] | Contract-work rate for the contractor's status |
 
-- **Mixed contract flag** — **[T2] If the contract involves both professional services and execution work (e.g., architect who also supervises construction), flag for CA to determine dominant nature of the contract.**
+- **Mixed contract flag** [T2]: if the contract has both professional services and execution work (for example an architect who also supervises construction), flag it for a Chartered Accountant to settle the dominant nature of the contract.
 
-## Step 3: Section 194O -- E-Commerce Operator Payments [T1]
+### Individual or HUF payers who are not "specified" or "designated" (serial 6(ii)) [T1]
 
-- **Legislation** — Income Tax Act, 1961, Section 194O
+An individual or HUF that is not required to deduct under serial 6(i) or 6(iii) (or serial 1(ii)) deducts under serial 6(ii) on sums for work, professional fees, or commission or brokerage, but only above a much higher threshold.
 
-**Section 194O details**  _(Income Tax Act, 1961, Section 194O)_
-
-| Item | Detail |
-| --- | --- |
-| Applies to | E-commerce operators facilitating sale of goods/services by e-commerce participants |
-| TDS rate | 1% |
-| Threshold | INR 5,00,000 per annum per participant (for individuals/HUFs only) |
-| Who deducts | The e-commerce OPERATOR (platform), not the buyer |
-| Effective from | 1 October 2020 |
-
-### Key Points
-
-- 194O applies to the PLATFORM (Swiggy, Zomato, Amazon, Flipkart, Urban Company, etc.)
-- The freelancer/seller sees TDS deducted from their payouts
-- If 194O applies, 194C/194J do NOT apply to the same transaction (194O takes precedence for e-commerce transactions)
-- Individual/HUF participants with gross amount <= INR 5,00,000 are exempt (threshold added by Finance Act 2023)
-
-## Step 4: Section 206AA -- Higher Rate for Missing PAN [T1]
-
-- **Legislation** — Income Tax Act, 1961, Section 206AA
-
-**Normal rate vs 206AA rate**  _(Income Tax Act, 1961, Section 206AA)_
-
-| Normal Rate | 206AA Rate |
-| --- | --- |
-| Any rate under Chapter XVII-B | Higher of: (a) the rate specified in the section, (b) the rate in force, or (c) **20%** |
-
-### Practical Application
-
-**Practical application table**
-
-| Section | Normal Rate | Rate Without PAN |
+| Item | Value | Note |
 | --- | --- | --- |
-| 194J (professional) | 10% | 20% |
-| 194J (technical) | 2% | 20% |
-| 194C (individual/HUF) | 1% | 20% |
-| 194C (others) | 2% | 20% |
-| 194O | 1% | 20% (but 5% if 206AB applies) |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate under serial 6(ii) | 2% | "(ii) Any sum–– Any person, Rate: 2%" |
+| Threshold under serial 6(ii) | Fifty lakh rupees | "Threshold limit: supply of labour for Fifty lakh rupees." |
 
-- **WARNING** — 20% is the MINIMUM rate when PAN is not provided. Always verify PAN before making any payment.
+Such a payer does not need a TAN (section 397(1)(c)). It deposits the tax with a challan-cum-statement in Form No. 141 within thirty days from the end of the month of deduction (rule 218(3) and rule 219(5) of the Income-tax Rules 2026) and issues the certificate in Form No. 132 (rule 215).
 
-## Step 5: Section 206AB -- Higher Rate for Non-Filers [T1]
+## Step 3: E-commerce Operators (section 393(1), Table serial 8(v)) [T1]
 
-- **Legislation** — Income Tax Act, 1961, Section 206AB
-- **Condition** — If the payee has NOT filed income tax returns for the two preceding years AND the aggregate TDS/TCS in each of those years exceeded INR 50,000, the higher rate under 206AB applies.
+An e-commerce operator (section 402(13): a person who owns, operates or manages a digital or electronic facility or platform for electronic commerce) deducts on the gross amount of sales of goods or provision of services by an e-commerce participant that it facilitates. An e-commerce participant (section 402(14)) is a person resident in India selling goods or providing services through such a platform. Section 402(34) says "services" here includes fees for technical services and fees for professional services.
 
-**Rate table**  _(Income Tax Act, 1961, Section 206AB)_
-
-| Rate | Detail |
-| --- | --- |
-| Higher of | (a) twice the rate specified in the relevant section, OR (b) 5% |
-
-### Verification
-
-- Deductors can verify payee's filing status on the Income Tax portal's "Compliance Check for Section 206AB & 206CCA" utility
-- If both 206AA (no PAN) and 206AB (non-filer) apply, the HIGHER rate applies
-
-## Step 6: TDS Deposit (Remittance to Government) [T1]
-
-- **Legislation** — Rule 30 of Income-tax Rules, 1962
-
-**Deposit due dates**  _(Rule 30 of Income-tax Rules, 1962)_
-
-| Deductor Type | Due Date for Deposit |
-| --- | --- |
-| Government deductors | Same day of deduction |
-| Non-government deductors | 7th of the following month |
-| March deductions | 30 April (extended deadline for March TDS) |
-
-### Payment Method
-
-- Challan No. ITNS 281 (available on TIN-NSDL or the Income Tax portal)
-- Payment via net banking or authorised bank branch
-
-## Step 7: TDS Return Filing -- Form 26Q [T1]
-
-- **Legislation** — Section 200(3); Rule 31A
-
-Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 194J, 194O).
-
-**Quarterly filing due dates**  _(Section 200(3); Rule 31A)_
-
-| Quarter | Period | Filing Due Date |
+| Item | Value | Note |
 | --- | --- | --- |
-| Q1 | 1 April -- 30 June | 31 July |
-| Q2 | 1 July -- 30 September | 31 October |
-| Q3 | 1 October -- 31 December | 31 January |
-| Q4 | 1 January -- 31 March | 31 May |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate on the gross amount of sales or services | 0.1% | "Rate: 0.1% of gross" |
+| No deduction where the participant is an individual or HUF AND gross sales or services in the tax year do not exceed this amount AND the participant has given PAN or Aadhaar to the operator (section 393(4), Table serial 11) | INR 500,000 | "gross amount of the sales or services or both during the tax year does not exceed ₹ 500000" |
 
-### Filing Requirements
+### Key points (Note 3 to serial 8(v))
 
-**Filing requirements**
+- The OPERATOR deducts, not the buyer. A payment the buyer makes directly to the participant for a sale or service facilitated by the operator counts as paid by the operator and is included in the gross amount.
+- Serial 8(v) takes precedence over the other provisions of Chapter XIX-B. If tax was deducted under serial 8(v), or the transaction is exempt under section 393(4) Table serial 11, no tax is deducted on that transaction under any other provision. The client who books through the platform does not also deduct under serial 6.
+- The precedence rule does not apply to amounts the operator itself receives for hosting advertisements or for other services not connected with the facilitated sale or service (Note 3(e)).
+- The individual or HUF exemption in the table above needs all three conditions (AND). A company or firm participant has no exemption.
 
-| Item | Detail |
-| --- | --- |
-| Who must file | Any person who has deducted TDS under Chapter XVII-B |
-| How | Online via TRACES (tdscpc.gov.in) using DSC or EVC |
-| Software | Return Preparation Utility (RPU) from TRACES, or commercial TDS software |
-| Nil return | NOT mandatory but recommended to avoid default notices |
-| Corrections | Correction returns (C1/C2/C3/C4/C5) can be filed via TRACES |
+## Step 4: Payee Without a Valid PAN (section 397(2)) [T1]
 
-### Late Filing Penalty
+Every person entitled to receive an amount on which tax is deductible must give the payer a valid PAN (section 397(2)(a)). If not, section 397(2)(b)(i) requires deduction at the HIGHER of the rate in the relevant provision, the rates in force, or the rate in the table below.
 
-**Penalty table**
-
-| Penalty | Amount |
-| --- | --- |
-| Section 234E | INR 200 per day of delay (maximum = total TDS deductible) |
-| Section 271H | INR 10,000 to INR 1,00,000 (at AO's discretion for delay > 1 year or incorrect information) |
-
-## Step 8: TDS Certificates -- Form 16A [T1]
-
-- **Legislation** — Section 203; Rule 31
-
-**Form 16A details**  _(Section 203; Rule 31)_
-
-| Item | Detail |
-| --- | --- |
-| Form | Form 16A (certificate for non-salary TDS) |
-| Issued by | Deductor to deductee |
-| Frequency | Quarterly (one per quarter of deduction) |
-| Due date | Within 15 days from the due date of filing Form 26Q |
-| Generation | Download from TRACES after filing Form 26Q (auto-generated with digital signature) |
-
-### Form 16A Due Dates
-
-**Due dates by quarter**
-
-| Quarter | 26Q Due | 16A Due |
+| Item | Value | Note |
 | --- | --- | --- |
-| Q1 (Apr-Jun) | 31 July | 15 August |
-| Q2 (Jul-Sep) | 31 October | 15 November |
-| Q3 (Oct-Dec) | 31 January | 15 February |
-| Q4 (Jan-Mar) | 31 May | 15 June |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| No-PAN rate for e-commerce (serial 8(v)) and purchase of goods (serial 8(ii)) | 5% | "at the rate of 5% where tax is required to be deducted under section 393(1)" |
+| No-PAN rate in any other case | 20% | "at the rate of 5% where tax is required to be deducted under section 393(1) [Table: Sl. No. 8(ii) or 8(v)]; or 20% in any other case" |
 
-## Step 9: Form 26AS and AIS Reconciliation [T1]
+### Practical application
 
-- **Legislation** — Section 203AA; Rule 31AB
+| Serial | Normal rate | Rate without PAN |
+| --- | --- | --- |
+| 6(iii) professional fees, rate (b) | 10% | 20% |
+| 6(iii) fees for technical services, rate (a) | 2% | 20% |
+| 6(i) contractor is an individual or HUF | 1% | 20% |
+| 6(i) any other contractor | 2% | 20% |
+| 8(v) e-commerce | 0.1% | 5% |
 
-**Forms table**  _(Section 203AA; Rule 31AB)_
+- **WARNING**: the no-PAN rate is a floor, not a fixed rate: it is the higher of the three. It is 5%, not 20%, for e-commerce. Without a PAN, the payee also cannot get a section 395 certificate (section 397(2)(f)(ii)). The PAN must appear on all bills, vouchers and correspondence between the two (section 397(2)(h)).
 
-| Form | Purpose |
+## Step 5: Benefits or Perquisites to Freelancers (section 393(1), Table serial 8(iv)) [T2]
+
+A "specified person" (Step 1) that provides a resident with a benefit or perquisite, convertible into money or not, arising from that resident's business or profession, deducts tax on the value. Note 2 to the Table: this applies to benefits in cash, in kind or partly in each, and the provider must ensure tax has been deducted BEFORE providing the benefit.
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Rate on the value or aggregate value of the benefit | 10% | "Rate: 10% of value or perquisite, whether person." |
+| Threshold (tax year aggregate) | INR 20,000 | "of a profession of any resident. Threshold limit: ₹ 20,000." |
+
+[T2] Valuation of a benefit in kind and how the payer funds the tax are for a Chartered Accountant.
+
+## Step 6: TAN, Deposit and Payment to Government [T1]
+
+- **TAN.** Every person deducting tax applies for a tax deduction and collection account number and quotes it in all challans, statements and certificates (section 397(1)(a) and (b)). Not needed by a person deducting under serial 6(ii) (and the other cases listed in section 397(1)(c)). From 1 October 2026 the Finance Act 2026 substitutes a new section 397(1)(c), which keeps the serial 6(ii) exception "in respect of a transaction" and adds cases for virtual digital assets and property bought from non-residents.
+- **Deposit dates** (section 397(3)(a); rule 218 of the Income-tax Rules 2026):
+
+| Deductor | Due date for payment to the Government |
 | --- | --- |
-| Form 26AS | Annual Tax Statement -- shows all TDS/TCS credited against the taxpayer's PAN |
-| AIS (Annual Information Statement) | Extended version showing financial transactions (SFT data, interest, dividends, purchases, etc.) |
-| TIS (Taxpayer Information Summary) | Aggregated and categorised summary of AIS data |
+| Office of the Government, tax paid without an income-tax challan | Same day |
+| Office of the Government, tax paid with an income-tax challan | On or before seven days from the end of the month of deduction |
+| Any other deductor, amount credited or paid in March | On or before 30th April |
+| Any other deductor, any other month | On or before seven days from the end of the month of deduction |
+| Individual or HUF deducting under serial 6(ii) | Within thirty days from the end of the month of deduction, with Form No. 141 |
 
-### Reconciliation Steps (for Payee/Deductee)
+## Step 7: Quarterly TDS Statement (section 397(3)(b); rule 219) [T1]
 
-1. Download Form 26AS from TRACES or the Income Tax portal
-2. Download AIS from the Income Tax portal
-3. Match TDS credits in 26AS against TDS deducted by each deductor
-4. Verify amounts match invoices raised and payments received
-5. If mismatch: contact the deductor to correct Form 26Q or file a correction return
-6. Claim TDS credit in ITR only for amounts reflected in Form 26AS
+The quarterly statement for TDS on payments to residents under section 393(1) (other than serial 8(iii)) is **Form No. 140** (rule 219(1), Table serial 3). Rule 219(4) sets the due dates:
 
-**WARNING:** TDS credit is allowed ONLY if reflected in Form 26AS. If the deductor has deducted TDS but not deposited or filed 26Q, the DEDUCTEE cannot claim credit. The deductee should pursue the deductor.
+| Quarter ending | Statement due |
+| --- | --- |
+| 30th June | 31st July of the financial year |
+| 30th September | 31st October of the financial year |
+| 31st December | 31st January of the financial year |
+| 31st March | 31st May of the financial year immediately following the tax year |
 
-## Step 10: Lower Deduction Certificate -- Section 197 [T2]
-
-- **Legislation** — Income Tax Act, 1961, Section 197
-- **Condition** — If the payee's total income is below the taxable threshold or the effective tax rate is lower than TDS rates, a lower deduction certificate may be sought.
-
-**Certificate details**  _(Income Tax Act, 1961, Section 197)_
+### Filing requirements
 
 | Item | Detail |
 | --- | --- |
-| Application | Form 13 filed online on the Income Tax portal |
-| Issued by | Assessing Officer (AO) |
-| Certificate specifies | NIL rate or a reduced rate |
-| Validity | Typically for one financial year |
-| Deductor obligation | Must apply the rate specified in the certificate (not the statutory rate) |
+| Who must file | Every person responsible for deducting tax, after paying it to the Government (section 397(3)(b)) |
+| Interest | Interest for late deduction or late payment (Step 10) must be paid BEFORE the statement is filed (section 398(3)(b)) |
+| Corrections | A correction statement may be delivered within two years from the end of the tax year in which the statement was due (section 397(3)(f)) |
+| Serial 6(ii) deductors | No quarterly statement: Form No. 141 instead (rule 219(5)) |
 
-### When to Recommend
+### Late filing: fee and penalty
 
-**Recommendation scenarios**
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2026/271439.pdf |
+| Fee for each day the statement is late (section 427(1) as substituted by the Finance Act 2026, from 1 April 2026); total fee capped at the tax deductible and paid before the statement is delivered | INR 200 | "section 397(3)(b) within the time prescribed therein, he shall be liable to pay by way of fee, a sum of ₹ 200 for every day" |
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Penalty for not filing the statement on time, or for incorrect information (section 461(1)): at least | INR 10,000 | "a penalty of a sum which shall not be less than ₹10000 but which may extend to ₹100000" |
+| Penalty under section 461(1): at most | INR 100,000 | "a penalty of a sum which shall not be less than ₹10000 but which may extend to ₹100000" |
+
+No penalty for late filing under section 461(1)(a) if the person proves that the tax, with the fee and any interest, was paid to the Government AND the statement was delivered before the expiry of one month from the prescribed time (section 461(2)).
+
+## Step 8: TDS Certificates (section 395(4); rule 215) [T1]
+
+| Item | Detail |
+| --- | --- |
+| Form | Form No. 131 for deductions under section 393(1) other than serial 2(i), 3(i), 6(ii) and 8(vi); Form No. 132 for serial 6(ii) |
+| Issued by | Deductor to deductee, generated and downloaded from the portal specified by the Director General of Income-tax (Systems) |
+| Content | Amount of tax deducted, rate, and other prescribed particulars (section 395(4)(a)) |
+| Due date, Form No. 131 | Within fifteen days from the due date for furnishing the statement under rule 219 |
+| Due date, Form No. 132 | Within fifteen days from the due date for furnishing Form No. 141 |
+| Duplicate | May be issued on request if the original is lost, marked as duplicate (rule 215(3)) |
+
+## Step 9: Annual Information Statement and Credit Reconciliation [T1]
+
+| Item | Purpose |
+| --- | --- |
+| Form No. 168, Annual Information Statement (rule 245) | Uploaded to the taxpayer's registered account; includes information on tax deducted or collected at source, specified financial transactions, tax payments, demands and refunds, and proceedings |
+| Credit rule (rule 203) | Credit for tax deducted is given on the basis of the information the DEDUCTOR furnishes to the income-tax authority, to the person paid or credited |
+
+### Reconciliation steps (for the payee)
+
+1. Download the Annual Information Statement (Form No. 168) from your registered account on the income-tax portal.
+2. Match each TDS entry against the payer, the invoice and the payment received.
+3. Check the payer used your correct PAN and the right serial.
+4. If an entry is missing or wrong, ask the payer to file a correction statement (section 397(3)(f)).
+5. Claim the credit in the return of income. Section 396 treats the sums deducted as income received, so the gross fee, not the net receipt, is income.
+
+**WARNING:** credit follows the deductor's statement (rule 203). If the payer deducted tax but did not pay it or did not file the statement, the credit does not show. The payee should pursue the payer.
+
+## Step 10: Payer in Default: Interest and Consequences (section 398) [T1]
+
+A person who does not deduct, or deducts but does not pay, is an assessee in default for that tax (section 398(1)).
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://egazette.gov.in/WriteReadData/2025/265620.pdf |
+| Interest per month or part of a month from the date tax was deductible to the date it is deducted (section 398(3)(a)(i)) | 1% | "(i) at 1% for every month or part of a month on the amount of such tax from the date on which such tax was deductible" |
+| Interest per month or part of a month from the date of deduction to the date of payment (section 398(3)(a)(ii)) | 1.5% | "(ii) at 1.5% for every month or part of a month" |
+
+- **Not in default** (section 398(2)): a payer who failed to deduct is not treated as an assessee in default if the payee filed the return of income under section 263, included the amount in it, and paid the tax due on that return, AND the payer furnishes an accountant's certificate in the prescribed form. Interest under 398(3)(a)(i) then runs to the date the payee filed the return (section 398(3)(c)).
+- **Time limit** (section 398(5)): no order for failure to deduct after six years from the end of the tax year in which tax was deductible, or two years from the end of the tax year in which a correction statement was delivered, whichever is later.
+- Failure to pay tax deducted to the Government can also be prosecuted under section 476, which the Finance Act 2026 substituted [T3: refer].
+
+## Step 11: Lower or No Deduction Certificate (section 395) [T2]
+
+- **Legislation**: section 395(1) and (6) of the 2025 Act; rule 213 of the Income-tax Rules 2026.
+- **Condition**: the payee applies; the Assessing Officer issues a certificate for a lower rate or no deduction if satisfied that the payee's total income justifies it.
+
+| Item | Detail |
+| --- | --- |
+| Application | Form No. 128 (rule 213(1)), filed by the payee. From 1 April 2026 it may also be filed before the prescribed income-tax authority, which can issue or reject it on electronic verification (section 395(6), inserted by the Finance Act 2026) |
+| What the officer considers | Tax on the estimated income for the year, tax on income of the last four tax years, existing liabilities, and advance tax and TDS already at the payee's credit (rule 213(3)) |
+| Certificate specifies | A lower rate or no deduction |
+| Issued in the name of | The person responsible for deducting tax, under advice to the applicant; valid only for a specified payment from the specified deductor, up to the amount specified (rule 213(8)) |
+| Many payers | Where the deductors are likely to exceed one hundred and their details are not available, the certificate may be issued in the applicant's name (rule 213(9)) |
+| Validity | The period of the tax year specified in the certificate, unless cancelled earlier (rule 213(7)) |
+| Deductor obligation | Deduct at the rate in the certificate, or not at all, while it is valid (section 395(1)(c)) |
+| No PAN | No certificate is granted (section 397(2)(f)(ii)) |
+| Nil-tax declaration | Not available for professional fees or contract work: the section 393(6) Table lists other incomes (interest, dividends, rent under serial 2(ii), insurance commission and others), not serial 6 |
+
+### When to recommend
 
 | Scenario | Action |
 | --- | --- |
-| Freelancer with income below basic exemption limit | Recommend applying for NIL certificate |
-| Professional with high expenses and low taxable income | Recommend applying for reduced rate certificate |
-| Multiple deductors deducting at full rate causing cash flow issues | Recommend lower deduction certificate |
+| Freelancer whose total income will be below the taxable level | Consider an application for no deduction |
+| Professional with high expenses and low taxable income | Consider an application for a lower rate |
+| Several payers deducting at the full rate and causing cash-flow problems | Consider an application for a lower rate |
 
-- **CA flag** — **[T2] Always flag for CA before advising on Section 197. The application requires projected income computation and supporting documentation.**
+- **CA flag** [T2]: always flag for a Chartered Accountant before advising on section 395. The application needs a projection of income and supporting documents.
 
-## Step 11: Edge Case Registry
+## Step 12: Edge Case Registry
 
-### EC1 -- Payment is mix of goods and services [T2]
+### EC1: Payment mixes goods and services [T2]
 
-**Situation:** Invoice includes INR 2,00,000 for software development (service) and INR 50,000 for hardware (goods purchase).
-**Resolution:** If amounts are separately identifiable in the invoice, TDS applies only to the service component (194J on INR 2,00,000). If not separately stated, TDS on the entire amount. [T2] flag for CA.
+**Situation:** One invoice covers software development (a service) and hardware (goods).
+**Resolution:** Serial 6(iii) applies to fees for services, not to the price of goods. The Act does not say how to split a single invoice. Options: deduct only on the service part where the invoice shows it separately, or on the whole amount where it does not. [T2] flag for a Chartered Accountant.
 
-### EC2 -- Reimbursement of expenses included in invoice [T2]
+### EC2: Reimbursement of expenses in the invoice [T2]
 
-**Situation:** Freelancer invoices INR 1,00,000 for consulting + INR 20,000 for travel reimbursement.
-**Resolution:** If reimbursement is separately billed and supported by actual receipts, TDS may not apply to the reimbursement component (per CBDT Circular 715/1995 and subsequent judicial decisions). However, this is frequently disputed. [T2] flag for CA.
+**Situation:** A freelancer invoices consulting fees plus a separately billed travel reimbursement.
+**Resolution:** The 2025 Act Table does not exclude reimbursements. Whether a separately billed, receipted reimbursement is outside the fee depends on Board guidance and case law that this Guide could not read on an allowed page. [T2] flag for a Chartered Accountant.
 
-### EC3 -- Payee is a partnership firm -- which rate? [T1]
+### EC3: Payee is a partnership firm: which contract rate? [T1]
 
-**Situation:** Payment under 194C to a partnership firm.
-**Resolution:** Partnership firm is NOT an individual/HUF. Rate = 2% (not 1%).
+**Situation:** Contract work paid to a partnership firm.
+**Resolution:** A firm is not an individual or HUF. Use the rate for "a person other than" an individual or HUF in the Step 2 table.
 
-### EC4 -- Aggregate threshold crossed mid-year (194C) [T1]
+### EC4: Contract aggregate threshold crossed mid-year [T2]
 
-**Situation:** Four payments of INR 28,000 each to the same contractor. Total = INR 1,12,000. No single payment exceeded INR 30,000.
-**Resolution:** Aggregate exceeded INR 1,00,000. TDS should have been deducted from the 4th payment onward (when the aggregate crossed INR 1,00,000). If not deducted on earlier payments, the deductor is treated as an assessee in default. Deduct TDS on subsequent payments and consider depositing shortfall with interest.
+**Situation:** Several payments to the same contractor, none above the single-sum threshold, but the year's total goes above the aggregate threshold in the Step 2 table.
+**Resolution:** Once the aggregate goes above the aggregate threshold in the Step 2 table, section 393(1)(a) requires tax "on the entire amount of such income or sum", so the earlier payments count in the amount taxed, not only the payment that crosses the line. The Act does not say whether tax on the earlier payments was "deductible" on the dates they were credited, which would start interest under section 398(3)(a)(i) from those dates, or only when the aggregate was crossed. [T2] a Chartered Accountant must confirm the timing and any interest before advising.
 
-### EC5 -- Freelancer on e-commerce platform (194O vs 194J) [T2]
+### EC5: Freelancer selling services through an e-commerce platform [T2]
 
-**Situation:** Graphic designer sells services via an e-commerce platform like Fiverr or Urban Company.
-**Resolution:** 194O applies (1% TDS by the e-commerce operator). The hiring client does NOT additionally deduct 194J. 194O takes precedence for transactions facilitated through the platform. If the client hires the freelancer directly (off-platform), 194J applies.
+**Situation:** A designer sells services through an online platform operated by an e-commerce operator.
+**Resolution:** The operator deducts under serial 8(v) (Step 3). The hiring client does not also deduct under serial 6 for a transaction facilitated by the platform, because Note 3(d) excludes deduction under any other provision once serial 8(v) tax was deducted or the serial 11 exemption applies. If the client hires the freelancer directly, off the platform, serial 6 applies. [T2] whether a particular platform is an "e-commerce operator" facilitating the sale.
 
-### EC6 -- TDS deducted but not deposited by deductor [T1]
+### EC6: Tax deducted but not paid by the payer [T1]
 
-**Situation:** Deductor deducted TDS of INR 50,000 from the freelancer's payment but has not deposited to the government. 26AS shows no credit.
-**Resolution:** The DEDUCTEE cannot claim credit until it appears in 26AS. The deductee should: (1) demand Form 16A from the deductor, (2) report to the Income Tax Department if deductor refuses, (3) file ITR without the credit and claim it via rectification once 26AS is updated.
+**Situation:** The payer deducted tax but did not pay it to the Government or did not file the statement. The Annual Information Statement shows no credit.
+**Resolution:** Credit follows the payer's statement (rule 203). The payee should (1) ask the payer for the certificate in Form No. 131, (2) ask the payer to pay and file or correct the statement, and (3) consider the credit in the return only once it is reported. The payer remains in default and liable to interest (section 398). Section 401: where tax is deductible at source, the payee "shall not be called upon to pay the tax himself to the extent to which tax has been deducted from that income". [T2] how to show the deduction when the credit is missing.
 
-### EC7 -- Section 194J threshold: multiple professional services [T1]
+### EC7: Several professional services to one freelancer [T1]
 
-**Situation:** Client pays a freelancer INR 15,000 for accounting and INR 20,000 for tax advisory in the same FY. Total = INR 35,000.
-**Resolution:** Aggregate exceeds INR 30,000. TDS applies to the entire INR 35,000 (not just the excess). The deductor should have started deducting from the payment that pushed the aggregate over INR 30,000.
+**Situation:** A client pays one freelancer for accounting and for tax advice in the same tax year. Each payment is below the professional-fees threshold in the Step 1 table, but the total is above it.
+**Resolution:** Both are fees for professional services, the same category, so the threshold tests their tax year total. Once that total exceeds the threshold, tax applies to the entire amount, not only the excess.
 
-### EC8 -- GST component in the invoice and TDS [T1]
+### EC8: GST shown on the invoice [T2]
 
-**Situation:** Invoice: Base fee INR 1,00,000 + GST 18% = INR 18,000. Total invoice INR 1,18,000.
-**Resolution:** Per CBDT Circular 23/2017, TDS is to be deducted on the base amount EXCLUDING GST, provided GST is separately shown in the invoice. TDS = 10% of INR 1,00,000 = INR 10,000 (not INR 11,800).
+**Situation:** The freelancer's invoice shows the fee and GST separately.
+**Resolution:** The 2025 Act Table taxes "any sum by way of fees" and does not mention GST. Whether GST shown separately is left out of the amount on which tax is deducted depends on CBDT guidance that this Guide could not read on an allowed page. Check the current CBDT circular before relying on either treatment. [T2] flag for a Chartered Accountant.
 
-### EC9 -- Presumptive taxation payee and TDS credit [T1]
+### EC9: Presumptive-scheme professional with excess TDS [T1]
 
-**Situation:** Freelancer files under Section 44ADA (presumptive). Has TDS of INR 80,000 deducted. Presumptive tax liability = INR 50,000.
-**Resolution:** TDS credit (INR 80,000) exceeds tax liability (INR 50,000). Excess INR 30,000 is refundable via ITR filing. The freelancer MUST file ITR to claim the refund.
+**Situation:** A freelancer under the presumptive scheme for professions (section 58 of the 2025 Act; see `in-income-tax`) had more TDS deducted than the tax due for the year.
+**Resolution:** The excess is refundable under section 431, and section 433 says every refund claim is made by furnishing the return under section 263. The freelancer MUST file the return to get it back.
 
-### EC10 -- Section 194R -- benefits or perquisites in kind [T2]
+### EC10: Benefit or perquisite given to a freelancer [T2]
 
-**Situation:** Company provides a freelancer with a laptop worth INR 50,000 as part of the engagement.
-**Resolution:** Section 194R (introduced in 2022) requires TDS at 10% on benefits/perquisites exceeding INR 20,000 provided to resident contractors/professionals. TDS = 10% x INR 50,000 = INR 5,000. The deductor may provide cash to cover the TDS. [T2] flag for CA.
+**Situation:** A company gives a freelancer a laptop as part of the engagement.
+**Resolution:** If the company is a specified person and the year's benefits to that freelancer exceed the threshold in the Step 5 table, tax at the Step 5 rate is due on the value, and the company must ensure it was deducted before giving the benefit (Note 2 to Table serial 8). [T2] valuation for a Chartered Accountant.
 
-## Step 12: Reviewer Escalation Protocol
+## Step 13: Reviewer Escalation Protocol
 
-When Claude identifies a [T2] situation:
+When the assistant identifies a [T2] situation:
 
-```
+~~~
 REVIEWER FLAG
 Tier: T2
 Client: [name]
@@ -431,74 +389,110 @@ Issue: [what is ambiguous]
 Options: [possible treatments]
 Recommended: [most likely correct treatment and why]
 Action Required: Chartered Accountant must confirm before advising client.
-```
+~~~
 
-When Claude identifies a [T3] situation:
+When the assistant identifies a [T3] situation:
 
-```
+~~~
 ESCALATION REQUIRED
 Tier: T3
 Client: [name]
 Situation: [description]
-Issue: [outside skill scope]
+Issue: [outside Guide scope]
 Action Required: Do not advise. Refer to Chartered Accountant. Document gap.
-```
+~~~
 
-## Step 13: Test Suite
+## Step 14: Test Suite
 
-### Test 1 -- Standard 194J deduction
+All cases are described against the thresholds and rates in the tables above; the arithmetic for hypothetical amounts is kept outside the Guide.
 
-**Input:** Payment of INR 1,50,000 to a freelance chartered accountant for audit services. PAN provided.
-**Expected output:** Section 194J applies. TDS = 10% x INR 1,50,000 = INR 15,000. Deposit by 7th of the following month.
+### Test 1: Professional fees above the threshold
 
-### Test 2 -- 194C to individual contractor
+**Input:** A company pays a resident freelance chartered accountant audit fees whose tax year total is above the professional-fees threshold. PAN given.
+**Expected output:** Serial 6(iii), rate (b), on the entire amount. Deposit within seven days from the end of the month of deduction (30th April for a March deduction).
 
-**Input:** Single payment of INR 45,000 to an individual contractor for office renovation. PAN provided.
-**Expected output:** Section 194C. Single payment exceeds INR 30,000 threshold. TDS = 1% x INR 45,000 = INR 450.
+### Test 2: Single contract payment above the single-sum threshold
 
-### Test 3 -- No TDS below threshold (194J)
+**Input:** A company makes one payment above the single-sum threshold to a resident individual contractor for office renovation. PAN given.
+**Expected output:** Serial 6(i), individual or HUF rate, on that payment.
 
-**Input:** Two payments of INR 12,000 each to a freelance designer in the same FY. Total = INR 24,000. PAN provided.
-**Expected output:** Aggregate INR 24,000 < INR 30,000 threshold. No TDS required.
+### Test 3: Professional fees at or below the threshold
 
-### Test 4 -- Missing PAN (Section 206AA)
+**Input:** A company pays a freelance designer two professional fees whose tax year total is equal to or below the professional-fees threshold. PAN given.
+**Expected output:** No deduction. The threshold is "exceeds", so a total equal to it is below the line.
 
-**Input:** Payment of INR 60,000 for professional services. Payee has NOT provided PAN.
-**Expected output:** Section 206AA applies. TDS = 20% x INR 60,000 = INR 12,000 (instead of normal 10% = INR 6,000).
+### Test 4: Missing PAN
 
-### Test 5 -- GST excluded from TDS base
+**Input:** Professional fees above the threshold; the payee has NOT given a PAN.
+**Expected output:** Section 397(2)(b)(i): the higher of rate (b) and the no-PAN rate for "any other case", which is the no-PAN rate.
 
-**Input:** Invoice: Professional fees INR 2,00,000 + GST 18% = INR 36,000. Total = INR 2,36,000. GST shown separately. PAN provided.
-**Expected output:** TDS on base amount only. TDS = 10% x INR 2,00,000 = INR 20,000.
+### Test 5: Contract aggregate crossed in the fourth quarter
 
-### Test 6 -- 194C aggregate threshold crossed
+**Input:** Quarterly payments to one individual contractor, none above the single-sum threshold, with the fourth payment taking the year's total above the aggregate threshold. PAN given.
+**Expected output:** Tax at the individual or HUF rate on the entire year's amount once the aggregate is crossed (section 393(1)(a)). Whether interest under section 398(3)(a)(i) runs on the earlier payments is [T2].
 
-**Input:** Q1: INR 25,000. Q2: INR 25,000. Q3: INR 25,000. Q4: INR 30,000. All to same individual contractor. PAN provided.
-**Expected output:** No single payment > INR 30,000. But aggregate = INR 1,05,000 > INR 1,00,000. TDS obligation arose when aggregate crossed INR 1,00,000 (during Q4 payment). TDS = 1% on the Q4 payment = INR 300. Future payments also subject to TDS.
+### Test 6: Statement and certificate timeline
 
-### Test 7 -- Form 26Q filing timeline
-
-**Input:** TDS deducted in July, August, September (Q2).
-**Expected output:** Form 26Q for Q2 due by 31 October. Form 16A due by 15 November.
+**Input:** TDS deducted in July, August and September.
+**Expected output:** Form No. 140 for the quarter ending 30th September is due by 31st October. Form No. 131 is due within fifteen days from that due date.
 
 ## PROHIBITIONS
 
-- NEVER apply Section 194J/194C to payments to non-residents -- Section 195 applies (out of scope, T3)
-- NEVER deduct TDS below the applicable threshold -- verify both single-payment and aggregate thresholds
-- NEVER ignore Section 206AA -- always verify PAN before applying the standard rate
-- NEVER include GST in the TDS base when GST is separately stated in the invoice
-- NEVER issue Form 16A without first filing Form 26Q for the relevant quarter
-- NEVER advise a deductee to claim TDS credit not reflected in Form 26AS
-- NEVER apply 194C rates (1%/2%) to professional services that fall under 194J
-- NEVER assume e-commerce payments are exempt -- verify 194O applicability
-- NEVER estimate Section 197 lower deduction certificate outcomes without CA review
-- NEVER ignore late filing penalties under Section 234E -- INR 200/day accrues quickly
+- NEVER apply serial 6 to payments to non-residents: section 393(2) applies (out of scope, T3).
+- NEVER deduct below the applicable threshold. Check both the single-sum and the aggregate tests for contract work, and remember the test is "exceeds".
+- NEVER deduct only on the excess over a threshold: section 393(1)(a) taxes the entire amount once it is crossed.
+- NEVER skip the PAN check: section 397(2)(b) applies when there is no valid PAN, and it is 5%, not 20%, for e-commerce.
+- NEVER apply the old non-filer higher rate: the 2025 Act has no such deduction rule (section 397(2)(b)(ii) "twice the rate" is for tax COLLECTED at source only).
+- NEVER hand-make the certificate: Form No. 131 is generated and downloaded from the portal (rule 215).
+- NEVER advise a payee to claim TDS credit that the payer has not reported (rule 203).
+- NEVER apply the contract-work rates to professional services that fall under serial 6(iii).
+- NEVER deduct under serial 6 on a transaction where the e-commerce operator deducted under serial 8(v) or serial 11 exempts it.
+- NEVER estimate the outcome of a section 395 application without a Chartered Accountant.
+- NEVER ignore the late statement fee under section 427: it accrues every day.
+- NEVER cite 1961 Act section numbers or forms for tax year 2026-27 payments.
+
+## The method, step by step
+
+1. **Confirm the year and the law.** For an amount credited or paid from 1 April 2026, apply Chapter XIX-B of the Income-tax Act 2025 (section 1(3): in force from 1 April 2026; section 536 repeals the 1961 Act): https://egazette.gov.in/WriteReadData/2025/265620.pdf
+2. **Classify the payment** under the section 393(1) Table: serial 6(i) contract work, 6(ii) individual payer, 6(iii) professional or technical fees, 8(iv) benefit, 8(v) e-commerce, using the definitions in section 402 (same link).
+3. **Check the payer** is a specified or designated person (section 402(37) and 402(11)), and the exclusions in section 393(4) and 393(5) (same link).
+4. **Test the threshold** for the tax year (section 393(1)(a)) and, if exceeded, take the entire amount (same link).
+5. **Fix the rate**: the Table rate, a section 395 certificate rate, or the section 397(2)(b) no-PAN rate (same link).
+6. **Deduct at credit or payment, whichever is earlier** (section 393(1)(c)), and deposit by the rule 218 date, Income-tax Rules 2026: https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
+7. **File the quarterly statement** in Form No. 140 (rule 219) and issue Form No. 131 (rule 215) from the same Rules link; serial 6(ii) payers use Form No. 141 and Form No. 132.
+8. **Check fees and interest** for any delay: section 427 fee as substituted by the Finance Act 2026 (https://egazette.gov.in/WriteReadData/2026/271439.pdf) and section 398(3) interest (https://egazette.gov.in/WriteReadData/2025/265620.pdf).
+9. **For the payee**, reconcile the Annual Information Statement (Form No. 168, rule 245) and claim the credit (rule 203) in the return, using the Rules link in step 6.
+
+## Ask the client first
+
+- Are you paying, or being paid? If paying, are you a company, firm or other entity, or an individual or HUF, and what were your business turnover or professional receipts in the previous tax year? (Specified person, designated person, or serial 6(ii).)
+- What exactly is the service: professional work in the section 402(28) list, technical or consultancy work, or a contract for work such as catering, transport, manpower supply or manufacturing to your specification? (Serial and rate.)
+- Is the payee resident in India, and has the payee given a valid PAN? (Section 393(2) and section 397(2).)
+- What is each payment, and what will the total to this payee be for the tax year? (Thresholds.)
+- Was the sale or service booked through an online platform that takes the payment? (Serial 8(v).)
+- Does the payee hold a section 395 certificate for this payer? (Rate.)
+
+## When to refuse or refer
+
+- **Non-resident payee**: section 393(2) and treaty questions. Refer [T3].
+- **Salary or employee payments**: see `india-payroll`.
+- **Virtual digital assets** (serial 8(vi)): see `india-crypto-tax`.
+- **Amounts credited or paid before 1 April 2026**, or statements and certificates for those periods: 1961 Act rules, not covered here. Refer.
+- **Prosecution** for not paying tax deducted (section 476): refer to a Chartered Accountant or lawyer.
+- **Classification disputes** between serial 6(i) and 6(iii), mixed contracts, reimbursements and GST on invoices: [T2], a Chartered Accountant must confirm.
+- **Section 395 applications** and anything that needs a projection of the payee's income: [T2].
+
+## Sources
+
+- Income-tax Act 2025 (30 of 2025), Gazette of India Extraordinary, 21 August 2025: https://egazette.gov.in/WriteReadData/2025/265620.pdf
+- Finance Act 2026 (4 of 2026), assented to on 30 March 2026, Gazette of India Extraordinary: https://egazette.gov.in/WriteReadData/2026/271439.pdf
+- Income-tax Rules 2026 (G.S.R. 198(E), 20 March 2026): https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/En-Notified-IT-Rules-2026-20-03-2026.pdf
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this Guide is maintained on the OpenAccountants site. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -520,4 +514,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-07-13. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-tds-freelance` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-tds-freelance. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-17. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `in-tds-freelance` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/in-tds-freelance. If neither is available, confirm every figure against the official source pages cited above before relying on it.

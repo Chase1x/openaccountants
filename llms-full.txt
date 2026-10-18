@@ -1,7 +1,7 @@
 # OpenAccountants — GitHub Skills Repository
 
 <!-- The counts sentence below is restamped from the `counts` block of index.json by scripts/build-index.py on every default build; do not edit its figures by hand. The README stats block carries the platform-wide totals. -->
-> Open-source AI skills (tax rules your AI follows) for AI agents. 2,050 AI skills across 245 jurisdictions in this repository, 144 of them accountant-reviewed and signed off by named Partners (CPAs/CAs/EAs). Live counts: the `counts` block of `index.json`.
+> Open-source AI skills (tax rules your AI follows) for AI agents. 2,050 AI skills across 245 jurisdictions in this repository, 143 of them accountant-reviewed and signed off by named Partners (CPAs/CAs/EAs). Live counts: the `counts` block of `index.json`.
 
 ## What this repo is
 
@@ -132,7 +132,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Skill inventory (2050 skills, 245 jurisdictions, 144 accountant-reviewed)
+## Skill inventory (2050 skills, 245 jurisdictions, 143 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -983,7 +983,7 @@ https://www.openaccountants.com
 - in-pf-esi-employer | IN | tier 2 | reviewed_by -
 - in-professional-tax | IN | tier 2 | reviewed_by -
 - in-tax-residency | IN | tier 2 | reviewed_by -
-- in-tds-freelance | IN | tier 1 | reviewed_by Mayur Deokar
+- in-tds-freelance | IN | tier 2 | reviewed_by -
 - india-crypto-tax | IN | tier 2 | reviewed_by -
 - india-einvoice | IN | tier 2 | reviewed_by -
 - india-financial-statements | IN | tier 2 | reviewed_by -

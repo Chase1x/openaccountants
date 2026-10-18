@@ -8,12 +8,11 @@ metadata:
   jurisdiction: "AU"
   tax_year: "2026"
   last_updated: "2026-09-27"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
 # Amending an individual income tax return in Australia
-
-## Amending an individual income tax return in Australia
 
 ## Amending an individual income tax return in Australia
 

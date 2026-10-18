@@ -8,16 +8,17 @@ metadata:
   jurisdiction: "AU"
   tax_year: "2026"
   last_updated: "2026-09-27"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
 # AU Crypto Tax
 
-## AU Crypto Tax
-
 ## Australia Crypto Tax -- CGT & Income Skill v1.3
 
 ## Section 1 -- Quick Reference
+
+**Quick Reference**
 
 **Quick Reference**
 
@@ -36,11 +37,11 @@ metadata:
 
 ### Core Principle
 
-- **ATO treatment of cryptocurrency** — The ATO treats cryptocurrency (including Bitcoin, Ethereum, stablecoins, NFTs, and DeFi tokens) as a **CGT asset**, not as foreign currency. Each disposal triggers a CGT event.  _(TD 2014/26 (Bitcoin as a CGT asset))_
+The ATO treats cryptocurrency (including Bitcoin, Ethereum, stablecoins, NFTs, and DeFi tokens) as a **CGT asset**, not as foreign currency. Each disposal triggers a CGT event.
 
 ### Individual Marginal Tax Rates (2026-27)
 
-**Individual Marginal Tax Rates (2026-27)**  _(ATO, Tax rates: Australian resident)_
+**Individual Marginal Tax Rates (2026-27)**
 
 | Taxable Income (AUD) | Rate |
 | --- | --- |
@@ -50,7 +51,7 @@ metadata:
 | 135,001 -- 190,000 | 37% |
 | 190,001+ | 45% |
 
-- **Rate scale by year** — The second resident bracket is 15 cents from 1 July 2026 and was 16 cents in 2024-25 and 2025-26; add the 2% Medicare levy. Non-residents have no tax-free threshold and no discount. From 1 July 2027 the 50% discount gives way to cost base indexation with a 30% minimum rate on gains accruing after that date (see 2.3).  _(ATO, Tax rates: Australian resident (https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents))_
+- **Rate scale by year** — The second resident bracket is 15 cents from 1 July 2026 and was 16 cents in 2024-25 and 2025-26; add the 2% Medicare levy. Non-residents have no tax-free threshold and no discount. From 1 July 2027 the 50% discount gives way to cost base indexation with a 30% minimum rate on gains accruing after that date (see 2.3).  _([ATO, Tax rates: Australian resident](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents))_
 
 ### Key Thresholds
 
@@ -107,12 +108,15 @@ A CGT event occurs when you:
 | Subscription to portfolio tracking tool | Included (third element -- ownership costs) |
 
 - **Method for identical assets** — FIFO, LIFO, or specific identification -- must be consistent and documented. ATO does not mandate a method but requires consistency.
-- **Fees and missing parcel records** — Classify each fee by the transaction it belongs to: a fee on acquisition enters the cost base of that asset, a fee on disposal is an incidental cost of that event, and a network fee is not automatically deductible or an addition to every asset's cost base. Where a parcel or acquisition record is missing, investigate exchange exports, wallet history and bank transfers before falling back to the $0 conservative default.  _(ATO, Transactions: acquiring and disposing of crypto assets (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets))_
+- **Fees and missing parcel records** — Classify each fee by the transaction it belongs to: a fee on acquisition enters the cost base of that asset, a fee on disposal is an incidental cost of that event, and a network fee is not automatically deductible or an addition to every asset's cost base. Where a parcel or acquisition record is missing, investigate exchange exports, wallet history and bank transfers before falling back to the $0 conservative default.  _([ATO, Transactions: acquiring and disposing of crypto assets](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets))_
 
 ### 2.3 50% CGT Discount
 
-- **50% CGT Discount availability** — Available if: - The asset was held for at least 12 months (acquisition to disposal) - The taxpayer is an individual or trust (not a company or super fund at 1/3 discount) - The taxpayer is an Australian tax resident at the time of the CGT event
-- **Events from 1 July 2027** — The 50% discount applies to eligible events before 1 July 2027. The Treasury Laws Amendment (Tax Reform No. 1) Act 2026 replaces it with cost base indexation and a 30% minimum rate for gains accruing after that date; apply the enacted transitional rules to later events. See `au-capital-gains.md`.  _(Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (https://www.legislation.gov.au/C2026A00049/asmade/text))_
+Available if:
+- The asset was held for at least 12 months (acquisition to disposal)
+- The taxpayer is an individual or trust (not a company or super fund at 1/3 discount)
+- The taxpayer is an Australian tax resident at the time of the CGT event
+- **Events from 1 July 2027** — The 50% discount applies to eligible events before 1 July 2027. The Treasury Laws Amendment (Tax Reform No. 1) Act 2026 replaces it with cost base indexation and a 30% minimum rate for gains accruing after that date; apply the enacted transitional rules to later events. See `au-capital-gains.md`.  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
 
 ### 2.4 Personal Use Asset Exemption
 
@@ -127,7 +131,7 @@ A CGT event occurs when you:
 | NOT held for exchange/trading purposes | Yes |
 
 - **Exemption failure conditions** — If ANY acquisition cost ≥ $10,000, the personal use asset exemption does NOT apply. If crypto is kept on an exchange or held for extended periods, the ATO considers it an investment -- NOT personal use.
-- **Threshold is acquisition cost, not proceeds** — The $10,000 test looks at what the crypto cost to acquire, not what it was worth when spent. Spending a long-held investment holding on personal goods does not turn it into a personal use asset, and a capital loss on a personal use asset is disregarded.  _(ATO, Crypto asset as a personal use asset (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/crypto-asset-as-a-personal-use-asset))_
+- **Threshold is acquisition cost, not proceeds** — The $10,000 test looks at what the crypto cost to acquire, not what it was worth when spent. Spending a long-held investment holding on personal goods does not turn it into a personal use asset, and a capital loss on a personal use asset is disregarded.  _([ATO, Crypto asset as a personal use asset](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/crypto-asset-as-a-personal-use-asset))_
 
 ### 2.5 Trading vs Investing
 
@@ -143,7 +147,7 @@ A CGT event occurs when you:
 | Tax treatment | Capital gains (50% discount available) | Ordinary income (no CGT discount, no capital loss restrictions) |
 | Losses | Capital losses only | Business losses (offset all income) |
 
-- **Frequency alone does not decide** — Establish whether the taxpayer invests, carries on a trading or mining business, is paid for services, or undertook an isolated profit-making transaction. An isolated commercial transaction can produce ordinary income without a business, and business trading stock and revenue gains use different calculations from capital investments.  _(TR 92/3 (https://www.ato.gov.au/law/view/document?docid=TXR/TR923/NAT/ATO/00001))_
+- **Frequency alone does not decide** — Establish whether the taxpayer invests, carries on a trading or mining business, is paid for services, or undertook an isolated profit-making transaction. An isolated commercial transaction can produce ordinary income without a business, and business trading stock and revenue gains use different calculations from capital investments.  _([TR 92/3](https://www.ato.gov.au/law/view/document?docid=TXR/TR923/NAT/ATO/00001))_
 
 ### 2.6 Staking Rewards
 
@@ -167,8 +171,8 @@ A CGT event occurs when you:
 | Airdrop of worthless/no-market token | $0 income; cost base = $0 |
 | Subsequent disposal | CGT event -- cost base is value at receipt |
 
-- **Airdrops are not automatically ordinary income** — Establish whether the airdrop was received in a crypto trading business, for goods or services, through another income-producing activity, or as a hobby receipt, gift or windfall; current ATO guidance distinguishes these. Where it is not ordinary income the token is still a CGT asset, so record its acquisition and support its value; an unavailable price feed is not evidence that a token had no value.  _(ATO, Staking rewards and airdrops (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/staking-rewards-and-airdrops))_
-- **TR 2026/D1 is a draft** — TR 2026/D1 sets out the Commissioner's preliminary view on airdrops, with stated scope exclusions and proposed application arrangements. Do not cite it as a final ruling; record which view was applied.  _(TR 2026/D1 (https://www.ato.gov.au/law/view/document?docid=DTR/TR2026D1/NAT/ATO/00001))_
+- **Airdrops are not automatically ordinary income** — Establish whether the airdrop was received in a crypto trading business, for goods or services, through another income-producing activity, or as a hobby receipt, gift or windfall; current ATO guidance distinguishes these. Where it is not ordinary income the token is still a CGT asset, so record its acquisition and support its value; an unavailable price feed is not evidence that a token had no value.  _([ATO, Staking rewards and airdrops](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/staking-rewards-and-airdrops))_
+- **TR 2026/D1 is a draft** — TR 2026/D1 sets out the Commissioner's preliminary view on airdrops, with stated scope exclusions and proposed application arrangements. Do not cite it as a final ruling; record which view was applied.  _([TR 2026/D1](https://www.ato.gov.au/law/view/document?docid=DTR/TR2026D1/NAT/ATO/00001))_
 
 ### 2.8 DeFi Specific Events
 
@@ -185,12 +189,13 @@ A CGT event occurs when you:
 | Bridge transactions (cross-chain) | Conservative: treat as disposal + acquisition |
 | Token migration/hard fork | New token acquired at $0 cost base; not assessable until disposed |
 
-- **Read the mechanics before choosing the event** — Depositing into a liquidity pool, receiving a replacement token, lending, borrowing, wrapping or unwrapping can change or end rights even where the economic exposure looks unchanged. Record the assets and rights held before and after the transaction; the CGT event can be A1, C2, E2 or H2 depending on the arrangement.  _(ATO, Decentralised finance and wrapping crypto (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto))_
-- **TD 2026/D2 on wrapping and unwrapping** — TD 2026/D2 proposes CGT event C2 treatment for specified smart-contract wrapping and unwrapping arrangements. It is a draft with exclusions, so do not apply it to every bridge or custodial transfer; keep a record of the arrangement and the interpretation used.  _(TD 2026/D2 (https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D2/NAT/ATO/00001))_
+- **Read the mechanics before choosing the event** — Depositing into a liquidity pool, receiving a replacement token, lending, borrowing, wrapping or unwrapping can change or end rights even where the economic exposure looks unchanged. Record the assets and rights held before and after the transaction; the CGT event can be A1, C2, E2 or H2 depending on the arrangement.  _([ATO, Decentralised finance and wrapping crypto](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto))_
+- **TD 2026/D2 on wrapping and unwrapping** — TD 2026/D2 proposes CGT event C2 treatment for specified smart-contract wrapping and unwrapping arrangements. It is a draft with exclusions, so do not apply it to every bridge or custodial transfer; keep a record of the arrangement and the interpretation used.  _([TD 2026/D2](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D2/NAT/ATO/00001))_
 
 ### 2.9 NFTs
 
-- **NFTs treatment** — Treated identically to other crypto assets. Purchase = acquisition (CGT asset). Sale = disposal (CGT event). Creating and selling an NFT = ordinary income if in the business of creating them, otherwise CGT.
+Treated identically to other crypto assets. Purchase = acquisition (CGT asset). Sale = disposal (CGT event). Creating and selling an NFT = ordinary income if in the business of creating them, otherwise CGT.
+
 - **What the NFT represents decides the treatment** — Business receipts, investment disposals, personal use assets and collectables each have their own rules. Neither the label NFT nor an exchange's tax category settles the result.
 
 ## Section 3 -- Transaction Pattern Library
@@ -294,7 +299,7 @@ The ATO requires the following records for each transaction:
 | Agent/exchange fees | Yes |
 
 - **Retention period** — Retention period: 5 years from the date of lodgement of the return in which the gain/loss is reported. For assets still held: records must be kept until 5 years after eventual disposal.
-- **Reconcile before calculating** — Collect exchange exports, wallet addresses, transaction identifiers, timestamps, token quantities, fees and Australian dollar valuations. Match transfers between the taxpayer's own wallets so they are not recorded as sales, and check that beneficial ownership really stayed unchanged for exchange, lending and custody arrangements. Reconcile opening holdings plus receipts less disposals and fees to closing holdings, and investigate any gap.  _(ATO, Keeping crypto records (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records))_
+- **Reconcile before calculating** — Collect exchange exports, wallet addresses, transaction identifiers, timestamps, token quantities, fees and Australian dollar valuations. Match transfers between the taxpayer's own wallets so they are not recorded as sales, and check that beneficial ownership really stayed unchanged for exchange, lending and custody arrangements. Reconcile opening holdings plus receipts less disposals and fees to closing holdings, and investigate any gap.  _([ATO, Keeping crypto records](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records))_
 
 ## Section 6 -- Edge Cases
 

@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "AU"
   tax_year: "2026"
   last_updated: "2026-09-27"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -71,9 +72,9 @@ metadata:
 
 ### Refusal catalogue
 
-- **R-AU-PI-1 -- Companies/trusts/partnerships** — Trigger: client is not a sole trader. Message: "This skill covers sole trader PAYG instalments only."  _(Refusal catalogue)_
-- **R-AU-PI-2 -- PAYG withholding** — Trigger: client asks about PAYG withholding (W labels). Message: "PAYG withholding is a separate obligation. See au-gst-bas."  _(Refusal catalogue)_
-- **R-AU-PI-3 -- GST computation** — Trigger: client asks about GST. Message: "GST computation is handled by the GST skill. This skill covers PAYG instalments only."  _(Refusal catalogue)_
+- **R-AU-PI-1 -- Companies/trusts/partnerships** — Trigger: client is not a sole trader. Message: "This skill covers sole trader PAYG instalments only."
+- **R-AU-PI-2 -- PAYG withholding** — Trigger: client asks about PAYG withholding (W labels). Message: "PAYG withholding is a separate obligation. See au-gst-bas."
+- **R-AU-PI-3 -- GST computation** — Trigger: client asks about GST. Message: "GST computation is handled by the GST skill. This skill covers PAYG instalments only."
 
 ## Section 3 -- Payment pattern library
 
@@ -173,11 +174,13 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = T
 
 ### 5.3 Instalment amount method (T7)
 
-- **Instalment amount method formula** — T7 = notional tax x (1 + GDP adjustment factor) / 4 No income calculation needed. ATO pre-fills the amount.
+- **Instalment amount method formula** — T7 = notional tax x (1 + GDP adjustment factor) / 4
+
+No income calculation needed. ATO pre-fills the amount.
 
 ### 5.4 GDP adjustment factor
 
-- **GDP adjustment factor 2026-27** — 5%, applied to the instalment amount (T7) for quarters starting on or after 1 April 2026; it was 6% in 2024-25. The factor is set each year from ABS data or by legislation and does not affect the rate method or annual payers. %  _([ATO, How we calculate your PAYG instalment amount or rate](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/how-we-calculate-your-payg-instalment-amount-or-rate))_
+- **GDP adjustment factor 2026-27** — 5%, applied to the instalment amount (T7) for quarters starting on or after 1 April 2026; it was 6% in 2024-25. The factor is set each year from ABS data or by legislation and does not affect the rate method or annual payers.  _([ATO, How we calculate your PAYG instalment amount or rate](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/how-we-calculate-your-payg-instalment-amount-or-rate))_
 
 ### 5.5 Variation
 
@@ -200,7 +203,7 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = T
 
 ### 6.2 Late BAS lodgement penalty
 
-- **Late BAS lodgement penalty** — One penalty unit for each 28-day period or part, up to 5 periods: $364 a unit from 1 July 2026 ($1,820 maximum for a small withholder) and $330 from 7 November 2024 to 30 June 2026. Medium withholders pay double and large withholders five times.  _([ATO, Penalty units; ATO, Failure to lodge on time penalty](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units))_
+- **Late BAS lodgement penalty** — One penalty unit for each 28-day period or part, up to 5 periods: $364 a unit from 1 July 2026 ($1,820 maximum for a small withholder) and $330 from 7 November 2024 to 30 June 2026. Medium withholders pay double and large withholders five times.  _([ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units); [ATO, Failure to lodge on time penalty](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty))_
 
 ### 6.3 Safe harbour
 
@@ -213,7 +216,17 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = T
 
 ## Section 8 -- Edge cases
 
-- **Edge cases** — Not entered into PAYG system until after first assessment. No instalments in Year 1. Tax shock in Year 2. Flag for reviewer. Instalment rate method auto-adjusts. If using amount method, consider variation in low-income quarters. Instalment income = total across all activities. Single rate applies to aggregate. Interest, dividends, rent are instalment income. Employees with significant investment income may enter PAYG system. ATO-notified rate already includes Medicare levy (2%) and any surcharge. No separate adjustment needed. The ATO removes an individual automatically when notional tax drops below $500, instalment income falls below $4,000, the tax debt on assessment is under $1,000 or the rate is 0.0%; a taxpayer who has stopped earning business or investment income can also ask to exit.  _([ATO, Stopping PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/stopping-payg-instalments))_
+Not entered into PAYG system until after first assessment. No instalments in Year 1. Tax shock in Year 2. Flag for reviewer.
+
+Instalment rate method auto-adjusts. If using amount method, consider variation in low-income quarters.
+
+Instalment income = total across all activities. Single rate applies to aggregate.
+
+Interest, dividends, rent are instalment income. Employees with significant investment income may enter PAYG system.
+
+ATO-notified rate already includes Medicare levy (2%) and any surcharge. No separate adjustment needed.
+
+The ATO removes an individual automatically when notional tax drops below $500, instalment income falls below $4,000, the tax debt on assessment is under $1,000 or the rate is 0.0%; a taxpayer who has stopped earning business or investment income can also ask to exit.  _([ATO, Stopping PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/stopping-payg-instalments))_
 
 ## Section 9 -- Self-checks
 

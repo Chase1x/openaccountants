@@ -8,12 +8,12 @@ metadata:
   jurisdiction: "AU"
   tax_year: "2026"
   last_updated: "2026-09-27"
+  authored_by: "Ryan Duguid"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
 # AU Employment Termination Payments
-
-## AU Employment Termination Payments
 
 ## Australia Employment Termination Payments and Redundancy v1.0
 
@@ -95,7 +95,7 @@ are reported as two ETPs. See Section 9.
 | Compensation for loss of job, and for wrongful dismissal paid within 12 months | Certain restraint of trade payments |
 | Payments for loss of future super | Certain personal injury compensation for the inability to be employed |
 | Payments on termination because of ill health, other than personal injury compensation | Employee share scheme payments, advances and loans |
-| Lump sums paid on the death of an employee |  |
+| Lump sums paid on the death of an employee | |
 
 - **Definition** — An ETP is a lump sum paid in consequence of the termination of employment and received within 12 months of that termination, unless the ATO has determined otherwise. A payment from a super fund is never an ETP.  _([ITAA 1997 (Cth) s 82-130](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/82-130))_
 - **The 12-month rule** — A payment made more than 12 months after termination is a delayed termination payment, not an ETP, unless the ATO approves ETP treatment. Withhold 32% from a delayed termination payment (47% from a resident and 45% from a foreign resident who has not quoted a TFN) and report it as gross payments. The exception is a genuine redundancy amount above the tax-free limit, which stays an ETP however late it is paid.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
@@ -313,8 +313,6 @@ cap would apply to all of it.
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before paying or reporting a termination package. Genuine redundancy status and early retirement scheme approval turn on the facts of the dismissal.
-
-> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

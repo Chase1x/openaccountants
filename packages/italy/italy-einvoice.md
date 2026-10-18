@@ -6,6 +6,7 @@ jurisdiction: IT
 tax_year: 2026
 last_updated: 2026-09-22
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 drafted_by: OpenAccountants
 approved_by: pending
 depends_on:
@@ -34,7 +35,6 @@ Who in Italy must issue e-invoices through the Sistema di Interscambio (SdI) and
 | B2G mandatory since | 31 March 2015 for all public administrations |
 | B2B/B2C mandatory since | 1 January 2019 |
 | Current status | In force for VAT persons resident or established in Italy, forfettari included (exceptions in Section 2) |
-
 
 ## Section 2: Mandate Scope
 
@@ -208,7 +208,6 @@ RF01 ordinary; RF02 contribuenti minimi; RF04 to RF18 special regimes (agricultu
 - `PECDestinatario` is used only if no channel is registered for the buyer's VAT number.
 - **Delivery failure.** The SdI sends a receipt of impossible delivery and places the invoice in the buyer's reserved area: issued for the seller, received by the buyer only when viewed. Tell the buyer.
 
-
 ### Submission Deadlines
 
 **Submission Deadlines**
@@ -242,7 +241,6 @@ The compilation guide 1.10 shows how to fill and correct TD16 to TD29.
 4. If invalid, the SdI sends a rejection receipt (ricevuta di scarto, NS) within 5 days of receiving the file.
 5. A rejected invoice is treated as never issued. Correct the error and resend, reusing the rejected invoice's date and number, with a new file name unless using the portal's web procedure.
 
-
 ## Section 6: Validation Rules
 
 ### SDI Pre-Checks (Automated)
@@ -263,7 +261,6 @@ The compilation guide 1.10 shows how to fill and correct TD16 to TD29.
 | Taxable amount | 00422 | `ImponibileImporto` off the sum of lines by more than one euro |
 | Duplicate detection | 00404, 00409 | Already processed; duplicate in the batch |
 | Simplified invoice total | 00460 | Total above the simplified-invoice limit (Section 7) |
-
 
 ### Common Rejection Reasons
 

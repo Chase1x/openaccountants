@@ -6,6 +6,7 @@ jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-27
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -109,10 +110,6 @@ Always check the saving clause and specific treaty wording.
 - ATO: Foreign resident capital gains withholding (ato.gov.au/FRCGW)
 
 > **Working paper only.** The TAP classification requires analysis of the company's asset composition by market value — not book value. Engage a qualified Australian tax adviser for transaction-specific advice.
-
-> Contributed by Ryan Duguid.
-
-> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

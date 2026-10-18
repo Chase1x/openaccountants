@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "MT"
   tax_year: "2026"
   last_updated: "2026-09-03"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 

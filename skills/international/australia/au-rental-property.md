@@ -6,14 +6,13 @@ jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-09-27
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # AU Rental Property
-
-## AU Rental Property
 
 ## AU Rental Property
 
@@ -94,6 +93,8 @@ income year, except where a section says otherwise.
 
 ### 2.1 Rental Income
 
+- **All gross rental income** — All gross rental income is assessable. Report at Item 21 (Rent) on the Individual Tax Return.  _(Report at Item 21 (Rent) on the Individual Tax Return)_
+
 **Rental Income Types**
 
 | Income Type | Treatment |
@@ -103,8 +104,6 @@ income year, except where a section says otherwise.
 | Insurance payout (loss of rent) | Assessable |
 | Reimbursement from tenant (excess utilities) | Assessable |
 | Key money / lease premium | Assessable |
-
-- **All gross rental income** — All gross rental income is assessable. Report at Item 21 (Rent) on the Individual Tax Return. (Report at Item 21 (Rent) on the Individual Tax Return)
 
 ### 2.2 Negative Gearing
 
@@ -340,7 +339,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 - **Holiday home deduction limitation** — If the property is available for rent at below-market rates, or restricted to holiday periods only, or rented to relatives at reduced rates -- deductions are limited to income received (no negative gearing). ATO scrutinises holiday letting closely.
 - **Section 26-50 leisure facilities** — Section 26-50 denies expenses associated with owning or using a leisure facility unless it is used or held mainly to produce assessable income. Offering a holiday home for a few rental weeks does not meet that requirement; keep advertisements, agent agreements, booking records and evidence of commercially realistic rent and tenant access.
-- **TR 2026/1 and the 2026 compliance guidelines** — TR 2026/1 sets out when rental receipts are assessable, when outgoings are deductible and how to apportion mixed use for individuals not in business. PCG 2026/2 gives the apportionment methods the ATO accepts, and PCG 2026/3 its compliance approach to section 26-50 for holiday homes that are also let. Read them before claiming a loss on a property with any private use.  _([ATO, What's new in the rental properties guide 2026](https://www.ato.gov.au/forms-and-instructions/rental-properties-2026/whats-new-in-the-rental-properties-guide); [ITAA 1997 (Cth) s 26-50](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/26-50); [ATO, How to claim rental expenses](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/how-to-claim-rental-expenses))_
+- **TR 2026/1 and the 2026 compliance guidelines** — TR 2026/1 sets out when rental receipts are assessable, when outgoings are deductible and how to apportion mixed use for individuals not in business. PCG 2026/2 gives the apportionment methods the ATO accepts, and PCG 2026/3 its compliance approach to section 26-50 for holiday homes that are also let. Read them before claiming a loss on a property with any private use.  _([ATO, What's new in the rental properties guide 2026](https://www.ato.gov.au/forms-and-instructions/rental-properties-2026/whats-new-in-the-rental-properties-guide))_  _([ITAA 1997 (Cth) s 26-50](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/26-50); [ATO, How to claim rental expenses](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/how-to-claim-rental-expenses))_
 
 ### 6.4 Subdivision and Development
 
@@ -412,8 +411,6 @@ Establish the jurisdiction first, then read that jurisdiction's own guidance:
 | Australian Capital Territory | ACT Revenue Office, https://www.revenue.act.gov.au/ |
 | Northern Territory | Territory Revenue Office, https://treasury.nt.gov.au/dtf/territory-revenue-office |
 
-### 8.3 State and territory taxes are not federal, and are not uniform
-
 Land tax paid on an income-producing property is generally deductible in the year it is incurred.
 Transfer duty on the purchase is not deductible; it is a cost base element. See `au-land-tax.md`
 and `au-stamp-duty.md` for the jurisdiction-specific detail.
@@ -438,10 +435,6 @@ and `au-stamp-duty.md` for the jurisdiction-specific detail.
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-> Contributed by Ryan Duguid.
-
-> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

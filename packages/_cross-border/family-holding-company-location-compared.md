@@ -4,7 +4,9 @@ description: "Where to put a family holding company: Malta, Cyprus, Ireland, Lux
 jurisdiction: general
 tax_year: 2026
 last_updated: 2026-10-05
+authored_by: Michael Cutajar, CPA, ACCA
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -6,6 +6,7 @@ jurisdiction: DE
 tax_year: 2026
 last_updated: 2026-10-16
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 drafted_by: OpenAccountants
 approved_by: pending
 tier: 2

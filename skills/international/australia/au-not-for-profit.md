@@ -6,17 +6,15 @@ version: 1.2
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-09-27
+authored_by: Ryan Duguid
 review_status: pending_review
+trust_label: Accountant-authored
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.2
-
-## Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.2
-
-## Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.2
 
 ## Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.2
 
@@ -210,7 +208,7 @@ Deductible amount = $500 - $90 = $410
 
 ### Rule 3 -- Taxable NFP companies: the $416 threshold and shade-in rates
 
-- **$416 threshold and shade-in** — An NFP company (including incorporated and unincorporated associations treated as companies) that is NOT exempt is taxable. Special rates apply (Income Tax Rates Act 1986): taxable income <= $416 -> nil tax, and the NFP may notify a non-lodgment advice instead of a return. Above $416, lodge a company return.  _(Income Tax Rates Act 1986)_
+- **$416 threshold and shade-in** — An NFP company (including incorporated and unincorporated associations treated as companies) that is NOT exempt is taxable. Special rates apply (Income Tax Rates Act 1986): taxable income <= $416 -> nil tax, and the NFP may notify a non-lodgment advice instead of a return. Above $416, lodge a company return:  _(Income Tax Rates Act 1986)_
 
 **Taxable NFP company rate bands**  _(Income Tax Rates Act 1986)_
 
@@ -425,12 +423,6 @@ If the client provides only financial statements and an ABN:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-> Contributed by Ryan Duguid.
-
-> Contributed by Ryan Duguid.
-
-> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 
