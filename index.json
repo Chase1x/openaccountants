@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T08:27:54+00:00",
+ "generated_at": "2026-10-19T09:11:53+00:00",
  "counts": {
   "guides": 2050,
   "jurisdictions": 245,
@@ -1060,7 +1060,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-03"
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "us-augusta-rule-home-rental-to-your-business",
@@ -1216,7 +1216,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-03"
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "us-federal-section-1031-like-kind-exchange",
@@ -8727,8 +8727,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "leaving-france-exit-tax",
@@ -9148,7 +9148,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-19"
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "germany-payroll",
@@ -20080,7 +20080,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-03"
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "gb-vat-eu-goods-sellers",
@@ -21279,8 +21279,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "ca-return-assembly",
@@ -21364,7 +21364,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-23"
+   "last_updated": "2026-10-19"
   },
   {
    "slug": "es-return-assembly",

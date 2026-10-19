@@ -4,24 +4,23 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their Spa
 version: 0.1
 jurisdiction: ES
 tax_year: 2026
-last_updated: 2026-09-23
+last_updated: 2026-10-19
+authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
-drafted_by: OpenAccountants
-approved_by: pending
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Spain: intake for a self-employed client (autónomo)
 
-The entry point for the Spanish self-employed workflow. This Guide gathers facts and routes; it computes nothing. It establishes residence and territory, the census position with the tax office, the RETA position with Social Security, the activity and its IAE heading, the income tax regime, the VAT position, the withholding on invoices and whether there are employees, then hands a structured package to the Guides that do the work. Figures are for tax year 2026. Every figure below is only here because its answer changes which downstream Guide applies or which document must be asked for; the computation of each one belongs to the Guide named beside it.
+The entry point for the Spanish self-employed workflow. This skill gathers facts and routes; it computes nothing. It establishes residence and territory, the census position with the tax office, the RETA position with Social Security, the activity and its IAE heading, the income tax regime, the VAT position, the withholding on invoices and whether there are employees, then hands a structured package to the skills that do the work. Figures are for tax year 2026. Every figure below is only here because its answer changes which downstream skill applies or which document must be asked for; the computation of each one belongs to the skill named beside it.
 
 ## What this file is
 
-The intake orchestrator for Spain-resident self-employed individuals (autónomos). Every downstream Spain Guide (`es-vat-return`, `es-income-tax`, `es-social-contributions`, `es-estimated-tax`) and the assembly orchestrator (`es-return-assembly`) depend on this Guide running first to produce a structured intake package. The whole picture of being self-employed in Spain, if the client wants the background rather than a return, is `es-autonomous-worker`.
+The intake orchestrator for Spain-resident self-employed individuals (autónomos). Every downstream Spain skill (`es-vat-return`, `es-income-tax`, `es-social-contributions`, `es-estimated-tax`) and the assembly orchestrator (`es-return-assembly`) depend on this skill running first to produce a structured intake package. The whole picture of being self-employed in Spain, if the client wants the background rather than a return, is `es-autonomous-worker`.
 
-This Guide does not compute any tax figure. Its job is to collect the facts, parse the documents, confirm everything with the user, and hand a clean intake package to `es-return-assembly`.
+This skill does not compute any tax figure. Its job is to collect the facts, parse the documents, confirm everything with the user, and hand a clean intake package to `es-return-assembly`.
 
 ## Design principles
 
@@ -31,7 +30,7 @@ Upload first, infer, then confirm:
 2. **Upload-first workflow.** After the refusal check, the user drops in everything they have.
 3. **Inference pass.** Parse every document and extract as much as possible.
 4. **Gap filling only.** Ask the user ONLY about what is missing, ambiguous, or needs confirmation.
-5. **Single confirmation pass** at the end: show the full picture, let the user correct anything wrong, hand off to the downstream Guides.
+5. **Single confirmation pass** at the end: show the full picture, let the user correct anything wrong, hand off to the downstream skills.
 
 Target: intake completes in five minutes for a prepared user, fifteen minutes for a user who has to go and fetch documents.
 
@@ -51,7 +50,7 @@ Target: intake completes in five minutes for a prepared user, fifteen minutes fo
 
 **Exception for blocking decisions.** If a single question determines whether the user is in scope or out of scope, ask it standalone.
 
-**Never state a rate or a threshold from memory.** The tables in this Guide carry the ones intake needs. Everything else is the downstream Guide's job.
+**Never state a rate or a threshold from memory.** The tables in this skill carry the ones intake needs. Everything else is the downstream skill's job.
 
 ## Section 1: the opening
 
@@ -86,8 +85,8 @@ Present the refusal sweep as a single `ask_user_input_v0` call with three questi
 **The three questions to ask first:**
 
 ~~~
-Q1: "Spanish residency in 2026?"
-    Options: ["Full year (183 days or more in Spain)", "Part year", "Did not live in Spain"]
+Q1: "Were you a Spanish tax resident for 2026?"
+    Options: ["Yes: more than 183 days in Spain in 2026, or my main business or economic interests are in Spain", "No: I was not resident in Spain in 2026", "I moved to or from Spain during 2026, or I am not sure"]
 
 Q2: "Business structure?"
     Options: ["Autonomo (persona fisica, trabajador por cuenta propia)", "Sociedad Limitada (SL)", "Sociedad Anonima (SA)", "Comunidad de bienes / sociedad civil", "Not sure"]
@@ -96,16 +95,18 @@ Q3: "Alta en RETA (registered with Social Security as self-employed)?"
     Options: ["Yes, alta en RETA for all of 2026", "Yes, but only part of 2026", "No, not registered in RETA", "Not sure"]
 ~~~
 
-- **Q1 = Full year residency.** Continue.
-- **Q1 = Part year residency.** Stop. "I'm set up for full-year Spanish residents only. Part-year residents have different rules around imputación temporal and may need to file in two jurisdictions. You need an asesor fiscal who handles non-resident or part-year returns."
-- **Q1 = Did not live in Spain.** Stop. "I'm set up for Spanish tax residents only. Non-residents file Modelo 210 with different rules. You need an asesor fiscal who handles non-resident returns."
+Residence is decided for the whole calendar year, because the income tax period is the calendar year (art. 12 Ley 35/2006, outside the case of death). Under art. 9.1 of the same Law a person is resident if EITHER they spend more than 183 days of the calendar year in Spain, counting sporadic absences unless they prove tax residence in another country, OR the main centre or base of their activities or economic interests is in Spain, directly or indirectly. Residence is also presumed, unless the contrary is proved, where the spouse who is not legally separated and the dependent minor children habitually live in Spain. Law: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 Spain has no part-year resident: a person who moves in or out during the year is either resident for the whole of it or not resident for any of it.
+
+- **Q1 = Resident.** Continue.
+- **Q1 = Not resident.** Stop. "I'm set up for Spanish tax residents only. Non-residents are taxed under the non-resident income tax, usually on Modelo 210, with different rules. You need an asesor fiscal who handles non-resident returns." Route the reader to `es-non-resident-income-tax-irnr-and`.
+- **Q1 = Moved, or not sure.** Stop. "In a year you moved, the residence test has to be applied to the whole year, and a treaty may decide which country taxes you. That needs an asesor fiscal before any return is prepared."
 - **Q2 = Autónomo.** Continue.
 - **Q2 = SL.** Stop. "I don't cover corporate returns. Sociedades Limitadas file Impuesto sobre Sociedades (Modelo 200) with separate rules for administrator remuneration, dividends, and corporate tax. You need an asesor fiscal familiar with corporate tax." Route the reader to `es-corporate-tax`.
 - **Q2 = SA.** Stop, same reason.
 - **Q2 = Comunidad de bienes.** Stop. "Comunidades de bienes and sociedades civiles have attribution-of-income rules of their own (Modelo 184). You need an asesor fiscal familiar with this structure."
 - **Q2 = Not sure.** Ask one follow-up: "Do you invoice clients in your own name using your NIF? Or do you have a registered company with its own tax number? If you invoice in your own name, you're an autónomo."
 - **Q3 = Yes, full year RETA.** Continue.
-- **Q3 = Part year RETA.** Continue with a flag: RETA cuotas are deductible only for the months of alta. Prorate.
+- **Q3 = Part year RETA.** Continue with a flag: record the dates of alta and baja, and pass them to `es-social-contributions` and `es-income-tax`. Only the cuotas shown on the recibos for the months of alta are collected.
 - **Q3 = Not registered.** Stop. "If you are carrying on an economic activity without alta en RETA, that is a compliance issue that has to be resolved first. Consult a gestor or a laboralista."
 - **Q3 = Not sure.** Ask one follow-up: "Do you pay a monthly cuota to the Seguridad Social, usually debited from your bank? If yes, you're alta en RETA."
 
@@ -113,7 +114,7 @@ Q3: "Alta en RETA (registered with Social Security as self-employed)?"
 
 ~~~
 Q4: "Estimacion directa type?"
-    Options: ["Estimacion directa simplificada (default for most autonomos)", "Estimacion directa normal", "Estimacion objetiva (modulos)", "Not sure"]
+    Options: ["Estimacion directa simplificada", "Estimacion directa normal", "Estimacion objetiva (modulos)", "Not sure"]
 
 Q5: "Where is your fiscal domicile?"
     Options: ["Territorio comun (peninsula or Baleares)", "Canarias", "Ceuta", "Melilla", "Pais Vasco (Alava, Bizkaia, Gipuzkoa)", "Navarra"]
@@ -122,38 +123,42 @@ Q6: "In which year did you first register the activity?"
     Options: ["This year", "Last year", "Two years ago", "Earlier than that"]
 ~~~
 
-- **Q4 = Simplificada.** Continue. This is the standard method for most autónomos. The hard-to-justify deduction and the turnover limit that governs it are in the table in Section 6.
+- **Q4 = Simplificada.** Continue. The hard-to-justify deduction and the turnover limit that governs simplificada are in the Reglamento del IRPF table in Section 6.
 - **Q4 = Normal.** Continue. Full accounting, and no hard-to-justify deduction.
-- **Q4 = Objetiva (módulos).** Stop. "I'm set up for estimación directa only. Módulos computes the result from physical parameters, not from your books. You need a gestor familiar with estimación objetiva." Before saying anyone is outside módulos, read the warning under the module table in Section 6: the statute and the Agencia Tributaria page state different limits.
-- **Q4 = Not sure.** Estimación directa simplificada applies where the activity is not in estimación objetiva, the prior year's net turnover for all activities does not exceed the limit in the Section 6 table, and the taxpayer has not renounced the simplified method. Ask for the last filed Modelo 100 or the Modelo 036 and read it off the return rather than guessing.
+- **Q4 = Objetiva (módulos).** Stop. "I'm set up for estimación directa only. Módulos computes the result from physical parameters, not from your books. You need a gestor familiar with estimación objetiva." Before saying anyone is outside módulos, read the warning under the two module tables in Section 6: the statute and the Agencia Tributaria page state different limits.
+- **Q4 = Not sure.** Under art. 28.1 of the Reglamento del IRPF, estimación directa simplificada applies where all three conditions are met: the activity is not in estimación objetiva, the prior year's net turnover for all those activities together does not exceed the limit in the Section 6 table, and the taxpayer has not renounced the simplified method. Ask for the last filed Modelo 100 or the Modelo 036 and read it off the return rather than guessing.
 - **Q5 = Territorio común.** Continue. VAT applies, and the autonomous community half of the income tax scale is that community's own.
-- **Q5 = Canarias.** Continue with a flag. The Canary Islands are outside the Spanish VAT territory: the client charges IGIC and files the Canary returns with the Agencia Tributaria Canaria, not Modelo 303. See the territory table in Section 6.
-- **Q5 = Ceuta or Melilla.** Continue with a flag. These cities are outside both the VAT and the IGIC territories and charge their own IPSI, set by each city's ordinance. There is also an income tax credit, a contribution bonification, and a 60 per cent cut to the withholding rates: see the territory table and the two withholding tables in Section 6.
+- **Q5 = Canarias.** Continue with a flag. Art. 3 Ley 37/1992 excludes the Canary Islands from the territory where Spanish VAT applies, so an activity there charges the Canary indirect tax, IGIC, not VAT, and files no Modelo 303 for it. The IGIC general rate is in the Ley 4/2012 table in Section 6; the Canary returns themselves are outside this workflow.
+- **Q5 = Ceuta or Melilla.** Continue with a flag. Art. 3 Ley 37/1992 also excludes Ceuta and Melilla from the VAT territory, and IGIC does not apply there either: these cities charge their own IPSI. There is also an income tax credit, a contribution bonification, and a cut to SOME withholding rates. For Ceuta only, in 2026 the hard-to-justify percentage in simplificada is also raised, and that raised figure counts for the Modelo 130 payments whose filing window opens from October 2026 (disposición adicional 64 Ley 35/2006): flag both for `es-income-tax` and `es-estimated-tax`. The cut is granted rule by rule, not across the board: this skill shows it only where the article that grants it is quoted, which is the professional invoice rates and the rent rate in the Section 6 tables.
 - **Q5 = País Vasco or Navarra.** Stop. "The foral territories (Álava, Bizkaia, Gipuzkoa, Navarra) have their own tax agencies and their own income tax law. I'm set up for territorio común only. You need an asesor fiscal in your foral territory."
-- **Q6.** Sets which withholding rate a professional invoice should carry. The reduced rate runs for the tax period in which the activity starts and the two following periods, and only where no professional activity was carried on in the year before the start. The rates are in the withholding table in Section 6. Do not infer the rate from the answer alone: read it off the invoices.
+- **Q6.** Sets which withholding rate a professional invoice should carry. Under art. 95.1 of the Reglamento del IRPF the reduced rate runs for the tax period in which the professional activity starts and the two following periods, and only where no professional activity at all was carried on in the year before the start date. The rates are in the withholding table in Section 6. Do not infer the rate from the answer alone: read it off the invoices.
 
 **Third batch, the activity and the indirect tax position:**
 
 ~~~
 Q7: "What is the activity, and which IAE heading is it registered under?"
-    Free text, plus: "Section one (empresarial) or section two (profesional)?"
+    Free text, plus: "Section one (empresarial), section two (profesional) or section three (artistic)?"
 
 Q8: "VAT position?"
     Options: ["Regimen general", "Recargo de equivalencia (retail)", "Exempt activity (medical, teaching, insurance, financial)", "Mixed: some exempt, some taxable", "Not sure"]
 
 Q9: "Do you have employees, or do you withhold on anything you pay out?"
     Options: ["Employees on payroll", "No employees, but I pay rent for business premises", "No employees, but I pay other professionals", "None of these"]
+
+Q10: "Do you invoice everything to one single client, or are you registered as an economically dependent self-employed worker (TRADE)?"
+    Options: ["Yes, one single client", "Yes, I am a TRADE", "No, several clients", "Not sure"]
 ~~~
 
-- **Q7.** The IAE heading decides whether clients withhold. Section two headings are professional and are withheld on. Most section one headings are not, but not all: certain section one activities in the module method are withheld on, and so are farming, livestock and forestry. Check the activity against art. 95 Reglamento del IRPF before telling a client there is no withholding: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 The CNAE code is a statistics code and is asked for separately; it does not decide withholding.
+- **Q7.** The IAE heading decides whether clients withhold. Under art. 95.2 of the Reglamento del IRPF, income from the activities in sections two AND three of the IAE tariffs is professional income, and a payer obliged to withhold applies the professional rates to it. Most section one headings are not withheld on, but not all: under art. 95.6 certain section one activities taxed under the module method are withheld on, and so are farming, livestock and forestry activities under art. 95.4 and 95.5. Check the activity against art. 95 before telling a client there is no withholding: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 The CNAE code is a statistics code and is asked for separately; it does not decide withholding.
 - **Q8 = Régimen general.** Continue. Modelo 303 each quarter.
-- **Q8 = Recargo de equivalencia.** Continue with a flag, and do not prepare a Modelo 303 for those sales. The regime is compulsory for retail traders who are individuals (art. 148.Uno Ley 37/1992); the supplier charges the surcharge on the invoice, the retailer neither settles nor pays VAT on the sales it covers, and the retailer deducts no input VAT on goods and services used in that activity (art. 154). Intra-Community acquisitions and reverse-charge purchases are still self-assessed. The rates and the retailer test are in the VAT table in Section 6.
-- **Q8 = Exempt activity.** Continue with a flag. Medical and health care, teaching, insurance and financial services are exempt without the right to deduct under art. 20.Uno Ley 37/1992: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740 The client may have no Modelo 303 obligation at all for those supplies, and input VAT on them is not deductible.
+- **Q8 = Recargo de equivalencia.** Continue with a flag, and do not prepare a Modelo 303 for those sales. Under art. 148.Uno Ley 37/1992 the regime applies to retail traders who are individuals, or entities under the income attribution regime, in the sectors and on the conditions set by regulation. Under art. 154 the supplier charges the surcharge on the invoice; the retailer neither settles nor pays VAT on the sales the regime covers, and deducts no input VAT on goods and services used in that activity. Intra-Community acquisitions and the purchases in art. 84.Uno.2 (reverse charge) are still self-assessed. The rates and the retailer test are in the Ley del IVA table in Section 6.
+- **Q8 = Exempt activity.** Continue with a flag. Medical and health care, teaching, insurance and financial services are exempt under art. 20.Uno Ley 37/1992: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740 Input VAT on costs used for exempt supplies is generally not deductible; art. 94.Uno lists the exceptions, among them insurance and financial services that would be exempt if made in Spain, where the customer is established outside the European Union or the service is directly linked to an export out of it. A client who makes ONLY supplies exempt under art. 20 or art. 26 files neither the periodic VAT return nor the annual summary (art. 71.1 and 71.7 of the Reglamento del IVA): https://www.boe.es/buscar/act.php?id=BOE-A-1992-28925
 - **Q8 = Mixed.** Flag for the reviewer: a prorrata or a separate sector of activity may apply. That is `es-vat-return` work, not intake work.
 - **Q8 = Not sure.** Read it off the last Modelo 303 or off the Modelo 036. Do not assume the general regime for a shop.
-- **Q9 = Employees.** Flag: the client is a withholder and files Modelo 111 quarterly and Modelo 190 annually, and is an employer with the Seguridad Social. Payroll is `spain-payroll`; the withholding return itself is `es-modelo-111`.
-- **Q9 = Rent for business premises.** Flag: withholding on the rent, declared on Modelo 115, unless one of the exceptions applies. Ask for the rent paid to each landlord separately over the year, because the exceptions are tested landlord by landlord. The rate and the exceptions are in the withholding table in Section 6.
+- **Q9 = Employees.** Flag: the client is a withholder and files Modelo 111, which art. 108.1 of the Reglamento del IRPF sets as quarterly in the first twenty calendar days of April, July, October and January (a monthly regime applies to large businesses), and Modelo 190 annually, and is an employer with the Seguridad Social. Payroll is `spain-payroll`; the withholding return itself is `es-modelo-111`.
+- **Q9 = Rent for business premises.** Flag: withholding on the rent, declared on Modelo 115, unless one of the exceptions applies. Ask for the rent paid to each landlord separately over the year, because the amount exception is tested landlord by landlord. The rate and the exceptions are in the two rent tables in Section 6.
 - **Q9 = Pays other professionals.** Flag: withholding on those invoices too, on Modelo 111.
+- **Q10 = One client or TRADE.** Flag for `es-income-tax`. Art. 32.2 Ley 35/2006 gives a reduction of net income to a self-employed person whose supplies all go to one single unrelated client, or who is an economically dependent self-employed worker under Ley 20/2007, and who meets the other conditions of that article. In simplificada that reduction and the hard-to-justify deduction cannot both be taken (art. 32.2.2.º.a of the Law and art. 30, rule 2.ª, of the Reglamento). Intake records the facts; the choice belongs to `es-income-tax`.
 
 **Total time:** about forty-five seconds if the user taps through the first two batches.
 
@@ -223,6 +228,7 @@ When documents arrive, parse each one. For each document, extract:
 - Any EU clients (intracomunitarias, reverse charge, listing on Modelo 349)
 - Any non-EU clients (exports of services)
 - The IAE heading the invoices are issued under
+- Whether all of them go to one single client
 
 **Facturas recibidas (purchase invoices):**
 - Expense category: running cost or capital item
@@ -262,7 +268,7 @@ When documents arrive, parse each one. For each document, extract:
 - Whether a reduced starting contribution (tarifa plana) was applied, and the resolution that granted it
 - The total paid for the year
 
-Do not state a monthly amount for the reduced starting contribution. Real Decreto-ley 13/2022 fixed it for 2023, 2024 and 2025 and left later years to a Budget Law, and none has been approved for 2026, so no allowed official page prints a 2026 amount. Read the amount off the recibo and name the recibo as the source. The rules are in `es-social-contributions`.
+Do not state a monthly amount for the reduced starting contribution. Art. 38 ter Ley 20/2007 leaves the yearly amount to each year's Ley de Presupuestos Generales del Estado; Real Decreto-ley 13/2022 fixed it only for 2023 to 2025 and left 2026 onwards to that Budget Law. This skill found no 2026 amount on any page it may cite. Read the amount off the recibo and name the recibo as the source. The rules are in `es-social-contributions`.
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference. Turn it into the compact summary in Section 5.
 
@@ -270,7 +276,7 @@ Do not state a monthly amount for the reduced starting contribution. Real Decret
 
 After inference, present a single compact summary message. Use a structure that is fast to scan. Invite the user to correct anything wrong.
 
-The legacy worked example that stood here was removed in this refresh: every amount in it was invented for illustration, and an invented amount in a library an assistant quotes is a figure somebody will repeat. Use the template below and fill it with the client's own numbers, read off their own documents.
+The legacy worked example that once stood here was removed: every amount in it was invented for illustration, and an invented amount in a library an assistant quotes is a figure somebody will repeat. Use the template below and fill it with the client's own numbers, read off their own documents.
 
 **Summary template:**
 
@@ -281,13 +287,13 @@ The legacy worked example that stood here was removed in this refresh: every amo
 > - Residency and fiscal domicile, including the autonomous community
 > - Autónomo, and which estimación directa method
 > - Date of alta in the Censo (Modelo 036) and date of alta en RETA
-> - IAE heading, and whether it is section one or section two
+> - IAE heading, and whether it is section one, two or three
 > - VAT position: general, recargo de equivalencia, exempt or mixed
 >
 > **Ingresos** (from the bank statement and the facturas emitidas)
 > - Ingresos brutos, base imponible, with the client breakdown
 > - Output VAT charged, by rate
-> - Withholdings suffered on professional invoices, at the rate the invoices show. Only a payer who is obliged to withhold applies one, and a business abroad with no establishment in Spain is not, so an invoice to such a client carries none and does not belong in this line
+> - Withholdings suffered on professional invoices, at the rate the invoices show. Only a payer who is obliged to withhold applies one. A business abroad with no establishment in Spain is one only in the cases of art. 76.1.d of the Reglamento del IRPF (employment income it pays, and income that is a deductible expense of its own Spanish-taxed income), so an invoice to such a client normally carries none and does not belong in this line; if it does carry one, keep it and flag it.
 > - Intra-Community supplies and exports, listed separately. Neither carries Spanish output VAT, so keep both out of the output VAT line above
 >
 > **Gastos** (from the bank statement and the facturas recibidas)
@@ -331,62 +337,58 @@ After the user confirms the summary, or corrects it, ask about the things that c
 5. **Personal deductions**: pension contributions, and the community deductions in `es-irpf-deductions`.
 6. **Other income**: employment, rent, capital gains, savings income.
 
-The tables in this section carry the figures that decide which of these questions has to be asked and what has to be collected. The computations sit in the Guides named beside each table.
+The tables in this section carry the figures that decide which of these questions has to be asked and what has to be collected. The computations sit in the skills named beside each table.
 
-**Income tax regime, the simplified deduction and the quarterly payment (Reglamento del IRPF)**
+**Income tax regime, the simplified deduction, withholding on invoices and the quarterly payment (Reglamento del IRPF, RD 439/2007)**
 
 | Item | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 |
-| Prior year net turnover above which estimación directa simplificada cannot be used (art. 28.1.b) | EUR 600,000 | "no supere los 600.000 euros anuales en el año inmediato anterior" |
-| Hard to justify expenses in simplificada: percentage of net income before this item (art. 30.2) | 5% | "se cuantificará aplicando el porcentaje del 5 por ciento sobre el rendimiento neto" |
+| Prior year net turnover of all the activities together above which estimación directa simplificada cannot be used (art. 28.1.b) | EUR 600,000 | "no supere los 600.000 euros anuales en el año inmediato anterior" |
+| Hard-to-justify expenses and provisions in simplificada: percentage of net income before this item (art. 30, rule 2.ª) | 5% | "se cuantificará aplicando el porcentaje del 5 por ciento sobre el rendimiento neto" |
 | Yearly cash cap on that deduction | EUR 2,000 | "sin que la cuantía resultante pueda superar 2.000 euros anuales" |
 | Quarterly payment on account in direct estimation, on net income from 1 January to the end of the quarter (art. 110.1.a) | 20% | "el 20 por ciento del rendimiento neto correspondiente al período de tiempo transcurrido" |
 | Share of the prior year's activity income that must have borne withholding for a professional to be released from filing the quarterly return (art. 109.2) | 70% | "al menos el 70 por ciento de los ingresos de la actividad fueron objeto de retención" |
-
-The deduction is a cap, not an allowance: it is the percentage of net income, up to the cash cap, and it is not available with the new activity reduction of art. 26.1 of the same regulation. The computation is `es-income-tax`; the quarterly return is `es-estimated-tax`.
-
-**Withholding on invoices (Reglamento del IRPF)**
-
-| Case | Rate | Note |
-| --- | --- | --- |
-| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 |
-| Ordinary rate on a professional invoice to a business or another professional (art. 95.1) | 15% | "se aplicará el tipo de retención del 15 por ciento sobre los ingresos íntegros satisfechos" |
-| Tax period in which the professional activity starts, and the two following periods, where no professional activity was carried on in the year before the start | 7% | "el tipo de retención será del 7 por ciento en el período impositivo de inicio de actividades" |
+| Ordinary withholding rate on a professional invoice paid by a payer obliged to withhold (art. 95.1) | 15% | "se aplicará el tipo de retención del 15 por ciento sobre los ingresos íntegros satisfechos" |
+| Professional who starts an activity: the tax period of the start and the two following periods, only where no professional activity was carried on in the year before the start date, and only once the payer has been told in writing | 7% | "el tipo de retención será del 7 por ciento en el período impositivo de inicio de actividades" |
 | Municipal collectors, insurance intermediaries who use external auxiliaries, and commercial delegates of the state lottery company, under letters a, b and c of art. 95.1. No income test applies to these three | 7% | "El tipo de retención será del 7 por ciento en el caso de rendimientos satisfechos a" |
 | The activities in letter d of art. 95.1, named there by their business tax group numbers and by the performing arts cases, but only where the prior year gross income of those activities was below this amount | EUR 15,000 | "correspondiente al ejercicio inmediato anterior sea inferior a 15.000 euros" |
 | And, for letter d only, where that income was more than this share of the person's total business and employment income in the same year. Both tests must be met | 75% | "represente más del 75 por ciento de la suma de los rendimientos íntegros de actividades económicas y del trabajo obtenidos por el contribuyente en dicho ejercicio" |
-| Both the 15 per cent and the 7 per cent rates above are cut by this share where the income qualifies for the Ceuta and Melilla credit in art. 68.4 of the Ley del IRPF, so an invoice from a Ceuta or Melilla professional shows a lower rate and is not evidence of anything else (art. 95.1, last paragraph) | 60% | "Estos porcentajes se reducirán en un 60 por ciento cuando los rendimientos tengan derecho a la deducción en la cuota prevista en el artículo 68.4 de la Ley del Impuesto" |
+| The professional rates in art. 95.1 are cut by this share where the income qualifies for the Ceuta and Melilla credit in art. 68.4 of the Ley del IRPF, so an invoice from a Ceuta or Melilla professional shows a lower rate and is not evidence of anything else (art. 95.1, last paragraph) | 60% | "Estos porcentajes se reducirán en un 60 por ciento cuando los rendimientos tengan derecho a la deducción en la cuota prevista en el artículo 68.4 de la Ley del Impuesto" |
+| No withholding on rent for urban premises where the rents paid by the tenant to the same landlord in the year are no more than this amount (art. 75.3.g.2.º) | EUR 900 | "Cuando las rentas satisfechas por el arrendatario a un mismo arrendador no superen los 900 euros anuales" |
 
-The reduced starting rate has to be notified to the payer in writing, and the payer keeps the signed notice. An invoice carrying the reduced rate in the table above is therefore not proof of a new autónomo: the payee may be one of the listed groups instead. Ask.
+The hard-to-justify deduction is a cap, not an allowance: it is the percentage of net income, up to the cash cap. For an activity carried on in Ceuta in 2026 the percentage is the one in the Ley del IRPF table below, not the one above; disposición adicional 64 names only the percentage and says nothing about the cash cap in the row above; whether that cap still applies to the raised percentage is for the accountant to settle. It cannot be taken by a taxpayer who opts for the reduction in art. 26.1 of the same Reglamento, which is the reduction for a single-client or economically dependent self-employed person in art. 32.2 of the Ley del IRPF (Q10 above). The computation is `es-income-tax`; the quarterly return is `es-estimated-tax`.
 
-**Withholding the client applies to others, and expenses that need a client answer (Ley del IRPF)**
+The reduced starting rate has to be notified to the payer in writing, and the payer keeps the signed notice. An invoice carrying a reduced rate from the table above is therefore not proof of a new autónomo: the payee may be one of the listed groups instead. Ask.
+
+Art. 75.3.g lists two more cases with no rent withholding, which carry no figure: housing let by a company to its own employees, and a landlord whose activity is classified in group 861 of section one of the business tax tariffs, or in another heading allowing the letting or subletting of urban property, where applying the group 861 quota rules to the cadastral value of the let property would not have given a nil quota. That landlord has to prove it to the tenant.
+
+**Withholding the client applies to rent, and expenses that need a client answer (Ley del IRPF, Ley 35/2006)**
 
 | Item | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
-| Withholding on rent paid for urban business premises, declared on Modelo 115 | 19% | "subarrendamiento de bienes inmuebles urbanos, cualquiera que sea su calificación, será del 19 por ciento" |
+| Withholding on rent paid for urban property, declared on Modelo 115 (art. 101.8) | 19% | "subarrendamiento de bienes inmuebles urbanos, cualquiera que sea su calificación, será del 19 por ciento" |
 | That rate is cut by this share where the let property is in Ceuta or Melilla, on the terms of art. 68.4 of the same Law (art. 101.8) | 60% | "Este porcentaje se reducirá en un 60 por ciento cuando el inmueble esté situado en Ceuta o Melilla" |
-| Where the home is partly used for the activity: the deductible share of water, gas, electricity, telephone and internet is this percentage applied to the proportion of square metres used, unless a different share is proved (art. 30.2.5.b) | 30% | "en el porcentaje resultante de aplicar el 30 por ciento a la proporción existente entre los metros cuadrados" |
-| Health insurance for the worker, the spouse and children under twenty-five living with them, per insured person per year (art. 30.2.5.a) | EUR 500 | "El límite máximo de deducción será de 500 euros por cada una de las personas" |
+| Where the main home is partly used for the activity: the deductible share of water, gas, electricity, telephone and internet is this percentage applied to the proportion of square metres used, unless a higher or lower share is proved (art. 30.2.5.ª.b) | 30% | "en el porcentaje resultante de aplicar el 30 por ciento a la proporción existente entre los metros cuadrados" |
+| Health insurance for the worker, the spouse and children under twenty-five living with them, per insured person per year (art. 30.2.5.ª.a) | EUR 500 | "El límite máximo de deducción será de 500 euros por cada una de las personas" |
 | The same limit for each of those insured people who has a disability | EUR 1,500 | "o de 1.500 euros por cada una de ellas con discapacidad" |
-| Source, the exceptions below, art. 75.3.g Reglamento del IRPF | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 |
-| No withholding is due on that rent where the rents paid by the tenant to the same landlord in the year do not exceed this amount. There is none either where the landlord's activity falls in group 861 of the first section of the business tax tariffs, or in any other heading permitting the letting or subletting of urban property, and applying those tariff rules to the cadastral value would not give a nil amount, nor on housing let by a company to its own employees | EUR 900 | "Cuando las rentas satisfechas por el arrendatario a un mismo arrendador no superen los 900 euros anuales" |
+| Ceuta only, tax year 2026: the hard-to-justify percentage in simplificada for activities carried on in Ceuta whose income qualifies for the art. 68.4 credit (disposición adicional 64, added by Real Decreto-ley 22/2026, convalidated 16 September 2026) | 10% | "será, durante el período impositivo 2026, del 10 por ciento" |
 
 **Pension contributions, the reduction limit (Ley del IRPF, art. 52)**
 
 | Item | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
-| The reduction is the lower of this share of net employment and business income, and the cash limit below | 30% | "El 30 por 100 de la suma de los rendimientos netos del trabajo y de actividades económicas" |
-| Cash limit | EUR 1,500 | "El 30 por 100 de la suma de los rendimientos netos del trabajo y de actividades económicas percibidos individualmente en el ejercicio. b) 1.500 euros anuales" |
-| Increase where it comes from employer contributions | EUR 8,500 | "En 8.500 euros anuales, siempre que tal incremento provenga de contribuciones empresariales" |
+| The reduction is the lower of this share of the net employment and business income earned individually in the year, and the cash limit below | 30% | "El 30 por 100 de la suma de los rendimientos netos del trabajo y de actividades económicas" |
+| Cash limit | EUR 1,500 | "b) 1.500 euros anuales" |
+| Increase where it comes from employer contributions, or from the worker's own contributions to the same instrument within the amounts the article sets against the employer contribution | EUR 8,500 | "En 8.500 euros anuales, siempre que tal incremento provenga de contribuciones empresariales" |
 | Increase where it comes from a self-employed person's contributions to a sectoral plan, to a simplified employment plan for the self-employed, or from the individual entrepreneur's or professional's own contributions to an employment plan they promote and belong to, or to a provident society of which they are a member | EUR 4,250 | "En 4.250 euros anuales, siempre que tal incremento provenga de aportaciones a los planes de pensiones sectoriales" |
 | The two increases taken together cannot exceed this amount | EUR 8,500 | "la cuantía máxima de reducción por aplicación de los incrementos previstos en los números 1.º y 2.º anteriores será de 8.500 euros" |
 
-For an autónomo the relevant increase is usually the sectoral plan one, not the employer one. Ask which plan the contributions went to, not just the amount.
+For an autónomo the relevant increase is usually the sectoral or self-employed plan one, not the employer one. Ask which plan the contributions went to, not just the amount.
 
-**Value added tax: the rates, the retailer test and the vehicle presumption (Ley del IVA)**
+**Value added tax: the rates, the retailer test and the vehicle presumption (Ley del IVA, Ley 37/1992)**
 
 | Item | Value | Note |
 | --- | --- | --- |
@@ -398,49 +400,69 @@ For an autónomo the relevant increase is usually the sectoral plan one, not the
 | Recargo de equivalencia on goods at the reduced rate | 1.4% | "el 1,4 por ciento" |
 | Recargo de equivalencia on goods at the super-reduced rate | 0.5% | "el 0,50 por ciento" |
 | Recargo de equivalencia on manufactured tobacco | 1.75% | "Para las entregas de bienes objeto del Impuesto Especial sobre las Labores del Tabaco, el 1,75 por ciento" |
-| Retailer test: share of the prior year's supplies of those goods made to non-business customers and to the Social Security system (art. 149.Uno.2) | 80% | "hubiese excedido del 80 por 100 del total de las entregas realizadas" |
-| Share of a car, trailer, moped or motorcycle presumed used in the business, for deducting input VAT (art. 95.Tres.2) | 50% | "se presumirán afectados al desarrollo de la actividad empresarial o profesional en la proporción del 50 por 100" |
+| Retailer test: a trader is a retailer only if, among the other conditions of art. 149.Uno, the prior year's supplies of those goods to non-business customers and to the Social Security system were more than this share of all supplies of them. The same article lifts this test for some traders classed as retailers under the business tax rules | 80% | "hubiese excedido del 80 por 100 del total de las entregas realizadas" |
+| Share of a car, its trailer, a moped or a motorcycle presumed used in the business, for deducting input VAT (art. 95.Tres.2.ª) | 50% | "se presumirán afectados al desarrollo de la actividad empresarial o profesional en la proporción del 50 por 100" |
 | Share presumed for the vehicles the same rule lists: mixed vehicles carrying goods, passenger transport for consideration, driver and pilot instruction for consideration, manufacturers' testing and sales promotion, the professional travel of commercial representatives and agents, and security services | 100% | "los vehículos que se relacionan a continuación se presumirán afectados al desarrollo de la actividad empresarial o profesional en la proporción del 100 por 100" |
 
 Both shares are presumptions, and rule 3 of the same article requires the deduction to be adjusted, either way, once the real degree of business use is proved. The presumption is a VAT rule only. For income tax a car counts as used in the activity only if it is used exclusively for it, with the narrow list of exceptions in art. 22.4 of the Reglamento del IRPF, which names much the same kinds of vehicle. Never carry one answer across to the other tax. The VAT work is `es-vat-return`.
 
-**Module method limits: the statute and the Agencia Tributaria disagree**
+**Module method limits, the statute (art. 31.1.3.ª Ley 35/2006)**
 
 | Limit | Value | Note |
 | --- | --- | --- |
-| Source, the statute, art. 31.1.3 Ley 35/2006 | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
-| Prior year income from all activities except farming, above which the module method cannot be used | EUR 150,000 | "excepto las agrícolas, ganaderas y forestales, 150.000 euros anuales" |
-| Of that, income invoiced to businesses and professionals | EUR 75,000 | "supere 75.000 euros" |
-| Prior year purchases, capital assets excluded | EUR 150,000 | "excluidas las adquisiciones de inmovilizado, en el ejercicio anterior supere la cantidad de 150.000 euros" |
-| Source, the Agencia Tributaria page, updated September 2026 | see below | https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/contribuyentes-modulos/quien-se-aplica/irpf.html |
+| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
+| Prior year income from all activities except farming, livestock and forestry, above which the module method cannot be used | EUR 150,000 | "excepto las agrícolas, ganaderas y forestales, 150.000 euros anuales" |
+| Of that, income from operations invoiced to businesses and professionals, above which the module method cannot be used | EUR 75,000 | "supere 75.000 euros" |
+| Prior year purchases of goods and services, capital assets excluded, above which the module method cannot be used | EUR 150,000 | "excluidas las adquisiciones de inmovilizado, en el ejercicio anterior supere la cantidad de 150.000 euros" |
+
+**Module method limits, the Agencia Tributaria page (page dated 13 October 2026)**
+
+| Limit | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/contribuyentes-modulos/quien-se-aplica/irpf.html |
 | Prior year income from all activities except farming, on that page | EUR 250,000 | "Desde 2016 hasta 2026 inclusive los límites de 150.000 € y 75.000 € pasan a ser 250.000 € y 125.000 € respectivamente" |
 | Of that, invoiced to businesses and professionals, on that page | EUR 125,000 | "pasan a ser 250.000 € y 125.000 € respectivamente" |
 | Prior year purchases, capital assets excluded, on that page | EUR 250,000 | "Desde 2016 hasta 2026 inclusive el volumen de compras en bienes y servicios en el año inmediato anterior no puede superar los 250.000 €" |
 
-The two official sources disagree. The higher limits sit in disposición transitoria 32 of Ley 35/2006, whose heading still reads "en los ejercicios 2016 a 2024"; three Real Decreto-ley tried to extend them and each was left without effect. The Agencia Tributaria page still states the higher limits for 2016 to 2026 inclusive. **Never place a client inside or outside the module method on one of these sources alone.** If the client's turnover falls between the two, stop the intake and say so. Tell the client in plain words that two official sources set different limits for this year, that which one governs decides whether they are taxed under the module method or under direct estimation, and that a gestor or asesor fiscal has to settle it with the Agencia Tributaria before any return is prepared. Name the two limits the client sits between. Do not pick a side and do not carry on under either method.
+The two official sources disagree. The higher limits sit in disposición transitoria 32 of Ley 35/2006, whose heading still reads "en los ejercicios 2016 a 2024"; three Real Decreto-ley tried to extend them and each was left without effect. The Agencia Tributaria page still states the higher limits for 2016 to 2026 inclusive. **Never place a client inside or outside the module method on one of these sources alone.** If the client's prior year income or purchases fall between the two, stop the intake and say so. Tell the client in plain words that two official sources set different limits for this year, that which one governs decides whether they are taxed under the module method or under direct estimation, and that a gestor or asesor fiscal has to settle it with the Agencia Tributaria before any return is prepared. Name the two limits the client sits between. Do not pick a side and do not carry on under either method.
 
 **Reporting thresholds the intake has to test (RD 1065/2007)**
 
 | Item | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984 |
-| Operations with one third party in the calendar year, above which they go on Modelo 347 (art. 33) | EUR 3,005.06 | "3.005,06 euros durante el año natural correspondiente" |
-| Assets abroad: each reporting block is filed once it passes this figure (art. 42 bis) | EUR 50,000 | "no superen, conjuntamente, los 50.000 euros, y la misma circunstancia concurra en relación con los saldos medios" |
+| Operations with one other person or entity in the calendar year: there is no Modelo 347 duty for a taxpayer whose operations with each of them, taken together, were no more than this amount (art. 32.c) | EUR 3,005.06 | "3.005,06 euros durante el año natural correspondiente" |
+| Accounts held abroad (Modelo 720): no duty to report any account where both the 31 December balances and the average balances, taken together, are no more than this figure; passing either means reporting every account (art. 42 bis.4.e) | EUR 50,000 | "no superen, conjuntamente, los 50.000 euros, y la misma circunstancia concurra en relación con los saldos medios" |
 
-**Territory: what changes outside the peninsula and Baleares**
+**Territory: the Canary Islands indirect tax (art. 51 Ley 4/2012, wording in force since 1 January 2024)**
 
 | Item | Value | Note |
 | --- | --- | --- |
-| Source, IGIC rates, art. 51 Ley 4/2012, wording in force since 1 January 2024 | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2012-9282 |
-| Canary Islands general IGIC rate, charged instead of VAT | 7% | "El tipo general del 7 por ciento, aplicable a las entregas de bienes y prestaciones de servicios" |
-| Source, Ceuta and Melilla income tax credit, art. 68.4 Ley 35/2006 | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
-| Credit against the tax on income earned in Ceuta or Melilla by someone habitually and effectively resident there | 60% | "se deducirán el 60 por ciento de la parte de la suma de las cuotas íntegras" |
-| Source, contribution bonification for contributions accrued before 1 October 2026, art. 36 Ley 20/2007 as worded by Real Decreto-ley 1/2023 | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2023-625 |
-| Bonification of the common contingencies contribution, listed sectors, before 1 October 2026 | 50% | "tendrán derecho a una bonificación del 50 por ciento de la cuota por contingencias comunes" |
-| Source, the wording that has effect for contributions accrued from 1 October 2026, art. 36 Ley 20/2007 | see below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409 |
-| Bonification of the common contingencies contribution, from 1 October 2026 | 75% | "tendrán derecho a una bonificación del 75 por ciento de la cuota por contingencias comunes" |
+| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2012-9282 |
+| Canary Islands general IGIC rate, charged instead of VAT on supplies not covered by any other IGIC rate | 7% | "El tipo general del 7 por ciento, aplicable a las entregas de bienes y prestaciones de servicios" |
 
-A Ceuta or Melilla intake in this tax year therefore spans two contribution periods and two sector lists: the earlier list named building construction inside its exception clause, the later one does not. Collect the RETA recibos for the whole year and let `es-social-contributions` split them. No IPSI rate is stated anywhere in this Guide: those ordinances are city law and are on no site this Guide may cite.
+**Territory: the Ceuta and Melilla income tax credit (art. 68.4 Ley 35/2006)**
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 |
+| Credit against the tax on income earned in Ceuta or Melilla by someone habitually and effectively resident there | 60% | "se deducirán el 60 por ciento de la parte de la suma de las cuotas íntegras" |
+
+**Territory: the Ceuta and Melilla contribution bonification before 1 October 2026 (art. 36 Ley 20/2007 as worded by Real Decreto-ley 1/2023)**
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2023-625 |
+| Bonification of the common contingencies contribution, listed sectors, for self-employed workers who live and work in Ceuta or Melilla | 50% | "tendrán derecho a una bonificación del 50 por ciento de la cuota por contingencias comunes" |
+
+**Territory: the Ceuta and Melilla contribution bonification from 1 October 2026 (art. 36 Ley 20/2007 as worded by Real Decreto-ley 22/2026)**
+
+| Item | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409 |
+| Bonification of the common contingencies contribution, listed sectors, for cuotas accrued from 1 October 2026 | 75% | "tendrán derecho a una bonificación del 75 por ciento de la cuota por contingencias comunes" |
+
+A Ceuta or Melilla intake in this tax year therefore spans two contribution periods and two wordings of the sector list. The earlier wording, in the services item, reads "excepto el transporte aéreo de ala fija, construcción de edificios"; the later wording ends that item at "excepto el transporte aéreo de ala fija". Whether building construction is in or out of the earlier bonification is not settled by the text alone, so flag it for the reviewer for any client in that sector. Collect the RETA recibos for the whole year and let `es-social-contributions` split them. No IPSI rate is stated anywhere in this skill: those rates are set by each city and are on no site this skill may cite.
 
 **The questions to ask, in `ask_user_input_v0` form:**
 
@@ -455,7 +477,7 @@ Q: "Home office (despacho en casa)?"
    ]
 ~~~
 
-- **Option 1.** Ask for the proportion of the home used, as square metres of the workspace over total square metres. Collect the rent or mortgage interest, IBI, community fees and utility bills. The deductible share of the utilities is the percentage in the table above, applied to that proportion.
+- **Option 1.** Ask for the proportion of the home used, as square metres of the workspace over total square metres. Collect the rent or mortgage interest, IBI, community fees and utility bills. The deductible share of the utilities is the percentage in the Ley del IRPF table above, applied to that proportion.
 - **Option 2.** Flag for the reviewer: a part of the home used for work without the address being declared on Modelo 036 is weak.
 - **Option 3.** "A shared space is very hard to defend with the Agencia Tributaria. I'll skip this deduction."
 - **Option 4.** The rent is already captured as an expense. No home office computation is needed, but check whether the client should be withholding on that rent.
@@ -505,13 +527,13 @@ Once gap filling is done, produce a final handoff message and hand off to `es-re
 > 2. A reviewer brief with positions, citations, and flags for your asesor fiscal
 > 3. A filing calendar with the upcoming deadlines
 >
-> Starting now.
+> Reminder: all of it has to be reviewed by your asesor fiscal or gestor before anything is filed. Starting now.
 
-Then invoke `es-return-assembly` with the structured intake package.
+Then invoke `es-return-assembly` with the structured intake package. For a client in Canarias, Ceuta or Melilla, or a client who makes only exempt supplies, leave Modelo 303 out of the list.
 
 ## Section 8: structured intake package (internal format)
 
-The downstream Guide `es-return-assembly` consumes a JSON structure. It is internal and not shown to the user unless they ask. Key fields:
+The downstream skill `es-return-assembly` consumes a JSON structure. It is internal and not shown to the user unless they ask. Key fields:
 
 ~~~json
 {
@@ -520,18 +542,20 @@ The downstream Guide `es-return-assembly` consumes a JSON structure. It is inter
   "taxpayer": {
     "name": "",
     "nif": "",
-    "residency": "full_year",
+    "residency": "resident",
     "comunidad_autonoma": "",
     "territory": "comun | canarias | ceuta | melilla",
     "censo_alta_date": "",
     "censo_form": "036",
     "alta_reta_date": "",
+    "baja_reta_date": "",
     "first_year_of_activity": 0,
     "estimacion": "directa_simplificada | directa_normal",
     "entity_type": "autonomo",
     "iae_epigrafe": "",
-    "iae_seccion": "one | two",
+    "iae_seccion": "one | two | three",
     "cnae": "",
+    "single_client_or_trade": false,
     "retencion_rate_on_invoices": "read off the invoices"
   },
   "income": {
@@ -612,7 +636,9 @@ The downstream Guide `es-return-assembly` consumes a JSON structure. It is inter
 }
 ~~~
 
-No rate or threshold goes into this package. The downstream Guide reads those from its own tables; intake passes facts, dates and amounts read off documents.
+No rate or threshold goes into this package. The downstream skill reads those from its own tables; intake passes facts, dates and amounts read off documents.
+
+The `territory` value in this package, `ceuta` or `melilla`, is what `es-income-tax` reads to tell the two apart, because in 2026 they get different answers for the hard-to-justify percentage.
 
 ## Section 9: refusal handling
 
@@ -666,7 +692,9 @@ When a refusal fires:
 
 **Check IN14.** No monthly amount was stated for the reduced starting contribution.
 
-**Check IN15.** If the client's turnover falls between the statutory module limit and the higher one the Agencia Tributaria publishes, the intake stopped rather than deciding.
+**Check IN15.** If the client's prior year income or purchases fall between the statutory module limit and the higher one the Agencia Tributaria publishes, the intake stopped rather than deciding.
+
+**Check IN16.** Residence was settled for the whole calendar year. No client was treated as a part-year resident, and a client who moved in or out during the year was referred.
 
 ## Section 11: performance targets
 
@@ -684,15 +712,15 @@ For an unprepared user who has to fetch documents:
 - The rest: the same
 - **Total:** fifteen to twenty-five minutes
 
-## Section 12: cross-Guide references
+## Section 12: cross-skill references
 
 **Inputs:** user-provided documents and answers.
 
 **Outputs:** a structured intake package consumed by `es-return-assembly`.
 
-**Downstream Guides, reached through `es-return-assembly`:**
+**Downstream skills, reached through `es-return-assembly`:**
 
-| Guide | What it does |
+| Skill | What it does |
 | --- | --- |
 | `es-vat-return` | Modelo 303, the quarterly VAT return |
 | `es-income-tax` | Modelo 100, the annual income tax return |
@@ -700,53 +728,56 @@ For an unprepared user who has to fetch documents:
 | `es-estimated-tax` | Modelo 130, the quarterly payment on account |
 | `es-return-assembly` | Assembles the working paper and the reviewer brief |
 
-**Guides to route to when the intake finds something outside this workflow:**
+**Skills to route to when the intake finds something outside this workflow:**
 
-| Finding | Guide |
+| Finding | Skill |
 | --- | --- |
 | The client wants the whole self-employed picture rather than a return | `es-autonomous-worker` |
+| The client was not resident in Spain for the year | `es-non-resident-income-tax-irnr-and` |
 | The client has employees | `spain-payroll`, and `es-modelo-111` for the withholding return |
 | The client operates through a company | `es-corporate-tax` |
 | Rental income alongside the activity | `es-rental-income` |
 | Autonomous community deductions | `es-irpf-deductions` |
 
-The Guide `spain-vat-return` no longer exists: it was retired and its content lives in `es-vat-return`. Never route to it.
+The VAT return is `es-vat-return` and nothing else: never route VAT work to any other slug.
 
 ### Change log
 
 - **v0.1 (April 2026):** initial draft. Upload first, infer, then confirm.
-- **v0.2 (September 2026):** refreshed against the official pages. Tax year moved to 2026. Modelo 037 removed: it was suppressed with effect from 3 February 2025 and only Modelo 036 exists. The routing target `spain-vat-return` replaced by `es-vat-return`. The monthly amount for the reduced starting contribution removed, because no allowed official page states one for this year. The invented worked example replaced by a template. Questions added for the IAE heading, the VAT position including recargo de equivalencia and exempt activities, employees and withholding obligations, and the territory.
+- **v0.2 (September 2026):** refreshed against the official pages. Tax year moved to 2026. Modelo 037 removed: it was suppressed with effect from 3 February 2025 and only Modelo 036 exists. A retired VAT routing target replaced by `es-vat-return`. The monthly amount for the reduced starting contribution removed, because no allowed official page states one for this year. The invented worked example replaced by a template. Questions added for the IAE heading, the VAT position including recargo de equivalencia and exempt activities, employees and withholding obligations, and the territory.
+- **v0.3 (October 2026):** the residence question rewritten to the two tests in art. 9.1 Ley 35/2006 (more than 183 days, or the centre of economic interests); the part-year resident route removed, because the tax period is the calendar year. Section three of the IAE tariffs added as professional income for withholding. The art. 26.1 reduction correctly identified as the single-client or dependent self-employed reduction, with a new question for it. The Ceuta and Melilla withholding cut limited to the rules that grant it. The exempt-only filing rule tied to art. 71 of the Reglamento del IVA. Contribution bonification rows dated to the two 2026 periods. Non-resident routing added.
 
-## End of the intake Guide
+## End of the intake skill
 
 ## The method, step by step
 
-1. Run the refusal sweep in Section 2 before anything else, and stop where it says stop. Residence, structure and alta en RETA decide whether this workflow applies at all. A non-resident files Modelo 210 and a company files Modelo 200; neither is this workflow.
-2. Establish the census position from the client's Modelo 036: the date of alta in the Censo de Empresarios, Profesionales y Retenedores, the IAE heading, the income tax regime and the VAT regime. The census obligations are in RD 1065/2007: https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984 The form is Modelo 036 only; Modelo 037 was suppressed by Orden HAC/1526/2024 with effect from 3 February 2025: https://www.boe.es/buscar/doc.php?id=BOE-A-2025-410
+1. Run the refusal sweep in Section 2 before anything else, and stop where it says stop. Residence for the whole calendar year (art. 9 Ley 35/2006), structure and alta en RETA decide whether this workflow applies at all: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764 A non-resident is taxed under the non-resident income tax and a company files Modelo 200; neither is this workflow.
+2. Establish the census position from the client's Modelo 036: the date of alta in the Censo de Empresarios, Profesionales y Retenedores, the IAE heading, the income tax regime and the VAT regime. The census obligations are in RD 1065/2007: https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984 The form is Modelo 036 only; Modelo 037 was suppressed by Orden HAC/1526/2024, in force from 3 February 2025: https://www.boe.es/buscar/doc.php?id=BOE-A-2025-410
 3. Establish the RETA position from the recibos: the months of alta, the base and the cuota each month, and whether a reduced starting contribution was granted. Do not state an amount for that contribution. The rules are in art. 38 ter Ley 20/2007: https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409
 4. Take the document dump in Section 3, then run the inference pass in Section 4 before asking a single content question.
-5. Fix the income tax regime against art. 28 and art. 30.2 of the Reglamento del IRPF and the turnover limit in the Section 6 table: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 If the client says módulos, stop and read the module warning in the same section.
-6. Fix the VAT position: general, recargo de equivalencia under arts. 148 to 154, exempt under art. 20.Uno, or mixed. Ley 37/1992: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740 In Canarias, Ceuta and Melilla there is no Modelo 303 at all.
-7. Fix the withholding position both ways: what the client's own invoices carry under art. 95 of the Reglamento del IRPF, and what the client must withhold from staff, from rent or from other professionals: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820
+5. Fix the income tax regime against art. 28 and art. 30 of the Reglamento del IRPF and the turnover limit in the Section 6 table: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 If the client says módulos, stop and read the module warning in the same section. Record whether the client has one single client or is a TRADE, for art. 32.2 Ley 35/2006.
+6. Fix the VAT position: general, recargo de equivalencia under arts. 148 to 163, exempt under art. 20.Uno, or mixed. Ley 37/1992: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740 In Canarias, Ceuta and Melilla, which art. 3 of the same Law leaves outside the VAT territory, there is no Modelo 303 for the activity carried on there.
+7. Fix the withholding position both ways: what the client's own invoices carry under art. 95 of the Reglamento del IRPF, read off the invoices, and what the client must withhold from staff, from rent or from other professionals: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820
 8. Confirm the whole picture with the user using the Section 5 template, then fill the gaps in Section 6 that the documents cannot answer.
-9. Hand the package in Section 8 to `es-return-assembly`, with every unresolved item in `open_flags`. An unresolved item passed on as resolved is the one failure this Guide can cause on its own.
+9. Hand the package in Section 8 to `es-return-assembly`, with every unresolved item in `open_flags`. An unresolved item passed on as resolved is the one failure this skill can cause on its own.
 
 ## Ask the client first
 
+- Were you resident in Spain for the whole of 2026 on the art. 9 tests, and did you move in or out during the year? A move year is referred, because Spain has no part-year resident.
 - Where is your fiscal domicile: territorio común, Canarias, Ceuta, Melilla, or a foral territory? It decides the indirect tax, the credit and half the income tax scale.
-- Which IAE heading are you registered under, and is it section one or section two? Only the second is normally withheld on.
+- Which IAE heading are you registered under, and is it section one, two or three? Sections two and three are professional income and are withheld on by a payer obliged to withhold.
 - In which tax period did the activity start, and had you carried on any professional activity in the year before that? Together they decide whether the reduced withholding rate applies.
 - What is your VAT position: general, recargo de equivalencia, exempt, or a mix? A retailer in recargo de equivalencia files no Modelo 303 for those sales and deducts no input VAT on them.
 - Do you have employees, pay rent for business premises, or pay other professionals? Each makes you a withholder with returns of your own.
-- Do you work from home, and what share of the square metres is used only for the activity?
 
 ## When to refuse or refer
 
-- Anyone who is not a full-year Spanish tax resident, and anyone who is not an autónomo.
+- Anyone who is not a Spanish tax resident for the year, anyone who moved to or from Spain during the year, and anyone who is not an autónomo.
 - Any client whose fiscal domicile is in the Basque Country or Navarra. Their income tax is foral law.
-- Any client in estimación objetiva (módulos), and any client whose turnover falls between the statutory module limit and the higher one the Agencia Tributaria publishes. Refer both to a gestor or asesor fiscal who works with the module method, and tell the second which two limits they sit between.
+- Any client in estimación objetiva (módulos), and any client whose prior year income or purchases fall between the statutory module limit and the higher one the Agencia Tributaria publishes. Refer both to a gestor or asesor fiscal who works with the module method, and tell the second which two limits they sit between.
 - Any autonomous community deduction or the community half of the scale. No national page carries them: `es-irpf-deductions`.
-- Any IPSI rate or return for Ceuta or Melilla. Those ordinances are city law.
+- Any IPSI rate or return for Ceuta or Melilla, and any IGIC return for the Canary Islands.
+- A Ceuta or Melilla client in building construction, for the contribution bonification before 1 October 2026: the wording does not settle it.
 - Any monthly amount for the reduced starting contribution in this tax year, until a Budget Law sets one.
 - A prorrata or a separate sector of activity for a mixed exempt and taxable business. That is `es-vat-return` work and needs a reviewer.
 - Anything with a foreign element: a client abroad, work abroad, a treaty, or a move in or out of Spain.
@@ -757,6 +788,7 @@ The Guide `spain-vat-return` no longer exists: it was retired and its content li
 - Ley 35/2006, Ley del IRPF: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764
 - RD 439/2007, Reglamento del IRPF: https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820
 - Ley 37/1992, Ley del IVA: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740
+- RD 1624/1992, Reglamento del IVA: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28925
 - RD 1065/2007, gestión e inspección: https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984
 - Orden HAC/1526/2024, suppressing Modelo 037: https://www.boe.es/buscar/doc.php?id=BOE-A-2025-410
 - Ley 20/2007, Estatuto del trabajo autónomo: https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409
@@ -766,9 +798,7 @@ The Guide `spain-vat-return` no longer exists: it was retired and its content li
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal, gestor administrativo, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-> Contributed by OpenAccountants.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal, gestor administrativo, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 <!-- openaccountants-cta-block -->
 

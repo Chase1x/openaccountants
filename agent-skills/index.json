@@ -5661,10 +5661,10 @@
    "name": "france-vat-return",
    "jurisdiction": "FR",
    "path": "skills/international/france/france-vat-return.md",
-   "trust_label": null,
-   "authored_by": null,
+   "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
    "reviewed_by": null,
-   "tax_year": 2025
+   "tax_year": 2026
   },
   {
    "name": "free-zones-sez-matrix",
@@ -5806,7 +5806,7 @@
    "jurisdiction": "GB",
    "path": "skills/international/uk/gb-tax-relief-under-the-merged-scheme.md",
    "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
-   "authored_by": null,
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
    "reviewed_by": null,
    "tax_year": 2026
   },
@@ -5950,7 +5950,7 @@
    "jurisdiction": "DE",
    "path": "skills/international/germany/germany-formation.md",
    "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
-   "authored_by": null,
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
    "reviewed_by": null,
    "tax_year": 2026
   },
@@ -15751,7 +15751,7 @@
    "jurisdiction": "US",
    "path": "skills/federal/us-amended-return-form-1040-including-capital.md",
    "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
-   "authored_by": null,
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
    "reviewed_by": null,
    "tax_year": 2026
   },
@@ -15904,7 +15904,7 @@
    "jurisdiction": "US",
    "path": "skills/federal/us-federal-income-tax-return-1040.md",
    "trust_label": "Built by Michael Cutajar and the OpenAccountants team",
-   "authored_by": null,
+   "authored_by": "Michael Cutajar and the OpenAccountants team",
    "reviewed_by": null,
    "tax_year": 2026
   },

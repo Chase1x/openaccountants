@@ -2,464 +2,538 @@
 name: ca-pte-elective-tax
 description: Tier 2 California content skill for the Pass-Through Entity Elective Tax (R&TC §§ 17052.10, 19900-19906; AB 150). Applies to S-corps, partnerships, and LLCs taxed as partnerships with at least one consenting individual, fiduciary, estate, or trust owner. Computes the 9.3% tax on qualified net income (each consenting owner's distributive share of CA-sourced income), produces Form 3804 entity election and Form 3804-CR owner-level nonrefundable credit, schedules the mandatory June 15 prepayment (greater of $1,000 or 50% of prior-year PTE tax) and the balance due by the original return due date, and flags the post-2025 sunset and the federal Notice 2020-75 SALT-cap workaround treatment. Tax year 2025.
 jurisdiction: US-CA
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-10-19
+authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# CA PTE Elective Tax
+# California pass-through entity (PTE) elective tax
 
-## California Pass-Through Entity Elective Tax (PTE Elective Tax / "AB 150 tax")
+This skill covers the California pass-through entity elective tax (the "PTE elective tax", also called the "AB 150 tax" or the SALT-cap workaround) for a partnership, an LLC taxed as a partnership, or an S corporation, and the matching credit each consenting owner claims on a personal return. Figures are for tax year 2026. The election is available for 2026: the Franchise Tax Board (FTB) says qualifying entities "may annually elect" for "taxable years beginning on or after January 1, 2021, and before January 1, 2031", and that Senate Bill (SB) 132 "extended the PTE elective tax and credit for taxable years beginning on or after January 1, 2026, and before January 1, 2031" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html); [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). The original AB 150 regime covered taxable years beginning before January 1, 2026; SB 132 is the extension, not a new tax. The main change for 2026 to 2030: a missed or short June 15 payment no longer blocks the election, it cuts the owners' credit instead.
 
-## Section 1 -- Scope
+Official pages were read on 19 October 2026: the FTB PTE elective tax page (last updated 04/23/2026), the FTB help and FAQ page (last updated 08/04/2026), the FTB business due dates page, the FTB penalties page, the FTB LLC and S corporation pages, IRS Notice 2020-75, and Public Law 119-21 on govinfo.gov. The California statute site (leginfo.legislature.ca.gov) refused our reader, so statute sections are cited only where an FTB page names them.
+
+## The method, step by step
+
+1. Confirm the entity is a qualified entity: taxed as a partnership or S corporation, not a publicly traded partnership, and not permitted or required to be in a combined reporting group. A disregarded entity can never elect. See the [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html).
+2. List every direct owner and mark who can be a qualified taxpayer: an individual, fiduciary, estate or trust subject to California personal income tax, or a disregarded single-member LLC owned by one of those. Corporations and partnerships cannot be. See the [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html).
+3. Collect written consent from each qualified taxpayer who wants in. Consent puts all of that owner's pro rata or distributive share and guaranteed payments into qualified net income (QNI). See the [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html).
+4. Check the June 15 payment for the year of the election (for 2026: on or before June 15, 2026). The required amount is the greater of the floor and the prior-year share in the FTB table below. For 2026 a missed or short payment does not stop the election but triggers the credit reduction in Section 5.2. See the [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html).
+5. Compute QNI owner by owner: each consenting owner's share of income and guaranteed payments subject to California personal income tax. A nonresident's share uses the California sourcing rules; a negative share is left out. Apply the rate in the FTB table below. See the [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html).
+6. Make the election on the timely filed original return (Form 100S, Form 565 or Form 568) by attaching a completed Form 3804 and entering the PTE elective tax on the designated line. It cannot be made on an amended return. See the [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html).
+7. Pay the balance by the original due date of the return without regard to extensions (15 March 2027 for a calendar-year 2026 return), by Web Pay, electronic funds withdrawal, or Form 3893 voucher, kept apart from the entity's other payments. See the [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) and [FTB business due dates](https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html).
+8. On the entity's California return, add back any PTE elective tax deducted for federal purposes. On the federal Form 1065 or 1120-S, deduct the payment under IRS Notice 2020-75 in the year it is paid. See the [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) and [IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf).
+9. Give each consenting owner the figures for Form 3804-CR. The owner claims the credit on Form 540, 540NR or 541, after the Other State Tax Credit (OSTC), and carries any unused credit forward for up to 5 years. See the [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html).
+
+## Ask the client first
+
+- Is the entity taxed as a partnership or S corporation, and is it in (or allowed to join) a combined reporting group? A disregarded single-member LLC or sole proprietor cannot elect at all.
+- Who owns it directly? For each owner: individual, trust, estate, disregarded LLC (and who owns that LLC), corporation or partnership. For each individual: California resident, nonresident or part-year resident.
+- Which owners will consent, in writing? Consent covers all of that owner's share, never part of it.
+- What was paid as a PTE elective tax payment on or before June 15, 2026, and what PTE elective tax was paid for 2025? The answers set the required June 15 payment and any credit reduction.
+- Is the entity a calendar-year or fiscal-year filer, and was its 2026 return (or a first return) already filed? This decides the due dates and whether a later return is superseding or amended.
+- Is any nonresident owner in a group nonresident return, or subject to nonresident withholding? The credit cannot be claimed on a group return, and the election does not change withholding.
+
+## Section 1. Scope
 
 ### 1.1 What this skill does
 
-- **PTE Elective Tax** — This skill prepares the California Pass-Through Entity Elective Tax computation, election, payment schedule, and owner-level credit for tax year 2025. The PTE Elective Tax (sometimes called the "AB 150 tax", the "SALT-cap workaround", or the "PTET") is an annual entity-level election that allows qualifying pass-through entities to pay an entity-level California income tax at 9.3% of each consenting owner's distributive share of California-sourced income. In exchange, each consenting owner receives a nonrefundable California credit equal to their share of the tax paid on Form 3804-CR. The economic purpose of the election is to convert what would otherwise be a state income tax paid at the owner level (subject to the federal $10,000 state and local tax (SALT) deduction cap under IRC § 164(b)(6)) into a state income tax paid at the entity level. Under IRS Notice 2020-75 (issued November 9, 2020), specified income tax payments made by a partnership or S corporation are deductible by the entity in computing its non-separately-stated taxable income and are not treated as separately stated items subject to the SALT cap. The election therefore preserves the federal deduction for what is, in economic substance, the owners' California income tax.  _(IRC § 164(b)(6); IRS Notice 2020-75)_
+This skill prepares the PTE elective tax computation, the election, the payment schedule and the owner-level credit for a 2026 taxable year, with the rules that still matter for finishing 2025 returns. The election lets a qualified entity pay California tax at the entity level on each consenting owner's share of qualified net income. Each consenting owner gets a nonrefundable California credit for the tax paid on their share, claimed on Form 3804-CR. The federal reason for electing is that IRS Notice 2020-75 lets the entity deduct a state income tax it pays itself, outside the owner's SALT deduction limit under IRC § 164(b)(6). The federal limit for 2026 is in the table in Section 8.
 
 ### 1.2 Statutory authority
 
-- **R&TC § 17052.10** — Owner-level nonrefundable PTE tax credit; ordering, carryforward, and refundability rules.  _(R&TC § 17052.10)_
-- **R&TC §§ 19900–19906** — Entity-level election, qualified net income definition, tax rate, payment schedule, election procedure, and irrevocability.  _(R&TC §§ 19900–19906)_
-- **AB 150 (2021 Cal. Stat. ch. 82)** — Enacted the original regime for tax years beginning on or after January 1, 2021, and before January 1, 2026; SB 132 later extended the regime for taxable years beginning on or after January 1, 2026, and before January 1, 2031.  _([AB 150 (2021 Cal. Stat. ch. 82)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
-- **SB 113 (2022 Cal. Stat. ch. 3)** — Expanded eligibility (allowed disregarded SMLLC owners and SMLLCs owned by individuals to consent), removed tentative-minimum-tax limitation on the credit, allowed credit to reduce tax below tentative minimum tax, and reordered the credit ahead of the OSTC.  _(SB 113 (2022 Cal. Stat. ch. 3))_
-- **SB 851 (2022 Cal. Stat. ch. 705)** — Clarified the interaction of the PTE credit with the Other State Tax Credit (OSTC) by directing taxpayers to add back the PTE credit when computing the OSTC's "net tax" denominator.  _(SB 851 (2022 Cal. Stat. ch. 705))_
-- **IRS Notice 2020-75** — Federal blessing of entity-level deduction.  _(IRS Notice 2020-75)_
+- **R&TC § 17052.10.** Owner-level PTE elective tax credit (FTB help page).
+- **R&TC § 17052.11 and Part 10.4.1 (including § 19914(b)).** Added by SB 132 for taxable years beginning on or after January 1, 2026, and before January 1, 2031; § 19914(b) lets an entity elect despite a missed June 15 payment, and § 17052.11 reduces the credit (FTB help page).
+- **R&TC § 17039.** Credit ordering: the PTE credit falls under § 17039(a)(7) from 2022 and under (a)(8) for taxable years on or after January 1, 2026, after the OSTC (FTB help page).
+- **AB 150, SB 113, SB 851, SB 132.** The FTB PTE elective tax page lists these four bills as the related law.
+- **IRS Notice 2020-75 (November 9, 2020).** Federal treatment of the entity-level payment.
+
+The live version of this skill also cited R&TC §§ 19900 to 19906 by subsection. The FTB pages read for this rewrite do not name those subsections and the statute site could not be read, so the subsection references are not repeated here.
 
 ### 1.3 What this skill does NOT cover
 
-1. Composite returns under R&TC § 18535 (Form 540NR Group Return) — these are a separate regime, mutually exclusive with PTE elective tax for the same income stream.
-2. The nonresident withholding regime under R&TC §§ 18662, 18666 (Forms 592, 592-PTE, 592-B) — separate from PTE elective tax, but interacts because PTE prepayments do not satisfy the nonresident withholding obligation.
-3. Tiered partnerships where an upper-tier pass-through is itself an owner of the electing entity (these owners are ineligible to consent; the lower tier may still elect for its individual owners).
-4. Publicly traded partnerships (statutorily excluded).
-5. Disregarded entities other than SMLLCs owned by individuals (the 2022 SB 113 fix narrowly admitted SMLLCs owned by individuals only).
-6. Detailed 2026-2030 credit-reduction computations under SB 132 / R&TC § 17052.11 — this 2025 skill notes the extension and future-year rule change, but does not compute post-2025 reduced-credit schedules.
+1. California nonresident group returns (Form 540NR group return). The entity may file one, but the PTE credit cannot be claimed on it (Section 7.3).
+2. Nonresident withholding (Forms 592, 592-PTE, 592-B). The election does not change it (Section 7.3).
+3. Tiered structures beyond the owner test: an upper-tier partnership is not a qualified taxpayer; the lower tier may still elect for its other owners.
+4. Publicly traded partnerships (excluded).
+5. Disregarded entities other than a single-member LLC owned by an individual, fiduciary, estate or trust subject to California personal income tax.
+6. Part-year resident sourcing. Which part of a part-year resident's share is subject to California tax is decided in `ca-residency-leaving-california`; this skill takes that answer as its input.
+7. Other states' elective entity taxes: see `us-pte-state-matrix`.
 
 ### 1.4 Assumed companion skills
 
-This skill must be loaded alongside `us-tax-workflow-base` v0.2 or later. It typically runs in coordination with:
+This skill runs with `us-tax-workflow-base`. It usually runs alongside:
 
-- `ca-540-individual-return` — owner-level Form 540 / 540NR claiming the PTE credit.
-- `ca-smllc-form-568` — for multi-member LLC entity returns electing PTE (note: that skill is SMLLC-only; multi-member 568 is documented here for the PTE flow).
-- `us-s-corp-election-decision` — when a freelance developer is considering S-corp status, the PTE election is a downstream consequence to evaluate.
-- `us-federal-return-assembly` — for the entity's federal Form 1065 / 1120-S with the Notice 2020-75 deduction.
+- `ca-540-individual-return`: owner-level Form 540 claiming the credit.
+- `ca-estimated-tax-540es`: owner estimated payments after the credit.
+- `ca-smllc-form-568` and `ca-llc-fee-and-tax`: LLC annual tax and fee.
+- `us-form-1065-partnership` and `us-federal-return-assembly`: the federal entity return with the Notice 2020-75 deduction.
+- `us-s-corp-election-decision`: where a single-member LLC owner is weighing S corporation status, the PTE election is one input.
+- `us-2026-federal-tax-changes`: the federal SALT limit after Public Law 119-21.
+- `ca-residency-leaving-california`: residency and source of income for part-year and nonresident owners.
 
-## Section 2 -- Eligibility
+## Section 2. Eligibility
 
-The PTE elective tax has two eligibility tests that must BOTH be satisfied:
+Two tests must BOTH be met: the entity must be a qualified entity, AND at least one owner must be a qualified taxpayer who consents. Only consenting owners' shares go into QNI. Non-consenting owners are left out of QNI, but the election still binds them.
 
-1. The **entity** must be a "qualified entity" under R&TC § 19902(a).
-2. At least one **owner** must be a "qualified taxpayer" under R&TC § 17052.10(b) and must affirmatively consent to inclusion.
+### 2.1 Qualified entities
 
-The election covers only the qualified net income attributable to consenting qualified taxpayers. Non-consenting owners and ineligible owners are excluded from the computation; the entity continues to report their distributive shares in the ordinary way on Schedule K-1 (565 / 568 / 100S).
+A qualifying PTE is "an entity taxed as a partnership or S corporation". It does not include publicly traded partnerships or "An entity permitted or required to be in a combined reporting group" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). An entity can be a qualified entity even if it has a disregarded entity or a partnership as an owner ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
-### 2.1 Qualified entities (R&TC § 19902(a))
+**Eligible entity types** ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))
 
-- **Qualified entity definition** — A qualified entity is an entity that: 1. Is taxed as a partnership or S corporation for the taxable year; AND 2. Has only partners, shareholders, or members that are (a) corporations (as defined in R&TC § 23038, which excludes S corporations from "corporation" for this purpose; an S corporation owner of a partnership is treated as a permitted upper-tier owner only with respect to its own individual shareholders' shares, not as a qualified taxpayer itself), (b) individuals, fiduciaries, estates, or trusts; AND 3. Is NOT a publicly traded partnership (as defined in IRC § 7704); AND 4. Is NOT a partnership, LLC, or other entity that is required to be included in a combined reporting group under R&TC § 25101.5.  _(R&TC § 19902(a))_
-
-**Eligible entity types**  _(R&TC § 19902(a))_
-
-| Federal classification | CA return | PTE-eligible? |
+| Federal classification | California return | Can elect? |
 | --- | --- | --- |
-| S corporation (Form 1120-S) | Form 100S | YES |
-| Partnership / multi-member LLC taxed as partnership (Form 1065) | Form 565 or Form 568 | YES |
-| LLC taxed as S corporation | Form 100S | YES |
-| Sole proprietorship | Schedule C (federal) / nothing at CA entity level | NO |
-| Single-member LLC disregarded for federal tax, owned by individual | Form 568 (CA only) | NO (entity ineligible) — but see Section 2.3 below: the SMLLC's individual owner may consent at the level of an upper-tier electing partnership |
-| Single-member LLC disregarded, owned by a partnership / S-corp | Form 568 | NO |
-| C corporation (Form 1120) | Form 100 | NO |
-| Publicly traded partnership | Form 565 | NO (statutorily excluded) |
+| S corporation (Form 1120-S) | Form 100S | Yes |
+| Partnership or multi-member LLC taxed as a partnership (Form 1065) | Form 565 or Form 568 | Yes |
+| LLC taxed as an S corporation | Form 100S | Yes |
+| Sole proprietorship (Schedule C) | None at entity level | No |
+| Single-member LLC disregarded for federal tax | Form 568 | No: "A disregarded entity cannot be a qualified entity" |
+| C corporation | Form 100 | No |
+| Publicly traded partnership | Form 565 | No |
+| Entity permitted or required to be in a combined reporting group | Varies | No |
 
-- **Critical exclusion — SMLLCs** — A single-member LLC disregarded for federal tax is NOT a qualified entity in its own right, because it is not "taxed as a partnership or S corporation." A freelance developer operating through a CA SMLLC cannot elect PTE on the SMLLC. To access the PTE workaround, the SMLLC would need to (a) elect S-corp treatment via Form 2553 (after which it files Form 1120-S federally and Form 100S in CA — see `us-s-corp-election-decision`), or (b) bring in a second member, become a partnership, and file Form 1065 / 568.  _(R&TC § 19902(a))_
-- **Critical exclusion — sole proprietorships** — A bare sole proprietor reporting on Schedule C has no entity that can elect. The SALT-cap workaround is unavailable.  _(R&TC § 19902(a))_
+- **Single-member LLCs.** A disregarded single-member LLC is not taxed as a partnership or S corporation, so it cannot elect. To use the election, the owner would have to (a) elect S corporation treatment (see `us-s-corp-election-decision`) or (b) add a member and become a partnership. Either is a separate decision with its own costs.
+- **Sole proprietors.** No entity, no election.
 
-### 2.2 Qualified taxpayers (R&TC § 17052.10(b))
+### 2.2 Qualified taxpayers
 
-- **Qualified taxpayer definition** — A qualified taxpayer is a partner, shareholder, or member of a qualified entity that is: 1. An individual, fiduciary, estate, or trust subject to California personal income tax under R&TC Part 10; AND 2. NOT a partnership for federal tax purposes; AND 3. Consents to have its distributive share of qualified net income included in the entity's PTE elective tax computation.  _(R&TC § 17052.10(b))_
+A qualified taxpayer is a partner, member or shareholder of an electing qualified entity that is "An individual, fiduciary, estate, or trust subject to California personal income tax" or "A disregarded single member LLC that is owned by an individual, fiduciary, estate, or trust subject to California personal income tax". A qualified taxpayer is not a corporation, a partnership, or any other disregarded business entity ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)).
 
-**Eligibility chart for owners**  _(R&TC § 17052.10(b))_
+**Eligibility chart for owners** ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))
 
 | Owner type | Qualified taxpayer? |
 | --- | --- |
-| Individual (CA resident) | YES |
-| Individual (CA nonresident with CA-source income) | YES |
-| Individual (CA part-year resident) | YES (only for CA-source share) |
-| Grantor trust (treated as owned by individual grantor) | YES — consent through grantor |
-| Non-grantor trust (irrevocable, separate tax entity) | YES |
-| Estate (during administration) | YES |
-| Disregarded SMLLC owned by an individual | YES — SB 113 fix; consent runs through the SMLLC's individual owner |
-| Disregarded SMLLC owned by a non-individual (e.g., S-corp, partnership, trust other than grantor) | NO (entity is disregarded but the underlying owner is not a qualified taxpayer) |
-| C corporation | NO |
-| S corporation owner of a partnership | NO (S-corp itself cannot be a qualified taxpayer; however, the lower-tier partnership may still elect for its other qualifying owners) |
-| Partnership owner of a partnership / S-corp | NO (tiered partnership exclusion) |
-| Other pass-through entity (LLC taxed as partnership) | NO |
-| Publicly traded partnership | NO |
-| Foreign partner not otherwise subject to CA tax | NO (not subject to CA personal income tax) |
+| Individual, California resident | Yes |
+| Individual, nonresident with income subject to California tax | Yes, on the share subject to California tax |
+| Individual, part-year resident | Yes, on the share subject to California tax (see `ca-residency-leaving-california`) |
+| Grantor trust | Yes: it may consent, and the grantor may generally claim the credit |
+| Trust within the R&TC § 17004 definition of "taxpayer" | Yes |
+| Estate | Yes |
+| Disregarded single-member LLC owned by an individual, fiduciary, estate or trust subject to California personal income tax | Yes |
+| Disregarded single-member LLC owned by a partnership or corporation | No |
+| C corporation or S corporation owner | No |
+| Partnership or LLC taxed as a partnership | No |
 
-- **Practical consequence of tiered partnership exclusion** — If an upper-tier LLC (taxed as partnership) owns 30% of a lower-tier LLC, the lower tier may still elect PTE — but only the 70% held by individuals / trusts is included in qualified net income. The 30% attributable to the upper-tier partnership is excluded entirely; it gets no PTE tax paid on its behalf and no credit. This significantly weakens the workaround for tiered structures.  _(R&TC § 17052.10(b))_
+- **Tiered structures.** If a partnership owns part of the electing entity, the entity can still elect, but only the consenting qualified taxpayers' shares are in QNI. The partnership owner's share gets no PTE tax and no credit. FTB example: Partnership A can elect if it has another owner that is a qualified taxpayer, even where a disregarded LLC owned by Partnership B is a partner; that LLC is not a qualified taxpayer ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
 ### 2.3 Consent mechanics
 
-- **Consent mechanics** — Each qualified taxpayer must affirmatively consent on the entity's Form 3804 (Pass-Through Entity Elective Tax Calculation) by signing or being listed as a consenting owner. Consent is owner-by-owner and is annual. A taxpayer may consent in 2024 and not consent in 2025. Consent is irrevocable for the year for which it is given (parallel to the entity-level election irrevocability). A non-consenting owner is not penalized — their distributive share is simply excluded from the PTE computation and they continue to pay California tax through their individual return (Form 540 / 540NR), through composite return inclusion, or through Form 592-PTE nonresident withholding.  _(Form 3804)_
+To be a qualified taxpayer, the owner "must consent to have all of their pro rata or distributive share and guaranteed payments included in the qualified net income" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). Consent is all of the share or none of it. The election is annual, so consent is given year by year: in the FTB credit-reduction example, four partners consent for 2025 and only three for 2026 ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Once a valid election is made, the entity cannot later amend Form 3804 to change the consenting owners. A non-consenting owner is left out of QNI and pays California tax on that share in the ordinary way.
 
-## Section 3 -- Election mechanics
+## Section 3. Election mechanics
 
 ### 3.1 How the election is made
 
-- **Election steps** — The election is made by: 1. Including the election on a timely filed return (including extensions) — Form 100S (S-corps), Form 565 (partnerships), or Form 568 (multi-member LLCs taxed as partnerships) — for the taxable year for which the election applies; AND 2. Filing Form 3804 with that return, listing each consenting qualified taxpayer, their share of qualified net income, and the tax computed; AND 3. Making the required prepayment by June 15 of the taxable year (see Section 5). The election is annual. An entity that elected for 2024 must elect again for 2025 (and pay the required June 15 prepayment) to obtain the benefit for 2025. There is no "evergreen" or "continuing" election.  _(Form 3804)_
+For 2026 to 2030 taxable years (beginning on or after January 1, 2026, and before January 1, 2031), the election must be made on a timely filed original return by filing a completed Form 3804 with the entity's return and including the PTE elective tax amount on the designated line of that return, and the entity must make the required initial payment by June 15 of the taxable year of the election. "However, if the June 15 payment is missed or less than the required amount, the qualified entity may still make a PTE elective tax election" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). The election is annual. An entity that elected for 2025 must elect again for 2026.
 
-### 3.2 Irrevocability and deadlines
+For 2022 to 2025 taxable years the same return rule applied, AND the June 15 payment was a condition of the election (Section 5.2).
 
-- **Irrevocability** — Once made, the election is irrevocable for that taxable year (R&TC § 19902(c)). The entity cannot amend out of the election after the original due date of the return. This is functionally important because: - If the entity later realizes the election was disadvantageous (e.g., owners would have benefited more from the OSTC ordering, or qualified net income was overstated), the entity cannot withdraw. - Conversely, for 2022-2025 elections, if the entity missed or short-paid the June 15 prepayment, the election is void for that year and cannot be cured by paying late (see Section 5.2). For 2026-2030 elections, SB 132 allows a valid election despite a missed or short June 15 payment, but the qualified taxpayers' credits are reduced under R&TC § 17052.11.  _([R&TC § 19902(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
+### 3.2 Irrevocability and superseding returns
+
+- **Irrevocable.** "Once the election is made, it is irrevocable for that year and is binding on all consenting and nonconsenting partners, shareholders, or members of the qualified entity." It "cannot be made on an amended return" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)).
+- **Superseding returns.** The election can be made, or revoked, on a superseding return. A return is superseding only if (1) the first return and the superseding return were both filed before the original due date, or (2) the original return and the superseding return were both filed on extension. A second return filed after the original due date, when the first was filed on or before it, is an amended return and cannot elect. A second return filed after the extended due date cannot elect ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Later changes to income.** If the entity's taxable income later changes, the entity must revise QNI and pay the extra tax or claim the refund; penalties and interest apply to any underpaid amount; the owners must amend with an amended Form 3804-CR and amended Schedule P, Part III. The change can also alter the required June 15 payment for the next year ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
 ### 3.3 Timing of the election decision
 
-- **Timing flexibility and constraint** — Because the election is made on the return (including extensions), an entity has until the extended due date of the entity return to make a final election decision — typically: - S corporations / partnerships: September 15 of the year following the taxable year (calendar-year filers). - LLCs taxed as partnerships (Form 568): September 15 of the year following. However, this flexibility is constrained by the June 15 prepayment rule. The entity must make the June 15 prepayment during the taxable year to preserve the option of electing. For 2025, failure to pre-pay by June 15 voids the election even if the entity tries to elect on a September-filed return. For 2026-2030, FTB guidance says the election can still be made, but qualified taxpayers must reduce their credits if the June 15 payment was missed or short.  _(https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)_
+The election is made on the original return filed by the extended due date. For a calendar-year 2026 entity, from the [FTB business due dates](https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html) page:
 
-**Practical workflow for tax year 2025**
+| Entity | Return due | Extended due date |
+| --- | --- | --- |
+| S corporation (Form 100S) | 15th day of the 3rd month after the close of the tax year (15 March 2027) | 15th day of the 9th month after the close (15 September 2027) |
+| Partnership (Form 565) | 15th day of the 3rd month after the close (15 March 2027) | 15th day of the 10th month after the close (15 October 2027) |
+| LLC classified as a partnership (Form 568) | 15th day of the 3rd month after the close (15 March 2027) | 15th day of the 10th month after the close (15 October 2027) |
+
+When a due date falls on a weekend or holiday, the next business day counts ([FTB business due dates](https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html)).
+
+**Workflow for a calendar-year 2026 election** ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))
 
 | Date | Action |
 | --- | --- |
-| Early 2025 | Estimate qualified net income; identify consenting owners. |
-| June 15, 2025 | Mandatory prepayment of greater of $1,000 or 50% of prior-year PTE tax. Use Form 3893 (Pass-Through Entity Elective Tax Payment Voucher). |
-| December 31, 2025 | Tax year closes; finalize qualified net income computation. |
-| March 15, 2026 | Original due date for Form 100S / 565 / 568 (calendar-year). Final PTE balance due. Election deadline if no extension. |
-| September 15, 2026 | Extended due date. Final deadline to make the election. |
+| Early 2026 | Estimate QNI; identify consenting owners. |
+| On or before June 15, 2026 | Payment 1: the greater of the floor and the prior-year share in the FTB table in Section 5. Errors in this payment must be corrected on or before June 15 to meet the statutory requirement. |
+| December 31, 2026 | Tax year closes; finalise QNI. Pay any further amount before year end if the federal deduction is wanted in 2026 (Section 8.3). |
+| On or before 15 March 2027 | Payment 2: the remaining PTE elective tax, due on the original due date without regard to extensions. Election on the return if not extended. |
+| 15 September 2027 (Form 100S) or 15 October 2027 (Form 565 and 568) | Last day to make the election on a timely filed extended original return. |
 
-### 3.4 Form 3893 vs. Form 3804
+For a 2025 return still being finished: the 2025 June 15 payment was a condition of the election, and the extended due dates are the 2026 equivalents of the rows above (the FTB due dates page gives an S corporation's 2025 calendar-year return due date as March 16, 2026).
 
-- **Distinct FTB forms** — Two distinct FTB forms are involved: - Form 3893 (Pass-Through Entity Elective Tax Payment Voucher) — payment voucher used to remit the June 15 prepayment AND the balance due at filing. There are typically two distinct vouchers per year (one for the current-year prepayment due June 15 of the current taxable year, and one for the balance due / prior-year reconciliation, used with the return). - Form 3804 (Pass-Through Entity Elective Tax Calculation) — calculation schedule attached to the entity's Form 100S / 565 / 568, listing each consenting owner and computing the tax. Form 3804 is the elective mechanism itself. - Form 3804-CR (Pass-Through Entity Elective Tax Credit) — owner-level credit form filed with Form 540 / 540NR / 541 by each consenting owner to claim the credit.  _(Form 3893; Form 3804; Form 3804-CR)_
+### 3.4 Form 3893, Form 3804 and Form 3804-CR
 
-## Section 4 -- Rate and qualified net income calculation
+- **Form 3893 (Pass-Through Entity Elective Tax Payment Voucher).** For payments by voucher. The FTB lists a 2026 version. Payments by Web Pay or electronic funds withdrawal must be designated as a "PTE payment", and then no Form 3893 is filed. Use separate vouchers or transactions for each tax year. PTE payments cannot be combined with the entity's other tax payments. Mail address on the FTB page: Franchise Tax Board, P.O. Box 942857, Sacramento, CA 94257-0531 ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Form 3804 (Pass-Through Entity Elective Tax Calculation).** Attached to Form 100S, 565 or 568; it is the election. The 2026 Form 3804 computes the reduced credit where the June 15 payment was short.
+- **Form 3804-CR (Pass-Through Entity Elective Tax Credit).** Filed by each consenting owner with Form 540, 540NR or 541.
 
-### 4.1 Rate (R&TC § 19900(a)(2))
+## Section 4. Rate and qualified net income calculation
 
-- **PTE tax rate** — 9.3%
+**FTB PTE elective tax page: rate and payment figures**
 
-This rate was chosen because it matches the marginal CA personal income tax rate for the income bracket where many pass-through owners fall (the 9.3% bracket starts at approximately $66,000 of single-filer CA taxable income for 2025). It is below the top marginal CA rate of 12.3% (or 13.3% including the mental health services tax under R&TC § 17043) — meaning owners in the top brackets pay only 9.3% via PTE and reconcile the remaining 3.0–4.0% on their personal return (uncredited). The 9.3% rate is statutory and not indexed.
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html |
+| PTE elective tax rate, on qualified net income | 9.3% | "The PTE elective tax is 9.3% of the qualified entity's qualified net income" |
+| June 15 payment: minimum (taxable years 2022 to 2030) | USD 1,000 | "Pay $1,000 or 50% of the PTE elective tax paid for the prior taxable year, whichever is greater." |
+| June 15 payment: share of the prior taxable year's PTE elective tax paid | 50% | "Pay $1,000 or 50% of the PTE elective tax paid for the prior taxable year, whichever is greater." |
+| Credit reduction, 2026 to 2030 taxable years, applied to each owner's pro rata share of the unpaid June 15 amount | 12.5% | "must reduce their PTE elective tax credit by 12.5% of their pro rata share of the unpaid amount that was due on June 15" |
 
-### 4.2 Qualified net income (R&TC § 19902(b))
+### 4.1 Rate
 
-- **Qualified net income (QNI)** — Qualified net income (QNI) is the sum, for each consenting qualified taxpayer, of: 1. The taxpayer's distributive share (for partners / members) or pro rata share (for S-corp shareholders) of the entity's income subject to California personal income tax; PLUS 2. Guaranteed payments under IRC § 707(c) made to consenting partners (for 2022 and forward — SB 113 expansion; AB 150 originally excluded guaranteed payments).  _(R&TC § 19902(b))_
-- **Apportionment / sourcing** — For a multi-state pass-through entity, QNI is computed by reference to the share of the entity's income that is California-source under R&TC §§ 17951–17955 and the apportionment rules under R&TC §§ 25120 et seq. (as adopted for personal income tax purposes by R&TC § 17743). The CA-source share is the share that flows through to the owner's CA tax base.  _(R&TC §§ 17951–17955; R&TC §§ 25120 et seq.; R&TC § 17743)_
-- **Resident vs. nonresident owners** — For a CA-resident consenting owner, QNI includes their entire distributive share regardless of where the entity's income was earned (CA residents are taxed on worldwide income). For a CA-nonresident consenting owner, QNI is limited to the CA-source share of the distributive share.  _(R&TC § 19902(b))_
-- **Loss years** — If the entity has a net loss for the year, QNI for each consenting owner is zero (negative QNI is not netted across owners and does not produce a credit). The entity should still file Form 3804 showing zero tax, OR may simply not elect for the loss year.  _(R&TC § 19902(b))_
-- **Items excluded from QNI** — Capital gains / losses are included to the extent they enter into the owner's California taxable income (note that California does not have preferential capital gain rates — capital gains are ordinary income for CA purposes). Tax-exempt municipal bond interest is excluded.  _(R&TC § 19902(b))_
+The rate is in the table above. It applies to the whole of QNI; there are no brackets. Owners whose personal California rate is higher pay the difference on their own return; the credit is limited to the tax paid on their share.
+
+### 4.2 Qualified net income (QNI)
+
+- **Definition.** QNI is "the sum of the pro rata or distributive share and guaranteed payments of each qualified taxpayers' income subject to California personal income tax" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). Only consenting owners' shares are included.
+- **Nonresident owners.** QNI includes only the consenting nonresident's share "subject to the California personal income tax, which would be determined by using applicable sourcing rules as necessary" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Resident owners.** A California resident is taxable "upon their entire net income, regardless of whether derived from sources within or without the State" ([18 CCR § 17014, LII mirror](https://www.law.cornell.edu/regulations/california/18-CCR-17014)). So a resident's share subject to California personal income tax is the whole share, not the California-apportioned share.
+- **Which K-1 lines.** For an S corporation, the sum of Schedule K-1 (100S) income lines 1 to 10 minus deduction lines 11 and 12. For a partnership, the sum of Schedule K-1 (565/568) lines 1, 2, 3 and 4c through 11 minus deduction lines 12 and 13. All items of the share count even if not on those lines, for example IRC § 179 recapture and gain on disposal of § 179 property ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Gains.** Gain on the entity's sale of an entity-level asset is in QNI. Gain or loss on an owner's sale of their interest (partnership or LLC interest, S corporation stock) is owner-level and is NOT in QNI ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Negative shares.** If an owner's share of the items is negative, that share is left out of QNI and that owner gets no credit ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Negative shares are not netted against other owners' positive shares.
 
 ### 4.3 Per-owner computation
 
-- **Per-owner PTE tax computation** — For each consenting qualified taxpayer: QNI_i = consenting owner i's distributive share of CA-taxable income (including guaranteed payments to partners); Tax_i = QNI_i × 9.3%. Entity-level PTE tax = sum of Tax_i across all consenting owners.  _(R&TC § 19900(a)(2); R&TC § 19902(b))_
-- **Importance of per-owner computation** — This per-owner computation is important because the owner-level credit on Form 3804-CR is each owner's Tax_i, not a pro rata share of the entity total. If owners have unequal CA-source allocations (e.g., a CA-resident 50% partner and a Nevada-resident 50% partner where only 60% of entity income is CA-source), the per-owner credits will differ even though their ownership percentages are equal.
+For each consenting owner: tax on that owner = the owner's QNI × the rate in the Section 4 table. Entity PTE elective tax = the sum over consenting owners. The owner's credit is the tax on that owner's share, not a pro rata cut of the entity total, so owners with equal percentages can get different credits when one is a resident and one is not (Example B in Section 10).
 
-## Section 5 -- Payment schedule
+## Section 5. Payment schedule
 
-The PTE elective tax has a two-installment payment schedule. For 2025, compliance with the first installment is a hard prerequisite for the election; missing it voids the election. For 2026-2030, SB 132 changes the consequence: a missed or short June 15 payment can leave the election valid, but causes a 12.5% credit reduction for qualified taxpayers.
+Two payments: Payment 1 on or before June 15 during the taxable year of the election, and Payment 2, the remaining amount, on or before the due date of the original return without regard to extensions ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)).
 
-### 5.1 June 15 prepayment (R&TC § 19904)
+### 5.1 June 15 payment
 
-- **June 15 prepayment amount** — By June 15 of the taxable year (i.e., during the year being taxed, NOT the year after), the entity must pay the greater of: $1,000; OR 50% of the prior taxable year's PTE elective tax.  _(R&TC § 19904)_
-- **Calendar-year electing entity specifics** — 2025 prepayment due June 15, 2025, based on greater of $1,000 or 50% of 2024 PTE tax. First-year electors (no prior PTE tax): must still pay $1,000 by June 15 to preserve the option to elect. Re-electors who skipped a year: If the entity elected in 2023 but not in 2024, the "prior taxable year's PTE elective tax" is $0, so the floor is $1,000. The payment is made with Form 3893 (PTE Voucher), mailed or paid electronically via the FTB Web Pay system, or via the entity's tax software with an electronic funds transfer.  _(R&TC § 19904)_
+- **Amount.** The greater of the floor and the prior-year share in the Section 4 table. An entity that paid no PTE elective tax for the prior taxable year (for example, a first election) owes the floor. The prior-year figure is the PTE elective tax PAID for the prior taxable year. A one-time sale in the prior year can raise it; "There are no statutory exceptions" for an unusually high prior year ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Weekend rule.** When June 15 falls on a weekend or holiday, a payment on the next business day is timely ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)).
+- **Short first year.** "Qualified entities whose taxable year does not include June 15 in its short period taxable year are not subject to the June 15 payment requirement for that taxable year" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **No carry-forward as Payment 1.** An overpayment cannot be carried forward and designated as a June 15 payment or as PTE elective tax for a later year. It can be applied to the next year's LLC annual tax or fee, or an S corporation's next estimated tax ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **Disasters.** No statutory exceptions, but a declared federal or state disaster covering the entity's principal place of business may give more time to pay or file ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
-### 5.2 Consequences of missing the June 15 prepayment
+### 5.2 Consequences of a missed or short June 15 payment
 
-- **Voided election if prepayment missed** — For 2022-2025 taxable years, if the entity fails to make the required June 15 prepayment in full, FTB guidance treats the PTE election as unavailable for that taxable year. The entity may not cure the 2025 election by paying late, and a short payment can void the 2025 election. For 2026-2030 taxable years, SB 132 / R&TC § 19914(b) allows the entity to make a valid PTE election even when the June 15 payment was missed or short, but qualified taxpayers must reduce their PTE elective tax credit by 12.5% of their pro rata share of the unpaid amount that was due on June 15 under R&TC § 17052.11.  _([R&TC § 19904(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
-- **Mitigation if the deadline is missed** — For a missed or short 2025 June 15 payment, the entity files its 100S / 565 / 568 without electing PTE. Owners pay tax through their individual returns (Forms 540 / 540NR) and through nonresident withholding (Form 592-PTE) as applicable. For 2026-2030 elections, do not default to "no election" solely because of a missed or short June 15 payment; instead compute the SB 132 credit reduction or route to reviewer.  _([R&TC § 19904(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
+| Taxable years beginning | What happens | Source |
+| --- | --- | --- |
+| On or after January 1, 2022, and before January 1, 2026 | The entity "may not make the PTE elective tax election for that taxable year". Paying late does not cure it. | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| On or after January 1, 2026, and before January 1, 2031 | The entity "may still make the PTE elective tax election", but each qualified taxpayer's credit is reduced by the percentage in the Section 4 table times their pro rata share of the amount due but not paid (R&TC § 17052.11; election allowed by § 19914(b)). | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-### 5.3 Balance due at original return due date (R&TC § 19904(b))
+For a 2026 election with a missed or short June 15 payment, do not default to "no election". Compute the reduced credit (Example A2 in Section 10) and compare it with not electing.
 
-- **Balance due timing** — The balance of the PTE elective tax (total tax less June 15 prepayment) is due by the original due date of the entity return (without regard to extensions). For calendar-year filers: S corporations (Form 100S): March 15 of the year following the taxable year. Partnerships (Form 565): March 15 of the year following. LLCs taxed as partnerships (Form 568): March 15 (NOTE: the LLC franchise tax of $800 is separately due April 15; the PTE balance is due March 15 for an LLC taxed as a partnership filing Form 568 — verify the entity classification before applying dates). The balance is paid with a second Form 3893 voucher. Late payment of the balance does NOT void the election (only the June 15 prepayment has that consequence), but late payment triggers interest under R&TC § 19101 and may trigger penalties under R&TC § 19132 (late payment penalty) and § 19142 (estimated tax-equivalent underpayment exposure).  _(R&TC § 19904(b); R&TC § 19101; R&TC § 19132; R&TC § 19142)_
+### 5.3 Balance due at the original return due date
+
+Payment 2 is due on or before the due date of the original return without regard to extensions (15 March 2027 for a calendar-year 2026 entity). The FTB says "the correct amount of tax must be paid by the due date of the original return" and "Applicable penalties and interest will apply to underpaid amounts"; the FTB pages tie the loss of the election (2022 to 2025) or the credit reduction (2026 to 2030) to the June 15 payment only, and do not say what a short Payment 2 does to the election ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). An LLC's annual tax and fee have their own dates (Section 7.1).
 
 ### 5.4 Interest and penalties on PTE tax
 
-- **Interest on underpaid PTE tax** — Interest on underpaid PTE tax accrues at the FTB underpayment rate (quarterly adjusted; for 2025, approximately 7–8% — verify at filing time) from the original due date until paid.
-- **Late payment penalty** — Late payment penalty under R&TC § 19132 is 5% of the unpaid tax plus 0.5% per month of the unpaid balance, capped at 25%.  _(R&TC § 19132)_
-- **No specific PTE estimated-tax penalty** — No specific PTE estimated-tax penalty exists (the June 15 prepayment is not framed as a "safe harbor" calculation; it is a binary election prerequisite).
+**FTB penalties page: late payment penalty**
 
-## Section 6 -- Owner credit (Form 3804-CR)
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/pay/penalties-and-interest/index.html |
+| Late payment penalty, underpayment part (R&TC § 19132) | 5% | "Penalty 5% of the unpaid tax (underpayment), and 0.5% of the unpaid tax for each month or part of the month" |
+| Late payment penalty, monthly part, for at most 40 months | 0.5% | "0.5% of the unpaid tax for each month or part of the month" |
+| Late filing penalty maximum (a different penalty, for a late return) | 25% | "for each month or part of a month unpaid The maximum penalty is 25%." |
 
-### 6.1 Mechanics of the credit (R&TC § 17052.10)
+- **Interest** runs on underpaid tax. The FTB interest-rate page refused our reader, so no rate is given here; take the current rate from the FTB at the time of computation.
+- **Estimated tax.** The PTE elective tax liability is not included in the qualified entity's estimated tax under R&TC § 19136 ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
-- **Credit amount per owner** — Each consenting qualified taxpayer claims a nonrefundable California income tax credit equal to their share of the PTE elective tax paid by the entity. The credit is claimed on the consenting owner's California personal income tax return (Form 540 / 540NR for individuals, Form 541 for trusts and estates) using Form 3804-CR (Pass-Through Entity Elective Tax Credit). Credit amount per owner i = Tax_i = QNI_i × 9.3%.  _(R&TC § 17052.10)_
+## Section 6. Owner credit (Form 3804-CR)
 
-### 6.2 Nonrefundable + 5-year carryforward
+### 6.1 Mechanics of the credit
 
-- **Carryforward rule** — The credit is nonrefundable. If the credit exceeds the owner's CA net tax for the year, the excess is carried forward for up to 5 succeeding taxable years (R&TC § 17052.10(b)(2)). Any unused credit after 5 years is lost. The credit cannot be carried back, refunded, transferred, sold, or assigned.  _(R&TC § 17052.10(b)(2))_
+The credit equals the owner's share of income and guaranteed payments subject to the election, multiplied by the rate in the Section 4 table ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)), less any 2026 to 2030 reduction for a short June 15 payment. It is claimed on Form 3804-CR with Form 540, 540NR or 541. An owner who consented to a valid election but did not claim the credit may amend to claim it, attaching Form 3804-CR. If an owner reports too much credit, the FTB disallows the excess.
 
-This nonrefundability is a meaningful design constraint: if a consenting owner has a CA tax loss year (e.g., large rental losses or NOL absorption) immediately after consenting, the credit may go unused for that year and start its 5-year clock. Practitioners should model whether a consenting owner can absorb the credit before recommending consent.
+### 6.2 Nonrefundable, with a 5-year carryover
 
-### 6.3 Ordering rules — PTE credit vs. Other State Tax Credit (OSTC)
+"Qualified taxpayers are eligible to claim a nonrefundable credit" and "Unused credits can be carried over for up to 5 years" ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). The carryover period is not affected by the repeal of the credit: an unused credit can be carried into years when the PTE credit is not operative ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). The credit is not subject to the R&TC § 17039.4 credit limitation (FTB help page).
 
-- **OSTC interaction overview** — A key technical issue is the interaction between the PTE credit (R&TC § 17052.10) and the Other State Tax Credit (OSTC) under R&TC § 18001 et seq. The OSTC mitigates double taxation when a CA resident pays tax to another state on income also taxed by California.  _(R&TC § 17052.10; R&TC § 18001 et seq.)_
-- **SB 113 reordering (2022)** — Effective for tax years beginning on or after January 1, 2022, the PTE credit is applied before other credits with carryover, including the OSTC, in the ordering hierarchy under R&TC § 17039. Specifically: 1. Credits with no carryover and no refund are applied first. 2. The PTE credit is applied before credits with carryover. 3. The OSTC is applied after the PTE credit.  _(R&TC § 17039; SB 113 (2022))_
-- **SB 851 OSTC denominator fix (2022)** — To prevent owners from "double-dipping" the PTE credit (claiming the PTE credit against CA tax AND treating the PTE-tax payment as reducing the "net tax" denominator in the OSTC computation), R&TC § 18001 was amended to require taxpayers to add back the PTE credit when computing the "net tax" used in the OSTC formula. This restores the OSTC to the value it would have had absent the PTE election, preventing a windfall.  _(R&TC § 18001; SB 851 (2022))_
+A consenting owner with little California tax (a nonresident with a small California share, or an owner with losses elsewhere) may not be able to use the credit in the year. Model that before advising consent.
 
-The practical effect for a CA-resident owner with income in another PTE-electing state (e.g., NY, NJ, MD): the owner generally gets the PTE credit in CA AND the OSTC for tax paid to the other state, but the OSTC denominator add-back ensures the OSTC is sized as if the CA PTE credit had not been claimed. The owner does not get to claim both the full PTE credit and the full OSTC simultaneously against the same income; the SB 851 mechanism splits them.
+### 6.3 Ordering rules: PTE credit and the Other State Tax Credit (OSTC)
 
-### 6.4 No AMT / TMT limitation
+- **Order.** Under R&TC § 17039, the PTE credit falls under § 17039(a)(7) for taxable years beginning on or after January 1, 2022, and under (a)(8) for taxable years on or after January 1, 2026, and "both must be applied after the Other State Tax Credit (OSTC)" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- **OSTC add-back.** "For taxable years beginning on or after January 1, 2022, and before January 1, 2031", to calculate the OSTC, taxpayers must increase the "net tax payable" by the amount of PTE credit that reduced net tax, before application of the OSTC, in the same taxable year ([FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). The live version of this skill attributed this rule to SB 851; the FTB pages list SB 851 as related law but do not tie it to this rule.
 
-- **TMT floor removal** — Originally under AB 150, the PTE credit could only reduce CA tax down to the tentative minimum tax (TMT) under R&TC § 17062, not below. SB 113 removed the TMT limitation effective for 2021 and forward. The PTE credit now reduces CA net tax without a TMT floor, parallel to the treatment of refundable credits even though the PTE credit itself is nonrefundable.  _(R&TC § 17062; SB 113)_
+### 6.4 Tentative minimum tax and the behavioral health services tax
+
+- "Yes, the PTE elective tax credit may reduce the amount of tax due below the TMT" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
+- The credit cannot reduce the behavioral health services tax (formerly the mental health services tax) under R&TC § 17043(c)(1); the rate is in the FTB help page table in Section 7.3. So that tax is still owed by a high-income owner, and the credit does not change the estimated payments due for it ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
 ### 6.5 Trust and estate owners
 
-- **Trust/estate credit claim** — A trust or estate that is a consenting qualified taxpayer claims the credit on Form 541 (Fiduciary Income Tax Return), Schedule G. If the trust or estate distributes the underlying PTE income to a beneficiary, the credit generally remains at the trust/estate level (it does NOT pass through to the beneficiary as a separately-stated credit — this contrasts with some other states). Practitioners should review trust DNI mechanics with a fiduciary income tax specialist if the trust is a complex trust with significant distributions.  _(Form 541, Schedule G)_
+A trust or estate that consents claims the credit on Form 541. "Generally, estates or trusts are able to pass credits through to beneficiaries." A grantor trust may consent, and "The grantor may generally claim the credit received from the trust on their return" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Complex trusts with large distributions need a fiduciary specialist.
 
-## Section 7 -- Interactions with other CA taxes
+## Section 7. Interactions with other California taxes
 
-### 7.1 PTE tax is IN ADDITION to LLC franchise tax (Form 568)
+### 7.1 LLCs: PTE tax is in addition to the LLC annual tax and fee
 
-- **LLC franchise tax and fee stacking** — For an LLC taxed as a partnership filing Form 568, the PTE elective tax is separate from and in addition to: The $800 annual LLC tax under R&TC § 17941 (Form 3522 or Form 568 Line 2). The LLC fee under R&TC § 17942 (the gross-receipts-based fee on a stepped schedule, capped at $11,790 for total income ≥ $5M).  _(R&TC § 17941; R&TC § 17942)_
+For an LLC classified as a partnership (Form 568), the PTE elective tax is separate from the annual tax (Form 3522, due the 15th day of the 4th month after the beginning of the tax year) and the LLC fee (estimate on Form 3536 by the 15th day of the 6th month of the current tax year) ([FTB business due dates](https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html)). For the fee bands, first-year rules and penalties, use `ca-llc-fee-and-tax`.
 
-A multi-member LLC with $500,000 of CA-source income that elects PTE for two consenting individual owners owes: $800 LLC tax; LLC fee (e.g., $2,500 for income $250k–$499,999; $6,000 for income $500k–$999,999 — verify exact bracket from `ca-smllc-form-568` skill or the FTB schedule); PTE elective tax = $500,000 × 9.3% = $46,500. The $800 LLC tax and LLC fee are entity-level deductions on the federal Form 1065 (reducing flow-through income to owners). The PTE tax is also deductible at the entity level under Notice 2020-75. These are stacking deductions.
+**FTB business due dates page and FTB LLC page: LLC annual tax and fee**
 
-### 7.2 PTE tax is IN ADDITION to 1.5% S-corp tax (Form 100S)
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html |
+| LLC fee, total California income USD 250,000 to USD 499,999 | USD 900 | "$250,000 - $499,999 $900 $500,000 - $999,999 $2,500" |
+| LLC fee, total California income USD 500,000 to USD 999,999 | USD 2,500 | "$500,000 - $999,999 $2,500 $1,000,000 - $4,999,999 $6,000" |
+| LLC fee, total California income USD 1,000,000 to USD 4,999,999 | USD 6,000 | "$1,000,000 - $4,999,999 $6,000 $5,000,000 or more $11,790" |
+| LLC fee, total California income USD 5,000,000 or more | USD 11,790 | "$5,000,000 or more $11,790" |
 
-- **S-corp tax stacking** — For an S corporation filing Form 100S, the PTE elective tax is separate from and in addition to the 1.5% California S-corp franchise / income tax under R&TC § 23802. (The 1.5% applies to the S-corp's net income; the $800 minimum tax floor also applies.) An S corp with $500,000 of CA net income that elects PTE owes: $7,500 = 1.5% × $500,000 S-corp tax (subject to $800 floor); PTE tax = $500,000 × 9.3% = $46,500. Both are entity-level. Both are deductible federally (the 1.5% under IRC § 164 / Notice 2020-75 treatment for entity-level state income taxes). The owner-level credit on Form 3804-CR is only for the PTE tax (the $46,500), not for the 1.5% S-corp tax (which is a true entity-level franchise tax and does not pass through as an owner credit).  _(R&TC § 23802; IRC § 164)_
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html |
+| LLC classified as a partnership: annual tax | USD 800 | "Annual tax Your annual tax amount is $800." |
 
-### 7.3 Interaction with composite returns and nonresident withholding
+### 7.2 S corporations: PTE tax is in addition to the S corporation tax
 
-- **Composite return exclusivity** — Composite return (Form 540NR Group Return, R&TC § 18535): A nonresident owner included in the entity's composite return is NOT a consenting qualified taxpayer for PTE purposes. The two regimes are mutually exclusive at the owner level for the same income. An owner either consents to PTE OR is included in the composite — not both.  _(R&TC § 18535)_
-- **Nonresident withholding interaction** — Nonresident withholding (Form 592-PTE, R&TC § 18662): The entity's PTE prepayment / payment does NOT discharge the entity's nonresident withholding obligation under § 18662. Practically, however, FTB has issued guidance that withholding for a nonresident owner who has consented to PTE may be reduced or waived because the owner's CA tax is being paid through the entity. Practitioners should consult the most current FTB guidance and the Form 592-PTE instructions; this is one of the more operationally confusing intersections.  _(R&TC § 18662)_
+For an S corporation (Form 100S), the PTE elective tax is separate from the S corporation tax on California source income and the minimum franchise tax. The owner credit on Form 3804-CR is only for the PTE elective tax, not for the S corporation tax.
 
-### 7.4 Interaction with California estimated tax (Form 540-ES)
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/file/business/types/corporations/s-corporations.html |
+| S corporation tax rate on California source income | 1.5% | "We tax every S corporation that has California source income 1.5%." |
+| Minimum franchise tax | USD 800 | "Your minimum franchise tax ($800) is due the first quarter" |
 
-- **Estimated tax adjustment** — A consenting owner who expects to receive a PTE credit may reduce their Form 540-ES estimated payments to account for the credit, but should NOT reduce them to zero if the PTE prepayment / balance is not fully made by year-end. The Form 540-ES safe harbor (R&TC § 19136) is computed on the owner's actual CA net tax after credits; if the PTE credit reduces CA net tax appropriately, estimated payments can be sized accordingly. See `ca-540-es-estimated-tax`.  _(R&TC § 19136)_
+### 7.3 Group returns and nonresident withholding
 
-## Section 8 -- Federal treatment
+- **Group nonresident return.** "The partnership/S corporation/LLC can file a group return, but the PTE elective tax credit cannot be claimed on a group return because it is not a flow-through item from the qualified entity. The PTE elective tax credit is available only on the individual return of the qualified taxpayer" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). A nonresident who wants the credit must file their own Form 540NR.
+- **Nonresident withholding.** The election does not change the withholding requirement (rate in the table below). PTE payments do not count as withholding.
+
+**FTB help page: figures**
+
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html |
+| Nonresident withholding requirement, unchanged by the election | 7% | "The qualified entities’ election does not affect the 7% withholding requirement." |
+| Behavioral health services tax, which the credit cannot reduce | 1% | "The PTE elective tax credit cannot reduce the 1% behavioral health services tax" |
+
+### 7.4 Owner estimated tax (Form 540-ES)
+
+The FTB says "the PTE elective tax credit does reduce the computation of estimated payments for qualified taxpayers" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Size the owner's 540-ES payments on tax after the expected credit, and keep the behavioral health services tax in the computation. See `ca-estimated-tax-540es`.
+
+## Section 8. Federal treatment
 
 ### 8.1 IRS Notice 2020-75
 
-- **Notice 2020-75 blessing** — On November 9, 2020, the IRS issued Notice 2020-75, blessing entity-level pass-through state income taxes as deductible at the entity level rather than as a separately stated item subject to the $10,000 SALT cap under IRC § 164(b)(6). The Notice provides: "A specified income tax payment made by a partnership or an S corporation during a taxable year does not constitute an item of expense that must be taken into account in computing a partner's or shareholder's separately stated items under section 702(a) of the Code or section 1366(a) of the Code... a specified income tax payment may be deducted by the partnership or S corporation in computing its non-separately stated taxable income or loss for the taxable year of payment." "Specified income tax payment" is defined as a payment by a partnership or S corporation to a state, political subdivision, or DC, in satisfaction of a tax imposed by such jurisdiction on the entity (rather than on the partners/shareholders). The CA PTE elective tax fits this definition.  _(IRS Notice 2020-75; IRC § 164(b)(6))_
+The Notice (November 9, 2020) says "Specified Income Tax Payments ... are deductible by partnerships and S corporations in computing their non-separately stated income or loss". A Specified Income Tax Payment includes an amount paid by a partnership or S corporation to a state under a direct imposition of income tax on the entity "without regard to whether the imposition of and liability ... for the income tax is the result of an election by the entity". It "does not constitute an item of deduction that a partner or an S corporation shareholder takes into account separately under section 702 or section 1366" ([IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf)). The California PTE elective tax is an elective entity-level income tax of that kind.
 
 ### 8.2 Practical federal mechanics
 
-For a 2025 PTE-electing entity: 1. Entity pays PTE tax ($46,500 in the running example). Cash leaves the entity in 2025 (or first half of 2026 for the balance, but only the paid portion is deductible in 2025 — see Section 8.3 on cash vs. accrual timing). 2. Entity deducts PTE tax in computing federal partnership / S-corp ordinary income. The Form 1065 / 1120-S non-separately-stated income decreases by $46,500. 3. Owners' K-1s flow through the reduced ordinary income — each 50/50 owner sees $23,250 less of distributive share / pro rata share on their federal K-1 than they would have absent the election. 4. Owners pay CA PTE elective tax of $0 personally (the entity paid it). They claim the CA Form 3804-CR credit of $23,250 on their CA Form 540 / 540NR. 5. Federal net effect: Each owner's federal AGI decreases by $23,250 × marginal federal rate. For a 37% marginal taxpayer, $23,250 × 37% ≈ $8,602 of federal tax saved — roughly the federal SALT-cap deduction that would otherwise have been lost.
+1. The entity pays PTE elective tax.
+2. The entity deducts the amount paid in the year in computing non-separately stated income on Form 1065 or 1120-S.
+3. Owners' K-1s carry the lower ordinary income.
+4. Owners do not deduct the PTE tax again on Schedule A; they did not pay it.
+5. On the California side, the entity adds back the PTE elective tax it deducted federally in computing its California net income ("If the qualified entity deducts the PTE elective tax for federal purposes, the amount of the PTE elective tax that was deducted is added back for California purposes", [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)). The owner is taxed in California on the full share and takes the credit.
 
-### 8.3 Cash-basis vs. accrual-basis timing
+The benefit depends on how much of the owner's own state and local taxes the federal limit would disallow. The 2026 federal limit is in the table below; for its detail see `us-2026-federal-tax-changes`.
 
-- **Cash-basis entities timing** — Cash-basis entities (most pass-throughs unless they have inventories or gross receipts > the § 448(c) threshold): The PTE tax is deductible federally in the year paid. So the June 15, 2025 prepayment is deductible on the 2025 Form 1065 / 1120-S. The March 15, 2026 balance is deductible on the 2026 Form 1065 / 1120-S — UNLESS paid by December 31, 2025.  _(IRC § 448(c))_
+**Public Law 119-21 (One Big Beautiful Bill Act): SALT limit under IRC § 164(b)(6) and (7)**
 
-Many CA-PTE-electing entities accelerate the balance payment into December of the taxable year to capture the full federal deduction in the same year. The June 15 prepayment plus a December "true-up" payment effectively front-loads the deduction.
-
-- **Accrual-basis entities** — The PTE tax is deductible in the year to which it relates (assuming the all-events test under Treas. Reg. § 1.461-1 is met). Most pass-throughs are not accrual basis, so this is uncommon.  _(Treas. Reg. § 1.461-1)_
-
-### 8.4 No federal owner credit / pickup
-
-- **No federal pass-through of PTE deduction** — The PTE tax paid by the entity is not a separately stated item on the federal K-1 that owners pick up. Owners do not claim a federal deduction for "state income tax paid by the partnership" — the deduction was already captured at the entity level. Owners also do not include the PTE tax in their personal federal Schedule A SALT deduction (because they did not personally pay it). The owner's CA Form 3804-CR credit is purely a state-level item; it has no federal counterpart.
-
-### 8.5 Section 461(l) excess business loss limitation
-
-- **Excess business loss interaction** — The reduction of flow-through ordinary income by the PTE tax does affect the computation of excess business losses under IRC § 461(l) (which limits net business losses for individual taxpayers to $313,000 / $626,000 MFJ for 2025, indexed). For loss-year electing entities the math reverses, but in practice loss-year entities typically do not elect.  _(IRC § 461(l))_
-
-## Section 9 -- Sunset and legislative outlook
-
-### 9.1 Statutory sunset
-
-- **Sunset date** — AB 150 enacted the original PTE elective tax for taxable years beginning on or after January 1, 2021, and before January 1, 2026. Current FTB guidance reflects SB 132, which extended the PTE elective tax and credit for taxable years beginning on or after January 1, 2026, and before January 1, 2031. The regime is therefore available for 2025 and, under the extension, for 2026-2030 taxable years, subject to the changed June 15 underpayment/credit-reduction rules for 2026-2030.  _([R&TC § 19906](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
-
-### 9.2 Linkage to federal SALT cap
-
-- **Federal SALT cap linkage** — The PTE regime is economically motivated by the federal $10,000 SALT cap under IRC § 164(b)(6), which itself was originally enacted by the Tax Cuts and Jobs Act (TCJA) for tax years 2018–2025. The TCJA SALT cap was set to expire after 2025. Federal legislation in mid-2025 modified the SALT cap going forward (the One Big Beautiful Bill Act, P.L. 119-21, July 4, 2025 — verify exact post-2025 SALT cap mechanics from the federal `us-tax-workflow-base` skill). California has extended the PTE elective tax through taxable years beginning before January 1, 2031. The federal SALT cap mechanics still matter for the economic benefit of electing, so the reviewer must verify current federal SALT-cap rules and entity-level deduction treatment at filing time.  _([IRC § 164(b)(6); P.L. 119-21](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
-
-### 9.3 Legislative status (as of the last_updated date of this skill)
-
-Current FTB guidance states that SB 132 extended the PTE elective tax and credit for taxable years beginning on or after January 1, 2026, and before January 1, 2031.
-
-**Reviewer guidance for tax year 2025 returns:** Proceed with PTE election as normal — the regime is fully operative for 2025. The 2025 June 15 payment remains a hard election prerequisite under the 2022-2025 rules.
-
-**Reviewer flag for 2026-forward planning advice:** The election is available under the SB 132 extension, but the consequence of a missed or short June 15 payment changes. For 2026-2030, FTB guidance says the entity may still make a valid election, but qualified taxpayers must reduce their PTE elective tax credit by 12.5% of their pro rata share of the unpaid amount that was due on June 15.
-
-## Section 10 -- Worked examples
-
-### 10.1 Example A: Two-member LLC, both CA residents, equal partners
-
-ABC Software LLC, a CA LLC taxed as a partnership (Form 568). Two members: Alex (CA resident, 50%) and Brooke (CA resident, 50%). Both individuals. 2025 CA-source ordinary income: $500,000. Both members consent to PTE.
-
-**Computation**
-
-| Step | Amount |
-| --- | --- |
-| Qualified net income — Alex | $250,000 |
-| Qualified net income — Brooke | $250,000 |
-| Total QNI | $500,000 |
-| PTE tax rate | 9.3% |
-| **Total PTE tax** | **$46,500** |
-| Alex's credit (Form 3804-CR) | $23,250 |
-| Brooke's credit (Form 3804-CR) | $23,250 |
-
-**Payment schedule**
-
-| Date | Action | Amount |
+| Item | Value | Note (verbatim) |
 | --- | --- | --- |
-| June 15, 2025 | First-year election; floor is $1,000 (no prior PTE). Practitioner electing the safe approach pays $1,000. | $1,000 |
-| December 31, 2025 | Optional: accelerate balance to maximize federal deduction in 2025. | $45,500 |
-| March 15, 2026 | If not paid in December, balance due. | $45,500 |
-| March 15, 2026 | LLC tax ($800) and LLC fee due. | $800 + LLC fee |
+| Source | all figures below | https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm |
+| SALT limit, taxable years beginning in 2026 (half for married filing separately) | USD 40,400 | "in the case of any taxable year beginning in calendar year 2026, $40,400" |
+| MAGI threshold for the phase-down, taxable years beginning in 2026 | USD 505,000 | "in the case of any taxable year beginning in calendar year 2026, $505,000" |
+| Phase-down rate on MAGI above the threshold | 30 percent | "reduced by 30 percent of the excess (if any) of the taxpayer's modified adjusted gross income over the threshold amount" |
+| Floor of the phase-down | USD 10,000 | "shall not result in the applicable limitation amount being less than $10,000" |
+| SALT limit, taxable years beginning in 2025 | USD 40,000 | "in the case of any taxable year beginning in calendar year 2025, $40,000" |
 
-Form 1065 ordinary income reduced by $46,500 PTE tax + $800 LLC tax + LLC fee. Each K-1 reflects 50% of the reduced ordinary income. Each owner's federal AGI lower by approximately $23,650 (their 50% share of the entity-level state deductions).
+### 8.3 Timing of the federal deduction
 
-Each owner files Form 540 (CA resident return) including Form 3804-CR. Each owner's Form 540 reports their $250,000 distributive share (note: CA does NOT adopt the Notice 2020-75 federal reduction at the owner level — for CA personal income tax purposes, the owner is taxed on the full $250,000 of CA-source income, then claims the $23,250 PTE credit as an offset against CA net tax).
+Under the Notice, "the partnership or S corporation is allowed a deduction for the Specified Income Tax Payment in computing its taxable income for the taxable year in which the payment is made" ([IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf)). So the June 15, 2026 payment and anything else paid by December 31, 2026 is a 2026 deduction; Payment 2 made in March 2027 is a 2027 deduction. An entity that wants the whole federal deduction in 2026 must pay by December 31, 2026.
 
-Federal SALT cap workaround captured; California tax economically the same as without the election (paid via PTE rather than via personal income tax).
+### 8.4 No federal owner credit
 
-### 10.2 Example B: S corporation, one CA resident shareholder and one nonresident shareholder
+The PTE tax is not a separately stated item on the federal K-1. The owner's Form 3804-CR credit is a California item only.
 
-XYZ Consulting Inc., a CA S-corp (Form 100S). Two shareholders: Chris (CA resident, 60%) and Dana (Nevada resident, 40%). Both individuals. 2025 federal S-corp ordinary income: $400,000. CA apportionment factor: 75% (i.e., $300,000 CA-source). Both shareholders consent to PTE.
+### 8.5 Excess business loss limitation (IRC § 461(l))
 
-**Computation**
+The entity-level deduction lowers each owner's share of non-separately stated business income, which is an input to the excess business loss test. Loss-year entities rarely elect, because a negative share gives no credit (Section 4.2). For the full test use `us-tax-workflow-base`.
 
-| Step | Amount |
-| --- | --- |
-| Chris's pro rata share — federal | $240,000 (60% × $400,000) |
-| Chris's pro rata share — CA-source | $180,000 (60% × $300,000) |
-| BUT: Chris is a CA resident, so taxed on full $240,000 — wait, this is per-owner-by-residency. |  |
-| Chris's QNI (CA resident — full distributive share) | $240,000 |
-| Dana's pro rata share — federal | $160,000 |
-| Dana's pro rata share — CA-source (nonresident — limited to CA-source) | $120,000 (40% × $300,000) |
-| Dana's QNI (nonresident — CA-source only) | $120,000 |
-| Total QNI | $360,000 |
-| PTE tax rate | 9.3% |
-| **Total PTE tax** | **$33,480** |
-| Chris's credit | $22,320 ($240,000 × 9.3%) |
-| Dana's credit | $11,160 ($120,000 × 9.3%) |
+| Item | Value | Note (verbatim) |
+| --- | --- | --- |
+| Source | all figures below | https://www.irs.gov/pub/irs-drop/rp-25-32.pdf |
+| Excess business loss threshold, 2026, other than joint | USD 256,000 | "is $256,000 ($512,000 for joint returns)" |
+| Excess business loss threshold, 2026, joint returns | USD 512,000 | "is $256,000 ($512,000 for joint returns)" |
 
-This computation illustrates a frequently-misunderstood point: for a CA-resident consenting owner of a multi-state pass-through, QNI is the FULL distributive share (because CA taxes residents on worldwide income), not just the CA-apportioned share. For a nonresident consenting owner, QNI is limited to the CA-apportioned share. This produces apparently-asymmetric tax-per-percent-ownership outcomes that are correct and intended.
+## Section 9. Sunset and legislative outlook
 
-Dana, as a Nevada resident, is taxed by CA only on her CA-source $120,000. She must file Form 540NR to claim the $11,160 PTE credit. If her only CA-source income is the $120,000 from the S-corp, her CA tax on $120,000 at graduated rates is approximately $7,000–$8,000 (varies with deductions / exemptions); the $11,160 credit fully covers her CA tax AND leaves about $3,000–$4,000 of carryforward credit. Because the credit is nonrefundable, Dana cannot get the excess as a refund. The carryforward expires after 5 years if Dana has no further CA-source income. Important practical implication: Nonresident owners can over-pay through PTE if their CA-source share is small relative to the tax computed by the entity. The PTE election may still be net-positive for them (because the federal SALT-cap savings often exceed the trapped credit), but a careful owner-by-owner analysis is required.
+### 9.1 Statutory period
 
-### 10.3 Example C: Tiered partnership — upper-tier LLC owns 30%, individuals own 70%
+| Taxable years beginning | Status | Source |
+| --- | --- | --- |
+| On or after January 1, 2021, and before January 1, 2022 | Election on the original return; no June 15 payment; pay by the original due date | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| On or after January 1, 2022, and before January 1, 2026 | Election plus June 15 payment as a condition | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| On or after January 1, 2026, and before January 1, 2031 (SB 132) | Election available; short June 15 payment reduces the credit | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-DEF Holdings LLC (the lower tier), a CA LLC taxed as a partnership (Form 568). Members: Upper Tier Capital LLC (a multi-member LLC taxed as partnership, owns 30%) and seven individual members (CA residents, each owning 10%). 2025 CA-source ordinary income: $1,000,000. All seven individuals consent. Upper Tier Capital LLC is ineligible.
+**Fiscal-year filers.** The third change made by SB 132: "the credit under both R&TC sections 17052.10 and 17052.11 is allowed for the 2026 and 2031 taxable years, respectively, in situations where the qualified entity making the PTE elective tax election is a fiscal year filer and has a different taxable year beginning than its qualified taxpayer" ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Our reading, not FTB wording: a calendar-year owner of a fiscal-year entity whose year began in 2025 can still claim the credit on the owner's 2026 return. Confirm against R&TC sections 17052.10 and 17052.11 before relying on it.
 
-**Computation**
+### 9.2 Link to the federal SALT limit
 
-| Step | Amount |
-| --- | --- |
-| Total entity CA-source income | $1,000,000 |
-| Share owned by ineligible upper-tier partnership | 30% → $300,000 (EXCLUDED) |
-| Share owned by consenting individuals | 70% → $700,000 |
-| Qualified net income | $700,000 |
-| PTE tax | $700,000 × 9.3% = $65,100 |
-| Credit per consenting individual (10% each) | $9,300 |
+The election exists because of the federal SALT limit. Under Public Law 119-21 the limit is higher for 2025 to 2029 than before and returns to a lower amount from 2030 (table in Section 8.2 and `us-2026-federal-tax-changes`). An owner whose own state and local taxes fit under the higher limit gains less from electing. Recheck the federal side every year.
 
-The $300,000 attributable to Upper Tier Capital LLC pays no PTE tax. Those dollars flow through to Upper Tier as ordinary income on the K-1; Upper Tier in turn distributes to its own members, who pay CA tax through their personal returns and bear the federal SALT-cap pain. The PTE workaround captures only 70% of the lower-tier entity's economic activity. A planning note: if the upper-tier ownership can be restructured (e.g., upper tier converts to S-corp, or upper tier's owners receive their interest directly), more of the lower tier's income becomes PTE-eligible. This is a multi-year, multi-entity planning question.
+### 9.3 Status on 19 October 2026
 
-### 10.4 Example D: Disregarded SMLLC owned by an individual, member of a partnership
+The election and credit are in force for taxable years beginning before January 1, 2031, per the FTB pages above. For 2025 returns, the 2025 June 15 payment was a condition. For 2026 to 2030, a missed or short June 15 payment reduces the credit rather than blocking the election. Tell the client both points in writing.
 
-GHI Partners, a multi-member CA LLC taxed as a partnership. One of the members is "Erin Single LLC," a CA SMLLC disregarded for federal tax purposes, wholly owned by Erin (a CA-resident individual). Erin Single LLC owns 25% of GHI Partners. GHI 2025 CA-source income: $800,000. Erin Single LLC's distributive share: $200,000.
+## Section 10. Worked examples
 
-Can Erin (through her SMLLC) consent to PTE at GHI Partners level?
+All examples are hypothetical except Examples A and A2, which are the FTB's own example. People and amounts are invented; the rate is the one in the Section 4 table.
 
-- **Answer** — YES, by virtue of SB 113. The SB 113 amendment to R&TC § 17052.10 expressly admits as a qualified taxpayer "a disregarded business entity, and its partners or members, that is a partner, shareholder, or member of an electing qualified entity," provided the underlying owner is an individual, fiduciary, estate, or trust. Erin (the individual) is the qualified taxpayer; Erin's SMLLC is the conduit on the K-1.  _(R&TC § 17052.10; SB 113)_
+### 10.1 Example A: FTB Partnership A, 2025 election
 
-Erin's QNI = $200,000. PTE tax on Erin's share = $200,000 × 9.3% = $18,600. Erin claims the $18,600 credit on her Form 540 (Form 3804-CR), even though her K-1 was issued to "Erin Single LLC."
+Partnership A has four equal partners, W, X, Y and Z. All four consent for 2025 ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
-Form 3804 should list Erin (the individual) as the consenting qualified taxpayer, with the SMLLC noted as the disregarded conduit. Practitioners sometimes incorrectly list the SMLLC as the consenting party; this triggers FTB matching issues because the SMLLC has no CA personal income tax account. Always list the underlying individual.
+| Step | Amount | Source |
+| --- | --- | --- |
+| 2025 QNI | USD 500,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| 2025 PTE elective tax (QNI × the rate) | USD 46,500 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Required June 15, 2026 payment (the greater of the floor and half of the 2025 tax) | USD 23,250 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-### 10.5 Example E: Part-year resident consenting owner
+### 10.2 Example A2: FTB Partnership A, 2026 election with a short June 15 payment
 
-JKL Studios LLC, a CA LLC taxed as a partnership. One member: Fei, who was a CA resident for the first 6 months of 2025 and moved to Washington State on July 1, 2025. Fei's 2025 distributive share from JKL: $300,000, of which $180,000 was earned by the partnership while Fei was a CA resident (Jan–June) and $120,000 while Fei was a WA resident (July–Dec). Assume all of JKL's income is CA-source (so apportionment is 100% to CA).
+Partnership A pays only part of the required amount on June 15, 2026. Only X, Y and Z consent for 2026, each with a share of income and guaranteed payments as below. The partnership elects on its timely filed original return and pays the balance ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)).
 
-- **Computation** — For part-year residents, R&TC § 17041(b) prorates the CA tax base. For PTE purposes, the question is: what is Fei's QNI? During Jan–June: Fei is a CA resident, taxed on worldwide distributive share. QNI portion = $180,000. During July–Dec: Fei is a WA nonresident; taxed by CA only on CA-source share, which is 100% in this example. QNI portion = $120,000. Total QNI for Fei = $300,000 (because all entity income was CA-source, the residence-period analysis happens to coincide with the apportionment analysis). PTE tax = $300,000 × 9.3% = $27,900. Fei files Form 540NR (part-year resident return) and claims the $27,900 credit.  _(R&TC § 17041(b))_
+| Step | Amount | Source |
+| --- | --- | --- |
+| June 15, 2026 payment made | USD 10,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Share of each of X, Y and Z | USD 100,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| 2026 QNI | USD 300,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| 2026 PTE elective tax | USD 27,900 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Credit per partner before reduction | USD 9,300 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Reduction per partner: 12.5% × (USD 23,250 minus USD 10,000) × USD 100,000 / USD 300,000 | USD 552 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Credit allowed to each of X, Y and Z for 2026 | USD 8,748 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-Suppose JKL's CA apportionment factor were 70% (not 100%), and the entity earned ratably throughout the year. Jan–June (Fei is CA resident): Fei's distributive share = $150,000 of $300,000, but worldwide-taxed → QNI = $150,000. July–Dec (Fei is WA nonresident): Fei's distributive share = $150,000, but only 70% CA-source → QNI = $105,000. Total QNI for Fei = $255,000, PTE tax = $23,715. This calculation is technically nuanced and requires verifying which day-by-day or month-by-month allocation method the entity uses. The standard approach is the "ratable" / "interim closing" method; entities with seasonal income (e.g., a project that closed in March before Fei moved) may use a closing-of-the-books approach.
+The FTB rounds the reduction to whole dollars (the unrounded figure is a little above it). W did not consent for 2026 and gets no 2026 credit, but is bound by the election.
 
-## Section 11 -- Common errors and reviewer checks
+### 10.3 Example B: S corporation, one resident and one nonresident shareholder (hypothetical)
 
-The following checks should be completed for every PTE election engagement. They reflect FTB enforcement patterns and the most common practitioner errors observed in the first four years of the regime.
+An S corporation (Form 100S) has two individual shareholders: Chris, a California resident, 60%, and Dana, a Nevada resident, 40%. 2026 ordinary income USD 400,000, of which 75% is California source. Both consent. ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))
 
-- **Check 301** — June 15 prepayment timely and full. Verify the prepayment was made by June 15 of the taxable year (not the year after) in the correct amount (greater of $1,000 or 50% of prior-year PTE tax). For 2025, a short payment voids the election. For 2026-2030, a short or missed payment can preserve the election but triggers the SB 132 credit-reduction computation. Confirm Form 3893 voucher reference matches the FTB cashed check / EFT confirmation.  _([R&TC § 19904](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
-- **Check 302** — Prior-year PTE tax correctly computed for the 50% floor. If the entity elected in the prior year, the floor is the higher of $1,000 or 50% of that prior-year tax. Verify by pulling the prior-year Form 3804.  _(Form 3804)_
-- **Check 303** — All consenting owners are eligible qualified taxpayers. Each consenting owner must be an individual, fiduciary, estate, trust, or disregarded SMLLC owned by an individual. Verify by reviewing each owner's federal classification (Form W-9 or K-1 detail). A C-corporation or partnership owner inadvertently listed on Form 3804 invalidates that line item (not necessarily the whole election, but creates an FTB inquiry).  _(Form 3804)_
-- **Check 304** — Form 3804 ties to entity return. The total PTE tax on Form 3804 should match the entity's "PTE tax paid" line on Form 100S, Form 565, or Form 568. The sum of per-owner credits on Form 3804 should equal entity-level PTE tax.  _(Form 3804)_
-- **Check 305** — Each consenting owner has a corresponding Form 3804-CR. When preparing the owner-level 540 / 540NR, verify the owner is claiming exactly the credit shown on Form 3804 for that owner (and that the entity's EIN / CA Secretary of State number is correctly cross-referenced on Form 3804-CR).  _(Form 3804-CR)_
-- **Check 306** — Nonresident-owner QNI uses CA-source share only. For each nonresident consenting owner, verify QNI was computed using the CA-apportioned share, not the worldwide distributive share. This is the single most common substantive error.
-- **Check 307** — Resident-owner QNI uses full distributive share. For each CA-resident consenting owner, verify QNI was computed using the worldwide distributive share, not just CA-apportioned. This is the mirror error of Check 306.
-- **Check 308** — Guaranteed payments included in partner QNI (2022 forward). For partnerships, verify that any guaranteed payments under IRC § 707(c) to consenting partners are included in QNI. SB 113 added these for years beginning in 2022 and forward.  _(IRC § 707(c); SB 113)_
-- **Check 309** — Tiered partnership exclusion enforced. If any owner is itself a partnership or LLC taxed as partnership (not a disregarded SMLLC owned by an individual), verify that owner is excluded from Form 3804 entirely.  _(Form 3804)_
-- **Check 310** — Election made on a timely (with extension) return. Verify the entity return was filed by the extended due date (typically September 15 of the year following the taxable year). A late entity return forfeits the election even if June 15 prepayment was made.
-- **Check 311** — PTE balance paid (no late penalty exposure). Verify the balance due was paid by the original due date (typically March 15 of the year following). Late payment triggers interest and penalties but does not void the election.
-- **Check 312** — Owner credit carryforward tracked. For each consenting owner, if the PTE credit exceeds CA net tax for the year, verify the carryforward is recorded on the owner's CA tax workpapers with a 5-year expiry calendar.
-- **Check 313** — OSTC ordering correct. For CA-resident owners with out-of-state income, verify the PTE credit is applied before the OSTC and that the SB 851 add-back is applied in the OSTC denominator.  _(SB 851)_
-- **Check 314** — Federal Notice 2020-75 deduction taken at entity level. Verify the federal Form 1065 / 1120-S deducts the PTE tax paid in 2025 as a Notice 2020-75 specified income tax payment, reducing non-separately-stated taxable income.  _(IRS Notice 2020-75)_
-- **Check 315** — Federal deduction timing matches cash basis. Verify only PTE tax paid by December 31, 2025 is deducted on the 2025 federal return. The March 15, 2026 balance, if not pre-paid by 12/31/25, is deducted on the 2026 federal return.
-- **Check 316** — Entity is NOT a publicly traded partnership. Confirm by reviewing the entity's federal classification and any PTP listing.
-- **Check 317** — Entity is NOT a disregarded SMLLC trying to elect at its own level. A SMLLC disregarded federally cannot itself elect; verify the entity files Form 1065 or Form 1120-S federally.
-- **Check 318** — Consenting owners affirmatively consented. Review the consent log / Form 3804 signature mechanics. FTB has, in audit, requested evidence of owner consent (operating agreement amendments, signed consent forms, or written attestations).  _(Form 3804)_
-- **Check 319** — Composite return mutual exclusion. Verify that no consenting PTE owner is also included in a Form 540NR Group Return for the same year.
-- **Check 320** — Nonresident withholding (Form 592-PTE) reconciled. Verify the entity's nonresident withholding for any consenting nonresident owner is appropriately reduced or waived per current FTB guidance, and that any withholding paid is properly credited on the nonresident's Form 540NR (in addition to the PTE credit).  _(Form 592-PTE)_
-- **Check 321** — Extension / credit-reduction disclosure to client. Verify the client has been advised in writing that California extended PTE through 2030, and that 2026-2030 missed or short June 15 payments can reduce owner credits rather than automatically voiding the election.  _(https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)_
-- **Check 322** — Trust / estate credit not pushed to beneficiaries. If the consenting owner is a trust or estate, verify the credit is claimed at the trust/estate level on Form 541 and is not separately stated to beneficiaries on Schedule K-1 (541) unless specifically supported.  _(Form 541)_
-- **Check 323** — Net loss year handled. If the entity has a net loss, verify that no PTE election was made (or, if made, that QNI is reported as zero for each owner). Confirm no credit is generated from a loss year.
-- **Check 324** — SMLLC-owned-by-individual disclosure on Form 3804. When a consenting owner is an SMLLC, verify Form 3804 lists the underlying individual (not the SMLLC) as the consenting party, with the SMLLC noted as the conduit.  _(Form 3804)_
-- **Check 325** — Part-year resident QNI correctly bifurcated. For any consenting part-year resident, verify the residency-period-vs-nonresidency-period bifurcation of QNI per Section 10.5.
+| Step | Amount | Source |
+| --- | --- | --- |
+| Chris: whole share (resident, 60% of USD 400,000) | USD 240,000 | [18 CCR § 17014](https://www.law.cornell.edu/regulations/california/18-CCR-17014) |
+| Dana: California-source share only (40% of 75% of USD 400,000) | USD 120,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| QNI of both owners together | USD 360,000 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| PTE elective tax at the rate in the Section 4 table | USD 33,480 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| Chris's credit | USD 22,320 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
+| Dana's credit | USD 11,160 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-## Section 12 -- Output specification
+Dana files Form 540NR to claim the credit. If her California tax on her California-source income is lower than her credit, the excess is not refunded; she carries it forward for up to 5 years and loses it if she has no later California tax. Model this before she consents. The S corporation also owes its own S corporation tax (Section 7.2), which gives no owner credit.
 
-For each PTE elective tax engagement, this skill produces:
+### 10.4 Example C: Tiered partnership (hypothetical)
 
-1. Eligibility memo: Confirmation that the entity is a qualified entity and listing of which owners are qualified taxpayers (with reasons for any exclusion).
-2. Consent register: Per-owner consent status, with copies of consent documentation.
-3. Form 3804 (entity-level calculation): Per-owner QNI and tax, total entity PTE tax.
-4. Form 3893 payment vouchers: June 15 prepayment voucher (year of the taxable year) and balance-due voucher (year after).
-5. Form 3804-CR (per consenting owner): Owner's credit amount, attached to the owner's Form 540 / 540NR / 541 workpapers.
-6. Federal deduction memo: Notice 2020-75 specified income tax payment deduction on Form 1065 / 1120-S, with cash-basis timing.
-7. Cross-skill handoffs:
-   - To `ca-540-individual-return` / `ca-540-es-estimated-tax`: PTE credit amount for each owner, OSTC interaction (if applicable), 2025 estimated tax adjustment.
-   - To `us-federal-return-assembly`: Entity-level PTE deduction, reduced K-1 flow-throughs.
-   - To `us-s-corp-election-decision`: PTE benefit as an input to the S-corp break-even analysis (when applicable).
-8. Reviewer brief: Sections 11 checks completed, extension / credit-reduction disclosure included, signed off by reviewer.
+An LLC taxed as a partnership has 2026 California-source ordinary income of USD 1,000,000. An upper-tier LLC taxed as a partnership owns 30%; seven California-resident individuals own 10% each, and all seven consent. ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))
 
-## Section 13 -- Cross-skill references
+| Step | Amount | Source |
+| --- | --- | --- |
+| Share of the upper-tier partnership (30%), excluded | USD 300,000 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| QNI: consenting individuals (70%) | USD 700,000 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| PTE elective tax | USD 65,100 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| Credit per consenting individual (each 10%, share USD 100,000) | USD 9,300 | [FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) |
 
-Inputs from:
-- `us-sole-prop-bookkeeping` / entity-level bookkeeping — entity's CA-source ordinary income, apportionment factor.
-- `us-schedule-c-and-se-computation` — N/A directly (sole props are ineligible); informational only.
-- Prior-year Form 3804 — for 50% prior-year floor computation.
-- Entity operating agreement / shareholder agreement — for ownership percentages and consent mechanics.
+The upper tier's share gets no PTE tax and no credit; its own members pay California tax on it personally. Restructuring the upper tier is a multi-year, multi-entity question and out of scope.
 
-Outputs to:
-- `ca-540-individual-return` — PTE credit on Form 3804-CR per consenting owner.
-- `ca-540-es-estimated-tax` — adjusted owner estimated tax baseline.
-- `ca-smllc-form-568` — for multi-member 568 PTE-electing entities (note that skill is SMLLC-only; this skill provides the multi-member 568 PTE flow).
-- `us-federal-return-assembly` — entity-level Notice 2020-75 deduction.
-- `us-ca-return-assembly` — final unified package for taxpayer.
+### 10.5 Example D: Disregarded single-member LLC owned by an individual (hypothetical)
 
-## Section 14 -- Known gaps and uncertainty flags
+A partnership has 2026 California-source income of USD 800,000. One partner (25%) is Erin Single LLC, a disregarded single-member LLC wholly owned by Erin, a California resident. The LLC's share is USD 200,000. ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))
 
-1. California PTE is extended for taxable years beginning before January 1, 2031 under SB 132. The 2026-2030 credit-reduction mechanics for missed or short June 15 payments are summarized here but should be recomputed from current FTB forms and R&TC § 17052.11 before filing.
-2. Federal SALT cap post-2025 mechanics. The interaction with the post-2025 federal SALT cap (as modified by P.L. 119-21, the One Big Beautiful Bill Act of July 4, 2025) requires verification at filing time. The economic motivation for the PTE election depends on the surviving federal cap level.
-3. FTB underpayment interest rate for 2025 quarters must be verified at filing time for any late-PTE-balance interest computation.
-4. Form 592-PTE nonresident withholding waiver mechanics for consenting nonresident owners are based on FTB administrative guidance; verify the most current FTB Notice or Form 592-PTE instructions at filing time.
-5. Tiered partnership planning (e.g., restructuring upper-tier ownership to maximize PTE eligibility) is multi-year, multi-entity, and not fully detailed here. Refer to a dedicated entity-restructuring workflow.
-6. Trust DNI / credit-passthrough rules for complex trusts are summarized only; complex fiduciary income tax matters require specialist review.
-7. California conformity to Notice 2020-75 at the entity level for state-tax-base purposes is not the same question — CA does not allow the entity to deduct PTE tax in computing the entity's own CA tax base (because the PTE tax IS the CA tax). Federal conformity for federal-base purposes is the relevant point.
+| Step | Amount | Source |
+| --- | --- | --- |
+| QNI attributable to Erin's LLC | USD 200,000 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
+| PTE elective tax on that share, and the credit | USD 18,600 | [FTB PTE elective tax page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) |
 
-### Change log
+The single-member LLC is a qualified taxpayer because it is owned by an individual subject to California personal income tax ([FTB help page](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html)). Erin claims the credit on her Form 540 with Form 3804-CR. Record both the LLC and Erin on the consent register, so the credit can be matched to the person who files the personal return; follow the 2026 Form 3804 instructions on how to list them.
 
-v0.1 (November 2025): Initial content skill covering eligibility, election mechanics, 9.3% rate, June 15 prepayment, owner credit on Form 3804-CR, OSTC ordering, federal Notice 2020-75 treatment, sunset uncertainty, and five worked examples.
-- 2026-07-09: Updated for FTB guidance reflecting SB 132 extension through taxable years beginning before January 1, 2031; distinguished 2025 missed-payment void rule from 2026-2030 credit-reduction rules.
+### 10.6 Part-year resident owner
 
-## End of skill
+The live version of this skill had a part-year resident example with a residence-period split. The FTB pages read for this rewrite do not set out how QNI is split for a part-year resident beyond "income subject to California personal income tax". Take the owner's California-taxable share from `ca-residency-leaving-california` and apply Section 4.3.
 
-## Provenance & attribution
+## Section 11. Common errors and reviewer checks
 
-This skill is authored by the Open Accountants project and is intended for use by credentialed tax professionals (Enrolled Agents, CPAs, attorneys admitted to practice under Circular 230) reviewing California pass-through entity tax matters. Statutory and form references are drawn from:
+- **Check 301.** June 15 payment. Confirm the amount (Section 5.1) and the date. For 2025 a short payment blocks the election. For 2026 to 2030 it keeps the election but reduces the credit (Section 5.2). Match the voucher or electronic payment designated as a "PTE payment" to the FTB account.
+- **Check 302.** Prior-year PTE tax used for the June 15 amount is the tax PAID for the prior year, from the prior-year Form 3804 and account.
+- **Check 303.** Every consenting owner is a qualified taxpayer (Section 2.2). No corporation, partnership or disregarded entity owned by one.
+- **Check 304.** Form 3804 total ties to the PTE line on Form 100S, 565 or 568, and per-owner amounts add to the entity total.
+- **Check 305.** Each consenting owner has a Form 3804-CR matching Form 3804 (after any 2026 reduction).
+- **Check 306.** Nonresident QNI uses only the share subject to California tax under the sourcing rules.
+- **Check 307.** Resident QNI uses the whole share.
+- **Check 308.** Guaranteed payments to consenting partners are in QNI.
+- **Check 309.** Partnership and corporate owners are excluded from QNI.
+- **Check 310.** The election was made on a timely filed original or superseding return, not an amended one (Section 3.2).
+- **Check 311.** Payment 2 paid by the original due date without extensions; otherwise penalties and interest (Section 5.4).
+- **Check 312.** Unused credit carryover recorded per owner with its 5-year limit.
+- **Check 313.** PTE credit applied after the OSTC, with the "net tax payable" add-back in the OSTC computation.
+- **Check 314.** Federal deduction taken at the entity level under Notice 2020-75.
+- **Check 315.** Federal deduction in the year paid (Section 8.3).
+- **Check 316.** Entity is not a publicly traded partnership and not in, or eligible for, a combined reporting group.
+- **Check 317.** Entity is not a disregarded single-member LLC trying to elect.
+- **Check 318.** Written consent on file for each consenting owner, covering all of that owner's share.
+- **Check 319.** No consenting owner expects to claim the credit through a group nonresident return.
+- **Check 320.** Nonresident withholding still made; the election does not change it.
+- **Check 321.** Client told in writing that the election runs to taxable years beginning before January 1, 2031, and that a short June 15 payment for 2026 to 2030 reduces the credit.
+- **Check 322.** Trust or estate owner: credit claimed on Form 541 or passed to beneficiaries; grantor trust credit on the grantor's return.
+- **Check 323.** Negative shares excluded; no credit for those owners.
+- **Check 324.** Disregarded single-member LLC owner: the individual behind it is identified on the consent register.
+- **Check 325.** Part-year resident: share from `ca-residency-leaving-california`.
+- **Check 326.** Federal deduction added back on the entity's California return.
+- **Check 327.** Owner's sale of an interest kept out of QNI; entity asset sales kept in.
+- **Check 328.** Owner estimated tax resized for the credit, keeping the behavioral health services tax.
 
-- California Revenue and Taxation Code (R&TC), Division 2, Part 10 (Personal Income Tax) and Part 10.4 (Pass-Through Entity Elective Tax), as amended through 2025.
-- California Franchise Tax Board (FTB) forms and instructions: Form 3804 (Pass-Through Entity Elective Tax Calculation), Form 3804-CR (Pass-Through Entity Elective Tax Credit), Form 3893 (Pass-Through Entity Elective Tax Payment Voucher), Form 100S (S Corporation Tax Return), Form 565 (Partnership Return of Income), Form 568 (Limited Liability Company Return of Income), Form 592-PTE, Form 540, Form 540NR, Form 541.
-- AB 150 (2021 Cal. Stat. ch. 82), SB 113 (2022 Cal. Stat. ch. 3), SB 851 (2022 Cal. Stat. ch. 705).
-- IRS Notice 2020-75 (November 9, 2020).
-- IRC §§ 164(b)(6), 461(l), 702, 707(c), 1366, 7704.
+## Section 12. Output specification
 
-The verified, country-signed-off version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Verification model: lead California accountant signs off, with optional contributing reviewers, per the multi-accountant-per-jurisdiction governance model. Pending verification status as of v0.1; awaiting review by a California-licensed CPA or Enrolled Agent with PTE experience.
+1. Eligibility memo: entity status and each owner's status, with reasons.
+2. Consent register: per-owner consent and copies.
+3. Form 3804: per-owner QNI and tax; for 2026 to 2030, any credit reduction.
+4. Payment record: June 15 payment and Payment 2, by voucher (Form 3893) or electronic payment designated as a PTE payment.
+5. Form 3804-CR figures per consenting owner.
+6. Federal deduction memo: Notice 2020-75 deduction, year paid.
+7. Handoffs: to `ca-540-individual-return` and `ca-estimated-tax-540es` (credit, OSTC interaction, estimated tax); to `us-form-1065-partnership` or `us-federal-return-assembly` (entity deduction); to `us-s-corp-election-decision` (where relevant).
+8. Reviewer brief: Section 11 checks done, and the Check 321 disclosure.
+
+## Section 13. Cross-skill references
+
+Inputs from: entity bookkeeping (California-source income and apportionment); prior-year Form 3804 and FTB account; operating or shareholder agreement (ownership and consent); `ca-residency-leaving-california` (owner residency and source).
+
+Outputs to: `ca-540-individual-return`, `ca-estimated-tax-540es`, `ca-smllc-form-568`, `ca-llc-fee-and-tax`, `us-form-1065-partnership`, `us-federal-return-assembly`, `us-ca-return-assembly`.
+
+## Section 14. Known gaps and uncertainty flags
+
+1. The R&TC text itself (Part 10.4 and Part 10.4.1) could not be read from leginfo.legislature.ca.gov; this skill relies on the FTB pages. Check the statute for any point the FTB pages do not address.
+2. The 2026 Form 3804, 3804-CR and 3893 instructions were not read for this rewrite; follow them for line-by-line reporting, including how a disregarded LLC owner is listed.
+3. FTB interest rates could not be read; take the rate at computation time.
+4. Federal: Notice 2020-75 still governs the entity deduction as far as the pages read show. Recheck for later IRS guidance every year.
+5. Part-year resident QNI split is not set out on the FTB pages.
+6. Complex trusts: credit pass-through to beneficiaries is "generally" allowed; specialist review needed.
+
+## When to refuse or refer
+
+- Refer when the entity is in, or may be required or permitted to be in, a combined reporting group; or is a publicly traded partnership.
+- Refer tiered structures where restructuring is being considered, and complex trusts with large distributions.
+- Refer part-year resident owners whose California-taxable share is disputed (`ca-residency-leaving-california`).
+- Refuse to state that an election made on an amended return is valid; the FTB page says it cannot be.
+- Refuse to state that a 2022 to 2025 election survives a missed or short June 15 payment.
+- Refer any question on federal treatment beyond Notice 2020-75 to `us-2026-federal-tax-changes` and a federal preparer.
+- Refuse to sign off a return: this skill is a source-cited draft and needs review by a California CPA, EA or tax attorney.
+
+## Sources
+
+- [FTB: Pass-through entity elective tax](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html) (last updated 04/23/2026)
+- [FTB: Help with pass-through entity (PTE) elective tax](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html) (last updated 08/04/2026)
+- [FTB: Due dates for businesses](https://www.ftb.ca.gov/file/when-to-file/due-dates-business.html)
+- [FTB: Penalties and interest](https://www.ftb.ca.gov/pay/penalties-and-interest/index.html)
+- [FTB: Limited liability company](https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html)
+- [FTB: S corporations](https://www.ftb.ca.gov/file/business/types/corporations/s-corporations.html)
+- [18 CCR § 17014, LII mirror](https://www.law.cornell.edu/regulations/california/18-CCR-17014)
+- [IRS Notice 2020-75](https://www.irs.gov/pub/irs-drop/n-20-75.pdf)
+- [Public Law 119-21 on govinfo.gov](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm)
+- [IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf)
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date version of this skill is maintained at openaccountants.com. Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 

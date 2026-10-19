@@ -7,18 +7,19 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/germany-formation"
   jurisdiction: "DE"
   tax_year: "2026"
-  last_updated: "2026-09-19"
+  last_updated: "2026-10-19"
+  authored_by: "Michael Cutajar and the OpenAccountants team"
   trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
 # Forming a company in Germany (GmbH, UG, AG and partnerships)
 
-How to set up a business entity in Germany: which legal form to pick, the steps from the articles to the commercial register, the capital that must be paid in, the official fees, the registrations that follow, and the duties that start once the company exists. It is for founders, inside and outside Germany, and for the advisers who help them. Most of the detail is on the GmbH and its small variant, the UG (haftungsbeschränkt). Figures are for tax year 2026. The statute figures are read from the consolidated federal law pages on 19 September 2026. The capital amounts in digits come from the Federal Government's start-up portal (existenzgruendungsportal.de): its pages carry a 2014 page date but describe the 2022 and 2023 changes, and the statutes print the same amounts in words. The small-business start-up limit comes from the finance ministry's instructions for the 2026 EÜR form (ministry letter of 1 September 2026).
+How to set up a business entity in Germany: which legal form to pick, the steps from the articles to the commercial register, the capital that must be paid in, the official fees, the registrations that follow, and the duties that start once the company exists. It is for founders, inside and outside Germany, and for the advisers who help them. Most of the detail is on the GmbH and its small variant, the UG (haftungsbeschränkt). Figures are for tax year 2026. The statute figures were read from the consolidated federal law pages on 19 September 2026 and read again on 19 October 2026, with no change to any figure or rule used here. The statutes print the minimum capital amounts in words, so this skill gives them in words too. The small-business start-up limit comes from the finance ministry's instructions for the 2026 EÜR form (ministry letter of 1 September 2026).
 
-## Germany Company Formation Guide
+## Germany Company Formation Skill
 
-Read Section 2 to pick the legal form, Section 3 for the steps in order, Section 4 for capital, Section 5 for fees, and Section 6 for what is due after the company exists. Every amount and percentage sits in a table that names the official page it was read on. Where no official page prints a number, this Guide says so and gives none.
+Read Section 2 to pick the legal form, Section 3 for the steps in order, Section 4 for capital, Section 5 for fees, and Section 6 for what is due after the company exists. Every amount and percentage sits in a table that names the official page it was read on. Where no official page prints a number, this skill says so and gives none.
 
 ## Section 1: Quick Reference
 
@@ -26,10 +27,10 @@ Read Section 2 to pick the legal form, Section 3 for the steps in order, Section
 | --- | --- |
 | Country | Germany (Federal Republic of Germany) |
 | Currency | Euro |
-| Company registrar | Handelsregister, kept by the local court (Amtsgericht) where the company has its seat. Public search portal of the federal states: https://www.handelsregister.de/rp_web/welcome.xhtml |
+| Company registrar | Handelsregister, kept by the local court (Amtsgericht) where the company has its seat. It has two divisions: A for sole merchants, OHG and KG, B for the AG, GmbH and other corporations (§ 3 HRV): https://www.gesetze-im-internet.de/hdlregvfg/__3.html The joint register portal of the federal states carries the commercial register and the other company registers: https://www.handelsregister.de/rp_web/welcome.xhtml |
 | Key legislation | GmbH-Gesetz (GmbHG); Handelsgesetzbuch (HGB); Aktiengesetz (AktG). For partnerships also §§ 705 and following of the Civil Code (BGB) and the PartGG |
 | Typical formation time | Legacy estimate: 3 to 6 weeks from the notary to the register entry. No official page states a duration |
-| Taxes on a GmbH, UG or AG | Corporate income tax, solidarity surcharge and trade tax. The three tables below give the parts. No official page prints one combined rate, so this Guide does not state one |
+| Taxes on a GmbH, UG or AG | Corporate income tax, solidarity surcharge and trade tax. The three tables below give the parts. No official page prints one combined rate, so this skill does not state one |
 | Tax authority | Local Finanzamt. Bundeszentralamt für Steuern (BZSt) for the VAT identification number and the business identification number |
 
 **Corporate income tax (Körperschaftsteuer)**
@@ -54,28 +55,28 @@ Read Section 2 to pick the legal form, Section 3 for the steps in order, Section
 | Base rate (Steuermesszahl) applied to trade income. It is not the tax rate: the result is multiplied by the multiplier (Hebesatz) that each municipality sets | 3.5% | § 11(2) GewStG: "Die Steuermesszahl für den Gewerbeertrag beträgt 3,5 Prozent" |
 | Allowance taken off trade income first. Natural persons and partnerships only. A GmbH, UG or AG is not on the list and gets no allowance | EUR 24,500 | § 11(1) GewStG: "bei natürlichen Personen sowie bei Personengesellschaften um einen Freibetrag in Höhe von 24 500 Euro" |
 
-The activity of a GmbH, UG or AG always counts as a trade, in full, whatever the company does. See § 2(2) GewStG at https://www.gesetze-im-internet.de/gewstg/__2.html The multiplier is set by the municipality under § 16 GewStG at https://www.gesetze-im-internet.de/gewstg/__16.html so the trade tax burden depends on where the company sits. See `de-trade-tax` for the calculation.
+The activity of a GmbH, UG or AG always counts as a trade, in full, whatever the company does. See § 2(2) GewStG at https://www.gesetze-im-internet.de/gewstg/__2.html The multiplier is set by the municipality under § 16 GewStG at https://www.gesetze-im-internet.de/gewstg/__16.html so the trade tax burden depends on where the company sits. `de-trade-tax` explains the calculation for sole traders and partnerships. It does not cover companies, so for a GmbH, UG or AG use the base rate above and the municipality's multiplier, with no allowance.
 
 ## Section 2: Entity Types Comparison
 
-The amounts in this table are the ones proved in the linked tables of Section 4.
+The capital rules in this table are explained, with their sources, in Section 4.
 
 | Feature | Einzelunternehmen (sole trader) | GmbH | UG (haftungsbeschränkt) | GbR / OHG / KG (partnerships) | AG (stock corporation) |
 | --- | --- | --- | --- | --- | --- |
 | Legal status | The owner in person | Legal person (§ 13 GmbHG) | A GmbH with less than the GmbH minimum capital, not a separate form (§ 5a GmbHG) | Not called legal persons in the statutes. An OHG or KG can acquire rights and incur liabilities (§ 105(2), § 161(2) HGB). A GbR can too, if the partners mean it to take part in legal transactions (§ 705(2) BGB) | Company with its own legal personality (§ 1 AktG) |
 | Liability | Unlimited, personal | Only the company's assets answer to its creditors (§ 13(2) GmbHG) | Same as GmbH | GbR and OHG: every partner, personally, jointly and severally (§ 721 BGB, § 126 HGB). KG: general partners without limit; a limited partner up to the registered liability amount, and not at all as far as the agreed contribution has been paid (§ 171 HGB) | Only the company's assets answer to its creditors (§ 1 AktG) |
 | Min. founders | 1 | 1 (§ 1 GmbHG) | 1 | 2 | 1 (§ 2 AktG) |
-| Min. share capital | None | EUR 25,000 | one euro | None | EUR 50,000 |
-| Min. paid in before the register application | Not applicable | EUR 12,500 in total, and one quarter of each cash share | All of it, in cash | Not applicable | One quarter of the lowest issue price of each share, plus any premium in full |
+| Min. share capital | None | twenty-five thousand euros (§ 5(1) GmbHG) | one euro, see Section 4 | None | fifty thousand euros (§ 7 AktG) |
+| Min. paid in before the register application | Not applicable | Half of the minimum share capital in total, and one quarter of each cash share (§ 7(2) GmbHG) | All of it, in cash | Not applicable | One quarter of the lowest issue price of each share, plus any premium in full |
 | Tax treatment | Income tax on the owner | Corporate income tax, solidarity surcharge, trade tax | Same as GmbH | Partners taxed individually. If the partnership runs a trade, the partnership itself owes the trade tax (§ 5 GewStG) | Same as GmbH |
 | Notary | Only to certify a register application, when the owner is a merchant who must register (§ 12, § 29 HGB) | Yes. Articles are notarised (§ 2 GmbHG) and the register application is certified (§ 12 HGB) | Yes, same as GmbH | GbR: none needed to form. An application to the Gesellschaftsregister must be certified (§ 707b BGB, § 12 HGB). OHG and KG: the register application must be certified (§ 12, § 106, § 162 HGB) | Yes. Statutes are notarised (§ 23 AktG) |
 | Commercial register | Only merchants (§ 1, § 29 HGB). A small trader may opt in (§ 2 HGB) | Yes, division B | Yes, division B | OHG and KG: yes, division A. GbR: no. It may choose an entry in the Gesellschaftsregister (§ 707 BGB) | Yes, division B |
 | Bodies | Owner | Managing director(s) and shareholders' meeting. A supervisory board is compulsory only with more than 500 employees (§ 1 DrittelbG) | Same as GmbH | Partners | Management board, supervisory board of three members or more (§ 95 AktG), general meeting |
 | Admin burden | Low | High | High | Low to medium | Very high |
 
-Sources for the table: GmbHG §§ 1, 5a, 13 at https://www.gesetze-im-internet.de/gmbhg/__13.html ; HGB §§ 105, 126, 161, 171 at https://www.gesetze-im-internet.de/hgb/__105.html ; § 705 and § 721 BGB at https://www.gesetze-im-internet.de/bgb/__705.html ; AktG §§ 1, 2, 95 at https://www.gesetze-im-internet.de/aktg/__1.html ; the register divisions and the 500 employee rule at https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Gruendungswissen/Behoerden/Handelsregister/inhalt and https://www.gesetze-im-internet.de/drittelbg/__1.html
+Sources for the table: GmbHG §§ 1, 5a, 13 at https://www.gesetze-im-internet.de/gmbhg/__13.html ; HGB §§ 105, 126, 161, 171 at https://www.gesetze-im-internet.de/hgb/__105.html ; § 705 and § 721 BGB at https://www.gesetze-im-internet.de/bgb/__705.html ; AktG §§ 1, 2, 95 at https://www.gesetze-im-internet.de/aktg/__1.html ; the register divisions at https://www.gesetze-im-internet.de/hdlregvfg/__3.html ; the 500 employee rule at https://www.gesetze-im-internet.de/drittelbg/__1.html
 
-**Recommended default:** GmbH for established businesses. UG for bootstrapped startups with a plan to move up to a GmbH. This default is legacy editorial advice, not an official statement. The start-up portal describes the UG as suited to founders of small commercial businesses, service providers above all, who want limited liability and can manage with little capital. It also tells founders to check the later cost of moving up to a GmbH and to ask whether a GmbH from the start makes more sense: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt
+**Recommended default:** GmbH for established businesses. UG for bootstrapped startups with a plan to move up to a GmbH. This default is legacy editorial advice, not an official statement. The start-up portal describes the UG as suited to founders of small commercial businesses, service providers above all, who want limited liability and can manage with little capital. It also tells founders to check the costs of the later step up to a GmbH and to ask whether a GmbH from the start makes more sense: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt
 
 **Liberal professions.** An OHG or KG is defined by a commercial business (§ 105, § 161 HGB). A small trade, a partnership that only manages its own assets, or a partnership of liberal professionals can still become an OHG by choosing to be entered in the commercial register, the last only as far as the law of the profession allows the entry (§ 107(1) HGB): https://www.gesetze-im-internet.de/hgb/__107.html Otherwise members of the liberal professions who join forces use the GbR or the Partnerschaftsgesellschaft. Only natural persons can be partners in a Partnerschaft, and it does not carry on a commercial business (§ 1 PartGG): https://www.gesetze-im-internet.de/partgg/__1.html In the variant with limited professional liability (PartG mbB) only the partnership is liable for professional errors, if it keeps the professional liability insurance that a statute prescribes for that purpose (§ 8(4) PartGG): https://www.gesetze-im-internet.de/partgg/__8.html
 
@@ -109,14 +110,14 @@ Steps 1 to 4 are written for the GmbH and the UG. Steps 5 to 8 apply to every fo
 
 - **Notarisation requirement.** The articles need notarial form and every shareholder signs them (§ 2(1) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__2.html
 - **Signing through a representative.** Allowed only with a power of attorney that a notary drew up or certified (§ 2(2) GmbHG).
-- **Video notarisation.** The articles can be notarised by video under §§ 16a to 16e of the Beurkundungsgesetz, unless another form rule stands in the way (§ 2(3) GmbHG). The start-up portal dates this option from 1 August 2022 and says that before 1 August 2023 only cash formations could be done online. It runs on the video system of the Federal Chamber of Notaries, can be used from abroad, and can be mixed: one founder at the notary's office, the others online: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html
+- **Video notarisation.** The articles can be notarised by video under §§ 16a to 16e of the Beurkundungsgesetz, unless another form rule stands in the way (§ 2(3) GmbHG). It runs on the video system that the Federal Chamber of Notaries operates (§ 16a(1) BeurkG): https://www.gesetze-im-internet.de/beurkg/__16a.html The start-up portal dates the online formation from 1 August 2022 and says that before 1 August 2023 only cash formations could be done online. It says the online route can be used from abroad and can be mixed, for example one shareholder at the notary's office and the others online: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html
 - **Who can be identified by video.** The notary checks a photo read electronically from the chip of a German identity card, passport or electronic residence permit, or of an official identity card or passport of another state that meets the German passport and identity card duty. No photo is needed if the notary already knows the person. On top of the photo the notary checks an electronic identity: a German one (identity card, eID card or electronic residence permit), or one issued by another EU or EEA state that is recognised for cross-border use and notified at assurance level "high" (§ 16c BeurkG): https://www.gesetze-im-internet.de/beurkg/__16c.html A founder without such an electronic identity cannot normally use the video route. The notary should refuse video if identity or legal capacity cannot be made certain (§ 16a BeurkG).
-- **Who can be managing director.** Only a natural person with full legal capacity. Excluded are, among others, persons whom a court or an authority has banned from a trade or profession that matches the company's object in whole or in part, while the ban is in force, and persons convicted of the listed intentional insolvency, fraud and accounting offences, for five years from the final judgment. A comparable ban in another EU or EEA state counts too. So does a conviction abroad for a comparable offence (§ 6(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__6.html Each managing director assures the court of this in the application (§ 8(3) GmbHG).
-- **Notary prepares Handelsregister application.** The application to the register must be certified by a notary, which can also be done online. The notary sends it to the register with the documents: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Gruendungswissen/Behoerden/Handelsregister/inhalt
+- **Who can be managing director.** Only a natural person with full legal capacity. Excluded are, among others, persons whom a court or an authority has banned from a trade or profession that matches the company's object in whole or in part, while the ban is in force, and persons convicted of the listed intentional insolvency and false-statement offences, or sentenced to prison for one year or more for the listed fraud, subsidy, credit and embezzlement offences (§§ 263 to 264a, 265b to 266a StGB), in each case for five years from the final judgment. A comparable ban in another EU or EEA state counts too. So does a conviction abroad for a comparable offence (§ 6(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__6.html Each managing director assures the court of this in the application (§ 8(3) GmbHG).
+- **Notary prepares Handelsregister application.** The application to the register is filed electronically in publicly certified form, and the certification may also be done by video (§ 12(1) HGB): https://www.gesetze-im-internet.de/hgb/__12.html The notary sends it to the register with the documents.
 
 ### Step 3: Open Bank Account and Deposit Capital
 
-- **Geschäftskonto naming.** Legacy practice note: open the business account in the name of the company with the addition "i.G." (in Gründung). No official page read for this Guide describes the account opening. Treat it as practice, not law.
+- **Geschäftskonto naming.** Legacy practice note: open the business account in the name of the company with the addition "i.G." (in Gründung). No official page read for this skill describes the account opening. Treat it as practice, not law.
 - **GmbH deposit requirement.** Before the register application, one quarter of each cash share must be paid in, and the total paid in (cash plus the nominal amount of shares to be covered in kind) must reach the amount in the Section 4 table (§ 7(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__7.html
 - **UG deposit requirement.** The whole share capital must be paid in, in cash, before the application. Contributions in kind are excluded (§ 5a(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__5a.html
 - **Free disposal.** What is paid in must be at the final free disposal of the managing directors, and they assure this in the application (§ 7(3), § 8(2) GmbHG).
@@ -131,7 +132,7 @@ Steps 1 to 4 are written for the GmbH and the UG. Steps 5 to 8 apply to every fo
 - **Address and powers.** The application states a business address in Germany and how the managing directors represent the company (§ 8(4) GmbHG).
 - **Registration fee.** See the court fee table below.
 - **Legal existence date.** Before the entry in the register the GmbH or UG does not exist as such (§ 11(1) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__11.html
-- **Beware of fake invoices.** Soon after the entry is published, founders often get letters that look like official bills for a listing in a private "company register". The federal justice ministry warns against them: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Gruendungswissen/Behoerden/Handelsregister/inhalt
+- **Beware of fake invoices.** Soon after the entry is published in the register portal, founders often get letters that look like a bill for entry in a state register. The start-up portal reports that the federal justice ministry warns against these "offers": https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Gruendungswissen/Behoerden/Handelsregister/inhalt Check every bill against the court's own fee notice before paying.
 
 **Court fees for the first entry in the commercial register (Handelsregistergebührenverordnung, fee schedule)**
 
@@ -146,15 +147,15 @@ Steps 1 to 4 are written for the GmbH and the UG. Steps 5 to 8 apply to every fo
 | First entry of a partnership with up to 3 partners to be entered (no. 1101) | EUR 150 | "einer Gesellschaft mit bis zu 3 einzutragenden Gesellschaftern" |
 | Added to no. 1101 for each further partner to be entered (no. 1102) | EUR 60 | "erhöht sich für jeden weiteren einzutragenden Gesellschafter" |
 
-On top of each entry fee the court charges a separate fee for making the data available for retrieval (no. 6000). The schedule prints it as one third of the entry fee ("1/3 der für die Eintragung oder Entgegennahme bestimmten Gebühr"). This Guide does not add the two together. The notary's fee is separate: see Section 5.
+On top of each entry fee the court charges a separate fee for making the data available for retrieval (no. 6000). The schedule prints it as one third of the entry fee ("1/3 der für die Eintragung oder Entgegennahme bestimmten Gebühr"). This skill does not add the two together. The notary's fee is separate: see Section 5.
 
 ### Step 5: Gewerbeanmeldung (Trade Registration)
 
 - **Registration requirement.** Whoever starts a standing trade must notify the competent authority at the same time (§ 14(1) GewO): https://www.gesetze-im-internet.de/gewo/__14.html Moving the business, changing its object and closing it must be notified too.
-- **Who is exempt.** The liberal professions and primary production (farming, forestry, fishing) make no trade notification: https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung
-- **Fee.** See the table below. The municipality sets it.
-- **What to bring.** Identity card or passport; a permit if the trade needs one; the craft card for a craft; a register extract if the business is in the commercial register; for non-German nationals a residence permit that allows self-employed trading: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
-- **Processing.** The portal says a trade notification is normally processed within a few days, and that the trade office passes the data on to the accident insurer, the chamber (IHK or Handwerkskammer), the register court and the trade supervisory office. It advises founders to check that each of them was in fact informed. The municipality also informs the tax office (§ 138(1) AO).
+- **Who is outside the trade rules.** The Trade Regulation Act does not apply at all to, among others, fishing, lawyers, notaries, auditors, tax advisers and the teaching sector (§ 6(1) GewO): https://www.gesetze-im-internet.de/gewo/__6.html A partnership of liberal professionals that runs no trade makes no trade notification; it tells the tax office instead (§ 138(1) AO). The start-up portal puts it generally: the liberal professions and primary production (farming, forestry, fishing and hunting) make no trade notification: https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung
+- **Fee.** The municipality sets it. No federal statute sets the fee. The table below gives the range the Federal Government's start-up portal prints. Ask the trade office for its own amount.
+- **What to bring.** Identity card or passport; a permit if the trade needs one; the craft card for a craft; a register extract if the business is in the commercial register; for non-German nationals a residence permit that allows self-employed trading. A certificate of good conduct or an extract from the central trade register may also be asked for: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
+- **Processing.** The trade office passes data from the notification on to other bodies, among them the IHK and the Handwerkskammer (§ 14(8) GewO). The municipality informs the tax office without delay (§ 138(1) AO): https://www.gesetze-im-internet.de/ao_1977/__138.html The start-up portal says a trade notification is normally processed within a few days, and that the trade office informs the accident insurer, the IHK or Handwerkskammer, the register court and the trade supervisory office. It advises founders to check that each of them was in fact informed: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
 - **Penalty.** Not notifying, or notifying late, is an administrative offence (§ 146(2) no. 2 GewO). The statute prints the ceiling in words: a fine of up to one thousand euros ("bis zu eintausend Euro"): https://www.gesetze-im-internet.de/gewo/__146.html
 
 **Fee for the trade notification**
@@ -168,12 +169,12 @@ On top of each entry fee the court charges a separate fee for making the data av
 ### Step 6: Tax Registration (Steuerliche Erfassung)
 
 - **Notify within one month.** A taxpayer that is not a natural person must report its formation to the tax office and to the municipality within one month of the event (§ 137 AO): https://www.gesetze-im-internet.de/ao_1977/__137.html The statute names the formation and the acquisition of legal capacity as separate events to report ('die Gründung, den Erwerb der Rechtsfähigkeit'). Do not wait for the register entry before the first notice.
-- **Fragebogen.** Further details go to the tax office in the questionnaire for tax registration, sent electronically within one month (§ 138(1b) and (4) AO): https://www.gesetze-im-internet.de/ao_1977/__138.html In Mein ELSTER the form is called "Fragebogen zur steuerlichen Erfassung: Gründung einer Kapitalgesellschaft beziehungsweise Genossenschaft". It is for corporations with their seat in Germany, such as a GmbH, UG or AG: https://www.elster.de/eportal/formulare-leistungen/alleformulare/fsekapg Sole traders and partnerships have their own versions of the questionnaire.
+- **Fragebogen.** Further details go to the tax office in the questionnaire for tax registration, sent electronically within one month (§ 138(1b) and (4) AO): https://www.gesetze-im-internet.de/ao_1977/__138.html In Mein ELSTER the form is called "Fragebogen zur steuerlichen Erfassung: Gründung einer Kapitalgesellschaft beziehungsweise Genossenschaft". Its condition is the formation of a corporation with its seat in Germany, for example a GmbH, UG or AG: https://www.elster.de/eportal/formulare-leistungen/alleformulare/fsekapg Practice note: sole traders and partnerships use other versions of the questionnaire.
 - **Copy for the tax office.** Under the model protocol the tax office's corporate tax unit receives a plain copy of the deed (clause 6 of the protocol). That copy does not replace the questionnaire.
-- **Steuernummer.** After it has processed the questionnaire the tax office issues the tax number, which is needed to issue invoices: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
-- **Business identification number (W-IdNr).** The BZSt has been assigning it in stages, without application, since November 2024. A business that starts a new activity gets it through its ELSTER mailbox. It is used next to the tax number for now (page dated 10 September 2026): https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Wirtschafts-Identifikationsnummer/wirtschaftsidentifikationsnummer_node.html
-- **USt-IdNr.** A new business asks for the VAT identification number by ticking the box in the questionnaire. The tax office forwards the request to the BZSt, which can take some weeks. The number can only be issued once the business is registered for VAT, and it arrives by post only: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Umsatzsteuer-Identifikationsnummer/Vergabe_USt_IdNr/vergabe_ust_idnr_node.html
-- **Small-business choice.** The questionnaire asks whether the business uses the small-business VAT rule. The limits are in the first two tables below. § 19 UStG speaks of every business established in Germany (Unternehmer), so a company can use the rule too.
+- **Steuernummer.** After it has processed the questionnaire the tax office tells the business its tax number, which the start-up portal says is needed to issue invoices: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden An invoice must carry the tax number or the VAT identification number (§ 14(4) no. 2 UStG): https://www.gesetze-im-internet.de/ustg_1980/__14.html An invoice for a small amount needs neither, under the lighter rules of § 33 UStDV, which do not apply to supplies under §§ 3c, 6a and 13b UStG: https://www.gesetze-im-internet.de/ustdv_1980/__33.html
+- **Business identification number (W-IdNr).** It is assigned at the request of the competent tax authority, not on the business's application, and it starts with the letters DE (§ 139c(1) AO): https://www.gesetze-im-internet.de/ao_1977/__139c.html The BZSt has been assigning it in stages, without application, since November 2024, by public notice or through the ELSTER user account. The tax number and the VAT identification number stay in use next to it, and giving the W-IdNr in tax forms is optional until the first assignment is complete (page dated 10 September 2026): https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Wirtschafts-Identifikationsnummer/wirtschaftsidentifikationsnummer_node.html
+- **USt-IdNr.** The BZSt issues the VAT identification number to a business on application. The application is made in writing and names the tax number under which the business is registered for VAT, so it can only follow the tax registration (§ 27a(1) UStG): https://www.gesetze-im-internet.de/ustg_1980/__27a.html A newly formed business asks for it by ticking the box in the questionnaire. The tax office forwards the request to the BZSt automatically, which can take some weeks. The number can only be issued once the business is registered for VAT and its data has reached the BZSt, and it is sent by post only: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Umsatzsteuer-Identifikationsnummer/Vergabe_USt_IdNr/vergabe_ust_idnr_node.html
+- **Small-business choice.** The questionnaire asks whether the business uses the small-business VAT rule. The limits are in the first two tables below. § 19 UStG speaks of every business established in Germany (Unternehmer), so a company can use the rule too. A business that uses the rule files no advance VAT returns and no annual VAT return: § 19(1) sentence 2 UStG switches off the filing duties of § 18(1) to (4) ("über die Erklärungspflichten (§ 18 Absatz 1 bis 4) keine Anwendung"); the cases of § 18(4a) UStG stay. A business that waives the rule is bound by the waiver for at least five calendar years ("Der Verzicht bindet den Unternehmer mindestens für fünf Kalenderjahre", § 19(3) UStG). The tables below are for a business that does not use the rule.
 
 **Small-business VAT rule (Kleinunternehmer): the two yearly limits**
 
@@ -204,9 +205,8 @@ For tax periods 2021 to 2026 a new business is not automatically a monthly filer
 
 - **Registration requirement.** Legal persons under private law and registered partnerships must obtain the details of their beneficial owners, keep them up to date and report them to the register without undue delay, electronically (§ 20(1) GwG): https://www.gesetze-im-internet.de/gwg_2017/__20.html The details are first name and surname, date of birth, place of residence, nature and extent of the interest, and all nationalities (§ 19(1) GwG).
 - **Who is a beneficial owner.** See the table below. If no natural person passes the test after a thorough check, the legal representative, managing partner or partner counts as beneficial owner (§ 3(2) GwG).
-- **Mandatory since 2021.** Until 31 July 2021 the duty could count as met without a report, under the old § 20(2) GwG (the legacy text of this Guide says: through the commercial register entry). That rule is gone. Existing GmbHs that had relied on it had to report by 30 June 2022 (§ 59(8) GwG): https://www.gesetze-im-internet.de/gwg_2017/__59.html A newly formed company reports itself.
+- **Mandatory since 2021.** Until 31 July 2021 the duty could count as met without a report, under the old § 20(2) GwG (the legacy text of this skill says: through the commercial register entry). That rule is gone. Existing GmbHs that had relied on it had to report by 30 June 2022 (§ 59(8) GwG): https://www.gesetze-im-internet.de/gwg_2017/__59.html A newly formed company reports itself.
 - **No fixed number of days.** The statute says "unverzüglich" (without undue delay) for the first report and for changes. It sets no period in days.
-- **Questions.** The register courts cannot answer questions about the Transparenzregister. The register portal says so: https://www.handelsregister.de/rp_web/welcome.xhtml
 
 **Beneficial owner test**
 
@@ -219,8 +219,8 @@ For tax periods 2021 to 2026 a new business is not automatically a monthly filer
 
 - **IHK membership.** Membership follows from the law, not from an application: whoever is assessed to trade tax and has a permanent establishment in the chamber's district belongs to it (§ 2(1) IHKG): https://www.gesetze-im-internet.de/ihkg/__2.html The trade office sends the chamber the data from the trade notification (§ 14(8) GewO). Crafts businesses register with the Handwerkskammer, and belong to the IHK only with any part of the business that is not a craft (§ 2(3) IHKG).
 - **IHK contributions.** Each chamber sets a basic contribution and a levy in its own rules (§ 3 IHKG). No federal page prints an amount. A GmbH or UG is in the commercial register, so the exemption in the table below does not apply to it.
-- **Berufsgenossenschaft.** Every entrepreneur must tell the competent accident insurer, within one week of the start of the enterprise, its kind and object, the number of insured persons and the opening day. The duty counts as met if the trade notification under § 14 GewO was made within one week of the start (§ 192(1) SGB VII): https://www.gesetze-im-internet.de/sgb_7/__192.html The start-up portal still advises telling the insurer directly within a week, to be safe. Contributions fall due when the entrepreneur is insured there or has employees, and the business alone bears them: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
-- **Employer number.** A business that takes on employees, apprentices or mini-jobbers needs a Betriebsnummer from the Federal Employment Agency, applied for online (same portal page). See `germany-payroll`.
+- **Berufsgenossenschaft.** Every entrepreneur must tell the competent accident insurer, within one week of the start of the enterprise, its kind and object, the number of insured persons and the opening day. The duty counts as met if the trade notification under § 14 GewO was made within one week of the start (§ 192(1) SGB VII): https://www.gesetze-im-internet.de/sgb_7/__192.html The start-up portal still advises telling the insurer directly within a week, to be safe, although trade offices usually pass the notification on. Contributions fall due when the entrepreneur is insured there or has employees, and the business alone bears them: https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden
+- **Employer number.** An employer that reports employees, mini-jobbers or apprentices to social insurance needs a Betriebsnummer for each establishment, issued by the Federal Employment Agency's Betriebsnummern-Service (§§ 18i to 18n SGB IV): https://www.arbeitsagentur.de/unternehmen/betriebsnummern-service/alles-wichtige See `germany-payroll`.
 
 **IHK contribution exemption for small unregistered businesses**
 
@@ -242,9 +242,13 @@ For tax periods 2021 to 2026 a new business is not automatically a monthly filer
 
 | What | Value | Note |
 | --- | --- | --- |
-| Source | all figures below | https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html |
-| Minimum share capital (Stammkapital) of a GmbH. § 5(1) GmbHG prints the same amount in words | EUR 25,000 | "beträgt 25.000 Euro, wovon aber nur die Hälfte sofort eingezahlt werden muss" |
-| Amount that must be reached before the register application: cash paid in, plus the nominal amount of shares to be covered in kind. § 7(2) GmbHG says "die Hälfte des Mindeststammkapitals" in words. The rest stays owed by the shareholders | EUR 12,500 | "muss mindestens die Hälfte des Mindeststammkapitals vor der Anmeldung der Gesellschaft erbracht werden, also mindestens 12.500 Euro" |
+| Source | all figures below | https://www.gesetze-im-internet.de/gmbhg/__5.html |
+| Minimum share capital (Stammkapital) of a GmbH, printed in words | twenty-five thousand euros | § 5(1) GmbHG: "Das Stammkapital der Gesellschaft muß mindestens fünfundzwanzigtausend Euro betragen" |
+
+| What | Value | Note |
+| --- | --- | --- |
+| Source | all figures below | https://www.gesetze-im-internet.de/gmbhg/__7.html |
+| Amount that must be reached before the register application: cash paid in, plus the nominal amount of shares to be covered in kind. The rest stays owed by the shareholders | half of the minimum share capital | § 7(2) GmbHG: "die Hälfte des Mindeststammkapitals gemäß § 5 Abs. 1 erreicht" |
 
 A second test applies together with the total, not instead of it: on each cash share one quarter of the nominal amount must be paid in before the application. The statute prints it in words ("ein Viertel des Nennbetrags eingezahlt ist", § 7(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__7.html Contributions in kind must be made in full before the application (§ 7(3) GmbHG). Each share must be a full euro amount, and the shares must add up to the share capital (§ 5 GmbHG): https://www.gesetze-im-internet.de/gmbhg/__5.html
 
@@ -252,32 +256,32 @@ A second test applies together with the total, not instead of it: on each cash s
 
 | What | Value | Note |
 | --- | --- | --- |
-| Source | all figures below | https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt |
-| Minimum share capital of a UG, printed in words. The portal adds that capital should follow the real need, because thin capital carries a high risk of insolvency | one euro | "Das Stammkapital beträgt mindestens einen Euro" |
-| Share of each year's profit that must go into a statutory reserve. § 5a(3) GmbHG says it in words: one quarter of the annual net profit, reduced by a loss carried forward from the year before | 25% | "25 Prozent des Gewinns müssen so lange in eine gesetzliche Rücklage fließen" |
-| Registered share capital at which the UG rules stop applying, once the company raises its capital to it | EUR 25,000 | "Erhöht die Gesellschaft ihr Stammkapital auf mindestens 25.000 Euro, fallen die Beschränkungen weg" |
+| Source | all figures below | https://www.gesetze-im-internet.de/gmbhg/__5a.html |
+| Minimum share capital of a UG. The statute sets no amount: a UG is a company formed with less than the GmbH minimum (§ 5a(1)), and each share must be a full euro amount (§ 5(2) GmbHG). This skill reads that as a lowest possible capital of one euro | one euro | § 5a(1) GmbHG: "mit einem Stammkapital gegründet wird, das den Betrag des Mindeststammkapitals nach § 5 Abs. 1 unterschreitet". The start-up portal prints it: "Das Stammkapital beträgt mindestens einen Euro" (https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt) |
+| Share of each year's annual net profit, reduced by a loss carried forward from the year before, that must go into a statutory reserve, printed in words | one quarter | § 5a(3) GmbHG: "ein Viertel des um einen Verlustvortrag aus dem Vorjahr geminderten Jahresüberschusses" |
+| Registered share capital at which the UG rules stop applying, once the company raises its capital to it or above | the GmbH minimum | § 5a(5) GmbHG: "den Betrag des Mindeststammkapitals nach § 5 Abs. 1 erreicht oder übersteigt" |
 
 - **UG profit retention rule.** The reserve duty has no time limit. It does not end when the reserve reaches a certain size. It ends only when the company raises its registered share capital to the GmbH minimum or above. From then on the special UG rules no longer apply, and the company may keep the UG name or change to GmbH (§ 5a(5) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__5a.html
-- **What the reserve may be used for.** Only a capital increase from company funds, or to cover an annual loss or a loss carried forward that profits do not cover (§ 5a(3) GmbHG). A capital increase from company funds rests on a balance sheet, and the last annual balance sheet can serve only if it was audited (§ 57c, § 57e GmbHG): https://www.gesetze-im-internet.de/gmbhg/__57e.html The start-up portal puts it this way: before the step up to a GmbH the UG's balance sheet must be examined by an auditor. § 5a(5) GmbHG itself does not say by which kind of capital increase the minimum must be reached.
-- **No profit, no reserve.** A UG that makes no profit puts nothing in the reserve. The portal warns that the duty must not be dodged through hidden profit distributions, for example excessive pay for the managing director.
+- **What the reserve may be used for.** Only a capital increase from company funds, or to cover an annual loss or a loss carried forward that profits do not cover (§ 5a(3) GmbHG). A capital increase from company funds rests on a balance sheet, and the last annual balance sheet can serve only if it was audited (§ 57c, § 57e GmbHG): https://www.gesetze-im-internet.de/gmbhg/__57e.html The start-up portal puts it this way: before the step up to a GmbH the UG's balance sheet must be examined by an auditor: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt § 5a(5) GmbHG itself does not say by which kind of capital increase the minimum must be reached.
+- **No profit, no reserve.** The reserve is a share of the annual net profit, so a UG with no annual net profit puts nothing in it (§ 5a(3) GmbHG). The start-up portal warns that the duty must not be dodged through hidden profit distributions, for example excessive pay for the managing director: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt
 - **Meeting on looming insolvency.** In a UG the shareholders' meeting must be called without delay when the company is threatened with inability to pay (§ 5a(4) GmbHG).
 
 **AG: minimum capital**
 
 | What | Value | Note |
 | --- | --- | --- |
-| Source | all figures below | https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Kleine-Aktiengesellschaft-AG/inhalt.html |
-| Minimum share capital (Grundkapital) of an AG. § 7 AktG prints the same amount in words | EUR 50,000 | "muss das Grundkapital von mindestens 50.000 Euro aufbringen" |
+| Source | all figures below | https://www.gesetze-im-internet.de/aktg/__7.html |
+| Minimum share capital (Grundkapital) of an AG, printed in words | fifty thousand euros | § 7 AktG: "Der Mindestnennbetrag des Grundkapitals ist fünfzigtausend Euro" |
 
-For cash contributions to an AG the amount called in before the application must be one quarter of the lowest issue price of each share or more, plus the whole premium if shares are issued above that price. The statute prints it in words ("mindestens ein Viertel des geringsten Ausgabebetrags", § 36a(1) AktG): https://www.gesetze-im-internet.de/aktg/__36a.html Contributions in kind must be made in full. Where the contribution is a duty to transfer an asset, the transfer must be carried out within five years of the entry (§ 36a(2) AktG). No official page prints that quarter as a euro amount, so this Guide gives none.
+For cash contributions to an AG the amount called in before the application must be one quarter of the lowest issue price of each share or more, plus the whole premium if shares are issued above that price. The statute prints it in words ("mindestens ein Viertel des geringsten Ausgabebetrags", § 36a(1) AktG): https://www.gesetze-im-internet.de/aktg/__36a.html Contributions in kind must be made in full. Where the contribution is a duty to transfer an asset, the transfer must be carried out within five years of the entry (§ 36a(2) AktG). No official page prints that quarter as a euro amount, so this skill gives none.
 
 **Capital Requirements**
 
 | Entity Type | Min. Share Capital | Min. Paid In Before the Application | Payment Timing | In-Kind Contributions |
 | --- | --- | --- | --- | --- |
-| GmbH | EUR 25,000 | EUR 12,500 in total, and one quarter of each cash share | Before the register application | Permitted. They must be set out in the articles, with a report on the formation in kind (§ 5(4) GmbHG), and made in full before the application. The court fee is higher (Step 4 table) |
+| GmbH | twenty-five thousand euros | Half of the minimum share capital in total, and one quarter of each cash share | Before the register application | Permitted. They must be set out in the articles, with a report on the formation in kind (§ 5(4) GmbHG), and made in full before the application. The court fee is higher (Step 4 table) |
 | UG (haftungsbeschränkt) | one euro | The whole stated capital, in cash | Before the register application | Excluded (§ 5a(2) GmbHG) |
-| AG | EUR 50,000 | One quarter of the lowest issue price of each share, plus any premium in full | Before the register application | Permitted. Made in full. A duty to transfer an asset must be carried out within five years of the entry (§ 36a(2) AktG). The formation is audited by formation auditors (§ 33(2) no. 4 AktG), unless the narrow exception of § 33a AktG applies: traded securities at their average market price, or other assets valued by an independent expert not more than six months before. The court fee is higher (Step 4 table) |
+| AG | fifty thousand euros | One quarter of the lowest issue price of each share, plus any premium in full | Before the register application | Permitted. Made in full. A duty to transfer an asset must be carried out within five years of the entry (§ 36a(2) AktG). The formation is audited by formation auditors (§ 33(2) no. 4 AktG), unless the narrow exception of § 33a AktG applies: traded securities at their average market price, or other assets valued by an independent expert not more than six months before. The court fee is higher (Step 4 table) |
 
 ## Section 5: Costs Breakdown
 
@@ -286,12 +290,12 @@ The legacy version of this section gave euro ranges for notary fees, adviser fee
 | Cost Component | GmbH | UG | Notes |
 | --- | --- | --- | --- |
 | Notary fee (Musterprotokoll) | By the fee statute (GNotKG). See the four tables below | Same | With the model protocol the floor for the business value does not apply, so the value can be lower than the floor |
-| Notary fee (custom Satzung) | By the fee statute. The floor for the business value applies | Same | The notary quotes the fee. This Guide does not compute one |
+| Notary fee (custom Satzung) | By the fee statute. The floor for the business value applies | Same | The notary quotes the fee. This skill does not compute one |
 | Handelsregister fee | See the Step 4 table | Same fee number as the GmbH | Plus the separate retrieval fee (no. 6000) |
-| Gewerbeanmeldung | See the Step 5 table | Same | Municipality-dependent |
+| Gewerbeanmeldung | Set by the municipality (Step 5) | Same | No federal amount |
 | Share capital deposit | See Section 4 | See Section 4 | Stays in the company as its own money |
 | Steuerberater (initial setup) | No official figure | No official figure | Agreed with the adviser |
-| Total (excl. capital) | Not stated | Not stated | No official page prints a total, and this Guide does not add fees up |
+| Total (excl. capital) | Not stated | Not stated | No official page prints a total, and this skill does not add fees up |
 
 **Notary fees: the business value (Geschäftswert) for the articles**
 
@@ -323,7 +327,7 @@ The legacy version of this section gave euro ranges for notary fees, adviser fee
 | Single fee (rate 1.0) for a business value up to EUR 25,000 | EUR 115 | Table B row "25 000 435,50 115,00". The first number is the value step, the second is Table A, the third is Table B |
 | Single fee (rate 1.0) for a business value up to EUR 30,000 | EUR 125 | Table B row "30 000 476,00 125,00" |
 
-How the notary fee is built: the fee rate from the schedule is applied to the single fee that Table B gives for the business value. Separate fees can come on top, for drafting the register application, for carrying out the filing and for producing the structured electronic data, plus outlays and VAT (fee schedule, no. 32014). These amounts are building blocks, not a quote. Agreements on the amount of notary costs are void (§ 125 GNotKG): https://www.gesetze-im-internet.de/gnotkg/__125.html so the fee cannot be negotiated. Ask the notary to state it in advance.
+How the notary fee is built: the fee rate from the schedule is applied to the single fee that Table B gives for the business value. Separate fees can come on top, for drafting the register application, for carrying out the filing and for producing the structured electronic data, plus outlays and VAT (fee schedule, no. 32014). These amounts are building blocks, not a quote. Agreements on the amount of notary costs are void, except where the next section allows one (§ 125 GNotKG): https://www.gesetze-im-internet.de/gnotkg/__125.html That exception (§ 126 GNotKG) covers only work as a mediator or conciliator, and official acts for which the statute sets no fee and that are not connected with other acts that carry a fee: https://www.gesetze-im-internet.de/gnotkg/__126.html Notarising the articles and certifying the register application have fees in the schedule, so the formation fee cannot be negotiated. Ask the notary to state it in advance.
 
 ### Annual Maintenance
 
@@ -334,7 +338,7 @@ The legacy version gave euro ranges for chamber contributions, accident insuranc
 | IHK membership | Set by each chamber's own rules (§ 3 IHKG). No federal amount. See Step 8 |
 | Berufsgenossenschaft | Worked out by the accident insurer after the end of each business year. No federal amount. See https://www.dguv.de/de/ihr_partner/unternehmen/index.jsp |
 | Steuerberater | Agreed with the adviser. No official figure |
-| Disclosure of annual accounts | Filed with the company register through its publication platform: https://www.unternehmensregister.de/ureg/ No fee was found on the pages read |
+| Disclosure of annual accounts | Sent electronically to the company register (§ 325 HGB, see Section 6). The register's own page explains where and how to file: https://www.unternehmensregister.de/ureg/ No fee was found on the pages read |
 | Handelsregister changes | See the table below |
 
 **Court fees for later entries in the commercial register, division B (GmbH, UG, AG)**
@@ -342,7 +346,7 @@ The legacy version gave euro ranges for chamber contributions, accident insuranc
 | What | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.gesetze-im-internet.de/hreggebv/anlage.html |
-| Entry of one fact, for example a new managing director (this Guide's example, the schedule gives none) (no. 2500) | EUR 105 | "2500 Eintragung einer Tatsache 105,00 €" |
+| Entry of one fact, for example a new managing director (this skill's example, the schedule gives none) (no. 2500) | EUR 105 | "2500 Eintragung einer Tatsache 105,00 €" |
 | Second and each further fact in the same application (no. 2501) | EUR 60 | "Eintragung der zweiten und jeder weiteren Tatsache aufgrund derselben Anmeldung: Die Gebühr 2500 beträgt jeweils 60,00 €" |
 | Entry of a fact with no economic significance (no. 2502). The schedule gives no examples | EUR 45 | "Die Eintragung betrifft eine Tatsache ohne wirtschaftliche Bedeutung: Die Gebühren 2500 und 2501 betragen 45,00 €" |
 | Receipt of a new shareholder list (no. 5002) | EUR 45 | "der Liste der Gesellschafter (§ 40 GmbHG) 45,00 €" |
@@ -355,15 +359,16 @@ The retrieval fee (no. 6000, one third of the fee in question) comes on top of e
 | --- | --- | --- |
 | Jahresabschluss (annual financial statements), preparation | Within the first three months of the new financial year. A small company may take longer if that fits an orderly course of business, but no longer than the first six months (§ 264(1) HGB) | Managing directors |
 | Adoption of the accounts and decision on the profit | Shareholders decide within the first eight months of the financial year, or the first eleven months for a small company. The articles cannot extend this (§ 42a(2) GmbHG) | Shareholders' meeting |
-| Offenlegung (disclosure) | Sent electronically to the company register at the latest one year after the balance sheet date (§ 325(1a) HGB). Not the Bundesanzeiger, as older texts say | Unternehmensregister. The Federal Office of Justice enforces it |
+| Offenlegung (disclosure) | Sent electronically to the company register at the latest one year after the balance sheet date (§ 325(1a) HGB). Not the Bundesanzeiger, as older texts say | Unternehmensregister. The Federal Office of Justice enforces it (§ 335 HGB) |
 | Körperschaftsteuererklärung (corporate tax return) | Seven months after the end of the calendar year. If an adviser prepares it: the last day of February of the second calendar year after the tax period (§ 149(2) and (3) AO). The tax office can call an advised return in earlier (§ 149(4) AO) | Finanzamt |
 | Gewerbesteuererklärung (trade tax return) | Same deadlines as the corporate tax return (§ 149 AO) | Finanzamt. The municipality sets and collects the tax |
-| Umsatzsteuervoranmeldung (VAT returns) | Quarterly or monthly, see the Step 6 table. Annual VAT return on top | Finanzamt |
+| Umsatzsteuervoranmeldung (VAT returns) | Quarterly or monthly, see the Step 6 table. Annual VAT return on top. Not for a business under the small-business rule of § 19 UStG (Step 6) | Finanzamt |
+| E-invoices (E-Rechnung) | Receiving: since 1 January 2025 every business established in Germany must be able to receive an e-invoice from another German business. There are no exceptions, small businesses under § 19 UStG included, and an e-mail inbox is enough (finance ministry FAQ). A small business under § 19 UStG must receive e-invoices but need not issue them (§ 34a UStDV, FAQ question 4). Issuing: for supplies made in 2025 and 2026 an invoice between German businesses may still be sent on paper, or with the recipient's consent in another electronic format, until 31 December 2026; a narrower transition for 2027 depends on the issuer's turnover in the previous year (§ 27(38) UStG). See `germany-einvoice` | None. It is a standing duty from the first supply |
 | Gesellschafterliste (shareholder list) | Without undue delay after any change in the shareholders or their holdings. The managing directors file it, or the notary if a notary took part in the change (§ 40 GmbHG) | Handelsregister |
-| Business letters | Every business letter, in any form, states the legal form, the seat, the register court and number, and all managing directors by surname and one full first name (§ 35a GmbHG) | None. It is a standing duty |
+| Business letters | Every business letter, in any form, that is addressed to a specific recipient states the legal form, the seat, the register court and number, and all managing directors by surname and at least one full first name, plus the chair of the supervisory board if there is one. Order forms always count as business letters. Routine notices within an existing business relationship on preprinted forms are exempt (§ 35a GmbHG) | None. It is a standing duty |
 | Transparenzregister | Keep the details current and report changes without undue delay (§ 20(1) GwG). The statute sets no number of days | Transparenzregister |
 
-Sources for the table: https://www.gesetze-im-internet.de/hgb/__264.html and https://www.gesetze-im-internet.de/gmbhg/__42a.html and https://www.gesetze-im-internet.de/hgb/__325.html and https://www.gesetze-im-internet.de/ao_1977/__149.html and https://www.gesetze-im-internet.de/gmbhg/__40.html and https://www.gesetze-im-internet.de/gmbhg/__35a.html
+Sources for the table: https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html and https://www.gesetze-im-internet.de/ustg_1980/__27.html and https://www.gesetze-im-internet.de/hgb/__264.html and https://www.gesetze-im-internet.de/gmbhg/__42a.html and https://www.gesetze-im-internet.de/hgb/__325.html and https://www.gesetze-im-internet.de/ao_1977/__149.html and https://www.gesetze-im-internet.de/gmbhg/__40.html and https://www.gesetze-im-internet.de/gmbhg/__35a.html
 
 **What "small" and "micro" mean (size classes)**
 
@@ -389,21 +394,17 @@ A small company files only the balance sheet and the notes. A micro company file
 
 | What | Value | Note |
 | --- | --- | --- |
-| Source | all figures below | https://www.bundesjustizamt.de/DE/Themen/OrdnungsgeldVollstreckung/Jahresabschluesse/Offenlegung/Verfahren/Verfahren_node.html |
-| Lowest fine in the normal case. It is threatened first, with six weeks to comply, and can be set again and again until the accounts are filed | EUR 2,500 | Federal Office of Justice: "Das Ordnungsgeld beträgt im Regelfall mindestens 2.500 Euro und höchstens 25.000 Euro" |
-| Highest single fine in the normal case. Capital-market companies face a higher ceiling | EUR 25,000 | Same sentence. § 335(1) HGB prints both amounts in words |
-
-| What | Value | Note |
-| --- | --- | --- |
 | Source | all figures below | https://www.gesetze-im-internet.de/hgb/__335.html |
+| Lowest fine, printed in words. It is first threatened, with six weeks from receipt of the threat to comply or object (§ 335(3) HGB) | two thousand five hundred euros | § 335(1) HGB: "Das Ordnungsgeld beträgt mindestens zweitausendfünfhundert und höchstens fünfundzwanzigtausend Euro" |
+| Highest fine, printed in words. A capital-market company faces a higher ceiling (§ 335(1a) HGB) | twenty-five thousand euros | Same sentence |
 | Reduced fine when the accounts are filed after the six weeks have run out but before the Federal Office decides on the fine, for a micro company that used its deposit right | EUR 500 | § 335(4) HGB: "auf einen Betrag von 500 Euro, wenn die Beteiligten von dem Recht einer Kleinstkapitalgesellschaft" |
 | Reduced fine in the same late case for a small company | EUR 1,000 | § 335(4) HGB: "auf einen Betrag von 1 000 Euro, wenn es sich um eine kleine Kapitalgesellschaft" |
 
-The costs of the fine procedure come on top. They are on the Federal Office of Justice page linked above.
+The costs of the procedure come on top: they are imposed together with the threat of the fine (§ 335(3) HGB). The fines go to the Federal Office of Justice, which runs the procedure. Its page describes the cycle: if the duty is still not met, the fine is set and the order is repeated under threat of a new fine, until the accounts are disclosed, with the fine normally raised step by step: https://www.bundesjustizamt.de/DE/Themen/OrdnungsgeldVollstreckung/Jahresabschluesse/Offenlegung/Verfahren/Verfahren_node.html
 
 **Bookkeeping duty depends on the legal form**
 
-A GmbH or UG counts as a commercial company (§ 13(3) GmbHG), and so does an AG (§ 3 AktG). The rules for merchants apply to commercial companies (§ 6(1) HGB), so the company must keep books (§ 238 HGB): https://www.gesetze-im-internet.de/hgb/__238.html The start-up portal says the same of the GmbH and the UG: double-entry books and a yearly balance sheet. The two rules below are not for companies. They matter when the choice is between a company and a sole trader business.
+A GmbH or UG counts as a commercial company (§ 13(3) GmbHG), and so does an AG (§ 3 AktG). The rules for merchants apply to commercial companies (§ 6(1) HGB), so the company must keep books (§ 238 HGB): https://www.gesetze-im-internet.de/hgb/__238.html The two rules below are not for companies. They matter when the choice is between a company and a sole trader business.
 
 | What | Value | Note |
 | --- | --- | --- |
@@ -421,7 +422,7 @@ See `germany-bookkeeping` and `germany-financial-statements` for the detail.
 
 ## Section 7: Bank Account Opening
 
-No official page read for this Guide describes how banks open company accounts. The two lists and the note below are legacy practice notes. Only the beneficial owner test is law.
+No official page read for this skill describes how banks open company accounts. The two lists and the note below are legacy practice notes. Only the beneficial owner test is law.
 
 ### Documents Typically Required
 
@@ -440,7 +441,7 @@ No official page read for this Guide describes how banks open company accounts. 
 
 ### Common Banks
 
-The legacy version named commercial banks here. The names are gone: no official page supports such a list, a name in a public Guide reads as a recommendation, and offers change. Business accounts come from branch banks (private banks, savings banks, cooperative banks) and from online-only providers. Whether a given provider opens an account for a GmbH in formation, or for a company at all, must be checked with that provider.
+The legacy version named commercial banks here. The names are gone: no official page supports such a list, a name in a public skill reads as a recommendation, and offers change. Business accounts come from branch banks (private banks, savings banks, cooperative banks) and from online-only providers. Whether a given provider opens an account for a GmbH in formation, or for a company at all, must be checked with that provider.
 
 ## Section 8: Foreign Founder Considerations
 
@@ -449,19 +450,19 @@ The legacy version named commercial banks here. The names are gone: no official 
 | Non-resident Geschäftsführer allowed? | § 6(2) GmbHG lists who cannot be managing director. Residence and nationality are not on that list. A comparable ban in another EU or EEA state counts, and so does a conviction abroad for a comparable offence |
 | Minimum German-resident director? | The GmbHG does not ask for one. The company does need its seat in Germany (§ 4a GmbHG) and a business address in Germany in the register (§ 8(4) GmbHG). Legacy practice note: a resident director helps with banks and the tax office |
 | Instruction of a director abroad | The instruction about the duty to give the court full information can be given in writing, or by a foreign notary, a comparable legal adviser or a consular officer (§ 8(3) GmbHG) |
-| Video notarisation for foreigners? | Possible from abroad, but only with an electronic identity that § 16c BeurkG accepts: a German one, or one from another EU or EEA state notified at level "high", plus a photo read from the chip of an identity card, passport or residence permit. See Step 2 |
-| Apostille requirements | Legacy note: foreign documents need an apostille or legalisation and a certified German translation. No official page read for this Guide states this. Ask the notary |
+| Video notarisation for foreigners? | The start-up portal says the online route can be used from abroad, but only with an electronic identity that § 16c BeurkG accepts: a German one, or one from another EU or EEA state notified at level "high", plus a photo read from the chip of an identity card, passport or residence permit. See Step 2 |
+| Apostille requirements | Legacy note: foreign documents need an apostille or legalisation and a certified German translation. No official page read for this skill states this. Ask the notary |
 | Physical presence required? | Not strictly. A representative can sign with a power of attorney that a notary drew up or certified (§ 2(2) GmbHG). That power of attorney can itself be drawn up by video |
-| Trade notification by a non-German | The start-up portal lists a residence permit that allows self-employed trading among the papers for the trade office |
-| Foreign ownership restrictions | The GmbHG sets none. Investment screening under the Außenwirtschaftsverordnung is about acquiring an existing German business or a stake in one. § 55 covers buyers from outside the EU. The sections on specific sectors were not read for this Guide. Refer such cases |
+| Trade notification by a non-German | The start-up portal lists a residence permit that allows self-employed trading among the papers for the trade office. Immigration law is outside this skill |
+| Foreign ownership restrictions | The GmbHG sets none. Investment screening under the Außenwirtschaftsverordnung is about acquiring an existing German business or a stake in one. § 55 covers buyers from outside the EU. The sections on specific sectors were not read for this skill. Refer such cases |
 
-Sources for the table: https://www.gesetze-im-internet.de/gmbhg/__6.html and https://www.gesetze-im-internet.de/gmbhg/__8.html and https://www.gesetze-im-internet.de/beurkg/__16c.html and https://www.gesetze-im-internet.de/awv_2013/__55.html
+Sources for the table: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html and https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden and https://www.gesetze-im-internet.de/gmbhg/__6.html and https://www.gesetze-im-internet.de/gmbhg/__8.html and https://www.gesetze-im-internet.de/beurkg/__16c.html and https://www.gesetze-im-internet.de/awv_2013/__55.html
 
-Whether a founder or director from outside the EU needs a visa or residence permit to work in Germany is immigration law. It is outside this Guide.
+Whether a founder or director from outside the EU needs a visa or residence permit to work in Germany is immigration law. It is outside this skill.
 
 ## Section 9: Common Mistakes and Refusals
 
-- **R-DE-F1: UG with minimal capital and no plan.** A UG with the legal minimum is possible but fragile. The start-up portal says the capital should follow the real need, because thin capital carries a high risk of insolvency. The legacy version named a euro range as the capital to advise. No official page prints one, so it is gone. Remember that under the model protocol the company bears its formation costs only up to the cap in the Step 1 table, and never beyond its share capital. The rest falls on the founders.
+- **R-DE-F1: UG with minimal capital and no plan.** A UG with the legal minimum is possible but fragile. The start-up portal says the capital should follow the real need, because thin capital always carries a high risk of insolvency: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt The legacy version named a euro range as the capital to advise. No official page prints one, so it is gone. Remember that under the model protocol the company bears its formation costs only up to the cap in the Step 1 table, and never beyond its share capital. The rest falls on the founders.
 - **R-DE-F2: Trading before Handelsregister entry.** The GmbH does not exist as such until it is entered. If someone acts in the company's name before that, the persons acting are liable personally, jointly and severally (§ 11(2) GmbHG): https://www.gesetze-im-internet.de/gmbhg/__11.html The statute says "die Handelnden" (the persons acting), not only the managing director. Flag this risk clearly.
 - **R-DE-F3: Missing Transparenzregister filing.** The old rule, under which the duty could count as met without a report, ended on 31 July 2021 (Step 7). Not reporting, or reporting late, wrongly or incompletely, is an administrative offence if done with intent or recklessly (§ 56(1) no. 55 GwG). The statute prints the ceilings in words: a fine of up to one hundred and fifty thousand euros for intent ("bis zu einhundertfünfzigtausend Euro"), otherwise up to one hundred thousand euros. Serious, repeated or systematic breaches carry more (§ 56(3) GwG): https://www.gesetze-im-internet.de/gwg_2017/__56.html
 - **R-DE-F4: Sacheinlage in UG.** Contributions in kind are excluded for a UG under § 5a(2) GmbHG. Only cash works. A hidden contribution in kind (Step 3) is the same mistake in disguise.
@@ -471,7 +472,7 @@ Whether a founder or director from outside the EU needs a visa or residence perm
 
 ## Section 10: Timeline
 
-The durations below are legacy estimates. The only durations found on official pages are: a trade notification is "normally processed within a few days" (start-up portal), and the VAT identification number "can take some weeks" from the questionnaire to the BZSt. Court and notary times vary and no official page states them.
+The durations below are legacy estimates. The only durations found on official pages are: a trade notification is normally processed within a few days (start-up portal, Step 5), and the VAT identification number request can take some weeks to pass from the tax office to the BZSt (Step 6). Court and notary times vary and no official page states them.
 
 | Step | Duration | Cumulative |
 | --- | --- | --- |
@@ -521,39 +522,40 @@ The main bottleneck is the processing time at the register court, which varies b
 - A buyer from outside the EU acquiring an existing German business (investment screening under the Außenwirtschaftsverordnung).
 - A quote for the notary's fee. Ask the notary.
 - Tax structuring: company or partnership, the option for a partnership to be taxed like a corporation (§ 1a KStG), holding structures and tax groups. Refer to a Steuerberater.
-- A company that is already in financial trouble. Insolvency duties are outside this Guide.
+- A company that is already in financial trouble. Insolvency duties are outside this skill.
 
 ## Sources
 
-- GmbHG §§ 1 to 8, 10, 11, 13, 19, 35a, 40, 42a, 57c, 57e: https://www.gesetze-im-internet.de/gmbhg/__2.html and https://www.gesetze-im-internet.de/gmbhg/__5.html and https://www.gesetze-im-internet.de/gmbhg/__5a.html and https://www.gesetze-im-internet.de/gmbhg/__7.html and https://www.gesetze-im-internet.de/gmbhg/__8.html and https://www.gesetze-im-internet.de/gmbhg/__11.html
+- GmbHG §§ 1 to 8, 10, 11, 13, 19, 35a, 40, 42a, 57c, 57e: https://www.gesetze-im-internet.de/gmbhg/__2.html and https://www.gesetze-im-internet.de/gmbhg/__35a.html and https://www.gesetze-im-internet.de/gmbhg/__5.html and https://www.gesetze-im-internet.de/gmbhg/__5a.html and https://www.gesetze-im-internet.de/gmbhg/__7.html and https://www.gesetze-im-internet.de/gmbhg/__8.html and https://www.gesetze-im-internet.de/gmbhg/__11.html
 - GmbHG model protocols, Annex 1 and Annex 2: https://www.gesetze-im-internet.de/normengrafiken/bgbl1_2021/j3364_0010.pdf and https://www.gesetze-im-internet.de/gmbhg/anlage_2.html
 - AktG §§ 1, 2, 3, 7, 23, 30, 33, 33a, 36, 36a, 41, 95: https://www.gesetze-im-internet.de/aktg/__7.html and https://www.gesetze-im-internet.de/aktg/__36a.html and https://www.gesetze-im-internet.de/aktg/__33a.html
+- Handelsregisterverordnung § 3: https://www.gesetze-im-internet.de/hdlregvfg/__3.html
 - HGB §§ 1, 2, 6, 12, 19, 29, 105, 106, 107, 123, 126, 161, 162, 171, 176, 238, 241a, 264, 267, 267a, 325, 326, 335: https://www.gesetze-im-internet.de/hgb/__12.html and https://www.gesetze-im-internet.de/hgb/__267.html and https://www.gesetze-im-internet.de/hgb/__335.html
 - Civil Code §§ 705, 707, 707b, 719, 721 and PartGG §§ 1, 4, 8: https://www.gesetze-im-internet.de/bgb/__705.html and https://www.gesetze-im-internet.de/bgb/__719.html and https://www.gesetze-im-internet.de/bgb/__707b.html and https://www.gesetze-im-internet.de/partgg/__1.html
 - Beurkundungsgesetz §§ 16a, 16c: https://www.gesetze-im-internet.de/beurkg/__16a.html
 - Handelsregistergebührenverordnung, fee schedule: https://www.gesetze-im-internet.de/hreggebv/anlage.html
-- GNotKG §§ 34, 105, 107, 125 and its two annexes: https://www.gesetze-im-internet.de/gnotkg/__105.html and https://www.gesetze-im-internet.de/gnotkg/__107.html and https://www.gesetze-im-internet.de/gnotkg/anlage_1.html and https://www.gesetze-im-internet.de/gnotkg/anlage_2.html
-- GewO §§ 14, 146: https://www.gesetze-im-internet.de/gewo/__14.html
-- AO §§ 137, 138, 141, 149: https://www.gesetze-im-internet.de/ao_1977/__137.html and https://www.gesetze-im-internet.de/ao_1977/__138.html
-- UStG §§ 18, 19, 27a: https://www.gesetze-im-internet.de/ustg_1980/__18.html and https://www.gesetze-im-internet.de/ustg_1980/__19.html and https://www.gesetze-im-internet.de/ustg_1980/__27a.html
+- GNotKG §§ 34, 105, 107, 125, 126 and its two annexes: https://www.gesetze-im-internet.de/gnotkg/__105.html and https://www.gesetze-im-internet.de/gnotkg/__126.html and https://www.gesetze-im-internet.de/gnotkg/__107.html and https://www.gesetze-im-internet.de/gnotkg/anlage_1.html and https://www.gesetze-im-internet.de/gnotkg/anlage_2.html
+- GewO §§ 6, 14, 146: https://www.gesetze-im-internet.de/gewo/__6.html and https://www.gesetze-im-internet.de/gewo/__14.html
+- AO §§ 137, 138, 139c, 141, 149: https://www.gesetze-im-internet.de/ao_1977/__139c.html and https://www.gesetze-im-internet.de/ao_1977/__137.html and https://www.gesetze-im-internet.de/ao_1977/__138.html
+- UStG §§ 14, 18, 19, 27, 27a and UStDV § 33: https://www.gesetze-im-internet.de/ustg_1980/__14.html and https://www.gesetze-im-internet.de/ustdv_1980/__33.html and https://www.gesetze-im-internet.de/ustg_1980/__18.html and https://www.gesetze-im-internet.de/ustg_1980/__27.html and https://www.gesetze-im-internet.de/ustg_1980/__19.html and https://www.gesetze-im-internet.de/ustg_1980/__27a.html
 - KStG §§ 1, 1a, 23, SolzG § 4, GewStG §§ 2, 5, 11, 16: https://www.gesetze-im-internet.de/kstg_1977/__23.html and https://www.gesetze-im-internet.de/solzg_1995/__4.html and https://www.gesetze-im-internet.de/gewstg/__11.html
 - GwG §§ 3, 19, 20, 56, 59: https://www.gesetze-im-internet.de/gwg_2017/__20.html
 - IHKG §§ 2, 3, SGB VII §§ 192, 209, DrittelbG § 1, Außenwirtschaftsverordnung § 55: https://www.gesetze-im-internet.de/ihkg/__3.html and https://www.gesetze-im-internet.de/sgb_7/__192.html
-- Start-up portal of the Federal Government, pages on the GmbH, the UG, the small AG, the commercial register, the authorities, and registering a business: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html and https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt and https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Kleine-Aktiengesellschaft-AG/inhalt.html and https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden and https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung
+- Federal Employment Agency, Betriebsnummern-Service: https://www.arbeitsagentur.de/unternehmen/betriebsnummern-service/alles-wichtige
+- Start-up portal of the Federal Government, pages on the GmbH, the UG, the commercial register, the authorities, and registering a business: https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/Gesellschaft-mit-beschraenkter-Haftung-GmbH/inhalt.html and https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Rechtsformen/UG-haftungsbeschraenkt/inhalt and https://www.existenzgruendungsportal.de/_noch_neu_einordnen/DE/Gruendung-vorbereiten/Gruendungswissen/Behoerden/Handelsregister/inhalt and https://www.existenzgruendungsportal.de/Navigation/DE/Gruendungswissen/Behoerden/behoerden and https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung
 - ELSTER, questionnaire for tax registration of a corporation: https://www.elster.de/eportal/formulare-leistungen/alleformulare/fsekapg
 - BZSt, VAT identification number and business identification number: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Umsatzsteuer-Identifikationsnummer/Vergabe_USt_IdNr/vergabe_ust_idnr_node.html and https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Wirtschafts-Identifikationsnummer/wirtschaftsidentifikationsnummer_node.html
 - Federal Office of Justice, fine procedure for undisclosed accounts: https://www.bundesjustizamt.de/DE/Themen/OrdnungsgeldVollstreckung/Jahresabschluesse/Offenlegung/Verfahren/Verfahren_node.html
 - Register portal of the federal states and the company register: https://www.handelsregister.de/rp_web/welcome.xhtml and https://www.unternehmensregister.de/ureg/
 - German Social Accident Insurance (DGUV), page for businesses: https://www.dguv.de/de/ihr_partner/unternehmen/index.jsp
+- Finance ministry, questions and answers on the compulsory e-invoice (Stand März 2026): https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html
 - Finance ministry, instructions for the 2026 EÜR form, letter of 1 September 2026: https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Einkommensteuer/2026-09-01-anlage-EUER-2026.pdf?__blob=publicationFile&v=2
 
 ## Disclaimer
 
-This Guide and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this Guide. All outputs must be reviewed and signed off by a qualified professional before acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before acting upon.
 
-The most up-to-date version of this Guide is maintained at openaccountants.com.
-
-> Contributed by OpenAccountants.
+The most up-to-date version of this skill is maintained at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 
@@ -575,4 +577,4 @@ version (and the professional behind it) is at
 
 ## Today's figures and who stands behind this skill
 
-This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-09-19. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `germany-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/germany-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.
+This file is an AI skill (tax rules your AI follows) from OpenAccountants, copied on 2026-10-19. Rates, thresholds and deadlines change. For the current version of this skill, its official sources and the named accountant (if any) who stands behind it, call `get_skill` with slug `germany-formation` on the OpenAccountants connector (https://www.openaccountants.com/connect), or read https://www.openaccountants.com/skills/germany-formation. If neither is available, confirm every figure against the official source pages cited above before relying on it.

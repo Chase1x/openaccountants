@@ -3,181 +3,219 @@ name: us-federal-income-tax-return-1040
 description: A drafting guide to the tax year 2026 Form 1040 rates, standard deductions and filing deadlines for individual US taxpayers, and the IRS-described filing method, for accountants preparing US individual income tax returns.
 jurisdiction: US
 tax_year: 2026
-last_updated: 2026-09-03
+last_updated: 2026-10-19
+authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
-drafted_by: OpenAccountants
-approved_by: pending
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# US federal income tax return Form 1040 in United States
+# US federal income tax return, Form 1040
 
-Form 1040 is the annual US individual income tax return. 
-Form 1040 is used by citizens or residents of the United States to file an annual income tax return
-, and 
-Form 1040-SR is available as an optional alternative to using Form 1040 for taxpayers who are age 65 or older, using the same schedules and instructions as Form 1040
-. The return covers the taxpayer's tax year; for most individuals that is the calendar year ending 31 December. Figures are for tax year 2026. The IRS states that 
-the tax year 2026 adjustments generally apply to tax returns filed in 2027
-. Where a figure below is published by the IRS for a different year, the table note says so.
+Form 1040 is the annual US individual income tax return. The IRS says Form 1040 is used by U.S. taxpayers to file an annual income tax return, and that Form 1040-SR is an optional alternative for taxpayers who are age 65 or older, using the same schedules and instructions ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)). Most individuals use the calendar year. Figures are for tax year 2026. A tax year 2026 return is the one filed in 2027: the IRS says the tax year 2026 adjustments "generally apply to tax returns filed in 2027" ([IR-2025-103](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill)). Every table below names its year. Rows marked tax year 2025 belong to the 2025 return filed in 2026, and appear only where the IRS has not yet printed the 2026 figure or where a 2025 return is still being prepared.
 
 ## Who this is for
 
-This Guide is for individuals who are citizens or residents of the United States filing an annual federal income tax return on Form 1040, and for taxpayers age 65 or older who use Form 1040-SR instead. 
-If you have wages, you file Form 1040, U.S. Individual Income Tax Return or Form 1040-SR, U.S. Income Tax Return for Seniors; if you have a business or side income, you file Form 1040 with a Schedule C.
- It is not for nonresident aliens, who file a different return, and it is not for entity returns. It does not cover state or local income tax returns.
+This skill is for preparers of a federal individual income tax return on Form 1040 or Form 1040-SR for tax year 2026. The IRS filing page says: "If you have wages, file Form 1040, U.S. Individual Income Tax Return or Form 1040-SR, U.S. Income Tax Return for Seniors", and that a person with a business or side income files Form 1040 with a Schedule C ([File your tax return](https://www.irs.gov/filing/individuals/how-to-file)). It does not cover nonresident aliens, entity returns (partnership, corporation, trust or estate), amended returns, estimated tax payments, or state and local income tax returns.
 
 ## Rates, thresholds and deadlines
 
-### Tax year 2026 rates and brackets
+### Tax year 2026 rate schedules
+
+These are the four rate schedules (Tables 1 to 4) in Revenue Procedure 2025-32, for taxable years beginning in 2026. The Act called the One, Big, Beautiful Bill (Public Law 119-21, 4 July 2025) kept the seven rates. In each row, "over" means more than and "up to" means not more than, applied to taxable income.
+
+| What | Value | Note |
+|---|---|---|
+| Source | all figures below | https://www.irs.gov/pub/irs-drop/rp-25-32.pdf |
+| Married filing jointly and surviving spouses, up to USD 24,800 | 10% of taxable income | Table 1: "Not over $24,800 10% of the taxable income" |
+| Married filing jointly, over USD 24,800 up to USD 100,800 | USD 2,480 plus 12% of the excess over USD 24,800 | Table 1: "Over $24,800 but not over $2,480 plus 12% of the excess $100,800 over $24,800" |
+| Married filing jointly, over USD 100,800 up to USD 211,400 | USD 11,600 plus 22% of the excess over USD 100,800 | Table 1: "Over $100,800 but not over $11,600 plus 22% of the excess $211,400" |
+| Married filing jointly, over USD 211,400 up to USD 403,550 | USD 35,932 plus 24% of the excess over USD 211,400 | Table 1: "Over $211,400 but not over $35,932 plus 24% of the excess $403,550" |
+| Married filing jointly, over USD 403,550 up to USD 512,450 | USD 82,048 plus 32% of the excess over USD 403,550 | Table 1: "Over $403,550 but not over $82,048 plus 32% of the excess $512,450" |
+| Married filing jointly, over USD 512,450 up to USD 768,700 | USD 116,896 plus 35% of the excess over USD 512,450 | Table 1: "Over $512,450 but not over $116,896 plus 35% of the $768,700" |
+| Married filing jointly, over USD 768,700 | USD 206,583.50 plus 37% of the excess over USD 768,700 | Table 1: "Over $768,700 $206,583.50 plus 37% of the excess over $768,700" |
+| Head of household, up to USD 17,700 | 10% of taxable income | Table 2: "Not over $17,700 10% of the taxable income" |
+| Head of household, over USD 17,700 up to USD 67,450 | USD 1,770 plus 12% of the excess over USD 17,700 | Table 2: "Over $17,700 but $1,770 plus 12% of not over $67,450" |
+| Head of household, over USD 67,450 up to USD 105,700 | USD 7,740 plus 22% of the excess over USD 67,450 | Table 2: "Over $67,450 but $7,740 plus 22% of not over $105,700" |
+| Head of household, over USD 105,700 up to USD 201,750 | USD 16,155 plus 24% of the excess over USD 105,700 | Table 2: "Over $105,700 but $16,155 plus 24% of not over $201,750" |
+| Head of household, over USD 201,750 up to USD 256,200 | USD 39,207 plus 32% of the excess over USD 201,750 | Table 2: "Over $201,750 but $39,207 plus 32% of not over $256,200" |
+| Head of household, over USD 256,200 up to USD 640,600 | USD 56,631 plus 35% of the excess over USD 256,200 | Table 2: "Over $256,200 but $56,631 plus 35% of not over $640,600" |
+| Head of household, over USD 640,600 | USD 191,171 plus 37% of the excess over USD 640,600 | Table 2: "Over $640,600 $191,171 plus 37% of the excess over $640,600" |
+| Single, and married filing separately, up to USD 12,400 | 10% of taxable income | Tables 3 and 4: "Not over $12,400 10% of the taxable income" |
+| Single, and married filing separately, over USD 12,400 up to USD 50,400 | USD 1,240 plus 12% of the excess over USD 12,400 | Tables 3 and 4: "Over $12,400 but $1,240 plus 12% of not over $50,400" |
+| Single, and married filing separately, over USD 50,400 up to USD 105,700 | USD 5,800 plus 22% of the excess over USD 50,400 | Tables 3 and 4: "Over $50,400 but $5,800 plus 22% of not over $105,700" |
+| Single, and married filing separately, over USD 105,700 up to USD 201,775 | USD 17,966 plus 24% of the excess over USD 105,700 | Tables 3 and 4: "Over $105,700 but $17,966 plus 24% of not over $201,775" |
+| Single, and married filing separately, over USD 201,775 up to USD 256,225 | USD 41,024 plus 32% of the excess over USD 201,775 | Tables 3 and 4: "Over $201,775 but $41,024 plus 32% of not over $256,225" |
+| Single only, over USD 256,225 up to USD 640,600 | USD 58,448 plus 35% of the excess over USD 256,225 | Table 3: "Over $256,225 but $58,448 plus 35% of not over $640,600" |
+| Single only, over USD 640,600 | USD 192,979.25 plus 37% of the excess over USD 640,600 | Table 3: "Over $640,600 $192,979.25 plus 37% of the excess over $640,600" |
+| Married filing separately only, over USD 256,225 up to USD 384,350 | USD 58,448 plus 35% of the excess over USD 256,225 | Table 4: "Over $256,225 but $58,448 plus 35% of not over $384,350" |
+| Married filing separately only, over USD 384,350 | USD 103,291.75 plus 37% of the excess over USD 384,350 | Table 4: "Over $384,350 $103,291.75 plus 37% of the excess over $384,350" |
+
+The single and head of household schedules share some edges (USD 105,700 and USD 640,600) but not others. Married filing separately leaves the single schedule at the 35% band. Use the schedule for the filing status, not the nearest match.
+
+### Tax year 2026 deductions, credits and other amounts
+
+| What | Value | Note |
+|---|---|---|
+| Source | all figures below | https://www.irs.gov/pub/irs-drop/rp-25-32.pdf |
+| Standard deduction, married filing jointly and surviving spouses | USD 32,200 | "Married Individuals Filing Joint Returns and Surviving Spouses $32,200" |
+| Standard deduction, head of household | USD 24,150 | "Heads of Households (§ 1(j)(2)(B)) $24,150" |
+| Standard deduction, single and married filing separately | USD 16,100 | "Unmarried Individuals (other than Surviving Spouses and Heads of $16,100"; married filing separately is also printed at $16,100 |
+| Standard deduction of a person who can be claimed as a dependent | cannot exceed the greater of USD 1,350, or USD 450 plus earned income | "cannot exceed the greater of (1) $1,350, or (2) the sum of $450 and the individual's earned income" |
+| Additional standard deduction for age 65 or blindness, per condition, married person or surviving spouse | USD 1,650 | "the additional standard deduction amount under § 63(f) for the aged or the blind is $1,650" |
+| Additional standard deduction for age 65 or blindness, unmarried and not a surviving spouse | USD 2,050 | "increased to $2,050 if the individual is also unmarried and not a surviving spouse" |
+| Child tax credit, maximum per qualifying child | USD 2,200 | "the maximum amount of the credit allowed under § 24(a) is $2,200" |
+| Child tax credit, refundable amount per child | USD 1,700 | "the amount used in § 24(d)(1)(A) to determine the amount of the credit under § 24 that may be refundable is $1,700" |
+| Earned income credit, maximum: one, two, three or more, no qualifying children | USD 4,427; USD 7,316; USD 8,231; USD 664 | "Maximum Amount of Credit $4,427 $7,316 $8,231 $664" (columns One, Two, Three or More, None) |
+| Earned income credit, investment income limit | no credit if certain investment income is more than USD 12,200 | "not allowed under § 32(i) if the aggregate amount of certain investment income exceeds $12,200" |
+| Capital gains, maximum zero rate amount and maximum 15 percent rate amount, married filing jointly and surviving spouse | USD 98,900; USD 613,700 | "Married Individuals Filing Joint Returns and $98,900 $613,700" |
+| Capital gains, same amounts, married filing separately | USD 49,450; USD 306,850 | "Married Individuals Filing Separate Returns $49,450 $306,850" |
+| Capital gains, same amounts, head of household | USD 66,200; USD 579,600 | "Heads of Household $66,200 $579,600" |
+| Capital gains, same amounts, all other individuals (single) | USD 49,450; USD 545,500 | "All Other Individuals $49,450 $545,500" |
+| Alternative minimum tax exemption, married filing jointly and surviving spouses | USD 140,200 | "Joint Returns or Surviving Spouses $140,200" |
+| Alternative minimum tax exemption, unmarried (not surviving spouse) | USD 90,100 | "Unmarried Individuals (other than Surviving Spouses) $90,100" |
+| Alternative minimum tax exemption, married filing separately | USD 70,100 | "Married Individuals Filing Separate Returns $70,100" |
+| Alternative minimum tax exemption, phase-out starts and ends, joint returns | USD 1,000,000; USD 1,280,400 | "Joint Returns or Surviving Spouses $1,000,000 $1,280,400" |
+| Alternative minimum tax exemption, phase-out starts and ends, unmarried | USD 500,000; USD 680,200 | "Unmarried Individuals (other than $500,000 $680,200" |
+| Alternative minimum tax exemption, phase-out starts and ends, married filing separately | USD 500,000; USD 640,200 | "Married Individuals Filing Separate $500,000 $640,200" |
+| Foreign earned income exclusion, per qualifying individual | USD 132,900 | "the foreign earned income exclusion amount under § 911(b)(2)(D)(i) is $132,900" |
+
+The additional standard deduction for age or blindness is not the senior deduction in the next table. A person aged 65 or older who qualifies can have both.
+
+### Changes made by Public Law 119-21 that apply to a tax year 2026 return
+
+The Act text sets these amounts. Its own start and end dates are given in each row. The IRS puts the senior, tips, overtime and vehicle loan interest deductions on Schedule 1-A (Form 1040), Additional Deductions ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)), and says all new or enhanced deductions are available to itemizing and non-itemizing taxpayers ([IRS Tax Tip 2026-12](https://www.irs.gov/newsroom/new-and-enhanced-deductions-for-individuals)).
+
+| What | Value | Note |
+|---|---|---|
+| Source | all figures below | https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm |
+| Senior deduction, taxable years beginning before 1 January 2029 | USD 6,000 for each qualified individual: the taxpayer, and on a joint return the spouse, who is 65 before the end of the year | Section 70103: "there shall be allowed a deduction in an amount equal to $6,000 for each qualified individual" |
+| Senior deduction, income reduction | reduced, not below zero, by 6 percent of modified AGI over USD 75,000 (USD 150,000 joint) | "reduced (but not below zero) by 6 percent of so much of the taxpayer's modified adjusted gross income as exceeds $75,000 ($150,000 in the case of a joint return)" ; a married taxpayer must file jointly and the return must carry the qualified individual's social security number |
+| Qualified tips deduction, taxable years beginning after 31 December 2024 and not after 31 December 2028 | up to USD 25,000 a year | Section 70201, new § 224: "for any taxable year shall not exceed $25,000" ; cash tips in an occupation that customarily and regularly received tips on or before 31 December 2024; `cash tips' includes tips received from customers that are paid in cash or charged and, in the case of an employee, tips received under any tip-sharing arrangement; excluded unless the amount is paid voluntarily without any consequence in the event of nonpayment, is not the subject of negotiation, and is determined by the payor |
+| Qualified tips and qualified overtime, income reduction | USD 100 for each USD 1,000 of modified AGI over USD 150,000 (USD 300,000 joint) | "by $100 for each $1,000 by which the taxpayer's modified adjusted gross income exceeds $150,000 ($300,000 in the case of a joint return)" ; a married taxpayer must file jointly, and the return must carry the social security number |
+| Qualified overtime deduction, same years as tips | up to USD 12,500 (USD 25,000 on a joint return) | Section 70202, new § 225: "shall not exceed $12,500 ($25,000 in the case of a joint return)" ; only overtime required by section 7 of the Fair Labor Standards Act, in excess of the regular rate |
+| Qualified passenger vehicle loan interest, taxable years beginning after 31 December 2024 and before 1 January 2029 | up to USD 10,000 a year | Section 70203: "shall not exceed $10,000" ; loan incurred after 31 December 2024, first lien, personal use, a vehicle the original use of which commences with the taxpayer, not lease financing, final assembly in the United States, vehicle identification number on the return |
+| Vehicle loan interest, income reduction | USD 200 for each USD 1,000 (or part) of modified AGI over USD 100,000 (USD 200,000 joint) | "by $200 for each $1,000 (or portion thereof) by which the modified adjusted gross income of the taxpayer for the taxable year exceeds $100,000 ($200,000 in the case of a joint return)" |
+| State and local tax deduction cap, taxable years beginning in 2026 | USD 40,400 (half for married filing separately) | Section 70120: "in the case of any taxable year beginning in calendar year 2026, $40,400" |
+| State and local tax cap, income reduction, 2026 | cap reduced by 30 percent of modified AGI over USD 505,000 (half that threshold for married filing separately), but the reduction cannot take the cap below USD 10,000 | "reduced by 30 percent of the excess (if any) of the taxpayer's modified adjusted gross income over the threshold amount" ; "in the case of any taxable year beginning in calendar year 2026, $505,000" ; "shall not result in the applicable limitation amount being less than $10,000" |
+| Charitable deduction for a taxpayer who does not itemize, taxable years beginning after 31 December 2025 | up to USD 1,000 (USD 2,000 joint) | Section 70424: "by striking ``$300 ($600'' and inserting ``$1,000 ($2,000''" ; cash gifts only, see § 170(p) |
+| Charitable floor for an individual who itemizes, taxable years beginning after 31 December 2025 | gifts count only above 0.5 percent of the contribution base | Section 70425: "exceeds 0.5 percent of the taxpayer's contribution base" |
+| Limit on itemized deductions in the 37% bracket, taxable years beginning after 31 December 2025 | itemized deductions reduced by 2/37 of the lesser of (1) the itemized deductions, or (2) taxable income, computed before this reduction and increased by those itemized deductions, above the dollar amount at which the 37% bracket begins for the taxpayer | Section 70111, new § 68: "shall be reduced by \2/37\ of the lesser of" ; applied after the application of any other limitation on the allowance of any itemized deduction |
+
+The tips and overtime deductions end with tax years beginning after 31 December 2028: "No deduction shall be allowed under this section for any taxable year beginning after December 31, 2028" ([Public Law 119-21](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm)). For tips received in the taxpayer's own trade or business (not as an employee), the Act counts them only up to the net income of that business, and excludes a specified service trade or business. The non-itemizer charitable rule counts only contributions made in cash to an organisation described in § 170(b)(1)(A) and not to an organization described in section 509(a)(3), or for the establishment of a new, or maintenance of an existing, donor advised fund ([26 U.S. Code § 170(p), LII mirror](https://www.law.cornell.edu/uscode/text/26/170)).
+
+### What the IRS said about tax year 2026 and 2025 in its announcement
 
 | What | Value | Note |
 |---|---|---|
 | Source | all figures below | https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill |
-| Top marginal rate, single | 37% for incomes greater than $640,600 | Page: "the top tax rate remains 37% for individual single taxpayers with incomes greater than $640,600" |
-| Top marginal rate, married filing jointly | 37% for incomes greater than $768,700 | Page states $768,700 for married couples filing jointly |
-| 35% rate | over $256,225 single; $512,450 married filing jointly | Page: "The other rates are: 35% for incomes over $256,225 ($512,450 for married couples filing jointly)" |
-| 32% rate | over $201,775 single; $403,550 married filing jointly | Page: "32% for incomes over $201,775 ($403,550 for married couples filing jointly)" |
-| 24% rate | over $105,700 single; $211,400 married filing jointly | Page: "24% for incomes over $105,700 ($211,400 for married couples filing jointly)" |
-| 22% rate | over $50,400 single; $100,800 married filing jointly | Page: "22% for incomes over $50,400 ($100,800 for married couples filing jointly)" |
-| 12% rate | over $12,400 single; $24,800 married filing jointly | Page: "12% for incomes over $12,400 ($24,800 for married couples filing jointly)" |
-| 10% rate | $12,400 or less single; $24,800 or less married filing jointly | Page: "The lowest rate is 10% for incomes of single individuals with incomes of $12,400 or less ($24,800 for married couples filing jointly)" |
+| Which return the 2026 figures are for | returns filed in 2027 | "The tax year 2026 adjustments described below generally apply to tax returns filed in 2027" |
+| Personal exemptions, tax year 2026 | 0 | "For tax year 2026, personal exemptions remain at 0, as in tax year 2025" |
+| Lifetime Learning Credit phase-out, not adjusted for inflation for tax years beginning after 2020, so it applies to 2026 | modified AGI between USD 80,000 and USD 90,000 (USD 160,000 and USD 180,000 joint) | "phased out for taxpayers with MAGI between $80,000 and $90,000 ($160,000 and $180,000 for joint returns)" |
+| Standard deduction, tax year 2025 only (the return filed in 2026) | USD 15,750 single and married filing separately; USD 31,500 married filing jointly; USD 23,625 head of household | "the standard deduction for 2025 is $15,750, and for heads of households, the standard deduction is $23,625" ; "for tax year 2025, the OBBB raises the standard deduction amount to $31,500 for married couples filing jointly" |
 
-### Tax year 2026 standard deduction, exemptions and selected amounts
+### Who must file: the IRS table, tax year 2025
+
+The IRS page still prints the tax year 2025 filing thresholds. The tax year 2026 version is not yet on the page.
 
 | What | Value | Note |
 |---|---|---|
-| Source | all figures below | https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill |
-| Standard deduction, married filing jointly | $32,200 | Page: "the standard deduction increases to $32,200 for married couples filing jointly" |
-| Standard deduction, single and married filing separately | $16,100 | Page: "the standard deduction rises to $16,100 for tax year 2026" |
-| Standard deduction, head of household | $24,150 | Page states the head of household standard deduction will be $24,150 |
-| Personal exemptions | 0 | Page: "For tax year 2026, personal exemptions remain at 0, as in tax year 2025" |
-| Alternative minimum tax exemption, unmarried individuals | $90,100, phase-out begins at $500,000 | Page: "the exemption amount for unmarried individuals is $90,100 and begins to phase out at $500,000" |
-| Alternative minimum tax exemption, married filing jointly | $140,200, phase-out begins at $1,000,000 | Page states $140,200 for married couples filing jointly, phasing out from $1,000,000 |
-| Maximum Earned Income Tax Credit, three or more qualifying children | $8,231 | Page: "The tax year 2026 maximum Earned Income Tax Credit (EITC) amount is $8,231 for qualifying taxpayers who have three or more qualifying children" ; other categories are in Revenue Procedure 2025-32 |
-| Foreign earned income exclusion | $132,900 | Page: "For tax year 2026, the foreign earned income exclusion is $132,900 up from $130,000 for tax year 2025" |
-| Lifetime Learning Credit phase-out | MAGI between $80,000 and $90,000; $160,000 and $180,000 for joint returns | Page states this amount is not adjusted for inflation for tax years beginning after Dec. 31, 2020 |
+| Source | all figures below | https://www.irs.gov/individuals/check-if-you-need-to-file-a-tax-return |
+| Self-employment, any year shown on the page | must file with more than USD 400 of net earnings from self-employment | "You have over $400 in net earnings from self-employment" |
+| Under 65 at the end of 2025: single; head of household | gross income of USD 15,750 or more; USD 23,625 or more | "Single $15,750 or more Head of household $23,625 or more" |
+| Under 65 at the end of 2025: married filing jointly | USD 31,500 or more (both under 65); USD 33,100 or more (one spouse under 65) | "Married filing jointly $31,500 or more (both spouses under 65) $33,100 or more (one spouse under 65)" |
+| Married filing separately, 2025, any age | gross income of USD 5 or more | "Married filing separately $5 or more" |
+| 65 or older at the end of 2025: single; head of household | USD 17,550 or more; USD 25,625 or more | "Single $17,550 or more Head of household $25,625 or more" |
+| 65 or older at the end of 2025: married filing jointly, both 65 or older | USD 34,700 or more | "$34,700 or more (both spouses 65 or older)" |
 
-The IRS states that the itemised deduction limitation eliminated for tax years 2018 to 2025 was permanently eliminated by the One, Big, Beautiful Bill, 
-"although it imposes a limitation on the tax benefit from itemized deductions for those taxpayers in the highest tax bracket (37%)"
-. The pages read do not state the amount of that limitation for tax year 2026.
-
-### New and enhanced individual deductions as the IRS states them
-
-| What | Value | Note |
-|---|---|---|
-| Source | all figures below | https://www.irs.gov/newsroom/new-and-enhanced-deductions-for-individuals |
-| Year stated on the page | 2026 filing season | Page is IRS Tax Tip 2026-12 and states these deductions were "introduced for the 2026 filing season" ; the page does not restate these amounts for tax year 2026 |
-| Additional deduction, seniors age 65 and older | $6,000 | Page: "Seniors age 65 and older may be eligible to claim an additional $6,000 deduction" |
-| Qualified tips deduction | up to $25,000 | Page: "Tipped workers may be eligible to deduct up to $25,000 for qualified tips" |
-| Qualified overtime deduction | up to $12,500; $25,000 for joint filers | Page: "Individuals may be eligible to deduct up to $12,500 ($25,000 for joint filers) for qualified overtime" |
-| Qualified passenger vehicle loan interest | up to $10,000 | Page: "Individuals may deduct up to $10,000 in qualified passenger vehicle loan interest" |
-| Availability | itemising and non-itemising taxpayers | Page: "All new or enhanced deductions are available for both itemizing and non-itemizing taxpayers" |
+Dependants have their own table on the same page. Gross income there is "Earned plus unearned income".
 
 ### Filing deadlines and extension
 
 | What | Value | Note |
 |---|---|---|
 | Source | all figures below | https://www.irs.gov/taxtopics/tc301 |
-| Calendar year filers | generally April 15 of each year | Page: "If you're a calendar year filer and your tax year ends on December 31, the due date for filing your federal individual income tax return is generally April 15 of each year" ; the page states the 2025 tax return due date as April 15, 2026 and does not state a date for the tax year 2026 return |
-| Automatic extension of time to file | 6 months, by filing Form 4868 by the original due date | Page: "To request an automatic 6-month extension of time to file your return, you must file Form 4868 by the original due date of your return" |
-| Extension and payment | an extension of time to file is not an extension of time to pay | Page states interest is owed if the tax is not paid by the original due date, and a late-payment penalty may also apply |
-| Taxpayers abroad or on military duty outside the US and Puerto Rico | automatic 2-month extension to file and pay without filing Form 4868 | Page states interest is charged on any amount not paid by the original due date until the tax is paid |
-| Disaster-affected taxpayers | up to one year after the due date, depending on the deadline specified by the Service | Page: "If the Service determines you to be affected by a disaster, you may have up to one year after the due date of your return to file and pay taxes, depending on the deadline specified by the Service" |
+| Calendar year filers | generally April 15 of each year | "the due date for filing your federal individual income tax return is generally April 15 of each year. For the 2025 tax return, the due date is April 15, 2026." The page prints no date for the tax year 2026 return |
+| Weekend or holiday | moved to the next business day | "If your due date falls on a Saturday, Sunday, or legal holiday, the due date is moved to the next business day" |
+| Paper return | on time if properly addressed, with enough postage, postmarked and deposited in the mail on or before the due date | "properly addressed, has enough postage, is postmarked and deposited in the mail on or before the due date" |
+| Electronic return | the transmission time in the taxpayer's time zone controls | "the date and time in your time zone when your return is transmitted controls whether your return is filed timely" |
+| Extension to file | automatic 6 months, if Form 4868 is filed by the original due date | "To request an automatic 6-month extension of time to file your return, you must file Form 4868 by the original due date of your return" |
+| Extension and payment | an extension to file is not an extension to pay | "An extension of time to file is not an extension of time to pay" ; interest runs from the original due date and a late-payment penalty may apply |
+| Living and working outside the United States and Puerto Rico, or on military or naval duty outside them | may qualify for an automatic 2-month extension to file and pay without Form 4868 | "you may qualify for an automatic 2-month extension to file and pay the tax without filing Form 4868" ; interest is charged on tax not paid by the original due date |
+| Combat zone or contingency operation | generally at least 180 days after leaving the area to file and pay | "You generally have at least 180 days after you leave the designated combat zone or contingency operation to file and pay taxes" |
+| Disaster | up to one year after the due date, as the IRS specifies | "you may have up to one year after the due date of your return to file and pay taxes, depending on the deadline specified by the Service" |
+
+For a calendar-year 2026 return the general rule points to April 15, 2027, subject to the weekend and holiday rule and to any later IRS announcement. Confirm the date on the IRS page once it is printed.
 
 ### Fiscal year filers
 
 | What | Value | Note |
 |---|---|---|
 | Source | all figures below | https://www.irs.gov/filing/individuals/when-to-file |
-| Fiscal year filers | the fourth month after the fiscal year ends, day 15 | Page: "File on: The fourth month after your fiscal year ends, day 15" |
-| Weekend or holiday | due date delayed until the next business day | Page: "If day 15 falls on a Saturday, Sunday or legal holiday, the due date is delayed until the next business day" |
-| Mailed returns | filed on time if properly addressed, postmarked and deposited in the mail by the due date | Page: "Your return is considered filed on time if your envelope is properly addressed, postmarked and deposited in the mail by the due date" |
+| Fiscal year filers | day 15 of the fourth month after the fiscal year ends | "File on: The fourth month after your fiscal year ends, day 15" |
+| Weekend or holiday | delayed to the next business day | "If day 15 falls on a Saturday, Sunday or legal holiday, the due date is delayed until the next business day" |
+| Combat zone relief | the taxpayer must tell the IRS | "Taxpayers, including civilians working with the Department of Defense, must notify the IRS directly of their status for qualifying combat zone relief" |
 
-### Free filing options as stated by the IRS
+### Free filing options, 2026 filing season (2025 returns)
 
 | What | Value | Note |
 |---|---|---|
 | Source | all figures below | https://www.irs.gov/filing/individuals/how-to-file |
-| Free File | adjusted gross income of $89,000 or less | Page: "Free File - If your adjusted gross income is $89,000 or less. If higher, you can use Free File Fillable Forms" ; the page states this alongside the 2025 tax return deadline and does not state a tax year for the threshold |
-| IRS-certified volunteer help | earn $69,000 or less, have a disability, are 60 years or older or need language support | Page states these as the conditions for volunteer assistance; no tax year is stated for the threshold |
+| Free File guided software | adjusted gross income of USD 89,000 or less | "Free File - If your adjusted gross income is $89,000 or less. If higher, you can use Free File Fillable Forms." The page is for 2025 returns; it prints no 2026 figure |
+| IRS-certified volunteers | earn USD 69,000 or less, or have a disability, or are 60 or older, or need language support | "If you earn $69,000 or less, have a disability, are 60 years or older or need language support" |
 
 ## The method, step by step
 
-1. Check whether a return is required. The IRS sets out the filing-requirement tables and a questionnaire at [Check if you need to file a tax return](https://www.irs.gov/individuals/check-if-you-need-to-file-a-tax-return), where gross income is defined as 
-earned plus unearned income
- and unearned income includes 
-taxable interest, ordinary dividends, and capital gain distributions, unemployment compensation, taxable Social Security benefits, pensions, annuities and distributions of unearned income from a trust
-. The tables currently published on that page are stated for 2025. The pages read describe no registration step before filing a Form 1040.
-2. Gather the documents. The IRS filing sequence is 
-check if you need to file, gather your documents, get credits and deductions, file your return, get your refund, pay taxes on time, be ready to file taxes next year
-, set out at [How to file your taxes: step by step](https://www.irs.gov/filing/individuals/how-to-file).
-3. Choose the right form and schedules. See [About Form 1040, U.S. Individual Income Tax Return](https://www.irs.gov/forms-pubs/about-form-1040). Numbered Schedules 1, 2 and 3 are used where the taxpayer has, for example, 
-additional income such as unemployment compensation, prize or award money or gambling winnings, or deductions to claim such as student loan interest deduction, self-employment tax or educator expenses
-, or 
-credits not claimed on Form 1040 or 1040-SR such as the foreign tax credit, education credits or the general business credit, or other payments such as an amount paid with a request for an extension to file or excess social security tax withheld
-. For Schedule A and the other lettered schedules the page directs you to Schedules for Form 1040.
-4. Prepare the return using the rates and standard deduction in the tables above, from [IRS releases tax inflation adjustments for tax year 2026](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill).
-5. Assemble and sign. Per [Topic no. 301](https://www.irs.gov/taxtopics/tc301), attach to the front of the return 
-copies of Form W-2G, Form 1099-R and any other income document if there was federal income tax withheld
-, together with 
-any other applicable forms the instructions indicate to attach to the front of your return (for example, Form 2439, Notice to Shareholder of Undistributed Long-Term Capital Gains)
-, and place 
-related schedules and forms behind your return in the order of the sequence number located in the upper right-hand corner of the schedule or form
-. Where a corrected Form W-2 has been received, 
-attach Form W-2c and a copy of both the original Forms W-2 and any Forms W-2c
-. 
-If you file a joint return, both spouses must sign the return.
-
-6. File by the due date in the deadlines table, electronically or on paper. The IRS notes at [Topic no. 301](https://www.irs.gov/taxtopics/tc301) that 
-you may want to file your return electronically instead of mailing it, to receive your refund faster
-, and at [About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040) directs paper filers to the Where to file page for the current filing address.
-7. If more time is needed, file Form 4868 by the original due date, as set out at [When to file](https://www.irs.gov/filing/individuals/when-to-file): 
-"You must file Form 4868, Application for Automatic Extension of Time To File U.S. Individual Income Tax Return by the original due date of your return"
-, and 
-pay any owed taxes by the original due date to avoid possible penalties
-.
-8. Pay any balance due. [Topic no. 301](https://www.irs.gov/taxtopics/tc301) directs taxpayers to the Make a payment page for 
-payment by credit or debit card, digital wallet, other electronic payment options, or cash
-, and states that 
-if you cannot pay all of the tax due on your return, the IRS may be able to assist you with a payment arrangement
-.
-9. If a return for an earlier year is outstanding, [When to file](https://www.irs.gov/filing/individuals/when-to-file) states that 
-if you haven't filed your federal income tax return for this year or for prior years, you should file your return as soon as possible
-.
+1. Decide whether a return is required. Use the filing thresholds at [Check if you need to file a tax return](https://www.irs.gov/individuals/check-if-you-need-to-file-a-tax-return). That page prints the 2025 thresholds (table above). For 2026, wait for the 2026 version of that page or the 2026 Instructions for Form 1040. Net earnings from self-employment over the amount in that table create a filing duty on their own. Filing can still pay when there was withholding or a refundable credit.
+2. Confirm the person files Form 1040 at all. A nonresident alien does not use this skill. A taxpayer 65 or older may use Form 1040-SR instead, with the same schedules ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)).
+3. Fix the filing status for the year: single, married filing jointly, married filing separately, head of household, or qualifying surviving spouse. Status picks the rate schedule, the standard deduction and most thresholds in the tables above. Married filing separately loses the senior, tips and overtime deductions, because the Act allows them to a married taxpayer only on a joint return ([Public Law 119-21](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm)).
+4. Gather the documents and report income. Follow the IRS sequence at [How to file your taxes: step by step](https://www.irs.gov/filing/individuals/how-to-file). Business or side income goes on Schedule C. Use Schedule 1 for additional income (such as unemployment compensation, prize or award money, gambling winnings) and deductions (such as student loan interest, self-employment tax, educator expenses) ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)).
+5. Take the deductions. Compare the 2026 standard deduction, plus any additional amount for age or blindness, with itemized deductions on Schedule A (table from [Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf)). For an itemizer in 2026, apply the state and local tax cap, the charitable floor and, in the 37% bracket, the § 68 reduction, all from the Act table above. For a non-itemizer in 2026, add the cash charitable deduction. Claim the senior, tips, overtime and vehicle loan interest deductions on Schedule 1-A, whether or not the taxpayer itemizes, applying each income reduction ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)).
+6. Compute the tax. Apply the 2026 rate schedule for the filing status to taxable income, from [Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf). Where there are qualified dividends or long-term capital gains, apply the maximum zero rate and 15 percent rate amounts in the second table. Report other taxes on Schedule 2, which the IRS lists for self-employment tax, household employment taxes, additional tax on IRAs and other tax-favoured accounts, alternative minimum tax, and repayment of excess advance premium tax credit ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)).
+7. Take the credits. The child tax credit and earned income credit amounts are in the second table ([Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf)). Use Schedule 3 for credits not claimed on Form 1040 itself, such as the foreign tax credit, education credits and the general business credit, and for other payments such as an amount paid with an extension request or excess social security tax withheld ([About Form 1040](https://www.irs.gov/forms-pubs/about-form-1040)).
+8. Assemble and sign a paper return as [Topic no. 301](https://www.irs.gov/taxtopics/tc301) says. Attach a copy of all Forms W-2 to the front. Attach Forms W-2G, 1099-R and any other income document to the front if federal income tax was withheld, plus any form the instructions say goes on the front (for example Form 2439). Put related schedules and forms behind the return in sequence-number order. If a Form W-2c was received, attach it and a copy of the original Form W-2. On a joint paper return both spouses sign; the page sets out how one spouse signs for the other in limited cases.
+9. File by the due date in the deadline table. E-filing is timed by transmission; a paper return by postmark. A paper return goes to the address in the form instructions ([Topic no. 301](https://www.irs.gov/taxtopics/tc301)).
+10. If more time is needed, file Form 4868 by the original due date for the automatic extension, and still pay by the original due date ([When to file](https://www.irs.gov/filing/individuals/when-to-file)). Check first whether the client qualifies for the automatic 2-month rule for people abroad, combat zone relief, or a disaster postponement ([Topic no. 301](https://www.irs.gov/taxtopics/tc301)).
+11. Pay any balance due. The IRS Make a payment page covers card, digital wallet, other electronic options and cash; if the client cannot pay in full, the IRS may agree a payment arrangement ([Topic no. 301](https://www.irs.gov/taxtopics/tc301)).
+12. If returns for earlier years are outstanding, the IRS says to file them as soon as possible ([When to file](https://www.irs.gov/filing/individuals/when-to-file)). Each earlier year uses that year's figures, not the 2026 tables.
 
 ## Ask the client first
 
-- What is the filing status for the year, and did marital status or household composition change during it? This selects the bracket and standard deduction column in the tables above.
-- Is the taxpayer or spouse age 65 or older, or blind? This affects both the choice of Form 1040-SR and the senior deduction in the table above.
+- What was the filing status at the end of the year, and did marriage, separation, divorce, a death or a change in the household happen during it? This picks the rate schedule and standard deduction, and a married person filing separately loses the senior, tips and overtime deductions.
+- Is the taxpayer, or the spouse, 65 or older by the end of the year, or blind? This decides the additional standard deduction, the senior deduction and whether Form 1040-SR is an option.
+- Were there tips, overtime pay, or interest on a loan for a new personal vehicle bought after 2024? Ask for the statements that show them and the vehicle identification number, and for the client's modified AGI.
 - Is the tax year the calendar year, or a fiscal year? The due date row that applies differs.
-- Was any income received as tips, overtime, or with a vehicle loan taken out? These determine whether the new deduction rows apply and for which year the IRS has stated them.
-- Was any foreign earned income received, or was the taxpayer living or working outside the United States and Puerto Rico on the due date? This affects both the exclusion in the table and the automatic two-month extension.
-- Will the balance due be paid by the original due date, or is an extension or payment arrangement needed?
+- Does the client expect to itemize, and how much state and local tax and how many charitable gifts (cash or other) were paid in 2026?
+- Was the client living and working outside the United States and Puerto Rico on the due date, in a combat zone, or in a declared disaster area? This changes the deadline.
+- Will the balance be paid by the original due date, or is an extension or a payment arrangement needed?
 
 ## When to refuse or refer
 
-- Nonresident alien taxpayers, who do not file Form 1040 under the pages cited here.
-- Amended returns; the IRS handles these on Form 1040-X, which this Guide does not cover.
+- Nonresident aliens: they do not file Form 1040 under the pages cited here.
+- Amended returns: the IRS uses Form 1040-X. See the skill `us-amended-return-form-1040-including-capital`.
+- Estimated tax payments for the year: see the skill `us-quarterly-estimated-tax`.
 - State or local income tax returns of any state.
-- Returns for tax years other than 2026, where the figures in the tables above do not apply.
-- Cases turning on the exact dollar filing-requirement thresholds for tax year 2026, which the IRS pages read state only for 2025.
-- Cases turning on the tax year 2026 amounts for the child tax credit, the additional standard deduction for age or blindness, capital gains rate brackets, or the itemised deduction limitation for the 37% bracket; the pages read do not state these, and Revenue Procedure 2025-32 must be checked directly.
-- Disaster-relief postponements, where the applicable deadline is the one specified by the Service for that disaster.
-- Estimated tax payment obligations and their due dates, which are not covered by the pages cited here.
+- Tax years other than 2026, except the rows marked 2025: each other year has its own figures.
+- A return that turns on the exact tax year 2026 filing thresholds: the IRS page prints only 2025 thresholds today.
+- Disaster postponements: use the deadline the IRS sets for that disaster.
+- A tips claim where it is unclear whether the occupation counts or whether the business is a specified service trade or business: the Act leaves the occupation list and further conditions to the Treasury, and those were not read for this skill.
+- Excess business losses, the qualified business income deduction, passive activity losses and the alternative minimum tax computation itself: this skill gives the amounts only, not the method.
 
 ## Sources
 
-- https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill (rates and brackets table; standard deduction, exemptions and selected amounts table)
-- https://www.irs.gov/newsroom/new-and-enhanced-deductions-for-individuals (new and enhanced individual deductions table)
-- https://www.irs.gov/taxtopics/tc301 (filing deadlines and extension table)
-- https://www.irs.gov/filing/individuals/when-to-file (fiscal year filers table)
-- https://www.irs.gov/filing/individuals/how-to-file (free filing options table)
-- https://www.irs.gov/individuals/check-if-you-need-to-file-a-tax-return (filing requirement step)
-- https://www.irs.gov/forms-pubs/about-form-1040 (form and schedule selection step)
+- https://www.irs.gov/pub/irs-drop/rp-25-32.pdf (Revenue Procedure 2025-32: rate schedules; deductions, credits and other amounts for tax year 2026)
+- https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm (Public Law 119-21: senior, tips, overtime, vehicle loan interest, state and local tax cap, charitable rules, § 68 limit)
+- https://www.law.cornell.edu/uscode/text/26/170 (LII mirror of the U.S. Code, § 170(p): cash-only rule for non-itemizers)
+- https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill (IR-2025-103: which returns the 2026 figures apply to; 2025 standard deduction; Lifetime Learning Credit)
+- https://www.irs.gov/newsroom/new-and-enhanced-deductions-for-individuals (IRS Tax Tip 2026-12: new deductions available to itemizers and non-itemizers)
+- https://www.irs.gov/individuals/check-if-you-need-to-file-a-tax-return (filing thresholds, tax year 2025)
+- https://www.irs.gov/taxtopics/tc301 (Topic no. 301: deadlines, extensions, attachments, signing, payment)
+- https://www.irs.gov/filing/individuals/when-to-file (fiscal year filers, Form 4868, earlier years)
+- https://www.irs.gov/filing/individuals/how-to-file (forms by income type, free filing options)
+- https://www.irs.gov/forms-pubs/about-form-1040 (Form 1040 and 1040-SR, Schedules 1, 1-A, 2 and 3)
 
-Drafted by OpenAccountants. Not yet reviewed or approved by a named accountant.
+This skill has not been reviewed or approved by a named accountant.
 
 <!-- openaccountants-cta-block -->
 
