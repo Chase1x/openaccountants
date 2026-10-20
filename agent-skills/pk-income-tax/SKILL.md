@@ -8,7 +8,8 @@ metadata:
   jurisdiction: "PK"
   tax_year: "2025"
   last_updated: "2026-07-13"
-  reviewed_by: "Ibrar Ali"
+  reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -26,17 +27,17 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **Salary brackets (TY 2024-25 baseline — TBC under Finance Act 2025)** — 0 – 600,000 = 0; 600,001 – 1,200,000 = 1% on amount > 600,000; 1,200,001 – 2,200,000 = 11% on excess + 6,000; 2,200,001 – 3,200,000 = 23% on excess + 116,000; 3,200,001 – 4,100,000 = 30% on excess + 346,000; > 4,100,000 = 35% on excess + 616,000  _(First Schedule, Pt I, Div I)_
 - **Salary table applies** — Where salary income is more than 75% of total taxable income  _(First Schedule, Pt I, Div I)_
-- **Non-salary brackets — business / AOP (TY 2024-25 baseline — TBC FA 2025)** — 0 – 600,000 = 0; 600,001 – 1,200,000 = 15% on amount > 600,000; 1,200,001 – 1,600,000 = 20% on excess + 90,000; 1,600,001 – 3,200,000 = 30% on excess + 170,000; 3,200,001 – 5,600,000 = 40% on excess + 650,000; > 5,600,000 = 45% on excess + 1,610,000  _(First Schedule, Pt I, Div I)_
-- **10% surcharge** — 10% for non-salaried/AOPs; reduced to 9% for salaried individuals.  _(Finance Act 2025)_
+- **Non-salary brackets — business / AOP (TY 2024-25 baseline — TBC FA 2025)** — 0 – 600,000 = 0; 600,001 – 1,200,000 = 15% on amount > 600,000; 1,200,001 – 1,600,000 = 20% on excess + 90,000; 1,600,001 – 3,200,000 = 30% on excess + 170,000; 3,200,001 – 5,600,000 = 40% on excess + 650,000; > 5,600,000 = 45% on excess + 1,610,000 (40% instead of 45% for an AOP that is a professional firm prohibited from incorporating)  _([First Schedule, Pt I, Div I](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
+- **10% surcharge** — 10% for non-salaried/AOPs; reduced to 9% for salaried individuals; applies only where the taxable income exceeds rupees ten million.  _([Finance Act 2025](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **Minimum tax on turnover §113** — 1.25% where turnover > PKR 100,000,000 (TBC)  _(ITO 2001 §113)_
 - **Default surcharge §205** — Change to: Higher of 12% per annum or KIBOR + 3%  _(ITO 2001 §205)_
 - **Super tax §4C** — Separate charge above PKR 150M (out of this skill's scope)  _(ITO 2001 §4C)_
-- **Resident individual** — Present in Pakistan ≥ 183 days in the tax year  _(ITO 2001 §82)_
+- **Resident individual** — Present in Pakistan ≥ 183 days in the tax year; or a citizen of Pakistan not present in any other country for more than one hundred and eighty-two days (or not a resident taxpayer of any other country)  _([ITO 2001 §82](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **Tax year** — 1 July – 30 June  _(ITO 2001 §7)_
 - **Return deadline — AOP** — 30 September following close of tax year  _(ITO 2001 §118(3))_
 - **Return deadline — AOP** — 30 September following close of tax year  _(ITO 2001 §118(3))_
 - **Wealth statement** — Mandatory for every resident individual filing a return  _(ITO 2001 §116)_
-- **Advance tax instalments** — Quarterly: 15 Sept, 15 Dec, 15 March, 15 June  _(ITO 2001 §147(5) & §147(5A))_
+- **Advance tax instalments** — Quarterly. Individuals: 15 Sept, 15 Dec, 15 March, 15 June. AOPs: 25 Sept, 25 Dec, 25 March, 15 June  _([ITO 2001 §147(5) & §147(5A)](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **Advance tax threshold** — Latest assessed taxable income > PKR 1,000,000 (TBC)  _(ITO 2001 §147)_
 - **§154A IT/ITeS export final tax (PSEB-registered)** — 0.25% of export proceeds via banking channel; excluded from bracket computation & from the PKR 10M surcharge test  _(ITO 2001 §154A)_
 - **Non-PSEB IT export rate** — 1% (TBC)  _(ITO 2001 §154A)_
@@ -44,10 +45,10 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **§62 listed shares / sukuk credit** — Omitted  _(ITO 2001 §62)_
 - **§63 voluntary pension contribution** — 20% of taxable income (age uplift available)  _(ITO 2001 §63)_
 - **§103 foreign tax credit** — Lesser of foreign tax paid or Pakistan tax on that income; no carry-forward  _(ITO 2001 §103)_
-- **AOP member share of profit** — Exempt at member level (AOP has already paid the tax)  _(ITO 2001 §92)_
+- **AOP member share of profit** — Exempt at member level (AOP has already paid the tax); not exempt if the AOP had turnover of three hundred million rupees or above and did not file audited financial statements with its return  _([ITO 2001 §92](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **ATL surcharge to regain filer status** — PKR 1,000 individual / 10,000 AOP / 20,000 company (TBC)  _(ITO 2001 (FA-set))_
-- **Non-filer withholding** — Increased by 100% to 500%+ depending on the transaction code  _(ITO 2001 Tenth Schedule)_
-- **Late filing penalty §182** — 0.1% per day, capped at 50% of tax payable (Minimum PKR 40,000 applies)  _(ITO 2001 §182)_
+- **Non-filer withholding** — Increased by hundred percent of the filer rate as the general rule (two hundred percent for §231B; fixed non-filer rate tables for §236C, §236G, §236H and §236K)  _([ITO 2001 Tenth Schedule](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
+- **Late filing penalty §182** — Higher of 0.1% of tax payable per day or rupees one thousand per day; minimum rupees ten thousand (individual with 75% or more income from salary) or rupees fifty thousand (all other cases); maximum two hundred percent of tax payable  _([ITO 2001 §182](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **Business loss carry-forward** — 6 years  _(ITO 2001 §57)_
 
 ## Section 1 — Quick Reference
@@ -87,7 +88,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **Applicability** — Applies where salary income is more than 75% of total taxable income (ITO 2001 First Schedule, Part I, Division I).  _(ITO 2001 First Schedule, Part I, Division I)_
 
-**TBC — verify under Finance Act 2025 final text.** Finance Act 2025 was widely expected to revise the lower-band rates (notably the 1% and 11% bands) downward in response to public consultation; until the final gazetted Schedule is confirmed for TY 2025-26, treat the above as the TY 2024-25 baseline and flag for reviewer.
+**Confirmed under the Finance Act, 2025.** The table above is the salary table substituted by the Finance Act, 2025 (ITO 2001 First Schedule, Part I, Division I) and applies from TY 2025-26. It is not the TY 2024-25 table, which used 5%, 15%, 25%, 30% and 35% bands.
 
 ### Non-Salary Brackets — Business, Profession, and AOP (TY 2024-25 baseline; TBC under Finance Act 2025)
 
@@ -159,7 +160,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### 3.1 Residency (ITO 2001 §82)
 
-- **Residency test** — An individual is a resident for a tax year if: Present in Pakistan for 183 days or more in aggregate during the tax year (1 July – 30 June); OR an employee or official of the Federal or Provincial Government posted abroad in the tax year.  _(ITO 2001 §82)_
+- **Residency test** — An individual is a resident for a tax year if: Present in Pakistan for 183 days or more in aggregate during the tax year (1 July – 30 June); OR an employee or official of the Federal or Provincial Government posted abroad in the tax year; OR, being a citizen of Pakistan, is not present in any other country for more than one hundred and eighty-two days during the tax year or is not a resident taxpayer of any other country.  _([ITO 2001 §82](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 - **Whole-year determination** — Residence is determined for the whole tax year — Pakistan does not have a split-year regime. A person who becomes resident on day 183 is resident for the entire tax year and is taxed on worldwide income for that year (subject to §103 foreign tax credit and any treaty relief).  _(ITO 2001 §82)_
 - **AOP residency (§84)** — An AOP is resident if its control and management is situated wholly or partly in Pakistan in the tax year.  _(ITO 2001 §84)_
 
@@ -212,12 +213,12 @@ Practical impact for a freelance software developer:
 
 ### 4.2 Tax credits — Sections 61–65 family
 
-**Tax credits table**
+**Tax credits table**  _(https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf)_
 
 | Section | Credit | Cap |
 | --- | --- | --- |
 | §61 | Charitable donation to approved institution | 30% of taxable income for individuals & AOPs / 20% for Companies; credit at average rate of tax |
-| §62 | Investment in shares of listed companies / sukuk | Lower of cost / 20% of taxable income / PKR 2,000,000 (TBC under FA 2025) |
+| §62 | Investment in shares of listed companies / sukuk | Omitted by the Finance Act, 2022 (no credit) |
 | §63 | Voluntary pension scheme contribution | 20% of taxable income, age-uplift available; subject to §63 sub-rules |
 | §65 (historic) | Investment tax credit for industrial undertakings | Largely sunset for individuals; verify if any residual applies |
 
@@ -346,7 +347,7 @@ Key IRIS workflow:
 
 ### 6.2 Deadlines
 
-**Deadlines table**
+**Deadlines table**  _(https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf)_
 
 | Item | Deadline | Source |
 | --- | --- | --- |
@@ -355,20 +356,20 @@ Key IRIS workflow:
 | Wealth statement (§116) | Filed with the return; mandatory for resident individuals | §116(2) |
 | Payment of tax with return (§137) | On or before the return filing deadline | §137(1) |
 | Extension request | Application to the Commissioner under §119 before the due date; extension limited and discretionary | §119 |
-| Advance tax (§147) | Quarterly: 15 Sept, 15 Dec, 15 March, 15 June | §147(5) |
+| Advance tax (§147) | Individuals: 15 Sept, 15 Dec, 15 March, 15 June. AOPs: 25 Sept, 25 Dec, 25 March, 15 June | §147(5), §147(5A) |
 
 ### 6.3 Advance tax — §147
 
 - **Advance tax calculation** — Advance tax for the quarter = (latest assessed taxable income × current year's bracket rate / 4) – withholding tax collected during the quarter  _(ITO 2001 §147)_
-- **Advance tax obligation and default** — Resident individuals and AOPs with the latest assessed taxable income above the threshold (currently PKR 1,000,000 — TBC under FA 2025) must pay advance tax in four quarterly instalments under §147. Failure to pay advance tax triggers default surcharge under §205.  _(ITO 2001 §147, §205)_
+- **Advance tax obligation and default** — Individuals with latest assessed taxable income of one million rupees or more, and AOPs (on the turnover formula, no income threshold), must pay advance tax in four quarterly instalments under §147. Failure to pay advance tax triggers default surcharge under §205.  _([ITO 2001 §147, §205](https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf))_
 
 ### 6.4 Late filing and late payment
 
-**Late filing/payment table**
+**Late filing/payment table**  _(https://download1.fbr.gov.pk/Docs/2025881983148210Income-Tax-Ordinance,-2001-Amended-upto-31.07.2025.pdf)_
 
 | Breach | Sanction |
 | --- | --- |
-| Late filing of return (§182) | Higher of (a) 0.1% of tax payable per day, capped at 50% of tax payable (minimum PKR 40,000), or (b) prescribed minimum penalty; **AND** removal from ATL until next list refresh after compliance |
+| Late filing of return (§182) | Higher of (a) 0.1% of tax payable per day or (b) rupees one thousand per day; minimum rupees ten thousand (individual with 75% or more income from salary) or rupees fifty thousand (all other cases); maximum two hundred percent of tax payable; reduced by 75%, 50% and 25% if filed within one, two and three months after the due date; **AND** removal from ATL until next list refresh after compliance |
 | Late payment / short payment (§205) | Default surcharge at higher of 12% per annum or KIBOR + 3% (TBC), calculated daily |
 | Failure to file wealth statement (§182A) | Separate penalty in addition to return-filing penalty |
 | Concealment / wilful default (§192 / §192A) | Tax evasion penalties; potential prosecution |

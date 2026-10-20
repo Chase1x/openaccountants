@@ -7,6 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -92,7 +94,7 @@ This skill does NOT cover:
 - OBBBA §70102 — retroactively increased the 2025 standard deduction to $15,750 single/MFS, $23,625 HoH, $31,500 MFJ (used in this skill's taxable-income computations)
 - Tax Cuts and Jobs Act of 2017 — original enactment of §199A
 - Treasury Regulations §1.199A-1 through §1.199A-6 — final regulations (January 2019) and subsequent amendments
-- Rev. Proc. 2024-40 — 2025 inflation adjustments for taxable income thresholds (§199A item at §3.27)
+- Rev. Proc. 2024-40 — 2025 inflation adjustments for taxable income thresholds (§199A thresholds at section 2, item .27)
 - Rev. Proc. 2025-32 — modified Rev. Proc. 2024-40 for OBBBA (2025 standard deduction) and published the 2026 §199A thresholds
 - Form 8995 and Form 8995-A Instructions for tax year 2025
 - IRS Publication 334 (Tax Guide for Small Business) — Pub 535 was discontinued after its 2022 revision
@@ -103,22 +105,22 @@ This skill does NOT cover:
 
 ## Section 3 — Year-specific figures table for tax year 2025
 
-**Year-specific figures table for tax year 2025**  _(Section 3 table, various IRC/Rev. Proc. citations as shown)_
+**Year-specific figures table for tax year 2025**  _([Section 3 table, various IRC/Rev. Proc. citations as shown](https://www.irs.gov/pub/irs-drop/rp-24-40.pdf))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
 | §199A QBI deduction rate | 20% | IRC §199A(a); OBBBA P.L. 119-21 §70105 (permanent) |
 | §199A QBI deduction rate (2026 onward) | 20% — unchanged; the 23% House-bill rate was not enacted | IRC §199A(a) as amended by OBBBA P.L. 119-21 |
-| Taxable income threshold (single / HoH / QSS) | $197,300 | Rev. Proc. 2024-40 §3.27; IRC §199A(e)(2) |
-| Taxable income threshold (MFJ) | $394,600 | Rev. Proc. 2024-40 §3.27 |
-| Taxable income threshold (MFS) | $197,300 | Rev. Proc. 2024-40 §3.27 |
+| Taxable income threshold (single / HoH / QSS) | $197,300 | Rev. Proc. 2024-40 section 2, item .27; IRC §199A(e)(2) |
+| Taxable income threshold (MFJ) | $394,600 | Rev. Proc. 2024-40 section 2, item .27 |
+| Taxable income threshold (MFS) | $197,300 | Rev. Proc. 2024-40 section 2, item .27 |
 | Phase-in range width (single / HoH / QSS / MFS) | $50,000 above threshold | IRC §199A(b)(3)(B), §199A(d)(3)(A); statutory, not indexed |
 | Phase-in range width (MFJ) | $100,000 above threshold | IRC §199A(b)(3)(B), §199A(d)(3)(A); statutory, not indexed |
-| Phase-in range top (single / MFS) | $247,300 | $197,300 + $50,000; Rev. Proc. 2024-40 §3.27 |
-| Phase-in range top (MFJ) | $494,600 | $394,600 + $100,000; Rev. Proc. 2024-40 §3.27 |
+| Phase-in range top (single / MFS) | $247,300 | $197,300 + $50,000; Rev. Proc. 2024-40 section 2, item .27 |
+| Phase-in range top (MFJ) | $494,600 | $394,600 + $100,000; Rev. Proc. 2024-40 section 2, item .27 |
 | W-2 wage limitation — alternative 1 | 50% of W-2 wages | IRC §199A(b)(2)(B)(i) |
 | W-2 wage limitation — alternative 2 | 25% of W-2 wages + 2.5% of UBIA | IRC §199A(b)(2)(B)(ii) |
-| Taxable income cap on QBI deduction | 20% of taxable income (excl. net capital gain) | IRC §199A(a)(1)(B) |
+| Taxable income cap on QBI deduction | 20% of taxable income (excl. net capital gain, increased by any qualified dividends) | IRC §199A(a)(2) |
 | Standard deduction (single / MFS) | $15,750 (OBBBA retroactive increase) | OBBBA §70102; Rev. Proc. 2025-32 §3.01 |
 | Standard deduction (HoH) | $23,625 | OBBBA §70102; Rev. Proc. 2025-32 §3.01 |
 | Standard deduction (MFJ / QSS) | $31,500 | OBBBA §70102; Rev. Proc. 2025-32 §3.01 |
@@ -162,7 +164,7 @@ This skill does NOT cover:
 
 ### IRS Guidance and Forms
 
-- **Rev. Proc. 2024-40** — 2025 inflation adjustments (§199A thresholds at §3.27)
+- **Rev. Proc. 2024-40** — 2025 inflation adjustments (§199A thresholds at section 2, item .27)
 - **Rev. Proc. 2025-32** — OBBBA modifications to 2025 amounts; 2026 inflation adjustments (§199A at §4.26)
 - **Form 8995** — Qualified Business Income Deduction Simplified Computation (and instructions)
 - **Form 8995-A** — Qualified Business Income Deduction (detailed, with Schedules A through D) (and instructions)
@@ -216,7 +218,7 @@ This skill does NOT cover:
 | Accounting / bookkeeping services | YES | Accounting under §199A(d)(2) |
 | Real estate agent | NO | Not a listed field |
 
-- **The consulting trap** — The regulations define consulting narrowly as "the provision of advice and counsel to clients to assist the client in achieving goals and solving problems." Treas. Reg. §1.199A-5(b)(2)(vii). Importantly, performing services in the field of consulting does NOT include "the performance of services other than advice and counsel, such as sales or the provision of training courses." If a "consultant" actually delivers code, designs, systems, analyses, or other work product, the business is NOT consulting for SSTB purposes.  _(Treas. Reg. §1.199A-5(b)(2)(vii))_
+- **The consulting trap** — The regulations define consulting narrowly as "the provision of professional advice and counsel to clients to assist the client in achieving goals and solving problems." Treas. Reg. §1.199A-5(b)(2)(vii). Importantly, performing services in the field of consulting does NOT include "the performance of services other than advice and counsel, such as sales or the provision of training courses." If a "consultant" actually delivers code, designs, systems, analyses, or other work product, the business is NOT consulting for SSTB purposes.  _([Treas. Reg. §1.199A-5(b)(2)(vii)](https://www.law.cornell.edu/cfr/text/26/1.199A-5))_
 
 ### Step 7 — Compute the deduction
 
@@ -234,24 +236,28 @@ This skill does NOT cover:
 
 ## Section 6 — Form 8995 (simplified computation)
 
-- **When Form 8995 is used** — Form 8995 is used when: Taxable income is at or below $197,300 (single) / $394,600 (MFJ); The taxpayer has only one trade or business (or does not need aggregation); No SSTB considerations apply (below threshold, SSTB status is irrelevant)  _(Form 8995 Instructions)_
+- **When Form 8995 is used** — Form 8995 is used when: Taxable income is at or below $197,300 (single) / $394,600 (MFJ); The taxpayer is not a patron of an agricultural or horticultural cooperative; More than one trade or business (or aggregation) can be listed on line 1; No SSTB considerations apply (below threshold, SSTB status is irrelevant)  _([Form 8995 Instructions](https://www.irs.gov/pub/irs-pdf/f8995.pdf))_
 
 **Form 8995 line-by-line:**
 
 - **Line 1:** Trade, business, or aggregation name and TIN (sole prop = SSN)
-- **Line 2:** Qualified business income (QBI) — from the computation in Section 5
-- **Line 3:** Total QBI — sum of all lines 2 (typically just one for single-Schedule-C filers)
-- **Line 4:** QBI component — if line 3 is positive, multiply by 20%. If negative, enter $0 (loss is carried forward)
-- **Line 5:** Qualified REIT dividends and PTP income — $0 for most sole props
-- **Line 6:** REIT/PTP component — 20% of line 5
-- **Line 7:** Total QBI deduction before income limitation — line 4 + line 6
-- **Line 8:** Taxable income before QBI deduction
-- **Line 9:** Net capital gain — enter as positive number
-- **Line 10:** Line 8 minus line 9
-- **Line 11:** Income limitation — 20% of line 10
-- **Line 12:** QBI deduction — smaller of line 7 or line 11
-- **Line 13:** Total QBI loss carryforward — if line 3 is negative, carry to next year
-- **Line 14:** Total REIT/PTP loss carryforward
+- **Line 1 column (c):** Qualified business income (QBI) for each business — from the computation in Section 5
+- **Line 2:** Total QBI — combine lines 1i through 1v, column (c) (typically just one for single-Schedule-C filers)
+- **Line 3:** Qualified business net (loss) carryforward from the prior year
+- **Line 4:** Total QBI — combine lines 2 and 3; if zero or less, enter $0
+- **Line 5:** QBI component — multiply line 4 by 20%
+- **Line 6:** Qualified REIT dividends and PTP income or (loss) — $0 for most sole props
+- **Line 7:** Qualified REIT dividends and qualified PTP (loss) carryforward from the prior year
+- **Line 8:** Total qualified REIT dividends and PTP income — combine lines 6 and 7; if zero or less, enter $0
+- **Line 9:** REIT and PTP component — multiply line 8 by 20%
+- **Line 10:** QBI deduction before the income limitation — line 5 + line 9
+- **Line 11:** Taxable income before QBI deduction
+- **Line 12:** Net capital gain, if any, increased by any qualified dividends
+- **Line 13:** Line 11 minus line 12; if zero or less, enter $0
+- **Line 14:** Income limitation — 20% of line 13
+- **Line 15:** QBI deduction — smaller of line 10 or line 14
+- **Line 16:** Total qualified business (loss) carryforward — combine lines 2 and 3; if greater than zero, enter $0
+- **Line 17:** Total qualified REIT dividends and PTP (loss) carryforward — combine lines 6 and 7; if greater than zero, enter $0
 
 ## Section 7 — Form 8995-A (detailed computation)
 
@@ -273,7 +279,7 @@ For a single-Schedule-C sole prop above the threshold with a non-SSTB business, 
 
 ## Section 8 — QBI loss carryover rules
 
-- **QBI loss carryover rules** — Under IRC §199A(c)(2), if QBI from a qualified trade or business is negative (a loss), the loss: 1. Is NOT deductible as part of the QBI deduction in the loss year 2. Is carried forward to the next tax year 3. Reduces QBI from the SAME trade or business in the next year (and subsequent years until absorbed) 4. Is treated as a loss from a separate trade or business in the carryforward year For sole props with a single business: a Schedule C loss year produces zero QBI deduction, and the loss carries forward to reduce QBI in the next profitable year. The carryforward is tracked on Form 8995 line 13 or Form 8995-A Schedule C.  _(IRC §199A(c)(2))_
+- **QBI loss carryover rules** — Under IRC §199A(c)(2), if QBI from a qualified trade or business is negative (a loss), the loss: 1. Is NOT deductible as part of the QBI deduction in the loss year 2. Is carried forward to the next tax year 3. Reduces QBI from the SAME trade or business in the next year (and subsequent years until absorbed) 4. Is treated as a loss from a separate trade or business in the carryforward year For sole props with a single business: a Schedule C loss year produces zero QBI deduction, and the loss carries forward to reduce QBI in the next profitable year. The carryforward is tracked on Form 8995 line 16 or Form 8995-A Schedule C.  _([IRC §199A(c)(2)](https://www.irs.gov/pub/irs-pdf/f8995.pdf))_
 
 ## Section 9 — Conservative defaults table
 
@@ -425,7 +431,7 @@ Taxable income cap = 20% × $425,093 = $85,019 (not binding)
 
 ## Section 13 — Edge cases
 
-1. **QBI is negative.** Schedule C loss or large retirement contributions create negative QBI. Deduction = $0; loss carries forward. Track on Form 8995 line 13 or Form 8995-A Schedule C.
+1. **QBI is negative.** Schedule C loss or large retirement contributions create negative QBI. Deduction = $0; loss carries forward. Track on Form 8995 line 16 or Form 8995-A Schedule C.
 
 2. **Taxable income is negative.** QBI deduction = $0 (cannot create or increase a loss). The QBI itself still carries forward if negative.
 
@@ -455,7 +461,7 @@ Taxable income cap = 20% × $425,093 = $85,019 (not binding)
 ### Test 2 — Loss year
 
 **Input:** Schedule C net loss ($15,000); deductible half of SE tax $0 (no profit); single.
-**Expected:** QBI = ($15,000). QBI deduction = $0. QBI loss carryforward = ($15,000) to next year. Form 8995 line 13.
+**Expected:** QBI = ($15,000). QBI deduction = $0. QBI loss carryforward = ($15,000) to next year. Form 8995 line 16.
 
 ### Test 3 — Above threshold, non-SSTB, no W-2 wages, no UBIA
 
@@ -502,12 +508,12 @@ Taxable income cap = 20% × $425,093 = $85,019 (not binding)
 | `us-self-employed-health-insurance` | SE health insurance deduction amount |
 | `us-self-employed-retirement` | Retirement contribution deduction amount |
 
-**Downstream skills**
+**Downstream skills**  _(https://www.irs.gov/pub/irs-pdf/i1040gi.pdf)_
 
 | Downstream skill | Data provided |
 | --- | --- |
 | `us-quarterly-estimated-tax` | QBI deduction amount (reduces estimated tax liability) |
-| `us-federal-return-assembly` | QBI deduction for Form 1040 Line 13 |
+| `us-federal-return-assembly` | QBI deduction for Form 1040 Line 13a |
 | `us-federal-tx-return-assembly` | QBI deduction for Texas-resident federal return |
 | `us-ca-return-assembly` | QBI deduction for CA-resident federal return |
 

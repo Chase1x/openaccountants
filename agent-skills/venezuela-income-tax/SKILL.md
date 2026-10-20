@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "VE"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Jose Padilla, CPA"
   reviewed_by: "Jose Padilla"
+  trust_label: "Checked by Jose Padilla"
   review_status: "current"
 ---
 

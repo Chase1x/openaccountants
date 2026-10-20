@@ -8,24 +8,19 @@ metadata:
   jurisdiction: "SD"
   tax_year: "2025"
   last_updated: "2026-07-22"
+  authored_by: "Ahmed Hassan"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
 # Sudan Tax Overview Skill v0.1
-
-## Sudan Tax Overview Skill v0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
 > **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments and the political situation (post-2021 military takeover, ongoing conflict since April 2023) has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), PwC Worldwide Tax Summaries, or a qualified Sudan accountant.
 
-## Section 1 — Quick reference
-
-**Quick reference**  _(Section 1 — Quick reference)_
-
-| Field | Value |
-| --- | --- |
+----|-------|
 | Country | Republic of Sudan (جمهورية السودان) — note: separate from South Sudan (Republic of South Sudan) since 2011 |
 | Capital | Khartoum (الخرطوم) |
 | Official language | Arabic; English common in business |
@@ -45,31 +40,29 @@ metadata:
 | Standard VAT rate | 17% (40% telecom, 30% cigarettes special rates) |
 | Filed currency | SDG (foreign currency must be converted at transaction-date rate) |
 
+---
+
 ## Section 2 — Tax structure map
 
 Sudan classifies taxes into three categories:
 
 ### Category 1 — Goods and Services Taxes
 
-**Category 1 — Goods and Services Taxes**  _(Section 2 — Tax structure map)_
-
 | Tax | Authority | Rate | Notes |
-| --- | --- | --- | --- |
+|-----|-----------|------|-------|
 | **Value Added Tax (VAT)** | Taxation Chamber | 17% standard; 40% telecom; 30% cigarettes; 5% reduced | VAT Act 2001 + 2017 Regulations — see `sd-vat-gst` |
 | **Excise Duty** | Taxation Chamber | Schedule-based (subject to Ministerial amendment) | Alcohol, tobacco, luxury items |
 | **Customs Duty** | Customs Administration | Schedule-based by HS code | Imports and exports |
 | **Special Tax on Services** | State / Local | 3%-10% on service supply; 5%-35% on goods production | Municipal/local taxes |
-| **Public Lighting Tax** | State / Local | 5% on alcohol/tobacco at first stage |  |
-| **Accommodation / Hotel Tax** | State / Local | 2% on hotel accommodation |  |
-| **Patent Tax** | State / Local | Fixed schedule |  |
-| **Signboard Tax** | State / Local | Per decimeter-squared and height |  |
+| **Public Lighting Tax** | State / Local | 5% on alcohol/tobacco at first stage | |
+| **Accommodation / Hotel Tax** | State / Local | 2% on hotel accommodation | |
+| **Patent Tax** | State / Local | Fixed schedule | |
+| **Signboard Tax** | State / Local | Per decimeter-squared and height | |
 
 ### Category 2 — Income Taxes
 
-**Category 2 — Income Taxes**  _(Section 2 — Tax structure map)_
-
 | Tax | Authority | Rate | Notes |
-| --- | --- | --- | --- |
+|-----|-----------|------|-------|
 | **Corporate Income Tax (BPT)** | Taxation Chamber | 15% standard; 30% sector rates | Income Tax Act 1986 — see `sd-corporate-income-tax` |
 | **Individual Income Tax** | Taxation Chamber | 5%-15% progressive (residents); 20% (non-residents/fringe) | Income Tax Act 1986 — see `sd-income-tax` |
 | **Capital Gains Tax** | Taxation Chamber | 20% | Separate schedule |
@@ -79,29 +72,27 @@ Sudan classifies taxes into three categories:
 
 ### Category 3 — Property and Transaction Taxes
 
-**Category 3 — Property and Transaction Taxes**  _(Section 2 — Tax structure map)_
-
 | Tax | Authority | Rate | Notes |
-| --- | --- | --- | --- |
+|-----|-----------|------|-------|
 | **Stamp Duty** | Taxation Chamber | Schedule (260+ instruments) | Stamp Duty Law 2019 |
-| **Real Estate Tax** | State / Local | 0.1% on immovable property |  |
-| **Vehicle Tax** | State / Local | Schedule based on type |  |
+| **Real Estate Tax** | State / Local | 0.1% on immovable property | |
+| **Vehicle Tax** | State / Local | Schedule based on type | |
 | **Zakat** | Zakat Chamber | Religious obligation (Islamic tax) | Zakat Act 2001 — separate from Income Tax |
-| **Registration/Transfer Tax** | State / Local | 4% on ownership transfer of movable/immovable property |  |
-| **Unused Land Tax** | State / Local | 2% on unused land |  |
-| **Tax on Means of Transportation** | State / Local | Schedule based on vehicle type/cylinder/seats |  |
+| **Registration/Transfer Tax** | State / Local | 4% on ownership transfer of movable/immovable property | |
+| **Unused Land Tax** | State / Local | 2% on unused land | |
+| **Tax on Means of Transportation** | State / Local | Schedule based on vehicle type/cylinder/seats | |
 
 ### Category 4 — Sector-specific and contractual
 
-**Category 4 — Sector-specific and contractual**  _(Section 2 — Tax structure map)_
-
 | Regime | Authority | Detail |
-| --- | --- | --- |
+|---------|-----------|--------|
 | **Petroleum PSA (Production Sharing Agreement)** | Ministry of Petroleum | BPT 30% statutory, but actual fiscal regime governed by individual concession agreements |
 | **Mining / minerals** | Ministry of Minerals | Special mineral production sharing regimes |
 | **Free Zones** | Sudan Free Zones Authority | Free Zones Act 2001; corporate tax exemption up to 5 years; VAT exemption on capital equipment |
 | **Investment Incentives** | Ministry of Investment and International Cooperation | Investment Incentive Law 2021 — 5-year CIT exemption for qualifying projects |
 | **Sukuk (Islamic Finance)** | Central Bank of Sudan (Bank of Sudan) | Subject to regular corporate taxation unless specifically exempt |
+
+---
 
 ## Section 3 — Tax administration architecture
 
@@ -115,10 +106,8 @@ Sudan classifies taxes into three categories:
 
 ### Related fiscal agencies
 
-**Related fiscal agencies**  _(Section 3 — Tax administration architecture)_
-
 | Agency | Role |
-| --- | --- |
+|--------|------|
 | **Exercises and Customs General Administration** | Customs duty, customs VAT at import |
 | **General Administration of Finance and Budget** | Government budget oversight |
 | **Bank of Sudan** | Central bank, currency policy, Sukuk regulation |
@@ -128,12 +117,14 @@ Sudan classifies taxes into three categories:
 | **Ministry of Investment and International Cooperation** | Investment incentives, capital equipment VAT exemption approval |
 | **Zakat Chamber** | Religious Zakat collection (Islamic tax) |
 
+---
+
 ## Section 4 — Sudan vs. South Sudan
 
-**Sudan vs. South Sudan comparison**  _(Section 4 — Sudan vs. South Sudan)_
+**Critical:** These are separate jurisdictions since South Sudan's independence in 2011.
 
 | Aspect | Sudan (Khartoum) | South Sudan (Juba) |
-| --- | --- | --- |
+|--------|------------------|---------------------|
 | Independence | Pre-2011 (older jurisdiction) | July 9, 2011 |
 | Currency | Sudanese Pound (SDG) | South Sudanese Pound (SSP) |
 | Tax year | Calendar year | Calendar year |
@@ -142,30 +133,38 @@ Sudan classifies taxes into three categories:
 | DTA network | 17 countries | Limited — verify |
 | Tax authority | Taxation Chamber | National Revenue Authority (NRA) |
 
-## Section 4 — Sudan vs. South Sudan
-
-**Critical:** These are separate jurisdictions since South Sudan's independence in 2011.
-
 **AUDIT FLASH POINT:** Sources may congregate Sudan and South Sudan data. Verify all rates apply to **Sudan (Khartoum)**, not South Sudan (Juba), when researching this skill.
+
+---
 
 ## Section 5 — Tax residence and basis
 
 ### Territorial + person hybrid
 
-- **Territorial + person hybrid** — Sudan combines the territoriality and person principles: - Residents taxed on income arising in Sudan AND any place outside Sudan (worldwide for residents) - Non-residents taxed on Sudan-source income only  _(Income Tax Act 1986)_
+Sudan combines the territoriality and person principles:
+- Residents taxed on income arising in Sudan AND any place outside Sudan (worldwide for residents)
+- Non-residents taxed on Sudan-source income only
 
 ### Residency tests
 
-- **Residency tests** — For an **individual**: - Present in Sudan for 183 days or more in the period, OR - Present in Sudan in the period and both preceding periods for 12 months or more, OR - Has taken Sudan as their place of residence and shown intention to settle For a **non-individual (company)**: - Control and management are exercised directly in Sudan in the period *(Income Tax Act 1986, terminology section)*  _(Income Tax Act 1986, terminology section)_
+For an **individual**:
+- Present in Sudan for 183 days or more in the period, OR
+- Present in Sudan in the period and both preceding periods for 12 months or more, OR
+- Has taken Sudan as their place of residence and shown intention to settle
+
+For a **non-individual (company)**:
+- Control and management are exercised directly in Sudan in the period
+
+*(Income Tax Act 1986, terminology section)*
+
+---
 
 ## Section 6 — Reform history and recent changes
 
 ### Reform timeline
 
-**Reform timeline**  _(Section 6 — Reform history and recent changes)_
-
 | Date | Event | Detail |
-| --- | --- | --- |
+|------|-------|--------|
 | **1974** | Social insurance law (consolidating 1919 pensions) | First modern social insurance |
 | **1986** | Income Tax Act | Current primary direct tax law |
 | **1999/2001** | VAT Act | Replaced earlier sales tax (Sales Tax Act 2000) |
@@ -191,21 +190,19 @@ Sudan's tax administration continues to function in nominal terms but operates u
 
 **AUDIT FLASH POINT:** Always verify current thresholds against the Sudan Taxation Chamber (tax.gov.sd) before relying on any rate for compliance purposes. Do not use stale historical SDG figures for filings.
 
+---
+
 ## Section 7 — Currency and denomination considerations
 
-**Currency history**  _(Section 7 — Currency and denomination considerations)_
+Sudan's currency history is complex:
 
 | Year/Event | Currency note |
-| --- | --- |
+|------------|---------------|
 | Pre-2007 | Sudanese dinar (SDD) — used historically |
 | 2007 | Trade currency in USD/EUR permitted in many contexts |
 | 2011 | South Sudan independence; shared currency briefly legal tender |
 | 2018-Present | Multiple redenominations of the Sudanese Pound (SDG) |
 | 2024-2026 | Highly volatile exchange rate; chronic shortage of banknotes drives partial informal dollarisation |
-
-## Section 7 — Currency and denomination considerations
-
-Sudan's currency history is complex:
 
 **Practical implications:**
 - Tax computed in SDG but conversion to USD/EUR informally common in business
@@ -214,6 +211,8 @@ Sudan's currency history is complex:
 - The SDG 3,000 personal exemption was set in pre-redenomination currency; verify current value
 
 **AUDIT FLASH POINT:** When reviewing a client's books, ensure consistent transaction-date conversion methodology. Mixed-presentation across filings is a common audit finding.
+
+---
 
 ## Section 8 — Audit flash points summary
 
@@ -228,12 +227,12 @@ Sudan's currency history is complex:
 9. **Free zone 5-year clock** — exemption expires from commercial production date.
 10. **PSA confidentiality** — petroleum concession terms are confidential; never rely on statutory 30% without checking the agreement.
 
+---
+
 ## Section 9 — Reference material
 
-**Reference material**  _(Section 9 — Reference material)_
-
 | Resource | Reference |
-| --- | --- |
+|----------|-----------|
 | Sudan Taxation Chamber | https://tax.gov.sd/ |
 | Income Tax page | https://tax.gov.sd/en/income-tax-2/ |
 | Value Added Tax page | https://tax.gov.sd/en/value-added-tax-vat |
@@ -245,12 +244,12 @@ Sudan's currency history is complex:
 | ILO Social Protection — Sudan | https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=SD |
 | SSA Social Security Worldwide — Sudan | https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/sudan.html |
 
+---
+
 ## Section 10 — Risk-classified treatment summary
 
-**Risk-classified treatment summary**  _(Section 10 — Risk-classified treatment summary)_
-
 | Tax area | Complexity | Common audit finding | Recommended verification |
-| --- | --- | --- | --- |
+|----------|------------|---------------------|---------------------------|
 | Standard BPT 15% | Low | Less common — supportability of expenses | Confirm sector eligibility |
 | Bank BPT 30% | Medium | Investment incentive misapplication | Confirm not in free zone |
 | Petroleum BPT (PSA) | High | PSA terms vs statutory rate discrepancy | Review specific concession agreement |
@@ -264,6 +263,8 @@ Sudan's currency history is complex:
 | Stamp duty | High | 260+ instrument types | Consult Schedule directly |
 | Free zones | High | Expiry date miscalculation | Track from commercial production date |
 | Cross-border (DTA treaty) | High | Wrong WHT rate applied | Verify specific treaty in force |
+
+---
 
 ## PROHIBITIONS
 

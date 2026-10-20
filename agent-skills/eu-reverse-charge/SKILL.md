@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "GLOBAL"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -51,14 +52,14 @@ Every rule in this skill is tagged with a confidence tier:
 
 ### Decision Tree Table
 
-**Decision Tree Table**  _(Step 1: Decision Tree -- Does Reverse Charge Apply? [T1])_
+**Decision Tree Table**  _([Step 1: Decision Tree -- Does Reverse Charge Apply? [T1]](https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1))_
 
 | Step | Question | If YES | If NO |
 | --- | --- | --- | --- |
 | 1 | Is the customer a taxable person (business) acting as such? Verify via VIES. | Go to Step 2 | **STOP.** B2C rules apply. Supplier charges own VAT rate or uses OSS. Reverse charge does NOT apply. |
 | 2 | Is the supplier established in a different EU member state from the customer? | Go to Step 3 | **STOP.** Domestic supply. Use country-specific skill. |
 | 3 | Is the service related to immovable property (land, buildings)? Art 47. | **STOP.** Place of supply = where property is located. No reverse charge. Supplier may need to register in that country. [T2] | Go to Step 4 |
-| 4 | Is the service admission to a cultural, artistic, sporting, scientific, educational, or entertainment event? Art 53. | **STOP.** Place of supply = where event takes place. No reverse charge. [T2] | Go to Step 5 |
+| 4 | Is the service admission to a cultural, artistic, sporting, scientific, educational, or entertainment event attended in person? Art 53 (Art 53 does not apply where the attendance is virtual). | **STOP.** Place of supply = where event takes place. No reverse charge. [T2] | Go to Step 5 |
 | 5 | Is the service short-term hire of a means of transport (<=30 days, <=90 days for vessels)? Art 56(1). | **STOP.** Place of supply = where vehicle put at disposal. No reverse charge. [T2] | Go to Step 6 |
 | 6 | Is the service restaurant/catering on board transport (ship, plane, train) within EU? Art 57. | **STOP.** Place of supply = point of departure. No reverse charge. [T2] | Go to Step 7 |
 | 7 | Is the service passenger transport? Art 48. | **STOP.** Place of supply = where transport takes place proportionally. No reverse charge. [T2] | Go to Step 8 |
@@ -90,14 +91,14 @@ Every rule in this skill is tagged with a confidence tier:
 
 ### Supplier-Side Country Box Mappings [T1]
 
-**Supplier-Side Country Box Mappings [T1]**  _(Supplier-Side Country Box Mappings [T1])_
+**Supplier-Side Country Box Mappings [T1]**  _([Supplier-Side Country Box Mappings [T1]](https://www.impots.gouv.fr/sites/default/files/formulaires/3310-ca3-sd/2026/3310-ca3-sd_5426.pdf))_
 
 | Supplier Country | VAT Return Box for EU B2B Services | ESL Filing |
 | --- | --- | --- |
 | Malta (MT) | Box 1 (EU supplies) | Quarterly ESL to CFR |
-| Germany (DE) | Kennziffer 21 (steuerfrei innergemeinschaftliche Leistungen) | Zusammenfassende Meldung (ZM), monthly or quarterly |
-| France (FR) | Line A2 / Cadre A (services intracommunautaires) | Etat récapitulatif (DES), monthly |
-| Italy (IT) | VE30 field 3 (servizi intracomunitari) / Esterometro | Elenchi Intrastat servizi, monthly or quarterly |
+| Germany (DE) | Kennziffer 21 (nicht steuerbare sonstige Leistungen gemäß § 18b Satz 1 Nummer 2 UStG) | Zusammenfassende Meldung (ZM), monthly or quarterly |
+| France (FR) | Line E2 (autres opérations non imposables) | Etat récapitulatif (DES), monthly |
+| Italy (IT) | VE34 (operazioni non soggette per carenza del requisito di territorialità) | Elenchi Intrastat servizi, monthly or quarterly |
 | Slovakia (SK) | Row 15 (services Art 15(10) of Slovak VAT Act) | Quarterly ESL (Súhrnný výkaz) |
 | UK | N/A -- UK left the EU on 31 January 2020. Reverse charge between UK and EU does NOT apply under Art 196. See `non-eu-export-services.md`. | N/A |
 
@@ -112,22 +113,22 @@ Every rule in this skill is tagged with a confidence tier:
 
 ### Customer-Side Country Box Mappings [T1]
 
-**Customer-Side Country Box Mappings [T1]**  _(Customer-Side Country Box Mappings [T1])_
+**Customer-Side Country Box Mappings [T1]**  _([Customer-Side Country Box Mappings [T1]](https://www.impots.gouv.fr/sites/default/files/formulaires/3310-ca3-sd/2026/3310-ca3-sd_5426.pdf))_
 
 | Customer Country | Acquisition Box (Net) | Output VAT Box | Input VAT Box | Net Effect |
 | --- | --- | --- | --- | --- |
 | Malta (MT) | Box 9a (EU services) | Box 3 / Box 6 | Box 13a | Zero (if fully taxable) |
-| Germany (DE) | KZ 46 (sonst. Leistungen eines im anderen EU-Land ansässigen Unternehmers) | KZ 46 feeds output | KZ 67 (Vorsteuer) | Zero (if fully taxable) |
-| France (FR) | Line 2B (acquisitions intracommunautaires de prestations de services) | Line 08/09 | Line 20 | Zero (if fully taxable) |
-| Italy (IT) | VF24 / Esterometro (acquisti intracomunitari servizi) | VJ3 (output) | VF24 (input) | Zero (if fully taxable) |
+| Germany (DE) | KZ 46 (sonst. Leistungen eines im anderen EU-Land ansässigen Unternehmers) | KZ 47 | KZ 67 (Vorsteuer) | Zero (if fully taxable) |
+| France (FR) | Line A3 (achats de prestations de services fournies par un prestataire non établi en France) | Line 08/09 | Line 20 | Zero (if fully taxable) |
+| Italy (IT) | VJ3 (acquisti di beni e servizi da soggetti residenti all'estero) | VJ3 (output) | VF1-VF13 by rate (input) | Zero (if fully taxable) |
 | Slovakia (SK) | Row 11/12 (nadobudnutie z EU) | Row 11/12 output | Row 20 input | Zero (if fully taxable) |
 
 ## Step 4: EC Sales List (ESL) Requirements [T1]
 
 - **Who must file** — Any VAT-registered business that supplies services to a business in another EU member state where reverse charge applies under Art 196.  _(Regulation (EU) No 904/2010; VAT Directive Art 262-263.)_
 - **What to report** — Customer's VAT identification number + total value of services for the period.  _(Regulation (EU) No 904/2010; VAT Directive Art 262-263.)_
-- **Frequency** — Varies by member state. Typically quarterly, but some require monthly (e.g., France monthly DES for services).  _(Regulation (EU) No 904/2010; VAT Directive Art 262-263.)_
-- **Deadline** — Varies. Typically by the 20th-25th of the month following the reporting period.  _(Regulation (EU) No 904/2010; VAT Directive Art 262-263.)_
+- **Frequency** — Monthly under VAT Directive Art 263(1); member states may allow a quarterly statement for services (Art 263(1c)) (e.g., France monthly DES for services).  _([Regulation (EU) No 904/2010; VAT Directive Art 262-263.](https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1))_
+- **Deadline** — Varies by member state, within a period not exceeding one month (VAT Directive Art 263); check the national deadline, which can be shorter.  _([Regulation (EU) No 904/2010; VAT Directive Art 262-263.](https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1))_
 - **Penalty for non-filing** — Varies by member state. Can range from EUR 50 to EUR 5,000+ per missed filing.  _(Regulation (EU) No 904/2010; VAT Directive Art 262-263.)_
 
 ### Critical Rule [T1]
@@ -148,7 +149,7 @@ Every rule in this skill is tagged with a confidence tier:
 **Facts:** Maltese VAT-registered consultant invoices a German company (valid DE VAT number) EUR 5,000 for management consulting.
 **Analysis:** B2B, general service (Art 44 applies), no exceptions. Reverse charge applies.
 **Supplier (MT):** Invoice EUR 5,000, 0% VAT, notation "Reverse charge Art 196". Report in Box 1. Report on ESL.
-**Customer (DE):** Self-assess 19% output VAT = EUR 950 (KZ 46). Claim EUR 950 input VAT (KZ 67). Net = zero.
+**Customer (DE):** Self-assess 19% output VAT = EUR 950 (KZ 47). Claim EUR 950 input VAT (KZ 67). Net = zero.
 
 ### Example 2 -- Software development, DE supplier to FR customer [T1]
 
@@ -161,7 +162,7 @@ Every rule in this skill is tagged with a confidence tier:
 
 **Facts:** Italian law firm invoices a Maltese company (valid MT VAT number) EUR 3,000 for legal advice on a contract.
 **Analysis:** B2B, general service under Art 44. Legal services are not in Art 45 exceptions. Reverse charge applies.
-**Supplier (IT):** Invoice EUR 3,000, 0% VAT, "inversione contabile Art 196". Report in VE30 field 3. File Intrastat.
+**Supplier (IT):** Invoice EUR 3,000, 0% VAT, "inversione contabile Art 196". Report in VE34. File Intrastat.
 **Customer (MT):** Box 9a = EUR 3,000. Box 6 = EUR 540 (18%). Box 13a = EUR 540. Net = zero.
 
 ### Example 4 -- Architectural services for property in France, MT supplier to DE customer [T2]
@@ -194,11 +195,11 @@ Every rule in this skill is tagged with a confidence tier:
 
 **Facts:** German training company invoices an Austrian company EUR 4,000 for a 3-day in-person training seminar held in Germany.
 **Analysis:** If this is admission to an event (Art 53), place of supply = Germany (where seminar takes place) -- no reverse charge. However, if the seminar is a bespoke training service (not admission to an event open to the public), then Art 44 applies and reverse charge applies.
-**Flag:** T2 -- determine whether the training qualifies as "admission to an event" (Art 53) or a bespoke B2B service (Art 44). The ECJ case C-647/17 (Srf konsulterna) clarified that a seminar involving active participation is a service under Art 44, not admission under Art 53.
+**Flag:** T2 -- determine whether the training qualifies as "admission to an event" (Art 53) or a bespoke B2B service (Art 44). The CJEU in case C-647/17 (Srf konsulterna) held that a five-day course on accountancy and management supplied solely to taxable persons and requiring advance registration and payment is admission to an event under Art 53, not a general Art 44 service.
 
 ## Step 7: Common Mistakes [T1]
 
-**Step 7: Common Mistakes [T1]**  _(Step 7: Common Mistakes [T1])_
+**Step 7: Common Mistakes [T1]**  _([Step 7: Common Mistakes [T1]](https://publications.europa.eu/resource/cellar/6b06c8b6-43f0-11ea-b81b-01aa75ed71a1.0006.03/DOC_1))_
 
 | # | Mistake | Correct Treatment |
 | --- | --- | --- |
@@ -208,7 +209,7 @@ Every rule in this skill is tagged with a confidence tier:
 | 4 | Not verifying the customer's VAT number via VIES | VIES verification is required. Invalid number = no reverse charge = must charge domestic VAT. |
 | 5 | Applying reverse charge to property-related services | Art 47 exception: place of supply = where property is located. Reverse charge does NOT apply. |
 | 6 | Confusing "zero-rated" with "exempt" | Intra-EU B2B services under reverse charge are zero-rated (supplier retains input VAT recovery). They are NOT exempt supplies. |
-| 7 | Applying reverse charge to post-Brexit UK transactions | UK is not an EU member state since 31 January 2020. Art 196 does not apply to UK-EU transactions. |
+| 7 | Applying reverse charge to post-Brexit UK transactions | UK is not an EU member state since 31 January 2020. Art 196 does not apply to UK-EU transactions after the transition period ended on 31 December 2020. |
 | 8 | Customer in a partially exempt business not adjusting input VAT | If the customer makes exempt supplies, they cannot fully recover the self-assessed input VAT. Partial exemption rules of the customer's country apply. |
 
 ## PROHIBITIONS
@@ -231,7 +232,7 @@ Every rule in this skill is tagged with a confidence tier:
 ### EC2 -- Supplier has a fixed establishment in the customer's country [T2]
 
 **Situation:** A German company supplying services to a French customer also has a fixed establishment (branch) in France. Does the French branch trigger domestic treatment instead of reverse charge?
-**Resolution:** If the French fixed establishment is NOT involved in the supply, reverse charge still applies (Art 44 + Implementing Regulation Art 21-22). If the fixed establishment IS involved, the supply is domestic. Flag for reviewer to determine which establishment is making the supply.
+**Resolution:** If the French fixed establishment is NOT involved in the supply, reverse charge still applies (Art 44; Art 192a of the VAT Directive + Implementing Regulation Art 53). If the fixed establishment IS involved, the supply is domestic. Flag for reviewer to determine which establishment is making the supply.
 
 ### EC3 -- Chain of services (intermediary) [T2]
 

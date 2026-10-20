@@ -5,7 +5,9 @@ version: 0.1
 jurisdiction: SD
 tax_year: 2025
 last_updated: 2026-07-22
+authored_by: Ahmed Hassan
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -15,34 +17,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sudan Personal Income Tax (ضريبة الدخل) Skill v0.1
 
-## Sudan Personal Income Tax (ضريبة الدخل) Skill v0.1
-
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
 > **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments and the political situation has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), PwC Worldwide Tax Summaries, or a qualified Sudan accountant before filing.
-
-## Section 1 — Scope statement
-
-This skill covers:
-
-- Personal income tax (employment income) rates and progressive brackets
-- Self-employed / sole proprietorship income tax (same progressive scale)
-- Professional / non-commercial activity income
-- Rental income from real estate
-- Residence rules and taxation basis (territorial + person principle)
-- Personal tax-free allowance (SDG 3,000)
-- PAYE withholding and remittance mechanics
-- Tax exemptions and special categories
-
-This skill does NOT cover:
-
-- Corporate / Business Profits Tax — see `sd-corporate-income-tax`
-- VAT — see `sd-vat-gst`
-- Payroll and social insurance contributions — see `sd-payroll-social`
-- Company formation — see `sd-company-formation`
-- Capital gains tax — separate schedule under Income Tax Act 1986
-- Zakat — separate obligation under Zakat Act 2001
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -67,6 +45,8 @@ Before starting any Sudan personal income tax work, obtain:
 - **R-SD-6** — Do not advise on corporate income tax — this skill is individuals only.
 - **R-SD-7** — Do not give a binding figure where current-year bracket/allowance values cannot be verified; provide the formula and flag "verify current value."
 
+---
+
 ## Section 3 — Rates and thresholds
 
 ### Personal income tax rates (employment / salary)
@@ -75,12 +55,8 @@ Sudan taxes employment income at progressive rates. The top marginal personal in
 
 **AUDIT FLASH POINT:** Multiple sources cite different top rates (15% vs 20%). The 15% rate is confirmed by Trading Economics and the Sudan Tax Authority page for residents. The 20% rate appears for non-resident taxpayers and fringe benefits per the Britacom tax profile. Verify the current bracket schedule before filing.
 
-- **Top marginal personal income tax rate** — 15%  _(Trading Economics; Income Tax Act 1986)_
-
-**Personal income tax rate categories**  _(Income Tax Act 1986; Trading Economics; Britacom tax profile)_
-
 | Category | Rate range | Source |
-| --- | --- | --- |
+|----------|-----------|--------|
 | **Resident employment income** | 5% – 15% (progressive) | Income Tax Act 1986; Trading Economics |
 | **Non-resident employment income** | 20% (flat) | Income Tax Act 1986; Britacom tax profile |
 | **Fringe benefits** | 20% | Income Tax Act 1986; Britacom tax profile |
@@ -90,45 +66,53 @@ Sudan taxes employment income at progressive rates. The top marginal personal in
 
 ### Personal tax-free allowance (exemption)
 
-- **Personal tax-free allowance** — SDG 3,000 SDG (All resident and non-resident individuals eligible; can offset self-employed ventures, rent income, professional services income)  _(Income Tax Act 1986; Britacom tax profile)_
+All resident and non-resident individuals are eligible for a **tax-free allowance of SDG 3,000**, which can be used to offset income from:
+- Self-employed ventures
+- Rent income
+- Professional services income
+
+*(Income Tax Act 1986; Britacom tax profile)*
 
 **Verify current value:** The SDG 3,000 figure predates multiple currency redenominations. Confirm against current Taxation Chamber guidance before filing.
 
 ### PAYE withholding
 
-- **PAYE withholding at source** — Employment income tax is **withheld at source by the employer (PAYE)** and remitted monthly  _(Income Tax Act 1986; tax.gov.sd)_
-- **PAYE remittance deadline** — On or before the 15th of the month following deduction  _(Income Tax Act 1986; tax.gov.sd)_
+- Employment income tax is **withheld at source by the employer (PAYE)** and remitted monthly
+- **PAYE remittance deadline:** On or before the **15th of the month following deduction** *(Income Tax Act 1986; tax.gov.sd)*
 
 ### Individual annual return deadline
 
-- **Individual annual return deadline** — As specified in the Income Tax Act; commonly within a set period after year-end (verify current deadline — some sources indicate 30 June)  _(Income Tax Act 1986; tax.gov.sd; taxratesbycountry.com)_
+- As specified in the Income Tax Act; commonly within a set period after year-end (verify current deadline — some sources indicate 30 June) *(Income Tax Act 1986; tax.gov.sd; taxratesbycountry.com)*
 
 ### Conservative defaults
 
-**Conservative defaults**
-
 | Ambiguity | Default |
-| --- | --- |
+|-----------|---------|
 | Unknown residency | Treat as **non-resident** (Sudan-source income only, 20% flat rate) until residency confirmed |
 | Unknown whether 15% or 20% applies | Use 15% for residents, 20% for non-residents; flag both |
 | Unknown personal allowance current value | Use SDG 3,000 and label "verify current value" |
 | Unknown whether an expense is deductible | Treat as **non-deductible** until documentary support confirmed |
 | Unknown income category | Default to employment income (most common); verify |
 
+---
+
 ## Section 4 — Computation rules
 
 ### Step 1 — Determine residency
 
-- **Resident (individual)** — An individual is **resident** if: (i) Present in Sudan for **183 days or more** in the base period; OR (ii) Present in Sudan in the period and both preceding periods for **12 months or more**; OR Has taken Sudan as their place of residence and shown intention to settle there  _(Income Tax Act 1986, terminology section)_
+An individual is **resident** if:
+- (i) Present in Sudan for **183 days or more** in the base period; OR
+- (ii) Present in Sudan in the period and both preceding periods for **12 months or more**; OR
+- Has taken Sudan as their place of residence and shown intention to settle there
+
+*(Income Tax Act 1986, terminology section)*
 
 Residents are taxed on income arising in Sudan AND any place outside Sudan (worldwide for residents). Non-residents are taxed on Sudan-source income only.
 
 ### Step 2 — Classify income
 
-**Income classification**
-
 | Income type | Determination rule | Rate treatment |
-| --- | --- | --- |
+|------------|-------------------|---------------|
 | Employment income | Gross salary + allowances | Progressive 5%-15% (resident) / 20% (non-resident) |
 | Business/professional income | Net profit (gross income less deductible expenses) | Progressive 0%-20% (same as sole proprietorship) |
 | Rental income | Gross rent less allowable property expenses | 10% |
@@ -138,18 +122,31 @@ Residents are taxed on income arising in Sudan AND any place outside Sudan (worl
 
 ### Step 3 — Apply personal allowance
 
-- **Taxable income** — Taxable income = Gross income - SDG 3,000 personal allowance (verify current value)
+```
+Taxable income = Gross income - SDG 3,000 personal allowance (verify current value)
+```
 
 The SDG 3,000 allowance can offset self-employment income, rent income, and professional services income.
 
 ### Step 4 — Compute tax on progressive scale
 
-- **Tax (resident employment income)** — For employment income (residents): Tax = Taxable income x applicable progressive rate (5% to 15%)
-- **Tax (non-residents and fringe benefits)** — For non-residents and fringe benefits: Tax = Gross income x 20% (flat rate, no allowance — verify)
+For employment income (residents):
+```
+Tax = Taxable income x applicable progressive rate (5% to 15%)
+```
+
+For non-residents and fringe benefits:
+```
+Tax = Gross income x 20% (flat rate, no allowance — verify)
+```
 
 ### Step 5 — Apply credits
 
-- **Tax payable** — Tax payable = Tax computed - PAYE already withheld - WHT credits
+```
+Tax payable = Tax computed - PAYE already withheld - WHT credits
+```
+
+---
 
 ## Section 5 — Edge cases and special rules
 
@@ -165,25 +162,37 @@ The SDG 3,000 allowance can offset self-employment income, rent income, and prof
 
 ### Residence — non-individual (companies)
 
-- **Resident (non-individual/company)** — For a non-individual (company), **resident** means control and management are exercised directly in Sudan in the period.  _(Income Tax Act 1986)_
+For a non-individual (company), **resident** means control and management are exercised directly in Sudan in the period. *(Income Tax Act 1986)*
 
 ### Currency conversion
 
-- **Currency conversion** — Documents or invoices in a currency other than SDG must be converted at the **exchange rate at the time of the transaction**, with the exchange rate used stated.  _(Income Tax Act 1986, Art 39(3-5))_
+Documents or invoices in a currency other than SDG must be converted at the **exchange rate at the time of the transaction**, with the exchange rate used stated. *(Income Tax Act 1986, Art 39(3-5))*
 
 ### Income subject to tax (Art 4, Income Tax Act 1986)
 
-- **Income subject to tax** — Tax is levied for the assessment year on income from the base period arising from: 1. **Sudan** — for residents and non-residents 2. **Any place outside Sudan** — for residents Despite any law granting tax exemption, tax is imposed on profits from commercial activity, which includes: - Business profits - Rental income from real estate - Personal income - Gross income This applies even if the person no longer owns the income source in the assessment year.  _(Art 4, Income Tax Act 1986)_
+Tax is levied for the assessment year on income from the base period arising from:
+1. **Sudan** — for residents and non-residents
+2. **Any place outside Sudan** — for residents
+
+Despite any law granting tax exemption, tax is imposed on profits from commercial activity, which includes:
+- Business profits
+- Rental income from real estate
+- Personal income
+- Gross income
+
+This applies even if the person no longer owns the income source in the assessment year.
 
 ### Record-keeping
 
-- **Record-keeping** — Every person subject to tax must keep accounting books (manual or electronic) — journal, ledgers, and inventory — plus supporting documents for **not less than 6 years** after the base period, in either **Arabic or English**.  _(Income Tax Act 1986, Art 39(3-5))_
+Every person subject to tax must keep accounting books (manual or electronic) — journal, ledgers, and inventory — plus supporting documents for **not less than 6 years** after the base period, in either **Arabic or English**. *(Income Tax Act 1986, Art 39(3-5))*
 
 ### Self-assessment and penalties
 
-- **Self-assessment additional tax** — Every person under self-assessment must submit their return and pay tax due at the time of filing. If the return is found incorrect after review, an **additional tax not exceeding twice (2x) the amount of tax** determined from the audit may be imposed.  _(Income Tax Act 1986, Art 38(2))_
+Every person under self-assessment must submit their return and pay tax due at the time of filing. If the return is found incorrect after review, an **additional tax not exceeding twice (2x) the amount of tax** determined from the audit may be imposed. *(Income Tax Act 1986, Art 38(2))*
 
 **AUDIT FLASH POINT:** The 2x penalty for self-assessment under-declaration is significant. Conservative computation is essential; do not finalise aggressive tax positions without professional review.
+
+---
 
 ## Section 6 — Worked examples
 
@@ -237,6 +246,8 @@ The SDG 3,000 allowance can offset self-employment income, rent income, and prof
 - Tax = **SDG 0** (if condition met)
 - *Flag: verify the "highest salary in the government salary plan" cap for the current year*
 
+---
+
 ## Section 7 — Self-checks
 
 Before delivering output, verify:
@@ -251,6 +262,8 @@ Before delivering output, verify:
 - [ ] Record retention compliance noted (6 years minimum, Arabic or English)
 - [ ] Self-assessment 2x penalty risk flagged for aggressive positions
 
+---
+
 ## Section 8 — Bank statement reading guide
 
 Sudanese bank statements (كشف حساب) may appear in Arabic or English. Common Sudanese banks:
@@ -261,10 +274,8 @@ Sudanese bank statements (كشف حساب) may appear in Arabic or English. Comm
 
 ### Key Arabic banking terms
 
-**Key Arabic banking terms**
-
 | Arabic | English |
-| --- | --- |
+|--------|---------|
 | كشف حساب | bank statement |
 | رصيد | balance |
 | مدين | debit |
@@ -276,17 +287,19 @@ Sudanese bank statements (كشف حساب) may appear in Arabic or English. Comm
 | إيجار | rent |
 | فوائد | interest (bank deposit — exempt from income tax) |
 
+---
+
 ## Section 9 — Reference material
 
-**Reference material**  _(Sudan Taxation Chamber; PwC Worldwide Tax Summaries; Trading Economics; Britacom; TaxRatesByCountry)_
-
 | Resource | Reference |
-| --- | --- |
+|----------|-----------|
 | Sudan Taxation Chamber — Income Tax | https://tax.gov.sd/en/income-tax-2/ |
 | PwC Worldwide Tax Summaries — Sudan | https://taxsummaries.pwc.com/sudan |
 | Trading Economics — Sudan PIT rate | https://tradingeconomics.com/sudan/personal-income-tax-rate |
 | Britacom tax profile — Sudan | https://www.britacom.org/zt/BRPolicies/Sudan/ |
 | TaxRatesByCountry — Sudan | https://taxratesbycountry.com/tax-rates-in-sudan/ |
+
+---
 
 ## PROHIBITIONS
 

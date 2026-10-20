@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "US"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "James Wallach"
   reviewed_by: "Christopher Aryee"
+  trust_label: "Checked by Christopher Aryee"
   review_status: "current"
 ---
 
@@ -75,7 +77,7 @@ This is the single most misunderstood rule in cross-border small-entity practice
 
 ### 4.1 What the regulation did
 
-- **T.D. 9796 regulatory changes** — Effective for tax years beginning on or after January 1, 2017 (with the form-and-filing mechanics effective for tax years beginning on or after January 1, 2017), the Treasury issued T.D. 9796, amending Treas. Reg. §1.6038A-1 and §301.7701-2 to provide: - A domestic eligible entity (i.e., a US LLC or other entity electing to be disregarded) wholly owned by one foreign person is treated as a domestic corporation for the limited purposes of §6038A reporting and recordkeeping. - The entity must obtain a US EIN (Form SS-4) and file Form 5472 annually attached to a "pro forma" Form 1120.  _(T.D. 9796; Treas. Reg. §1.6038A-1; Treas. Reg. §301.7701-2)_
+- **T.D. 9796 regulatory changes** — Effective for tax years beginning after December 31, 2016, and ending on or after December 13, 2017, the Treasury issued T.D. 9796, amending Treas. Reg. §1.6038A-1 and §301.7701-2 to provide: - A domestic eligible entity (i.e., a US LLC or other entity electing to be disregarded) wholly owned by one foreign person is treated as a domestic corporation for the limited purposes of §6038A reporting and recordkeeping. - The entity must obtain a US EIN (Form SS-4) and file Form 5472 annually attached to a "pro forma" Form 1120.  _([T.D. 9796; Treas. Reg. §1.6038A-1; Treas. Reg. §301.7701-2](https://www.law.cornell.edu/cfr/text/26/1.6038A-1))_
 
 ### 4.2 Why Treasury did this
 
@@ -95,30 +97,31 @@ Form 5472 reports all monetary and non-monetary transactions between the reporti
 
 ### 5.1 Categories of reportable transactions
 
-**Principal categories on Form 5472 Parts IV–V**  _(Treas. Reg. §1.6038A-2(b))_
+**Principal categories on Form 5472 Parts IV–V**  _([Treas. Reg. §1.6038A-2(b)](https://www.irs.gov/pub/irs-pdf/f5472.pdf))_
 
 | Line / Part | Category |
 | --- | --- |
-| Part IV Line 1 | Sales of stock in trade (inventory) |
-| Part IV Line 2 | Sales of tangible property other than inventory |
-| Part IV Line 3 | Platform contribution transaction payments received |
-| Part IV Line 4 | Cost sharing transaction payments received |
-| Part IV Line 5 | Rents received (for use of tangible property) |
-| Part IV Line 6 | Royalties received (patents, trademarks, copyrights, know-how) |
-| Part IV Line 7 | Sales, leases, licenses, etc. of intangible property |
-| Part IV Line 8 | Consideration received for technical, managerial, engineering, construction, scientific, or like services |
-| Part IV Line 9 | Commissions received |
-| Part IV Line 10 | Amounts borrowed (beginning and ending balances) |
-| Part IV Line 11 | Interest received |
-| Part IV Line 12 | Premiums received for insurance or reinsurance |
-| Part IV Line 13 | Other amounts received |
-| Part V (mirror) | All of the above, but paid to foreign related party |
+| Part IV Line 9 | Sales of stock in trade (inventory) |
+| Part IV Line 10 | Sales of tangible property other than inventory |
+| Part IV Line 11 | Platform contribution transaction payments received |
+| Part IV Line 12 | Cost sharing transaction payments received |
+| Part IV Line 13a | Rents received (for use of tangible property) |
+| Part IV Line 13b | Royalties received (for other than intangible property rights; patent, trademark and similar licences go on Line 14) |
+| Part IV Line 14 | Sales, leases, licenses, etc. of intangible property |
+| Part IV Line 15 | Consideration received for technical, managerial, engineering, construction, scientific, or like services |
+| Part IV Line 16 | Commissions received |
+| Part IV Line 17 | Amounts borrowed (beginning and ending balances) |
+| Part IV Line 18 | Interest received |
+| Part IV Line 19 | Premiums received for insurance or reinsurance |
+| Part IV Line 21 | Other amounts received |
+| Part IV Lines 23–35 (mirror) | All of the above, but paid to foreign related party (total on line 36) |
+| Part V | Reportable transactions of a foreign-owned U.S. DE not entered in Part IV (capital contributions, distributions, formation/dissolution amounts) |
 | Part VI | Non-monetary and less-than-full consideration transactions |
-| Part VII | Additional reportable transactions (capital contributions, distributions, etc.) |
+| Part VII | Additional information (e.g., §267A hybrid arrangements, §250 FDII), not a transaction schedule |
 
 ### 5.2 No de minimis — every dollar counts
 
-- **No de minimis threshold** — There is no threshold below which a transaction is exempt. A single $50 reimbursement from the foreign owner to the LLC is reportable. A $1 capital contribution is reportable. This is in contrast to many other international tax forms (e.g., Form 5471 Schedule M, Form 8938) which have explicit thresholds. AUDIT FLASH POINT. Practitioners who file Form 5472 only when transactions exceed $50,000 are applying a wrong rule (possibly confused with Form 5471 Category 4 thresholds or with the §6038B reporting threshold). All §6038A regulations require reporting of every monetary transaction. Two regulatory carve-outs relieve compliance burdens without changing the filing duty. Under the small corporation exception (Treas. Reg. §1.6038A-1(h)), a reporting corporation with less than $10,000,000 of US gross receipts for the taxable year is exempt from the §6038A record-maintenance and agent-authorization requirements, but NOT from filing Form 5472 itself. Under the safe harbor of Treas. Reg. §1.6038A-1(i), the record-maintenance and agent-authorization requirements also do not apply where the aggregate value of gross payments to and from all foreign related parties is $5,000,000 or less AND less than 10% of US gross income. Separately, the Instructions for Form 5472 (12/2024) permit transactions of $50,000 or less to be reported as "$50,000 or less" rather than as an exact dollar amount.  _(Treas. Reg. §1.6038A-2(b))_
+- **No de minimis threshold** — There is no threshold below which a transaction is exempt. A single $50 reimbursement from the foreign owner to the LLC is reportable. A $1 capital contribution is reportable. This is in contrast to many other international tax forms (e.g., Form 5471 Schedule M, Form 8938) which have explicit thresholds. AUDIT FLASH POINT. Practitioners who file Form 5472 only when transactions exceed $50,000 are applying a wrong rule (possibly confused with Form 5471 Category 4 thresholds or with the §6038B reporting threshold). All §6038A regulations require reporting of every monetary transaction. Two regulatory carve-outs relieve compliance burdens without changing the filing duty. Under the small corporation exception (Treas. Reg. §1.6038A-1(h)), a reporting corporation (other than a foreign-owned US DE) with less than $10,000,000 of US gross receipts for the taxable year is exempt from the §6038A record-maintenance and agent-authorization requirements, but NOT from filing Form 5472 itself. Under the safe harbor of Treas. Reg. §1.6038A-1(i), the record-maintenance and agent-authorization requirements also do not apply (except to a foreign-owned US DE) where the aggregate value of gross payments to and from all foreign related parties is $5,000,000 or less AND less than 10% of US gross income. Separately, the Instructions for Form 5472 (12/2024) permit transactions of $50,000 or less to be reported as "$50,000 or less" rather than as an exact dollar amount.  _([Treas. Reg. §1.6038A-2(b)](https://www.law.cornell.edu/cfr/text/26/1.6038A-1))_
 
 ### 5.3 Aggregation
 
@@ -126,7 +129,7 @@ Form 5472 reports all monetary and non-monetary transactions between the reporti
 
 ### 5.4 Non-monetary and indirect transactions
 
-- **Extended reporting categories** — Treas. Reg. §1.6038A-2(b)(3) extends reporting to: - Property transfers at less than full consideration. - Services rendered without arm's-length compensation. - Capital contributions of property or cash. - Distributions to the foreign owner. - Loans (beginning and ending balances reported on Lines 10 / corresponding lines in Part V). - Guarantee fees, foreign-currency exchanges, and similar items.  _(Treas. Reg. §1.6038A-2(b)(3))_
+- **Extended reporting categories** — Treas. Reg. §1.6038A-2(b)(3) extends reporting to: - Property transfers at less than full consideration. - Services rendered without arm's-length compensation. - Capital contributions of property or cash (foreign-owned US DEs only). - Distributions to the foreign owner (foreign-owned US DEs only). - Loans (beginning and ending balances reported on Part IV lines 17 (amounts borrowed) and 31 (amounts loaned)). - Guarantee fees, foreign-currency exchanges, and similar items.  _([Treas. Reg. §1.6038A-2(b)(3)](https://www.irs.gov/instructions/i5472))_
 
 ## 6. The Pro Forma Form 1120 for Foreign-Owned SMLLCs
 
@@ -134,7 +137,7 @@ The pro forma Form 1120 is the "envelope" through which an SMLLC's 5472 is filed
 
 ### 6.1 Completing the pro forma 1120
 
-- **Pro forma 1120 completion steps** — Per the Form 5472 instructions (revised annually; cite the 2024 / 2025 instructions in working papers): 1. Top of form: write "Foreign-owned U.S. DE" across the top so it is clearly visible. The instructions do not require red ink or any particular ink color. 2. Item B (Employer Identification Number): enter the LLC's EIN. 3. Item A (Check applicable boxes): leave blank or check "Initial return" / "Final return" as applicable. 4. Name and address: the LLC's legal name and US mailing address. 5. Income (Lines 1–11), Deductions (Lines 12–29), Tax (Lines 30–37): leave blank. 6. Signature: signed by an officer of the LLC (i.e., the foreign owner or a US-resident manager). A paid preparer signs if applicable.  _(Form 5472 instructions)_
+- **Pro forma 1120 completion steps** — Per the Form 5472 instructions (revised annually; cite the 2024 / 2025 instructions in working papers): 1. Top of form: write "Foreign-owned U.S. DE" across the top so it is clearly visible. The instructions do not require red ink or any particular ink color. 2. Item B (Employer Identification Number): enter the LLC's EIN. 3. Item E: complete it (the instructions require items B and E); check "Initial return" / "Final return" as applicable. 4. Name and address: the LLC's legal name and US mailing address. 5. Income (Lines 1–11), Deductions (Lines 12–29), Tax (Lines 30–37): leave blank. 6. Signature: signed by an officer of the LLC (i.e., the foreign owner or a US-resident manager). A paid preparer signs if applicable.  _([Form 5472 instructions](https://www.irs.gov/instructions/i5472))_
 
 ### 6.2 Filing channel for SMLLC pro forma 1120
 
@@ -146,14 +149,14 @@ The pro forma Form 1120 is the "envelope" through which an SMLLC's 5472 is filed
 
 ## 7. Due Dates and Extensions
 
-**Due dates and extensions by filer type**
+**Due dates and extensions by filer type**  _(https://www.irs.gov/instructions/i7004)_
 
 | Filer | Return | 2025 Original Due Date | Extended Due Date (Form 7004) |
 | --- | --- | --- | --- |
 | Calendar-year C corp | Form 1120 + 5472 | April 15, 2026 | October 15, 2026 |
 | Foreign-owned SMLLC | Pro forma 1120 + 5472 | April 15, 2026 | October 15, 2026 |
 | Foreign corp with ECI | Form 1120-F + 5472 | April 15, 2026 (if US office) or June 15, 2026 (if no US office) | October 15, 2026 / December 15, 2026 |
-| Fiscal-year C corp | Form 1120 + 5472 | 15th day of 4th month after FY end | 6 months later |
+| Fiscal-year C corp | Form 1120 + 5472 | 15th day of 4th month after FY end | 6 months later (7 months for a tax year ending June 30 and beginning before January 1, 2026) |
 
 ## 7. Due Dates and Extensions
 
@@ -177,7 +180,7 @@ This is the rule that gives Form 5472 its enforcement teeth.
 
 ### 8.4 Reasonable cause abatement
 
-- **Reasonable cause abatement standard** — §6038A(d)(3) and Treas. Reg. §1.6038A-4(b) provide for abatement upon a showing of reasonable cause. Reasonable cause is fact-specific but typically requires: A written statement explaining the failure. Evidence of ordinary business care and prudence. Reliance on a competent tax professional (with documentation). Promptness of cure (file as soon as the failure is discovered). The IRS publishes guidance in IRM 20.1.9 on penalty abatement for international information returns. First-time abatement (FTA) under IRM 20.1.1.3.6.1 is not generally available for §6038A penalties (FTA applies to common penalties but international information return penalties are excluded). Practitioners typically must rely on reasonable cause arguments.  _(§6038A(d)(3); Treas. Reg. §1.6038A-4(b); IRM 20.1.9; IRM 20.1.1.3.6.1)_
+- **Reasonable cause abatement standard** — §6038A(d)(3) and Treas. Reg. §1.6038A-4(b) provide for abatement upon a showing of reasonable cause. Reasonable cause is fact-specific but typically requires: A written statement explaining the failure. Evidence of ordinary business care and prudence. Reliance on a competent tax professional (with documentation). Promptness of cure (file as soon as the failure is discovered). The IRS publishes guidance in IRM 20.1.9 on penalty abatement for international information returns. First-time abatement (FTA) does not apply to event-based filing requirements such as Form 5472 (IRM 20.1.1.3.3.2.1(7)), except where the failure to file penalty on the related Form 1120 is abated under FTA (IRM 20.1.9) (FTA applies to common penalties but international information return penalties are excluded). Practitioners typically must rely on reasonable cause arguments.  _([§6038A(d)(3); Treas. Reg. §1.6038A-4(b); IRM 20.1.9; IRM 20.1.1.3.6.1](https://www.irs.gov/irm/part20/irm_20-001-009))_
 
 ### 8.5 Streamlined Filing Compliance Procedures and other amnesty regimes
 
@@ -247,8 +250,8 @@ Form 5472 analysis:
 
 - GreenMobil USA Inc. is a domestic corp 100% foreign-owned → reporting corporation under §6038A.
 - Files Form 1120 (real return, with income / expenses / tax) + Form 5472 attached.
-- Reportable transactions on Part IV (amounts received): Line 8 (consideration received for services): R&D services fee from German parent. Line 11 (interest received): if any intercompany loans.
-- Reportable transactions on Part V (amounts paid): Line 6 (royalties paid): if GreenMobil USA pays for use of German parent's IP.
+- Reportable transactions on Part IV (amounts received): Line 15 (consideration received for services): R&D services fee from German parent. Line 18 (interest received): if any intercompany loans.
+- Reportable transactions on Part IV (amounts paid): Line 28 (purchases, leases, licenses of intangible property rights): if GreenMobil USA pays for use of German parent's IP.
 - §482 transfer pricing: cost-plus method typical for R&D services; documentation under Treas. Reg. §1.6662-6 strongly recommended (this is a real operating company with material flows).
 - BEAT (§59A): GreenMobil USA gross receipts likely well below $500M; BEAT does not apply.
 - Due date: April 15, 2026 (or extended via Form 7004).
@@ -298,7 +301,7 @@ Form 5472 analysis:
 
 ### Error 8 — "Late 5472? I'll just request first-time abatement"
 
-- **Correction** — Wrong. FTA generally does not apply to §6038A penalties (international information return penalty exclusion in IRM 20.1.1.3.6.1). Reasonable cause must be argued on the merits.  _(IRM 20.1.1.3.6.1)_
+- **Correction** — Wrong. FTA generally does not apply to §6038A penalties (event-based filing exclusion, IRM 20.1.1.3.3.2.1(7); exception where the related Form 1120 failure to file penalty is abated under FTA). Reasonable cause must be argued on the merits.  _([IRM 20.1.1.3.6.1](https://www.irs.gov/irm/part20/irm_20-001-009))_
 
 ### Error 9 — "I'll attach Form 5472 to my Form 1040"
 
@@ -329,7 +332,7 @@ Step 3 — Reportable transactions with Aisha.
 
 The $14,500 in Stripe customer revenue is not a related-party transaction (customers are unrelated) and is not reported on 5472. However, it is reported on Aisha's UK Self Assessment as her personal trading income (LLC is disregarded for income tax).
 
-Step 4 — Form preparation. Pro forma Form 1120: write "Foreign-owned U.S. DE" across the top; complete Item B (EIN), name and address; leave all income / deduction / tax lines blank; sign as "Member/Manager." Form 5472: Part I: identifying info for Frostbite LLC. Part II: identifying info for Aisha (name, address, country of citizenship UK, foreign tax ID = UK NI Number, relationship = direct 25%+ shareholder). Part III: skipped (not a foreign corp). Part IV: blank (no amounts received from Aisha in the listed categories — capital contributions go to Part VII not Part IV/V). Part V: blank. Part VI: blank (no non-monetary transactions other than the capital contribution). Part VII: capital contribution $10,200; distributions $9,000.
+Step 4 — Form preparation. Pro forma Form 1120: write "Foreign-owned U.S. DE" across the top; complete Item B (EIN), name and address; leave all income / deduction / tax lines blank; sign as "Member/Manager." Form 5472: Part I: identifying info for Frostbite LLC. Part II: identifying info for Aisha (name, address, country of citizenship UK, foreign tax ID = UK NI Number, relationship = direct 25%+ shareholder). Part III: skipped (not a foreign corp). Part IV: blank (no amounts received from Aisha in the listed categories — capital contributions and distributions go to Part V). Part V: check the box and attach a statement describing the capital contribution and the distributions. Part VI: blank. Part VII: answer the additional-information questions.
 
 Step 5 — Filing. Mail or fax pro forma 1120 + 5472 to Ogden, UT M/S 6112 by April 15, 2026 (or October 15, 2026 with Form 7004 extension filed by April 15, 2026).
 
@@ -345,18 +348,18 @@ Step 2 — Foreign related party. GreenMobil GmbH is the only foreign related pa
 
 Step 3 — Reportable transactions.
 
-**Reportable transactions table**
+**Reportable transactions table**  _(https://www.irs.gov/pub/irs-pdf/f5472.pdf)_
 
 | Description | Amount | Form 5472 Line |
 | --- | --- | --- |
-| Services fee received from parent | $4,200,000 | Part IV Line 8 |
-| Royalties paid to parent | $620,000 | Part V Line 6 |
+| Services fee received from parent | $4,200,000 | Part IV Line 15 |
+| Royalties paid to parent | $620,000 | Part IV Line 28 |
 
 Step 4 — §482 transfer pricing. Cost-plus 8% on services: defensible if 8% mark-up is within the arm's-length range for comparable contract R&D providers. Practitioner recommends contemporaneous documentation under Treas. Reg. §1.6662-6 — typically commissioned annually from a transfer pricing specialist.
 
-Step 5 — Form preparation. Real Form 1120 with full income, deduction, and tax computation. Attach Form 5472 with Part IV Line 8 = $4,200,000 and Part V Line 6 = $620,000. One Form 5472 only (one foreign related party).
+Step 5 — Form preparation. Real Form 1120 with full income, deduction, and tax computation. Attach Form 5472 with Part IV Line 15 = $4,200,000 and Part IV Line 28 = $620,000. One Form 5472 only (one foreign related party).
 
-Step 6 — Withholding. Royalty payments to a German parent are subject to §1441 FDAP withholding. Under Article 12 of the US-Germany income tax treaty (1989, as amended), the withholding rate on royalties is 0% (with exceptions for IP rented for use of motion picture films, where 15% applies). Form W-8BEN-E from the German parent on file; Form 1042 / 1042-S filed separately.
+Step 6 — Withholding. Royalty payments to a German parent are subject to §1441 FDAP withholding. Under Article 12 of the US-Germany income tax treaty (1989, as amended), the withholding rate on royalties is 0% (including film and TV royalties). Form W-8BEN-E from the German parent on file; Form 1042 / 1042-S filed separately.
 
 Step 7 — Filing. April 15, 2026 for calendar year 2025; extension to October 15 via Form 7004.
 
@@ -391,7 +394,7 @@ Before signing off on a Form 5472 deliverable, the reviewer confirms:
 - [ ] All foreign related parties identified — direct, indirect (with §318 attribution as modified by §6038A), and family.
 - [ ] Separate Form 5472 prepared for each foreign related party with reportable transactions.
 - [ ] All reportable transactions enumerated; no de minimis exclusion applied.
-- [ ] Capital contributions and distributions reported in Part VII for SMLLCs (commonly missed).
+- [ ] Capital contributions and distributions reported in Part V for SMLLCs (commonly missed).
 - [ ] Pro forma 1120 marked "Foreign-owned U.S. DE" at top, identifying info only, signed.
 - [ ] Filing channel is mail or fax (not e-file for SMLLC pro forma); fax confirmation retained.
 - [ ] Due date tracked; Form 7004 extension filed timely if needed.
@@ -402,16 +405,16 @@ Before signing off on a Form 5472 deliverable, the reviewer confirms:
 
 ## 15. Provenance
 
-**Provenance table**
+**Provenance table**  _(https://www.law.cornell.edu/uscode/text/26/6038A)_
 
 | Source | Citation |
 | --- | --- |
 | Statutory base | IRC §6038A; IRC §6038C; IRC §6662; IRC §482; IRC §318; IRC §267(b); IRC §707(b)(1) |
 | 2017 SMLLC expansion regulation | T.D. 9796, 81 Fed. Reg. 89849 (December 13, 2016); Treas. Reg. §1.6038A-1(c)(1)(iii); Treas. Reg. §301.7701-2(c)(2)(vi) |
-| Penalty doubling | Tax Cuts and Jobs Act §13305 (Pub. L. 115-97); penalty increased from $10,000 to $25,000 for tax years beginning after 12/31/2017 |
+| Penalty doubling | Tax Cuts and Jobs Act §14401(b)(2) (Pub. L. 115-97); penalty increased from $10,000 to $25,000 for tax years beginning after 12/31/2017 |
 | Reporting regulations | Treas. Reg. §1.6038A-1 (definitions); §1.6038A-2 (reportable transactions); §1.6038A-3 (records); §1.6038A-4 (penalties); §1.6038A-5 (agent authorization) |
 | §6662 transfer pricing documentation | Treas. Reg. §1.6662-6 |
-| Form and instructions | Form 5472 (Rev. December 2024 — confirm 2025 revision); Instructions for Form 5472 (annual revision) |
+| Form and instructions | Form 5472 (Rev. December 2023); Instructions for Form 5472 (annual revision) |
 | IRM | IRM 20.1.9 (international information return penalties); IRM 20.1.1.3.6.1 (FTA exclusions) |
 | Special filing address | Internal Revenue Service, 1973 Rulon White Blvd., M/S 6112 Attn: PIN Unit, Ogden, UT 84201 — confirm in current Form 5472 instructions each filing season |
 
@@ -430,7 +433,7 @@ This skill is marked verified_by: pending. It must be reviewed by a Circular 230
 
 ### Annual update flags
 
-- Confirm Form 5472 revision date in use (currently December 2024; watch for 2025/2026 revisions).
+- Confirm Form 5472 revision date in use (currently December 2023; watch for 2025/2026 revisions).
 - Confirm the Ogden filing address and fax number in current instructions.
 - Watch for changes to the §6038A(d) penalty amount (currently $25,000; could change by statute).
 - Watch for changes to the SMLLC pro forma 1120 filing channel (e-file may become available in future).

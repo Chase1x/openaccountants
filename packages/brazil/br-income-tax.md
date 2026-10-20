@@ -5,9 +5,11 @@ version: 2.0
 jurisdiction: BR
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Ariane Marrocos
+reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
-tier: 1
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -29,8 +31,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **De R$ 45.012,61 até R$ 55.976,16** — 22,5% (dedução R$ 8.054,97)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
 - **Acima de R$ 55.976,16** — 27,5% (dedução R$ 10.853,78)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
 - **Limite MEI anual** — R$ 81.000  _(LC 123/2006)_
-- **DIRPF obrigatória acima de** — R$ 33.888 de rendimentos tributáveis  _(Instrução Normativa RFB nº 2.255/2025.)_
-- **Prazo da DIRPF** — 30 de maio do ano seguinte  _(Instrução Normativa RFB nº 2.255/2025 O prazo de entrega da DIRPF é definido anualmente pela Receita Federal por meio de Instrução Normativa. Para a DIRPF 2025, o prazo final de entrega foi 30 de maio de 2025.)_
+- **DIRPF obrigatória acima de** — R$ 35.584,00 de rendimentos tributáveis (DIRPF 2026, ano-calendário 2025)  _([Instrução Normativa RFB nº 2.255/2025.](https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf))_
+- **Prazo da DIRPF** — 29 de maio de 2026 (DIRPF 2026, ano-calendário 2025; o prazo é fixado anualmente)  _([Instrução Normativa RFB nº 2.255/2025 O prazo de entrega da DIRPF é definido anualmente pela Receita Federal por meio de Instrução Normativa. Para a DIRPF 2025, o prazo final de entrega foi 30 de maio de 2025.](https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf))_
 - **IRRF sobre serviços PJ** — 1,5% (padrão para serviços profissionais)  _(Decreto nº 9.580/2018 - art. 647. Os pagamentos efetuados por pessoa jurídica a outra pessoa jurídica pela prestação de serviços profissionais previstos no art. 647 do RIR/2018 estão sujeitos à retenção do IRRF à alíquota de 1,5%, observadas as exceções legais e o regime tributário do prestador.)_
 - **INSS retido por PJ** — INSS retido na (11% sobre o valor bruto da nota fiscal/fatura de serviços sujeitos à retenção previdenciária (cessão de mão de obra ou empreitada))  _(art. 31 da Lei nº 8.212/1991)_
 - **Obrigatoriedade** — A pessoa física residente no Brasil que receber rendimentos de outras pessoas físicas ou de (s situadas no exterior deve apurar mensalmente o imposto devido por meio do Carnê-Leão, observadas as regras do RIR/2018 e da Receita Federal.)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988)_
@@ -40,36 +42,36 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Reforma tributária 2026 — impacto no IR
 
-A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui apenas os tributos sobre o consumo (PIS, Cofins, ICMS, ISS, IPI) por CBS+IBS. **O IRPF e o IRPJ permanecem inalterados** estruturalmente — alíquotas, faixas, deduções, prazos, regimes (Lucro Real/Presumido/Arbitrado) seguem como hoje. Cuidado apenas com a interação contábil: créditos de CBS/IBS aparecem no resultado e podem alterar lucro contábil → lucro tributável.
+A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui apenas os tributos sobre o consumo (PIS, Cofins, ICMS, ISS, IPI) por CBS+IBS. **O IRPF e o IRPJ permanecem inalterados** pela reforma do consumo — mas a Lei nº 15.270, de 26 de novembro de 2025, alterou o IRPF a partir de janeiro de 2026 (redução mensal que zera o imposto para rendimentos tributáveis até R$ 5.000,00). Cuidado apenas com a interação contábil: créditos de CBS/IBS aparecem no resultado e podem alterar lucro contábil → lucro tributável.
 
 ### Faixas do IRPF 2025 (ano-calendário janeiro–dezembro 2025)
 
-**Faixas do IRPF 2025**
+**Faixas do IRPF 2025**  _(https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025)_
 
 | Faixa de renda anual tributável (BRL) | Alíquota | Dedução (Anual) |
 | --- | --- | --- |
-| Até 26.963,60 | Isento | 0 |
-| 26.963,61 – 33.919,80 | 7,5% | 2.022,17 |
-| 33.919,81 – 45.012,60 | 15% | 4.566,23 |
-| 45.012,61 – 55.976,16 | 22,5% | 7.942,19 |
-| Acima de 55.976,16 | 27,5% | 10.740,98 |
+| Até 28.467,20 | Isento | 0 |
+| 28.467,21 – 33.919,80 | 7,5% | 2.135,04 |
+| 33.919,81 – 45.012,60 | 15% | 4.679,03 |
+| 45.012,61 – 55.976,16 | 22,5% | 8.054,97 |
+| Acima de 55.976,16 | 27,5% | 10.853,78 |
 
 - **Fórmula (anual)** — Imposto = (renda tributável × alíquota) − dedução
 
-**Faixas mensais do Carnê-Leão** (dividir os limites anuais por 12; tabela mensal específica é publicada pela Receita Federal a cada ano — sempre confirmar a tabela mensal vigente do Carnê-Leão).
+**Faixas mensais do Carnê-Leão** (não dividir a tabela anual por 12: em 2025 a faixa isenta mensal foi até R$ 2.259,20 de janeiro a abril e até R$ 2.428,80 a partir de maio — sempre confirmar a tabela mensal vigente do Carnê-Leão).
 
 ### IRPJ — alíquotas e regimes
 
 - **IRPJ** — 15% sobre o lucro tributável, mais adicional de 10% sobre a parcela do lucro que ultrapassar R$ 240.000 anuais (R$ 20.000/mês)  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
 - **Lucro Real** — apuração pelo lucro contábil ajustado por adições/exclusões; obrigatório para receita > R$ 78 milhões/ano e para determinadas atividades  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
-- **Lucro Presumido** — base presumida sobre receita bruta (percentuais de 1,6% a 32% conforme atividade); opcional para receita ≤ R$ 78 milhões/ano  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
+- **Lucro Presumido** — base presumida sobre receita bruta (percentuais de 1,6% a 32% conforme atividade; a partir de 2026, acréscimo de 10% nos percentuais sobre a parcela da receita bruta que exceda R$ 5.000.000,00 no ano, LC 224/2025); opcional para receita ≤ R$ 78 milhões/ano  _([Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp224.htm))_
 - **Lucro Arbitrado** — aplicado quando a escrituração é imprestável ou ausente; bases majoradas  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
 
 Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
 ### Desconto Simplificado
 
-- **Desconto simplificado** — O contribuinte pode optar pelo desconto simplificado em vez das deduções via livro caixa: Dedução: 20% da renda bruta, limitada a BRL 16.754,34 por ano; Não exige comprovantes; Não pode ser combinado com as deduções do livro caixa; Vantajoso quando as despesas reais < 20% do bruto
+- **Desconto simplificado** — O contribuinte pode optar pelo desconto simplificado em vez das deduções via livro caixa: Dedução: 20% da renda bruta, limitada a BRL 16.754,34 por ano; Não exige comprovantes; Substitui todas as deduções admitidas na legislação (livro caixa, INSS, dependentes, saúde, instrução); Vantajoso quando as despesas reais < 20% do bruto  _(https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf)_
 
 ### Livro Caixa (dedução das despesas reais)
 
@@ -77,11 +79,11 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
 ### Contribuições ao INSS para autônomos
 
-**Contribuições ao INSS para autônomos**
+**Contribuições ao INSS para autônomos**  _(https://www.gov.br/previdencia/pt-br/assuntos/rpps/legislacao-dos-rpps/2025/PortariaInterministerialMPSMFn6de10jan2025Revogada.pdf)_
 
 | Tipo de contribuinte | Alíquota | Teto (2025) |
 | --- | --- | --- |
-| Autônomo (contribuinte individual) | 20% | BRL 908,46/mês (teto INSS: BRL 7.786,02 × 11,67%) |
+| Autônomo (contribuinte individual) | 20% | Sobre o salário de contribuição, limitado ao teto INSS de BRL 8.157,41/mês (2025) |
 | Empregador retendo do autônomo | 20% (empregador) | Sobre cada pagamento |
 | Microempreendedor Individual (MEI) | DAS fixo ~BRL 75/mês | Regime separado |
 
@@ -90,37 +92,37 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 ### Carnê-Leão (pagamentos mensais estimados)
 
 - **Obrigação Carnê-Leão** — Os autônomos que recebem rendimentos de pessoas físicas (PF) brasileiras ou de fontes no exterior devem recolher o Carnê-Leão mensalmente, até o último dia útil do mês seguinte.
-- **Rendimentos de PJ - IRRF** — Rendimentos de pessoas jurídicas (PJ) → a PJ retém 1,5% ou 11% de IRRF (conforme o tipo de serviço) — crédito a compensar na DIRPF anual.
+- **Rendimentos de PJ - IRRF** — Rendimentos de pessoas jurídicas (PJ) → a PJ retém IRRF calculado pela tabela progressiva mensal (e, quando aplicável, 11% de INSS) — crédito a compensar na DIRPF anual.  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 
-**Carnê-Leão (pagamentos mensais estimados)**
+**Carnê-Leão (pagamentos mensais estimados)**  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 
 | Fonte | Obrigação mensal |
 | --- | --- |
 | Renda de PF (pessoas físicas) ou exterior | Carnê-Leão obrigatório |
-| Renda de PJ (empresas) | IRRF retido na fonte (1,5% + INSS 11%) |
+| Renda de PJ (empresas) | IRRF retido na fonte pela tabela progressiva (+ INSS 11%) |
 
 ### Padrões conservadores
 
-**Padrões conservadores**
+**Padrões conservadores**  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 
 | Situação | Premissa padrão |
 | --- | --- |
 | Desconto simplificado vs. livro caixa — indefinido | Comparar ambos: se despesas reais < 20% do bruto, simplificado é melhor; apresentar os dois |
 | INSS retido pela PJ vs. pago pelo autônomo indefinido | Sinalizar — depende de o cliente ser PJ ou PF |
-| Pagamento de PJ: alíquota de IRRF indefinida | Aplicar 1,5% (serviços profissionais) como padrão; sinalizar |
+| Pagamento de PJ: alíquota de IRRF indefinida | Usar o valor do Comprovante; para PF, a retenção segue a tabela progressiva (1,5% só entre PJs); sinalizar |
 | Renda do exterior | Tratar como Carnê-Leão obrigatório; sinalizar para análise de tratado |
 | Status MEI vs. autônomo indefinido | NÃO prosseguir — o status determina todo o regime |
 | Receita em espécie sem Recibo / NF | Tributável — sinalizar; a Receita Federal fiscaliza declarações com muito caixa |
 
 ### Limites de alerta (red flags)
 
-**Limites de alerta (red flags)**
+**Limites de alerta (red flags)**  _(https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf)_
 
 | Alerta | Limite |
 | --- | --- |
 | Receita bruta > BRL 81.000/ano | Era MEI? — limite MEI BRL 81.000; ultrapassar gera desenquadramento |
 | Nenhum pagamento de Carnê-Leão feito | Verificar se toda a renda veio de PJs (retido na fonte) |
-| Receita total > BRL 33.888 | DIRPF obrigatória |
+| Rendimentos tributáveis > BRL 35.584 (ano-calendário 2025) | DIRPF obrigatória |
 | Contribuições ao INSS aparecem zeradas | Verificar — autônomos têm obrigação de INSS |
 | Uma única fonte PJ > 90% da renda | Pode indicar vínculo empregatício |
 
@@ -132,13 +134,13 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
 ### Catálogo de recusas
 
-**Catálogo de recusas**
+**Catálogo de recusas**  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 
 | Código | Situação | Ação |
 | --- | --- | --- |
 | R-BR-1 | Cliente é MEI (Microempreendedor Individual) — não autônomo | Parar — MEI paga DAS (INSS + ICMS/ISS), não IRPF sobre receita do negócio; IRPF apenas sobre o pró-labore retirado; redirecionar para a skill específica de MEI |
 | R-BR-2 | Sem Comprovantes de Rendimentos de clientes PJ | Parar — não é possível calcular o crédito de IRRF sem os comprovantes de retenção |
-| R-BR-3 | Renda do exterior sem conversão cambial | Parar — todos os valores devem estar em BRL na data do recebimento (taxa PTAX do Banco Central) |
+| R-BR-3 | Renda do exterior sem conversão cambial | Parar — todos os valores devem ser convertidos para BRL pelo dólar de compra do Banco Central do último dia útil da primeira quinzena do mês anterior ao do recebimento |
 | R-BR-4 | Renda mista Simples Nacional / autônomo | Sinalizar — a renda da empresa do Simples Nacional flui de forma diferente; não misturar |
 | R-BR-5 | Cliente alega que não precisa de Carnê-Leão apesar de ter renda PF ou do exterior | Sinalizar — se houver qualquer fonte PF ou estrangeira, o Carnê-Leão é obrigatório; o não pagamento gera multa |
 
@@ -146,7 +148,7 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
 ### Padrões de receita
 
-**Padrões de receita**
+**Padrões de receita**  _(https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm)_
 
 | # | Padrão de histórico | Linha tributária | Observações |
 | --- | --- | --- | --- |
@@ -161,7 +163,7 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 | I-09 | `NOTA FISCAL [número]` / `NF SERVIÇOS` | Receita bruta — retenção de PJ | Se de PJ, IRRF e INSS podem ter sido retidos; conferir com o Comprovante |
 | I-10 | `RESTITUIÇÃO IRPF RECEITA` | NÃO é receita — restituição de IRPF | Restituição não é renda tributável |
 | I-11 | `RENDIMENTO POUPANÇA` / `JUROS CDB` | Rendimentos isentos (até certos limites) ou tributados | Juros bancários: LCA/LCI podem ser isentos; CDB sujeito a IOF/IR — sinalizar |
-| I-12 | `DIVIDENDOS` (de empresa) | Isentos (se PJ distribuindo dividendos pelas regras atuais) | Dividendos atualmente isentos de IRPF no Brasil (em discussão na reforma — verificar) |
+| I-12 | `DIVIDENDOS` (de empresa) | Isentos (se PJ distribuindo dividendos pelas regras atuais) | Isentos até 2025; a partir de janeiro de 2026, retenção de 10% sobre o total quando uma mesma PJ paga a uma mesma PF residente mais de R$ 50.000,00 no mês (Lei 15.270/2025) |
 
 ### Padrões de despesa
 
@@ -235,13 +237,13 @@ Renda tributável:       BRL 56.314,80
 ```
 
 ```
-BRL 56.314,80 × 27,5% − BRL 10.740,98 = BRL 15.486,57 − BRL 10.740,98 = BRL 4.745,59
+BRL 56.314,80 × 27,5% − BRL 10.853,78 = BRL 15.486,57 − BRL 10.853,78 = BRL 4.632,79
 ```
 
 ```
 IRRF retido pelas PJs (1,5% × BRL 65.000):     BRL 975,00
 Carnê-Leão pago:                                BRL 850,00 × meses pagos
-Saldo de IRPF a pagar:                          BRL 4.745,59 − BRL 975 − BRL [total carnê]
+Saldo de IRPF a pagar:                          IRPF apurado acima − BRL 975 − BRL [total carnê]
 ```
 
 ### Exemplo 2 — Bradesco (Rio de Janeiro, Arquiteta — desconto simplificado)
@@ -255,15 +257,12 @@ IRRF retido pelas PJs: 1,5% × BRL 48.000 = BRL 720
 Desconto simplificado: 20% × BRL 48.000 = BRL 9.600 (< limite) — aplicar
 Renda tributável: BRL 48.000 − BRL 9.600 = BRL 38.400
 
-IRPF: BRL 38.400 × 22,5% − BRL 7.942,19 = BRL 8.640 − BRL 7.942,19 = **BRL 697,81**
+IRPF: BRL 38.400 × 15% − BRL 4.679,03 = BRL 5.760 − BRL 4.679,03 = **BRL 1.080,97**
 (−) crédito de IRRF: BRL 720
 
-Resultado: **restituição de BRL 22,19** (IRRF > IRPF)
+Resultado: **saldo a pagar de BRL 360,97** (IRPF > IRRF)
 
-Observação: deduzir também o INSS separadamente na DIRPF (Ficha de Deduções). Se INSS pago BRL 6.000:
-Tributável: BRL 38.400 − BRL 6.000 = BRL 32.400
-IRPF: BRL 32.400 × 15% − BRL 4.566,23 = BRL 4.860 − BRL 4.566,23 = BRL 293,77
-Com crédito de IRRF: **restituição de BRL 426,23**
+Observação: o desconto simplificado substitui todas as deduções, inclusive o INSS. Se houver INSS pago, compare com a declaração com deduções legais (INSS + demais deduções) e use a opção de menor imposto.
 
 ### Exemplo 3 — Banco do Brasil (Brasília, Médico)
 
@@ -279,7 +278,7 @@ Receita bruta total: BRL 156.000
 (−) livro caixa: BRL 44.600
 Tributável: BRL 111.400
 
-IRPF: BRL 111.400 × 27,5% − BRL 10.740,98 = BRL 30.635 − BRL 10.740,98 = **BRL 19.894,02**
+IRPF: BRL 111.400 × 27,5% − BRL 10.853,78 = BRL 30.635 − BRL 10.853,78 = **BRL 19.781,22**
 (−) IRRF: BRL 1.800 e pagamentos de Carnê-Leão
 
 Alerta de alta renda: BRL 156.000 brutos → verificar se todos os Carnê-Leão mensais sobre renda PF foram pagos; penalidade se em atraso.
@@ -303,9 +302,9 @@ Livro caixa (despesas reais ~BRL 8.000): simplificado é melhor (teto BRL 16.754
 
 Tributável: BRL 119.500 − BRL 16.754,34 = BRL 102.745,66
 
-IRPF: BRL 102.745,66 × 27,5% − BRL 10.740,98 = BRL 28.254,56 − BRL 10.740,98 = **BRL 17.513,58**
+IRPF: BRL 102.745,66 × 27,5% − BRL 10.853,78 = BRL 28.255,06 − BRL 10.853,78 = **BRL 17.401,28**
 
-(−) IRRF das plataformas. Alerta: DIRPF obrigatória (bruto > BRL 33.888).
+(−) IRRF das plataformas. Alerta: DIRPF obrigatória (rendimentos tributáveis > BRL 35.584).
 
 ### Exemplo 5 — Santander Brasil (Porto Alegre, Engenheiro)
 
@@ -319,7 +318,7 @@ Consolidação na DIRPF:
 - Autônomo (livro caixa): BRL 60.000 − BRL 22.000 (despesas) = BRL 38.000
 
 Tributável total: BRL 48.000 + BRL 38.000 = BRL 86.000
-IRPF: BRL 86.000 × 27,5% − BRL 10.740,98 = BRL 23.650 − BRL 10.740,98 = **BRL 12.909,02**
+IRPF: BRL 86.000 × 27,5% − BRL 10.853,78 = BRL 23.650 − BRL 10.853,78 = **BRL 12.796,22**
 (−) IRRF salário: BRL 4.800 + Carnê-Leão pago + INSS empregador
 
 Renda dupla — sinalizar: DIRPF complexa com Ficha de Rendimentos das duas fontes.
@@ -337,20 +336,20 @@ Bruto: BRL 72.000 — observação: BRL 72.000 < limite MEI BRL 81.000. Se Ferna
 Se confirmada como autônoma: prosseguir. INSS: BRL 14.400 (20% × BRL 72.000 — estimativa simplificada; o valor real depende do teto mensal). Desconto simplificado: BRL 14.400 vs. 20% (teto BRL 14.400 — igual). Despesas reais ~BRL 6.000. Usar simplificado (BRL 14.400 > BRL 6.000).
 
 Tributável: BRL 72.000 − BRL 14.400 = BRL 57.600
-IRPF: BRL 57.600 × 27,5% − BRL 10.740,98 = BRL 15.840 − BRL 10.740,98 = **BRL 5.099,02**
+IRPF: BRL 57.600 × 27,5% − BRL 10.853,78 = BRL 15.840 − BRL 10.853,78 = **BRL 4.986,22**
 
 ## Seção 5 — Regras Tier 1 (aplicar diretamente)
 
-- **T1-BR-1 — INSS é sempre dedutível** — As contribuições ao INSS pagas (GPS, DARF ou retidas por PJ) são 100% dedutíveis da base tributável do IRPF. Deduzir na Ficha de Deduções da DIRPF independentemente da fonte de renda (livro caixa ou simplificado). Aplicar sem escalonar.
-- **T1-BR-2 — IRRF retido por PJ é crédito tributário, não redução de receita** — O IRRF retido pelos clientes PJ (tipicamente 1,5% para serviços profissionais, 11% INSS) reduz o saldo de IRPF anual a pagar. A receita bruta (antes da retenção) é o valor tributável. Sempre fazer gross-up para o valor pré-retenção.
+- **T1-BR-1 — INSS é sempre dedutível** — As contribuições ao INSS pagas (GPS, DARF ou retidas por PJ) são 100% dedutíveis da base tributável do IRPF. Deduzir apenas na declaração com deduções legais; no desconto simplificado o INSS já está substituído pelo desconto de 20%. Aplicar sem escalonar.  _(https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf)_
+- **T1-BR-2 — IRRF retido por PJ é crédito tributário, não redução de receita** — O IRRF retido pelos clientes PJ (calculado pela tabela progressiva quando o prestador é PF; 11% de INSS quando aplicável) reduz o saldo de IRPF anual a pagar. A receita bruta (antes da retenção) é o valor tributável. Sempre fazer gross-up para o valor pré-retenção.  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 - **T1-BR-3 — Carnê-Leão é obrigatório para renda PF e do exterior** — Qualquer recebimento mensal de uma pessoa física brasileira (PF) ou do exterior — independentemente do valor — gera obrigação de Carnê-Leão (vencimento no último dia útil do mês seguinte). O não pagamento gera multa de mora (0,33%/dia até 20%). Aplicar imediatamente ao classificar fontes de renda.
 - **T1-BR-4 — Pagamentos via DARF (Carnê-Leão, IRPF) não são dedutíveis** — Antecipações de imposto pagas via DARF (código 0190 para Carnê-Leão, código 1854 para saldo final de IRPF) são créditos contra a obrigação anual de IRPF, não despesas dedutíveis. Nunca incluir DARFs nas deduções do livro caixa.
-- **T1-BR-5 — Renda do exterior: conversão PTAX obrigatória** — Toda renda recebida em moeda estrangeira deve ser convertida para BRL utilizando a taxa PTAX de venda do Banco Central na data do recebimento. Não utilizar qualquer outra taxa de conversão.
+- **T1-BR-5 — Renda do exterior: conversão PTAX obrigatória** — Toda renda recebida em moeda estrangeira deve ser convertida para BRL utilizando o valor do dólar dos Estados Unidos estabelecido para compra pelo Banco Central do Brasil para o último dia útil da primeira quinzena do mês anterior ao do recebimento (RIR/2018, art. 119).  _(https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm)_
 - **T1-BR-6 — Teto do desconto simplificado** — BRL 16.754,34 (A dedução simplificada de 20% é limitada a BRL 16.754,34 independentemente do tamanho da renda bruta. Sempre verificar o teto antes de aplicar o percentual.)
 
 ## Seção 6 — Catálogo Tier 2 (exige julgamento do revisor)
 
-**Catálogo Tier 2**
+**Catálogo Tier 2**  _(https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm)_
 
 | Código | Situação | Motivo de escalonamento | Tratamento sugerido |
 | --- | --- | --- | --- |
@@ -358,8 +357,8 @@ IRPF: BRL 57.600 × 27,5% − BRL 10.740,98 = BRL 15.840 − BRL 10.740,98 = **B
 | T2-BR-2 | Renda do exterior (cripto, clientes estrangeiros) | Renda do exterior exige Carnê-Leão em BRL via PTAX; pode acionar IOF | Sinalizar — conversão PTAX + Carnê-Leão sobre todo recebimento estrangeiro |
 | T2-BR-3 | Renda de aluguel | Tratamento tributário separado; Carnê-Leão com deduções diferentes | Sinalizar — renda de aluguel em Ficha separada; deduções específicas (IPTU, manutenção) |
 | T2-BR-4 | Ganho de capital | Programa GCAP separado; alíquotas 15%/17,5%/20%/22,5% | Sinalizar — não incluir na Ficha de Rendimentos Tributáveis |
-| T2-BR-5 | Renda em cripto / ativos digitais | IN RFB 1888/2019 e normativos posteriores; reporte complexo | Sinalizar — ganhos em cripto tributados como ganho de capital; apuração mensal se ganhos > BRL 35.000/mês |
-| T2-BR-6 | Dividendos da própria empresa | Atualmente isentos (em revisão na reforma) | Sinalizar — verificar status atual de isenção de dividendos antes de declarar |
+| T2-BR-5 | Renda em cripto / ativos digitais | IN RFB 1888/2019 e normativos posteriores; reporte complexo | Sinalizar — ganhos em cripto tributados como ganho de capital; apuração mensal se o total alienado no mês > BRL 35.000 |
+| T2-BR-6 | Dividendos da própria empresa | Desde janeiro de 2026: retenção de 10% sobre o total quando a mesma PJ paga à mesma PF mais de R$ 50.000,00 no mês (Lei 15.270/2025) | Sinalizar — verificar status atual de isenção de dividendos antes de declarar |
 
 ## Seção 7 — Modelo de papel de trabalho em Excel
 
@@ -477,15 +476,15 @@ SEÇÃO F — ALERTAS PARA O REVISOR
 
 ### Calendário de entrega e pagamento 2025 (ano-base 2024)
 
-**Calendário de entrega e pagamento 2025 (ano-base 2024)**
+**Calendário de entrega e pagamento 2025 (ano-base 2024)**  _(https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirpf/p-r-irpf-2026-v1-00-2026-04-23.pdf)_
 
 | Prazo | Evento |
 | --- | --- |
 | Último dia útil de cada mês | DARF de Carnê-Leão referente aos recebimentos do mês anterior |
-| 28 de fevereiro de 2025 | Clientes PJ devem emitir Comprovantes de Rendimentos |
-| 31 de março de 2025 | Abertura da entrega da DIRPF 2025 (ano-base 2024) |
-| 30 de maio de 2025 | Prazo final da entrega da DIRPF 2025 |
-| 30 de maio de 2025 | 1ª parcela do saldo de IRPF (ou pagamento único com desconto) |
+| Último dia útil de fevereiro de 2026 | Clientes PJ devem emitir Comprovantes de Rendimentos (ano-calendário 2025) |
+| 23 de março de 2026 | Abertura da entrega da DIRPF 2026 (ano-base 2025) |
+| 29 de maio de 2026 | Prazo final da entrega da DIRPF 2026 |
+| 29 de maio de 2026 | 1ª quota ou quota única do saldo de IRPF (sem acréscimo de juros) |
 
 ### Referências úteis
 

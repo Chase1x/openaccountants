@@ -5,8 +5,10 @@ version: 0.1
 jurisdiction: DO
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Miguel Lantigua, CPA
 reviewed_by: Miguel Lantigua
 review_status: current
+trust_label: Checked by Miguel Lantigua
 depends_on:
   - income-tax-workflow-base
 category: international

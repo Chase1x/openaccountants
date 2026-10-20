@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "SA"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -15,9 +16,9 @@ metadata:
 
 ## Saudi Arabia — Return Assembly (Capstone) — Skill v1.0
 
-## CRITICAL EXECUTION DIRECTIVE — READ FIRST
+## How this workflow runs
 
-**When this skill is invoked, the user has already passed through intake and the relevant content skills. They want their finished ZATCA working paper. Execute all steps without pausing for permission.**
+Intake and the content Guides have already collected the facts for this working paper. Use what they captured, and ask the user again only where something is missing or contradicts itself.
 
 Specifically:
 

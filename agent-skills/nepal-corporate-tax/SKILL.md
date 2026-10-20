@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "NP"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Ashish Bista, ICAI, OTHER, CA"
   reviewed_by: "Ashish Bista"
+  trust_label: "Checked by Ashish Bista"
   review_status: "current"
 ---
 

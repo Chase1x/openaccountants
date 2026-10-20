@@ -4,8 +4,10 @@ description: "Source-cited draft: corporate income tax for Georgia (tax year 202
 jurisdiction: GE
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Gvantsa Amiridze, ACCA
 reviewed_by: Gvantsa Amiridze
 review_status: current
+trust_label: Checked by Gvantsa Amiridze
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

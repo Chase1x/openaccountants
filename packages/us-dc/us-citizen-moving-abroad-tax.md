@@ -4,7 +4,9 @@ description: "The US taxes citizens wherever they live. What that actually means
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-08-03
+authored_by: Michael Cutajar, CPA, ACCA
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

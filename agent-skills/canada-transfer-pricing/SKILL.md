@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "CA"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Nathan Wiebe"
   reviewed_by: "Edgar Lautsyus"
+  trust_label: "Checked by Edgar Lautsyus"
   review_status: "current"
 ---
 
@@ -26,22 +28,22 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **TP provision** — Section 247, ITA  _(ITA s.247; CRA — Transfer pricing — canada.ca)_
 - **Arm's length standard** — ITA s.247(2)  _(ITA s.247(2))_
-- **Recharacterization power** — ITA s.247(2)(b)(c)(d)  _(ITA s.247(2)(b)(c)(d))_
-- **Documentation threshold** — CAD $1M aggregate with a single non-resident related party is the T106 FILING threshold — it is not an exemption from contemporaneous documentation under s.247(4)  _(ITA s.247(4); CRA — Transfer pricing memorandum TPM-09)_
+- **Recharacterization power** — ITA s.247(2)(b)(c)(d) for taxation years beginning on or before November 4, 2025; for later years a single adjustment rule replaces recharacterization  _([ITA s.247(2)(b)(c)(d)](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html))_
+- **Documentation threshold** — CAD $1M aggregate with all non-arm's length non-residents combined is the T106 FILING threshold — it is not an exemption from contemporaneous documentation under s.247(4)  _([ITA s.247(4); CRA — Transfer pricing memorandum TPM-09](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf))_
 - **Timing** — By documentation-due date (tax return filing deadline)  _(ITA s.247(4)(a))_
 - **Provision to CRA on request** — 3 months (30 days for years beginning after 4 Nov 2025)  _(ITA s.247(4)(b); Finance Canada draft legislation Aug 2025)_
 - **Form T106** — If aggregate NR related-party transactions > $1M  _(ITA s.233.1; Form T106 instructions)_
-- **Form T106 deadline** — 6 months after taxation year-end  _(ITA s.233.1(4))_
+- **Form T106 deadline** — 6 months after taxation year-end for corporations (trusts: 90 days; individuals: April 30, or June 15 if self-employed)  _([ITA s.233.1(4)](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf))_
 - **CbCR (Form RC4649)** — EUR 750M+ consolidated group revenue  _(ITA Part XVIII; Form RC4649 instructions)_
 - **CbCR deadline** — 12 months after fiscal year-end  _(ITA s.233.8(3))_
-- **TP penalty threshold** — Lesser of $10M or 10% of gross revenue for taxation years beginning on or after November 4, 2025 (Budget 2025); previously the lesser of $5M or 10% of gross revenue  _(ITA s.247(3); Finance Canada draft legislation Aug 2025)_
+- **TP penalty threshold** — Lesser of $10M or 10% of gross revenue for taxation years beginning after November 4, 2025 (Budget 2025); previously the lesser of $5M or 10% of gross revenue  _([ITA s.247(3); Finance Canada draft legislation Aug 2025](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html))_
 - **Penalty rate** — 10% of the qualifying transfer-pricing NET adjustment (capital + income) once the threshold is exceeded — the threshold is a gate, not an amount subtracted  _(ITA s.247(3))_
 - **Reasonable efforts defence** — No penalty if reasonable efforts made  _(ITA s.247(3); CRA — IC 87-2R)_
 - **Documentation failure** — Deemed NOT reasonable efforts  _(ITA s.247(3)(b))_
 - **Late T106** — $25/day, min $100, max $2,500  _(ITA s.162(7); CRA)_
 - **Types** — Unilateral, Bilateral, Multilateral  _(CRA — Advance pricing arrangement — canada.ca; IC 94-4R)_
 - **Duration** — Typically 5 years prospective; rollback up to 5 prior years  _(CRA — IC 94-4R)_
-- **Application fee** — None for the regular APA program, but the taxpayer bears CRA's out-of-pocket costs (e.g. travel); the small-business APA stream charges a fixed fee (IC94-4R2)  _(CRA — IC 94-4R)_
+- **Application fee** — None set out in IC94-4R2; travel costs for CRA officials are borne by the CRA, and the taxpayer pays its own travel and any independent expert (IC94-4R2)  _([CRA — IC 94-4R](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ic94-4/international-transfer-pricing-advance-pricing.html))_
 - **Processing time** — Directional only — bilateral APAs have recently averaged several years; cite the latest CRA MAP/APA Program Report figure  _(CRA — APA program statistics)_
 - **Formal safe harbour?** — None — Canada has no statutory TP safe harbour  _(ITA s.247; CRA — IC 87-2R)_
 - **Low-value services** — No formal rule; CRA may accept 5% cost-plus in low-risk  _(CRA — IC 87-2R; OECD TP Guidelines Chapter VII)_
@@ -68,40 +70,40 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### 2.1 Contemporaneous Documentation (Section 247(4))
 
-**Contemporaneous Documentation (Section 247(4))**
+**Contemporaneous Documentation (Section 247(4))**  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf)_
 
 | Item | Detail |
 | --- | --- |
 | Required? | Yes, for all taxpayers with non-arm's length transactions with non-residents (where Form T106 filed) |
-| Threshold | T106 filing: aggregate transactions > CAD 1 million with any single non-resident related party (the documentation duty is not exempted below it) |
+| Threshold | T106 filing: aggregate transactions > CAD 1 million with all non-arm's length non-residents combined (the documentation duty is not exempted below it) |
 | Timing | Must be prepared or obtained by the "documentation-due date" (tax return filing deadline) |
-| Content | Six prescribed items per s.247(4)(a): parties, terms, method, assumptions, comparable data, adjustments |
+| Content | Six prescribed items per s.247(4)(a): property or services, contractual terms, identity of participants, functions performed, data and methods (most appropriate method), economic circumstances and assumptions |
 | Provision to CRA | Within 3 months of written request (reducing to 30 days for years beginning after 4 Nov 2025) |
 
 ### 2.2 Form T106 -- Information Return
 
-**Form T106 -- Information Return**
+**Form T106 -- Information Return**  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf)_
 
 | Item | Detail |
 | --- | --- |
 | Required? | Yes, if total non-arm's length transactions with non-residents > CAD 1 million in tax year |
-| Filing deadline | 6 months after end of taxation year (aligns with corporate tax return) |
+| Filing deadline | 6 months after end of taxation year for corporations (aligns with corporate tax return); trusts 90 days; individuals April 30 (June 15 if self-employed) |
 | Content | Summary of all non-arm's length transactions by non-resident party |
 
 ### 2.3 Master File / Local File
 
-Canada does not formally mandate OECD-style Master File / Local File (no separate filing). However, the 2025 draft legislation introduces enhanced documentation aligning with OECD standards for years beginning after November 4, 2025.
+Canada does not formally mandate OECD-style Master File / Local File (no separate filing). However, Bill C-15 (Budget 2025 Implementation Act, No. 1, Royal Assent March 26, 2026) introduces enhanced documentation aligning with OECD standards for years beginning after November 4, 2025.
 
 ### 2.4 Country-by-Country Report (Form RC4649)
 
-**Country-by-Country Report (Form RC4649)**
+**Country-by-Country Report (Form RC4649)**  _(https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4651/guidance-on-country-country-reporting-canada.html)_
 
 | Item | Detail |
 | --- | --- |
 | Threshold | Consolidated group revenue ≥ EUR 750 million |
 | Filing deadline | 12 months after fiscal year-end |
 | Applies to | Canadian ultimate parent entities of qualifying MNE groups |
-| Notification | Required (CBC2 notification form) |
+| Notification | No advance notification required for a Canadian UPE or SPE; an SPE must notify the CRA at the time of filing |
 
 ## Section 3 -- Arm's Length Standard
 
@@ -127,30 +129,30 @@ No statutory hierarchy. CRA accepts most appropriate method per OECD Guidelines.
 
 ### 3.4 Recharacterization Power
 
-- **Recharacterization Power** — Section 247(2)(b)(c)(d): CRA can recharacterize transactions if they would not have been entered into at all between arm's length parties (not just reprice them).  _(Section 247(2)(b)(c)(d))_
+- **Recharacterization Power** — Section 247(2)(b)(c)(d): CRA can recharacterize transactions if they would not have been entered into at all between arm's length parties (not just reprice them). This applies to taxation years beginning on or before November 4, 2025; for later years a single adjustment rule replaces the previous two-part system of pricing adjustments and recharacterization.  _([Section 247(2)(b)(c)(d)](https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html))_
 
 ## Section 4 -- Filing Obligations
 
-**Filing Obligations**
+**Filing Obligations**  _(https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html)_
 
 | Obligation | Detail |
 | --- | --- |
-| Contemporaneous documentation | Prepared by documentation-due date; provided within 3 months (30 days from 2025+) of CRA request |
+| Contemporaneous documentation | Prepared by documentation-due date; provided within 3 months (30 days for taxation years beginning after 4 Nov 2025) of CRA request |
 | Form T106 | Annual information return (if threshold met) |
 | Form T1134 | Information return for foreign affiliates |
 | Form RC4649 (CbCR) | Annual filing (EUR 750m+ groups) |
-| CBC2 notification | Annual notification |
+| CbC notification | Not required in advance for a Canadian UPE or SPE; an SPE notifies the CRA at the time of filing |
 | Corporate tax return (T2) | Annual self-assessment |
 
 ## Section 5 -- Deadlines
 
-**Deadlines**
+**Deadlines**  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf)_
 
 | Item | Deadline |
 | --- | --- |
 | Documentation preparation | By documentation-due date (corporate: 6 months after year-end) |
 | Provision to CRA on request | 3 months from written request (30 days for years beginning after 4 Nov 2025) |
-| Form T106 | 6 months after taxation year-end |
+| Form T106 | 6 months after taxation year-end for corporations; trusts 90 days; individuals April 30 (June 15 if self-employed) |
 | CbCR (RC4649) | 12 months after fiscal year-end |
 | T2 corporate tax return | 6 months after taxation year-end |
 | T2 tax payment | 2-3 months after year-end (depending on entity type) |
@@ -159,37 +161,37 @@ No statutory hierarchy. CRA accepts most appropriate method per OECD Guidelines.
 
 ### 6.1 Transfer Pricing Penalty (s.247(3))
 
-**Transfer Pricing Penalty (s.247(3))**
+**Transfer Pricing Penalty (s.247(3))**  _(https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html)_
 
 | Item | Detail |
 | --- | --- |
-| Trigger threshold | Net TP adjustment exceeds lesser of: CAD 5 million OR 10% of gross revenue (for taxation years beginning before 4 Nov 2025); lesser of CAD 10 million OR 10% of gross revenue (for taxation years beginning after 4 Nov 2025) |
+| Trigger threshold | Net TP adjustment exceeds lesser of: CAD 5 million OR 10% of gross revenue (for taxation years beginning on or before 4 Nov 2025); lesser of CAD 10 million OR 10% of gross revenue (for taxation years beginning after 4 Nov 2025) |
 | Penalty rate | 10% of the net TP adjustment once the threshold is exceeded (the threshold is a gate, not subtracted) |
 | Reasonable efforts defence | No penalty if taxpayer made "reasonable efforts" to determine arm's length pricing |
 | Documentation impact | Failure to meet s.247(4) requirements = deemed NOT to have made reasonable efforts |
 
 ### 6.2 Other Penalties
 
-**Other Penalties**
+**Other Penalties**  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t106/t106-25e.pdf)_
 
 | Offence | Penalty |
 | --- | --- |
 | Late filing Form T106 | CAD 25/day, minimum CAD 100, maximum CAD 2,500 |
-| Failure to file Form T106 | Up to CAD 2,500 per return |
+| Failure to file Form T106 | Knowingly or through gross negligence: CAD 500 per month up to CAD 12,000 (CAD 1,000 per month up to CAD 24,000 after a demand) |
 | Late CbCR | Standard administrative penalties |
 
 ## Section 7 -- Advance Pricing Agreements (APA)
 
-**Advance Pricing Agreements (APA)**
+**Advance Pricing Agreements (APA)**  _(https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ic94-4/international-transfer-pricing-advance-pricing.html)_
 
 | Item | Detail |
 | --- | --- |
 | Availability | Yes (active program) |
 | Types | Unilateral, Bilateral, Multilateral |
-| Governing guidance | IC 94-4R (International Circular) |
+| Governing guidance | IC 94-4R2 (Information Circular, February 22, 2024) |
 | Application | To CRA Competent Authority Division |
 | Duration | Typically 5 years prospective; rollback for up to 5 prior years |
-| Fees | None for the regular program (taxpayer bears CRA out-of-pocket costs); fixed fee for the small-business stream |
+| Fees | None set out in IC 94-4R2; travel costs for CRA officials are borne by the CRA (taxpayer pays its own travel and any independent expert) |
 | Processing time | Several years for bilateral APAs -- see the latest CRA MAP/APA Program Report |
 | Annual compliance report | Required |
 | Key benefit | Eliminates penalty exposure for covered transactions |
@@ -200,13 +202,13 @@ Canada does not have formal statutory safe harbour rules for transfer pricing.
 
 ## Section 8 -- Safe Harbours
 
-**Safe Harbours**
+**Safe Harbours**  _(https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/transfer-pricing.html)_
 
 | Area | Detail |
 | --- | --- |
 | Low-value services | No formal safe harbour; CRA may accept 5% cost-plus in low-risk scenarios |
 | Interest rates | No safe harbour; market benchmarking required (thin cap rules separate) |
-| Simplified documentation (2025+) | Draft legislation introduces simplified requirements where prescribed conditions met |
+| Simplified documentation (years beginning after 4 Nov 2025) | Bill C-15 (Royal Assent March 26, 2026) introduces simplified requirements where prescribed conditions met |
 | Small transactions | No de minimis; all related-party transactions should be at arm's length |
 | Form T106 threshold | Aggregate transactions ≤ CAD 1 million: no Form T106 filing required |
 
@@ -221,7 +223,7 @@ CRA uses a risk-based approach to TP audits, focusing on:
 
 ### 8.2 2025 Simplified Documentation
 
-Draft legislation for taxation years beginning after November 4, 2025 introduces:
+Legislation enacted by Bill C-15 (Royal Assent March 26, 2026) for taxation years beginning after November 4, 2025 introduces:
 - Simplified contemporaneous documentation for taxpayers meeting prescribed conditions
 - Conditions and scope still being finalized through consultation
 - Intended to reduce compliance burden for lower-risk transactions

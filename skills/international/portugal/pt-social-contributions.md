@@ -5,9 +5,11 @@ version: 2.0
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Mário Jorge da costa Vale
+reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
-tier: 1
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -27,17 +29,17 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Empresário em nome individual** — 25,2%  _(Código Contributivo)_
 - **Rendimento relevante — serviços** — 70% do bruto  _(Código Contributivo Art. 162)_
 - **Rendimento relevante — bens** — 20% do bruto  _(Código Contributivo Art. 162)_
-- **Base mínima mensal (IAS)** — €522,50  _(Portaria n.º 6-B/2025/1, de 6 de janeiro)_
-- **Base máxima mensal (12×IAS)** — €6.270,00  _(Código Contributivo Art.º 163º, nº 5)_
+- **Base mínima mensal (IAS)** — €20,00 por mês (valor mínimo a pagar quando não há rendimentos ou as contribuições apuradas são inferiores a 20,00€; não existe base mínima igual ao IAS)  _([Portaria n.º 6-B/2025/1, de 6 de janeiro](https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw))_
+- **Base máxima mensal (12×IAS)** — €6 445,56 (12 x IAS, 2026)  _([Código Contributivo Art.º 163º, nº 5](https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw))_
 - **Primeiros 12 meses** — Isento de contribuições  _(Código Contributivo)_
-- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês (em 2025 4 x 522,50 = €2.090)  _(Código Contributivo Art.º 157º, nº 1, a))_
+- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês (em 2026 4 x 537,13 = €2 148,52)  _([Código Contributivo Art.º 157º, nº 1, a)](https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw))_
 - **Declaração trimestral** — Janeiro (out-dez), abril (jan-mar), julho (abr-jun), outubro (jul-set)  _(Código Contributivo)_
 - **Pagamento mensal** — Entre 10 e 20 do mês  _(Código Contributivo)_
 - **Dedutibilidade fiscal** — SIM — dedutíveis do IRS  _(CIRS)_
 
 ## Section 1 -- Quick reference
 
-**Quick reference**
+**Quick reference**  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 | Field | Value |
 | --- | --- |
@@ -49,8 +51,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Empresário em nome individual rate | 25.2% |
 | Relevant income -- services | 70% of gross |
 | Relevant income -- goods | 20% of gross |
-| Minimum monthly base (IAS, 2025) | EUR 480.43 |
-| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+| Minimum monthly contribution | EUR 20 |
+| Maximum monthly base (12x IAS) | EUR 6 445,56 (2026) |
 | First 12 months | Exempt from contributions |
 | Declaration frequency | Quarterly |
 | Payment frequency | Monthly (between 10th and 20th) |
@@ -72,7 +74,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Prohibitions
 
-- **Prohibitions list** — NEVER apply 21.4% to gross income directly -- the relevant income percentage (70% for services, 20% for goods) must be applied first. NEVER forget the first 12 months exemption for new self-employed. NEVER ignore the minimum base of EUR 480.43 (IAS) -- even with zero income, this minimum applies after the exemption period. NEVER confuse the self-employed rate (21.4%) with the empresário rate (25.2%). NEVER present quarterly declaration income as the contribution base -- it must be converted to monthly. NEVER forget to clamp at the maximum of 12 x IAS (EUR 5,765.16). NEVER state that contributions are NOT tax-deductible -- they ARE deductible from IRS income. NEVER advise on concurrent employment exemption without verifying the 4 x IAS threshold.
+- **Prohibitions list** — NEVER apply 21.4% to gross income directly -- the relevant income percentage (70% for services, 20% for goods) must be applied first. NEVER forget the first 12 months exemption for new self-employed. NEVER ignore the minimum monthly contribution of EUR 20 -- with zero income, or contributions below EUR 20, this minimum applies after the exemption period. NEVER confuse the self-employed rate (21.4%) with the empresário rate (25.2%). NEVER present quarterly declaration income as the contribution base -- it must be converted to monthly. NEVER forget to clamp at the maximum of 12 x IAS (EUR 6 445,56 in 2026). NEVER state that contributions are NOT tax-deductible -- they ARE deductible from IRS income. NEVER advise on concurrent employment exemption without verifying the 4 x IAS threshold.  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ## Section 3 -- Relevant income calculation
 
@@ -102,23 +104,23 @@ Legislation: Código Contributivo, art. 163, 168
 
 ### Contribution rates
 
-**Contribution rates**
+**Contribution rates**  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 | Category | Rate |
 | --- | --- |
 | Trabalhador independente | 21.4% |
-| Empresário em nome individual (with employees) | 25.2% |
+| Empresário em nome individual (commercial/industrial income) and EIRL holder | 25.2% |
 
 ### Base bounds
 
-**Base bounds**
+**Base bounds**  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 | Bound | Amount |
 | --- | --- |
-| Minimum monthly base (IAS) | EUR 480.43 |
-| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+| Minimum monthly contribution (no IAS minimum base) | EUR 20 |
+| Maximum monthly base (12x IAS, 2026) | EUR 6 445,56 |
 
-- **Monthly base clamp formula** — monthly_base = clamp(480.43, monthly_relevant_income, 5,765.16)
+- **Monthly base clamp formula** — monthly_base = min(monthly_relevant_income, 6 445,56); if the resulting contribution is below EUR 20, pay EUR 20  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ## Section 5 -- Computation steps
 
@@ -135,15 +137,15 @@ Legislation: Código Contributivo, art. 163, 168
 
 ### Step 5.2 -- Calculate monthly relevant income
 
-- **Monthly relevant income calculation** — IF services_only (sem contabilidade): relevant_income = quarterly_gross x 70% / 3 ELIF goods_only: relevant_income = quarterly_gross x 20% / 3 ELIF mixed: relevant_income = (services_gross x 70% + goods_gross x 20%) / 3 ELIF contabilidade_organizada: relevant_income = quarterly_net_profit / 3
+- **Monthly relevant income calculation** — IF services_only (sem contabilidade): relevant_income = quarterly_gross x 70% / 3 ELIF goods_only: relevant_income = quarterly_gross x 20% / 3 ELIF mixed: relevant_income = (services_gross x 70% + goods_gross x 20%) / 3 ELIF contabilidade_organizada: relevant_income = prior-year lucro tributável / 12 (minimum 805,70 = 1,5 x IAS; fixed in October for the following year)  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ### Step 5.3 -- Apply bounds and calculate
 
-- **Apply bounds and calculate contribution** — monthly_base = max(480.43, min(relevant_income, 5,765.16)) monthly_contribution = monthly_base x 21.4%
+- **Apply bounds and calculate contribution** — monthly_base = min(relevant_income, 6 445,56) monthly_contribution = max(20, monthly_base x 21.4%)  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ### Step 5.4 -- Contributions apply for the next quarter
 
-- **Contributions apply for next quarter** — The quarterly declaration determines contributions for the following 3 months.
+- **Contributions apply for next quarter** — The quarterly declaration determines contributions for the month of the declaration and the 2 following months.  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ## Section 6 -- Payment schedule, exemptions, and tax deductibility
 
@@ -161,7 +163,7 @@ Legislation: Código Contributivo, art. 163, 168
 ### Exemptions
 
 - **First 12 months** — new self-employed workers are exempt from contributions for the first 12 months of activity.
-- **Concurrent employment exemption** — if the self-employed person also has employment where the employer pays at least the minimum contribution base: If employment income >= IAS: self-employed contributions may be reduced or exempt. If self-employed income >= 4 x IAS (EUR 1,921.72): exemption does NOT apply
+- **Concurrent employment exemption** — if the self-employed person also has employment where the employer pays at least the minimum contribution base: If employment income >= IAS: self-employed contributions may be reduced or exempt. If average monthly relevant income >= 4 x IAS (EUR 2 148,52 in 2026): exemption does NOT apply, and contributions are due on the amount above that limit  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ### Tax deductibility
 
@@ -177,7 +179,7 @@ Legislation: Código Contributivo, art. 163, 168
 
 ### Self-employed with organized accounting
 
-- **Organized accounting net profit rule** — Relevant income = actual net profit (not deemed %). If net profit is negative, minimum base still applies. Confirm profit calculation methodology with contabilista. Flag for reviewer.
+- **Organized accounting net profit rule** — Relevant income = prior-year taxable profit (lucro tributável, Anexo SS of Modelo 3) / 12, with a minimum monthly base of EUR 805,70 (1,5 x IAS), fixed in October for the following year. Confirm profit calculation methodology with contabilista. Flag for reviewer.  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xyfxz00dekl2ynxz676sw)_
 
 ### Recibos verdes (green receipts) income
 
@@ -191,11 +193,11 @@ Situation: Client opened activity in March 2025. Resolution: Exempt from contrib
 
 ### EC2 -- Services income below minimum
 
-Situation: Client provides services with quarterly gross EUR 1,000. Resolution: Relevant income = EUR 1,000 x 70% / 3 = EUR 233.33/month. Below minimum. Monthly contribution = EUR 480.43 x 21.4% = EUR 102.81.
+Situation: Client provides services with quarterly gross EUR 1,000. Resolution: Relevant income = EUR 1,000 x 70% / 3 = EUR 233.33/month. Monthly contribution = EUR 233.33 x 21.4% = EUR 49.93 (above the EUR 20 minimum, so no floor applies).
 
 ### EC3 -- Very high income
 
-Situation: Client earns EUR 30,000/quarter from services. Resolution: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Monthly contribution = EUR 5,765.16 x 21.4% = EUR 1,233.74.
+Situation: Client earns EUR 30,000/quarter from services. Resolution: Relevant income = EUR 7,000/month. Capped at EUR 6,445.56 (12 x IAS, 2026). Monthly contribution = EUR 6,445.56 x 21.4% = EUR 1,379.35.
 
 ### EC4 -- Mixed services and goods
 
@@ -239,11 +241,11 @@ Input: Quarterly gross services EUR 9,000, no employment, established. Expected 
 
 ### Test 2 -- Minimum base applies
 
-Input: Quarterly gross services EUR 1,500. Expected output: Relevant income = EUR 350/month. Below minimum. Base = EUR 480.43. Contribution = EUR 102.81/month.
+Input: Quarterly gross services EUR 1,500. Expected output: Relevant income = EUR 350/month. Base = EUR 350 (no minimum base). Contribution = EUR 74.90/month (above the EUR 20 minimum).
 
 ### Test 3 -- Maximum base applies
 
-Input: Quarterly gross services EUR 30,000. Expected output: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Contribution = EUR 1,233.74/month.
+Input: Quarterly gross services EUR 30,000. Expected output: Relevant income = EUR 7,000/month. Capped at EUR 6,445.56 (12 x IAS, 2026). Contribution = EUR 1,379.35/month.
 
 ### Test 4 -- First year exempt
 

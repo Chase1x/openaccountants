@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "US"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Christopher Aryee, ACCA, CA, EA, CPA-CA"
   reviewed_by: "James Wallach"
+  trust_label: "Checked by James Wallach"
   review_status: "current"
 ---
 
@@ -100,7 +102,7 @@ Treasurer or CFO of a US company with signing power on the company's foreign ban
 
 ### 3.8 Due date and filing mechanics
 
-- **FBAR due date and extension** — The FBAR is due April 15 of the year following the calendar year being reported. Since 2017 a six-month automatic extension to October 15 has been available — no form needs to be filed to claim the extension; it is automatic for all filers. There is no further extension beyond October 15 except in narrow disaster-area circumstances.  _(31 CFR §1010.350)_
+- **FBAR due date and extension** — The FBAR is due April 15 of the year following the calendar year being reported. Since 2017 a six-month automatic extension to October 15 has been available — no form needs to be filed to claim the extension; it is automatic for all filers. There is no further extension beyond October 15 except in narrow disaster-area circumstances and FinCEN's annual notice for certain individuals with signature authority over, but no financial interest in, foreign financial accounts (Notice FIN-2025-NTC3 extends their 2025 FBAR to April 15, 2027).  _([31 CFR §1010.350](https://www.fincen.gov/system/files/2025-12/FBAR-FBAR-Filing-Requirement-for-Certain-Financial-Professionals.pdf))_
 - **Filing mechanics detail** — Filing is through the BSA E-Filing System (bsaefiling.fincen.treas.gov). The form requires identification of each account: institution name, address, account number, maximum value during the year (in USD), and the relationship of the filer to the account. There is no fee. There is no paper option for routine cases. The signed form is retained by the filer (5-year retention under 31 CFR §1010.420). FinCEN may request supporting records during this period; failure to provide them is itself sanctionable.  _(31 CFR §1010.420)_
 
 ## 4. Form 8938 — Statement of Specified Foreign Financial Assets
@@ -111,8 +113,8 @@ Treasurer or CFO of a US company with signing power on the company's foreign ban
 
 ### 4.2 Specified person
 
-- **Specified individual** — A US citizen, a resident alien for any portion of the year, a nonresident alien who elects to be treated as a resident under §6013(g) or §6013(h), or a bona fide resident of American Samoa or Puerto Rico (with modifications).  _(IRC §6038D; §6013(g); §6013(h))_
-- **Specified domestic entity** — Under regulations effective for tax years beginning after December 31, 2015, a domestic corporation, partnership, or trust will be a specified domestic entity if it is "formed or availed of" for purposes of holding specified foreign financial assets. The regulations apply a presumption test based on passive income and asset composition (the 50% passive income or 50% passive asset thresholds).  _(Treas. Reg. §1.6038D-6)_
+- **Specified individual** — A US citizen, a resident alien for any portion of the year, a nonresident alien who elects to be treated as a resident under §6013(g) or §6013(h), or a nonresident alien who is a bona fide resident of American Samoa or Puerto Rico.  _([IRC §6038D; §6013(g); §6013(h)](https://www.irs.gov/instructions/i8938))_
+- **Specified domestic entity** — Under regulations effective for tax years beginning after December 31, 2015, a domestic corporation, partnership, or trust will be a specified domestic entity if it is "formed or availed of" for purposes of holding specified foreign financial assets. The regulations apply a presumption test based on passive income and asset composition (the 50% passive income or 50% passive asset thresholds), and a domestic corporation or partnership is caught only if it is closely held by a specified individual (at least 80% ownership on the last day of the tax year).  _([Treas. Reg. §1.6038D-6](https://www.irs.gov/instructions/i8938))_
 - **Single-member LLC 8938 treatment** — Single-member LLCs disregarded for federal income tax purposes are disregarded for §6038D purposes too. The owner reports the LLC's foreign accounts on the owner's own Form 8938 attached to the owner's Form 1040. This is the opposite of the FBAR rule.  _(IRC §6038D)_
 
 ### 4.3 What is a Specified Foreign Financial Asset (SFFA)
@@ -137,7 +139,7 @@ Treasurer or CFO of a US company with signing power on the company's foreign ban
 | Married filing separate, abroad | $200,000 | $300,000 |
 | Specified domestic entity | $50,000 | $75,000 |
 
-- **Abroad definition** — "Abroad" for these purposes generally means meeting the bona fide foreign residence test or the physical presence test under §911 (the foreign earned income exclusion residence tests). Mere absence from the US does not by itself put a filer in the higher-threshold category.  _(IRC §911)_
+- **Abroad definition** — "Abroad" for these purposes means having your tax home in a foreign country and either being a U.S. citizen who is a bona fide resident of a foreign country for an uninterrupted period that includes an entire tax year, or being a U.S. citizen or resident present in a foreign country at least 330 full days during any period of 12 consecutive months that ends in the tax year. Mere absence from the US does not by itself put a filer in the higher-threshold category.  _([IRC §911](https://www.irs.gov/instructions/i8938))_
 
 These thresholds are dramatically higher than the FBAR's flat $10,000. A typical fact pattern:
 
@@ -183,13 +185,13 @@ The FBAR penalty regime is among the harshest in the entire federal tax and fina
 
 ### 6.1 Non-willful civil penalty — Bittner v. United States (2023)
 
-- **Pre-Bittner IRS/FinCEN position** — Pre-Bittner, the IRS and FinCEN took the position that the non-willful penalty under 31 USC §5321(a)(5)(B)(i) — capped at $10,000 (adjusted for inflation; $16,536 for 2024-reportable violations and $17,103 for 2025-reportable violations per FinCEN inflation adjustments) — applied per account per year. Under this view, a filer with 12 foreign accounts who failed to file a single FBAR faced a $120,000-plus penalty.  _(31 USC §5321(a)(5)(B)(i))_
+- **Pre-Bittner IRS/FinCEN position** — Pre-Bittner, the IRS and FinCEN took the position that the non-willful penalty under 31 USC §5321(a)(5)(B)(i) — capped at $10,000 (adjusted for inflation; $16,536 for penalties assessed on or after January 17, 2025, per FinCEN inflation adjustments at 31 CFR 1010.821) — applied per account per year. Under this view, a filer with 12 foreign accounts who failed to file a single FBAR faced a $120,000-plus penalty.  _([31 USC §5321(a)(5)(B)(i)](https://www.ecfr.gov/current/title-31/section-1010.821))_
 - **Bittner holding** — In Bittner v. United States, 598 U.S. 85 (2023), the Supreme Court held that the non-willful penalty is per form per year, not per account. The Court reasoned that the BSA reporting obligation is to file an FBAR (a single form), and a single failure to file that form is a single violation. This is a major taxpayer victory. A non-willful penalty for a missed FBAR with twelve accounts is now capped at one inflation-adjusted $10,000 maximum, not twelve.  _(Bittner v. United States, 598 U.S. 85 (2023))_
 - **Important caveats** — Bittner does not affect willful penalties, which remain per-account-per-year. The IRS still has discretion to assert lower amounts or no penalty under its mitigation guidelines (IRM 4.26.16). Reasonable-cause relief under 31 USC §5321(a)(5)(B)(ii) remains available. The six-year statute of limitations under 31 USC §5321(b)(1) remains six years from the FBAR's April 15 due date — so the FBAR for calendar year 2018 (due April 15, 2019; extended to October 15, 2019) was time-barred for civil penalty assessment after April 15, 2025.  _(31 USC §5321(a)(5)(B)(ii); 31 USC §5321(b)(1); IRM 4.26.16)_
 
 ### 6.2 Willful civil penalty — draconian
 
-- **Willful civil penalty amount** — greater of $100,000 (inflation-adjusted, $165,353 for 2024 violations and $171,032 for 2025 violations per FinCEN adjustments) or 50% of the balance in the account at the time of the violation USD/percent (per violation per year; per account per year for willful)  _(31 USC §5321(a)(5)(C))_
+- **Willful civil penalty amount** — greater of $100,000 (inflation-adjusted to $165,353 for penalties assessed on or after January 17, 2025, per FinCEN adjustments) or 50% of the balance in the account at the time of the violation USD/percent (per violation per year; per account per year for willful)  _([31 USC §5321(a)(5)(C)](https://www.ecfr.gov/current/title-31/section-1010.821))_
 
 This is per violation per year — and "per violation" for willful is per account per year. A willful filer with 12 accounts averaging $200,000 faces a starting-point penalty of $1.2 million (12 × $100,000) or 50% of $2.4 million = $1.2 million, whichever is greater.
 
@@ -201,7 +203,7 @@ This is per violation per year — and "per violation" for willful is per accoun
 
 - **Criminal penalty structure** — Under 31 USC §5322(a), a willful violation of any provision of the BSA, including FBAR filing, is punishable by a fine of up to $250,000 and imprisonment for up to 5 years. If the violation is part of a pattern of illegal activity involving more than $100,000 in a 12-month period (§5322(b)), the maximum fine doubles to $500,000 and the prison term doubles to 10 years. Criminal prosecutions remain rare relative to civil enforcement but are not theoretical. The DOJ Tax Division has prosecuted dozens of FBAR cases since 2009 in connection with the Swiss bank disclosures and subsequent enforcement.  _(31 USC §5322(a); 31 USC §5322(b))_
 
-> **AUDIT FLASH POINT — willful vs non-willful determination.** This determination is the single highest-leverage judgment in an FBAR delinquency case. A willful determination can produce a million-dollar penalty; a non-willful determination caps at roughly $17,000 per form per year. The taxpayer's contemporaneous knowledge, the accountant's prior advice (or absence of it), and the Schedule B answers in prior years are all relevant. Documenting reasonable-cause facts at the outset of any catch-up engagement is essential.
+> **AUDIT FLASH POINT — willful vs non-willful determination.** This determination is the single highest-leverage judgment in an FBAR delinquency case. A willful determination can produce a million-dollar penalty; a non-willful determination caps at $16,536 per form per year (penalties assessed on or after January 17, 2025). The taxpayer's contemporaneous knowledge, the accountant's prior advice (or absence of it), and the Schedule B answers in prior years are all relevant. Documenting reasonable-cause facts at the outset of any catch-up engagement is essential.
 
 ### 6.5 Reasonable cause
 
@@ -222,7 +224,7 @@ This is per violation per year — and "per violation" for willful is per accoun
 ### 7.4 Extended statute of limitations — §6501(e)(1)(A)(ii)
 
 - **Six-year assessment extension** — Under §6501(e)(1)(A)(ii) (as amended by FATCA), the period for assessing tax is extended to six years when the taxpayer omits from gross income any amount that exceeds $5,000 and is attributable to one or more assets with respect to which information was required to be reported under §6038D and the required information was not provided.  _(§6501(e)(1)(A)(ii))_
-- **Indefinite statute when 8938 missing** — Under §6501(c)(8), the statute of limitations does not begin to run at all for the entire return until the §6038D information is furnished, if the failure to furnish information is due to gross negligence or worse. This means the IRS can audit a return indefinitely if Form 8938 was required but never filed — even for items unrelated to the foreign asset. The interaction is a powerful deterrent: a missing Form 8938 keeps the entire return open to IRS examination indefinitely.  _(§6501(c)(8))_
+- **Indefinite statute when 8938 missing** — Under §6501(c)(8), the time for assessment does not expire before 3 years after the §6038D information is furnished; if the failure to furnish the information is due to reasonable cause and not willful neglect, this applies only to the items related to the failure. This means the IRS can audit a return indefinitely if Form 8938 was required but never filed — even for items unrelated to the foreign asset. The interaction is a powerful deterrent: a missing Form 8938 keeps the entire return open to IRS examination indefinitely.  _([§6501(c)(8)](https://www.law.cornell.edu/uscode/text/26/6501))_
 
 ## 8. PFIC Interaction (§1291) — Refer Out
 
@@ -340,7 +342,7 @@ Aggregate SFFAs for Form 8938: All of the above plus the mutual funds = $87,000.
 
 PFIC exposure: each of the three Indian mutual funds is a separate PFIC requiring its own Form 8621 with §1291 computation.
 
-Catch-up path: Because Priya answered "no" to the Schedule B foreign account questions while holding foreign accounts, the willfulness analysis is sensitive. If she had no actual knowledge of the FBAR obligation and no professional advice on the question, the non-willful position is defensible. SDOP is the likely path, with three years of amended returns including the back-year interest income, six years of delinquent FBARs, and the 5% Title 31 penalty on the highest aggregate balance during the covered period.
+Catch-up path: Because Priya answered "no" to the Schedule B foreign account questions while holding foreign accounts, the willfulness analysis is sensitive. If she had no actual knowledge of the FBAR obligation and no professional advice on the question, the non-willful position is defensible. SDOP is the likely path, with three years of amended returns including the back-year interest income, six years of delinquent FBARs, and the 5% Title 26 miscellaneous offshore penalty on the highest aggregate year-end balance/value during the covered period.
 
 The PFIC issue is independent of SDOP. SDOP does not eliminate §1291 tax. Form 8621 must be filed for each PFIC for each year, and the §1291 deemed-distribution tax is owed.
 
@@ -388,7 +390,7 @@ There is also no immediate income tax consequence to Sarah from the trust's inve
 
 Schedule B (Form 1040) Part III asks two questions critical to FBAR and 8938 compliance:
 
-> "At any time during 2025, did you have a financial interest in or signature or other authority over a financial account (such as a bank account, securities account, or brokerage account) located in a foreign country?"
+> "At any time during 2025, did you have a financial interest in or signature authority over a financial account (such as a bank account, securities account, or brokerage account) located in a foreign country?"
 
 > "During 2025, did you receive a distribution from, or were you the grantor of, or transferor to, a foreign trust?"
 
@@ -425,7 +427,7 @@ Document the answers in the file. A negative attestation contemporaneously docum
 
 ## 16. Coordination with Other International Information Returns
 
-- **Form 8938 coordination with other forms** — Form 8938 explicitly coordinates with several other international forms via Part IV. Where the same asset is reported on another form, Form 8938 references the other form and skips the detail: Form 3520 — gifts from foreign persons over $100,000 or distributions from foreign trusts; Form 3520-A — annual return for foreign grantor trust with US owner; Form 5471 — US persons with interests in foreign corporations (10% or greater); Form 8621 — PFIC reporting; Form 8865 — US persons with interests in foreign partnerships (10% or greater); Form 8858 — foreign disregarded entities and foreign branches. The coordination is one-way: Form 8938 defers to these forms. Filing one of them does not satisfy FBAR. FBAR remains an independent obligation with its own form, due date, platform, and penalty regime.
+- **Form 8938 coordination with other forms** — Form 8938 explicitly coordinates with several other international forms via Part IV. Where the same asset is reported on another form, Form 8938 references the other form and skips the detail: Form 3520 — gifts from foreign persons over $100,000 or distributions from foreign trusts; Form 3520-A — annual return for foreign grantor trust with US owner; Form 5471 — US persons with interests in foreign corporations (10% or greater); Form 8621 — PFIC reporting; Form 8865 — US persons with interests in foreign partnerships (10% or greater); Form 8858 is not on the Part IV list (Part IV covers only Forms 3520, 3520-A, 5471, 8621 and 8865). The coordination is one-way: Form 8938 defers to these forms. Filing one of them does not satisfy FBAR. FBAR remains an independent obligation with its own form, due date, platform, and penalty regime.  _(https://www.irs.gov/instructions/i8938)_
 
 ## 17. Reviewer Self-Checks
 
@@ -438,7 +440,7 @@ Before signing off on any return implicating these forms, the reviewer should ve
 - **Signature-authority accounts reported on FBAR** — Signature-authority accounts are reported on FBAR even when not on 8938.
 - **PFIC trigger consideration** — PFIC trigger has been considered for every foreign fund, ETF, or pooled investment.
 - **Form 8621 filed for PFIC interests meeting threshold** — Form 8621 has been filed for every PFIC interest where the §1298(f) threshold is met.  _(§1298(f))_
-- **Cross-references in Form 8938 Part IV** — Cross-references in Form 8938 Part IV correctly identify any 3520/5471/8621/8865/8858/3520-A filings.
+- **Cross-references in Form 8938 Part IV** — Cross-references in Form 8938 Part IV correctly identify any 3520/5471/8621/8865/3520-A filings.  _(https://www.irs.gov/instructions/i8938)_
 - **Currency translation rate** — Currency translation uses the Treasury Reporting Rate of Exchange for the appropriate date.
 - **Reasonable-cause documentation for late filings** — Reasonable-cause documentation is in the file if any late filings are involved.
 

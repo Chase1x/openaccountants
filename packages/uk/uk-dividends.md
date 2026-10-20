@@ -5,12 +5,15 @@ version: 1.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: James Power, CIMA
 reviewed_by: James Power
 review_status: current
+trust_label: Checked by James Power
+source_checked: 2026-10-17
 depends_on:
   - uk-income-tax-sa100
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -42,7 +45,7 @@ Reviewed against the cited tax authorities by James Power on 2026-06-03. Items f
 
 ## Section 1 -- Quick Reference
 
-**Quick Reference**
+**Quick Reference**  _(https://assets.publishing.service.gov.uk/media/69c14d07cfa346b9d4704a8d/SA100-2026.pdf)_
 
 | Field | Value |
 | --- | --- |
@@ -55,7 +58,7 @@ Reviewed against the cited tax authorities by James Power on 2026-06-03. Items f
 | Tax authority | HMRC |
 | Filing portal | HMRC Self Assessment Online |
 | Filing deadline (online) | 31 January following the tax year |
-| SA100 box | Box 4 (UK dividends); Box 5 (foreign dividends) on the main SA100 or SA106 (Foreign) supplementary pages |
+| SA100 box | Box 4 (UK dividends); Box 5 (other dividends); Box 6 (foreign dividends up to £500) and Box 7 (tax taken off foreign dividends) on the main SA100, or SA106 (Foreign) supplementary pages |
 | Validated by | Verified by James Power on 2026-06-03 |
 | Skill version | 1.1 |
 
@@ -81,7 +84,7 @@ Reviewed against the cited tax authorities by James Power on 2026-06-03. Items f
 
 ### Dividend Tax Rates (2026-27) — from 6 April 2026
 
-Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Basic and higher rates increase by 2 percentage points; the additional rate is unchanged. The £500 dividend allowance is unchanged for 2026-27, and the income tax bands remain frozen through 2027-28 (Personal Allowance £12,570; basic rate band cap £50,270; additional rate threshold £125,140).
+Announced at Autumn Budget 2025 and enacted by Finance Act 2026 (c. 11). Basic and higher rates increase by 2 percentage points; the additional rate is unchanged. The £500 dividend allowance is unchanged for 2026-27, and the income tax bands remain frozen through 2030-31 (Personal Allowance £12,570; basic rate band cap £50,270; additional rate threshold £125,140).
 
 **Dividend Tax Rates (2026-27)**
 
@@ -104,7 +107,7 @@ Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Ba
 
 ### Dividend Allowance History
 
-**Dividend Allowance History**
+**Dividend Allowance History**  _(https://www.gov.uk/government/publications/income-tax-dividend-allowance-reduction/income-tax-dividend-allowance-reduction)_
 
 | Tax year | Allowance |
 | --- | --- |
@@ -113,8 +116,8 @@ Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Ba
 | 2023-24 | £1,000 |
 | 2022-23 | £2,000 |
 | 2021-22 | £2,000 |
-| 2017-18 to 2020-21 | £2,000 |
-| 2016-17 | £5,000 |
+| 2018-19 to 2020-21 | £2,000 |
+| 2016-17 to 2017-18 | £5,000 |
 
 ### How the Dividend Allowance Works
 
@@ -154,24 +157,24 @@ Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Ba
 
 ### 3.1 The Core Trade-Off
 
-**The Core Trade-Off**
+**The Core Trade-Off**  _(https://www.gov.uk/government/publications/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl)_
 
 | Payment type | Corporation Tax | Employee NIC | Employer NIC | Income Tax | Net in pocket |
 | --- | --- | --- | --- | --- | --- |
-| Salary | Deductible (reduces CT) | 8% (above £12,570) + 2% (above £50,270) | 13.8% (above £9,100) | 20%/40%/45% | Lower gross, but CT saved |
+| Salary | Deductible (reduces CT) | 8% (above £12,570) + 2% (above £50,270) | 15% (above £5,000) from 6 April 2025; 13.8% (above £9,100) before | 20%/40%/45% | Lower gross, but CT saved |
 | Dividend | NOT deductible (paid from post-CT profits) | None | None | 8.75%/33.75%/39.35% | No NIC, but CT already paid |
 
 ### 3.2 Optimal Strategy (2024-25, Single Director-Shareholder)
 
-**Optimal Strategy (2024-25, Single Director-Shareholder)**
+**Optimal Strategy (2024-25, Single Director-Shareholder)**  _(https://www.gov.uk/corporation-tax-rates)_
 
 | Component | Amount | Rationale |
 | --- | --- | --- |
-| Salary | £12,570 (PA level) | Tax-free; employer NIC: 13.8% × (£12,570 - £9,100) = £479; CT deduction saves 25% × £12,570 = £3,143 |
+| Salary | £12,570 (PA level) | Tax-free; employer NIC: 13.8% × (£12,570 - £9,100) = £479; CT deduction saves 25% × £12,570 = £3,143 at the main rate (19% small profits rate if profits are £50,000 or less) |
 | Dividends | Remainder of profits | 0% on first £500; 8.75% on remainder within basic rate band |
 | NIC threshold salary alternative | £9,100 (Secondary Threshold) | Zero employer NIC; small sacrifice of personal allowance |
 
-Optimal for most single directors: Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2024-25 tax year (rates unchanged for 2025-26).
+Optimal for most single directors: Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2024-25 tax year (dividend rates unchanged for 2025-26, but from 6 April 2025 employer NIC rose from 13.8% to 15% and the Secondary Threshold fell from £9,100 to £5,000).
 
 2026-27 impact: The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. The combined CT + higher-rate dividend cost rises from ~50.28% to ~51.78%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
 
@@ -198,30 +201,30 @@ Optimal for most single directors: Salary at £12,570, dividends for the rest up
 
 ### 4.1 Reporting
 
-- **Reporting pages** — Foreign dividends are reported on the SA106 (Foreign) supplementary pages, or SA100 Box 5 if straightforward
+- **Reporting pages** — Foreign dividends are reported on the SA106 (Foreign) supplementary pages, or SA100 Box 6 if they are £500 or less (foreign tax in Box 7)  _(https://assets.publishing.service.gov.uk/media/69c14d07cfa346b9d4704a8d/SA100-2026.pdf)_
 - **Gross amount** — Report the gross amount (before foreign tax deducted)
 - **GBP conversion** — Convert to GBP at the exchange rate on the date the dividend was paid (or the rate used by the paying agent)
 
 ### 4.2 Double Tax Relief (DTR)
 
-**Double Tax Relief (DTR)**
+**Double Tax Relief (DTR)**  _(https://www.legislation.gov.uk/ukpga/2010/8/section/9)_
 
 | Method | Detail |
 | --- | --- |
 | Treaty relief | Credit for foreign tax paid, limited to UK tax on the same income |
-| Unilateral relief | Available even without a treaty (ITA 2007 s. 18) — credit for foreign tax up to UK tax |
+| Unilateral relief | Available even without a treaty (TIOPA 2010 s. 9) — credit for foreign tax up to UK tax |
 | Maximum credit | Lower of: foreign tax paid, or UK tax attributable to the foreign income |
 | Excess foreign tax | Cannot be carried forward or refunded; effectively wasted |
 
 ### 4.3 Common Foreign Dividend Withholding Rates
 
-**Common Foreign Dividend Withholding Rates**
+**Common Foreign Dividend Withholding Rates**  _(https://www.impots.gouv.fr/international-particulier/dividends)_
 
 | Country | Typical WHT on dividends | Treaty rate (to UK) |
 | --- | --- | --- |
 | USA | 30% (statutory) | 15% (treaty) |
-| Ireland | 25% | 15% |
-| France | 25% | 15% |
+| Ireland | 25% | Exempt if the UK-resident shareholder files a DWT non-resident exemption declaration |
+| France | 12.8% (individuals) | 15% (the lower domestic 12.8% applies) |
 | Germany | 26.375% (incl. Soli) | 15% |
 | Australia | 0% (franked) / 30% (unfranked) | 15% |
 | Canada | 25% | 15% |
@@ -294,7 +297,7 @@ Input: Same as Example 1 — Employment income £30,000, UK dividends £8,000, n
 
 Computation:
 Total income: £38,000
-Personal allowance: £12,570 (unchanged — frozen through 2027-28)
+Personal allowance: £12,570 (unchanged — frozen through 2030-31)
 Taxable non-savings: £17,430 (at 20% = £3,486)
 Remaining basic rate band: £50,270 - £30,000 = £20,270
 
@@ -323,13 +326,13 @@ Total dividend tax: £2,763.76
 
 ### Example 3 -- Director Salary + Dividends
 
-Input: Company profit before salary: £60,000. Director takes £12,570 salary, rest as dividends. Corporation Tax 25%.
+Input: Company profit before salary: £60,000. Director takes £12,570 salary, rest as dividends. Corporation Tax 25% (main rate, used for illustration; a company with profits of £50,000 or less pays the 19% small profits rate, with Marginal Relief up to £250,000).
 
 Computation:
 Company:
   Profit: £60,000
   Salary: £12,570 (deductible)
-  Employer NIC: 13.8% × (£12,570 - £9,100) = £479 (deductible)
+  Employer NIC (2024-25 rates; from 6 April 2025 it is 15% above £5,000): 13.8% × (£12,570 - £9,100) = £479 (deductible)
   Taxable profit: £60,000 - £12,570 - £479 = £46,951
   Corporation Tax: £46,951 × 25% = £11,738
   Available for dividends: £46,951 - £11,738 = £35,213
@@ -373,7 +376,7 @@ UK tax payable: £1,164.38 - £593 = £571.38
 
 ### 8.4 Close Company Loans (Section 455)
 
-- **Section 455 tax** — If a director borrows from their close company, the company pays Section 455 tax (33.75%). If the loan is written off, the director is taxed as if receiving a dividend. The Section 455 tax is refunded to the company.
+- **Section 455 tax** — If a director borrows from their close company, the company pays Section 455 tax (33.75%; 35.75% for loans made from 6 April 2026). If the loan is written off, the director is taxed as if receiving a dividend. The Section 455 tax is refunded to the company.  _(https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note)_
 
 ### 8.5 Dividend in Specie
 
@@ -381,15 +384,15 @@ UK tax payable: £1,164.38 - £593 = £571.38
 
 ## Section 9 -- Filing Requirements
 
-**Filing Requirements**
+**Filing Requirements**  _(https://www.gov.uk/tax-on-dividends/how-to-report-tax-on-dividends)_
 
 | Scenario | Action |
 | --- | --- |
 | Total dividends ≤ £500 | No Self Assessment required (covered by allowance) |
-| Total dividends > £500, all UK, basic rate taxpayer | May need to complete SA100; HMRC may collect via Simple Assessment or PAYE code adjustment |
-| Higher/additional rate taxpayer with dividends | Must file SA100 |
-| Foreign dividends of any amount | Must file SA100 + SA106 |
-| Company director taking dividends | Must file SA100 |
+| Total dividends > £500 and up to £10,000, not already in Self Assessment | Tell HMRC after 5 April and before 5 October: ask HMRC to update your tax code or contact the helpline |
+| Dividends over £10,000 (any tax band) | Must file SA100; if you do not usually send a return, register by 5 October after the tax year |
+| Foreign dividends (unless your only foreign income is dividends, total dividends including UK dividends are within the £500 dividend allowance and you have no other income to report) | Must file SA100 + SA106 |
+| Company director taking dividends | Must file SA100 if dividends exceed £10,000 or you already send a Self Assessment return |
 
 ## PROHIBITIONS
 

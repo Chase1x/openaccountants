@@ -5,7 +5,9 @@ version: 0.1
 jurisdiction: SD
 tax_year: 2025
 last_updated: 2026-07-22
+authored_by: Ahmed Hassan
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - company-formation-workflow-base
 category: international
@@ -13,44 +15,17 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sudan Company Formation & Entity Choice Skill
-
-## Sudan Company Formation & Entity Choice Skill v0.1
+# Sudan Company Formation & Entity Choice Skill v0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
 > **YMYL — verify before relying.** Sudan's company registration framework operates under disrupted conditions since the October 2021 military takeover and the conflict since April 2023. Registration timelines vary widely. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), the Commercial Registrar, or a Sudan-qualified formation agent before acting.
 
-## Section 1 — Scope statement
-
-This skill covers:
-
-- Common entity types under Sudanese corporate law (Companies Act — verify current year)
-- Minimum shareholders, directors, and capital requirements
-- Commercial (Trade) Registration procedure
-- Memorandum and Articles of Association preparation
-- Tax registration with the Sudan Taxation Chamber
-- VAT registration (when threshold met)
-- National Social Insurance Fund (NSIF) registration for employers
-- Free zone registration under the Free Zones Act
-- Sector-specific licensing (banking, oil, telecom)
-- Annual return, audit, and renewal obligations
-
-This skill does NOT cover:
-
-- Computing corporate income tax or filing the return — see `sd-corporate-income-tax`
-- VAT return preparation — see `sd-vat-gst`
-- Computing PAYE or NSIF contributions — see `sd-payroll-social`
-- Sudan tax system overview — see `sd-tax-overview`
-- Personal income tax registration — see `sd-income-tax`
-
 ## Section 2 — Quick reference
 
-**Quick reference**
-
 | Field | Value |
-| --- | --- |
+|-------|-------|
 | Country | Republic of Sudan (جمهورية السودان) |
 | Governing companies law | Companies Act (verify current year — 2015 per Chandrawat; 2017 per Scribd draft — verify against gazette) |
 | Registration authority | Commercial (Trade) Registrar, Ministry of Justice |
@@ -68,14 +43,14 @@ This skill does NOT cover:
 | Free zones authority | Sudan Free Zones & Investment Authority |
 | Investment regime | Investment Incentive Law 2021 |
 
+---
+
 ## Section 3 — Entity types, capital and incorporation
 
 ### Common entity types
 
-**Common entity types**  _(Companies Act)_
-
 | Entity type | Key features | Source |
-| --- | --- | --- |
+|-------------|-------------|--------|
 | **Limited Liability Company (LLC) — شركة ذات مسؤولية محدودة** | 1+ shareholder; 1+ director; any nationality; limited liability; most common for SMEs | Companies Act |
 | **Public Joint-Stock Company — شركة مساهمة عامة** | Larger capital; shares publicly tradable; suitable for large enterprises | Companies Act |
 | **Private Joint-Stock Company — شركة مساهمة خاصة** | Private shares; shares not publicly tradable | Companies Act |
@@ -84,6 +59,8 @@ This skill does NOT cover:
 | **Sole Proprietorship — مؤسسة فردية** | Single owner; unlimited liability; simplest form | Commercial Registrations |
 
 **AUDIT FLASH POINT:** Source uncertain between Companies Act 2015 (per chandrawatpartners) and Companies Act 2017 (per Scribd reference). Verify against the **official Commercial Registrar / gazette publication** before incorporation.
+
+---
 
 ## Section 4 — Registration procedure
 
@@ -106,10 +83,8 @@ This skill does NOT cover:
 
 ### Typical timeline
 
-**Typical timeline**
-
 | Step | Typical duration |
-| --- | --- |
+|------|------------------|
 | Name reservation | 1-3 business days |
 | MOA/AOA preparation | 3-7 days |
 | Commercial Registrar filing | 1-4 weeks (varies significantly) |
@@ -120,12 +95,12 @@ This skill does NOT cover:
 
 **Total: typically 4-12 weeks** for a straightforward LLC; significantly longer for sector-licensed industries.
 
+---
+
 ## Section 5 — Capital requirements
 
-**Capital requirements**
-
 | Entity type | Minimum capital | Source |
-| --- | --- | --- |
+|-------------|----------------|--------|
 | **LLC** | No fixed statutory minimum; capital varies by activity | Companies Act |
 | **Public Joint-Stock Company** | Higher minimum — verify (commonly higher) | Companies Act |
 | **Private Joint-Stock Company** | Mid-range minimum — verify | Companies Act |
@@ -136,8 +111,10 @@ This skill does NOT cover:
 
 ### Initial depreciation and investment incentives
 
-- **Newly purchased machinery and equipment initial depreciation** — 20% initial depreciation of purchase price after being put into production %  _(Investment Incentive Law 2021)_
-- **Qualifying investment projects CIT exemption** — Corporate income tax exemption starting from commercial production date, period not exceeding 5 years (see `sd-corporate-income-tax`)  _(Investment Incentive Law 2021)_
+- **Newly purchased machinery and equipment:** 20% initial depreciation of purchase price after being put into production *(Investment Incentive Law 2021)*
+- **Qualifying investment projects:** Corporate income tax exemption starting from commercial production date, period not exceeding 5 years (see `sd-corporate-income-tax`)
+
+---
 
 ## Section 6 — Tax registrations
 
@@ -157,27 +134,23 @@ This skill does NOT cover:
 - Registration Certificate issued (Form 2) — must be displayed at all branches
 - See `sd-vat-gst` for full VAT mechanics
 
-- **VAT registration turnover threshold** — SDG 1,200,000 SDG (Industrial producer, trader, or service provider with turnover ≥ SDG 1,200,000; importers/exporters regardless of turnover)
-
 ### Social insurance registration (NSIF / NHIF)
 
-**Social insurance registration (NSIF / NHIF)**
-
 | Item | Authority | Mandatory for |
-| --- | --- | --- |
+|------|-----------|---------------|
 | National Pensions and Social Insurance Fund (NSIF) | Ministry of Insurance and Social Development | All employers with employees |
 | National Health Insurance Fund (NHIF) | Federal Ministry of Health | All employers with employees |
 
 See `sd-payroll-social` for full contribution mechanics.
 
+---
+
 ## Section 7 — Sectoral licensing
 
 Different sectors require specific pre-registration approvals:
 
-**Sectoral licensing**
-
 | Sector | Approving body | Notes |
-| --- | --- | --- |
+|--------|----------------|-------|
 | **Banking and Finance** | Central Bank of Sudan (Bank of Sudan) | Banking license; capital adequacy requirements; subject to specific contribution rates under Central Bank supervision |
 | **Oil and Gas / Petroleum** | Ministry of Petroleum and Gas | Production Sharing Agreement (PSA); BPT 30% statutory; specific PSA terms per concession |
 | **Telecommunications** | National Telecommunications Commission | Special VAT rate (40%) applies |
@@ -191,6 +164,8 @@ Different sectors require specific pre-registration approvals:
 | **Charitable / NGO** | Humanitarian Affairs Commission | Registration for tax-exempt charitable bodies |
 
 **AUDIT FLASH POINT:** Sectoral licensing often precedes Commercial Registrartion for foreign-owned entities. Application timelines for banking and petroleum sectors commonly take 3-6 months.
+
+---
 
 ## Section 8 — Free Zones
 
@@ -212,14 +187,14 @@ Different sectors require specific pre-registration approvals:
 
 See `sd-corporate-income-tax` for full free zone tax treatment.
 
+---
+
 ## Section 9 — Annual obligations
 
 ### Annual return and renewal
 
-**Annual return and renewal**
-
 | Obligation | Frequency | Source |
-| --- | --- | --- |
+|-----------|-----------|--------|
 | Commercial Registry renewal | Annual | Companies Act / Commercial Registration Law |
 | Tax return filing | Annual (BPT, capital gains, etc.) | Income Tax Act 1986, Art 38 |
 | VAT return filing | Monthly (Form 3) | VAT Regulations 2017 |
@@ -240,6 +215,8 @@ A chartered accountant for tax purposes must be:
 - Authorized in writing by the Minister to act as a chartered accountant for the Income Tax law
 - Persons leaving Taxation Chamber positions may engage in consulting after 15+ years of service and a university degree *(Income Tax Act 1986)*
 
+---
+
 ## Section 10 — Refusal catalogue
 
 For the formation agent / accountant reviewing the engagement:
@@ -250,6 +227,8 @@ For the formation agent / accountant reviewing the engagement:
 - **R-SD-FORM-4** — Do not assume the SDG 1,200,000 VAT threshold applies to current-period filings without currency-redenomination verification.
 - **R-SD-FORM-5** — Do not prepare documents (MOA, AOA) without signed engagement and receipt of all shareholder ID documentation.
 - **R-SD-FORM-6** — Do not assume LLC "no minimum capital" applies in practice — some banks require minimum paid-in capital for opening corporate accounts.
+
+---
 
 ## Section 11 — Worked examples
 
@@ -300,6 +279,8 @@ For the formation agent / accountant reviewing the engagement:
 - VAT treatment: Exemption on capital equipment (per Ministry-approved list)
 - Timeline: 8-12 weeks (excluding investment authority approval)
 
+---
+
 ## Section 12 — Self-checks
 
 Before delivering incorporation guidance, verify:
@@ -316,12 +297,12 @@ Before delivering incorporation guidance, verify:
 - [ ] Audit and annual filing obligation explained to client
 - [ ] 6-year books retention obligation communicated
 
+---
+
 ## Section 13 — Reference material
 
-**Reference material**
-
 | Resource | Reference |
-| --- | --- |
+|----------|-----------|
 | Sudan Taxation Chamber | https://tax.gov.sd/ |
 | Income Tax Act 1986 | https://tax.gov.sd/en/income-tax-2/ |
 | VAT Act 2001 / 2017 Regulations | https://tax.gov.sd/en/value-added-tax-vat |
@@ -330,6 +311,8 @@ Before delivering incorporation guidance, verify:
 | US State Dept Investment Climate Statement | https://www.state.gov/reports/2022-investment-climate-statements/sudan/ |
 | Chandrawat Partners — incorporate LLC Sudan | https://chandrawatpartners.com/how-to-incorporate-an-llc-in-sudan-insights-compliances-much-more/ |
 | MaxisHR — Company Registration in Sudan | https://maxishr.com/en/sudan/company-registration |
+
+---
 
 ## PROHIBITIONS
 

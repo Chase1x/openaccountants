@@ -5,12 +5,14 @@ version: 0.1
 jurisdiction: VE
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Jose Padilla, CPA
 reviewed_by: Jose Padilla
 review_status: current
+trust_label: Checked by Jose Padilla
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

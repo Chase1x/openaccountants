@@ -4,9 +4,11 @@ description: Use this skill whenever asked about Tanzania payroll processing for
 jurisdiction: TZ
 tax_year: 2026
 last_updated: 2026-07-13
+authored_by: Baraka Cassian, CPA, CA, CTA
 reviewed_by: Baraka Cassian
 review_status: current
-tier: 1
+trust_label: Checked by Baraka Cassian
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

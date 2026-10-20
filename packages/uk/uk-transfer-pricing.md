@@ -5,12 +5,14 @@ version: 1.0
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: James Power, CIMA
 reviewed_by: James Power
 review_status: current
+trust_label: Checked by James Power
 depends_on:
   - transfer-pricing-workflow-base
 category: transfer-pricing
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

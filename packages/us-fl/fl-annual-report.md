@@ -5,12 +5,14 @@ version: 1.0
 jurisdiction: US-FL
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Rob Hoffman, EA
 reviewed_by: Rob Hoffman
 review_status: current
+trust_label: Checked by Rob Hoffman
 depends_on:
   - us-tax-workflow-base
 category: state
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

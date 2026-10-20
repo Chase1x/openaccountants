@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -213,7 +214,7 @@ MFJ. TY2024 AGI = $210,000. TY2024 tax = $42,000. Expected TY2025 tax = $55,000.
 | Period 3 | Jan-Aug | 1.5 |
 | Period 4 | Jan-Dec | 1 |
 
-- **Required instalment computation** — Required instalment = 25% of annualized tax, minus prior payments. Must be elected for all four quarters.
+- **Required instalment computation** — Required instalment = applicable percentage of annualized tax (22.5%, 45%, 67.5%, 90% for periods 1-4), minus prior required instalments. Must be elected for all four quarters.  _(https://www.irs.gov/pub/irs-pdf/f2210.pdf)_
 
 ### 5.6 Withholding strategy (MFJ)
 
@@ -221,13 +222,13 @@ MFJ. TY2024 AGI = $210,000. TY2024 tax = $42,000. Expected TY2025 tax = $55,000.
 
 ### 5.7 January 31 filing exception
 
-- **January 31 filing exception** — If return filed and all tax paid by January 31, 2026: 4th instalment not required.
+- **January 31 filing exception** — If return filed and all tax paid by February 2, 2026: 4th instalment not required.  _(https://www.irs.gov/pub/irs-prior/f1040es--2025.pdf)_
 
 ## Section 6 -- Penalties and interest
 
 ### 6.1 Underpayment penalty (Form 2210)
 
-- **Underpayment penalty** — The "penalty" is interest on the underpayment. Rate = federal short-term rate + 3 percentage points, compounded daily.
+- **Underpayment penalty** — The "penalty" is interest on the underpayment. Rate = federal short-term rate + 3 percentage points, figured as simple interest (not compounded daily).  _(https://www.law.cornell.edu/uscode/text/26/6622)_
 
 ### 6.2 Published rates (TY2025)
 
@@ -249,7 +250,7 @@ MFJ. TY2024 AGI = $210,000. TY2024 tax = $42,000. Expected TY2025 tax = $55,000.
 
 ### 6.4 Waiver provisions
 
-- **Waiver provisions** — IRS may waive under IRC 6654(e)(3) for: casualty/disaster/unusual circumstances, retirement after age 62, or disability.  _(IRC 6654(e)(3))_
+- **Waiver provisions** — IRS may waive under IRC 6654(e)(3) for: casualty/disaster/unusual circumstances, retirement after age 62 or disability in the tax year or the preceding year, where the underpayment was due to reasonable cause and not willful neglect.  _([IRC 6654(e)(3)](https://www.law.cornell.edu/uscode/text/26/6654))_
 
 ## Section 7 -- Special situations
 
@@ -259,7 +260,7 @@ MFJ. TY2024 AGI = $210,000. TY2024 tax = $42,000. Expected TY2025 tax = $55,000.
 
 ### 7.2 First year of self-employment
 
-- **First year of self-employment** — If prior year tax was zero: required annual payment under prior-year method = $0. No estimated payments required under that method.
+- **First year of self-employment** — If prior year tax was zero and you were a U.S. citizen or resident alien for all of the prior 12-month year: required annual payment under prior-year method = $0. No estimated payments required under that method.  _(https://www.irs.gov/pub/irs-prior/f1040es--2025.pdf)_
 
 ### 7.3 Mid-year income changes
 
@@ -267,7 +268,7 @@ MFJ. TY2024 AGI = $210,000. TY2024 tax = $42,000. Expected TY2025 tax = $55,000.
 
 ### 7.4 Farmer/fisherman exception
 
-- **Farmer/fisherman exception** — 2/3 of income from farming/fishing: single instalment by January 15, or file by March 1 and pay in full.
+- **Farmer/fisherman exception** — At least two-thirds of gross income for 2024 or 2025 from farming/fishing: single instalment by January 15, 2026, or file by March 2, 2026 and pay in full.  _(https://www.irs.gov/pub/irs-prior/f1040es--2025.pdf)_
 
 ## Section 8 -- Edge cases
 
@@ -283,13 +284,13 @@ W-2 withholding treated as ratable. Annualized method reduces Q1/Q2 required amo
 
 Applied to next year or refunded (Form 1040 line 36).
 
-Penalties computed per-quarter. Q1 shortfall not cured by Q2 overpayment.
+Penalties computed per-quarter. A later payment is applied first to any earlier quarter's underpayment, so a Q2 payment stops the Q1 shortfall accruing.
 
 IRS may postpone due dates. Verify announcements.
 
-Single January 15 payment or file by March 1.
+Single January 15, 2026 payment or file by March 2, 2026.
 
-Investment income above NIIT threshold ($200K single / $250K MFJ) adds 3.8% to total tax.
+Modified AGI above NIIT threshold ($200K single / $250K MFJ) adds 3.8% of the lesser of net investment income or that excess to total tax.
 
 ## Section 9 -- Self-checks
 
@@ -341,7 +342,7 @@ Before delivering output, verify:
 ### Test 7 -- Farmer exception
 
 **Input:** 2/3+ farming income. Expected tax $25,000.
-**Expected:** Single payment Jan 15 or file by Mar 1.
+**Expected:** Single payment Jan 15, 2026 or file by Mar 2, 2026.
 
 ## Prohibitions
 

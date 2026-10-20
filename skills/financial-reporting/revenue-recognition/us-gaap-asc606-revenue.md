@@ -7,6 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
 review_status: current
+trust_label: Checked by James Wallach
+source_checked: 2026-10-16
 depends_on:
   - financial-reporting-workflow-base
 category: financial-reporting
@@ -22,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **This is a content skill that loads on top of `financial-reporting-workflow-base`.** It supplies the recognition, measurement, presentation, and disclosure rules for revenue from contracts with customers under US GAAP. The base supplies the two-layer output contract, the journal-entry format, and the self-checks.
 
-- **Standard currency** — ASC 606 and ASC 340-40 as effective for all entities (public business entities since annual periods beginning after 15 Dec 2017; all others after 15 Dec 2018). No subsequent ASU has displaced the five-step core. Confirm no entity-specific industry guidance (e.g. ASC 924, 942, 944, 980) overrides.  _(ASC 606; ASC 340-40)_
+- **Standard currency** — ASC 606 and ASC 340-40 as effective for all entities (public business entities, certain not-for-profit entities and certain employee benefit plans since annual periods beginning after 15 Dec 2017; all others after 15 Dec 2018, or after 15 Dec 2019 for entities that elected the ASU 2020-05 deferral). No subsequent ASU has displaced the five-step core. Confirm no entity-specific industry guidance (e.g. ASC 924, 942, 944, 980) overrides.  _([ASC 606; ASC 340-40](https://storage.fasb.org/ASU%202020-05.pdf))_
 - **Scope exclusions** — ASC 606 applies to contracts with customers except: leases (ASC 842), insurance (ASC 944), financial instruments (ASC 310, 320, 815, 825, 860), guarantees other than product/service warranties (ASC 460), and certain non-monetary exchanges between entities in the same line of business to facilitate sales to customers.  _(ASC 606-10-15-2)_
 
 ## Section 1 — Scope statement
@@ -43,7 +45,7 @@ This skill does NOT cover: lease revenue (`ASC 842`), interest/dividend income (
 ### Step 1 — Identify the contract — `ASC 606-10-25-1` to `25-8`
 
 - **Five criteria for a contract to exist** — A contract exists when **all five** criteria are met: 1. Parties have **approved** the contract and are committed to perform. 2. Each party's **rights** to goods/services are identifiable. 3. **Payment terms** are identifiable. 4. The contract has **commercial substance**. 5. It is **probable** the entity will collect the consideration it is entitled to (a *collectibility* gate). "Probable" under US GAAP = **likely to occur** (a higher threshold than IFRS's "probable").  _(ASC 606-10-25-1 to 25-8)_
-- **Criteria not met — deposit liability** — If the criteria are not met, no revenue; consideration received is a deposit liability until criteria are met or the release events occur (contract terminated and consideration non-refundable, or no remaining obligations and substantially all consideration received).  _(ASC 606-10-25-7)_
+- **Criteria not met — deposit liability** — If the criteria are not met, no revenue; consideration received is a deposit liability until criteria are met or the release events occur (contract terminated and consideration non-refundable; no remaining obligations and substantially all consideration received and non-refundable; or control of the goods/services to which the consideration relates has transferred, the entity has stopped transferring goods/services with no obligation to transfer more, and the consideration is non-refundable).  _([ASC 606-10-25-7](https://storage.fasb.org/ASU%202016-12.pdf))_
 - **Combine contracts** — Combine contracts entered into at/near the same time with the same customer when they are negotiated as a package, consideration in one depends on the other, or the goods/services are a single performance obligation.  _(ASC 606-10-25-9)_
 
 > **⚑ AUDIT FLASH POINT — collectibility gate.** Step 1 collectibility is assessed at the *customer* level on the consideration the entity expects to be entitled to (it may reflect an intention to offer a price concession, which is variable consideration, not a collectibility failure). Misusing Step 1 to defer revenue for a credit-risky customer when the real issue is a concession is a common error.
@@ -145,15 +147,15 @@ Each month (×24) — amortize cost — driving rule: ASC 340-40-35-1
 
 ASC 606 and IFRS 15 share the five-step model and converge on most outcomes. Known divergences a dual-reporter must check:
 
-**Divergence from IFRS 15 table**  _(ASC 606; IFRS 15)_
+**Divergence from IFRS 15 table**  _([ASC 606; IFRS 15](https://storage.fasb.org/ASU%202016-10.pdf))_
 
 | Area | US GAAP (ASC 606) | IFRS (IFRS 15) |
 | --- | --- | --- |
 | Collectibility threshold (Step 1) | "Probable" = **likely** (higher bar) | "Probable" = **more likely than not** (lower bar) — `IFRS 15.9(e)` |
 | Licenses — sales/usage royalty exception | Applies to licenses of IP only | Same, but interaction with other guidance differs in edge cases |
-| Shipping & handling | Policy election to treat as a fulfillment activity (`606-10-25-18A`) | No equivalent election |
+| Shipping & handling | Policy election to treat post-control shipping and handling as a fulfillment activity (`606-10-25-18B`) | No equivalent election |
 | Immaterial promised goods/services | May disregard (`606-10-25-16A`) | No explicit equivalent; assess materiality generally |
-| Noncash consideration measurement date | Fair value at **contract inception** | At contract inception, but measurement-date guidance was not amended identically |
+| Noncash consideration measurement date | Fair value at **contract inception** | Measurement date not prescribed by IFRS 15 |
 | Disclosure / interim | Different interim disclosure requirements (US public entities) | IAS 34 interim regime |
 
 Always run `ifrs15-revenue` in parallel for dual-reporters and present both answers (base §2).
@@ -167,7 +169,7 @@ Trigger and produce as relevant:
 - [ ] Performance obligations: nature, timing of satisfaction, significant payment terms (`50-12`)
 - [ ] Transaction price allocated to **remaining** performance obligations (backlog) and when expected to be recognized (`50-13` to `50-15`)
 - [ ] Significant judgments: timing of satisfaction, determining/allocating transaction price (`50-17` to `50-20`)
-- [ ] Contract cost assets: closing balances by category and amortization (`340-40-50-2`)
+- [ ] Contract cost assets: closing balances by category and amortization (`340-40-50-3`); judgments and amortization method (`340-40-50-2`)
 - [ ] Practical expedients elected (`50-22`, `50-23`)
 
 ## Section 9 — Topic self-checks (in addition to base §7)

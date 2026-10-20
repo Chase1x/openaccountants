@@ -6,6 +6,7 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN
 review_status: current
+trust_label: Checked by MUHAMMAD HANIS MAT HUSSIN
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

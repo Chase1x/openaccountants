@@ -7,6 +7,8 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/crypto-accounting"
   jurisdiction: "GB"
   last_updated: "2026-09-02"
+  authored_by: "Nadir Khan, OTHER"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

@@ -4,8 +4,11 @@ description: Tier 2 US federal content skill for Form 1041 — US Income Tax Ret
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: James Wallach
 reviewed_by: Christopher Aryee
 review_status: current
+trust_label: Checked by Christopher Aryee
+source_checked: 2026-10-16
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -101,7 +104,7 @@ The triggering event for a revocable living trust to STOP being a grantor trust 
 ### 3.4 §645 Election Combined Filing
 
 - **Qualified revocable trust (QRT) §645 election** — A qualified revocable trust (QRT) — i.e. a revocable trust that became irrevocable at the grantor's death — can elect under §645 to be treated as part of the decedent's estate for federal income tax purposes.  _(§645)_
-- **§645 election mechanics** — Combines the QRT and the estate into ONE Form 1041. One EIN (the estate's), one return, one fiscal year (estate's choice). Election made by filing Form 8855 by the due date (including extensions) of the first 1041 for the combined entity. Election is irrevocable. Election period: ends at the earlier of (a) two years after death if no federal estate tax return is required, OR (b) six months after the final determination of estate tax liability if a 706 is required, OR (c) the earlier of those plus the date the combined entity is closed.  _(§645; Form 8855)_
+- **§645 election mechanics** — Combines the QRT and the estate into ONE Form 1041. One EIN (the estate's), one return, one fiscal year (estate's choice). Election made by filing Form 8855 by the due date (including extensions) of the first 1041 for the combined entity. Election is irrevocable. Election period: ends at the earlier of (a) two years after death if no federal estate tax return is required, OR (b) if a 706 is required, the later of two years after death or six months after the final determination of estate tax liability, OR (c) the earlier of those plus the date the combined entity is closed.  _([§645; Form 8855](https://www.irs.gov/instructions/i1041))_
 
 The §645 election is almost always advantageous when a 1041 must be filed for both the estate AND a substantial RLT, because:
 
@@ -190,15 +193,15 @@ Compare to single individual 2025: 37% top rate starts at $626,350 of taxable in
 
 ### 6.2 The 2025 Long-Term Capital Gain / Qualified Dividend Schedule (§1(h))
 
-**2025 LTCG/QDI Schedule for Estates and Trusts**  _(§1(h))_
+**2025 LTCG/QDI Schedule for Estates and Trusts**  _([§1(h)](https://www.irs.gov/instructions/i1041))_
 
 | Taxable income (over) | But not over | LTCG / QDI rate |
 | --- | --- | --- |
 | $0 | $3,250 | 0% |
-| $3,250 | $15,200 | 15% |
-| $15,200 | — | **20%** |
+| $3,250 | $15,900 | 15% |
+| $15,900 | — | **20%** |
 
-The 20% LTCG rate hits at $15,200 of taxable income for a trust/estate. The corresponding single-individual threshold is $533,400.
+The 20% LTCG rate hits at $15,900 of taxable income for a trust/estate. The corresponding single-individual threshold is $533,400.
 
 ### 6.3 Net Investment Income Tax — §1411
 
@@ -279,13 +282,13 @@ If the simple trust ACTUALLY distributes more than required (which would violate
 Schedule B of Form 1041 walks through this:
 - Line 1: Adjusted total income (Form 1041 page 1 Line 17 + adjustments)
 - Line 2: Tax-exempt interest
-- Line 3–4: Net capital gains allocated to corpus (subtract)
-- Line 6: Distributable Net Income (DNI)
+- Line 6: Gain from page 1, line 4, entered as a negative number (subtract)
+- Line 7: Distributable Net Income (DNI)
 - Line 9: Income required to be distributed (Tier 1)
 - Line 10: Other amounts paid or required (Tier 2)
 - Line 11: Total
 - Line 12: Reduced by tax-exempt amount
-- Line 14: **Distribution deduction** — flows to page 1 Line 18
+- Line 15: **Distribution deduction** — flows to page 1 Line 18
 
 ## 11. The §663(b) 65-Day Rule
 
@@ -320,14 +323,14 @@ This converts a planning problem (December-31-or-bust distribution timing) into 
 
 ## 12. §642(b) Personal Exemption
 
-**§642(b) Personal Exemption by Entity**  _(§642(b))_
+**§642(b) Personal Exemption by Entity**  _([§642(b)](https://www.irs.gov/instructions/i1041))_
 
 | Entity | §642(b) Exemption |
 | --- | --- |
 | Estate | **$600** |
 | Simple trust (required to distribute all income) | **$300** |
 | Complex trust / all other trusts | **$100** |
-| Qualified disability trust (§642(b)(2)(C)) | tied to individual exemption — but 2018–2025 TCJA reduced to indexed amount; 2025 = approximately $5,050 |
+| Qualified disability trust (§642(b)(2)(C)) | tied to individual exemption — but 2018–2025 TCJA reduced to indexed amount; 2025 = $5,100 |
 
 - **Fixed dollar exemption, no phaseout** — The 1041 personal exemption is fixed dollar amounts (no inflation adjustment, no phaseout for any AGI level). The exemption is taken on Form 1041 Line 21, after the distribution deduction. Note the exemption is added back when computing DNI (§7.1) — it never reduces DNI.  _(§642(b))_
 
@@ -341,18 +344,18 @@ This converts a planning problem (December-31-or-bust distribution timing) into 
 
 ### 13.2 Period of the Election
 
-- **§645 election period** — The election period runs from the date of death to the EARLIEST of: Two years after the date of death (if no Form 706 is required), OR Six months after the final determination of estate tax liability (if a 706 is required), OR The date the combined entity is closed/terminated.  _(§645)_
+- **§645 election period** — The election period runs from the date of death to the EARLIEST of: Two years after the date of death (if no Form 706 is required), OR (if a 706 is required) the later of two years after the date of death or six months after the final determination of estate tax liability, OR The date the combined entity is closed/terminated.  _([§645](https://www.irs.gov/instructions/i1041))_
 
 ### 13.3 Benefits
 
-**§645 Benefits Comparison Table**  _(§645; §6654(l); §469)_
+**§645 Benefits Comparison Table**  _([§645; §6654(l); §469](https://www.law.cornell.edu/uscode/text/26/6654))_
 
 | Benefit | Without §645 | With §645 |
 | --- | --- | --- |
 | Number of 1041s | 2 (one for estate + one for trust) | 1 |
 | Trust's allowable taxable year | Calendar year required | Estate's fiscal year |
 | Personal exemption | $100 trust + $600 estate = $700 | $600 (one exemption)** |
-| Quarterly estimated tax — first 2 years | Trust must make payments | Combined entity exempt (treated as estate) §6654(l) |
+| Quarterly estimated tax — first 2 years | Trust must make payments (unless it was treated as owned by the decedent and receives the residue under the will, which is also exempt) | Combined entity exempt (treated as estate) §6654(l) |
 | §469 active participation real estate $25K | Not available to trust | Available to estate-treated entity for 2 years post-death |
 
 ** The combined entity uses the estate's $600 exemption, so a small theoretical loss of $200 ($600 + $100 vs. $600). Almost always swamped by the other benefits.
@@ -444,7 +447,7 @@ Character is preserved — LTCG on the K-1 is LTCG on the beneficiary's 1040, ta
 
 ## 17. Estimated Tax Payments — §6654(l)
 
-- **Quarterly estimated tax requirement** — Trusts are required to make quarterly estimated tax payments under §6654 if expected tax exceeds $1,000. Standard quarterly due dates (April 15, June 15, September 15, January 15) apply.  _(§6654)_
+- **Quarterly estimated tax requirement** — Trusts are required to make quarterly estimated tax payments under §6654 if expected tax is at least $1,000. Standard quarterly due dates (April 15, June 15, September 15, January 15) apply.  _([§6654](https://www.law.cornell.edu/uscode/text/26/6654))_
 
 ### 17.1 The Estate Exemption
 
@@ -452,7 +455,7 @@ Character is preserved — LTCG on the K-1 is LTCG on the beneficiary's 1040, ta
 
 ### 17.2 Beneficiary Election under §643(g)
 
-- **§643(g) estimated tax allocation election** — A trust (NOT estate) may elect under §643(g) to treat any portion of its current-year estimated tax payment as having been paid by a beneficiary. The election is on Form 1041-T and must be filed by the 65th day of the year following. This pushes the estimated payment credit onto the beneficiary's 1040.  _(§643(g); Form 1041-T)_
+- **§643(g) estimated tax allocation election** — A trust (or an estate, in its final year only) may elect under §643(g) to treat any portion of its current-year estimated tax payment as having been paid by a beneficiary. The election is on Form 1041-T and must be filed by the 65th day of the year following. This pushes the estimated payment credit onto the beneficiary's 1040.  _([§643(g); Form 1041-T](https://www.irs.gov/instructions/i1041))_
 
 Use case: trust paid estimated tax during the year, then under-distributed; the 65-day rule pushes income to the beneficiary; §643(g) similarly pushes the prepaid tax credit out so the beneficiary gets the credit instead of the trust holding it. The two elections work together.
 
@@ -547,7 +550,7 @@ The trust pays tax on $29,700, of which $30,000 is LTCG. Under the 2025 brackets
 (Pro rata character allocation: $55,000 distributed / $63,000 DNI = 87.3% of each character flows to Jane; the remainder stays in the trust. Capital gain is excluded from DNI under §7.2 default so it never flows to Jane.)
 
 - Jane reports $34,921 interest, $17,460 qualified dividends, $6,984 tax-exempt interest on her 2025 1040. Her qualified dividends are taxed at her LTCG bracket (likely 15%), far better than the trust's 20% cliff.
-- The trust retains the capital gain and pays it at the trust's 20% LTCG rate on the amount over $15,200.
+- The trust retains the capital gain and pays it at the trust's 20% LTCG rate on the amount over $15,900.
 - **Planning observation:** if Jane wanted the capital gain too, the trust agreement would need to allocate CG to income and the trustee would need a consistent pattern of including CG in distributions. As drafted, the gain is trapped in the trust at 20% even though Jane is in the 15% bracket.
 
 ### 21.2 Example 2 — Estate with Fiscal-Year Election
@@ -601,7 +604,7 @@ Each child picks this up on her 2026 1040, filed April 15, 2027. Income earned i
 
 - §642(g) election is correctly on 1041 (estate is below 706 threshold).
 - IRD items ($8,000 + $12,000 = $20,000) are correctly in the estate's gross income AND would have been in the 706 gross estate had a 706 been required. Since no 706 is required (estate < $13.99M), no §691(c) deduction is available — there's no estate tax for the IRD to be attributable to.
-- The capital gain on the residence is trapped at the estate's 20% LTCG bracket on the excess over $15,200, even though the children are all in the 15% bracket. To push the gain out, the executor would need to (a) actually distribute the proceeds of the sale in the year of sale AND (b) consistently allocate capital gains to income under the trust/will or state principal-and-income act. With a will giving discretion, this is a Reg. §1.643(a)-3(b)(3) trustee discretion exercise — viable but documentation-intensive.
+- The capital gain on the residence is trapped at the estate's 20% LTCG bracket on the excess over $15,900, even though the children are all in the 15% bracket. To push the gain out, the executor would need to (a) actually distribute the proceeds of the sale in the year of sale AND (b) consistently allocate capital gains to income under the trust/will or state principal-and-income act. With a will giving discretion, this is a Reg. §1.643(a)-3(b)(3) trustee discretion exercise — viable but documentation-intensive.
 
 ### 21.3 Example 3 — Complex Trust Using the 65-Day Rule
 

@@ -5,7 +5,9 @@ description: >
 version: 0.1
 jurisdiction: ZA
 last_updated: 2026-09-03
+authored_by: Brandon Iverach
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - foundation
 category: international
@@ -14,8 +16,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # South Africa — Income Tax Rate Tables (individuals)
-
-## South Africa — Income Tax Rate Tables (individuals)
 
 Year-keyed rate tables for **natural persons and special trusts**, years of
 assessment 2023 to 2027. This file is data only: it states what the figures are
@@ -45,8 +45,6 @@ SARS numbers a year of assessment by the calendar year in which it **ends**. The
 year runs 1 March to the last day of February. So the year of assessment ending
 28 February 2027 is **YoA 2027**, and it is the year commonly written "2026/27".
 
-**Year of assessment labelling**  _(SARS numbers a year of assessment by the calendar year in which it ends)_
-
 | Year of assessment | Commonly written | Period |
 | --- | --- | --- |
 | 2023 | 2022/23 | 1 March 2022 – 28 February 2023 |
@@ -54,8 +52,6 @@ year runs 1 March to the last day of February. So the year of assessment ending
 | 2025 | 2024/25 | 1 March 2024 – 28 February 2025 |
 | 2026 | 2025/26 | 1 March 2025 – 28 February 2026 |
 | 2027 | 2026/27 | 1 March 2026 – 28 February 2027 |
-
-## How South African years of assessment are labelled
 
 Getting this wrong by one year is the single most common error in South African rate
 lookups. Every table below is keyed by **year of assessment**.
@@ -79,17 +75,7 @@ Not covered here: company, trust (other than special trusts) and turnover tax
 rates; capital gains tax (see `za-capital-gains-tables`); travel allowance and
 logbook tables (see `za-travel-allowance-tables`); any computation rule.
 
-## Section 2 — Progressive tax brackets
-
-Each band states the **base amount** payable at the bottom of the band plus the
-**marginal rate** on the excess above the band floor. Amounts are rand.
-
-### Year of assessment 2023 (2022/23)
-
-**Progressive tax brackets — Year of assessment 2023 (2022/23)**  _([SARS, Rates of Tax for Individuals — 2023 tax year. https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/ Confirmed 2026-09-02.](https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/))_
-
-| Taxable income | Base amount | Rate on excess |
-| --- | --- | --- |
+ | --- | --- |
 | 1 – 226,000 | — | 18% |
 | 226,001 – 353,100 | R40,680 | 26% above R226,000 |
 | 353,101 – 488,700 | R73,726 | 31% above R353,100 |
@@ -98,9 +84,9 @@ Each band states the **base amount** payable at the bottom of the band plus the
 | 817,601 – 1,731,600 | R239,452 | 41% above R817,600 |
 | 1,731,601 and above | R614,192 | 45% above R1,731,600 |
 
-### Year of assessment 2024 (2023/24)
+_Source: SARS, Rates of Tax for Individuals — 2023 tax year. <https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/> Confirmed 2026-09-02._
 
-**Progressive tax brackets — Year of assessment 2024 (2023/24)**  _([SARS, Rates of Tax for Individuals — 2024 tax year. https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/ Confirmed 2026-09-02.](https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/))_
+### Year of assessment 2024 (2023/24)
 
 | Taxable income | Base amount | Rate on excess |
 | --- | --- | --- |
@@ -111,11 +97,11 @@ Each band states the **base amount** payable at the bottom of the band plus the
 | 673,001 – 857,900 | R179,147 | 39% above R673,000 |
 | 857,901 – 1,817,000 | R251,258 | 41% above R857,900 |
 | 1,817,001 and above | R644,489 | 45% above R1,817,000 |
+
+_Source: SARS, Rates of Tax for Individuals — 2024 tax year. <https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/> Confirmed 2026-09-02._
 
 ### Year of assessment 2025 (2024/25)
 
-**Progressive tax brackets — Year of assessment 2025 (2024/25)**  _([SARS, Rates of Tax for Individuals — 2025 tax year. https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/ Confirmed 2026-09-02.](https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/))_
-
 | Taxable income | Base amount | Rate on excess |
 | --- | --- | --- |
 | 1 – 237,100 | — | 18% |
@@ -125,11 +111,11 @@ Each band states the **base amount** payable at the bottom of the band plus the
 | 673,001 – 857,900 | R179,147 | 39% above R673,000 |
 | 857,901 – 1,817,000 | R251,258 | 41% above R857,900 |
 | 1,817,001 and above | R644,489 | 45% above R1,817,000 |
+
+_Source: SARS, Rates of Tax for Individuals — 2025 tax year. <https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/> Confirmed 2026-09-02._
 
 ### Year of assessment 2026 (2025/26)
 
-**Progressive tax brackets — Year of assessment 2026 (2025/26)**  _([SARS, Rates of Tax for Individuals — 2026 tax year. https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/ Confirmed 2026-09-02.](https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/))_
-
 | Taxable income | Base amount | Rate on excess |
 | --- | --- | --- |
 | 1 – 237,100 | — | 18% |
@@ -140,9 +126,9 @@ Each band states the **base amount** payable at the bottom of the band plus the
 | 857,901 – 1,817,000 | R251,258 | 41% above R857,900 |
 | 1,817,001 and above | R644,489 | 45% above R1,817,000 |
 
-### Year of assessment 2027 (2026/27)
+_Source: SARS, Rates of Tax for Individuals — 2026 tax year. <https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/> Confirmed 2026-09-02._
 
-**Progressive tax brackets — Year of assessment 2027 (2026/27)**  _([SARS, Rates of Tax for Individuals — 2027 tax year. https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/ Confirmed 2026-09-02.](https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/))_
+### Year of assessment 2027 (2026/27)
 
 | Taxable income | Base amount | Rate on excess |
 | --- | --- | --- |
@@ -154,12 +140,14 @@ Each band states the **base amount** payable at the bottom of the band plus the
 | 887,001 – 1,878,600 | R259,783 | 41% above R887,000 |
 | 1,878,601 and above | R666,339 | 45% above R1,878,600 |
 
+_Source: SARS, Rates of Tax for Individuals — 2027 tax year. <https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/> Confirmed 2026-09-02._
+
+---
+
 ## Section 3 — Rebates and tax thresholds
 
 Rebates are credits against tax, not deductions from income. The secondary and
 tertiary rebates are **additional** to the primary rebate, not replacements for it.
-
-**Rebates: primary, secondary, tertiary**  _(Income Tax Act 58 of 1962 s 6; SARS Rates of Tax for Individuals.)_
 
 | YoA | Primary | Secondary (65+, additional) | Tertiary (75+, additional) |
 | --- | --- | --- | --- |
@@ -169,7 +157,7 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2026 (2025/26) | R17,235 | R9,444 | R3,145 |
 | 2027 (2026/27) | R17,820 | R9,765 | R3,249 |
 
-**Cumulative rebate by age band**  _(Income Tax Act 58 of 1962 s 6; SARS Rates of Tax for Individuals.)_
+**Cumulative rebate by age band:**
 
 | YoA | Under 65 | 65 to 74 | 75 and over |
 | --- | --- | --- | --- |
@@ -179,7 +167,8 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2026 (2025/26) | R17,235 | R26,679 | R29,824 |
 | 2027 (2026/27) | R17,820 | R27,585 | R30,834 |
 
-**Tax thresholds — income below which no tax is payable**  _(Income Tax Act 58 of 1962 s 6; SARS Rates of Tax for Individuals.)_
+**Tax thresholds** — the income below which no tax is payable. Each threshold is
+the cumulative rebate divided by the lowest marginal rate (18% in every year below).
 
 | YoA | Under 65 | 65 to 74 | 75 and over |
 | --- | --- | --- | --- |
@@ -189,9 +178,14 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2026 (2025/26) | R95,750 | R148,217 | R165,689 |
 | 2027 (2026/27) | R99,000 | R153,250 | R171,300 |
 
+_Source: Income Tax Act 58 of 1962 s 6; SARS Rates of Tax for Individuals._
+
+---
+
 ## Section 4 — Medical scheme fees tax credits
 
-**Medical scheme fees tax credits (s 6A)**  _(Income Tax Act 58 of 1962 s 6A; SARS Medical Tax Credit Rates.)_
+Monthly credits under s 6A. "Principal member" and "first dependant" carry the
+same amount; every further dependant carries the "additional" amount.
 
 | YoA | Principal member | First dependant | Each additional dependant |
 | --- | --- | --- | --- |
@@ -201,9 +195,11 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2026 (2025/26) | R364 pm | R364 pm | R246 pm |
 | 2027 (2026/27) | R376 pm | R376 pm | R254 pm |
 
-## Section 5 — Other annual limits and thresholds
+_Source: Income Tax Act 58 of 1962 s 6A; SARS Medical Tax Credit Rates._
 
-**s 11F retirement cap, s 11F percentage, s 18A donations limit**  _(Income Tax Act 58 of 1962 s 11F, s 18A, s 10(1)(i), s 10B(3), s 10(1)(o)(ii).)_
+---
+
+## Section 5 — Other annual limits and thresholds
 
 | YoA | s 11F retirement cap | s 11F percentage | s 18A donations limit |
 | --- | --- | --- | --- |
@@ -213,8 +209,6 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2026 (2025/26) | R350,000 | 27.5% of the greater of remuneration or taxable income | 10% of taxable income |
 | 2027 (2026/27) | R430,000 | 27.5% of the greater of remuneration or taxable income | 10% of taxable income |
 
-**Interest exemption, foreign dividend fraction, s 10(1)(o)(ii) cap**  _(Income Tax Act 58 of 1962 s 11F, s 18A, s 10(1)(i), s 10B(3), s 10(1)(o)(ii).)_
-
 | YoA | Interest exemption (under 65) | Interest exemption (65+) | Foreign dividend exempt fraction | s 10(1)(o)(ii) cap |
 | --- | --- | --- | --- | --- |
 | 2023 (2022/23) | R23,800 | R34,500 | 25/45 | R1,250,000 |
@@ -222,6 +216,10 @@ tertiary rebates are **additional** to the primary rebate, not replacements for 
 | 2025 (2024/25) | R23,800 | R34,500 | 25/45 | R1,250,000 |
 | 2026 (2025/26) | R23,800 | R34,500 | 25/45 | R1,250,000 |
 | 2027 (2026/27) | R23,800 | R34,500 | 25/45 | R1,250,000 |
+
+_Source: Income Tax Act 58 of 1962 s 11F, s 18A, s 10(1)(i), s 10B(3), s 10(1)(o)(ii)._
+
+---
 
 ## Section 6 — Edge cases and traps
 
@@ -249,6 +247,8 @@ Run these before relying on any bracket table, including this one:
    rate`. For YoA 2027: 17,820 / 0.18 = 99,000.
 3. **Year check.** Confirm the year of assessment, not the calendar year. A return
    for the year ended 28 February 2027 uses YoA 2027.
+
+---
 
 ## Disclaimer
 

@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "James Wallach"
+  trust_label: "Checked by James Wallach"
   review_status: "current"
 ---
 

@@ -8,6 +8,8 @@ metadata:
   jurisdiction: "GB"
   tax_year: "2025"
   last_updated: "2026-07-27"
+  authored_by: "Nadir Khan, OTHER"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

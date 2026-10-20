@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "James Wallach"
+  trust_label: "Checked by James Wallach"
   review_status: "current"
 ---
 
@@ -36,7 +37,7 @@ metadata:
 ### IRS digital asset question on Form 1040
 
 - **Digital asset question text** — For tax year 2025, every taxpayer must answer the digital asset question on Form 1040 page 1: "At any time during 2025, did you: (a) receive (as a reward, award, or payment for property or services); or (b) sell, exchange, or otherwise dispose of a digital asset (or a financial interest in a digital asset)?"  _(Form 1040 (2025))_
-- **Answer Yes if taxpayer** — Received crypto as payment for services (including mining/staking rewards); Sold crypto for fiat; Exchanged one crypto for another; Received an airdrop; Received crypto from a hard fork and disposed of it; Used crypto to pay for goods or services  _(Form 1040 instructions)_
+- **Answer Yes if taxpayer** — Received crypto as payment for services (including mining/staking rewards); Sold crypto for fiat; Exchanged one crypto for another; Received an airdrop; Received crypto from a hard fork (receipt alone is enough, even if not disposed of); Used crypto to pay for goods or services  _([Form 1040 instructions](https://www.irs.gov/instructions/i1040gi))_
 - **Answer No only if taxpayer** — Held crypto without any transactions; Transferred between own wallets (same owner); Purchased crypto with fiat and took no other action  _(Form 1040 instructions)_
 
 ### Taxable events requiring Form 8949 reporting
@@ -53,7 +54,7 @@ metadata:
 
 ### Schedule D summary
 
-- **Schedule D structure** — Part I: Short-term capital gains and losses (holding period ≤ 1 year); Part II: Long-term capital gains and losses (holding period > 1 year); Schedule D totals flow to Form 1040 Line 7 (or Schedule D Tax Worksheet if needed)  _(Schedule D instructions)_
+- **Schedule D structure** — Part I: Short-term capital gains and losses (holding period ≤ 1 year); Part II: Long-term capital gains and losses (holding period > 1 year); Schedule D totals flow to Form 1040 Line 7a (or Schedule D Tax Worksheet if needed)  _([Schedule D instructions](https://www.irs.gov/instructions/i1040sd))_
 
 ### Capital gains rates (2025)
 
@@ -77,7 +78,7 @@ metadata:
 | 15% | $48,351–$533,400 | $96,701–$600,050 |
 | 20% | Over $533,400 | Over $600,050 |
 
-- **Net Investment Income Tax (NIIT)** — Additional 3.8% on net investment income for AGI above $200,000 (single) / $250,000 (MFJ) percent  _(§1411)_
+- **Net Investment Income Tax (NIIT)** — Additional 3.8% on net investment income for modified adjusted gross income above $200,000 (single or head of household) / $250,000 (MFJ) / $125,000 (married filing separately) percent  _([§1411](https://www.irs.gov/individuals/net-investment-income-tax))_
 
 ### Specific identification (recommended)
 
@@ -101,7 +102,7 @@ metadata:
 
 ### Tax treatment
 
-- **Staking income timing and recognition** — Staking rewards are ordinary income at the fair market value (FMV) at the time the taxpayer gains dominion and control over the rewards. Income recognized when rewards are credited to the staking wallet and freely transferable; If rewards are locked during an unbonding period, income is recognized when the unbonding completes and tokens become available; Reported on Schedule 1 Line 8z (Other income) or Schedule C if staking constitutes a trade or business.  _(IRS guidance on staking (dominion and control))_
+- **Staking income timing and recognition** — Staking rewards are ordinary income at the fair market value (FMV) at the time the taxpayer gains dominion and control over the rewards. Income recognized when rewards are credited to the staking wallet and freely transferable; If rewards are locked during an unbonding period, income is recognized when the unbonding completes and tokens become available; Reported on Schedule 1 Line 8v (digital assets) or Schedule C if staking constitutes a trade or business.  _([IRS guidance on staking (dominion and control)](https://www.irs.gov/instructions/i1040gi))_
 
 ### Basis in staked tokens received
 
@@ -113,7 +114,7 @@ metadata:
 
 ### When staking is passive (Schedule 1)
 
-- **Passive staking treatment** — If the taxpayer delegates to a staking pool or exchange-managed staking (e.g., Coinbase staking, Kraken staking): Income reported on Schedule 1 Line 8z; NOT subject to self-employment tax; Subject to NIIT (3.8%) if AGI exceeds threshold.  _(IRC §1411)_
+- **Passive staking treatment** — If the taxpayer delegates to a staking pool or exchange-managed staking (e.g., Coinbase staking, Kraken staking): Income reported on Schedule 1 Line 8v; NOT subject to self-employment tax; Subject to NIIT (3.8%) if AGI exceeds threshold.  _([IRC §1411](https://www.irs.gov/instructions/i1040gi))_
 
 ### Ethereum-specific: post-Merge staking
 
@@ -126,7 +127,7 @@ metadata:
 ### Individual miner (hobby vs. business)
 
 - **Trade or business (Schedule C)** — Mining is conducted with continuity and regularity; Primary purpose is profit; Equipment costs, electricity, and facility costs are deductible against mining income; Net mining income subject to self-employment tax; Equipment depreciable under MACRS (5-year property for computer equipment) or §179 expensing  _(MACRS; §179)_
-- **Hobby (Schedule 1)** — Mining is sporadic or incidental; Hobby loss rules under §183 apply: no deduction for expenses exceeding income (post-TCJA, hobby expenses are not deductible at all); Income still taxable, reported on Schedule 1 Line 8z  _(§183; TCJA)_
+- **Hobby (Schedule 1)** — Mining is sporadic or incidental; Hobby loss rules under §183 apply: no deduction for expenses exceeding income (post-TCJA, hobby expenses are not deductible at all); Income still taxable, reported on Schedule 1 Line 8v  _([§183; TCJA](https://www.irs.gov/instructions/i1040gi))_
 
 ### Pool mining
 
@@ -171,7 +172,7 @@ metadata:
 ### Liquidity pool (LP) positions
 
 - **Providing liquidity** — Depositing tokens into an LP may constitute a taxable exchange (position uncertain); Conservative position: treat deposit as a taxable disposition of both tokens for the LP token received; Aggressive position: treat LP deposit as a non-taxable open transaction until withdrawal; Flag for reviewer: IRS has not issued definitive guidance on LP deposits  _(No definitive IRS guidance — flag for reviewer)_
-- **LP fee income** — Trading fees earned by LPs are ordinary income when received/accrued; Report on Schedule 1 Line 8z or Schedule C if LP activity constitutes a trade or business  _(IRS guidance on ordinary income)_
+- **LP fee income** — Trading fees earned by LPs are ordinary income when received/accrued; Report on Schedule 1 Line 8v or Schedule C if LP activity constitutes a trade or business  _([IRS guidance on ordinary income](https://www.irs.gov/instructions/i1040gi))_
 - **Impermanent loss** — Not deductible as a separate loss; Reflected in the reduced value of tokens withdrawn from the pool; Capital loss recognized only upon actual disposition of the LP position  _(General property tax principles)_
 - **Withdrawing from LP** — Taxable event: recognize gain/loss based on difference between value received and basis in LP position  _(General property tax principles)_
 
@@ -227,11 +228,11 @@ metadata:
 
 ### Who does NOT receive Form 1099-DA
 
-- **Non-recipients** — Self-custodied wallet transactions (hardware wallets, MetaMask); Peer-to-peer transactions; Certain DeFi protocols (the DeFi broker rule, TD 10021, was REPEALED under the Congressional Review Act by P.L. 119-5 on April 10, 2025, and the regulations were removed at 90 FR 31136; non-custodial DeFi front-ends are not brokers and will not issue Form 1099-DA, and the CRA bars a substantially similar rule absent new legislation)  _(P.L. 119-5; 90 FR 31136)_
+- **Non-recipients** — Self-custodied wallet transactions (hardware wallets, MetaMask); Peer-to-peer transactions; Certain DeFi protocols (the DeFi broker rule, TD 10021, was REPEALED under the Congressional Review Act by P.L. 119-5 on April 10, 2025, and the regulations were removed at 90 FR 30825; non-custodial DeFi front-ends are not brokers and will not issue Form 1099-DA, and the CRA bars a substantially similar rule absent new legislation)  _([P.L. 119-5; 90 FR 31136](https://www.federalregister.gov/documents/full_text/text/2025/07/11/2025-12967.txt))_
 
 ### Reconciliation
 
-- **Reconciliation guidance** — Taxpayers must reconcile Form 1099-DA against their own records: 1099-DA may not reflect correct basis (especially for transferred-in tokens); 1099-DA may report gross proceeds without netting fees; If basis on 1099-DA is incorrect, report on Form 8949 Box B with adjustment in column (f)/(g)  _(Form 8949 instructions)_
+- **Reconciliation guidance** — Taxpayers must reconcile Form 1099-DA against their own records: 1099-DA may not reflect correct basis (especially for transferred-in tokens); 1099-DA may report gross proceeds without netting fees; If basis on 1099-DA is incorrect, report on Form 8949 Box G or J (basis reported to IRS: enter the 1099-DA basis in column (e) and correct it in column (g), code B in column (f)) or Box H or K (basis not reported: enter the correct basis in column (e))  _([Form 8949 instructions](https://www.irs.gov/instructions/i8949))_
 
 ### Current law
 
@@ -309,7 +310,7 @@ metadata:
 
 ### What records to maintain
 
-- **Recordkeeping requirements** — Per IRS guidance (FAQ Q39-Q41): Date and time of each transaction; Quantity of digital asset received or transferred; FMV at time of transaction (with source of valuation); Purpose of the transaction; Counterparty information (if available); Wallet addresses involved; Transaction IDs (hash); Exchange records  _(IRS FAQ Q39-Q41)_
+- **Recordkeeping requirements** — Per IRS guidance (FAQ Q95): Date and time of each transaction; Quantity of digital asset received or transferred; FMV at time of transaction (with source of valuation); Purpose of the transaction; Counterparty information (if available); Wallet addresses involved; Transaction IDs (hash); Exchange records  _([IRS FAQ Q39-Q41](https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-digital-asset-transactions))_
 
 ### Valuation sources
 
@@ -367,13 +368,13 @@ Purchased 1.0 BTC on March 15, 2024 for $65,000. Sold 1.0 BTC on July 20, 2025 f
 - Proceeds: $98,000
 - Basis: $65,000
 - Long-term capital gain: $33,000
-- Report on Form 8949 Part II, Box C (no 1099 received)
+- Report on Form 8949 Part II, Box L (no 1099-DA received)
 
 ### Example 2: Staking income
 
 Staked 32 ETH on Coinbase. Received 1.2 ETH in staking rewards throughout 2025. Monthly FMV at receipt: average $3,500/ETH.
 - Ordinary income: 1.2 × $3,500 = $4,200 (actual computation uses per-receipt FMV)
-- Report on Schedule 1 Line 8z (delegated staking, not trade or business)
+- Report on Schedule 1 Line 8v (delegated staking, not trade or business)
 - Basis in 1.2 ETH received = $4,200
 - Subject to NIIT if AGI > $200,000 (single)
 
@@ -384,13 +385,13 @@ Swapped 10 ETH (basis $25,000, acquired February 2025) for 50,000 USDC on August
 - Proceeds: $50,000 (FMV of USDC received)
 - Basis: $25,000
 - Short-term capital gain: $25,000
-- Report on Form 8949 Part I, Box C
+- Report on Form 8949 Part I, Box I
 
 ### Example 4: Airdrop
 
 Received 1,000 ARB tokens via airdrop on March 23, 2025. FMV at receipt: $1.15/token.
 - Ordinary income: 1,000 × $1.15 = $1,150
-- Report on Schedule 1 Line 8z
+- Report on Schedule 1 Line 8v
 - Basis in 1,000 ARB = $1,150
 - If later sold for $2.00/token: gain = ($2,000 − $1,150) = $850
 

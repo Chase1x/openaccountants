@@ -5,9 +5,11 @@ version: 2.0
 jurisdiction: NP
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Ashish Bista, ICAI, OTHER, CA
 reviewed_by: Ashish Bista
 review_status: current
-tier: 1
+trust_label: Checked by Ashish Bista
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

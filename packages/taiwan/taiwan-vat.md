@@ -6,6 +6,7 @@ jurisdiction: TW
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 depends_on:
   - vat-workflow-base
 category: international

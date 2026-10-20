@@ -8,12 +8,12 @@ metadata:
   jurisdiction: "EG"
   tax_year: "2025"
   last_updated: "2026-07-22"
+  authored_by: "Ahmed Hassan"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
 # Egypt Real Estate Tax (ضريبة العقارات) Skill v0.1
-
-## Egypt Real Estate Tax (ضريبة العقارات) Skill v0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -23,14 +23,6 @@ This skill covers Egyptian real estate tax (ضريبة العقارات المب
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
 > **YMYL — verify before relying.** Egyptian property tax thresholds and exemptions were amended in 2014 and again in 2026 (Law 3/2026). Where this skill says "verify current value," re-confirm against the Real Estate Taxation Authority (RETA), the Egyptian Tax Authority (eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
-
-## What this file is
-
-**This file is a content skill that loads on top of the universal workflow base** (`workflow-base`). It provides Egypt-specific real estate tax rates, exemptions, valuation mechanics, filing procedures, and the critical CIT non-deductibility rule.
-
-**Tax year coverage.** This skill is current for **tax year 2025** as of its currency date, and reflects the March 2026 amendments (Law 3/2026) where noted.
-
-**The reviewer is the customer of this output.** Per the base, this skill assumes a credentialed reviewer reviews and signs any filing. The skill produces working papers and a brief, not a filing.
 
 ## Section 1 — Scope statement
 
@@ -56,12 +48,12 @@ This skill does NOT cover:
 - Property registration procedures (Law 114/1946) — legal, not tax
 - Transfer pricing — see `eg-transfer-pricing`
 
+---
+
 ## Section 2 — Legal framework
 
-**Legal framework**  _(Law 196/2008; Law 117/2014; Law 3/2026; Law 91/2005 Art 47)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Primary law** | Unified Real Estate Tax Law — imposes annual tax on built real estate | Law 196/2008 |
 | **Amendments** | Raised residential exemption threshold from EGP 6,000 to EGP 24,000; broadened commercial exemption | Law 117/2014 |
 | **Latest amendments** | Raised exemption threshold to EGP 100,000; 25% timely-payment discount; penalty waiver; digital filing; centralized declaration submission | Law 3/2026 (March 2026) |
@@ -72,16 +64,16 @@ This skill does NOT cover:
 
 > **Key distinction.** The real estate tax is an annual tax on property OWNERSHIP (not income). The real estate wealth tax is a tax on rental INCOME. They are separate levies with separate filing mechanisms. The transactions tax is a one-time tax on property TRANSFERS. This skill focuses on the annual real estate tax.
 
+---
+
 ## Section 3 — Tax base and valuation
 
 ### 3.1 — Annual Rental Value (ARV)
 
 The tax base is the **Annual Rental Value (ARV)** of the property as determined by government assessors — NOT the market purchase price and NOT the actual rent (if leased).
 
-**Annual Rental Value (ARV)**  _(Law 196/2008 Art 4–7; Art 8; Art 5; Art 2; Art 18; Law 3/2026)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Basis** | Assessed annual rental value set by RETA valuation committees | Law 196/2008 Art 4–7 |
 | **Valuation cycle** | Every 5 years (revaluation of all properties) | Law 196/2008 Art 8 |
 | **Factors** | Location, condition, size, usage type, associated facilities | Law 196/2008 Art 5 |
@@ -90,20 +82,27 @@ The tax base is the **Annual Rental Value (ARV)** of the property as determined 
 
 ### 3.2 — Deductions before applying the rate
 
-- **Deductions before applying the rate** — Before the 10% tax rate is applied, two deductions are made: 1. **Maintenance/management deduction** — a statutory allowance for maintenance and management costs: - Residential property: deduct **30%** of gross ARV - Non-residential property: deduct **32%** of gross ARV 2. **Exemption deduction** — deduct the statutory exemption amount: - EGP 24,000 (pre-2026) / EGP 100,000 (post-2026, Law 3/2026) per residential unit - EGP 1,200 for non-residential units  _(Law 3/2026)_
+Before the 10% tax rate is applied, two deductions are made:
+
+1. **Maintenance/management deduction** — a statutory allowance for maintenance and management costs:
+   - Residential property: deduct **30%** of gross ARV
+   - Non-residential property: deduct **32%** of gross ARV
+2. **Exemption deduction** — deduct the statutory exemption amount:
+   - EGP 24,000 (pre-2026) / EGP 100,000 (post-2026, Law 3/2026) per residential unit
+   - EGP 1,200 for non-residential units
 
 > **The 30%/32% deduction is automatic** — no receipts or proof of actual expenses required. It is built into the statute.
 
 ### 3.3 — Tax rate
 
-**Tax rate**  _(Law 196/2008 Art 12)_
-
 | Property type | Tax rate | Deduction | Statutory exemption |
-| --- | --- | --- | --- |
+|---------------|----------|-----------|-------------------|
 | **Residential** | 10% of net ARV | 30% of gross ARV | EGP 24,000 (pre-2026) / EGP 100,000 (Law 3/2026) |
 | **Non-residential** (commercial, industrial, administrative) | 10% of net ARV | 32% of gross ARV | EGP 1,200 |
 
 > **Note on non-residential rate.** Law 196/2008 Art 12 sets the rate at 10% for ALL property types. Some secondary sources reference a 20% rate for non-residential — this reflects earlier draft proposals and/or the wealth tax on rental income, NOT the annual property tax. The statutory annual rate is 10% across the board.
+
+---
 
 ## Section 4 — Worked examples
 
@@ -145,31 +144,42 @@ The tax base is the **Annual Rental Value (ARV)** of the property as determined 
 - Net ARV: 24,000 – 7,200 = EGP 16,800
 - Net ARV is below exemption threshold → **fully exempt, no tax due**
 
+---
+
 ## Section 5 — Exemptions
 
 ### 5.1 — Threshold exemptions (annual rental value)
 
-**Threshold exemptions (annual rental value)**  _(Law 196/2008 Art 10; Law 3/2026)_
-
 | Property type | Exemption threshold | Source |
-| --- | --- | --- |
+|---------------|-------------------|--------|
 | Residential | ARV ≤ EGP 24,000 (pre-2026) / ≤ EGP 100,000 (Law 3/2026) | Law 196/2008 Art 10; Law 3/2026 |
 | Non-residential | ARV ≤ EGP 1,200 | Law 196/2008 Art 10 |
 
 ### 5.2 — Property-type exemptions (fully non-taxable)
 
-- **Property-type exemptions (fully non-taxable)** — The following properties are NOT subject to the real estate tax at all: - **State-owned properties** (unless used for commercial purposes) - **Places of worship** — mosques, churches, and registered religious institutions - **Public schools, universities, and hospitals** (government and private) - **Registered charitable organisations** and nonprofit entities - **Properties owned by foreign governments** used for diplomatic purposes - **Under-construction properties** — not taxed until fully built and registered - **Agricultural land** — not subject to the built-property tax (separate agricultural land tax regime under Law 113/1939)  _(Law 113/1939)_
+The following properties are NOT subject to the real estate tax at all:
+
+- **State-owned properties** (unless used for commercial purposes)
+- **Places of worship** — mosques, churches, and registered religious institutions
+- **Public schools, universities, and hospitals** (government and private)
+- **Registered charitable organisations** and nonprofit entities
+- **Properties owned by foreign governments** used for diplomatic purposes
+- **Under-construction properties** — not taxed until fully built and registered
+- **Agricultural land** — not subject to the built-property tax (separate agricultural land tax regime under Law 113/1939)
 
 ### 5.3 — Partial/conditional exemptions
 
-- **Partial/conditional exemptions** — - **Newly constructed properties**: may qualify for a 5-year exemption from completion (certain conditions apply per Law 196/2008 Art 11) - **Owner-occupied sole residence**: exempt if it is the taxpayer's only property AND below the threshold (per Law 117/2014 amendments, the exemption applies to the aggregated value of all residential properties owned) - **Heritage/registered historic buildings**: may negotiate deductions during restoration - **Vacant properties**: unrented for 6+ months may qualify for partial relief (governorate discretion)  _(Law 196/2008 Art 11; Law 117/2014)_
+- **Newly constructed properties**: may qualify for a 5-year exemption from completion (certain conditions apply per Law 196/2008 Art 11)
+- **Owner-occupied sole residence**: exempt if it is the taxpayer's only property AND below the threshold (per Law 117/2014 amendments, the exemption applies to the aggregated value of all residential properties owned)
+- **Heritage/registered historic buildings**: may negotiate deductions during restoration
+- **Vacant properties**: unrented for 6+ months may qualify for partial relief (governorate discretion)
 
 ### 5.4 — 2026 amendments to exemptions (Law 3/2026)
 
-**2026 amendments to exemptions (Law 3/2026)**  _(Law 3/2026)_
+Key changes introduced in March 2026:
 
 | Item | Old rule (pre-2026) | New rule (Law 3/2026) |
-| --- | --- | --- |
+|------|---------------------|----------------------|
 | Residential exemption threshold | EGP 24,000 ARV | EGP 100,000 ARV |
 | Total exemption value | EGP 2,000,000 (aggregated property value) | EGP 8,000,000 (aggregated property value) |
 | Declaration submission | Separate submission to each RETA office | Single submission to any RETA office |
@@ -179,14 +189,12 @@ The tax base is the **Annual Rental Value (ARV)** of the property as determined 
 | Dispute settlement | 100% of disputed tax | 70% of disputed tax |
 | Tax effect date | Retroactive from property registration | From date of declaration submission |
 
-Key changes introduced in March 2026:
+---
 
 ## Section 6 — Filing and payment
 
-**Filing and payment**  _(Law 196/2008; Law 3/2026)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Who must file** | All property owners (individuals, companies, associations, public bodies) owning built real estate in Egypt | Law 196/2008 Art 2 |
 | **Filing method** | Annual declaration submitted to RETA office (Maamouria) — NOT the ETA e-filing portal | Law 196/2008 Art 25 |
 | **Digital filing** | Gradually transitioning to digital platforms (per Law 3/2026) | Law 3/2026 |
@@ -201,19 +209,19 @@ Key changes introduced in March 2026:
 
 > **RETA ≠ ETA.** The Real Estate Taxation Authority (RETA / المعمورة) is a separate authority from the Egyptian Tax Authority (ETA). Real estate tax declarations go to RETA offices, NOT the ETA online portal. There are 44 RETA branch offices across Egypt.
 
+---
+
 ## Section 7 — CIT non-deductibility (critical audit issue)
 
 > **This is the single most important compliance point for corporate taxpayers.**
 
-**CIT non-deductibility**  _(Law 91/2005 Art 23)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Deductibility for CIT** | **NOT deductible** — real estate tax is a non-business tax and is disallowed as a deduction from taxable profits | Law 91/2005 Art 23 |
 | **Mechanism** | Real estate tax is added back to accounting profit in the CIT return as a non-deductible expense | Law 91/2005 Art 23 |
-| **Rationale** | Art 23 disallows "taxes and duties" that are not business taxes (income tax, VAT, customs). Real estate tax is a property tax on ownership — not a cost of generating business income |  |
-| **Exception** | REAL ESTATE HELD FOR RE-SALE (inventory/stock) may qualify for different treatment — verify with advisor |  |
-| **Audit risk** | High — many companies incorrectly deduct real estate tax on their business premises. This is a common audit finding by ETA |  |
+| **Rationale** | Art 23 disallows "taxes and duties" that are not business taxes (income tax, VAT, customs). Real estate tax is a property tax on ownership — not a cost of generating business income |
+| **Exception** | REAL ESTATE HELD FOR RE-SALE (inventory/stock) may qualify for different treatment — verify with advisor |
+| **Audit risk** | High — many companies incorrectly deduct real estate tax on their business premises. This is a common audit finding by ETA |
 
 ### Practical guidance for the reviewer
 
@@ -227,12 +235,12 @@ When preparing or reviewing a CIT return:
 
 > **Note.** This non-deductibility is specific to the annual real estate tax. Rental INCOME taxed under the wealth tax regime (Art 47, Law 91/2005) is a separate matter — that IS the income tax itself, not a deduction question.
 
+---
+
 ## Section 8 — Real estate transactions tax (context only)
 
-**Real estate transactions tax (context only)**  _(Law 196/2008 Art 40; Art 41)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Rate** | 2.5% of the property's sale value | Law 196/2008 Art 40 |
 | **Timing** | Due on transfer (registration) | Law 196/2008 Art 40 |
 | **Exemptions** | Family transactions, inheritance transfers, some investment-related sales | Law 196/2008 Art 41 |
@@ -240,24 +248,24 @@ When preparing or reviewing a CIT return:
 
 This is a one-time transfer tax, NOT the annual property tax. See the property registration process (Law 114/1946) for the registration mechanics.
 
+---
+
 ## Section 9 — Interaction with other Egypt taxes
 
-**Interaction with other Egypt taxes**  _(eg-corporate-tax; eg-income-tax; egypt-vat; eg-stamp-duty; eg-transfer-pricing)_
-
 | Tax | Relationship | Skill |
-| --- | --- | --- |
+|-----|-------------|-------|
 | **CIT (corporate income tax)** | Real estate tax is NOT deductible — must add back in CIT reconciliation | `eg-corporate-tax` |
 | **Personal income tax** | Real estate wealth tax on rental income (10%–27.5%) is collected via the income tax return | `eg-income-tax` |
 | **VAT** | No interaction — property tax is not a VAT input | `egypt-vat` |
 | **Stamp duty** | Separate levy on property registration documents | `eg-stamp-duty` |
 | **Transfer pricing** | No direct interaction | `eg-transfer-pricing` |
 
+---
+
 ## Section 10 — Sources and verification
 
-**Sources and verification**  _(Law 196/2008; Law 117/2014; Law 3/2026; Law 91/2005)_
-
 | Source | Reference | URL |
-| --- | --- | --- |
+|--------|-----------|-----|
 | **Law 196/2008** | Unified Real Estate Tax Law (primary statute) | — |
 | **Law 117/2014** | Amendments to Law 196/2008 (exemption threshold increases) | — |
 | **Law 3/2026** | March 2026 amendments (exemption threshold, digital filing, penalty waiver) | — |
@@ -268,6 +276,8 @@ This is a one-time transfer tax, NOT the annual property tax. See the property r
 | **RETA** | Real Estate Taxation Authority (44 offices nationwide) | — |
 
 > **Verify before relying.** Egyptian property tax thresholds and exemption amounts change frequently. The 2026 amendments (Law 3/2026) significantly raised thresholds and introduced new facilitations. Always confirm current values against the official sources above before filing.
+
+---
 
 ## Self-check
 

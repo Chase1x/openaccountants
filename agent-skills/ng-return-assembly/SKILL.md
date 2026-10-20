@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "NG"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Omolola Fasasi, CA"
   reviewed_by: "Omolola Fasasi"
+  trust_label: "Checked by Omolola Fasasi"
   review_status: "current"
 ---
 
@@ -59,9 +61,9 @@ metadata:
 - **Foreign tax credit cap — individual (PIT)** — Under the Nigeria Tax Act (NTA), the cap for the Foreign Tax Credit for resident individuals (Personal Income Tax - PIT) is limited to the lower of the tax actually paid in the foreign country or the Nigerian tax attributable to that foreign incom  _(Nigeria Tax Act 2025)_
 - **Foreign tax credit cap — corporate (CIT)** — there is no flat, unilateral foreign tax credit cap for Companies Income Tax (CIT)  _(Nigeria Tax Act 2025)_
 
-## CRITICAL EXECUTION DIRECTIVE — READ FIRST
+## How this workflow runs
 
-When this skill is invoked, the user has already passed through intake and the relevant content skills. They want their finished Nigerian return working paper. Execute all steps without pausing for permission.
+Intake and the content Guides have already collected the facts for this working paper. Use what they captured, and ask the user again only where something is missing or contradicts itself.
 
 Specifically:
 

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "KR"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Yeong Min Lee, ACCA, CPA"
   reviewed_by: "Yeong Min Lee"
+  trust_label: "Checked by Yeong Min Lee"
   review_status: "current"
 ---
 

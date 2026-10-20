@@ -8,8 +8,8 @@ metadata:
   jurisdiction: "PT"
   tax_year: "2025"
   last_updated: "2026-07-13"
-  reviewed_by: "Mário Jorge da costa Vale"
-  review_status: "current"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
+  review_status: "pending_review"
 ---
 
 # Portugal Payroll
@@ -48,12 +48,12 @@ metadata:
 - **Férias anuais** — 22 dias úteis mínimo  _(Código do Trabalho)_
 - **Licença paternidade** — 28 dias consecutivos obrigatórios (SS)  _(Código do Trabalho)_
 - **DMR (Declaração Mensal)** — Até dia 10 do mês seguinte  _(AT)_
-- **Pagamento SS/IRS** — Até dia 20 do mês seguinte  _(AT/ISS)_
+- **Pagamento SS/IRS** — Segurança Social: entre o dia 1 e o dia 25 do mês seguinte; IRS retido: até dia 20 do mês seguinte  _([AT/ISS](https://www.seg-social.pt/ptss/pssd/documento/cmc1y95ap00dkkl2yk3g4tdla))_
 - **Relatório Único** — Até 15 de abril  _(GEP/MTSSS)_
 
 ## Secção 1 — Referência Rápida
 
-**Secção 1 — Referência Rápida**
+**Secção 1 — Referência Rápida**  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1y95ap00dkkl2yk3g4tdla)_
 
 | Campo | Valor |
 | --- | --- |
@@ -70,51 +70,51 @@ metadata:
 | Retribuição Mínima Mensal Garantida (RMMG) | 920 EUR/mês (2026, Continente) |
 | Pagamentos | 14 por ano (12 meses + subsídio de férias + subsídio de Natal) |
 | Entrega da DMR | Mensal, até ao dia 10 do mês seguinte |
-| Pagamento da Segurança Social / IRS | Mensal, até ao dia 20 do mês seguinte |
+| Pagamento da Segurança Social / IRS | Mensal: Segurança Social entre o dia 1 e o dia 25 do mês seguinte; IRS retido até ao dia 20 do mês seguinte |
 | Versão da skill | 1.1 |
 
 ## Secção 2 — Retenção na Fonte de IRS
 
 ### Escalões de IRS (2026 — Rendimento Coletável Anual)
 
-**Escalões de IRS (2026 — Rendimento Coletável Anual)**
+**Escalões de IRS (2026 — Rendimento Coletável Anual)**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx)_
 
 | Escalão | Rendimento Coletável Anual (EUR) | Taxa Marginal |
 | --- | --- | --- |
-| 1.º | Até 7 703 | 13,25% |
-| 2.º | 7 703 — 11 623 | 16,50% |
-| 3.º | 11 623 — 17 838 | 22,00% |
-| 4.º | 17 838 — 22 052 | 24,10% |
-| 5.º | 22 052 — 28 227 | 31,40% |
-| 6.º | 28 227 — 41 674 | 37,00% |
-| 7.º | 41 674 — 55 696 | 43,50% |
-| 8.º | 55 696 — 78 834 | 45,00% |
-| 9.º | Acima de 78 834 | 48,00% |
+| 1.º | Até 8 342 | 12,50% |
+| 2.º | 8 342 — 12 587 | 15,70% |
+| 3.º | 12 587 — 17 838 | 21,20% |
+| 4.º | 17 838 — 23 089 | 24,10% |
+| 5.º | 23 089 — 29 397 | 31,10% |
+| 6.º | 29 397 — 43 090 | 34,90% |
+| 7.º | 43 090 — 46 566 | 43,10% |
+| 8.º | 46 566 — 86 634 | 44,60% |
+| 9.º | Acima de 86 634 | 48,00% |
 
 ### Mecanismo de Retenção na Fonte
 
 - **Mecanismo de retenção** — A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente por Despacho (tabelas do Anexo III), nos termos do art.º 99.º do CIRS. Desde 2023, Portugal aplica uma fórmula progressiva marginal na retenção (e não uma taxa fixa por escalão).  _(CIRS art.º 99.º)_
 
-**Tabelas de Retenção**
+**Tabelas de Retenção**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Despacho-233-A-2026.pdf)_
 
 | Tabela | Aplicável a |
 | --- | --- |
-| Tabela I | Casado, único titular |
-| Tabela II | Casado, dois titulares |
-| Tabela III | Não casado |
-| Tabelas IV-VII | Pensionistas |
-| Tabelas VIII-XI | Trabalhadores com deficiência |
+| Tabela I | Não casado sem dependentes ou casado dois titulares |
+| Tabela II | Não casado com um ou mais dependentes |
+| Tabela III | Casado único titular |
+| Tabelas IV-VII | Trabalho dependente — pessoa com deficiência |
+| Tabelas VIII-XI | Pensões (VIII e IX sem deficiência; X e XI com deficiência) |
 
 ### Regras-Chave de Retenção (2026)
 
-**Regras-Chave de Retenção (2026)**
+**Regras-Chave de Retenção (2026)**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Despacho-233-A-2026.pdf)_
 
 | Regra | Detalhe |
 | --- | --- |
-| Limiar de não retenção | Até 920 EUR/mês (salário mínimo) = 0% de IRS |
+| Limiar de não retenção | Até 920 EUR/mês (Tabelas I e II) ou até 991 EUR/mês (Tabela III, casado único titular) = 0% de IRS |
 | Mínimo de existência | 12 880 EUR anuais (14 × 920) — totalmente isento |
 | Dedução por dependente | 42,86 EUR/mês (casado único titular); 21,43 EUR (dois titulares); 34,29 EUR (não casado) |
-| Dedução específica | 4 104 EUR/ano (ou contribuições efetivas para a Segurança Social, se superiores) |
+| Dedução específica | 8,54 × IAS por ano (ou contribuições efetivas para a Segurança Social, se superiores) |
 | 3 ou mais dependentes | Redução de 1 ponto percentual na taxa marginal mais elevada aplicável |
 
 ### Retenção sobre Subsídio de Férias / Subsídio de Natal
@@ -142,7 +142,7 @@ metadata:
 
 ### O Que Está Isento de Contribuições para a Segurança Social
 
-- Subsídio de refeição até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão refeição) — valores de 2026
+- Subsídio de refeição até 6,15 EUR/dia (numerário) ou 10,20 EUR/dia (cartão refeição) — valores de 2026
 - Ajudas de custo e despesas de deslocação (dentro dos limites legais)
 - Distribuição de participação nos lucros
 - Compensações por cessação do contrato (dentro dos limites legais)
@@ -165,25 +165,26 @@ metadata:
 
 ### Taxas Especiais para a Entidade Patronal
 
-**Taxas Especiais para a Entidade Patronal**
+**Taxas Especiais para a Entidade Patronal**  _(https://www.seg-social.pt/ptss/pssd/documento/cmc1xlxpq00d9kl2y0p3inyft)_
 
 | Situação | Taxa |
 | --- | --- |
 | Membros de órgãos estatutários (gerentes/administradores) com proteção no desemprego | 23,75% (trabalhador 11%) |
 | Membros de órgãos estatutários sem proteção no desemprego | 20,30% (trabalhador 9,30%) |
-| Trabalhadores do serviço doméstico | 18,90% (trabalhador 9,40%) |
-| Incentivo ao primeiro emprego (3 anos) | Redução de 50% na taxa da entidade patronal |
+| Trabalhadores do serviço doméstico sem proteção no desemprego | 18,90% (trabalhador 9,40%) |
+| Trabalhadores do serviço doméstico com proteção no desemprego | 22,3% (trabalhador 11%) |
+| Incentivo ao primeiro emprego (5 anos) | Redução de 50% na taxa da entidade patronal |
 | Desempregados de longa duração (3 anos) | Redução de 50% na taxa da entidade patronal |
 
 ### Fundo de Compensação do Trabalho (FCT)
 
-**Fundo de Compensação do Trabalho (FCT)**
+**Fundo de Compensação do Trabalho (FCT)**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_13_2023.pdf)_
 
 | Fundo | Taxa | Finalidade |
 | --- | --- | --- |
 | FCT (Fundo de Compensação do Trabalho) | 0,925% | Garantia de compensação por cessação do contrato |
 | FGCT (Fundo de Garantia de Compensação do Trabalho) | 0,075% | Fundo de garantia mútua |
-| **Total** | **1,00%** | Pago pela entidade patronal sobre a remuneração bruta |
+| **Total** | **1,00%** | Não exigível: obrigações relativas ao FCT e ao FGCT suspensas (Lei 13/2023) |
 
 - Aplica-se a contratos iniciados após 1 de outubro de 2013
 - Pago mensalmente, até ao dia 20 do mês seguinte
@@ -193,13 +194,13 @@ metadata:
 
 ### Retribuição Mínima Mensal Garantida (RMMG)
 
-**Retribuição Mínima Mensal Garantida (RMMG)**
+**Retribuição Mínima Mensal Garantida (RMMG)**  _(https://www.madeira.gov.pt//Portals/25/Documentos/Legislacao/DLR_1_2026_M.pdf)_
 
 | Região | 2026 — Mensal (EUR) |
 | --- | --- |
 | Continente | 920,00 |
 | Açores | 966,00 |
-| Madeira | 968,00 |
+| Madeira | 980,00 |
 
 - Fixada pelo Decreto-Lei n.º 139/2025 (em vigor a 1 de janeiro de 2026)
 - Ano anterior (2025): 870,00 EUR
@@ -209,7 +210,7 @@ metadata:
 
 ### Período Normal de Trabalho e Trabalho Suplementar
 
-**Período Normal de Trabalho e Trabalho Suplementar**
+**Período Normal de Trabalho e Trabalho Suplementar**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_13_2023.pdf)_
 
 | Parâmetro | Padrão |
 | --- | --- |
@@ -219,22 +220,23 @@ metadata:
 | Acréscimo da 1.ª hora (dia útil) | 25% |
 | Acréscimo das horas seguintes (dia útil) | 37,5% |
 | Acréscimo em dia de descanso/feriado | 50% |
+| Trabalho suplementar acima de 100 horas anuais | 50% pela primeira hora e 75% por hora subsequente em dia útil; 100% em dia de descanso ou feriado |
 | Subsídio de trabalho noturno (22h-7h) | Mínimo de 25% |
 
 ## Secção 6 — Benefícios Obrigatórios
 
-**Secção 6 — Benefícios Obrigatórios**
+**Secção 6 — Benefícios Obrigatórios**  _(https://files.diariodarepublica.pt/1s/2026/01/02103/0001100011.pdf)_
 
 | Benefício | Detalhe |
 | --- | --- |
 | Férias anuais | 22 dias úteis (mínimo) |
 | Subsídio de férias | Equivalente a um mês de vencimento (pago antes do início das férias ou em junho) |
 | Subsídio de Natal | Equivalente a um mês de vencimento (pago até 15 de dezembro) |
-| Subsídio de refeição (subsídio de alimentação) | Não obrigatório por lei mas largamente generalizado; isento até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão) |
+| Subsídio de refeição (subsídio de alimentação) | Não obrigatório por lei mas largamente generalizado; isento até 6,15 EUR/dia (numerário) ou 10,20 EUR/dia (cartão) |
 | Baixa por doença | Paga pela Segurança Social a partir do 4.º dia (55%-75% do vencimento, conforme duração) |
 | Licença de parentalidade (mãe) | 120 dias a 100% ou 150 dias a 80% (pago pela Segurança Social) |
-| Licença de parentalidade (pai) | 28 dias consecutivos obrigatórios (pago pela Segurança Social) |
-| Faltas por falecimento de familiar | 2 a 5 dias, conforme o grau de parentesco |
+| Licença de parentalidade (pai) | 28 dias obrigatórios, seguidos ou em períodos interpolados de no mínimo 7 dias, nos 42 dias seguintes ao nascimento (pago pela Segurança Social) |
+| Faltas por falecimento de familiar | Até 20 dias consecutivos (cônjuge, filho ou enteado); até cinco dias consecutivos (outro parente ou afim no 1.º grau da linha reta); menos para graus mais afastados |
 | Licença por casamento | 15 dias consecutivos |
 | Seguro de acidentes de trabalho | Obrigatório (a entidade patronal deve contratar seguradora) |
 
@@ -279,17 +281,17 @@ O trabalhador pode optar (ou a entidade patronal pode determinar) pelo pagamento
 
 ## Secção 8 — Obrigações Declarativas
 
-**Secção 8 — Obrigações Declarativas**
+**Secção 8 — Obrigações Declarativas**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_13_2023.pdf)_
 
 | Obrigação | Periodicidade | Prazo | Entidade |
 | --- | --- | --- | --- |
 | Declaração Mensal de Remunerações (DMR) | Mensal | Até ao dia 10 do mês seguinte | AT + Segurança Social |
-| Pagamento das contribuições para a Segurança Social | Mensal | Entre os dias 10 e 20 do mês seguinte | Segurança Social (DGSS) |
+| Pagamento das contribuições para a Segurança Social | Mensal | Entre os dias 1 e 25 do mês seguinte | Segurança Social (DGSS) |
 | Pagamento da retenção na fonte de IRS | Mensal | Até ao dia 20 do mês seguinte | AT |
-| Pagamento FCT/FGCT | Mensal | Até ao dia 20 do mês seguinte | Fundos de Compensação |
+| Pagamento FCT/FGCT | Não aplicável | Obrigações suspensas (Lei 13/2023) | Fundos de Compensação |
 | Relatório Único | Anual | Até 15 de abril (via portal) | GEP / MTSSS |
 | Declaração anual de IRS (Modelo 3) | Anual | 1 de abril — 30 de junho (entregue pelo trabalhador) | AT |
-| Modelo 10 (rendimentos pagos a não residentes) | Anual | Até 28 de fevereiro | AT |
+| Declaração de rendimentos pagos a não residentes | Por pagamento | Até ao fim do 2.º mês seguinte ao do pagamento | AT |
 
 ### DMR — Detalhes
 
@@ -391,8 +393,8 @@ Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de 
 - **Duodécimos**: O trabalhador pode requerer o pagamento dos subsídios de férias e de Natal em 12 prestações mensais iguais (1/12 por mês). A entidade patronal também pode optar por este método.
 - **Regiões autónomas**: Os Açores e a Madeira têm valores de salário mínimo ligeiramente superiores e podem ter tabelas de retenção de IRS diferentes.
 - **Tabelas de retenção de IRS**: Atualizadas anualmente por Despacho da AT (nos termos do art.º 99.º do CIRS). Utilizar sempre as tabelas do ano em curso. As tabelas de 2026 aplicam-se retroativamente a partir de 1 de janeiro de 2026.
-- **Subsídio de refeição**: Benefício amplamente generalizado. A parcela isenta (6,00 EUR em numerário / 10,20 EUR em cartão) NÃO está sujeita a Segurança Social nem a IRS. O excesso ESTÁ sujeito.
-- **Trabalho suplementar**: Sujeito a contribuições para a Segurança Social e a retenção na fonte de IRS à taxa normal.
+- **Subsídio de refeição**: Benefício amplamente generalizado. A parcela isenta (6,15 EUR em numerário / 10,20 EUR em cartão) NÃO está sujeita a Segurança Social nem a IRS. O excesso ESTÁ sujeito.
+- **Trabalho suplementar**: Sujeito a contribuições para a Segurança Social; a retenção na fonte de IRS é autónoma, à taxa correspondente a 50 % da taxa aplicável à remuneração mensal do mês em que é paga.
 - **Regime IFICI / RNH**: Para trabalhadores abrangidos, a retenção na fonte de IRS é efetuada à taxa especial de 20% — consultar a skill **pt-nhr-ifici**.
 
 ## Aviso Legal

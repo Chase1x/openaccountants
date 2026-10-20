@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "GB"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "James Power, CIMA"
   reviewed_by: "James Power"
+  trust_label: "Checked by James Power"
   review_status: "current"
 ---
 
@@ -55,7 +57,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Income Tax Rates 2025/26
 
-**Income Tax Rates 2025/26**
+**Income Tax Rates 2025/26**  _(https://www.gov.uk/income-tax-rates)_
 
 | Band | Taxable income | Rate |
 | --- | --- | --- |
@@ -97,12 +99,12 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ## Section 3 -- Deductions Most People Miss
 
-**Deductions Most People Miss**
+**Deductions Most People Miss**  _(https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles)_
 
 | Deduction | Legislation | Notes |
 | --- | --- | --- |
 | Use of home as office | ITTOIA 2005 s.34 | Proportion of home costs (rent, mortgage interest, council tax, electricity, heating, internet, insurance) based on rooms used and time spent. Alternatively, use HMRC simplified expenses: £10/month (25-50 hrs), £18/month (51-100 hrs), £26/month (101+ hrs). |
-| Business mileage | ITTOIA 2005 s.94A | Simplified mileage: 45p/mile (first 10,000 miles), 25p/mile thereafter. Covers fuel, insurance, repairs, depreciation. |
+| Business mileage | ITTOIA 2005 s.94A | Simplified mileage: 45p/mile (first 10,000 miles) before 6 April 2026 and 55p/mile for the 2026-2027 tax year, 25p/mile thereafter. Covers fuel, insurance, repairs, depreciation. |
 | Professional subscriptions | ITTOIA 2005 s.34 | ICAEW, ACCA, CIMA, CII, Law Society, etc. Must be on HMRC List 3. Fully deductible. |
 | Training & CPD | ITTOIA 2005 s.34 | Training to maintain or update existing skills is deductible. Training for a new trade is not. |
 | Pre-trading expenses | ITTOIA 2005 s.57 | Expenses incurred up to 7 years before trading begins, which would have been deductible if incurred during trading. |
@@ -138,15 +140,15 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### New 40% First-Year Allowance (from 1 January 2026)
 
-- **New 40% First-Year Allowance** — Available for main-rate expenditure where AIA or full expensing does not apply. Particularly relevant for unincorporated businesses (sole traders/partnerships) and leased assets.  _(Finance Act 2025-26, amending CAA 2001)_
+- **New 40% First-Year Allowance** — Available for main-rate expenditure where AIA or full expensing does not apply. The plant or machinery must be new and unused and must not be a car. Particularly relevant for unincorporated businesses (sole traders/partnerships) and leased assets.  _([Finance Act 2025-26, amending CAA 2001](https://www.gov.uk/capital-allowances/40-first-year-allowance))_
 
 ### Cars
 
-**Cars**
+**Cars**  _(https://www.gov.uk/capital-allowances/business-cars)_
 
 | CO2 emissions | Allowance |
 | --- | --- |
-| 0 g/km (electric) | 100% FYA |
+| 0 g/km (electric), new and unused (second hand electric car: main pool) | 100% FYA |
 | 1-50 g/km | Main pool (18%/14%) |
 | Over 50 g/km | Special rate pool (6%) |
 
@@ -189,7 +191,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **Legislation** — Value Added Tax Act 1994 (VATA 1994)  _(VATA 1994)_
 
-**VAT Optimization**
+**VAT Optimization**  _(https://www.gov.uk/guidance/capital-goods-scheme-notice-7062)_
 
 | Strategy | Detail |
 | --- | --- |
@@ -198,7 +200,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Cash accounting scheme | Pay VAT only when paid by customers (not when invoiced). Helps cash flow and avoids paying VAT on bad debts. |
 | Annual accounting scheme | One VAT return per year instead of quarterly. Nine monthly instalments based on estimate, balancing payment with annual return. |
 | Partial exemption | If making both taxable and exempt supplies, optimize the allocation method to maximize input VAT recovery. Standard method vs special method. |
-| Capital Goods Scheme | For items over £50,000 (or £250,000 for land/buildings), input VAT is adjusted over 5 or 10 years. Time large purchases to maximize initial recovery. |
+| Capital Goods Scheme | For land and buildings of £600,000 or more (exclusive of VAT) and aircraft, ships, boats and other vessels of £50,000 or more, input VAT is adjusted over 5 or 10 intervals; computers are no longer covered (from 29 July 2026). Time large purchases to maximize initial recovery. |
 | De-registration | If turnover falls below £88,000 (de-registration threshold), consider voluntary de-registration if clients are VAT-exempt consumers. |
 
 ## Section 8 -- Social Security Optimization
@@ -216,26 +218,26 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Optimization Strategies
 
-**Optimization Strategies**
+**Optimization Strategies**  _(https://www.legislation.gov.uk/uksi/2025/288/made)_
 
 | Strategy | Detail |
 | --- | --- |
-| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.45/week) to protect State Pension entitlement. |
-| NIC holiday (incorporation) | Directors of Ltd companies can set salary below the Primary Threshold (£12,570) to avoid employee NIC while still building NIC credits. |
+| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.50/week) to protect State Pension entitlement. |
+| NIC holiday (incorporation) | Directors of Ltd companies can set salary below the Primary Threshold (£12,570), but at or above the Lower Earnings Limit (£6,500 for 2025 to 2026), to avoid employee NIC while still building NIC credits. |
 | Maximize pension contributions | Pension contributions reduce income for the Personal Allowance taper calculation but do not reduce NIC-liable profits. |
 
 ## Section 9 -- Investment & Retirement
 
 ### Pension Contributions
 
-**Pension Contributions**
+**Pension Contributions**  _(https://www.gov.uk/guidance/pension-schemes-work-out-your-tapered-annual-allowance)_
 
 | Feature | Detail | Legislation |
 | --- | --- | --- |
 | Annual allowance | £60,000 (or 100% of earnings, whichever is lower) | Finance Act 2004 s.228 |
 | Carry forward | Unused allowance from previous 3 tax years can be carried forward | FA 2004 s.228A |
 | Tax relief | Basic rate (20%) added at source; higher/additional rate claimed via Self Assessment | FA 2004 s.188-195 |
-| Tapered allowance | Reduces by £1 for every £2 of adjusted income above £260,000, minimum £10,000 | FA 2004 s.228ZA |
+| Tapered allowance | Reduces by £1 for every £2 of adjusted income above £260,000, minimum £10,000 (not reduced if threshold income is £200,000 or less) | FA 2004 s.228ZA |
 | Money Purchase Annual Allowance | £10,000 if flexibly accessed pension benefits | FA 2004 s.227ZA |
 
 - **Strategy** — A higher-rate taxpayer contributing £40,000 to a pension receives 40% tax relief = £16,000 saving. If this brings adjusted net income below £100,000, the Personal Allowance is restored = additional saving of up to £5,028 (£12,570 × 40%).
@@ -252,13 +254,13 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Venture Capital Schemes
 
-**Venture Capital Schemes**
+**Venture Capital Schemes**  _(https://www.gov.uk/hmrc-internal-manuals/venture-capital-schemes-manual/vcm51030)_
 
 | Scheme | Income tax relief | CGT exemption | Legislation |
 | --- | --- | --- | --- |
 | EIS (Enterprise Investment Scheme) | 30% on up to £1m invested | Yes, if held 3+ years | ITA 2007 s.156-257 |
 | SEIS (Seed EIS) | 50% on up to £200,000 invested | Yes, if held 3+ years | ITA 2007 s.257SA-SG |
-| VCT (Venture Capital Trust) | 30% on up to £200,000 invested | Yes | ITA 2007 s.258-332 |
+| VCT (Venture Capital Trust) | 20% (investments made on or after 6 April 2026; 30% before) on up to £200,000 invested | Yes | ITA 2007 s.258-332 |
 
 ## Section 10 -- Red Lines
 

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "ZA"
   tax_year: "2025"
   last_updated: "2026-09-03"
+  authored_by: "Werner Britz, CA(SA)"
   reviewed_by: "Werner Britz"
+  trust_label: "Checked by Werner Britz"
   review_status: "current"
 ---
 

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "TZ"
   tax_year: "2026"
   last_updated: "2026-07-13"
+  authored_by: "Baraka Cassian, CPA, CA, CTA"
   reviewed_by: "Baraka Cassian"
+  trust_label: "Checked by Baraka Cassian"
   review_status: "current"
 ---
 

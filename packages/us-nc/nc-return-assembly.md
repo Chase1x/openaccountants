@@ -5,6 +5,7 @@ jurisdiction: US-NC
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -19,9 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > **Quality tier.** Q3 — AI-drafted, not independently verified. Researched 2026-05-28 against NCDOR, IRS, and the upstream NC content skills in this same package directory. A qualified professional must review before filing.
 
-## CRITICAL EXECUTION DIRECTIVE — READ FIRST
+## How this workflow runs
 
-**When this skill is invoked, intake has already happened. The taxpayer has consented to the full workflow. Execute every step without pausing for permission.**
+Intake and the content Guides have already collected the facts for this working paper. Use what they captured, and ask the user again only where something is missing or contradicts itself.
 
 - **Do NOT ask the user "how deep do you want me to go".** The taxpayer asked for a North Carolina return. Produce it.
 - **Do NOT announce tool budgets or token counts.** Execute.

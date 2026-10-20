@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "GE"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Gvantsa Amiridze, ACCA"
   reviewed_by: "Gvantsa Amiridze"
+  trust_label: "Checked by Gvantsa Amiridze"
   review_status: "current"
 ---
 

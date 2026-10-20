@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "GB"
   tax_year: "2024"
   last_updated: "2026-07-13"
+  authored_by: "James Power, CIMA"
   reviewed_by: "James Power"
+  trust_label: "Checked by James Power"
   review_status: "current"
 ---
 

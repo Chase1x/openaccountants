@@ -6,6 +6,7 @@ jurisdiction: UA
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 depends_on:
   - ua-freelance-intake
 category: orchestrator

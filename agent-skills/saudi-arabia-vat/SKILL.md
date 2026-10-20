@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "SA"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Mehran Habib, CA"
   reviewed_by: "Mehran Habib"
+  trust_label: "Checked by Mehran Habib"
   review_status: "current"
 ---
 
@@ -32,13 +34,13 @@ metadata:
 
 **Quick reference field table**
 
-**Quick reference field table**
+**Quick reference field table**  _(https://zatca.gov.sa/en/RulesRegulations/Taxes/Documents/Implmenting%20Regulations%20of%20the%20VAT%20Law_EN.pdf)_
 
 | Field | Value |
 | --- | --- |
 | Country | Kingdom of Saudi Arabia (KSA) |
 | Standard rate | 15% (from 1 July 2020; previously 5% from 1 January 2018) |
-| Zero rate | 0% (exports outside GCC, international transport, qualifying medicines, investment metals 99%+ purity, first residential property up to SAR 1,000,000 cap) |
+| Zero rate | 0% (exports outside GCC, international transport, qualifying medicines, investment metals 99%+ purity; supplies of real estate by transfer of ownership are exempt, not zero-rated) |
 | Exempt supplies | Financial services (interest/margin-based, Islamic finance equivalents), residential rental, life insurance |
 | Return form | VAT return filed electronically via ZATCA portal |
 | Filing portal | https://zatca.gov.sa (ZATCA portal) |
@@ -225,7 +227,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.7 Food retail and supermarkets
 
-**Food retail table**
+**Food retail table**  _(https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Amendments-to-the-Implementing-Regulation-of-%28VAT%29.PDF)_
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
@@ -235,7 +237,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | TAMIMI MARKETS, التميمي | Default BLOCK | Same |
 | OTHAIM, العثيم | Default BLOCK | Same |
 | BIN DAWOOD, بن داود | Default BLOCK | Same |
-| RESTAURANTS, CAFES (any named restaurant) | Default BLOCK | Entertainment blocked under IR Art. 49(4) |
+| RESTAURANTS, CAFES (any named restaurant) | Default BLOCK | Entertainment blocked under IR Art. 50 |
 
 ### 3.8 SaaS — non-resident suppliers (reverse charge)
 
@@ -372,13 +374,13 @@ Incoming SAR 25,000 from a US company. The client provides IT consulting service
 `15.04.2026 ; THE GLOBE RESTAURANT RIYADH ; DEBIT ; Client dinner ; -1,800.00 ; SAR`
 
 **Reasoning:**
-Restaurant transaction. Entertainment and hospitality expenses for non-business purposes are blocked under IR Article 49(4). Client entertainment is a hard block — the input VAT is irrecoverable. Default: full block.
+Restaurant transaction. Entertainment and hospitality expenses for non-business purposes are blocked under IR Article 50. Client entertainment is a hard block — the input VAT is irrecoverable. Default: full block.
 
-**Output table**
+**Output table**  _(https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Amendments-to-the-Implementing-Regulation-of-%28VAT%29.PDF)_
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Question? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 15.04.2026 | THE GLOBE RESTAURANT | -1,800.00 | -1,800.00 | 0 | — | — | Y | Q2 | "Entertainment: blocked under IR Art. 49(4)" |
+| 15.04.2026 | THE GLOBE RESTAURANT | -1,800.00 | -1,800.00 | 0 | — | — | Y | Q2 | "Entertainment: blocked under IR Art. 50" |
 
 ### Example 4 — Domestic standard-rated purchase (office equipment)
 
@@ -400,13 +402,13 @@ Jarir is a local retailer (Section 3.10). The gross amount is SAR 5,750 inclusiv
 `22.04.2026 ; AL JAZIRAH VEHICLES ; DEBIT ; Monthly car lease ; -4,500.00 ; SAR`
 
 **Reasoning:**
-Car lease payment. Input VAT on motor vehicles (purchase, lease, running costs) is blocked under IR Article 49(3) unless the vehicle is essential to the business (taxi, delivery, car rental, transportation business). An IT consultant does not qualify. Default: full block.
+Car lease payment. Input VAT on motor vehicles (purchase, lease, running costs) is blocked under IR Article 50 unless the vehicle is essential to the business (taxi, delivery, car rental, transportation business). An IT consultant does not qualify. Default: full block.
 
-**Output table**
+**Output table**  _(https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Amendments-to-the-Implementing-Regulation-of-%28VAT%29.PDF)_
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Question? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 22.04.2026 | AL JAZIRAH VEHICLES | -4,500.00 | -4,500.00 | 0 | — | — | Y | Q3 | "Motor vehicle: blocked under IR Art. 49(3)" |
+| 22.04.2026 | AL JAZIRAH VEHICLES | -4,500.00 | -4,500.00 | 0 | — | — | Y | Q3 | "Motor vehicle: blocked under IR Art. 50" |
 
 ### Example 6 — Exempt financial service (bank charges)
 
@@ -432,7 +434,7 @@ Each rule states the legal source and the field mapping. Apply silently if the d
 
 ### 5.2 Zero-rated supplies (Art. 33-37)
 
-- **Zero-rated supplies** — Exports of goods outside GCC implementing states with proof of export (customs declaration, bill of lading). Report in Field 6. Exports of services to non-resident outside KSA (no KSA establishment, service not related to goods/real estate in KSA). Report in Field 6. International transport of goods and passengers. Report in Field 6. Zero-rated domestic sales (qualifying medicines per SFDA list, investment metals 99%+ purity, supplies to diplomats). Report in Field 5. First supply of residential property within 3 years up to SAR 1,000,000 cap. Report in Field 5. No output VAT. Full input tax recovery on related costs.  _(Art. 33-37)_
+- **Zero-rated supplies** — Exports of goods outside GCC implementing states with proof of export (customs declaration, bill of lading). Report in Field 6. Exports of services to non-resident outside KSA (no KSA establishment, service not related to goods/real estate in KSA). Report in Field 6. International transport of goods and passengers. Report in Field 6. Zero-rated domestic sales (qualifying medicines per SFDA list, investment metals 99%+ purity, supplies to diplomats). Report in Field 5. Supplies of real estate by transfer of ownership (commercial, residential or land) are exempt, not zero-rated; report with exempt sales. No output VAT. Full input tax recovery on related costs.  _([Art. 33-37](https://zatca.gov.sa/en/RulesRegulations/Taxes/Documents/Implmenting%20Regulations%20of%20the%20VAT%20Law_EN.pdf))_
 
 ### 5.3 Exempt supplies (Art. 29-30)
 
@@ -460,7 +462,7 @@ Each rule states the legal source and the field mapping. Apply silently if the d
 
 ### 5.9 Blocked input tax (IR Art. 49)
 
-- **Blocked categories** — The following categories have zero VAT recovery: - Motor vehicles: purchase, lease, running costs — IR Art. 49(3). Exception: vehicle is essential to the business (taxi, delivery fleet, car rental, transportation business). - Entertainment, hospitality, recreation for non-business purposes — IR Art. 49(4). Exception: staff meals at workplace may be claimable. - Employee personal benefits: housing, childcare (unless legally required) — IR Art. 49(5). - Costs related to exempt supplies — Art. 46(1). Blocked categories override any other recovery rule. Check blocked status before applying recovery.  _(IR Art. 49)_
+- **Blocked categories** — The following categories have zero VAT recovery: - Motor vehicles: purchase, lease, running costs — IR Art. 50. Applies to vehicles designed to carry no more than ten persons. Exceptions: vehicles used exclusively for economic activity without being made available for personal use, vehicles acquired for resale or lease, trucks/cranes/heavy machinery, emergency vehicles. - Entertainment, hospitality, recreation for non-business purposes — IR Art. 50. Exception: staff meals at workplace are claimable only where the taxable person is legally obligated to provide them to employees under Kingdom regulations. - Employee personal benefits: housing, childcare (unless legally required) — IR Art. 50. - Costs related to exempt supplies — Art. 46(1). Blocked categories override any other recovery rule. Check blocked status before applying recovery.  _([IR Art. 49](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Amendments-to-the-Implementing-Regulation-of-%28VAT%29.PDF))_
 
 ### 5.10 E-invoicing compliance
 
@@ -468,11 +470,11 @@ Each rule states the legal source and the field mapping. Apply silently if the d
 
 ### 5.11 Credit notes and adjustments
 
-- **Credit notes and adjustments** — Credit notes issued reduce output tax. Credit notes received reduce input tax. Enter in Field 16 (output adjustments) and Field 17 (input adjustments). For errors in prior returns: if VAT difference exceeds SAR 5,000, mandatory voluntary disclosure via ZATCA portal. If SAR 5,000 or less, correct in next return.
+- **Credit notes and adjustments** — Credit notes issued reduce output tax. Credit notes received reduce input tax. Enter in Field 16 (output adjustments) and Field 17 (input adjustments). For errors in prior returns (Article (63) as amended): an understatement of net VAT is corrected using the “Corrections” section in the VAT return for the tax period in which the error was discovered; an overstatement may be corrected in any subsequent VAT return within the timeframe in Paragraph (4) of Article (63).  _(https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Amendments-to-the-Implementing-Regulation-of-%28VAT%29.PDF)_
 
 ### 5.12 Penalty amnesty
 
-- **Penalty amnesty** — ZATCA penalty cancellation initiative extended to 30 June 2026. Covers late registration, late filing, late payment, and correction penalties. Requires: taxpayer registered, all returns submitted, full principal tax paid.
+- **Penalty amnesty** — ZATCA penalty cancellation initiative extended to 31 December 2026 (excludes penalties associated with any tax return due after June 30, 2026). Covers late registration, late filing, late payment, and correction penalties. Requires: taxpayer registered, all returns submitted, full principal tax paid.  _(https://zatca.gov.sa/en/MediaCenter/News/Pages/Cancellation-of-fines-Dec-2026.aspx)_
 
 ### 5.13 Sales — domestic standard
 

@@ -8,12 +8,12 @@ metadata:
   jurisdiction: "EG"
   tax_year: "2025"
   last_updated: "2026-07-22"
+  authored_by: "Ahmed Hassan"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
-# Egypt Transfer Pricing
-
-## Egypt Transfer Pricing (تسعير المعاملات بين الشركات المرتبطة) Skill v0.1
+# Egypt Transfer Pricing (تسعير المعاملات بين الشركات المرتبطة) Skill v0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,20 +24,10 @@ This skill covers Egyptian **transfer pricing (TP)** compliance for resident com
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
 > **YMYL — verify before relying.** Egyptian TP guidelines, thresholds, and penalty rates are subject to amendment (most recently Laws 5, 6, 7 of 2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
 
-## What this file is
-
-**This file is a content skill that loads on top of a workflow base** (here: `transfer-pricing-workflow-base`). It provides Egypt-specific TP rules, documentation thresholds, methods, filing deadlines, penalty regimes, and APA procedure.
-
-**Tax year coverage.** This skill is current for **tax year 2025** as of its currency date.
-
-**The reviewer is the customer of this output.** Per the base, this skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
-
 ## Section 1 — Quick Reference
 
-**Quick Reference**
-
 | Field | Value |
-| --- | --- |
+|---|---|
 | Country | Egypt (جمهورية مصر العربية) |
 | Tax authority | Egyptian Tax Authority (ETA — مصلحة الضرائب المصرية, eta.gov.eg) |
 | Primary TP legislation | Article 30, Income Tax Law No. 91 of 2005 (قانون الضريبة على الدخل) |
@@ -52,14 +42,14 @@ This skill covers Egyptian **transfer pricing (TP)** compliance for resident com
 | Documentation language | Arabic; English accepted for MNE groups with non-Arabic parents |
 | Skill version | 0.1 |
 
+---
+
 ## Section 2 — Legal Foundation
 
 ### 2.1 Primary Articles
 
-**Primary Articles**  _(Executive Regs Art 39; Law 91/2005; Ministerial Decrees 547/2018, 221/2018; Unified Tax Procedures Law 206/2020)_
-
 | Source | Scope |
-| --- | --- |
+|---|---|
 | **Law 91/2005 Art 30** | Arm's length principle applied to transactions between related parties — commercial, financial, goods, services, cost contributions, royalties, interest, other commercial/financial transactions |
 | **Law 91/2005 Executive Regs Art 38** | Related-party scope; application of arm's length principle |
 | **Law 91/2005 Executive Regs Art 39** | Recognised TP methods (CUP, RPM, CPM, TNMM, PSM); other appropriate methods permitted with supporting documentation |
@@ -84,16 +74,16 @@ Related parties exist where the relationship affects, directly or indirectly (th
 
 > **Note.** Ownership attributed by a related party may not be reassigned to another. Employees/clients are not related parties solely by virtue of that relationship unless it affects the tax base.
 
+---
+
 ## Section 3 — Documentation Requirements
 
 Egypt follows the OECD BEPS Action 13 three-tier documentation model.
 
 ### 3.1 Documentation Threshold
 
-**Documentation Threshold**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Master File + Local File required | Aggregated annual related-party transactions > **EGP 15 million** |
 | Below threshold | Arm's length pricing must still be substantiated; TP policy/strategy recommended but documentation not mandatory |
 | Individual transaction records | Maintain records of material controlled transactions (> EGP 1m individually as a practical benchmark; no statutory individual threshold) |
@@ -102,10 +92,8 @@ Egypt follows the OECD BEPS Action 13 three-tier documentation model.
 
 ### 3.2 Master File
 
-**Master File**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Required? | Yes, where EGP 15m threshold met |
 | Format | OECD-aligned per BEPS Action 13 |
 | Content | Group organisational structure; description of business; intangibles ownership and strategy; intercompany financial activities; consolidated financial and tax positions |
@@ -115,10 +103,8 @@ Egypt follows the OECD BEPS Action 13 three-tier documentation model.
 
 ### 3.3 Local File
 
-**Local File**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Required? | Yes, where EGP 15m threshold met |
 | Format | OECD-aligned; entity-specific analysis of material transactions |
 | Content | Local entity business description; FAR analysis (functions, assets, risks); controlled transaction descriptions; method selection; comparability analysis and benchmarking; financial data |
@@ -128,10 +114,8 @@ Egypt follows the OECD BEPS Action 13 three-tier documentation model.
 
 ### 3.4 Country-by-Country Report (CbCR)
 
-**Country-by-Country Report (CbCR)**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Egyptian-parent threshold | MNE groups with consolidated group revenue ≥ **EGP 3 billion** (≈ EUR 750m; aligned with OECD CbCR threshold) |
 | Non-Egyptian-parent threshold | OECD EUR 750m applies; Egyptian subsidiaries must file CbCR Notification in each tax year |
 | Surrogate filing | Egyptian subsidiary may be required to file locally if the parent's jurisdiction does not require CbCR, does not have automatic exchange with Egypt, or fails to file |
@@ -140,14 +124,14 @@ Egypt follows the OECD BEPS Action 13 three-tier documentation model.
 | Notification | Required for each Egyptian subsidiary of an MNE group meeting the threshold |
 | Effective | From fiscal years beginning on/after 1 January 2018 |
 
+---
+
 ## Section 4 — Transfer Pricing Methods
 
 ### 4.1 Accepted Methods (Executive Regs Art 39)
 
-**Accepted Methods**  _(Executive Regs Art 39)_
-
 | Method | Accepted | Best suited for |
-| --- | --- | --- |
+|---|---|---|
 | Comparable Uncontrolled Price (CUP) | Yes | Commodities, standard goods with public prices; must be applied where reliable comparables available |
 | Resale Price Method (RPM) | Yes | Distributors that add limited value to goods purchased from related parties |
 | Cost Plus Method (CPM) | Yes | Manufacturers; service providers; routine back-office functions |
@@ -161,10 +145,8 @@ Egypt applies the **"most appropriate method"** criterion (Egyptian TPG §2.3.2)
 
 ### 4.3 Comparability Analysis
 
-**Comparability Analysis**
-
 | Requirement | Detail |
-| --- | --- |
+|---|---|
 | OECD TPG Chapter III alignment | Yes, Egypt follows the OECD approach |
 | Comparability adjustments | Required where differences between controlled and uncontrolled transactions affect price/margin (Egyptian TPG Chapter 4) |
 | Arm's length range | Permitted; statistical measures (interquartile range) applied where sufficient comparables exist |
@@ -174,10 +156,8 @@ Egypt applies the **"most appropriate method"** criterion (Egyptian TPG §2.3.2)
 
 ### 4.4 Intra-Group Services
 
-**Intra-Group Services**
-
 | Field | Detail |
-| --- | --- |
+|---|---|
 | Dedicated guidance in Egyptian TPG? | No (OECD TPG consulted for detail) |
 | Low-value-adding services safe harbour? | No |
 | Benefit test | Apply OECD TPG Chapters IV and VII principles — services must provide economic/commercial value; shareholder-type costs generally not chargeable |
@@ -187,23 +167,21 @@ Egypt applies the **"most appropriate method"** criterion (Egyptian TPG §2.3.2)
 
 ### 4.5 Financial Transactions / Thin Capitalisation
 
-**Financial Transactions / Thin Capitalisation**
-
 | Field | Detail |
-| --- | --- |
+|---|---|
 | Dedicated TP guidance for financial transactions? | No (OECD TPG consulted) |
 | Thin-cap rule | Law 91/2005 Art 24 — interest on loans exceeding **2× the Central Bank of Egypt (CBE) credit/discount rate** at the start of the calendar year is non-deductible |
 | BEPS Action 4 implementation | Not fully implemented; Egypt relies on the Art 24 interest cap |
 | Other financial rules | Art 52 (no deduction of distributions to owners); Art 56 (20% WHT on payments to non-residents) |
 
+---
+
 ## Section 5 — Filing Obligations and Deadlines
 
 ### 5.1 Filing Matrix
 
-**Filing Matrix**
-
 | Obligation | File | Deadline |
-| --- | --- | --- |
+|---|---|---|
 | CIT return | CITR | Within 30 April following the fiscal year-end (standard fiscal year 1 Jan – 31 Dec) unless an extension applies; ETA returns may be filed up to 30 days late with revised return (preserves Local File deadline) |
 | Local File | TP documentation | **Within 2 months** of filing the CITR (or revised CITR) |
 | Master File | TP documentation | Aligns with the ultimate parent's own Master File filing deadline in its home jurisdiction |
@@ -212,13 +190,13 @@ Egypt applies the **"most appropriate method"** criterion (Egyptian TPG §2.3.2)
 
 ### 5.2 Retention and Language
 
-**Retention and Language**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Documentation retention | Retain during the tax statute of limitations (5 years per Unified Tax Procedures Law; longer if audit open) |
 | Language | Arabic; supplementary English accepted for MNE groups |
 | Production on audit | Must be produced on ETA request; failure to produce is a basis for ETA estimation |
+
+---
 
 ## Section 6 — Penalties
 
@@ -226,10 +204,8 @@ Egypt applies the **"most appropriate method"** criterion (Egyptian TPG §2.3.2)
 
 Egypt's TP penalty regime follows a percentage-of-transaction-value model, capped at **3% of total related-party transactions** per year (per Law 206/2020 and ETA practice):
 
-**Percentage-Based TP Penalties**  _(per Law 206/2020 and ETA practice)_
-
 | Violation | Penalty Rate |
-| --- | --- |
+|---|---|
 | Failure to disclose related-party transactions in the tax return | **1%** of the transaction value |
 | Failure to submit the Local File | **3%** of the transaction value |
 | Failure to submit the Master File | **3%** of the transaction value |
@@ -238,30 +214,26 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 
 ### 6.2 General CIT Late Filing / Late Payment Penalties (Law 91/2005)
 
-**General CIT Late Filing / Late Payment Penalties**  _(Law 91/2005 Arts 110-111)_
-
 | Provision | Detail |
-| --- | --- |
+|---|---|
 | Late filing penalty | Art 110 CIT Law — **2%/month** on tax due, from the day following the legal deadline |
 | Late payment penalty | Art 111 CIT Law — **1.5%/month** from the deadline until full payment |
 | TP audit-driven assessments | Adjusted tax follows general CIT penalty rules above, on top of TP percentage penalties in §6.1 |
 
 ### 6.3 Additional Risks
 
-**Additional Risks**
-
 | Risk | Detail |
-| --- | --- |
+|---|---|
 | ETA estimation | Without sufficient documentation, the ETA may estimate arm's length prices — the burden shifts to the taxpayer to disprove the estimate |
 | Reassessment window | 5 years from filing (or 6 years if fraud); extended by Unified Tax Procedures Law 206/2020 in certain cases |
 | Criminal exposure | Introduced by Law 7/2025 — tax evasion including deliberate mis-statement of related-party prices may attract criminal liability; qualified professional review strongly advised |
 
+---
+
 ## Section 7 — Advance Pricing Agreements (APA)
 
-**Advance Pricing Agreements (APA)**
-
 | Item | Detail |
-| --- | --- |
+|---|---|
 | Availability | Yes — available under Ministerial Decree 221/2018 (amending Art 30 ITL) |
 | Types | Unilateral, bilateral, and multilateral APAs |
 | Administrator | Egyptian Tax Authority (ETA) — competent authority function |
@@ -273,24 +245,24 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 | Fees | No statutory fee structure; professional fees apply |
 | Practical use | Limited uptake; advance tax rulings and bilateral negotiations more common in practice |
 
+---
+
 ## Section 8 — Safe Harbours and Simplified Approaches
 
-**Safe Harbours and Simplified Approaches**
-
 | Area | Detail |
-| --- | --- |
+|---|---|
 | Low-value-adding services safe harbour | **No** — full arm's length analysis required; OECD TPG Chapter VII consulted |
 | Interest rate safe harbour | **No** — thin-cap governed by Art 24 (2× CBE rate) and arm's length principle; no reduced-rate safe harbour |
 | Thin cap | 2× CBE credit/discount rate (cost not deductible beyond this) — a deduction cap, not a TP method |
 | CbCR safe harbour | **No** — full OECD template required |
 | General position | All cross-border and domestic related-party transactions must meet the arm's length standard |
 
+---
+
 ## Section 9 — Recent Developments
 
-**Recent Developments**
-
 | Date | Development |
-| --- | --- |
+|---|---|
 | 2005 | Law 91/2005 Art 30 enacted — Egypt becomes the first ME country with TP legislation (CUP, RPM, CPM initially) |
 | 2010 | First Egyptian TP Guidelines issued (closely follow OECD TPG) |
 | May 2018 | Ministerial Decree 221/2018 — added TNMM and PSM; authorised APAs; broadened scope of related-party transactions |
@@ -302,12 +274,12 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 | Ongoing | ETA building TP audit capacity; increased audit focus on royalties, management fees, and IP |
 | Ongoing | CbCR used for risk assessment and audit selection; exchange of CbC reports under MCAA |
 
+---
+
 ## Section 10 — Interaction with Other Skills
 
-**Interaction with Other Skills**
-
 | Related skill | Interaction |
-| --- | --- |
+|---|---|
 | eg-corporate-tax | TP adjustments directly affect taxable income and CIT liability; adjustments flow through the CITR |
 | eg-withholding-tax | Art 56 WHT at 20% applies to payments to non-resident affiliates (before treaty relief); royalty/interest/fees in scope |
 | eg-income-tax | Related-party transactions affect individual income tax for owners/partners |
@@ -316,6 +288,8 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 | eg-formation | New entities must consider TP policy from formation; related-party agreements should be in place from day one |
 | transfer-pricing-workflow-base | Workflow base for this content skill — controls documentation and formatting |
 | Cross-border treaty skills | Egypt's ~60 tax treaties provide WHT relief and MAP/APA pathways for related-party cross-border transactions |
+
+---
 
 ## Sources
 
@@ -329,6 +303,8 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 - **Andersen in Egypt "Transfer Pricing Regulations in Egypt and India" (Dec 2025)** — eg.andersen.com
 - **Thomson Reuters "Egypt Enhances Transfer Pricing Rules" (Jul 2018)** — tax.thomsonreuters.com
 - **PwC Worldwide Tax Summaries — Egypt** — taxsummaries.pwc.com/egypt
+
+---
 
 ## Disclaimer
 

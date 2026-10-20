@@ -6,6 +6,8 @@ jurisdiction: SG
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
+source_checked: 2026-10-17
 depends_on:
   - bookkeeping-workflow-base
 category: tax-optimization
@@ -17,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 1 — Quick Reference
 
-**Quick Reference Table**
+**Quick Reference Table**  _(https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/filing-a-paper-income-tax-return)_
 
 | Field | Value |
 | --- | --- |
@@ -27,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Income Tax Act 1947 (ITA); Goods and Services Tax Act (GSTA) |
 | Anti-avoidance | Section 33 ITA (general anti-avoidance); Section 33A (specific surcharge avoidance) |
 | Tax authority | Inland Revenue Authority of Singapore (IRAS) |
-| Filing deadline | 15 April (paper); 18 April (e-filing) |
+| Filing deadline | 18 April (paper and e-filing) |
 | Individual top rate | 24% (on income >$1,000,000) |
 | Corporate rate | 17% flat (with exemptions reducing effective rate) |
 | Capital gains tax | None (unless income in nature) |
@@ -54,7 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 500,001 – 1,000,000 | 23% | $199,150 |
 | Above 1,000,000 | 24% | — |
 
-- **YA 2026 Personal Income Tax Rebate** — 60% of tax payable, capped at $200 (automatically applied).
+- **YA 2026 Personal Income Tax Rebate** — - YA 2025 Personal Income Tax Rebate — 60% of tax payable, up to $200 (one-off rebate granted for YA 2025 only; it cannot be carried forward).  _(https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/personal-income-tax-rebate)_
 
 No capital gains tax. No estate/inheritance tax. No dividend tax. Territorial system — only Singapore-sourced income and foreign income remitted to Singapore are taxable (with substantial exemptions for individuals).
 
@@ -65,12 +67,12 @@ No capital gains tax. No estate/inheritance tax. No dividend tax. Territorial sy
 - **Sole proprietor** — Business income reported in personal tax return at progressive rates (0%–24%). Simple compliance. Losses offset personal income.
 - **Private Limited Company (Pte Ltd)** — Profits taxed at flat 17%. Effective rate much lower due to exemption schemes.
 
-**Exemption Schemes**
+**Exemption Schemes**  _(https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes)_
 
 | Scheme | First $100k | Next $100k |
 | --- | --- | --- |
 | Start-Up Tax Exemption (SUTE) — first 3 YAs | 75% exempt | 50% exempt |
-| Partial Tax Exemption (PTE) — all companies | 75% exempt | 50% exempt (first $100k at 75% exempt, next $100k at 50%) |
+| Partial Tax Exemption (PTE) — all companies | 75% exempt (first $10,000 only) | 50% exempt (next $190,000) |
 
 - **SUTE effective rate** — SUTE effective rate on first $200,000 profit: ~6.4% (before CIT rebate).
 - **CIT Rebate YA 2026** — 50% of corporate tax payable, capped at $40,000 (less $2,000 CIT Rebate Cash Grant if applicable). Applied automatically.
@@ -91,24 +93,24 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 ### Personal Reliefs (Subject to $80,000 Cap)
 
-**Personal Reliefs Table**
+**Personal Reliefs Table**  _(https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/spouse-relief-spouse-relief-(disability))_
 
 | Relief | Amount | Key Conditions |
 | --- | --- | --- |
 | Earned income relief | $1,000 (below 55); $6,000 (55–59); $8,000 (60+) | Automatic for those with earned income |
-| Spouse relief | $2,000 | Spouse income ≤$4,000/year; living together or maintained |
-| Qualifying child relief (QCR) | $4,000/child | Child under 16, or full-time student/NS, income ≤$4,000 |
+| Spouse relief | $2,000 | Spouse income ≤$8,000/year (from YA 2025); living together or maintained |
+| Qualifying child relief (QCR) | $4,000/child | Child under 16, or 16+ studying full-time, income ≤$8,000 (from YA 2025) |
 | Handicapped child relief | $7,500/child | In lieu of QCR if child is handicapped |
-| Working mother's child relief (WMCR) | 15%/20%/25% of mother's earned income (1st/2nd/3rd+ child) | Mother must be married, divorced, or widowed. Combines with QCR up to $50,000/child |
-| Parent relief | $9,000 (living together); $5,500 (not living together) | Parent 55+, income ≤$4,000, living in Singapore |
+| Working mother's child relief (WMCR) | Child born/adopted before 1 Jan 2024: 15%/20%/25% of mother's earned income (1st/2nd/3rd+ child); on or after 1 Jan 2024: $8,000/$10,000/$12,000 | Mother must be married, divorced, or widowed. Combines with QCR up to $50,000/child |
+| Parent relief | $9,000 (living together); $5,500 (not living together) | Parent 55+, income ≤$8,000 (from YA 2025), living in Singapore; if not living together you incurred $2,000 or more supporting them |
 | Handicapped parent relief | $14,000 / $10,000 | In lieu of parent relief |
 | Grandparent caregiver relief | $3,000 | Working mother; grandparent/parent cares for child |
-| Life insurance relief | Lower of premiums paid or $5,000 | Only if CPF contributions <$5,000 |
-| Course fees relief | $5,500 | Courses for degree, diploma, professional qualification |
+| Life insurance relief | Lower of: $5,000 minus your CPF contributions; or premiums paid (up to 7% of the insured value) | Only if CPF contributions <$5,000 |
+| Course fees relief | $5,500 (discontinued from YA 2026; YA 2025 was the final year of claim) | Courses for degree, diploma, professional qualification |
 | CPF relief | Mandatory CPF contributions | Auto-included. Self-employed: MediSave contributions |
 | CPF cash top-up relief | Up to $8,000 (self) + $8,000 (family member) | Top-up to Special/Retirement/MediSave account |
 | SRS relief | Up to $15,300 (citizen/PR) or $35,700 (foreigner) | Contributions by 31 December |
-| NSman relief | $1,500–$5,000 | Active/non-active NSman and spouse/parent |
+| NSman relief | $1,500–$5,000 (NSman self); $750 (wife or parent) | Active/non-active NSman and spouse/parent |
 
 ### Self-Employed Deductions (Trade, Business, Profession)
 
@@ -128,15 +130,15 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 ### Section 19/19A — Capital Allowances (Depreciation for Tax)
 
-**Capital Allowances Methods**
+**Capital Allowances Methods**  _(https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-allowances/capital-allowances)_
 
 | Method | Detail |
 | --- | --- |
 | Section 19 — over working life | Claim over prescribed or estimated working life of the asset |
-| Section 19A — 1-year write-off | Immediate 100% write-off of qualifying plant and machinery in the year of purchase. Powerful accelerated deduction |
+| Section 19A — 1-year write-off | Immediate 100% write-off in the year of purchase, only for computers and prescribed automation equipment [Section 19A(2)] and low-value assets [Section 19A(10A)] |
 | Section 19A — 3-year write-off | Spread equally over 3 years. Useful if company is in loss and wants to utilise CAs when profitable |
 
-- **Section 19A(1) one-year write-off default** — Section 19A(1) one-year write-off is the default accelerated option for most equipment, computers, furniture, and tools. No cost cap per asset.
+- **Section 19A(1) one-year write-off default** — Section 19A(1) is the 3-year write-off for plant and machinery such as furniture and tools. The 100% 1-year write-off applies only to computers and prescribed automation equipment [Section 19A(2)] and low-value assets [Section 19A(10A)].  _(https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-allowances/capital-allowances)_
 
 ### Low-Value Assets
 
@@ -148,7 +150,7 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 ### Intellectual Property
 
-- **Writing-down allowances on IP** — Writing-down allowances on qualifying IP (patents, copyrights, trademarks, designs) under s 19B ITA. 5-year or 10-year write-off from date of registration/acquisition.  _(s 19B ITA)_
+- **Writing-down allowances on IP** — Writing-down allowances on qualifying IP (patents, copyrights, trademarks, designs) under s 19B ITA. 5-year, 10-year or 15-year write-off (irrevocable election) from the YA in which the capital expenditure is incurred.  _([s 19B ITA](https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-allowances/writing-down-allowances-for-intellectual-property-rights-(iprs)))_
 
 ## Section 5 — Loss Utilization
 
@@ -162,7 +164,7 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 ### Carry Back (Group Relief)
 
-- **Carry-back of losses** — Unabsorbed CAs, trade losses, and donations can be carried back 1 YA (up to $100,000) under s 37E — claim must be made within the filing deadline.  _(s 37E)_
+- **Carry-back of losses** — Current year unutilised CAs and trade losses (not donations) can be carried back 1 YA (up to $100,000) under s 37E — claim must be made within the filing deadline.  _([s 37E](https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-reliefs/loss-carry-back-relief))_
 - **Group relief** — Current-year unabsorbed losses, CAs, and donations can be transferred to related Singapore companies (75%+ common ownership).  _(s 37C)_
 
 ### Loss Planning
@@ -189,17 +191,17 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 ## Section 7 — GST Optimization
 
-**GST Optimization Table**
+**GST Optimization Table**  _(https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/do-i-need-to-register-for-gst)_
 
 | Topic | Detail |
 | --- | --- |
-| Registration threshold | Mandatory if taxable turnover >$1 million (retrospective 12 months or prospective 12 months). Voluntary registration below threshold to claim input tax |
+| Registration threshold | Mandatory if taxable turnover >$1 million (retrospective: at the end of the calendar year; or prospective: expected in the next 12 months). Voluntary registration below threshold to claim input tax |
 | Voluntary registration trade-off | Allows input GST credits but must charge 9% GST to customers. Advantageous if customers are GST-registered businesses (they claim it back). Disadvantageous for B2C businesses (price-sensitive consumers) |
 | Input tax claims | GST on business expenses. Not claimable on: motor vehicle expenses (private), club memberships, medical expenses (with exceptions), transaction costs for share/property transfers |
 | Exempt supplies | Financial services, sale/lease of residential property, import/local supply of investment precious metals. No GST charged, limited input credit |
 | Zero-rated exports | International services and exported goods at 0% GST. Full input credit claimable. Excellent for export-oriented businesses |
-| Tourist refund scheme | Tourists can claim GST refund on qualifying purchases >$100 via eTRS |
-| Reverse charge | From 1 Jan 2020: GST-registered businesses must self-account for GST on imported services (B2B). Prevents advantage of importing services from overseas |
+| Tourist refund scheme | Tourists can claim GST refund on qualifying purchases of at least $100 (including GST) via eTRS |
+| Reverse charge | From 1 Jan 2020: GST-registered businesses not entitled to full input tax credit (they make exempt supplies or receive non-business receipts) must self-account for GST on imported services (B2B). Prevents advantage of importing services from overseas |
 | Simplified Filing | Major Exporter Scheme, Approved 3rd Party Logistics, Import GST Deferment Scheme — various cash-flow benefits for qualifying businesses |
 
 ## Section 8 — CPF & Social Security Optimization
@@ -208,17 +210,17 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 - **Employees mandatory contribution** — Mandatory CPF contributions by employer and employee.
 
-**CPF Contribution Rates by Age**
+**CPF Contribution Rates by Age**  _(https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay)_
 
 | Age | Employee Rate | Employer Rate | Total |
 | --- | --- | --- | --- |
 | ≤55 | 20% | 17% | 37% |
-| 55–60 | 15% | 14.5% | 29.5% |
-| 60–65 | 9.5% | 11% | 20.5% |
-| 65–70 | 7% | 8.5% | 15.5% |
+| 55–60 | 18% | 16% | 34% |
+| 60–65 | 12.5% | 12.5% | 25% |
+| 65–70 | 7.5% | 9% | 16.5% |
 | 70+ | 5% | 7.5% | 12.5% |
 
-- **Ordinary Wage / Additional Wage ceilings** — Ordinary Wage ceiling: $7,400/month (from 1 Jan 2026). Additional Wage ceiling ensures total annual CPF does not exceed $44,400 (employee share, based on OW + AW caps).
+- **Ordinary Wage / Additional Wage ceilings** — Ordinary Wage ceiling: $8,000/month (from 1 Jan 2026). The CPF annual wage ceiling of $102,000 limits total wages (OW + AW) attracting CPF in a year.  _(https://www.cpf.gov.sg/member/infohub/news/news-releases/cpf-related-changes-taking-place-in-2026-what-you-need-to-know)_
 - **Self-employed CPF contributions** — Self-employed: mandatory MediSave contributions only (based on net trade income). No mandatory OA/SA contributions — but voluntary contributions possible.
 
 ### CPF Cash Top-Up Relief
@@ -279,7 +281,7 @@ Singapore residents benefit from:
 
 ### IRAS Scrutiny Triggers
 
-**IRAS Scrutiny Triggers Table**
+**IRAS Scrutiny Triggers Table**  _(https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates)_
 
 | Trigger | Risk |
 | --- | --- |
@@ -290,7 +292,7 @@ Singapore residents benefit from:
 | Non-arm's length transactions with related parties | Transfer pricing adjustments (s 34D, 34E ITA) |
 | Trading income disguised as capital gains | Reclassification — assessed at income tax rates |
 | SRS over-contribution | No additional relief; funds cannot be withdrawn without penalty |
-| Non-resident claiming resident rates | 183-day rule strictly applied. Non-residents taxed at 15% or resident rates (higher of) |
+| Non-resident claiming resident rates | 183-day rule strictly applied. Non-resident employment income taxed at 15% or resident rates (higher of); other income (e.g. director's fees, rental) at 24% |
 | Failure to register for GST above $1m threshold | Penalties: up to $10,000 fine + 10% of GST unpaid |
 | Employment income channelled through company to avoid personal tax | s 33 application; shareholder benefit assessment |
 
@@ -300,14 +302,14 @@ Singapore residents benefit from:
 
 ## Section 11 — Annual Tax Planning Calendar
 
-**Annual Tax Planning Calendar Table**
+**Annual Tax Planning Calendar Table**  _(https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/filing-a-paper-income-tax-return)_
 
 | When | Action |
 | --- | --- |
 | January | New YA begins (on prior-year income). Review SRS contribution (if not maxed by 31 Dec). Finalise IR8A preparation (employers) |
 | February | Receive IR8A from employer. Gather donation receipts, CPF statements, rental income records |
 | March | Prepare tax return. Verify pre-filled reliefs on myTax Portal. File early for faster processing |
-| April 15/18 | Filing deadline (paper/e-file). Ensure all reliefs claimed and verified |
+| April 18 | Filing deadline (paper and e-file). Ensure all reliefs claimed and verified |
 | May–June | Receive Notice of Assessment. Object within 30 days if incorrect. Pay tax by due date (usually ~1 month after NOA) |
 | July | Mid-year review. Estimate annual income for SRS/CPF planning. Review GST registration threshold |
 | September | GIRO instalment payments (if applicable). Review YA position for carry-back elections |
@@ -342,7 +344,7 @@ Donate $10,000 to an IPC. Tax deduction: $25,000 (250%). At 22% marginal rate: *
 
 ### Example 4 — Section 19A One-Year Write-Off
 
-Company purchases $150,000 of equipment. Section 19A: full deduction in Year 1. At 17% corporate rate: **$25,500 tax saving** in the year of purchase (vs spreading over useful life). With CIT rebate (50%): effective saving amplified.
+Company purchases $150,000 of equipment. Section 19A: full deduction in Year 1 only if the equipment is computers or prescribed automation equipment [Section 19A(2)]; other equipment is written off over 3 years [Section 19A(1)]. At 17% corporate rate: **$25,500 tax saving** in the year of purchase (vs spreading over useful life). With CIT rebate (50%): effective saving amplified.
 
 ## Disclaimer
 

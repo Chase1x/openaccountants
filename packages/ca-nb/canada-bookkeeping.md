@@ -7,10 +7,11 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Khushboo Talreja, CPA
 review_status: current
+trust_label: Checked by Khushboo Talreja, CPA
 depends_on:
   - bookkeeping-workflow-base
 category: bookkeeping
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "ZA"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Werner Britz, CA(SA)"
   reviewed_by: "Werner Britz"
+  trust_label: "Checked by Werner Britz"
   review_status: "current"
 ---
 
@@ -27,7 +29,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Country** — South Africa (Republic of South Africa)
 - **Tax** — VAT (Value-Added Tax)
 - **Currency** — ZAR (South African Rand / R)
-- **Tax year** — VAT has tax periods, not tax years, and there is no QUARTERLY category in SA. Categories under s 27: A (bimonthly), B (monthly, >R30m), C (six-monthly farming below R1.5m), D (annual connected-party farming/rental), E (annual rental between certain connected persons), F (four-monthly micro businesses on turnover tax).  _(VAT Act s 27)_
+- **Tax year** — VAT has tax periods, not tax years, and there is no QUARTERLY category in SA. Categories under s 27: A (bimonthly, periods ending January, March, May, July, September, November), B (bimonthly, periods ending February, April, June, August, October, December), C (monthly, >R30m), D (six-monthly: farming below R1.5m, or micro businesses registered for turnover tax on application), E (annual: companies/trusts letting property, renting goods or managing companies for connected persons).  _([VAT Act s 27](https://www.sars.gov.za/types-of-tax/value-added-tax/tax-periods-for-vat-vendors/))_
 - **Standard rate** — 15%  _(VAT Act s 7(1)(a); SARS media release 25 April 2025)_
 - **Zero rate list** — Two problems: (1) "Residential accommodation on long-term letting by developers" is EXEMPT under s 12(c), not zero-rated. (2) "Certain financial instruments" is misleading - financial instruments are generally exempt under s 2/s 12; the only zero-rated financial supply is gold supplied to the SARB or a bank under s 11(1)(k). Add: supply of an enterprise as a going concern (s 11(1)(e)); illuminating paraffin (s 11(1)(h)); certain government grants; agricultural inputs; deemed exports of second-hand goods.  _(VAT Act s 11 and s 12(c))_
 - **Exempt list** — "Lending" alone is too narrow - the s 2 definition covers exchange of currency, dealing in securities, life insurance/reinsurance, retirement annuity contributions, etc. SHORT-TERM insurance is standard-rated (not exempt). Add to list: educational services by recognised institutions; childcare and creche; donated goods/services by associations not for gain.  _(VAT Act s 12 and s 2)_
@@ -155,7 +157,7 @@ Reasonable.
 - **5.5 Imported services** — Definition tighter: imported service is a service supplied by a person not resident or carrying on business in SA, to a SA-resident recipient, used otherwise than for making taxable supplies. Non-vendor individuals are technically required to remit on VAT215 within 30 days - widely ignored in practice but enforceable.  _(VAT Act s 7(1)(c) and s 14; SARS Form VAT215)_
 - **5.6 Anti-avoidance - entertainment** — Largely correct. Add the other exceptions: employee subsistence away from usual place of work; employee canteen for charge; bona fide promotional gifts subject to BGR conditions; long-distance road transport operators meals for drivers.  _(VAT Act s 17(2)(a); BGR 16; SARS IN 70)_
 - **5.7 Motor vehicles** — Mostly correct but tightening needed: the "motor car" definition is wider than "passenger vehicle" colloquially - it includes station wagons, double-cab LDVs (bakkies), minibuses up to 16 seats, and SUVs. The test is OBJECTIVE per IN 82 (passenger area vs loading area). Single-cab bakkies are not motor cars. The "transport services" exception is not in the Act - the actual exception under s 17(2)(c) is for vendors who CONTINUOUSLY OR REGULARLY SUPPLY MOTOR CARS in the ordinary course of business (dealers, rental companies). A passenger transport operator (taxi, ride-hailing) is also caught and CAN claim. The skill conflates these.  _(VAT Act s 1 (motor car) and s 17(2)(c); SARS IN 82; RTCC v CSARS VAT 1345)_
-- **5.8 Filing deadlines table** — No quarterly category. See Section 1 note above. Six categories under s 27: A, B, C, D, E, F.  _(VAT Act s 27)_
+- **5.8 Filing deadlines table** — No quarterly category. See Section 1 note above. Five categories under s 27: A, B, C, D, E.  _([VAT Act s 27](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 - **6.1 Entertainment - is vendor in the hospitality trade?** — Add the other exceptions to the block (see 5.6 above): employee subsistence; employee canteen for charge; promotional gifts subject to BGR conditions.  _(VAT Act s 17(2)(a); BGR 16)_
 - **6.2 Motor car - definition** — Reasonable Tier 2 question but should explicitly state the OBJECTIVE test (passenger area vs loading area per IN 82) and include the double-cab bakkie note (caught as motor car) and SUVs (caught). Also add the rental-company / dealer exception under s 17(2)(c).  _(VAT Act s 1 and s 17(2)(c); SARS IN 82)_
 - **6.3 Rent - landlord opted to charge VAT?** — "Opt to charge VAT" is a UK concept. In SA, commercial landlords charge VAT if they are registered (compulsory or voluntary); residential letting is exempt regardless. Better framing: "Is this commercial or residential property? Is the landlord VAT-registered (check VAT number on invoice)?"  _(VAT Act s 7 and s 12(c))_
@@ -163,7 +165,7 @@ Reasonable.
 - **6.5 Imported services - partial exemption interaction** — Vendor with exempt income may have limited recovery.  _(VAT Act s 17(1))_
 - **MISSING: Fringe benefits as deemed supplies** — See summary critical finding #5. Section 18(3) deems Seventh Schedule fringe benefits as taxable supplies by the employer. Output VAT payable on cash equivalent in the month of accrual. Common items: company car, low-interest loans, free or cheap services, assets at less than market value, residential accommodation, awards over R5,000. Exclusions: exempt supplies, zero-rated supplies, entertainment supplied as a fringe benefit.  _(VAT Act s 18(3), s 9(7), s 10(13))_
 - **MISSING: Adjustments under s 18** — Section 18 adjustments: (a) s 18(1) when goods/services acquired for taxable use are applied for non-taxable use - output VAT payable on lesser of cost or open market value; (b) s 18(4) when previously non-claimed goods/services are applied for taxable use - input VAT claim available; (c) s 18(3) fringe benefits (above); (d) s 18(7) supplies to relatives and connected persons at non-arm's length.  _(VAT Act s 18)_
-- **MISSING: Bad debts and bad debts recovered** — Section 22(1) bad debt relief: vendor on invoice basis may claim input deduction equal to 15/115 of the bad debt amount, where (a) the original supply was taxable, (b) the debt is outstanding more than 12 months from due date, (c) it has been written off in the books. s 22(2) recoupment if subsequently recovered. Common practitioner trap.  _(VAT Act s 22)_
+- **MISSING: Bad debts and bad debts recovered** — Section 22(1) bad debt relief: vendor on invoice basis may claim input deduction equal to 15/115 of the bad debt amount, where (a) the original supply was taxable, (b) the vendor has already accounted for the supply in a VAT return, (c) the debt has been written off as irrecoverable. s 22(2) recoupment if subsequently recovered. Common practitioner trap.  _([VAT Act s 22](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 - **A. Output tax structure** — Logic sound. Map to actual VAT201 fields: A1->Field 1, A2->Field 4, A3->Field 2/2A, A4->Field 3, A5->Field 12 (other and imported services), A6->Field 13. Also add capital goods (Field 1A/4A) and commercial accommodation if applicable.  _(SARS VAT201 completion guide)_
 - **B. Input tax structure** — Logic sound. Map to actual VAT201: B1/B2 -> Field 15 (or Field 14 for capital), B3 -> Field 15A or 14A, B4 -> Field 15 (imported services input), B5 (blocked) -> not a Field; just excluded from claim, B6 -> Field 19.  _(SARS VAT201 completion guide)_
 
@@ -178,7 +180,7 @@ FNB, Standard Bank, ABSA, Nedbank, Capitec column structures
 - **SALARY / WAGES** — Payroll / Out of VAT scope
 - **Q1: VAT number** — VAT registration number (10 digits starting with 4)
 - **Q2: Tax period** — Tax period covered by this bank statement
-- **Q3: Filing frequency** — Add specifically: Category A/B/C/D/E/F.  _(VAT Act s 27)_
+- **Q3: Filing frequency** — Add specifically: Category A/B/C/D/E.  _([VAT Act s 27](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 - **Q4: Exports** — Do you have any exports? Evidence held?  _(Export Regulation GN R316)_
 - **Q5: Exempt income** — Financial services, residential rent  _(VAT Act s 17(1))_
 - **Q6: Entertainment vendor** — Determines whether entertainment input is blocked  _(VAT Act s 17(2)(a))_
@@ -203,14 +205,14 @@ Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 5
 
 ## Section 1 — Quick reference
 
-**Section 1 — Quick reference**
+**Section 1 — Quick reference**  _(https://www.sars.gov.za/types-of-tax/value-added-tax/tax-periods-for-vat-vendors/)_
 
 | Field | Value |
 | --- | --- |
 | Country | South Africa (Republic of South Africa) |
 | Tax | VAT (Value-Added Tax) |
 | Currency | ZAR (South African Rand / R) |
-| Tax year | Tax periods under s 27: Category A bimonthly (default); B monthly (>R30m); C six-monthly (farming <R1.5m); D annual (connected-party farming/rental); E annual (connected-party rental); F four-monthly (micro businesses on turnover tax). No quarterly category exists. |
+| Tax year | Tax periods under s 27: Category A bimonthly (odd months) or B bimonthly (even months) (default, allocated by SARS); C monthly (>R30m); D six-monthly (farming <R1.5m, or micro businesses on turnover tax on application); E annual (companies/trusts supplying connected persons). No quarterly category exists. |
 | Standard rate | 15% |
 | Zero rate | 0% (exports; basic foodstuffs (Schedule 2); international transport; certain farming inputs; petrol/diesel; illuminating paraffin; supply of enterprise as going concern (s 11(1)(e)); gold to SARB/bank) |
 | Exempt | Financial services (narrow s 2 definition -- interest, exchange margins, life insurance, dealing in securities; fee-based services are STANDARD-RATED per s 2(1) proviso), residential rental, public road and rail transport (s 12(g)), educational services by recognised institutions, childcare, donated goods/services by associations not for gain. Short-term insurance is STANDARD-RATED, not exempt. |
@@ -218,7 +220,7 @@ Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 5
 | Tax authority | SARS (South African Revenue Service) |
 | Return form | VAT201 (eFiling) |
 | Filing portal | SARS eFiling (https://efiling.sars.gov.za) |
-| Filing frequencies | Category A bimonthly (default); Category B monthly (>R30m); Category C six-monthly (farming <R1.5m); Category D annual (connected-party farming/rental); Category E annual (connected-party rental); Category F four-monthly (micro businesses on turnover tax) |
+| Filing frequencies | Category A bimonthly (odd months) and Category B bimonthly (even months) (default); Category C monthly (>R30m); Category D six-monthly (farming <R1.5m, or micro businesses on turnover tax); Category E annual (companies/trusts supplying connected persons) |
 | Filing deadline | Last business day of month following tax period (eFiling); 25th for paper (not recommended) |
 | Tax invoice | VAT-compliant invoice — required for input tax |
 | VAT number | Format: 4xxxxxxxx (10 digits starting with 4) |
@@ -229,18 +231,18 @@ Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 5
 
 ### Key VAT201 fields
 
-**Key VAT201 fields**
+**Key VAT201 fields**  _(https://www.sars.gov.za/wp-content/uploads/Ops/Guides/GEN-ELEC-04-G01-Guide-for-completing-the-Value-Added-Tax-VAT201-Declaration-External-Guide.pdf)_
 
 | Field | Meaning |
 | --- | --- |
-| 1 | Standard-rated supplies (VAT-inclusive, excluding capital goods) |
+| 1 | Standard-rated supplies (VAT-inclusive, excluding capital goods and accommodation) |
 | 1A | Standard-rated capital goods supplied (VAT-inclusive) |
 | 2 | Zero-rated supplies (excluding exports) |
 | 2A | Zero-rated exported goods |
 | 3 | Exempt and non-supplies |
 | 4 | Output VAT on Field 1 (Field 1 x 15/115) |
 | 4A | Output VAT on Field 1A |
-| 5 | Commercial accommodation supplied for 28+ days |
+| 5 | Commercial accommodation supplied for more than 28 days (VAT-exclusive; 60% taxed via Field 6) |
 | 9 | Output VAT on commercial accommodation |
 | 10 | Change-in-use / second-hand goods exported (consideration) |
 | 11 | Field 10 x 15/115 |
@@ -286,7 +288,7 @@ Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 5
 
 Minimum viable — bank statement for the tax period in CSV, PDF, or pasted text. VAT registration number (starting with 4).
 
-Recommended — tax invoices for all input tax claims above ZAR 5,000, sales invoices for all output, prior period excess credit (Field 14).
+Recommended — tax invoices for all input tax claims above ZAR 50 (full tax invoice above ZAR 5,000), sales invoices for all output, prior period excess credit.
 
 Ideal — complete creditors/debtors ledger, import VAT certificates (SAD500), asset register, prior VAT201 return.
 
@@ -382,13 +384,13 @@ Refusal if minimum missing — SOFT WARN. No bank statement = hard stop. "Input 
 
 ### 3.6 SaaS — international suppliers (reverse charge / imported services)
 
-- **Imported services rule** — Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT if the recipient is a non-vendor or partially exempt vendor. For fully taxable vendors, VAT on imported services can be claimed back as input tax in the same period — net effect zero.  _(VAT Act Section 7(1)(c))_
+- **Imported services rule** — Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT if the recipient is a non-vendor or partially exempt vendor. Services used wholly to make taxable supplies are not "imported services" as defined, so a fully taxable vendor declares nothing. Where the foreign supplier is registered as an SA vendor (e.g. electronic services), SA VAT is on the invoice and is claimed as normal input tax.  _([VAT Act Section 7(1)(c)](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 
-**SaaS — international suppliers (reverse charge / imported services)**  _(VAT Act Section 7(1)(c))_
+**SaaS — international suppliers (reverse charge / imported services)**  _([VAT Act Section 7(1)(c)](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| GOOGLE (Workspace, Ads, Cloud) | Imported services — self-assess 15% | Output and input in same period (net zero for fully taxable) |
+| GOOGLE (Workspace, Ads, Cloud) | Input 15% if invoice shows SA VAT; otherwise imported services only on the non-taxable portion | Registered foreign electronic-services suppliers charge SA VAT; no VAT is declared on services used wholly for taxable supplies |
 | MICROSOFT (365, Azure) | Imported services — self-assess 15% | Same |
 | META, FACEBOOK ADS | Imported services — self-assess 15% | Same |
 | ZOOM, SLACK | Imported services — self-assess 15% | Same |
@@ -452,7 +454,7 @@ Incoming R 115,000 (VAT-inclusive) from a SA company for IT consulting. Standard
 `22 Apr 2025  CREDIT  ACME CORP USA  USD 5,000 (R 92,500)  R 592,500.00`
 
 **Reasoning:**
-USD receipt from a US company for IT consulting services exported from South Africa. Zero-rated under Schedule 1 of the VAT Act if the services are physically performed in SA but consumed outside SA. Evidence: contract showing foreign client, payment in foreign currency. Report R 92,500 on Field 2 (zero-rated). Output tax: R 0.
+USD receipt from a US company for IT consulting services exported from South Africa. Zero-rated under section 11(2)(l) of the VAT Act if the services are supplied to a non-resident who is not present in SA when the services are rendered (and no exclusion applies). Evidence: contract showing foreign client, payment in foreign currency. Report R 92,500 on Field 2 (zero-rated). Output tax: R 0.
 
 **Classification:** Zero-rated export — R 92,500. Output tax: R 0.
 
@@ -484,7 +486,7 @@ Grocery purchase. If itemised receipt shows basic foodstuffs only (brown bread, 
 **Reasoning:**
 Google Ads billed from Ireland. Note: Google typically bills SA VAT directly now via its local entity; check the invoice. If billed by a non-resident entity, this is an "imported service" under Section 7(1)(c) of the VAT Act. The South African VAT-registered vendor must self-assess 15% VAT. Self-assessed output: R 10,000 × 15% = R 1,500 (add to Field 12 — other output adjustments and imported services). For a fully taxable vendor, simultaneously claim same as input tax R 1,500 (Field 15 — input VAT on other goods/services). Net effect: zero. Must be disclosed in the VAT201.
 
-**Classification:** Imported service — self-assess output R 1,500 (Field 12); input R 1,500 (Field 15). Net: R 0 for fully taxable vendor.
+**Classification:** For a vendor using the service wholly to make taxable supplies, this is not an "imported service" as defined — no VAT is declared (nothing in Field 12 or Field 15). VAT is declared in Field 12 only to the extent the service is used for non-taxable purposes.
 
 ### Example 6 — Residential rent (exempt, no input tax)
 
@@ -511,13 +513,13 @@ Monthly rent. If this is for a commercial office space where the landlord has op
 ### 5.4 Tax invoice requirements (Section 20)
 
 - **Supplies R50 or less** — NO invoice required (till slip sufficient)  _(Section 20)_
-- **Supplies R50 to R5,000** — ABRIDGED tax invoice (omits recipient details)  _(Section 20)_
+- **Supplies R50 to R5,000** — ABRIDGED tax invoice (omits recipient details), except zero-rated supplies, which always need a FULL tax invoice  _([Section 20](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 - **Supplies above R5,000** — FULL tax invoice required with supplier name/address/VAT number, invoice number, date, buyer name/address/VAT number (if VAT-registered), description, net amount, VAT rate, VAT amount, total  _(Section 20)_
 - **Tax invoice issuance timeframe** — Must be issued within 21 days.  _(Section 20)_
 
 ### 5.5 Imported services
 
-- **Imported services treatment** — Services supplied by a non-resident to a South African recipient are subject to VAT under Section 7(1)(c). Fully taxable vendors self-assess (output = input; net zero). Partially exempt or non-vendor recipients cannot recover and face a cost.  _(VAT Act Section 7(1)(c))_
+- **Imported services treatment** — Services supplied by a non-resident to a South African recipient are subject to VAT under Section 7(1)(c). Services used wholly to make taxable supplies are not imported services and no VAT is declared; vendors declare VAT in Field 12 only on the non-taxable portion. Partially exempt or non-vendor recipients cannot recover and face a cost.  _([VAT Act Section 7(1)(c)](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/Legal-Pub-Guide-VAT404-VAT-404-Guide-for-Vendors.pdf))_
 
 ### 5.6 Anti-avoidance — entertainment
 
@@ -529,24 +531,22 @@ Monthly rent. If this is for a commercial office space where the landlord has op
 
 ### 5.8 Filing deadlines
 
-**Filing deadlines**
+**Filing deadlines**  _(https://www.sars.gov.za/types-of-tax/value-added-tax/tax-periods-for-vat-vendors/)_
 
 | Category | Period | Due date |
 | --- | --- | --- |
-| Category B (>R30m) | Monthly | Last business day of following month |
-| Category A (default) | Bimonthly | Last business day of following month |
-| Category C (farming <R1.5m) | Six-monthly | Last business day of following month |
-| Category D (connected-party farming/rental) | Annual | Last business day of following month |
-| Category E (connected-party rental) | Annual | Last business day of following month |
-| Category F (micro business turnover tax) | Four-monthly | Last business day of following month |
+| Category C (>R30m) | Monthly | Last business day of following month |
+| Category A / B (default) | Bimonthly | Last business day of following month |
+| Category D (farming <R1.5m; micro businesses) | Six-monthly | Last business day of following month |
+| Category E (company/trust supplying connected persons) | Annual | Last business day of following month |
 
 ### 5.9 Penalties
 
-**Penalties**
+**Penalties**  _(https://www.sars.gov.za/individuals/what-if-i-do-not-agree/admin-penalty/)_
 
 | Offence | Penalty |
 | --- | --- |
-| Late return | ZAR 100–ZAR 16,000 per month late |
+| Late return | ZAR 250–ZAR 16,000 per month late |
 | Late payment | 10% of tax due + interest at prescribed rate |
 | Understatement | 10%–200% of shortfall depending on intent |
 | Fraud | Criminal prosecution |
@@ -659,7 +659,7 @@ REVIEWER FLAGS:
 SOUTH AFRICA VAT ONBOARDING — MINIMUM QUESTIONS
 1. VAT registration number (10 digits starting with 4)?
 2. Tax period covered by this bank statement?
-3. Filing frequency: Category A bimonthly, B monthly, C six-monthly, D/E annual, F four-monthly?
+3. Filing frequency: Category A or B bimonthly, C monthly, D six-monthly, E annual?
 4. Do you have any exports (zero-rated)? Evidence held?
 5. Do you have exempt income (financial services, residential rent)?
 6. Does the business provide entertainment as its primary service?

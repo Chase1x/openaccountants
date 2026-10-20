@@ -11,7 +11,9 @@ description: >
 version: 0.1
 jurisdiction: ZA
 last_updated: 2026-09-03
+authored_by: Brandon Iverach
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - foundation
 category: international
@@ -21,36 +23,35 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # South Africa — Ring-fencing of Assessed Losses, s 20A
 
-## South Africa — Ring-fencing of Assessed Losses, s 20A
-
 > **What changed, and why this file exists.** For years of assessment commencing on or
 > after **1 March 2026**, s 20A bites from the **39%** marginal rate, not the 45% maximum
 > marginal rate. The threshold roughly halves. Ring-fencing stops being a
 > high-income edge case and becomes the **default** for a geared residential rental held
 > by a reasonably paid employee.
 
----
-
-## Section 1 — Scope
-
-This file covers **s 20A ring-fencing for natural persons**, and enough of **s 20** to
-place it.
-
-Not covered: assessed losses of trusts; the s 20(1)(a) company rules beyond the summary in
-Section 6; capital losses, which are an Eighth Schedule matter and not assessed losses at
-all.
-
 ## Section 2 — The two-stage test
 
-- **Two-stage test — Stage 1 income test** — Ring-fencing under s 20A applies only where **both** stages are met. **Stage 1 — the income test.** The taxpayer's taxable income, *before* setting off the loss in question, equals or exceeds the amount at which the relevant marginal rate begins.  _(Income Tax Act 58 of 1962 s 20A(2).)_
-- **Two-stage test — Stage 2 trade test** — **Stage 2 — the trade test.** Either - the trade is a **listed suspect trade** (Section 4), **or** - the trade has made an assessed loss in **at least three of the last five** years of assessment, counting the current year. If stage 1 fails, s 20A does not apply at all, whatever the trade. If stage 1 is met, a listed suspect trade is caught **immediately** — it never needs the three-in-five test.  _(Income Tax Act 58 of 1962 s 20A(2).)_
+Ring-fencing under s 20A applies only where **both** stages are met.
+
+**Stage 1 — the income test.** The taxpayer's taxable income, *before* setting off the
+loss in question, equals or exceeds the amount at which the relevant marginal rate begins.
+
+**Stage 2 — the trade test.** Either
+- the trade is a **listed suspect trade** (Section 4), **or**
+- the trade has made an assessed loss in **at least three of the last five** years of
+  assessment, counting the current year.
+
+If stage 1 fails, s 20A does not apply at all, whatever the trade. If stage 1 is met, a
+listed suspect trade is caught **immediately** — it never needs the three-in-five test.
+
+_Source: Income Tax Act 58 of 1962 s 20A(2)._
+
+---
 
 ## Section 3 — The income threshold, by year of assessment
 
 The threshold is **not a fixed rand amount**. It is defined by reference to a marginal
 rate, so it moves every year with the bracket table.
-
-**Income threshold by year of assessment**  _(Income Tax Act 58 of 1962 s 20A(2)(a), as amended with effect for years of assessment commencing on or after 1 March 2026; SARS Rates of Tax for Individuals for the bracket floors.)_
 
 | Year of assessment | Rate the threshold keys off | Taxable income threshold |
 | --- | --- | --- |
@@ -73,17 +74,64 @@ _Source: Income Tax Act 58 of 1962 s 20A(2)(a), as amended with effect for years
 assessment commencing on or after 1 March 2026; SARS Rates of Tax for Individuals for the
 bracket floors._
 
+---
+
 ## Section 4 — The listed suspect trades
 
-- **Listed suspect trades** — Under s 20A(2)(b), these are caught on the income test alone: - Any sport practised by the taxpayer or a relative - Any dealing in collectibles - **The rental of residential accommodation**, unless the letting exception in Section 5 applies - The rental of vehicles, aircraft or boats - Animal showing by the taxpayer or a relative - Farming or animal breeding, unless carried on on a full-time basis - Any form of performing or creative arts - Any form of gambling or betting - Any trade in respect of which a tax benefit scheme applies  _(Income Tax Act 58 of 1962 s 20A(2)(b).)_
+Under s 20A(2)(b), these are caught on the income test alone:
+
+- Any sport practised by the taxpayer or a relative
+- Any dealing in collectibles
+- **The rental of residential accommodation**, unless the letting exception in Section 5
+  applies
+- The rental of vehicles, aircraft or boats
+- Animal showing by the taxpayer or a relative
+- Farming or animal breeding, unless carried on on a full-time basis
+- Any form of performing or creative arts
+- Any form of gambling or betting
+- Any trade in respect of which a tax benefit scheme applies
+
+_Source: Income Tax Act 58 of 1962 s 20A(2)(b)._
+
+---
 
 ## Section 5 — The escapes
 
-- **The escapes — letting exception and reasonable prospect of profit** — A trade that is otherwise caught is **not** ring-fenced where one of these applies. **The letting exception — s 20A(2)(b)(iii).** Residential accommodation is not a suspect trade where **at least 80%** of the accommodation is used by persons who are **not relatives** of the taxpayer for **at least half** the year of assessment. Note both limbs: the 80% is about who occupies it, and the half-year is about duration. **Reasonable prospect of profit — s 20A(3).** The trade escapes if it constitutes a business with a reasonable prospect of deriving taxable income within a reasonable period, having regard to the s 20A(3) factors — among them the proportion of gross income to allowable deductions, the commercial manner in which the trade is carried on, the number of years of losses, the business plan, and whether assets are available for private use. This is a facts-and-evidence test, not an assertion. A business plan, arm's length pricing, separate banking and a credible route to profitability are what carry it.  _(Income Tax Act 58 of 1962 s 20A(2)(b)(iii), s 20A(3).)_
+A trade that is otherwise caught is **not** ring-fenced where one of these applies.
+
+**The letting exception — s 20A(2)(b)(iii).** Residential accommodation is not a suspect
+trade where **at least 80%** of the accommodation is used by persons who are **not
+relatives** of the taxpayer for **at least half** the year of assessment. Note both limbs:
+the 80% is about who occupies it, and the half-year is about duration.
+
+**Reasonable prospect of profit — s 20A(3).** The trade escapes if it constitutes a
+business with a reasonable prospect of deriving taxable income within a reasonable period,
+having regard to the s 20A(3) factors — among them the proportion of gross income to
+allowable deductions, the commercial manner in which the trade is carried on, the number
+of years of losses, the business plan, and whether assets are available for private use.
+
+This is a facts-and-evidence test, not an assertion. A business plan, arm's length
+pricing, separate banking and a credible route to profitability are what carry it.
+
+_Source: Income Tax Act 58 of 1962 s 20A(2)(b)(iii), s 20A(3)._
+
+---
 
 ## Section 6 — Section 20, for context
 
-- **Section 20 carry-forward rules and company 80% cap** — Ring-fencing modifies an ordinary carry-forward. The underlying rules: - An assessed loss carries forward and may be set off against income from **any** trade, subject to s 20(2A), which requires the taxpayer to have carried on a trade in the year of set-off. - **Companies** are separately limited: for years of assessment commencing on or after 1 April 2022, the balance of assessed loss that may be set off is capped at the **greater of R1,000,000 and 80%** of taxable income before the set-off. **This 80% cap does not apply to natural persons.**  _(Income Tax Act 58 of 1962 s 20, s 20(2A).)_
+Ring-fencing modifies an ordinary carry-forward. The underlying rules:
+
+- An assessed loss carries forward and may be set off against income from **any** trade,
+  subject to s 20(2A), which requires the taxpayer to have carried on a trade in the year
+  of set-off.
+- **Companies** are separately limited: for years of assessment commencing on or after
+  1 April 2022, the balance of assessed loss that may be set off is capped at the **greater
+  of R1,000,000 and 80%** of taxable income before the set-off. **This 80% cap does not
+  apply to natural persons.**
+
+_Source: Income Tax Act 58 of 1962 s 20, s 20(2A)._
+
+---
 
 ## Section 7 — What ring-fencing actually does
 
@@ -93,6 +141,8 @@ trades.
 
 So the cash effect is a deferral, sometimes indefinite. A rental that never turns a taxable
 profit carries a ring-fenced loss forward permanently without ever relieving anything.
+
+---
 
 ## Section 8 — Edge cases
 
@@ -111,6 +161,8 @@ profit carries a ring-fenced loss forward permanently without ever relieving any
 - **The election is not annual.** Once ring-fenced, the loss stays ring-fenced to that trade
   until it is absorbed by profits of that trade.
 
+---
+
 ## Section 9 — Self-checks
 
 1. **Threshold from the right year's bracket table.** Confirm the taxable income threshold
@@ -124,6 +176,8 @@ profit carries a ring-fenced loss forward permanently without ever relieving any
    half the year. One without the other fails.
 5. **Ring-fenced, not lost.** Confirm the loss is carried forward against that trade and
    not written off.
+
+---
 
 ## Disclaimer
 

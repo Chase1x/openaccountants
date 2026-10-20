@@ -5,6 +5,8 @@ jurisdiction: US-CA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
+source_checked: 2026-10-16
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -110,14 +112,14 @@ This skill does NOT cover:
 
 ### Key payment logistics
 
-**Key payment logistics**
+**Key payment logistics**  _(https://www.ftb.ca.gov/forms/2025/2025-540-es-instructions.html)_
 
 | Item | Detail |
 | --- | --- |
 | Payment methods | FTB Web Pay (recommended), credit card (with fee), check with Form 540-ES voucher |
 | Web Pay URL | https://webapp.ftb.ca.gov/webpay |
 | Payee for checks | Franchise Tax Board |
-| Mailing address | Varies by county; see Form 540-ES voucher |
+| Mailing address | Franchise Tax Board, PO Box 942867, Sacramento, CA 94267-0008 |
 
 ## Section 4 -- Primary source library
 
@@ -157,7 +159,7 @@ This skill does NOT cover:
 
 ### 5.4 -- First year in California
 
-- **First year in California rule** — If the taxpayer had no CA tax liability in the prior year (e.g., new CA resident), the prior-year safe harbor is $0 (no prior-year tax). The taxpayer must use the 90% current-year method. **Flag for reviewer.**  _(R&TC section 19136.5)_
+- **First year in California rule** — If the taxpayer had no CA tax liability in the prior year (e.g., new CA resident), no 2025 estimated tax payments are required: a nonresident or new resident of California in 2025 who did not have a California tax liability in 2024 does not have to make estimated tax payments. **Flag for reviewer.**  _([R&TC section 19136.5](https://www.ftb.ca.gov/forms/2025/2025-540-es-instructions.html))_
 
 ## Section 6 -- The 30/40/0/30 installment schedule (detailed)
 
@@ -197,7 +199,7 @@ Required annual payment = $10,000.
 
 ### 6.4 -- Withholding credit application
 
-- **Withholding credit application** — If the taxpayer also has W-2 wages with CA withholding: W-2 withholding is treated as paid ratably over the year (equally across all 4 quarters), regardless of when it was actually withheld. Reduce each installment's required payment by 1/4 of the annual withholding. If total withholding meets the safe harbor, no estimated payments are needed.  _(R&TC section 19136.5)_
+- **Withholding credit application** — If the taxpayer also has W-2 wages with CA withholding: W-2 withholding is treated as paid on each payment due date in the same 30%/40%/0%/30% pattern as the required installments, unless you can show it was withheld otherwise. Reduce the 1st and 4th installments by 30% of the annual withholding and the 2nd by 40%. If total withholding meets the safe harbor, no estimated payments are needed.  _([R&TC section 19136.5](https://www.ftb.ca.gov/forms/2025/2025-5805-instructions.html))_
 
 ### 6.5 -- Backup withholding
 
@@ -211,7 +213,7 @@ Required annual payment = $10,000.
 
 ### 7.2 -- Penalty computation steps
 
-- **Penalty computation steps** — For each installment: 1. Determine the required payment (30% / 40% / 0% / 30% of required annual payment). 2. Subtract withholding credit allocated to that quarter (1/4 of annual withholding). 3. Subtract estimated payments actually made by the due date. 4. If the result is positive, that is the underpayment for that installment. 5. Compute interest on the underpayment at the FTB's quarterly rate from the due date to April 15, 2026 (or earlier payment date).  _(R&TC section 19142)_
+- **Penalty computation steps** — For each installment: 1. Determine the required payment (30% / 40% / 0% / 30% of required annual payment). 2. Subtract withholding credit allocated to that installment (30% of annual withholding for the 1st and 4th, 40% for the 2nd, 0% for the 3rd). 3. Subtract estimated payments actually made by the due date. 4. If the result is positive, that is the underpayment for that installment. 5. Compute interest on the underpayment at the FTB's quarterly rate from the due date to April 15, 2026 (or earlier payment date).  _([R&TC section 19142](https://www.ftb.ca.gov/forms/2025/2025-5805-instructions.html))_
 
 ### 7.3 -- Exceptions to penalty
 
@@ -221,12 +223,12 @@ Required annual payment = $10,000.
 | --- | --- |
 | Tax liability under threshold | No penalty if total tax after withholding/credits is less than $500, or less than $250 if MFS |
 | No prior-year liability | If 2024 CA tax was $0 (12-month return), no penalty for 2025 underpayment |
-| Casualty/disaster | FTB may waive penalty for taxpayers in federally declared disaster areas |
-| Annualized income method | Taxpayer can use Schedule AI on Form 5805 to demonstrate income was earned unevenly throughout the year and payments matched income timing |
+| Casualty/disaster | FTB may waive the penalty if an installment was underpaid due to a casualty, disaster, or other unusual circumstance, or if you retired after age 62 or became disabled in 2024 or 2025 and the underpayment was due to reasonable cause |
+| Annualized income method | Taxpayer can use Part III (Annualized Income Installment Method Schedule) of Form 5805 to demonstrate income was earned unevenly throughout the year and payments matched income timing |
 
 ### 7.4 -- Annualized income installment method
 
-- **Annualized income installment method** — If income was earned unevenly (e.g., large contract paid in Q4), the taxpayer can use the annualized income installment method on Schedule AI (Form 5805): 1. Compute CA taxable income for each cumulative period (Jan-Mar, Jan-May, Jan-Aug, Jan-Dec). 2. Annualize each period's income. 3. Compute tax on the annualized income. 4. Determine the required installment based on annualized tax. 5. This may reduce or eliminate the penalty for early installments when income was low.  _(FTB Form 5805 (2025))_
+- **Annualized income installment method** — If income was earned unevenly (e.g., large contract paid in Q4), the taxpayer can use the annualized income installment method on Form 5805, Part III (Annualized Income Installment Method Schedule): 1. Compute CA taxable income for each cumulative period (Jan-Mar, Jan-May, Jan-Aug, Jan-Dec). 2. Annualize each period's income. 3. Compute tax on the annualized income. 4. Determine the required installment based on annualized tax. 5. This may reduce or eliminate the penalty for early installments when income was low.  _([FTB Form 5805 (2025)](https://www.ftb.ca.gov/forms/2025/2025-5805-instructions.html))_
 
 ## Section 8 -- Interaction with federal estimated tax
 
@@ -276,8 +278,8 @@ Required annual payment = $10,000.
 **Resolution:**
 - Required: Q1 = $6,000 (30%), Q2 = $8,000 (40%), Q3 = $0, Q4 = $6,000 (30%).
 - Paid: Q1 = $5,000, Q2 = $5,000, Q3 = $5,000, Q4 = $5,000.
-- Underpayment: Q1 = $1,000 (underpaid), Q2 = $3,000 (underpaid), Q3 = $0 (overpaid, no penalty but no credit applied retroactively to Q1/Q2), Q4 = $1,000 (underpaid).
-- Penalty: interest computed on $1,000 from April 15, on $3,000 from June 16, and on $1,000 from January 15, each to April 15, 2026.
+- Underpayment: Q1 = $1,000 (underpaid), Q2 = $3,000 (underpaid), Q3 = $0 required; the $5,000 September payment is applied first to the Q1 and Q2 underpayments, leaving $1,000 that carries to Q4, so the $5,000 January payment plus the $1,000 carried covers Q4 in full (no Q4 underpayment).
+- Penalty: interest computed on $1,000 from April 15 and on $3,000 from June 16, each to September 15, 2025 (the date the September payment was made).
 - Form 5805 applies payments to earlier underpayment balances first; the September payment cannot retroactively erase Q1/Q2 penalties but may be applied before later-period underpayments.
 
 ### EC-ES-2 -- New California resident, no prior-year CA tax
@@ -287,9 +289,8 @@ Required annual payment = $10,000.
 **Resolution:**
 - Prior-year safe harbor: $0 (no prior CA tax).
 - Cannot rely on 100% of prior-year tax (that would be $0, which is insufficient).
-- Must use 90% current-year method: 90% x $15,000 = $13,500.
-- Required annual payment: $13,500.
-- Q1 = $4,050, Q2 = $5,400, Q3 = $0, Q4 = $4,050.
+- No 2025 estimated tax payments are required: a new resident of California in 2025 who did not have a California tax liability in 2024 does not have to make estimated tax payments.
+- The $15,000 is paid with the 2025 return.
 - **Flag for reviewer:** New residents must carefully estimate current-year tax since the prior-year safe harbor is unavailable.
 
 ### EC-ES-3 -- Income spike in Q4
@@ -310,12 +311,12 @@ Required annual payment = $10,000.
 
 **Resolution:**
 - Required annual payment: lesser of 90% x $15,000 = $13,500 or 100% of prior year tax.
-- Withholding credit: $12,000 / 4 = $3,000 per quarter (allocated ratably).
+- Withholding credit: $12,000 is treated as paid 30% / 40% / 0% / 30% on the four due dates: Q1 $3,600, Q2 $4,800, Q3 $0, Q4 $3,600.
 - Net required estimated payment per installment:
-  - Q1: 30% x $13,500 - $3,000 = $4,050 - $3,000 = $1,050
-  - Q2: 40% x $13,500 - $3,000 = $5,400 - $3,000 = $2,400
-  - Q3: 0% x $13,500 - $3,000 = -$3,000 (no payment needed, credit applied)
-  - Q4: 30% x $13,500 - $3,000 = $4,050 - $3,000 = $1,050
+  - Q1: 30% x $13,500 - $3,600 = $4,050 - $3,600 = $450
+  - Q2: 40% x $13,500 - $4,800 = $5,400 - $4,800 = $600
+  - Q3: 0% x $13,500 - $0 = $0 (no installment due)
+  - Q4: 30% x $13,500 - $3,600 = $4,050 - $3,600 = $450
 - If withholding alone meets the prior-year safe harbor, no estimated payments needed.
 - **Flag for reviewer:** Verify whether W-2 withholding alone meets safe harbor.
 
@@ -371,17 +372,17 @@ Required annual payment = $10,000.
 ### Test ES-2 -- Equal-quarter error detection
 
 **Input:** Required annual payment = $12,000. Taxpayer paid $3,000 each quarter (April 15, June 16, September 15, January 15).
-**Expected:** Required: Q1 $3,600, Q2 $4,800, Q3 $0, Q4 $3,600. Underpayment: Q1 $600, Q2 $1,800, Q3 none, Q4 $600. Penalty = interest on each underpayment from due date to April 15, 2026.
+**Expected:** Required: Q1 $3,600, Q2 $4,800, Q3 $0, Q4 $3,600. Underpayment: Q1 $600, Q2 $1,800, Q3 none; the September 15 payment is applied first to the Q1 and Q2 underpayments and the $600 left over carries to Q4, so Q4 is paid in full (no Q4 underpayment). Penalty = interest on the Q1 and Q2 underpayments from their due dates to September 15.
 
 ### Test ES-3 -- Withholding offsets estimated tax
 
 **Input:** Total CA tax = $16,000. Prior year tax = $14,000. W-2 withholding = $14,000.
-**Expected:** Required annual payment = $14,000. Withholding per quarter = $3,500. Net required: Q1 = $4,200 - $3,500 = $700, Q2 = $5,600 - $3,500 = $2,100, Q3 = $0 - $3,500 = -$3,500 (no payment), Q4 = $4,200 - $3,500 = $700.
+**Expected:** Required annual payment = $14,000. Withholding allocated 30%/40%/0%/30% = Q1 $4,200, Q2 $5,600, Q3 $0, Q4 $4,200. Net required: Q1 = $4,200 - $4,200 = $0, Q2 = $5,600 - $5,600 = $0, Q3 = $0, Q4 = $4,200 - $4,200 = $0. No estimated payments needed.
 
 ### Test ES-4 -- No prior-year CA tax
 
 **Input:** New CA resident. No 2024 CA tax. Expected 2025 CA tax = $20,000. No withholding.
-**Expected:** Required annual payment = 90% x $20,000 = $18,000 (prior-year safe harbor is $0, does not help). Q1 = $5,400, Q2 = $7,200, Q3 = $0, Q4 = $5,400.
+**Expected:** No 2025 estimated tax payments required: a new resident of California in 2025 who did not have a California tax liability in 2024 does not have to make estimated tax payments. The $20,000 is paid with the return.
 
 ### Test ES-5 -- Prior-year safe harbor satisfied, current year much higher
 
@@ -405,7 +406,7 @@ Required annual payment = $10,000.
 
 **Check 252 -- Safe harbor computed correctly.** Verify that the required annual payment uses the lesser of 90% current-year or 100% (or 110%) prior-year.
 
-**Check 253 -- Withholding credited ratably.** If the taxpayer has W-2 withholding, verify it is allocated equally across all 4 quarters.
+**Check 253 -- Withholding credited by installment.** If the taxpayer has W-2 withholding, verify it is allocated 30%/40%/0%/30% across the installments unless actual withholding dates are shown.
 
 **Check 254 -- Federal and CA payments are separate.** Verify the taxpayer action list shows separate payment amounts to IRS (EFTPS/Direct Pay) and FTB (Web Pay).
 

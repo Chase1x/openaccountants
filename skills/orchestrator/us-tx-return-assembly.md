@@ -6,6 +6,7 @@ jurisdiction: US-TX
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 category: orchestrator
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US Tx Return Assembly
 
-## CRITICAL EXECUTION DIRECTIVE — READ FIRST
+## How this workflow runs
 
-**When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
+Intake and the content Guides have already collected the facts for this working paper. Use what they captured, and ask the user again only where something is missing or contradicts itself.
 
 - Do NOT ask "how deep do you want me to go." Produce the full package.
 - Do NOT announce token counts or tool calls.

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "GB"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "James Power, CIMA"
   reviewed_by: "James Power"
+  trust_label: "Checked by James Power"
   review_status: "current"
 ---
 
@@ -30,7 +32,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **2nd POA** — 31 July after tax year (50%)  _(TMA 1970)_
 - **Balancing payment** — 31 January following tax year  _(TMA 1970)_
 - **Items** — Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance  _(TMA 1970)_
-- **Rate** — BoE base rate + 2.5%  _(TMA 1970 s.86)_
+- **Rate** — BoE base rate + 4% from 6 April 2025 (was plus 2.5% on or before 5 April 2025)  _([TMA 1970 s.86](https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates))_
 - **Type** — Simple interest (not compound)  _(TMA 1970)_
 
 ## Section 1 -- Quick reference
@@ -59,7 +61,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment schedule, SA303 mechanism, excluded items) are UNCHANGED across all three years. Only the late payment interest rate and the surrounding reporting workflow shift.
 
-**Three-year comparison table**
+**Three-year comparison table**  _(https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates)_
 
 | Element | 2024-25 | 2025-26 | 2026-27 |
 | --- | --- | --- | --- |
@@ -69,12 +71,12 @@ The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment s
 | 1st POA due | 31 January 2025 | 31 January 2026 | 31 January 2027 |
 | 2nd POA due | 31 July 2025 | 31 July 2026 | 31 July 2027 |
 | Balancing payment due | 31 January 2026 | 31 January 2027 | 31 January 2028 |
-| Late payment interest rate | HMRC Bank Rate + 4 pp (approx. 7.75% late 2024 / 2025) | HMRC Bank Rate + 4 pp (track Bank Rate movements) | HMRC Bank Rate + 4 pp (track Bank Rate movements) |
+| Late payment interest rate | HMRC Bank Rate + 2.5 pp on or before 5 April 2025; Bank Rate + 4 pp from 6 April 2025 | HMRC Bank Rate + 4 pp (track Bank Rate movements) | HMRC Bank Rate + 4 pp (track Bank Rate movements) |
 | SA303 (claim to reduce) | Available; standard process | Available; standard process | Available; standard process |
 | MTD ITSA quarterly reporting | Not in scope (most clients) | Not in scope (most clients) | MANDATORY from 6 April 2026 for qualifying SE/property income (does NOT replace POA) |
 | Annual reconciliation | SA tax return | SA tax return | SA tax return / Final Declaration under MTD ITSA |
 
-**Note on the 4 pp surcharge.** Finance (No. 2) Act 2024 increased the late payment interest add-on from 2.5 pp to 4 pp from 31 January late onwards (operative for sums overdue from the standard 2024-25 cycle and forward). All worked examples in this version use Bank Rate + 4 pp.
+**Note on the 4 pp surcharge.** The late payment interest add-on increased from 2.5 pp to 4 pp from 6 April 2025 (it was plus 2.5% on or before 5 April 2025). All worked examples in this version use Bank Rate + 4 pp.
 
 **Payment schedule summary (illustrative for 2025-26 tax year)**
 
@@ -255,15 +257,15 @@ Three scenarios on the actual 2025-26 liability:
 
 Assume Scenario B1 (POAs of GBP 6,000 each for 2026-27). The client is in MTD ITSA from 6 April 2026 and submits quarterly updates through compatible software, but the POA cash flow is unchanged:
 
-**Step C event table**
+**Step C event table**  _(https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates)_
 
 | Date | Event | Cash impact |
 | --- | --- | --- |
 | 31 January 2027 | 1st POA 2026-27 + (any) 2025-26 balancing | GBP 6,000 (B1) |
-| 5 August 2026 | Q1 MTD ITSA quarterly update due | No tax payment -- reporting only |
-| 5 November 2026 | Q2 MTD ITSA quarterly update due | No tax payment -- reporting only |
-| 5 February 2027 | Q3 MTD ITSA quarterly update due | No tax payment -- reporting only |
-| 5 May 2027 | Q4 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 7 August 2026 | Q1 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 7 November 2026 | Q2 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 7 February 2027 | Q3 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 7 May 2027 | Q4 MTD ITSA quarterly update due | No tax payment -- reporting only |
 | 31 July 2027 | 2nd POA 2026-27 | GBP 6,000 |
 | 31 January 2028 | Final Declaration (replaces SA return) + 2026-27 balancing payment + 1st POA 2027-28 | Depends on final 2026-27 liability |
 
@@ -275,7 +277,7 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 **MTD ITSA does NOT replace or alter the POA regime.** Specifically:
 
-1. **POA dates remain 31 January and 31 July.** MTD quarterly updates (due 5 August, 5 November, 5 February, 5 May for a standard 6 April -- 5 April year) are SEPARATE reporting events. They do not collect tax.
+1. **POA dates remain 31 January and 31 July.** MTD quarterly updates (due 7 August, 7 November, 7 February, 7 May for a standard 6 April -- 5 April year) are SEPARATE reporting events. They do not collect tax.
 2. **POA calculation remains 50% of prior year SA balance.** It does not switch to a quarterly profit-to-date basis.
 3. **The annual reconciliation continues -- now called the Final Declaration.** This replaces the SA100 tax return for MTD-scope taxpayers and is due 31 January following the tax year, same as before. Balancing payment is due on the same 31 January date.
 4. **SA303 (claim to reduce POAs) remains available.** The mechanism is unchanged.
@@ -314,11 +316,11 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 ### 6.1 Late payment interest
 
-**Late payment interest table**
+**Late payment interest table**  _(https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates)_
 
 | Element | Rule |
 | --- | --- |
-| Rate | HMRC Bank Rate + 4 percentage points (per Finance (No. 2) Act 2024 from 31 January late onwards). Approx. 7.75% as at late 2025 -- confirm current Bank Rate. |
+| Rate | HMRC Bank Rate + 4 percentage points (from 6 April 2025). 7.75% from 9 January 2026 -- confirm current Bank Rate. |
 | Runs from | Due date of the POA (31 Jan or 31 Jul) |
 | Runs until | Date of payment |
 | Compounding | Simple interest (not compound) |
@@ -328,7 +330,7 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 - **Interest computation formula** — interest = overdue_amount x (Bank_Rate + 4%) / 365 x days_overdue
 
-There is no separate penalty for late POA payment -- only interest. A surcharge may apply if the balancing payment is more than 30 days late under the wider late payment penalty regime.
+There is no separate penalty for late POA payment -- only interest. A surcharge may apply if the balancing payment is more than 30 days late under the wider late payment penalty regime. If you are using Making Tax Digital for Income Tax, new late payment penalties replace this from the tax year you join, and they do not apply to payments on account.
 
 ### 6.3 Time-to-Pay arrangements
 
@@ -336,7 +338,7 @@ There is no separate penalty for late POA payment -- only interest. A surcharge 
 
 ## Section 7 -- Interaction with tax codes and PAYE
 
-- **coding out** — When HMRC collects SA underpayments via a PAYE tax code (coding out), this reduces the SA balance and therefore reduces POAs for the following year. Maximum coding out is GBP 3,000 for employed taxpayers. If HMRC is coding out underpayments, verify whether the coded amount has been correctly removed from the SA balance before computing POAs.
+- **coding out** — When HMRC collects SA underpayments via a PAYE tax code (coding out), this reduces the SA balance and therefore reduces POAs for the following year. Coding out is only available if you owe less than GBP 3,000 on your tax bill (you cannot make a part payment to meet this threshold) and you already pay tax through PAYE. If HMRC is coding out underpayments, verify whether the coded amount has been correctly removed from the SA balance before computing POAs.  _(https://www.gov.uk/pay-self-assessment-tax-bill/through-your-tax-code)_
 
 ## Section 8 -- Edge cases
 
@@ -354,7 +356,7 @@ There is no separate penalty for late POA payment -- only interest. A surcharge 
 
 **EC7 -- Student loan pushed SA balance above GBP 1,000.** Student loan excluded. SA balance for POA test = income tax via SA only. If that is below GBP 1,000, no POAs.
 
-**EC8 -- 31 January falls on a weekend.** Deadline moves to next working day. No interest for the weekend days.
+**EC8 -- 31 January falls on a weekend.** Make sure your payment reaches HMRC on the last working day before (unless you are paying by Faster Payments or by debit or credit card).
 
 **EC9 -- HMRC amendment reduces prior year liability.** HMRC should adjust POAs automatically. If not, file SA303 referencing the amendment.
 
@@ -441,7 +443,7 @@ Before delivering output, verify:
 - NEVER present POA figures as definitive until the prior year return is filed and processed
 - NEVER assume HMRC has automatically adjusted POAs after a return amendment
 - NEVER conflate POA interest (simple, Bank Rate + 4 pp) with late filing penalties (separate regime)
-- NEVER use the legacy +2.5 pp interest add-on for periods of lateness running from 31 January 2025 onwards -- the rate is Bank Rate + 4 pp
+- NEVER use the legacy +2.5 pp interest add-on for periods of lateness running from 6 April 2025 onwards -- the rate is Bank Rate + 4 pp
 - NEVER tell a client that MTD ITSA quarterly updates replace POAs -- they do not
 - NEVER advise on penalty disputes without escalating to a qualified accountant
 

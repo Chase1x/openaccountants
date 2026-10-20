@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "ZW"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -191,12 +192,12 @@ Low-risk sectors (offices, retail) attract lower rates; high-risk sectors (minin
 
 When a required input is missing and the user asks you to proceed anyway, apply the **most conservative** assumption (the one least likely to under-withhold tax or under-state a statutory liability), flag it loudly, and queue it for reviewer confirmation. Never silently guess.
 
-**Conservative defaults table**
+**Conservative defaults table**  _(https://www.zimra.co.zw/domestic-taxes/individual/pay-as-you-earn-paye)_
 
 | Unknown | Conservative default | Why |
 | --- | --- | --- |
 | Pay currency | Treat as **USD** and apply the USD PAYE table | Avoids mis-applying the ZiG threshold; but DO NOT finalise — currency drives everything. Flag hard. |
-| Currency split (USD/ZiG) | Apply PAYE separately to each stated portion; if unknown, treat full pay in the stated currency | Splitting across two tables understates tax if done wrong |
+| Currency split (USD/ZiG) | Use the USD tax tables on the whole salary and apportion the tax due between the currencies (ZIMRA instruction); if the split is unknown, treat full pay in the stated currency | Splitting across two tables understates tax |
 | NSSA insurable ceiling | Use **USD 700/month** (2024/2025 gazetted level) | Latest confirmed figure; flag that it is gazetted quarterly |
 | APWCS IC rate | Do **not** invent a rate — leave as `[reviewer to supply IC rate]` | No authoritative full schedule exists |
 | Employee NSSA deductibility | Deduct employee POBS before PAYE | Statutorily allowed; omitting it over-withholds tax |
@@ -225,14 +226,14 @@ Apply these classifications **in order**; first match wins. Currency tags (USD /
 
 ### 8a. Salary credits (money INTO an employee account)
 
-**Salary credits table**
+**Salary credits table**  _(https://www.zimra.co.zw/domestic-taxes/individual/paye-explained)_
 
 | Bank-statement text (typical) | Classification |
 | --- | --- |
 | `SALARY`, `MUHOLO` (Shona: wages/pay), `MUVUZO`, `WAGES`, `PAY` | Net salary payment |
 | `EMPLOYER [name] TRF`, `STAFF SALARY`, `PAYROLL CR` | Net salary payment |
 | `ALLOWANCE`, `HOUSING ALLOW`, `TRANSPORT ALLOW` | Allowance (taxable unless specifically exempt) |
-| `BONUS`, `13TH CHEQUE` | Bonus (taxable; included in ZIMDEF leviable base) |
+| `BONUS`, `13TH CHEQUE` | Bonus (taxable above the ZIMRA tax-free bonus threshold; included in ZIMDEF leviable base) |
 | `NSSA REFUND` | NSSA adjustment — not income |
 
 ### 8b. Employer statutory debits (money OUT of the employer account)
@@ -298,7 +299,7 @@ Apply these classifications **in order**; first match wins. Currency tags (USD /
 
 ### Example 5 — Split pay (65% USD / 35% ZiG)
 
-- Total gross: **USD 1,000-equivalent**, split 65% USD / 35% ZiG. Apply the relevant PAYE table to each portion. **[RESEARCH GAP — split-pay PAYE mechanics (whether thresholds apply once or per currency) should be confirmed with ZIMRA / a tax agent; conservative approach: apply each currency's table to its own portion and remit each in its own currency.]**
+- Total gross: **USD 1,000-equivalent**, split 65% USD / 35% ZiG. ZIMRA: "for salaries with both ZWG and USD components use the USD tax tables and apportion the tax due accordingly." Compute PAYE once on the total on the USD table, then apportion the tax between the USD and ZiG portions and remit each portion in its own currency. Do not apply each currency's table to its own portion.
 - **USD portion:** USD 650. Employee NSSA 4.5% × 650 = USD 29.25. Taxable 650 − 29.25 = 620.75 (300.01–1,000 → 25%, deduct 35). PAYE = 620.75 × 0.25 − 35 = 155.19 − 35 = **USD 120.19** (155.1875 → 120.19). AIDS Levy = 120.19 × 0.03 = **USD 3.61** (3.6057 → 3.61).
 - **ZiG portion:** assume ZWG-equivalent of the remaining 35%. Compute on the ZWG monthly table per Section 2c. **[RESEARCH GAP — requires the USD/ZiG exchange rate for the period; reviewer to supply.]**
 - Remit USD PAYE in USD and ZiG PAYE in ZiG. Do **not** net the two currencies.

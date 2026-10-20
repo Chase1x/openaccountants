@@ -4,9 +4,11 @@ description: "Use this skill whenever asked about Indonesian bookkeeping or tran
 jurisdiction: ID
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: RILIA PUTRI, CA, CPA
 reviewed_by: RILIA PUTRI
 review_status: current
-tier: 1
+trust_label: Checked by RILIA PUTRI
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

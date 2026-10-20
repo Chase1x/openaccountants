@@ -5,8 +5,10 @@ version: 1.0
 jurisdiction: SA
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Mehran Habib, CA
 reviewed_by: Mehran Habib
 review_status: current
+trust_label: Checked by Mehran Habib
 depends_on:
   - einvoice-workflow-base
 category: invoicing

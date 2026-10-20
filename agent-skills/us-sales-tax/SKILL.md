@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -83,22 +84,22 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 3.2 Food (grocery, unprepared)
 
-**Food taxability by treatment**
+**Food taxability by treatment**  _(https://tax.illinois.gov/research/publications/bulletins/fy-2026-03.html)_
 
 | Treatment | States |
 | --- | --- |
 | EXEMPT | Most states (CA, NY, FL, TX, PA, OH, NJ, MA, etc.) |
-| TAXABLE at reduced rate | IL (1%), VA (1%), AR (0.125%), MO (1.225%), TN (4%), KS (varying) |
-| FULLY TAXABLE | AL, MS, SD, OK (state level), HI |
+| TAXABLE at reduced rate | IL (state 1% eliminated January 1, 2026; local 1% only where a municipality or county imposes it), VA (1%), AR (state 0% from 01/01/2026; local tax only), MO (1.225%), TN (4%), KS (varying) |
+| FULLY TAXABLE | AL (reduced state food rate: 2 percent from September 1, 2025), MS (groceries at 5%), SD, OK (local only; state rate on food and food ingredients 0% from August 29, 2024), HI |
 
 ### 3.3 Clothing
 
-**Clothing taxability by treatment**
+**Clothing taxability by treatment**  _(https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/clothing_and_footwear.htm)_
 
 | Treatment | States |
 | --- | --- |
 | EXEMPT (all clothing) | PA, NJ, MN |
-| EXEMPT under threshold | NY (under $110/item), MA (under $175/item), VT (under $110), RI (under $250) |
+| EXEMPT under threshold | NY (under $110/item; state 4% only, local tax applies unless the county or city elects the exemption), MA (under $175/item), VT (under $110), RI (under $250) |
 | FULLY TAXABLE | CA, TX, FL, IL, WA, OH, GA, NC, and most other states |
 | Holiday exemption only | TX, FL, and several other states with temporary sales tax holidays |
 
@@ -131,23 +132,23 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 4.1 State base rates
 
-**State base rates**
+**State base rates**  _(https://dam.ldr.la.gov/lawspolicies/RIB%2025-007%20-%20State%20Sales%20Tax%20Rate.pdf)_
 
 | State | Rate | State | Rate | State | Rate |
 | --- | --- | --- | --- | --- | --- |
 | AL | 4.00% | KY | 6.00% | ND | 5.00% |
-| AZ | 5.60% | LA | 4.45% | NE | 5.50% |
+| AZ | 5.60% | LA | 5% | NE | 5.50% |
 | AR | 6.50% | ME | 5.50% | NV | 6.85% |
 | CA | 7.25% | MD | 6.00% | NH | None |
 | CO | 2.90% | MA | 6.25% | NJ | 6.625% |
-| CT | 6.35% | MI | 6.00% | NM | 5.125% |
+| CT | 6.35% | MI | 6.00% | NM | 4.875% |
 | DC | 6.00% | MN | 6.875% | NY | 4.00% |
 | DE | None | MS | 7.00% | NC | 4.75% |
 | FL | 6.00% | MO | 4.225% | OH | 5.75% |
 | GA | 4.00% | MT | None | OK | 4.50% |
 | HI | 4.00% | OR | None | PA | 6.00% |
 | ID | 6.00% | RI | 7.00% | SC | 6.00% |
-| IL | 6.25% | SD | 4.50% | TN | 7.00% |
+| IL | 6.25% | SD | 4.2% | TN | 7.00% |
 | IN | 7.00% | TX | 6.25% | UT | 6.10% |
 | IA | 6.00% | VT | 6.00% | VA | 5.30% |
 | KS | 6.50% | WA | 6.50% | WV | 6.00% |
@@ -186,12 +187,12 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 5.4 Economic nexus thresholds (common patterns)
 
-**Economic nexus thresholds (common patterns)**
+**Economic nexus thresholds (common patterns)**  _(https://tax.nv.gov/faqs/marketplace-facilitator-seller-faqs/)_
 
 | Threshold | States |
 | --- | --- |
-| $100K OR 200 transactions | Most states (SD, IN, IA, KY, ME, etc.) |
-| $100K only (no transaction count) | FL, WA, NV, TX (uses $500K), CA ($500K) |
+| $100K OR 200 transactions | Some states (e.g. KY; IN, SD, IA and ME have dropped the 200-transaction test) |
+| $100K only (no transaction count) | FL, WA, TX (uses $500K), CA ($500K) |
 | $500K | CA, TX |
 | $500K AND 100 transactions | NY (AND test -- unique) |
 
@@ -205,7 +206,7 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 6.3 SST centralized registration
 
-- **SST centralized registration** — Remote sellers can register in all 24 SST member states through a single application at https://www.sstregister.org.
+- **SST centralized registration** — Remote sellers can register in all SST member states through a single application at https://www.sstregister.org.  _(https://www.streamlinedsalestax.org/Shared-Pages/faqs/faqs---about-streamlined)_
 
 ### 7.1 Wayfair decision (2018)
 
@@ -259,7 +260,7 @@ Expected: NY: taxable. CA: not taxable (pure SaaS). IL: not taxable (pure cloud,
 ### Test 3 -- Food taxability
 
 Input: Grocery food sold in IL, TX, and AL.
-Expected: IL: 1% reduced rate. TX: exempt. AL: fully taxable.
+Expected: IL: state rate eliminated January 1, 2026 (local 1% only where imposed). TX: exempt. AL: taxable at the reduced state food rate (2 percent from September 1, 2025).
 
 ### Test 4 -- Clothing taxability
 

@@ -5,8 +5,8 @@ version: 2.0
 jurisdiction: CM
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Nkinyam Courage Ndasi
-review_status: current
+review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

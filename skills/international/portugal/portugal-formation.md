@@ -5,12 +5,14 @@ version: 1.0
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Mário Jorge da costa Vale
+reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
 depends_on:
   - company-formation-workflow-base
 category: formation
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -39,12 +41,12 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **RCBE (beneficiário efetivo)** — Na constituição + confirmação anual  _(IRN)_
 - **Declaração início atividade** — 15 dias  _(AT)_
 - **Contabilista Certificado** — Obrigatório (responsabilidade legal)  _(DL 158/2009)_
-- **Taxa normal** — 2025: 21% ; 2026: 19%  _(Código IRC)_
+- **Taxa normal** — 2025: 20% ; 2026: 19%  _([Código IRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/ra/Pages/irc87ra_20251107.aspx))_
 - **PME — primeiros €50.000** — 2025: 16% ; 2026: 15%  _(Código IRC)_
 
 ## Secção 1 -- Referência Rápida
 
-**Referência Rápida**
+**Referência Rápida**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx)_
 
 | Campo | Valor |
 | --- | --- |
@@ -53,19 +55,19 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Registo comercial | Instituto dos Registos e do Notariado (IRN) / Conservatória do Registo Comercial |
 | Legislação principal | Código das Sociedades Comerciais (CSC); DL 111/2005 (Empresa na Hora) |
 | Tempo típico de constituição | 1 hora (Empresa na Hora) até 2 semanas (tradicional/online) |
-| Taxa de IRC | 21% (taxa geral); 17% sobre os primeiros €50.000 para PME em regiões do interior |
+| Taxa de IRC | 19% (taxa geral, 2026); 15% sobre os primeiros €50.000 de matéria coletável para PME |
 | Versão da skill | 1.1 |
 
 ## Secção 2 -- Comparação de Tipos de Entidade
 
-**Comparação de Tipos de Entidade**
+**Comparação de Tipos de Entidade**  _(https://justica.gov.pt/Como-criar-uma-empresa-online/Capital-social)_
 
 | Característica | Empresário em Nome Individual (ENI) | Sociedade por Quotas (Lda) | Sociedade Unipessoal por Quotas (Unipessoal Lda) | Sociedade Anónima (SA) |
 | --- | --- | --- | --- | --- |
 | Personalidade jurídica | Não | Sim | Sim | Sim |
 | Responsabilidade | Ilimitada | Limitada à entrada de capital | Limitada | Limitada |
 | Sócios mínimos | 1 | 2 | 1 | 5 (ou 1 se detida por outra sociedade) |
-| Capital social mínimo | N/A | €1 (mínimo €1 por quota) | €1 | €50.000 |
+| Capital social mínimo | N/A | €2 (mínimo €1 por quota) | €1 | €50.000 |
 | Tratamento fiscal | IRS (pessoal) | IRC (societário) | IRC (societário) | IRC (societário) |
 | Carga administrativa | Baixa | Média | Média | Elevada |
 | Auditoria obrigatória | Não | Apenas se ultrapassados os limites | Apenas se ultrapassados os limites | Sim (ROC obrigatório acima dos limites) |
@@ -184,12 +186,12 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 
 ## Secção 8 -- Considerações para Sócios Fundadores Estrangeiros
 
-**Considerações para Sócios Fundadores Estrangeiros**
+**Considerações para Sócios Fundadores Estrangeiros**  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/lgt/Pages/lgt19.aspx)_
 
 | Questão | Resposta |
 | --- | --- |
 | Gerentes não residentes permitidos? | Sim -- NIF obrigatório (obtido através de representante fiscal) |
-| Representante fiscal exigido? | Sim, para residentes fora da UE/EEE (representante nomeado em Portugal para efeitos fiscais) |
+| Representante fiscal exigido? | Sim, para residentes fora da UE/EEE (representante nomeado em Portugal para efeitos fiscais), salvo adesão ao regime de notificações e citações eletrónicas no Portal das Finanças |
 | Presença física exigida? | Sim para a Empresa na Hora; aceite procuração para a via tradicional/online |
 | Requisitos de apostilha | Documentos estrangeiros exigem apostilha + tradução certificada para português |
 | NIF para estrangeiros | Obtido num serviço de Finanças ou via serviços online com representante fiscal |
@@ -200,7 +202,7 @@ A "Empresa na Hora" portuguesa é um dos processos de constituição mais rápid
 
 - **R-PT-F1** — Dispensar o Contabilista Certificado. "Toda a empresa portuguesa tem de ter um Contabilista Certificado (CC) nomeado. Trata-se de uma exigência legal, não opcional. O CC é pessoalmente responsável pela exactidão das declarações fiscais."
 - **R-PT-F2** — Não depositar o capital a tempo. "O capital tem de ser depositado no prazo de 5 dias úteis após a constituição via Empresa na Hora, ou entregue em caixa social até ao final do primeiro exercício. O incumprimento pode gerar responsabilidade pessoal dos gerentes."
-- **R-PT-F3** — Não residente sem representante fiscal. "Os residentes fora da UE/EEE têm de nomear um representante fiscal em Portugal antes de obter um NIF. Sem NIF não é possível constituir a sociedade."
+- **R-PT-F3** — Não residente sem representante fiscal. "Os residentes fora da UE/EEE têm de nomear um representante fiscal em Portugal antes de obter um NIF, salvo se aderirem ao regime de notificações e citações eletrónicas no Portal das Finanças. Sem NIF não é possível constituir a sociedade."  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/lgt/Pages/lgt19.aspx)_
 - **R-PT-F4** — Sociedade veículo para Golden Visa. "A mera constituição da empresa não confere direito ao Golden Visa. O investimento tem de cumprir critérios específicos (investimento em fundos, criação de postos de trabalho, etc.), nos termos da reforma de 2023. Não aconselhe a constituição como via para obtenção de visto sem aconselhamento especializado em imigração."
 - **R-PT-F5** — Incumprimento do RCBE. "A falta de entrega e confirmação anual do Registo Central do Beneficiário Efetivo (RCBE) impede a sociedade de celebrar contratos, receber fundos ou distribuir lucros."
 

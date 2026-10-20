@@ -5,12 +5,14 @@ version: 2.0
 jurisdiction: KR
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Yeong Min Lee, ACCA, CPA
 reviewed_by: Yeong Min Lee
 review_status: current
+trust_label: Checked by Yeong Min Lee
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

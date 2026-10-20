@@ -5,8 +5,10 @@ version: 1.0
 jurisdiction: ZA
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Werner Britz, CA(SA)
 reviewed_by: Werner Britz
 review_status: current
+trust_label: Checked by Werner Britz
 depends_on:
   - transfer-pricing-workflow-base
 category: transfer-pricing

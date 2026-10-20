@@ -7,6 +7,8 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/ca-prompt-library-and-tax-updates"
   jurisdiction: "IN"
   last_updated: "2026-09-03"
+  authored_by: "Arshad raza"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

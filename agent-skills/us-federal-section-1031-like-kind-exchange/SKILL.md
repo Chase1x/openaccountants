@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "US"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "James Wallach"
   reviewed_by: "James Wallach"
+  trust_label: "Checked by James Wallach"
   review_status: "current"
 ---
 

@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -71,16 +72,16 @@ This is a Tier 2 content skill for computing quarterly estimated Illinois income
 
 ### Who must make estimated payments
 
-- **Estimated payment requirement** — An individual must make estimated payments if: 1. The taxpayer expects to owe $500 or more in Illinois income tax after subtracting Illinois withholding and credits, AND 2. The taxpayer expects Illinois withholding and credits to be less than the smaller of: (a) 90% of the current year tax liability, or (b) 100% of the prior year tax liability.  _(35 ILCS 5/803(a); 86 Ill. Admin. Code 100.8010.)_
+- **Estimated payment requirement** — An individual must make estimated payments if: 1. The taxpayer expects to owe more than $1,000 in Illinois income tax after subtracting Illinois withholding and credits, AND 2. The taxpayer expects Illinois withholding and credits to be less than the smaller of: (a) 90% of the current year tax liability, or (b) 100% of the prior year tax liability.  _([35 ILCS 5/803(a); 86 Ill. Admin. Code 100.8010.](https://taxarchive.illinois.gov/content/dam/soi/en/web/taxarchive/forms/income-tax/2024/individual/il-1040-es.pdf))_
 
 ### Payment schedule
 
-**Payment schedule**  _(35 ILCS 5/803(b))_
+**Payment schedule**  _([35 ILCS 5/803(b)](https://taxarchive.illinois.gov/content/dam/soi/en/web/taxarchive/forms/income-tax/2024/individual/il-1040-es.pdf))_
 
 | Installment | Period covered | Due date | Source |
 | --- | --- | --- | --- |
 | 1st quarter | Jan 1 -- Mar 31 | April 15, 2025 | 35 ILCS 5/803(b) |
-| 2nd quarter | Apr 1 -- May 31 | June 15, 2025 | 35 ILCS 5/803(b) |
+| 2nd quarter | Apr 1 -- May 31 | June 16, 2025 | 35 ILCS 5/803(b) |
 | 3rd quarter | Jun 1 -- Aug 31 | September 15, 2025 | 35 ILCS 5/803(b) |
 | 4th quarter | Sep 1 -- Dec 31 | January 15, 2026 | 35 ILCS 5/803(b) |
 
@@ -88,16 +89,16 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ## Section 3 -- Rates and thresholds
 
-**Rates and thresholds**  _(35 ILCS 5/201(b)(5.4); 35 ILCS 5/803(a); 35 ILCS 5/204 (2025); 35 ILCS 5/804; 35 ILCS 5/804(c))_
+**Rates and thresholds**  _([35 ILCS 5/201(b)(5.4); 35 ILCS 5/803(a); 35 ILCS 5/204 (2025); 35 ILCS 5/804; 35 ILCS 5/804(c)](https://taxarchive.illinois.gov/content/dam/soi/en/web/taxarchive/forms/income-tax/2024/individual/il-1040-es.pdf))_
 
 | Item | Amount | Source |
 | --- | --- | --- |
 | Illinois flat income tax rate | 4.95% | 35 ILCS 5/201(b)(5.4) |
-| Estimated tax threshold | $500 | 35 ILCS 5/803(a) |
-| Personal exemption | $2,625 (single); $5,250 (MFJ) | 35 ILCS 5/204 (2025) |
+| Estimated tax threshold | More than $1,000 | 35 ILCS 5/803(a) |
+| Personal exemption | $2,850 (single); $5,700 (MFJ); none if federal AGI is over $250,000 (over $500,000 MFJ) | 35 ILCS 5/204 (2025) |
 | Safe harbour -- current year | 90% of current year tax | 35 ILCS 5/804 |
 | Safe harbour -- prior year | 100% of prior year tax | 35 ILCS 5/804 |
-| Underpayment penalty rate | Varies (set by IDOR quarterly, tied to federal short-term rate + 2%) | 35 ILCS 5/804(c) |
+| Underpayment penalty rate | 2% of the tax due if paid 1 to 30 days late; 10% if paid 31 days or later (interest is charged separately) | 35 ILCS 5/804(c) |
 
 **Note:** Illinois does NOT have a 110% prior-year safe harbour for high-income taxpayers as the IRS does. The prior-year safe harbour is always 100%.
 
@@ -105,11 +106,11 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Step 1: Estimate current year Illinois taxable income
 
-0. **Step 1** — 1. Start with expected federal adjusted gross income (AGI). 2. Add Illinois addition modifications (Schedule M, Line 3): e.g., interest from non-Illinois state/local bonds, any bonus depreciation add-back per Illinois decoupling from IRC §168(k). 3. Subtract Illinois subtraction modifications (Schedule M, Line 16): e.g., U.S. government bond interest, Illinois income tax refunds included in federal AGI, Illinois retirement income subtraction (if applicable). 4. Result = Illinois base income.
+0. **Step 1** — 1. Start with expected federal adjusted gross income (AGI). 2. Add Illinois addition modifications (Schedule M, Line 12, carried to Form IL-1040, Line 3): e.g., interest from non-Illinois state/local bonds, any bonus depreciation add-back per Illinois decoupling from IRC §168(k). 3. Subtract Illinois subtraction modifications (Schedule M, Line 42, carried to Form IL-1040, Line 7): e.g., U.S. government bond interest, Illinois income tax refunds included in federal AGI, Illinois retirement income subtraction (if applicable). 4. Result = Illinois base income.  _(https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-schedule-m.pdf)_
 
 ### Step 2: Subtract personal exemption
 
-0. **Step 2** — - Single/HoH: $2,625 - MFJ: $5,250 - MFS: $2,625 - Result = Illinois net income (equivalent to Illinois taxable income for individuals).
+0. **Step 2** — - Single/HoH: $2,850 - MFJ: $5,700 - MFS: $2,850 (none if federal AGI is over $250,000, or over $500,000 if MFJ) - Result = Illinois net income (equivalent to Illinois taxable income for individuals).  _(https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf)_
 
 ### Step 3: Compute estimated annual tax
 
@@ -117,11 +118,11 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Step 4: Subtract credits and withholding
 
-0. **Step 4** — - Subtract expected Illinois withholding (from W-2 jobs, if any). - Subtract the Illinois Property Tax Credit (5% of property taxes paid on principal residence). - Subtract the Illinois Earned Income Credit (20% of federal EIC for 2025). - Subtract any other applicable credits. - Result = net estimated tax liability.
+0. **Step 4** — - Subtract expected Illinois withholding (from W-2 jobs, if any). - Subtract the Illinois Property Tax Credit (5% of property taxes paid on principal residence; not allowed if federal AGI is over $250,000, or over $500,000 if MFJ). - Subtract the Illinois Earned Income Credit (20% of federal EIC for 2025). - Subtract any other applicable credits. - Result = net estimated tax liability.  _(https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf)_
 
 ### Step 5: Determine if estimated payments are required
 
-0. **Step 5** — If the result from Step 4 is $500 or more, estimated payments are required.
+0. **Step 5** — If the result from Step 4 is more than $1,000, estimated payments are required.  _(https://taxarchive.illinois.gov/content/dam/soi/en/web/taxarchive/forms/income-tax/2024/individual/il-1040-es.pdf)_
 
 ### Step 6: Determine safe harbour amount
 
@@ -133,7 +134,7 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Step 8: Adjust for annualized income (if applicable)
 
-0. **Step 8** — If income is not earned evenly throughout the year, the taxpayer may use the annualized income installment method (Form IL-2210, Section B) to reduce early-quarter payments. This requires demonstrating that income was concentrated in later quarters.
+0. **Step 8** — If income is not earned evenly throughout the year, the taxpayer may use the annualized income installment method (Form IL-2210, Step 6) to reduce early-quarter payments. This requires demonstrating that income was concentrated in later quarters.  _(https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-2210-instr.pdf)_
 
 ## Section 5 -- Edge cases and special rules
 
@@ -151,7 +152,7 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### E-4: Prior year had no tax liability
 
-- **Prior year zero liability** — If the taxpayer's prior year Illinois tax liability was zero (e.g., first year of self-employment with no IL-1040 filed), the prior-year safe harbour is $0. The taxpayer must pay 90% of the current year tax to avoid penalties.  _(unsure)_
+- **Prior year zero liability** — If the taxpayer's prior year Form IL-1040 had a zero tax liability, or the taxpayer was not required to file Form IL-1040 for the prior year, no late-payment penalty for underpayment of estimated tax is owed for the current year.  _([unsure](https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-2210-instr.pdf))_
 
 ### E-5: Fiscal year taxpayers
 
@@ -166,12 +167,12 @@ Illinois follows the same quarterly schedule as the IRS.
 ### Test 1: Standard freelancer
 
 - **Input:** Single filer, IL resident all year. Expected net income from Schedule C: $100,000. No withholding. No credits other than personal exemption.
-- **Expected:** IL taxable income: $100,000 - $2,625 = $97,375. Tax: $97,375 x 4.95% = $4,820.06. Quarterly payment: $4,820.06 / 4 = $1,205.02 per quarter.
+- **Expected:** IL taxable income: $100,000 - $2,850 = $97,150. Tax: $97,150 x 4.95% = $4,808.93. Quarterly payment: $4,808.93 / 4 = $1,202.23 per quarter.
 
 ### Test 2: Below threshold
 
 - **Input:** Part-year freelancer. Expected IL taxable income: $8,000. Tax: $8,000 x 4.95% = $396. With withholding of $0.
-- **Expected:** $396 < $500 threshold. No estimated payments required.
+- **Expected:** $396 is not more than the $1,000 threshold. No estimated payments required.
 
 ### Test 3: Safe harbour using prior year
 
@@ -180,13 +181,13 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Test 4: MFJ with W-2 withholding
 
-- **Input:** MFJ. Combined income: $150,000. W-2 withholding (spouse): $3,200. Estimated tax: ($150,000 - $5,250) x 4.95% = $7,170.23. Net after withholding: $7,170.23 - $3,200 = $3,970.23.
-- **Expected:** $3,970.23 > $500. Quarterly: $3,970.23 / 4 = $992.56.
+- **Input:** MFJ. Combined income: $150,000. W-2 withholding (spouse): $3,200. Estimated tax: ($150,000 - $5,700) x 4.95% = $7,142.85. Net after withholding: $7,142.85 - $3,200 = $3,942.85.
+- **Expected:** $3,942.85 > $1,000. Quarterly: $3,942.85 / 4 = $985.71.
 
 ### Test 5: Property tax credit
 
 - **Input:** Single filer, IL taxable income $80,000. Property taxes paid: $6,000.
-- **Expected:** Tax: ($80,000 - $2,625) x 4.95% = $3,830.06. Property tax credit: $6,000 x 5% = $300. Net: $3,530.06. Quarterly: $882.52.
+- **Expected:** Tax: ($80,000 - $2,850) x 4.95% = $3,818.93. Property tax credit: $6,000 x 5% = $300. Net: $3,518.93. Quarterly: $879.73.
 
 ## Section 7 -- Prohibitions
 
@@ -201,8 +202,8 @@ Before delivering output, verify:
 
 - [ ] Federal AGI correctly adjusted for Illinois modifications (Schedule M)
 - [ ] Flat rate of 4.95% applied (not a graduated rate)
-- [ ] Personal exemption of $2,625 (single) or $5,250 (MFJ) deducted
-- [ ] $500 threshold applied to determine filing requirement
+- [ ] Personal exemption of $2,850 (single) or $5,700 (MFJ) deducted (none above the federal AGI cut-offs)
+- [ ] $1,000 threshold applied to determine filing requirement
 - [ ] Safe harbour computed using the lesser of 90% current / 100% prior
 - [ ] 100% prior year rule used (not 110%)
 - [ ] Bonus depreciation add-back included if applicable

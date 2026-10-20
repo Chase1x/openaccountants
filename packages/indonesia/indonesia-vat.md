@@ -5,12 +5,14 @@ version: 2.0
 jurisdiction: ID
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: RILIA PUTRI, CA, CPA
 reviewed_by: RILIA PUTRI
 review_status: current
+trust_label: Checked by RILIA PUTRI
 depends_on:
   - vat-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

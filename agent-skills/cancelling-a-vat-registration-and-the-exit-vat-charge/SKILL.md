@@ -7,6 +7,8 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/cancelling-a-vat-registration-and-the-exit-vat-charge"
   jurisdiction: "ZA"
   last_updated: "2026-09-02"
+  authored_by: "Brandon Iverach"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

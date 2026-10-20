@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "GB"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "James Power, CIMA"
   reviewed_by: "James Power"
+  trust_label: "Checked by James Power"
   review_status: "current"
 ---
 
@@ -35,7 +37,7 @@ metadata:
 - **Medium — turnover** — ≤ £54,000,000  _(CA 2006 s.465)_
 - **Medium — balance sheet** — ≤ £27,000,000  _(CA 2006)_
 - **Medium — employees** — ≤ 250  _(CA 2006)_
-- **Test** — 2 out of 3 criteria in current + preceding year  _(CA 2006)_
+- **Test** — 2 out of 3 criteria; first financial year on its own, then a change only counts if it occurs in two consecutive financial years  _([CA 2006](https://www.legislation.gov.uk/ukpga/2006/46/section/382))_
 - **Private company deadline** — 9 months after year-end  _(CA 2006 s.442)_
 - **Public company deadline** — 6 months after year-end  _(CA 2006)_
 - **Late filing penalty (private)** — £150 to £1,500  _(CA 2006 s.453)_
@@ -85,7 +87,7 @@ Effective for accounting periods beginning on or after 6 April 2025:
 | Balance sheet total | ≤ £500,000 | ≤ £7,500,000 | ≤ £27,000,000 |
 | Employees | ≤ 10 | ≤ 50 | ≤ 250 |
 
-- **Classification test** — Must meet 2 out of 3 criteria in the current and preceding year. Companies exceeding "medium" thresholds are classified as large.
+- **Classification test** — Must meet 2 out of 3 criteria. In the first financial year that year alone counts; after that, meeting or ceasing to meet the criteria only changes the size category if it occurs in two consecutive financial years. Companies exceeding "medium" thresholds are classified as large.  _(https://www.legislation.gov.uk/ukpga/2006/46/section/382)_
 
 **Previous thresholds (periods beginning before 6 April 2025)**
 
@@ -97,7 +99,7 @@ Effective for accounting periods beginning on or after 6 April 2025:
 
 ## Section 4 -- Required Financial Statements
 
-**Required Financial Statements**
+**Required Financial Statements**  _(https://www.legislation.gov.uk/ukpga/2006/46/section/414A)_
 
 | Document | Micro (FRS 105) | Small (s1A) | Medium/Large |
 | --- | --- | --- | --- |
@@ -107,12 +109,12 @@ Effective for accounting periods beginning on or after 6 April 2025:
 | Cash flow statement | Not required | Not required | Required |
 | Notes to accounts | Statutory minimum only | Reduced disclosures | Full |
 | Directors' report | Not required (statutory presumption) | Required | Required |
-| Strategic report | Not required | Not required | Required (large only) |
+| Strategic report | Not required | Not required | Required (medium and large) |
 | Auditor's report | Not required | Not required (if exempt) | Required (medium with audit) |
 
 ## Section 5 -- Year-End Adjustments Checklist
 
-**Year-End Adjustments Checklist**
+**Year-End Adjustments Checklist**  _(https://www.frc.org.uk/docs/9461/html/)_
 
 | # | Adjustment | UK-specific notes |
 | --- | --- | --- |
@@ -120,11 +122,11 @@ Effective for accounting periods beginning on or after 6 April 2025:
 | 2 | Accruals | Audit/accountancy fees, bonuses, utilities |
 | 3 | Prepayments | Insurance, rent, software licences |
 | 4 | Provisions | FRS 102 Section 21; present obligation, reliable estimate |
-| 5 | Bad debt provision | Expected credit loss model (FRS 102 Section 11 simplified) |
+| 5 | Bad debt provision | Incurred loss model: impair where there is objective evidence of impairment (FRS 102 Section 11, para 11.21); no expected credit loss model |
 | 6 | Inventory | Lower of cost and estimated selling price less costs to sell |
 | 7 | Deferred tax | FRS 102 Section 29; timing differences approach (not temporary differences) |
 | 8 | Holiday pay accrual | Required under FRS 102 — untaken leave at year-end |
-| 9 | Lease accounting | FRS 102 Section 20 (finance/operating distinction — not IFRS 16) |
+| 9 | Lease accounting | FRS 102 Section 20: for accounting periods beginning on or after 1 January 2026, lessees recognise right-of-use assets and lease liabilities for most leases (operating/finance distinction removed for lessees) |
 | 10 | R&D costs | Capitalise development costs meeting criteria (Section 18) or expense |
 | 11 | Government grants | Accruals model or performance model (Section 24) |
 | 12 | Director's loan account | S.455 CTA 2010 tax charge if overdrawn at year-end |
@@ -202,7 +204,7 @@ Capital and reserves
 
 ### Minimum disclosures by entity size
 
-**Minimum disclosures by entity size**
+**Minimum disclosures by entity size**  _(https://www.frc.org.uk/library/standards-codes-policy/accounting-and-reporting/uk-accounting-standards/frs-102/)_
 
 | # | Disclosure | Micro (FRS 105) | Small (s1A) | Medium/Large |
 | --- | --- | --- | --- | --- |
@@ -212,7 +214,7 @@ Capital and reserves
 | 4 | Guarantees/contingencies | Required (on balance sheet) | Required | Required |
 | 5 | Related party transactions | Not required | Required (s1A.12) | Required (Section 33) |
 | 6 | Employee numbers | Not required | Average number only | Full breakdown + costs |
-| 7 | Directors' remuneration | Not required | Required (total) | Required (detailed) |
+| 7 | Directors' remuneration | Not required | Not explicitly required for periods beginning on or after 1 January 2026 (disclose if not under normal market conditions; true and fair judgement) | Required (detailed) |
 | 8 | Audit fees | Not required | Not required | Required |
 | 9 | Financial instruments | Not required | Basic only | Full (Section 11/12) |
 | 10 | Deferred tax | Not required | If material | Required (Section 29) |
@@ -247,11 +249,11 @@ Capital and reserves
 | 3–6 months | £750 |
 | Over 6 months | £1,500 |
 
-- **Public company penalties** — Public company penalties are doubled.
+- **Public company penalties** — Public company penalties are higher: £750, £1,500, £3,000 and £7,500 for the same bands. Any company pays double if it also failed to file on time for the previous financial year.  _(https://www.legislation.gov.uk/uksi/2008/497/regulation/4/made)_
 
 ## Section 10 -- Audit Requirements
 
-**Audit Requirements**
+**Audit Requirements**  _(https://www.legislation.gov.uk/ukpga/2011/25/section/144)_
 
 | Category | Audit requirement |
 | --- | --- |
@@ -260,7 +262,7 @@ Capital and reserves
 | Medium company | Required |
 | Large company | Required |
 | Public company | Always required |
-| Charity (income > £1m) | Required |
+| Charity in England & Wales (gross income > £1.5 million, or above the accounts threshold with assets > £5 million; from 30.9.2026) | Required |
 | Member of non-small group | Required (even if company itself is small) |
 
 ### Conditions that override small company audit exemption:

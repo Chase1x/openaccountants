@@ -5,7 +5,9 @@ description: >
 version: 0.1
 jurisdiction: ZA
 last_updated: 2026-09-03
+authored_by: Brandon Iverach
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - foundation
 category: international
@@ -14,8 +16,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # South Africa — Travel Allowance and Logbook Rate Tables
-
-## South Africa — Travel Allowance and Logbook Rate Tables
 
 The SARS fixed cost table and prescribed reimbursive rate, years of assessment
 2023 to 2027. Data only: this file states the rates and where they come from. It
@@ -43,8 +43,6 @@ SARS numbers a year of assessment by the calendar year in which it **ends**. The
 year runs 1 March to the last day of February. So the year of assessment ending
 28 February 2027 is **YoA 2027**, and it is the year commonly written "2026/27".
 
-**Year of assessment labelling**  _(SARS numbers a year of assessment by the calendar year in which it ends)_
-
 | Year of assessment | Commonly written | Period |
 | --- | --- | --- |
 | 2023 | 2022/23 | 1 March 2022 – 28 February 2023 |
@@ -52,8 +50,6 @@ year runs 1 March to the last day of February. So the year of assessment ending
 | 2025 | 2024/25 | 1 March 2024 – 28 February 2025 |
 | 2026 | 2025/26 | 1 March 2025 – 28 February 2026 |
 | 2027 | 2026/27 | 1 March 2026 – 28 February 2027 |
-
-## How South African years of assessment are labelled
 
 Getting this wrong by one year is the single most common error in South African rate
 lookups. Every table below is keyed by **year of assessment**.
@@ -70,18 +66,7 @@ Not covered here: whether a logbook is required, how to apportion business versu
 private kilometres, the 80/20 PAYE inclusion on a travel allowance, or the
 interaction with codes 3701/3702/3703. Those are computation rules.
 
-## Section 2 — Fixed cost table (deemed-cost method)
-
-Fuel and maintenance are stated in **cents per kilometre**, as SARS publishes them.
-Fixed cost is an annual rand amount. The band is set by the **determined value** of
-the vehicle.
-
-### Year of assessment 2023 (2022/23)
-
-**Fixed Cost Table, YoA 2023 (2022/23)**  _(SARS Fixed Cost Table, YoA 2023, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed.)_
-
-| Determined value of vehicle | Fixed cost (per year) | Fuel cost | Maintenance cost |
-| --- | --- | --- | --- |
+ | --- | --- | --- |
 | 0 – 95,000 | R29,504 | 141.6 c/km | 45.0 c/km |
 | 95,001 – 190,000 | R52,226 | 158.1 c/km | 56.3 c/km |
 | 190,001 – 285,000 | R75,039 | 171.8 c/km | 62.0 c/km |
@@ -91,9 +76,9 @@ the vehicle.
 | 570,001 – 665,000 | R157,564 | 234.2 c/km | 115.6 c/km |
 | exceeding 665,000 | R157,564 | 234.2 c/km | 115.6 c/km |
 
-### Year of assessment 2024 (2023/24)
+_Source: SARS Fixed Cost Table, YoA 2023, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed._
 
-**Fixed Cost Table, YoA 2024 (2023/24)**  _(SARS Fixed Cost Table, YoA 2024, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed.)_
+### Year of assessment 2024 (2023/24)
 
 | Determined value of vehicle | Fixed cost (per year) | Fuel cost | Maintenance cost |
 | --- | --- | --- | --- |
@@ -106,9 +91,9 @@ the vehicle.
 | 600,001 – 700,000 | R183,611 | 233.4 c/km | 112.2 c/km |
 | exceeding 700,000 | R183,611 | 233.4 c/km | 112.2 c/km |
 
-### Year of assessment 2025 (2024/25)
+_Source: SARS Fixed Cost Table, YoA 2024, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed._
 
-**Fixed Cost Table, YoA 2025 (2024/25)**  _(SARS Fixed Cost Table, YoA 2025, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Confirmed 2026-09-02 against PAYE-GEN-01-G03-A01, Revision 17, effective 29 February 2024 — all 9 bands.)_
+### Year of assessment 2025 (2024/25)
 
 | Determined value of vehicle | Fixed cost (per year) | Fuel cost | Maintenance cost |
 | --- | --- | --- | --- |
@@ -122,9 +107,9 @@ the vehicle.
 | 700,001 – 800,000 | R215,447 | 251.2 c/km | 118.9 c/km |
 | exceeding 800,000 | R215,447 | 251.2 c/km | 118.9 c/km |
 
-### Year of assessment 2026 (2025/26)
+_Source: SARS Fixed Cost Table, YoA 2025, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Confirmed 2026-09-02 against PAYE-GEN-01-G03-A01, Revision 17, effective 29 February 2024 — all 9 bands._
 
-**Fixed Cost Table, YoA 2026 (2025/26)**  _(SARS Fixed Cost Table, YoA 2026, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed.)_
+### Year of assessment 2026 (2025/26)
 
 | Determined value of vehicle | Fixed cost (per year) | Fuel cost | Maintenance cost |
 | --- | --- | --- | --- |
@@ -138,9 +123,9 @@ the vehicle.
 | 700,001 – 800,000 | R211,121 | 242.9 c/km | 122.5 c/km |
 | exceeding 800,000 | R211,121 | 242.9 c/km | 122.5 c/km |
 
-### Year of assessment 2027 (2026/27)
+_Source: SARS Fixed Cost Table, YoA 2026, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Annexure for this year not retrievable; not independently confirmed._
 
-**Fixed Cost Table, YoA 2027 (2026/27)**  _(SARS Fixed Cost Table, YoA 2027, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Confirmed 2026-09-02 against PAYE-GEN-01-G03-A01, Revision 19, effective 1 March 2026 — all 9 bands.)_
+### Year of assessment 2027 (2026/27)
 
 | Determined value of vehicle | Fixed cost (per year) | Fuel cost | Maintenance cost |
 | --- | --- | --- | --- |
@@ -154,9 +139,11 @@ the vehicle.
 | 805,001 – 920,000 | R237,679 | 220.1 c/km | 126.1 c/km |
 | exceeding 920,000 | R237,679 | 220.1 c/km | 126.9 c/km |
 
-## Section 3 — Prescribed reimbursive rate per kilometre
+_Source: SARS Fixed Cost Table, YoA 2027, published under Income Tax Act s 8(1)(b)(iii) as PAYE-GEN-01-G03-A01. Confirmed 2026-09-02 against PAYE-GEN-01-G03-A01, Revision 19, effective 1 March 2026 — all 9 bands._
 
-**Prescribed reimbursive rate per kilometre**  _([SARS Rate per Kilometre Schedule, PAYE-GEN-01-G03-A01, para 1.4 (simplified method), linked from https://www.sars.gov.za/tax-rates/employers/subsistence-allowances-and-advances/. YoA 2027 (495 c/km) and YoA 2025 (484 c/km) confirmed 2026-09-02 against Revisions 19 and 17 respectively. YoA 2023, 2024 and 2026 not independently confirmed — those annexures are superseded and no longer published at a stable URL.](https://www.sars.gov.za/tax-rates/employers/subsistence-allowances-and-advances/))_
+---
+
+## Section 3 — Prescribed reimbursive rate per kilometre
 
 | YoA | Rate per kilometre | Effective from |
 | --- | --- | --- |
@@ -165,6 +152,10 @@ the vehicle.
 | 2025 (2024/25) | R4.84 | 1 March 2024 |
 | 2026 (2025/26) | R4.76 | 1 March 2025 |
 | 2027 (2026/27) | R4.95 | 1 March 2026 |
+
+_Source: SARS Rate per Kilometre Schedule, **PAYE-GEN-01-G03-A01**, para 1.4 (simplified method), linked from <https://www.sars.gov.za/tax-rates/employers/subsistence-allowances-and-advances/>. YoA 2027 (495 c/km) and YoA 2025 (484 c/km) confirmed 2026-09-02 against Revisions 19 and 17 respectively. YoA 2023, 2024 and 2026 not independently confirmed — those annexures are superseded and no longer published at a stable URL._
+
+---
 
 ## Section 4 — Edge cases and traps
 
@@ -191,6 +182,8 @@ the vehicle.
 2. **Band continuity.** Each band floor equals the previous band ceiling.
 3. **Year check.** Rates are keyed to the year of assessment, and the reimbursive
    rate changes on 1 March.
+
+---
 
 ## Disclaimer
 

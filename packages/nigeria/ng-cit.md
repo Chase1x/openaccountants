@@ -4,9 +4,11 @@ description: "Use this skill whenever asked about Nigerian Companies Income Tax 
 jurisdiction: NG
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Omolola Fasasi, CA
 reviewed_by: Omolola Fasasi 
 review_status: current
-tier: 1
+trust_label: Checked by Omolola Fasasi
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

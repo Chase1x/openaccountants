@@ -8,7 +8,8 @@ metadata:
   jurisdiction: "PT"
   tax_year: "2025"
   last_updated: "2026-07-13"
-  reviewed_by: "Mário Jorge da costa Vale"
+  reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -26,30 +27,30 @@ metadata:
 
 ### IRS Independente
 
-**IRS Independente — verified rates & thresholds**  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+**IRS Independente — verified rates & thresholds**  _([CIRS / Redação da Lei n.º 55-A/2025, de 22/07](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/ra/Pages/irs68ra_202512.aspx))_
 
-- **0 – €7.703** — 0 – €8.059 ; 12,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€7.703 – €11.623** — 8.059 – €12.160 ; 16,00%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€11.623 – €16.472** — 12.160 – €17.233 ; 21,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€16.472 – €21.321** — 17.233 – €22.306 ; 24,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€21.321 – €27.146** — 22.306 – €28.400 ; 31,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€27.146 – €39.791** — 28.400 – €41.629 ; 34,90%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€39.791 – €51.997** — 41.629 – €44.987 ; 43,10%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€51.997 – €81.199** — 44.987 – €83.696 ; 44,60%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **Acima de €81.199** — Acima de €83.696 ; 12,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **0 – €8.059** — 0 – €8.059 ; 12,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€8.059 – €12.160** — 8.059 – €12.160 ; 16,00%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€12.160 – €17.233** — 12.160 – €17.233 ; 21,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€17.233 – €22.306** — 17.233 – €22.306 ; 24,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€22.306 – €28.400** — 22.306 – €28.400 ; 31,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€28.400 – €41.629** — 28.400 – €41.629 ; 34,90%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€41.629 – €44.987** — 41.629 – €44.987 ; 43,10%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **€44.987 – €83.696** — 44.987 – €83.696 ; 44,60%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
+- **Acima de €83.696** — Acima de €83.696 ; 48,00%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
 - **€80.000 – €250.000** — 2,5%  _(CIRS)_
 - **Acima de €250.000** — 5%  _(CIRS)_
 - **Vendas de bens** — 0,15 (15% do bruto tributável)  _(CIRS Art. 31.º)_
-- **Prestação de serviços** — 0,35 (35% do bruto)  _(CIRS Art. 31.º, nº 1, b) e c))_
-- **Hotelaria/alojamento** — 0,15  _(CIRS Art. 31.º)_
+- **Prestação de serviços** — 0,75 (atividades profissionais da tabela do art. 151.º) ; 0,35 (restantes prestações de serviços)  _(CIRS Art. 31.º, nº 1, b) e c))_
+- **Hotelaria/alojamento** — 0,15 (exceto alojamento local na modalidade de moradia ou apartamento)  _(CIRS Art. 31.º)_
 - **Propriedade intelectual (autor)** — Isenção de 50% até máximo de 10.000 ; o restante é sujeito a coeficiente de 0,95  _(CIRS Art. 31.º)_
-- **Outros rendimentos Cat. B** — 0,95  _(CIRS Art. 31.º)_
-- **Limiar contabilidade organizada** — > €200.000 de receitas  _(CIRS)_
+- **Outros rendimentos Cat. B** — 0,10  _(CIRS Art. 31.º)_
+- **Limiar contabilidade organizada** — > €200.000 de receitas (em dois períodos de tributação consecutivos, ou num único em montante superior a 25 %)  _(CIRS)_
 - **Trabalhador independente Cat. B** — * CIRS Art. 101.º, nº 1, a) 16,5% ; * CIRS Art. 101.º, nº 1, b) 23% ; * CIRS Art. 101.º, nº 1, c) 11,5%  _(CIRS Art. 101.º)_
-- **Anos 1–3** — Ano 1 - 100%  _(CIRS, artº 12º-B, nº 5, a) ; (máx. 55 x IAS ; IAS 2026 = 537,13))_
-- **Anos 4–6** — Ano 2-4 - 75%  _(CIRS, artº 12º-B, nº 5, b))_
-- **Anos 7–9** — Ano 5-7 - 50%  _(CIRS, artº 12º-B, nº 5, c))_
-- **Ano 10** — Ano 8-10 - 25%  _(CIRS, artº 12º-B, nº 5, d))_
+- **Ano 1** — Ano 1 - 100%  _(CIRS, artº 12º-B, nº 5, a) ; (máx. 55 x IAS ; IAS 2026 = 537,13))_
+- **Anos 2–4** — Ano 2-4 - 75%  _(CIRS, artº 12º-B, nº 5, b))_
+- **Anos 5–7** — Ano 5-7 - 50%  _(CIRS, artº 12º-B, nº 5, c))_
+- **Anos 8–10** — Ano 8-10 - 25%  _(CIRS, artº 12º-B, nº 5, d))_
 - **Entrega Modelo 3** — 1 abril – 30 junho  _(CIRS)_
 - **Pagamentos por conta** — Até dia 20 de Julho, setembro, dezembro (dispensado se prestação < €50)  _(CIRS Art. 102º, nº 1 e 3)_
 
@@ -89,11 +90,11 @@ metadata:
 
 ### Regime Simplificado — Coeficientes 2025 (art. 31.º n.º 1 CIRS)
 
-**Regime Simplificado — Coeficientes 2025 (art. 31.º n.º 1 CIRS)**  _(art. 31.º n.º 1 CIRS)_
+**Regime Simplificado — Coeficientes 2025 (art. 31.º n.º 1 CIRS)**  _([art. 31.º n.º 1 CIRS](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx))_
 
 | Tipo de Rendimento | Coeficiente | Base Tributável Efetiva |
 | --- | --- | --- |
-| Vendas de mercadorias e produtos; atividades de restauração/bebidas e hotelaria (exceto AL em zona de contenção) | 0,15 | 15% do bruto |
+| Vendas de mercadorias e produtos; atividades de restauração/bebidas e hotelaria (exceto alojamento local na modalidade de moradia ou apartamento) | 0,15 | 15% do bruto |
 | **Atividades profissionais da tabela do art. 151.º** (Portaria 1011/2001 — inclui, entre outros: arquitetos 1001, engenheiros 1003, consultores 1320, programadores informáticos 1332, tradutores 1334, designers 1336, e o código residual **1519 — outros prestadores de serviços**) | **0,75** | 75% do bruto |
 | Prestações de serviços **não** previstas na tabela do art. 151.º nem noutras alíneas | 0,35 | 35% do bruto |
 | Propriedade intelectual e industrial (exploração), rendimentos prediais, capitais e mais-valias imputados à atividade | 0,95 | 95% do bruto |
@@ -101,7 +102,7 @@ metadata:
 | Subsídios não destinados à exploração | 0,30 | 30% do bruto |
 
 - **Propriedade intelectual — benefício EBF art. 58.º** — Se o titular for o titular originário residente, apenas 50% do rendimento é englobado, com limite de EUR 10 000 de montante excluído (regime em vigor até 2026 — Lei 20/2023); o remanescente segue o coeficiente 0,95. Não existe coeficiente 0,50 para propriedade intelectual.  _(EBF art. 58.º; Lei 20/2023)_
-- **Armadilha de classificação** — A maioria das profissões liberais exercidas pessoalmente cai na tabela do art. 151.º (coeficiente 0,75) — incluindo, pela posição da AT, o código residual 1519. O coeficiente 0,35 só se aplica a prestações de serviços fora da tabela. Verificar o código de atividade no registo do contribuinte antes de escolher o coeficiente.  _(art. 151.º CIRS)_
+- **Armadilha de classificação** — A maioria das profissões liberais exercidas pessoalmente cai na tabela do art. 151.º (coeficiente 0,75) — incluindo, pela posição da AT, o código residual 1519 (mas, para retenção na fonte, a AT aplica ao código 1519 a taxa de 11,5% da alínea c) do n.º 1 do artigo 101.º). O coeficiente 0,35 só se aplica a prestações de serviços fora da tabela. Verificar o código de atividade no registo do contribuinte antes de escolher o coeficiente.  _([art. 151.º CIRS](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/informacoes_vinculativas/rendimento/cirs/Documents/PIV_16493.pdf))_
 - **Dedução de contribuições obrigatórias (art. 31.º n.º 2)** — Nos rendimentos das alíneas b) e c), as contribuições obrigatórias para regimes de proteção social são dedutíveis apenas na parte em que excedam 10% dos rendimentos brutos (e quando não deduzidas a outro título). Não deduzir a totalidade da SS à base coeficiente.  _(art. 31.º n.º 2 CIRS)_
 - **Limiar de elegibilidade do regime simplificado** — EUR 200 000 EUR (Receitas brutas do ano anterior (ou estimadas no ano corrente para novos contribuintes) ≤ EUR 200 000)  _(CIRS)_
 
@@ -126,11 +127,11 @@ metadata:
 
 ### Segurança Social (Contribuições)
 
-**Segurança Social (Contribuições)**
+**Segurança Social (Contribuições)**  _(https://www.seg-social.pt/ptss/pssd/documento/cmdddzytm006agq2y1ci6tibc)_
 
 | Esquema | Valor | Base |
 | --- | --- | --- |
-| Trabalhador independente SS | 21,4% | 70% das receitas brutas trimestrais ÷ 3 (base mensal) |
+| Trabalhador independente SS | 21,4% (25,2% para empresários em nome individual) | 70% das receitas brutas trimestrais de prestação de serviços (20% nas vendas de bens e hotelaria/restauração) ÷ 3 (base mensal) |
 | Limite máximo da base mensal | 12 × IAS = EUR 6 270,00 (2025; IAS 2025 = EUR 522,50) | Rendimento relevante mensal acima do teto não contribui |
 | Novos trabalhadores independentes | Isenção nos primeiros 12 meses de atividade (primeira inscrição) | Confirmar data de início na SS |
 
@@ -292,7 +293,7 @@ Alerta: o IRS Jovem requer confirmação do número do ano (opção exercida na 
 
 ### Exemplo 3 — BPI (Algarve, Arquiteta — Contabilidade Organizada)
 
-**Cliente:** Sofia Pinto, arquiteta, receitas brutas EUR 220 000 (contab. organizada obrigatória; CC exigido).
+**Cliente:** Sofia Pinto, arquiteta, receitas brutas EUR 220 000 (contab. organizada obrigatória apenas se o limite tiver sido ultrapassado em dois períodos de tributação consecutivos ou em montante superior a 25 % num único exercício; caso contrário, por opção; CC exigido).
 
 ```
 Receitas brutas: EUR 220 000
@@ -325,7 +326,7 @@ Adicional de solidariedade (art. 68.º-A; rendimento coletável > 80 000):
 Total IRS: 73 827,26 + 2 414,97 = **EUR 76 242,23**
 ```
 
-Alerta: bruto > EUR 200 000 — CC obrigatório; adicional de solidariedade aplica-se; confirmar a base SS efetivamente declarada (declaração trimestral) antes de fechar.
+Alerta: bruto > EUR 200 000 — CC obrigatório; adicional de solidariedade aplica-se; confirmar a base SS efetivamente fixada antes de fechar (em contabilidade organizada, o rendimento relevante corresponde ao lucro tributável do ano anterior, com o máximo de 12 vezes o IAS).
 
 ### Exemplo 4 — Santander Portugal (Lisboa, Designer, muitos MB Way)
 
@@ -366,6 +367,7 @@ Não aplicar taxas progressivas nem 20% flat **sem confirmação documental** do
 **Cliente:** Rita Alves, tradutora (código 1334 — tabela art. 151.º), Coimbra, primeiro ano como trabalhadora independente.
 
 Considerações para o primeiro ano:
+- Coeficientes das alíneas b), c) e f) reduzidos em 50 % no período de início de atividade e em 25 % no seguinte, se não auferir rendimentos das categorias A ou H (art. 31.º n.º 10)
 - Regime simplificado aplica-se (novo contribuinte, rendimento estimado < EUR 200 000)
 - Dispensa de retenção (art. 101.º-B): só se **previr auferir** menos de EUR 15 000 anuais (limiar do art. 53.º CIVA em 2025). Com EUR 22 000 estimados, **não** há dispensa — os clientes empresariais retêm 23%.
 - IRS Jovem: se a Rita tiver até 35 anos, ano 1 → isenção 100% (limite 55 × IAS = EUR 28 737,50)
@@ -386,11 +388,11 @@ Nota: o rendimento isento é declarado na Modelo 3 (a opção IRS Jovem exerce-s
 
 ## Secção 5 — Regras de Tier 1 (Aplicar Diretamente)
 
-- **T1-PT-1 — Regime simplificado: coeficiente, não despesas reais** — Em regime simplificado, rendimento tributável = receitas brutas × coeficiente. Despesas individuais NÃO são dedutíveis (estão implicitamente cobertas pelo coeficiente). Apenas as contribuições para a SS pagas são deduzidas separadamente da base tributável. Aplicar mecanicamente — não somar despesas em regime simplificado. — e o coeficiente das profissões da tabela do art. 151.º é 0,75 (art. 31.º n.º 1 b)); 0,35 apenas para serviços fora da tabela.  _(art. 31.º n.º 1 b) CIRS)_
+- **T1-PT-1 — Regime simplificado: coeficiente, não despesas reais** — Em regime simplificado, rendimento tributável = receitas brutas × coeficiente. Despesas individuais NÃO são dedutíveis (estão implicitamente cobertas pelo coeficiente), mas nas alíneas b) e c) acresce ao rendimento tributável a diferença positiva entre 15 % dos rendimentos brutos e as despesas e encargos comunicados (art. 31.º n.º 13). Apenas as contribuições para a SS pagas são deduzidas separadamente da base tributável. Aplicar mecanicamente — não somar despesas em regime simplificado. — e o coeficiente das profissões da tabela do art. 151.º é 0,75 (art. 31.º n.º 1 b)); 0,35 apenas para serviços fora da tabela.  _([art. 31.º n.º 1 b) CIRS](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx))_
 - **T1-PT-2 — Retenção na fonte é um adiantamento, não uma redução de rendimento** — A retenção pelos clientes (23% para profissões da tabela 151.º; 16,5% propriedade intelectual; 11,5% outros B) é um adiantamento creditado contra a coleta final. Não reduz as receitas brutas. Recompor sempre: bruto = líquido ÷ (1 − taxa efetiva) — ÷ 0,77 no caso típico de 23%. Confirmar a taxa em cada recibo (transição 25% → 23% em 2025).
 - **T1-PT-3 — Contribuições SS: dedução limitada em regime simplificado** — Contabilidade organizada: dedutíveis integralmente como gasto. Regime simplificado (alíneas b) e c) do art. 31.º n.º 1): dedutíveis apenas na parte em que excedam 10% dos rendimentos brutos e quando não deduzidas a outro título (art. 31.º n.º 2). Nunca deduzir a totalidade por defeito.  _(art. 31.º n.º 2 CIRS)_
 - **T1-PT-4 — IRS Jovem: confirmar número do ano antes de aplicar** — Nunca presumir. Contribuinte até 35 anos, primeiros 10 anos de obtenção de rendimentos; escala 100% (ano 1), 75% (anos 2–4), 50% (anos 5–7), 25% (anos 8–10); limite anual 55 × IAS; rendimento isento englobado para efeitos de taxa. Pedir sempre confirmação.
-- **T1-PT-5 — Contabilidade organizada obrigatória a partir de EUR 200 000** — Receitas brutas acima de EUR 200 000 no ano anterior obrigam à contabilidade organizada a partir do ano seguinte. Aplicar regime simplificado apenas quando confirmado bruto ≤ EUR 200 000 no ano anterior (ou ano corrente para novos contribuintes).
+- **T1-PT-5 — Contabilidade organizada obrigatória a partir de EUR 200 000** — Receitas brutas acima de EUR 200 000 obrigam à contabilidade organizada a partir do período seguinte apenas quando o limite seja ultrapassado em dois períodos de tributação consecutivos ou, num único exercício, em montante superior a 25 % (art. 28.º n.º 6). Aplicar regime simplificado apenas quando confirmado bruto ≤ EUR 200 000 no ano anterior (ou ano corrente para novos contribuintes).  _(https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs28.aspx)_
 - **T1-PT-6 — Pagamentos de IRS e IVA não são despesas de IRS** — Pagamentos à AT (pagamento por conta, saldo de IRS) e entregas de IVA são pagamentos de imposto, não despesas de Categoria B. Excluir todos os descritivos de pagamentos à AT do cálculo do rendimento.
 - **T1-PT-7 — RNH / IFICI: encaminhar para skill dedicada** — Se houver qualquer indício de estatuto RNH ou IFICI (datas de registo, ano de início, indicação do cliente), parar e remeter para a skill `pt-nhr-ifici`. Não tentar aplicar a taxa de 20% AEVA, nem isenções de rendimento estrangeiro, nesta skill.
 - **T1-PT-8 — Verificar o código de atividade antes do coeficiente** — O coeficiente depende do enquadramento do art. 151.º, não da descrição informal da atividade. Pedir o comprovativo de atividade da AT; na dúvida aplicar 0,75 e sinalizar (default conservador).  _(art. 151.º CIRS)_

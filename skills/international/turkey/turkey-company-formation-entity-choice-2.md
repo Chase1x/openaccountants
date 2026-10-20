@@ -4,7 +4,9 @@ description: "Source-cited draft: company formation & entity choice for Turkey (
 jurisdiction: TR
 tax_year: 2025
 last_updated: 2026-08-25
+authored_by: Yiğit Çelikel
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "US-FL"
   tax_year: "2026"
   last_updated: "2026-07-13"
+  authored_by: "Rob Hoffman, EA"
   reviewed_by: "Rob Hoffman"
+  trust_label: "Checked by Rob Hoffman"
   review_status: "current"
 ---
 

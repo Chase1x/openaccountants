@@ -5,8 +5,8 @@ version: 0.1
 jurisdiction: CM
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Nkinyam Courage Ndasi
-review_status: current
+review_status: pending_review
+trust_label: Built by Michael Cutajar and the OpenAccountants team
 depends_on:
   - social-contributions-workflow-base
 category: international

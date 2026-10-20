@@ -4,7 +4,9 @@ description: "What actually happens to your UK tax when you move to Dubai or Abu
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-08-03
+authored_by: Michael Cutajar, CPA, ACCA
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

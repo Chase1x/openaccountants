@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -32,7 +33,7 @@ This file is a content skill that loads on top of `us-tax-workflow-base` v0.1. I
 
 This is a decision skill, not a computation skill. Unlike the bookkeeping and computation skills in the pipeline, this skill produces a decision brief for the reviewer, not a tax return position. The decision brief presents the SE tax savings estimate, the incremental costs, the QBI interaction, state-specific issues, and a recommendation with confidence level.
 
-Tax year coverage. This skill is current for tax year 2025 as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the permanent QBI deduction and the rate increase to 23% for 2026+.
+Tax year coverage. This skill is current for tax year 2025 as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the permanent QBI deduction, which stays at 20% for 2026+.
 
 The reviewer is the customer of this output. The skill produces a decision analysis, not a filing. The reviewing Enrolled Agent, CPA, or attorney makes the final recommendation to the client.
 
@@ -71,14 +72,14 @@ This skill does NOT cover:
 
 ## Section 2 — Year coverage and currency
 
-Tax year covered: 2025 (election effective for TY2025 if Form 2553 filed by March 17, 2025 — March 15 falls on Saturday — or within 75 days of formation if formed after January 1, 2025).
+Tax year covered: 2025 (election effective for TY2025 if Form 2553 filed by March 17, 2025 — March 15 falls on Saturday — or no more than 2 months and 15 days after the beginning of the first tax year if formed after January 1, 2025).
 
 Currency date: April 2026.
 
 Legislation reflected:
 - Internal Revenue Code as in force for tax year 2025
 - One Big Beautiful Bill Act (OBBBA), Public Law 119-21, signed July 4, 2025
-- IRC §199A as made permanent by OBBBA (20% for 2025, rising to 23% for 2026+)
+- IRC §199A as made permanent by OBBBA (20% for 2025 and 2026+)
 - Rev. Proc. 2013-30 (late S-corp election relief)
 - Rev. Proc. 2024-40 (2025 inflation adjustments)
 
@@ -104,23 +105,23 @@ Legislation reflected:
 
 ### S-corp payroll tax figures (employer side)
 
-**S-corp payroll tax figures (employer side)**  _(IRC §3301; IRC §3306(b)(1); State law)_
+**S-corp payroll tax figures (employer side)**  _([IRC §3301; IRC §3306(b)(1); State law](https://www.irs.gov/pub/irs-pdf/f940sa.pdf))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
-| FUTA tax rate | 6.0% (0.6% after state credit) | IRC §3301; most states qualify for 5.4% credit |
+| FUTA tax rate | 6.0% (0.6% after state credit) | IRC §3301; most states qualify for 5.4% credit; 2025 credit reduction states: California 1.2%, U.S. Virgin Islands 4.5% |
 | FUTA wage base | $7,000 | IRC §3306(b)(1) |
 | Effective FUTA cost per employee | $42 (0.6% x $7,000) | Derived |
 | State unemployment insurance (SUI) | Varies by state; typically 1-5% on first $7K-$56K | State law |
 
 ### QBI deduction figures
 
-**QBI deduction figures**  _(IRC §199A(a); §199A(b)(2); OBBBA P.L. 119-21; Rev. Proc. 2024-40)_
+**QBI deduction figures**  _([IRC §199A(a); §199A(b)(2); OBBBA P.L. 119-21; Rev. Proc. 2024-40](https://www.law.cornell.edu/uscode/text/26/199A))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
 | QBI deduction rate (2025) | 20% | IRC §199A(a); OBBBA made permanent |
-| QBI deduction rate (2026 onward) | 23% | OBBBA P.L. 119-21; IRC §199A as amended |
+| QBI deduction rate (2026 onward) | 20% | OBBBA P.L. 119-21; IRC §199A as amended |
 | QBI threshold (single) | $197,300 | Rev. Proc. 2024-40 |
 | QBI threshold (MFJ) | $394,600 | Rev. Proc. 2024-40 |
 | QBI phase-in range top (single) | $247,300 | $197,300 + $50,000 |
@@ -129,12 +130,12 @@ Legislation reflected:
 
 ### Form 2553 deadlines
 
-**Form 2553 deadlines**  _(IRC §1362(b)(1)(B); §7503; §1362(b)(1)(C); Rev. Proc. 2013-30)_
+**Form 2553 deadlines**  _([IRC §1362(b)(1)(B); §7503; §1362(b)(1)(C); Rev. Proc. 2013-30](https://www.irs.gov/pub/irs-pdf/i2553.pdf))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
 | Election deadline for existing entity (calendar year) | March 17, 2025 (March 15 is Saturday) | IRC §1362(b)(1)(B); §7503 |
-| Election deadline for newly formed entity | Within 75 days of formation | IRC §1362(b)(1)(C); Rev. Proc. 2013-30 |
+| Election deadline for newly formed entity | No more than 2 months and 15 days after the beginning of its first tax year (earliest of first shareholders, first assets, or beginning business) | IRC §1362(b); Form 2553 instructions |
 | Late election relief | Available if requirements of Rev. Proc. 2013-30 are met | Rev. Proc. 2013-30 |
 
 ## Section 4 — Primary source library
@@ -286,7 +287,7 @@ Conclusion: At $120K net SE income with a $65K salary, the S-corp saves roughly 
 
 ### The basic QBI framework (2025)
 
-- **Basic QBI framework** — Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (rising to 23% for 2026+ under OBBBA). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no limitations.  _(IRC §199A)_
+- **Basic QBI framework** — Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (unchanged at 20% for 2026+ under OBBBA). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no W-2 wage/UBIA limitation (the cap of 20% of taxable income minus net capital gain still applies).  _([IRC §199A](https://www.law.cornell.edu/uscode/text/26/199A))_
 
 ### When QBI interacts with the S-corp decision
 
@@ -294,29 +295,29 @@ Conclusion: At $120K net SE income with a $65K salary, the S-corp saves roughly 
 
 ### When this matters
 
-**When this matters**
+**When this matters**  _(https://www.irs.gov/pub/irs-pdf/i8995.pdf)_
 
 | Taxpayer situation | QBI impact of S-corp | Notes |
 | --- | --- | --- |
-| Income below QBI threshold | No impact — QBI is 20% of QBI regardless | S-corp decision driven purely by SE tax savings |
+| Income below QBI threshold | Reduces QBI — the S-corp salary is not QBI, so the deduction is 20% of profit after salary | Include the lost QBI deduction alongside SE tax savings |
 | Income in phase-in range | S-corp W-2 wages may increase QBI deduction | Run both scenarios; net tax impact may favor S-corp |
 | Income above phase-in range | S-corp W-2 wages are critical for QBI deduction | Without W-2 wages, QBI deduction may be zero for service businesses (SSTBs) |
-| Specified Service Trade or Business (SSTB) above threshold | QBI deduction phases out entirely | S-corp W-2 wages do not help once fully phased out |
+| Specified Service Trade or Business (SSTB) above threshold | QBI deduction phases out across the phase-in range ($394,600 to $494,600 MFJ for 2025) and is gone above it | S-corp W-2 wages do not help once fully phased out |
 
 ### The SSTB factor
 
-- **SSTB QBI phase-out** — For specified service trades or businesses (legal, health, consulting, financial services, performing arts, athletics, etc. under §199A(d)(2)), the QBI deduction phases out entirely above the threshold. Once fully phased out, the W-2 wages from S-corp salary provide no QBI benefit. The S-corp decision for SSTBs above the threshold is driven purely by SE tax savings. Note: Software development is generally NOT an SSTB (consulting may be, depending on facts). The reviewer must classify the business.  _(IRC §199A(d)(2))_
+- **SSTB QBI phase-out** — For specified service trades or businesses (legal, health, consulting, financial services, performing arts, athletics, etc. under §199A(d)(2)), the QBI deduction phases out over the phase-in range above the threshold ($197,300 to $247,300 single / $394,600 to $494,600 MFJ for 2025) and is fully phased out above the top of that range. Once fully phased out, the W-2 wages from S-corp salary provide no QBI benefit. The S-corp decision for SSTBs above the threshold is driven purely by SE tax savings. Note: Software development is generally NOT an SSTB (consulting may be, depending on facts). The reviewer must classify the business.  _([IRC §199A(d)(2)](https://www.irs.gov/pub/irs-drop/rp-24-40.pdf))_
 
 ## Section 9 — Form 2553 election mechanics
 
 ### Filing deadline
 
-**Filing deadline**
+**Filing deadline**  _(https://www.irs.gov/pub/irs-pdf/i2553.pdf)_
 
 | Scenario | Deadline | Primary source |
 | --- | --- | --- |
 | Existing entity, calendar year, electing for TY2025 | March 17, 2025 (March 15 is Saturday) | IRC §1362(b)(1)(B); §7503 |
-| Entity formed on or after Jan 1, 2025 | Within 75 days of formation | IRC §1362(b)(1)(C) |
+| Entity formed on or after Jan 1, 2025 | No more than 2 months and 15 days after the beginning of its first tax year | IRC §1362(b); Form 2553 instructions |
 | Fiscal year entity | By the 15th day of the 3rd month of the fiscal year | IRC §1362(b)(1)(B) |
 
 ### Late election relief under Rev. Proc. 2013-30
@@ -325,7 +326,7 @@ Conclusion: At $120K net SE income with a $65K salary, the S-corp saves roughly 
 
 ### Other late election methods
 
-- **Other late election methods** — PLR (Private Letter Ruling): If Rev. Proc. 2013-30 does not apply (e.g., more than 3 years and 75 days have passed, or inconsistent returns were filed), the entity can request a PLR from the IRS. Cost: $3,000 - $35,000+ user fee plus professional fees. Generally not cost-effective for sole props. Rev. Proc. 2022-19: Provides additional simplified relief for certain late elections when filed within 3 years and 75 days.  _(Rev. Proc. 2022-19)_
+- **Other late election methods** — PLR (Private Letter Ruling): If Rev. Proc. 2013-30 does not apply (e.g., inconsistent returns were filed, or more than 3 years and 75 days have passed without the corporation and all shareholders having reported consistently with S status and at least 6 months having elapsed since the first Form 1120-S was filed), the entity can request a PLR from the IRS. Cost: $14,500 user fee ($3,450 if gross income is less than $400,000) under Rev. Proc. 2026-1, plus professional fees. Generally not cost-effective for sole props. Rev. Proc. 2022-19: Provides taxpayer assistance procedures, including under § 1362(f), to resolve frequently encountered S corporation issues without requesting a PLR (it is not a late-election procedure).  _([Rev. Proc. 2022-19](https://www.irs.gov/pub/irs-pdf/i2553.pdf))_
 
 ### Eligibility requirements for S-corp status
 
@@ -335,15 +336,15 @@ Conclusion: At $120K net SE income with a $65K salary, the S-corp saves roughly 
 
 ### States with significant S-corp disadvantages
 
-**States with significant S-corp disadvantages**
+**States with significant S-corp disadvantages**  _(https://www.ftb.ca.gov/file/business/types/corporations/s-corporations.html)_
 
 | State | Issue | Impact |
 | --- | --- | --- |
-| **California** | $800 annual franchise tax (LLC or S-corp) + 1.5% S-corp tax on net income | S-corp pays 1.5% income tax at entity level (franchise tax); sole prop does not. At $100K net income, this is $1,500 additional state tax. Break-even analysis must account for this. |
+| **California** | $800 annual minimum franchise tax (LLC or S-corp; waived for a newly formed S corporation's first taxable year) + 1.5% S-corp tax on net income | S-corp pays 1.5% income tax at entity level (franchise tax); sole prop does not. At $100K net income, this is $1,500 additional state tax. Break-even analysis must account for this. |
 | **New York City** | S-corps are subject to NYC General Corporation Tax (GCT) or UBT | Sole props pay NYC UBT; S-corps may pay GCT. The rates and structures differ. Detailed NYC analysis needed. |
 | **New Hampshire** | Business Profits Tax (BPT) at 7.5% applies to S-corp income | NH has no personal income tax but taxes business income at entity level. S-corps pay BPT. |
 | **Tennessee** | No state income tax on earned income | S-corp provides no state tax savings; sole prop is equally advantaged. |
-| **Texas** | Franchise (margin) tax applies to S-corps with revenue > $2.47M | Small S-corps below the no-tax-due threshold are unaffected. Above threshold, 0.375% to 0.75% on margin. |
+| **Texas** | Franchise (margin) tax applies to S-corps with revenue > $2,470,000 (report years 2024 and 2025; $2,650,000 for report years 2026 and 2027) | Small S-corps below the no-tax-due threshold are unaffected. Above threshold, 0.375% to 0.75% on margin. |
 
 ### States with S-corp advantages
 
@@ -405,7 +406,7 @@ A freelancer earned $150K in TY2024 but expects only $40K in TY2025 due to a car
 
 ### Edge Case 2 — Taxpayer's only income source is this business.
 
-When the taxpayer's entire livelihood comes from the business and they perform all services personally, the IRS's argument that "reasonable salary = most of the income" is strongest. The Watson case involved a CPA whose firm earned $488K; the court found $93K was reasonable (about 19%), but the taxpayer had other partners. A solo operator has a weaker position. Conservative approach: set salary at 60-70% of net income for solo operators.
+When the taxpayer's entire livelihood comes from the business and they perform all services personally, the IRS's argument that "reasonable salary = most of the income" is strongest. The Watson case involved a CPA whose firm earned $488K; the court found $91,044 per year was reasonable, but the taxpayer had other partners. A solo operator has a weaker position. Conservative approach: set salary at 60-70% of net income for solo operators.
 
 ### Edge Case 3 — S-corp election mid-year.
 
@@ -494,7 +495,7 @@ An S-corp cannot have a nonresident alien as a shareholder (§1361(b)(1)(C)). If
 
 **Input:** Freelance designer, single filer, formed LLC on January 15, 2025. Intended to elect S-corp effective January 15, 2025. Missed the 75-day deadline (April 1, 2025). Now filing Form 2553 on July 15, 2025. Net SE income expected: $100,000. Filed TY2025 returns as S-corp.
 **Expected output:**
-- 75-day deadline: April 1, 2025 (75 days from Jan 15)
+- Election deadline: no more than 2 months and 15 days after the beginning of the tax year (count as in Form 2553 instructions, Example 1)
 - Filing date: July 15, 2025 (105 days late)
 - Rev. Proc. 2013-30 requirements:
   - Eligible entity: YES (assumed)

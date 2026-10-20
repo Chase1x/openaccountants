@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "Michael Cutajar, CPA (Malta)"
+  trust_label: "Checked by Michael Cutajar, CPA (Malta)"
   review_status: "current"
 ---
 

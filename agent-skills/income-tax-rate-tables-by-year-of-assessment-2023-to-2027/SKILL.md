@@ -7,6 +7,8 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/income-tax-rate-tables-by-year-of-assessment-2023-to-2027"
   jurisdiction: "ZA"
   last_updated: "2026-09-02"
+  authored_by: "Brandon Iverach"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

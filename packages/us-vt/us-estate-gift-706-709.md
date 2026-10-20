@@ -4,8 +4,11 @@ description: Tier 2 US federal content skill for the unified estate, gift, and g
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: James Wallach
 reviewed_by: Christopher Aryee
 review_status: current
+trust_label: Checked by Christopher Aryee
+source_checked: 2026-10-17
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -59,7 +62,7 @@ The intended consumer is a Circular 230 practitioner (EA, CPA, or estate-and-tru
 | Annual exclusion for gifts to non-citizen spouse under §2523(i)(2) | $185,000 | **$190,000** |
 | Section 6166 2% portion ceiling for closely held businesses | $1,850,000 | **$1,900,000** |
 
-- **Rounding rule** — All figures other than the §2523(i) and §6166 amounts continue to be rounded to the nearest $10,000 under §2010(c)(3)(B)(ii).  _(§2010(c)(3)(B)(ii))_
+- **Rounding rule** — The basic exclusion amount is rounded to the nearest multiple of $10,000 under §2010(c)(3)(B); the §2503(b) annual exclusion is rounded to the next lowest multiple of $1,000 under §2503(b)(2).  _([§2010(c)(3)(B)(ii)](https://www.law.cornell.edu/uscode/text/26/2503))_
 
 ### 2.2 The tax rate table — §2001(c)
 
@@ -87,7 +90,7 @@ For all practical purposes, the working rate is 40%. Every reviewer brief should
 ### 2.3 The applicable credit amount
 
 - **AEA formula** — AEA = BEA + DSUE + Restored exclusion amount (rarely applicable)  _(§2010(c)(2))_
-- **2025 applicable credit amount** — For a single decedent or unmarried donor in 2025, AEA = BEA = $13,990,000, producing an applicable credit amount of $5,389,800 (the tentative tax on $13,990,000 under §2001(c)).  _(§2010(c)(2); §2001(c))_
+- **2025 applicable credit amount** — For a single decedent or unmarried donor in 2025, AEA = BEA = $13,990,000, producing an applicable credit amount of $5,541,800 (the tentative tax on $13,990,000 under §2001(c)).  _([§2010(c)(2); §2001(c)](https://www.irs.gov/pub/irs-pdf/i709.pdf))_
 
 ### 2.4 The "Form 706 Method" — interaction of lifetime gifts and the estate
 
@@ -110,7 +113,7 @@ For all practical purposes, the working rate is 40%. Every reviewer brief should
 - **Anti-clawback rule §20.2010-1(c)** — In November 2019, the IRS finalized §20.2010-1(c) (T.D. 9884) providing that if a decedent's estate computes its estate tax using a BEA at death that is lower than the BEA in effect when a gift was made, the AEA used in the §2001(b)(2) gift-tax credit computation is the larger of the two BEAs. Because § 70106 of the OBBBA (P.L. 119-21) made the BEA permanent at $15,000,000 from 2026, no reversion occurs under current law; the rule remains relevant as protection against any future statutory reduction of the BEA.  _(T.D. 9884; §20.2010-1(c); §2001(b)(2))_
 - **Use it or lose it** — The "use it or lose it" pressure ended with the OBBBA: under § 70106 of P.L. 119-21 a donor who makes no large gift before 2026 and then dies in 2026 still has the permanent $15,000,000 BEA available to shelter the estate. The urgency returns only if a future statute reduces the BEA.  _(T.D. 9884)_
 - **Top of the stack principle** — Anti-clawback only protects gifts that consumed exclusion above the BEA in effect at death. Gifts under the BEA at death are absorbed first; only the excess generates the §20.2010-1(c) protection. This is the so-called "use the top of the stack" principle. With the BEA made permanent at $15,000,000 from 2026 by § 70106 of P.L. 119-21, the rule matters only if a future statute reduces the BEA below a donor's cumulative gifts.  _(§20.2010-1(c))_
-- **2022 amendment anti-abuse rule** — In April 2022 the IRS published T.D. 9884 amending §20.2010-1(c)(3) to add an anti-abuse rule preventing certain transfers that are includible in the gross estate under §§2035–2042 (i.e., transfers with retained interests or strings) from generating the anti-clawback protection. Practical effect: an aggressive "gift" that is in substance not a completed transfer — for example, an outright gift followed by a side agreement retaining benefits — does not lock in the doubled BEA.  _(T.D. 9884; §20.2010-1(c)(3); §§2035–2042)_
+- **2022 amendment anti-abuse rule** — In April 2022 the IRS published proposed regulations (REG-118913-21, 87 FR 24918; not finalized) that would amend §20.2010-1(c)(3) to add an anti-abuse rule preventing certain transfers that are includible in the gross estate under §§2035–2042 (i.e., transfers with retained interests or strings) from generating the anti-clawback protection. Practical effect: an aggressive "gift" that is in substance not a completed transfer — for example, an outright gift followed by a side agreement retaining benefits — does not lock in the doubled BEA.  _([T.D. 9884; §20.2010-1(c)(3); §§2035–2042](https://www.federalregister.gov/documents/2022/04/27/2022-08865/estate-and-gift-taxes-limitation-on-the-special-rule-regarding-a-difference-in-the-basic-exclusion))_
 
 ### 3.4 Planning structures (overview only)
 
@@ -127,7 +130,7 @@ For all practical purposes, the working rate is 40%. Every reviewer brief should
 
 ### 3.5 The "DSUE preservation" alternative for moderate estates
 
-For decedents with estates below the 2025 BEA but where the surviving spouse may have appreciable assets approaching the post-sunset BEA, filing Form 706 solely to elect portability preserves the deceased spouse's full unused BEA at the 2025 level. Rev. Proc. 2022-32 makes this election available without a PLR for 5 years after death. See Section 5.
+For decedents with estates below the 2025 BEA but where the surviving spouse may have appreciable assets approaching the BEA ($15,000,000 for 2026), filing Form 706 solely to elect portability preserves the deceased spouse's full unused BEA at the 2025 level. Rev. Proc. 2022-32 makes this election available without a PLR for 5 years after death. See Section 5.
 
 ## 4. Annual Exclusion, Medical/Education Exception, Gift-Splitting, and §529 Frontload
 
@@ -154,8 +157,8 @@ For decedents with estates below the 2025 BEA but where the surviving spouse may
 - **Requirement — citizenship/residency** — Both spouses must be US citizens or residents at the time of the gift.  _(§2513(a))_
 - **Requirement — marriage status** — Both spouses must be married to each other at the time of the gift and either remain married throughout the calendar year or, if divorced before year-end, neither remarry before year-end.  _(§2513(a))_
 - **Election applies to all gifts** — The election applies to all gifts made by either spouse during the year — it is not selective. Exception: gifts in which the non-donor spouse has any interest (other than as a remainderman) cannot be split.  _(§2513(a))_
-- **Election mechanics on Form 709** — The election is made on Form 709, Page 1, by checking the box on Line 12 and obtaining the consenting spouse's signature on Line 18.  _(Form 709, Line 12, Line 18)_
-- **Both spouses must file** — Both spouses must file Form 709 in any year the election is made if either spouse made a gift exceeding $19,000 to any one donee. The non-donor spouse files a return showing the deemed half-gifts.  _(§2513)_
+- **Election mechanics on Form 709** — The election is made on Form 709, Part III (Spouse's Consent on Gifts to Third Parties): check "Yes" on line 1, complete lines 2 through 7, and attach a Notice of Consent signed and dated by the consenting spouse, who no longer signs the return.  _([Form 709, Line 12, Line 18](https://www.irs.gov/pub/irs-pdf/i709.pdf))_
+- **Both spouses must file** — Both spouses generally must file Form 709 in any year the election is made. Exception: only the donor spouse files (the consenting spouse signifies consent on that return) if only the donor spouse made gifts of more than $19,000 but not more than $38,000 to any third-party donee, the consenting spouse's only gifts were not more than $19,000 to other donees, and all gifts were of present interests.  _([§2513](https://www.irs.gov/pub/irs-pdf/i709.pdf))_
 
 A common review error: a couple making gifts only at or below the $19,000 annual exclusion does not need to split, because each spouse's gifts are already under the annual exclusion individually. Splitting is needed when one spouse makes a gift between $19,001 and $38,000 from separate property, or when one spouse made the gift from joint or community property where the deemed allocation is otherwise unclear.
 
@@ -187,7 +190,7 @@ A common review error: a couple making gifts only at or below the $19,000 annual
 ### 5.3 How portability is elected — Form 706
 
 - **Timely filing requirement** — Portability is elected by the timely filing of a complete and properly prepared Form 706 by the executor of the deceased spouse's estate. "Timely" means within 9 months of death plus the automatic 6-month extension on Form 4768.  _(Form 4768)_
-- **Simplified valuation method for portability-only filings** — A Form 706 filed solely for portability where the gross estate is below the BEA may use the simplified valuation method under §20.2010-2(a)(7)(ii): the executor reports estimated values rounded to the nearest $250,000 for property that qualifies for the marital or charitable deduction. Property generating tax (i.e., not deducted) must still be reported at full FMV.  _(§20.2010-2(a)(7)(ii))_
+- **Simplified valuation method for portability-only filings** — A Form 706 filed solely for portability where the gross estate is below the BEA may use the simplified valuation method under §20.2010-2(a)(7)(ii): the executor need not enter values for property that qualifies for the marital or charitable deduction, but includes in the totals the amount from the Table of Estimated Values (the top of the $250,000 band into which the executor's best estimate falls). Property generating tax (i.e., not deducted) must still be reported at full FMV.  _([§20.2010-2(a)(7)(ii)](https://www.irs.gov/pub/irs-prior/i706--2025.pdf))_
 
 ### 5.4 Late portability election — Rev. Proc. 2022-32
 
@@ -221,19 +224,19 @@ For most clients with a surviving spouse and combined assets approaching or exce
 
 ### 6.3 Form 709 structure
 
-**Form 709 structure table**
+**Form 709 structure table**  _(https://www.irs.gov/pub/irs-pdf/i709.pdf)_
 
 | Section | Content |
 | --- | --- |
-| Page 1 | Donor information; gift-splitting election (Lines 12, 17, 18); summary computation (Lines 1–20) |
+| Page 1 | Part I—General Information (lines 1–21) and Part II—Tax Computation; the gift-splitting consent moved to Part III on page 2 (lines 1–7) |
 | Schedule A — Part 1 | Gifts subject only to gift tax (no GST) |
 | Schedule A — Part 2 | **Direct skips** subject to both gift tax and GST |
 | Schedule A — Part 3 | **Indirect skips** subject to gift tax that may later be subject to GST |
 | Schedule A — Part 4 | Taxable gift reconciliation |
 | Schedule B | Gifts from prior periods (cumulative tracking) |
 | Schedule C | **Deceased Spousal Unused Exclusion (DSUE)** — claimed by surviving spouse using DSUE on lifetime gifts |
-| Schedule D — Part 1 | GST exemption reconciliation |
-| Schedule D — Part 2 | GST exemption allocation |
+| Schedule D — Part 1 | Generation-skipping transfers |
+| Schedule D — Part 2 | GST exemption reconciliation (§2631) and allocation |
 | Schedule D — Part 3 | GST tax computation on direct skips |
 
 ### 6.4 Schedule A — gift listing
@@ -255,7 +258,7 @@ For most clients with a surviving spouse and combined assets approaching or exce
 ### 6.7 Filing logistics
 
 - **Where to file** — Where to file (2025): Internal Revenue Service Center, Kansas City, MO 64999 (verify in current Form 709 instructions; the address has occasionally changed).
-- **E-filing availability** — Form 709 was added to the IRS Modernized e-File system in 2023 and is now widely supported by commercial software. Paper filing remains acceptable.
+- **E-filing availability** — Form 709 was added to the IRS Modernized e-File system in June 2025 (Forms 709 and 709-NA). Paper filing remains acceptable.  _(https://www.irs.gov/irm/part3/irm_03-042-004r)_
 - **Payment methods** — Electronic via EFTPS, IRS Direct Pay (limit $10M per transaction), or check with Form 1040-V-equivalent (no separate gift-tax voucher; identify the payment in the memo line).
 
 ## 7. Form 706 — Estate Tax Return Mechanics
@@ -336,10 +339,10 @@ QDOT mechanics generate a deferred §2056A tax on corpus distributions and on th
 
 ### 7.9 Filing logistics
 
-- **Where to file** — Where to file: Department of the Treasury, IRS, Cincinnati, OH 45999 (verify in current instructions).
-- **E-filing not available** — Form 706 is not electronically filed as of 2025. Paper filing only, certified mail with return receipt strongly recommended.
+- **Where to file** — Where to file: Department of the Treasury, Internal Revenue Service, Kansas City, MO 64999 (verify in current instructions).  _(https://www.irs.gov/pub/irs-prior/i706--2025.pdf)_
+- **E-filing not available** — Form 706 could not be e-filed during 2025; the MeF System was modified in January 2026 to accept Form 706. If filing on paper, certified mail with return receipt is strongly recommended.  _(https://www.irs.gov/irm/part3/irm_03-042-004r)_
 - **Payment methods** — EFTPS or check with the return.
-- **Closing letter fee** — Since June 1, 2021, Form 706 closing letters are issued only upon request and payment of a $67 user fee under Rev. Proc. 2021-30; otherwise the executor must rely on the Form 4422 transcript request to confirm the return has been processed.  _(Rev. Proc. 2021-30; Form 4422)_
+- **Closing letter fee** — Form 706 closing letters are issued only upon request via Pay.gov and payment of a user fee ($67 under T.D. 9957 from Oct. 28, 2021; $56 for requests on or after May 21, 2025); otherwise the executor can rely on an account transcript (Transcript Delivery System or Form 4506-T) to confirm the return has been processed.  _(T.D. 9957; T.D. 10038; Form 4506-T)_  _([Rev. Proc. 2021-30; Form 4422](https://www.irs.gov/businesses/small-businesses-self-employed/frequently-asked-questions-on-the-estate-tax-closing-letter))_
 
 ## 8. Alternate Valuation Date — §2032
 
@@ -449,12 +452,12 @@ For high-basis assets or assets unlikely to appreciate significantly, the trade-
 
 - **Top of the stack mechanic** — The protection applies only to the portion of cumulative lifetime gifts that exceeds the BEA at death. Mechanically: 1. Determine total post-1976 taxable gifts. 2. Determine BEA at death. 3. If total post-1976 gifts ≤ BEA at death: no anti-clawback protection needed (gifts are within the BEA anyway). 4. If total post-1976 gifts > BEA at death: the excess is protected — the estate tax computation uses an AEA equal to total post-1976 gifts (not BEA at death) for purposes of §2001(b)(2).  _(§2001(b)(2))_
 
-Practical example: donor uses $13M of BEA in 2025 (when BEA = $13.99M); donor dies in 2027 when BEA has reverted to ~$7M. Protected gift portion = $13M − $7M = $6M; the $7M post-sunset BEA is also available to shelter the estate; total protection = $7M (BEA at death) + $6M (anti-clawback) = $13M of total transfers shielded.
+Practical example: donor uses $13M of BEA in 2025 (when BEA = $13.99M); donor dies in 2027 after a hypothetical future statute cuts the BEA to ~$7M (under current law the BEA is $15,000,000 for 2026 and indexed after). Protected gift portion = $13M − $7M = $6M; the $7M post-sunset BEA is also available to shelter the estate; total protection = $7M (BEA at death) + $6M (anti-clawback) = $13M of total transfers shielded.
 
 ### 11.3 The 2022 anti-abuse amendment
 
-- **2022 anti-abuse amendment** — T.D. 9884 was amended in April 2022 (final regs published as T.D. 9884-A, 87 F.R. 25530) to disqualify from anti-clawback protection any transfer that is includible in the gross estate under §§ 2035, 2036, 2037, 2038, 2039, 2040, 2041, or 2042. The intent is to prevent "string-attached" gifts from generating clawback protection without being completed transfers.  _(T.D. 9884-A, 87 F.R. 25530)_
-- **Insurance exception** — Exception: gifts of insurance brought back into the estate under §2035(a) by reason of transfer within 3 years of death are not disqualified — these were always pulled back into the estate and the doubled exemption was always available.  _(§2035(a))_
+- **2022 anti-abuse amendment** — Proposed regulations published in April 2022 (REG-118913-21, 87 FR 24918; not finalized) would amend T.D. 9884 to disqualify from anti-clawback protection any transfer that is includible in the gross estate under §§ 2035, 2036, 2037, 2038, 2039, 2040, 2041, or 2042. The intent is to prevent "string-attached" gifts from generating clawback protection without being completed transfers.  _([T.D. 9884-A, 87 F.R. 25530](https://www.federalregister.gov/documents/2022/04/27/2022-08865/estate-and-gift-taxes-limitation-on-the-special-rule-regarding-a-difference-in-the-basic-exclusion))_
+- **Insurance exception** — Exception (proposed): the special rule would continue to apply to includible transfers whose taxable amount is 5 percent or less of the total amount of the transfer, valued as of the date of the transfer. The proposed rule has no carve-out for insurance transferred within 3 years of death; transfers includible under §2035 are covered.  _([§2035(a)](https://www.federalregister.gov/documents/2022/04/27/2022-08865/estate-and-gift-taxes-limitation-on-the-special-rule-regarding-a-difference-in-the-basic-exclusion))_
 
 ### 11.4 Practical implications for pre-sunset planning
 
@@ -473,7 +476,7 @@ A state can have both.
 
 ### 12.2 Overview table — states with estate or inheritance tax (2025)
 
-**States with estate or inheritance tax (2025)**  _(12.2 Overview table — states with estate or inheritance tax (2025))_
+**States with estate or inheritance tax (2025)**  _([12.2 Overview table — states with estate or inheritance tax (2025)](https://www.tax.ny.gov/pit/estate/etidx.htm))_
 
 | State | Type | 2025 exemption / threshold | Top rate | Notes |
 | --- | --- | --- | --- | --- |
@@ -485,11 +488,11 @@ A state can have both.
 | **Maryland** | Estate **and** Inheritance | Estate: $5,000,000; Inheritance: no threshold | Estate 16%; Inheritance 10% | Two-tax state |
 | **Massachusetts** | Estate | $2,000,000 | 16% | "Cliff" raised to $2M effective 2023 by Ch. 50 of 2023 Acts |
 | **Minnesota** | Estate | $3,000,000 | 16% | Not indexed |
-| **New York** | Estate | $6,940,000 | 16% | "Cliff" effect — full estate taxed if > 105% of threshold |
+| **New York** | Estate | $7,160,000 | 16% | "Cliff" effect — full estate taxed if > 105% of threshold |
 | **Oregon** | Estate | $1,000,000 | 16% | Lowest state threshold |
 | **Rhode Island** | Estate | $1,802,431 | 16% | Indexed |
 | **Vermont** | Estate | $5,000,000 | 16% | Not indexed |
-| **Washington** | Estate | $2,193,000 | 20% | Top rate 20% — highest of any state |
+| **Washington** | Estate | $2,193,000 (deaths to 6/30/2025); $3,000,000 (deaths 7/1/2025–12/31/2025) | 20% (deaths to 6/30/2025); 35% (deaths 7/1/2025–6/30/2026) | Rates and exclusion raised for deaths from July 1, 2025 |
 | **Iowa** | Inheritance | — | 0% in 2025 | Phased out effective January 1, 2025 |
 | **Kentucky** | Inheritance | Class A exempt | 16% Class C | Class A (immediate family) exempt; Class C non-relatives highest |
 | **Nebraska** | Inheritance | $100,000 immediate family; lower others | 15% non-relatives | Reduced effective 2023 |
@@ -527,7 +530,7 @@ A state can have both.
 
 ### 13.4 Treaty modifications
 
-- **Estate tax treaties** — The US has estate-tax treaties with approximately 16 countries (Australia, Austria, Canada [via the income tax treaty], Denmark, Finland, France, Germany, Greece, Ireland, Italy, Japan, the Netherlands, Norway, South Africa, Switzerland, and the United Kingdom). Treaty provisions typically: Apportion the BEA between the US and the treaty country in proportion to US-situs vs worldwide assets, or Grant the NRA decedent a credit against US estate tax for foreign death taxes paid on the same property.  _(13.4 Treaty modifications)_
+- **Estate tax treaties** — The IRS lists estate and/or gift tax treaty provisions with these countries: Australia, Austria, Canada [via the income tax treaty], Denmark, Finland, France, Germany, Greece, Ireland, Italy, Japan, the Netherlands, South Africa, Switzerland, and the United Kingdom. Treaty provisions typically: Apportion the BEA between the US and the treaty country in proportion to US-situs vs worldwide assets, or Grant the NRA decedent a credit against US estate tax for foreign death taxes paid on the same property.  _([13.4 Treaty modifications](https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international))_
 
 The Canadian "treaty" provisions are unusual — they appear in the income tax treaty but operate as estate-tax coordination provisions.
 
@@ -547,11 +550,11 @@ Form 706 is not required by the threshold test because the gross estate plus adj
 
 - **DSUE computation** — DSUE = $13,990,000 (BEA) − $0 (taxable estate + adjusted taxable gifts) − $0 (gift tax paid) = $13,990,000  _(Example 14.1)_
 
-S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = $27,980,000. After the 2025 sunset, S's own BEA reverts to ~$7M, but the DSUE — locked in at $13,990,000 — remains.
+S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = $27,980,000. From 2026 there is no sunset: S's own BEA is $15,000,000, and the DSUE — locked in at $13,990,000 — remains.
 
 1. Use simplified valuation under §20.2010-2(a)(7)(ii) for marital-deduction property. 2. File Form 706 within 9 months of death + 6-month extension under Form 4768. If missed, file under Rev. Proc. 2022-32 within 5 years of death. 3. At top of return: write "FILED PURSUANT TO REV. PROC. 2022-32 TO ELECT PORTABILITY UNDER §2010(c)(5)(A)" if filing under the late-relief procedure.
 
-Portability locks in DSUE at $13,990,000 — a benefit worth (13.99M − 7M) × 40% = ~$2.8M in expected estate tax savings if S dies after the sunset. The §2010(c)(5)(B) examination-deferral rule means D's Form 706 records must be retained until S's estate is closed. If S is likely to remarry, the last-deceased-spouse rule under §2010(c)(4)(B)(i) may forfeit the DSUE — discuss with client.
+Portability locks in DSUE at $13,990,000 — sheltering that amount of S's estate from estate tax on top of S's own BEA, which is $15,000,000 for 2026. The §2010(c)(5)(B) examination-deferral rule means D's Form 706 records must be retained until S's estate is closed. If S is likely to remarry, the last-deceased-spouse rule under §2010(c)(4)(B)(i) may forfeit the DSUE — discuss with client.
 
 ### Example 14.2 — $20 million estate; full BEA + marital deduction
 
@@ -569,7 +572,7 @@ D dies in 2025. D is survived by spouse S (US citizen) and three adult children.
 | 50% interest in family LLC (closely held real estate) | $1,500,000 |
 | **Total gross estate** | **$20,000,000** |
 
-**Analysis computation table**  _(Example 14.2)_
+**Analysis computation table**  _([Example 14.2](https://www.irs.gov/pub/irs-pdf/i709.pdf))_
 
 | Line | Amount |
 | --- | --- |
@@ -581,10 +584,10 @@ D dies in 2025. D is survived by spouse S (US citizen) and three adult children.
 | Taxable estate | $13,490,000 |
 | Adjusted taxable gifts (post-1976 gifts not in gross estate) | $500,000 |
 | Tentative tax base | $13,990,000 |
-| Tentative tax (§2001(c) at 40% top rate) | $5,389,800 |
+| Tentative tax (§2001(c) at 40% top rate) | $5,541,800 |
 | Less gift tax payable on adjusted taxable gifts at DOD rates | $0 (within BEA) |
-| Net tentative tax | $5,389,800 |
-| Less applicable credit amount (AEA = BEA only, no DSUE) | ($5,389,800) |
+| Net tentative tax | $5,541,800 |
+| Less applicable credit amount (AEA = BEA only, no DSUE) | ($5,541,800) |
 | **Net federal estate tax** | **$0** |
 
 D's BEA is fully consumed: $13,490,000 to the bypass trust at death + $500,000 prior gifts = $13,990,000. Exactly matches 2025 BEA. IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved. Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate. The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
@@ -595,7 +598,7 @@ D used the full BEA — DSUE = $0. No portability benefit to S. However, S now h
 
 ### Example 14.3 — $30 million couple maxing out 2025 SLAT before sunset
 
-H and W are married US citizens, ages 65 and 63, with combined assets of $30,000,000 (rough 50/50 split between them, mostly publicly traded securities and a closely held business interest). No prior taxable gifts. Three adult children, six grandchildren. Both spouses are healthy with normal life expectancy. Date: November 2025. The TCJA sunset is approximately 6 weeks away.
+H and W are married US citizens, ages 65 and 63, with combined assets of $30,000,000 (rough 50/50 split between them, mostly publicly traded securities and a closely held business interest). No prior taxable gifts. Three adult children, six grandchildren. Both spouses are healthy with normal life expectancy. Date: November 2025. The TCJA sunset was repealed by P.L. 119-21 (approved July 4, 2025), so the BEA rises to $15,000,000 in 2026 rather than falling.
 
 Consume as much of the doubled BEA as possible before December 31, 2025, retaining sufficient liquid assets for lifestyle.
 
@@ -603,7 +606,7 @@ H establishes an irrevocable trust (SLAT-1) for the benefit of W and descendants
 
 Different trustees; Different dispositive provisions (e.g., SLAT-1 is HEMS-only for W; SLAT-2 has an annual 5/5 withdrawal power for H); Different remainder structures (SLAT-1 distributes outright to descendants at age 35; SLAT-2 remains in further trust for descendants); Different commencement and funding dates by a meaningful interval (e.g., several weeks apart); Each spouse contributes different specific assets (not pro rata); Memorialize separate planning meetings for each spouse with independent counsel.
 
-**Gift tax computation (each spouse, 2025)**  _(Example 14.3)_
+**Gift tax computation (each spouse, 2025)**  _([Example 14.3](https://www.irs.gov/pub/irs-pdf/i709.pdf))_
 
 | Line | Amount |
 | --- | --- |
@@ -613,7 +616,7 @@ Different trustees; Different dispositive provisions (e.g., SLAT-1 is HEMS-only 
 | Cumulative prior gifts | $0 |
 | Cumulative gifts | $13,000,000 |
 | Applicable credit on $13,000,000 | $4,989,800 (tax on $13M at the §2001(c) rates) |
-| Applicable credit available (2025 = $5,389,800) | $5,389,800 |
+| Applicable credit available (2025 = $5,541,800) | $5,541,800 |
 | Net gift tax due | $0 |
 
 Each spouse uses $13,000,000 of the $13,990,000 BEA. Remaining BEA per spouse for end-of-2025 = $990,000.
@@ -624,7 +627,7 @@ If the SLATs are dynasty trusts (multi-generational), allocate full $13,000,000 
 
 $26M of value (the two SLATs) plus all future appreciation is permanently outside the H/W taxable estate. If the SLATs grow at 6% net for 20 years, future value ≈ $26M × (1.06)²⁰ ≈ $83M, all GST-exempt and estate-tax-exempt. Compared to doing nothing pre-sunset, estimated federal estate tax savings (assuming death in 2045 at age 85): approximately $25M – $30M depending on appreciation.
 
-1. Carryover basis: assets gifted to the SLATs take §1015 carryover basis. If $13M of contributed assets had a $3M basis, the donee trust holds a $10M built-in gain. Compared to a §1014 step-up at death, the income-tax cost on eventual sale at the same FMV would be ~$2.4M federal LTCG + NIIT per spouse — a significant offset to estate tax savings. Consider contributing high-basis assets if possible. 2. Reciprocal trust doctrine: if the IRS or a court uncrosses the SLATs, each spouse is treated as having made a gift to a trust of which he/she is a beneficiary — pulling the trust back under §2036. Anti-clawback protection lost; estate tax savings reversed. Drafting differentiation must be defensible. 3. Step-transaction concerns: funding the SLATs immediately before the sunset and with similar structures could attract IRS scrutiny. Document independent decision-making. 4. Divorce risk: if H and W divorce, the indirect access to the SLAT corpus (through the spouse beneficiary) evaporates. Discuss with client. 5. Liquidity: the couple retains $4M of liquid assets ($30M total − $26M gifted). Confirm this is sufficient for lifestyle plus reserves. 6. State estate tax: does the couple live in a state with a lower threshold (e.g., NY at $6.94M)? If so, the SLATs may also reduce state estate tax. Confirm state of domicile.
+1. Carryover basis: assets gifted to the SLATs take §1015 carryover basis. If $13M of contributed assets had a $3M basis, the donee trust holds a $10M built-in gain. Compared to a §1014 step-up at death, the income-tax cost on eventual sale at the same FMV would be ~$2.4M federal LTCG + NIIT per spouse — a significant offset to estate tax savings. Consider contributing high-basis assets if possible. 2. Reciprocal trust doctrine: if the IRS or a court uncrosses the SLATs, each spouse is treated as having made a gift to a trust of which he/she is a beneficiary — pulling the trust back under §2036. Anti-clawback protection lost; estate tax savings reversed. Drafting differentiation must be defensible. 3. Step-transaction concerns: funding the SLATs immediately before the sunset and with similar structures could attract IRS scrutiny. Document independent decision-making. 4. Divorce risk: if H and W divorce, the indirect access to the SLAT corpus (through the spouse beneficiary) evaporates. Discuss with client. 5. Liquidity: the couple retains $4M of liquid assets ($30M total − $26M gifted). Confirm this is sufficient for lifestyle plus reserves. 6. State estate tax: does the couple live in a state with a lower threshold (e.g., NY at $7,160,000 for 2025)? If so, the SLATs may also reduce state estate tax. Confirm state of domicile.
 
 H files Form 709 reporting the $13M gift to SLAT-1, GST exemption allocation, no gift tax due. W files Form 709 reporting the $13M gift to SLAT-2, GST exemption allocation, no gift tax due. No gift splitting — each spouse is making a gift from separate property, and gift-splitting is precluded because each non-donor spouse has a beneficial interest in the other's SLAT. Both Form 709s due April 15, 2026, with extensions available to October 15, 2026.
 
@@ -684,7 +687,7 @@ State of domicile at death; State estate / inheritance tax filing requirement; S
 
 ### 16.7 Open items / required client confirmations
 
-Missing appraisals; Outstanding W-9s / TINs for donees; Crummey notices proof; Spousal consent (Line 18) — if gift splitting; Anti-abuse review for §§2036–2042 retained interests
+Missing appraisals; Outstanding W-9s / TINs for donees; Crummey notices proof; Spousal consent (Form 709 Part III, line 7, plus signed Notice of Consent) — if gift splitting; Anti-abuse review for §§2036–2042 retained interests
 
 ### 16.8 Citations
 
@@ -719,23 +722,23 @@ IRC §§ 2001–2058 (Estate tax); IRC §§ 2501–2524 (Gift tax); IRC §§ 260
 
 ### 18.2 Regulations
 
-Treas. Reg. § 20.2010-1 (anti-clawback final rule — T.D. 9884, 2019, as amended by T.D. 9884-A, 2022); Treas. Reg. § 20.2010-2 (portability election mechanics, including simplified valuation rule); Treas. Reg. § 20.2010-3 (DSUE computation); Treas. Reg. § 20.2032-1 (alternate valuation); Treas. Reg. § 20.2056A (QDOT requirements); Treas. Reg. § 25.2503-3 (future interests — annual exclusion eligibility); Treas. Reg. § 25.2513-1 (gift splitting mechanics); Treas. Reg. § 26.2632-1 (GST exemption allocation)
+Treas. Reg. § 20.2010-1 (anti-clawback final rule — T.D. 9884, 2019; (c)(3) still [Reserved], 2022 amendment only proposed); Treas. Reg. § 20.2010-2 (portability election mechanics, including simplified valuation rule); Treas. Reg. § 20.2010-3 (DSUE computation); Treas. Reg. § 20.2032-1 (alternate valuation); Treas. Reg. § 20.2056A (QDOT requirements); Treas. Reg. § 25.2503-3 (future interests — annual exclusion eligibility); Treas. Reg. § 25.2513-1 (gift splitting mechanics); Treas. Reg. § 26.2632-1 (GST exemption allocation)
 
 ### 18.3 Revenue Procedures and Rulings
 
-Rev. Proc. 2024-40 (2025 inflation-adjusted amounts); Rev. Proc. 2022-32 (5-year late portability election); Rev. Proc. 2017-34 (predecessor — superseded); Rev. Proc. 2021-30 (Form 706 closing letter user fee); T.D. 9884 (November 2019) and T.D. 9884-A (April 2022, anti-abuse amendment)
+Rev. Proc. 2024-40 (2025 inflation-adjusted amounts); Rev. Proc. 2022-32 (5-year late portability election); Rev. Proc. 2017-34 (predecessor — superseded); Rev. Proc. 2021-30 (Form 706 closing letter user fee); T.D. 9884 (November 2019) and proposed regulations REG-118913-21, 87 FR 24918 (April 2022, anti-abuse amendment; not finalized)
 
 ### 18.4 Forms and instructions
 
-Form 706 (Rev. September 2024) and instructions; Form 709 (2024 revision, used for calendar year 2024 gifts; 2025 revision expected late 2025) and instructions; Form 706-GS(D), 706-GS(D-1), 706-GS(T); Form 706-NA (NRA estate tax — referenced but not produced); Form 4768 (extension); Form 8892 (gift tax extension); Form 4422 (release of estate tax lien); Form 712 (life insurance statement); Form 8971 (consistent basis reporting — §1014(f) and §6035)
+Form 706 (Rev. September 2025, for decedents dying after December 31, 2024) and instructions; Form 709 (2025, for gifts made during calendar year 2025; redesigned with gift-splitting consent in Part III) and instructions; Form 706-GS(D), 706-GS(D-1), 706-GS(T); Form 706-NA (NRA estate tax — referenced but not produced); Form 4768 (extension); Form 8892 (gift tax extension); Form 4422 (release of estate tax lien); Form 712 (life insurance statement); Form 8971 (consistent basis reporting — §1014(f) and §6035)
 
 ### 18.5 Legislative
 
-Tax Cuts and Jobs Act of 2017, Pub. L. 115-97, §11061 (BEA doubling and sunset); One Big Beautiful Bill Act of 2025, Pub. L. 119-21 (no estate tax extension; verified); American Taxpayer Relief Act of 2012, Pub. L. 112-240 (portability made permanent)
+Tax Cuts and Jobs Act of 2017, Pub. L. 115-97, §11061 (BEA doubling and sunset); One Big Beautiful Bill Act of 2025, Pub. L. 119-21, § 70106 (BEA set at $15,000,000 for decedents dying and gifts made after December 31, 2025; sunset struck); American Taxpayer Relief Act of 2012, Pub. L. 112-240 (portability made permanent)
 
 ### 18.6 Last-updated note
 
-Last updated 2025-11-15 for tax year 2025 figures. Verify the OBBBA P.L. 119-21 status of the §2010(c)(3)(C) sunset before relying on the sunset analysis for any return crossing the December 31, 2025 boundary. As of the last update, no legislation has been enacted to extend, repeal, or modify the sunset.
+Last updated 2025-11-15 for tax year 2025 figures. Verify the OBBBA P.L. 119-21 status of the §2010(c)(3)(C) sunset before relying on the sunset analysis for any return crossing the December 31, 2025 boundary. P.L. 119-21 (approved July 4, 2025), § 70106, struck the §2010(c)(3)(C) sunset.
 
 ### 18.7 Version history
 

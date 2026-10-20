@@ -5,7 +5,9 @@ description: >
 version: 0.1
 jurisdiction: ZA
 last_updated: 2026-09-03
+authored_by: Brandon Iverach
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - foundation
 category: international
@@ -14,8 +16,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # South Africa — Capital Gains Tax Rate Tables (natural persons)
-
-## South Africa — Capital Gains Tax Rate Tables (natural persons)
 
 Year-keyed CGT exclusions and inclusion rates for **natural persons**, years of
 assessment 2023 to 2027, plus the tax-free savings account limits. Data only: this
@@ -41,8 +41,6 @@ SARS numbers a year of assessment by the calendar year in which it **ends**. The
 year runs 1 March to the last day of February. So the year of assessment ending
 28 February 2027 is **YoA 2027**, and it is the year commonly written "2026/27".
 
-**Year of assessment labelling**  _(SARS numbers a year of assessment by the calendar year in which it ends.)_
-
 | Year of assessment | Commonly written | Period |
 | --- | --- | --- |
 | 2023 | 2022/23 | 1 March 2022 – 28 February 2023 |
@@ -50,8 +48,6 @@ year runs 1 March to the last day of February. So the year of assessment ending
 | 2025 | 2024/25 | 1 March 2024 – 28 February 2025 |
 | 2026 | 2025/26 | 1 March 2025 – 28 February 2026 |
 | 2027 | 2026/27 | 1 March 2026 – 28 February 2027 |
-
-## How South African years of assessment are labelled
 
 Getting this wrong by one year is the single most common error in South African rate
 lookups. Every table below is keyed by **year of assessment**.
@@ -70,23 +66,22 @@ Not covered here: inclusion rates for companies and trusts; base cost rules;
 the small business asset exclusion under s 10(1)(zJ); roll-overs; or any
 computation rule.
 
-## Section 2 — CGT exclusions and inclusion rate (natural persons)
-
-**CGT exclusions and inclusion rate (natural persons)**  _([Income Tax Act 58 of 1962 s 26A; Eighth Schedule paras 5, 10 and 45. YoA 2027 confirmed against SARS, Capital Gains Tax (CGT) rate tables dated 25 February 2026: <https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/>, 2026-09-02. Earlier years not re-checked.](https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/))_
-
-| YoA | Annual exclusion | Annual exclusion (year of death) | Primary residence exclusion | Inclusion rate |
-| --- | --- | --- | --- | --- |
+ | --- | --- | --- | --- |
 | 2023 (2022/23) | R40,000 | R300,000 | R2,000,000 | 40% |
 | 2024 (2023/24) | R40,000 | R300,000 | R2,000,000 | 40% |
 | 2025 (2024/25) | R40,000 | R300,000 | R2,000,000 | 40% |
 | 2026 (2025/26) | R40,000 | R300,000 | R2,000,000 | 40% |
 | 2027 (2026/27) | R50,000 | R440,000 | R3,000,000 | 40% |
 
-- **Effective rate** — The inclusion rate is 40% in every year in this file, so the maximum effective CGT rate for a natural person is 40% of the top marginal rate of 45%, being 18%.  _(Income Tax Act 58 of 1962 s 26A; Eighth Schedule paras 5, 10 and 45.)_
+_Source: Income Tax Act 58 of 1962 s 26A; Eighth Schedule paras 5, 10 and 45. YoA 2027 confirmed against SARS, Capital Gains Tax (CGT) rate tables dated 25 February 2026: <https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/>, 2026-09-02. Earlier years not re-checked._
+
+**Effective rate.** The inclusion rate is 40% in every year in this file, so the
+maximum effective CGT rate for a natural person is 40% of the top marginal rate of
+45%, being 18%.
+
+---
 
 ## Section 3 — Tax-free savings accounts
-
-**Tax-free savings accounts**  _(Income Tax Act 58 of 1962 s 12T.)_
 
 | YoA | Annual contribution limit | Lifetime contribution limit | Penalty on excess |
 | --- | --- | --- | --- |
@@ -95,6 +90,10 @@ computation rule.
 | 2025 (2024/25) | R36,000 | R500,000 | 40% |
 | 2026 (2025/26) | R36,000 | R500,000 | 40% |
 | 2027 (2026/27) | R46,000 | R500,000 | 40% |
+
+_Source: Income Tax Act 58 of 1962 s 12T._
+
+---
 
 ## Section 4 — Edge cases and traps
 
@@ -121,6 +120,8 @@ computation rule.
    not, the two have been transposed.
 3. **Inclusion rate is for natural persons only.** Companies and trusts differ and
    are out of scope here.
+
+---
 
 ## Disclaimer
 

@@ -4,7 +4,9 @@ description: Small business VAT, sorted quarter after quarter properly, not just
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-07-27
+authored_by: Nadir Khan, OTHER
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

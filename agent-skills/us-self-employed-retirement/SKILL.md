@@ -9,6 +9,7 @@ metadata:
   tax_year: "2025"
   last_updated: "2026-07-13"
   reviewed_by: "A licensed accountant (name withheld at their request)"
+  trust_label: "Checked by a licensed accountant (name withheld at their request)"
   review_status: "current"
 ---
 
@@ -86,14 +87,14 @@ This skill does NOT cover:
 
 **Legislation reflected:**
 - Internal Revenue Code §§401, 402, 404, 408, 408A, 408(p), 414, 415, 219 as in force for tax year 2025
-- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (delayed to 2026 per IRS Notice 2024-02), enhanced SIMPLE IRA limits
+- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (delayed to 2026 per IRS Notice 2023-62), enhanced SIMPLE IRA limits
 - One Big Beautiful Bill Act (OBBBA, P.L. 119-21) — OBBBA did NOT change retirement contribution limits for 2025. The limits were set by Notice 2024-80 before OBBBA's enactment.
 - IRS Notice 2024-80 — 2025 retirement plan limits (issued November 2024)
 - IRS Publication 560 (2025) — Retirement Plans for Small Business
 - IRS Publication 590-A (2025) — Contributions to Individual Retirement Arrangements
 
 **Currency limitations:**
-- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was delayed by IRS Notice 2024-02 to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
+- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was delayed by IRS Notice 2023-62 to taxable years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
 - The super catch-up for ages 60-63 under SECURE 2.0 §109 is effective for 2025 and is reflected in this skill.
 
 ### Solo 401(k)
@@ -124,12 +125,12 @@ This skill does NOT cover:
 
 ### SIMPLE IRA
 
-**SIMPLE IRA year-specific figures table for TY2025**  _(Section 3)_
+**SIMPLE IRA year-specific figures table for TY2025**  _([Section 3](https://www.irs.gov/newsroom/401k-limit-increases-to-23500-for-2025-ira-limit-remains-7000))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
-| Employee deferral limit | $16,500 | Notice 2024-80; IRC §408(p)(2)(E) |
-| Catch-up contribution (age 50-59, 64+) | $3,500 | Notice 2024-80; IRC §414(v)(2)(B)(ii) |
+| Employee deferral limit | $16,500 (a higher $17,600 limit applies to certain applicable SIMPLE plans) | Notice 2024-80; IRC §408(p)(2)(E) |
+| Catch-up contribution (age 50-59, 64+) | $3,500 (a different $3,850 limit applies to certain applicable SIMPLE plans) | Notice 2024-80; IRC §414(v)(2)(B)(ii) |
 | Super catch-up contribution (age 60-63) | $5,250 | Notice 2024-80; IRC §414(v)(2)(E); SECURE 2.0 §109 |
 | Employer match (dollar-for-dollar) | Up to 3% of compensation | IRC §408(p)(2)(A)(iii) |
 | Employer non-elective alternative | 2% of compensation | IRC §408(p)(2)(B) |
@@ -137,12 +138,12 @@ This skill does NOT cover:
 
 ### Traditional and Roth IRA
 
-**Traditional and Roth IRA year-specific figures table for TY2025**  _(Section 3)_
+**Traditional and Roth IRA year-specific figures table for TY2025**  _([Section 3](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
 | IRA contribution limit | $7,000 | Notice 2024-80; IRC §219(b)(5)(A) |
-| IRA catch-up (age 50+) | $1,000 | IRC §219(b)(5)(B); statutory, NOT indexed |
+| IRA catch-up (age 50+) | $1,000 | IRC §219(b)(5)(B); indexed for inflation under SECURE 2.0 ($1,100 for 2026) |
 | Traditional IRA deductibility phase-out (single, covered by employer plan) | MAGI $79,000-$89,000 | Notice 2024-80; IRC §219(g)(3)(B)(i) |
 | Traditional IRA deductibility phase-out (MFJ, covered by employer plan) | MAGI $126,000-$146,000 | Notice 2024-80; IRC §219(g)(3)(B)(i) |
 | Traditional IRA deductibility phase-out (MFJ, not covered but spouse is) | MAGI $236,000-$246,000 | Notice 2024-80; IRC §219(g)(7) |
@@ -266,15 +267,15 @@ The Solo 401(k) (also called individual 401(k) or one-participant 401(k)) is the
 
 ### Establishment and contribution deadlines
 
-**Solo 401(k) establishment and contribution deadlines**  _(Section 6)_
+**Solo 401(k) establishment and contribution deadlines**  _([Section 6](https://www.irs.gov/publications/p560))_
 
 | Action | Deadline |
 | --- | --- |
-| Establish a new Solo 401(k) plan | December 31, 2025 (for 2025 contributions) |
-| Make employee elective deferrals (2025) | December 31, 2025 (must be made by end of tax year) |
+| Establish a new Solo 401(k) plan | By the tax filing deadline (without regard to extensions) for a sole proprietor with no employees (for 2025 contributions) |
+| Make employee elective deferrals (2025) | Must be elected by the end of the tax year; can then be made by the tax return filing deadline, including extensions |
 | Make employer profit-sharing contributions (2025) | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026 with extension) |
 
-- **Solo 401(k) December 31 establishment requirement** — A Solo 401(k) must be established (plan adoption agreement executed) by December 31 of the tax year. If the plan was not established by December 31, 2025, the sole prop CANNOT make 2025 Solo 401(k) contributions — even if they file an extension. This is different from a SEP-IRA.  _(Section 6)_
+- **Solo 401(k) December 31 establishment requirement** — For 2023 and later years, a sole proprietor with no employees can adopt a section 401(k) plan after the end of the tax year, provided the plan is adopted by the tax filing deadline (without regard to extensions). Elective deferrals for that first plan year must be paid to the plan before the time for filing the return (determined without regard to any extensions). A SEP-IRA can still be set up later, up to the due date including extensions.  _([Section 6](https://www.irs.gov/publications/p560))_
 
 ### Form 5500-EZ filing requirement
 
@@ -299,7 +300,7 @@ A SEP-IRA (Simplified Employee Pension) allows employer-only contributions. Ther
 - No employee deferral component — total contribution limited to 20% of net SE earnings
 - For sole props with net SE earnings under ~$117,500, the SEP-IRA allows LESS total contribution than a Solo 401(k) with employee deferrals
 - No catch-up contributions (the catch-up rules apply only to elective deferrals, not employer contributions)
-- No Roth option (all SEP contributions are pre-tax)
+- Roth option only if the employer's SEP plan allows a Roth SEP IRA (permitted for tax years beginning after 2022 under section 601 of the SECURE 2.0 Act of 2022)
 
 ### Establishment and contribution deadlines
 
@@ -310,7 +311,7 @@ A SEP-IRA (Simplified Employee Pension) allows employer-only contributions. Ther
 | Establish SEP-IRA | Tax filing deadline including extensions (can establish and fund on same day) |
 | Make 2025 contributions | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026) |
 
-- **SEP-IRA key advantage** — A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). This is NOT possible with a Solo 401(k).  _(Section 7)_
+- **SEP-IRA key advantage** — A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). A new Solo 401(k) can also be adopted after year-end, but only by the tax filing deadline (without regard to extensions).  _([Section 7](https://www.irs.gov/publications/p560))_
 
 ### Overview
 
@@ -413,7 +414,7 @@ Is net SE earnings > $0?
 - **R-RET-DB — Defined benefit plan inquiry** — Trigger: Taxpayer asks about a defined benefit plan, cash balance plan, or pension. Output: "Defined benefit plans require actuarial computation, Form 5500 filing, and ongoing plan administration that is beyond the scope of this skill. These plans can allow contributions substantially exceeding the §415(c) limit and are worth exploring for high-income sole props ($300K+ net SE earnings). Please consult an actuary or retirement plan specialist."
 - **R-RET-EMPLOYEES — Sole prop has common-law employees** — Trigger: The taxpayer has employees (pays W-2 wages), which triggers nondiscrimination, top-heavy, and coverage rules for 401(k) and SEP plans. Output: "When a sole prop has common-law employees, retirement plan contributions for the owner must satisfy nondiscrimination and coverage rules under §401(a)(4) and §410(b). This skill covers one-participant (solo) plans only. Please consult a retirement plan administrator or CPA."
 - **R-RET-EXCESS — Excess contributions** — Trigger: Taxpayer may have contributed more than the limit. Output: "Excess contributions to retirement plans are subject to a 6% excise tax under §4973 (IRAs) or must be corrected under the plan's terms (401(k)/SEP). This skill does not compute excess contribution penalties. Please consult a CPA or tax attorney."
-- **R-RET-RMD — Required minimum distributions** — Trigger: Taxpayer is age 73+ and has retirement accounts. Output: "Required minimum distributions under §401(a)(9) must begin by April 1 following the year the taxpayer turns 73 (under SECURE 2.0 schedule). RMD computation is out of scope. Please consult a CPA or financial advisor."
+- **R-RET-RMD — Required minimum distributions** — Trigger: Taxpayer is age 73+ and has retirement accounts. Output: "Required minimum distributions under §401(a)(9) must begin by April 1 following the year the taxpayer turns 73 (under SECURE 2.0 schedule; for an individual who attains age 74 after December 31, 2032, the applicable age is 75). RMD computation is out of scope. Please consult a CPA or financial advisor."  _(https://www.law.cornell.edu/uscode/text/26/401)_
 - **R-RET-ROTHCONV — Roth conversion strategy** — Trigger: Taxpayer asks about converting traditional IRA or 401(k) to Roth. Output: "Roth conversions are taxable events with complex interactions (pro-rata rule, state tax, impact on ACA subsidies, Medicare IRMAA). This skill flags the backdoor Roth strategy but does not compute conversion mechanics. Please consult a CPA or financial advisor."
 
 ## Section 14 — Reviewer attention thresholds
@@ -583,7 +584,7 @@ Roth IRA: $7,000 (MAGI well below $150,000)
 ## Section 18 — PROHIBITIONS
 
 - **Prohibition 1 — Employer contribution rate** — NEVER use the 25% rate directly for a sole prop's employer contribution. The effective rate is 20% (25% / 1.25) because the contribution reduces the base. Using 25% overstates the maximum contribution.
-- **Prohibition 2 — Solo 401(k) establishment deadline** — NEVER allow a Solo 401(k) for 2025 if the plan was not established by December 31, 2025. Default to SEP-IRA if the establishment date is unknown or after December 31.
+- **Prohibition 2 — Solo 401(k) establishment deadline** — NEVER allow a Solo 401(k) for 2025 unless the plan was adopted by December 31, 2025 or, for a sole proprietor with no employees, by the tax filing deadline (without regard to extensions). Default to SEP-IRA if the adoption date is unknown or after that deadline.  _(https://www.irs.gov/publications/p560)_
 - **Prohibition 3 — §415(c) cap** — NEVER ignore the §415(c) $70,000 cap. Employee deferrals + employer contributions (excluding catch-up) cannot exceed $70,000. Catch-up is on top.
 - **Prohibition 4 — Super catch-up age restriction** — NEVER apply the super catch-up to ages outside 60-63. Ages 50-59 and 64+ get the regular $7,500 catch-up. Only ages 60-63 get the $11,250 super catch-up.
 - **Prohibition 5 — SIMPLE IRA recommendation** — NEVER recommend a SIMPLE IRA over a Solo 401(k) for a sole prop without employees. SIMPLE IRA has lower limits and more restrictions. It is virtually always inferior for the target demographic.

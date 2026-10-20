@@ -8,6 +8,8 @@ metadata:
   jurisdiction: "NG"
   tax_year: "2025"
   last_updated: "2026-08-24"
+  authored_by: "Omolola Fasasi, CA"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

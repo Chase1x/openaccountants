@@ -4,7 +4,9 @@ description: UK SDLT on property purchase — standard bands, the additional-dwe
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-08-25
+authored_by: Nadir Khan, OTHER
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

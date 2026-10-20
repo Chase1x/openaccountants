@@ -4,9 +4,12 @@ description: Tier 2 US federal content skill for employer payroll tax compliance
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Christopher Aryee, ACCA, CA, EA, CPA-CA
 reviewed_by: James Wallach
 review_status: current
-tier: 2
+trust_label: Checked by James Wallach
+source_checked: 2026-10-17
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -66,8 +69,8 @@ The form has four functional sections:
 - **Line 3 — Federal income tax withheld** — Federal income tax withheld from those wages, tips, and other compensation  _(Form 941 Line 3)_
 - **Line 4 — no wages subject to SS/Medicare checkbox** — Checkbox if no wages, tips, and other compensation are subject to Social Security or Medicare tax (rare — used by certain religious organizations and certain agricultural employers filing 943 instead)  _(Form 941 Line 4)_
 - **Line 5a — Taxable SS wages tax** — Taxable Social Security wages × 0.124 (combined 6.2% employee + 6.2% employer). Column 1 is the wages, Column 2 is the tax. The wages reported here are capped per employee per calendar year at the Social Security wage base ($176,100 for 2025).  _(Form 941 Line 5a)_
-- **Line 5a(i) — Qualified sick leave wages** — Qualified sick leave wages × 0.062 (legacy FFCRA — should be zero for 2025; FFCRA credits expired 9/30/2021)  _(Form 941 Line 5a(i))_
-- **Line 5a(ii) — Qualified family leave wages** — Qualified family leave wages × 0.062 (legacy FFCRA — should be zero for 2025)  _(Form 941 Line 5a(ii))_
+- **Line 5a(i) — Qualified sick leave wages** — Not on the 2025 Form 941. For tax periods beginning after December 31, 2023, the lines used to claim the credit for qualified sick and family leave wages were removed; an employer that pays such wages claims the credit on Form 941-X after filing Form 941.  _([Form 941 Line 5a(i)](https://www.irs.gov/pub/irs-prior/i941--2025.pdf))_
+- **Line 5a(ii) — Qualified family leave wages** — Not on the 2025 Form 941. The family leave credit line was removed for tax periods beginning after December 31, 2023 (see line 5a(i)).  _([Form 941 Line 5a(ii)](https://www.irs.gov/pub/irs-prior/i941--2025.pdf))_
 - **Line 5b — Taxable Social Security tips** — Taxable Social Security tips × 0.124  _(Form 941 Line 5b)_
 - **Line 5c — Taxable Medicare wages and tips** — Taxable Medicare wages and tips × 0.029 (combined 1.45% employee + 1.45% employer). No wage cap.  _(Form 941 Line 5c)_
 - **Line 5d — Additional Medicare withholding** — Taxable wages and tips subject to Additional Medicare Tax withholding × 0.009. This is the employer's withholding obligation only — the employer must withhold an additional 0.9% on each individual employee's wages in excess of $200,000 paid by that employer during the calendar year, regardless of the employee's filing status or other employers. The actual liability for Additional Medicare Tax is reconciled on the employee's Form 8959 attached to Form 1040.  _(Form 941 Line 5d)_
@@ -79,15 +82,15 @@ The form has four functional sections:
 - **Line 9 — tips and GTL adjustments** — Current quarter's adjustments for tips and group-term life insurance (the GTL > $50k employer FICA paid on behalf of former employees, etc.)  _(Form 941 Line 9)_
 - **Line 10 — Total taxes after adjustments** — Total taxes after adjustments  _(Form 941 Line 10)_
 - **Line 11a — R&D payroll tax credit** — Qualified small business payroll tax credit for increasing research activities (Form 8974). For 2025, the maximum credit is $500,000 per year ($250,000 against Social Security tax under the original IRC §41(h) limit and an additional $250,000 against Medicare tax under the Inflation Reduction Act of 2022 increase, applicable to tax years beginning after 12/31/2022). Form 8974 must be attached.  _(Form 941 Line 11a; Form 8974; IRC §41(h); Inflation Reduction Act of 2022)_
-- **Line 11b-11f — Reserved** — Reserved for future use (formerly used for ERC and FFCRA — should be blank in 2025)  _(Form 941 Lines 11b-11f)_
-- **Line 11g — Total nonrefundable credits** — Total nonrefundable credits  _(Form 941 Line 11g)_
-- **Line 12 — Total taxes after adjustments and nonrefundable credits** — Line 10 minus Line 11g  _(Form 941 Line 12)_
+- **Line 11b-11f — Reserved** — Not on the 2025 Form 941. Line 11 (qualified small business payroll tax credit, Form 8974) is the only credit line, and line 12 subtracts line 11 from line 10.  _([Form 941 Lines 11b-11f](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 11g — Total nonrefundable credits** — Not on the 2025 Form 941; line 12 is line 10 minus line 11.  _([Form 941 Line 11g](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 12 — Total taxes after adjustments and nonrefundable credits** — Line 10 minus Line 11 (the 2025 form has no line 11g)  _([Form 941 Line 12](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
 - **Line 13a — Total deposits for the quarter** — Total deposits for the quarter, including overpayments from prior quarters applied  _(Form 941 Line 13a)_
-- **Line 13b-13f — Reserved** — Reserved for future use  _(Form 941 Lines 13b-13f)_
-- **Line 13g — Total deposits and refundable credits** — Total deposits and refundable credits  _(Form 941 Line 13g)_
-- **Line 14 — Balance due** — Line 12 minus Line 13g, if positive  _(Form 941 Line 14)_
-- **Line 15 — Overpayment** — Line 13g minus Line 12, if positive; check box to apply to next return or request refund  _(Form 941 Line 15)_
-- **Line 16 — Tax liability for the quarter** — If Line 12 is less than $2,500, no deposit schedule required — pay with return. If $2,500 or more and a monthly depositor, enter monthly liabilities directly on Line 16. If $2,500 or more and a semiweekly depositor, check the box on Line 16 indicating semiweekly and attach Schedule B (Form 941).  _(Form 941 Line 16)_
+- **Line 13b-13f — Reserved** — Not on the 2025 Form 941; line 13 is the only deposits line.  _([Form 941 Lines 13b-13f](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 13g — Total deposits and refundable credits** — Not on the 2025 Form 941; balance due and overpayment compare line 12 with line 13.  _([Form 941 Line 13g](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 14 — Balance due** — Line 12 minus Line 13, if positive  _([Form 941 Line 14](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 15 — Overpayment** — Line 13 minus Line 12, if positive; check box to apply to next return or request refund  _([Form 941 Line 15](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
+- **Line 16 — Tax liability for the quarter** — If Line 12 on this return is less than $2,500 or line 12 on the return for the prior quarter was less than $2,500, and no $100,000 next-day deposit obligation arose during the current quarter, no deposit schedule is required: check the first box on Line 16. If $2,500 or more and a monthly depositor, enter monthly liabilities directly on Line 16. If $2,500 or more and a semiweekly depositor, check the box on Line 16 indicating semiweekly and attach Schedule B (Form 941).  _([Form 941 Line 16](https://www.irs.gov/pub/irs-prior/f941--2025.pdf))_
 
 ### 2.3 Filing due dates
 
@@ -107,7 +110,7 @@ The form has four functional sections:
 
 Used to correct errors on a previously filed Form 941. Two paths:
 
-1. **Adjusted return process** (interest-free under §6205) — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. Generally filed by April 15 of the calendar year following the year the error was discovered.
+1. **Adjusted return process** (interest-free under §6205) — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. For underreported tax, file by the due date of the return for the return period in which the error was discovered.
 2. **Claim for refund process** under §6402 — used when the employer is claiming a refund of overcollected employee tax. Requires written consent from each affected employee (or evidence the employer reimbursed the employee) per Treas. Reg. §31.6402(a)-2.
 
 Common 941-X scenarios:
@@ -120,14 +123,14 @@ Common 941-X scenarios:
 
 Form 941-X is filed separately, not attached to the next Form 941.
 
-- **Adjusted return process** — Interest-free under §6205 — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. Generally filed by April 15 of the calendar year following the year the error was discovered.  _(IRC §6205)_
+- **Adjusted return process** — Interest-free under §6205 — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. For underreported tax, Form 941-X is due by the due date of the return for the return period in which the error was discovered.  _([IRC §6205](https://www.irs.gov/instructions/i941x))_
 - **Claim for refund process** — Under §6402 — used when the employer is claiming a refund of overcollected employee tax. Requires written consent from each affected employee (or evidence the employer reimbursed the employee) per Treas. Reg. §31.6402(a)-2.  _(IRC §6402; Treas. Reg. §31.6402(a)-2)_
 
 ### 2.5 Form 944 (annual variant for very small employers)
 
 Form 944 is an annual employment tax return that replaces Form 941 for employers whose total annual employment tax liability is $1,000 or less. **Eligibility is by IRS notification only** — the employer cannot self-elect. The IRS sends a written notice (typically in early in the year) informing the employer that they are eligible to file Form 944 for that year.
 
-Employers who want to file 944 can request the change by April 1 of the year by calling the IRS or writing to the appropriate IRS office. Employers who want to switch from 944 to 941 must request the change in writing by April 1.
+Employers who want to file 944 (or who want to switch from 944 to 941) must call the IRS between January 1 and April 1 of the year, or send a written request postmarked between January 1 and March 16 (for 2026: between January 1, 2026, and April 1, 2026 by phone, or postmarked between January 1, 2026, and March 16, 2026).
 
 Form 944 is due January 31 of the following year (February 10 with the 10-day extension if all deposits were timely).
 
@@ -301,7 +304,7 @@ States that have borrowed from the federal unemployment trust fund (Title XII ad
 - California (CA): 0.9% reduction → effective FUTA rate 1.5% (0.6% + 0.9%) on first $7,000 = $105 per employee
 - New York (NY): 0.9% reduction → effective FUTA rate 1.5%
 - US Virgin Islands (VI): 4.2% reduction → effective FUTA rate 4.8%
-- Connecticut (CT): finalized — reduction status varied; verify final 2024 status against DOL November 2024 announcement
+- Connecticut (CT): not a 2024 credit reduction state — the 2024 Schedule A lists only California and New York (0.009) and the U.S. Virgin Islands (0.042)
 
 **For 2025 (Form 940 filed by January 31, 2026)** — the DOL announces final credit reduction states each November. As of the November 2025 DOL determination, the credit reduction status of each state must be verified against the official DOL Credit Reduction State announcement at oui.doleta.gov/unemploy/futa_credit.asp. The reviewer must check the current-year list before finalizing Form 940 Schedule A.
 
@@ -311,7 +314,7 @@ If the employer paid wages in any credit reduction state, Schedule A (Form 940) 
 
 ### 5.5 Filing due date
 
-- **Form 940 filing due date** — Form 940 is due January 31 of the year following the tax year (so January 31, 2026 for tax year 2025), with an extension to February 10 if all FUTA deposits were made on time.  _(Form 940 instructions)_
+- **Form 940 filing due date** — Form 940 is due January 31 of the year following the tax year (for tax year 2025 the due date is February 2, 2026, because January 31, 2026 falls on a Saturday), with an extension to February 10 (February 10, 2026 for tax year 2025) if all FUTA deposits were made on time.  _([Form 940 instructions](https://www.irs.gov/instructions/i940))_
 
 ### 5.6 Deposit schedule
 
@@ -376,7 +379,7 @@ The most common W-2 preparation error is the assumption that Box 1, Box 3, and B
 
 ### 6.4 Box 12 codes — The Single-Letter Reference
 
-**Box 12 codes reference**  _(6.4 Box 12 codes — The Single-Letter Reference)_
+**Box 12 codes reference**  _([6.4 Box 12 codes — The Single-Letter Reference](https://www.irs.gov/pub/irs-prior/iw2w3--2025.pdf))_
 
 | Code | Description |
 | --- | --- |
@@ -410,7 +413,7 @@ The most common W-2 preparation error is the assumption that Box 1, Box 3, and B
 | FF | Permitted benefits under qualified small employer health reimbursement arrangement (QSEHRA) |
 | GG | Income from qualified equity grants under §83(i) |
 | HH | Aggregate deferrals under §83(i) — current year |
-| II | Reserved |
+| II | Medicaid waiver payments excluded from gross income under Notice 2014-7 |
 
 - **Box 12 entries limit** — Multiple Box 12 entries are entered in Box 12a, 12b, 12c, 12d (up to four on the W-2 itself; additional codes require a second W-2 for that employee).  _(6.4 Box 12 codes — The Single-Letter Reference)_
 
@@ -506,19 +509,19 @@ The classification of a worker as an employee (W-2) or independent contractor (1
 
 - **DOL 2024 Worker Classification Rule** — 29 C.F.R. Part 795, effective March 11, 2024 — applies for FLSA (wage-and-hour) purposes, not directly for FICA/FUTA, but is persuasive. The rule uses a six-factor "economic realities" test: 1. Opportunity for profit or loss depending on managerial skill 2. Investments by the worker and the potential employer 3. Degree of permanence of the work relationship 4. Nature and degree of control 5. Extent to which the work performed is integral to the potential employer's business 6. Skill and initiative For payroll tax purposes the IRS common-law test under §3121(d) controls. However, the DOL rule is a useful corroborating analysis, and a worker classified as an employee under the FLSA economic-realities test almost certainly will be classified as an employee for FICA purposes.  _(29 C.F.R. Part 795; IRC §3121(d))_
 - **Section 530 relief** — Revenue Act of 1978, P.L. 95-600 §530, never codified in IRC: An employer may avoid retroactive payroll tax liability for misclassification if: 1. The employer had a reasonable basis (judicial precedent, IRS ruling, prior IRS audit on the same issue, or long-standing industry practice) 2. The employer consistently treated the worker (and similar workers) as independent contractors 3. The employer filed all required information returns (Form 1099-NEC) on a basis consistent with treating the worker as an independent contractor  _(Revenue Act of 1978, P.L. 95-600 §530)_
-- **Voluntary Classification Settlement Program (VCSP)** — Allows an employer to reclassify workers as employees going forward with reduced past-period liability (about 10% of one year's employment tax). Application via Form 8952.  _(Form 8952)_
+- **Voluntary Classification Settlement Program (VCSP)** — Allows an employer to reclassify workers as employees going forward with reduced past-period liability (10% of the employment tax liability for the most recent tax year, computed under the reduced rates of section 3509(a)). Application via Form 8952.  _([Form 8952](https://www.irs.gov/businesses/small-businesses-self-employed/voluntary-classification-settlement-program))_
 
 For independent contractor reporting (1099-NEC), see `us-1099-nec-issuance`. That skill covers the §6041A $600 threshold (rising to $2,000 for 2026 under OBBBA), the §6109 W-9 collection requirement, and the §3406 backup withholding mechanics.
 
 ## 10. §6656 Failure-to-Deposit Penalty
 
-**Failure-to-deposit penalty tiers**  _(IRC §6656(b)(1))_
+**Failure-to-deposit penalty tiers**  _([IRC §6656(b)(1)](https://www.irs.gov/pub/irs-prior/p15--2025.pdf))_
 
 | Days late | Penalty rate |
 | --- | --- |
 | 1-5 calendar days late | 2% |
 | 6-15 calendar days late | 5% |
-| 16+ days late, but before the date of IRS notice and demand | 10% |
+| 16+ days late, but before 10 days from the date of the first IRS notice asking for the tax due | 10% |
 | Not paid within 10 days after IRS notice and demand | 15% |
 
 - **Penalty applies per deposit** — The penalty applies to each deposit, not to the cumulative shortfall. So an employer who is 16 days late on the first deposit of the quarter and 3 days late on the second deposit owes 10% on the first underpayment and 2% on the second.  _(IRC §6656(b)(1))_
@@ -694,29 +697,29 @@ The employer FICA on unreported tips — if the IRS later assesses additional ti
 | --- | --- | --- |
 | 12 employees who each earned > $7,000 | $7,000 × 12 | $84,000 |
 
-- **Computation assuming CA is a credit reduction state for 2024 at 0.9%** — Gross FUTA: $84,000 × 6.0% = $5,040.00; State UI credit: maximum 5.4% × $84,000 = $4,536.00, less the credit reduction adjustment; Credit reduction (0.9%): $84,000 × 0.9% = $756.00 — this is the additional FUTA owed; Effective FUTA: ($84,000 × 0.6%) + ($84,000 × 0.9%) = $504 + $756 = $1,260.00; Per employee: $1,260 / 12 = $105.00  _(final 2024 status finalized November 2024)_
+- **Computation assuming CA is a credit reduction state for 2024 at 0.9%** — Gross FUTA: $84,000 × 6.0% = $5,040.00; State UI credit: maximum 5.4% × $84,000 = $4,536.00, less the credit reduction adjustment; Credit reduction (1.2%): $84,000 × 1.2% = $1,008.00 — this is the additional FUTA owed; Effective FUTA: ($84,000 × 0.6%) + ($84,000 × 1.2%) = $504 + $1,008 = $1,512.00; Per employee: $1,512 / 12 = $126.00  _([final 2024 status finalized November 2024](https://www.irs.gov/pub/irs-prior/f940sa--2025.pdf))_
 
 **Form 940 reporting**:
 
 - Part 2 Line 7 (Total FUTA wages): $84,000
-- Part 2 Line 8: Credit reduction states → "Yes" → attach Schedule A
-- **Schedule A (Form 940)**: Check the CA box; enter $84,000 in the CA row; credit reduction rate 0.009; credit reduction amount $756
-- Total FUTA tax (Line 12 of Form 940): $84,000 × 0.006 = $504 (base) plus $756 (Schedule A credit reduction) = **$1,260.00**
+- Part 1 Line 2: Credit reduction states → check the box → attach Schedule A
+- **Schedule A (Form 940)**: Check the CA box; enter $84,000 in the CA row; credit reduction rate 0.012; credit reduction amount $1,008
+- Total FUTA tax (Line 12 of Form 940): $84,000 × 0.006 = $504 (base) plus $1,008 (Schedule A credit reduction) = **$1,512.00**
 
-**FUTA deposit schedule**: Total annual FUTA liability $1,260 > $500 — quarterly deposits required when accumulated liability exceeds $500 within the quarter.
+**FUTA deposit schedule**: Total annual FUTA liability $1,512 > $500 — quarterly deposits required when accumulated liability exceeds $500 within the quarter.
 
 Assuming relatively even payroll across the year and the wage base concentration in Q1-Q2:
 
 - Q1 (Jan-Mar): about $42,000 of FUTA-taxable wages → $42,000 × 0.6% = $252 (no credit reduction is added until year-end) — accrued $252 < $500 → carry forward
 - Q2 (Apr-Jun): about $42,000 FUTA-taxable wages → $252 — cumulative through Q2 = $504 > $500 → **deposit by July 31** → $504
 - Q3, Q4: zero FUTA-taxable wages (all employees over $7,000) → no additional deposit until year-end
-- Year-end: credit reduction of $756 added at filing → **paid with Form 940 by January 31, 2026**
+- Year-end: credit reduction of $1,008 is a fourth-quarter liability → **included with the fourth quarter deposit, due February 2, 2026**
 
-(The credit reduction $756 is paid with the return rather than via quarterly deposit, because the credit reduction adjustment is computed on Schedule A at year-end. The IRS instructions for Form 940 confirm this treatment — see line 16 instructions, "if Line 9 or 10 applies"… effectively, the additional credit-reduction FUTA tax is owed at the time of filing.)
+(The credit reduction $1,008 is paid with the return rather than via quarterly deposit, because the credit reduction adjustment is computed on Schedule A at year-end. The IRS instructions for Form 940 confirm this treatment — see line 16 instructions, "if Line 9 or 10 applies"… effectively, the additional credit-reduction FUTA tax is owed at the time of filing.)
 
 **Form 940 due date**: January 31, 2026 (or February 10, 2026 if all deposits including the $504 Q2 deposit were timely).
 
-**Worked-example note for the reviewer**: The 2025 credit reduction status of CA must be confirmed against the DOL November 2025 announcement before finalizing. If CA repaid its Title XII loans during 2025, the credit reduction may not apply.
+**Worked-example note for the reviewer**: The 2025 Schedule A (Form 940) sets the California credit reduction rate at 0.012 (1.2%), which this example uses. If CA repaid its Title XII loans during 2025, the credit reduction may not apply.
 
 ### 12.4 Example 4 — Reconciliation of all four 941s to the W-3 (brief)
 
@@ -819,7 +822,7 @@ This skill is based on the following primary sources, all current as of November
 - SSA Fact Sheet on 2025 Social Security Changes (October 10, 2024) — for the $176,100 wage base
 - IRS news release IR-2024-273 and Rev. Proc. 2024-40 for 2025 figures
 
-**Verification status**: The $176,100 wage base, the 0.6%/1.5% effective FUTA rates, the credit reduction state list (CA, NY, VI, CT for 2024), and the 0.9% Additional Medicare employer withholding threshold of $200,000 are all verified against the cited primary sources as of November 15, 2025. The 2025 final credit reduction state list (for Form 940 to be filed January 2026) must be re-verified against the DOL November 2025 announcement before any 2025 Form 940 is finalized. The 2026 backup withholding rate, 2026 SS wage base, and 2026 OBBBA-driven 1099-NEC threshold are referenced as scope notes; this skill does not produce 2026 returns.
+**Verification status**: The $176,100 wage base, the 0.6%/1.5% effective FUTA rates, the credit reduction state list (CA, NY, VI for 2024), and the 0.9% Additional Medicare employer withholding threshold of $200,000 are all verified against the cited primary sources as of November 15, 2025. The 2025 final credit reduction state list (for Form 940 to be filed January 2026) must be re-verified against the DOL November 2025 announcement before any 2025 Form 940 is finalized. The 2026 backup withholding rate, 2026 SS wage base, and 2026 OBBBA-driven 1099-NEC threshold are referenced as scope notes; this skill does not produce 2026 returns.
 
 **Reviewer**: pending. This skill has not yet been reviewed by a Circular 230-credentialed practitioner. No Form 941, Form 940, W-2, or W-3 output should be filed without independent review and signature by a CPA, EA, or attorney licensed to practice before the IRS.
 

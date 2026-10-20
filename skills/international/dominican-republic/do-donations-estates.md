@@ -4,9 +4,11 @@ description: Dominican Republic Donations & Estates — accountant-verified rule
 jurisdiction: DO
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Miguel Lantigua, CPA
 reviewed_by: Miguel Lantigua
 review_status: current
-tier: 1
+trust_label: Checked by Miguel Lantigua
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

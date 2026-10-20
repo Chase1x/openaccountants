@@ -5,12 +5,14 @@ version: 2.0
 jurisdiction: BR
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Ariane Marrocos
+reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -28,9 +30,9 @@ Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
 - **Microempresa (ME)** — Considera-se Microempresa (ME), para fins da LC nº 123/2006, a pessoa jurídica com receita bruta anual igual ou inferior a R$ 360.000,00.  _(Lei Complementar nº 123/2006 – art. 3º, inciso I.)_
 - **EPP** — Considera-se Empresa de Pequeno Porte (EPP) a pessoa jurídica com receita bruta anual superior a R$ 360.000,00 e igual ou inferior a R$ 4.800.000,00, nos termos do art. 3º da LC nº 123/2006.  _(Lei Complementar nº 123/2006 – art. 3º, inciso II.)_
 - **Sublimite ICMS/ISS** — O sublimite de receita bruta de R$ 3.600.000, previsto na LC nº 123/2006, pode determinar o recolhimento do ICMS e/ou ISS fora do Simples Nacional em determinados Estados, sem excluir a empresa do regime simplificado.  _(Principal Lei Complementar nº 123/2006 Art. 19. Informou Art. 13 e ele trata dos tributos abrangidos pelo Simples Nacional. O tema sublimite estadual de ICMS/ISS está principalmente relacionado ao: Art. 19 da LC 123/2006.)_
-- **Comércio/Indústria** — R$ 81,50 (INSS) + R$ 1,00 (ICMS)  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
-- **Serviços** — R$ 86,50 (INSS R$ 81,50 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
-- **Comércio + Serviços** — R$ 87,50 (INSS R$ 81,50 + ICMS R$ 1,00 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
+- **Comércio/Indústria** — R$ 81,05 (INSS) + R$ 1,00 (ICMS)  _([Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.](https://www8.receita.fazenda.gov.br/simplesnacional/Noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3))_
+- **Serviços** — R$ 86,05 (INSS R$ 81,05 + ISS R$ 5,00).  _([Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.](https://juazeirodonorte.ce.gov.br/informa/31684/contribui-o-mensal-do-microempreendedor-individual))_
+- **Comércio + Serviços** — R$ 87,05 (INSS R$ 81,05 + ICMS R$ 1,00 + ISS R$ 5,00).  _([Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.](https://juazeirodonorte.ce.gov.br/informa/31684/contribui-o-mensal-do-microempreendedor-individual))_
 - **Anexo I** — Comércio, varejo  _(Resolução CGSN nº 140/2018.)_
 - **Anexo II** — Indústria, manufatura (inclui IPI)  _(Resolução CGSN nº 140/2018.)_
 - **Anexo III** — Anexo III – Prestação de serviços em geral, incluindo diversas atividades de manutenção, reparação, saúde, educação e serviços administrativos, conforme o CNAE e as regras da LC nº 123/2006.  _(Resolução CGSN nº 140/2018.)_
@@ -40,7 +42,7 @@ Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
 - **DAS mensal** — O DAS do Simples Nacional deve ser recolhido até o dia 20 do mês subsequente ao da apuração da receita, prorrogando-se o vencimento para o primeiro dia útil seguinte quando não houver expediente bancário.  _(Lei Complementar nº 123/2006 – art. 21. Resolução CGSN nº 140/2018.)_
 - **DEFIS anual** — A DEFIS deve ser transmitida pelas empresas optantes pelo Simples Nacional até 31 de março do ano subsequente ao ano-calendário a que se refere a declaração.  _(Resolução CGSN nº 140/2018.)_
 - **DASN-SIMEI** — O Microempreendedor Individual (MEI) deve apresentar a DASN-SIMEI até 31 de maio do ano subsequente ao ano-calendário a que se referem as informações.  _(Resolução CGSN nº 140/2018.)_
-- **Regime híbrido art. 21-A** — O optante pelo Simples Nacional poderá optar pelo recolhimento da CBS e do IBS fora do DAS, nos termos do art. 21-A da LC nº 123/2006, permitindo ao adquirente o aproveitamento dos créditos desses tributos conforme o regime geral.  _(Lei Complementar nº 123/2006 – art. 21-A (incluído pela Reforma Tributária). Lei Complementar nº 214/2025. Emenda Constitucional nº 132/2023.)_
+- **Regime híbrido art. 21-A** — O optante pelo Simples Nacional poderá optar, a partir de 2027 (opção em setembro de 2026 para o primeiro semestre de 2027), pelo recolhimento da CBS e do IBS fora do DAS, pelo regime regular, nos termos da LC nº 123/2006, permitindo ao adquirente o aproveitamento dos créditos desses tributos conforme o regime geral.  _([Lei Complementar nº 123/2006 – art. 21-A (incluído pela Reforma Tributária). Lei Complementar nº 214/2025. Emenda Constitucional nº 132/2023.](https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf))_
 
 ## Seção 1 — Referência rápida
 
@@ -82,7 +84,7 @@ Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
 | Serviços | R$ 75,90 | -- | R$ 5,00 | R$ 80,90 |
 | Comércio + Serviços | R$ 75,90 | R$ 1,00 | R$ 5,00 | R$ 81,90 |
 
-Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
+Baseado no salário mínimo de R$ 1.518,00 vigente em 2025. A partir de janeiro de 2026 (salário mínimo de R$ 1.621), o INSS passa a R$ 81,05 e o DAS-MEI a R$ 82,05 (Comércio/Indústria), R$ 86,05 (Serviços) e R$ 87,05 (Comércio + Serviços).
 
 ### Fórmula da alíquota efetiva
 
@@ -133,7 +135,7 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 
 ### 3.2 Padrões de pagamento de tributos
 
-**Padrões de pagamento de tributos**
+**Padrões de pagamento de tributos**  _(https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf)_
 
 | Padrão | Tratamento | Notas |
 | --- | --- | --- |
@@ -142,7 +144,7 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 | ICMS FORA SIMPLES | ICMS apartado | Acima do sublimite ou ICMS-ST |
 | ISS FORA SIMPLES | ISS apartado | Acima do sublimite |
 | INSS PATRONAL | INSS patronal apartado | Apenas Anexo IV |
-| CBS/IBS APARTADO (2026+) | Recolhimento separado fora do DAS | Apenas no regime híbrido do art. 21-A LC 123/06 |
+| CBS/IBS APARTADO (2027+) | Recolhimento separado fora do DAS | Apenas na opção pelo regime regular do IBS e CBS no Simples Nacional |
 
 ### 3.3 Padrões de definição de Anexo
 
@@ -160,12 +162,12 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 
 ### Exemplo 1 — DAS mensal do MEI (Serviços)
 
-**Entrada:** MEI prestando serviços de TI. Salário mínimo R$ 1.518.
+**Entrada:** MEI prestando serviços de TI. Salário mínimo R$ 1.621 (2026).
 
 **Cálculo:**
-- INSS: 5% x 1.518 = R$ 75,90
+- INSS: 5% x 1.621 = R$ 81,05
 - ISS: R$ 5,00
-- Total DAS: R$ 80,90/mês
+- Total DAS: R$ 86,05/mês
 
 ### Exemplo 2 — Simples Nacional, Anexo I Comércio
 
@@ -198,7 +200,7 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 
 ### 5.1 Elegibilidade do MEI
 
-- **Elegibilidade do MEI** — Receita anual máxima R$ 81.000. Máximo de 1 empregado. Vedado a profissões regulamentadas. Vedado a sócio de outra empresa. Vedado ter filiais.  _(LC 123/2006, Arts. 18-A a 18-E)_
+- **Elegibilidade do MEI** — Receita anual máxima R$ 81.000. Máximo de 1 empregado, que receba exclusivamente 1 (um) salário mínimo ou o piso salarial da categoria profissional. Vedado a profissões regulamentadas. Vedado a sócio de outra empresa. Vedado ter filiais.  _([LC 123/2006, Arts. 18-A a 18-E](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm))_
 
 ### 5.2 Anexos do Simples Nacional
 
@@ -248,15 +250,15 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 
 ### MEI permanece isento
 
-- **MEI permanece isento** — O MEI permanece isento de IBS/CBS. Continua recolhendo seus tributos via DAS-MEI, que unifica INSS + ISS/ICMS no valor fixo mensal. Não há qualquer alteração estrutural para o MEI em 2026 e não há repasse de créditos de IBS/CBS aos seus clientes.
+- **MEI permanece isento** — Em 2026 o MEI não recolhe IBS/CBS; a partir de 2027 o DAS-MEI passa a incluir IBS e CBS em valores fixos (Anexo VII da LC 123/2006, na redação da LC 214/2025). Continua recolhendo seus tributos via DAS-MEI, que unifica INSS + ISS/ICMS no valor fixo mensal. Não há qualquer alteração estrutural para o MEI em 2026 e não há repasse de créditos de IBS/CBS aos seus clientes.  _(https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)_
 
 ### Simples Nacional (ME/EPP) — duas opções a partir de 2026
 
-- **Duas opções a partir de 2026** — O Simples Nacional para ME e EPP continua existindo. Em 2026, o optante pode escolher entre dois caminhos: **(a) Permanecer integralmente no Simples (caminho padrão).** O DAS continua a ser o recolhimento único. IBS e CBS já estão embutidos no DAS, sem créditos transferíveis aos clientes. É a opção mais simples administrativamente e adequada a clientelas predominantemente B2C ou compostas por outros optantes do Simples. **(b) Regime híbrido (opção do art. 21-A da LC 123/06, introduzido pela LC 214/2025).** O contribuinte recolhe CBS e IBS separadamente, fora do DAS, pelas regras gerais do IVA dual, permitindo a transferência de créditos aos adquirentes. Os demais tributos do Simples (IRPJ, CSLL, PIS/COFINS residuais, CPP, ICMS/ISS quando aplicáveis) continuam no DAS. É vantajoso para EPP que vende a empresas B2B do Lucro Real/Presumido interessadas em apropriar créditos integrais.
+- **Duas opções a partir de 2026** — O Simples Nacional para ME e EPP continua existindo. A partir de 2027 (opção feita em setembro de 2026), o optante pode escolher entre dois caminhos: **(a) Permanecer integralmente no Simples (caminho padrão).** O DAS continua a ser o recolhimento único. IBS e CBS já estão embutidos no DAS, sem créditos transferíveis aos clientes. É a opção mais simples administrativamente e adequada a clientelas predominantemente B2C ou compostas por outros optantes do Simples. **(b) Regime híbrido (opção do art. 21-A da LC 123/06, introduzido pela LC 214/2025).** O contribuinte recolhe CBS e IBS separadamente, fora do DAS, pelas regras gerais do IVA dual, permitindo a transferência de créditos aos adquirentes. Os demais tributos do Simples (IRPJ, CSLL, PIS/COFINS residuais, CPP, ICMS/ISS quando aplicáveis) continuam no DAS. É vantajoso para EPP que vende a empresas B2B do Lucro Real/Presumido interessadas em apropriar créditos integrais.  _(https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf)_
 
 ### Período de teste em 2026
 
-- **Período de teste em 2026** — 2026 é ano de teste com alíquotas simbólicas: CBS 0,9% + IBS 0,1% nas notas fiscais. As multas estão suspensas pelos 3 primeiros meses após a regulamentação, permitindo adaptação operacional sem penalização imediata por erros formais.
+- **Período de teste em 2026** — 2026 é ano de teste com alíquotas simbólicas: CBS 0,9% + IBS 0,1% nas notas fiscais, que não se aplicam às operações dos optantes pelo Simples Nacional (LC 214/2025, art. 348). As multas estão suspensas pelos 3 primeiros meses após a regulamentação, permitindo adaptação operacional sem penalização imediata por erros formais.  _(https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)_
 
 ### Decisão híbrido vs Simples cheio
 
@@ -298,8 +300,8 @@ D. FATOR R (se atividade do Anexo V)
 
 E. CBS/IBS 2026 (se aplicável)
   E1. Opção pelo art. 21-A LC 123/06? (S/N)          ___________
-  E2. CBS apartada (0,9% em 2026)                    ___________
-  E3. IBS apartado (0,1% em 2026)                    ___________
+  E2. CBS apartada (apenas a partir de 2027)         ___________
+  E3. IBS apartado (apenas a partir de 2027)         ___________
 
 SINALIZAÇÕES AO REVISOR:
   [ ] Tipo de entidade confirmado (MEI/ME/EPP)?
@@ -414,7 +416,7 @@ PERGUNTAS DE ONBOARDING -- BRASIL SIMPLES NACIONAL
 
 ### Principais referências legais
 
-**Principais referências legais**
+**Principais referências legais**  _(https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)_
 
 | Tema | Referência |
 | --- | --- |
@@ -427,7 +429,7 @@ PERGUNTAS DE ONBOARDING -- BRASIL SIMPLES NACIONAL
 | Reforma Tributária — IVA dual | EC 132/2023 |
 | Regulamentação CBS/IBS | LC 214/2025 |
 | Segunda fase / vigência 2026 | LC 227/2026 |
-| Opção híbrida do Simples | LC 123/2006, Art. 21-A (incluído pela LC 214/2025) |
+| Opção híbrida do Simples | LC 214/2025, art. 41, § 3º; opção exercida nos termos da LC 123/2006 (efeitos a partir de 2027) |
 
 ## PROIBIÇÕES
 

@@ -8,6 +8,8 @@ metadata:
   jurisdiction: "MT"
   tax_year: "2025"
   last_updated: "2026-08-03"
+  authored_by: "Michael Cutajar, CPA, ACCA"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

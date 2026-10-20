@@ -8,6 +8,8 @@ metadata:
   jurisdiction: "MM"
   tax_year: "2025"
   last_updated: "2026-08-22"
+  authored_by: "Mr Moe Lwin Tun"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 

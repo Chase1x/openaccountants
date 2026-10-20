@@ -7,6 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-16
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -66,13 +68,13 @@ Tax year: 2025. Currency date: April 2026.
 
 ### Schedule SE Optional Methods (TY2025)
 
-**Schedule SE Optional Methods (TY2025)**
+**Schedule SE Optional Methods (TY2025)**  _(https://www.irs.gov/pub/irs-pdf/f1040sse.pdf)_
 
 | Figure | Value |
 | --- | --- |
-| Nonfarm optional method max SE earnings | $7,320 |
-| Nonfarm gross income threshold | $10,380 minimum gross |
-| Nonfarm profit threshold | < $7,320 net AND < 72.189% of gross |
+| Nonfarm optional method max SE earnings | $7,240 |
+| Nonfarm gross income threshold | None (the nonfarm method has no gross-income minimum) |
+| Nonfarm profit threshold | < $7,840 net AND < 72.189% of gross, and at least $400 net SE earnings in 2 of the prior 3 years |
 | 5-year lifetime limit | Yes |
 
 ### Home Office Methods
@@ -414,7 +416,7 @@ Line 30: $1,500. Line 31: $0. SE tax: $0 ($0 < $400 minimum).
 - **T1-US-SE-3 — Additional Medicare Tax is on Form 8959, NOT Schedule SE** — The 0.9% Additional Medicare Tax is computed on Form 8959, not blended into Schedule SE. Schedule SE Line 11 uses 2.9% only. Never include 0.9% in Schedule SE.
 - **T1-US-SE-4 — Minimum $400 threshold** — If net SE earnings (after 92.35% adjustment) are less than $400, no SE tax is due. Do not compute SE tax on sub-$400 amounts.
 - **T1-US-SE-5 — Home office deduction cannot exceed Line 29** — The 280A(c)(5) gross income limitation caps the home office deduction at the tentative profit. Excess carries over under actual method; is lost under simplified method.  _(IRC 280A(c)(5))_
-- **T1-US-SE-6 — Deductible half of SE tax is NOT a Schedule C expense** — The deductible half (Schedule SE Line 13) flows to Schedule 1 line 15 as an above-the-line deduction. It does NOT reduce Schedule C net profit and does NOT reduce QBI.
+- **T1-US-SE-6 — Deductible half of SE tax is NOT a Schedule C expense** — The deductible half (Schedule SE Line 13) flows to Schedule 1 line 15 as an above-the-line deduction. It does NOT reduce Schedule C net profit, but it DOES reduce qualified business income (QBI) for the §199A deduction (Form 8995 instructions).  _(https://www.irs.gov/pub/irs-pdf/i8995.pdf)_
 - **T1-US-SE-7 — EFTPS / estimated tax payments are credits, not expenses** — Quarterly estimated tax payments made via EFTPS are credits against the annual tax liability. Never include them as Schedule C expenses.
 - **T1-US-SE-8 — 1250 recapture warning for actual home office depreciation** — Taking home depreciation creates 1250 recapture on future home sale. The 121 home sale exclusion does NOT shelter this. Flag prominently. Note: depreciation is "allowed or allowable" — skipping the deduction does not avoid recapture.
 
@@ -581,13 +583,13 @@ SECTION H — REVIEWER FLAGS
 
 - Payouts appear as `STRIPE TRANSFER` or `STRIPE` in bank statement
 - Cross-reference with Stripe dashboard → Payouts for gross amounts and fees
-- 1099-K issued by Stripe if > $600
+- 1099-K issued by Stripe if > $20,000 and > 200 transactions (2025)
 
 ### PayPal
 
 - Payouts appear as `PAYPAL INST XFER` or `PAYPAL TRANSFER`
 - Cross-reference with PayPal activity → Reports for gross amounts
-- 1099-K issued if > $600
+- 1099-K issued if > $20,000 and > 200 transactions (2025)
 
 ### Key US Banking Notes
 
@@ -655,7 +657,7 @@ SECTION H — REVIEWER FLAGS
 
 ### 2025 Year-Specific Figures Summary
 
-**2025 Year-Specific Figures Summary**
+**2025 Year-Specific Figures Summary**  _(https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm)_
 
 | Figure | Value |
 | --- | --- |
@@ -665,8 +667,8 @@ SECTION H — REVIEWER FLAGS
 | Additional Medicare Tax | 0.9% above $200K/$250K/$125K |
 | Simplified home office rate | $5/sq ft, max 300 sq ft = $1,500 |
 | Standard mileage rate | $0.70/mile |
-| 179 expensing limit | $1,250,000 (OBBBA) |
-| Bonus depreciation | 100% (OBBBA restored) |
+| 179 expensing limit | $2,500,000 (OBBBA) |
+| Bonus depreciation | 100% for property acquired after 19 Jan 2025 (OBBBA); earlier 2025 acquisitions keep the pre-OBBBA phase-down rate |
 
 ## Disclaimer
 

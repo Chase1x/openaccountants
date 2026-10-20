@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "ID"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "RILIA PUTRI, CA, CPA"
   reviewed_by: "RILIA PUTRI"
+  trust_label: "Checked by RILIA PUTRI"
   review_status: "current"
 ---
 

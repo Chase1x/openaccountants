@@ -7,41 +7,24 @@ metadata:
   openaccountants_url: "https://www.openaccountants.com/skills/za-foreign-employment-exemption"
   jurisdiction: "ZA"
   last_updated: "2026-09-03"
+  authored_by: "Brandon Iverach"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
 # South Africa — Foreign Employment Income Exemption, s 10(1)(o)(ii)
 
-## South Africa — Foreign Employment Income Exemption, s 10(1)(o)(ii)
-
 > **The single most misunderstood point.** The exemption is **not** "the first
-R1,250,000 of foreign remuneration is exempt". SARS applies a work-day ratio to the
-foreign-service remuneration **first**, and caps the result **second**. On most
-facts the ratio binds long before the cap does, and a return prepared on the
-"first R1.25m" assumption will overstate the exemption, sometimes by a very large
-amount.
-
-## Section 1 — Scope
-
-This file covers the s 10(1)(o)(ii) exemption for a South African **tax resident** who
-renders services outside the Republic as an **employee** (holder of an office or
-employment).
-
-Covered: the day tests, the apportionment formula, the annual cap, the twelve month
-window, day counting, IRP5 coding, ITR12 containers.
-
-**Not covered:** s 10(1)(o)(i), the separate and **uncapped** exemption for officers and
-crew of ships — a different container and a different test. Independent contractors, who
-are not employees and cannot use this section. Tax residency itself (see
-`za-tax-residency`). Foreign tax credits under s 6*quat*. Double tax agreement relief,
-which is a separate and sometimes better route.
+> R1,250,000 of foreign remuneration is exempt". SARS applies a work-day ratio to the
+> foreign-service remuneration **first**, and caps the result **second**. On most
+> facts the ratio binds long before the cap does, and a return prepared on the
+> "first R1.25m" assumption will overstate the exemption, sometimes by a very large
+> amount.
 
 ## Section 2 — Three quantities, three different jobs
 
 Almost every error in this area is a confusion between these three. They are not
 alternatives; all three apply, in order.
-
-**Three quantities, three different jobs**  _(_Source: Income Tax Act 58 of 1962 s 10(1)(o)(ii); SARS Interpretation Note 16._)_
 
 | Quantity | What it is | What it does |
 | --- | --- | --- |
@@ -54,9 +37,15 @@ the gate and the money are computed from different things.
 
 _Source: Income Tax Act 58 of 1962 s 10(1)(o)(ii); SARS Interpretation Note 16._
 
+---
+
 ## Section 3 — The computation
 
-- **Exemption computation** — exemption = ( work days outside RSA ÷ total work days ) × foreign-service remuneration per the IRP5 then limited to R1 250 000  _(Section 3 — The computation)_
+```
+exemption = ( work days outside RSA ÷ total work days )
+              × foreign-service remuneration per the IRP5
+          then limited to R1 250 000
+```
 
 ### Worked example
 
@@ -82,25 +71,77 @@ that number before assuming the cap is the operative limit. On a base of R1,350,
 ratio would need to exceed **92.6%** — effectively unattainable for anyone who spends any
 material time working in South Africa.
 
+---
+
 ## Section 4 — The IRP5 must carry the remuneration UN-apportioned
 
-- **IRP5 must carry remuneration un-apportioned** — This is where the largest errors are made, and they are made by the employer, before the practitioner ever sees the certificate. SARS applies the ratio to **whatever the foreign-service codes disclose**. If the employer has already apportioned the remuneration before coding it, the remuneration is apportioned **twice** — once by the payroll, once again by SARS — and the exemption collapses. **So the foreign-service codes must carry the remuneration for the assignment period in full, un-apportioned, and let the SARS ratio do the work.** That is how Interpretation Note 16's own worked example behaves. **Practical consequence:** an under-coded certificate silently caps the taxpayer out *below* the statutory limit, and no amount of correct work on the return will recover it. Where the coding is wrong, the fix is a corrected IRP5 from the employer, not a re-computation. Check the certificate before doing anything else.  _(That is how Interpretation Note 16's own worked example behaves.)_
+This is where the largest errors are made, and they are made by the employer, before the
+practitioner ever sees the certificate.
+
+SARS applies the ratio to **whatever the foreign-service codes disclose**. If the employer
+has already apportioned the remuneration before coding it, the remuneration is apportioned
+**twice** — once by the payroll, once again by SARS — and the exemption collapses.
+
+**So the foreign-service codes must carry the remuneration for the assignment period in
+full, un-apportioned, and let the SARS ratio do the work.** That is how Interpretation
+Note 16's own worked example behaves.
+
+**Practical consequence:** an under-coded certificate silently caps the taxpayer out
+*below* the statutory limit, and no amount of correct work on the return will recover it.
+Where the coding is wrong, the fix is a corrected IRP5 from the employer, not a
+re-computation. Check the certificate before doing anything else.
+
+---
 
 ## Section 5 — Choosing the twelve month window
 
-- **Choosing the twelve month window** — The period is **any 12 consecutive months**. It need **not** be the year of assessment, and choosing it deliberately is part of the work. An assignment that straddles a year end will often produce a comfortable margin on one window and a dangerous margin on another. A window giving 185 days against a 183 day requirement is a margin of two days — one contested border stamp from failing. Shifting the window to capture a tour that crosses the year end can turn that into a margin of several weeks on identical underlying facts. Test more than one window before settling. Record which window was used and why.  _(Section 5 — Choosing the twelve month window)_
+The period is **any 12 consecutive months**. It need **not** be the year of assessment,
+and choosing it deliberately is part of the work.
+
+An assignment that straddles a year end will often produce a comfortable margin on one
+window and a dangerous margin on another. A window giving 185 days against a 183 day
+requirement is a margin of two days — one contested border stamp from failing. Shifting
+the window to capture a tour that crosses the year end can turn that into a margin of
+several weeks on identical underlying facts.
+
+Test more than one window before settling. Record which window was used and why.
+
+---
 
 ## Section 6 — Counting full days
 
-- **Counting full days** — A **full day** outside the Republic is a day spent **wholly** outside it. Both the departure day and the return day are therefore excluded from the count. - **Overnight flights.** Where the RSA exit stamp and the foreign entry stamp fall on different dates, the arrival day is a full day abroad. Where the flight departs and lands on the same date — common on short regional hops — only one day is lost. - **Foreign-to-foreign travel.** A day spent travelling between two foreign countries is a full day outside the Republic. The absence is not broken by transiting a third country. - **Evidence.** Build the count from passport stamps, boarding passes and the assignment schedule, date by date. A count asserted from memory will not survive verification.  _(Section 6 — Counting full days)_
+A **full day** outside the Republic is a day spent **wholly** outside it. Both the
+departure day and the return day are therefore excluded from the count.
+
+- **Overnight flights.** Where the RSA exit stamp and the foreign entry stamp fall on
+  different dates, the arrival day is a full day abroad. Where the flight departs and
+  lands on the same date — common on short regional hops — only one day is lost.
+- **Foreign-to-foreign travel.** A day spent travelling between two foreign countries is
+  a full day outside the Republic. The absence is not broken by transiting a third country.
+- **Evidence.** Build the count from passport stamps, boarding passes and the assignment
+  schedule, date by date. A count asserted from memory will not survive verification.
+
+---
 
 ## Section 7 — Work days are not automatically Monday to Friday
 
-- **Work days are days services actually rendered** — The ratio uses days on which services were **actually rendered**, not a calendar weekday proxy. For many assignments the two are close enough. For others they are not: touring professionals, shift workers, events staff and anyone on duty for the whole of a deployment routinely render services at weekends. Applying a weekday proxy in those cases can understate the foreign work days by a third or more, and understate the exemption in the same proportion. Build the date-by-date schedule of days actually worked, inside and outside the Republic, and use it for both the numerator and the denominator. _Source: SARS Interpretation Note 16 §4.3._  _(_Source: SARS Interpretation Note 16 §4.3._)_
+The ratio uses days on which services were **actually rendered**, not a calendar
+weekday proxy.
+
+For many assignments the two are close enough. For others they are not: touring
+professionals, shift workers, events staff and anyone on duty for the whole of a
+deployment routinely render services at weekends. Applying a weekday proxy in those cases
+can understate the foreign work days by a third or more, and understate the exemption in
+the same proportion.
+
+Build the date-by-date schedule of days actually worked, inside and outside the Republic,
+and use it for both the numerator and the denominator.
+
+_Source: SARS Interpretation Note 16 §4.3._
+
+---
 
 ## Section 8 — ITR12 containers
-
-**ITR12 containers**  _(Section 8 — ITR12 containers)_
 
 | Field | What it is | Use it? |
 | --- | --- | --- |
@@ -111,6 +152,8 @@ material time working in South Africa.
 
 Placing the claim in the wrong container is a common cause of a verification request even
 where the underlying computation is correct.
+
+---
 
 ## Section 9 — Edge cases
 
@@ -126,6 +169,8 @@ where the underlying computation is correct.
 - **Where the exemption is partial**, the non-exempt balance stays in gross income and is
   taxed normally, and s 6*quat* foreign tax credit relief may apply to it.
 
+---
+
 ## Section 10 — Self-checks
 
 1. **Compute the ratio threshold.** `R1,250,000 ÷ foreign-service remuneration`. If the
@@ -139,13 +184,15 @@ where the underlying computation is correct.
    work days. Full days outside is a different count and will not tie to it.
 5. **Confirm the container is 4041**, and that 4259 carries a figure.
 
+---
+
 ## Disclaimer
 
 > **General reference only.** This file is general tax reference material for AI-assisted
-workflows. It has not been reviewed for any specific person's facts, documents,
-elections, deadlines, residency, filing status or local procedures. Do not rely on it to
-file, pay, amend or take a tax position without review by a qualified professional in
-South Africa.
+> workflows. It has not been reviewed for any specific person's facts, documents,
+> elections, deadlines, residency, filing status or local procedures. Do not rely on it to
+> file, pay, amend or take a tax position without review by a qualified professional in
+> South Africa.
 
 > Contributed by Brandon Iverach.
 

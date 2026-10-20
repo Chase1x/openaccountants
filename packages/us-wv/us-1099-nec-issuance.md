@@ -7,6 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-17
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -24,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Threshold** — $600 for 2025 payments (OBBBA raises the threshold to $2,000 for payments after 12/31/2025)  _(IRC 6041A; OBBBA.)_
 - **Backup WH** — 24% backup withholding (made permanent by OBBBA)  _(IRC 3406.)_
 - **Due** — File with IRS and furnish recipient by January 31 (no automatic 30-day extension)  _(IRC 6071(c); 1099-NEC instr.)_
-- **After Aug 1** — 2025 late-filing penalty tiers $60/$130/$330; $330 applies if filed after Aug 1 or not filed  _(IRC 6721; 2025 General Instr. for Certain Information Returns.)_
+- **After Aug 1** — 2025 late-filing penalty tiers $60/$130/$340; $340 applies if filed after Aug 1 or not filed  _([IRC 6721; 2025 General Instr. for Certain Information Returns.](https://www.irs.gov/instructions/i1099gi))_
 
 ## What this file is, and what it is not
 
@@ -79,7 +81,7 @@ Legislation reflected:
 - Treasury Regulations under §6041, §6041A, §6045(f), and §3406
 
 Currency limitations:
-- The §6050W reporting threshold for third-party settlement organizations (Form 1099-K) has been repeatedly deferred. For TY2025, the transitional threshold is $5,000 (per IRS Notice 2024-85). This does NOT affect the 1099-NEC threshold, which remains at $600 under §6041A. However, some payments previously reported on 1099-NEC may also be reported on 1099-K by the payment processor, creating potential duplicate reporting that must be managed.
+- The §6050W reporting threshold for third-party settlement organizations (Form 1099-K) has been repeatedly deferred. For TY2025, the threshold is more than $20,000 and more than 200 transactions (P.L. 119-21, sec. 70432, effective as if included in section 9674 of the American Rescue Plan Act). This does NOT affect the 1099-NEC threshold, which is $600 under §6041A for 2025 payments (increased to $2,000 for tax years beginning after 2025). However, some payments previously reported on 1099-NEC may also be reported on 1099-K by the payment processor, creating potential duplicate reporting that must be managed.
 
 ## Section 3 — Year-specific figures table for tax year 2025
 
@@ -131,14 +133,14 @@ Currency limitations:
 
 ### Penalties for failure to file (§6721) and failure to furnish (§6722)
 
-**Penalties for failure to file (§6721) and failure to furnish (§6722)**  _(IRC §6721)_
+**Penalties for failure to file (§6721) and failure to furnish (§6722)**  _([IRC §6721](https://www.irs.gov/instructions/i1099gi))_
 
 | Timing of correction | Penalty per form (2025) | Maximum per year (small business ≤ $5M gross receipts) | Primary source |
 | --- | --- | --- | --- |
-| Filed within 30 days of due date | $60 | $220,500 | IRC §6721(b)(1); inflation-adjusted |
-| Filed after 30 days but by August 1 | $130 | $630,500 | IRC §6721(b)(2); inflation-adjusted |
-| Filed after August 1 or not filed | $330 | $1,261,000 ($3,783,000 for large filers) | IRC §6721(a); inflation-adjusted |
-| Intentional disregard | $660 per form, no maximum | No cap | IRC §6721(e) |
+| Filed within 30 days of due date | $60 | $239,000 | IRC §6721(b)(1); inflation-adjusted |
+| Filed after 30 days but by August 1 | $130 | $683,000 | IRC §6721(b)(2); inflation-adjusted |
+| Filed after August 1 or not filed | $340 | $1,366,000 ($4,098,500 for large filers) | IRC §6721(a); inflation-adjusted |
+| Intentional disregard | $680 per form, no maximum | No cap | IRC §6721(e) |
 
 - **Penalty adjustment note** — Penalty amounts are inflation-adjusted annually. The figures above are for returns required to be filed in calendar year 2026 (i.e., TY2025 forms). The same penalty structure applies to failure to furnish correct payee statements under §6722.  _(IRC §6721; IRC §6722)_
 
@@ -215,7 +217,7 @@ Currency limitations:
 
 ### Exception 3 — Fish purchases
 
-- **Fish purchase exception** — Under IRC §6050R, payments of $600 or more for fish purchased for resale are reportable regardless of corporate status. Reported on 1099-MISC Box 11. Unlikely to apply to most sole proprietors in scope.  _(IRC §6050R)_
+- **Fish purchase exception** — Under IRC §6050R, total cash payments of $600 or more for fish purchased for resale are reportable regardless of corporate status. Reported on 1099-MISC Box 11. Unlikely to apply to most sole proprietors in scope.  _([IRC §6050R](https://www.irs.gov/instructions/i1099mec))_
 
 ### Exception 4 — Substitute payments in lieu of dividends or interest
 
@@ -237,7 +239,7 @@ Currency limitations:
 
 ### B-notices (IRS CP2100 / CP2100A)
 
-- **B-notice procedures** — If the IRS identifies a name/TIN mismatch on a filed 1099, it sends a B-notice to the filer: - First B-notice (CP2100/CP2100A): The filer must solicit a new W-9 from the payee within 15 business days and begin backup withholding if the payee does not respond within 30 days - Second B-notice (within 3 years): The filer must instruct the payee to contact the IRS or SSA to verify their TIN. The filer must begin backup withholding immediately and cannot accept a new W-9 alone — the payee must provide IRS/SSA validation  _(IRS CP2100/CP2100A procedures)_
+- **B-notice procedures** — If the IRS identifies a name/TIN mismatch on a filed 1099, it sends a B-notice to the filer: - First B-notice (CP2100/CP2100A): The filer must solicit a new W-9 from the payee within 15 business days and begin backup withholding if the payee does not respond within 30 business days - Second B-notice (within 3 years): The filer must instruct the payee to contact the IRS or SSA to verify their TIN. The filer must begin backup withholding if validation is not received within 30 business days after the date of the second B-notice and cannot accept a new W-9 alone — the payee must provide IRS/SSA validation  _([IRS CP2100/CP2100A procedures](https://www.irs.gov/pub/irs-pdf/p1281.pdf))_
 
 ## Section 8 — Filing mechanics
 
@@ -254,7 +256,7 @@ Currency limitations:
 
 ### Copies and distribution
 
-**Copies and distribution**  _(IRS Form 1099-NEC Instructions)_
+**Copies and distribution**  _([IRS Form 1099-NEC Instructions](https://www.irs.gov/instructions/i1099gi))_
 
 | Copy | Recipient | Due date |
 | --- | --- | --- |
@@ -262,7 +264,7 @@ Currency limitations:
 | Copy 1 | State tax department (if applicable) | Varies by state |
 | Copy B | Payee (recipient) | January 31 (February 2, 2026 for TY2025) |
 | Copy 2 | Payee (for state return, if applicable) | With Copy B |
-| Copy C | Filer's records | Retain for at least 3 years |
+| Copy C | Filer's records | Retain for at least 3 years (4 years if backup withholding was imposed) |
 
 ### Form 1096 transmittal (paper filing only)
 
@@ -371,7 +373,7 @@ Expected output:
 Input: Sole proprietor paid a virtual assistant $2,400 via PayPal Business during TY2025. VA provided W-9 showing individual status.
 Expected output:
 - 1099-NEC required: NO — payment was made through a third-party settlement organization (PayPal Business). The payment processor is responsible for 1099-K reporting. The payer does not issue 1099-NEC.
-- Note: PayPal's 1099-K threshold for TY2025 is $5,000 (transitional). The VA may not receive a 1099-K either if below threshold, but the payer's obligation is discharged.
+- Note: PayPal's 1099-K threshold for TY2025 is more than $20,000 and more than 200 transactions (P.L. 119-21, sec. 70432). The VA may not receive a 1099-K either if below threshold, but the payer's obligation is discharged.
 
 ### Test 6 — Penalty computation for late filing
 

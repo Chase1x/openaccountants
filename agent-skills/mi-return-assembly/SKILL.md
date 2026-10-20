@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "US-MI"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -21,9 +22,9 @@ metadata:
 >
 > **Quality tier.** Q3 — AI-drafted, not independently verified. Researched 2026-05-28 against Michigan Department of Treasury, City of Detroit Income Tax Division, and IRS publications. A qualified professional must review before filing.
 
-## CRITICAL EXECUTION DIRECTIVE — READ FIRST
+## How this workflow runs
 
-**When this skill is invoked, intake has already happened. The taxpayer has consented to the full workflow. Execute every step without pausing for permission.**
+Intake and the content Guides have already collected the facts for this working paper. Use what they captured, and ask the user again only where something is missing or contradicts itself.
 
 - **Do NOT ask the user "how deep do you want me to go".** The taxpayer asked for a Michigan return. Produce it.
 - **Do NOT announce tool budgets or token counts.** Execute.

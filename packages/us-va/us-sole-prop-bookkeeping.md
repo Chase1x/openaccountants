@@ -7,6 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
+trust_label: Checked by a licensed accountant (name withheld at their request)
+source_checked: 2026-10-16
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -24,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Bookkeeping (Sched C)
 
 - **§179** — $2,500,000 for 2025; phase-out begins at $4,000,000 (fully phased at $6.5M), per OBBBA for TY beginning after 12/31/2024  _(IRC 179; OBBBA (PL 119-21); 2025 Form 2106 instr.)_
-- **§168(k)** — 100% bonus for property acquired AND placed in service after Jan 19, 2025 (property placed in service 1/1-1/19/2025 = 40%), made permanent by OBBBA  _(IRC 168(k); OBBBA; IRS Pub 463.)_
+- **§168(k)** — 100% bonus for property acquired AND placed in service after Jan 19, 2025 (property acquired before Jan 20, 2025 and placed in service in 2025 = 40%), made permanent by OBBBA  _([IRC 168(k); OBBBA; IRS Pub 463.](https://www.irs.gov/instructions/i4562))_
 - **Mileage** — 70 cents/mile business for 2025  _(IRS Notice 2025-5.)_
 - **§280F yr1** — $20,200 first-year limit for autos placed in service in 2025 when bonus applies ($12,200 without bonus)  _(Rev. Proc. 2025-16, Table 1; IRS Pub 463.)_
 - **Home office** — Simplified method: $5/sq ft up to 300 sq ft = $1,500 maximum  _(Rev. Proc. 2013-13; IRS Pub 587.)_
@@ -49,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants |
 | Currency date | April 2026 |
 
-**Schedule C line structure (Part II — Expenses)**
+**Schedule C line structure (Part II — Expenses)**  _(https://www.irs.gov/instructions/i1040sc)_
 
 | Line | Content |
 | --- | --- |
@@ -79,10 +81,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 24b | Meals (subject to 50% limit) |
 | 25 | Utilities |
 | 26 | Wages (employees, not owner) |
-| 27a | Other expenses (from Part V line 48) |
-| 27b | Reserved |
+| 27a | Energy efficient commercial bldgs deduction (attach Form 7205) |
+| 27b | Other expenses (from line 48) |
 
-**Year-specific figures for tax year 2025**
+**Year-specific figures for tax year 2025**  _(https://www.law.cornell.edu/uscode/text/26/199A)_
 
 | Figure | Value | Primary source |
 | --- | --- | --- |
@@ -108,7 +110,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 1099-NEC filing threshold | $600 | IRC §6041A(a) |
 | Social Security wage base | $176,100 | SSA; IRC §1402(b) |
 | QBI deduction rate (2025) | 20% | IRC §199A(a); OBBBA made permanent |
-| QBI deduction rate (2026 onward) | 23% | OBBBA; IRC §199A as amended |
+| QBI deduction rate (2026 onward) | 20% | OBBBA; IRC §199A as amended |
 | §471(c) small business gross receipts threshold | $31,000,000 | IRC §471(c); IRC §448(c)(1) |
 
 **OBBBA depreciation note:** The 100% restaurant meal deduction is NOT available in 2025. The temporary 100% deduction under CAA 2021 §210 expired December 31, 2022. OBBBA did NOT reinstate it. The simplified home office rate remains $5/sq ft, NOT $6/sq ft.
@@ -326,12 +328,12 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.12 Government (tax payments — exclude from Schedule C)
 
-**Government pattern table**
+**Government pattern table**  _(https://www.irs.gov/instructions/i1040sca)_
 
 | Pattern | Treatment | Line | Notes |
 | --- | --- | --- | --- |
 | IRS, UNITED STATES TREASURY, EFTPS, US TREASURY | EXCLUDE | — | Federal tax payments (income tax, SE tax, estimated tax) are NOT deductible on Schedule C. They are personal tax obligations. |
-| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT, subject to $10K cap). |
+| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT, subject to the $40,000 cap for 2025, $20,000 if married filing separately, reduced if modified AGI is more than $500,000). |
 | EDD, EMPLOYMENT DEVELOPMENT (CA) | EXCLUDE from Schedule C OR Line 23 | — or 23 | State unemployment tax (employer portion) → Line 23. Personal income tax withholding → EXCLUDE. |
 | STATE TAX PAYMENT, STATE ESTIMATED TAX | EXCLUDE | — | Personal state income tax, not Schedule C |
 | BUSINESS LICENSE, CITY LICENSE, COUNTY LICENSE | Line 23 Taxes and licenses | 23 | Business license fees and permits |
@@ -473,7 +475,7 @@ Each rule states the legal source and the Schedule C line assignment. Apply sile
 ### 5.4 Vehicle expenses (Line 9)
 
 - **Standard mileage method** — 70 cents/mile for 2025 (Notice 2025-5). Multiply by business miles. Parking and tolls deductible separately. Depreciation is included in the rate.  _(Notice 2025-5)_
-- **Actual expense method** — Gas, oil, repairs, insurance, registration, depreciation, lease payments — all multiplied by business-use %. Subject to §280F luxury auto caps for passenger vehicles under 6,000 lbs.  _(§280F)_
+- **Actual expense method** — Gas, oil, repairs, insurance, registration, depreciation, lease payments — all multiplied by business-use %. Subject to §280F luxury auto caps for passenger vehicles rated at 6,000 lbs or less.  _([§280F](https://www.law.cornell.edu/uscode/text/26/280F))_
 - **Method lock-in** — If standard mileage was elected in the first year the vehicle was used for business, taxpayer may switch to actual later (with straight-line depreciation). If actual method with MACRS was elected first, taxpayer is LOCKED IN to actual for that vehicle's life.
 - **§274(d) substantiation** — A contemporaneous mileage log is required showing: date, destination, business purpose, and miles driven. Without the log, the deduction is $0 under the strict §274(d) rule. Reconstructed estimates are not sufficient.  _(§274(d))_
 - **Commuting is NEVER deductible** — Exception: if the home office qualifies as the principal place of business, trips from home to client sites are business miles, not commuting.  _(Treas. Reg. §1.162-2(e); Rev. Rul. 99-7)_
@@ -485,7 +487,7 @@ Each rule states the legal source and the Schedule C line assignment. Apply sile
 
 ### 5.6 Travel (Line 24a)
 
-- **Travel deductibility** — Business travel away from the tax home is deductible: airfare, lodging, rental car, ground transportation, tips, dry cleaning, and 50% of meals while traveling. The travel must be primarily for business. If a trip has both business and personal days, only the business-purpose portion of transportation is deductible (for domestic travel); lodging/meals only for business days. For international travel, special allocation rules apply if the trip exceeds 7 days and personal days exceed 25%.  _(IRC §162; §274(d); Pub 463 (2025).)_
+- **Travel deductibility** — Business travel away from the tax home is deductible: airfare, lodging, rental car, ground transportation, tips, dry cleaning, and 50% of meals while traveling. The travel must be primarily for business. If a trip has both business and personal days, only the business-purpose portion of transportation is deductible (for domestic travel); lodging/meals only for business days. For international travel, special allocation rules apply if the trip exceeds 7 days and personal days are 25% or more of the time abroad.  _([IRC §162; §274(d); Pub 463 (2025).](https://www.irs.gov/pub/irs-pdf/p463.pdf))_
 
 ### 5.7 Contract labor and 1099-NEC (Line 11)
 
@@ -626,12 +628,12 @@ Part II — Expenses:
 | 24b| Meals (50% applied) | =SUMIFS(Transactions!G:G, Transactions!E:E, "24b") |
 | 25 | Utilities | =SUMIFS(Transactions!G:G, Transactions!E:E, "25") |
 | 26 | Wages | =SUMIFS(Transactions!G:G, Transactions!E:E, "26") |
-| 27a| Other expenses | =SUMIFS(Transactions!G:G, Transactions!E:E, "27a") |
+| 27b| Other expenses | =SUMIFS(Transactions!G:G, Transactions!E:E, "27b") |
 ```
 
 ### Sheet "Return Form"
 
-- **Final Schedule C-ready figures** — Line 7  = Gross income = (Line 1 - Line 2 - Line 4) + Line 6 Line 28 = Total expenses = SUM(Lines 8 through 27a) Line 29 = Tentative profit/loss = Line 7 - Line 28 Line 30 = Business use of home (from Form 8829 or simplified method) Line 31 = Net profit or loss = Line 29 - Line 30 Positive Line 31 = net profit (flows to Form 1040 Schedule 1 and Schedule SE). Negative Line 31 = net loss (flag for §183 hobby loss risk).
+- **Final Schedule C-ready figures** — Line 7  = Gross income = (Line 1 - Line 2 - Line 4) + Line 6 Line 28 = Total expenses = SUM(Lines 8 through 27b) Line 29 = Tentative profit/loss = Line 7 - Line 28 Line 30 = Business use of home (from Form 8829 or simplified method) Line 31 = Net profit or loss = Line 29 - Line 30 Positive Line 31 = net profit (flows to Form 1040 Schedule 1 and Schedule SE). Negative Line 31 = net loss (flag for §183 hobby loss risk).  _(https://www.irs.gov/pub/irs-pdf/f1040sc.pdf)_
 
 ### Sheet "Asset Register" (for Form 4562)
 
@@ -751,7 +753,7 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 ### Primary legislation
 
 - **Internal Revenue Code** — Internal Revenue Code (Title 26 USC) — all sections cited throughout this skill  _(Item 1)_
-- **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20% (rising to 23% in 2026), new tip/overtime/auto loan interest deductions on Schedule 1-A  _(Item 2)_
+- **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20%, new tip/overtime/auto loan interest deductions on Schedule 1-A  _([Item 2](https://www.law.cornell.edu/uscode/text/26/199A))_
 
 ### Treasury Regulations (26 CFR)
 

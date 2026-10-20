@@ -5,7 +5,9 @@ version: 0.1
 jurisdiction: SD
 tax_year: 2025
 last_updated: 2026-07-22
+authored_by: Ahmed Hassan
 review_status: pending_review
+trust_label: Accountant-authored
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -13,43 +15,17 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill
-
-## Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.1
+# Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All monetary figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
 > **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments, and the political situation (post-2021 military takeover, ongoing conflict since April 2023) has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), PwC Worldwide Tax Summaries, or a qualified Sudan accountant before filing.
 
-## Section 1 — Scope statement
-
-This skill covers:
-
-- Business Profits Tax (BPT) rates and sector differentiation for resident companies
-- Taxable income determination (accounting profit -> taxable profit adjustments)
-- Allowable and disallowed deductions (Income Tax Act 1986, Art 18)
-- Loss carryforward rules
-- Withholding tax obligations on outbound payments (dividends, interest, royalties, services)
-- Free Zones Act 2001 and investment incentive regime (Investment Incentive Law 2021)
-- Petroleum production sharing agreement (PSA) regime — special tax treatment
-- Filing requirements and self-assessment
-
-This skill does NOT cover:
-
-- Personal income tax for individuals — see `sd-income-tax`
-- VAT — see `sd-vat-gst`
-- Payroll and social insurance — see `sd-payroll-social`
-- Company formation and registration — see `sd-company-formation`
-- Capital gains tax — separate schedule under Income Tax Act 1986
-- Zakat — separate religious obligation under Zakat Act 2001
-
 ## Section 2 — Filing requirements
 
-**Filing requirements**  _(Income Tax Act 1986, Art 4, 10, 38, 39)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Who must file** | All resident companies, branches of foreign companies, and PEs of non-residents deriving Sudan-source income | Income Tax Act 1986, Art 4 |
 | **Tax year** | Calendar year (1 Jan – 31 Dec); companies may use a different accounting period with approval | Income Tax Act 1986, Art 10 |
 | **Return form** | Business Profits Tax return (إقرار ضريبة أرباح الأعمال) via Sudan Taxation Chamber | Income Tax Act 1986, Art 38 |
@@ -58,14 +34,14 @@ This skill does NOT cover:
 | **Audited accounts** | Companies audited by the General Auditor submit return for the same period; companies with non-calendar year-end submit within the prescribed period | Income Tax Act 1986, Art 38(1) |
 | **Record retention** | Accounting books (journal, ledger, inventory) must be kept for minimum 6 years in Arabic or English | Income Tax Act 1986, Art 39(3-5) |
 
+---
+
 ## Section 3 — Rates and thresholds
 
 ### Sector-differentiated BPT rates
 
-**Sector-differentiated BPT rates**  _(Income Tax Act 1986, Schedule; PwC; Britacom; Trading Economics)_
-
 | Sector | Rate | Source |
-| --- | --- | --- |
+|--------|------|--------|
 | **Standard (general/industrial companies)** | 15% | Income Tax Act 1986, Schedule; PwC Worldwide Tax Summaries — Sudan; Trading Economics |
 | **Banks and financial institutions** | 30% | Income Tax Act 1986, Schedule; Britacom tax profile |
 | **Tobacco / cigarette companies** | 30% | Income Tax Act 1986, Schedule; Britacom tax profile |
@@ -76,10 +52,8 @@ This skill does NOT cover:
 
 ### Withholding tax rates on payments
 
-**Withholding tax rates on payments**  _(Income Tax Act 1986; PwC; Britacom)_
-
 | Payment type | Rate | Character | Source |
-| --- | --- | --- | --- |
+|-------------|------|-----------|--------|
 | **Interest (to non-residents)** | 7% | Final | Income Tax Act 1986; PwC |
 | **Royalties (to non-residents)** | 15% | Final | Income Tax Act 1986 |
 | **Technical / management services (to non-residents)** | 15% | Final | Income Tax Act 1986 |
@@ -88,61 +62,113 @@ This skill does NOT cover:
 | **Payments to non-resident taxpayers** | 14% | Standard WHT on contracts | Income Tax Act 1986; Britacom |
 | **Imports of goods (resident payer)** | 2% | Creditable | Income Tax Act 1986 |
 
+---
+
 ## Section 4 — Computation rules
 
 ### Step 1 — Determine taxable income
 
-- **Determine taxable income** — Tax base is **net profit** (accounting profit adjusted for tax) of the enterprise. ``` Net profit = Gross income (business profits + rental + personal income + gross income) - Allowable deductions ```  _(Income Tax Act 1986, Art 4)_
+Tax base is **net profit** (accounting profit adjusted for tax) of the enterprise. *(Income Tax Act 1986, Art 4)*
+
+```
+Net profit = Gross income (business profits + rental + personal income + gross income)
+           - Allowable deductions
+```
 
 ### Step 2 — Apply sector rate
 
-- **Apply sector rate** — ``` BPT = Net profit x Sector rate (15% standard / 30% banks, tobacco, petroleum / 0% agriculture) ```  _(Income Tax Act 1986, Schedule)_
+```
+BPT = Net profit x Sector rate (15% standard / 30% banks, tobacco, petroleum / 0% agriculture)
+```
 
 ### Step 3 — Apply deductions and credits
 
-- **Apply deductions and credits** — ``` Tax payable = BPT - WHT credits - Advance payments ```  _(Income Tax Act 1986)_
+```
+Tax payable = BPT - WHT credits - Advance payments
+```
 
 ### Step 4 — Loss carryforward
 
-- **Loss carryforward** — Business losses are computed similarly to profits and may be carried forward (verify carryforward period — commonly 5 years under standard practice).  _(Income Tax Act 1986, terminology: "Loss" in relation to business profits means a loss computed in a similar manner to profits)_
+Business losses are computed similarly to profits and may be carried forward (verify carryforward period — commonly 5 years under standard practice). *(Income Tax Act 1986, terminology: "Loss" in relation to business profits means a loss computed in a similar manner to profits)*
 
 ### Allowable deductions (Income Tax Act 1986, Art 18(1)(A))
 
-- **Allowable deductions** — 1. Expenses related to the activity and necessary for its operation 2. Communication expenses (telephone, telex, fax, internet) — work-related fully deductible 3. Subscriptions to trade chambers, scientific journals, bulletins related to work 4. Advertising expenses as determined by the Secretary-General 5. Hospitality and entertainment expenses related to work (as determined by Secretary-General) 6. Rent paid for the workplace 7. **Depreciation of fixed assets** at rates specified in the First Schedule 8. Legal expenses related to the work 9. Professional allowance (subject to Art 18 and Art 38 declaration) 10. Salaries, wages, and similar payments (subject to personal income tax payment) 11. **Zakat paid** during the accounting period (subject to proof of payment) 12. Bonuses, grants, and rewards to employees — not exceeding 3 months' salary per year 13. Repair costs for buildings, machinery, and equipment (not capital expenditure; no depreciation allowed under Second Schedule) 14. **Bad debts** — must be: (a) supported by audited accounts; (b) related to the activity; (c) of specific value in accounts; (d) legal action taken and decision issued  _(Income Tax Act 1986, Art 18(1)(A))_
+1. Expenses related to the activity and necessary for its operation
+2. Communication expenses (telephone, telex, fax, internet) — work-related fully deductible
+3. Subscriptions to trade chambers, scientific journals, bulletins related to work
+4. Advertising expenses as determined by the Secretary-General
+5. Hospitality and entertainment expenses related to work (as determined by Secretary-General)
+6. Rent paid for the workplace
+7. **Depreciation of fixed assets** at rates specified in the First Schedule
+8. Legal expenses related to the work
+9. Professional allowance (subject to Art 18 and Art 38 declaration)
+10. Salaries, wages, and similar payments (subject to personal income tax payment)
+11. **Zakat paid** during the accounting period (subject to proof of payment)
+12. Bonuses, grants, and rewards to employees — not exceeding 3 months' salary per year
+13. Repair costs for buildings, machinery, and equipment (not capital expenditure; no depreciation allowed under Second Schedule)
+14. **Bad debts** — must be: (a) supported by audited accounts; (b) related to the activity; (c) of specific value in accounts; (d) legal action taken and decision issued
 
 ### Non-deductible expenses
 
-- **Non-deductible expenses** — 1. Expenses not related to the activity or not necessary for its operation 2. Must be actual expenses supported by documents (except customary undocumented expenses like internal travel, hospitality, routine maintenance) 3. Must relate to the relevant base period (not previous or subsequent years) 4. Must relate to an activity subject to tax for the relevant base period  _(Income Tax Act 1986, Art 18)_
+1. Expenses not related to the activity or not necessary for its operation
+2. Must be actual expenses supported by documents (except customary undocumented expenses like internal travel, hospitality, routine maintenance)
+3. Must relate to the relevant base period (not previous or subsequent years)
+4. Must relate to an activity subject to tax for the relevant base period
 
 ### Initial depreciation allowance
 
-- **Initial depreciation allowance** — Newly purchased machinery and equipment receive **20% initial depreciation** of purchase price after being put into production. %  _(Investment Incentive Law 2021)_
+Newly purchased machinery and equipment receive **20% initial depreciation** of purchase price after being put into production. *(Investment Incentive Law 2021)*
+
+---
 
 ## Section 5 — Edge cases and special rules
 
 ### Free Zones and Investment Incentives
 
-- **Free Zones and Investment Incentives** — - Investment projects economically aligned with the **Investment Incentive Law 2021** are **exempt from corporate income tax** starting from the date of commercial production, for a period **not exceeding 5 years** - Capital equipment of qualifying investment projects is **exempt from VAT** (list approved by Ministry of Investment and International Cooperation) - Free Trade Zones and Duty-Free Zones enjoy customs exemptions and tax incentives - Projects in designated underdeveloped areas receive special preferences - Exporters of goods and providers of taxable services enjoy **zero VAT rate** with input VAT refund entitlement **AUDIT FLASH POINT:** Free zone exemptions are time-limited (5 years max). Track the commercial production start date carefully — the exemption clock starts then, not at company registration.  _(Investment Incentive Law 2021)_
+- Investment projects economically aligned with the **Investment Incentive Law 2021** are **exempt from corporate income tax** starting from the date of commercial production, for a period **not exceeding 5 years**
+- Capital equipment of qualifying investment projects is **exempt from VAT** (list approved by Ministry of Investment and International Cooperation)
+- Free Trade Zones and Duty-Free Zones enjoy customs exemptions and tax incentives
+- Projects in designated underdeveloped areas receive special preferences
+- Exporters of goods and providers of taxable services enjoy **zero VAT rate** with input VAT refund entitlement
+
+**AUDIT FLASH POINT:** Free zone exemptions are time-limited (5 years max). Track the commercial production start date carefully — the exemption clock starts then, not at company registration.
 
 ### Petroleum Production Sharing Agreement (PSA) regime
 
-- **Petroleum PSA regime** — - Petroleum operations are taxed at **30%** BPT rate - However, most petroleum operations are conducted under **PSA terms** that govern the fiscal regime: - The state (via Sudan National Petroleum Corporation / Sudapet) and the contractor (international oil company) share production - **Cost oil** — contractor recovers costs from a portion of produced oil - **Profit oil** — remaining oil is split between government and contractor per negotiated terms - Tax is typically paid by the contractor on its profit oil share - The PSA terms may override standard BPT provisions — each concession agreement must be reviewed individually - A flat 5% royalty is referenced in some investment documents for companies already exempt from tax under the Investment Law **AUDIT FLASH POINT:** PSA terms are confidential and concession-specific. Never assume standard BPT applies to petroleum operations without verifying the specific concession agreement. The 30% rate is the statutory fallback, not necessarily the effective rate.  _(Income Tax Act 1986, Schedule; Britacom tax profile)_
+- Petroleum operations are taxed at **30%** BPT rate
+- However, most petroleum operations are conducted under **PSA terms** that govern the fiscal regime:
+  - The state (via Sudan National Petroleum Corporation / Sudapet) and the contractor (international oil company) share production
+  - **Cost oil** — contractor recovers costs from a portion of produced oil
+  - **Profit oil** — remaining oil is split between government and contractor per negotiated terms
+  - Tax is typically paid by the contractor on its profit oil share
+  - The PSA terms may override standard BPT provisions — each concession agreement must be reviewed individually
+- A flat 5% royalty is referenced in some investment documents for companies already exempt from tax under the Investment Law
+
+**AUDIT FLASH POINT:** PSA terms are confidential and concession-specific. Never assume standard BPT applies to petroleum operations without verifying the specific concession agreement. The 30% rate is the statutory fallback, not necessarily the effective rate.
 
 ### Transfer pricing
 
-- **Transfer pricing** — Sudan does not have formal transfer pricing legislation comparable to OECD guidelines. Related-party transactions should follow arm's length principle as a matter of general tax administration practice. No formal CbCR or TP documentation requirements are currently in force — verify with the Taxation Chamber.  _(verify with the Taxation Chamber)_
+Sudan does not have formal transfer pricing legislation comparable to OECD guidelines. Related-party transactions should follow arm's length principle as a matter of general tax administration practice. No formal CbCR or TP documentation requirements are currently in force — verify with the Taxation Chamber.
 
 ### Currency conversion
 
-- **Currency conversion** — Documents or invoices in a currency other than SDG must be converted at the **exchange rate at the time of the transaction**, with the exchange rate used stated.  _(Income Tax Act 1986, Art 39(3-5))_
+Documents or invoices in a currency other than SDG must be converted at the **exchange rate at the time of the transaction**, with the exchange rate used stated. *(Income Tax Act 1986, Art 39(3-5))*
 
 ### Tax exemptions (Schedule 1 and ministerial orders)
 
-- **Tax exemptions** — - Pensions paid to members of municipal services or disciplinary departments - Payments and transfers to envoys, diplomats, and employees of international organizations - Interest from bank deposits, savings accounts, and postal savings funds - Personal income of employees **over 50 years old** working in government or private sectors (capped at highest government salary) - Charitable bodies (Minister may reimburse taxes collected from legally registered charities) - Activities under the **Zakat Act 2001** and **Islamic Endowments Act 1996** are outside the Income Tax Act's scope - Expatriate personnel working on major development projects (oil industry, dams, roads, bridges) may receive tax exemption benefits  _(Income Tax Act 1986, Schedule 1 and ministerial orders)_
+- Pensions paid to members of municipal services or disciplinary departments
+- Payments and transfers to envoys, diplomats, and employees of international organizations
+- Interest from bank deposits, savings accounts, and postal savings funds
+- Personal income of employees **over 50 years old** working in government or private sectors (capped at highest government salary)
+- Charitable bodies (Minister may reimburse taxes collected from legally registered charities)
+- Activities under the **Zakat Act 2001** and **Islamic Endowments Act 1996** are outside the Income Tax Act's scope
+- Expatriate personnel working on major development projects (oil industry, dams, roads, bridges) may receive tax exemption benefits
 
 ### Double taxation treaties
 
-- **Double taxation treaties** — As of January 2024, Sudan has concluded and brought into force double taxation agreements with 17 countries and regions. Verify treaty availability and rates before applying.  _(Britacom tax profile)_
+As of January 2024, Sudan has concluded and brought into force double taxation agreements with 17 countries and regions. *(Britacom tax profile)* Verify treaty availability and rates before applying.
+
+---
 
 ## Section 6 — Worked examples
 
@@ -179,6 +205,8 @@ This skill does NOT cover:
 - The Sudanese company must withhold and remit within the prescribed period
 - The non-resident cannot claim the personal allowance on WHT-taxed income
 
+---
+
 ## Section 7 — Self-checks
 
 Before delivering output, verify:
@@ -194,12 +222,12 @@ Before delivering output, verify:
 - [ ] Record retention compliance (6 years minimum, Arabic or English)
 - [ ] DTA treaty consulted for cross-border payments before applying WHT rates
 
+---
+
 ## Section 8 — Reference material
 
-**Reference material**  _(Section 8 — Reference material)_
-
 | Resource | Reference |
-| --- | --- |
+|----------|-----------|
 | Sudan Taxation Chamber | https://tax.gov.sd/en/income-tax-2/ |
 | Income Tax Act 1986 (PDF) | https://tax.gov.sd/wp-content/uploads/2025/02/ — legislation section |
 | PwC Worldwide Tax Summaries — Sudan | https://taxsummaries.pwc.com/sudan |
@@ -207,6 +235,8 @@ Before delivering output, verify:
 | US State Dept Investment Climate Statement | https://www.state.gov/reports/2022-investment-climate-statements/sudan/ |
 | Investment Incentive Law 2021 | Ministry of Investment and International Cooperation, Sudan |
 | Trading Economics — Sudan corporate tax rate | https://tradingeconomics.com/sudan/corporate-tax-rate |
+
+---
 
 ## PROHIBITIONS
 

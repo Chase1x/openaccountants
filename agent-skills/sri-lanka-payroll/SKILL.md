@@ -8,7 +8,9 @@ metadata:
   jurisdiction: "LK"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  authored_by: "Lal kumarasiri, CA"
   reviewed_by: "Lal kumarasiri"
+  trust_label: "Checked by Lal kumarasiri"
   review_status: "current"
 ---
 

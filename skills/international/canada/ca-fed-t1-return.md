@@ -5,12 +5,15 @@ version: 2.0
 jurisdiction: CA
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: Nathan Wiebe
 reviewed_by: Edgar Lautsyus
 review_status: current
+trust_label: Checked by Edgar Lautsyus
+source_checked: 2026-10-17
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -41,10 +44,10 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Basic exemption** — $3,500  _(Canada Pension Plan Act s.20; CRA — Schedule 8)_
 - **Max CPP contribution** — $8,068.20
 - **Max QPP2 contribution** — $792.00
-- **CPP deductible portion** — 50% (line 22200)  _(ITA s.60(e); CRA — Line 22200)_
+- **CPP deductible portion** — 50% of base contributions plus all first and second additional contributions (line 22200); the other 50% of base contributions is the line 31000 credit  _([ITA s.60(e); CRA — Line 22200](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s8/5000-s8-25e.pdf))_
 - **EI rate** — $1.64/$100  _(CRA — EI premium rates and maximums — canada.ca; Employment Insurance Act Part VII.1)_
 - **Max EI premium** — $1,077.48  _(CRA — EI premium rates and maximums — canada.ca)_
-- **Quebec EI rate** — $1.30/$100  _(CRA — EI premium rates and maximums — canada.ca)_
+- **Quebec EI rate** — $1.31/$100  _([CRA — EI premium rates and maximums — canada.ca](https://www.canada.ca/en/employment-social-development/news/2024/09/canada-employment-insurance-commission-confirms-2025-employment-insurance-premium-rate.html))_
 - **Waiting period** — 12 months  _(Employment Insurance Act s.152.07; CRA — Self-employed EI — canada.ca)_
 - **Self-employed filing** — June 15  _(ITA s.150(1)(d))_
 - **Payment due** — April 30 (interest from May 1)  _(ITA s.156.1(1); CRA — Paying income tax — canada.ca)_
@@ -110,7 +113,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Max CPP contribution | $8,068.20 |
 | Max CPP2 contribution | $792.00 |
 
-Half of CPP/CPP2 is deductible (line 22200); half is a non-refundable credit.
+Half of base CPP plus all first and second additional (CPP2) contributions are deductible (line 22200); the other half of base CPP is a non-refundable credit (line 31000).
 
 ### Conservative Defaults
 
@@ -194,11 +197,11 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 
 ### 5.2 CPP Self-Employed Computation
 
-- **CPP Self-Employed Computation** — On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half deducted, half credited.
+- **CPP Self-Employed Computation** — On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half of base CPP is credited (line 31000); the other half of base CPP plus all first and second additional contributions is deducted (line 22200).  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s8/5000-s8-25e.pdf)_
 
 ### 5.3 EI Self-Employed (Voluntary)
 
-- **EI Self-Employed (Voluntary)** — Rate $1.64/$100, max $1,077.48 (Quebec: $1.30). Covers special benefits only (maternity, parental, sickness). 12-month waiting period. Non-refundable credit at 14.5%.
+- **EI Self-Employed (Voluntary)** — Rate $1.64/$100, max $1,077.48 (Quebec: $1.31). Covers special benefits only (maternity, parental, sickness). 12-month waiting period. Non-refundable credit at 14.5%.  _(https://www.canada.ca/en/employment-social-development/news/2024/09/canada-employment-insurance-commission-confirms-2025-employment-insurance-premium-rate.html)_
 
 ### 5.4 Filing Deadlines
 
@@ -220,7 +223,7 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 
 ### 6.3 Medical Expenses and Charitable Donations
 
-- **Medical Expenses and Charitable Donations** — Medical: amounts > lesser of 3% of net income or $2,759. Charitable: 15% on first $200 + 29%/33% on excess. Flag for reviewer.
+- **Medical Expenses and Charitable Donations** — Medical: amounts > lesser of 3% of net income or $2,834. Charitable: 14.5% on first $200 + 29%/33% on excess. Flag for reviewer.  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-r/5006-r-25e.pdf)_
 
 ## Section 7 -- Excel Working Paper Template
 

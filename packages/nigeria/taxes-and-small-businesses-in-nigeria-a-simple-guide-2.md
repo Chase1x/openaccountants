@@ -4,7 +4,9 @@ description: Nigeria has a new tax law. It is called the Nigeria Tax Act 2025. I
 jurisdiction: NG
 tax_year: 2025
 last_updated: 2026-08-24
+authored_by: Omolola Fasasi, CA
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

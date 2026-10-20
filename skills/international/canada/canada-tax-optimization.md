@@ -5,12 +5,15 @@ version: 1.0
 jurisdiction: CA
 tax_year: 2026
 last_updated: 2026-07-13
+authored_by: Nathan Wiebe
 reviewed_by: Edgar Lautsyus
 review_status: current
+trust_label: Checked by Edgar Lautsyus
+source_checked: 2026-10-17
 depends_on:
   - bookkeeping-workflow-base
 category: tax-optimization
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -46,12 +49,12 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Class 50** — 55% — Computer hardware  _(ITR Schedule II Class 50)_
 - **Class 54** — 30% declining balance — zero-emission passenger vehicles (cost cap $61,000 + tax), with enhanced first-year deductions under AIIP/RIIP  _(ITR Schedule II Class 54; CRA — classes of depreciable property — canada.ca)_
 - **Child care** — $8,000/child under 7; $5,000/child 7–16; $11,000 for a child eligible for the disability tax credit  _(ITA s.63(3))_
-- **Medical expenses** — Medical expense credit rate for 2025 is 15% (NRTC). Threshold: amounts over the lesser of 3% of net income or $2,834(threshold for 2025)  _(ITA s.118.2; CRA — Medical expenses — canada.ca; Bill C-4 (14.5% credit rate for 2025))_
+- **Medical expenses** — Medical expense credit rate for 2025 is 14.5% (NRTC; 14% for 2026). Threshold: amounts over the lesser of 3% of net income or $2,834(threshold for 2025)  _([ITA s.118.2; CRA — Medical expenses — canada.ca; Bill C-4 (14.5% credit rate for 2025)](https://www.canada.ca/en/department-finance/services/publications/report-impact-reducing-lowest-marginal-personal-income-tax-rate-non-refundable-tax-credits.html))_
 - **Moving expenses** — Must move ≥ 40 km closer to new work location  _(ITA s.62)_
-- **LCGE (QSBC shares)** — $1,250,000  _(ITA s.110.6(2); Budget 2024; CRA — LCGE — canada.ca)_
+- **LCGE (QSBC shares)** — $1,275,000 (2026; $1,250,000 for 2025)  _([ITA s.110.6(2); Budget 2024; CRA — LCGE — canada.ca](https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html))_
 - **GAAR** — ITA s.245  _(ITA s.245)_
 - **TOSI** — ITA s.120.4 — top rate on split income to family members  _(ITA s.120.4)_
-- **Superficial loss** — Repurchase within 30 days — loss denied  _(ITA s.54; ITA s.40(2)(g))_
+- **Superficial loss** — You or an affiliated person acquire identical property in the period 30 days before to 30 days after the sale, and still own it at the end of that period: loss denied  _([ITA s.54; ITA s.40(2)(g)](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-54.html))_
 
 ## Section 1 — Quick Reference
 
@@ -108,30 +111,30 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | Personal tax treatment | Marginal rates | Gross-up + dividend tax credit |
 | Payroll admin | Required (T4, remittances) | Minimal (T5) |
 
-- **Optimal mix** — Pay enough salary to maximise RRSP room ($33,810 limit for 2026 → requires ~$187,833 salary). If RRSP room is not needed, eligible dividends may produce slightly lower combined tax. Model annually — provincial rates create different break-even points.
+- **Optimal mix** — Pay enough salary to maximise RRSP room ($33,810 limit for 2026 → requires ~$187,833 of 2025 earned income; salary paid in 2026 creates room under the 2027 limit of $35,390). If RRSP room is not needed, eligible dividends may produce slightly lower combined tax. Model annually — provincial rates create different break-even points.  _(https://www.canada.ca/en/revenue-agency/services/tax/registered-plans-administrators/whats-new.html)_
 
 ### TOSI (Tax on Split Income) — s 120.4
 
 - **TOSI** — Income paid to family members (spouse, children) from a related business is subject to top marginal tax rate unless an exclusion applies.  _(s 120.4)_
 - **Excluded business** — Family member works ≥20 hours/week in the business  _(s 120.4)_
-- **Excluded shares** — Family member aged 25+, owns shares of a corporation where <90% of income is from services, 10%+ equity  _(s 120.4)_
+- **Excluded shares** — Family member aged 25+, owns shares of a corporation (not a professional corporation) where <90% of income is from services, 10%+ of votes and value  _([s 120.4](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/federal-government-budgets/income-sprinkling/guidance-split-income-rules-adults/excluded-shares.html))_
 - **Reasonable return** — Compensation proportional to labour, capital, risk contributed  _(s 120.4)_
 - **Prescribed rate loans** — Lend funds to spouse at CRA prescribed rate (3% Q1 2026); spouse invests, attributes interest income back to lender, keeps excess returns  _(s 120.4)_
 
 ## Section 3 — Deductions Most People Miss
 
-**Deductions Most People Miss**
+**Deductions Most People Miss**  _(https://www.canada.ca/en/department-finance/services/publications/report-impact-reducing-lowest-marginal-personal-income-tax-rate-non-refundable-tax-credits.html)_
 
 | Deduction | Provision | Notes |
 | --- | --- | --- |
 | Home office expenses | s 8(1)(f), 8(1)(i), 18(12) | Employees: T2200 required. Self-employed: proportion of rent/mortgage interest, utilities, insurance, property tax |
 | Moving expenses | s 62 | Must move ≥40 km closer to new work/business location. Deduct against income at new location |
 | Carrying charges | s 20(1)(c) | Interest on money borrowed to earn investment income. Includes investment counsel fees |
-| Medical expenses | s 118.2 | Tax credit at 15% federal on expenses >3% of net income or $2,834 (lesser, 2025 threshold). Include premiums, dental, prescriptions, travel for treatment |
-| Disability tax credit | s 118.3 | $9,872 federal credit (2026). Transferable to supporting person. Unlocks RDSP eligibility |
+| Medical expenses | s 118.2 | Tax credit at 14% federal (2026; 14.5% for 2025) on expenses >3% of net income or $2,834 (lesser, 2025 threshold). Include premiums, dental, prescriptions, travel for treatment |
+| Disability tax credit | s 118.3 | $10,341 federal credit (2026). Transferable to supporting person. Unlocks RDSP eligibility |
 | Northern residents deduction | s 110.7 | Residency deduction + travel benefits for prescribed zones |
 | Capital cost allowance (CCA) on rental property | s 20(1)(a), Sch II | Class 1 (4%), Class 8 (20%). Accelerated Investment Incentive (triple declining balance in year 1) |
-| Apprentice mechanic tools | s 8(1)(s) | Cost exceeding $1,368 (2026 indexed) |
+| Apprentice mechanic tools | s 8(1)(s) | Cost exceeding the greater of $1,000 plus the s.118(10) amount (Canada employment amount) and 5% of apprenticeship income (s 8(1)(r)) |
 | Union/professional dues | s 8(1)(i) | Full deduction |
 | Child care expenses | s 63 | $8,000/child under 7; $5,000/child 7–16; $11,000 if DTC-eligible. Must be claimed by lower-income spouse (exceptions apply) |
 
@@ -157,7 +160,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ### Immediate Expensing (CCPCs)
 
-- **Immediate expensing** — CCPCs can immediately expense up to $1.5 million per year of eligible property (Classes 2–6, 8, 10, 12, etc.) acquired after 18 April 2021 and available for use before 2025 — verify ongoing extensions.
+- **Immediate expensing** — CCPCs can immediately expense up to $1.5 million per year of eligible property (Classes 2–6, 8, 10, 12, etc.) acquired on or after 19 April 2021 and available for use before 1 January 2024 (before 2025 for individuals and partnerships of individuals) — the measure has expired; verify ongoing extensions.  _(https://www.canada.ca/en/department-finance/news/2022/02/expansion-of-the-eligibility-for-tax-support-for-business-investments.html)_
 
 ## Section 5 — Loss Utilization
 
@@ -181,7 +184,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ## Section 6 — Timing Strategies
 
-**Timing Strategies**
+**Timing Strategies**  _(https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html)_
 
 | Strategy | Detail |
 | --- | --- |
@@ -190,7 +193,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | Accelerate deductions | Prepay deductible expenses before 31 December. Purchase CCA-eligible assets before year-end |
 | Charitable donations | Carry forward donations up to 5 years. Consolidate to one spouse for higher credit rate (29%/33% on amounts >$200) |
 | Capital gains deferral | Hold assets >1 year (no discount, but defer realisation). Use CCPC to shelter passive income until extraction |
-| LCGE crystallisation | Trigger capital gain on QSBC shares up to $1,250,000 LCGE while still eligible. Useful before selling active business |
+| LCGE crystallisation | Trigger capital gain on QSBC shares up to $1,275,000 LCGE (2026) while still eligible. Useful before selling active business |
 | Prescribed rate loan before rate increase | Lock in lower CRA prescribed rate before quarterly adjustments |
 
 ## Section 7 — GST/HST Optimization
@@ -211,14 +214,14 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ### CPP Contributions (2026)
 
-- **CPP1** — 5.95% employee + 5.95% employer on pensionable earnings $3,500–$73,200 (max employee contribution ~$4,147)
-- **CPP2** — 4% employee + 4% employer on earnings $73,200–$81,200 (second ceiling)
+- **CPP1** — 5.95% employee + 5.95% employer on pensionable earnings $3,500–$74,600 (max employee contribution $4,230.45)  _(https://www.canada.ca/en/services/benefits/publicpensions/cpp/contributions.html)_
+- **CPP2** — 4% employee + 4% employer on earnings $74,600–$85,000 (second ceiling)  _(https://www.canada.ca/en/services/benefits/publicpensions/cpp/contributions.html)_
 - **Self-employed CPP** — Self-employed pay both halves (11.9% CPP1 + 8% CPP2)
 - **CCPC owner-manager dividends only** — No CPP contributions → no CPP pension accrual. Trade-off: lower current cost vs lower retirement benefit
 
 ### EI Premiums
 
-- **Employees** — 1.64% on insurable earnings up to $65,700 (2026)
+- **Employees** — 1.63% on insurable earnings up to $68,900 (2026)  _(https://www.canada.ca/en/employment-social-development/news/2025/09/canada-employment-insurance-commission-sets-the-2026-employment-insurance-premium-rate.html)_
 - **Self-employed** — Can opt in for special benefits (maternity, sickness)
 - **CCPC dividends** — No EI — but also no EI eligibility
 
@@ -230,7 +233,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ## Section 9 — Investment & Retirement
 
-**Investment & Retirement**
+**Investment & Retirement**  _(https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4460/registered-disability-savings-plan.html)_
 
 | Account | 2026 Limit | Tax Treatment |
 | --- | --- | --- |
@@ -238,7 +241,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | TFSA | $7,000 (cumulative $109,000 since 2009) | No deduction; growth and withdrawals tax-free |
 | FHSA | $8,000/year ($40,000 lifetime) | Deductible like RRSP + tax-free withdrawal for first home (like TFSA). Best of both worlds |
 | RESP | $2,500/year to maximise CESG ($500 grant) | No deduction; growth tax-deferred; grants from government; withdrawals taxed to student |
-| RDSP | Up to $200,000 lifetime | Government grants/bonds up to $3,500/year. Must have DTC |
+| RDSP | Up to $200,000 lifetime | Government grants up to $3,500/year plus bonds up to $1,000/year. Must have DTC |
 
 ### Strategy Framework
 
@@ -257,7 +260,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ### CRA Scrutiny Triggers
 
-**CRA Scrutiny Triggers**
+**CRA Scrutiny Triggers**  _(https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/questions-answers-about-form-t1135.html)_
 
 | Trigger | Risk |
 | --- | --- |
@@ -267,7 +270,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | Personal expenses through corporation | Shareholder benefit (s 15(1)) or deemed dividend (s 15(2)) |
 | Automobile benefits | Standby charge + operating benefit if personal use not properly reported |
 | Non-arm's length transactions at non-FMV | Transfer pricing rules (s 69, s 247) |
-| Foreign reporting non-compliance | T1135 (≥$100,000 foreign property). Penalties: $2,500/year late filing |
+| Foreign reporting non-compliance | T1135 (specified foreign property with total cost amount of more than $100,000 at any time in the year). Penalties: $2,500/year late filing |
 | Underground economy / unreported income | CRA uses third-party data matching |
 | RRSP over-contribution | 1% per month penalty tax on excess >$2,000 |
 | Aggressive tax shelters | CRA mandatory disclosure rules (s 237.3, 237.4) — expanded 2023 |
@@ -302,7 +305,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 **Scenario:** CCPC earns $200,000 active business income. Owner is sole shareholder.
 
-**All salary ($200,000):** Corporate tax $0 (fully deductible). Personal tax ~$52,700 (Ontario combined). CPP: ~$8,300. RRSP room created: $33,810. **Net after tax: ~$138,000.**
+**All salary ($200,000):** Corporate tax $0 (fully deductible). Personal tax ~$52,700 (Ontario combined). CPP: ~$8,300. RRSP room created: $35,390 (2027 limit). **Net after tax: ~$138,000.**
 
 **All eligible dividends:** Corporate tax at ~12.2% = $24,400. Remaining $175,600 as dividends. Personal tax on grossed-up dividends ~$25,200. No CPP. No RRSP room. **Net after tax: ~$150,400. Saving: ~$12,400** but no CPP accrual or RRSP room.
 
@@ -318,7 +321,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ### Example 3 — LCGE on Business Sale
 
-Owner sells qualifying small business corporation shares. Capital gain: $1,000,000. LCGE shelters the full gain (within $1,250,000 lifetime limit). Tax at 50% inclusion × 33% rate = $165,000 avoided. **Cash saving: $165,000.**
+Owner sells qualifying small business corporation shares. Capital gain: $1,000,000. LCGE shelters the full gain (within $1,275,000 lifetime limit for 2026). Tax at 50% inclusion × 33% rate = $165,000 avoided. **Cash saving: $165,000.**
 
 ## Disclaimer
 

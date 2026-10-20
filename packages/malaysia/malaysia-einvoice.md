@@ -7,6 +7,7 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN
 review_status: current
+trust_label: Checked by MUHAMMAD HANIS MAT HUSSIN
 depends_on:
   - einvoice-workflow-base
 category: invoicing

@@ -3,7 +3,9 @@ name: crypto-accounting
 description: How to build a defensible crypto transaction ledger for UK clients exchange/wallet data collection, internal-transfer traps, and the Section 104/30-day matching sequence.
 jurisdiction: GB
 last_updated: 2026-09-02
+authored_by: Nadir Khan, OTHER
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

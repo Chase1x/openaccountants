@@ -4,8 +4,11 @@ description: US federal content skill for preparing Form 1065 — the US partner
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
+authored_by: James Wallach
 reviewed_by: Christopher Aryee
 review_status: current
+trust_label: Checked by Christopher Aryee
+source_checked: 2026-10-16
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -35,7 +38,7 @@ The skill produces:
 - Schedule B-2 (election out of CPAR) when triggered
 - Schedule K-1 for each partner (the most important deliverable — partners cannot file their own 1040 without it)
 - Schedules K-2 and K-3 when international activity or foreign partners exist, OR when the Domestic Filing Exception under the K-2/K-3 instructions does **not** apply
-- Schedule M-3 when total assets at year-end are ≥ $10 million
+- Schedule M-3 when total assets at year-end are ≥ $10 million, adjusted total assets are $10 million or more, total receipts are $35 million or more, or a reportable entity partner owns 50% or more
 - Common attached forms: 4562, 4797, 8825, 8990, 6765 (where indicated by the taxpayer's facts)
 - Reviewer brief covering CPAR election decision, §704(b)/(c) issues, §752 liability allocation, partner basis/at-risk/passive limit indicators, and SE tax classification per partner
 
@@ -128,11 +131,11 @@ The skill produces:
 
 ### 4.2 Examples
 
-- **3-partner LLC, return filed 2 months late, no extension:** 3 partners × $245 × 2 months = **$1,470**.
-- **3-partner LLC, return filed 13 months late:** 3 × $245 × 12 (capped) = **$8,820**.
-- **20-partner LP, return filed 6 months late:** 20 × $245 × 6 = **$29,400**.
+- **3-partner LLC, return filed 2 months late, no extension:** 3 partners × $255 × 2 months = **$1,530**.
+- **3-partner LLC, return filed 13 months late:** 3 × $255 × 12 (capped) = **$9,180**.
+- **20-partner LP, return filed 6 months late:** 20 × $255 × 6 = **$30,600**.
 
-The penalty scales linearly with partner count. A 50-partner FLP filed 12 months late owes **$147,000** in §6698 penalties — for a return showing zero tax.
+The penalty scales linearly with partner count. A 50-partner FLP filed 12 months late owes **$153,000** in §6698 penalties — for a return showing zero tax.
 
 ### 4.3 Reasonable cause relief — Rev. Proc. 84-35
 
@@ -223,7 +226,7 @@ The 2025 Schedule K-1 (Form 1065) has the following major sections:
 
 ### 7.1 What they are
 
-- **Schedules K-2 and K-3 overview** — Schedules K-2 and K-3 were introduced for tax year 2021 to replace the old K-1 Box 16 free-text reporting of international items. They are voluminous (Schedule K-2 ran ~19 pages in 2021; the partner-by-partner K-3 ran similarly per partner). Schedule K-2 — partnership-level summary of international items. Filed with Form 1065. Schedule K-3 — per-partner detail. One K-3 per partner who needs international information. Furnished to the partner. The schedules have eleven parts in 2025: Part I — Partnership's other current-year international information; Part II — Foreign tax credit limitation (categories of income, source-of-income); Part III — Other information for preparation of Form 1116 or 1118 (deductions allocable to foreign income); Part IV — §250 deduction (FDII / GILTI / §163(j) interactions); Part V — Distributions from foreign corporations (§959, §961, etc.); Part VI — Information on partners' §951(a) inclusions; Part VII — §965 transition tax (mostly residual / closing accounts); Part VIII — Section 871(m) / dividend equivalents; Part IX — Section 1446 withholding (foreign partners); Part X — Foreign partners' character & source of income; Part XI — Section 871(m), Schedule K-3 supplemental.  _(§250; §959; §961; §951(a); §965; §871(m); §1446)_
+- **Schedules K-2 and K-3 overview** — Schedules K-2 and K-3 were introduced for tax year 2021 to replace the old K-1 Box 16 free-text reporting of international items. They are voluminous (Schedule K-2 ran ~19 pages in 2021; the partner-by-partner K-3 ran similarly per partner). Schedule K-2 — partnership-level summary of international items. Filed with Form 1065. Schedule K-3 — per-partner detail. One K-3 per partner who needs international information. Furnished to the partner. Schedule K-2 has twelve parts (I-XII) and Schedule K-3 has thirteen (I-XIII) in 2025: Part I — Partnership's other current-year international information; Part II — Foreign tax credit limitation (categories of income, source-of-income); Part III — Other information for preparation of Form 1116 or 1118 (deductions allocable to foreign income); Part IV — §250 deduction (FDII / GILTI / §163(j) interactions); Part V — Distributions from foreign corporations (§959, §961, etc.); Part VI — Information on partners' §951(a) inclusions; Part VII — §965 transition tax (mostly residual / closing accounts); Part VIII — Section 871(m) / dividend equivalents; Part IX — Section 1446 withholding (foreign partners); Part X — Foreign partners' character & source of income; Part XI — Section 871(m), Schedule K-3 supplemental.  _([§250; §959; §961; §951(a); §965; §871(m); §1446](https://www.irs.gov/instructions/i1065s23))_
 
 ### 7.2 Who must file K-2/K-3
 
@@ -231,11 +234,11 @@ The 2025 Schedule K-1 (Form 1065) has the following major sections:
 
 ### 7.3 The Domestic Filing Exception
 
-- **Four conditions of Domestic Filing Exception** — Beginning with tax year 2022 (and refined for 2023+ in the K-2/K-3 instructions), partnerships meeting all four of the following do not need to file K-2/K-3: 1. No or limited foreign activity — the partnership has no foreign-source income, no foreign taxes paid or accrued, and no ownership in any foreign entity, OR foreign activity is below the de minimis thresholds in the instructions (e.g., < $300 of foreign passive income with < $20 of foreign tax). 2. All direct partners are eligible US persons — US citizens, resident aliens, domestic decedents' estates, certain domestic trusts, S corporations with eligible shareholders, single-member LLCs whose sole owner is one of the above. No foreign partners, no partnerships as partners (other than as nominees), no domestic partnerships (except where treated as a nominee partner), no domestic partnerships in multi-tier structures. 3. Partner notification — by January 15 of the year following the tax year (so by January 15, 2026 for tax year 2025), the partnership has notified each partner that it will not provide a Schedule K-3 unless requested. Notification can be embedded in the K-1 footer in many practice templates. 4. No partner has requested K-3 — by the "1-month date" (one month before the partnership files Form 1065, or one month before the extended due date if extending), no partner has requested a K-3 from the partnership in writing. If all four are met, the partnership may omit K-2/K-3. If any one fails, K-2/K-3 must be filed.
+- **Four conditions of Domestic Filing Exception** — Beginning with tax year 2022 (and refined for 2023+ in the K-2/K-3 instructions), partnerships meeting all four of the following do not need to file K-2/K-3: 1. No or limited foreign activity — the partnership has no foreign-source income, no foreign taxes paid or accrued, and no ownership in any foreign entity, OR foreign activity is limited to passive category foreign income on which not more than $300 of foreign income taxes are treated as paid or accrued, shown on a payee statement furnished to the partnership. 2. All direct partners are eligible US persons — US citizens, resident aliens, domestic decedents' estates, certain domestic trusts, S corporations with eligible shareholders, single-member LLCs whose sole owner is one of the above. No foreign partners. Domestic partnerships may be partners only if their own direct partners are all of the eligible types above (criterion 2 was broadened for 2025). 3. Partner notification — at the latest when the partnership furnishes the Schedule K-1 to the partner, the partnership has notified each partner that it will not provide a Schedule K-3 unless requested. Notification can be embedded in the K-1 footer in many practice templates. 4. No partner has requested K-3 — by the "1-month date" (1 month before the date the partnership files Form 1065; for tax year 2025 calendar year partnerships, the latest 1-month date is August 17, 2026, if the partnership files an extension), no partner has requested a K-3 from the partnership in writing. If all four are met, the partnership may omit K-2/K-3. If any one fails, K-2/K-3 must be filed.  _(https://www.irs.gov/instructions/i1065s23)_
 
 ### 7.4 The "1-month date" trap
 
-- **1-month date timing rule** — If a partner requests K-3 information after the partnership files Form 1065 but before the original or extended due date, the partnership must furnish that partner's K-3 but is not required to file Schedule K-2 with the IRS. If a partner requests K-3 before the 1-month date, the partnership must file the full K-2 with the IRS. Practitioners should solicit K-3 requests early (e.g., in November/December of the tax year) to know what they're filing.
+- **1-month date timing rule** — If a partner requests K-3 information after the 1-month date, the partnership must provide that partner's K-3 no later than 1 month from the date it receives the request but is not required to file Schedules K-2 and K-3 with the IRS. If a partner requests K-3 on or before the 1-month date, the partnership must file Schedules K-2 and K-3, completed only for the parts and sections relevant to the requesting partner. Practitioners should solicit K-3 requests early (e.g., in November/December of the tax year) to know what they're filing.  _(https://www.irs.gov/instructions/i1065s23)_
 
 ### 7.5 Practical guidance
 
@@ -247,7 +250,7 @@ The 2025 Schedule K-1 (Form 1065) has the following major sections:
 
 ### 8.2 Default mechanics
 
-- **CPAR default audit mechanics** — Under CPAR, an IRS audit of a partnership return results in: 1. Determination of an "imputed underpayment" at the partnership level for the reviewed year (the year being audited). 2. The imputed underpayment is assessed against and collected from the partnership in the adjustment year (the year the audit concludes), at the highest individual or corporate rate (37% for individuals in 2025 / 21% for C corps; the partnership default uses the highest applicable rate). 3. Current-year partners bear the economic burden — even if they were not partners in the reviewed year. This is the default. It is harsh and often inappropriate when the partner roster has changed. The statute provides two safety valves: Section 6226 push-out election — within 45 days of the final partnership adjustment, the partnership can elect to push the adjustment out to the reviewed-year partners, who report the adjustment on their own returns for the adjustment year (with interest at AFR + 2%). The reviewed-year partners then pay, not the partnership. Modification of imputed underpayment under §6225(c) — e.g., tax-exempt partners' allocable share is removed, lower rates for C corp partners' share, etc. Election out of CPAR entirely — Schedule B-2 (see §9).  _(§6226; §6225(c))_
+- **CPAR default audit mechanics** — Under CPAR, an IRS audit of a partnership return results in: 1. Determination of an "imputed underpayment" at the partnership level for the reviewed year (the year being audited). 2. The imputed underpayment is assessed against and collected from the partnership in the adjustment year (the year the audit concludes), at the highest individual or corporate rate (37% for individuals in 2025 / 21% for C corps; the partnership default uses the highest applicable rate). 3. Current-year partners bear the economic burden — even if they were not partners in the reviewed year. This is the default. It is harsh and often inappropriate when the partner roster has changed. The statute provides two safety valves: Section 6226 push-out election — within 45 days of the final partnership adjustment, the partnership can elect to push the adjustment out to the reviewed-year partners, who report the adjustment on their own returns for the adjustment year (with interest at the §6621(a)(2) underpayment rate determined by substituting 5 percentage points for 3 percentage points). The reviewed-year partners then pay, not the partnership. Modification of imputed underpayment under §6225(c) — e.g., tax-exempt partners' allocable share is removed, lower rates for C corp partners' share, etc. Election out of CPAR entirely — Schedule B-2 (see §9).  _([§6226; §6225(c)](https://www.law.cornell.edu/uscode/text/26/6226))_
 
 ### 8.3 Partnership Representative (PR) — §6223
 
@@ -259,7 +262,7 @@ The 2025 Schedule K-1 (Form 1065) has the following major sections:
 
 ### 9.1 Who can elect out
 
-- **§6221(b) election-out eligibility** — Under §6221(b), a partnership may elect out of CPAR for a tax year if it has 100 or fewer partners at any point during the tax year and every partner is an "eligible partner." Eligible partners are: Individuals; C corporations (and foreign entities that would be C corporations if domestic); S corporations (each S-corp shareholder is counted toward the 100-partner limit); Estates of deceased partners; Certain other eligible categories per the regulations (Reg. §301.6221(b)-1). Ineligible partners (any one of which destroys election-out eligibility): Partnerships (any tier — no upper-tier partnerships allowed; this is the most common disqualifier); Trusts (including grantor trusts, in most cases — verify against Reg. §301.6221(b)-1 for the limited exceptions); Disregarded entities (DREs) — except the regulations carve out an SMLLC owned by an eligible individual under Reg. §301.6221(b)-1(b)(3)(ii) (verify against current regs; treatment has been clarified over time); Nominees and similar agents that are not the beneficial owner; IRAs (treated as exempt trusts); Foreign entities that are not C-corp-equivalent.  _(§6221(b); Reg. §301.6221(b)-1)_
+- **§6221(b) election-out eligibility** — Under §6221(b), a partnership may elect out of CPAR for a tax year if it has 100 or fewer partners at any point during the tax year and every partner is an "eligible partner." Eligible partners are: Individuals; C corporations (and foreign entities that would be C corporations if domestic); S corporations (each S-corp shareholder is counted toward the 100-partner limit); Estates of deceased partners; Certain other eligible categories per the regulations (Reg. §301.6221(b)-1). Ineligible partners (any one of which destroys election-out eligibility): Partnerships (any tier — no upper-tier partnerships allowed; this is the most common disqualifier); Trusts (including grantor trusts, in most cases — verify against Reg. §301.6221(b)-1 for the limited exceptions); Disregarded entities (DREs), including an SMLLC owned by an eligible individual (Reg. §301.6221(b)-1(b)(3)(ii)(D)); Nominees and similar agents that are not the beneficial owner; IRAs (treated as exempt trusts); Foreign entities that are not C-corp-equivalent.  _([§6221(b); Reg. §301.6221(b)-1](https://www.ecfr.gov/api/renderer/v1/content/enhanced/current/title-26?part=301&section=301.6221(b)-1))_
 
 ### 9.2 Counting partners
 
@@ -439,14 +442,14 @@ The reviewer brief should include:
 
 ## 17. Common Attached Forms
 
-**Common Attached Forms**
+**Common Attached Forms**  _(https://www.irs.gov/instructions/i1065)_
 
 | Form | Trigger | Notes |
 | --- | --- | --- |
 | **4562** Depreciation and Amortization | Any depreciation, amortization, §179, listed property, or property placed in service this year | §179 expense flows out separately on K-1 (subject to §179(d)(8) partner-level limit) |
 | **4797** Sales of Business Property | §1231 gain/loss, §1245/1250 recapture, ordinary gain on §1239 sales | §1231 gain flows to K-1 Box 10 |
 | **8825** Rental Real Estate Income and Expenses | Any rental real estate activity | Replaces Schedule E logic for partnerships; output flows to K Line 2 / K-1 Box 2 |
-| **8990** §163(j) Limitation on Business Interest Expense | Partnership not eligible for §163(j) small-business exemption (gross receipts > $30M for 2025, verify against §448(c)) | Excess business interest is allocated to partners and carried at the partner level; complex 11-step §163(j) partner-level rule |
+| **8990** §163(j) Limitation on Business Interest Expense | Partnership not eligible for §163(j) small-business exemption (average annual gross receipts > $31 million for 2025 under §448(c)) | Excess business interest is allocated to partners and carried at the partner level; complex 11-step §163(j) partner-level rule |
 | **6765** Credit for Increasing Research Activities | Qualified research expenses | Credit flows on K-1 Box 15 |
 | **8283** Noncash Charitable Contributions | Property contribution > $500 | Special partnership rules apply for partner-level deduction |
 | **8332** Release of Claim to Exemption | Not applicable to partnerships, but partners may need at their level | n/a |
@@ -462,7 +465,7 @@ The reviewer brief should include:
 
 ### 18.1 §6226 push-out election
 
-- **§6226 push-out election window and mechanics** — After an IRS audit finalizes an imputed underpayment under CPAR, the partnership has 45 days from the date of the final partnership adjustment to elect under §6226 to push out the adjustment to reviewed-year partners. Mechanics: Partnership prepares 'Statements' (one per reviewed-year partner) showing each partner's share of the adjustments; Partnership files Form 8985 (Pass-Through Statement) with the IRS and furnishes Form 8986 (Partner's Share of Adjustments) to each reviewed-year partner; Each reviewed-year partner reports the adjustment on their own return for the year that includes the date the statement was furnished (the 'reporting year'); Interest accrues at AFR + 2% (higher than the standard underpayment rate of AFR + 3% — actually a penalty premium; verify against current §6621 underpayment-rate plus §6226(c) 2-point increase). The push-out election is irrevocable once made.  _(IRC §6226; §6621; §6226(c))_
+- **§6226 push-out election window and mechanics** — After an IRS audit finalizes an imputed underpayment under CPAR, the partnership has 45 days from the date of the final partnership adjustment to elect under §6226 to push out the adjustment to reviewed-year partners. Mechanics: Partnership prepares 'Statements' (one per reviewed-year partner) showing each partner's share of the adjustments; Partnership files Form 8985 (Pass-Through Statement) with the IRS and furnishes Form 8986 (Partner's Share of Adjustments) to each reviewed-year partner; Each reviewed-year partner reports the adjustment on their own return for the year that includes the date the statement was furnished (the 'reporting year'); Interest accrues at the §6621(a)(2) underpayment rate determined by substituting 5 percentage points for 3 percentage points (i.e., 2 points above the standard underpayment rate). The push-out election is irrevocable once made.  _([IRC §6226; §6621; §6226(c)](https://www.law.cornell.edu/uscode/text/26/6226))_
 - **Push-out election deadline** — 45 days (from date of final partnership adjustment)  _(IRC §6226)_
 
 ### 18.2 Administrative Adjustment Request (AAR) — §6227
@@ -499,7 +502,7 @@ Reviewer should never confuse: LLC (state-law entity) — flexible default feder
 *Form 1065:*
 - Page 1, Line 22 Ordinary business income: $150,000
 - Schedule B: Domestic LLC; cash method; two partners; no foreign activity
-- Schedule B-1: not required (no partner owns 50%+ on either capital or profits considered alone — both at exactly 50%; verify against B-1 instructions, which trigger at >50% in many years, but disclosure may still be best practice for 50% partners)
+- Schedule B-1: required (each individual owns 50% of profit, loss, or capital, so the partnership answers "Yes" to Schedule B, question 2b)
 - Schedule B-2: **Elect out of CPAR** — two individual eligible partners, well under 100
 - Partnership Representative: Alice Cetta (managing partner, US citizen, US address); DI not required (PR is an individual)
 - Schedule K Line 1: $150,000
@@ -613,7 +616,7 @@ Reviewer should never confuse: LLC (state-law entity) — flexible default feder
 
 Through 2024, depreciation has been allocated under §704(c) traditional+curative method. In 2025, the property is sold. Gain on disposition: Sale price: $1,300,000; Adjusted tax basis at sale (after depreciation): $120,000; Total tax gain: $1,180,000; Of which: built-in gain attributable to Michael under §704(c) = $800,000 (less recapture already allocated through depreciation); Remaining "common" gain split per partnership shares: ~$380,000
 
-- **Schedule B-2 election out eligibility** — Possible. Eligibility check: 4 partners (1 GP + 3 LPs). Under 100. ✓ Cutajar Management LLC (the GP) — this is an SMLLC owned by Michael (an eligible individual). Per Reg. §301.6221(b)-1(b)(3)(ii) — verify with current regs — an SMLLC wholly owned by an eligible individual partner IS an eligible partner. ✓ Michael, Sofia, Marcus — individuals. ✓ → Schedule B-2 election out is available. Reviewer to confirm with Michael whether he wants to elect out (recommend yes — small stable family entity, no benefit to staying in CPAR).  _(Reg. §301.6221(b)-1(b)(3)(ii))_
+- **Schedule B-2 election out eligibility** — Possible. Eligibility check: 4 partners (1 GP + 3 LPs). Under 100. ✓ Cutajar Management LLC (the GP) — this is an SMLLC owned by Michael (an eligible individual). A disregarded entity is not an eligible partner, so the SMLLC GP is ineligible. ✗ Michael, Sofia, Marcus — individuals. ✓ → Schedule B-2 election out is NOT available while the SMLLC is a partner; the partnership stays in CPAR and must designate a Partnership Representative.  _([Reg. §301.6221(b)-1(b)(3)(ii)](https://www.irs.gov/instructions/i1065))_
 - **§1402(a)(13) limited-partner SE issue analysis** — Cutajar Management LLC (the GP): the GP receives a 1% allocation. The GP itself is a partnership-tax disregarded entity (SMLLC), so its allocation flows through to Michael. But Michael's distributive share via the GP is a general-partner allocation, subject to SE tax. Net rental real estate income is excluded from SE under §1402(a)(1) regardless — so Michael's GP-routed share of $80,000 is not SE income. The §1231 gain is also excluded (§1402(a)(3)). The interest income is excluded (§1402(a)(2)). Michael's LP share (49%) — Michael is labeled an LP but he actively manages through the GP. Under Soroban (2023), a labeled-LP who provides material services is not necessarily an LP for §1402(a)(13). But: Rental real estate income is excluded from SE in any case (§1402(a)(1)); §1231 gain is excluded (§1402(a)(3)); Interest is excluded; Net SE income at the partnership level = $0 regardless of LP/GP characterization. So in this fact pattern, the LP/GP characterization for §1402 is moot because the income items are all per-se non-SE.  _(§1402(a)(13); §1402(a)(1); §1402(a)(2); §1402(a)(3); Soroban Capital Partners LP v. Commissioner)_
 
 However: if the FLP also had a side business of "property management services" charged at fair market value to third parties, that service revenue would be ordinary trade-or-business income subject to SE rules and the Soroban question would matter. Reviewer to confirm no service business is being conducted alongside the rental.
@@ -625,7 +628,7 @@ However: if the FLP also had a side business of "property management services" c
    - Tier 3 (excess): per partnership agreement, typically per profit-sharing ratio
 3. §469 passive activity — Sofia and Marcus are clearly passive (rental is per se passive; no real estate professional status). Their net rental income is passive income but the §1231 gain is portfolio/§1231 not passive (Box 10 on K-1; partner-level §469 grouping rule applies).
 4. Michael's real estate professional status (§469(c)(7)) — verify; if he qualifies, his rental income/loss is non-passive at his level.
-5. Schedule B-2: elect out (recommended).
+5. Schedule B-2: not available (the SMLLC GP is a disregarded entity, an ineligible partner).
 6. K-3: Domestic Filing Exception likely applies (all US individual/SMLLC partners, no foreign activity). Confirm partner notifications and no K-3 requests.
 7. Schedule L: required (assets very likely > $1M for a $1M+ contribution + appreciation + multiple properties).
 8. Schedule M-3: required if year-end assets ≥ $10M — verify against rollforward.
@@ -656,7 +659,7 @@ However: if the FLP also had a side business of "property management services" c
 - IRC §§704, 707, 752 (allocation, capital accounts, liabilities)
 - IRC §§465, 469, 461(l) (loss limits)
 - IRC §1402 (self-employment tax); §1402(a)(13) (limited partner exclusion)
-- IRC §199A (QBI deduction); made made permanent at 20% (2025) / 23% (2026+) by OBBBA P.L. 119-21 §70105
+- IRC §199A (QBI deduction); made permanent at 20% by OBBBA P.L. 119-21 §70105
 - IRC §§6221–6241 (Centralized Partnership Audit Regime / BBA)
 - Treas. Reg. §301.7701-1 through -3 (entity classification)
 - Treas. Reg. §1.704-1, -2, -3 (substantial economic effect; §704(c) methods)
@@ -687,7 +690,7 @@ However: if the FLP also had a side business of "property management services" c
 
 ### 21.4 Statutory changes from OBBBA (P.L. 119-21, July 4, 2025) potentially affecting this skill
 
-- §199A made permanent at 20% (2025) / 23% (2026+) — confirmed
+- §199A made permanent at 20% — confirmed
 - §461(l) excess business loss limit made permanent
 - §163(j) interest limitation — small business exemption threshold (gross receipts) — verify Rev. Proc. 2024-40 for 2025 threshold
 - §6698 penalty amount — verify 2025 indexed figure

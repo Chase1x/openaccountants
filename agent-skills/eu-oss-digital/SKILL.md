@@ -8,6 +8,7 @@ metadata:
   jurisdiction: "GLOBAL"
   tax_year: "2025"
   last_updated: "2026-07-13"
+  trust_label: "Built by Michael Cutajar and the OpenAccountants team"
   review_status: "pending_review"
 ---
 
@@ -15,13 +16,13 @@ metadata:
 
 ## Skill Metadata
 
-**Skill Metadata**
+**Skill Metadata**  _(https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1)_
 
 | Field | Value |
 | --- | --- |
 | Jurisdiction | EU (all 27 member states) |
-| Primary Legislation | Council Directive 2006/112/EC, Articles 58, 369a-369k (Union OSS), Articles 358-369 (non-Union OSS) |
-| Supporting Legislation | Council Implementing Regulation (EU) No 282/2011 (Art 24a-24f: ESS definitions; Art 54a-55a: consumer location); Commission Implementing Regulation (EU) 2019/2026 |
+| Primary Legislation | Council Directive 2006/112/EC, Articles 58, 59c (threshold), 369a-369k (Union OSS), Articles 358-369 (non-Union OSS) |
+| Supporting Legislation | Council Implementing Regulation (EU) No 282/2011 (Art 7 and Annex I: ESS definitions; Art 24a-24f: consumer location); Council Implementing Regulation (EU) 2019/2026 |
 | Scope | B2C sales of electronically supplied services (ESS) / digital services by EU and non-EU sellers to EU consumers |
 | Key Threshold | EUR 10,000 annual cross-border B2C digital sales threshold |
 | Contributor | OpenAccountants |
@@ -91,13 +92,13 @@ metadata:
 
 ### Union OSS (for EU-established sellers)
 
-**Union OSS (for EU-established sellers)**
+**Union OSS (for EU-established sellers)**  _(https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1)_
 
 | Feature | Detail |
 | --- | --- |
 | Who can register | Any business established in an EU member state |
 | Where to register | In the member state where the business is established (Member State of Identification -- MSI) |
-| What is reported | All B2C ESS sales to consumers in other EU member states, broken down by destination country and VAT rate |
+| What is reported | All B2C supplies of services taxable in member states where the seller is not established (not only ESS), plus intra-Community distance sales of goods, broken down by destination country and VAT rate |
 | Filing frequency | Quarterly |
 | Filing deadline | End of the month following the quarter (e.g., Q1 Jan-Mar: deadline 30 April) |
 | Payment | Single payment to the MSI tax authority, which distributes to destination countries |
@@ -106,13 +107,13 @@ metadata:
 
 ### Non-Union OSS (for non-EU sellers)
 
-**Non-Union OSS (for non-EU sellers)**
+**Non-Union OSS (for non-EU sellers)**  _(https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1)_
 
 | Feature | Detail |
 | --- | --- |
 | Who can register | Any business NOT established in the EU that makes B2C ESS sales to EU consumers |
 | Where to register | In any EU member state of the seller's choice (MSI) |
-| What is reported | All B2C ESS sales to EU consumers, broken down by destination country and VAT rate |
+| What is reported | All B2C services supplied to EU consumers (not only ESS), broken down by destination country and VAT rate |
 | Filing frequency | Quarterly |
 | Filing deadline | End of the month following the quarter |
 | Payment | Single payment to the chosen MSI |
@@ -122,7 +123,7 @@ metadata:
 
 ## Step 4: EU VAT Rate Table for Digital Services (ESS) [T1]
 
-**EU VAT Rate Table for Digital Services (ESS)**  _(Rates as of April 2026. Always verify for rate changes.)_
+**EU VAT Rate Table for Digital Services (ESS)**  _([Rates as of April 2026. Always verify for rate changes.](https://www.emta.ee/en/business-client/taxes-and-payment/value-added-tax))_
 
 | Country | Code | Standard Rate | Reduced Rate (if applicable to ESS) | Notes |
 | --- | --- | --- | --- | --- |
@@ -133,13 +134,13 @@ metadata:
 | Cyprus | CY | 19% | -- |  |
 | Czech Republic | CZ | 21% | -- |  |
 | Denmark | DK | 25% | -- |  |
-| Estonia | EE | 22% | -- |  |
+| Estonia | EE | 24% | -- | Increased from 22% on 1 July 2025 |
 | Finland | FI | 25.5% | -- | Increased from 24% in 2024 |
 | France | FR | 20% | 5.5% on e-books, digital press |  |
 | Germany | DE | 19% | 7% on e-books |  |
 | Greece | GR | 24% | -- |  |
 | Hungary | HU | 27% | -- | Highest rate in EU |
-| Ireland | IE | 23% | 9% on e-books, e-newspapers |  |
+| Ireland | IE | 23% | zero rate on e-books, e-newspapers; second reduced rate on e-periodicals |  |
 | Italy | IT | 22% | 4% on e-books |  |
 | Latvia | LV | 21% | -- |  |
 | Lithuania | LT | 21% | -- |  |
@@ -148,7 +149,7 @@ metadata:
 | Netherlands | NL | 21% | -- |  |
 | Poland | PL | 23% | -- |  |
 | Portugal | PT | 23% | 6% on e-books |  |
-| Romania | RO | 19% | -- |  |
+| Romania | RO | 21% | 11% on e-books, e-newspapers |  |
 | Slovakia | SK | 23% | -- |  |
 | Slovenia | SI | 22% | -- |  |
 | Spain | ES | 21% | 4% on e-books |  |
@@ -179,7 +180,7 @@ metadata:
 
 ### Rules [T1]
 
-- **Consumer location rules** — 1. Two items of non-contradictory evidence are required. If two items point to the same country, that is the consumer's country. 2. If evidence is contradictory (e.g., IP address says Germany, billing address says France): use the billing address as the default, unless there is reason to believe it is incorrect. [T2] 3. Below EUR 100,000 in cross-border B2C ESS sales: The seller may use a single piece of evidence (usually billing address) if it is not contradicted by other information available to the seller. 4. Sellers must retain evidence records for 10 years from the end of the year of the transaction.  _(Implementing Regulation 282/2011, Articles 24b-24f)_
+- **Consumer location rules** — 1. Two items of non-contradictory evidence are required. If two items point to the same country, that is the consumer's country. 2. If evidence is contradictory (e.g., IP address says Germany, billing address says France): use the billing address as the default, unless there is reason to believe it is incorrect. [T2] 3. Where these supplies from an establishment in a member state do not exceed EUR 100,000 in the current and the preceding calendar year, the seller may rely on one item of evidence listed in points (a) to (e) of Art 24f (e.g. billing address, IP address, bank details) provided by a person involved in the supply other than the seller or the customer. 4. Sellers must retain evidence records for 10 years from the end of the year of the transaction.  _([Implementing Regulation 282/2011, Articles 24b-24f](https://publications.europa.eu/resource/cellar/5bc93f0b-2a93-11f0-8a44-01aa75ed71a1.0006.02/DOC_1))_
 
 ## Step 6: Filing the OSS Return [T1]
 
@@ -200,15 +201,15 @@ metadata:
 
 ### Nil Returns [T1]
 
-- **Nil returns** — If no B2C ESS sales were made in the quarter, a nil return MUST still be filed. Failure to file three consecutive nil returns may result in deregistration from OSS.
+- **Nil returns** — If no B2C ESS sales were made in the quarter, a nil return MUST still be filed. If reminders are issued for three immediately preceding return periods and each return is not submitted within 10 days after the reminder, the seller is regarded as persistently failing to comply and is excluded from OSS, and from all special schemes for two years.  _(https://publications.europa.eu/resource/cellar/5bc93f0b-2a93-11f0-8a44-01aa75ed71a1.0006.02/DOC_1)_
 
 ### Currency [T1]
 
-- **Currency** — The OSS return must be filed in EUR. If the MSI does not use EUR (e.g., Sweden, Denmark, Poland), the ECB exchange rate on the last day of the quarter is used for conversion.
+- **Currency** — The OSS return is made out in EUR, but an MSI that has not adopted the euro (e.g., Sweden, Denmark, Poland) may require it in its national currency. Sales made in other currencies are converted at the ECB exchange rate published for the last day of the quarter.  _(https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1)_
 
 ### Corrections [T1]
 
-- **Corrections** — Corrections to previous quarters are made on the NEXT regular quarterly return (not by amending the original). The correction is reported in a separate section showing the member state, period, and adjusted amounts.
+- **Corrections** — Corrections to previous quarters are made on a subsequent quarterly return (not by amending the original), within three years of the date on which the original return was due. The correction is reported in a separate section showing the member state, period, and adjusted amounts.  _(https://publications.europa.eu/resource/cellar/03c42d77-512a-11f0-a9d0-01aa75ed71a1.0007.02/DOC_1)_
 
 ## Step 7: Non-Union OSS for Non-EU Sellers [T1]
 

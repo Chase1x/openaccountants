@@ -8,44 +8,23 @@ metadata:
   jurisdiction: "SD"
   tax_year: "2025"
   last_updated: "2026-07-22"
+  authored_by: "Ahmed Hassan"
+  trust_label: "Accountant-authored"
   review_status: "pending_review"
 ---
 
 # Sudan Payroll & Social Contributions Skill v0.1
 
-## Sudan Payroll & Social Contributions Skill v0.1
-
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All figures are in Sudanese Pounds (SDG — ج.س). Exchange rate reference: US$1.00 = SDG 47 (SSA 2019 data — verify current rate). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
-
-## Section 1 — Scope statement
-
-This skill covers:
-
-- National Social Insurance Fund (NSIF) contribution rates for employers and employees
-- Employment income tax (PAYE) withholding mechanics
-- Monthly remittance deadlines for both PAYE and NSIF
-- Sickness, maternity, and work injury benefits framework
-- Severance pay (unemployment) rules under the labor code
-- Self-employed and voluntary social insurance contributions
-- Record-keeping and compliance requirements
-
-This skill does NOT cover:
-
-- Personal income tax computation (brackets, allowances) — see `sd-income-tax`
-- Corporate income tax — see `sd-corporate-income-tax`
-- VAT — see `sd-vat-gst`
-- Company formation — see `sd-company-formation`
 
 ## Section 2 — Social insurance framework
 
 ### Regulatory framework
 
-**Regulatory framework**  _(SSA Social Security Worldwide; ILO Social Protection)_
-
 | Item | Detail | Source |
-| --- | --- | --- |
+|------|--------|--------|
 | **First laws** | 1919 (pensions ordinance); 1974 (social insurance) | SSA Social Security Worldwide |
 | **Current law** | 2016 (social insurance) — consolidating prior legislation | SSA Social Security Worldwide |
 | **Administering body** | National Pensions and Social Insurance Fund (NPSIF / NSIF) | SSA; ILO Social Protection |
@@ -62,14 +41,14 @@ This skill does NOT cover:
 
 **AUDIT FLASH POINT:** Excluded categories (household workers, agricultural labor) are commonly miss-classified. Verify actual job classification against the NSIF exclusion list before computing contributions.
 
+---
+
 ## Section 3 — Contribution rates and thresholds
 
 ### Old Age, Disability, and Survivors (pension)
 
-**Old Age, Disability, and Survivors (pension) contribution rates**  _(SSA Social Security Worldwide — Sudan; NSIF regulations)_
-
 | Contributor | Rate | Source |
-| --- | --- | --- |
+|------------|------|--------|
 | **Employer** | **17%** of gross monthly payroll (including cost-of-living, travel, and accommodation allowances) | SSA Social Security Worldwide — Sudan |
 | **Employee** | **8%** of gross monthly earnings (including cost-of-living, travel, and accommodation allowances) | SSA Social Security Worldwide — Sudan |
 | **Self-employed** | **25%** of monthly declared earnings (also finances work injury benefits) | SSA Social Security Worldwide — Sudan |
@@ -78,10 +57,8 @@ This skill does NOT cover:
 
 ### Contribution wage base
 
-**Contribution wage base**  _(SSA Social Security Worldwide (2019 data — verify current))_
-
 | Item | Amount (SDG) | Source |
-| --- | --- | --- |
+|------|-------------|--------|
 | **Minimum monthly earnings for contribution** | SDG 1,500 | SSA Social Security Worldwide (2019 data — verify current) |
 | **Maximum monthly earnings for contribution** | SDG 20,000 | SSA Social Security Worldwide (2019 data — verify current) |
 
@@ -89,32 +66,28 @@ This skill does NOT cover:
 
 ### Sickness and Maternity
 
-**Sickness and Maternity contribution rates**  _(SSA; National Health Insurance Fund; Labor code 1997)_
-
 | Contributor | Rate | Source |
-| --- | --- | --- |
+|------------|------|--------|
 | **Employee (medical insurance)** | 4% of gross earnings | SSA; National Health Insurance Fund |
 | **Employer (medical insurance)** | 6% of gross payroll | SSA; National Health Insurance Fund |
 | **Employer (cash benefits)** | 100% of cost (employer liability system) | SSA; Labor code 1997 |
 
 ### Work Injury
 
-**Work Injury contribution rates**  _(SSA Social Security Worldwide)_
-
 | Contributor | Rate | Source |
-| --- | --- | --- |
+|------------|------|--------|
 | **Employee** | 0% (none) | SSA Social Security Worldwide |
 | **Employer** | Included in the 17% pension contribution (employer contributions also finance work injury) | SSA Social Security Worldwide |
 | **Self-employed** | Included in the 25% contribution | SSA Social Security Worldwide |
+
+---
 
 ## Section 4 — PAYE withholding
 
 ### Employment income tax (PAYE)
 
-**Employment income tax (PAYE)**  _(Income Tax Act 1986; tax.gov.sd; Britacom)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Mechanism** | Employer withholds income tax at progressive rates from salaries | Income Tax Act 1986; tax.gov.sd |
 | **Remittance deadline** | On or before the **15th of the month following deduction** | Income Tax Act 1986; tax.gov.sd |
 | **Progressive rates** | 5% – 15% (resident); 20% (non-resident, fringe benefits) | Income Tax Act 1986; see `sd-income-tax` |
@@ -122,10 +95,8 @@ This skill does NOT cover:
 
 ### Employer monthly payroll obligations
 
-**Employer monthly payroll obligations**  _(Income Tax Act 1986; NSIF; NHIF)_
-
 | Obligation | Rate | Remittance deadline |
-| --- | --- | --- |
+|------------|------|---------------------|
 | PAYE income tax withholding | Progressive 5%-15% of employee gross salary | 15th of following month |
 | NSIF employer pension contribution | 17% of gross monthly payroll | Monthly (verify exact date) |
 | NSIF employee pension contribution (withheld) | 8% of gross monthly earnings | Monthly (verify exact date) |
@@ -142,14 +113,14 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 
 **AUDIT FLASH POINT:** NSIF remittance deadline is monthly but the exact date (15th vs end-of-month) should be confirmed against current NSIF regulations. Some sources reference monthly without specifying a date.
 
+---
+
 ## Section 5 — Benefit calculations
 
 ### Old-age pension
 
-**Old-age pension**  _(SSA)_
-
 | Item | Rule | Source |
-| --- | --- | --- |
+|------|------|--------|
 | **Retirement age** | 65 (normal); reduced for arduous work | SSA |
 | **Early pension** | Age 50 with at least 20 years of contributions (any age if involuntarily unemployed due to economic factors) | SSA |
 | **Minimum contributions** | 20 years for old-age pension | SSA |
@@ -189,29 +160,29 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 
 ### Severance pay (unemployment, labor code 1997)
 
-**Severance pay (unemployment, labor code 1997)**  _(Labor code 1997)_
-
 | Years of service | Severance |
-| --- | --- |
+|-----------------|-----------|
 | 3 – 9 years | 1 month's basic earnings per year |
 | 10 – 14 years | 1.5 months' basic earnings per year |
 | 15+ years | 1.75 months' basic earnings per year |
 | Maximum | 36 months of basic monthly earnings |
 
+---
+
 ## Section 6 — Worked examples
 
 ### Example 1 — Standard employee payroll
 
-**Example 1 — Standard employee payroll (Gross monthly salary SDG 25,000)**
+**Scenario:** Employee with gross monthly salary of SDG 25,000.
 
 | Item | Amount (SDG) | Rate |
-| --- | --- | --- |
+|------|-------------|------|
 | Gross salary | 25,000 | — |
 | NSIF employee pension (8%) | -2,000 | 8% |
 | Health insurance employee (4%) | -1,000 | 4% |
 | PAYE (estimate at ~12% effective) | -3,000 | ~12% (verify bracket) |
 | **Net pay** | **19,000** | — |
-|  |  |  |
+| | | |
 | Employer NSIF (17%) | +4,250 | 17% |
 | Employer health insurance (6%) | +1,500 | 6% |
 | **Total employer cost** | **30,750** | — |
@@ -220,10 +191,10 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 
 ### Example 2 — NSIF contribution with wage cap
 
-**Example 2 — NSIF contribution with wage cap (Gross monthly salary SDG 35,000)**
+**Scenario:** Employee with gross monthly salary of SDG 35,000. NSIF maximum contribution base is SDG 20,000 (verify current).
 
 | Item | Amount (SDG) | Calculation |
-| --- | --- | --- |
+|------|-------------|------------|
 | NSIF employer contribution | 3,400 | 20,000 x 17% |
 | NSIF employee contribution | 1,600 | 20,000 x 8% |
 | Excess salary (35,000 - 20,000) | 15,000 | No NSIF contribution |
@@ -246,14 +217,14 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 - Years 10-12 (3 years): 3 x 1.5 x 20,000 = SDG 90,000
 - Total severance: SDG 230,000
 
+---
+
 ## Section 7 — Record-keeping and compliance
 
 ### Employer record requirements
 
-**Employer record requirements**
-
 | Record type | Retention |
-| --- | --- |
+|------------|-----------|
 | Individual employee records (name, ID, contract date, salary, deductions, contributions) | 5-7 years minimum |
 | Monthly payroll registers | 5-7 years |
 | Tax withholding documentation | 5-7 years |
@@ -275,6 +246,8 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 - Operational restrictions: license suspension or business closure for severe violations
 - Back payment requirements: employer remains liable for unpaid contributions + accumulated penalties
 
+---
+
 ## Section 8 — Audit flash points
 
 1. **Wage base cap:** The SDG 20,000 maximum contribution base (2019 figure) likely no longer reflects current SDG values due to inflation and redenomination. Verify current NSIF circular.
@@ -283,6 +256,8 @@ Employers must register with the NSIF, deduct employee contributions from wages,
 4. **NSIF vs NHIF:** Pension contributions go to NSIF (National Pensions and Social Insurance Fund); health insurance contributions go to NHIF (National Health Insurance Fund). Do not confuse the two.
 5. **Employer liability for cash sickness/maternity:** The employer pays cash sickness and maternity benefits directly — this is above the NSIF contribution rate, not part of it.
 6. **Confusion with South Sudan:** Some sources congregate Sudan and South Sudan (which became independent in 2011). Verify all rates apply to Sudan (Khartoum), not South Sudan (Juba).
+
+---
 
 ## Section 9 — Self-checks
 
@@ -299,18 +274,20 @@ Before delivering output, verify:
 - [ ] Severance calculation uses correct tier (1x / 1.5x / 1.75x per service band)
 - [ ] Record retention period (5-7 years) communicated
 
+---
+
 ## Section 10 — Reference material
 
-**Reference material**  _(Section 10 — Reference material)_
-
 | Resource | Reference |
-| --- | --- |
+|----------|-----------|
 | Sudan Taxation Chamber — Income Tax | https://tax.gov.sd/en/income-tax-2/ |
 | SSA Social Security Worldwide — Sudan | https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/sudan.html |
 | ILO Social Protection — Sudan | https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=SD |
 | National Health Insurance Fund (NHIF) Sudan | http://www.nhif.gov.sd/ |
 | Britacom tax profile — Sudan | https://www.britacom.org/zt/BRPolicies/Sudan/ |
 | Africarrieres — Employer Taxes Sudan | https://africarrieres.com/sudan/en/guide/employeur-entreprise/employer-taxes |
+
+---
 
 ## PROHIBITIONS
 

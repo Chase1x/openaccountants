@@ -4,7 +4,9 @@ description: https://userbank/nationcard/detail.12/magada(n)150506 /Bankaccount 
 jurisdiction: MM
 tax_year: 2025
 last_updated: 2026-08-22
+authored_by: Mr Moe Lwin Tun
 review_status: pending_review
+trust_label: Accountant-authored
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
