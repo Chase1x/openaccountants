@@ -2,7 +2,10 @@
 jurisdiction: IT
 applicable: [IT-IND, IT-CORP, VAT, SC, PR, TP, XB]
 not_applicable: {}
-covered_by: {}
+covered_by:
+  XB: it-cross-border
+partial:
+  IT-IND: it-income-tax covers the self-employed (regime ordinario) only, not employees' IRPEF
 ---
 
 # Italy: tax pack
@@ -19,7 +22,7 @@ Calendar tax year for individuals; companies are taxed on their financial year. 
 | SC, social contributions | it-inps-contributions | source-cited draft |
 | PR, payroll withholding | italy-payroll | source-cited draft |
 | TP, transfer pricing | italy-transfer-pricing | source-cited draft |
-| XB, cross-border | (missing: exit tax for individuals, treaties and non-resident taxation; it-impatriati covers only the inbound worker regime, and it-ires-corporate-tax covers company withholding, CFC and exit tax) | |
+| XB, cross-border | it-cross-border (hub), it-impatriati | source-cited draft |
 
 ## Official sources
 
