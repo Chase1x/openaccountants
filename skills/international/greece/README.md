@@ -5,7 +5,7 @@ not_applicable: {}
 covered_by:
   SC: gr-employee-contributions
 partial:
-  IT-IND: "gr-income-tax covers all individuals on the 2026 scale, but the 2026 annual minimum-wage base of the self-employed minimum income (art. 28A) is not confirmed on an official page, and capital gains (arts. 41-42) and living-expense presumptions (arts. 31-34) are not computed"
+  IT-IND: "capital gains (arts. 41-42) are not computed; gr-income-tax covers all individuals on the 2026 scale and gr-living-expense-presumptions computes the deemed income of arts. 30-34"
 ---
 
 # Greece: tax pack
@@ -16,7 +16,7 @@ Calendar tax year. Authority: AADE (Independent Authority for Public Revenue); r
 
 | Domain | Skill | Status |
 |---|---|---|
-| IT-IND, individual income tax | gr-income-tax (partial: 2026 scale for employees, pensioners, the self-employed, rent and capital income; the 2026 art. 28A minimum-wage base is not confirmed; capital gains and living-expense presumptions are not computed) | source-cited draft |
+| IT-IND, individual income tax | gr-income-tax, gr-living-expense-presumptions (partial: 2026 scale for employees, pensioners, the self-employed, rent and capital income, and 2026 deemed income from living-expense presumptions; capital gains are not computed) | source-cited draft |
 | IT-CORP, corporate income tax | gr-corporate-income-tax (entities on double-entry books, 2026: 22% rate, base, losses, interest limitation, withholding, 80% prepayment, trade fee, form N, penalties), gr-partnerships-single-entry (ΟΕ, ΕΕ, civil partnerships, joint ventures and other entities on single-entry books, 2026) | source-cited draft |
 | VAT | gr-vat-return, greece-vat-return | source-cited draft |
 | SC, social contributions | gr-employee-contributions (employees and employers, 2026), gr-efka (self-employed, freelancers and farmers, 2026 amounts from e-EFKA circular 6/2026) | source-cited draft |
