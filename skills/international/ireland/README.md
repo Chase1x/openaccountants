@@ -6,7 +6,6 @@ covered_by:
   SC: ie-prsi-class-s
 partial:
   IT-IND: no non-resident or PAYE-only (Form 12) method, no Case V rental method, and ie-cgt and ie-non-dom still give CGT at 33% after the 31% rate from 7 October 2026
-  SC: posted and cross-border workers (A1 and bilateral certificates) and Class K are referred out
 ---
 
 # Ireland: tax pack
@@ -20,7 +19,7 @@ Calendar tax year. Authority: the Revenue Commissioners; returns and payments go
 | IT-IND, individual income tax | ie-income-tax-form11, ie-usc, ie-cgt, ie-non-dom, ie-preliminary-tax | source-cited draft |
 | IT-CORP, corporate income tax | ie-corporation-tax (resident companies; non-resident branches with ie-foreign-tax-and-withholding) | source-cited draft |
 | VAT | ireland-vat-return, ie-vat-return | source-cited draft |
-| SC, social contributions | ie-prsi-class-s (self-employed, Class S), ie-payroll (employee and employer PRSI) | source-cited draft |
+| SC, social contributions | ie-prsi-class-s (self-employed, Class S), ie-payroll (employee and employer PRSI), ie-prsi-cross-border (posted and cross-border workers, A1, bilateral agreements, Class K) | source-cited draft |
 | PR, payroll withholding | ie-payroll | source-cited draft |
 | TP, transfer pricing | ie-transfer-pricing | source-cited draft |
 | XB, cross-border | ie-cross-border, ie-non-dom, ie-foreign-tax-and-withholding | source-cited draft |
