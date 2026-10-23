@@ -20,7 +20,7 @@ Calendar tax year. Authority: the Financial Administration (Finanční správa) 
 | IT-CORP, corporate income tax | cz-corporate-income-tax | source-cited draft |
 | VAT | cz-vat-return, czech-republic-vat-return | source-cited draft |
 | SC, social contributions | cz-employee-contributions (employees and employers, 2026); cz-social-health (self-employed, still 2025 figures) | partial, source-cited draft |
-| PR, payroll withholding | (missing: employer income tax advances, tax declaration, annual reconciliation; employee social and health insurance is in cz-employee-contributions) | |
+| PR, payroll withholding | cz-payroll (2026: registration and JMHZ, monthly gross-to-net, prohlášení and credits, DPP and DPČ withholding tax, sick pay, annual reconciliation and vyúčtování; deductions under court orders not covered) | source-cited draft |
 | TP, transfer pricing | cz-transfer-pricing | source-cited draft |
 | XB, cross-border | cz-cross-border | source-cited draft |
 
