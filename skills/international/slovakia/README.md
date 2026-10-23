@@ -26,7 +26,7 @@ Calendar tax year. Authority: the Financial Administration (Finančná správa S
 | VAT | slovakia-vat-return, slovakia-vat-registration-4-7-7a | source-cited draft |
 | SC, social contributions | sk-payroll-social | source-cited draft |
 | PR, payroll withholding | sk-payroll-social | source-cited draft |
-| TP, transfer pricing | (missing) | |
+| TP, transfer pricing | sk-transfer-pricing (2026: dependent persons, significant controlled transactions, § 17(5) adjustment, methods and median rule, full, basic and shortened documentation under guideline MF/012879/2025-724, Table I, 15-day hand-over, penalties, CbCR, APAs) | source-cited draft |
 | XB, cross-border | sk-cross-border | source-cited draft |
 
 ## Official sources
@@ -36,3 +36,4 @@ Calendar tax year. Authority: the Financial Administration (Finančná správa S
 - Act No. 563/2009 Coll., Tax Procedure Code, version in force from 1 September 2026: https://static.slov-lex.sk/static/SK/ZZ/2009/563/20260901.html (read 2026-10-23)
 - Ministry of Finance, list of cooperating states under § 2 x) with the treaty for each state, valid from 1 January 2026: https://www.mfsr.sk/files/archiv/39/Zoznam-spolupracujucich-statov-podla-2-pism-x-zakona-c-595_2003-Z-z_1.1.2026.pdf (read 2026-10-23)
 - Financial Directorate, list of tax treaties in force (as at 1 January 2022): https://www.financnasprava.sk/_img/pfsedit/Dokumenty_PFS/Zverejnovanie_dok/Aktualne/DP/Medzinarodne_zdanovanie/2022/2021.01.05_1_MZ_2022_IM.pdf (read 2026-10-23)
+- Ministry of Finance, transfer pricing: https://www.mfsr.sk/sk/dane-cla-uctovnictvo/priame-dane/dane-z-prijmu/transferove-ocenovanie/ (read 2026-10-23)
