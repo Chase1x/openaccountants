@@ -2,9 +2,7 @@
 jurisdiction: RO
 applicable: [IT-IND, IT-CORP, VAT, SC, PR, TP, XB]
 not_applicable: {}
-partial:
-  IT-IND: "PFA skill ro-income-tax still carries 2025 figures and is not in the deep-tax shape"
-  SC: "ro-cas-cass is on 2025 figures (minimum wage RON 3,590, CASS capped at 24 minimum wages instead of 72 for PFA net income, late interest 0.01% instead of 0.02%); employee contributions and CAM are current for 2026 in ro-payroll-social"
+partial: {}
 ---
 
 # Romania: tax pack
@@ -15,14 +13,14 @@ Individuals pay a flat 10% income tax plus employee pension (CAS, 25%) and healt
 
 ## Domains
 
-A skill's presence is not coverage. Several skills below are thin lists with secondary sources, and only ro-cross-border, ro-corporate-income-tax, ro-employee-income-tax, ro-transfer-pricing and ro-payroll-social follow the deep-tax shape so far.
+A skill's presence is not coverage. Several skills below are thin lists with secondary sources, and only ro-cross-border, ro-corporate-income-tax, ro-employee-income-tax, ro-income-tax, ro-cas-cass, ro-transfer-pricing and ro-payroll-social follow the deep-tax shape so far.
 
 | Domain | Skill | Status |
 |---|---|---|
-| IT-IND, individual income tax | ro-employee-income-tax (employees, rent, investment income, 2026); ro-income-tax (partial: self-employed PFA, still on 2025 figures) | source-cited draft |
+| IT-IND, individual income tax | ro-income-tax (self-employed PFA, II, IF and liberal professions, 2026); ro-employee-income-tax (employees, rent and investment income, 2026) | source-cited draft |
 | IT-CORP, corporate income tax | ro-corporate-income-tax (2026: profit tax at 16%, micro-enterprise tax at 1%, minimum turnover tax, base, losses, interest limit, filing and penalties, from the Fiscal Code) | source-cited draft |
 | VAT | ro-vat-return, romania-vat-return | source-cited draft |
-| SC, social contributions | ro-cas-cass (partial: self-employed CAS and CASS, still on 2025 figures), ro-payroll-social (employee CAS and CASS, employer CAM, the minimum CAS and CASS on part-time contracts, 2026) | source-cited draft |
+| SC, social contributions | ro-cas-cass (self-employed CAS and CASS, 2026); ro-payroll-social (employee CAS and CASS, employer CAM, the minimum CAS and CASS on part-time contracts, 2026) | source-cited draft |
 | PR, payroll withholding | ro-payroll-social (2026 gross-to-net, minimum-wage relief, benefits, REGES ONLINE, D112, penalties, two worked examples) | source-cited draft |
 | TP, transfer pricing | ro-transfer-pricing | source-cited draft |
 | XB, cross-border | ro-cross-border | source-cited draft |
