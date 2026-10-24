@@ -6,7 +6,6 @@ covered_by:
   IT-CORP: hr-corporate-income-tax
   XB: hr-cross-border
 partial:
-  VAT: "croatia-vat-return carries tax year 2025 figures, not yet rolled to 2026"
   SC: "croatia-social-contributions carries tax year 2025 contribution bases, not yet rolled to 2026"
   PR: "croatia-payroll carries tax year 2025 figures, not yet rolled to 2026"
 ---
