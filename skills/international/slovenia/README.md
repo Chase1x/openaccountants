@@ -25,7 +25,7 @@ Calendar tax year for individuals; companies may use a business year of up to 12
 | VAT | slovenia-vat-return (tax year 2025) | source-cited draft |
 | SC, social contributions | slovenia-social-contributions (tax year 2025) | source-cited draft |
 | PR, payroll withholding | slovenia-payroll (tax year 2025) | source-cited draft |
-| TP, transfer pricing | (missing) | |
+| TP, transfer pricing | si-transfer-pricing (2026: related parties, arm's length, recognised interest rate, documentation, fines, CbCR, APA, MAP) | source-cited draft |
 | XB, cross-border | si-cross-border (2026: residence of individuals and companies, permanent establishment, 15% withholding under ZDDPO-2 art. 70 and the art. 8.a lists, EU directive exemptions, KIDO treaty claims and refunds, foreign tax credit, corporate exit tax with 5 instalments, 7% relief for new residents) | source-cited draft |
 
 Also in the pack: si-tax-overview, si-company-formation, slovenia-tax-optimization.
@@ -37,3 +37,6 @@ Also in the pack: si-tax-overview, si-company-formation, slovenia-tax-optimizati
 - Tax Procedure Act (ZDavP-2), consolidated: https://pisrs.si/pregledPredpisa?id=ZAKO4703 (read 2026-10-23)
 - FURS, international taxation: https://www.fu.gov.si/davki_in_druge_dajatve/podrocja/mednarodno_obdavcenje/ (read 2026-10-23)
 - FURS, corporate income tax: https://www.fu.gov.si/davki_in_druge_dajatve/podrocja/davek_od_dohodkov_pravnih_oseb_ddpo/ (read 2026-10-23)
+- Pravilnik o transfernih cenah: https://pisrs.si/pregledPredpisa?id=PRAV7545 (read 2026-10-23)
+- Pravilnik o priznani obrestni meri: https://pisrs.si/pregledPredpisa?id=PRAV7544 (read 2026-10-23)
+- Ministry of Finance, recognised interest rates for related-party loans: https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-finance/o-ministrstvu/direktorat-za-sistem-davcnih-carinskih-in-drugih-javnih-prihodkov/ (read 2026-10-23)
