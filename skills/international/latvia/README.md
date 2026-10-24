@@ -25,7 +25,7 @@ Calendar tax year for individuals; companies use their financial year as the rep
 | SC, social contributions | latvia-social-contributions (2025 figures) | source-cited draft |
 | PR, payroll withholding | latvia-payroll (2025 figures) | source-cited draft |
 | TP, transfer pricing | lv-transfer-pricing (2026: related persons, deemed distribution, controlled transactions report, local and master file, penalties, country-by-country report, APAs) | source-cited draft |
-| XB, cross-border | (missing) | |
+| XB, cross-border | lv-cross-border (2026: residence, permanent establishment, withholding on payments to non-residents, low-tax jurisdictions, treaty relief, foreign tax credit, exit charge) | source-cited draft |
 
 ## Official sources
 
@@ -34,3 +34,4 @@ Calendar tax year for individuals; companies use their financial year as the rep
 - Cabinet Regulation No. 677 of 14 November 2017 (CIT Law application rules): https://likumi.lv/ta/id/295416 (read 2026-10-23)
 - Cabinet Regulation No. 397 of 4 July 2017 (country-by-country report): https://likumi.lv/ta/id/292196-noteikumi-par-starptautiskas-uznemumu-grupas-parskatu-par-katru-valsti (read 2026-10-23)
 - State Revenue Service: https://www.vid.gov.lv (not reachable on 2026-10-23)
+- Law On Personal Income Tax: https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli (read 2026-10-23)
