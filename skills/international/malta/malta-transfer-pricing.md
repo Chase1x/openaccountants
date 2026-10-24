@@ -11,7 +11,6 @@ depends_on:
   - transfer-pricing-workflow-base
 category: transfer-pricing
 tier: 2
-verified_by: pending
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -293,6 +292,8 @@ This skill and its outputs are provided for informational and computational purp
 | Income Tax (Statutory Dates) Rules, S.L. 372.16 | https://legislation.mt/eli/sl/372.16/eng | 2026-10-23 |
 
 Not yet confirmed: CbCR penalty amounts (not checked against S.L. 123.127); the content of TRA 135; the CbCR deadline and notification rules (not re-read in this update); how the S.L. 372.16 return date applies to a company with a 31 December accounting date (see mt-corporate-tax).
+
+> Contributed by Michael Cutajar.
 
 <!-- openaccountants-cta-block -->
 

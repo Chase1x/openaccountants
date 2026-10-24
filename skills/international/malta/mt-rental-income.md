@@ -11,7 +11,6 @@ depends_on:
   - malta-income-tax
 category: international
 tier: 2
-verified_by: pending
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -416,6 +415,8 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Income Tax Act, Cap. 123, Articles 31D and 5A(3)(e) | https://legislation.mt/eli/cap/123/eng | 2026-10-23 |
 
 Not yet confirmed: the MTCA guidance note's wider reading of "tenement" (land, roof tops) against the Article 31D(8)(a) definition; the MTCA manual's line that gross rent under the 15% is "declared by end of June", which sits against FAQ 5 saying individuals do not declare it in the return; the 31 July online return date for the 2026 basis year; treating platform fees as not deductible from the 15% base; the UK treaty position in Example 3.
+
+> Contributed by Michael Cutajar.
 
 <!-- openaccountants-cta-block -->
 

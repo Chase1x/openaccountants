@@ -3,13 +3,12 @@ name: slovakia-vat-return
 description: "Slovak VAT (DPH) for tax year 2026 under Act No. 222/2004 Coll. as in force from 1 January 2026: the 23% standard rate, the 19% rate (most food, electricity, non-alcoholic drinks served in restaurants), the 5% rate (basic food, medicines, books, restaurant meals, accommodation, sports and fitness entry), the foods moved from 19% to 23% in 2026, the monthly or quarterly return and control statement due 25 days after the period, refunds, domestic reverse charge, the 50% cap on passenger car input VAT, the EU SME scheme, fines and late-payment interest. Trigger on: Slovak VAT return, DPH priznanie, kontrolny vykaz, suhrnny vykaz, nadmerny odpocet, prenesenie danovej povinnosti, Slovakia 23% VAT. Out of scope: which registration a client needs (slovakia-vat-registration-4-7-7a), income tax (slovakia-pit, sk-corporate-income-tax), payroll (sk-payroll-social)."
 version: 2.0
 jurisdiction: SK
-category: international
 tax_year: 2026
-tier: 2
 last_updated: 2026-10-23
-verified_by: pending
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
+category: international
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -172,3 +171,23 @@ expected:
 | Financna sprava, Sadzby dane (VAT rates and the 1 January 2026 changes) | https://www.financnasprava.sk/sk/podnikatelia/dane/dan-z-pridanej-hodnoty/sadzby-dane | 2026-10-23 |
 
 Not yet confirmed: the row numbers of the 2026 VAT return form and the control statement layout (the official forms were not read, so this skill names no boxes); the ECB base rate on any given date, which sets the fine and interest percentages above the floors; whether the first-breach rule in Tax Procedure Code § 155(4) also covers the control statement fine in VAT Act § 78a(15); the detail of the § 50 coefficient (rounding and de minimis), which was not re-read for this version.
+
+> Contributed by Michael Cutajar.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

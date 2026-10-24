@@ -11,7 +11,6 @@ depends_on:
   - income-tax-workflow-base
 category: international
 tier: 2
-verified_by: pending
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -359,6 +358,8 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Income Tax (Statutory Dates) Rules, S.L. 372.16, rules 2 and 5 | https://legislation.mt/eli/sl/372.16/eng | 2026-10-23 |
 
 Not yet confirmed: the start date of the 0.6% rate for PT (rule 14(1) says periods from 1 June 2022; MTCA pages say 1 September 2022; this does not change any 2026 figure); the 31 December refund date and refund interest, taken from the MTCA Tax Return Cycle page rather than Article 48 ITMA.
+
+> Contributed by Michael Cutajar.
 
 <!-- openaccountants-cta-block -->
 
