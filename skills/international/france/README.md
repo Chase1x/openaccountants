@@ -14,7 +14,7 @@ Calendar tax year for individuals; companies are taxed by financial year. Author
 
 | Domain | Skill | Status |
 |---|---|---|
-| IT-IND, individual income tax | fr-personal-income-tax, fr-income-tax, fr-capital-gains, fr-rental-income, fr-crypto-tax | sourced from the law |
+| IT-IND, individual income tax | fr-personal-income-tax (household computation for the income of 2025 taxed in 2026: the 2026 scale, family quotient and caps, décote, allowances, deductions, reductions and credits, CEHR, CDHR, withholding at source, flat tax 30% / 31.4%, deadlines, penalties; out of scope: part-year residents, IFI, PUMa), fr-income-tax (self-employed), fr-capital-gains, fr-rental-income, fr-crypto-tax | source-cited draft |
 | IT-CORP, corporate income tax | fr-corporate-tax (local business taxes in fr-cfe) | sourced from the law |
 | VAT | france-vat-return (franchise en base, rates, régime réel normal and régime simplifié, CA3 and CA12, self-assessment, EU statements, e-invoicing dates, penalties; e-invoicing formats in france-einvoice; out of scope: overseas departments, Corsican rate rules, margin scheme, property VAT, VAT groups, OSS) | sourced from the law |
 | SC, social contributions | fr-social-contributions (self-employed), france-payroll (employee and employer contributions) | sourced from the law |
