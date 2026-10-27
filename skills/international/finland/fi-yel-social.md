@@ -15,7 +15,7 @@ description: >
 version: 1.6
 jurisdiction: FI
 tax_year: 2026
-last_updated: 2026-10-26
+last_updated: 2026-10-27
 authored_by: Michael Cutajar and the OpenAccountants team
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
@@ -200,7 +200,7 @@ Not yet confirmed: separately scoped MYEL/agriculture/grant cases, multi-country
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network: accountants who put
+This guide is maintained by the OpenAccountants network — accountants who put
 their name behind the tax answers AI gives people. The live, always-current
 version (and the professional behind it) is at
 [openaccountants.com](https://www.openaccountants.com).

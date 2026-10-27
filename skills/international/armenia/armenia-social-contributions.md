@@ -4,7 +4,7 @@ description: "Use for Armenian 2026 pension social payments, military stamp and 
 version: 0.3
 jurisdiction: AM
 tax_year: 2026
-last_updated: 2026-10-26
+last_updated: 2026-10-27
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
 depends_on:
@@ -252,7 +252,7 @@ Targeted commencement recheck, **25 October 2026**: [current Health Law arts. 16
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network of accountants who put
+This guide is maintained by the OpenAccountants network — accountants who put
 their name behind the tax answers AI gives people. The live, always-current
 version (and the professional behind it) is at
 [openaccountants.com](https://www.openaccountants.com).

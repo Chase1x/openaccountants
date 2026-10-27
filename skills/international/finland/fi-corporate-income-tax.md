@@ -14,7 +14,7 @@ description: >
   corporate cross-border skill.
 jurisdiction: FI
 tax_year: 2026
-last_updated: 2026-10-26
+last_updated: 2026-10-27
 review_status: pending_review
 trust_label: Built by Michael Cutajar and the OpenAccountants team
 tier: 2
@@ -198,7 +198,7 @@ Not yet confirmed: separately scoped specialist incentives, reorganisations, fin
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network: accountants who put
+This guide is maintained by the OpenAccountants network — accountants who put
 their name behind the tax answers AI gives people. The live, always-current
 version (and the professional behind it) is at
 [openaccountants.com](https://www.openaccountants.com).
